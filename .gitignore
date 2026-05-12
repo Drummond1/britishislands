@@ -1,0 +1,54 @@
+# --- OS / editor noise ------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+*.iml
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.env.local
+*.egg-info/
+
+# --- Logs / runtime ---------------------------------------------------------
+logs/
+*.log
+nohup.out
+
+# --- Local credentials ------------------------------------------------------
+*.key
+*.pem
+.env*
+config.local.*
+**/secrets/
+
+# --- Generated / cache data we DO NOT want in version control ---------------
+# Re-fetchable from upstream APIs in minutes; would bloat the repo.
+data/cache_*.json
+data/water_raw.json
+data/osm_raw.json
+data/osm_ferries_raw.json
+data/candidates_*.json
+
+# Backup snapshots taken before destructive operations - regeneratable from
+# the live JSONs + report logs. Keeping them out of git keeps the repo small
+# and avoids confusing readers about which file is canonical.
+data/islands.json.before-*
+data/islands.json.corrupt-*
+data/islands.json.tmp
+
+# --- GTFS bundles -----------------------------------------------------------
+# Multi-MB zip blobs from Traveline Scotland / BODS. Re-downloadable.
+data/gtfs/
+*.gtfs.zip
+
+# --- Tooling --------------------------------------------------------------
+# Cursor-specific runtime artefacts (terminals, agent transcripts).
+.cursor/projects/

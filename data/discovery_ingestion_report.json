@@ -1,0 +1,463 @@
+{
+  "by_action": {
+    "wikidata": {
+      "considered": 2644,
+      "added": 859,
+      "merged": 1781,
+      "dropped": 4
+    },
+    "thames": {
+      "considered": 30,
+      "added": 22,
+      "merged": 8,
+      "dropped": 0
+    },
+    "crannog": {
+      "considered": 10,
+      "added": 4,
+      "merged": 6,
+      "dropped": 0
+    }
+  },
+  "new_by_nation": {
+    "Scotland": 355,
+    "Wales": 48,
+    "England": 264,
+    "Crown Dependency": 72,
+    "Ireland": 122,
+    "Northern Ireland": 24
+  },
+  "new_by_type": {
+    "sea": 859,
+    "river": 22,
+    "lake": 4
+  },
+  "new_by_source": {
+    "wikidata": 859,
+    "wikipedia-thames": 22,
+    "wikipedia-crannog": 4
+  },
+  "merged_into_existing": 1795,
+  "total_candidates": 2684,
+  "initial_count": 5892,
+  "final_count": 6741,
+  "net_delta": 849,
+  "log_sample": [
+    {
+      "id": "wd-Q116590676",
+      "name": "Aa Skerry",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q130372994",
+      "name": "Aberdyfi Bar",
+      "nation": "Wales",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q116505278",
+      "name": "Abernethy Bank",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q56665781",
+      "name": "Achnacree Moss,crannog 210m SW of Moss Cottage",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659636",
+      "name": "Adamant Shoal",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q27118715",
+      "name": "Aiguillon",
+      "nation": "Crown Dependency",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659098",
+      "name": "Aith Baa",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659107",
+      "name": "Aldeburgh Napes",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659667",
+      "name": "Aldeburgh Ridge",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659159",
+      "name": "An Coileach",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659164",
+      "name": "An Garbh-eilean",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24659160",
+      "name": "Andrews Spit",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q104322906",
+      "name": "Annaghminnogue",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26718468",
+      "name": "Annaghroe Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656990",
+      "name": "Archdeacon Rock",
+      "nation": "Wales",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24657122",
+      "name": "Arva Skerry",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26718728",
+      "name": "Ash Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q124373236",
+      "name": "Auchie Island",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q2987177",
+      "name": "Aughinish",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24644002",
+      "name": "Baa Gruna",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24641428",
+      "name": "Baa of Hascosay",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24638982",
+      "name": "Baa of Oxafirth",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24636700",
+      "name": "Baa of Wether Holm",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24641373",
+      "name": "Baas of Hagdale",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24640627",
+      "name": "Baas of Linton",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24638069",
+      "name": "Baas of Trevan",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24658713",
+      "name": "Balbithan Island",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q27118686",
+      "name": "Baleine",
+      "nation": "Crown Dependency",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q116875402",
+      "name": "Balhepburn Island",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q1138911",
+      "name": "Ballinderry Crannog No. 1",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26718287",
+      "name": "Ballingarry Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q27118660",
+      "name": "Banc de Saint Brelade",
+      "nation": "Crown Dependency",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q27118667",
+      "name": "Banc Le Fret",
+      "nation": "Crown Dependency",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26717951",
+      "name": "Bankboy",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656394",
+      "name": "Bann Shoal",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26716369",
+      "name": "Bannow Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q104256098",
+      "name": "Banragh Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26717834",
+      "name": "Bar of Aran",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656408",
+      "name": "Barkley Rocks",
+      "nation": "Northern Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656415",
+      "name": "Barnard",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656421",
+      "name": "Barnyard Reef",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24657075",
+      "name": "Barrels",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q1770146",
+      "name": "Barry Island",
+      "nation": "Wales",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656441",
+      "name": "Bastram Shoal",
+      "nation": "Wales",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656446",
+      "name": "Bawd Head",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656447",
+      "name": "Bawdsey Bank",
+      "nation": "England",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24657162",
+      "name": "Beckfoot",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q26717456",
+      "name": "Beggarin Island",
+      "nation": "Ireland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q24656498",
+      "name": "Bellhues Rocks",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    },
+    {
+      "id": "wd-Q116722866",
+      "name": "Bendibus Island",
+      "nation": "Scotland",
+      "type": "sea",
+      "source": "wikidata"
+    }
+  ],
+  "blockers": [
+    {
+      "action": "crannogs (Canmore)",
+      "planned_yield": "200-800 candidates",
+      "actual_yield": "0",
+      "blocker": "HES Canmore search endpoint returned HTTP 403 (Forbidden) for /api/site/search/result with SITETYPE=CRANNOG. They appear to require their own search UI; no public REST endpoint surfaced. Fell back to Wikipedia categories which only have ~10 individually-notable crannogs.",
+      "remediation_path": "Either (a) reach out to HES for documented API access, or (b) parse the Canmore site-search HTML pages (rate-limited; would need ~30 pages × ~20 results, manageable but more brittle), or (c) accept the Wikidata-island P31=Q23442 ingest already covers crannogs that have notability for a dedicated Wikidata item."
+    },
+    {
+      "action": "crannogs (NMS Ireland)",
+      "planned_yield": "200-500 candidates",
+      "actual_yield": "0",
+      "blocker": "The ArcGIS REST FeatureServer URL we tried returned empty payload — the NMS Ireland Archaeological Survey is documented as having a public dataset but the actual feature-server URL appears to differ from the one we constructed. Verifying the canonical URL requires authenticated access to data.gov.ie's portal API or interactive web exploration which the sandbox environment couldn't reliably provide.",
+      "remediation_path": "Fetch the documented dataset CSV from data.gov.ie's CKAN API (https://data.gov.ie/api/3/action/package_show?id=archaeological-survey-of-ireland) once endpoint can be verified manually."
+    },
+    {
+      "action": "crannogs (DfC NI NISMR)",
+      "planned_yield": "100-300 candidates",
+      "actual_yield": "0",
+      "blocker": "Same as NMS Ireland — ArcGIS endpoint guess was wrong. NISMR data is available as a shapefile from OpenDataNI but requires URL verification.",
+      "remediation_path": "Resolve the canonical NISMR endpoint via OpenDataNI catalogue, then re-run."
+    },
+    {
+      "action": "designations",
+      "planned_yield": "250-450 island-bounded designations",
+      "actual_yield": "0",
+      "blocker": "All five guessed ArcGIS FeatureServer URLs (Tailte Éireann Islands, NPWS SAC + SPA, NIEA ASSI, NatureScot SSSI) returned empty payloads. The pattern of URL construction (`https://services<N>.arcgis.com/<orgId>/ArcGIS/rest/services/<dataset>/FeatureServer/0/query`) varies per organisation and the orgId values used are placeholders. Most designated islands in any case already appear in the 2,644 Wikidata island candidates because they're individually notable items in Wikidata.",
+      "remediation_path": "Verify each org's actual feature-service URL (NatureScot OpenData portal, NPWS GeoHive, OpenDataNI, GeoHive). This is plumbing work — the data is there, just behind a URL we couldn't validate in this session."
+    },
+    {
+      "action": "river-pipeline",
+      "planned_yield": "500-1000 net new (EA polygons → re-classify)",
+      "actual_yield": "deferred",
+      "blocker": "Substantial engineering investment (downloading EA DRN gpkg, modifying classify_inland.py to accept new water-body sources, re-running Tier A+B). Out of scope for this session; the 22 named Thames eyots from Wikipedia carry the user-visible river count for now.",
+      "remediation_path": "Next session — see docs/NEXT-SESSION-PLAN.md action 2."
+    }
+  ],
+  "ingested_sources": [
+    {
+      "name": "Wikidata SPARQL",
+      "licence": "CC0",
+      "countries": [
+        "UK (Q145)",
+        "Ireland (Q27)",
+        "Isle of Man (Q9676)",
+        "Jersey (Q785)",
+        "Bailiwick of Guernsey (Q3311985)"
+      ],
+      "rows": 2644,
+      "candidates_added_new": 859,
+      "candidates_merged_into_existing": 1781,
+      "candidates_dropped_out_of_remit": 4
+    },
+    {
+      "name": "Wikipedia — Islands in the River Thames",
+      "licence": "CC BY-SA 4.0",
+      "candidates_added_new": 22,
+      "candidates_merged_into_existing": 8
+    },
+    {
+      "name": "Wikipedia — Crannog categories",
+      "licence": "CC BY-SA 4.0",
+      "candidates_added_new": 4,
+      "candidates_merged_into_existing": 6
+    }
+  ]
+}

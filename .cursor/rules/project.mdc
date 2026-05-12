@@ -1,0 +1,34 @@
+---
+description: Isles of Britain project — orientation, hard rules, where to find state and queue
+alwaysApply: true
+---
+
+# Isles of Britain — agent rule
+
+This is the **Isles of Britain** project: a static web app that maps every
+island within ~50 miles of the UK and Ireland, including river/lake islands.
+Stack: Leaflet + vanilla ES modules + Python ingestion scripts. No build.
+
+## Before doing anything
+
+1. Read `AGENTS.md` at the repo root — it is the orientation entry point.
+2. Read `docs/STATE.md` — live snapshot (counts, what's currently running).
+3. Read `docs/QUEUE.md` — what's next.
+4. Read `docs/ETHICS.md` — non-negotiable guardrails.
+
+## Hard rules
+
+- Never break `data/islands.json` schema without updating `docs/DATA-SCHEMA.md`.
+- Never add an island without provenance (`source` + one of
+  `osmId`/`wikidata`/curated reference).
+- Never add an image without attribution + licence inside `images[]`.
+- Never delete a curated island (they are the regression spine).
+- Always use cached Overpass / Wikidata responses if available (`--cache`).
+- Do not run write-pipelines while another agent is running them — check
+  `docs/STATE.md` "Currently running".
+
+## After any material change
+
+- Append a one-block entry to `docs/SESSION-LOG.md`.
+- Update `docs/STATE.md` if counts, schema, or running processes changed.
+- Move completed items from `docs/QUEUE.md` to the session log.

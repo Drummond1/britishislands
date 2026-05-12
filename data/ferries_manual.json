@@ -1,0 +1,4730 @@
+{
+  "schemaVersion": 1,
+  "description": "Hand-curated ferry routes that aren't (yet) covered by OSM, GTFS, or per-operator scrapers. Merged into data/ferries.json by the UI at render time, so removing an entry here disables the corresponding card on the live site. Re-running scripts/seed_ferries_manual.py overwrites this file.",
+  "lastUpdated": "2026-05-11",
+  "routes": [
+    {
+      "id": "manual-wightlink-portsmouth-fishbourne",
+      "operatorId": "wightlink",
+      "operatorRouteCode": null,
+      "name": "Portsmouth Gunwharf – Fishbourne (Isle of Wight)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-portsmouth-gunwharf",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-fishbourne",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 45,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.wightlink.co.uk/routes/portsmouth-to-fishbourne/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Hourly car/passenger ferry; ~30 sailings per day each way in summer."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.wightlink.co.uk/ferry-information/timetables/",
+          "id": "wightlink-portsmouth-fishbourne"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-wightlink-lymington-yarmouth",
+      "operatorId": "wightlink",
+      "operatorRouteCode": null,
+      "name": "Lymington Pier – Yarmouth (Isle of Wight)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-lymington-pier",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-yarmouth-iow",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 40,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.wightlink.co.uk/routes/lymington-to-yarmouth/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "~30 minute sailings, half-hourly to hourly."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.wightlink.co.uk/ferry-information/timetables/",
+          "id": "wightlink-lymington-yarmouth"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-wightlink-portsmouth-ryde",
+      "operatorId": "wightlink",
+      "operatorRouteCode": null,
+      "name": "Portsmouth Harbour – Ryde Pier Head (FastCat)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-portsmouth-harbour",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-ryde-pier",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 22,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.wightlink.co.uk/routes/portsmouth-to-ryde/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Passenger-only catamaran every 30 mins."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.wightlink.co.uk/ferry-information/timetables/",
+          "id": "wightlink-portsmouth-ryde"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-red-funnel-southampton-east-cowes",
+      "operatorId": "red-funnel",
+      "operatorRouteCode": null,
+      "name": "Southampton Town Quay – East Cowes (Vehicle Ferry)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-southampton-town-quay",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-east-cowes",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 60,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/timetable",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Car/passenger ferry; ~18 sailings/day each way."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/timetable",
+          "id": "red-funnel-vehicle"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-red-funnel-southampton-west-cowes",
+      "operatorId": "red-funnel",
+      "operatorRouteCode": null,
+      "name": "Southampton Royal Pier – West Cowes (Red Jet)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-southampton-redjet",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-west-cowes",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 28,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/timetable",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Passenger-only Red Jet hi-speed; half-hourly to hourly."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/timetable",
+          "id": "red-funnel-redjet"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-hovertravel-southsea-ryde",
+      "operatorId": "hovertravel",
+      "operatorRouteCode": null,
+      "name": "Southsea – Ryde Esplanade (Hovercraft)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-southsea",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-ryde-esplanade",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 10,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.hovertravel.co.uk/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "World's only commercial passenger hovercraft service. Every 30 mins."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.hovertravel.co.uk/timetable/",
+          "id": "hovertravel-solent"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-scilly-penzance-stmarys",
+      "operatorId": "scilly-travel",
+      "operatorRouteCode": null,
+      "name": "Penzance – St Mary's (Scillonian III)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-penzance",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-st-marys-scilly",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 170,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.islesofscilly-travel.co.uk/scillonian-ferry",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Operates Mar-Nov; daily in summer, reduced spring/autumn. Out of season requires Skybus flight."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.islesofscilly-travel.co.uk/scillonian-ferry",
+          "id": "scilly-travel-scillonian"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-lundy-bideford-lundy",
+      "operatorId": "lundy-co",
+      "operatorRouteCode": null,
+      "name": "Bideford / Ilfracombe – Lundy (MS Oldenburg)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-bideford",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-lundy",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 120,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.lundyisland.co.uk/how-to-get-there/oldenburg/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Sails Tue/Thu/Sat in summer from Bideford or Ilfracombe (varies by tide). Winter access by helicopter from Hartland Point."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.lundyisland.co.uk/how-to-get-there/oldenburg/",
+          "id": "lundy-oldenburg"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-brownsea-poole-brownsea",
+      "operatorId": "brownsea-ferries",
+      "operatorRouteCode": null,
+      "name": "Poole Quay – Brownsea Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-poole-quay",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-brownsea",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://brownseaislandferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Operates Easter-October. Multiple operators; also from Sandbanks."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://brownseaislandferries.com/",
+          "id": "brownsea-poole"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-brownsea-sandbanks-brownsea",
+      "operatorId": "brownsea-ferries",
+      "operatorRouteCode": null,
+      "name": "Sandbanks – Brownsea Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-sandbanks",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-brownsea",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 10,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://brownseaislandferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Quicker crossing from Sandbanks; Easter-Oct."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://brownseaislandferries.com/",
+          "id": "brownsea-sandbanks"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-farne-seahouses-inner",
+      "operatorId": "farne-islands-tours",
+      "operatorRouteCode": null,
+      "name": "Seahouses – Inner Farne (multiple operators)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-seahouses",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-farne-inner",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://farne-islands.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Multiple licensed operators (Billy Shiel's, Serenity, Golden Gate). Apr-Oct landings on Inner Farne / Staple Island."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://farne-islands.com/",
+          "id": "farne-tours"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-farne-seahouses-staple",
+      "operatorId": "farne-islands-tours",
+      "operatorRouteCode": null,
+      "name": "Seahouses – Staple Island (multiple operators)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-seahouses",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-staple",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 25,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://farne-islands.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Jul (puffin/auk landings); seal-cruise only later."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://farne-islands.com/",
+          "id": "farne-staple"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-caldey-tenby",
+      "operatorId": "caldey-boats",
+      "operatorRouteCode": null,
+      "name": "Tenby – Caldey Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-tenby",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-caldey",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.caldeyislandwales.com/getting-here.html",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Mon-Sat, Easter to Oct (no Sunday sailings - Cistercian monastery). Subject to tide."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.caldeyislandwales.com/getting-here.html",
+          "id": "caldey-boats"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-bardsey-aberdaron",
+      "operatorId": "bardsey-boats",
+      "operatorRouteCode": null,
+      "name": "Porth Meudwy (Aberdaron) – Bardsey Island (Ynys Enlli)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-aberdaron",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-bardsey",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.bardseyboattrips.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Weather-dependent small boat; runs Apr-Oct."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.bardseyboattrips.com/",
+          "id": "bardsey-boats"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-skomer",
+      "operatorId": "pembs-island-boats",
+      "operatorRouteCode": null,
+      "name": "Martin's Haven – Skomer Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-martins-haven",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-skomer",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 15,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://pembrokeshire-islands.co.uk/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Sep; landings require pre-booked tickets via Wildlife Trust of South & West Wales. Closed Mondays."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://pembrokeshire-islands.co.uk/",
+          "id": "pembs-skomer"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-skokholm",
+      "operatorId": "pembs-island-boats",
+      "operatorRouteCode": null,
+      "name": "Martin's Haven / Dale – Skokholm Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-dale",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-skokholm",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 30,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://pembrokeshire-islands.co.uk/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Sep; overnight stays only at Skokholm Bird Observatory."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://pembrokeshire-islands.co.uk/",
+          "id": "pembs-skokholm"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-grassholm",
+      "operatorId": "pembs-island-boats",
+      "operatorRouteCode": null,
+      "name": "Martin's Haven – Grassholm (no landing)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-martins-haven",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-grassholm",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 40,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://pembrokeshire-islands.co.uk/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Boat trip only - no landings on Grassholm (gannet colony). Apr-Sep."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://pembrokeshire-islands.co.uk/",
+          "id": "pembs-grassholm"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-rathlin",
+      "operatorId": "rathlin-ferry",
+      "operatorRouteCode": null,
+      "name": "Ballycastle – Rathlin Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-ballycastle",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-rathlin",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 45,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.rathlinballycastleferry.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Car ferry plus fast passenger ferry; ~8 sailings/day in summer, fewer in winter."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.rathlinballycastleferry.com/timetable",
+          "id": "rathlin-ferry"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-strangford",
+      "operatorId": "strangford-ferry",
+      "operatorRouteCode": null,
+      "name": "Strangford – Portaferry (Strangford Lough)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-strangford",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-portaferry",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 10,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.infrastructure-ni.gov.uk/articles/strangford-ferry",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Mainland-mainland car ferry across Strangford Lough narrows; every 30 mins all day."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.infrastructure-ni.gov.uk/articles/strangford-ferry",
+          "id": "strangford-dfi"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-aran-rossaveal-inishmore",
+      "operatorId": "aran-island-ferries",
+      "operatorRouteCode": null,
+      "name": "Ros a' Mhíl (Rossaveal) – Cill Rónáin (Inishmore)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-rossaveal",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishmore",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 40,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://aranislandferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "~5-6 sailings daily summer; ~3 winter. Connecting bus from Galway."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://aranislandferries.com/timetable/",
+          "id": "aran-inishmore"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-aran-rossaveal-inishmaan",
+      "operatorId": "aran-island-ferries",
+      "operatorRouteCode": null,
+      "name": "Ros a' Mhíl – Inis Meáin",
+      "terminals": {
+        "from": {
+          "terminalId": "term-rossaveal",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishmaan",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 40,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://aranislandferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "2-3 sailings daily; inter-island connections via Inishmore."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://aranislandferries.com/timetable/",
+          "id": "aran-inishmaan"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-aran-rossaveal-inisheer",
+      "operatorId": "aran-island-ferries",
+      "operatorRouteCode": null,
+      "name": "Ros a' Mhíl – Inis Oírr",
+      "terminals": {
+        "from": {
+          "terminalId": "term-rossaveal",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inisheer",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 40,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://aranislandferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "2-3 sailings daily; Aran Islands' smallest, often visited from Doolin."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://aranislandferries.com/timetable/",
+          "id": "aran-inisheer"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-doolin-inishmore",
+      "operatorId": "doolin-ferry",
+      "operatorRouteCode": null,
+      "name": "Doolin – Inishmore",
+      "terminals": {
+        "from": {
+          "terminalId": "term-doolin",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishmore",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 45,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.doolinferry.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct; smaller fast boats from Doolin (Co. Clare)."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.doolinferry.com/timetable/",
+          "id": "doolin-inishmore"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-doolin-inishmaan",
+      "operatorId": "doolin-ferry",
+      "operatorRouteCode": null,
+      "name": "Doolin – Inis Meáin",
+      "terminals": {
+        "from": {
+          "terminalId": "term-doolin",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishmaan",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 30,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.doolinferry.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.doolinferry.com/timetable/",
+          "id": "doolin-inishmaan"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-doolin-inisheer",
+      "operatorId": "doolin-ferry",
+      "operatorRouteCode": null,
+      "name": "Doolin – Inis Oírr",
+      "terminals": {
+        "from": {
+          "terminalId": "term-doolin",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inisheer",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.doolinferry.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct; shortest Aran crossing."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.doolinferry.com/timetable/",
+          "id": "doolin-inisheer"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-inishbofin",
+      "operatorId": "inishbofin-ferry",
+      "operatorRouteCode": null,
+      "name": "Cleggan – Inishbofin",
+      "terminals": {
+        "from": {
+          "terminalId": "term-cleggan",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishbofin",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 30,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://inishbofinislanddiscovery.com/ferry-timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "2-3 daily sailings; mailboat + summer fast ferry."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://inishbofinislanddiscovery.com/ferry-timetable/",
+          "id": "inishbofin"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-clare-island",
+      "operatorId": "clare-island-ferries",
+      "operatorRouteCode": null,
+      "name": "Roonagh – Clare Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-roonagh",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-clare-island",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.clareislandferry.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "4-6 sailings daily summer."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.clareislandferry.com/timetable/",
+          "id": "clare-island"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-inishturk",
+      "operatorId": "inishturk-ferry",
+      "operatorRouteCode": null,
+      "name": "Roonagh – Inishturk",
+      "terminals": {
+        "from": {
+          "terminalId": "term-roonagh",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-inishturk",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 45,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://inishturkisland.com/ferry-services/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Year-round; reduced winter service."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://inishturkisland.com/ferry-services/",
+          "id": "inishturk"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-tory",
+      "operatorId": "tory-island-ferry",
+      "operatorRouteCode": null,
+      "name": "Magheroarty – Tory Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-magheroarty",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-tory",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 50,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.toryislandferry.com/sailing-times/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Weather-dependent; usually 1-2 sailings per day."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.toryislandferry.com/sailing-times/",
+          "id": "tory"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-cape-clear",
+      "operatorId": "cape-clear-ferries",
+      "operatorRouteCode": null,
+      "name": "Baltimore – Cape Clear",
+      "terminals": {
+        "from": {
+          "terminalId": "term-baltimore",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-cape-clear",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 45,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.capeclearferries.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "2-3 sailings daily; weather-dependent."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.capeclearferries.com/timetable/",
+          "id": "cape-clear"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-sherkin",
+      "operatorId": "sherkin-ferry",
+      "operatorRouteCode": null,
+      "name": "Baltimore – Sherkin Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-baltimore",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-sherkin",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 10,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://sherkinferry.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Hourly in summer; multiple operators."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://sherkinferry.com/timetable/",
+          "id": "sherkin"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-bere",
+      "operatorId": "bere-island-ferries",
+      "operatorRouteCode": null,
+      "name": "Castletownbere – Bere Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-castletownbere",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-bere-island",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 20,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.bereislandferries.com/timetable/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Two operators (Pontoon + Murphy's Ferry); hourly."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.bereislandferries.com/timetable/",
+          "id": "bere"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-spike",
+      "operatorId": "spike-island",
+      "operatorRouteCode": null,
+      "name": "Cobh – Spike Island",
+      "terminals": {
+        "from": {
+          "terminalId": "term-cobh",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-spike",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 15,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.spikeislandcork.ie/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Bookable as part of Spike Island visitor attraction (former prison)."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.spikeislandcork.ie/",
+          "id": "spike"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-skellig-michael",
+      "operatorId": "skellig-boats",
+      "operatorRouteCode": null,
+      "name": "Portmagee – Skellig Michael",
+      "terminals": {
+        "from": {
+          "terminalId": "term-portmagee",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-skellig-michael",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 60,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.skelligmichael.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "May-Oct; multiple licensed operators; tight 180/day landing cap; very weather-dependent."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.skelligmichael.com/",
+          "id": "skellig"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-iom-heysham-douglas",
+      "operatorId": "iom-steam-packet",
+      "operatorRouteCode": null,
+      "name": "Heysham – Douglas (Isle of Man)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-heysham",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-douglas-iom",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 225,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.steam-packet.com/sailings",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Primary year-round route; 1-2 sailings daily."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.steam-packet.com/sailings",
+          "id": "iom-heysham"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-iom-liverpool-douglas",
+      "operatorId": "iom-steam-packet",
+      "operatorRouteCode": null,
+      "name": "Liverpool – Douglas",
+      "terminals": {
+        "from": {
+          "terminalId": "term-liverpool-pier-head",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-douglas-iom",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 165,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.steam-packet.com/sailings",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Manannan fast craft; Apr-Sep mainly."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.steam-packet.com/sailings",
+          "id": "iom-liverpool"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-iom-belfast-douglas",
+      "operatorId": "iom-steam-packet",
+      "operatorRouteCode": null,
+      "name": "Belfast – Douglas",
+      "terminals": {
+        "from": {
+          "terminalId": "term-belfast",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-douglas-iom",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 170,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.steam-packet.com/sailings",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Seasonal fast craft."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.steam-packet.com/sailings",
+          "id": "iom-belfast"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-iom-dublin-douglas",
+      "operatorId": "iom-steam-packet",
+      "operatorRouteCode": null,
+      "name": "Dublin – Douglas",
+      "terminals": {
+        "from": {
+          "terminalId": "term-dublin-port",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-douglas-iom",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 175,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.steam-packet.com/sailings",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Seasonal fast craft."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.steam-packet.com/sailings",
+          "id": "iom-dublin"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-condor-poole-jersey",
+      "operatorId": "condor-ferries",
+      "operatorRouteCode": null,
+      "name": "Poole – Jersey",
+      "terminals": {
+        "from": {
+          "terminalId": "term-poole-condor",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-jersey-st-helier",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 270,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.condorferries.co.uk/timetables",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "High-speed Condor Liberation; ~1-2 sailings daily."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.condorferries.co.uk/timetables",
+          "id": "condor-poole-je"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-condor-poole-guernsey",
+      "operatorId": "condor-ferries",
+      "operatorRouteCode": null,
+      "name": "Poole – Guernsey",
+      "terminals": {
+        "from": {
+          "terminalId": "term-poole-condor",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-guernsey-st-peter-port",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 210,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.condorferries.co.uk/timetables",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Condor Liberation; daily."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.condorferries.co.uk/timetables",
+          "id": "condor-poole-gg"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-condor-portsmouth-jersey",
+      "operatorId": "condor-ferries",
+      "operatorRouteCode": null,
+      "name": "Portsmouth – Jersey (Overnight)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-portsmouth-condor",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-jersey-st-helier",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "weekly",
+      "durationMinutes": 660,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.condorferries.co.uk/timetables",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Overnight Commodore Goodwill route; cabins available."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.condorferries.co.uk/timetables",
+          "id": "condor-pompey-je"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-condor-portsmouth-guernsey",
+      "operatorId": "condor-ferries",
+      "operatorRouteCode": null,
+      "name": "Portsmouth – Guernsey (Overnight)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-portsmouth-condor",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-guernsey-st-peter-port",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "weekly",
+      "durationMinutes": 600,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.condorferries.co.uk/timetables",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Overnight Commodore Goodwill route."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.condorferries.co.uk/timetables",
+          "id": "condor-pompey-gg"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-condor-jersey-stmalo",
+      "operatorId": "condor-ferries",
+      "operatorRouteCode": null,
+      "name": "Jersey – St Malo",
+      "terminals": {
+        "from": {
+          "terminalId": "term-jersey-st-helier",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-st-malo",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "daily",
+      "durationMinutes": 75,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.condorferries.co.uk/timetables",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Hi-speed catamaran; allows day trips to/from France."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.condorferries.co.uk/timetables",
+          "id": "condor-je-sm"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-manche-granville-jersey",
+      "operatorId": "manche-iles",
+      "operatorRouteCode": null,
+      "name": "Granville – Jersey",
+      "terminals": {
+        "from": {
+          "terminalId": "term-granville",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-jersey-st-helier",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 70,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.manche-iles.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct; passenger only; popular day-trip route."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.manche-iles.com/horaires/",
+          "id": "manche-granville-je"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-manche-dielette-guernsey",
+      "operatorId": "manche-iles",
+      "operatorRouteCode": null,
+      "name": "Diélette – Guernsey",
+      "terminals": {
+        "from": {
+          "terminalId": "term-dielette",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-guernsey-st-peter-port",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "weekly",
+      "durationMinutes": 60,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.manche-iles.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct; passenger only."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.manche-iles.com/horaires/",
+          "id": "manche-dielette-gg"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-manche-granville-chausey",
+      "operatorId": "manche-iles",
+      "operatorRouteCode": null,
+      "name": "Granville – Chausey",
+      "terminals": {
+        "from": {
+          "terminalId": "term-granville",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-chausey",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "summer-only",
+      "frequencyBand": "daily",
+      "durationMinutes": 55,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.manche-iles.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Apr-Oct; day trip to French Channel Islands archipelago."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.manche-iles.com/horaires/",
+          "id": "manche-chausey"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-sark",
+      "operatorId": "sark-shipping",
+      "operatorRouteCode": null,
+      "name": "Guernsey – Sark",
+      "terminals": {
+        "from": {
+          "terminalId": "term-guernsey-st-peter-port",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-sark-maseline",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 55,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.sarkshippingcompany.com/sailing-schedule/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "No cars on Sark; 2-4 sailings daily depending on season."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.sarkshippingcompany.com/sailing-schedule/",
+          "id": "sark-shipping"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-alderney",
+      "operatorId": "alderney-bailiwick",
+      "operatorRouteCode": null,
+      "name": "Guernsey – Alderney (irregular sea link)",
+      "terminals": {
+        "from": {
+          "terminalId": "term-guernsey-st-peter-port",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-alderney-braye",
+          "islandId": null
+        }
+      },
+      "type": "foot-only",
+      "seasonality": "seasonal",
+      "frequencyBand": "on-demand",
+      "durationMinutes": 90,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.visitalderney.com/getting-here",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Sea passage is irregular / charter only; most visitors fly Aurigny from Guernsey or Southampton."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.visitalderney.com/getting-here",
+          "id": "alderney-sea"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-stena-cairnryan-belfast",
+      "operatorId": "stena-line",
+      "operatorRouteCode": null,
+      "name": "Cairnryan – Belfast",
+      "terminals": {
+        "from": {
+          "terminalId": "term-strangford",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-belfast",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 135,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.stenaline.co.uk/routes-and-times/cairnryan-belfast",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Major car ferry to Northern Ireland (island of Ireland)."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.stenaline.co.uk/routes-and-times",
+          "id": "stena-cairnryan-belfast"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    },
+    {
+      "id": "manual-irish-holyhead-dublin",
+      "operatorId": "irish-ferries",
+      "operatorRouteCode": null,
+      "name": "Holyhead – Dublin",
+      "terminals": {
+        "from": {
+          "terminalId": "term-dublin-port",
+          "islandId": null
+        },
+        "to": {
+          "terminalId": "term-dublin-port",
+          "islandId": null
+        }
+      },
+      "type": "car-and-foot",
+      "seasonality": "year-round",
+      "frequencyBand": "several-daily",
+      "durationMinutes": 210,
+      "vessel": [],
+      "vesselWikidata": [],
+      "bookingUrl": "https://www.irishferries.com/",
+      "timetable": {
+        "source": "manual",
+        "validFrom": null,
+        "validTo": null,
+        "weekly": [],
+        "notes": "Major car ferry to the island of Ireland. Conventional + Dublin Swift fast craft."
+      },
+      "accessibility": {
+        "wheelchair": null,
+        "bicycle": null,
+        "pets": null,
+        "ev": null
+      },
+      "fareFromGBP": null,
+      "sources": [
+        {
+          "type": "operator-page",
+          "url": "https://www.irishferries.com/uk-en/",
+          "id": "irish-holyhead-dublin"
+        }
+      ],
+      "lastVerified": "2026-05-11"
+    }
+  ],
+  "terminals": [
+    {
+      "id": "term-portsmouth-harbour",
+      "name": "Portsmouth Harbour",
+      "names": {
+        "en": "Portsmouth Harbour"
+      },
+      "lat": 50.7949,
+      "lon": -1.0917,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-portsmouth-gunwharf",
+      "name": "Portsmouth Gunwharf (Wightlink Car Ferry)",
+      "names": {
+        "en": "Portsmouth Gunwharf (Wightlink Car Ferry)"
+      },
+      "lat": 50.7951,
+      "lon": -1.1083,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-fishbourne",
+      "name": "Fishbourne (Isle of Wight)",
+      "names": {
+        "en": "Fishbourne (Isle of Wight)"
+      },
+      "lat": 50.7395,
+      "lon": -1.1839,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-lymington-pier",
+      "name": "Lymington Pier",
+      "names": {
+        "en": "Lymington Pier"
+      },
+      "lat": 50.7589,
+      "lon": -1.5394,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-yarmouth-iow",
+      "name": "Yarmouth (Isle of Wight)",
+      "names": {
+        "en": "Yarmouth (Isle of Wight)"
+      },
+      "lat": 50.7058,
+      "lon": -1.5005,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-ryde-pier",
+      "name": "Ryde Pier Head",
+      "names": {
+        "en": "Ryde Pier Head"
+      },
+      "lat": 50.7393,
+      "lon": -1.1599,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "wightlink"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-southampton-town-quay",
+      "name": "Southampton Town Quay",
+      "names": {
+        "en": "Southampton Town Quay"
+      },
+      "lat": 50.8961,
+      "lon": -1.4011,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "red-funnel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-east-cowes",
+      "name": "East Cowes",
+      "names": {
+        "en": "East Cowes"
+      },
+      "lat": 50.7568,
+      "lon": -1.2906,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "red-funnel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-southampton-redjet",
+      "name": "Southampton Royal Pier",
+      "names": {
+        "en": "Southampton Royal Pier"
+      },
+      "lat": 50.8978,
+      "lon": -1.407,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "red-funnel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-west-cowes",
+      "name": "West Cowes",
+      "names": {
+        "en": "West Cowes"
+      },
+      "lat": 50.7607,
+      "lon": -1.2978,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "red-funnel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-southsea",
+      "name": "Southsea Hoverport",
+      "names": {
+        "en": "Southsea Hoverport"
+      },
+      "lat": 50.7813,
+      "lon": -1.0853,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "hovertravel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-ryde-esplanade",
+      "name": "Ryde Esplanade Hoverport",
+      "names": {
+        "en": "Ryde Esplanade Hoverport"
+      },
+      "lat": 50.737,
+      "lon": -1.1574,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "hovertravel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-penzance",
+      "name": "Penzance Harbour",
+      "names": {
+        "en": "Penzance Harbour"
+      },
+      "lat": 50.118,
+      "lon": -5.5273,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "scilly-travel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-st-marys-scilly",
+      "name": "St Mary's Harbour, Scilly",
+      "names": {
+        "en": "St Mary's Harbour, Scilly"
+      },
+      "lat": 49.9183,
+      "lon": -6.3206,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "scilly-travel"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-bideford",
+      "name": "Bideford Quay",
+      "names": {
+        "en": "Bideford Quay"
+      },
+      "lat": 51.0166,
+      "lon": -4.2078,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "lundy-co"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-ilfracombe",
+      "name": "Ilfracombe Harbour",
+      "names": {
+        "en": "Ilfracombe Harbour"
+      },
+      "lat": 51.2095,
+      "lon": -4.1175,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "lundy-co"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-lundy",
+      "name": "Lundy Landing Bay",
+      "names": {
+        "en": "Lundy Landing Bay"
+      },
+      "lat": 51.1659,
+      "lon": -4.665,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "lundy-co"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-poole-quay",
+      "name": "Poole Quay",
+      "names": {
+        "en": "Poole Quay"
+      },
+      "lat": 50.7124,
+      "lon": -1.992,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "brownsea-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-sandbanks",
+      "name": "Sandbanks",
+      "names": {
+        "en": "Sandbanks"
+      },
+      "lat": 50.6857,
+      "lon": -1.9521,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "brownsea-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-brownsea",
+      "name": "Brownsea Island Pier",
+      "names": {
+        "en": "Brownsea Island Pier"
+      },
+      "lat": 50.6921,
+      "lon": -1.9647,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "brownsea-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-seahouses",
+      "name": "Seahouses Harbour",
+      "names": {
+        "en": "Seahouses Harbour"
+      },
+      "lat": 55.5836,
+      "lon": -1.6485,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "farne-islands-tours"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-farne-inner",
+      "name": "Inner Farne Landing",
+      "names": {
+        "en": "Inner Farne Landing"
+      },
+      "lat": 55.6178,
+      "lon": -1.6529,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "farne-islands-tours"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-staple",
+      "name": "Staple Island Landing",
+      "names": {
+        "en": "Staple Island Landing"
+      },
+      "lat": 55.63,
+      "lon": -1.626,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "farne-islands-tours"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-tenby",
+      "name": "Tenby Harbour",
+      "names": {
+        "en": "Tenby Harbour",
+        "cy": "Dinbych-y-pysgod"
+      },
+      "lat": 51.674,
+      "lon": -4.6979,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "caldey-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-caldey",
+      "name": "Caldey Island Jetty",
+      "names": {
+        "en": "Caldey Island Jetty",
+        "cy": "Ynys Bŷr"
+      },
+      "lat": 51.6396,
+      "lon": -4.6886,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "caldey-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-aberdaron",
+      "name": "Porth Meudwy (Aberdaron)",
+      "names": {
+        "en": "Porth Meudwy (Aberdaron)",
+        "cy": "Porth Meudwy"
+      },
+      "lat": 52.7895,
+      "lon": -4.7282,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "bardsey-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-bardsey",
+      "name": "Bardsey Island Slipway",
+      "names": {
+        "en": "Bardsey Island Slipway",
+        "cy": "Ynys Enlli"
+      },
+      "lat": 52.7546,
+      "lon": -4.7951,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "bardsey-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-martins-haven",
+      "name": "Martin's Haven",
+      "names": {
+        "en": "Martin's Haven"
+      },
+      "lat": 51.7368,
+      "lon": -5.2483,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "pembs-island-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-dale",
+      "name": "Dale Slipway",
+      "names": {
+        "en": "Dale Slipway"
+      },
+      "lat": 51.705,
+      "lon": -5.1733,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "pembs-island-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-skomer",
+      "name": "Skomer Landing",
+      "names": {
+        "en": "Skomer Landing",
+        "cy": "Sgomer"
+      },
+      "lat": 51.7378,
+      "lon": -5.2989,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "pembs-island-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-skokholm",
+      "name": "Skokholm Landing",
+      "names": {
+        "en": "Skokholm Landing",
+        "cy": "Sgogwm"
+      },
+      "lat": 51.6961,
+      "lon": -5.2787,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "pembs-island-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-grassholm",
+      "name": "Grassholm (no landing)",
+      "names": {
+        "en": "Grassholm (no landing)",
+        "cy": "Gwales"
+      },
+      "lat": 51.7311,
+      "lon": -5.4789,
+      "country": "Wales",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "pembs-island-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-ballycastle",
+      "name": "Ballycastle Harbour",
+      "names": {
+        "en": "Ballycastle Harbour",
+        "ga": "Baile an Chaistil"
+      },
+      "lat": 55.2058,
+      "lon": -6.2358,
+      "country": "Northern Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "rathlin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-rathlin",
+      "name": "Church Bay, Rathlin",
+      "names": {
+        "en": "Church Bay, Rathlin",
+        "ga": "Reachlainn"
+      },
+      "lat": 55.295,
+      "lon": -6.19,
+      "country": "Northern Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "rathlin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-strangford",
+      "name": "Strangford Quay",
+      "names": {
+        "en": "Strangford Quay"
+      },
+      "lat": 54.3702,
+      "lon": -5.551,
+      "country": "Northern Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "strangford-ferry",
+        "dfi-ni"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-portaferry",
+      "name": "Portaferry Quay",
+      "names": {
+        "en": "Portaferry Quay",
+        "ga": "Port an Pheire"
+      },
+      "lat": 54.3818,
+      "lon": -5.5523,
+      "country": "Northern Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "strangford-ferry",
+        "dfi-ni"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-rossaveal",
+      "name": "Ros a' Mhíl (Rossaveal)",
+      "names": {
+        "en": "Ros a' Mhíl (Rossaveal)",
+        "ga": "Ros a' Mhíl"
+      },
+      "lat": 53.2649,
+      "lon": -9.5582,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "aran-island-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-doolin",
+      "name": "Doolin Pier",
+      "names": {
+        "en": "Doolin Pier",
+        "ga": "Dúlainn"
+      },
+      "lat": 53.015,
+      "lon": -9.408,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "doolin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-inishmore",
+      "name": "Cill Rónáin (Inishmore)",
+      "names": {
+        "en": "Cill Rónáin (Inishmore)",
+        "ga": "Cill Rónáin"
+      },
+      "lat": 53.1235,
+      "lon": -9.6727,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "aran-island-ferries",
+        "doolin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-inishmaan",
+      "name": "Inis Meáin Pier",
+      "names": {
+        "en": "Inis Meáin Pier",
+        "ga": "Inis Meáin"
+      },
+      "lat": 53.0917,
+      "lon": -9.5928,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "aran-island-ferries",
+        "doolin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-inisheer",
+      "name": "Inis Oírr Pier",
+      "names": {
+        "en": "Inis Oírr Pier",
+        "ga": "Inis Oírr"
+      },
+      "lat": 53.0617,
+      "lon": -9.5267,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "aran-island-ferries",
+        "doolin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-cleggan",
+      "name": "Cleggan Pier",
+      "names": {
+        "en": "Cleggan Pier",
+        "ga": "Cloigeann"
+      },
+      "lat": 53.5511,
+      "lon": -10.1267,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "inishbofin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-inishbofin",
+      "name": "Inishbofin Pier",
+      "names": {
+        "en": "Inishbofin Pier",
+        "ga": "Inis Bó Finne"
+      },
+      "lat": 53.6133,
+      "lon": -10.2025,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "inishbofin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-roonagh",
+      "name": "Roonagh Quay",
+      "names": {
+        "en": "Roonagh Quay",
+        "ga": "Cuan Ruanaí"
+      },
+      "lat": 53.7669,
+      "lon": -9.9089,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "clare-island-ferries",
+        "inishturk-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-clare-island",
+      "name": "Clare Island Pier",
+      "names": {
+        "en": "Clare Island Pier",
+        "ga": "Cliara"
+      },
+      "lat": 53.8045,
+      "lon": -9.9856,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "clare-island-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-inishturk",
+      "name": "Inishturk Pier",
+      "names": {
+        "en": "Inishturk Pier",
+        "ga": "Inis Toirc"
+      },
+      "lat": 53.7022,
+      "lon": -10.0859,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "inishturk-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-magheroarty",
+      "name": "Machaire Rabhartaigh (Magheroarty)",
+      "names": {
+        "en": "Machaire Rabhartaigh (Magheroarty)",
+        "ga": "Machaire Rabhartaigh"
+      },
+      "lat": 55.1639,
+      "lon": -8.1633,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "tory-island-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-tory",
+      "name": "Tory Island Pier",
+      "names": {
+        "en": "Tory Island Pier",
+        "ga": "Toraigh"
+      },
+      "lat": 55.2667,
+      "lon": -8.23,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "tory-island-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-baltimore",
+      "name": "Baltimore Pier",
+      "names": {
+        "en": "Baltimore Pier",
+        "ga": "Baile an Tí Mhóir"
+      },
+      "lat": 51.4837,
+      "lon": -9.3735,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "cape-clear-ferries",
+        "sherkin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-cape-clear",
+      "name": "Cape Clear North Harbour",
+      "names": {
+        "en": "Cape Clear North Harbour",
+        "ga": "Cléire"
+      },
+      "lat": 51.4393,
+      "lon": -9.4955,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "cape-clear-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-sherkin",
+      "name": "Sherkin Island Pier",
+      "names": {
+        "en": "Sherkin Island Pier",
+        "ga": "Inis Arcáin"
+      },
+      "lat": 51.4807,
+      "lon": -9.4172,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "sherkin-ferry"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-castletownbere",
+      "name": "Castletownbere",
+      "names": {
+        "en": "Castletownbere",
+        "ga": "Baile Chaisleáin Bhéarra"
+      },
+      "lat": 51.6517,
+      "lon": -9.9094,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "bere-island-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-bere-island",
+      "name": "Bere Island Pier",
+      "names": {
+        "en": "Bere Island Pier",
+        "ga": "Béarra"
+      },
+      "lat": 51.6431,
+      "lon": -9.85,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "bere-island-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-cobh",
+      "name": "Cobh Pier",
+      "names": {
+        "en": "Cobh Pier",
+        "ga": "An Cóbh"
+      },
+      "lat": 51.8506,
+      "lon": -8.295,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "spike-island"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-spike",
+      "name": "Spike Island Pier",
+      "names": {
+        "en": "Spike Island Pier",
+        "ga": "Inis Píc"
+      },
+      "lat": 51.84,
+      "lon": -8.2867,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "spike-island"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-portmagee",
+      "name": "Portmagee Pier",
+      "names": {
+        "en": "Portmagee Pier",
+        "ga": "An Caladh"
+      },
+      "lat": 51.8867,
+      "lon": -10.3667,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "skellig-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-skellig-michael",
+      "name": "Skellig Michael Landing",
+      "names": {
+        "en": "Skellig Michael Landing",
+        "ga": "Sceilg Mhichíl"
+      },
+      "lat": 51.7711,
+      "lon": -10.5378,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "skellig-boats"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-heysham",
+      "name": "Heysham Port",
+      "names": {
+        "en": "Heysham Port"
+      },
+      "lat": 54.0319,
+      "lon": -2.9183,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "iom-steam-packet"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-liverpool-pier-head",
+      "name": "Liverpool Pier Head",
+      "names": {
+        "en": "Liverpool Pier Head"
+      },
+      "lat": 53.4061,
+      "lon": -2.9974,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "iom-steam-packet"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-douglas-iom",
+      "name": "Douglas, Isle of Man",
+      "names": {
+        "en": "Douglas, Isle of Man",
+        "gv": "Doolish"
+      },
+      "lat": 54.1483,
+      "lon": -4.4781,
+      "country": "Isle of Man",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "iom-steam-packet"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-belfast",
+      "name": "Belfast Port",
+      "names": {
+        "en": "Belfast Port",
+        "ga": "Béal Feirste"
+      },
+      "lat": 54.6094,
+      "lon": -5.9056,
+      "country": "Northern Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "iom-steam-packet",
+        "po-ferries",
+        "stena-line"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-dublin-port",
+      "name": "Dublin Port",
+      "names": {
+        "en": "Dublin Port",
+        "ga": "Baile Átha Cliath"
+      },
+      "lat": 53.3489,
+      "lon": -6.2058,
+      "country": "Ireland",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "iom-steam-packet",
+        "irish-ferries",
+        "stena-line"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-poole-condor",
+      "name": "Poole (Condor)",
+      "names": {
+        "en": "Poole (Condor)"
+      },
+      "lat": 50.7104,
+      "lon": -1.9799,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "condor-ferries",
+        "brownsea-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-portsmouth-condor",
+      "name": "Portsmouth Continental Port",
+      "names": {
+        "en": "Portsmouth Continental Port"
+      },
+      "lat": 50.8128,
+      "lon": -1.0942,
+      "country": "England",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "condor-ferries",
+        "po-ferries",
+        "brittany-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-jersey-st-helier",
+      "name": "St Helier Harbour, Jersey",
+      "names": {
+        "en": "St Helier Harbour, Jersey",
+        "fr": "St Hélier"
+      },
+      "lat": 49.1812,
+      "lon": -2.111,
+      "country": "Jersey",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "condor-ferries",
+        "manche-iles"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-guernsey-st-peter-port",
+      "name": "St Peter Port Harbour, Guernsey",
+      "names": {
+        "en": "St Peter Port Harbour, Guernsey",
+        "fr": "Saint-Pierre-Port"
+      },
+      "lat": 49.4574,
+      "lon": -2.5374,
+      "country": "Guernsey",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "condor-ferries",
+        "manche-iles",
+        "sark-shipping",
+        "alderney-bailiwick"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-st-malo",
+      "name": "St Malo Ferry Terminal",
+      "names": {
+        "en": "St Malo Ferry Terminal",
+        "fr": "Saint-Malo"
+      },
+      "lat": 48.6442,
+      "lon": -2.0167,
+      "country": "France",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "condor-ferries",
+        "brittany-ferries"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-granville",
+      "name": "Granville Ferry Port",
+      "names": {
+        "en": "Granville Ferry Port",
+        "fr": "Granville"
+      },
+      "lat": 48.8336,
+      "lon": -1.6042,
+      "country": "France",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "manche-iles"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-dielette",
+      "name": "Diélette Ferry Port",
+      "names": {
+        "en": "Diélette Ferry Port",
+        "fr": "Diélette"
+      },
+      "lat": 49.5478,
+      "lon": -1.8615,
+      "country": "France",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "manche-iles"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-carteret",
+      "name": "Carteret Ferry Port",
+      "names": {
+        "en": "Carteret Ferry Port",
+        "fr": "Carteret"
+      },
+      "lat": 49.3741,
+      "lon": -1.791,
+      "country": "France",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "manche-iles"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-sark-maseline",
+      "name": "Maseline Harbour, Sark",
+      "names": {
+        "en": "Maseline Harbour, Sark",
+        "fr": "Le Maseline"
+      },
+      "lat": 49.4339,
+      "lon": -2.3617,
+      "country": "Sark",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "sark-shipping"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-alderney-braye",
+      "name": "Braye Harbour, Alderney",
+      "names": {
+        "en": "Braye Harbour, Alderney",
+        "fr": "La Braye"
+      },
+      "lat": 49.7245,
+      "lon": -2.1989,
+      "country": "Alderney",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "alderney-bailiwick"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    },
+    {
+      "id": "term-chausey",
+      "name": "Chausey Pier",
+      "names": {
+        "en": "Chausey Pier",
+        "fr": "Chausey"
+      },
+      "lat": 48.88,
+      "lon": -1.82,
+      "country": "France",
+      "islandId": null,
+      "islandDistanceKm": null,
+      "osmNodeId": null,
+      "wikidata": null,
+      "operatorsServing": [
+        "manche-iles"
+      ],
+      "facilities": {
+        "carPark": null,
+        "evCharger": null,
+        "stepFree": null,
+        "ticketOffice": null,
+        "cafe": null
+      },
+      "driveTimeMinutes": {
+        "London": null,
+        "Glasgow": null,
+        "Edinburgh": null,
+        "Belfast": null,
+        "Dublin": null
+      },
+      "lastVerified": "2026-05-11",
+      "source": "manual"
+    }
+  ]
+}

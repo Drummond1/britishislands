@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isles of Britain — A Visual Atlas</title>
+    <meta
+      name="description"
+      content="Explore the islands of the United Kingdom and Crown Dependencies — sea, river and lake — on an interactive map with history, transport and accommodation info."
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◍</span>
+        <div>
+          <h1>Isles of Britain</h1>
+          <p class="tagline">
+            A visual atlas of UK islands — sea, river and lake.
+          </p>
+        </div>
+      </div>
+
+      <div class="topbar-controls">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search by name, region, tag…"
+          aria-label="Search islands"
+        />
+        <select id="type-filter" aria-label="Filter by island type">
+          <option value="">All types</option>
+          <option value="sea">Sea islands</option>
+          <option value="lake">Lake islands</option>
+          <option value="river">River islands</option>
+        </select>
+        <select id="nation-filter" aria-label="Filter by nation">
+          <option value="">All nations</option>
+        </select>
+        <label class="toggle" title="Group nearby markers into clusters">
+          <input type="checkbox" id="cluster-toggle" checked />
+          <span>Cluster</span>
+        </label>
+        <select id="basemap" aria-label="Choose base map">
+          <option value="osm">Standard (OpenStreetMap)</option>
+          <option value="topo">Topographic (OpenTopoMap)</option>
+          <option value="satellite">Satellite (Esri)</option>
+          <option value="cartoLight">Light (CARTO)</option>
+          <option value="cartoDark">Dark (CARTO)</option>
+          <option value="osMaps" disabled>
+            OS Maps (open an island to add a key)
+          </option>
+        </select>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" id="sidebar" aria-label="Island list and details">
+        <section class="island-list" id="island-list-section">
+          <header class="sidebar-section-header">
+            <h2 id="list-heading">Islands</h2>
+            <span class="count" id="result-count">0</span>
+          </header>
+          <ul id="island-list" class="island-list__items"></ul>
+        </section>
+
+        <section class="island-details" id="island-details" hidden>
+          <button
+            class="back-button"
+            id="back-button"
+            type="button"
+            aria-label="Back to list"
+          >
+            ← Back to list
+          </button>
+          <div id="details-content"></div>
+        </section>
+      </aside>
+
+      <section class="map-wrap">
+        <div id="map" role="application" aria-label="Map of British islands"></div>
+        <div class="legend" aria-hidden="true">
+          <span><i class="dot dot--sea"></i> Sea</span>
+          <span><i class="dot dot--lake"></i> Lake</span>
+          <span><i class="dot dot--river"></i> River</span>
+        </div>
+      </section>
+    </main>
+
+    <button
+      class="chat-launcher"
+      id="chat-launcher"
+      type="button"
+      aria-controls="chat-panel"
+      aria-expanded="false"
+      title="Ask the island finder"
+    >
+      <span class="chat-launcher__icon" aria-hidden="true">✦</span>
+      <span class="chat-launcher__label">Ask</span>
+    </button>
+
+    <aside
+      class="chat-panel"
+      id="chat-panel"
+      role="dialog"
+      aria-labelledby="chat-title"
+      aria-hidden="true"
+    >
+      <header class="chat-panel__header">
+        <h2 id="chat-title">Island finder</h2>
+        <p class="chat-panel__sub">
+          Describe an island and I'll find the closest matches.
+        </p>
+        <button
+          class="chat-panel__close"
+          id="chat-close"
+          type="button"
+          aria-label="Close chat"
+        >
+          ×
+        </button>
+      </header>
+      <div
+        class="chat-panel__messages"
+        id="chat-messages"
+        role="log"
+        aria-live="polite"
+      ></div>
+      <form class="chat-panel__form" id="chat-form" autocomplete="off">
+        <input
+          type="text"
+          id="chat-input"
+          name="q"
+          placeholder="e.g. Scottish lake islands with a castle"
+          aria-label="Describe what you're looking for"
+          required
+        />
+        <button type="submit" aria-label="Send">↑</button>
+      </form>
+    </aside>
+
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <!--
+      proj4 + proj4leaflet enable the Ordnance Survey "Leisure" paper-style
+      raster, which is published only in EPSG:27700 (British National Grid).
+      They're <30 KB combined; without them the detail map silently falls
+      back to Web-Mercator Outdoor / OSM.
+    -->
+    <script src="https://unpkg.com/proj4@2.10.0/dist/proj4.js"></script>
+    <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

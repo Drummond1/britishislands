@@ -1,0 +1,1998 @@
+{
+  "input": 235,
+  "adopted": [
+    {
+      "row_name": "Boreray (N Uist)",
+      "id": "csv-geocoded-Q108407584",
+      "qid": "Q108407584",
+      "coord": [
+        57.658797,
+        -7.2483718
+      ],
+      "label": "Boreray Cottage, Isle of North Uist"
+    },
+    {
+      "row_name": "Shillay",
+      "id": "csv-geocoded-Q3739794",
+      "qid": "Q3739794",
+      "coord": [
+        57.525817,
+        -7.69605
+      ],
+      "label": "Old Monach Lighthouse"
+    },
+    {
+      "row_name": "Haskeir Eagach",
+      "id": "csv-geocoded-Q100975338",
+      "qid": "Q100975338",
+      "coord": [
+        57.7,
+        -7.7
+      ],
+      "label": "Haskeir Eagach"
+    },
+    {
+      "row_name": "Crowlin Islands (Eilean Mòr, Eilean Meadhonach, Eilean Beag)",
+      "id": "csv-geocoded-Q783776",
+      "qid": "Q783776",
+      "coord": [
+        57.35,
+        -5.8333333333333
+      ],
+      "label": "Crowlin Islands"
+    },
+    {
+      "row_name": "Ascrib Islands",
+      "id": "csv-geocoded-Q723406",
+      "qid": "Q723406",
+      "coord": [
+        57.589811111111,
+        -6.5114305555556
+      ],
+      "label": "Ascrib Islands"
+    },
+    {
+      "row_name": "South Rona",
+      "id": "csv-geocoded-Q17829062",
+      "qid": "Q17829062",
+      "coord": [
+        57.5781,
+        -5.95903
+      ],
+      "label": "Rona Lighthouse"
+    },
+    {
+      "row_name": "Trodday",
+      "id": "csv-geocoded-Q29552470",
+      "qid": "Q29552470",
+      "coord": [
+        57.726666666667,
+        -6.2983333333333
+      ],
+      "label": "Trodday Lighthouse"
+    },
+    {
+      "row_name": "Harlosh",
+      "id": "csv-geocoded-Q3127495",
+      "qid": "Q3127495",
+      "coord": [
+        57.3854,
+        -6.51789
+      ],
+      "label": "Harlosh"
+    },
+    {
+      "row_name": "Eilean Bàn",
+      "id": "csv-geocoded-Q17827710",
+      "qid": "Q17827710",
+      "coord": [
+        57.2782,
+        -5.74047
+      ],
+      "label": "Keepers' Houses, Kyleakin Lighthouse, Eilean Ban"
+    },
+    {
+      "row_name": "Castle Stalker (Eilean an Stalcaire)",
+      "id": "csv-geocoded-Q217058",
+      "qid": "Q217058",
+      "coord": [
+        56.5715390505552,
+        -5.38619210494101
+      ],
+      "label": "Castle Stalker"
+    },
+    {
+      "row_name": "MacCormaig Isles (Eilean Mòr, Eilean nan Coinean, Eilean Ghaoideamal)",
+      "id": "csv-geocoded-Q6721784",
+      "qid": "Q6721784",
+      "coord": [
+        55.917239,
+        -5.719329
+      ],
+      "label": "MacCormaig Isles"
+    },
+    {
+      "row_name": "Egilsay",
+      "id": "csv-geocoded-Q17828185",
+      "qid": "Q17828185",
+      "coord": [
+        59.1467,
+        -2.91436
+      ],
+      "label": "Howan, Egilsay"
+    },
+    {
+      "row_name": "Lashy Skerries",
+      "id": "csv-geocoded-Q24640460",
+      "qid": "Q24640460",
+      "coord": [
+        59.25,
+        -2.7
+      ],
+      "label": "Lashy Skerries"
+    },
+    {
+      "row_name": "Lunga Skerries",
+      "id": "csv-geocoded-Q24639351",
+      "qid": "Q24639351",
+      "coord": [
+        59.03677,
+        -2.58052
+      ],
+      "label": "Lunga Skerries"
+    },
+    {
+      "row_name": "Sheep Skerry",
+      "id": "csv-geocoded-Q24638551",
+      "qid": "Q24638551",
+      "coord": [
+        58.783333333333,
+        -3.2833333333333
+      ],
+      "label": "Sheep Skerry"
+    },
+    {
+      "row_name": "Skertours",
+      "id": "csv-geocoded-Q24638633",
+      "qid": "Q24638633",
+      "coord": [
+        59.066666666667,
+        -2.9333333333333
+      ],
+      "label": "Skertours"
+    },
+    {
+      "row_name": "Uyea (Unst)",
+      "id": "csv-geocoded-Q282210",
+      "qid": "Q282210",
+      "coord": [
+        60.6667,
+        -0.9
+      ],
+      "label": "Uyea"
+    },
+    {
+      "row_name": "Rumblings",
+      "id": "csv-geocoded-Q24638319",
+      "qid": "Q24638319",
+      "coord": [
+        60.85,
+        -0.9
+      ],
+      "label": "Rumblings"
+    },
+    {
+      "row_name": "Tipta Skerry",
+      "id": "csv-geocoded-Q109568554",
+      "qid": "Q109568554",
+      "coord": [
+        60.8526,
+        -0.88796
+      ],
+      "label": "Tipta Skerry"
+    },
+    {
+      "row_name": "Burnt Islands (Eilean Mòr, Eilean Fraoich, Eilean Buidhe)",
+      "id": "csv-geocoded-Q1016854",
+      "qid": "Q1016854",
+      "coord": [
+        55.928861111111,
+        -5.1757805555556
+      ],
+      "label": "Burnt Islands"
+    },
+    {
+      "row_name": "St Patrick's Isle",
+      "id": "csv-geocoded-Q31118312",
+      "qid": "Q31118312",
+      "coord": [
+        54.2265,
+        -4.6987
+      ],
+      "label": "Peel Castle"
+    },
+    {
+      "row_name": "Thorney Island",
+      "id": "csv-geocoded-Q66227635",
+      "qid": "Q66227635",
+      "coord": [
+        50.8221517,
+        -0.9326345
+      ],
+      "label": "Thorney Island Community Primary School"
+    },
+    {
+      "row_name": "Green Island",
+      "id": "csv-geocoded-Q1375188",
+      "qid": "Q1375188",
+      "coord": [
+        54.695,
+        -5.857
+      ],
+      "label": "Greenisland"
+    },
+    {
+      "row_name": "Eddystone",
+      "id": "csv-geocoded-Q546122",
+      "qid": "Q546122",
+      "coord": [
+        50.18,
+        -4.265
+      ],
+      "label": "Eddystone Lighthouse"
+    },
+    {
+      "row_name": "Walney Island",
+      "id": "csv-geocoded-Q2785373",
+      "qid": "Q2785373",
+      "coord": [
+        54.128611111111,
+        -3.2672222222222
+      ],
+      "label": "Walney Aerodrome"
+    },
+    {
+      "row_name": "Great Arthur",
+      "id": "csv-geocoded-Q26272407",
+      "qid": "Q26272407",
+      "coord": [
+        51.5221146,
+        -0.095984665
+      ],
+      "label": "Great Arthur House Including Boiler House"
+    },
+    {
+      "row_name": "Little Crebawethan",
+      "id": "csv-geocoded-Q108188171",
+      "qid": "Q108188171",
+      "coord": [
+        49.87829971,
+        -6.41754458
+      ],
+      "label": "Little Crebawethan"
+    },
+    {
+      "row_name": "St Michael's Mount",
+      "id": "csv-geocoded-Q24659597",
+      "qid": "Q24659597",
+      "coord": [
+        50.11652,
+        -5.47791
+      ],
+      "label": "St Michael's Mount Castle"
+    }
+  ],
+  "ambiguous": [
+    {
+      "name": "Pabbay (Barra)",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Barra Isles",
+      "candidates": [
+        {
+          "id": "Q56666852",
+          "label": "Pabbay,symbol stone,cross-marked stones,chapel and settlement",
+          "coord": [
+            56.854337,
+            -7.5690428
+          ],
+          "desc": "architectural structure in Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q114711796",
+          "label": "Pabbay, Teampull Beag",
+          "coord": [
+            57.764128,
+            -7.2328483
+          ],
+          "desc": "chapel in Outer Hebrides, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Pabbay (Harris)",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Sound of Harris / Monach Is",
+      "candidates": [
+        {
+          "id": "Q56666852",
+          "label": "Pabbay,symbol stone,cross-marked stones,chapel and settlement",
+          "coord": [
+            56.854337,
+            -7.5690428
+          ],
+          "desc": "architectural structure in Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q114711796",
+          "label": "Pabbay, Teampull Beag",
+          "coord": [
+            57.764128,
+            -7.2328483
+          ],
+          "desc": "chapel in Outer Hebrides, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Haskeir",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Atlantic outliers",
+      "candidates": [
+        {
+          "id": "Q26126003",
+          "label": "Haskeir Lighthouse",
+          "coord": [
+            57.699084,
+            -7.688555
+          ],
+          "desc": "lighthouse on the remote island of Haskeir, Scotland"
+        },
+        {
+          "id": "Q100975338",
+          "label": "Haskeir Eagach",
+          "coord": [
+            57.7,
+            -7.7
+          ],
+          "desc": "island group in the Outer Hebrides, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Scalpay (Skye)",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        {
+          "id": "Q14544324",
+          "label": "Eilean Glas Lighthouse",
+          "coord": [
+            57.8569,
+            -6.642
+          ],
+          "desc": "lighthouse on the island of Scalpay, Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q17568051",
+          "label": "Foghorn, Eilean Glas Lighthouse, Scalpay",
+          "coord": [
+            57.8567,
+            -6.64198
+          ],
+          "desc": "foghorn in Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q17568032",
+          "label": "Store, Eilean Glas Lighthouse, Scalpay",
+          "coord": [
+            57.8571,
+            -6.63899
+          ],
+          "desc": "architectural structure in Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q17568042",
+          "label": "Pier, Eilean Glas Lighthouse, Scalpay",
+          "coord": [
+            57.8576,
+            -6.6435
+          ],
+          "desc": "architectural structure in Outer Hebrides, Scotland, UK"
+        },
+        {
+          "id": "Q17568047",
+          "label": "Keeper's Dwelling, Eilean Glas Lighthouse, Scalpay",
+          "coord": [
+            57.8571,
+            -6.64198
+          ],
+          "desc": "architectural structure in Outer Hebrides, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Soay",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        {
+          "id": "Q103924867",
+          "label": "Soay",
+          "coord": [
+            56.3311635638126,
+            -6.3766160302654775
+          ],
+          "desc": "shipwreck off the Scottish coast"
+        },
+        {
+          "id": "Q24638691",
+          "label": "Soay Sound",
+          "coord": [
+            57.166666666667,
+            -6.2333333333333
+          ],
+          "desc": "sound off the Isle of Skye, Scotland"
+        }
+      ]
+    },
+    {
+      "name": "Oronsay (Mull)",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Mull coast",
+      "candidates": [
+        {
+          "id": "Q1775773",
+          "label": "Oronsay Priory",
+          "coord": [
+            56.01991667,
+            -6.25469444
+          ],
+          "desc": "priory in Argyll and Bute, Scotland, UK"
+        },
+        {
+          "id": "Q2031388",
+          "label": "Oronsay High Cross",
+          "coord": [
+            56.019794,
+            -6.2545783
+          ],
+          "desc": "stone cross at Oronsay Priory in Argyll and Bute, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Uyea (Mainland)",
+      "region": "Shetland (Scotland)",
+      "location": "Shetland",
+      "candidates": [
+        {
+          "id": "Q1783763",
+          "label": "Uyeasound",
+          "coord": [
+            60.6829362459243,
+            -0.936890888842754
+          ],
+          "desc": "village on Unst, Shetland Islands, Scotland, UK"
+        },
+        {
+          "id": "Q33061353",
+          "label": "Uyea Sound Lighthouse",
+          "coord": [
+            60.685816666667,
+            -0.92456666666667
+          ],
+          "desc": "lighthouse on Unst, Shetland Islands, Scotland, UK"
+        },
+        {
+          "id": "Q17853289",
+          "label": "Uyea, Chapel And Graveyard",
+          "coord": [
+            60.665507,
+            -0.88882549
+          ],
+          "desc": "architectural structure in Shetland Islands, Scotland, UK"
+        },
+        {
+          "id": "Q12013472",
+          "label": "Uyea Breck Standing Stone",
+          "coord": [
+            60.685039,
+            -0.89238159
+          ],
+          "desc": "menhir on Unst, Shetland Islands, Scotland, UK"
+        },
+        {
+          "id": "Q24636555",
+          "label": "Uyea Sound",
+          "coord": [
+            60.33333,
+            -1.43333
+          ],
+          "desc": "sound between West Mainland and Vementry, Shetland Islands, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Ramna Stacks",
+      "region": "Shetland (Scotland)",
+      "location": "NW Mainland",
+      "candidates": [
+        {
+          "id": "Q7289747",
+          "label": "Ramna Stacks",
+          "coord": [
+            60.6619,
+            -1.31194
+          ],
+          "desc": "group of islands in Shetland Islands, Scotland, UK"
+        },
+        {
+          "id": "Q56295441",
+          "label": "Ramna Stacks and Gruney",
+          "coord": [
+            60.65639,
+            -1.30889
+          ],
+          "desc": "archipelago designated a Special Protection Area and SSSI, Shetland Islands, Scotland, UK"
+        }
+      ]
+    },
+    {
+      "name": "Pladda",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        {
+          "id": "Q17016410",
+          "label": "Pladda Lighthouse",
+          "coord": [
+            55.425129,
+            -5.118362
+          ],
+          "desc": "lighthouse in North Ayrshire, Scotland, UK"
+        },
+        {
+          "id": "Q114710079",
+          "label": "Pladda, Church",
+          "coord": [
+            55.427753,
+            -5.1195911
+          ],
+          "desc": "church building in North Ayrshire, Scotland, UK"
+        }
+      ]
+    }
+  ],
+  "no_in_bbox_hit": [
+    {
+      "name": "Seana Bhaile",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Outer Hebrides",
+      "candidates": [
+        "Q3776186"
+      ]
+    },
+    {
+      "name": "Lingeigh",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Barra Isles",
+      "candidates": [
+        "Q2324117",
+        "Q3776125",
+        "Q3241520",
+        "Q12716529",
+        "Q778351"
+      ]
+    },
+    {
+      "name": "Flodday",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Barra Isles",
+      "candidates": [
+        "Q2733595",
+        "Q2736445",
+        "Q962571",
+        "Q19585637",
+        "Q3073797",
+        "Q3073816",
+        "Q3073799"
+      ]
+    },
+    {
+      "name": "Sibhinis",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Sound of Harris / Monach Is",
+      "candidates": [
+        "Q2733600"
+      ]
+    },
+    {
+      "name": "Hearnish",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Sound of Harris / Monach Is",
+      "candidates": [
+        "Q2733600"
+      ]
+    },
+    {
+      "name": "Stockinish",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "East Lewis/Harris",
+      "candidates": [
+        "Q3499602"
+      ]
+    },
+    {
+      "name": "Eilean Chearstaidh",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "East Lewis/Harris",
+      "candidates": [
+        "Q3777200"
+      ]
+    },
+    {
+      "name": "Bearasaigh",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Loch Ròg / W Lewis",
+      "candidates": [
+        "Q4876621"
+      ]
+    },
+    {
+      "name": "Vuia Beag (Fuaigh Beag)",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Loch Ròg / W Lewis",
+      "candidates": [
+        "Q2733568"
+      ]
+    },
+    {
+      "name": "Campaigh",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Loch Ròg / W Lewis",
+      "candidates": [
+        "Q2935478"
+      ]
+    },
+    {
+      "name": "Soay Mòr",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Loch Ròg / W Lewis",
+      "candidates": [
+        "Q3107634"
+      ]
+    },
+    {
+      "name": "Coppay",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Atlantic outliers",
+      "candidates": [
+        "Q24651836"
+      ]
+    },
+    {
+      "name": "Lunga (Firth of Lorn)",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Garvellachs/Slate",
+      "candidates": [
+        "Q714128",
+        "Q7886",
+        "Q3058378",
+        "Q18941",
+        "Q1984705",
+        "Q2457224",
+        "Q21484462",
+        "Q3180967",
+        "Q3507119"
+      ]
+    },
+    {
+      "name": "Priest Island",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Summer Isles",
+      "candidates": [
+        "Q3107371",
+        "Q21974079",
+        "Q22566337",
+        "Q115467349",
+        "Q104332784",
+        "Q134714322",
+        "Q22947909"
+      ]
+    },
+    {
+      "name": "Horse Island",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Summer Isles",
+      "candidates": [
+        "Q3140800",
+        "Q18510338",
+        "Q42456380",
+        "Q5905472",
+        "Q2408678",
+        "Q5905463",
+        "Q18151939",
+        "Q28232473"
+      ]
+    },
+    {
+      "name": "Tulm",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        "Q6549825",
+        "Q111777484",
+        "Q6570685",
+        "Q20592595",
+        "Q2026697",
+        "Q12675397",
+        "Q7852286",
+        "Q36882086",
+        "Q1191065",
+        "Q15924",
+        "Q53381",
+        "Q242165",
+        "Q8011223"
+      ]
+    },
+    {
+      "name": "Mingay",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        "Q25114633",
+        "Q55448471",
+        "Q3314960",
+        "Q111420223",
+        "Q23990338",
+        "Q187255",
+        "Q10896667"
+      ]
+    },
+    {
+      "name": "Tarner",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        "Q37078510",
+        "Q3515757",
+        "Q66223741",
+        "Q7686411",
+        "Q21547656",
+        "Q202849",
+        "Q1593408",
+        "Q7686410"
+      ]
+    },
+    {
+      "name": "Wiay",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Skye coast",
+      "candidates": [
+        "Q1472974",
+        "Q3057442",
+        "Q32123291",
+        "Q3567902",
+        "Q29047344"
+      ]
+    },
+    {
+      "name": "Calve",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Mull coast",
+      "candidates": [
+        "Q63350684",
+        "Q27897265",
+        "Q21492784",
+        "Q981815",
+        "Q1780383",
+        "Q2577471",
+        "Q21130107",
+        "Q501277",
+        "Q4035785",
+        "Q21507499"
+      ]
+    },
+    {
+      "name": "Eilean Macaskin",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Knapdale",
+      "candidates": [
+        "Q25559"
+      ]
+    },
+    {
+      "name": "Danna",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Knapdale",
+      "candidates": [
+        "Q16275286",
+        "Q100429323",
+        "Q138824",
+        "Q22340385",
+        "Q16275288",
+        "Q100429444",
+        "Q60378749",
+        "Q2731465",
+        "Q633006"
+      ]
+    },
+    {
+      "name": "Glimps Holm",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney",
+      "candidates": [
+        "Q2608688"
+      ]
+    },
+    {
+      "name": "Sweyn Holm",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney",
+      "candidates": [
+        "Q941270",
+        "Q24637815",
+        "Q29590811"
+      ]
+    },
+    {
+      "name": "Corn Holm",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney",
+      "candidates": [
+        "Q1747849"
+      ]
+    },
+    {
+      "name": "Green Holm (Eday)",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney",
+      "candidates": [
+        "Q5602675",
+        "Q24641272",
+        "Q24641271",
+        "Q5602671"
+      ]
+    },
+    {
+      "name": "Linga",
+      "region": "Shetland (Scotland)",
+      "location": "Shetland",
+      "candidates": [
+        "Q5064162",
+        "Q388620",
+        "Q468895",
+        "Q41978",
+        "Q21476559",
+        "Q36919716",
+        "Q34770",
+        "Q2731977",
+        "Q2731963",
+        "Q2879660"
+      ]
+    },
+    {
+      "name": "Vesta Skerry",
+      "region": "Shetland (Scotland)",
+      "location": "Off Unst (N)",
+      "candidates": [
+        "Q109568556"
+      ]
+    },
+    {
+      "name": "Davaar (Island Davaar)",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q1173072",
+        "Q17772261",
+        "Q103774195",
+        "Q17845605",
+        "Q77774087",
+        "Q26477771"
+      ]
+    },
+    {
+      "name": "Eilean Dubh",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q3049401",
+        "Q1303927",
+        "Q24649408",
+        "Q24649407",
+        "Q24649410",
+        "Q102247241",
+        "Q136658798"
+      ]
+    },
+    {
+      "name": "Glunimore",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q3109301"
+      ]
+    },
+    {
+      "name": "Sheep Island (Argyll)",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q4628",
+        "Q3481712",
+        "Q17984917",
+        "Q7492415",
+        "Q24659607",
+        "Q106711280",
+        "Q7492418",
+        "Q16861561",
+        "Q25614812"
+      ]
+    },
+    {
+      "name": "Castle Island",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q1438579",
+        "Q1049440",
+        "Q5501599",
+        "Q64540211",
+        "Q21713758",
+        "Q114833764",
+        "Q3997513",
+        "Q5050160",
+        "Q5050161"
+      ]
+    },
+    {
+      "name": "The Eileans",
+      "region": "Firth of Clyde (Scotland)",
+      "location": "Firth of Clyde",
+      "candidates": [
+        "Q7731671"
+      ]
+    },
+    {
+      "name": "The Stack",
+      "region": "Isle of Man",
+      "location": "off Calf",
+      "candidates": [
+        "Q807899",
+        "Q759899",
+        "Q108742367",
+        "Q3495447",
+        "Q123153066",
+        "Q117314867",
+        "Q108867404"
+      ]
+    },
+    {
+      "name": "St Michael's Isle",
+      "region": "Isle of Man",
+      "location": "Derbyhaven",
+      "candidates": [
+        "Q2734568"
+      ]
+    },
+    {
+      "name": "Havergate Island",
+      "region": "England",
+      "location": "Suffolk",
+      "candidates": [
+        "Q5683779",
+        "Q119667658"
+      ]
+    },
+    {
+      "name": "Round Island (Poole)",
+      "region": "England",
+      "location": "Poole Hbr",
+      "candidates": [
+        "Q22469128",
+        "Q1333268",
+        "Q974329",
+        "Q1162481",
+        "Q1087761",
+        "Q21472770",
+        "Q27977575"
+      ]
+    },
+    {
+      "name": "Long Island (Poole)",
+      "region": "England",
+      "location": "Poole Hbr",
+      "candidates": [
+        "Q18438",
+        "Q80967",
+        "Q890879",
+        "Q22651312",
+        "Q112250246",
+        "Q2545992",
+        "Q725802"
+      ]
+    },
+    {
+      "name": "Hilbre Islands (Hilbre, Little Eye, Middle Eye)",
+      "region": "England",
+      "location": "Wirral",
+      "candidates": [
+        "Q119863431",
+        "Q2021601"
+      ]
+    },
+    {
+      "name": "White Island",
+      "region": "England",
+      "location": "Isles of Scilly",
+      "candidates": [
+        "Q155868",
+        "Q557077",
+        "Q1810349",
+        "Q1821510",
+        "Q1337945",
+        "Q27876981",
+        "Q7994244"
+      ]
+    },
+    {
+      "name": "Round Island",
+      "region": "England",
+      "location": "Isles of Scilly",
+      "candidates": [
+        "Q22469128",
+        "Q1333268",
+        "Q974329",
+        "Q1162481",
+        "Q1087761",
+        "Q21472770",
+        "Q27977575"
+      ]
+    },
+    {
+      "name": "Plumb Island (×2)",
+      "region": "England",
+      "location": "Isles of Scilly",
+      "candidates": [
+        "Q49669820",
+        "Q22410111",
+        "Q49669817",
+        "Q22410134",
+        "Q30973617",
+        "Q34754030",
+        "Q34754039"
+      ]
+    },
+    {
+      "name": "Merrick Island (×2)",
+      "region": "England",
+      "location": "Isles of Scilly",
+      "candidates": [
+        "Q56282529"
+      ]
+    },
+    {
+      "name": "Scilly Rock",
+      "region": "England",
+      "location": "Isles of Scilly (Norrard Rocks)",
+      "candidates": [
+        "Q24659022"
+      ]
+    },
+    {
+      "name": "Seal Rock",
+      "region": "England",
+      "location": "Isles of Scilly (Norrard Rocks)",
+      "candidates": [
+        "Q3440812",
+        "Q20538435",
+        "Q7440532",
+        "Q49621341",
+        "Q42363616",
+        "Q16625755",
+        "Q21472479"
+      ]
+    },
+    {
+      "name": "Old Man (Scilly)",
+      "region": "England",
+      "location": "Isles of Scilly",
+      "candidates": [
+        "Q7565",
+        "Q837169",
+        "Q774719",
+        "Q157976",
+        "Q2171485",
+        "Q96630806",
+        "Q121799"
+      ]
+    }
+  ],
+  "no_search_hit": [
+    {
+      "name": "Beasts of Holm",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "E Lewis"
+    },
+    {
+      "name": "~50+ unnamed/charted skerries (Loch Ròg, Loch Maddy, Loch Boisdale, Sound of Barra)",
+      "region": "Outer Hebrides (Scotland)",
+      "location": "Outer Hebrides"
+    },
+    {
+      "name": "~50 uninhabited islets/skerries off Skye, Raasay, Jura, Sound of Mull",
+      "region": "Inner Hebrides (Scotland)",
+      "location": "Inner Hebrides"
+    },
+    {
+      "name": "Oessen Skerry",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney"
+    },
+    {
+      "name": "Taing Skerry",
+      "region": "Orkney (Scotland)",
+      "location": "Orkney"
+    },
+    {
+      "name": "Linga of Gluss",
+      "region": "Shetland (Scotland)",
+      "location": "Shetland"
+    },
+    {
+      "name": "Stack of the Skersons",
+      "region": "Shetland (Scotland)",
+      "location": "Mainland coast"
+    },
+    {
+      "name": "Galti Stacks",
+      "region": "Shetland (Scotland)",
+      "location": "Mainland coast"
+    },
+    {
+      "name": "~150+ smaller skerries (Bronga, Flat Stack, Green Isle, Hellam, Hog Island, Longa Skerry, Muckle Stack, Sandrift Skerries, Scarve Skerry, etc.)",
+      "region": "Shetland (Scotland)",
+      "location": "Shetland"
+    },
+    {
+      "name": "The Burroo (Yn Burroo)",
+      "region": "Isle of Man",
+      "location": "off Calf"
+    },
+    {
+      "name": "Holy Island / Lindisfarne",
+      "region": "England",
+      "location": "Northumberland"
+    },
+    {
+      "name": "Farne Islands (28 islets) — Inner Farne, Knoxes Reef, East Wideopens, West Wideopens, Megstone, Staple, Brownsman, North Wamses, South Wamses, Big Harcar, Little Harcar, Longstone, Crumstone, Callers, Knivestone, Gun Rock, Glororum Shad, Goldstone, Elbow, Fang, Roddam & Green, Blue Caps, Nameless Rock",
+      "region": "England",
+      "location": "Northumberland"
+    },
+    {
+      "name": "Virtle Rock",
+      "region": "England",
+      "location": "Cornwall"
+    },
+    {
+      "name": "Northwethal",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Foreman's Island",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Pernagie",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Peashopper",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Norwethel",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Hangman's Island",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Middle Arthur",
+      "region": "England",
+      "location": "Isles of Scilly (Eastern Isles)"
+    },
+    {
+      "name": "Hanjaque",
+      "region": "England",
+      "location": "Isles of Scilly (Eastern Isles)"
+    },
+    {
+      "name": "Crebawethan",
+      "region": "England",
+      "location": "Isles of Scilly (Western Rocks)"
+    },
+    {
+      "name": "Kittern Rock",
+      "region": "England",
+      "location": "Isles of Scilly"
+    },
+    {
+      "name": "Outer Covel Rock",
+      "region": "England",
+      "location": "Isles of Scilly"
+    }
+  ],
+  "skipped_unknown_region": [
+    {
+      "name": "Inchbrayock (in Tay)",
+      "region": "Firth of Forth (Scotland)",
+      "location": "Tay",
+      "norm_region": "Firth of Forth (Scotland)"
+    },
+    {
+      "name": "Mugdrum (Tay)",
+      "region": "Firth of Forth (Scotland)",
+      "location": "Tay",
+      "norm_region": "Firth of Forth (Scotland)"
+    },
+    {
+      "name": "Castle Tarbet (off Fidra)",
+      "region": "Firth of Forth (Scotland)",
+      "location": "Firth of Forth",
+      "norm_region": "Firth of Forth (Scotland)"
+    },
+    {
+      "name": "Islands of Fleet (Murray's Isles, Ardwall, Barlocco)",
+      "region": "Solway Firth / SW Scotland",
+      "location": "Wigtown Bay",
+      "norm_region": "Solway Firth / SW Scotland"
+    },
+    {
+      "name": "Rough Island",
+      "region": "Solway Firth / SW Scotland",
+      "location": "Solway",
+      "norm_region": "Solway Firth / SW Scotland"
+    },
+    {
+      "name": "Handa",
+      "region": "North/West Coast Scotland outliers",
+      "location": "NW Sutherland",
+      "norm_region": "North/West Coast Scotland outliers"
+    },
+    {
+      "name": "Oldany",
+      "region": "North/West Coast Scotland outliers",
+      "location": "Sutherland",
+      "norm_region": "North/West Coast Scotland outliers"
+    },
+    {
+      "name": "Eilean nan Ròn",
+      "region": "North/West Coast Scotland outliers",
+      "location": "N Sutherland",
+      "norm_region": "North/West Coast Scotland outliers"
+    },
+    {
+      "name": "Longa",
+      "region": "North/West Coast Scotland outliers",
+      "location": "NW coast",
+      "norm_region": "North/West Coast Scotland outliers"
+    },
+    {
+      "name": "Achill",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Great Island (Cobh)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishmore (Árainn)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway – Aran",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Valentia",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Gorumna",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Lettermore",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Lettermullen",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inch Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishbofin (Galway)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishturk",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Sherkin",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Cape Clear (Cléire)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishbofin (Donegal)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishark",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Whiddy",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Dursey",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Bull Island (North Bull)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Dublin",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Lambay",
+      "region": "Ireland (RoI & NI)",
+      "location": "Dublin",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Spike Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Fota",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Cruit",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Owey",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishfree Upper",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Rutland (Inishmacadurn)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishmore (Deer Island)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Clare",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Mweenish",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Omey",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Saltee Islands (Great + Little)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Wexford",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Skerries (incl. Colt, St Patrick's, Shenick)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Dublin",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Begerin (Beggerin)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Wexford",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Skellig Michael (Sceilg Mhichíl)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Little Skellig",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Puffin Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Scariff Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Great Blasket",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishvickillane",
+      "region": "Ireland (RoI & NI)",
+      "location": "Blaskets",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishnabro",
+      "region": "Ireland (RoI & NI)",
+      "location": "Blaskets",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Tearaght",
+      "region": "Ireland (RoI & NI)",
+      "location": "Blaskets",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Beginish (Blaskets)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Magharee Islands (Seven Hogs: Illauntannig + 6)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Long Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Horse Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork (Roaringwater Bay)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Castle Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork (Roaringwater Bay)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Mannin",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork (Roaringwater Bay)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Ringarogy",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishbeg",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Garinish (Ilnacullin)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Cork (Bantry Bay)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Rossmore",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Rossdohan",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Sherky",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Dunkerron East",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Dunkerron West",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Garinish (Kenmare)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Cappanacush",
+      "region": "Ireland (RoI & NI)",
+      "location": "Kerry (Kenmare River)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Mutton Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Clare",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Eagle Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishglora",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo (Erris)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Caher",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Clew Bay Islands (~117 drumlin-islets incl. Inishlyre, Inishgort, Inishraher, Inishbee, Inishnakillew, Inishcottle, Collanmore, Island More, Inisheeny, Inishgowla, Inishoo, Crovinish, Knockycahillaun)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Mayo",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "High Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway (Inishbofin group)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Crump Island",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway (Inishbofin group)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishturk South",
+      "region": "Ireland (RoI & NI)",
+      "location": "Galway",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishkeel",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal (Rosses)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishkeeragh",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal (Rosses)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Eighter",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal (Rosses)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishbeg (Donegal)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishmeane",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Inishinny",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Rathlin O'Birne",
+      "region": "Ireland (RoI & NI)",
+      "location": "Donegal",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Copeland Islands (Big Copeland, Mew Island, Lighthouse Island)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Down (NI)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Strangford Lough Islands (~70 incl. Mahee, Reagh, Rainey, Sketrick, Trasnagh, Roe, Conley, Dunsy, Islandmore, Pawle, Simmy, Island Taggart, Castle, Gores, Salt, Mid, Rough, Wood, Chapel, Darragh, Boretree, South Island, Angus Rock)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Down (NI)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Carlingford Lough islands (Green Island, Block House Island, etc.)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Down/Louth",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Angus Rock (Strangford)",
+      "region": "Ireland (RoI & NI)",
+      "location": "Down (NI)",
+      "norm_region": "Ireland (RoI & NI)"
+    },
+    {
+      "name": "Holy Island (Ynys Gybi)",
+      "region": "Wales",
+      "location": "Anglesey",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Ramsey (Ynys Dewi)",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Caldey (Ynys Bŷr)",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Bardsey (Ynys Enlli)",
+      "region": "Wales",
+      "location": "Gwynedd",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Llanddwyn (Ynys Llanddwyn)",
+      "region": "Wales",
+      "location": "Anglesey",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Puffin Island (Ynys Seiriol)",
+      "region": "Wales",
+      "location": "Anglesey",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Middleholm (Midland Isle)",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Denny Island",
+      "region": "Wales",
+      "location": "Bristol Channel",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Salt Island",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Church Island",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Emsger",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Ynys Beri",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Ynys Gored Goch",
+      "region": "Wales",
+      "location": "Anglesey",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Ynys Benlas",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Sheep Island (Pembrokeshire)",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Thorn Island",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "St Margaret's Island",
+      "region": "Wales",
+      "location": "Pembrokeshire",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Mumbles Head",
+      "region": "Wales",
+      "location": "Swansea",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Middle Head",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "Maen Gwenonwy",
+      "region": "Wales",
+      "location": "Wales",
+      "norm_region": "Wales"
+    },
+    {
+      "name": "The Casquets",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey (Alderney)",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Grande Amfroque",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Les Houmets (Houmet Paradis, Houmet Benest, Hommetol)",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Lihoumel",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Bréhon",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Les Hanois",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "La Platte Fougère",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Round Rock",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "La Grosse Rocque",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "La Percée",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Le Bisé",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Les Tas de Pois d'Amont",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Les Tas de Pois d'Aval",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Guernsey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Minquiers (Maîtresse Île + ~150 rocks)",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Jersey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Écréhous (Maître Île, Marmotière, Blanche Île + ~20)",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Jersey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Pierres de Lecq (Paternosters)",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Jersey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "St Helier islets (Elizabeth Castle islet, Icho Tower, La Rocque, Demie de Pas)",
+      "region": "Channel Islands (Crown Dependencies)",
+      "location": "Jersey",
+      "norm_region": "Channel Islands (Crown Dependencies)"
+    },
+    {
+      "name": "Îles Chausey (Grande Île + ~52 named islets at HT, ~365 at LT)",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Normandy, off Granville; ~25 km / ~15 mi S of Jersey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Île de Bréhat (+ ~86 islets)",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Côtes-d'Armor, Brittany; ~70 km / 44 mi S of Guernsey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Roches Douvres (plateau + lighthouse islet)",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Brittany; ~36 km / 22 mi S of Guernsey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Plateau de Barnouic",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Brittany; ~48 km / 30 mi SE of Guernsey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Île-Grande (Île Aganton, Île Morvil)",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Côtes-d'Armor; ~75 km / 47 mi S of Guernsey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Île Tomé",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Côtes-d'Armor (off Perros-Guirec); ~75 km / 47 mi S of Guernsey",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Sept-Îles archipelago (Île aux Moines, Rouzic, Malban, Bono, Île Plate, Le Cerf, Plateau des Costans)",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Côtes-d'Armor (off Perros-Guirec); ~80 km / 50 mi S of Guernsey (at the limit)",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    },
+    {
+      "name": "Île d'Ouessant (Ushant), Île de Molène, Île de Sein, Île de Batz, Belle-Île-en-Mer, Île d'Yeu, Saint-Marcouf",
+      "region": "French islands within ~50 miles of British Isles",
+      "location": "Brittany / Normandy / Vendée; >50 mi from any British Isles point",
+      "norm_region": "French islands within ~50 miles of British Isles"
+    }
+  ]
+}

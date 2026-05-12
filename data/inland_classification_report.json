@@ -1,0 +1,7009 @@
+{
+  "tierA": [
+    {
+      "id": "brazil-wood-w8125203",
+      "name": "Brazil Wood",
+      "new_type": "lake",
+      "parent": "Swithland Reservoir"
+    },
+    {
+      "id": "heron-island-w8128680",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Verulamium Lake"
+    },
+    {
+      "id": "hunts-lock-w222908544",
+      "name": "Hunts Lock",
+      "new_type": "river",
+      "parent": "OSM rel 1123"
+    },
+    {
+      "id": "osm-way-8166041",
+      "name": "Inishatirra",
+      "new_type": "lake",
+      "parent": "Lough Eidin"
+    },
+    {
+      "id": "osm-way-186289752",
+      "name": "Cherry Island",
+      "new_type": "lake",
+      "parent": "Garadice Lake"
+    },
+    {
+      "id": "osm-way-186289751",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Garadice Lake"
+    },
+    {
+      "id": "osm-way-6957984",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Garadice Lake"
+    },
+    {
+      "id": "hook-island-w139412875",
+      "name": "Hook Island",
+      "new_type": "river",
+      "parent": "OSM rel 2822"
+    },
+    {
+      "id": "osm-way-202805282",
+      "name": "Serpentine Island",
+      "new_type": "lake",
+      "parent": "The Serpentine"
+    },
+    {
+      "id": "osm-way-4821984",
+      "name": "Inchconnachan",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821985",
+      "name": "Inchmurrin",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821986",
+      "name": "Inchmoan",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821987",
+      "name": "Inchtavannach",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821988",
+      "name": "Inchlonaig",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821991",
+      "name": "Inchfad",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821990",
+      "name": "Inchcruin",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821993",
+      "name": "Torrinch",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821995",
+      "name": "Clairinsh",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821996",
+      "name": "Creinch",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-4821998",
+      "name": "Bucinch",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-45834131",
+      "name": "Aber Isle",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-45834130",
+      "name": "Ellanderroch",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-56755151",
+      "name": "Tarbet Isle",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-56755215",
+      "name": "Inveruglas Ise",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-56755400",
+      "name": "Island I Vow",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-57041516",
+      "name": "The Kitchen",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-115414983",
+      "name": "Inchgalbraith",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-115224852",
+      "name": "Fraoch Eilean",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-103409980",
+      "name": "Stot Isle",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-115639382",
+      "name": "Eilean nan Deargannan",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-446495636",
+      "name": "Eilean na h-Aon Chraoibhe",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-446495637",
+      "name": "Eilean Daraich",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-445335038",
+      "name": "Ceardach",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "osm-way-1388482509",
+      "name": "Elan-Rossdhu",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "lusty-beg-w23494105",
+      "name": "Lusty Beg",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-116527170",
+      "name": "Lusty More",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-relation-3998456",
+      "name": "Inish Doney",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180191945",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-relation-3998520",
+      "name": "Inishturk",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180191965",
+      "name": "Rush Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180191954",
+      "name": "Fad Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201327",
+      "name": "Gravel Ridge",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201325",
+      "name": "Gravel Ridge Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201322",
+      "name": "Stallion Cowes",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-relation-3998503",
+      "name": "Screegan Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201341",
+      "name": "Sallow Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "kerney-island-w180203458",
+      "name": "Kerney Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-relation-3998457",
+      "name": "Inish Garve",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201314",
+      "name": "Black Rock",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180201309",
+      "name": "Water Horse",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180191953",
+      "name": "Macart Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-180191964",
+      "name": "Physicberry Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "osm-way-4560815",
+      "name": "Fairy Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-4560819",
+      "name": "Monks Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-4560824",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-4560826",
+      "name": "Innisfree",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-4560829",
+      "name": "Cottage Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-4560830",
+      "name": "Flat Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88125455",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88125442",
+      "name": "Bernard's Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88125448",
+      "name": "Wolf Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88125439",
+      "name": "Annagh Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143454",
+      "name": "Swan Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143446",
+      "name": "Black Tom's Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143457",
+      "name": "Comorant Rock",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143437",
+      "name": "Glynn Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143442",
+      "name": "Slishwood Island West",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143449",
+      "name": "Goats Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143432",
+      "name": "Slishwood Island East",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-88143439",
+      "name": "St. Connells Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "willow-island-w308796425",
+      "name": "Willow Island",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-308811788",
+      "name": "Pearl Rock",
+      "new_type": "lake",
+      "parent": "Lough Gill"
+    },
+    {
+      "id": "osm-way-306303592",
+      "name": "Ash Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 306303592
+    },
+    {
+      "id": "osm-way-306303592",
+      "name": "Ash Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 306303593
+    },
+    {
+      "id": "osm-way-306303592",
+      "name": "Ash Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156371",
+      "name": "Derry More Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156377",
+      "name": "Trough Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156375",
+      "name": "Derry Beg Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156369",
+      "name": "Bulls Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156376",
+      "name": "Allingham's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156370",
+      "name": "Ash Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-112156380",
+      "name": "Philipboy Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-109728511",
+      "name": "Kelly's Isles",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-109728511",
+      "name": "Kelly's Isles",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 109728511
+    },
+    {
+      "id": "osm-way-109722657",
+      "name": "Friar's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-106592833",
+      "name": "Station Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-relation-4087466",
+      "name": "Inishgoosk",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-relation-4087468",
+      "name": "Saints Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-6135673",
+      "name": "St Herbert's Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-6135675",
+      "name": "Derwent Isle",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-6135676",
+      "name": "Lord's Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-6135677",
+      "name": "Rampsholme Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-34700322",
+      "name": "One Tree Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-277704485",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-277704482",
+      "name": "Otterbield Island",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-277711715",
+      "name": "Park Neb",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-277725419",
+      "name": "Scarf Stones",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-1283255879",
+      "name": "Bass Rock",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-1283255880",
+      "name": "Upper Scarf Stones",
+      "new_type": "lake",
+      "parent": "Derwentwater",
+      "merged_from_inner": 1283255880
+    },
+    {
+      "id": "osm-way-1283255880",
+      "name": "Upper Scarf Stones",
+      "new_type": "lake",
+      "parent": "Derwentwater"
+    },
+    {
+      "id": "osm-way-336658038",
+      "name": "Yew Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-336658038",
+      "name": "Yew Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 336658038
+    },
+    {
+      "id": "osm-way-124660665",
+      "name": "Caher Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47850106",
+      "name": "Foot's Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-4913801",
+      "name": "Illaunmore",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-34752926",
+      "name": "Inishcaltra or Holy Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473096",
+      "name": "Rabbit Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473097",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473099",
+      "name": "Young's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473100",
+      "name": "Bushy Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473101",
+      "name": "Cribby Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 40473101
+    },
+    {
+      "id": "osm-way-40473101",
+      "name": "Cribby Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473104",
+      "name": "Scilly Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40473105",
+      "name": "Lushag Rocks",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40520958",
+      "name": "Seagull Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40520959",
+      "name": "Goat Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-371603077",
+      "name": "Inishdala Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-40521686",
+      "name": "Dog Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-42327211",
+      "name": "Hare Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-42328479",
+      "name": "Illaunhobert",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-43175454",
+      "name": "Malt Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47466078",
+      "name": "Crow Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47850116",
+      "name": "Silver Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47850116",
+      "name": "Silver Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 47850116
+    },
+    {
+      "id": "osm-way-47850114",
+      "name": "Man's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-186667713",
+      "name": "Abbey Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-335610128",
+      "name": "Gorteeny Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-195587494",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-195587496",
+      "name": "Roach Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-336658039",
+      "name": "Puckady Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-493521166",
+      "name": "Yellow Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552820283",
+      "name": "Bounla Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552818838",
+      "name": "Sally Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552821457",
+      "name": "Spa Island South",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552822545",
+      "name": "Whiskey Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552823378",
+      "name": "Keavy Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552823374",
+      "name": "Brieny Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552823375",
+      "name": "Grassy Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552823379",
+      "name": "Beacon",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552828164",
+      "name": "Buggane Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-552832580",
+      "name": "Long Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-360172194",
+      "name": "Illannafinnoge",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-195587499",
+      "name": "Crone Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553236112",
+      "name": "Spa Island North",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553237632",
+      "name": "Geen Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553237631",
+      "name": "Priest's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553237629",
+      "name": "Priest's Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553237864",
+      "name": "Goat Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-209536751",
+      "name": "Goose Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553301635",
+      "name": "Ringroe Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 553301635
+    },
+    {
+      "id": "osm-way-553301635",
+      "name": "Ringroe Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553301634",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553301633",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553310042",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553312680",
+      "name": "Rabbit Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553321740",
+      "name": "Piper's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553321739",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47466077",
+      "name": "Cormorant Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 47466077
+    },
+    {
+      "id": "osm-way-553321728",
+      "name": "Roger's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553321738",
+      "name": "Spindillaun",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553321730",
+      "name": "Burke's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47466077",
+      "name": "Cormorant Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-47466077",
+      "name": "Cormorant Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 553351224
+    },
+    {
+      "id": "osm-way-553351227",
+      "name": "Swan Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553351236",
+      "name": "Illaunnaskagh",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-544339279",
+      "name": "Illaunybaun",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553351232",
+      "name": "Goose Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-553351232",
+      "name": "Goose Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg",
+      "merged_from_inner": 553351232
+    },
+    {
+      "id": "osm-way-553357694",
+      "name": "Cormorant Islands",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-544154396",
+      "name": "Goose Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-575553835",
+      "name": "Goose Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-1090200676",
+      "name": "Haguensy's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-1302883106",
+      "name": "Pollanillaun",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-1302918577",
+      "name": "Friar's Island",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "osm-way-4561271",
+      "name": "Inishlee Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-199918901",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-199918902",
+      "name": "Roe Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-199171974",
+      "name": "Illannaglashy",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-199171973",
+      "name": "Cliff Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-4561467",
+      "name": "Freaghillan",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "osm-way-5045056",
+      "name": "Pigeon Island",
+      "new_type": "river",
+      "parent": "OSM rel 13549"
+    },
+    {
+      "id": "osm-way-65623264",
+      "name": "Rabbit Island",
+      "new_type": "river",
+      "parent": "OSM rel 13549"
+    },
+    {
+      "id": "osm-way-60437249",
+      "name": "Alice's Bower",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-60437248",
+      "name": "Roys Folly",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-60437247",
+      "name": "Reed Bower",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-60437745",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-60437827",
+      "name": "Scart Island",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-60438001",
+      "name": "St Serf's Island",
+      "new_type": "lake",
+      "parent": "Loch Leven"
+    },
+    {
+      "id": "osm-way-148716616",
+      "name": "Desborough Island",
+      "new_type": "river",
+      "parent": "OSM rel 28938"
+    },
+    {
+      "id": "osm-way-148442095",
+      "name": "D'Oyly Carte Island",
+      "new_type": "river",
+      "parent": "OSM rel 28938"
+    },
+    {
+      "id": "osm-way-23650920",
+      "name": "Black Potts Ait",
+      "new_type": "river",
+      "parent": "OSM rel 28948"
+    },
+    {
+      "id": "osm-way-1058300452",
+      "name": "Cutlers Ait",
+      "new_type": "river",
+      "parent": "OSM rel 28948"
+    },
+    {
+      "id": "osm-way-23678804",
+      "name": "Firework Ait",
+      "new_type": "river",
+      "parent": "OSM rel 28949"
+    },
+    {
+      "id": "osm-way-48096183",
+      "name": "Baths Island",
+      "new_type": "river",
+      "parent": "OSM rel 28949"
+    },
+    {
+      "id": "osm-way-111036490",
+      "name": "Barry Avenue Island",
+      "new_type": "river",
+      "parent": "OSM rel 28949"
+    },
+    {
+      "id": "osm-way-586632109",
+      "name": "Temple Mill Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-59993445",
+      "name": "Town Rod Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32253769",
+      "name": "Temple Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32253859",
+      "name": "Hambleden Lock Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32253980",
+      "name": "Magpie Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32254150",
+      "name": "Frog Mill Ait",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32254152",
+      "name": "Black Boy Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-32837373",
+      "name": "Lock Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-43185938",
+      "name": "Hurley Lock Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-59963312",
+      "name": "Taylor Island",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-59991671",
+      "name": "Handbuck Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-59991673",
+      "name": "Poplar Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-59993348",
+      "name": "Ferry Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28951"
+    },
+    {
+      "id": "osm-way-23679557",
+      "name": "Queen's Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-23679577",
+      "name": "Monkey Island",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-23679633",
+      "name": "Guards Club Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-48099640",
+      "name": "Pigeonhill Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-48099638",
+      "name": "Headpile Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-23682150",
+      "name": "Bridge Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "grass-eyot-w23682157",
+      "name": "Grass Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 28952"
+    },
+    {
+      "id": "osm-way-27471686",
+      "name": "Barton Island",
+      "new_type": "river",
+      "parent": "OSM rel 35311"
+    },
+    {
+      "id": "osm-way-27638355",
+      "name": "Folly Island",
+      "new_type": "river",
+      "parent": "OSM rel 36896"
+    },
+    {
+      "id": "osm-way-28204825",
+      "name": "Donald's Isle",
+      "new_type": "lake",
+      "parent": "Loch Doon"
+    },
+    {
+      "id": "osm-relation-3516650",
+      "name": "Gad Island",
+      "new_type": "lake",
+      "parent": "Lough Erne Upper"
+    },
+    {
+      "id": "osm-way-195207447",
+      "name": "Bockan Island",
+      "new_type": "lake",
+      "parent": "Lough Erne Upper"
+    },
+    {
+      "id": "osm-way-157601030",
+      "name": "Small Island",
+      "new_type": "lake",
+      "parent": "Lough Erne Upper"
+    },
+    {
+      "id": "osm-way-116104846",
+      "name": "Castle Island",
+      "new_type": "river",
+      "parent": "OSM rel 58903"
+    },
+    {
+      "id": "osm-way-179202453",
+      "name": "Cherry Island",
+      "new_type": "river",
+      "parent": "OSM rel 58903"
+    },
+    {
+      "id": "osm-way-28010387",
+      "name": "Knock Island",
+      "new_type": "river",
+      "parent": "OSM rel 58903"
+    },
+    {
+      "id": "osm-way-28010388",
+      "name": "Cleenish Island",
+      "new_type": "river",
+      "parent": "OSM rel 58903"
+    },
+    {
+      "id": "osm-way-31774088",
+      "name": "Inch Geck",
+      "new_type": "river",
+      "parent": "Ythan Estuary"
+    },
+    {
+      "id": "osm-way-83589902",
+      "name": "Monkey Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "osm-way-32723135",
+      "name": "Piper's Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "osm-way-32723094",
+      "name": "Fry's Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "osm-way-169875221",
+      "name": "View Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "osm-way-97537721",
+      "name": "Heron Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "osm-way-97548759",
+      "name": "De Bohun Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "chocolate-island-w32724398",
+      "name": "Chocolate Island",
+      "new_type": "river",
+      "parent": "OSM rel 116485"
+    },
+    {
+      "id": "osm-way-1125281075",
+      "name": "Crib Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-355834407",
+      "name": "Little Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-355834408",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-355834411",
+      "name": "Whim Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-355834410",
+      "name": "Sedgy Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-355834406",
+      "name": "Horse Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-312617899",
+      "name": "Leveret Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-66158461",
+      "name": "Inchcleraun",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-65798718",
+      "name": "Nun's Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-356038960",
+      "name": "Hareisland",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-48996177",
+      "name": "Inchturk",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922862",
+      "name": "Clawinch",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922847",
+      "name": "Goat's Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922855",
+      "name": "Bushy Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922846",
+      "name": "Incharmadermot",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922852",
+      "name": "Ferrinch",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922848",
+      "name": "Priest's Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922858",
+      "name": "Dogs Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922857",
+      "name": "Sedgy Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922851",
+      "name": "Leveran Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119922853",
+      "name": "Kings Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927931",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927911",
+      "name": "Sand Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927940",
+      "name": "Horse Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927944",
+      "name": "Brearoge Islands",
+      "new_type": "lake",
+      "parent": "Lough Ree",
+      "merged_from_inner": 119927944
+    },
+    {
+      "id": "osm-way-119927944",
+      "name": "Brearoge Islands",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927870",
+      "name": "Girls' Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927949",
+      "name": "Nut Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927956",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927937",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927880",
+      "name": "Black Islands",
+      "new_type": "lake",
+      "parent": "Lough Ree",
+      "merged_from_inner": 119927880
+    },
+    {
+      "id": "osm-way-119927880",
+      "name": "Black Islands",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927935",
+      "name": "Illanfan",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927887",
+      "name": "Cribby Islands",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119928347",
+      "name": "Carberry Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119928345",
+      "name": "Little Yellow Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119928346",
+      "name": "Kids Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119929330",
+      "name": "Big Yellow Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119929398",
+      "name": "Beam Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119929681",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-120359523",
+      "name": "Little Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-120361417",
+      "name": "Crow Island",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "osm-way-119927931",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Ree",
+      "merged_from_inner": 167315050
+    },
+    {
+      "id": "osm-way-209341732",
+      "name": "Hodson's Pillar",
+      "new_type": "lake",
+      "parent": "Lough Ree"
+    },
+    {
+      "id": "the-carr-w38109715",
+      "name": "The Carr",
+      "new_type": "lake",
+      "parent": "Whitlingham Great Broad"
+    },
+    {
+      "id": "golden-island-w1160563516",
+      "name": "Golden Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "green-island-w1160563531",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-263973410",
+      "name": "Easter Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-relation-4070971",
+      "name": "Rabbit Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-264165427",
+      "name": "Matthew Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-275736407",
+      "name": "Illaunustokeen",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-258084498",
+      "name": "Cannaver Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-49022915",
+      "name": "Illaunnashinnagh",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-48995801",
+      "name": "Illaunnanure",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-49024194",
+      "name": "Walsh's Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-48995095",
+      "name": "Walsh's Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-49024605",
+      "name": "Inchiquin",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-261128117",
+      "name": "Inchagoill",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-261128116",
+      "name": "Burr Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-49024594",
+      "name": "Rabbit Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-49024595",
+      "name": "Illaunaconaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-relation-3484373",
+      "name": "Roeillaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-257263271",
+      "name": "Inishlannaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-260758122",
+      "name": "Snahadaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-260758123",
+      "name": "Inishgarraun Beg",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-197267040",
+      "name": "Inishdoorus",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-231010026",
+      "name": "Roeillaundoo",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-235371339",
+      "name": "Inishannagh",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-261135498",
+      "name": "Cadd Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-199701917",
+      "name": "Farnaght Roeillaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-1161136345",
+      "name": "Bilberry Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-199701910",
+      "name": "Bilberry Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-198667888",
+      "name": "Roeillaun South",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-198667252",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "tootoge-rock-w199701915",
+      "name": "Tootoge Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262870156",
+      "name": "Varley's island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876110",
+      "name": "Booey",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876111",
+      "name": "Booeybeg",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876112",
+      "name": "Illaunagawna Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876113",
+      "name": "Cleenillaun",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876119",
+      "name": "Illaunree",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262876122",
+      "name": "Oileán na nAnam",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262884722",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-264165525",
+      "name": "Holy Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-265272692",
+      "name": "Mucky",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-265272693",
+      "name": "Sloe Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-265272695",
+      "name": "Derry Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "oak-island-w265272696",
+      "name": "Oak Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-265272697",
+      "name": "Carrigeen Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "salmon-point-rock-w264165095",
+      "name": "Salmon Point Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "salmon-island-w264165096",
+      "name": "Salmon Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "mine-island-w264165093",
+      "name": "Mine Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "whiskey-island-w264165094",
+      "name": "Whiskey Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "easter-rock-w266684525",
+      "name": "Easter Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-266684529",
+      "name": "Bartragh Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "grass-rock-w266684534",
+      "name": "Grass Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-266684539",
+      "name": "Grass Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "abbots-rock-w266684542",
+      "name": "Abbot's Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "green-island-w266684543",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-595586268",
+      "name": "Camillaun Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-1263554233",
+      "name": "Red Island Rock",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-197261502",
+      "name": "Kelly's Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262869383",
+      "name": "Illaunibben",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-262736553",
+      "name": "Inishthee",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-relation-3531702",
+      "name": "Inishdauwee",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-1051701450",
+      "name": "Migchean",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "osm-way-39871990",
+      "name": "Inish",
+      "new_type": "lake",
+      "parent": "Lady's Island Lake"
+    },
+    {
+      "id": "osm-way-39871998",
+      "name": "Scargeen",
+      "new_type": "lake",
+      "parent": "Lady's Island Lake"
+    },
+    {
+      "id": "osm-way-4264083",
+      "name": "Duck Island",
+      "new_type": "lake",
+      "parent": "St. James's Park Lake"
+    },
+    {
+      "id": "west-island-w4264082",
+      "name": "West Island",
+      "new_type": "lake",
+      "parent": "St. James's Park Lake"
+    },
+    {
+      "id": "osm-way-48274365",
+      "name": "Raven's Ait",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-48076585",
+      "name": "Thames Ditton Island",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-48076588",
+      "name": "Swan Island",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-48076587",
+      "name": "Boyle Farm Island",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-43531168",
+      "name": "Steven's Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-26600935",
+      "name": "Trowlock Island",
+      "new_type": "river",
+      "parent": "OSM rel 308126"
+    },
+    {
+      "id": "osm-way-9709174",
+      "name": "Glover's Island",
+      "new_type": "river",
+      "parent": "OSM rel 318374"
+    },
+    {
+      "id": "osm-way-44071991",
+      "name": "Flowerpot Islands",
+      "new_type": "river",
+      "parent": "OSM rel 318374"
+    },
+    {
+      "id": "osm-way-44071991",
+      "name": "Flowerpot Islands",
+      "new_type": "river",
+      "parent": "OSM rel 318374",
+      "merged_from_inner": 44071991
+    },
+    {
+      "id": "osm-way-19852012",
+      "name": "Corporation Island",
+      "new_type": "river",
+      "parent": "OSM rel 318374"
+    },
+    {
+      "id": "osm-way-505880364",
+      "name": "Swan Island",
+      "new_type": "river",
+      "parent": "OSM rel 318374"
+    },
+    {
+      "id": "osm-way-44960775",
+      "name": "Eilean Anlaimh",
+      "new_type": "lake",
+      "parent": "Loch Anlaimh"
+    },
+    {
+      "id": "osm-way-1387337757",
+      "name": "Dùn Anlaimh",
+      "new_type": "lake",
+      "parent": "Loch nan Cinneachan"
+    },
+    {
+      "id": "osm-way-177764790",
+      "name": "Crow Island",
+      "new_type": "lake",
+      "parent": "Lough Gara"
+    },
+    {
+      "id": "osm-way-45181422",
+      "name": "Inch Island",
+      "new_type": "lake",
+      "parent": "Lough Gara"
+    },
+    {
+      "id": "osm-way-45468274",
+      "name": "Grasmere Island",
+      "new_type": "lake",
+      "parent": "Grasmere"
+    },
+    {
+      "id": "osm-way-47717832",
+      "name": "Àird Faoghail Chiorabhal",
+      "new_type": "lake",
+      "parent": "Loch Faoghail Kirraval"
+    },
+    {
+      "id": "osm-way-47717878",
+      "name": "Eilean Mhic Fail",
+      "new_type": "lake",
+      "parent": "Loch Àirigh na h-Àirde"
+    },
+    {
+      "id": "osm-way-1239701265",
+      "name": "Eilean a' Chaise",
+      "new_type": "lake",
+      "parent": "Loch Àirigh na h-Àirde"
+    },
+    {
+      "id": "osm-way-47720486",
+      "name": "Eilean a' Phaof",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-47718012",
+      "name": "Tairead",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-47720509",
+      "name": "Tairead Fhliuch",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-47720510",
+      "name": "Tairead Thioram",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-1106946661",
+      "name": "Saothair an Aobhaidh",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-1241464551",
+      "name": "Eilean Mhic Mhurchaidh Mhic Aonghais",
+      "new_type": "lake",
+      "parent": "Loch Langavat"
+    },
+    {
+      "id": "osm-way-48203496",
+      "name": "Eilean Mòr Loch an Taobh Sear",
+      "new_type": "lake",
+      "parent": "Loch an Taobh Sear"
+    },
+    {
+      "id": "france-island-w48989620",
+      "name": "France Island",
+      "new_type": "river",
+      "parent": "OSM rel 396311"
+    },
+    {
+      "id": "osm-way-49706046",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Rydal Water"
+    },
+    {
+      "id": "osm-way-49706048",
+      "name": "Little Isle",
+      "new_type": "lake",
+      "parent": "Rydal Water"
+    },
+    {
+      "id": "osm-way-49706049",
+      "name": "Green Holme",
+      "new_type": "lake",
+      "parent": "Rydal Water"
+    },
+    {
+      "id": "osm-way-51363434",
+      "name": "Rainis Eilean Mòr",
+      "new_type": "lake",
+      "parent": "Loch Orasay"
+    },
+    {
+      "id": "osm-way-52490115",
+      "name": "Lady Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-52490116",
+      "name": "Hen Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-52490117",
+      "name": "Thompson's Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-60048101",
+      "name": "Crow Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-60095812",
+      "name": "Ramp Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-61690857",
+      "name": "Ling Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "blake-holme-w75312776",
+      "name": "Blake Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-75479922",
+      "name": "Crag Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-75479904",
+      "name": "Silver Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-75479907",
+      "name": "Grass Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-153843468",
+      "name": "Rough Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-166260198",
+      "name": "Snake Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-166260199",
+      "name": "Fir Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-239883527",
+      "name": "Green Tuft Island",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-338190048",
+      "name": "Maiden Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-522974691",
+      "name": "Haws Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "tuft-rock-w522974692",
+      "name": "Tuft Rock",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-708452086",
+      "name": "Bee Holme",
+      "new_type": "lake",
+      "parent": "Windermere"
+    },
+    {
+      "id": "osm-way-52803937",
+      "name": "Wood Howe",
+      "new_type": "lake",
+      "parent": "Haweswater Reservoir"
+    },
+    {
+      "id": "osm-way-55536598",
+      "name": "Poplar Island",
+      "new_type": "river",
+      "parent": "OSM rel 557187"
+    },
+    {
+      "id": "osm-way-55536611",
+      "name": "Appletree Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 557187"
+    },
+    {
+      "id": "osm-way-55539034",
+      "name": "Sonning Eye",
+      "new_type": "river",
+      "parent": "OSM rel 557199"
+    },
+    {
+      "id": "osm-way-55539041",
+      "name": "Buck Ait",
+      "new_type": "river",
+      "parent": "OSM rel 557199"
+    },
+    {
+      "id": "osm-way-55539046",
+      "name": "Hallsmead Ait",
+      "new_type": "river",
+      "parent": "OSM rel 557199"
+    },
+    {
+      "id": "osm-way-55539052",
+      "name": "The Lynch",
+      "new_type": "river",
+      "parent": "OSM rel 557199"
+    },
+    {
+      "id": "osm-way-55539108",
+      "name": "Phillimore's Island",
+      "new_type": "river",
+      "parent": "OSM rel 557199"
+    },
+    {
+      "id": "osm-way-58080234",
+      "name": "Eilean Iubhair",
+      "new_type": "lake",
+      "parent": "Loch Laidon"
+    },
+    {
+      "id": "osm-way-58010945",
+      "name": "Alney Island",
+      "new_type": "river",
+      "parent": "OSM rel 900006"
+    },
+    {
+      "id": "paradise-island-w58529097",
+      "name": "Paradise Island",
+      "new_type": "lake",
+      "parent": "OSM rel 904752"
+    },
+    {
+      "id": "eilean-aigas-w59034285",
+      "name": "Eilean Aigas",
+      "new_type": "river",
+      "parent": "OSM rel 910778"
+    },
+    {
+      "id": "osm-way-60005791",
+      "name": "Unnamed Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 933950"
+    },
+    {
+      "id": "osm-way-1116340578",
+      "name": "Alfie's Island",
+      "new_type": "river",
+      "parent": "OSM rel 933950"
+    },
+    {
+      "id": "osm-way-60213153",
+      "name": "Denny Island",
+      "new_type": "lake",
+      "parent": "Chew Valley Lake"
+    },
+    {
+      "id": "osm-way-60958688",
+      "name": "Charley Island",
+      "new_type": "river",
+      "parent": "OSM rel 947808"
+    },
+    {
+      "id": "osm-way-4438947",
+      "name": "Moncreiffe Island",
+      "new_type": "river",
+      "parent": "OSM rel 956087"
+    },
+    {
+      "id": "osm-way-431093729",
+      "name": "The Stanners",
+      "new_type": "river",
+      "parent": "OSM rel 956087"
+    },
+    {
+      "id": "osm-way-56059556",
+      "name": "Torksey Island",
+      "new_type": "river",
+      "parent": "OSM rel 957809"
+    },
+    {
+      "id": "osm-way-62177634",
+      "name": "Fred's Ait",
+      "new_type": "river",
+      "parent": "OSM rel 966496"
+    },
+    {
+      "id": "osm-way-62177633",
+      "name": "Roy's Ait",
+      "new_type": "river",
+      "parent": "OSM rel 966496"
+    },
+    {
+      "id": "osier-island-w58075480",
+      "name": "Osier Island",
+      "new_type": "river",
+      "parent": "Pershore Islands"
+    },
+    {
+      "id": "osm-way-57675219",
+      "name": "Deergarth How Island",
+      "new_type": "lake",
+      "parent": "Thirlmere"
+    },
+    {
+      "id": "osm-way-57675218",
+      "name": "Hawes How Island",
+      "new_type": "lake",
+      "parent": "Thirlmere"
+    },
+    {
+      "id": "osm-way-67660077",
+      "name": "Trout Island",
+      "new_type": "river",
+      "parent": "OSM rel 1069783"
+    },
+    {
+      "id": "osm-way-176200189",
+      "name": "Osney Island",
+      "new_type": "river",
+      "parent": "OSM rel 1083245"
+    },
+    {
+      "id": "osm-way-71932577",
+      "name": "Ram's Island",
+      "new_type": "lake",
+      "parent": "Lough Neagh"
+    },
+    {
+      "id": "osm-way-71932874",
+      "name": "Coney Island",
+      "new_type": "lake",
+      "parent": "Lough Neagh"
+    },
+    {
+      "id": "osm-way-670701724",
+      "name": "Bird Island",
+      "new_type": "lake",
+      "parent": "Lough Neagh"
+    },
+    {
+      "id": "osm-way-60172007",
+      "name": "Broomhaugh Island",
+      "new_type": "river",
+      "parent": "River Tyne"
+    },
+    {
+      "id": "coxs-island-w41311693",
+      "name": "Cox's Island",
+      "new_type": "river",
+      "parent": "Stratford-on-Avon"
+    },
+    {
+      "id": "osm-way-72620793",
+      "name": "Heathery Isle",
+      "new_type": "river",
+      "parent": "OSM rel 1127684"
+    },
+    {
+      "id": "osm-way-73068943",
+      "name": "Eilean Ruairidh Mòr",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73068743",
+      "name": "Eilean Ruairidh Beag",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73070408",
+      "name": "Garbh Eilean",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73069281",
+      "name": "Eilean Loisgte",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73069454",
+      "name": "Eilean Dubh na Sroine",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73070571",
+      "name": "Eilean nan Clachairean",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73072600",
+      "name": "Eilean Camas a' Chonnaidh",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73072165",
+      "name": "Eilean na Creige Giubhais",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73073800",
+      "name": "Isle Maree",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73071690",
+      "name": "Eilean Eachainn",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73073678",
+      "name": "Eilean a' Chlamhain",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73072700",
+      "name": "Eilean Mhic an Fhularaich",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73072114",
+      "name": "Eilean Ghrùididh",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-73072559",
+      "name": "Eilean na Craoibhe",
+      "new_type": "lake",
+      "parent": "Loch Maree"
+    },
+    {
+      "id": "osm-way-75804064",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-75804061",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-165287097",
+      "name": "Sporting Rock",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-165287104",
+      "name": "Watty's Rocks",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-571088981",
+      "name": "Stony Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-165287107",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-1101280932",
+      "name": "Curry's Rocks",
+      "new_type": "lake",
+      "parent": "Lough Sheelin",
+      "merged_from_inner": 1101280932
+    },
+    {
+      "id": "osm-way-571088963",
+      "name": "Inchicup Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-571088982",
+      "name": "Wall Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-571088987",
+      "name": "Dinner Island",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-1101280932",
+      "name": "Curry's Rocks",
+      "new_type": "lake",
+      "parent": "Lough Sheelin"
+    },
+    {
+      "id": "osm-way-77414667",
+      "name": "Speirs Island",
+      "new_type": "lake",
+      "parent": "Banton Loch"
+    },
+    {
+      "id": "osm-way-1304538350",
+      "name": "Strand Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1304538351",
+      "name": "Triple Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1263306165",
+      "name": "Castle Hag Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-405701042",
+      "name": "Aghinish Rocks",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177690870",
+      "name": "Black Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-313621877",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177681540",
+      "name": "Wild Duck Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682183",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682177",
+      "name": "Dash Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682178",
+      "name": "Lusteen more",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682180",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682179",
+      "name": "Lusteenbeg Rocks",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177682184",
+      "name": "Lusteen beg",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177689474",
+      "name": "Curlew Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177689497",
+      "name": "Doon Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691254",
+      "name": "Shangorman",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691267",
+      "name": "Carrigeenawolla",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691252",
+      "name": "Inishdurra",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691269",
+      "name": "Castle Hag",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691268",
+      "name": "Rialisk",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691253",
+      "name": "Lamb Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691261",
+      "name": "Carrigeennasassonag",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691256",
+      "name": "Shanvallay",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691255",
+      "name": "Carrigeennaweelaun",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691260",
+      "name": "Carrigeennagur",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691250",
+      "name": "Inishowel",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177691251",
+      "name": "Carrigeen Inishowen",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177694138",
+      "name": "Carrigeenamore Rocks",
+      "new_type": "lake",
+      "parent": "Lough Mask",
+      "merged_from_inner": 177694138
+    },
+    {
+      "id": "osm-way-177694138",
+      "name": "Carrigeenamore Rocks",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-178065777",
+      "name": "Carrigeenroe",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177698419",
+      "name": "Long Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-relation-3507340",
+      "name": "Earls Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-357840396",
+      "name": "Carrigeenfair Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-357840397",
+      "name": "Heath Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177706616",
+      "name": "Lustereenmore Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177706614",
+      "name": "Carrigeennaweelaun beg",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177706613",
+      "name": "Kilbride Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177706612",
+      "name": "Rock Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-405701038",
+      "name": "Eel Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-409770003",
+      "name": "Carrigeenduree",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-409769998",
+      "name": "Carrigeen Shangorman",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410012585",
+      "name": "Carrigeendawn Islands",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410012586",
+      "name": "Carrigeennaglogh",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662187",
+      "name": "Carrigeenacoheroe",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662190",
+      "name": "Inishoicenlackboy",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662140",
+      "name": "Inishard Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662191",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662193",
+      "name": "Shrub Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662188",
+      "name": "Carrigeennaminna Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-410662189",
+      "name": "Carrigeenoroen",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1282593240",
+      "name": "Carrigeenbunnahown",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1282593241",
+      "name": "Carrigeenmaumtrasna",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1263258953",
+      "name": "Black Rock",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177704891",
+      "name": "Islandmore",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-177704893",
+      "name": "Islandbeg",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-relation-3507323",
+      "name": "Wood Island",
+      "new_type": "lake",
+      "parent": "Lough Mask"
+    },
+    {
+      "id": "osm-way-1263308032",
+      "name": "Horse Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-1263308033",
+      "name": "Leamnahye Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-1263308034",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-1263308051",
+      "name": "Dormbeg Island South",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-406283803",
+      "name": "Connors Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-403858910",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179548450",
+      "name": "Gleneary Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179548454",
+      "name": "Bird Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179548457",
+      "name": "Lady's Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179548458",
+      "name": "Stony Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179614728",
+      "name": "Deer Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179614739",
+      "name": "Priest Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179614727",
+      "name": "Ballycally Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715859",
+      "name": "Derrynafersha Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715861",
+      "name": "Cow Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715865",
+      "name": "Stare Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715872",
+      "name": "Lakeview Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715877",
+      "name": "Carigeennamoe",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715874",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715879",
+      "name": "Carigeennagat Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871085",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871081",
+      "name": "illanatrim island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871093",
+      "name": "Dormbeg Island North",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871091",
+      "name": "Otter Islands",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871079",
+      "name": "Pleasure Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871097",
+      "name": "Hag island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871099",
+      "name": "Creevagh Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-403858913",
+      "name": "Mearing Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-180871078",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-179715878",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-456755607",
+      "name": "Bonnimilish",
+      "new_type": "lake",
+      "parent": "Lough Carra"
+    },
+    {
+      "id": "osm-way-322267458",
+      "name": "Drummans Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-207529521",
+      "name": "Corry Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-814326891",
+      "name": "\"Jenny's Island\"",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-231229702",
+      "name": "Inishmagrath",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-816432969",
+      "name": "Gull Rock",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-816432968",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1094318119",
+      "name": "Spiranthes Islands",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1094318119",
+      "name": "Spiranthes Islands",
+      "new_type": "lake",
+      "parent": "Lough Allen",
+      "merged_from_inner": 1094318119
+    },
+    {
+      "id": "osm-way-1106942090",
+      "name": "Fahy Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1106942089",
+      "name": "Fahy Rock",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1081419179",
+      "name": "The Spit",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1081419180",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-1105379439",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Lough Allen"
+    },
+    {
+      "id": "osm-way-82223040",
+      "name": "Bellymore",
+      "new_type": "river",
+      "parent": "OSM rel 1231845"
+    },
+    {
+      "id": "osm-way-82237831",
+      "name": "Richard's Island",
+      "new_type": "river",
+      "parent": "OSM rel 1232108"
+    },
+    {
+      "id": "mains-mound-waterfowl-w86306966",
+      "name": "Mains mound (waterfowl)",
+      "new_type": "lake",
+      "parent": "Mains Loch"
+    },
+    {
+      "id": "osm-way-87339008",
+      "name": "Sallow Island",
+      "new_type": "lake",
+      "parent": "Ballygawley Lough"
+    },
+    {
+      "id": "victoria-park-playing-fields-w707417290",
+      "name": "Victoria Park Playing Fields",
+      "new_type": "lake",
+      "parent": "OSM rel 1306306"
+    },
+    {
+      "id": "osm-way-43128067",
+      "name": "Devil's Spadeful",
+      "new_type": "lake",
+      "parent": "Stenhouse Reservoir"
+    },
+    {
+      "id": "osm-way-178144112",
+      "name": "Annaghgowla Island",
+      "new_type": "lake",
+      "parent": "Lough Arrow"
+    },
+    {
+      "id": "osm-way-177975499",
+      "name": "Inishmore",
+      "new_type": "lake",
+      "parent": "Lough Arrow"
+    },
+    {
+      "id": "osm-way-177901580",
+      "name": "Inishbeg",
+      "new_type": "lake",
+      "parent": "Lough Arrow"
+    },
+    {
+      "id": "osm-way-177901589",
+      "name": "Muck Island",
+      "new_type": "lake",
+      "parent": "Lough Arrow"
+    },
+    {
+      "id": "osm-way-95316078",
+      "name": "Eilean nan Reithan",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "osm-way-95316139",
+      "name": "Eilean Allmha",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "brinacory-island-w76465045",
+      "name": "Brinacory Island",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "eilean-a-phidhir-w94828432",
+      "name": "Eilean a' Phidhir",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "an-t-eilean-meadhoin-w94828436",
+      "name": "An t-Eilean Meadhoin",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "eilean-nam-breac-w94828441",
+      "name": "Eilean nam Breac",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "eilean-bàn-w94828437",
+      "name": "Eilean Bàn",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "osm-way-94956711",
+      "name": "Eilean Dhughaill Mhic Raonuill",
+      "new_type": "lake",
+      "parent": "Loch Morar"
+    },
+    {
+      "id": "tern-island-w369137279",
+      "name": "Tern Island",
+      "new_type": "lake",
+      "parent": "Colebrook Lake North"
+    },
+    {
+      "id": "plover-island-w369137277",
+      "name": "Plover Island",
+      "new_type": "lake",
+      "parent": "Colebrook Lake North"
+    },
+    {
+      "id": "eco-island-w99002210",
+      "name": "Eco Island",
+      "new_type": "lake",
+      "parent": "OSM rel 1423400"
+    },
+    {
+      "id": "osm-way-100804808",
+      "name": "Hospital Island",
+      "new_type": "river",
+      "parent": "River Deveron"
+    },
+    {
+      "id": "osm-way-100804879",
+      "name": "Scury Islands",
+      "new_type": "river",
+      "parent": "River Deveron"
+    },
+    {
+      "id": "osm-way-101212920",
+      "name": "Old Meggison",
+      "new_type": "river",
+      "parent": "OSM rel 1442754"
+    },
+    {
+      "id": "osm-way-102436674",
+      "name": "St Thomas's Island",
+      "new_type": "river",
+      "parent": "OSM rel 1455103"
+    },
+    {
+      "id": "osm-way-102843179",
+      "name": "Eilean Bàn",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-26508217",
+      "name": "Black Island",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-102843188",
+      "name": "Eilean Dharag",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-103218882",
+      "name": "Eilean Molach (Ellen's Isle)",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-103218988",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-103218978",
+      "name": "Lady's Isle",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-221564444",
+      "name": "Rubha nam Mult",
+      "new_type": "lake",
+      "parent": "Loch Katrine"
+    },
+    {
+      "id": "osm-way-91403177",
+      "name": "Bathing Island",
+      "new_type": "river",
+      "parent": "OSM rel 1473960"
+    },
+    {
+      "id": "osm-way-85762228",
+      "name": "Fish's Island",
+      "new_type": "river",
+      "parent": "OSM rel 1473960"
+    },
+    {
+      "id": "osm-way-147739346",
+      "name": "Garrie Island",
+      "new_type": "river",
+      "parent": "OSM rel 1477694"
+    },
+    {
+      "id": "osm-way-462906707",
+      "name": "Swan Island",
+      "new_type": "lake",
+      "parent": "Delapre Lake"
+    },
+    {
+      "id": "osm-way-462906706",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Delapre Lake"
+    },
+    {
+      "id": "osm-way-462906705",
+      "name": "Cormorant Island",
+      "new_type": "lake",
+      "parent": "Delapre Lake"
+    },
+    {
+      "id": "osm-way-106160121",
+      "name": "Pleasure Island",
+      "new_type": "lake",
+      "parent": "Hickling Broad"
+    },
+    {
+      "id": "osm-way-148102643",
+      "name": "Turner's Island",
+      "new_type": "lake",
+      "parent": "Hickling Broad"
+    },
+    {
+      "id": "osm-way-32824409",
+      "name": "Rose Isle",
+      "new_type": "river",
+      "parent": "OSM rel 1559384"
+    },
+    {
+      "id": "clyde-valley-family-parks-island-w830695599",
+      "name": "Clyde Valley Family Park's Island",
+      "new_type": "river",
+      "parent": "River Clyde"
+    },
+    {
+      "id": "osm-way-114320251",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507805",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507795",
+      "name": "Orchard Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507797",
+      "name": "Swallow Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507807",
+      "name": "Lahan Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507790",
+      "name": "Bullock Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507789",
+      "name": "Ash Islands",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507792",
+      "name": "Hermit Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507796",
+      "name": "Stag Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507793",
+      "name": "Hog's Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "osm-way-186507800",
+      "name": "Bingham Island",
+      "new_type": "lake",
+      "parent": "Lough Key"
+    },
+    {
+      "id": "dun-scolpaig-w116521693",
+      "name": "Dun Scolpaig",
+      "new_type": "lake",
+      "parent": "Loch Scolpaig"
+    },
+    {
+      "id": "osm-way-117381875",
+      "name": "Oldmill Island",
+      "new_type": "river",
+      "parent": "OSM rel 1621840"
+    },
+    {
+      "id": "osm-way-119049815",
+      "name": "Fir Island",
+      "new_type": "lake",
+      "parent": "Carlingwark Loch"
+    },
+    {
+      "id": "ash-island-w119050044",
+      "name": "Ash Island",
+      "new_type": "lake",
+      "parent": "Carlingwark Loch"
+    },
+    {
+      "id": "dog-island-w119049994",
+      "name": "Dog Island",
+      "new_type": "lake",
+      "parent": "Carlingwark Loch"
+    },
+    {
+      "id": "osm-way-119050086",
+      "name": "Ducking Island",
+      "new_type": "lake",
+      "parent": "Carlingwark Loch"
+    },
+    {
+      "id": "osm-way-93868002",
+      "name": "Berry Island",
+      "new_type": "river",
+      "parent": "River Leven"
+    },
+    {
+      "id": "osm-way-93868004",
+      "name": "Fore Island",
+      "new_type": "river",
+      "parent": "River Leven"
+    },
+    {
+      "id": "osm-way-127628519",
+      "name": "Inisheher",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-127628518",
+      "name": "Inishmean",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-127628517",
+      "name": "Inishtemple",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-127628516",
+      "name": "Inishkeen",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-179073597",
+      "name": "Gorminish",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-179073598",
+      "name": "Bilberry Island",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "osm-way-266455362",
+      "name": "Sally Island",
+      "new_type": "lake",
+      "parent": "Lough Melvin"
+    },
+    {
+      "id": "river-avon-w140782844",
+      "name": "River Avon",
+      "new_type": "river",
+      "parent": "OSM rel 1754193",
+      "merged_from_inner": 140782844
+    },
+    {
+      "id": "river-avon-w140782844",
+      "name": "River Avon",
+      "new_type": "river",
+      "parent": "OSM rel 1754193"
+    },
+    {
+      "id": "osm-way-73908596",
+      "name": "St Thomas's Island",
+      "new_type": "river",
+      "parent": "OSM rel 1860435"
+    },
+    {
+      "id": "osm-way-139431440",
+      "name": "Jordan's Island",
+      "new_type": "river",
+      "parent": "OSM rel 1876599"
+    },
+    {
+      "id": "bull-island-w49140368",
+      "name": "Bull Island",
+      "new_type": "river",
+      "parent": "OSM rel 1915194"
+    },
+    {
+      "id": "kelso-ana-w143207507",
+      "name": "Kelso Ana",
+      "new_type": "river",
+      "parent": "OSM rel 1939028"
+    },
+    {
+      "id": "colander-island-w4234346",
+      "name": "Colander Island",
+      "new_type": "lake",
+      "parent": "Glen Faba"
+    },
+    {
+      "id": "dagger-island-w148138396",
+      "name": "Dagger Island",
+      "new_type": "lake",
+      "parent": "Beecraigs Loch"
+    },
+    {
+      "id": "osm-way-148734676",
+      "name": "Bulldogs Island",
+      "new_type": "river",
+      "parent": "OSM rel 2001566"
+    },
+    {
+      "id": "osm-way-148442098",
+      "name": "Pharaoh's Island",
+      "new_type": "river",
+      "parent": "OSM rel 2001806"
+    },
+    {
+      "id": "osm-way-148442096",
+      "name": "Hamhaugh Island",
+      "new_type": "river",
+      "parent": "OSM rel 2001806"
+    },
+    {
+      "id": "lock-island-w148442097",
+      "name": "Lock Island",
+      "new_type": "river",
+      "parent": "OSM rel 2001806"
+    },
+    {
+      "id": "osm-way-148502588",
+      "name": "Hollyhock Island",
+      "new_type": "river",
+      "parent": "OSM rel 2002541"
+    },
+    {
+      "id": "holm-island-w148502589",
+      "name": "Holm Island",
+      "new_type": "river",
+      "parent": "OSM rel 2002541"
+    },
+    {
+      "id": "osm-way-148502587",
+      "name": "Church Island",
+      "new_type": "river",
+      "parent": "OSM rel 2002541"
+    },
+    {
+      "id": "osm-way-23205665",
+      "name": "Friday Island",
+      "new_type": "river",
+      "parent": "OSM rel 2004856"
+    },
+    {
+      "id": "osm-way-48097346",
+      "name": "Pats Croft Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 2004856",
+      "merged_from_inner": 48097346
+    },
+    {
+      "id": "osm-way-148678169",
+      "name": "Magna Carta Island",
+      "new_type": "river",
+      "parent": "OSM rel 2004856"
+    },
+    {
+      "id": "osm-way-48097346",
+      "name": "Pats Croft Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 2004856"
+    },
+    {
+      "id": "osm-way-148678193",
+      "name": "The Island",
+      "new_type": "river",
+      "parent": "OSM rel 2004857"
+    },
+    {
+      "id": "osm-way-148473773",
+      "name": "Truss's Island",
+      "new_type": "river",
+      "parent": "OSM rel 2006294"
+    },
+    {
+      "id": "osm-way-148455446",
+      "name": "Penton Hook Island",
+      "new_type": "river",
+      "parent": "OSM rel 2006294"
+    },
+    {
+      "id": "monkey-island-w78036722",
+      "name": "Monkey Island",
+      "new_type": "river",
+      "parent": "OSM rel 2036391"
+    },
+    {
+      "id": "maks-island-w153589576",
+      "name": "Maks Island",
+      "new_type": "lake",
+      "parent": "Clickimin Loch"
+    },
+    {
+      "id": "osm-way-154243138",
+      "name": "Corran Island",
+      "new_type": "lake",
+      "parent": "Lough Sewdy"
+    },
+    {
+      "id": "osm-way-49901778",
+      "name": "Tagg's Island",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-49901777",
+      "name": "Ash Island",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157810927",
+      "name": "Garrick's Ait",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-166505013",
+      "name": "Benn's Island",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812280",
+      "name": "Platts Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812279",
+      "name": "Grand Junction Isle",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812293",
+      "name": "Sunbury Court Island",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-49901775",
+      "name": "Rivermead Island",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812302",
+      "name": "Sunbury Lock Ait",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812308",
+      "name": "Wheatley's Ait (north)",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "osm-way-157812309",
+      "name": "Wheatley's Eyot (south)",
+      "new_type": "river",
+      "parent": "OSM rel 2110237"
+    },
+    {
+      "id": "island-1-w159590329",
+      "name": "Island 1",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "island-3-w159682118",
+      "name": "Island 3",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "island-4-w159682119",
+      "name": "Island 4",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "island-2-w159682120",
+      "name": "Island 2",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "island-5-w159682121",
+      "name": "Island 5",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "island-6-w159682117",
+      "name": "Island 6",
+      "new_type": "lake",
+      "parent": "Dorchester Lagoon"
+    },
+    {
+      "id": "osm-way-367353150",
+      "name": "Blount Island",
+      "new_type": "river",
+      "parent": "OSM rel 2179283"
+    },
+    {
+      "id": "osm-way-3997946",
+      "name": "Canny Island",
+      "new_type": "river",
+      "parent": "OSM rel 2179284"
+    },
+    {
+      "id": "osm-way-163596702",
+      "name": "Corronagh Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596703",
+      "name": "Corronagh Sand Bank",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596726",
+      "name": "Porters Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596726",
+      "name": "Porters Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor",
+      "merged_from_inner": 163596726
+    },
+    {
+      "id": "osm-way-163596729",
+      "name": "Sallow Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596752",
+      "name": "Knocknagartan North",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596698",
+      "name": "Behernagh Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596728",
+      "name": "Ryefield Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596733",
+      "name": "Ryefield Sand Bank",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596741",
+      "name": "Woodworth's Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596706",
+      "name": "Crossafehin Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor",
+      "merged_from_inner": 163596706
+    },
+    {
+      "id": "osm-way-163596706",
+      "name": "Crossafehin Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596740",
+      "name": "Stony Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596715",
+      "name": "Islandboy",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596714",
+      "name": "Illanakirka Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596753",
+      "name": "Sand Bank",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596711",
+      "name": "Georges Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor",
+      "merged_from_inner": 163596711
+    },
+    {
+      "id": "osm-way-163596711",
+      "name": "Georges Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596697",
+      "name": "Ballaghanea Island South",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596713",
+      "name": "Illanagreeve",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596695",
+      "name": "Ballaghanea Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596755",
+      "name": "Stony Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor",
+      "merged_from_inner": 163596755
+    },
+    {
+      "id": "osm-way-163596755",
+      "name": "Stony Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596739",
+      "name": "Sloe Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596700",
+      "name": "Corlea Island North",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596701",
+      "name": "Corlea Island South",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596699",
+      "name": "Cock Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596710",
+      "name": "Garrets Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596705",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596736",
+      "name": "Scrabby Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596708",
+      "name": "Fort Frederick Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-163596708",
+      "name": "Fort Frederick Islands",
+      "new_type": "lake",
+      "parent": "Lough Ramor",
+      "merged_from_inner": 163596708
+    },
+    {
+      "id": "osm-way-163596704",
+      "name": "Cow and Knockatemple Island",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-1097300744",
+      "name": "Stones",
+      "new_type": "lake",
+      "parent": "Lough Ramor"
+    },
+    {
+      "id": "osm-way-82976962",
+      "name": "Norfolk Isle",
+      "new_type": "lake",
+      "parent": "Ullswater"
+    },
+    {
+      "id": "osm-way-163844086",
+      "name": "Wall Holm",
+      "new_type": "lake",
+      "parent": "Ullswater"
+    },
+    {
+      "id": "osm-way-510707993",
+      "name": "Lingy Holm",
+      "new_type": "lake",
+      "parent": "Ullswater"
+    },
+    {
+      "id": "osm-way-348523494",
+      "name": "Cherry Holm",
+      "new_type": "lake",
+      "parent": "Ullswater"
+    },
+    {
+      "id": "osm-way-163970500",
+      "name": "Dreeper Island",
+      "new_type": "river",
+      "parent": "OSM rel 2187338"
+    },
+    {
+      "id": "border-maid-w163972310",
+      "name": "Border Maid",
+      "new_type": "river",
+      "parent": "OSM rel 2187338"
+    },
+    {
+      "id": "osm-way-75809674",
+      "name": "Inchmore",
+      "new_type": "lake",
+      "parent": "Lough Gowna"
+    },
+    {
+      "id": "osm-way-164240722",
+      "name": "White Island",
+      "new_type": "lake",
+      "parent": "Lough Gowna"
+    },
+    {
+      "id": "osm-way-1102206831",
+      "name": "Scrabby Island",
+      "new_type": "lake",
+      "parent": "Lough Gowna"
+    },
+    {
+      "id": "osm-way-59274651",
+      "name": "Queen Elizabeth's Island",
+      "new_type": "lake",
+      "parent": "Queen Pool"
+    },
+    {
+      "id": "osm-way-1153375616",
+      "name": "Inishmoylin",
+      "new_type": "lake",
+      "parent": "Lough Boderg"
+    },
+    {
+      "id": "osm-way-26526918",
+      "name": "Innisfallen",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526916",
+      "name": "Rough Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526913",
+      "name": "Crow Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526914",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526915",
+      "name": "Swallow Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526921",
+      "name": "Rabbit or Brown Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526919",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526920",
+      "name": "Lamb Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526912",
+      "name": "Cow Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526911",
+      "name": "Ash Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526910",
+      "name": "Osprey Rock",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-26526917",
+      "name": "Burnt Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-245046786",
+      "name": "Yew Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-245294576",
+      "name": "Cherry Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-292172164",
+      "name": "O'Donohoe's Prison",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "darbys-garden-w314598656",
+      "name": "Darby's Garden",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "stag-island-w314600115",
+      "name": "Stag Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-314858457",
+      "name": "O'Donohoe's Horse",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-314858353",
+      "name": "Paddy Blake's Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-314858442",
+      "name": "Goose Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-975196248",
+      "name": "Mouse Island",
+      "new_type": "lake",
+      "parent": "Lough Leane"
+    },
+    {
+      "id": "osm-way-172578596",
+      "name": "Inchbuie",
+      "new_type": "river",
+      "parent": "OSM rel 2304151"
+    },
+    {
+      "id": "osm-way-172578595",
+      "name": "Crow Island",
+      "new_type": "river",
+      "parent": "OSM rel 2304151"
+    },
+    {
+      "id": "dunbrody-w109090074",
+      "name": "Dunbrody",
+      "new_type": "river",
+      "parent": "OSM rel 2311841"
+    },
+    {
+      "id": "osm-way-129986694",
+      "name": "Treasure Island",
+      "new_type": "lake",
+      "parent": "OSM rel 2329504"
+    },
+    {
+      "id": "osm-way-177126984",
+      "name": "Glencar Island",
+      "new_type": "lake",
+      "parent": "Glencar Lough"
+    },
+    {
+      "id": "osm-relation-3999309",
+      "name": "Rosscorkey Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-179021421",
+      "name": "Kilrooscagh Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-179021429",
+      "name": "Tuam Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-179021410",
+      "name": "Bilberry Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-179021423",
+      "name": "Port Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-179021422",
+      "name": "Saint Patrick's Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-274965315",
+      "name": "Trawnish Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-274965314",
+      "name": "Creevaghern Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-274965313",
+      "name": "Crannoge Island",
+      "new_type": "lake",
+      "parent": "Upper Lough MacNean"
+    },
+    {
+      "id": "osm-way-177486313",
+      "name": "Duck Island",
+      "new_type": "lake",
+      "parent": "Killyfole Lough"
+    },
+    {
+      "id": "osm-way-177843615",
+      "name": "Inchihicleley",
+      "new_type": "lake",
+      "parent": "Lough Funshinagh"
+    },
+    {
+      "id": "osm-way-177843620",
+      "name": "Inchmore",
+      "new_type": "lake",
+      "parent": "Lough Funshinagh"
+    },
+    {
+      "id": "tiffins-island-w178623379",
+      "name": "Tiffin's Island",
+      "new_type": "river",
+      "parent": "OSM rel 2382279"
+    },
+    {
+      "id": "osm-way-369604216",
+      "name": "Inishnagon",
+      "new_type": "river",
+      "parent": "OSM rel 2405957"
+    },
+    {
+      "id": "spiers-island-w182827606",
+      "name": "Spiers Island",
+      "new_type": "lake",
+      "parent": "Hillend Loch"
+    },
+    {
+      "id": "eilean-an-lochain-duibh-w60071870",
+      "name": "Eilean an Lochain Duibh",
+      "new_type": "lake",
+      "parent": "Lochan Dubh"
+    },
+    {
+      "id": "osm-way-27382765",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Owel"
+    },
+    {
+      "id": "ladys-island-w307694816",
+      "name": "Lady's Island",
+      "new_type": "lake",
+      "parent": "Lough Owel"
+    },
+    {
+      "id": "osm-way-188988497",
+      "name": "Pine Island",
+      "new_type": "lake",
+      "parent": "Derryclare lough"
+    },
+    {
+      "id": "osm-way-188988378",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Inagh"
+    },
+    {
+      "id": "osm-way-188988451",
+      "name": "Crows Island",
+      "new_type": "lake",
+      "parent": "Lough Inagh"
+    },
+    {
+      "id": "osm-way-188988410",
+      "name": "Lue Island",
+      "new_type": "lake",
+      "parent": "Lough Inagh"
+    },
+    {
+      "id": "osm-way-188988733",
+      "name": "Eagle Island",
+      "new_type": "lake",
+      "parent": "Lough Inagh"
+    },
+    {
+      "id": "osm-way-190655326",
+      "name": "Hut Island",
+      "new_type": "lake",
+      "parent": "Glencullin Lough"
+    },
+    {
+      "id": "osm-way-191010914",
+      "name": "Pollatawny",
+      "new_type": "lake",
+      "parent": "Lough Nearty"
+    },
+    {
+      "id": "osm-way-191450489",
+      "name": "Baron's Island",
+      "new_type": "lake",
+      "parent": "Brackley Lough"
+    },
+    {
+      "id": "osm-way-202175057",
+      "name": "Innis Chonain",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202176591",
+      "name": "Baden Tomain",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202176847",
+      "name": "Eilean Beith",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202177043",
+      "name": "Fraoch Eilean",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202179149",
+      "name": "Eilean a' Chomhraidh",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202179152",
+      "name": "Inishail",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202179151",
+      "name": "Black Islands",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202179154",
+      "name": "Eilean Seileachan",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-202179151",
+      "name": "Black Islands",
+      "new_type": "lake",
+      "parent": "Loch Awe",
+      "merged_from_inner": 202179151
+    },
+    {
+      "id": "osm-way-205258734",
+      "name": "Innischonnell",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "osm-way-196858604",
+      "name": "Hat Island",
+      "new_type": "lake",
+      "parent": "OSM rel 2637486"
+    },
+    {
+      "id": "osm-way-196858586",
+      "name": "Goat Island",
+      "new_type": "lake",
+      "parent": "OSM rel 2637486"
+    },
+    {
+      "id": "osm-way-197494620",
+      "name": "Rusheen Island",
+      "new_type": "lake",
+      "parent": "Lough Scur"
+    },
+    {
+      "id": "osm-way-367822461",
+      "name": "Whiskey Island",
+      "new_type": "lake",
+      "parent": "Lough Scur"
+    },
+    {
+      "id": "osm-way-367822454",
+      "name": "Prison Island",
+      "new_type": "lake",
+      "parent": "Lough Scur"
+    },
+    {
+      "id": "osm-way-367822460",
+      "name": "Small Island",
+      "new_type": "lake",
+      "parent": "Lough Scur"
+    },
+    {
+      "id": "osm-way-367822453",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Lough Scur"
+    },
+    {
+      "id": "osm-way-200235309",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Levally Lough"
+    },
+    {
+      "id": "osm-way-206910592",
+      "name": "Saint Mogue's Island",
+      "new_type": "lake",
+      "parent": "Templeport Lough"
+    },
+    {
+      "id": "osm-way-210088181",
+      "name": "Eilean Dubh",
+      "new_type": "lake",
+      "parent": "Loch an Draing"
+    },
+    {
+      "id": "dibnah-island-w211370262",
+      "name": "Dibnah Island",
+      "new_type": "lake",
+      "parent": "Clifton Marina"
+    },
+    {
+      "id": "osm-way-211539843",
+      "name": "Eilean Fraoich",
+      "new_type": "lake",
+      "parent": "Loch Dùn na Cille"
+    },
+    {
+      "id": "osm-way-211539849",
+      "name": "Eilean Buidhe",
+      "new_type": "lake",
+      "parent": "Loch Dùn na Cille"
+    },
+    {
+      "id": "osm-way-1152479328",
+      "name": "Eilean Chreamh",
+      "new_type": "lake",
+      "parent": "Loch Dùn na Cille"
+    },
+    {
+      "id": "osm-way-219379567",
+      "name": "Fairy Island",
+      "new_type": "lake",
+      "parent": "Lough Glinn"
+    },
+    {
+      "id": "osm-way-220261100",
+      "name": "Derreens Island",
+      "new_type": "lake",
+      "parent": "Carrowmore Lake"
+    },
+    {
+      "id": "osm-way-220261102",
+      "name": "Muingerroon Island",
+      "new_type": "lake",
+      "parent": "Carrowmore Lake"
+    },
+    {
+      "id": "osm-way-220261099",
+      "name": "Attavally Island",
+      "new_type": "lake",
+      "parent": "Carrowmore Lake"
+    },
+    {
+      "id": "osm-way-220261101",
+      "name": "Gortmore Island",
+      "new_type": "lake",
+      "parent": "Carrowmore Lake"
+    },
+    {
+      "id": "osm-way-209470263",
+      "name": "Eilean nam Faoileag",
+      "new_type": "lake",
+      "parent": "Loch Rannoch"
+    },
+    {
+      "id": "osm-way-220719975",
+      "name": "Cranagh Island",
+      "new_type": "lake",
+      "parent": "Lough na Cranagh"
+    },
+    {
+      "id": "osm-way-221487484",
+      "name": "Pagoda Island",
+      "new_type": "lake",
+      "parent": "West Lake"
+    },
+    {
+      "id": "osm-way-111550629",
+      "name": "Eilean Dubh",
+      "new_type": "river",
+      "parent": "River Spey"
+    },
+    {
+      "id": "osm-way-227073452",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Beltra Lough"
+    },
+    {
+      "id": "osm-way-227073456",
+      "name": "Islandmore",
+      "new_type": "lake",
+      "parent": "Beltra Lough"
+    },
+    {
+      "id": "osm-way-227073457",
+      "name": "Coarse Island",
+      "new_type": "lake",
+      "parent": "Beltra Lough"
+    },
+    {
+      "id": "osm-way-227073454",
+      "name": "Tree Island",
+      "new_type": "lake",
+      "parent": "Beltra Lough"
+    },
+    {
+      "id": "osm-way-227073455",
+      "name": "Low Island",
+      "new_type": "lake",
+      "parent": "Beltra Lough"
+    },
+    {
+      "id": "osm-way-4236486",
+      "name": "Cormorant Island",
+      "new_type": "lake",
+      "parent": "Reservoir №5"
+    },
+    {
+      "id": "osm-way-4236488",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Reservoir №1"
+    },
+    {
+      "id": "kitts-island-w227691223",
+      "name": "Kitt's Island",
+      "new_type": "river",
+      "parent": "OSM rel 3030731"
+    },
+    {
+      "id": "great-island-w227692237",
+      "name": "Great Island",
+      "new_type": "river",
+      "parent": "OSM rel 3030744"
+    },
+    {
+      "id": "pleasure-hill-island-w29403301",
+      "name": "Pleasure Hill Island",
+      "new_type": "lake",
+      "parent": "Barton Broad"
+    },
+    {
+      "id": "osm-way-229634115",
+      "name": "Eilean nan Caorach",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-229634435",
+      "name": "Chiasmul",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-229634433",
+      "name": "Limalum Beg",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-229634434",
+      "name": "Limalum More",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-229635228",
+      "name": "Eilean nan Ceapan",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-229641200",
+      "name": "Eilean a' Charnan",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-231375965",
+      "name": "Brostam More",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "osm-way-231375960",
+      "name": "Brostam Beg",
+      "new_type": "lake",
+      "parent": "Loch Bee"
+    },
+    {
+      "id": "barton-locks-w138572261",
+      "name": "Barton Locks",
+      "new_type": "river",
+      "parent": "OSM rel 3091412"
+    },
+    {
+      "id": "barton-locks-w230531722",
+      "name": "Barton Locks",
+      "new_type": "river",
+      "parent": "OSM rel 3091412"
+    },
+    {
+      "id": "osm-way-267889197",
+      "name": "Eilean an Taighe",
+      "new_type": "lake",
+      "parent": "Loch Druidibeg"
+    },
+    {
+      "id": "osm-way-231712839",
+      "name": "Lurgan Island",
+      "new_type": "lake",
+      "parent": "Lurgan Park Lake"
+    },
+    {
+      "id": "osm-way-116516224",
+      "name": "Eilean Bheagram",
+      "new_type": "lake",
+      "parent": "Loch an Eilein"
+    },
+    {
+      "id": "osm-way-231995955",
+      "name": "Eilean an t-Sagairt",
+      "new_type": "lake",
+      "parent": "Loch a' Phuirt-ruaidh"
+    },
+    {
+      "id": "osm-way-237657830",
+      "name": "Eilean an Staoir",
+      "new_type": "lake",
+      "parent": "Loch Eilean an Staoir"
+    },
+    {
+      "id": "osm-way-239731267",
+      "name": "Ardcarn Islands",
+      "new_type": "river",
+      "parent": "OSM rel 3232455"
+    },
+    {
+      "id": "osm-way-239731267",
+      "name": "Ardcarn Islands",
+      "new_type": "river",
+      "parent": "OSM rel 3232455",
+      "merged_from_inner": 239731267
+    },
+    {
+      "id": "cloonagower-island-w239788449",
+      "name": "Cloonagower Island",
+      "new_type": "river",
+      "parent": "OSM rel 3232455"
+    },
+    {
+      "id": "osm-way-239825620",
+      "name": "Clooncoran Island",
+      "new_type": "river",
+      "parent": "OSM rel 3232455"
+    },
+    {
+      "id": "osm-way-239825607",
+      "name": "Greeninch",
+      "new_type": "river",
+      "parent": "OSM rel 3232455"
+    },
+    {
+      "id": "osm-way-239938744",
+      "name": "Inch Island",
+      "new_type": "river",
+      "parent": "OSM rel 3232455"
+    },
+    {
+      "id": "osm-way-240873206",
+      "name": "Brayford Island",
+      "new_type": "river",
+      "parent": "Brayford Pool"
+    },
+    {
+      "id": "little-island-w4554956",
+      "name": "Little Island",
+      "new_type": "river",
+      "parent": "OSM rel 3271896"
+    },
+    {
+      "id": "osm-way-27378075",
+      "name": "Fiddown Island",
+      "new_type": "river",
+      "parent": "OSM rel 3271896"
+    },
+    {
+      "id": "osm-way-72711092",
+      "name": "Isle of Spar",
+      "new_type": "lake",
+      "parent": "Loch Tay"
+    },
+    {
+      "id": "osm-way-28448235",
+      "name": "Priory Island",
+      "new_type": "lake",
+      "parent": "Loch Tay"
+    },
+    {
+      "id": "osm-way-41594150",
+      "name": "Sandy Island",
+      "new_type": "lake",
+      "parent": "Loch Tay"
+    },
+    {
+      "id": "winson-green-toll-island-w245195295",
+      "name": "Winson Green Toll Island",
+      "new_type": "river",
+      "parent": "OSM rel 3315089"
+    },
+    {
+      "id": "smethwick-toll-island-w245197879",
+      "name": "Smethwick Toll Island",
+      "new_type": "river",
+      "parent": "OSM rel 3315118"
+    },
+    {
+      "id": "bromford-stop-w245209431",
+      "name": "Bromford Stop",
+      "new_type": "river",
+      "parent": "OSM rel 3315183"
+    },
+    {
+      "id": "dunkirk-toll-island-w245443704",
+      "name": "Dunkirk Toll Island",
+      "new_type": "river",
+      "parent": "OSM rel 3315187"
+    },
+    {
+      "id": "windmill-end-toll-island-w245397800",
+      "name": "Windmill End Toll Island",
+      "new_type": "river",
+      "parent": "OSM rel 3317726"
+    },
+    {
+      "id": "osm-way-488868320",
+      "name": "Seacat Island",
+      "new_type": "lake",
+      "parent": "OSM rel 3355160"
+    },
+    {
+      "id": "cock-island-w351529342",
+      "name": "Cock Island",
+      "new_type": "lake",
+      "parent": "Lough Lannagh"
+    },
+    {
+      "id": "osm-way-253714169",
+      "name": "Brown's Island",
+      "new_type": "river",
+      "parent": "OSM rel 3400086"
+    },
+    {
+      "id": "osm-way-255075921",
+      "name": "Whitton Island",
+      "new_type": "river",
+      "parent": "OSM rel 3415964"
+    },
+    {
+      "id": "osm-way-765256469",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Nafooey"
+    },
+    {
+      "id": "osm-way-260393502",
+      "name": "Fern Island",
+      "new_type": "lake",
+      "parent": "Dunglow Lough"
+    },
+    {
+      "id": "osm-way-260393500",
+      "name": "Black Island",
+      "new_type": "lake",
+      "parent": "Dunglow Lough"
+    },
+    {
+      "id": "osm-way-260393501",
+      "name": "Flat Island",
+      "new_type": "lake",
+      "parent": "Dunglow Lough"
+    },
+    {
+      "id": "osm-way-260393497",
+      "name": "Wren Island",
+      "new_type": "lake",
+      "parent": "Dunglow Lough"
+    },
+    {
+      "id": "osm-way-261757024",
+      "name": "Little Holm",
+      "new_type": "lake",
+      "parent": "Loch of Watlee"
+    },
+    {
+      "id": "osm-way-248766254",
+      "name": "Derrinch Island",
+      "new_type": "lake",
+      "parent": "Rinn Lough"
+    },
+    {
+      "id": "osm-way-263296910",
+      "name": "Lady Elizabeth's Island",
+      "new_type": "lake",
+      "parent": "Rinn Lough"
+    },
+    {
+      "id": "osm-way-66364361",
+      "name": "An Dun",
+      "new_type": "lake",
+      "parent": "Loch Tummel"
+    },
+    {
+      "id": "osm-way-292662812",
+      "name": "Girls Island",
+      "new_type": "lake",
+      "parent": "Purt Lough"
+    },
+    {
+      "id": "osm-way-292662811",
+      "name": "Boys Island",
+      "new_type": "lake",
+      "parent": "Purt Lough"
+    },
+    {
+      "id": "osm-way-295653139",
+      "name": "Rock Island",
+      "new_type": "lake",
+      "parent": "Inchiquin Lough"
+    },
+    {
+      "id": "osm-way-295653121",
+      "name": "Inchiquin Island",
+      "new_type": "lake",
+      "parent": "Inchiquin Lough"
+    },
+    {
+      "id": "osm-way-383695509",
+      "name": "Smith's Island",
+      "new_type": "river",
+      "parent": "OSM rel 3950680"
+    },
+    {
+      "id": "osm-way-467586333",
+      "name": "Ò' Donnell's Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-467589924",
+      "name": "Roshin Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-1033855560",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-1033855559",
+      "name": "Moylederg Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-1033855557",
+      "name": "Grania's Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-1033855558",
+      "name": "Pigeon's Island",
+      "new_type": "lake",
+      "parent": "Lough Eske"
+    },
+    {
+      "id": "osm-way-111861844",
+      "name": "Blue Snow Goose Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "clay-island-w111733626",
+      "name": "Clay Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "osm-way-111860920",
+      "name": "Volunteer Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "osm-way-111748608",
+      "name": "Barry Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "osm-way-111868940",
+      "name": "Volcanoe Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "osm-way-111867975",
+      "name": "Doughnut Island",
+      "new_type": "lake",
+      "parent": "East Lake"
+    },
+    {
+      "id": "osm-way-206524224",
+      "name": "Cherry Island",
+      "new_type": "lake",
+      "parent": "Loch Ness"
+    },
+    {
+      "id": "osm-way-76671630",
+      "name": "Rubha Dubh nam Fiadh",
+      "new_type": "lake",
+      "parent": "Loch Cuaich"
+    },
+    {
+      "id": "osm-way-4683100",
+      "name": "Bird Island",
+      "new_type": "lake",
+      "parent": "Stocks Reservoir"
+    },
+    {
+      "id": "osm-way-105598009",
+      "name": "Infinity Island",
+      "new_type": "lake",
+      "parent": "OSM rel 4028174"
+    },
+    {
+      "id": "osm-way-243723443",
+      "name": "Johnson’s Island",
+      "new_type": "river",
+      "parent": "OSM rel 4028190"
+    },
+    {
+      "id": "osm-way-302945722",
+      "name": "Rudh' an t-Saighdear",
+      "new_type": "lake",
+      "parent": "Loch Breacleit"
+    },
+    {
+      "id": "cherry-island-w310464055",
+      "name": "Cherry Island",
+      "new_type": "lake",
+      "parent": "Lough Ennell"
+    },
+    {
+      "id": "osm-way-1109234536",
+      "name": "Goose Island",
+      "new_type": "lake",
+      "parent": "Lough Ennell"
+    },
+    {
+      "id": "osm-way-1112518086",
+      "name": "Croincha",
+      "new_type": "lake",
+      "parent": "Lough Ennell"
+    },
+    {
+      "id": "osm-way-309723577",
+      "name": "Moyle Island",
+      "new_type": "river",
+      "parent": "OSM rel 4137665"
+    },
+    {
+      "id": "osm-way-1302505468",
+      "name": "Duck Island",
+      "new_type": "lake",
+      "parent": "Lough Beg"
+    },
+    {
+      "id": "osm-way-504223051",
+      "name": "Dewhamill Island",
+      "new_type": "lake",
+      "parent": "Lough Beg"
+    },
+    {
+      "id": "osm-way-1302359226",
+      "name": "Midge Island",
+      "new_type": "lake",
+      "parent": "Lough Beg"
+    },
+    {
+      "id": "osm-way-202139558",
+      "name": "Charlie's Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-1125283206",
+      "name": "Dead Man's Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-44964373",
+      "name": "Devenish Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-27386842",
+      "name": "Wren's Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-4886382",
+      "name": "Inchinaskeagh",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65976761",
+      "name": "Costello's Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65712541",
+      "name": "Lehinch",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-209528192",
+      "name": "Seymours Islands",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65718346",
+      "name": "Esker Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65712547",
+      "name": "Grants Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65712514",
+      "name": "Birds Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-65718268",
+      "name": "Inishee",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-26224139",
+      "name": "Hayes Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-26224456",
+      "name": "Long Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-26224454",
+      "name": "Portland Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-337670060",
+      "name": "Killeen's Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-26224455",
+      "name": "Sallow Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "osm-way-1303347115",
+      "name": "Ash Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347114",
+      "name": "Island McCoo",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347109",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347108",
+      "name": "Middle Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347107",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347106",
+      "name": "Barrack Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347105",
+      "name": "Blake's Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-1303347110",
+      "name": "Switch Island",
+      "new_type": "lake",
+      "parent": "Lough Rea"
+    },
+    {
+      "id": "osm-way-294862095",
+      "name": "Otter Island (North)",
+      "new_type": "lake",
+      "parent": "Lough Muckno",
+      "merged_from_inner": 294861681
+    },
+    {
+      "id": "osm-way-294861769",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "osm-way-294862095",
+      "name": "Otter Island (North)",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "osm-way-294861616",
+      "name": "Garmany's Island",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "osm-way-294861615",
+      "name": "Harper's Island",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "osm-way-294859024",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "osm-way-294858935",
+      "name": "Whites Island",
+      "new_type": "lake",
+      "parent": "Lough Muckno"
+    },
+    {
+      "id": "loughbrickland-crannóg-w152242485",
+      "name": "Loughbrickland Crannóg",
+      "new_type": "lake",
+      "parent": "Lough Brickland"
+    },
+    {
+      "id": "apple-island-w344100095",
+      "name": "Apple Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "keaghery-island-w344100103",
+      "name": "Keaghery Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "osm-way-344100110",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "parsons-island-w344100096",
+      "name": "Parsons Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "beagh-island-w344100100",
+      "name": "Beagh Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "ricks-island-w344100099",
+      "name": "Rick's Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "osm-way-351261644",
+      "name": "Holly Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "osm-way-1075196460",
+      "name": "Swan Island",
+      "new_type": "lake",
+      "parent": "Lough Cutra"
+    },
+    {
+      "id": "osm-way-182626259",
+      "name": "Inch Island",
+      "new_type": "lake",
+      "parent": "Lough Oughter"
+    },
+    {
+      "id": "osm-way-767535808",
+      "name": "Stony Island",
+      "new_type": "lake",
+      "parent": "Lough Oughter"
+    },
+    {
+      "id": "osm-way-1102225963",
+      "name": "Buck Island",
+      "new_type": "lake",
+      "parent": "Lough Oughter"
+    },
+    {
+      "id": "dùn-mhic-raouill-w353920733",
+      "name": "Dùn Mhic Raouill",
+      "new_type": "lake",
+      "parent": "Loch Eubhal"
+    },
+    {
+      "id": "osm-way-354590305",
+      "name": "Island McHugh",
+      "new_type": "lake",
+      "parent": "Lough Catherine"
+    },
+    {
+      "id": "osm-way-155001549",
+      "name": "Browning's Island",
+      "new_type": "river",
+      "parent": "Browning's Pool"
+    },
+    {
+      "id": "osm-way-355369673",
+      "name": "Duck Island",
+      "new_type": "lake",
+      "parent": "OSM rel 5307301"
+    },
+    {
+      "id": "ring-tail-lemur-w360169325",
+      "name": "Ring Tail Lemur",
+      "new_type": "lake",
+      "parent": "OSM rel 5362433"
+    },
+    {
+      "id": "lion-tailed-macaque-w360169314",
+      "name": "Lion-Tailed Macaque",
+      "new_type": "lake",
+      "parent": "OSM rel 5362433"
+    },
+    {
+      "id": "black-white-ruffed-lemur-w360169326",
+      "name": "Black & White Ruffed Lemur",
+      "new_type": "lake",
+      "parent": "OSM rel 5362433"
+    },
+    {
+      "id": "osm-way-361033301",
+      "name": "Eilean Glas",
+      "new_type": "lake",
+      "parent": "Loch nan Geireann"
+    },
+    {
+      "id": "osm-way-1387626100",
+      "name": "Eilean an Tighe",
+      "new_type": "lake",
+      "parent": "Loch nan Geireann"
+    },
+    {
+      "id": "osm-way-361058047",
+      "name": "Eilean Rainich",
+      "new_type": "lake",
+      "parent": "Loch Sgealtair"
+    },
+    {
+      "id": "osm-way-361058040",
+      "name": "Eilean Buidhe",
+      "new_type": "lake",
+      "parent": "Loch Sgealtair"
+    },
+    {
+      "id": "osm-way-361029139",
+      "name": "Eilean Dubh Mòr",
+      "new_type": "lake",
+      "parent": "Loch Scadavay"
+    },
+    {
+      "id": "osm-way-361022299",
+      "name": "Eilean Buidhe",
+      "new_type": "lake",
+      "parent": "Loch nan Eun"
+    },
+    {
+      "id": "osm-way-1100905198",
+      "name": "The Welsh Crannog Centre",
+      "new_type": "lake",
+      "parent": "Llangorse Lake"
+    },
+    {
+      "id": "llangorse-crannog-w1100905197",
+      "name": "Llangorse Crannog",
+      "new_type": "lake",
+      "parent": "Llangorse Lake"
+    },
+    {
+      "id": "osm-way-362438299",
+      "name": "Eilean Fada",
+      "new_type": "lake",
+      "parent": "Loch Obasaraigh"
+    },
+    {
+      "id": "osm-way-362438307",
+      "name": "Eilean Leathann",
+      "new_type": "lake",
+      "parent": "Loch Obasaraigh"
+    },
+    {
+      "id": "osm-way-362438303",
+      "name": "Eilean Mòr",
+      "new_type": "lake",
+      "parent": "Loch Obasaraigh"
+    },
+    {
+      "id": "osm-way-362775633",
+      "name": "Eilean Dubh Dùn Scor",
+      "new_type": "lake",
+      "parent": "Loch Carabhat"
+    },
+    {
+      "id": "osm-way-362775629",
+      "name": "Eilean Glas",
+      "new_type": "lake",
+      "parent": "Loch Carabhat"
+    },
+    {
+      "id": "osm-way-362775628",
+      "name": "Eilean Dubh",
+      "new_type": "lake",
+      "parent": "Loch Carabhat"
+    },
+    {
+      "id": "osm-way-367724521",
+      "name": "Inishmuck",
+      "new_type": "lake",
+      "parent": "Inishmuck Lough"
+    },
+    {
+      "id": "osm-way-367119416",
+      "name": "Crannog",
+      "new_type": "lake",
+      "parent": "OSM rel 5459139"
+    },
+    {
+      "id": "osm-way-367459345",
+      "name": "Turf Island",
+      "new_type": "lake",
+      "parent": "Kiltybardan Lough"
+    },
+    {
+      "id": "osm-way-368750217",
+      "name": "Buck Island",
+      "new_type": "lake",
+      "parent": "Kiltybardan Lough"
+    },
+    {
+      "id": "osm-way-614520862",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Kiltybardan Lough"
+    },
+    {
+      "id": "osm-way-368767084",
+      "name": "Cherry Island",
+      "new_type": "lake",
+      "parent": "Drumgay Lough"
+    },
+    {
+      "id": "osm-way-369582472",
+      "name": "Illankilly",
+      "new_type": "lake",
+      "parent": "Lough Naminn"
+    },
+    {
+      "id": "osm-way-482890662",
+      "name": "Craw Island",
+      "new_type": "lake",
+      "parent": "Lough Veagh"
+    },
+    {
+      "id": "osm-way-482890662",
+      "name": "Craw Island",
+      "new_type": "lake",
+      "parent": "Lough Veagh",
+      "merged_from_inner": 482890662
+    },
+    {
+      "id": "osm-way-482890658",
+      "name": "Illanbeg",
+      "new_type": "lake",
+      "parent": "Lough Veagh"
+    },
+    {
+      "id": "osm-way-482890654",
+      "name": "Illannaweelane",
+      "new_type": "lake",
+      "parent": "Lough Veagh",
+      "merged_from_inner": 482890654
+    },
+    {
+      "id": "osm-way-482890654",
+      "name": "Illannaweelane",
+      "new_type": "lake",
+      "parent": "Lough Veagh"
+    },
+    {
+      "id": "osm-way-482890664",
+      "name": "Red Island",
+      "new_type": "lake",
+      "parent": "Lough Veagh"
+    },
+    {
+      "id": "osm-way-370323641",
+      "name": "Bracken Island",
+      "new_type": "lake",
+      "parent": "Lough Veagh"
+    },
+    {
+      "id": "osm-way-370869290",
+      "name": "Papercourt Lock",
+      "new_type": "river",
+      "parent": "OSM rel 5509551"
+    },
+    {
+      "id": "osm-way-375201095",
+      "name": "Gallagher's Isle",
+      "new_type": "lake",
+      "parent": "Gartan Lough"
+    },
+    {
+      "id": "osm-way-260223894",
+      "name": "Illan Uille",
+      "new_type": "lake",
+      "parent": "Lough Illion"
+    },
+    {
+      "id": "osm-way-260223895",
+      "name": "Lough Illion Island",
+      "new_type": "lake",
+      "parent": "Lough Illion"
+    },
+    {
+      "id": "osm-way-482890647",
+      "name": "Illananure",
+      "new_type": "lake",
+      "parent": "Lough Anure"
+    },
+    {
+      "id": "osm-way-482890646",
+      "name": "Island Glass",
+      "new_type": "lake",
+      "parent": "Lough Anure"
+    },
+    {
+      "id": "osm-way-77499736",
+      "name": "Island Trairagh",
+      "new_type": "lake",
+      "parent": "Lough Anure"
+    },
+    {
+      "id": "osm-way-179748886",
+      "name": "Illan More",
+      "new_type": "lake",
+      "parent": "Lough Anure"
+    },
+    {
+      "id": "osm-way-4561698",
+      "name": "Inishower",
+      "new_type": "lake",
+      "parent": "Furnace Lough"
+    },
+    {
+      "id": "osm-way-4561665",
+      "name": "Illanroe",
+      "new_type": "lake",
+      "parent": "Furnace Lough"
+    },
+    {
+      "id": "osm-way-4561693",
+      "name": "Saints Island",
+      "new_type": "lake",
+      "parent": "Furnace Lough"
+    },
+    {
+      "id": "osm-way-381835562",
+      "name": "Illanshivans",
+      "new_type": "lake",
+      "parent": "Lough Egish"
+    },
+    {
+      "id": "osm-way-381835570",
+      "name": "Rock Island",
+      "new_type": "lake",
+      "parent": "Lough Egish"
+    },
+    {
+      "id": "osm-way-507561407",
+      "name": "Gully Island",
+      "new_type": "lake",
+      "parent": "Lough Egish"
+    },
+    {
+      "id": "osm-way-381835565",
+      "name": "Lough Egish Island",
+      "new_type": "lake",
+      "parent": "Lough Egish"
+    },
+    {
+      "id": "osm-way-382278799",
+      "name": "Small Island",
+      "new_type": "lake",
+      "parent": "Barnagrow Lough"
+    },
+    {
+      "id": "osm-way-382850896",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Milltown Lough"
+    },
+    {
+      "id": "osm-way-383281608",
+      "name": "Kilmacaran Island",
+      "new_type": "lake",
+      "parent": "Lough Sillan"
+    },
+    {
+      "id": "osm-way-383281606",
+      "name": "Bush Island",
+      "new_type": "lake",
+      "parent": "Lough Sillan"
+    },
+    {
+      "id": "osm-way-383281607",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Lough Sillan"
+    },
+    {
+      "id": "osm-way-169018853",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Lough Hyne"
+    },
+    {
+      "id": "combestone-island-w734246205",
+      "name": "Combestone Island",
+      "new_type": "river",
+      "parent": "OSM rel 5905636"
+    },
+    {
+      "id": "rabbit-island-w134156897",
+      "name": "Rabbit Island",
+      "new_type": "river",
+      "parent": "OSM rel 6111237"
+    },
+    {
+      "id": "osm-way-61606221",
+      "name": "Fir Island",
+      "new_type": "lake",
+      "parent": "Coniston Water"
+    },
+    {
+      "id": "osm-way-61603377",
+      "name": "Peel Island",
+      "new_type": "lake",
+      "parent": "Coniston Water"
+    },
+    {
+      "id": "osm-way-417405706",
+      "name": "Harelaw Island",
+      "new_type": "lake",
+      "parent": "Otterston Loch"
+    },
+    {
+      "id": "osm-way-185142167",
+      "name": "Church Island",
+      "new_type": "lake",
+      "parent": "Lough Currane"
+    },
+    {
+      "id": "osm-way-41360848",
+      "name": "Illaunaroan",
+      "new_type": "river",
+      "parent": "OSM rel 6231279"
+    },
+    {
+      "id": "powells-island-w262386950",
+      "name": "Powell's Island",
+      "new_type": "river",
+      "parent": "OSM rel 6231279"
+    },
+    {
+      "id": "osm-way-40992272",
+      "name": "Saint Thomas Island",
+      "new_type": "river",
+      "parent": "OSM rel 6231279"
+    },
+    {
+      "id": "osm-way-433272428",
+      "name": "Heron Island",
+      "new_type": "lake",
+      "parent": "Loch Chon"
+    },
+    {
+      "id": "osm-way-367411125",
+      "name": "Island of Clunie",
+      "new_type": "lake",
+      "parent": "Loch of Clunie"
+    },
+    {
+      "id": "osm-way-1388325088",
+      "name": "Crannog",
+      "new_type": "lake",
+      "parent": "Loch of Clunie"
+    },
+    {
+      "id": "osm-way-674007005",
+      "name": "Eilean a Ghiubhais",
+      "new_type": "lake",
+      "parent": "Loch Arkaig"
+    },
+    {
+      "id": "osm-way-4559402",
+      "name": "Illanmurrish",
+      "new_type": "river",
+      "parent": "Béal Abhainn An Chláidigh"
+    },
+    {
+      "id": "osm-way-470274209",
+      "name": "Illannagark",
+      "new_type": "river",
+      "parent": "Béal Abhainn An Chláidigh"
+    },
+    {
+      "id": "osm-way-474615950",
+      "name": "Holme Island",
+      "new_type": "lake",
+      "parent": "Crummock Water"
+    },
+    {
+      "id": "osm-way-474615950",
+      "name": "Holme Island",
+      "new_type": "lake",
+      "parent": "Crummock Water",
+      "merged_from_inner": 474615950
+    },
+    {
+      "id": "scale-island-w474615951",
+      "name": "Scale Island",
+      "new_type": "lake",
+      "parent": "Crummock Water"
+    },
+    {
+      "id": "osm-way-492374146",
+      "name": "Woodhouse Islands",
+      "new_type": "lake",
+      "parent": "Crummock Water",
+      "merged_from_inner": 492374146
+    },
+    {
+      "id": "osm-way-492374146",
+      "name": "Woodhouse Islands",
+      "new_type": "lake",
+      "parent": "Crummock Water",
+      "merged_from_inner": 495422246
+    },
+    {
+      "id": "osm-way-492374146",
+      "name": "Woodhouse Islands",
+      "new_type": "lake",
+      "parent": "Crummock Water"
+    },
+    {
+      "id": "osm-way-995659024",
+      "name": "St Maolrubha's Island",
+      "new_type": "lake",
+      "parent": "Little Loch Shin"
+    },
+    {
+      "id": "osm-way-533340012",
+      "name": "Small Island",
+      "new_type": "lake",
+      "parent": "Broadlands Lake"
+    },
+    {
+      "id": "osm-way-533340006",
+      "name": "Large Island",
+      "new_type": "lake",
+      "parent": "Broadlands Lake"
+    },
+    {
+      "id": "castle-island-w223640455",
+      "name": "Castle Island",
+      "new_type": "lake",
+      "parent": "Loch Kinord"
+    },
+    {
+      "id": "osm-way-1388326833",
+      "name": "Prison Island",
+      "new_type": "lake",
+      "parent": "Loch Kinord"
+    },
+    {
+      "id": "baron-w277313678",
+      "name": "Baron",
+      "new_type": "lake",
+      "parent": "OSM rel 7976449"
+    },
+    {
+      "id": "duke-w277313677",
+      "name": "Duke",
+      "new_type": "lake",
+      "parent": "OSM rel 7976450"
+    },
+    {
+      "id": "osm-way-562232753",
+      "name": "Eilean Mòr",
+      "new_type": "lake",
+      "parent": "Loch Gorm"
+    },
+    {
+      "id": "osm-way-27189205",
+      "name": "Eilean nan Uan",
+      "new_type": "lake",
+      "parent": "Loch Gorm"
+    },
+    {
+      "id": "osm-way-1241740885",
+      "name": "Glas Eilean",
+      "new_type": "lake",
+      "parent": "Loch Coiregerod"
+    },
+    {
+      "id": "osm-way-690452799",
+      "name": "Eilean Mhic Conuill",
+      "new_type": "lake",
+      "parent": "Loch Bhasapol"
+    },
+    {
+      "id": "osm-way-690452801",
+      "name": "Eilean Aird nam Brathan",
+      "new_type": "lake",
+      "parent": "Loch Bhasapol"
+    },
+    {
+      "id": "osm-way-699419678",
+      "name": "Duck Rock",
+      "new_type": "lake",
+      "parent": "Glenmore Lake"
+    },
+    {
+      "id": "osm-way-699419679",
+      "name": "Crane Island",
+      "new_type": "lake",
+      "parent": "Glenmore Lake"
+    },
+    {
+      "id": "osm-way-699419681",
+      "name": "Illaunatee",
+      "new_type": "lake",
+      "parent": "Glenmore Lake"
+    },
+    {
+      "id": "osm-way-708732017",
+      "name": "Eilean Na Moine",
+      "new_type": "lake",
+      "parent": "Loch Eilt"
+    },
+    {
+      "id": "osm-way-708575965",
+      "name": "Eilean na Mi-Chomhairle",
+      "new_type": "lake",
+      "parent": "Loch an Sticir"
+    },
+    {
+      "id": "osm-way-87652305",
+      "name": "Soldier's Island",
+      "new_type": "river",
+      "parent": "OSM rel 10180136"
+    },
+    {
+      "id": "osm-way-417356815",
+      "name": "Forest Islet",
+      "new_type": "lake",
+      "parent": "OSM rel 10559599"
+    },
+    {
+      "id": "osm-way-1510737879",
+      "name": "Cleevduff",
+      "new_type": "river",
+      "parent": "OSM rel 10709834"
+    },
+    {
+      "id": "osm-way-691626357",
+      "name": "Carrick Lough Crannóg",
+      "new_type": "lake",
+      "parent": "Carrick Lough"
+    },
+    {
+      "id": "osm-way-779124197",
+      "name": "Chimpanzee Island",
+      "new_type": "lake",
+      "parent": "OSM rel 10795933"
+    },
+    {
+      "id": "osm-way-614768460",
+      "name": "Mangabey Island",
+      "new_type": "lake",
+      "parent": "OSM rel 10795933"
+    },
+    {
+      "id": "craigroy-island-w795320944",
+      "name": "Craigroy Island",
+      "new_type": "river",
+      "parent": "OSM rel 11031368"
+    },
+    {
+      "id": "osm-way-801736129",
+      "name": "Eilean Fraoich",
+      "new_type": "lake",
+      "parent": "Loch Eilean Iain"
+    },
+    {
+      "id": "osm-way-801736130",
+      "name": "Eilean Iain",
+      "new_type": "lake",
+      "parent": "Loch Eilean Iain"
+    },
+    {
+      "id": "osm-way-803093631",
+      "name": "Eilean Ghillechriosda",
+      "new_type": "lake",
+      "parent": "Loch Langabhat"
+    },
+    {
+      "id": "osm-way-836414503",
+      "name": "Illaunmore",
+      "new_type": "lake",
+      "parent": "Muckanagh Lough"
+    },
+    {
+      "id": "floating-pocket-park-w731835169",
+      "name": "Floating Pocket Park",
+      "new_type": "river",
+      "parent": "Paddington Basin"
+    },
+    {
+      "id": "osm-way-1387598959",
+      "name": "Eileann Domhnuill a' Spionnaidh",
+      "new_type": "lake",
+      "parent": "Loch Olabhat"
+    },
+    {
+      "id": "long-island-w993115636",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Timsbury Lake"
+    },
+    {
+      "id": "burrow-island-w993115637",
+      "name": "Burrow Island",
+      "new_type": "lake",
+      "parent": "Timsbury Lake"
+    },
+    {
+      "id": "little-island-w993115638",
+      "name": "Little Island",
+      "new_type": "lake",
+      "parent": "Timsbury Lake"
+    },
+    {
+      "id": "otter-island-w993115649",
+      "name": "Otter Island",
+      "new_type": "lake",
+      "parent": "Timsbury Lake"
+    },
+    {
+      "id": "osm-way-899645181",
+      "name": "Eilean Àird Fhianuis",
+      "new_type": "lake",
+      "parent": "Barvas Loch"
+    },
+    {
+      "id": "osm-way-925500637",
+      "name": "Sedge Island",
+      "new_type": "river",
+      "parent": "OSM rel 12742193"
+    },
+    {
+      "id": "osm-way-39834813",
+      "name": "Peasholm Island",
+      "new_type": "lake",
+      "parent": "Peasholm Lake"
+    },
+    {
+      "id": "cottage-island-w129788984",
+      "name": "Cottage Island",
+      "new_type": "river",
+      "parent": "OSM rel 13195520"
+    },
+    {
+      "id": "llyn-y-fan-fach-w23147971",
+      "name": "Llyn y Fan Fach",
+      "new_type": "lake",
+      "parent": "OSM rel 13240062"
+    },
+    {
+      "id": "osm-way-988041921",
+      "name": "Eilean nan Cnamh",
+      "new_type": "lake",
+      "parent": "Loch Trealaval"
+    },
+    {
+      "id": "osm-way-988041979",
+      "name": "Eilean Glas Loch Trealabhal",
+      "new_type": "lake",
+      "parent": "Loch Trealaval"
+    },
+    {
+      "id": "osm-way-988041978",
+      "name": "Eilean nan Uan",
+      "new_type": "lake",
+      "parent": "Loch Trealaval"
+    },
+    {
+      "id": "osm-way-988041975",
+      "name": "Eilean Dubh Mhic Leòid",
+      "new_type": "lake",
+      "parent": "Loch Trealaval"
+    },
+    {
+      "id": "osm-way-988041972",
+      "name": "Eilean Mòr Dubh Loch Trealabhal",
+      "new_type": "lake",
+      "parent": "Loch Trealaval"
+    },
+    {
+      "id": "osm-way-333094312",
+      "name": "Wright's Island",
+      "new_type": "lake",
+      "parent": "Lough Henney"
+    },
+    {
+      "id": "old-lochnaw-castle-w1065572699",
+      "name": "Old Lochnaw Castle",
+      "new_type": "lake",
+      "parent": "Lochnaw Loch"
+    },
+    {
+      "id": "osm-way-1265336496",
+      "name": "Saint Stair's Island",
+      "new_type": "lake",
+      "parent": "Lochnaw Loch"
+    },
+    {
+      "id": "osm-way-1265336495",
+      "name": "Duck Island",
+      "new_type": "lake",
+      "parent": "Lochnaw Loch"
+    },
+    {
+      "id": "osm-way-1265336494",
+      "name": "Bramble Island",
+      "new_type": "lake",
+      "parent": "Lochnaw Loch"
+    },
+    {
+      "id": "holmes-islands-w42497615",
+      "name": "Holme's Islands",
+      "new_type": "river",
+      "parent": "River Dove",
+      "merged_from_inner": 42497615
+    },
+    {
+      "id": "holmes-islands-w42497615",
+      "name": "Holme's Islands",
+      "new_type": "river",
+      "parent": "River Dove"
+    },
+    {
+      "id": "osm-way-55754979",
+      "name": "Lock Wood Island",
+      "new_type": "river",
+      "parent": "OSM rel 14531242"
+    },
+    {
+      "id": "osm-way-327263373",
+      "name": "Crannog",
+      "new_type": "lake",
+      "parent": "Clea Lakes"
+    },
+    {
+      "id": "osm-way-1098895570",
+      "name": "Crannog",
+      "new_type": "lake",
+      "parent": "OSM rel 14638009"
+    },
+    {
+      "id": "osm-way-1111040302",
+      "name": "Eilean Mòr Loch a' Bhroma",
+      "new_type": "lake",
+      "parent": "Loch a' Bhroma"
+    },
+    {
+      "id": "crannog-w1117339306",
+      "name": "Crannog",
+      "new_type": "lake",
+      "parent": "Loch Vaa"
+    },
+    {
+      "id": "osm-way-1123939018",
+      "name": "Inchnaveague Island",
+      "new_type": "lake",
+      "parent": "Lough Croan"
+    },
+    {
+      "id": "dicks-island-w1147001625",
+      "name": "Dick's Island",
+      "new_type": "river",
+      "parent": "OSM rel 15504257"
+    },
+    {
+      "id": "osm-way-1175464607",
+      "name": "Puckada Island",
+      "new_type": "lake",
+      "parent": "Lough Bunny"
+    },
+    {
+      "id": "osm-way-1175464822",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Lough Bunny"
+    },
+    {
+      "id": "osm-way-1006518435",
+      "name": "Île des Maki Cattas",
+      "new_type": "lake",
+      "parent": "OSM rel 15904180"
+    },
+    {
+      "id": "osm-way-1006518433",
+      "name": "Île des Gibbons",
+      "new_type": "lake",
+      "parent": "OSM rel 15904180"
+    },
+    {
+      "id": "osm-way-357832729",
+      "name": "Crow Island",
+      "new_type": "lake",
+      "parent": "Mullagh Lough"
+    },
+    {
+      "id": "osm-way-357832726",
+      "name": "Sally Island",
+      "new_type": "lake",
+      "parent": "Mullagh Lough"
+    },
+    {
+      "id": "dunnes-island-w100552251",
+      "name": "Dunne's Island",
+      "new_type": "river",
+      "parent": "OSM rel 16519048"
+    },
+    {
+      "id": "osm-way-894049263",
+      "name": "Inishmore",
+      "new_type": "river",
+      "parent": "OSM rel 16519048"
+    },
+    {
+      "id": "furze-brake-w1229540822",
+      "name": "Furze Brake",
+      "new_type": "lake",
+      "parent": "Lake 29"
+    },
+    {
+      "id": "osm-way-1230974922",
+      "name": "Eilean an Stalcair",
+      "new_type": "lake",
+      "parent": "Loch Tulla"
+    },
+    {
+      "id": "osm-way-1230974920",
+      "name": "Eilean na h-Ainnis",
+      "new_type": "lake",
+      "parent": "Loch Tulla"
+    },
+    {
+      "id": "osm-way-1232746962",
+      "name": "Eilean Cùbhraidh",
+      "new_type": "lake",
+      "parent": "Loch an Eilein Chùbhraidh"
+    },
+    {
+      "id": "osm-way-535160381",
+      "name": "Eilean Mòr",
+      "new_type": "lake",
+      "parent": "Loch Meadie"
+    },
+    {
+      "id": "osm-way-773577555",
+      "name": "Double Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577554",
+      "name": "North Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577553",
+      "name": "Tern Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577544",
+      "name": "Long Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577546",
+      "name": "Gull Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577545",
+      "name": "Round Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-270483591",
+      "name": "Boomerang Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577547",
+      "name": "Large Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-773577548",
+      "name": "South Island",
+      "new_type": "lake",
+      "parent": "Astley Lake"
+    },
+    {
+      "id": "osm-way-1274515851",
+      "name": "Friday Island",
+      "new_type": "lake",
+      "parent": "Somerford Lakes Reserve"
+    },
+    {
+      "id": "osm-way-849599580",
+      "name": "Floating Island",
+      "new_type": "lake",
+      "parent": "Engine House Pool"
+    },
+    {
+      "id": "osm-way-849599580",
+      "name": "Floating Island",
+      "new_type": "lake",
+      "parent": "Engine House Pool",
+      "merged_from_inner": 849599581
+    },
+    {
+      "id": "black-country-millennium-forest-w93793495",
+      "name": "Black Country Millennium Forest",
+      "new_type": "lake",
+      "parent": "Swan Pool"
+    },
+    {
+      "id": "osm-way-166042078",
+      "name": "Red Island",
+      "new_type": "river",
+      "parent": "OSM rel 18049814"
+    },
+    {
+      "id": "osm-way-909036187",
+      "name": "Duck Decoy",
+      "new_type": "lake",
+      "parent": "Duck Decoy"
+    },
+    {
+      "id": "osm-way-244281425",
+      "name": "Green Island",
+      "new_type": "lake",
+      "parent": "Rushenduff Lough"
+    },
+    {
+      "id": "osm-way-244281428",
+      "name": "Bushy Island",
+      "new_type": "lake",
+      "parent": "Rushenduff Lough"
+    },
+    {
+      "id": "osm-way-98655636",
+      "name": "Eilean Mòr",
+      "new_type": "lake",
+      "parent": "Loch Syre"
+    },
+    {
+      "id": "cabbage-island-w1317014325",
+      "name": "Cabbage Island",
+      "new_type": "river",
+      "parent": "OSM rel 18071754"
+    },
+    {
+      "id": "osm-way-914489426",
+      "name": "Mill Eyot",
+      "new_type": "river",
+      "parent": "OSM rel 18100494"
+    },
+    {
+      "id": "osm-way-1319182365",
+      "name": "Sashes Island",
+      "new_type": "river",
+      "parent": "OSM rel 18100494"
+    },
+    {
+      "id": "osm-way-1319182370",
+      "name": "Formosa Island",
+      "new_type": "river",
+      "parent": "OSM rel 18100494"
+    },
+    {
+      "id": "the-island-w1322357223",
+      "name": "The Island",
+      "new_type": "lake",
+      "parent": "Paultons Lake"
+    },
+    {
+      "id": "wellsfoot-island-w734281974",
+      "name": "Wellsfoot Island",
+      "new_type": "river",
+      "parent": "OSM rel 18321764"
+    },
+    {
+      "id": "osm-way-903949865",
+      "name": "Gibraltar",
+      "new_type": "lake",
+      "parent": "Larch Hill Lake"
+    },
+    {
+      "id": "osm-way-903949864",
+      "name": "Lake Temple",
+      "new_type": "lake",
+      "parent": "Larch Hill Lake"
+    },
+    {
+      "id": "osm-way-1342448032",
+      "name": "Train pond island",
+      "new_type": "lake",
+      "parent": "Tree Tops Pond"
+    },
+    {
+      "id": "osm-way-1382848679",
+      "name": "Kingfisher Island",
+      "new_type": "lake",
+      "parent": "OSM rel 19067526"
+    },
+    {
+      "id": "osm-way-1388476159",
+      "name": "Eilean a' Chocaire",
+      "new_type": "lake",
+      "parent": "Loch Eck"
+    },
+    {
+      "id": "osm-way-1411678839",
+      "name": "Abi Island",
+      "new_type": "lake",
+      "parent": "Loch Cùlag"
+    },
+    {
+      "id": "osm-way-1411778464",
+      "name": "Joey Island",
+      "new_type": "lake",
+      "parent": "Loch Cùlag"
+    },
+    {
+      "id": "osm-way-1412733961",
+      "name": "Rebecca Island",
+      "new_type": "lake",
+      "parent": "Loch Cùlag"
+    },
+    {
+      "id": "osm-way-1414678333",
+      "name": "Batt Island",
+      "new_type": "river",
+      "parent": "OSM rel 19352257"
+    },
+    {
+      "id": "drakes-den-w1415283005",
+      "name": "Drakes Den",
+      "new_type": "lake",
+      "parent": "Decoy Pond"
+    },
+    {
+      "id": "herons-haven-w1415283006",
+      "name": "Herons Haven",
+      "new_type": "lake",
+      "parent": "Decoy Pond"
+    },
+    {
+      "id": "osm-way-1418102175",
+      "name": "Sally Island",
+      "new_type": "lake",
+      "parent": "Ballaghdacker Lough"
+    },
+    {
+      "id": "osm-way-1444847984",
+      "name": "Saki Monkey",
+      "new_type": "lake",
+      "parent": "OSM rel 19756443"
+    },
+    {
+      "id": "eilean-ceann-na-coille-w1446059613",
+      "name": "Eilean Ceann na Coille",
+      "new_type": "river",
+      "parent": "OSM rel 19770684"
+    },
+    {
+      "id": "osm-way-1446969166",
+      "name": "Eilean a' Bhreac-achaidh",
+      "new_type": "river",
+      "parent": "OSM rel 19786603"
+    },
+    {
+      "id": "lemur-island-w1226469295",
+      "name": "Lemur Island",
+      "new_type": "lake",
+      "parent": "Pelican Lake"
+    },
+    {
+      "id": "marmoset-island-w1226469306",
+      "name": "Marmoset Island",
+      "new_type": "lake",
+      "parent": "Pelican Lake"
+    },
+    {
+      "id": "osm-way-1454749301",
+      "name": "Eilean nan Eun",
+      "new_type": "lake",
+      "parent": "Loch Arienas"
+    },
+    {
+      "id": "osm-way-955007690",
+      "name": "Eilean Garbh",
+      "new_type": "river",
+      "parent": "OSM rel 19933076"
+    },
+    {
+      "id": "big-island-w29471565",
+      "name": "Big Island",
+      "new_type": "lake",
+      "parent": "OSM rel 20345791"
+    },
+    {
+      "id": "little-island-w31028733",
+      "name": "Little Island",
+      "new_type": "lake",
+      "parent": "OSM rel 20345791"
+    },
+    {
+      "id": "jeno-forest-w186660948",
+      "name": "Jeno Forest",
+      "new_type": "lake",
+      "parent": "Lowther Lake"
+    }
+  ],
+  "tierA_discovery": [],
+  "tierB": [
+    {
+      "id": "wd-Q26718468",
+      "name": "Annaghroe Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "wd-Q26717728",
+      "name": "Boghilmore Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    },
+    {
+      "id": "wd-Q104256068",
+      "name": "Borniagh Island",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "wd-Q56663122",
+      "name": "Carn Dubh,crannog E of Inverinan",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q137756430",
+      "name": "Castle Island",
+      "new_type": "river",
+      "parent": "OSM rel 2081391"
+    },
+    {
+      "id": "wd-Q115309314",
+      "name": "Coolure Demesne crannóg",
+      "new_type": "lake",
+      "parent": "Lough Derravaragh"
+    },
+    {
+      "id": "wd-Q126920100",
+      "name": "Cormorant Island",
+      "new_type": "lake",
+      "parent": "Fleet Pond"
+    },
+    {
+      "id": "wd-Q56663130",
+      "name": "crannog 1100m SW of Innis Errich",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663106",
+      "name": "crannog 300m ESE of Inistrynich",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663890",
+      "name": "crannog 510m NNE of Fincharn",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663107",
+      "name": "crannog 600m SE of Lochawe",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663901",
+      "name": "crannog 600m W of Ederline",
+      "new_type": "lake",
+      "parent": "Loch Ederline"
+    },
+    {
+      "id": "wd-Q56663104",
+      "name": "crannog 800m W of Achlian",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663119",
+      "name": "crannogs 750m NE & 200m N of Rockhill Farm",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q1140655",
+      "name": "Cro Inis",
+      "new_type": "lake",
+      "parent": "Lough Ennell"
+    },
+    {
+      "id": "wd-Q56661793",
+      "name": "Cults Loch, crannog 770m ESE of Castle Kennedy House",
+      "new_type": "lake",
+      "parent": "Cults Loch"
+    },
+    {
+      "id": "wd-Q104361814",
+      "name": "Deerahan Island",
+      "new_type": "lake",
+      "parent": "Lower Lough Erne"
+    },
+    {
+      "id": "wd-Q26718861",
+      "name": "Illanee",
+      "new_type": "lake",
+      "parent": "Lough Cullin"
+    },
+    {
+      "id": "wd-Q104256065",
+      "name": "Illaunnacalliagh",
+      "new_type": "river",
+      "parent": "OSM rel 4214062"
+    },
+    {
+      "id": "wd-Q26718769",
+      "name": "Inishparran",
+      "new_type": "lake",
+      "parent": "Lough Derg"
+    },
+    {
+      "id": "wd-Q115473746",
+      "name": "island in Loch an Sgoltaire",
+      "new_type": "lake",
+      "parent": "Loch an Sgoltaire"
+    },
+    {
+      "id": "wd-Q126087958",
+      "name": "Island Roary",
+      "new_type": "river",
+      "parent": "OSM rel 10559622"
+    },
+    {
+      "id": "wd-Q56663903",
+      "name": "Kilneuair,crannogs 740m WNW and 260m N of St Columba's Church",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q124343669",
+      "name": "Lamb Island",
+      "new_type": "river",
+      "parent": "OSM rel 13998671"
+    },
+    {
+      "id": "wd-Q124378363",
+      "name": "Leap Isle",
+      "new_type": "river",
+      "parent": "OSM rel 20204260"
+    },
+    {
+      "id": "wd-Q56663116",
+      "name": "Loch Awe,Carn an Roin,crannog",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663135",
+      "name": "Loch Awe,Carn Mhic Chealair,crannog",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663120",
+      "name": "Loch Awe,Ceann Mara,crannog 150m SW of",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q56663117",
+      "name": "Loch Awe,Eilean Seileachan,crannog 500m W of",
+      "new_type": "lake",
+      "parent": "Loch Awe"
+    },
+    {
+      "id": "wd-Q66022746",
+      "name": "Loch Bhorgastail crannog",
+      "new_type": "lake",
+      "parent": "Loch Borasdale"
+    },
+    {
+      "id": "wd-Q1867235",
+      "name": "Loch Glashan Crannóg",
+      "new_type": "lake",
+      "parent": "Loch Glashan"
+    },
+    {
+      "id": "wd-Q56662007",
+      "name": "Loch Lomond, crannog 200m WSW of Mill of Ross",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "wd-Q56663154",
+      "name": "Loch Teàrnait crannog",
+      "new_type": "lake",
+      "parent": "Loch Teàrnait"
+    },
+    {
+      "id": "wd-Q43372925",
+      "name": "Lochindorb Castle",
+      "new_type": "lake",
+      "parent": "Lochindorb"
+    },
+    {
+      "id": "wd-Q124343664",
+      "name": "Lodge Island",
+      "new_type": "river",
+      "parent": "OSM rel 13998671"
+    },
+    {
+      "id": "wd-Q26718843",
+      "name": "Loosky Island",
+      "new_type": "lake",
+      "parent": "Lough Conn"
+    },
+    {
+      "id": "wd-Q104348833",
+      "name": "Loughlin Island",
+      "new_type": "river",
+      "parent": "Béal Abhainn An Chláidigh"
+    },
+    {
+      "id": "wd-Q15261795",
+      "name": "Ness Islands",
+      "new_type": "river",
+      "parent": "OSM rel 1020106"
+    },
+    {
+      "id": "wd-Q55443859",
+      "name": "Oatbank crannog",
+      "new_type": "lake",
+      "parent": "Loch Tay"
+    },
+    {
+      "id": "wd-Q116890290",
+      "name": "Pitnacree Island",
+      "new_type": "river",
+      "parent": "OSM rel 2080645"
+    },
+    {
+      "id": "wd-Q7369427",
+      "name": "Ross Isles",
+      "new_type": "lake",
+      "parent": "Loch Lomond"
+    },
+    {
+      "id": "wd-Q98446638",
+      "name": "Sonning Hill Island",
+      "new_type": "river",
+      "parent": "OSM rel 106675"
+    },
+    {
+      "id": "wd-Q126088258",
+      "name": "Stony Island",
+      "new_type": "river",
+      "parent": "OSM rel 10559622"
+    },
+    {
+      "id": "wd-Q116723281",
+      "name": "The Batta",
+      "new_type": "river",
+      "parent": "OSM rel 1609149"
+    },
+    {
+      "id": "wd-Q124343695",
+      "name": "Threave Island",
+      "new_type": "river",
+      "parent": "OSM rel 13998671"
+    },
+    {
+      "id": "wd-Q7994722",
+      "name": "White Goat Island",
+      "new_type": "lake",
+      "parent": "Lough Corrib"
+    }
+  ],
+  "skipped": []
+}

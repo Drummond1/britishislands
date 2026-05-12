@@ -1,0 +1,113 @@
+{
+  "started": "2026-05-11T18:19:54",
+  "targets": 3337,
+  "processed": 3337,
+  "added_per_source": {
+    "commons-category": 2475,
+    "commons-geosearch": 6478
+  },
+  "skipped": [
+    {
+      "id": "wd-Q1138911",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4555456",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4561943",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q632738",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q24652290",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-205497205",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q60026313",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-47704658",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-relation-15061321",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-252328463",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q6034042",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4558430",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4562075",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-relation-11619444",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4554688",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4560604",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-4007188",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-71932577",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-700743387",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q7439265",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-118949938",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q24638498",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-23610841",
+      "reason": "no candidates"
+    },
+    {
+      "id": "osm-way-47704657",
+      "reason": "no candidates"
+    },
+    {
+      "id": "wd-Q110082706",
+      "reason": "no candidates"
+    }
+  ],
+  "complete": true,
+  "finished": "2026-05-11T19:16:25"
+}

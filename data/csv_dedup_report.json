@@ -1,0 +1,57 @@
+{
+  "deduped": [
+    {
+      "removed_id": "sanda-island",
+      "merged_into": "osm-way-376949973",
+      "name": "Sanda Island",
+      "distance_km": 1.0,
+      "fields_filled": [
+        "archipelago",
+        "provenance.csv",
+        "shortDescription"
+      ]
+    }
+  ],
+  "kept": [
+    {
+      "id": "monach-islands-ceann-iar-ceann-ear-shivinish-stockay-shillay",
+      "name": "Monach Islands (Ceann Iar, Ceann Ear, Shivinish + Stockay, Shillay)",
+      "reason": "no name match"
+    },
+    {
+      "id": "shiant-islands-garbh-eilean-eilean-an-tighe-eilean-mhuire-galta-morbeag",
+      "name": "Shiant Islands (Garbh Eilean, Eilean an Tighe, Eilean Mhuire + Galta Mòr/Beag)",
+      "reason": "no name match"
+    },
+    {
+      "id": "flannan-isles-eilean-mor-6-others",
+      "name": "Flannan Isles (Eilean Mòr + 6 others)",
+      "reason": "no name match"
+    },
+    {
+      "id": "treshnish-isles-lunga-bac-mordutchmans-cap-fladda-cairn-na-burgh-morbeag",
+      "name": "Treshnish Isles (Lunga, Bac Mòr/Dutchman's Cap, Fladda, Cairn na Burgh Mòr/Beag)",
+      "reason": "no name match"
+    },
+    {
+      "id": "tanera-mor",
+      "name": "Tanera Mòr",
+      "reason": "no name match"
+    },
+    {
+      "id": "pentland-skerries-muckle-skerry-little-skerry-louther-skerry-clettack-skerry",
+      "name": "Pentland Skerries (Muckle Skerry, Little Skerry, Louther Skerry, Clettack Skerry)",
+      "reason": "no name match"
+    },
+    {
+      "id": "out-skerries-housay-bruray",
+      "name": "Out Skerries (Housay + Bruray)",
+      "reason": "no name match"
+    },
+    {
+      "id": "rockall",
+      "name": "Rockall",
+      "reason": "no name match"
+    }
+  ]
+}
