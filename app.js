@@ -250,7 +250,9 @@ function loadFerries() {
       state.ferryIslandIds = islandIds;
       state.ferryRoutesByIsland = byIsland;
       state.ferryGraph = adj;
-      try { renderListWindow(); } catch (_) { /* noop */ }
+      try {
+        if (shouldRenderListWindow()) scheduleRenderListWindow();
+      } catch (_) { /* noop */ }
       try { refreshTripPlannerDatalist(); } catch (_) { /* noop */ }
       return state.ferries;
     })
@@ -728,21 +730,10 @@ async function loadIslands() {
   fillTripPlannerIslands();
   applyFilters();
   applyRouteFromUrl();
-  loadFerries().catch(() => {});
 }
 
 function fillTripPlannerIslands() {
-  const list = document.getElementById("trip-islands");
-  if (!list || list.dataset.filled || !state.islands?.length) return;
-  const frag = document.createDocumentFragment();
-  for (const isl of state.islands) {
-    if (!isl?.name) continue;
-    const opt = document.createElement("option");
-    opt.value = isl.name;
-    frag.appendChild(opt);
-  }
-  list.appendChild(frag);
-  list.dataset.filled = "1";
+  // Trip suggestions are filled lazily from ferry-connected islands only.
 }
 
 function populateNationFilter() {
@@ -870,6 +861,23 @@ function applyFilters() {
 let listScroller = null;
 let listSpacer = null;
 let listInner = null;
+let listRenderRaf = 0;
+
+function shouldRenderListWindow() {
+  if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view !== "islands") {
+    return false;
+  }
+  return true;
+}
+
+function scheduleRenderListWindow() {
+  if (!shouldRenderListWindow()) return;
+  if (listRenderRaf) return;
+  listRenderRaf = window.requestAnimationFrame(() => {
+    listRenderRaf = 0;
+    renderListWindow();
+  });
+}
 
 function ensureListScaffolding() {
   if (listScroller) return;
@@ -886,8 +894,8 @@ function ensureListScaffolding() {
   listInner.style.right = "8px";
   els.list.appendChild(listSpacer);
   els.list.appendChild(listInner);
-  listScroller.addEventListener("scroll", renderListWindow);
-  window.addEventListener("resize", renderListWindow);
+  listScroller.addEventListener("scroll", scheduleRenderListWindow, { passive: true });
+  window.addEventListener("resize", scheduleRenderListWindow);
 }
 
 function renderList() {
@@ -896,11 +904,11 @@ function renderList() {
   listSpacer.style.height = `${state.filtered.length * ROW_HEIGHT}px`;
   // Reset scroll to top when filter changes
   listScroller.scrollTop = 0;
-  renderListWindow();
+  scheduleRenderListWindow();
 }
 
 function renderListWindow() {
-  if (!listInner) return;
+  if (!listInner || !shouldRenderListWindow()) return;
   // Sidebar scrolls as a whole; subtract the section header to get the
   // offset into the list.
   const headerHeight =
@@ -999,7 +1007,7 @@ function focusIsland(id, { fly } = { fly: true }) {
   state.activeId = id;
   syncIslandUrl(id);
   // Re-render list so the active card is highlighted (cheap because virtualised)
-  renderListWindow();
+  scheduleRenderListWindow();
 
   renderDetails(island);
   if (mobileNav.isActive()) mobileNav.setView("islands");
@@ -2246,20 +2254,51 @@ els.detailsContent.addEventListener("click", (e) => {
 });
 
 els.back.addEventListener("click", () => {
+  releaseIslandDetailView({ clearUrl: true });
+  if (mobileNav.isActive()) mobileNav.setView("islands");
+  scheduleRenderListWindow();
+});
+
+function releaseIslandDetailView({ clearUrl = false } = {}) {
   els.details.hidden = true;
   els.listSection.hidden = false;
+  state.activeId = null;
   if (state.activePolygon) {
     map.removeLayer(state.activePolygon);
     state.activePolygon = null;
   }
-  // Release the detail map; its DOM is about to be hidden anyway, and we'd
-  // rather not keep tile requests alive when the panel isn't visible.
   if (state.detailMap) {
     try { state.detailMap.remove(); } catch (_) { /* ignore */ }
     state.detailMap = null;
   }
-  syncIslandUrl(null);
-});
+  if (clearUrl) syncIslandUrl(null);
+}
+
+function resetAtlasHome() {
+  releaseIslandDetailView({ clearUrl: true });
+  document.getElementById("itinerary-banner")?.remove();
+  els.search.value = "";
+  els.typeFilter.value = "";
+  els.nationFilter.value = "";
+  applyFilters();
+  document.body.classList.remove("filters-open");
+  document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("trip");
+    url.searchParams.delete("ask");
+    url.searchParams.delete("island");
+    window.history.replaceState(null, "", url.toString());
+  } catch (_) {
+    /* non-fatal */
+  }
+  if (typeof chatClose === "function") {
+    chatClose();
+  }
+  if (mobileNav.isActive()) {
+    mobileNav.setView("map", { skipChatSync: true });
+  }
+}
 
 // ---------- Polygon overlay (lazy) ----------
 async function loadAndShowPolygon(island) {
@@ -4301,21 +4340,23 @@ const mobileNav = (() => {
   const nav = document.getElementById("mobile-nav");
   const filtersToggle = document.getElementById("filters-toggle");
   let view = "map";
+  let mapSizeTimer = 0;
 
   function isActive() {
     return mq.matches;
   }
 
   function syncMapSize() {
-    if (typeof map !== "undefined" && map) {
-      window.setTimeout(() => {
-        try {
-          map.invalidateSize();
-        } catch (_) {
-          /* ignore */
-        }
-      }, 220);
-    }
+    if (typeof map === "undefined" || !map) return;
+    if (mapSizeTimer) window.clearTimeout(mapSizeTimer);
+    mapSizeTimer = window.setTimeout(() => {
+      mapSizeTimer = 0;
+      try {
+        map.invalidateSize();
+      } catch (_) {
+        /* ignore */
+      }
+    }, 180);
   }
 
   function setView(next, { skipChatSync = false } = {}) {
@@ -4334,11 +4375,18 @@ const mobileNav = (() => {
     } else if (!skipChatSync && chatEls.panel?.classList.contains("is-open")) {
       chatClose();
     }
-    if (next === "islands" && els.details.hidden) {
+    if (next === "map" && !els.details.hidden) {
+      releaseIslandDetailView();
+    }
+    if (next === "islands") {
       els.listSection.hidden = false;
+      scheduleRenderListWindow();
     }
     if (next === "trip") {
-      document.getElementById("trip-from")?.focus();
+      loadFerries()
+        .then(() => refreshTripPlannerDatalist())
+        .catch(() => {});
+      window.setTimeout(() => document.getElementById("trip-from")?.focus(), 60);
     }
     syncMapSize();
   }
@@ -4371,6 +4419,8 @@ const mobileNav = (() => {
   applyMode();
   return { isActive, setView, get view() { return view; } };
 })();
+
+document.getElementById("home-link")?.addEventListener("click", resetAtlasHome);
 
 loadIslands();
 initTripPlanner();
