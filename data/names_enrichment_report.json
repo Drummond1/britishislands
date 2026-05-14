@@ -1,15 +1,15 @@
 {
-  "targets": 2698,
+  "targets": 2775,
   "filled_per_lang": {
-    "gd": 10,
-    "cy": 13,
-    "ga": 47,
-    "gv": 5,
-    "kw": 6,
-    "sco": 15,
-    "fr": 135,
+    "gd": 0,
+    "cy": 0,
+    "ga": 0,
+    "gv": 0,
+    "kw": 0,
+    "sco": 0,
+    "fr": 0,
     "nrf": 0
   },
-  "islands_touched": 184,
-  "no_useful_labels": 1839
+  "islands_touched": 0,
+  "no_useful_labels": 1903
 }

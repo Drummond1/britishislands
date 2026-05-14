@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-05-14T20:58:07+00:00",
+  "totalIslands": 7298,
+  "candidates": 1575,
+  "adopted": 0,
+  "skippedNoTitle": 1521,
+  "skippedNoExtract": 1,
+  "skippedNameMismatch": 53,
+  "adoptionsByNation": {},
+  "samples": [],
+  "finishedAt": "2026-05-14T21:14:02+00:00"
+}
