@@ -51,9 +51,159 @@ const state = {
 // data/ferries.json + data/ferry_terminals.json + data/operators.json are
 // fetched on first island click. Once loaded we keep them in state.* so
 // every subsequent details render is synchronous.
+
+// Ferry terminals often carry OSM ids or null islandId while the atlas
+// uses curated slugs (e.g. mull vs osm-way-…). The trip planner needs a
+// single canonical id per island before we can build the route graph.
+const FERRY_PORT_TO_ISLAND = {
+  craignure: "mull",
+  fionnphort: "mull",
+  fishnish: "mull",
+  tobermory: "mull",
+  iona: "iona",
+  armadale: "isle-of-skye",
+  brodick: "arran",
+  tarbert: "islay",
+  portavadie: "bute",
+  rathlin: "rathlin",
+  lundy: "lundy",
+};
+
+function _ferryNorm(s) {
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\bthe\s+|\bisle of\s+|\bisland of\s+/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function buildFerryIslandRefIndex() {
+  const ref = new Map();
+  const register = (canonicalId, key) => {
+    if (!canonicalId || !key || ref.has(key)) return;
+    ref.set(key, canonicalId);
+  };
+  for (const isl of state.islands) {
+    const id = isl.id;
+    register(id, id);
+    if (isl.wikidata) {
+      register(id, isl.wikidata);
+      register(id, `wd-${isl.wikidata}`);
+    }
+    if (isl.osmType && isl.osmId) {
+      register(id, `osm-${isl.osmType}-${isl.osmId}`);
+    }
+  }
+  return ref;
+}
+
+function _nearestSeaIslandId(lat, lon, maxKm = 25) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  const R = 6371;
+  const toRad = (d) => (d * Math.PI) / 180;
+  let best = null;
+  let bestDist = maxKm;
+  for (const isl of state.islands) {
+    if (isl.type !== "sea" || !Number.isFinite(isl.lat) || !Number.isFinite(isl.lng)) continue;
+    const dLat = toRad(isl.lat - lat);
+    const dLng = toRad(isl.lng - lon);
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat)) * Math.cos(toRad(isl.lat)) * Math.sin(dLng / 2) ** 2;
+    const d = 2 * R * Math.asin(Math.sqrt(a));
+    if (d < bestDist) {
+      bestDist = d;
+      best = isl.id;
+    }
+  }
+  return best;
+}
+
+function _preferCuratedIslandId(id) {
+  if (!id || !state.byId.has(id)) return null;
+  if (!String(id).startsWith("osm-")) return id;
+  const isl = state.byId.get(id);
+  const target = _ferryNorm(isl?.name);
+  if (!target) return id;
+  let best = id;
+  let bestScore = 0;
+  for (const cand of state.islands) {
+    if (String(cand.id).startsWith("osm-")) continue;
+    const n = _ferryNorm(cand.name);
+    if (!n) continue;
+    let score = 0;
+    if (n === target) score = 100;
+    else if (n.includes(target) || target.includes(n)) score = 40;
+    else continue;
+    score += Math.min(5, Math.log10(1 + (cand.areaKm2 || 0)));
+    if (score > bestScore) {
+      bestScore = score;
+      best = cand.id;
+    }
+  }
+  return best;
+}
+
+function resolveFerryIslandId(rawId, terminal, route) {
+  const termKey = (terminal?.id || "").toLowerCase();
+  for (const [port, islandId] of Object.entries(FERRY_PORT_TO_ISLAND)) {
+    if (termKey.includes(port) && state.byId.has(islandId)) return islandId;
+  }
+  if (route?.id) {
+    const slug = route.id.toLowerCase();
+    for (const [port, islandId] of Object.entries(FERRY_PORT_TO_ISLAND)) {
+      if (slug.includes(port) && state.byId.has(islandId)) return islandId;
+    }
+  }
+  const ref = state.ferryIslandRef;
+  if (rawId) {
+    const hit = ref?.get(rawId) || (state.byId.has(rawId) ? rawId : null);
+    if (hit) return _preferCuratedIslandId(hit);
+  }
+  if (terminal?.name) {
+    const hit = _findIslandByName(terminal.name);
+    if (hit) return hit.id;
+  }
+  const lat = terminal?.lat;
+  const lon = terminal?.lon ?? terminal?.lng;
+  return _nearestSeaIslandId(lat, lon);
+}
+
+function _addFerryGraphEdge(adj, fromId, toId, route) {
+  if (!fromId || !toId || fromId === toId) return;
+  const dur = Number.isFinite(route.durationMinutes) ? route.durationMinutes : 120;
+  if (!adj.has(fromId)) adj.set(fromId, []);
+  if (!adj.has(toId)) adj.set(toId, []);
+  adj.get(fromId).push({ other: toId, durationMin: dur, routeId: route.id });
+  adj.get(toId).push({ other: fromId, durationMin: dur, routeId: route.id });
+}
+
+function refreshTripPlannerDatalist() {
+  const list = document.getElementById("trip-islands");
+  if (!list || !state.ferryGraph?.size) return;
+  list.replaceChildren();
+  const names = [];
+  for (const id of state.ferryGraph.keys()) {
+    const isl = state.byId.get(id);
+    if (isl?.name) names.push(isl.name);
+  }
+  names.sort((a, b) => a.localeCompare(b));
+  const frag = document.createDocumentFragment();
+  for (const name of names) {
+    const opt = document.createElement("option");
+    opt.value = name;
+    frag.appendChild(opt);
+  }
+  list.appendChild(frag);
+  list.dataset.filled = "1";
+}
+
 function loadFerries() {
   if (state.ferries) return Promise.resolve(state.ferries);
   if (state.ferriesPromise) return state.ferriesPromise;
+  state.ferryIslandRef = buildFerryIslandRefIndex();
   state.ferriesPromise = Promise.all([
     fetch("data/ferries.json").then((r) => (r.ok ? r.json() : { routes: [] })),
     fetch("data/ferry_terminals.json").then((r) => (r.ok ? r.json() : { terminals: [] })),
@@ -65,16 +215,22 @@ function loadFerries() {
       const operators = Array.isArray(opsDoc.operators) ? opsDoc.operators : [];
       const termById = new Map(terminals.map((t) => [t.id, t]));
       const opById = new Map(operators.map((o) => [o.id, o]));
-      // Build island-id -> [routes...] index by checking both endpoints'
-      // terminal.islandId (preferred) and falling back to terminal direct
-      // attachment.
       const byIsland = new Map();
       const islandIds = new Set();
+      const adj = new Map();
       for (const r of routes) {
         const fromTerm = termById.get(r.terminals?.from?.terminalId);
         const toTerm = termById.get(r.terminals?.to?.terminalId);
-        const fromIsl = r.terminals?.from?.islandId || fromTerm?.islandId || null;
-        const toIsl = r.terminals?.to?.islandId || toTerm?.islandId || null;
+        const fromIsl = resolveFerryIslandId(
+          r.terminals?.from?.islandId || fromTerm?.islandId,
+          fromTerm,
+          r,
+        );
+        const toIsl = resolveFerryIslandId(
+          r.terminals?.to?.islandId || toTerm?.islandId,
+          toTerm,
+          r,
+        );
         const enriched = Object.assign({}, r, {
           _fromTerminal: fromTerm,
           _toTerminal: toTerm,
@@ -82,36 +238,20 @@ function loadFerries() {
           _toIsland: toIsl,
           _operator: opById.get(r.operatorId) || null,
         });
-        if (fromIsl) {
-          if (!byIsland.has(fromIsl)) byIsland.set(fromIsl, []);
-          byIsland.get(fromIsl).push(enriched);
-          islandIds.add(fromIsl);
+        for (const islId of [fromIsl, toIsl]) {
+          if (!islId) continue;
+          if (!byIsland.has(islId)) byIsland.set(islId, []);
+          byIsland.get(islId).push(enriched);
+          islandIds.add(islId);
         }
-        if (toIsl && toIsl !== fromIsl) {
-          if (!byIsland.has(toIsl)) byIsland.set(toIsl, []);
-          byIsland.get(toIsl).push(enriched);
-          islandIds.add(toIsl);
-        }
+        _addFerryGraphEdge(adj, fromIsl, toIsl, r);
       }
       state.ferries = { routes, terminals, operators, termById, opById };
       state.ferryIslandIds = islandIds;
       state.ferryRoutesByIsland = byIsland;
-      // Build adjacency list for the itinerary planner (Phase 6f).
-      // Each edge is { other, durationMin, route }. Symmetric -- we add
-      // both directions because most ferries operate both ways.
-      const adj = new Map();
-      for (const r of routes) {
-        const fId = r.terminals?.from?.islandId || (termById.get(r.terminals?.from?.terminalId) || {}).islandId;
-        const tId = r.terminals?.to?.islandId || (termById.get(r.terminals?.to?.terminalId) || {}).islandId;
-        if (!fId || !tId || fId === tId) continue;
-        const dur = Number.isFinite(r.durationMinutes) ? r.durationMinutes : 120;
-        if (!adj.has(fId)) adj.set(fId, []);
-        if (!adj.has(tId)) adj.set(tId, []);
-        adj.get(fId).push({ other: tId, durationMin: dur, routeId: r.id });
-        adj.get(tId).push({ other: fId, durationMin: dur, routeId: r.id });
-      }
       state.ferryGraph = adj;
       try { renderListWindow(); } catch (_) { /* noop */ }
+      try { refreshTripPlannerDatalist(); } catch (_) { /* noop */ }
       return state.ferries;
     })
     .catch((err) => {
@@ -119,6 +259,7 @@ function loadFerries() {
       state.ferries = { routes: [], terminals: [], operators: [], termById: new Map(), opById: new Map() };
       state.ferryIslandIds = new Set();
       state.ferryRoutesByIsland = new Map();
+      state.ferryGraph = new Map();
       return state.ferries;
     });
   return state.ferriesPromise;
@@ -126,27 +267,30 @@ function loadFerries() {
 
 function findFerriesForIsland(islandId) {
   if (!state.ferryRoutesByIsland) return [];
-  return state.ferryRoutesByIsland.get(islandId) || [];
+  const key = resolveFerryIslandId(islandId, null, null) || islandId;
+  return state.ferryRoutesByIsland.get(key) || [];
 }
 
 // Dijkstra over the ferry graph. Returns { path: [islandId, ...],
 // edges: [routeId, ...], totalDurationMin } or null when unreachable.
 function findFerryItinerary(startId, endId) {
   const adj = state.ferryGraph;
-  if (!adj || !adj.has(startId) || !adj.has(endId)) return null;
-  if (startId === endId) return { path: [startId], edges: [], totalDurationMin: 0 };
+  const start = resolveFerryIslandId(startId, null, null) || startId;
+  const end = resolveFerryIslandId(endId, null, null) || endId;
+  if (!adj || !adj.has(start) || !adj.has(end)) return null;
+  if (start === end) return { path: [start], edges: [], totalDurationMin: 0 };
   const dist = new Map();
   const prev = new Map();
   const edgeUsed = new Map();
-  dist.set(startId, 0);
-  const queue = [[0, startId]]; // (priority, islandId) -- naive O(V^2) but graph is small
+  dist.set(start, 0);
+  const queue = [[0, start]];
   const visited = new Set();
   while (queue.length) {
     queue.sort((a, b) => a[0] - b[0]);
     const [d, u] = queue.shift();
     if (visited.has(u)) continue;
     visited.add(u);
-    if (u === endId) break;
+    if (u === end) break;
     for (const e of (adj.get(u) || [])) {
       if (visited.has(e.other)) continue;
       const alt = d + e.durationMin;
@@ -158,17 +302,16 @@ function findFerryItinerary(startId, endId) {
       }
     }
   }
-  if (!prev.has(endId) && startId !== endId) return null;
-  // Reconstruct path
-  const path = [endId];
+  if (!prev.has(end) && start !== end) return null;
+  const path = [end];
   const edges = [];
-  let cur = endId;
+  let cur = end;
   while (prev.has(cur)) {
     edges.unshift(edgeUsed.get(cur));
     cur = prev.get(cur);
     path.unshift(cur);
   }
-  return { path, edges, totalDurationMin: dist.get(endId) || 0 };
+  return { path, edges, totalDurationMin: dist.get(end) || 0 };
 }
 
 // Render a banner at the top of the details panel showing the chosen
@@ -585,6 +728,7 @@ async function loadIslands() {
   fillTripPlannerIslands();
   applyFilters();
   applyRouteFromUrl();
+  loadFerries().catch(() => {});
 }
 
 function fillTripPlannerIslands() {
