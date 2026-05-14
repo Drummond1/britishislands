@@ -1,9 +1,9 @@
 {
   "agent": "photo_finder",
-  "inputVerified": 539,
-  "withPhoto": 6,
-  "withoutPhoto": 533,
-  "skippedUnclearLicense": 533,
+  "inputVerified": 549,
+  "withPhoto": 5,
+  "withoutPhoto": 544,
+  "skippedUnclearLicense": 544,
   "records": [
     {
       "candidateId": "osm-node-411745197",
@@ -240,104 +240,73 @@
       }
     },
     {
-      "candidateId": "osm-way-621458785",
-      "name": "The Lion and the Lamb",
-      "lat": 54.47367,
-      "lng": -3.03919,
-      "nation": "England",
-      "featureKind": "rock",
-      "osmType": "way",
-      "osmId": 621458785,
-      "osmPlace": "rock",
-      "wikidata": "",
-      "wikipedia": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
-      "aliases": [],
+      "candidateId": "wp-Q969955",
+      "name": "Tarbert, County Kerry",
+      "lat": 52.57239,
+      "lng": -9.37511,
+      "nation": "Ireland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q969955",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+      "aliases": [
+        "Tarbert",
+        "Tairbeart"
+      ],
       "tags": [
-        "rock"
+        "island",
+        "wikipedia-list"
       ],
       "scanConfidence": "high",
       "sourceHints": [
         {
-          "name": "openstreetmap",
-          "url": "https://www.openstreetmap.org/way/621458785",
-          "license": "ODbL"
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+          "license": "CC-BY-SA-4.0"
         }
       ],
       "verified": true,
-      "verificationConfidence": "medium",
+      "verificationConfidence": "high",
       "sources": [
         {
-          "name": "openstreetmap",
-          "url": "https://www.openstreetmap.org/way/621458785",
-          "license": "ODbL"
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q969955",
+          "url": "https://www.wikidata.org/wiki/Q969955",
+          "license": "CC0"
         },
         {
           "name": "wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
+          "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
           "license": "CC-BY-SA-4.0"
         }
       ],
       "notes": [],
       "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Helm_Crag_from_Gibson_Knott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Helm_Crag_from_Gibson_Knott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "caption": "<a href=\"https://en.wikipedia.org/wiki/Helm_Crag\" class=\"extiw\" title=\"en:Helm Crag\">Helm Crag</a>, a <a href=\"https://en.wikipedia.org/wiki/fell\" class=\"extiw\" title=\"en:fell\">fell</a> in the English <a href=\"https://en.wikipedia.org/wiki/Lake_District\" class=\"extiw\" title=\"en:Lake District\">Lake District</a> situated in the <a href=\"https://en.wikipedia.org/wiki/Central_Fells\" class=\"extiw\" title=\"en:Central Fells\">Central Fells</a> to the north of <a href=\"https://en.wikipedia.org/wiki/Grasmere\" class=\"extiw\" title=\"en:Grasmere\">Grasmere</a>.",
-        "source": "wikipedia-pageimage",
-        "sourceRef": "Helm Crag",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Helm_Crag_from_Gibson_Knott.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Tarbert_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Tarbert_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "caption": "Aerial photo of Tarbert (looking north).",
+        "source": "wikidata-p18",
+        "sourceRef": "Q969955",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tarbert_aerial.jpg",
         "license": "Public domain",
-        "attribution": "<a href=\"https://en.wikipedia.org/wiki/User:Harthacanute\" class=\"extiw\" title=\"en:User:Harthacanute\">User:Harthacanute</a>",
-        "primary": true
-      }
-    },
-    {
-      "candidateId": "osm-way-621461523",
-      "name": "The Woman and the Organ",
-      "lat": 54.47506,
-      "lng": -3.04082,
-      "nation": "England",
-      "featureKind": "rock",
-      "osmType": "way",
-      "osmId": 621461523,
-      "osmPlace": "rock",
-      "wikidata": "",
-      "wikipedia": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
-      "aliases": [],
-      "tags": [
-        "rock"
-      ],
-      "scanConfidence": "high",
-      "sourceHints": [
-        {
-          "name": "openstreetmap",
-          "url": "https://www.openstreetmap.org/way/621461523",
-          "license": "ODbL"
-        }
-      ],
-      "verified": true,
-      "verificationConfidence": "medium",
-      "sources": [
-        {
-          "name": "openstreetmap",
-          "url": "https://www.openstreetmap.org/way/621461523",
-          "license": "ODbL"
-        },
-        {
-          "name": "wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
-          "license": "CC-BY-SA-4.0"
-        }
-      ],
-      "notes": [],
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Helm_Crag_from_Gibson_Knott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Helm_Crag_from_Gibson_Knott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-        "caption": "<a href=\"https://en.wikipedia.org/wiki/Helm_Crag\" class=\"extiw\" title=\"en:Helm Crag\">Helm Crag</a>, a <a href=\"https://en.wikipedia.org/wiki/fell\" class=\"extiw\" title=\"en:fell\">fell</a> in the English <a href=\"https://en.wikipedia.org/wiki/Lake_District\" class=\"extiw\" title=\"en:Lake District\">Lake District</a> situated in the <a href=\"https://en.wikipedia.org/wiki/Central_Fells\" class=\"extiw\" title=\"en:Central Fells\">Central Fells</a> to the north of <a href=\"https://en.wikipedia.org/wiki/Grasmere\" class=\"extiw\" title=\"en:Grasmere\">Grasmere</a>.",
-        "source": "wikipedia-pageimage",
-        "sourceRef": "Helm Crag",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Helm_Crag_from_Gibson_Knott.jpg",
-        "license": "Public domain",
-        "attribution": "<a href=\"https://en.wikipedia.org/wiki/User:Harthacanute\" class=\"extiw\" title=\"en:User:Harthacanute\">User:Harthacanute</a>",
+        "attribution": "<a href=\"https://en.wikipedia.org/wiki/User:Fionnscannell\" class=\"extiw\" title=\"wikipedia:User:Fionnscannell\">Fionnscannell</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>",
         "primary": true
       }
     },
@@ -17422,6 +17391,88 @@
       "image": null
     },
     {
+      "candidateId": "osm-way-621458785",
+      "name": "The Lion and the Lamb",
+      "lat": 54.47367,
+      "lng": -3.03919,
+      "nation": "England",
+      "featureKind": "rock",
+      "osmType": "way",
+      "osmId": 621458785,
+      "osmPlace": "rock",
+      "wikidata": "",
+      "wikipedia": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
+      "aliases": [],
+      "tags": [
+        "rock"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "openstreetmap",
+          "url": "https://www.openstreetmap.org/way/621458785",
+          "license": "ODbL"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "medium",
+      "sources": [
+        {
+          "name": "openstreetmap",
+          "url": "https://www.openstreetmap.org/way/621458785",
+          "license": "ODbL"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "osm-way-621461523",
+      "name": "The Woman and the Organ",
+      "lat": 54.47506,
+      "lng": -3.04082,
+      "nation": "England",
+      "featureKind": "rock",
+      "osmType": "way",
+      "osmId": 621461523,
+      "osmPlace": "rock",
+      "wikidata": "",
+      "wikipedia": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
+      "aliases": [],
+      "tags": [
+        "rock"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "openstreetmap",
+          "url": "https://www.openstreetmap.org/way/621461523",
+          "license": "ODbL"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "medium",
+      "sources": [
+        {
+          "name": "openstreetmap",
+          "url": "https://www.openstreetmap.org/way/621461523",
+          "license": "ODbL"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Helm_Crag#The_Lion_and_the_Lamb",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
       "candidateId": "osm-way-678087673",
       "name": "Criss-Cross Rock",
       "lat": 55.28685,
@@ -20077,6 +20128,524 @@
         {
           "name": "wikipedia",
           "url": "https://az.wikipedia.org/wiki/Sumbiarstaynur",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wd-Q27055535",
+      "name": "blackwater bank",
+      "lat": 52.45178,
+      "lng": -6.19031,
+      "nation": "Ireland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q27055535",
+      "wikipedia": "",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q27055535",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q27055535",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q27055535",
+          "url": "https://www.wikidata.org/wiki/Q27055535",
+          "license": "CC0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wd-Q24659657",
+      "name": "Careg Goch",
+      "lat": 53.20833,
+      "lng": -4.54167,
+      "nation": "Wales",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q24659657",
+      "wikipedia": "https://ceb.wikipedia.org/wiki/Careg_Goch_%28piliw%29",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q24659657",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q24659657",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q24659657",
+          "url": "https://www.wikidata.org/wiki/Q24659657",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://ceb.wikipedia.org/wiki/Careg_Goch_%28piliw%29",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wd-Q116885105",
+      "name": "The Inch",
+      "lat": 56.53548,
+      "lng": -3.45272,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q116885105",
+      "wikipedia": "",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q116885105",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q116885105",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q116885105",
+          "url": "https://www.wikidata.org/wiki/Q116885105",
+          "license": "CC0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q3776044",
+      "name": "Eilean Glas, Scalpay",
+      "lat": 57.8575,
+      "lng": -6.64278,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q3776044",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+      "aliases": [
+        "Eilean Glas"
+      ],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q3776044",
+          "url": "https://www.wikidata.org/wiki/Q3776044",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q6913506",
+      "name": "Morrich More",
+      "lat": 57.83528,
+      "lng": -3.96278,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q6913506",
+      "wikipedia": "https://en.wikipedia.org/wiki/Morrich_More",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Morrich_More",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Morrich_More",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q6913506",
+          "url": "https://www.wikidata.org/wiki/Q6913506",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Morrich_More",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q6083754",
+      "name": "Islands of Furness",
+      "lat": 54.1039,
+      "lng": -3.25,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q6083754",
+      "wikipedia": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q6083754",
+          "url": "https://www.wikidata.org/wiki/Q6083754",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q7577196",
+      "name": "Spike Island, Bristol",
+      "lat": 51.4479,
+      "lng": -2.6087,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q7577196",
+      "wikipedia": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+      "aliases": [
+        "Spike Island"
+      ],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q7577196",
+          "url": "https://www.wikidata.org/wiki/Q7577196",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q4379038",
+      "name": "Sunk Island",
+      "lat": 53.6524,
+      "lng": -0.0844,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q4379038",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sunk_Island",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q4379038",
+          "url": "https://www.wikidata.org/wiki/Q4379038",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": [],
+      "image": null
+    },
+    {
+      "candidateId": "wp-Q7493669",
+      "name": "Mochras",
+      "lat": 52.81665,
+      "lng": -4.14997,
+      "nation": "Wales",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q7493669",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mochras",
+      "aliases": [
+        "Shell Island"
+      ],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Wales",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Mochras",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Wales",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Mochras",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q7493669",
+          "url": "https://www.wikidata.org/wiki/Q7493669",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mochras",
           "license": "CC-BY-SA-4.0"
         }
       ],

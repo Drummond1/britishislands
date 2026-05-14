@@ -1,8 +1,9 @@
 """Five-stage island discovery pipeline."""
 
-from . import enricher, map_scanner, photo_finder, site_update, source_verifier
+from . import catalog_scanner, enricher, map_scanner, photo_finder, site_update, source_verifier
 
 __all__ = [
+    "catalog_scanner",
     "map_scanner",
     "source_verifier",
     "photo_finder",

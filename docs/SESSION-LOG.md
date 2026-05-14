@@ -1259,3 +1259,23 @@
   resize handling).
 - **Outcome**: Mobile uses Map / Islands / Trip / Ask tabs; island deep links
   open the details panel on load.
+
+---
+
+## 2026-05-14 — Multi-source catalog discovery
+
+- **Goal**: Discover missing islands from open gazetteers (Wikidata, Wikipedia
+  lists, DoBIH, Thames eyots, crannogs, designations) and merge vetted rows.
+- **What changed**:
+  - `scripts/discovery/catalog_scanner.py` plus pipeline stage
+    `catalog_scanner` in `scripts/discover_islands_pipeline.py`.
+  - Artifacts `data/discovery/candidates_catalog.json`, refreshed
+    `candidates_scan.json` / `verification.json` / `enrichment.json` /
+    `review_report.json`.
+- **Outcome / counts**: Catalog pass considered 2,688 rows (2,678 already in
+  DB); **10** new catalog candidates. Full scan verification **549** rows;
+  site update applied **10** islands (`islands.json` **7,298 → 7,308**).
+  OS Open Names deferred until `data/raw/os_opennames.csv` is staged.
+  Haswell-Smith, Vision of Britain, and OS MasterMap remain reference-only.
+- **Open items kicked to QUEUE.md**: Human review of uncertain discovery rows;
+  stage OS Open Names / NRS boundary feeds when files are available.

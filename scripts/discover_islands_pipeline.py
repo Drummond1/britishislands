@@ -31,11 +31,12 @@ SCRIPTS = Path(__file__).resolve().parent
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from discovery import enricher, map_scanner, photo_finder, site_update, source_verifier
+from discovery import catalog_scanner, enricher, map_scanner, photo_finder, site_update, source_verifier
 
 
 STAGES = (
     "map_scanner",
+    "catalog_scanner",
     "source_verifier",
     "photo_finder",
     "enricher",
@@ -72,6 +73,9 @@ def parse_args() -> argparse.Namespace:
 def run_stage(name: str, args: argparse.Namespace) -> None:
     if name == "map_scanner":
         map_scanner.run(use_cache=not args.no_cache, limit=args.limit)
+        return
+    if name == "catalog_scanner":
+        catalog_scanner.run(limit=args.limit)
         return
     if name == "source_verifier":
         source_verifier.run(limit=args.limit)

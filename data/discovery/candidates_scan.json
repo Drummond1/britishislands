@@ -11,7 +11,7 @@
   "alreadyInDatabase": 5980,
   "outOfRemit": 0,
   "unnamedOrUnlocated": 79,
-  "missingCandidates": 539,
+  "missingCandidates": 549,
   "candidates": [
     {
       "candidateId": "osm-node-255601877",
@@ -13548,6 +13548,318 @@
           "license": "ODbL"
         }
       ]
+    },
+    {
+      "candidateId": "wd-Q27055535",
+      "name": "blackwater bank",
+      "lat": 52.45178,
+      "lng": -6.19031,
+      "nation": "Ireland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q27055535",
+      "wikipedia": "",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q27055535",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wd-Q24659657",
+      "name": "Careg Goch",
+      "lat": 53.20833,
+      "lng": -4.54167,
+      "nation": "Wales",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q24659657",
+      "wikipedia": "",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q24659657",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wd-Q116885105",
+      "name": "The Inch",
+      "lat": 56.53548,
+      "lng": -3.45272,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q116885105",
+      "wikipedia": "",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikidata"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q116885105",
+          "license": "CC0"
+        },
+        {
+          "name": "Database of British and Irish Hills",
+          "url": "https://www.hills-database.co.uk/",
+          "license": "CC-BY-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q3776044",
+      "name": "Eilean Glas, Scalpay",
+      "lat": 57.8575,
+      "lng": -6.64278,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q3776044",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q6913506",
+      "name": "Morrich More",
+      "lat": 57.83528,
+      "lng": -3.96278,
+      "nation": "Scotland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q6913506",
+      "wikipedia": "https://en.wikipedia.org/wiki/Morrich_More",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Morrich_More",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q6083754",
+      "name": "Islands of Furness",
+      "lat": 54.1039,
+      "lng": -3.25,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q6083754",
+      "wikipedia": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q7577196",
+      "name": "Spike Island, Bristol",
+      "lat": 51.4479,
+      "lng": -2.6087,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q7577196",
+      "wikipedia": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q4379038",
+      "name": "Sunk Island",
+      "lat": 53.6524,
+      "lng": -0.0844,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q4379038",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sunk_Island",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q7493669",
+      "name": "Mochras",
+      "lat": 52.81665,
+      "lng": -4.14997,
+      "nation": "Wales",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q7493669",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mochras",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Wales",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Mochras",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "candidateId": "wp-Q969955",
+      "name": "Tarbert, County Kerry",
+      "lat": 52.57239,
+      "lng": -9.37511,
+      "nation": "Ireland",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q969955",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+          "license": "CC-BY-SA-4.0"
+        }
+      ]
     }
-  ]
+  ],
+  "catalogMergedAt": "2026-05-14T21:36:22Z",
+  "catalogMissingCandidates": 10
 }

@@ -5,6 +5,13 @@
 
 ## Last updated
 
+**2026-05-14 22:45 UTC+1** — **Multi-source catalog discovery applied.**
+`scripts/discovery/catalog_scanner.py` harvests Wikidata, Wikipedia island
+lists, Thames eyots, crannogs, DoBIH crosswalk, and optional OS Open Names
+(`data/raw/os_opennames.csv`). Haswell-Smith, Vision of Britain, and OS
+MasterMap stay reference-only. `islands.json` **7,308** (+10 from catalog
+merge; backup `data/islands.json.before-discovery-20260514T214253Z`).
+
 **2026-05-14 06:45 UTC+1** — **Autonomous run in progress.** Full
 discovery pipeline (`discover_islands_pipeline.py --include-uncertain
 --apply`) then overnight enrichment + LLM (≤ $30). Check
@@ -273,7 +280,7 @@ was patched to handle "Isle of"/"Sanda Island" name variants.
 
 | Metric | Value |
 |---|---|
-| **Total islands** | **6,776** |
+| **Total islands** | **7,308** |
 | File size | 8.0 MB |
 | Total lines | ~283,000 (post v3 + CSV + reclass) |
 
@@ -345,8 +352,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `scripts/enrich_names.py` → `enrich_descriptions_wikipedia.py` → `enrich_descriptions_llm.py` / `enrich_tags_llm.py` → `enrich_images_v5.py` | 2026-05-14 20:30 UTC+1 | multi-hour | main agent | Sequential labeling + enrichment on `islands.json` (one writer). Logs under `logs/enrichment-*.log`. |
-| ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5; superseded by this run. |
+| _(none)_ | — | — | — | No write-pipelines active on `islands.json` as of 2026-05-14 22:45 UTC+1. |
+| ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
+| ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
 | ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded by autonomous run; verify no live PID before trusting this row. |
 | `python3 -m http.server 8767` (PID 60358) | 2026-05-11 17:02 | persistent | main agent | Local preview at <http://localhost:8767>. Logs at `/tmp/preview_server.log`. |
 | `python3 scripts/enrich_images_v4.py` (PID 63436) | 2026-05-11 18:01 | ~90 min | main agent | Builds `data/galleries.json` (additional photos per island, separate file so it doesn't bloat `islands.json`'s first paint). Checkpointed every 100 islands. Logs at `/tmp/enrich_v4.log`. |

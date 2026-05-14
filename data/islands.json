@@ -25109,6 +25109,61 @@
     "descriptionFetchedAt": "2026-05-14T19:56:46+00:00"
   },
   {
+    "id": "blackwater-bank",
+    "name": "blackwater bank",
+    "nation": "Ireland",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 52.45178,
+    "lng": -6.19031,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "",
+    "wikidata": "Q27055535",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikidata"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q27055535",
+        "license": "CC0"
+      },
+      {
+        "name": "Database of British and Irish Hills",
+        "url": "https://www.hills-database.co.uk/",
+        "license": "CC-BY-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q27055535",
+        "url": "https://www.wikidata.org/wiki/Q27055535",
+        "license": "CC0"
+      }
+    ]
+  },
+  {
     "id": "wd-Q24656877",
     "name": "Blae Rock",
     "nation": "Scotland",
@@ -41547,6 +41602,66 @@
     "highestPointConfidence": "n/a"
   },
   {
+    "id": "careg-goch",
+    "name": "Careg Goch",
+    "nation": "Wales",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 53.20833,
+    "lng": -4.54167,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://ceb.wikipedia.org/wiki/Careg_Goch_%28piliw%29",
+    "wikidata": "Q24659657",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikidata"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q24659657",
+        "license": "CC0"
+      },
+      {
+        "name": "Database of British and Irish Hills",
+        "url": "https://www.hills-database.co.uk/",
+        "license": "CC-BY-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q24659657",
+        "url": "https://www.wikidata.org/wiki/Q24659657",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://ceb.wikipedia.org/wiki/Careg_Goch_%28piliw%29",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "wd-Q24653161",
     "name": "Careg Hen",
     "nation": "Wales",
@@ -49102,6 +49217,21 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/way/400474350",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/400474352",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/400474354",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/400474355",
         "license": "ODbL"
       }
     ],
@@ -59933,6 +60063,11 @@
         "name": "wikipedia",
         "url": "https://ceb.wikipedia.org/wiki/Clogher_Head_%28punta_sa_Munster%29",
         "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/699612119",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -59978,6 +60113,11 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/node/9690677782",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/9690677783",
         "license": "ODbL"
       }
     ],
@@ -83163,6 +83303,11 @@
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/node/2946563428",
         "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/2946563429",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -93240,6 +93385,26 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/node/12499403718",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/12499403719",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/12499403720",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/12499403721",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/12499403722",
         "license": "ODbL"
       }
     ],
@@ -111936,6 +112101,66 @@
     "names": {
       "en": "Eilean Glas na h-Acarsaid Fhalaich"
     }
+  },
+  {
+    "id": "eilean-glas-scalpay",
+    "name": "Eilean Glas, Scalpay",
+    "nation": "Scotland",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 57.8575,
+    "lng": -6.64278,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+    "wikidata": "Q3776044",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q3776044",
+        "url": "https://www.wikidata.org/wiki/Q3776044",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eilean_Glas,_Scalpay",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
   },
   {
     "id": "osm-way-964089752",
@@ -150350,6 +150575,11 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/node/12542839469",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/node/12542839473",
         "license": "ODbL"
       }
     ],
@@ -211259,6 +211489,66 @@
     }
   },
   {
+    "id": "islands-of-furness",
+    "name": "Islands of Furness",
+    "nation": "England",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 54.1039,
+    "lng": -3.25,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+    "wikidata": "Q6083754",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q6083754",
+        "url": "https://www.wikidata.org/wiki/Q6083754",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Islands_of_Furness",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "osm-way-434872768",
     "name": "Islanlyre",
     "nation": "Ireland",
@@ -249141,6 +249431,66 @@
     }
   },
   {
+    "id": "mochras",
+    "name": "Mochras",
+    "nation": "Wales",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 52.81665,
+    "lng": -4.14997,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mochras",
+    "wikidata": "Q7493669",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Wales",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Mochras",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q7493669",
+        "url": "https://www.wikidata.org/wiki/Q7493669",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mochras",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "osm-way-226403270",
     "name": "Moelyn",
     "nation": "Wales",
@@ -250257,6 +250607,66 @@
     }
   },
   {
+    "id": "morrich-more",
+    "name": "Morrich More",
+    "nation": "Scotland",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 57.83528,
+    "lng": -3.96278,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Morrich_More",
+    "wikidata": "Q6913506",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Scotland",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Morrich_More",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q6913506",
+        "url": "https://www.wikidata.org/wiki/Q6913506",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morrich_More",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "osm-way-88277556",
     "name": "Moss Island",
     "nation": "Scotland",
@@ -250388,6 +250798,11 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/node/1219966095",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/123861271",
         "license": "ODbL"
       }
     ],
@@ -287775,6 +288190,16 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/way/979661161",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/979661164",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/979661166",
         "license": "ODbL"
       }
     ],
@@ -327405,6 +327830,66 @@
     "descriptionFetchedAt": "2026-05-12T20:59:39+00:00"
   },
   {
+    "id": "spike-island-bristol",
+    "name": "Spike Island, Bristol",
+    "nation": "England",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 51.4479,
+    "lng": -2.6087,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+    "wikidata": "Q7577196",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q7577196",
+        "url": "https://www.wikidata.org/wiki/Q7577196",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Spike_Island,_Bristol",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "osm-way-553321738",
     "name": "Spindillaun",
     "nation": "Ireland",
@@ -337788,6 +338273,66 @@
     "highestPointConfidence": "n/a"
   },
   {
+    "id": "sunk-island",
+    "name": "Sunk Island",
+    "nation": "England",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 53.6524,
+    "lng": -0.0844,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sunk_Island",
+    "wikidata": "Q4379038",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_England",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q4379038",
+        "url": "https://www.wikidata.org/wiki/Q4379038",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sunk_Island",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  {
     "id": "wd-Q110207998",
     "name": "Sunk Sand",
     "nation": "England",
@@ -341104,6 +341649,78 @@
     "areaConfidence": "n/a",
     "highestPointSource": null,
     "highestPointConfidence": "n/a"
+  },
+  {
+    "id": "tarbert-county-kerry",
+    "name": "Tarbert, County Kerry",
+    "nation": "Ireland",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 52.57239,
+    "lng": -9.37511,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+    "wikidata": "Q969955",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/32/Tarbert_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Tarbert_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Tarbert_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "caption": "Aerial photo of Tarbert (looking north).",
+        "source": "wikidata-p18",
+        "sourceRef": "Q969955",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tarbert_aerial.jpg",
+        "license": "Public domain",
+        "attribution": "<a href=\"https://en.wikipedia.org/wiki/User:Fionnscannell\" class=\"extiw\" title=\"wikipedia:User:Fionnscannell\">Fionnscannell</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>",
+        "primary": true
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-list"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikipedia island list",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "Wikipedia article",
+        "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q969955",
+        "url": "https://www.wikidata.org/wiki/Q969955",
+        "license": "CC0"
+      },
+      {
+        "name": "wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
   },
   {
     "id": "osm-way-56755151",
@@ -347058,6 +347675,61 @@
     "areaConfidence": "n/a",
     "highestPointSource": null,
     "highestPointConfidence": "n/a"
+  },
+  {
+    "id": "the-inch",
+    "name": "The Inch",
+    "nation": "Scotland",
+    "type": "sea",
+    "subtype": null,
+    "tidal": false,
+    "archipelago": "",
+    "lat": 56.53548,
+    "lng": -3.45272,
+    "areaKm2": null,
+    "population": null,
+    "highestPointM": null,
+    "highestPointName": "",
+    "shortDescription": "",
+    "history": "",
+    "geography": "",
+    "transport": "",
+    "accommodation": "",
+    "wikipedia": "",
+    "wikidata": "Q116885105",
+    "image": "",
+    "images": [],
+    "tags": [
+      "island",
+      "wikidata"
+    ],
+    "source": "discovery",
+    "osmType": null,
+    "osmId": null,
+    "osmPlace": "island",
+    "parentWaterBody": null,
+    "classification": {
+      "source": "discovery-pipeline",
+      "confidence": "high"
+    },
+    "sources": [
+      {
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q116885105",
+        "license": "CC0"
+      },
+      {
+        "name": "Database of British and Irish Hills",
+        "url": "https://www.hills-database.co.uk/",
+        "license": "CC-BY-4.0"
+      },
+      {
+        "name": "wikidata",
+        "ref": "Q116885105",
+        "url": "https://www.wikidata.org/wiki/Q116885105",
+        "license": "CC0"
+      }
+    ]
   },
   {
     "id": "osm-way-148678193",
@@ -356811,6 +357483,11 @@
       {
         "name": "openstreetmap",
         "url": "https://www.openstreetmap.org/way/1136736504",
+        "license": "ODbL"
+      },
+      {
+        "name": "openstreetmap",
+        "url": "https://www.openstreetmap.org/way/1136736505",
         "license": "ODbL"
       }
     ],

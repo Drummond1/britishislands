@@ -20,6 +20,7 @@ ISLANDS_PATH = DATA / "islands.json"
 DISCOVERY_DIR = DATA / "discovery"
 
 SCAN_PATH = DISCOVERY_DIR / "candidates_scan.json"
+CATALOG_PATH = DISCOVERY_DIR / "candidates_catalog.json"
 VERIFY_PATH = DISCOVERY_DIR / "verification.json"
 PHOTOS_PATH = DISCOVERY_DIR / "photos.json"
 ENRICH_PATH = DISCOVERY_DIR / "enrichment.json"
@@ -28,6 +29,8 @@ REVIEW_PATH = DISCOVERY_DIR / "review_report.json"
 CACHE_OSM = DATA / "cache_discovery_osm.json"
 CACHE_WD = DATA / "cache_discovery_wikidata.json"
 CACHE_COMMONS = DATA / "cache_discovery_commons.json"
+CACHE_WP_LISTS = DATA / "cache_discovery_wikipedia_lists.json"
+OPEN_NAMES_PATH = DATA / "raw" / "os_opennames.csv"
 
 USER_AGENT = (
     "isles-of-britain/0.9 (discovery-pipeline; static-site; "
