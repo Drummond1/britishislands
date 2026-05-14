@@ -1,0 +1,132 @@
+{
+  "startedAt": "2026-05-12T21:02:10+00:00",
+  "islandsLoaded": 6776,
+  "stagedCount": 10,
+  "stagedByNation": {
+    "nrs": 10
+  },
+  "missingNationCsvs": [
+    "ons (census2022_ons.csv)",
+    "nisra (census2022_nisra.csv)",
+    "cso (census2022_cso.csv)",
+    "iom (census2022_iom.csv)",
+    "states (census2022_states.csv)"
+  ],
+  "skippedDueToNewerExisting": [],
+  "unmatchedCsvRows": [
+    {
+      "nation": "nrs",
+      "csvName": "# SAMPLE — replace with the full official NRS table before running `ingest_census_2022.py --commit`.",
+      "norm": "sample replace with full official nrs table before running ingest census 2022 py commit"
+    },
+    {
+      "nation": "nrs",
+      "csvName": "# Source: \"Scotland's Inhabited Islands\" report from NRS 2022.",
+      "norm": "source scotland s inhabited report from nrs 2022"
+    },
+    {
+      "nation": "nrs",
+      "csvName": "# https://www.nrscotland.gov.uk/publications/scotlands-census-2022-rounded-population-estimates/",
+      "norm": "https www nrscotland gov uk publications scotlands census 2022 rounded population estimates"
+    },
+    {
+      "nation": "nrs",
+      "csvName": "# Rename this file to `census2022_nrs.csv` once verified.",
+      "norm": "rename this file to census2022 nrs csv once verified"
+    }
+  ],
+  "ambiguousCsvRows": [
+    {
+      "nation": "nrs",
+      "csvName": "Coll",
+      "norm": "coll",
+      "candidates": [
+        "osm-relation-3512136",
+        "osm-relation-5420246"
+      ]
+    },
+    {
+      "nation": "nrs",
+      "csvName": "Muck",
+      "norm": "muck",
+      "candidates": [
+        "osm-relation-12895654",
+        "osm-relation-18138346",
+        "osm-way-177901589"
+      ]
+    }
+  ],
+  "matchedSample": [
+    {
+      "id": "isle-of-skye",
+      "nation": "nrs",
+      "csvName": "Isle of Skye",
+      "population": 10008,
+      "year": 2022
+    },
+    {
+      "id": "lewis-and-harris",
+      "nation": "nrs",
+      "csvName": "Lewis and Harris",
+      "population": 21031,
+      "year": 2022
+    },
+    {
+      "id": "mull",
+      "nation": "nrs",
+      "csvName": "Mull",
+      "population": 3049,
+      "year": 2022
+    },
+    {
+      "id": "islay",
+      "nation": "nrs",
+      "csvName": "Islay",
+      "population": 3498,
+      "year": 2022
+    },
+    {
+      "id": "arran",
+      "nation": "nrs",
+      "csvName": "Arran",
+      "population": 4679,
+      "year": 2022
+    },
+    {
+      "id": "osm-relation-6045455",
+      "nation": "nrs",
+      "csvName": "Tiree",
+      "population": 653,
+      "year": 2022
+    },
+    {
+      "id": "iona",
+      "nation": "nrs",
+      "csvName": "Iona",
+      "population": 177,
+      "year": 2022
+    },
+    {
+      "id": "osm-relation-1663615",
+      "nation": "nrs",
+      "csvName": "Eigg",
+      "population": 108,
+      "year": 2022
+    },
+    {
+      "id": "osm-relation-929839",
+      "nation": "nrs",
+      "csvName": "Rum",
+      "population": 40,
+      "year": 2022
+    },
+    {
+      "id": "osm-way-4004501",
+      "nation": "nrs",
+      "csvName": "Canna",
+      "population": 11,
+      "year": 2022
+    }
+  ],
+  "dryRun": true
+}

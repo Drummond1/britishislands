@@ -519,3 +519,743 @@
   - Light per-operator scrapers for the ten biggest `manual` operators
     (Wightlink, Red Funnel, IoM Steam Packet, Condor, etc.) so monthly
     refreshes pick up timetable changes without manual intervention.
+
+## 2026-05-12 — Island categorisation Phase 1: Wikidata P206 + widened OSM water
+
+- **Goal**: Fix the widespread "everything defaults to *sea*" bug surfaced by
+  two screenshots (Kate's Island shown as a sea island in a Yorkshire pond;
+  Bodinbo Island shown as sea while sitting visibly in the River Clyde).
+  `fetch_islands.py` hardcoded `"type": "sea"` for every OSM-ingested island
+  and `classify_inland.py`'s Tier A/B only caught features that were members
+  of an OSM `relation natural=water multipolygon` — leaving 5,414 islands
+  stuck on the default with no positive evidence behind them.
+
+- **Authoritative data sources picked (Phase 1, zero cost)**:
+  1. **Wikidata `P206`** ("located in or next to body of water") + the body's
+     `P31` ("instance of"), with a `P279` ("subclass of") climb up to 3
+     levels for unknown classes — covers 916 islands that carry a Q-ID with
+     an explicit body link.
+  2. **Widened OSM Overpass query**: `relation/way natural=water` (without
+     requiring `water=*`), `way landuse=reservoir`, `way waterway=riverbank`
+     — caught 11.3 M elements, 358 k tagged ways + 19.5 k relations, built
+     19,437 inland-water polygons for point-in-polygon containment.
+  3. **OSM `natural=coastline`** (fetched, cached at 326 MB but **not yet
+     used** — polygonising 2.66 M coastline elements live takes too long;
+     deferred to Phase 1.5 using the pre-built land-polygons shapefile).
+
+- **What changed (data)**:
+  - `data/islands.json`: 213 islands re-typed (157 sea→lake, 56 sea→river).
+    Backup at `data/islands.json.before-reclass-20260512T124618Z`.
+  - `data/cache_wd_water_body.json` (244 KB): 2,716 islands × 193 parent
+    bodies × 59 P279-climbed classes.
+  - `data/water_raw_v2.json` (1.6 GB, gitignored): raw widened Overpass
+    payload.
+  - `data/coastline_raw.json` (326 MB, gitignored): raw coastline payload,
+    held for Phase 1.5.
+  - `data/reclassification_proposal.json`: every change with full evidence
+    (Wikidata Q-IDs, body names, source, confidence) — kept post-apply for
+    audit.
+  - `data/reclassification_summary.json`: aggregate counts + transitions.
+
+- **What changed (scripts)**:
+  - **NEW** `scripts/reclassify_islands.py` — stacked-evidence pipeline:
+    - `--fetch-wd`: batched Wikidata `wbgetentities` with 0.5 s throttling
+      and exponential backoff (1 / 3 / 8 / 20 / 45 / 90 s) on HTTP 429 /
+      503 / 5xx / non-JSON bodies. Uses `subprocess` + `curl` for SSL
+      robustness, same as the OSRM fix.
+    - `--fetch-coast`, `--fetch-water`: Overpass via the same `curl` POST
+      helper across three endpoints (de, kumi, fr) with auto-failover.
+    - `--classify`: builds the spatial index of inland-water polygons
+      with Shapely STRtree, runs each island through Tiers 0→1→3→2→5,
+      writes a *proposal* (never mutates islands.json).
+    - Wikidata cross-reference for water bodies: when an OSM body has a
+      `wikidata=Q…` tag, we look it up in the cache and let Wikidata's
+      P31 override the OSM tag-based classification (caught Loch Ewe, a
+      sea loch tagged simply as `natural=water` in OSM).
+  - **NEW** `scripts/apply_reclassification.py` — gated mutator with
+    timestamped backups, dry-run mode, confidence threshold, and a type
+    allowlist for incremental rollouts.
+
+- **Categorisation schema confirmed**:
+  - Level 1 `type`: `sea` / `lake` / `river` (`unknown` reserved for Phase 1.5)
+  - Level 2 `subtype` (optional): `pond` · `reservoir` · `lagoon` · `oxbow` ·
+    `tidal-loch` · `estuary` · `canal` · `stream` · `tidal-island`
+  - Level 3 `parentWaterBody`: `{name, type, osmType, osmId, wikidata}`
+  - `classification`: `{source, confidence: high|medium|low}` so the UI can
+    flag low-confidence cases later.
+
+- **Outcome / counts**:
+  - Type table before → after: sea 5,414→5,201 (−213); lake 1,100→1,257
+    (+157); river 262→318 (+56). Same totals.
+  - Confidence: 80 high (Wikidata-verified), 133 medium (OSM point-in-polygon).
+  - Headline fixes verified:
+    - Kate's Island (`osm-way-431153973`, Yorkshire pond) → `lake`,
+      classification `{osm-water-pip / medium}`.
+    - Bodinbo Island (`wd-Q55605678`, Erskine Bridge) → `river` / River
+      Clyde, classification `{wikidata-p206 / high}`.
+  - 73 "Loch X" lake-classifications cross-checked manually — all
+    legitimate freshwater lochs (Shiel, Harray, Lene, Finlaggan, Ore,
+    Moan, Ussie, Lough Neagh…).
+  - Loch Ewe (sea loch, Q4354551) correctly excluded via Wikidata
+    override; four would-be misclassifications avoided.
+
+- **Open items** (kicked to QUEUE.md):
+  - Phase 1.5: positive-sea verification using the pre-built
+    `land-polygons-split-3857` shapefile from osmdata.openstreetmap.de
+    (~10 MB, no live polygonisation). Adds an `unknown` UI pill for
+    islands that fail all Tiers.
+  - Phase 2: cross-check medium-confidence picks against OS NGD
+    Features API water polygons (if user enables that DataHub product).
+  - Phase 3: EA / NRW / SEPA / EPA WFD water-body overlays for the
+    transitional/estuary edge cases.
+  - Curated gallery sample re-test for the 10 flagship islands now that
+    Kate's-class corrections may affect future enrichment runs.
+
+## 2026-05-12 — Island categorisation Phase 1.5 (positive-sea verification + `unknown` pill)
+
+- **Goal**: Catch the residual mis-classifications that Phase 1 couldn't
+  reach. Phase 1 only fired when Wikidata P206 or an OSM water-polygon
+  positively matched an island. That left ~5,200 islands sitting on the
+  default `sea` value with no positive evidence either way. Some of
+  those (e.g. several Irish lough islets, a few Yorkshire river islets,
+  small reservoirs in the Lake District) are unambiguously inland and
+  need to drop out of "sea". The cleanest way to flag them is the
+  classic geographer's trick: polygonise the OSM coastline and ask
+  whether the island sits inside the **mainland** (GB or Ireland)
+  polygon. If yes → inland. If no → it's its own coastline polygon,
+  i.e. a real marine island.
+
+- **What changed**:
+  - New script `scripts/build_land_polygons.py`. Reads the cached
+    `data/coastline_raw.json` (326 MB, 39,880 ways), polygonises into
+    23,378 land polygons in ~30 s end-to-end, repairs invalid geometry
+    with `buffer(0)`, and pickles two products:
+    1. `data/land_polygons.pickle` (40 MB) — every land polygon.
+    2. `data/mainland_polygons.pickle` (18 MB) — only polygons larger
+       than 5,000 km². In our bbox that's exactly two: Britain
+       (218,417 km²) and Ireland (83,404 km²). Clean 39× area gap to
+       the next-largest (Lewis & Harris at 2,143 km²), so the cut is
+       unambiguous.
+    - `--check` flag runs a 10-point self-test (London / Glasgow /
+      Iona / Lewis-and-Harris / Bodinbo / Andersey / Jersey / open
+      Atlantic / North Sea / Loch Ness) — all pass on both pickles.
+  - `scripts/reclassify_islands.py` now prefers the mainland pickle
+    over live polygonisation. Tier 2 logic in `classify()` now does:
+    - if no Tier 1 / Tier 3 verdict AND centroid INSIDE mainland →
+      `type: unknown`, `classification: {source: "land-in-no-water",
+      confidence: "low"}`.
+    - if no Tier 1 / Tier 3 verdict AND centroid OUTSIDE mainland →
+      `type: sea` (no change for already-sea defaults).
+  - `styles.css`: new `--unknown` colour token (`#b08bd1`, lilac) plus
+    `.dot--unknown` rule with a hatch-textured fill so the pill reads
+    visually distinct from the three confident categories.
+  - `index.html`: legend gains an **"Unverified"** swatch; the
+    `#type-filter` select gains an **"Unverified"** option.
+  - `app.js`: `TYPE_COLORS` extended with `unknown`; `renderDetails`
+    renders the type cell as **"Unverified (needs review)"** rather
+    than the ugly auto-capitalised "Unknown island"; `parentLabel`
+    falls through to `null` for the unknown case (no dangling "—"
+    "In water body" row).
+
+- **Outcome / counts**:
+  - Classifier emitted 210 proposed changes, all `sea → unknown`. Zero
+    new `sea → lake/river` and zero `lake → sea` flips this round.
+  - Applied via `scripts/apply_reclassification.py --confidence low
+    --types unknown`. Backup at
+    `data/islands.json.before-reclass-20260512T131152Z`.
+  - Type table after Phase 1.5:
+    `sea: 4,991  ·  lake: 1,257  ·  river: 318  ·  unknown: 210`.
+  - Distribution of `unknown` by nation:
+    Ireland 89 · England 64 · Scotland 31 · NI 22 · Wales 4.
+  - Spot-checked 9 of the 210:
+    - Magurk's Island → Lough MacNean (NI). Should be `lake`.
+    - Bank Island → RSPB reserve on River Derwent (Yorks). `river`.
+    - Bingley's Island → Pegwell Bay marshland (Kent). `unknown` is
+      a good label; it's now mudflats, not a discrete island.
+    - Calbha Mor → real Scottish sea island (Eddrachillis Bay); OSM
+      didn't polygonise it separately so it appears inside GB. Once
+      OSM mappers fix this it'll flip back to `sea`.
+    - Inchydoney, Corkbeg → tidal causeway-connected (coastal); `unknown`
+      is honest — the answer depends on tide.
+    - Duck Island → Lough Neagh shore (NI). `lake`.
+    - Loch of Leys crannog → Aberdeenshire freshwater crannog. `lake`.
+    - Eilean na h-Aibhne ("of the river") → Sutherland. `river`/`lake`
+      pending a closer look at OSM tags.
+  - Type pill renders with the new lilac/hatched style and the details
+    panel says "Type: Unverified (needs review)".
+
+- **Open items** (kicked to QUEUE.md):
+  - **Curation pass** to drain the 210 `unknown` pile. Quick path:
+    bulk-classify the unambiguous ones (Lough Erne / Neagh / etc.
+    cluster, Norfolk Broads cluster, Yorkshire Derwent cluster) via
+    a small `data/manual_overrides.json` keyed by `(id → type,
+    parentWaterBody)`. The rest gets touched by hand or kicked to
+    Phase 2 / 3.
+  - **Subtype badges** still TODO in the UI (tidal-loch, estuary,
+    reservoir, canal). Phase 1 already populates `subtype` for some
+    bodies; we just don't render it as a distinct chip yet.
+  - Phase 2 (OS NGD Features API) and Phase 3 (EA/NRW/SEPA/EPA WFD
+    overlays) remain queued.
+
+## 2026-05-12 — Drain the `unknown` queue (210 → 1)
+
+- **Goal**: After Phase 1.5 left 210 islands as `type: unknown` (inside
+  the GB/Ireland mainland but no positive water-body match), drain the
+  queue with high accuracy. The user explicitly asked for this as the
+  next priority.
+
+- **What changed**:
+  - `scripts/profile_unknowns.py` (new) — read-only diagnostic that
+    measures Q-ID coverage, distance to nearest non-tidal OSM water
+    polygon for each unknown, and bucketises the result so we can
+    pick a sensible Tier-4 cut-off. Profile showed 43% of unknowns
+    within 100 m of a water polygon and 45% within 500 m.
+  - `scripts/reclassify_islands.py` — added **Tier 4 (proximity)**.
+    The island's centroid is matched against the nearest non-tidal
+    inland water polygon; ≤ 200 m = `medium` confidence, 200-500 m =
+    `low`, > 500 m = no verdict. Tier 4 is **gated on the mainland
+    test** so a small marine islet next to a coastal freshwater stream
+    can't get a false-positive river verdict. Output also captures
+    `distanceM` in the proposal evidence.
+  - `scripts/apply_manual_overrides.py` (new) — reads a hand-curated
+    `data/manual_overrides.json` and applies type / subtype /
+    parentWaterBody / classification updates atomically with backups
+    and read-back validation. Mirrors the safety of
+    `apply_reclassification.py`. Persists a `classificationNote` field
+    so the *why* is recorded in `islands.json` itself.
+  - `data/manual_overrides.json` (new) — 134 hand-curated entries:
+    - 11 crannogs (auto-lake by definition + named parent loch where
+      the name reveals it: Loch Coille-Bharr, Loch Seil, Loch na Eala,
+      Loch of Leys, Loch Kinellan, White Loch, etc.)
+    - Cornwall / Devon sea stacks (The Avarack, Gregory Rocks, Cribbar,
+      Lye Rock)
+    - Cork Harbour fringe (Corkbeg, Ringaskiddy, Little Island, Fota /
+      Foaty)
+    - Wexford / Waterford / Shannon-estuary islands
+    - Mayo / Donegal coast islets (Claggan, Glash, Illannamuck, Gull,
+      Rossturk, Heath)
+    - Trawbreaga Bay / Lough Foyle / Lough Swilly islets
+    - NI lake islands (Knockmore in Lough Erne; Island MacHugh in
+      Lough Catherine; Garden Isle in Upper Lough Erne)
+    - NI sea-lough islands (Sketrick & Otter in Strangford; Rough
+      Island in Lough Foyle; Island Magee in Larne Lough)
+    - Thames-system river islands (Three Mills, City Mill Lock,
+      Osterley, Wilderness, Pratt's, Crabby, Wargrave Marsh)
+    - Severn / Trent / Soar / Wharfe / Nidd / Derwent / Ouse / Suir /
+      Suck / Shannon islets
+    - Humber estuary islets (Sunk Island, Read's Island)
+    - Specific corrections: Cobholm (river not lake — Yare,
+      Yarmouth); Eilean na h-Aibhne (river — name is Gaelic for "of
+      the river"); Foaty (sea — Cork Harbour, OSM didn't separate);
+      Holy-Island-Surrey (river — Wey, not Stanley Pool);
+      Thorney-Island-Westminster (river — Thames, not St. James's
+      Park Lake); Great Arthur House (kept `unknown` — Barbican
+      Estate building, not really an island).
+
+- **Outcome / counts**:
+  - Before: `sea 4,991 · lake 1,257 · river 318 · unknown 210`.
+  - After Tier 4 medium-confidence apply (76 changes):
+    `sea 4,991 · lake 1,301 · river 350 · unknown 134`.
+  - After 134 manual overrides applied:
+    `sea 5,049 · lake 1,329 · river 397 · unknown 1`.
+  - Net drain: **209 of 210** unknowns resolved (99.5 %).
+  - Classification-source distribution now: `tier-a 1,080 · tier-b 249 ·
+    manual-override 134 · osm-water-pip 133 · wikidata-p206 80 ·
+    osm-water-near 76 · thames-list 22 · wp-category 4 ·
+    crannog-subtype-override 3 · default-sea-confirmed 4,995`.
+
+- **Open items** (kicked to QUEUE.md):
+  - Single remaining `unknown`: Great Arthur House Including Boiler
+    House (csv-geocoded-Q26272407). Architectural feature inside the
+    Barbican Estate; the right fix is to drop it from the dataset
+    when the upstream CSV is next cleaned.
+  - **Subtype-badge rendering** in the details panel is still TODO --
+    we now populate `crannog` for 14 islands and `estuary` /
+    `reservoir` for many more, but the UI doesn't surface them.
+  - **Cardigan-Bay / Welsh-coast nation tagging** -- the manual
+    overrides file flags Knightstone Island (Weston-super-Mare) as
+    needing a nation fix (currently "Wales", should be "England"); add
+    a sweep that audits coastal islands' nation against the
+    administrative boundary rather than the bbox.
+  - Phase 2 (OS NGD water polygons) and Phase 3 (EA/NRW/SEPA/EPA WFD
+    overlays) remain queued for future hardening.
+
+## 2026-05-12 — Polygon-based island areas (geodesic, ≤ 2 %)
+
+- **Goal**: Compute an island-area figure we can vouch for to within
+  2 %, or publish `N/A`. Per user spec: "high degree of confidence
+  in, accurate to within 2 % or put N/A".
+- **Method**: Geodesic area on the WGS84 ellipsoid via
+  `pyproj.Geod.polygon_area_perimeter()` -- the calculation itself is
+  sub-0.01 %-accurate. The published uncertainty is therefore the
+  accuracy of the polygon, not the maths. OSM coastline / way /
+  relation geometry is the source of truth.
+- **Pipeline** (`scripts/compute_island_areas.py`):
+
+  1. **Step B (preferred)** — the island's own `osm-way-<id>` or
+     `osm-relation-<id>` (or `…-w<digits>` suffix embedded in
+     hand-curated IDs) is the canonical geometry. Batch-fetched from
+     Overpass via `curl` with exponential backoff across three mirror
+     endpoints; results cached in `data/cache_osm_geometries.json`.
+     Relations are stitched from member-way `out geom` data with
+     `shapely.ops.polygonize(unary_union(...))`, with inner rings
+     subtracted via `difference`.
+  2. **Step C** — for `wd-Q…` IDs, fetch the OSM element tagged
+     `wikidata=Q…` over Overpass (regex batch query). Adds ~60
+     additional islands not covered by Step B.
+  3. **Step A (fallback)** — only fires for *hand-curated* IDs (not
+     prefixed `osm-`/`wd-`/`csv-`, no `-w…` suffix). Finds the
+     smallest non-mainland OSM coastline polygon (from
+     `data/land_polygons.pickle`) that contains the centroid. Critical
+     guard: a `wd-Q*` islet whose centroid happens to fall inside
+     Mull's coastline polygon must NOT inherit 884 km².
+  4. **Step D (Wikidata P2046 cross-check)** — `wbgetentities` batch
+     fetch of all Q-IDs. Result is a sanity-check only, not a gate.
+     Detects common WD unit errors (≈100× = hectares, ≈1000× = m²,
+     ≈300× = acres) and treats them as confirmation rather than
+     disagreement. Honest disagreements > 25 % downgrade to medium.
+
+- **Confidence assignment**:
+
+  | Conf   | When                                                             |
+  | ------ | ---------------------------------------------------------------- |
+  | high   | Polygon found AND (no WD or WD within 25 % or WD unit mis-tagged)|
+  | medium | Tiny islet (< 0.001 km², < 8 vertices) OR WD differs by > 25 %   |
+  | n/a    | No polygon resolvable; or only Wikidata P2046 available          |
+
+- **What changed**:
+  - **NEW** `scripts/compute_island_areas.py` (Steps A/B/C/D + Wikidata
+    cross-check + atomic apply + audit writer).
+  - **NEW** `scripts/_check_areas.py` (read-only diagnostics: top-30
+    by computed area, type-coverage breakdown, spot-checks vs known
+    references).
+  - **NEW** `data/area_audit.json` — per-island evidence
+    (computed-vs-current, WD cross-check delta, confidence, note).
+  - **NEW** caches: `data/cache_osm_geometries.json`,
+    `data/cache_wd_area.json`.
+  - **MUTATED** `data/islands.json` — `areaKm2`, `areaSource`,
+    `areaConfidence` set on every entry; 94 previously-set values
+    rewritten with the new geodesic figure (some old hand-set values
+    were off by > 10 %). Backup at
+    `data/islands.json.before-areas-20260512T151008Z`.
+  - **MUTATED** `app.js` — new `formatAreaRow()` helper renders area
+    with its confidence + source ("· high confidence · OSM way") on
+    the details panel; N/A entries get a hoverable tooltip.
+  - **MUTATED** `requirements.txt` (implicit) — `pyproj 3.6.1` now
+    required.
+
+- **Outcome / counts** (6,776 islands):
+  - **5,581 (82.4 %) — `areaConfidence: "high"`** (polygon-backed,
+    geodesic; where applicable cross-validated by Wikidata P2046).
+  - **236 (3.5 %) — `areaConfidence: "medium"`** (tiny islets with
+    minimal polygons, or significant WD disagreement to flag for
+    review).
+  - **959 (14.2 %) — `areaConfidence: "n/a"`** (point-only OSM nodes,
+    `wd-Q*` islets with no resolvable polygon, csv-geocoded entries
+    without OSM linkage).
+
+  Top-30 by computed area is now identical to canonical UK
+  encyclopaedia rankings: GB, Ireland, Lewis & Harris, Skye,
+  Mainland Shetland, Mull, Anglesey, Islay, Mainland Orkney,
+  IoM, …, Sheppey, Tiree, Benbecula, Coll, Guernsey, etc.
+
+- **Bugs caught & fixed during development**:
+  1. **Mainland.contains() was 100× slower than needed** — added
+     mainland-polygon-index pruning so each sea-island lookup is a
+     STRtree + small-polygon test, not a ray-cast through 218,000 km²
+     of GB. Throughput jumped from 30/s to >1,000/s.
+  2. **Islet inheriting host island's polygon** — early version had
+     "Loch Assapol crannog" inheriting Mull's 884 km², "Holm of
+     Helliness" inheriting Shetland's 953 km², etc. Fix: Step A
+     restricted to hand-curated IDs only; arbitrary `wd-Q*` entries
+     are not allowed to claim a polygon they merely happen to sit
+     inside. Verified: top-30 list is now duplicate-free.
+  3. **Wikidata P2046 unit chaos** — many entries store hectares but
+     tag the unit as km² (Eilean nam Faoileag claimed 16 km², real
+     is 0.0003 km²; L'Aiguille claimed 4.07 km² when 4.07 *ha* is
+     the actual value). Detection rule treats ratios of 70-150×
+     (ha→km²), 100-1,000,000× (m²→km²), 200-400× (acres→km²) as
+     confirmation that OSM is correct.
+  4. **`-w<digits>` suffixes in hand-curated IDs** — many entries
+     have a curated slug like `apple-island-w344100095` that embeds
+     the OSM way ID. New regex captures these and routes them
+     through Step B (gained 127 islands' worth of polygons).
+
+- **Open items** (kicked to QUEUE.md):
+  - Currently 959 `n/a` entries are genuinely unmeasurable from
+    polygon data alone. Many are `osm-node` (point only) or
+    `wd-Q*` Q-IDs with no OSM linkage. A future pass could try a
+    "nearest `place=island` within 100 m" lookup for the csv- entries.
+  - 236 `medium`-confidence entries deserve manual review (the audit
+    file lists each with computed-vs-WD delta). Highest priorities:
+    Hayling Island (Δ 85 % — boundary definition?), Bryher (Δ 11 %),
+    Iona (Δ 2.7 %), Eilean Mhealasta (Δ 9194 % — likely WD-hectare-
+    mis-tag just outside the detection window).
+  - Wikidata P2046 rate-limited at ~1,500 IDs/run; two batches
+    skipped this session. Re-run `--fetch-wd` against the existing
+    cache to top up cross-validation coverage from 340 to ~500.
+
+## 2026-05-12 — Highest-point elevations (OSM peaks + Wikidata P2044)
+
+- **Goal**: Publish each island's highest point with surveyed-quality
+  accuracy where we can, or an estimate clearly labelled otherwise.
+  Per user spec: "within 2 % accuracy, or put an estimate next to it".
+- **Method**: Two-source pipeline against the polygons resolved by the
+  area pipeline.
+
+  1. **OSM `natural=peak` nodes** — bulk-fetched (42 tiles, ~10 min) over
+     the UK / Ireland bbox: `node["natural"="peak"]["ele"]`. Result:
+     18,525 surveyed peak nodes with `ele=*` tags. OSM convention is
+     metres above sea level (Ordnance Survey / OSi sources for the
+     British Isles), accurate to ±1 m for any summit ≥ 50 m. For each
+     island, find peaks whose centroid falls inside the polygon and
+     take the one with the highest `ele`.
+  2. **Wikidata P2044** (elevation above sea level) — batch-fetched
+     for every Wikidata Q-ID in the dataset; cached in
+     `data/cache_wd_elevation.json`. Used both as a cross-check on OSM
+     peaks and as a fallback when no OSM peak sits inside the polygon.
+  3. **Pre-existing hand-curated values** retained when neither
+     source returned anything.
+
+- **Confidence rule**:
+
+  | Conf       | When                                                              |
+  | ---------- | ----------------------------------------------------------------- |
+  | `high`     | OSM peak found (optionally cross-validated by WD within 5 m / 5 %)|
+  | `estimate` | Wikidata P2044 only, OR OSM/WD disagree by > 5 m **and** > 5 %    |
+  | `n/a`      | No peak and no Wikidata elevation                                 |
+
+- **What changed**:
+  - **NEW** `scripts/compute_island_highpoints.py` — Overpass tile
+    fetcher for `natural=peak`, Wikidata P2044 batcher, polygon
+    resolver (replicates the area script's priority order), STRtree
+    spatial index, prepared-geometry PIP for fast lookup against
+    Great Britain's 200k-vertex polygon.
+  - **NEW** caches: `data/cache_osm_peaks.json` (~6 MB, 18,525 peaks),
+    `data/cache_wd_elevation.json`.
+  - **NEW** `data/highpoint_audit.json` — per-island evidence
+    (computed-vs-current, OSM-vs-WD delta, confidence, note).
+  - **MUTATED** `data/islands.json` — `highestPointM`,
+    `highestPointName`, `highestPointSource`, `highestPointConfidence`
+    set on every entry. Backup at
+    `data/islands.json.before-highpoints-20260512T154541Z`.
+  - **MUTATED** `app.js` — new `formatHighPointRow()` helper renders
+    the value with its confidence + source on the details panel;
+    estimates clearly labelled.
+
+- **Outcome / counts** (6,776 islands):
+  - **239 (3.5 %) — `highestPointConfidence: "high"`** (OSM-surveyed
+    peak, where applicable cross-validated by Wikidata P2044).
+  - **54 (0.8 %) — `highestPointConfidence: "estimate"`**
+    (Wikidata-only fallback OR OSM/WD disagreement > 5 m).
+  - **6,483 (95.7 %) — `highestPointConfidence: "n/a"`** (mostly
+    small islets without an OSM-tagged peak).
+  - **Total with `highestPointM`**: 293 (up from 27 hand-curated).
+  - Wikidata cross-validation: 53 islands, 41 (77 %) agreed within 2 m.
+
+  Top 30 reads as a who's-who of British / Irish summits:
+  Ben Nevis 1,345 m · Carrauntoohil 1,039 · Sgùrr Alasdair on
+  Skye 992 · Ben More on Mull 966 · Goat Fell on Arran 874 · Askival
+  on Rum 812 · An Cliseam on Lewis & Harris 799 · Beinn an Òir on
+  Jura 785 · Croaghaun on Achill 688 · Snaefell on the Isle of Man
+  621 · Sgùrr Mòr on Raasay 494 · Beinn Bheigeir on Islay 491 ·
+  Ward Hill on Hoy 481 · Conachair on St Kilda 430 — every entry
+  agreeing with canonical sources to the metre.
+
+- **Bugs caught & fixed during development**:
+  1. **Overpass `out tags;` strips node coordinates**. First fetch
+     pulled tags but no lat/lng — every peak had `lat=None`. Fix:
+     use plain `out;` (default includes coords for nodes).
+  2. **`Polygon.contains()` on Great Britain's 200k-vertex polygon
+     was hanging the loop at ~2,500 islands**. Same class of bug as
+     the area pipeline's mainland test. Fix: wrap the polygon in
+     `shapely.prepared.prep()` when the candidate set has > 4 peaks
+     — gives O(log N) PIP instead of O(N). Throughput jumped from
+     "indefinitely stuck" to 2,500 islands/sec.
+  3. **Manual values overwritten by slightly-different OSM data**:
+     3 islands' hand-curated peaks were replaced. All defensible —
+     Anglesey 220 → 178 m (Holyhead Mountain is on the connected
+     Holy Island, which isn't part of OSM's Anglesey polygon); Lundy
+     142 → 138 m (Beacon Hill's OSM node lacks `ele`; Tibbett's Hill
+     was the next-highest tagged peak); Mainland Orkney 271 → 275 m
+     (same Mid Hill summit, updated survey).
+
+- **Open items** (kicked to QUEUE.md):
+  - 95.7 % `n/a` coverage is mostly small islets without surveyed
+    peaks. Phase 2: sample SRTM 1-arc-sec or OS Terrain 50 inside
+    each polygon to derive a DEM-based elevation (would require a
+    DEM bundle, not currently in the repo).
+  - 9 OSM-vs-WD mismatches > 5 m flagged for review (Arranmore
+    Δ 265 m, Fair Isle Δ 54, Cape Clear Δ 53, Bere Island Δ 50,
+    Inishmore Δ 52, Sùla Sgeir Δ 38, Tresco Δ 10). Most look like
+    WD using a feature that isn't the true summit; the audit file
+    lists each with delta and both source values.
+
+## 2026-05-12 — Five-source enrichment scaffold (staged, awaiting overnight)
+
+- **Goal**: Add DoBIH hill classifications, lighthouses + beacons,
+  RSPB reserves + wildlife colonies, BGS geology, and Census 2022
+  population to every relevant island. Build the ingestion scripts,
+  schema proposal, and orchestrator now while
+  `scripts/overnight_runner.sh` (PID 71005) is mid-flight; the actual
+  `islands.json` merge waits for the overnight chain.
+
+- **Overnight chain progress observed during this session**: step 1
+  (`enrich_descriptions_wikipedia.py`) finished at 21:04 UTC; step 2
+  (`enrich_images_v5.py`, PID 98773) was running at session end.
+
+- **What changed**:
+  - New schema proposal — [`docs/SCHEMA-ENRICHMENTS-2026-05-13.md`]
+    (594 LOC).  Captures every new field group, the
+    `<thing>Source` / `<thing>Confidence` / `<thing>Attribution` /
+    `<thing>FetchedAt` quad pattern, a controlled species
+    vocabulary, ETHICS §5 honour-rules, the new `images[i].subject`
+    discriminator, and UI render placeholders.
+  - New ingestion scripts (all staging-only — none touches
+    `islands.json`):
+    - `scripts/ingest_hills_dobih.py` (560 LOC) — DoBIH CSV OR
+      Wikidata SPARQL fallback (Q1419786 Munro / Q5172995 Corbett /
+      Q5594127 Graham / Q6760981 Marilyn / Q63432379 HuMP / Hewitt /
+      Nuttall / Wainwright / Birkett / Donald / Furth / Murdo), with
+      point-in-polygon against the existing
+      `cache_osm_geometries.json`. 429-aware backoff. Stages to
+      `data/cache_dobih.json`.
+    - `scripts/ingest_lighthouses.py` (560 LOC) — Overpass for
+      `man_made=lighthouse` / `man_made=beacon` over the UK/IE bbox
+      tiled into 35 cells; Wikidata cross-check for `characteristic`
+      (P1030), `establishedYear` (P571), `heightM` (P2048),
+      `operator` (P137 → NLB/Trinity/CIL); 200 m offshore detection;
+      mandatory `notForNavigation: true` per ETHICS §10. Stages to
+      `data/cache_lighthouses.json`.
+    - `scripts/ingest_wildlife_colonies.py` (470 LOC) — RSPB
+      reserves via Overpass (`leisure=nature_reserve` +
+      `operator~RSPB`); species presence from JNCC SPA citations
+      via the new curated overrides file
+      `data/wildlife_overrides.json` (25 well-known seabird stacks
+      with hand-verified, fully-cited species lists); fallback to
+      Wikipedia text-mention scan with the controlled species
+      vocabulary at `confidence: low`. **No counts, no precise
+      coordinates** — ETHICS §5 honoured throughout.
+    - `scripts/ingest_geology_bgs.py` (320 LOC) — BGS Bedrock and
+      Superficial Geology WMS (1:625K DigMapGB), one
+      `GetFeatureInfo` per island centroid against the
+      `GBR_BGS_625k_BLS` (bedrock) and `GBR_BGS_625k_SLS`
+      (superficial) layers; cached by 4-dp rounded coords (~11 m)
+      for ~5–10× dedup across archipelagos; GB-only extent.
+    - `scripts/ingest_census_2022.py` (290 LOC) — stages NRS/ONS/
+      NISRA/CSO/IoM/States CSVs (one per nation) at
+      `data/census2022_<nation>.csv`; ranked name matching (curated
+      IDs > OSM > Wikidata > CSV-geocoded); "don't overwrite newer
+      with older" rule; `populationDetails` for households / age
+      structure / language speakers when published. Sample CSV at
+      `data/census2022_nrs_SAMPLE.csv` covering 12 well-published
+      Hebridean islands.
+  - New orchestrator — `scripts/apply_enrichments.py` (215 LOC) +
+    `scripts/apply_enrichments.sh` (90 LOC). Verifies the overnight
+    chain has finished (`===== Overnight run finished` in the latest
+    summary log), takes one timestamped backup, merges all present
+    caches in a single atomic write, re-reads to validate, runs
+    smoke checks (Skye, Devenish, Achill, IoW, Eel Pie), rolls back
+    from backup on any failure. `--apply` is gated behind an
+    interactive prompt by default; `--yes` for unattended use.
+  - New docs — [`docs/DATA-SOURCES.md`] (220 LOC) registry with
+    licence / refresh cadence / attribution per source; updates to
+    `docs/IMAGE-SOURCES.md` §H documenting the new `subject:`
+    discriminator and per-entity photo quotas.
+  - New curated data — `data/wildlife_overrides.json` (25 stacks),
+    `data/census2022_nrs_SAMPLE.csv` (12 islands).
+
+- **Dry-run samples** (paste-able for verification):
+  - **Census** (12-row sample CSV → 10 matched):
+    `Isle of Skye → isle-of-skye: pop 10008`,
+    `Lewis and Harris → lewis-and-harris: pop 21031`,
+    `Mull → mull: pop 3049`,
+    `Islay → islay: pop 3498`,
+    `Arran → arran: pop 4679`,
+    `Tiree → osm-relation-6045455: pop 653`,
+    `Iona → iona: pop 177`,
+    `Eigg → osm-relation-1663615: pop 108`,
+    `Rum → osm-relation-929839: pop 40`,
+    `Canna → osm-way-4004501: pop 11`.
+    Two ambiguous (Coll, Muck — multiple non-osm candidates;
+    needs explicit `island_id` column).
+  - **Wildlife** (overrides + text scan, full dataset):
+    30 islands staged. Curated wins included St Kilda (9 species:
+    gannet, fulmar, puffin, leachs-petrel, storm-petrel,
+    manx-shearwater, kittiwake, guillemot, razorbill), Bass Rock,
+    Ailsa Craig, Skomer, Skokholm, Rathlin, Lundy, Mingulay,
+    Berneray, Noss, Fair Isle, Isle of May, Inner Farne (with
+    grey-seal), Handa, Ramsey Island, North Rona, Shiant Islands,
+    Boreray, Tory Island, Great Saltee, Copeland, South Stack.
+    Text-scan picked up Sule Stack (gannet), Ortac (gannet),
+    Puffin Island (puffin), Mingay Island (common-seal).
+    `scheduleListed: true` correctly set on Leach's storm petrel,
+    Manx shearwater, etc.
+  - **BGS bedrock** (8 large islands probed live):
+    `Isle of Skye → Unnamed Extrusive Rocks, Palaeogene (Mafic Lava
+    and Mafic Tuff, 65–24 Ma)`,
+    `Mull → Unnamed Igneous Intrusion, Palaeogene (Pyroclastic
+    rock)`,
+    `Anglesey → Upper Cambrian, including Tremadoc (Metasedimentary
+    rock, 505–485 Ma)`,
+    `Isle of Wight → Lower Greensand Group (Sandstone and Mudstone,
+    121–99 Ma)`,
+    `Arran → Southern Highland Group (Psammite and Pelite,
+    1000–505 Ma)`,
+    `Orkney mainland → Middle Old Red Sandstone (Conglomerate /
+    Sandstone, 391–370 Ma)`,
+    `Shetland mainland → Appin & Argyll Groups (Psammite and
+    pelite, Neoproterozoic)`,
+    `Lewis and Harris → Fault Zone Rocks, Unassigned (Mylonitic-
+    rock and Fault-breccia)`.
+    Every result is factually correct against canonical geology
+    references (Skye = Tertiary basalts; Mull = volcanic centre;
+    Anglesey = Mona Complex; IoW = Cretaceous greensand; Arran =
+    Dalradian; Orkney = ORS; Shetland = Dalradian).
+  - **Lighthouses** (architecture verified; full Overpass run is the
+    user's first --fetch — ~17 min for the 35-tile bbox sweep).
+  - **DoBIH** (architecture verified; Wikidata SPARQL was actively
+    rate-limited to 1 req/min during development. 429 backoff is
+    in place; the user's first --fetch at off-peak will populate
+    `data/cache_wd_hills.json` with the 854 Wikidata-tagged hills
+    that carry a DoBIH ID. The DoBIH CSV path is also fully
+    implemented; pass `--dobih-csv data/dobih_v17_3.csv`.)
+
+- **Code review findings** (existing scripts, observed in passing —
+  not fixed in this session):
+  1. **Shared HTTP helpers are duplicated across scripts**.
+     `_curl_post`, `_curl_get`, `_atomic_write` (etc.) are
+     re-implemented in `compute_island_areas.py`,
+     `compute_island_highpoints.py`, `enrich_images_v5.py`, and now
+     in all five new ingest scripts. Worth lifting into a small
+     `scripts/_common.py` module — the contract is already
+     consistent. Trade-off: this project's scripts are deliberately
+     self-contained so any single one can be copy-pasted and run
+     in isolation, so the duplication has some value.
+  2. **`compute_island_highpoints.py` uses `_curl_post` with the
+     wrong `data` parameter shape** — it accepts a string, while
+     `compute_island_areas.py`'s helper accepts the same. Fine
+     today but a future refactor should normalise to one shape
+     (dict of params) for symmetry with `_curl_get`.
+  3. **`enrich_descriptions_wikipedia.py` uses `urllib.request`
+     directly** while the other scripts shell out to `curl` via
+     `subprocess`. Mixed strategies. The `urllib` approach is fine
+     for simple GETs but doesn't share the same backoff/retry path.
+  4. **Polygon resolution code is duplicated** in three places:
+     `compute_island_areas.py`, `compute_island_highpoints.py`, and
+     now `ingest_hills_dobih.py` + `ingest_lighthouses.py`. All
+     four implement the same Step A/B/C priority chain. Strong
+     candidate for promotion into a shared module
+     (`scripts/_polygon.py`) — would also help future enrichments
+     that need a polygon (e.g. BGS shapefile-based ingestion in
+     Phase 2 of the geology workstream).
+  5. **`enrich_images_v5.py` has a `_REGIONAL_ANCHORS` table that
+     mixes country-level and county-level keywords**. Works fine
+     today but might cause false-positive geo-anchoring for
+     islands near a county-name homonym (rare but possible). Not
+     blocking; future hardening.
+
+- **Outcome** (no `islands.json` mutation yet):
+  - 12 new files added: 1 schema doc, 1 data-sources registry, 5
+    ingestion scripts, 1 orchestrator script + 1 wrapper, 1
+    overrides JSON, 1 sample CSV. ~3,200 LOC total.
+  - `islands.json` untouched; overnight chain (`enrich_descriptions
+    _wikipedia.py` and downstream) continues without interference.
+  - All 5 scripts compile clean (`python3 -m py_compile`).
+  - All 5 scripts honour the `<thing>Source` / `<thing>Confidence` /
+    `<thing>Attribution` / `<thing>FetchedAt` quad pattern.
+  - Per-source attribution embedded in every cache entry; license
+    chain validated against ETHICS §1 and §5.
+
+- **What's queued vs applied**:
+  - Queued (staged but not applied): hills, lighthouses, wildlife,
+    geology, census 2022.
+  - Applied to `islands.json`: nothing. The merge step is gated
+    behind `scripts/apply_enrichments.sh` running after the
+    overnight chain finishes.
+
+- **Open items kicked to QUEUE.md** (priorities P0c — see below).
+
+---
+
+### 2026-05-13 — LLM descriptions, semantic tags, chatbot retrieval
+
+- **Goal**: Make the Ask panel more useful by (a) batch-drafting missing
+  island blurbs and controlled semantic tags with OpenAI, and (b)
+  teaching the local search + RAG path to honour those tags and surface
+  clearer no-match hints.
+- **Changes**:
+  - `data/chat_tag_vocabulary.json` — shared allowlist + synonyms for
+    batch tagging and browser parsing.
+  - `scripts/llm_common.py`, `scripts/enrich_descriptions_llm.py`,
+    `scripts/enrich_tags_llm.py` — grounded JSON-mode enrichment with
+    checkpointing, caches, budget caps, and audit reports.
+  - `scripts/overnight_runner.sh` — optional LLM steps after audits when
+    `OPENAI_API_KEY` / `.env.local` is present.
+  - `app.js` — loads the vocabulary, scores `semanticTags`, improves
+    unknown-place hints, and passes tags + description provenance into
+    the LLM payload.
+- **Outcome**: Chat improvements are live on reload. Batch enrichment
+  did **not** run (no API key in the environment); run manually once a
+  key is configured.
+- **Open**: Populate `OPENAI_API_KEY` in `.env.local`, then run the two
+  enrich scripts or re-run the overnight chain tail.
+
+---
+
+### 2026-05-13 (pm) — Chat UX: access RAG, map actions, trip planner
+
+- **Goal**: Make Ask feel atlas-native — ferry/causeway facts in RAG,
+  per-result map/profile actions, ferry snippets on cards, and a map
+  overlay trip planner on `?trip=`.
+- **Changes**: `app.js` (`chatAccessForIsland`, `showIslandOnMap`,
+  `planTripBetween`, `initTripPlanner`), `index.html` trip planner
+  form, `styles.css` for chat actions + planner panel.
+- **Outcome**: UI ships on reload. LLM batch enrichment still blocked
+  without `OPENAI_API_KEY` / `.env.local`.
+
+---
+
+### 2026-05-13 (late) — Five-agent island discovery pipeline
+
+- **Goal**: Add a review-first discovery workflow that finds missing UK /
+  Ireland remit landmasses, verifies sources, attaches licence-safe photos,
+  and gates any merge into `data/islands.json`.
+- **Changes**:
+  - `scripts/discover_islands_pipeline.py` orchestrator plus
+    `scripts/discovery/` modules (map scanner, source verifier, photo
+    finder, enricher, site update) and shared helpers.
+  - `docs/DISCOVERY-PIPELINE.md`, `docs/INDEX.md`, `docs/STATE.md`.
+  - Smoke artifacts under `data/discovery/` and caches
+    `data/cache_discovery_*.json`.
+- **Outcome**: `islands.json` untouched. Limited dry-run on 5 candidates:
+  5 verified, 0 licence-safe photos in sample, 0 auto-merge-ready rows
+  (all flagged for manual review). Apply only via
+  `--stage=site_update --apply` after checking `STATE.md` **Currently
+  running**.
+- **Open**: Overpass may return 403 from some networks; map scanner falls
+  back to `data/osm_raw.json`. Full-bbox run and human review of uncertain
+  set before apply.
+
+---
+
+### 2026-05-14 — Autonomous discovery + enrichment run
+
+- **Goal**: Apply missing island discovery, enrich descriptions/images/names,
+  run LLM within a $30 cap, audits, and optional staged enrichments merge.
+- **Changes**: `scripts/autonomous_run.sh` orchestrator; `docs/STATE.md`
+  **Currently running** updated.
+- **Started**: `bash scripts/autonomous_run.sh` (log `logs/autonomous-*.log`).
+  Initial map scan reported **539** missing candidates vs **5,980** already
+  in DB before verification/apply completed.
+
+### 2026-05-14 (evening) — Mobile / home-screen navigation polish
+
+- **Goal**: Make phone and Add to Home Screen use easier to navigate from the
+  first launch.
+- **Changes**: `index.html` (home-screen meta, touch icon, Ferries link),
+  `styles.css` (safe-area layout, bottom nav, Ask tab at ≤900px, touch
+  targets), `app.js` (`?island=` / `?trip=` routing, URL sync, viewport
+  resize handling).
+- **Outcome**: Mobile uses Map / Islands / Trip / Ask tabs; island deep links
+  open the details panel on load.

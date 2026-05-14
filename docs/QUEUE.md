@@ -6,12 +6,140 @@
 
 ## P0 — currently in flight
 
-- `scripts/enrich_images_v4.py` (PID 63436) — galleries pass, ETA ~90 min.
-- `scripts/geocode_csv_skips.py` (PID 64221) — CSV-skip recovery, ETA ~30 min.
-- ~~`scripts/compute_drive_times.py`~~ ✅ done 2026-05-11 20:25 — populated
-  drive-times for **535 of 538 mainland terminals** (3 unreachable in
-  OSRM's road graph). Now uses `curl` via `subprocess` (Python's bundled
-  SSL stack failed on the OSRM demo server's TLS).
+- `scripts/overnight_runner.sh` (PID 71005, started 2026-05-12 20:30 UTC):
+  1. `enrich_descriptions_wikipedia.py` — **done** at 21:04 UTC
+     (~1180 candidates processed; report written to
+     `data/description_enrichment_report.json`).
+  2. `enrich_images_v5.py` (PID 98773) — **mid-run**, ~6–10 h.
+  3. Report-only audits (duplicates, coordinates, broken links) —
+     queued.
+
+## P0b — staged but not yet applied (this session, 2026-05-12)
+
+Five new enrichments are STAGED (per-source cache files), awaiting
+the overnight chain to finish before the single atomic merge runs.
+
+- **Hills** (DoBIH classifications) — `scripts/ingest_hills_dobih.py`
+  → `data/cache_dobih.json`. Wikidata SPARQL covers ~854 hills with
+  DoBIH IDs; full DoBIH CSV available at hills-database.co.uk under
+  CC-BY 4.0 with email registration.
+- **Lighthouses + beacons** — `scripts/ingest_lighthouses.py` →
+  `data/cache_lighthouses.json`. OSM `man_made=lighthouse|beacon` over
+  the UK/IE bbox, Wikidata cross-check for characteristic / built
+  year / operator. `notForNavigation: true` mandatory.
+- **RSPB reserves + wildlife colonies** — `scripts/ingest_wildlife_
+  colonies.py` → `data/cache_wildlife.json`. Strictly island-level
+  presence only (ETHICS §5).  25 curated overrides + Wikipedia text
+  scan as low-confidence backup.
+- **Geology** (BGS DigMapGB-625) — `scripts/ingest_geology_bgs.py`
+  → `data/cache_bgs.json`. WMS GetFeatureInfo per centroid; GB only.
+- **Census 2022** — `scripts/ingest_census_2022.py` → `data/
+  cache_census2022.json`. Reads one CSV per nation; honours "don't
+  overwrite newer with older". Sample NRS CSV staged with 12 islands.
+
+Apply step (single atomic merge):
+
+```
+# After overnight finishes:
+bash scripts/apply_enrichments.sh        # interactive
+bash scripts/apply_enrichments.sh --yes  # unattended
+```
+
+The apply step takes one timestamped backup, re-reads after writing,
+and runs smoke checks (Skye / Devenish / Achill / IoW / Eel Pie).
+Rolls back automatically on any failure.
+
+See [`docs/SCHEMA-ENRICHMENTS-2026-05-13.md`](SCHEMA-ENRICHMENTS-2026-05-13.md)
+for the full schema proposal and [`docs/DATA-SOURCES.md`](DATA-SOURCES.md)
+for source / licence / refresh-cadence detail.
+
+## P0c — follow-ups after the staged enrichment lands
+
+- **DoBIH CSV ingestion** — when the user signs up at
+  hills-database.co.uk and drops the CSV at `data/dobih_v17_3.csv`,
+  rerun `ingest_hills_dobih.py --dobih-csv … --commit` for the
+  canonical hill list (12,000+ hills vs Wikidata's 854).
+- **Census CSV completion** — NRS sample provided; add ONS, NISRA,
+  CSO Ireland, IoM, and Channel Islands CSVs (per nation).
+- **GSNI / GSI geology** — Northern Ireland (GSNI) and Republic of
+  Ireland (GSI) publish equivalent open WMS; current BGS ingest only
+  covers GB.  A follow-up `ingest_geology_gsni.py` /
+  `ingest_geology_gsi.py` can mirror the BGS script.
+- **Lighthouse photos** — once the lighthouses[] field group is
+  applied, run an `enrich_images_lighthouses.py` pass (extension of
+  `enrich_images_v5.py`) to attach 1–2 photos per lighthouse with
+  `subject: "lighthouse"`.
+- **UI rendering for the new field groups** — not shipped this
+  session.  `docs/SCHEMA-ENRICHMENTS-2026-05-13.md` §7 documents
+  where each new section would go and what CSS classes to introduce.
+
+- (nothing else — all prior P0 jobs from earlier sessions have completed.)
+
+## P0a — recently completed
+
+- ~~Highest-point elevations (OSM peaks + Wikidata P2044)~~ ✅ applied
+  2026-05-12 15:45 — `scripts/compute_island_highpoints.py` bulk-
+  fetched 18,525 surveyed `natural=peak` nodes across the UK / Ireland
+  bbox, spatial-indexed them, and assigned the highest peak inside
+  each island's polygon. Wikidata P2044 cross-validates and falls back
+  where no OSM peak is tagged. **Outcome**: 293 islands now have an
+  elevation (up from 27); 239 at high confidence, 54 marked
+  `estimate`. New schema fields: `highestPointM`, `highestPointName`,
+  `highestPointSource`, `highestPointConfidence`. UI renders the
+  source / confidence next to the figure. Audit at
+  `data/highpoint_audit.json`.
+- ~~Polygon-based island areas (≤ 2 % method, or N/A)~~ ✅ applied
+  2026-05-12 15:10 — `scripts/compute_island_areas.py` resolves a
+  polygon for each island (Step B: own OSM way / relation; Step C:
+  Wikidata→OSM; Step A: hand-curated coastline lookup), then runs
+  `pyproj.Geod.polygon_area_perimeter` for sub-0.01 % geodesic area.
+  Wikidata P2046 cross-check with unit-error detection.
+  **Outcome**: 5,581 high · 236 medium · 959 N/A on 6,776 islands
+  (85.8 % coverage). New schema fields: `areaKm2`,
+  `areaSource`, `areaConfidence`. UI updated to render confidence
+  + source on the details panel. Audit at `data/area_audit.json`.
+- ~~`scripts/enrich_images_v4.py`~~ ✅ done — galleries pass complete.
+- ~~`scripts/geocode_csv_skips.py`~~ ✅ done — CSV-skip recovery complete.
+- ~~`scripts/compute_drive_times.py`~~ ✅ done — drive-times for 535 of
+  538 mainland terminals (3 unreachable in OSRM).
+- ~~Phase 1 island reclassification~~ ✅ applied 2026-05-12 12:46 — 213
+  islands re-typed (157 sea→lake, 56 sea→river).
+- ~~Phase 1.5 positive-sea verification + `unknown` UI pill~~ ✅
+  applied 2026-05-12 13:15 — 210 islands flipped `sea → unknown`;
+  mainland test built offline by `scripts/build_land_polygons.py`.
+- ~~Drain the 210 `unknown` queue~~ ✅ applied 2026-05-12 13:55 —
+  Tier 4 proximity (76) + 134 manual overrides resolved 209 of 210.
+  Final: `sea 5,049 · lake 1,329 · river 397 · unknown 1` (the last
+  is a misclassified Barbican Estate building).
+
+## P0b — categorisation hardening (next layers)
+
+- **Subtype badges in the details panel.** We now have populated
+  `subtype` for ~250 islands (`tidal-loch`, `estuary`, `reservoir`,
+  `canal`, `pond`, `lagoon`, `oxbow`, `stream`, `crannog`). The UI
+  shows it inside the type label string (`Crannog (lake)`) but
+  doesn't render it as a distinct chip yet. Tiny visual job; promotes
+  earlier work without any new pipeline.
+- **Coastal-island nation audit.** The manual overrides flagged
+  Knightstone Island (Weston-super-Mare) as wrongly tagged "Wales"
+  when it's England; the underlying bbox-based `nation_for()` in
+  `fetch_islands.py` is sloppy near the Severn / Solway / Foyle
+  boundaries. Replace with a point-in-polygon test against admin
+  boundaries (Natural Earth or OS Boundary-Line).
+- **Drop dataset stowaways.** Two CSV-geocoded entries that aren't
+  geographic islands (`csv-geocoded-Q26272407` Great Arthur House and
+  `csv-geocoded-Q66227635` Thorney Island Community Primary School)
+  should be excluded at the ingestion stage rather than carried in
+  `islands.json`. Add a "is-this-actually-an-island?" sanity check
+  to `geocode_csv_skips.py`.
+- **OS NGD Features API integration (Phase 2).** Hit
+  `https://api.os.uk/features/ngd/ofa/v1/collections/wat-fts-water-1`
+  for each medium-confidence Phase-1 island and cross-check against the
+  OS authoritative water polygon. Requires the user to enable "OS NGD
+  Features API" on their existing OS DataHub project.
+- **EA / NRW / SEPA / EPA WFD overlays (Phase 3).** For the residual
+  estuary / transitional water disambiguation (Thames, Severn, Solway,
+  Clyde, Foyle).
 
 ## P1 — next session
 
@@ -50,6 +178,28 @@
 
 ## P2 — backlog (in rough order)
 
+- **Elevation follow-ups** (highest points shipped 2026-05-12):
+  - 95.7 % of islands are `n/a` because they have no OSM-tagged peak.
+    Phase 2: sample SRTM 1-arc-sec or OS Terrain 50 inside each
+    polygon to derive a DEM-based highest-elevation cell. Would
+    require fetching DEM tiles (large bundle, ~200 MB compressed for
+    the British Isles).
+  - 9 OSM-vs-WD mismatches > 5 m flagged in `highpoint_audit.json`
+    for manual review (Arranmore Δ 265 m, Fair Isle Δ 54, Cape Clear
+    Δ 53, Bere Island Δ 50, Inishmore Δ 52, Sùla Sgeir Δ 38, Tresco
+    Δ 10). Most look like Wikidata pointing at a non-summit feature.
+- **Area follow-ups** (polygon-based areas shipped 2026-05-12):
+  - Review the 236 `medium`-confidence entries from
+    `data/area_audit.json` and either confirm OSM, hand-curate, or
+    set N/A. Top candidates: Hayling Island (Δ 85 % — boundary
+    definition issue), Bryher (Δ 11 % — tide line), Eilean Mhealasta
+    (Δ 9194 % — likely a WD hectare-tag bug just outside our
+    detection window).
+  - Re-run `compute_island_areas.py --fetch-wd` later: two batches
+    were rate-limited (~166 Q-IDs missed) so the
+    Wikidata-cross-validated set is 340 instead of ~500.
+  - For the 959 N/A entries, consider a Step E: `place=island`
+    within 100 m for csv-geocoded entries (might unlock ~25 more).
 - **Ferry-routes follow-ups** (core feature shipped 2026-05-11 — see
   [`FERRIES.md`](FERRIES.md) and SESSION-LOG):
   - Surface a per-operator "data freshness" page that links to the

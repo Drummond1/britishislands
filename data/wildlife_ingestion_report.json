@@ -1,0 +1,372 @@
+{
+  "startedAt": "2026-05-12T21:02:17+00:00",
+  "islandsProcessed": 6776,
+  "rspbReservesAvailable": 0,
+  "overridesLoaded": 25,
+  "islandsWithReserve": 0,
+  "islandsWithColony": 30,
+  "  ofWhich_curated": 22,
+  "  ofWhich_textOnly": 8,
+  "sampleAudit": [
+    {
+      "id": "osm-way-495525351",
+      "name": "Ailsa Craig",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "gannet",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "fulmar"
+      ]
+    },
+    {
+      "id": "osm-way-3469292",
+      "name": "Bass Rock",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "gannet",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "shag"
+      ]
+    },
+    {
+      "id": "osm-relation-2789916",
+      "name": "Berneray",
+      "reserves": 0,
+      "colonies": 5,
+      "speciesSample": [
+        "fulmar",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-way-4010382",
+      "name": "Boreray",
+      "reserves": 0,
+      "colonies": 5,
+      "speciesSample": [
+        "gannet",
+        "fulmar",
+        "kittiwake",
+        "guillemot",
+        "razorbill"
+      ]
+    },
+    {
+      "id": "wd-Q2755722",
+      "name": "Coquet Island",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "roseate-tern"
+      ]
+    },
+    {
+      "id": "osm-way-529190905",
+      "name": "Cormorant Rock",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "cormorant"
+      ]
+    },
+    {
+      "id": "fair-isle",
+      "name": "Fair Isle",
+      "reserves": 0,
+      "colonies": 10,
+      "speciesSample": [
+        "fulmar",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-way-27013704",
+      "name": "Grassholm",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "gannet"
+      ]
+    },
+    {
+      "id": "osm-relation-6565329",
+      "name": "Great Copeland Island",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "manx-shearwater",
+        "eider",
+        "guillemot",
+        "razorbill",
+        "common-tern"
+      ]
+    },
+    {
+      "id": "osm-way-128077107",
+      "name": "Great Saltee",
+      "reserves": 0,
+      "colonies": 7,
+      "speciesSample": [
+        "gannet",
+        "puffin",
+        "kittiwake",
+        "guillemot",
+        "razorbill"
+      ]
+    },
+    {
+      "id": "osm-way-417926365",
+      "name": "Handa Island",
+      "reserves": 0,
+      "colonies": 7,
+      "speciesSample": [
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "puffin",
+        "fulmar"
+      ]
+    },
+    {
+      "id": "osm-relation-3077272",
+      "name": "Inner Farne",
+      "reserves": 0,
+      "colonies": 12,
+      "speciesSample": [
+        "puffin",
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "shag"
+      ]
+    },
+    {
+      "id": "osm-way-3469279",
+      "name": "Isle of May",
+      "reserves": 0,
+      "colonies": 9,
+      "speciesSample": [
+        "puffin",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "shag"
+      ]
+    },
+    {
+      "id": "lundy",
+      "name": "Lundy",
+      "reserves": 0,
+      "colonies": 8,
+      "speciesSample": [
+        "manx-shearwater",
+        "puffin",
+        "guillemot",
+        "razorbill",
+        "kittiwake"
+      ]
+    },
+    {
+      "id": "osm-way-157534025",
+      "name": "Mingay Island",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "common-seal"
+      ]
+    },
+    {
+      "id": "osm-way-885235014",
+      "name": "Mingulay",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "fulmar",
+        "kittiwake",
+        "guillemot",
+        "razorbill",
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-way-28220976",
+      "name": "North Rona",
+      "reserves": 0,
+      "colonies": 7,
+      "speciesSample": [
+        "leachs-petrel",
+        "storm-petrel",
+        "fulmar",
+        "kittiwake",
+        "guillemot"
+      ]
+    },
+    {
+      "id": "osm-way-8590977",
+      "name": "Noss",
+      "reserves": 0,
+      "colonies": 8,
+      "speciesSample": [
+        "gannet",
+        "kittiwake",
+        "fulmar",
+        "guillemot",
+        "razorbill"
+      ]
+    },
+    {
+      "id": "osm-way-3404613",
+      "name": "Ortac",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "gannet"
+      ]
+    },
+    {
+      "id": "osm-way-1213396832",
+      "name": "Puffin Island",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-way-4564233",
+      "name": "Puffin Island",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-relation-3012320",
+      "name": "Ramsey Island",
+      "reserves": 0,
+      "colonies": 7,
+      "speciesSample": [
+        "manx-shearwater",
+        "chough",
+        "kittiwake",
+        "guillemot",
+        "razorbill"
+      ]
+    },
+    {
+      "id": "rathlin",
+      "name": "Rathlin Island",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "fulmar",
+        "puffin"
+      ]
+    },
+    {
+      "id": "osm-way-1493746497",
+      "name": "Skokholm",
+      "reserves": 0,
+      "colonies": 5,
+      "speciesSample": [
+        "manx-shearwater",
+        "storm-petrel",
+        "puffin",
+        "razorbill",
+        "kittiwake"
+      ]
+    },
+    {
+      "id": "osm-relation-2856487",
+      "name": "Skomer",
+      "reserves": 0,
+      "colonies": 7,
+      "speciesSample": [
+        "manx-shearwater",
+        "puffin",
+        "storm-petrel",
+        "kittiwake",
+        "guillemot"
+      ]
+    },
+    {
+      "id": "osm-relation-10677661",
+      "name": "South Stack",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "guillemot",
+        "razorbill",
+        "puffin",
+        "kittiwake",
+        "fulmar"
+      ]
+    },
+    {
+      "id": "st-kilda",
+      "name": "St Kilda (Hirta)",
+      "reserves": 0,
+      "colonies": 9,
+      "speciesSample": [
+        "gannet",
+        "fulmar",
+        "puffin",
+        "leachs-petrel",
+        "storm-petrel"
+      ]
+    },
+    {
+      "id": "osm-way-28223661",
+      "name": "Sule Stack",
+      "reserves": 0,
+      "colonies": 1,
+      "speciesSample": [
+        "gannet"
+      ]
+    },
+    {
+      "id": "osm-way-4558807",
+      "name": "Tory Island",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "puffin",
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "fulmar"
+      ]
+    },
+    {
+      "id": "shiant-islands-garbh-eilean-eilean-an-tighe-eilean-mhuire-galta-morbeag",
+      "name": "Shiant Islands (Garbh Eilean, Eilean an Tighe, Eilean Mhuire + Galta Mòr/Beag)",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "puffin",
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "fulmar"
+      ]
+    }
+  ],
+  "dryRun": true,
+  "ethicsCompliance": "ETHICS.md §5 honoured: island-level only, no precise colony coords, no per-nest or count data ingested."
+}

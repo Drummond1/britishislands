@@ -1,0 +1,125 @@
+{
+  "_comment": "Curated wildlife-colony overrides for well-known seabird stacks. Strictly island-level presence only (ETHICS §5). No counts, no precise locations. Each entry's `species` list is sourced from public-domain references (Wikipedia, JNCC SPA citations, NPWS SPA citations, RSPB reserve pages) and reflects qualifying species at the named SPA / IBA. Island IDs were resolved against the live data/islands.json to use canonical identifiers.",
+  "_schema": {
+    "<islandId>": {
+      "species": ["controlled-vocab-key", "..."],
+      "confidence": "high|medium|low",
+      "source": "citation-url-or-spa-id"
+    }
+  },
+  "_coverage_gaps": [
+    "Skellig Michael / Little Skellig (NPWS SPA 004007) — not yet in islands.json; queue for ingestion.",
+    "Sula Sgeir (JNCC SPA UK9001071) — only 'Sula Skerry' (different etymology) present in islands.json; needs disambiguation."
+  ],
+
+  "st-kilda": {
+    "species": ["gannet", "fulmar", "puffin", "leachs-petrel", "storm-petrel", "manx-shearwater", "kittiwake", "guillemot", "razorbill"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001041 St Kilda citation (OGL 3.0)"
+  },
+  "osm-way-3469292": {
+    "species": ["gannet", "kittiwake", "guillemot", "razorbill", "shag", "puffin"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9004171 Forth Islands citation (OGL 3.0) — Bass Rock"
+  },
+  "osm-way-495525351": {
+    "species": ["gannet", "kittiwake", "guillemot", "razorbill", "fulmar", "puffin"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9003041 Ailsa Craig citation (OGL 3.0)"
+  },
+  "osm-relation-2856487": {
+    "species": ["manx-shearwater", "puffin", "storm-petrel", "kittiwake", "guillemot", "razorbill", "fulmar"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9020290 Skomer, Skokholm and the Seas off Pembrokeshire citation (OGL 3.0)"
+  },
+  "osm-way-1493746497": {
+    "species": ["manx-shearwater", "storm-petrel", "puffin", "razorbill", "kittiwake"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9020290 Skomer-Skokholm citation (OGL 3.0)"
+  },
+  "rathlin": {
+    "species": ["guillemot", "razorbill", "kittiwake", "fulmar", "puffin", "manx-shearwater"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9020071 Rathlin Island citation (OGL 3.0)"
+  },
+  "lundy": {
+    "species": ["manx-shearwater", "puffin", "guillemot", "razorbill", "kittiwake", "fulmar", "shag", "storm-petrel"],
+    "confidence": "high",
+    "source": "Lundy Marine Conservation Zone designation + RSPB description (OGL 3.0)"
+  },
+  "osm-way-885235014": {
+    "species": ["fulmar", "kittiwake", "guillemot", "razorbill", "puffin", "shag"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001031 Mingulay and Berneray citation (OGL 3.0) — Mingulay"
+  },
+  "osm-relation-2789916": {
+    "species": ["fulmar", "kittiwake", "guillemot", "razorbill", "puffin"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001031 Mingulay and Berneray citation (OGL 3.0) — Berneray"
+  },
+  "osm-way-8590977": {
+    "species": ["gannet", "kittiwake", "fulmar", "guillemot", "razorbill", "great-skua", "puffin", "shag"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9002131 Noss citation (OGL 3.0)"
+  },
+  "fair-isle": {
+    "species": ["fulmar", "kittiwake", "guillemot", "razorbill", "puffin", "arctic-tern", "arctic-skua", "great-skua", "shag", "storm-petrel"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9002091 Fair Isle citation (OGL 3.0)"
+  },
+  "osm-way-3469279": {
+    "species": ["puffin", "kittiwake", "guillemot", "razorbill", "shag", "fulmar", "eider", "arctic-tern", "sandwich-tern"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9004171 Forth Islands citation (OGL 3.0) — Isle of May"
+  },
+  "osm-relation-3077272": {
+    "species": ["puffin", "guillemot", "razorbill", "kittiwake", "shag", "fulmar", "arctic-tern", "common-tern", "sandwich-tern", "roseate-tern", "eider", "grey-seal"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9006031 Farne Islands citation (OGL 3.0) — Inner Farne (representative)"
+  },
+  "osm-way-417926365": {
+    "species": ["guillemot", "razorbill", "kittiwake", "puffin", "fulmar", "great-skua", "arctic-skua"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001381 Handa citation (OGL 3.0)"
+  },
+  "osm-relation-3012320": {
+    "species": ["manx-shearwater", "chough", "kittiwake", "guillemot", "razorbill", "fulmar", "grey-seal"],
+    "confidence": "high",
+    "source": "RSPB Ramsey Island reserve description (© RSPB)"
+  },
+  "osm-way-28220976": {
+    "species": ["leachs-petrel", "storm-petrel", "fulmar", "kittiwake", "guillemot", "razorbill", "grey-seal"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001071 North Rona and Sula Sgeir citation (OGL 3.0) — North Rona"
+  },
+  "shiant-islands-garbh-eilean-eilean-an-tighe-eilean-mhuire-galta-morbeag": {
+    "species": ["puffin", "guillemot", "razorbill", "kittiwake", "fulmar", "shag"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001351 Shiant Isles citation (OGL 3.0)"
+  },
+  "osm-way-4010382": {
+    "species": ["gannet", "fulmar", "kittiwake", "guillemot", "razorbill"],
+    "confidence": "high",
+    "source": "JNCC SPA UK9001041 St Kilda citation (OGL 3.0) — Boreray"
+  },
+  "osm-way-4558807": {
+    "species": ["puffin", "guillemot", "razorbill", "kittiwake", "fulmar", "shag"],
+    "confidence": "medium",
+    "source": "BWI Important Bird Area IE013 (BirdWatch Ireland) — Tory Island"
+  },
+  "osm-way-128077107": {
+    "species": ["gannet", "puffin", "kittiwake", "guillemot", "razorbill", "fulmar", "manx-shearwater"],
+    "confidence": "high",
+    "source": "NPWS SPA 004002 Saltee Islands citation (PSI Re-use, Ireland) — Great Saltee"
+  },
+  "osm-relation-6565329": {
+    "species": ["manx-shearwater", "eider", "guillemot", "razorbill", "common-tern", "arctic-tern"],
+    "confidence": "medium",
+    "source": "Copeland Bird Observatory open species lists — Great Copeland Island"
+  },
+  "osm-relation-10677661": {
+    "species": ["guillemot", "razorbill", "puffin", "kittiwake", "fulmar", "chough"],
+    "confidence": "high",
+    "source": "RSPB South Stack reserve description (© RSPB)"
+  }
+}

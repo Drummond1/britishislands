@@ -31,6 +31,19 @@ OPERATORS_PATH = ROOT / "data" / "operators.json"
 ISLANDS_PATH = ROOT / "data" / "islands.json"
 OUT_DIR = ROOT / "ferries"
 
+GTM_HEAD = """  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M2T6LN5J');</script>
+  <!-- End Google Tag Manager -->"""
+
+GTM_BODY_NOSCRIPT = """  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->"""
+
 
 # (slug, title, description, filter_fn(route, term_lookup, island_lookup) -> bool)
 def build_landing_specs():
@@ -237,6 +250,7 @@ def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
     return f"""<!doctype html>
 <html lang="en">
 <head>
+{GTM_HEAD}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{html.escape(title)} | Isles of Britain</title>
@@ -275,6 +289,7 @@ def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
   </style>
 </head>
 <body>
+{GTM_BODY_NOSCRIPT}
   <a class="lp-back" href="../../">← Back to the atlas</a>
   <h1>{html.escape(title)}</h1>
   {body_intro}
@@ -326,6 +341,7 @@ def main() -> int:
     index_html = f"""<!doctype html>
 <html lang="en">
 <head>
+{GTM_HEAD}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ferries to the islands of Britain &amp; Ireland | Isles of Britain</title>
@@ -345,6 +361,7 @@ def main() -> int:
   </style>
 </head>
 <body>
+{GTM_BODY_NOSCRIPT}
   <a class="lp-back" href="../">← Back to the atlas</a>
   <h1>Ferries to the islands of Britain and Ireland</h1>
   <p>Browse every published ferry route by region or by operator. Each page is rebuilt from <code>data/ferries.json</code> and emits Schema.org structured data per route.</p>

@@ -33,9 +33,14 @@ config.local.*
 # Re-fetchable from upstream APIs in minutes; would bloat the repo.
 data/cache_*.json
 data/water_raw.json
+data/water_raw_v2.json
+data/coastline_raw.json
 data/osm_raw.json
 data/osm_ferries_raw.json
 data/candidates_*.json
+data/*.holdback
+data/land_polygons.pickle
+data/mainland_polygons.pickle
 
 # Backup snapshots taken before destructive operations - regeneratable from
 # the live JSONs + report logs. Keeping them out of git keeps the repo small

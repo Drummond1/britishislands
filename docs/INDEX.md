@@ -25,12 +25,17 @@ Single map of every document in this repository. Always start at the top.
 | File | Purpose |
 |------|---------|
 | [`METHODOLOGY-INLAND.md`](METHODOLOGY-INLAND.md) | Tier A + Tier B inland classifier deep-dive. |
+| [`MEASUREMENTS.md`](MEASUREMENTS.md) | Area (`areaKm2`) + elevation (`highestPointM`) sources, methods, licensing, and confidence. |
+| [`PRD-USER-CONTRIBUTIONS.md`](PRD-USER-CONTRIBUTIONS.md) | Draft PRD for interactive features (accounts, photo uploads, community content, moderation). Not yet built. |
 | [`DISCOVERY-SOURCES.md`](DISCOVERY-SOURCES.md) | Catalogue of ~85 evaluated discovery sources. |
+| [`DISCOVERY-PIPELINE.md`](DISCOVERY-PIPELINE.md) | Five-agent review-first discovery workflow and artifact paths. |
 | [`NEXT-SESSION-PLAN.md`](NEXT-SESSION-PLAN.md) | Rolling, executable plan for the next ingestion phase. |
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
 | [`OS-MAPS.md`](OS-MAPS.md) | OS Maps detail-view integration: API key setup + the EPSG:27700 Leisure upgrade path. |
 | [`FERRIES.md`](FERRIES.md) | Ferry-routes feature: operator inventory (54 operators), data sources (OSM + GTFS + manual), refresh cadence, terminal-mapping rules, UI surface. |
+| [`DATA-SOURCES.md`](DATA-SOURCES.md) | Registry of every external dataset ingested into `islands.json`: licence, refresh cadence, attribution string, consuming script. |
+| [`SCHEMA-ENRICHMENTS-2026-05-13.md`](SCHEMA-ENRICHMENTS-2026-05-13.md) | Proposal for the 2026-05-13 enrichments (hills, lighthouses, wildlife colonies, geology, census 2022).  Schema, ethics rules, UI render plan, and apply order. |
 
 ## Reading order by goal
 
@@ -44,7 +49,7 @@ Single map of every document in this repository. Always start at the top.
 → `DATA-SCHEMA.md` → `ARCHITECTURE.md` (frontend impact) → update both in the same diff
 
 **"I'm extending discovery."**
-→ `NEXT-SESSION-PLAN.md` → `DISCOVERY-SOURCES.md` → `ETHICS.md` → `METHODOLOGY-INLAND.md` if inland-related
+→ `NEXT-SESSION-PLAN.md` → `DISCOVERY-SOURCES.md` → `DISCOVERY-PIPELINE.md` → `ETHICS.md` → `METHODOLOGY-INLAND.md` if inland-related
 
 **"I'm changing the UI."**
 → `ARCHITECTURE.md` (frontend section) → `app.js`/`styles.css`/`index.html`

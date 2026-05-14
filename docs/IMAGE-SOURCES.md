@@ -249,3 +249,48 @@ must not ship.
 - New brainstormed sources → §A.
 - Yield results after a run → §C.
 - Per-source attribution templates → §E.
+
+---
+
+## H. Per-entity photos (post 2026-05-13 schema enrichments)
+
+Photos enriched alongside the 2026-05-13 enrichment workstream (hills,
+lighthouses, RSPB reserves) live under the same `images[]` array on the
+island record, but each entry carries an extra `subject:` key so the UI
+can group them. See
+[`SCHEMA-ENRICHMENTS-2026-05-13.md`](SCHEMA-ENRICHMENTS-2026-05-13.md)
+§6 for the full schema.
+
+```jsonc
+{
+  "subject": "island" | "lighthouse" | "hill" | "wildlife",
+  "subjectRef": "neist-point-lighthouse",   // loose ID matching an entry in lighthouses[]/hillsOn[]/wildlifeColonies[]
+}
+```
+
+`subject: "island"` is the implicit default for every existing photo;
+no migration is required. Photos for **wildlife colonies** are
+deliberately **not** ingested at this stage — per ETHICS §5 we don't
+want to compose a "best photo-spotting locations" page that could
+drive disturbance.
+
+Per-entity quota (enforced in the ingestion scripts):
+
+- **Hills:** 1 photo per hill, attached to the parent island's
+  `images[]` with `subject: "hill"`.
+- **Lighthouses:** 1–2 photos per lighthouse (exterior + close-up if
+  both available), with `subject: "lighthouse"`.
+- **RSPB reserves:** 1 photo per reserve (the reserve itself, never a
+  species photo), with `subject: "wildlife"`.
+- **Wildlife colonies:** 0 photos (presence is text-only).
+
+The lookup chain for each entity is identical to §C above:
+
+1. Wikidata P18 if a Q-ID is in the entity's source data.
+2. Otherwise `prop=pageimages` from the matching Wikipedia article.
+3. Otherwise Commons `list=geosearch` within 200 m of the entity's
+   coordinates, with strict name-anchor filtering.
+
+In all cases the full attribution chain (`url`, `source`, `sourceRef`,
+`sourcePageUrl`, `license`, `attribution`) is mandatory. Missing any
+field is a bug; the photo must not ship.

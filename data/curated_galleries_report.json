@@ -1,0 +1,3606 @@
+{
+  "isle-of-skye": {
+    "name": "Isle of Skye",
+    "qid": "Q107393",
+    "poolSize": 134,
+    "selected": [
+      {
+        "fileName": "Loch Fada Storr Skye restitch 2007-08-22.jpg",
+        "category": "landscape",
+        "badge": "Featured",
+        "score": 180
+      },
+      {
+        "fileName": "2016 - Skye (25751180664).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "River Rha waterfall, Isle of Skye.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Skye-Portree-arjecahn.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Skye Road Bridge.JPG",
+        "category": "landscape",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "0c7398.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "2018 07 15 Schottland (14).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "2018 07 16 Schottland (12).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "2016 - Skye (25751183274).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (25751576223).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26081461330).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26261945912).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26262761342).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26262761592).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26263653612).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2016 - Skye (26263658342).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (20).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (21).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (22).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (23).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (25).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (26).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (27).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (29).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (43).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (48).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (49).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (53).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (62).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (63).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (66).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (67).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (68).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (69).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (7).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (70).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (71).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "2018 07 15 Schottland (72).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "iona": {
+    "name": "Iona",
+    "qid": "Q610",
+    "poolSize": 35,
+    "selected": [
+      {
+        "fileName": "Iona Abbey - October 2018 - Andrew Gray - 12.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Iona Abbey. Panorama.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "House in the centre of Iona - geograph.org.uk - 6188133.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Iona (15020668711).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "St Martins Cross on Iona.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 110
+      },
+      {
+        "fileName": "Iona2may11.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "TyIona20030825r17f31.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "TyIonaStColumbasBay20030825r19f10.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Cloisters of Abbey on the Isle of Iona.jpg",
+        "score": 80,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Iona Village from seawards.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Marble Quarry Iona.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "TyIonaNunnery20030825r19f31.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "I Chaluim Chille.ogg",
+        "score": 5,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5,
+          "non-image-mime": -100
+        }
+      },
+      {
+        "fileName": "Cnoc nam Bradain - geograph.org.uk - 2979373.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Cnoc-nam-Bradhann - geograph.org.uk - 3378597.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Argyll and Bute UK relief location map.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Boreray and the Stacs.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Cathedral Rock, Iona - Samuel John Peploe - ABDAG010719.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Commons-logo.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Scotland.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Hebridesmap.png",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Iona.showing.monasteries.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "KellsFol292rIncipJohn.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Lunga from Iona - Francis Campbell Boileau Cadell - ABDAG002205.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Lymphad3.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Modern Hy (Iona) by John Bartholomy 1874.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Mull topographic locator map.png",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "OOjs UI icon edit-ltr-progressive.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Red pog.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Scotland relief location map.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Scottish Isles.gif",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Stormy Weather, Iona by Samuel John Peploe - Samuel John Peploe - ABDAG003040.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "TyIonaBayAtTheBackOfTheOcean20030825r19f19.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Wikisource-logo.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Wikivoyage-Logo-v3-icon.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      }
+    ]
+  },
+  "staffa": {
+    "name": "Staffa",
+    "qid": "Q250117",
+    "poolSize": 66,
+    "selected": [
+      {
+        "fileName": "STAFFA ISLAND - aerial view.gif",
+        "category": "aerial",
+        "badge": "",
+        "score": 110
+      },
+      {
+        "fileName": "The jetty on Staffa - geograph.org.uk - 5849384.jpg",
+        "category": "harbour",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Scotland-Staffa-Fingals-Cave-1900.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Isle of Staffa Panorama.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Isle of Staffa basalt detail.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Isle of Staffa - geograph.org.uk - 7452429.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Am Buachaille Staffa - geograph.org.uk - 2598026.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Stairway on Staffa - geograph.org.uk - 2598033.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Cliff top Staffa - geograph.org.uk - 2598009.jpg",
+        "score": 130,
+        "category": "coast",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa west of Mull in Argyll and Bute - geograph.org.uk - 7705273.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa west of Mull in Argyll and Bute - geograph.org.uk - 7705279.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa NE 14673.JPG",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Isle of Staffa in Argyll and Bute, Scotland - geograph.org.uk - 7705284.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Interior of Staffa - geograph.org.uk - 4575657.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cliff edge, Staffa - geograph.org.uk - 2556805.jpg",
+        "score": 120,
+        "category": "coast",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Leaving Staffa - geograph.org.uk - 5849402.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Trig point on Staffa - geograph.org.uk - 2205881.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "East Side of Staffa - geograph.org.uk - 1801456.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa beside 14624.JPG",
+        "score": 115,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15
+        }
+      },
+      {
+        "fileName": "Isle of Staffa - geograph.org.uk - 7452424.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "On Staffa - geograph.org.uk - 7987272.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 6239495.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Basalt formations, Staffa - geograph.org.uk - 5849391.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa harbour 14705k.jpg",
+        "score": 100,
+        "category": "harbour",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10
+        }
+      },
+      {
+        "fileName": "Am Buchaille.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Donations Box and Toposcope, Staffa - geograph.org.uk - 3993102.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Boat Cave.JPG",
+        "score": 80,
+        "category": "coast",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 15778.jpg",
+        "score": 80,
+        "category": "coast",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 5366443.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 5190950.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 2451573.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Dino Staffa.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 906892.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Caves on Staffa - geograph.org.uk - 2280875.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 2451580.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Staffa - geograph.org.uk - 2452250.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Approaching Staffa - geograph.org.uk - 5187212.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Flotilla off Staffa - geograph.org.uk - 2452245.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "lindisfarne": {
+    "name": "Lindisfarne (Holy Island)",
+    "qid": "Q213804",
+    "poolSize": 32,
+    "selected": [
+      {
+        "fileName": "Lindisfarne (Holy Island) in Northumberland.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 70
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "LindisfarneCastleHolyIsland.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindsfarne Castle (182369607).jpeg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Arable field on Holy Island - geograph.org.uk - 4484532.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Holy Island , Grassy Field ^ Sheep - geograph.org.uk - 6670178.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Come Back Later^ - geograph.org.uk - 16072.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Commons-logo.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Commons to Wikidata QuickStatements.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Emmanuel Head Beacon - Holy Island - geograph.org.uk - 63388.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Flag of England.svg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Former coastguard station and remains of Lantern Chapel, The Heugh, Holy Island - geograph.org.uk - 409679.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Guile Point East (geograph 4790077).jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Guile Point West (geograph 6269449).jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Heugh Hill Lighthouse, Holy Island - geograph.org.uk - 409658.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Holy Island (Overview).jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Holy Island Plays Its Part- Everyday Life on Lindisfarne, 1942 D6771 (cropped).jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Holy Island Sunrise (again) (15064111624).jpg",
+        "score": -200,
+        "category": "atmospheric",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lime kilns - geograph.org.uk - 410592.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Abbey and St Marys.JPG",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Castle from Harbour.JPG",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Causeway.png",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Lobster Pots.JPG",
+        "score": -200,
+        "category": "harbour",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Priory ruins and St. Aidan statue.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lindisfarne Upturned Boats in Harbour.JPG",
+        "score": -200,
+        "category": "harbour",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Northumberland UK location map.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "OOjs UI icon edit-ltr-progressive.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Pilgrim's Way, Lindisfarne.JPG",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Red pog.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Statue of St Cuthbert by Fenwick Lawson, Lindisfarne Priory - geograph.org.uk - 1239259.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "T.homas Girtin Lindisfarne 1798.jpg",
+        "score": -200,
+        "category": "heritage",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Viking Raider Doomsday Stone front.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      }
+    ]
+  },
+  "isle-of-wight": {
+    "name": "Isle of Wight",
+    "qid": "Q9679",
+    "poolSize": 135,
+    "selected": [
+      {
+        "fileName": "Cowes on the River Medina - Isle of Wight aerial (26563871528).jpg",
+        "category": "aerial",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Ghost Tree on the Isle of Whight.jpg",
+        "category": "atmospheric",
+        "badge": "",
+        "score": 65
+      },
+      {
+        "fileName": "Brading Church Graveyard, Isle of Wight.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Wight Ryder II.JPG",
+        "category": "harbour",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Isle of Wight.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Browns Golf Course, Sandown, Isle of Wight.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Burfields, Ventnor, Isle of Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cantina, Ventnor, Isle of Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Clump of blackthorn, hawthorn and gorse, Isle of Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Crave, Ventnor, Isle of Wight (2).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Crave, Ventnor, Isle of Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Eat Wight, Shanklin, Isle of Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Falaises de l'île de Wight.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Flickr - ronsaunders47 - Isle of Wight. Cannons on the parade..jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "1970-Isle of Wight Festival- 5.JPG",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Southern Vectis 1613 HJ16 HSC.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "A train on the Isle of Wight.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Apse Heath, Isle of Wight, UK.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Atherfield Green, Isle of Wight, UK.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bathingbourne, Isle of Wight, UK.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bord Isle of Wight County Council, Centenary in kartonnen doos, objectnr KA 28274.12.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "GPS Isle of Wight Metal Detecting Club 1.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "GPS Isle of Wight Metal Detecting Club 2.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "GPS Isle of Wight Metal Detecting Club.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Flickr - ronsaunders47 - Newport Quayside. Isle of Wight UK..jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Above Colwell Bay (10004830123).jpg",
+        "score": 90,
+        "category": "coast",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Alert (15688013188).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Appley Manor Hotel (9999238854).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Appley Manor's garden (9999235794).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Appley Walk (9999368253).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Atherfield (10490249554).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bastille at IOW 2019.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Caravan with new Kampa Inflatable Awning and Micha the Boxer Dog (15123465967).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Causeway Lake (10002106025).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Causeway Lake (10002141254).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Causeway Lake (10002182166).jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "osm-relation-6046655": {
+    "name": "Bardsey Island",
+    "qid": "Q1991483",
+    "poolSize": 100,
+    "selected": [
+      {
+        "fileName": "Bardsey Lighthouse.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 70
+      },
+      {
+        "fileName": "PIA21182 - Bardsey Island, Wales.jpg",
+        "category": "aerial",
+        "badge": "",
+        "score": 80
+      },
+      {
+        "fileName": "Grey Seal (Halichoerus grypus) (33645522905).jpg",
+        "category": "wildlife",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "Bardsey Island lighthouse from Mynydd Enlli.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Bardsey rocks - geograph.org.uk - 6234999.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "An ancient boundary on Ynys Enlli - geograph.org.uk - 7921756.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "At the southern end of Bardsey Island - geograph.org.uk - 6235012.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island - geograph.org.uk - 6234351.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island - geograph.org.uk - 6234522.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island. - panoramio (4).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island. - panoramio (5).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island. - panoramio (6).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island. - panoramio.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey view - geograph.org.uk - 6234315.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Heading south on Bardsey Mountain - geograph.org.uk - 6234540.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Razorbills on the sea off Bardsey Island - geograph.org.uk - 6235018.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island - geograph.org.uk - 7350421.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island Slipway - geograph.org.uk - 3252157.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Henllwyn, Bardsey Island - geograph.org.uk - 6920825.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "On Bardsey Island - geograph.org.uk - 6921033.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Arhoswch! Stop! - geograph.org.uk - 6234841.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Descending the southern slope of Mynydd Enlli to Pen Cristin - geograph.org.uk - 6234844.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Gully on Pen Cristin - geograph.org.uk - 6234845.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Here comes Colin's boat - geograph.org.uk - 5557195.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Limestone boulders on Mynydd Enlli - geograph.org.uk - 6234838.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Mynydd Enlli ridge - geograph.org.uk - 6234837.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Nesting sites at Bae Felen - geograph.org.uk - 6235024.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "On the slopes of Mynydd Enlli - geograph.org.uk - 6234349.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "On top of Mynydd Enlli - geograph.org.uk - 6234533.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rocks and seals in Henllwyn - geograph.org.uk - 7921760.jpg",
+        "score": 90,
+        "category": "coast",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey gate posts - geograph.org.uk - 904653.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Island, Wales (ASTER).jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Bardsey Main Road.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Brenin Enlli, Bardsey King.png",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Brenin John Williams II.jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cloddio am ddwr ar Ynys Enlli yn ystod sychtwr 1962 (19315950112).jpg",
+        "score": 80,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "rathlin": {
+    "name": "Rathlin Island",
+    "qid": "Q1136111",
+    "poolSize": 128,
+    "selected": [
+      {
+        "fileName": "South leg of Rathlin Island looking towards Fear Head.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 110
+      },
+      {
+        "fileName": "Common Seal (Phoca vitulina), Rathlin Island.jpg",
+        "category": "wildlife",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Arachnanthus Sarsi in Church Bay, Rathlin Island.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Rathlin Island Ferry terminal, Ballycastle, September 2010.JPG",
+        "category": "harbour",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Antrim coast.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 80
+      },
+      {
+        "fileName": "2018 Rathlin Island Manor House Coal Store.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Black Sheep on Rathlin Island.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "End of Ballynagard Cottages, Rathlin Island.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "From Torr Head to Rathlin Island - panoramio.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Grey Seals, Rathlin Island.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Kelp Harvesting, Rathlin Island 02.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Kelp Harvesting, Rathlin Island 03.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Kelp Harvesting, Rathlin Island 04.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Kelp Harvesting, Rathlin Island, Kelp Store.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Express.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Old kelp store at Rathlin Island, 2017.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Island Ferry.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Island Northern Ireland 07.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Island Northern Ireland 14.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Spirit of Rathlin Ferry 2019.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "West LIghtouse, Rathlin Island 2017.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Balintoy Harbor and Rathlin Island.jpg",
+        "score": 120,
+        "category": "harbour",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Brockley House Sept 2018 Rathlin Island County Antrim bbb.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Derelict kelp house, Rathlin Island - geograph.org.uk - 4142225.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Ferry to Rathlin Island (466306986).jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Gannet flying over sea, Rathlin island.jpg",
+        "score": 120,
+        "category": "wildlife",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Grey Seals, Rathlin Island (cropped).jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Hydroids off Rathlin Island, Northern Ireland.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Island ferry at Ballycastle.jpg",
+        "score": 120,
+        "category": "harbour",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Approaching the entrance into Rathlin Harbour - geograph.org.uk - 3683326.jpg",
+        "score": 105,
+        "category": "harbour",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Ballynagard Cottages a new housing development on Rathlin - geograph.org.uk - 3683312.jpg",
+        "score": 105,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Exiting Rathlin Harbour - geograph.org.uk - 3683382.jpg",
+        "score": 105,
+        "category": "harbour",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Houses on the east side of Church Bay, Rathlin - geograph.org.uk - 3683316.jpg",
+        "score": 105,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Rathlin Island by Sentinel-2.jpg",
+        "score": 95,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Ballycastle Northern Ireland.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Carrick-a-Rede panorama.jpg",
+        "score": 90,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "osm-relation-6045552": {
+    "name": "Inishmore",
+    "qid": "Q369318",
+    "poolSize": 126,
+    "selected": [
+      {
+        "fileName": "Inishmore cliffs at Dun Aengus.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "DUN AONGHASA FORT INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9212255198).jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Harbor at Inishmore with tug boat.jpg",
+        "category": "harbour",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "2017-06-16 7356x4904 inishmore shingle beach.jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "2017-06-16 4904x7356 inishmore gravestone.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Aran Islands - stone walls on Inishmore, Co. Galway (2014).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "COAST ROAD INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9200121704).jpg",
+        "category": "coast",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "CRAGGY ISLAND TOURIST OFFICE CARAVAN OPPOSITE JOE WATTYS PUB KILLORAN INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9198082891).jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 130
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "2017-06-16 7356x4904 inishmore stone wall.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Green, green Inishmore (6007846709).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Horse Cart, Inishmore (40325696940).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9197328821).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9209539119).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9212212018).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9216328407).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "INIS MOR ARRAN ISLANDS IRELAND JULY 2013 (9216379121).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inis mor-ha.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore (42064198082).jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore (Inis Mor) The flat landscape.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore - Aran Islands.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore 1.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore 2.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Beach (41230879615).jpg",
+        "score": 130,
+        "category": "coast",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Beach (42085623672).jpg",
+        "score": 130,
+        "category": "coast",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Central Banner.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Central.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore from Dun Aengus.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0001.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0003.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0006.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0007.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0008.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 001.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0014.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0017.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 0018.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 002.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Inishmore Island 003.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "osm-way-2956937": {
+    "name": "Sark",
+    "qid": "Q3405693",
+    "poolSize": 63,
+    "selected": [
+      {
+        "fileName": "Sark-aerial.jpg",
+        "category": "aerial",
+        "badge": "",
+        "score": 110
+      },
+      {
+        "fileName": "Sark from the air - geograph.ci - 373.jpg",
+        "category": "aerial",
+        "badge": "",
+        "score": 80
+      },
+      {
+        "fileName": "Sark La Coupee 20160907.jpg",
+        "category": "atmospheric",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Sark Kirche.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 130
+      },
+      {
+        "fileName": "Sark Coast.JPG",
+        "category": "coast",
+        "badge": "",
+        "score": 105
+      },
+      {
+        "fileName": "Cutty Sark Frontage, Greenwich.jpg",
+        "category": "landscape",
+        "badge": "Quality",
+        "score": 155
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Sark July 2010 27.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark ferry arrival.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark and Brecqhou.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Little Sark Dolmen.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark Saint Peter Church.jpg",
+        "score": 130,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Polruan - Isle of Sark Shipping.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark Window in the Rock View.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark Window in the Rock view towards Herm.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark (January 2024) 05.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark deck with lifeboat.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark (January 2024) 04.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark (January 2024) 03.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark (January 2024) 02.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark with Canary Wharf in background.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 55.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2010 08.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 42.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 32.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2010 23.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2010 13.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 30.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 57.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 35.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Cutty Sark (January 2024) 01.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 56.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark July 2011 53.jpg",
+        "score": 130,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Church - Sark.jpg",
+        "score": 120,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark Coupee.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sark Seigneurie.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "res-exc": 25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "The emergency ambulance on Sark.jpg",
+        "score": 120,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "name-in-categories": 10,
+          "res-good": 15,
+          "has-attribution": 5
+        }
+      }
+    ]
+  },
+  "lundy": {
+    "name": "Lundy",
+    "qid": "Q324812",
+    "poolSize": 41,
+    "selected": [
+      {
+        "fileName": "Atlantic Puffin Lundy.jpg",
+        "category": "wildlife",
+        "badge": "",
+        "score": 70
+      },
+      {
+        "fileName": "Interior of St Helena's church, Lundy.jpg",
+        "category": "heritage",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "The Jetty, Lundy.jpg",
+        "category": "harbour",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Lundy Cabbage.JPG",
+        "category": "landscape",
+        "badge": "",
+        "score": 120
+      },
+      {
+        "fileName": "Lundy - panoramio.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 110
+      },
+      {
+        "fileName": "Remains of a German Heinkel 111H bomber.JPG",
+        "category": "landscape",
+        "badge": "",
+        "score": 90
+      },
+      {
+        "fileName": "Jointed Granite on Lundy in England.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 80
+      },
+      {
+        "fileName": "Lundy inscribed stones.jpg",
+        "category": "landscape",
+        "badge": "",
+        "score": 70
+      }
+    ],
+    "rejected": [
+      {
+        "fileName": "Marisco Castle on the southern tip of Lundy Island in Devon.jpg",
+        "score": 70,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Lundy.ferry.arp.750pix.jpg",
+        "score": 65,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-filename": 25,
+          "name-in-caption": 15,
+          "res-low": -25
+        }
+      },
+      {
+        "fileName": "The Halfway Wall - geograph.org.uk - 596075.jpg",
+        "score": 40,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Mariscocastle.jpg",
+        "score": 40,
+        "category": "heritage",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Millcombehouse.jpg",
+        "score": 40,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Sikadeerlundy.jpg",
+        "score": 40,
+        "category": "landscape",
+        "breakdown": {
+          "name-in-categories": 10,
+          "res-low": -25,
+          "has-attribution": 5
+        }
+      },
+      {
+        "fileName": "Ordnance Survey Pivot - geograph.org.uk - 5662787.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "1puffin1929.JPG",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Acap.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Beacon hill sketch.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Commons-logo.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Edward England.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Iceland.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Lundy.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Lundy (1932).svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Flag of Lundy (~1930s–40s).svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Fratercula arctica Lundy.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "HMS Montagu (1901) Aground Lundy Island 1906.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "historical-date": -200
+        }
+      },
+      {
+        "fileName": "HMS Montagu (1901) Heavy Fittings Removed 1906.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Lundy by Henry Mangles Denham 1804.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Lundy outline map.png",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "MS Oldenburg - geograph.org.uk - 873551.jpg",
+        "score": -200,
+        "category": "coast",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Naval ensign of Lundy.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "OOjs UI icon edit-ltr-progressive.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Phocoena phocoena.2.jpg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "no-name-anchor": -200
+        }
+      },
+      {
+        "fileName": "Skull & crossbones.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Symbol category class.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Symbol support vote.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      },
+      {
+        "fileName": "Wikivoyage-Logo-v3-icon.svg",
+        "score": -200,
+        "category": "landscape",
+        "breakdown": {
+          "non-photo": -200
+        }
+      }
+    ]
+  }
+}

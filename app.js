@@ -16,6 +16,7 @@ const TYPE_COLORS = {
   sea: "#4ea3ff",
   lake: "#6cd3a3",
   river: "#f5b04a",
+  unknown: "#b08bd1",
 };
 
 const ROW_HEIGHT = 64; // px, must match .island-card sizing
@@ -177,6 +178,7 @@ function tryRenderItineraryFromUrl() {
     const url = new URL(window.location.href);
     const trip = url.searchParams.get("trip");
     if (!trip) return;
+    if (mobileNav.isActive()) mobileNav.setView("trip");
     const [startId, endId] = trip.split(",").map((s) => s.trim()).filter(Boolean);
     if (!startId || !endId) return;
     loadFerries().then(() => {
@@ -244,6 +246,129 @@ function findCausewayForIsland(island) {
     }
   }
   return null;
+}
+
+// Compact ferry / causeway facts for chat RAG and result cards.
+function chatAccessForIsland(island) {
+  if (!island || typeof island !== "object") return { ferryRoutes: [], causeway: null };
+  const ferryRoutes = [];
+  if (state.ferryRoutesByIsland) {
+    for (const route of (state.ferryRoutesByIsland.get(island.id) || []).slice(0, 4)) {
+      ferryRoutes.push({
+        operator: route._operator?.shortName || route._operator?.name || route.operatorId || null,
+        from: route._fromTerminal?.name || null,
+        to: route._toTerminal?.name || null,
+        type: route.type || null,
+        seasonality: route.seasonality || null,
+        durationMinutes: route.durationMinutes ?? null,
+        frequencyBand: route.frequencyBand || null,
+        lastVerified: route.lastVerified || null,
+      });
+    }
+  }
+  const cw = findCausewayForIsland(island);
+  const causeway = cw
+    ? {
+        kind: cw.kind || null,
+        notes: typeof cw.notes === "string" ? cw.notes.slice(0, 220) : null,
+        safeHours: cw.safeHours || null,
+        sourceUrl: cw.sourceUrl || null,
+      }
+    : null;
+  return { ferryRoutes, causeway };
+}
+
+function showIslandOnMap(id) {
+  const island = state.byId.get(id);
+  if (!island || !map) return;
+  state.activeId = id;
+  renderListWindow();
+  const targetZoom =
+    island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
+  map.flyTo([island.lat, island.lng], targetZoom, { duration: 0.7 });
+  loadAndShowPolygon(island);
+}
+
+function resolveTripIslandId(query) {
+  const q = (query || "").trim();
+  if (!q) return null;
+  if (state.byId.has(q)) return q;
+  const hit = _findIslandByName(q);
+  return hit?.id || null;
+}
+
+function planTripBetween(startQuery, endQuery) {
+  const startId = resolveTripIslandId(startQuery);
+  const endId = resolveTripIslandId(endQuery);
+  if (!startId || !endId) {
+    return Promise.resolve({
+      ok: false,
+      error: "Couldn't match both islands — try the full island name.",
+    });
+  }
+  if (startId === endId) {
+    return Promise.resolve({ ok: false, error: "Choose two different islands." });
+  }
+  const url = new URL(window.location.href);
+  url.searchParams.set("trip", `${startId},${endId}`);
+  window.history.replaceState(null, "", url.toString());
+  return loadFerries().then(() => {
+    const it = findFerryItinerary(startId, endId);
+    if (!it) {
+      return { ok: false, error: "No ferry route found between those islands in the atlas." };
+    }
+    _renderItineraryBanner(it);
+    return { ok: true, itinerary: it, startId, endId };
+  });
+}
+
+function initTripPlanner() {
+  const form = document.getElementById("trip-form");
+  const fromInput = document.getElementById("trip-from");
+  const toInput = document.getElementById("trip-to");
+  const status = document.getElementById("trip-status");
+  const list = document.getElementById("trip-islands");
+  if (!form || !fromInput || !toInput || !list) return;
+
+  const fillList = () => {
+    if (list.dataset.filled || !state.islands?.length) return;
+    const frag = document.createDocumentFragment();
+    for (const isl of state.islands) {
+      if (!isl?.name) continue;
+      const opt = document.createElement("option");
+      opt.value = isl.name;
+      frag.appendChild(opt);
+    }
+    list.appendChild(frag);
+    list.dataset.filled = "1";
+  };
+  fillList();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (status) status.textContent = "Planning…";
+    planTripBetween(fromInput.value, toInput.value).then((res) => {
+      if (!status) return;
+      if (!res || res.ok === false) {
+        status.textContent = res?.error || "Couldn't plan that trip.";
+        return;
+      }
+      status.textContent = "Itinerary ready — see the banner above the map.";
+    });
+  });
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const trip = params.get("trip");
+    if (trip) {
+      const [startId, endId] = trip.split(",").map((s) => s.trim());
+      const a = state.byId.get(startId);
+      const b = state.byId.get(endId);
+      if (a) fromInput.value = a.name;
+      if (b) toInput.value = b.name;
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
 }
 
 // Lazy-fetch data/galleries.json on first island click. Extra images live
@@ -415,6 +540,34 @@ els.cluster.addEventListener("change", () => {
   activeMarkerLayer.addTo(map);
 });
 
+
+function syncIslandUrl(id) {
+  try {
+    const url = new URL(window.location.href);
+    if (id) url.searchParams.set("island", id);
+    else url.searchParams.delete("island");
+    window.history.replaceState(null, "", url.toString());
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
+function applyRouteFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const islandId = params.get("island");
+    if (islandId && state.byId?.has(islandId)) {
+      focusIsland(islandId, { fly: true });
+      return;
+    }
+    if (params.get("trip") && mobileNav.isActive()) {
+      mobileNav.setView("trip");
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
 // ---------- Data load ----------
 async function loadIslands() {
   try {
@@ -429,7 +582,23 @@ async function loadIslands() {
   }
 
   populateNationFilter();
+  fillTripPlannerIslands();
   applyFilters();
+  applyRouteFromUrl();
+}
+
+function fillTripPlannerIslands() {
+  const list = document.getElementById("trip-islands");
+  if (!list || list.dataset.filled || !state.islands?.length) return;
+  const frag = document.createDocumentFragment();
+  for (const isl of state.islands) {
+    if (!isl?.name) continue;
+    const opt = document.createElement("option");
+    opt.value = isl.name;
+    frag.appendChild(opt);
+  }
+  list.appendChild(frag);
+  list.dataset.filled = "1";
 }
 
 function populateNationFilter() {
@@ -684,10 +853,12 @@ function focusIsland(id, { fly } = { fly: true }) {
   if (!island) return;
 
   state.activeId = id;
+  syncIslandUrl(id);
   // Re-render list so the active card is highlighted (cheap because virtualised)
   renderListWindow();
 
   renderDetails(island);
+  if (mobileNav.isActive()) mobileNav.setView("islands");
 
   if (fly) {
     const targetZoom = island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
@@ -1005,32 +1176,31 @@ function renderDetails(island) {
   els.details.hidden = false;
   els.sidebar.scrollTop = 0;
 
-  const typeLabel = island.subtype
-    ? `${capitalize(island.subtype)} (${island.type})`
-    : `${capitalize(island.type)} island`;
+  const typeLabel =
+    island.type === "unknown"
+      ? `Unverified <span style="color:var(--text-muted)">(needs review)</span>`
+      : island.subtype
+        ? `${capitalize(island.subtype)} (${island.type})`
+        : `${capitalize(island.type)} island`;
 
   const parentBody = island.parentWaterBody;
   const parentLabel = parentBody
     ? parentBody.name
       ? `${escapeHtml(parentBody.name)} <span style="color:var(--text-muted)">(${escapeHtml(parentBody.type)})</span>`
       : `<span style="color:var(--text-muted)">Unnamed ${escapeHtml(parentBody.type)}</span>`
-    : island.type !== "sea"
-      ? "—"
-      : null;
+    : island.type === "sea" || island.type === "unknown"
+      ? null
+      : "—";
 
   const stats = [
     { label: "Type", value: typeLabel },
     { label: "Nation", value: island.nation || "—" },
     { label: "Archipelago", value: island.archipelago || "—" },
-    { label: "Area", value: formatArea(island.areaKm2) },
+    { label: "Area", value: formatAreaRow(island) },
     { label: "Population", value: formatPopulation(island.population) },
     {
       label: "Highest point",
-      value: island.highestPointM
-        ? `${island.highestPointM} m${
-            island.highestPointName ? " (" + escapeHtml(island.highestPointName) + ")" : ""
-          }`
-        : "—",
+      value: formatHighPointRow(island),
     },
   ];
   if (parentLabel) {
@@ -1944,6 +2114,7 @@ els.back.addEventListener("click", () => {
     try { state.detailMap.remove(); } catch (_) { /* ignore */ }
     state.detailMap = null;
   }
+  syncIslandUrl(null);
 });
 
 // ---------- Polygon overlay (lazy) ----------
@@ -2094,6 +2265,47 @@ function formatArea(km2) {
   }).format(km2)} km²`;
 }
 
+function formatHighPointRow(island) {
+  if (island.highestPointM == null) {
+    return `<span title="No surveyed peak or Wikidata elevation found inside this island's polygon.">—</span>`;
+  }
+  const namePart = island.highestPointName
+    ? ` (${escapeHtml(island.highestPointName)})`
+    : "";
+  const value = `${island.highestPointM} m${namePart}`;
+  const conf = island.highestPointConfidence;
+  if (!conf || conf === "n/a") return value;
+  const sourceLabel =
+    {
+      "osm-peak": "OSM surveyed peak",
+      "wikidata-p2044": "Wikidata estimate",
+      "manual": "hand-curated",
+    }[island.highestPointSource] || "";
+  if (conf === "estimate") {
+    return `${value} <span style="color:var(--text-muted);font-size:12px">· estimate${sourceLabel ? " · " + sourceLabel : ""}</span>`;
+  }
+  return `${value} <span style="color:var(--text-muted);font-size:12px">· ${sourceLabel || "high confidence"}</span>`;
+}
+
+function formatAreaRow(island) {
+  if (island.areaKm2 == null) {
+    return `<span title="No verified polygon for this island - we publish areas only where we can vouch for them to within 2 %.">N/A</span>`;
+  }
+  const value = formatArea(island.areaKm2);
+  const conf = island.areaConfidence;
+  if (!conf || conf === "n/a") return value;
+  const sourceLabel =
+    {
+      "osm-way": "OSM way",
+      "osm-relation": "OSM multipolygon",
+      "osm-coastline-polygon": "OSM coastline",
+      "osm-via-wikidata-way": "OSM (via Wikidata)",
+      "osm-via-wikidata-relation": "OSM (via Wikidata)",
+    }[island.areaSource] || "OSM";
+  const confLabel = conf === "high" ? "high confidence" : "medium confidence";
+  return `${value} <span style="color:var(--text-muted);font-size:12px">· ${confLabel} · ${sourceLabel}</span>`;
+}
+
 function capitalize(s) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 }
@@ -2239,19 +2451,52 @@ function chatHaversineKm(lat1, lng1, lat2, lng2) {
 }
 
 const CHAT_SUGGESTIONS = [
+  "How tall is Skye?",
+  "How big is Anglesey?",
+  "What's the largest island in Wales?",
+  "What's the highest island in Scotland?",
+  "How many crannogs are there in Ireland?",
+  "How many uninhabited islands in Scotland?",
+  "Compare Mull and Islay",
+  "Lewis vs Skye",
   "Scottish islands with mountains",
-  "Uninhabited islands in lakes",
-  "Islands with a castle",
-  "Largest islands in Wales",
-  "Crannogs in Ireland",
+  "Islands with a castle near Oban",
+  "Scottish islands with puffins",
   "Tidal islands in England",
-  "Islands near Oban",
-  "Within 30 km of Mallaig",
-  "Car ferries to the Hebrides",
   "Summer ferries to Pembrokeshire islands",
-  "Islands you can reach by ferry from Oban",
-  "CalMac islands with castles",
 ];
+
+// Controlled semantic tags (loaded from data/chat_tag_vocabulary.json).
+let CHAT_SEMANTIC_TAGS = {};
+let chatTagVocabularyPromise = null;
+
+function chatBuildSemanticTagMap(vocab) {
+  const out = {};
+  for (const entry of vocab?.tags || []) {
+    if (!entry?.id) continue;
+    const syns = [entry.id, ...(entry.synonyms || [])]
+      .map((s) => String(s).toLowerCase().trim())
+      .filter(Boolean);
+    out[entry.id] = syns;
+  }
+  return out;
+}
+
+function ensureChatTagVocabulary() {
+  if (!chatTagVocabularyPromise) {
+    chatTagVocabularyPromise = fetch("data/chat_tag_vocabulary.json")
+      .then((r) => (r.ok ? r.json() : { tags: [] }))
+      .then((vocab) => {
+        CHAT_SEMANTIC_TAGS = chatBuildSemanticTagMap(vocab);
+        return vocab;
+      })
+      .catch(() => {
+        CHAT_SEMANTIC_TAGS = {};
+        return { tags: [] };
+      });
+  }
+  return chatTagVocabularyPromise;
+}
 
 function chatTokens(text) {
   return text.toLowerCase().normalize("NFKD");
@@ -2278,6 +2523,8 @@ function parseChatQuery(rawText) {
     ferrySeasonWanted: null,      // 'year-round' | 'summer-only'
     ferryOperatorWanted: null,    // operator-id substring match
     ferryFromPort: null,          // free-text port name to match against terminal names
+    semanticTags: new Set(),
+    nearUnresolved: null,
   };
 
   for (const [nation, syn] of Object.entries(CHAT_NATIONS)) {
@@ -2294,6 +2541,9 @@ function parseChatQuery(rawText) {
   }
   for (const [feat, syn] of Object.entries(CHAT_FEATURES)) {
     if (syn.some((w) => text.includes(w))) q.features.add(feat);
+  }
+  for (const [tagId, syn] of Object.entries(CHAT_SEMANTIC_TAGS)) {
+    if (syn.some((w) => text.includes(w))) q.semanticTags.add(tagId);
   }
   // Disambiguate `inhabited` substring inside `uninhabited`.
   if (q.features.has("uninhabited")) q.features.delete("inhabited");
@@ -2379,6 +2629,8 @@ function parseChatQuery(rawText) {
     if (hit) {
       const [lat, lng] = CHAT_PLACES[hit];
       q.near = { name: hit, lat, lng, radiusKm };
+    } else {
+      q.nearUnresolved = placeName;
     }
   }
 
@@ -2390,6 +2642,7 @@ function parseChatQuery(rawText) {
     ...Object.values(CHAT_SUBTYPES).flat(),
     ...Object.values(CHAT_ARCHIPELAGOS).flat(),
     ...Object.values(CHAT_FEATURES).flat(),
+    ...Object.values(CHAT_SEMANTIC_TAGS).flat(),
     ...Object.keys(CHAT_SORTS),
     "island", "islands", "show", "me", "the", "a", "an", "with", "and",
     "in", "of", "to", "for", "find", "i", "want", "you", "have", "are",
@@ -2408,6 +2661,11 @@ function parseChatQuery(rawText) {
 }
 
 function chatHaystack(island) {
+  // Defensive: tags is normally an array but a malformed record could ship
+  // it as a string / object / null.  Coerce safely to a flat string.
+  let tagStr = "";
+  if (Array.isArray(island.tags)) tagStr = island.tags.join(" ");
+  else if (typeof island.tags === "string") tagStr = island.tags;
   return [
     island.name,
     island.archipelago,
@@ -2416,7 +2674,13 @@ function chatHaystack(island) {
     island.history,
     island.transport,
     island.accommodation,
-    (island.tags || []).join(" "),
+    tagStr,
+    Array.isArray(island.hillsOn)
+      ? island.hillsOn.map((h) => [h.name, h.classification].filter(Boolean).join(" ")).join(" ")
+      : "",
+    Array.isArray(island.wildlifeColonies)
+      ? island.wildlifeColonies.map((w) => [w.species, w.category].filter(Boolean).join(" ")).join(" ")
+      : "",
     (island.parentWaterBody && island.parentWaterBody.name) || "",
   ]
     .filter(Boolean)
@@ -2486,6 +2750,23 @@ function scoreChatIsland(island, q) {
   }
 
   const hay = chatHaystack(island);
+  const islandTags = new Set(
+    (Array.isArray(island.tags) ? island.tags : [])
+      .map((t) => String(t).toLowerCase()),
+  );
+
+  for (const tagId of q.semanticTags) {
+    if (islandTags.has(tagId)) score += 7;
+    else {
+      const syns = CHAT_SEMANTIC_TAGS[tagId] || [];
+      let hits = 0;
+      for (const w of syns) {
+        if (hay.includes(w)) hits++;
+      }
+      if (hits > 0) score += 3 + Math.min(3, hits);
+      else if (q.semanticTags.size === 1) score -= 2;
+    }
+  }
 
   for (const feat of q.features) {
     const syn = CHAT_FEATURES[feat] || [];
@@ -2532,7 +2813,14 @@ function searchChatIslands(rawText, limit = 6) {
   const q = parseChatQuery(rawText);
   const scored = [];
   for (const i of state.islands) {
-    const s = scoreChatIsland(i, q);
+    if (!i || typeof i !== "object") continue;
+    let s;
+    try {
+      s = scoreChatIsland(i, q);
+    } catch (_err) {
+      // One malformed record must never break the whole query; skip it.
+      continue;
+    }
     if (s > -Infinity && s > 0) scored.push({ island: i, score: s });
   }
   if (q.sort) {
@@ -2553,12 +2841,345 @@ function searchChatIslands(rawText, limit = 6) {
   return { query: q, results: scored.slice(0, limit), total: scored.length };
 }
 
+// ----- Direct-answer engine -----
+//
+// Detect question intent (count, superlative, comparison, lookup,
+// aggregation) and compute a direct factual answer.  When the intent
+// fires we prepend a one-sentence answer above the standard "found N
+// matches" summary, so a query like "How tall is Ben More?" gets an
+// immediate "Ben More (on Mull) rises to 966 m above sea level" rather
+// than just a card list.
+
+const _CHAT_NUMBER_FMT = new Intl.NumberFormat("en-GB");
+
+function _fmtKm2(v) {
+  if (v == null) return "—";
+  if (v < 0.01) return `${(v * 1_000_000).toFixed(0)} m²`;
+  if (v < 1)    return `${(v * 100).toFixed(1)} ha`;
+  if (v < 10)   return `${v.toFixed(1)} km²`;
+  return `${_CHAT_NUMBER_FMT.format(Math.round(v))} km²`;
+}
+
+function _fmtM(v) {
+  if (v == null) return "—";
+  return `${Math.round(v)} m`;
+}
+
+function _islandShortLabel(i) {
+  const bits = [i.name];
+  if (i.archipelago && i.archipelago !== i.name) bits.push("(" + i.archipelago + ")");
+  return bits.join(" ");
+}
+
+function detectAnswerIntent(rawText) {
+  const t = rawText.toLowerCase().trim();
+  // Count: "how many … islands" / "number of … islands" / "count of …"
+  if (/\b(how many|number of|count of|count the)\b/.test(t)) {
+    return { kind: "count" };
+  }
+  // Comparison: "compare A and B" / "X vs Y" / "is X bigger than Y"
+  let m = t.match(/\bcompare\s+(.+?)\s+(?:and|with|to|vs\.?)\s+(.+?)\s*\??$/);
+  if (m) return { kind: "compare", a: m[1].trim(), b: m[2].trim() };
+  m = t.match(/^(?:is\s+)?(.+?)\s+(?:bigger|larger|smaller|taller|higher|lower)\s+than\s+(.+?)\s*\??$/);
+  if (m) return { kind: "compare", a: m[1].trim(), b: m[2].trim() };
+  m = t.match(/^(.+?)\s+vs\.?\s+(.+?)\s*\??$/);
+  if (m && m[1].length > 1 && m[2].length > 1 && !/\b(island|loch|sea|river|lake)\b/.test(m[1] + " " + m[2])) {
+    return { kind: "compare", a: m[1].trim(), b: m[2].trim() };
+  }
+  // Superlative: "what is the largest/tallest/highest/smallest/most populous"
+  m = t.match(
+    /\bwhat(?:'s|\s+is)?\s+the\s+(largest|biggest|smallest|tiniest|tallest|highest|lowest|most populous|most populated|most remote|northernmost|southernmost|easternmost|westernmost)\b/,
+  );
+  if (m) return { kind: "superlative", which: m[1] };
+  m = t.match(/^(?:the\s+)?(largest|biggest|smallest|tiniest|tallest|highest|lowest|most populous|most populated|most remote|northernmost|southernmost|easternmost|westernmost)\s+/);
+  if (m) return { kind: "superlative", which: m[1] };
+  // Lookup: "how big/tall/high is X" / "area/elevation of X" / "what is the area of X"
+  m = t.match(/\bhow\s+(big|large|tall|high|wide|long|small)\s+is\s+(.+?)\s*\??$/);
+  if (m) return { kind: "lookup", attr: m[1], name: m[2].trim() };
+  m = t.match(/\b(area|size|elevation|height|highest\s*point|population|peak|summit)\s+of\s+(.+?)\s*\??$/);
+  if (m) return { kind: "lookup", attr: m[1].replace(/\s+/g, ""), name: m[2].trim() };
+  m = t.match(/\bwhat(?:'s|\s+is)\s+(?:the\s+)?(area|size|elevation|height|highest\s*point|population|peak|summit)\s+of\s+(.+?)\s*\??$/);
+  if (m) return { kind: "lookup", attr: m[1].replace(/\s+/g, ""), name: m[2].trim() };
+  // Aggregation: "total area", "combined population", "sum of …"
+  m = t.match(/\b(total|combined|sum of|aggregate)\s+(area|size|population)\b/);
+  if (m) return { kind: "aggregate", attr: m[2] };
+  return null;
+}
+
+function _islandsMatchingFilter(query) {
+  // Re-use the existing score function as a pure filter (drop islands
+  // that fail any hard filter; keep everything else).
+  const list = [];
+  for (const i of state.islands) {
+    const s = scoreChatIsland(i, query);
+    if (s > -Infinity) list.push(i);
+  }
+  return list;
+}
+
+function _findIslandByName(name) {
+  if (!name) return null;
+  const norm = (s) => (s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\bthe\s+|\bisle of\s+|\bisland of\s+/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+  const target = norm(name);
+  if (!target) return null;
+  let best = null;
+  let bestScore = -Infinity;
+  for (const i of state.islands) {
+    const n = norm(i.name);
+    if (!n) continue;
+    let s = 0;
+    if (n === target) s = 100;
+    else if (n.startsWith(target) || target.startsWith(n)) s = 50 + Math.min(target.length, n.length);
+    else if (n.includes(target) || target.includes(n)) s = 20 + Math.min(target.length, n.length);
+    else continue;
+    // Bias toward larger / more-populated islands so "Skye" picks the big one.
+    s += Math.min(5, Math.log10(1 + (i.areaKm2 || 0)));
+    s += Math.min(3, Math.log10(1 + (i.population || 0)));
+    if (s > bestScore) { bestScore = s; best = i; }
+  }
+  return best;
+}
+
+function _superlativeWinner(islands, which) {
+  const tied = [];
+  const want = which;
+  let comparator;
+  let formatter;
+  switch (want) {
+    case "largest": case "biggest":
+      comparator = (a, b) => (b.areaKm2 || 0) - (a.areaKm2 || 0);
+      formatter = (i) => _fmtKm2(i.areaKm2);
+      break;
+    case "smallest": case "tiniest":
+      comparator = (a, b) => (a.areaKm2 || Infinity) - (b.areaKm2 || Infinity);
+      formatter = (i) => _fmtKm2(i.areaKm2);
+      break;
+    case "tallest": case "highest":
+      comparator = (a, b) => (b.highestPointM || 0) - (a.highestPointM || 0);
+      formatter = (i) => _fmtM(i.highestPointM)
+        + (i.highestPointName ? ` (${i.highestPointName})` : "");
+      break;
+    case "lowest":
+      comparator = (a, b) => (a.highestPointM || Infinity) - (b.highestPointM || Infinity);
+      formatter = (i) => _fmtM(i.highestPointM);
+      break;
+    case "most populous": case "most populated":
+      comparator = (a, b) => (b.population || 0) - (a.population || 0);
+      formatter = (i) => `${_CHAT_NUMBER_FMT.format(i.population || 0)} residents`;
+      break;
+    case "most remote":
+      // Distance from nearest of London / Edinburgh / Dublin / Cardiff
+      // as a rough "remote-ness" proxy.
+      const anchors = [
+        [51.5074, -0.1278], [55.9533, -3.1883],
+        [53.3498, -6.2603], [51.4816, -3.1791],
+      ];
+      const distToAnchor = (i) => {
+        let m = Infinity;
+        for (const [la, ln] of anchors) {
+          const d = chatHaversineKm(la, ln, i.lat, i.lng);
+          if (d < m) m = d;
+        }
+        return m;
+      };
+      comparator = (a, b) => distToAnchor(b) - distToAnchor(a);
+      formatter = (i) => `${Math.round(distToAnchor(i))} km from the nearest capital`;
+      break;
+    case "northernmost":
+      comparator = (a, b) => (b.lat || -Infinity) - (a.lat || -Infinity);
+      formatter = (i) => `lat ${i.lat?.toFixed(2)}°`;
+      break;
+    case "southernmost":
+      comparator = (a, b) => (a.lat || Infinity) - (b.lat || Infinity);
+      formatter = (i) => `lat ${i.lat?.toFixed(2)}°`;
+      break;
+    case "easternmost":
+      comparator = (a, b) => (b.lng || -Infinity) - (a.lng || -Infinity);
+      formatter = (i) => `lng ${i.lng?.toFixed(2)}°`;
+      break;
+    case "westernmost":
+      comparator = (a, b) => (a.lng || Infinity) - (b.lng || Infinity);
+      formatter = (i) => `lng ${i.lng?.toFixed(2)}°`;
+      break;
+    default:
+      return null;
+  }
+  // Only include islands with the relevant attribute set
+  const filtered = islands.filter((i) => {
+    if (["largest","biggest","smallest","tiniest"].includes(want)) return i.areaKm2 != null && i.areaKm2 > 0;
+    if (["tallest","highest","lowest"].includes(want)) return i.highestPointM != null;
+    if (["most populous","most populated"].includes(want)) return (i.population || 0) > 0;
+    return Number.isFinite(i.lat) && Number.isFinite(i.lng);
+  });
+  if (!filtered.length) return null;
+  filtered.sort(comparator);
+  return { winner: filtered[0], value: formatter(filtered[0]), ranking: filtered.slice(0, 5) };
+}
+
+function answerIntent(intent, query) {
+  if (!intent) return null;
+  const filtered = _islandsMatchingFilter(query);
+
+  // ----- COUNT -----
+  if (intent.kind === "count") {
+    const n = filtered.length;
+    const facets = [];
+    if (query.nations.size) facets.push([...query.nations].join("/"));
+    if (query.types.size) facets.push([...query.types].join("/"));
+    if (query.subtypes.size) facets.push([...query.subtypes].join("/"));
+    if (query.archipelagos.size) facets.push("in " + [...query.archipelagos].join("/"));
+    if (query.features.size) facets.push("with " + [...query.features].join(" + "));
+    if (query.near) facets.push("within " + Math.round(query.near.radiusKm) + " km of " + query.near.name);
+    const facetStr = facets.length ? " " + facets.join(" ") : "";
+    if (n === 0) return { answer: `I couldn't find any islands${facetStr}.`, results: [] };
+    return {
+      answer: `There ${n === 1 ? "is 1 island" : `are ${_CHAT_NUMBER_FMT.format(n)} islands`} matching${facetStr}.`,
+      results: filtered.slice(0, 6),
+    };
+  }
+
+  // ----- SUPERLATIVE -----
+  if (intent.kind === "superlative") {
+    const pool = filtered.length ? filtered : state.islands;
+    const sup = _superlativeWinner(pool, intent.which);
+    if (!sup) return null;
+    const w = sup.winner;
+    const where = [];
+    if (w.nation) where.push(w.nation);
+    if (w.archipelago && w.archipelago !== w.name) where.push(w.archipelago);
+    const whereStr = where.length ? ` (${where.join(" · ")})` : "";
+    const intro = intent.which.charAt(0).toUpperCase() + intent.which.slice(1);
+    return {
+      answer: `${intro}: ${w.name}${whereStr} — ${sup.value}.`,
+      results: sup.ranking,
+    };
+  }
+
+  // ----- LOOKUP -----
+  if (intent.kind === "lookup") {
+    const island = _findIslandByName(intent.name);
+    if (!island) {
+      return { answer: `I couldn't find an island matching "${intent.name}".`, results: [] };
+    }
+    const attr = intent.attr;
+    let answer;
+    if (/(area|size|big|large|wide|long|small)/.test(attr)) {
+      const conf = island.areaConfidence === "high" ? "" :
+                   island.areaConfidence === "medium" ? " (medium-confidence)" :
+                   " — area not available";
+      answer = island.areaKm2 != null
+        ? `${_islandShortLabel(island)} covers ${_fmtKm2(island.areaKm2)}${conf}.`
+        : `We don't have a verified area for ${_islandShortLabel(island)}.`;
+    } else if (/(elevation|height|tall|high|peak|summit|highestpoint)/.test(attr)) {
+      if (island.highestPointM != null) {
+        const name = island.highestPointName ? ` (${island.highestPointName})` : "";
+        const conf = island.highestPointConfidence === "estimate" ? " — estimate" : "";
+        answer = `${_islandShortLabel(island)} rises to ${_fmtM(island.highestPointM)}${name}${conf}.`;
+      } else {
+        answer = `We don't have a verified highest point for ${_islandShortLabel(island)}.`;
+      }
+    } else if (/population/.test(attr)) {
+      const p = island.population;
+      answer = p == null
+        ? `Population of ${_islandShortLabel(island)} is unknown.`
+        : p === 0
+        ? `${_islandShortLabel(island)} is uninhabited.`
+        : `${_islandShortLabel(island)} has a population of about ${_CHAT_NUMBER_FMT.format(p)}.`;
+    } else {
+      return null;
+    }
+    return { answer, results: [island] };
+  }
+
+  // ----- COMPARE -----
+  if (intent.kind === "compare") {
+    const a = _findIslandByName(intent.a);
+    const b = _findIslandByName(intent.b);
+    if (!a || !b) {
+      return {
+        answer: !a && !b
+          ? `I couldn't find islands matching "${intent.a}" or "${intent.b}".`
+          : `I couldn't find an island matching "${a ? intent.b : intent.a}".`,
+        results: [a, b].filter(Boolean),
+      };
+    }
+    const lines = [];
+    if (a.areaKm2 != null && b.areaKm2 != null) {
+      const ratio = (a.areaKm2 / b.areaKm2).toFixed(2);
+      const bigger = a.areaKm2 > b.areaKm2 ? a : b;
+      lines.push(
+        `${a.name} is ${_fmtKm2(a.areaKm2)} · ${b.name} is ${_fmtKm2(b.areaKm2)}` +
+        ` — ${bigger.name} is ${a.areaKm2 > b.areaKm2 ? ratio + "×" : (1/ratio).toFixed(2) + "×"} larger.`,
+      );
+    }
+    if (a.highestPointM != null && b.highestPointM != null) {
+      const taller = a.highestPointM > b.highestPointM ? a : b;
+      lines.push(
+        `Highest points: ${a.name} ${_fmtM(a.highestPointM)} · ${b.name} ${_fmtM(b.highestPointM)}` +
+        ` — ${taller.name} is higher.`,
+      );
+    }
+    if (a.population != null && b.population != null) {
+      lines.push(
+        `Population: ${a.name} ${_CHAT_NUMBER_FMT.format(a.population)} · ` +
+        `${b.name} ${_CHAT_NUMBER_FMT.format(b.population)}.`,
+      );
+    }
+    if (!lines.length) {
+      lines.push(`Comparing ${a.name} and ${b.name}: not enough data on both islands.`);
+    }
+    return { answer: lines.join(" "), results: [a, b] };
+  }
+
+  // ----- AGGREGATE -----
+  if (intent.kind === "aggregate") {
+    const pool = filtered.length ? filtered : state.islands;
+    const attr = intent.attr;
+    if (attr === "area" || attr === "size") {
+      let total = 0; let n = 0;
+      for (const i of pool) {
+        if (typeof i.areaKm2 === "number" && i.areaKm2 > 0) { total += i.areaKm2; n++; }
+      }
+      return {
+        answer: `Total area of ${_CHAT_NUMBER_FMT.format(n)} matching islands: ${_fmtKm2(total)}.`,
+        results: pool.slice().sort((x, y) => (y.areaKm2 || 0) - (x.areaKm2 || 0)).slice(0, 5),
+      };
+    }
+    if (attr === "population") {
+      let total = 0; let n = 0;
+      for (const i of pool) {
+        if (typeof i.population === "number" && i.population > 0) { total += i.population; n++; }
+      }
+      return {
+        answer: `Combined population of ${_CHAT_NUMBER_FMT.format(n)} inhabited matching islands: ${_CHAT_NUMBER_FMT.format(total)}.`,
+        results: pool.slice().sort((x, y) => (y.population || 0) - (x.population || 0)).slice(0, 5),
+      };
+    }
+  }
+  return null;
+}
+
 function composeChatResponse({ query, results, total }) {
   if (!results.length) {
     const hints = [];
+    if (query.nearUnresolved) {
+      return (
+        `I couldn't find “${query.nearUnresolved}” in the atlas gazetteer. ` +
+        "Try a major ferry town — Oban, Mallaig, Ullapool, Stornoway, Penzance, Holyhead — " +
+        "or ask without a place filter."
+      );
+    }
     if (!query.nations.size) hints.push("a nation (Scotland, Wales, …)");
     if (!query.types.size) hints.push("a type (sea, lake, river)");
-    if (!query.features.size) hints.push("a feature (mountains, castle, ferry)");
+    if (!query.features.size && !query.semanticTags.size) {
+      hints.push("a feature (mountains, castle, ferry, puffins)");
+    }
     return (
       "I couldn't find any matches. Try mentioning " +
       hints.join(", ") +
@@ -2572,6 +3193,7 @@ function composeChatResponse({ query, results, total }) {
   if (query.types.size) facets.push([...query.types].map((t) => t + " islands").join("/"));
   else facets.push("islands");
   if (query.archipelagos.size) facets.push("in " + [...query.archipelagos].join("/"));
+  if (query.semanticTags.size) facets.push("tagged " + [...query.semanticTags].join(" + "));
   if (query.features.size) facets.push("with " + [...query.features].join(" + "));
   if (query.near) {
     const km = Math.round(query.near.radiusKm);
@@ -2599,11 +3221,13 @@ function chatOpen() {
   chatEls.panel.setAttribute("aria-hidden", "false");
   chatEls.launcher.setAttribute("aria-expanded", "true");
   chatEls.launcher.classList.add("is-hidden");
+  if (mobileNav.isActive()) mobileNav.setView("ask", { skipChatSync: true });
+  ensureChatTagVocabulary();
   setTimeout(() => chatEls.input.focus(), 50);
   if (!chatEls.messages.dataset.bootstrapped) {
     chatRenderBot(
-      "Hi! Describe what kind of island you're looking for — by nation, type, or feature. " +
-        "Everything happens locally; no data leaves your browser.",
+      "Hi! Ask me anything about British or Scottish islands — counts, sizes, peaks, comparisons, or what's near a place. " +
+        "I'll answer directly and surface the islands you mean. Everything runs locally; no data leaves your browser.",
       { suggestions: CHAT_SUGGESTIONS }
     );
     chatEls.messages.dataset.bootstrapped = "1";
@@ -2615,6 +3239,9 @@ function chatClose() {
   chatEls.panel.setAttribute("aria-hidden", "true");
   chatEls.launcher.setAttribute("aria-expanded", "false");
   chatEls.launcher.classList.remove("is-hidden");
+  if (mobileNav.isActive() && mobileNav.view === "ask") {
+    mobileNav.setView("map", { skipChatSync: true });
+  }
 }
 
 function chatAppend(node) {
@@ -2629,10 +3256,68 @@ function chatRenderUser(text) {
   chatAppend(div);
 }
 
-function chatRenderBot(text, { suggestions, results, query } = {}) {
+// Render a bot reply as safe HTML.
+//
+// We HTML-escape *first*, then re-introduce a tiny, known subset of
+// inline markup:
+//   - `**bold**`   → <strong>bold</strong>
+//   - `*italic*`   → <em>italic</em>
+//   - lines starting with `- ` → grouped <ul><li>…</li></ul>
+//   - single newline → <br>, blank line → paragraph break
+// Anything else stays escaped, so the model can't smuggle raw HTML.
+function chatFormatBotText(raw) {
+  if (!raw) return "";
+  let s = escapeHtml(String(raw));
+  s = s.replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>");
+  s = s.replace(/(^|[^*])\*([^*\n]+?)\*(?!\*)/g, "$1<em>$2</em>");
+  const lines = s.split("\n");
+  const out = [];
+  let textBuf = [];
+  let listBuf = [];
+  const flushText = () => {
+    if (textBuf.length) {
+      out.push(textBuf.join("<br>"));
+      textBuf = [];
+    }
+  };
+  const flushList = () => {
+    if (listBuf.length) {
+      out.push(
+        '<ul class="chat-msg__list"><li>' +
+          listBuf.join("</li><li>") +
+          "</li></ul>"
+      );
+      listBuf = [];
+    }
+  };
+  for (const line of lines) {
+    const m = /^\s*-\s+(.+)$/.exec(line);
+    if (m) {
+      flushText();
+      listBuf.push(m[1]);
+    } else {
+      flushList();
+      textBuf.push(line);
+    }
+  }
+  flushText();
+  flushList();
+  return out.join("");
+}
+
+function chatRenderBot(text, { suggestions, results, query, badge } = {}) {
   const div = document.createElement("div");
   div.className = "chat-msg chat-msg--bot";
-  div.innerHTML = escapeHtml(text);
+  div.innerHTML = chatFormatBotText(text);
+
+  // Optional badge ("AI", etc.) appended to the bot's bubble.
+  if (badge) {
+    const b = document.createElement("span");
+    b.className = "chat-msg__badge";
+    b.textContent = badge;
+    b.title = "Generated with AI from local atlas data";
+    div.appendChild(b);
+  }
 
   if (suggestions && suggestions.length) {
     const sug = document.createElement("div");
@@ -2650,84 +3335,634 @@ function chatRenderBot(text, { suggestions, results, query } = {}) {
   if (results && results.length) {
     const list = document.createElement("div");
     list.className = "chat-results";
+    let renderedCount = 0;
     for (const r of results) {
-      const isl = r.island;
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "chat-result";
-      btn.dataset.id = isl.id;
+      // Defensive: skip null entries or entries without an island record.
+      // Render every other entry inside its own try/catch so a single bad
+      // record can never blank out the whole reply.
+      if (!r) continue;
+      const isl = r && r.island;
+      if (!isl || typeof isl !== "object" || !isl.id) continue;
+      try {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chat-result";
+        btn.dataset.id = isl.id;
 
-      const thumb = document.createElement("div");
-      thumb.className = "chat-result__thumb";
-      const imgUrl = isl.image || (isl.images && isl.images[0] && isl.images[0].url) || "";
-      if (imgUrl) {
-        thumb.style.backgroundImage = `url('${imgUrl.replace(/'/g, "\\'")}')`;
-      } else {
-        thumb.classList.add("chat-result__thumb--empty");
-        thumb.textContent = "◍";
+        const thumb = document.createElement("div");
+        thumb.className = "chat-result__thumb";
+        const imgUrl =
+          isl.image ||
+          (Array.isArray(isl.images) && isl.images[0] && isl.images[0].url) ||
+          "";
+        if (imgUrl) {
+          thumb.style.backgroundImage = `url('${String(imgUrl).replace(/'/g, "\\'")}')`;
+        } else {
+          thumb.classList.add("chat-result__thumb--empty");
+          thumb.textContent = "◍";
+        }
+        btn.appendChild(thumb);
+
+        const body = document.createElement("div");
+        body.className = "chat-result__body";
+        const title = document.createElement("strong");
+        title.textContent = isl.name || "(unnamed)";
+        body.appendChild(title);
+        const meta = document.createElement("span");
+        meta.className = "chat-result__meta";
+        const parts = [];
+        if (isl.nation) parts.push(isl.nation);
+        if (isl.type) {
+          parts.push(
+            isl.subtype ? `${isl.subtype} (${isl.type})` : `${isl.type} island`,
+          );
+        }
+        if (isl.parentWaterBody && isl.parentWaterBody.name) {
+          parts.push(isl.parentWaterBody.name);
+        }
+        if (typeof isl.areaKm2 === "number" && isl.areaKm2 > 0 &&
+            typeof formatArea === "function") {
+          parts.push(formatArea(isl.areaKm2));
+        }
+        if (query && query.near &&
+            Number.isFinite(isl.lat) && Number.isFinite(isl.lng)) {
+          const km = chatHaversineKm(query.near.lat, query.near.lng, isl.lat, isl.lng);
+          parts.push(`${Math.round(km)} km from ${query.near.name}`);
+        }
+        meta.textContent = parts.join(" · ");
+        body.appendChild(meta);
+
+        // Source cross-reference: if there's a primary image with a
+        // sourcePageUrl, render a tiny clickable link so the user can
+        // verify where the photo came from. Mirrors the detail panel.
+        const imgs = Array.isArray(isl.images) ? isl.images : [];
+        const primaryImg = imgs.find((x) => x && x.primary) || imgs[0] || null;
+        if (primaryImg && primaryImg.sourcePageUrl) {
+          const srcLink = document.createElement("a");
+          srcLink.className = "chat-result__source";
+          srcLink.href = primaryImg.sourcePageUrl;
+          srcLink.target = "_blank";
+          srcLink.rel = "noopener";
+          const labelMap =
+            (typeof SOURCE_LABELS !== "undefined" && SOURCE_LABELS) || {};
+          srcLink.textContent =
+            (labelMap[primaryImg.source] || primaryImg.source || "source") +
+            " ↗";
+          srcLink.addEventListener("click", (e) => e.stopPropagation());
+          body.appendChild(srcLink);
+        }
+
+        btn.appendChild(body);
+
+        const access = chatAccessForIsland(isl);
+        if (access.causeway?.notes) {
+          const cw = document.createElement("p");
+          cw.className = "chat-result__causeway";
+          cw.textContent = access.causeway.notes;
+          body.appendChild(cw);
+        }
+        if (access.ferryRoutes.length) {
+          const ferryWrap = document.createElement("div");
+          ferryWrap.className = "chat-result__ferries";
+          for (const route of access.ferryRoutes.slice(0, 2)) {
+            const row = document.createElement("div");
+            row.className = "chat-ferry-snippet";
+            const op = route.operator || "Ferry";
+            const from = route.from || "mainland";
+            const to = route.to || "island";
+            const season = route.seasonality ? ` · ${route.seasonality}` : "";
+            row.textContent = `${op}: ${from} → ${to}${season}`;
+            ferryWrap.appendChild(row);
+          }
+          body.appendChild(ferryWrap);
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "chat-result__actions";
+        const mapBtn = document.createElement("button");
+        mapBtn.type = "button";
+        mapBtn.className = "chat-result__map-btn";
+        mapBtn.textContent = "Show on map";
+        mapBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showIslandOnMap(isl.id);
+          if (window.innerWidth <= 640) chatClose();
+        });
+        const detailBtn = document.createElement("button");
+        detailBtn.type = "button";
+        detailBtn.className = "chat-result__detail-btn";
+        detailBtn.textContent = "Open profile";
+        detailBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          focusIsland(isl.id);
+          if (window.innerWidth <= 640) chatClose();
+        });
+        actions.appendChild(mapBtn);
+        actions.appendChild(detailBtn);
+        body.appendChild(actions);
+
+        list.appendChild(btn);
+        renderedCount++;
+      } catch (cardErr) {
+        // Skip a single bad card without poisoning the rest of the reply.
+        console.warn("[chat] skipped result card", isl && isl.id, cardErr);
       }
-      btn.appendChild(thumb);
-
-      const body = document.createElement("div");
-      body.className = "chat-result__body";
-      const title = document.createElement("strong");
-      title.textContent = isl.name;
-      body.appendChild(title);
-      const meta = document.createElement("span");
-      meta.className = "chat-result__meta";
-      const parts = [];
-      if (isl.nation) parts.push(isl.nation);
-      if (isl.type) {
-        parts.push(
-          isl.subtype ? `${isl.subtype} (${isl.type})` : `${isl.type} island`
-        );
-      }
-      if (isl.parentWaterBody && isl.parentWaterBody.name) {
-        parts.push(isl.parentWaterBody.name);
-      }
-      if (isl.areaKm2) parts.push(formatArea(isl.areaKm2));
-      if (query && query.near &&
-          Number.isFinite(isl.lat) && Number.isFinite(isl.lng)) {
-        const km = chatHaversineKm(query.near.lat, query.near.lng, isl.lat, isl.lng);
-        parts.push(`${Math.round(km)} km from ${query.near.name}`);
-      }
-      meta.textContent = parts.join(" · ");
-      body.appendChild(meta);
-
-      // Source cross-reference: if there's a primary image with a
-      // sourcePageUrl, render a tiny clickable link so the user can verify
-      // where the photo came from. Mirrors the detail panel.
-      const primaryImg =
-        (isl.images && isl.images.find((x) => x.primary)) ||
-        (isl.images && isl.images[0]) ||
-        null;
-      if (primaryImg && primaryImg.sourcePageUrl) {
-        const srcLink = document.createElement("a");
-        srcLink.className = "chat-result__source";
-        srcLink.href = primaryImg.sourcePageUrl;
-        srcLink.target = "_blank";
-        srcLink.rel = "noopener";
-        srcLink.textContent =
-          (SOURCE_LABELS[primaryImg.source] || primaryImg.source || "source") +
-          " ↗";
-        srcLink.addEventListener("click", (e) => e.stopPropagation());
-        body.appendChild(srcLink);
-      }
-
-      btn.appendChild(body);
-
-      btn.addEventListener("click", () => {
-        focusIsland(isl.id);
-        if (window.innerWidth <= 640) chatClose();
-      });
-
-      list.appendChild(btn);
     }
-    div.appendChild(list);
+    if (renderedCount > 0) div.appendChild(list);
   }
 
   chatAppend(div);
 }
+
+// ---------- Optional LLM layer ----------
+//
+// Hybrid RAG: the local engine is always the source of truth.  When
+// "smart answers" is enabled, we additionally pass the question + the top
+// ~12 candidate islands + recent chat history to the user's chosen LLM
+// (OpenAI or Anthropic, BYOK).  The LLM is *only* allowed to use the
+// candidates we hand it; it returns JSON with an answer, the island IDs
+// it cited, and three short follow-up suggestions.  Everything stays
+// opt-in and the API key never leaves localStorage.
+
+const LLM_PROVIDERS = {
+  openai: {
+    label: "OpenAI",
+    models: [
+      { id: "gpt-4o-mini", label: "gpt-4o-mini · fast & cheap (default)" },
+      { id: "gpt-4o", label: "gpt-4o · best reasoning" },
+      { id: "gpt-4.1-mini", label: "gpt-4.1-mini" },
+    ],
+    defaultModel: "gpt-4o-mini",
+    endpoint: "https://api.openai.com/v1/chat/completions",
+  },
+  anthropic: {
+    label: "Anthropic",
+    models: [
+      { id: "claude-3-5-haiku-latest", label: "claude-3-5-haiku · fast & cheap (default)" },
+      { id: "claude-3-5-sonnet-latest", label: "claude-3-5-sonnet · best reasoning" },
+    ],
+    defaultModel: "claude-3-5-haiku-latest",
+    endpoint: "https://api.anthropic.com/v1/messages",
+  },
+};
+
+const LLM_HISTORY_TURNS = 6;
+const LLM_CANDIDATE_LIMIT = 12;
+
+function chatLLMGetSettings() {
+  try {
+    const raw = localStorage.getItem("chatAI");
+    const obj = raw ? JSON.parse(raw) : {};
+    return {
+      enabled: !!obj.enabled,
+      provider: obj.provider || "openai",
+      model: obj.model || LLM_PROVIDERS.openai.defaultModel,
+      apiKey: obj.apiKey || "",
+    };
+  } catch (_) {
+    return { enabled: false, provider: "openai", model: "gpt-4o-mini", apiKey: "" };
+  }
+}
+
+function chatLLMSaveSettings(patch) {
+  const current = chatLLMGetSettings();
+  const next = Object.assign({}, current, patch);
+  try {
+    localStorage.setItem("chatAI", JSON.stringify(next));
+  } catch (_) {
+    /* non-fatal */
+  }
+  chatLLMRefreshUI();
+  return next;
+}
+
+// Build a richer LLM-friendly representation of each candidate island.
+// We give the model enough narrative context to write naturally without
+// blowing the prompt budget — descriptions trimmed at ~480 chars,
+// history/transport at ~340.  Empty fields are dropped so the model isn't
+// tempted to comment on missing data.
+function chatLLMSerialiseIsland(isl) {
+  if (!isl || typeof isl !== "object") return null;
+  const trim = (s, n) =>
+    typeof s === "string" && s.trim()
+      ? s.length > n
+        ? s.slice(0, n - 1).trim() + "…"
+        : s.trim()
+      : null;
+  const dropEmpty = (obj) => {
+    const out = {};
+    for (const k of Object.keys(obj)) {
+      const v = obj[k];
+      if (v == null) continue;
+      if (typeof v === "string" && v === "") continue;
+      if (Array.isArray(v) && v.length === 0) continue;
+      out[k] = v;
+    }
+    return out;
+  };
+  return dropEmpty({
+    id: isl.id,
+    name: isl.name,
+    nation: isl.nation,
+    type: isl.type,
+    subtype: isl.subtype || null,
+    archipelago: isl.archipelago || null,
+    parentWaterBody:
+      isl.parentWaterBody && isl.parentWaterBody.name
+        ? isl.parentWaterBody.name
+        : null,
+    lat: typeof isl.lat === "number" ? +isl.lat.toFixed(3) : null,
+    lng: typeof isl.lng === "number" ? +isl.lng.toFixed(3) : null,
+    areaKm2: typeof isl.areaKm2 === "number" ? +isl.areaKm2.toFixed(3) : null,
+    areaConfidence: isl.areaConfidence || null,
+    highestPointM:
+      typeof isl.highestPointM === "number" ? Math.round(isl.highestPointM) : null,
+    highestPointName: isl.highestPointName || null,
+    population: typeof isl.population === "number" ? isl.population : null,
+    inhabited:
+      typeof isl.population === "number" ? isl.population > 0 : null,
+    tidal: isl.tidal || null,
+    shortDescription: trim(isl.shortDescription, 480),
+    geography: trim(isl.geography, 340),
+    history: trim(isl.history, 340),
+    transport: trim(isl.transport, 340),
+    accommodation: trim(isl.accommodation, 240),
+    tags: Array.isArray(isl.tags) ? isl.tags.slice(0, 16) : [],
+    descriptionSource: isl.descriptionSource || null,
+    descriptionConfidence: isl.descriptionConfidence || null,
+    hasPhoto: !!(isl.image || (Array.isArray(isl.images) && isl.images[0])),
+    wikipedia: isl.wikipedia || null,
+    ...chatAccessForIsland(isl),
+  });
+}
+
+// Atlas-level summary so the LLM understands what data set it's drawing
+// from.  Computed once per page-load and reused; recounting 6,776
+// records every turn would be wasteful.
+let _atlasSummaryCache = null;
+function chatLLMAtlasSummary() {
+  if (_atlasSummaryCache) return _atlasSummaryCache;
+  const islands = state.islands || [];
+  const byNation = {};
+  const byType = {};
+  let inhabitedCount = 0;
+  let withAreaCount = 0;
+  let withPeakCount = 0;
+  let largestArea = 0;
+  let highestPeak = 0;
+  for (const i of islands) {
+    if (!i) continue;
+    if (i.nation) byNation[i.nation] = (byNation[i.nation] || 0) + 1;
+    if (i.type) byType[i.type] = (byType[i.type] || 0) + 1;
+    if (typeof i.population === "number" && i.population > 0) inhabitedCount++;
+    if (typeof i.areaKm2 === "number" && i.areaKm2 > 0) {
+      withAreaCount++;
+      if (i.areaKm2 > largestArea) largestArea = i.areaKm2;
+    }
+    if (typeof i.highestPointM === "number") {
+      withPeakCount++;
+      if (i.highestPointM > highestPeak) highestPeak = i.highestPointM;
+    }
+  }
+  _atlasSummaryCache = {
+    totalIslands: islands.length,
+    inhabitedCount,
+    withVerifiedArea: withAreaCount,
+    withVerifiedPeak: withPeakCount,
+    largestAreaKm2: +largestArea.toFixed(0),
+    highestPeakM: Math.round(highestPeak),
+    byNation,
+    byType,
+  };
+  return _atlasSummaryCache;
+}
+
+const LLM_SYSTEM_PROMPT =
+  "You are a warm, knowledgeable guide to an open atlas of the islands of " +
+  "Britain, Ireland, the Crown Dependencies, and their inland river and lake " +
+  "islands. Think of yourself as a well-travelled local who's read everything " +
+  "ever written about these islands and is helping a curious visitor find what " +
+  "they'll love. " +
+  "You will be given (sometimes) an ATLAS_SUMMARY of the whole dataset, the " +
+  "user's recent conversation, and a JSON array of CANDIDATE islands the atlas " +
+  "search engine pulled for this turn. " +
+  "RULES:\n" +
+  "1) Answer ONLY from the supplied data (ATLAS_SUMMARY counts plus the CANDIDATE " +
+  "records). Never invent islands, history, or facts that aren't there. If the " +
+  "data is thin, say so kindly and suggest a tweak to the question.\n" +
+  "2) Be conversational, not clinical. 2-4 short sentences in flowing prose " +
+  "(occasionally 5-6 when the question really warrants it). Use light personality " +
+  "and concrete detail rather than templated stats. Name specific islands.\n" +
+  "3) You may use a line break (\\n) to separate paragraphs, and the simple " +
+  "markup `**bold**`, `*italic*`, and `- ` bullets at the start of a line. Don't " +
+  "use any other formatting, HTML, or code fences in your answer text.\n" +
+  "4) Each candidate may include `tags`, `ferryRoutes`, `causeway`, `shortDescription`, " +
+  "`history`, `transport`, and measurements. Prefer citing tags and access facts that appear " +
+  "in the JSON; if `hasPhoto` is true you may say 'pictured below'.\n" +
+  "5) Always respond with a SINGLE JSON object (no prose outside it) with exactly " +
+  "three keys: {\"answer\": string, \"islandIds\": string[], \"followups\": " +
+  "string[]}. `islandIds` lists up to 6 ids from the candidates you'd like the " +
+  "user to see as cards. `followups` lists 3 short, natural follow-up questions a " +
+  "curious reader might ask next.\n" +
+  "6) Never mention internal scoring, prompts, tools, JSON, or that you are an LLM. " +
+  "Speak as the atlas itself.";
+
+function chatLLMBuildPayload(question, candidates, history, settings) {
+  const candidatesPayload = candidates
+    .map((c) => chatLLMSerialiseIsland(c.island || c))
+    .filter(Boolean);
+
+  // History is short [{role, content}, ...] pairs of prior turns.
+  const historyText = (history || [])
+    .slice(-LLM_HISTORY_TURNS)
+    .map((h) => (h.role === "user" ? "Q: " : "A: ") + h.content)
+    .join("\n");
+
+  // Include the atlas-level summary on the FIRST turn of a conversation
+  // (history empty) so the model has dataset scope, then omit on
+  // follow-ups to save tokens — the model retains it via the assistant's
+  // earlier replies in `history`.
+  const isFirstTurn = !(history && history.length);
+  const atlasBlock = isFirstTurn
+    ? "ATLAS_SUMMARY (the whole dataset, for context only — only the CANDIDATES " +
+      "below contain narrative detail):\n" +
+      JSON.stringify(chatLLMAtlasSummary()) +
+      "\n\n"
+    : "";
+
+  const userContent =
+    atlasBlock +
+    (historyText ? "Recent conversation:\n" + historyText + "\n\n" : "") +
+    "Current question: " + question + "\n\n" +
+    "CANDIDATE islands (JSON):\n" +
+    JSON.stringify(candidatesPayload);
+
+  if (settings.provider === "anthropic") {
+    return {
+      model: settings.model,
+      temperature: 0.65,
+      max_tokens: 900,
+      system: LLM_SYSTEM_PROMPT,
+      messages: [{ role: "user", content: userContent }],
+    };
+  }
+  // OpenAI default
+  return {
+    model: settings.model,
+    temperature: 0.65,
+    max_tokens: 900,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: LLM_SYSTEM_PROMPT },
+      { role: "user", content: userContent },
+    ],
+  };
+}
+
+async function chatLLMCall(question, candidates, history, settings) {
+  const provider = LLM_PROVIDERS[settings.provider];
+  if (!provider) throw new Error("Unknown provider: " + settings.provider);
+  if (!settings.apiKey) throw new Error("No API key configured");
+
+  const body = chatLLMBuildPayload(question, candidates, history, settings);
+  const headers = { "Content-Type": "application/json" };
+  if (settings.provider === "openai") {
+    headers["Authorization"] = "Bearer " + settings.apiKey;
+  } else if (settings.provider === "anthropic") {
+    headers["x-api-key"] = settings.apiKey;
+    headers["anthropic-version"] = "2023-06-01";
+    // Anthropic requires this header for direct browser requests.
+    headers["anthropic-dangerous-direct-browser-access"] = "true";
+  }
+
+  const resp = await fetch(provider.endpoint, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+  });
+  if (!resp.ok) {
+    let detail = "";
+    try {
+      const errBody = await resp.json();
+      detail = errBody.error?.message || JSON.stringify(errBody).slice(0, 240);
+    } catch (_) {
+      detail = await resp.text().catch(() => "");
+    }
+    throw new Error(`HTTP ${resp.status} from ${provider.label}: ${detail}`);
+  }
+  const data = await resp.json();
+
+  // Extract the text payload, handling both API shapes.
+  let raw = "";
+  if (settings.provider === "openai") {
+    raw = data.choices?.[0]?.message?.content || "";
+  } else {
+    raw = (data.content || [])
+      .map((b) => (b && b.type === "text" ? b.text : ""))
+      .join("");
+  }
+
+  // Parse the JSON response.  Be forgiving: strip code fences if the model
+  // wrapped its reply in ```json … ``` despite instructions.
+  let parsed;
+  try {
+    const cleaned = raw
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/```\s*$/i, "")
+      .trim();
+    parsed = JSON.parse(cleaned);
+  } catch (e) {
+    throw new Error("LLM returned non-JSON: " + raw.slice(0, 200));
+  }
+  if (!parsed || typeof parsed.answer !== "string") {
+    throw new Error("LLM JSON missing `answer` field");
+  }
+  return {
+    answer: parsed.answer.trim(),
+    islandIds: Array.isArray(parsed.islandIds) ? parsed.islandIds.slice(0, 6) : [],
+    followups: Array.isArray(parsed.followups) ? parsed.followups.slice(0, 3) : [],
+  };
+}
+
+async function chatLLMTest(settings) {
+  // A tiny call with the cheapest possible payload, just to verify the key.
+  const probe = {
+    answer: "ok",
+    islandIds: [],
+    followups: [],
+  };
+  const fakeCands = [chatLLMSerialiseIsland(state.islands?.[0] || {})];
+  const res = await chatLLMCall(
+    "Reply with the JSON object: " + JSON.stringify(probe),
+    fakeCands.filter(Boolean),
+    [],
+    settings,
+  );
+  return res;
+}
+
+// ---------- Chat settings UI wiring ----------
+
+const chatSettingsEls = {
+  toggle: () => document.getElementById("chat-settings-toggle"),
+  panel: () => document.getElementById("chat-settings"),
+  aiToggle: () => document.getElementById("chat-ai-toggle"),
+  provider: () => document.getElementById("chat-ai-provider"),
+  model: () => document.getElementById("chat-ai-model"),
+  key: () => document.getElementById("chat-ai-key"),
+  test: () => document.getElementById("chat-ai-test"),
+  clear: () => document.getElementById("chat-ai-clear"),
+  status: () => document.getElementById("chat-ai-status"),
+  modeSub: () => document.getElementById("chat-mode-sub"),
+};
+
+function chatLLMRefreshUI() {
+  const s = chatLLMGetSettings();
+  const toggleBtn = chatSettingsEls.toggle();
+  const modeSub = chatSettingsEls.modeSub();
+  const btnLabel = document.getElementById("chat-ai-btn-label");
+  const keyLink = document.getElementById("chat-ai-key-link");
+  if (toggleBtn) toggleBtn.classList.toggle("is-on", !!s.enabled && !!s.apiKey);
+  if (btnLabel) {
+    if (s.enabled && s.apiKey) {
+      btnLabel.textContent = `AI: ${LLM_PROVIDERS[s.provider]?.label || s.provider}`;
+    } else if (s.apiKey) {
+      btnLabel.textContent = "AI off";
+    } else {
+      btnLabel.textContent = "Set up AI";
+    }
+  }
+  if (keyLink) {
+    keyLink.href =
+      s.provider === "anthropic"
+        ? "https://console.anthropic.com/settings/keys"
+        : "https://platform.openai.com/api-keys";
+  }
+  if (modeSub) {
+    if (s.enabled && s.apiKey) {
+      modeSub.textContent =
+        `AI mode · sending questions to ${LLM_PROVIDERS[s.provider]?.label || s.provider}.`;
+    } else if (s.enabled && !s.apiKey) {
+      modeSub.textContent =
+        "AI mode is on but no key is set. Open settings to add one.";
+    } else {
+      modeSub.textContent = "Local mode · nothing leaves your browser.";
+    }
+  }
+}
+
+function chatLLMPopulateModels(provider) {
+  const sel = chatSettingsEls.model();
+  if (!sel) return;
+  const opts = LLM_PROVIDERS[provider]?.models || [];
+  sel.innerHTML = "";
+  for (const m of opts) {
+    const o = document.createElement("option");
+    o.value = m.id;
+    o.textContent = m.label;
+    sel.appendChild(o);
+  }
+}
+
+function chatLLMInitSettingsUI() {
+  const s = chatLLMGetSettings();
+  const aiToggle = chatSettingsEls.aiToggle();
+  const provider = chatSettingsEls.provider();
+  const key = chatSettingsEls.key();
+  const test = chatSettingsEls.test();
+  const clear = chatSettingsEls.clear();
+  const toggleBtn = chatSettingsEls.toggle();
+  const panel = chatSettingsEls.panel();
+  if (!aiToggle || !provider || !key) return;
+
+  aiToggle.checked = s.enabled;
+  provider.value = s.provider;
+  chatLLMPopulateModels(s.provider);
+  const model = chatSettingsEls.model();
+  if (model) model.value = s.model;
+  if (s.apiKey) key.placeholder = "•••••• (saved in this browser)";
+
+  aiToggle.addEventListener("change", () => {
+    chatLLMSaveSettings({ enabled: aiToggle.checked });
+  });
+  provider.addEventListener("change", () => {
+    const def = LLM_PROVIDERS[provider.value]?.defaultModel;
+    chatLLMPopulateModels(provider.value);
+    chatLLMSaveSettings({ provider: provider.value, model: def });
+    const m = chatSettingsEls.model();
+    if (m) m.value = def;
+  });
+  const modelSel = chatSettingsEls.model();
+  if (modelSel) {
+    modelSel.addEventListener("change", () => {
+      chatLLMSaveSettings({ model: modelSel.value });
+    });
+  }
+  key.addEventListener("change", () => {
+    const v = key.value.trim();
+    chatLLMSaveSettings({ apiKey: v });
+    if (v) {
+      key.value = "";
+      key.placeholder = "•••••• (saved in this browser)";
+    }
+  });
+  test.addEventListener("click", async () => {
+    const status = chatSettingsEls.status();
+    if (!status) return;
+    const live = chatLLMGetSettings();
+    if (!live.apiKey) {
+      status.className = "chat-settings__status is-err";
+      status.textContent = "Add an API key first.";
+      return;
+    }
+    status.className = "chat-settings__status";
+    status.textContent = "Testing…";
+    try {
+      await chatLLMTest(live);
+      status.className = "chat-settings__status is-ok";
+      status.textContent = "Connection OK — AI is ready.";
+    } catch (err) {
+      status.className = "chat-settings__status is-err";
+      status.textContent = "Test failed: " + (err.message || err);
+    }
+  });
+  clear.addEventListener("click", () => {
+    chatLLMSaveSettings({ apiKey: "" });
+    key.value = "";
+    key.placeholder = "sk-… or sk-ant-…";
+    const status = chatSettingsEls.status();
+    if (status) {
+      status.className = "chat-settings__status";
+      status.textContent = "Key cleared.";
+    }
+  });
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener("click", () => {
+      const open = panel.hasAttribute("hidden") === false;
+      if (open) {
+        panel.setAttribute("hidden", "");
+        panel.setAttribute("aria-hidden", "true");
+      } else {
+        panel.removeAttribute("hidden");
+        panel.setAttribute("aria-hidden", "false");
+      }
+    });
+  }
+  chatLLMRefreshUI();
+}
+
+// Initialise once the DOM is parsed.
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", chatLLMInitSettingsUI);
+} else {
+  chatLLMInitSettingsUI();
+}
+
+// ---------- Chat submit ----------
+
+// Recent conversation history for AI-mode follow-ups.  Capped at
+// LLM_HISTORY_TURNS * 2 entries (alternating user / assistant).
+const chatHistory = [];
 
 function chatSubmit(text) {
   const t = (text || "").trim();
@@ -2754,18 +3989,119 @@ function chatSubmit(text) {
   // proper structured filtering kicks in. Falls back to the text-based
   // ferry feature heuristic when the index can't be loaded.
   const probe = parseChatQuery(t);
-  const prep = probe.ferryIntent && !state.ferries
-    ? loadFerries()
-    : Promise.resolve();
+  const prep = Promise.all([
+    loadFerries(),
+    loadCauseways(),
+    ensureChatTagVocabulary(),
+  ]);
 
-  prep.then(() => {
-    const r = searchChatIslands(t, 6);
-    thinking.remove();
-    if (!r.results.length) {
-      chatRenderBot(composeChatResponse(r), { suggestions: CHAT_SUGGESTIONS });
-    } else {
-      chatRenderBot(composeChatResponse(r), { results: r.results, query: r.query });
+  // Wrap the whole pipeline in try/catch so a single thrown error can never
+  // leave the user staring at a perpetual "Searching the atlas…" dot.
+  prep.then(async () => {
+    try {
+      const r = searchChatIslands(t, LLM_CANDIDATE_LIMIT);
+      thinking.remove();
+
+      const aiSettings = chatLLMGetSettings();
+      const aiActive = aiSettings.enabled && aiSettings.apiKey && r.results.length > 0;
+
+      if (aiActive) {
+        // Show a different spinner while the LLM is thinking.
+        const aiThinking = document.createElement("div");
+        aiThinking.className = "chat-msg chat-msg--system";
+        aiThinking.textContent = `Thinking with ${LLM_PROVIDERS[aiSettings.provider]?.label || "AI"}…`;
+        chatAppend(aiThinking);
+        try {
+          const llm = await chatLLMCall(t, r.results, chatHistory, aiSettings);
+          aiThinking.remove();
+
+          // Resolve cited island ids back to records; fall back to the
+          // local top results if the LLM cited nothing usable.
+          const cited = (llm.islandIds || [])
+            .map((id) => state.islands.find((i) => i && i.id === id))
+            .filter(Boolean);
+          const wrapped = (cited.length ? cited : r.results.slice(0, 5).map((x) => x.island))
+            .map((isl) => ({ island: isl }));
+
+          chatHistory.push({ role: "user", content: t });
+          chatHistory.push({ role: "assistant", content: llm.answer });
+          while (chatHistory.length > LLM_HISTORY_TURNS * 2) chatHistory.shift();
+
+          chatRenderBot(llm.answer, {
+            results: wrapped,
+            query: r.query,
+            suggestions: llm.followups.length ? llm.followups : undefined,
+            badge: "AI",
+          });
+          return;
+        } catch (llmErr) {
+          aiThinking.remove();
+          console.warn("[chat] LLM call failed; falling back to local engine", llmErr);
+          // Tell the user once that AI failed, then continue with local.
+          const note = document.createElement("div");
+          note.className = "chat-msg chat-msg--system";
+          note.textContent =
+            "AI is unreachable (" + (llmErr.message || "error") +
+            ") — showing local results instead.";
+          chatAppend(note);
+          // Fall through to local engine below.
+        }
+      }
+
+      // Local engine (also the fallback path when AI is off or failed).
+      // Direct-answer pass: if the question is a count/superlative/lookup/
+      // comparison/aggregate, prepend a one-sentence factual answer and
+      // surface the most relevant islands for that answer.  Defensive:
+      // if intent detection or answer-building throws, just fall through
+      // to the standard search-results path rather than blanking the
+      // whole reply.
+      let intent = null;
+      let direct = null;
+      try {
+        intent = detectAnswerIntent(t);
+        if (intent) direct = answerIntent(intent, r.query);
+      } catch (intentErr) {
+        console.warn("[chat] answer-engine error", intentErr);
+        intent = null;
+        direct = null;
+      }
+      if (direct) {
+        // chatRenderBot expects [{island, score}, ...]; answerIntent
+        // returns plain island objects, so wrap them.  Fall back to the
+        // already-wrapped r.results when the direct branch has none.
+        const wrappedDirect = (direct.results || []).map((x) => ({
+          island: x,
+        }));
+        const results = wrappedDirect.length ? wrappedDirect : r.results;
+        const tail = r.results.length && intent && intent.kind === "count"
+          ? "" // count answer already says "there are N"
+          : results.length
+          ? ""
+          : " " + composeChatResponse(r);
+        chatRenderBot(direct.answer + tail, { results, query: r.query });
+        return;
+      }
+
+      if (!r.results.length) {
+        chatRenderBot(composeChatResponse(r), { suggestions: CHAT_SUGGESTIONS });
+      } else {
+        chatRenderBot(composeChatResponse(r), { results: r.results, query: r.query });
+      }
+    } catch (err) {
+      thinking.remove();
+      console.error("[chat] pipeline error", err);
+      chatRenderBot(
+        "Sorry — something went wrong while searching. Try rephrasing, or pick a suggestion below.",
+        { suggestions: CHAT_SUGGESTIONS },
+      );
     }
+  }).catch((err) => {
+    thinking.remove();
+    console.error("[chat] prep promise rejected", err);
+    chatRenderBot(
+      "Sorry — couldn't load the ferry data needed for that question. Try a different question.",
+      { suggestions: CHAT_SUGGESTIONS },
+    );
   });
 }
 
@@ -2816,6 +4152,83 @@ if (chatEls.launcher) {
 }
 
 // ---------- Boot ----------
+const mobileNav = (() => {
+  const mq = window.matchMedia("(max-width: 900px)");
+  const nav = document.getElementById("mobile-nav");
+  const filtersToggle = document.getElementById("filters-toggle");
+  let view = "map";
+
+  function isActive() {
+    return mq.matches;
+  }
+
+  function syncMapSize() {
+    if (typeof map !== "undefined" && map) {
+      window.setTimeout(() => {
+        try {
+          map.invalidateSize();
+        } catch (_) {
+          /* ignore */
+        }
+      }, 220);
+    }
+  }
+
+  function setView(next, { skipChatSync = false } = {}) {
+    if (!isActive()) return;
+    view = next;
+    document.body.dataset.mobileView = next;
+    nav?.querySelectorAll(".mobile-nav__btn").forEach((btn) => {
+      const active = btn.dataset.mobileView === next;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-current", active ? "page" : "false");
+    });
+    if (next === "ask") {
+      if (!skipChatSync && chatEls.panel && !chatEls.panel.classList.contains("is-open")) {
+        chatOpen();
+      }
+    } else if (!skipChatSync && chatEls.panel?.classList.contains("is-open")) {
+      chatClose();
+    }
+    if (next === "islands" && els.details.hidden) {
+      els.listSection.hidden = false;
+    }
+    if (next === "trip") {
+      document.getElementById("trip-from")?.focus();
+    }
+    syncMapSize();
+  }
+
+  function applyMode() {
+    if (isActive()) {
+      document.body.dataset.mobileView = view;
+    } else {
+      delete document.body.dataset.mobileView;
+      document.body.classList.remove("filters-open");
+      filtersToggle?.setAttribute("aria-expanded", "false");
+    }
+    syncMapSize();
+  }
+
+  nav?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".mobile-nav__btn");
+    if (!btn?.dataset.mobileView) return;
+    setView(btn.dataset.mobileView);
+  });
+
+  filtersToggle?.addEventListener("click", () => {
+    const open = document.body.classList.toggle("filters-open");
+    filtersToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  mq.addEventListener("change", applyMode);
+  window.addEventListener("orientationchange", syncMapSize);
+  window.visualViewport?.addEventListener("resize", syncMapSize);
+  applyMode();
+  return { isActive, setView, get view() { return view; } };
+})();
+
 loadIslands();
+initTripPlanner();
 chatAutoLoadFromUrl();
 tryRenderItineraryFromUrl();

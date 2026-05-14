@@ -1,0 +1,921 @@
+{
+  "_doc": "Hand-curated reclassification overrides. Applied by scripts/apply_manual_overrides.py *after* the automatic reclassification pipeline. Each entry replaces (only) the fields it specifies. Use this for cases where the heuristic pipeline produces a wrong or low-confidence answer.",
+  "version": 1,
+  "lastUpdated": "2026-05-12",
+  "overrides": [
+    {
+      "id": "osm-relation-15030227",
+      "name": "Bishop's Islands",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Shannon", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Cluster of islets at 53.26 N, 8.03 W; sits inside the OSM Shannon riverbank polygon (14.3 km²) at 235m. Hand-confirmed as Shannon islets."
+    },
+    {
+      "id": "osm-way-44896657",
+      "name": "Boswell's Holme",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Great Ouse", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "52.18 N, 0.53 W is on the Great Ouse near Bedford; 'holme' = OE for river island."
+    },
+    {
+      "id": "wd-Q24673846",
+      "name": "Castle Island",
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {"name": "Lough Erne (Upper)", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "There are many 'Castle Island' entries; this NI one at the Lough Erne cluster is the one Tier 4 picked."
+    },
+    {
+      "id": "wd-Q5138901",
+      "name": "Cobholm Island",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Yare", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tier 4 wrongly assigned 'lake (unnamed, 0.002 km²)'. Cobholm Island is in Great Yarmouth on the River Yare (north bank, just before the Yare meets the sea)."
+    },
+    {
+      "id": "osm-way-372223318",
+      "name": "Coxes Lock",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Wey Navigation", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Coxes Lock is on the Wey Navigation at Addlestone, Surrey."
+    },
+    {
+      "id": "wd-Q56663344",
+      "name": "crannog 450m ESE of Rough Loch",
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {"name": "Rough Loch", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tier 4 attached it to nearby Elrig Loch (405m); the name itself says it's in Rough Loch, a smaller body. Crannogs are always in lochs."
+    },
+    {
+      "id": "osm-way-321659320",
+      "name": "Duck Island",
+      "type": "lake",
+      "subtype": "reservoir",
+      "parentWaterBody": {"name": "British Coal Pool", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Former colliery pond near Pontefract, W Yorkshire. Lake/reservoir is correct."
+    },
+    {
+      "id": "osm-way-103248941",
+      "name": "Eilean na h-Aibhne",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Scottish Gaelic 'Eilean na h-Aibhne' = 'island of the river'. Tier 4 wrongly assigned 'lake (unnamed, 0.0005 km²)'."
+    },
+    {
+      "id": "wd-Q26715737",
+      "name": "Foaty Island",
+      "type": "sea",
+      "subtype": "estuary",
+      "parentWaterBody": {"name": "Cork Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Foaty Island (Fota) is in Cork Harbour (tidal estuary), not a lake. OSM didn't polygonise it separately because it's causeway-connected, so the mainland test put it inside Ireland."
+    },
+    {
+      "id": "osm-relation-4294908",
+      "name": "Friars Island",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Shannon", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Same 14.3 km² Shannon polygon as Bishop's Islands; this is a Shannon islet."
+    },
+    {
+      "id": "osm-way-243669731",
+      "name": "Goat Island",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Suck", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Irish Goat Island at 53.41 N, 8.03 W is on the River Suck near its confluence with the Shannon."
+    },
+    {
+      "id": "osm-way-1302089260",
+      "name": "Holy Island",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Wey", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tier 4 wrongly assigned 'lake / Stanley Pool'. This Holy Island at 51.30 N, 0.67 W is the islet by Newark Priory ruins on the River Wey, Surrey."
+    },
+    {
+      "id": "osm-way-897055997",
+      "name": "Rayn's Island",
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {"name": "Tern Pool", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Sundorne Pool / Tern Pool area near Shrewsbury, Shropshire."
+    },
+    {
+      "id": "wd-Q24639232",
+      "name": "Reedy Flat",
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {"name": "Lough Neagh", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Lough Neagh shore; clear lake match."
+    },
+    {
+      "id": "osm-node-765050763",
+      "name": "Robinson Crusoe Island",
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {"name": "Mill Pond", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Bedford area; small ornamental islet in a mill pond."
+    },
+    {
+      "id": "wd-Q2453024",
+      "name": "Thorney Island",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Thames", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tier 4 wrongly assigned 'lake / St. James's Park Lake'. Thorney Island is the historical (now-vanished) river island in the Thames between the Tyburn streams where Westminster Abbey sits."
+    },
+    {
+      "id": "osm-way-1097309815",
+      "name": "Wargrave Marsh",
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {"name": "River Thames", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Wargrave Marsh sits in the Thames at Wargrave, Berkshire."
+    },
+    {
+      "id": "csv-geocoded-Q26272407",
+      "name": "Great Arthur House Including Boiler House",
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Building in the Barbican Estate, City of London. Not a geographic island. Should be removed from the dataset entirely; keeping it as 'unknown' until the upstream CSV is cleaned."
+    },
+
+    {
+      "_section": "Crannogs — Scottish/Irish lake-dwellings. All lake by definition.",
+      "id": "wd-Q56665781", "name": "Achnacree Moss,crannog 210m SW of Moss Cottage",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Scottish crannog -- lake-dwelling by definition. The named loch is too small to be in OSM water polygons."
+    },
+    {
+      "id": "wd-Q1138911", "name": "Ballinderry Crannog No. 1",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Lough Ennell area", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Irish crannog in Co. Westmeath."
+    },
+    {
+      "id": "wd-Q56665888", "name": "crannog 135m NNW of Hyndford House",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56666960", "name": "crannog 800m WSW of Stonehouse",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56668587", "name": "Loch Coille-Bharr, crannog, Knapdale",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Loch Coille-Bharr", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56665790", "name": "Loch Seil,crannog",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Loch Seil", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56665798", "name": "Loch na Eala,crannog",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Loch na Eala", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56663375", "name": "Loch of Leys, crannog 400m N of Lochton of Leys",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Loch of Leys", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q56665807", "name": "Loch Kinellan,crannog",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Loch Kinellan", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q115453907", "name": "Lochspouts crannog",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "Lochspouts (former)", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Drained loch near Maybole, Ayrshire; the crannog survives as a marker."
+    },
+    {
+      "id": "wd-Q56666963", "name": "White Loch,crannog",
+      "type": "lake", "subtype": "crannog",
+      "parentWaterBody": {"name": "White Loch", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+
+    {
+      "_section": "Cornwall & Devon sea stacks / coastal rocks -- SW England open coast.",
+      "id": "osm-node-9571867335", "name": "The Avarack",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Sea stack off Cape Cornwall."
+    },
+    {
+      "id": "wd-Q24641287", "name": "Gregory Rocks",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Devon coast rocks."
+    },
+    {
+      "id": "wd-Q5184886", "name": "Cribbar",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Reef/wave off Newquay, Cornwall."
+    },
+    {
+      "id": "osm-node-9801616675", "name": "Lye Rock",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Sea stack at Bossiney, Cornwall."
+    },
+    {
+      "id": "osm-node-1562273116", "name": "Horsey Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Taw-Torridge Estuary", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal islet at the Taw-Torridge estuary mouth, north Devon."
+    },
+
+    {
+      "_section": "Thorney Island, West Sussex -- a peninsula in Chichester Harbour, not the Thames one.",
+      "id": "wd-Q4575689", "name": "Thorney Island (Sussex)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Chichester Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "West Sussex peninsula at the south of Chichester Harbour. Was an island; causewayed in 1870. Surrounded by tidal water."
+    },
+    {
+      "id": "csv-geocoded-Q66227635", "name": "Thorney Island Community Primary School",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Chichester Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "On the same peninsula. School, not actually a separate island -- but inherits the parent body."
+    },
+
+    {
+      "id": "wd-Q265523", "name": "Isle of Oxney",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Rother / Royal Military Canal", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Former island in Romney Marsh, now surrounded by drained fenland and the Rother / Royal Military Canal."
+    },
+    {
+      "id": "wd-Q6804126", "name": "Meare Lake Villages",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Meare Pool (former)", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Iron Age lake villages on the drained Meare Pool, Somerset Levels."
+    },
+
+    {
+      "_section": "Thames + London-area river islands.",
+      "id": "osm-way-28016020", "name": "Bingley's Island (Sandwich)",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Stour (Kent)", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Former tidal island near Sandwich, Kent. Now part of the Stour floodplain."
+    },
+    {
+      "id": "wd-Q16903434", "name": "Wilderness Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Wandle", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Wilderness Island in Carshalton, on the River Wandle."
+    },
+    {
+      "id": "wd-Q7594499", "name": "St Mary's Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Medway Estuary", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal island in the Medway Estuary, Chatham."
+    },
+    {
+      "id": "osm-relation-12412633", "name": "Isle of Grain",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Thames Estuary / Medway", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Peninsula between the Thames and Medway estuaries. Saltwater."
+    },
+    {
+      "id": "osm-way-1448531989", "name": "Pratt's Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Thames", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Thames area near Erith."
+    },
+    {
+      "id": "osm-way-819059479", "name": "Osterley Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Brent", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "On the River Brent near Osterley Park, west London."
+    },
+    {
+      "id": "osm-way-1182255609", "name": "Three Mills Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Lea", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-1182260707", "name": "City Mill Lock Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Lea", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-1375842120", "name": "Pond Island",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Welsh Harp / Brent Reservoir", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-403472785", "name": "Wallasea Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Crouch / Roach Estuaries", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal island between the Crouch and Roach estuaries, Essex."
+    },
+    {
+      "id": "osm-way-996732539", "name": "Crabby Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Thames", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Near Bablock Hythe, Oxfordshire."
+    },
+    {
+      "id": "osm-way-1126119565", "name": "Diglis Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Severn", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Diglis Island in the Severn at Worcester."
+    },
+    {
+      "id": "osm-way-44896659", "name": "Church Holme",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Great Ouse", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-60556983", "name": "Colling's Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Yare", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Norfolk Broads area."
+    },
+    {
+      "id": "osm-node-1466974520", "name": "Butten Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "Little Ouse", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-130029587", "name": "Frog Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Soar", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Frog Island, Leicester -- on the River Soar."
+    },
+    {
+      "id": "osm-node-8682548297", "name": "Rhubarb island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Welland", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-122461963", "name": "Lower Holme",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Trent", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-122461959", "name": "Upper Holme",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Trent", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-2961222", "name": "Inner Trial Bank",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "The Wash", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Experimental sea bank built in The Wash for a water-storage scheme."
+    },
+
+    {
+      "_section": "Humber estuary / Yorkshire river islands.",
+      "id": "wd-Q24637790", "name": "Sunk Island",
+      "type": "river", "subtype": "estuary",
+      "parentWaterBody": {"name": "Humber Estuary", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Former island in the Humber, now reclaimed farmland behind sea-defences. Strictly estuary."
+    },
+    {
+      "id": "osm-way-360036778", "name": "Read's Island",
+      "type": "river", "subtype": "estuary",
+      "parentWaterBody": {"name": "Humber Estuary", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-1435994541", "name": "Beal Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Aire", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1303356919", "name": "Bank Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Derwent", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "RSPB reserve on the Derwent floodplain, Wheldrake."
+    },
+    {
+      "id": "osm-way-87686535", "name": "Hawksworth Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Wharfe", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1442237708", "name": "The Island (Knaresborough)",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Nidd", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-761233042", "name": "Mill Island (Ripon)",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Skell / Ure", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-48394268", "name": "Foulney Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Morecambe Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal islet in Morecambe Bay; causeway from Roa Island."
+    },
+    {
+      "id": "osm-way-1483926595", "name": "The Island (Nidderdale)",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Nidd", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "csv-geocoded-Q1375188", "name": "Greenisland",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Belfast Lough", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Town in Co. Antrim on the shore of Belfast Lough."
+    },
+
+    {
+      "_section": "Irish coastal islands -- Cork / Waterford / Wexford / Kerry / Mayo / Donegal.",
+      "id": "wd-Q3776775", "name": "Inchydoney",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Atlantic / Clonakilty Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-node-6455008690", "name": "Minane Island",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Co. Cork coast."
+    },
+    {
+      "id": "osm-node-9454322281", "name": "Illaunarone",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Coast of Kerry, near Valentia / Iveragh peninsula."
+    },
+    {
+      "id": "wd-Q26716909", "name": "Corkbeg Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Cork Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q26715610", "name": "Ringaskiddy Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Cork Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q14918707", "name": "Little Island (Cork)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Cork Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q16893777", "name": "Goat Island (Ardmore)",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Ardmore, Co. Waterford coast."
+    },
+    {
+      "id": "wd-Q112131366", "name": "Illaunobrick",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q26716257", "name": "Saint Patricks Bridge",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Lee (Cork)", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q26716369", "name": "Bannow Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Bannow Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q26717456", "name": "Beggarin Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Wexford Harbour", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q26718287", "name": "Ballingarry Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Shannon Estuary", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-34249977", "name": "Harry Boro Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Suir", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-764253578", "name": "Gowlaun Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Suir", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1444593441", "name": "Illaunnacrine",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Shannon", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1204317562", "name": "Mill Island (Kilkenny)",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Suir", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-relation-12412680", "name": "Carrig Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Shannon Estuary", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q26716273", "name": "Tarbert Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Shannon Estuary", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q104312761", "name": "Pigott's Island",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Derg", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-930783626", "name": "Portmurraghan Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Suck / Shannon", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-relation-5653466", "name": "Scanlan's Island",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Corrib", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-11309530022", "name": "Seaweed Point",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Galway coast."
+    },
+    {
+      "id": "osm-way-932906428", "name": "Inchaloon Island",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Ennell area", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1127906016", "name": "Inchaquin",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Inchiquin", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q26718921", "name": "Large Island (Carlingford)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Carlingford Lough", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-1133300341", "name": "Silver Island",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Boderg / Shannon system", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-4584197323", "name": "Rossturk Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Clew Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q20622863", "name": "Heath Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Achill Sound / Clew Bay area", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1285659541", "name": "Gull Island (Mayo)",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Mayo coast."
+    },
+    {
+      "id": "osm-way-374596163", "name": "Illannamuck",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Mayo coast."
+    },
+    {
+      "id": "osm-relation-12412647", "name": "Claggan Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Broadhaven Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "wd-Q26718975", "name": "Glash Island",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q119395314", "name": "Illanaclera",
+      "type": "sea", "subtype": null, "parentWaterBody": null,
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-relation-12412642", "name": "Connors Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Donegal Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+
+    {
+      "_section": "Northern Ireland.",
+      "id": "osm-way-1210043461", "name": "Garden Isle",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Upper Lough Erne", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1412784085", "name": "Otter Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Strangford Lough", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q4121975", "name": "Knockmore",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lower Lough Erne", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-node-8656167145", "name": "Sketrick Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Strangford Lough", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-58255990", "name": "Lagan Valley Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Lagan", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Conference/cultural centre on the Lagan at Lisburn."
+    },
+    {
+      "id": "wd-Q24639387", "name": "Island MacHugh",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Lough Catherine", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Crannog island in Lough Catherine, Co. Tyrone."
+    },
+    {
+      "id": "wd-Q24639396", "name": "Island Magee",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Larne Lough", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Peninsula (historically 'island') on the Antrim coast."
+    },
+    {
+      "id": "osm-way-813176103", "name": "Rough Island (Donegal)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Lough Foyle", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal islet in Lough Foyle. Foyle is a saltwater sea-lough."
+    },
+    {
+      "id": "wd-Q104348087", "name": "Ranaghmore Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Lough Swilly", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-relation-11482439", "name": "Rough Island (Inishowen)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Trawbreaga Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-node-3659561473", "name": "Otters Island (Inishowen)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Trawbreaga Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-3659561474", "name": "St Helena Island (Inishowen)",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Trawbreaga Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-3659561465", "name": "Doagh Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Trawbreaga Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Inishowen peninsula tidal islet."
+    },
+
+    {
+      "_section": "Scotland -- inland & coastal islets.",
+      "id": "osm-way-527570894", "name": "Buckholme Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Eden", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Borders / Cumbria boundary area."
+    },
+    {
+      "id": "osm-node-13116895886", "name": "Eilean Ceann na Creige",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Loch Fyne", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Sea loch islet."
+    },
+    {
+      "id": "wd-Q87457169", "name": "King's Inch",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Clyde", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Renfrew, Clyde river island."
+    },
+    {
+      "id": "wd-Q7241916", "name": "Preston Island",
+      "type": "sea", "subtype": "estuary",
+      "parentWaterBody": {"name": "Firth of Forth", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Former salt-pan island reclaimed on the Forth at Culross."
+    },
+    {
+      "id": "osm-relation-8538813", "name": "Stanners Island",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Tay", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-210604252", "name": "An Dunan",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Loch Leven (Argyll)", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"},
+      "note": "Argyll sea loch islet."
+    },
+    {
+      "id": "osm-relation-12412686", "name": "Eilean McEaragan",
+      "type": "lake", "subtype": null,
+      "parentWaterBody": {"name": "Loch Rannoch", "type": "lake"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "wd-Q24638276", "name": "Rossie Island",
+      "type": "river", "subtype": "estuary",
+      "parentWaterBody": {"name": "Montrose Basin / River South Esk", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-way-1137026759", "name": "Eilean Riabhach",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Loch Hourn / west-coast sea loch", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-relation-9366089", "name": "Eilean Tioram",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Loch Moidart", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Tidal castle island in Loch Moidart (sea loch)."
+    },
+    {
+      "id": "wd-Q24656397", "name": "The Old Bar",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Moray Firth", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Spit/bar on the Moray Firth coast."
+    },
+    {
+      "id": "wd-Q24645818", "name": "East Muck",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "North Sea / Aberdeenshire coast", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"}
+    },
+    {
+      "id": "osm-way-707730193", "name": "Eilean an Speanan",
+      "type": "river", "subtype": null,
+      "parentWaterBody": {"name": "River Carron (Sutherland)", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+    {
+      "id": "osm-node-2263011544", "name": "Garb Eilean",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Eddrachillis Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Small sea-island in Eddrachillis Bay; OSM didn't polygonise it."
+    },
+    {
+      "id": "wd-Q10967366", "name": "Calbha Mor",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Eddrachillis Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Real Scottish sea island; OSM didn't polygonise it separately so the mainland test failed. Wikipedia confirms it's in Eddrachillis Bay."
+    },
+    {
+      "id": "wd-Q24649410", "name": "Eilean Dubh",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Loch Eriboll", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    },
+
+    {
+      "_section": "Wales.",
+      "id": "osm-way-457907632", "name": "Black Rock (Severn)",
+      "type": "river", "subtype": "estuary",
+      "parentWaterBody": {"name": "Severn Estuary", "type": "river"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Black Rock at Portskewett, Severn Estuary. Tidal."
+    },
+    {
+      "id": "wd-Q125365707", "name": "Knightstone Island",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Weston-super-Mare seafront", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "high"},
+      "note": "Coastal islet at Weston-super-Mare. NB: nation may need correcting from Wales to England in a later sweep."
+    },
+    {
+      "id": "osm-way-1493746492", "name": "Mwsland",
+      "type": "sea", "subtype": null,
+      "parentWaterBody": {"name": "Cardigan Bay", "type": "sea"},
+      "classification": {"source": "manual-override", "confidence": "medium"}
+    }
+  ]
+}

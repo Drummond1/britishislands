@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-05-12T21:02:56+00:00",
+  "islandsProcessed": 10,
+  "newWMSFetches": 10,
+  "islandsWithBedrock": 1,
+  "islandsWithSuperficial": 0,
+  "islandsOutsideGB": 0,
+  "islandsMissingBedrock": 9,
+  "sampleAudit": [
+    {
+      "id": "osm-way-201143881",
+      "name": "A' Chùli",
+      "bedrock": {
+        "name": "Argyll Group",
+        "lithology": "Diamictite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    }
+  ],
+  "dryRun": true
+}

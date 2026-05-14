@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M2T6LN5J');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f1620" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Isles of Britain" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%230f1620'/%3E%3Ccircle cx='90' cy='90' r='52' fill='none' stroke='%234ea3ff' stroke-width='10'/%3E%3Ccircle cx='90' cy='90' r='18' fill='%234ea3ff'/%3E%3C/svg%3E"
+    />
     <title>Isles of Britain — A Visual Atlas</title>
     <meta
       name="description"
@@ -25,6 +44,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="topbar">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">◍</span>
@@ -36,7 +59,18 @@
         </div>
       </div>
 
-      <div class="topbar-controls">
+      <div class="topbar-actions">
+        <a class="topbar-link" href="ferries/">Ferries</a>
+        <button
+          class="topbar-filters-toggle"
+          id="filters-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="topbar-filters"
+        >
+          Filters
+        </button>
+        <div class="topbar-controls" id="topbar-filters">
         <input
           id="search"
           type="search"
@@ -48,6 +82,7 @@
           <option value="sea">Sea islands</option>
           <option value="lake">Lake islands</option>
           <option value="river">River islands</option>
+          <option value="unknown">Unverified</option>
         </select>
         <select id="nation-filter" aria-label="Filter by nation">
           <option value="">All nations</option>
@@ -66,6 +101,7 @@
             OS Maps (open an island to add a key)
           </option>
         </select>
+        </div>
       </div>
     </header>
 
@@ -98,7 +134,38 @@
           <span><i class="dot dot--sea"></i> Sea</span>
           <span><i class="dot dot--lake"></i> Lake</span>
           <span><i class="dot dot--river"></i> River</span>
+          <span><i class="dot dot--unknown"></i> Unverified</span>
         </div>
+        <section class="trip-planner" aria-labelledby="trip-planner-title">
+          <h2 class="trip-planner__title" id="trip-planner-title">Ferry trip planner</h2>
+          <form class="trip-planner__form" id="trip-form">
+            <label class="trip-planner__field">
+              <span>From island</span>
+              <input
+                id="trip-from"
+                name="from"
+                type="search"
+                list="trip-islands"
+                placeholder="e.g. Mull"
+                autocomplete="off"
+              />
+            </label>
+            <label class="trip-planner__field">
+              <span>To island</span>
+              <input
+                id="trip-to"
+                name="to"
+                type="search"
+                list="trip-islands"
+                placeholder="e.g. Iona"
+                autocomplete="off"
+              />
+            </label>
+            <button class="trip-planner__submit" type="submit">Plan route</button>
+          </form>
+          <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
+          <datalist id="trip-islands"></datalist>
+        </section>
       </section>
     </main>
 
@@ -122,10 +189,21 @@
       aria-hidden="true"
     >
       <header class="chat-panel__header">
-        <h2 id="chat-title">Island finder</h2>
-        <p class="chat-panel__sub">
-          Describe an island and I'll find the closest matches.
+        <h2 id="chat-title">Ask the atlas</h2>
+        <p class="chat-panel__sub" id="chat-mode-sub">
+          Local mode · nothing leaves your browser.
         </p>
+        <button
+          class="chat-panel__ai-btn"
+          id="chat-settings-toggle"
+          type="button"
+          aria-label="Chat AI settings"
+          aria-controls="chat-settings"
+          title="Set up AI or change model"
+        >
+          <span class="chat-panel__ai-btn-dot" aria-hidden="true"></span>
+          <span class="chat-panel__ai-btn-label" id="chat-ai-btn-label">Set up AI</span>
+        </button>
         <button
           class="chat-panel__close"
           id="chat-close"
@@ -135,6 +213,60 @@
           ×
         </button>
       </header>
+      <section
+        class="chat-settings"
+        id="chat-settings"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="chat-settings__row chat-settings__row--toggle">
+          <label class="chat-settings__switch">
+            <input type="checkbox" id="chat-ai-toggle" />
+            <span class="chat-settings__switch-track" aria-hidden="true"></span>
+            <span class="chat-settings__switch-label">Smart answers (AI)</span>
+          </label>
+        </div>
+        <p class="chat-settings__note" id="chat-settings-note">
+          When AI mode is on, your question plus the ~12 best-matching island records
+          are sent to your chosen LLM provider. The API key never leaves this browser.
+        </p>
+        <div class="chat-settings__row">
+          <label for="chat-ai-provider">Provider</label>
+          <select id="chat-ai-provider">
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+          </select>
+        </div>
+        <div class="chat-settings__row">
+          <label for="chat-ai-model">Model</label>
+          <select id="chat-ai-model">
+            <!-- options populated by app.js when provider changes -->
+          </select>
+        </div>
+        <div class="chat-settings__keyrow">
+          <label for="chat-ai-key">
+            <strong>Paste your API key here ↓</strong>
+            <a
+              id="chat-ai-key-link"
+              href="https://platform.openai.com/api-keys"
+              target="_blank"
+              rel="noopener"
+            >Get one →</a>
+          </label>
+          <input
+            type="password"
+            id="chat-ai-key"
+            placeholder="sk-…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="chat-settings__actions">
+          <button type="button" id="chat-ai-test">Test connection</button>
+          <button type="button" id="chat-ai-clear" class="chat-settings__danger">Clear key</button>
+        </div>
+        <p class="chat-settings__status" id="chat-ai-status" aria-live="polite"></p>
+      </section>
       <div
         class="chat-panel__messages"
         id="chat-messages"
@@ -146,7 +278,7 @@
           type="text"
           id="chat-input"
           name="q"
-          placeholder="e.g. Scottish lake islands with a castle"
+          placeholder="e.g. How tall is Skye? · Largest island in Wales? · Mull vs Islay"
           aria-label="Describe what you're looking for"
           required
         />
@@ -154,6 +286,24 @@
       </form>
     </aside>
 
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Primary navigation">
+      <button type="button" class="mobile-nav__btn is-active" data-mobile-view="map" aria-current="page">
+        <span class="mobile-nav__icon" aria-hidden="true">🗺</span>
+        <span class="mobile-nav__label">Map</span>
+      </button>
+      <button type="button" class="mobile-nav__btn" data-mobile-view="islands">
+        <span class="mobile-nav__icon" aria-hidden="true">☰</span>
+        <span class="mobile-nav__label">Islands</span>
+      </button>
+      <button type="button" class="mobile-nav__btn" data-mobile-view="trip">
+        <span class="mobile-nav__icon" aria-hidden="true">⛴</span>
+        <span class="mobile-nav__label">Trip</span>
+      </button>
+      <button type="button" class="mobile-nav__btn" data-mobile-view="ask">
+        <span class="mobile-nav__icon" aria-hidden="true">✦</span>
+        <span class="mobile-nav__label">Ask</span>
+      </button>
+    </nav>
 
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

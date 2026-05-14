@@ -1,0 +1,157 @@
+{
+  "totalIslands": 6776,
+  "missingOrInvalid": [],
+  "outsideBbox": [],
+  "exactCoordCollisions": [
+    {
+      "lat": 53.38252,
+      "lng": -9.56138,
+      "records": [
+        {
+          "id": "osm-way-251318763",
+          "name": "An tOileán Bán",
+          "nation": "Ireland",
+          "type": "sea"
+        },
+        {
+          "id": "osm-relation-3372821",
+          "name": "Illaunnaginga",
+          "nation": "Ireland",
+          "type": "sea"
+        }
+      ]
+    },
+    {
+      "lat": 59.06667,
+      "lng": -2.93333,
+      "records": [
+        {
+          "id": "wd-Q24657091",
+          "name": "Broad Shoal",
+          "nation": "Scotland",
+          "type": "sea"
+        },
+        {
+          "id": "csv-geocoded-Q24638633",
+          "name": "Skertours",
+          "nation": "Scotland",
+          "type": "sea"
+        }
+      ]
+    },
+    {
+      "lat": 54.61949,
+      "lng": -7.91013,
+      "records": [
+        {
+          "id": "osm-relation-4087462",
+          "name": "Derg Beg Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-way-112156375",
+          "name": "Derry Beg Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        }
+      ]
+    },
+    {
+      "lat": 54.62372,
+      "lng": -7.91075,
+      "records": [
+        {
+          "id": "osm-relation-4087463",
+          "name": "Derg More Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-way-112156371",
+          "name": "Derry More Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        }
+      ]
+    },
+    {
+      "lat": 53.46625,
+      "lng": -9.26932,
+      "records": [
+        {
+          "id": "osm-way-1051701449",
+          "name": "Inighbeagh",
+          "nation": "Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-relation-3476652",
+          "name": "Inishbeagh",
+          "nation": "Ireland",
+          "type": "lake"
+        }
+      ]
+    },
+    {
+      "lat": 54.15412,
+      "lng": -8.04293,
+      "records": [
+        {
+          "id": "osm-relation-7169522",
+          "name": "Inishmacgrath",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-way-231229702",
+          "name": "Inishmagrath",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        }
+      ]
+    },
+    {
+      "lat": 53.55952,
+      "lng": -9.47779,
+      "records": [
+        {
+          "id": "osm-relation-3507322",
+          "name": "Island Beg",
+          "nation": "Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-way-177704893",
+          "name": "Islandbeg",
+          "nation": "Ireland",
+          "type": "lake"
+        }
+      ]
+    },
+    {
+      "lat": 54.30063,
+      "lng": -7.90972,
+      "records": [
+        {
+          "id": "osm-way-179021421",
+          "name": "Kilrooscagh Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        },
+        {
+          "id": "osm-relation-3999308",
+          "name": "Kilrooskagh Island",
+          "nation": "Northern Ireland",
+          "type": "lake"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "missingOrInvalid": 0,
+    "outsideBbox": 0,
+    "collisionGroups": 8,
+    "collisionRecords": 16
+  }
+}

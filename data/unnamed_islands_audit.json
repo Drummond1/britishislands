@@ -1,0 +1,706 @@
+{
+  "generatedAt": "2026-05-13T21:46:17Z",
+  "datasetCount": 6776,
+  "bbox": [
+    49.0,
+    -10.5,
+    61.5,
+    2.5
+  ],
+  "openstreetmap": {
+    "rawElements": 22021,
+    "withoutAnyNameTag": 16028,
+    "withAltNameOnlySkipped": 5993,
+    "alreadyInDataset": 0,
+    "samples": [
+      {
+        "osmType": "node",
+        "osmId": 267036454,
+        "lat": 51.00118,
+        "lng": -0.93081,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 267037252,
+        "lat": 51.00417,
+        "lng": -0.93035,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 290546312,
+        "lat": 53.53848,
+        "lng": -2.23512,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 3051065434,
+        "lat": 51.00231,
+        "lng": -0.92018,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 4300852134,
+        "lat": 55.79107,
+        "lng": -6.48675,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 4793430262,
+        "lat": 53.53023,
+        "lng": -2.25651,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 4793430263,
+        "lat": 53.53128,
+        "lng": -2.25516,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 4793430264,
+        "lat": 53.53133,
+        "lng": -2.25378,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7531976051,
+        "lat": 57.42607,
+        "lng": -7.27976,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7531976052,
+        "lat": 57.42606,
+        "lng": -7.27966,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7531976053,
+        "lat": 57.42596,
+        "lng": -7.28011,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7536982081,
+        "lat": 57.41929,
+        "lng": -7.2602,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7536982082,
+        "lat": 57.41923,
+        "lng": -7.26017,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 7537017915,
+        "lat": 57.42892,
+        "lng": -7.2409,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 8223074587,
+        "lat": 58.05795,
+        "lng": -6.69371,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10116719978,
+        "lat": 53.56316,
+        "lng": -1.47466,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10116719979,
+        "lat": 53.56396,
+        "lng": -1.47457,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10116719980,
+        "lat": 53.56485,
+        "lng": -1.47488,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10215606721,
+        "lat": 55.13909,
+        "lng": -7.52481,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10215606722,
+        "lat": 55.14228,
+        "lng": -7.52747,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 10589639475,
+        "lat": 52.94728,
+        "lng": -6.45769,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 11175333651,
+        "lat": 51.64949,
+        "lng": -0.11513,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 11196120191,
+        "lat": 51.63206,
+        "lng": -0.11421,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 11196120192,
+        "lat": 51.63089,
+        "lng": -0.11594,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 11330075472,
+        "lat": 51.64011,
+        "lng": -0.12499,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "node",
+        "osmId": 11862760932,
+        "lat": 53.53721,
+        "lng": -2.20739,
+        "place": "island",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 2957700,
+        "lat": 49.48107,
+        "lng": -2.46971,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 2957701,
+        "lat": 49.47916,
+        "lng": -2.47124,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3102705,
+        "lat": 51.46829,
+        "lng": -0.94475,
+        "place": "islet",
+        "natural": "wood",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3246340,
+        "lat": 54.63354,
+        "lng": -1.15031,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3404366,
+        "lat": 49.46109,
+        "lng": -2.67513,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3404602,
+        "lat": 49.7295,
+        "lng": -2.25943,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3493160,
+        "lat": 57.09921,
+        "lng": -5.52843,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3493170,
+        "lat": 57.08642,
+        "lng": -5.76784,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3580388,
+        "lat": 50.75012,
+        "lng": -1.07236,
+        "place": "island",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3615697,
+        "lat": 58.53751,
+        "lng": -4.39185,
+        "place": "island",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3618126,
+        "lat": 58.28863,
+        "lng": -5.20343,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3618243,
+        "lat": 58.2612,
+        "lng": -5.13568,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 3997947,
+        "lat": 55.71444,
+        "lng": -2.17345,
+        "place": "islet",
+        "natural": null,
+        "inDataset": false
+      },
+      {
+        "osmType": "way",
+        "osmId": 4004449,
+        "lat": 58.39623,
+        "lng": -5.09251,
+        "place": "islet",
+        "natural": "coastline",
+        "inDataset": false
+      }
+    ]
+  },
+  "openstreetmapInnerRings": {
+    "unnamedInnerWays": 20762,
+    "namedInnerWaysNotInDataset": 113,
+    "samples": [
+      {
+        "osmWayId": 8128679,
+        "parentWaterBody": "Verulamium Lake",
+        "parentOsmId": 58,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 156456311,
+        "parentWaterBody": "One Island Pond",
+        "parentOsmId": 406,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8143294,
+        "parentWaterBody": null,
+        "parentOsmId": 451,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 265958254,
+        "parentWaterBody": "Model Boating Lake",
+        "parentOsmId": 537,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 8152890,
+        "parentWaterBody": "The Lake",
+        "parentOsmId": 819,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8152891,
+        "parentWaterBody": "The Lake",
+        "parentOsmId": 819,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8152892,
+        "parentWaterBody": "The Lake",
+        "parentOsmId": 819,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 4927462,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 482243588,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155040,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155041,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155042,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155043,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 482243589,
+        "parentWaterBody": "Lake 17",
+        "parentOsmId": 908,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155044,
+        "parentWaterBody": "Lake 9",
+        "parentOsmId": 909,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8155045,
+        "parentWaterBody": "Lake 9",
+        "parentOsmId": 909,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 1265224934,
+        "parentWaterBody": "Lake 9",
+        "parentOsmId": 909,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8158267,
+        "parentWaterBody": "Elms Pond",
+        "parentOsmId": 976,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 8158268,
+        "parentWaterBody": null,
+        "parentOsmId": 977,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 5113919,
+        "parentWaterBody": null,
+        "parentOsmId": 1123,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 223328581,
+        "parentWaterBody": null,
+        "parentOsmId": 1123,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 1155919906,
+        "parentWaterBody": "Lough Eidin",
+        "parentOsmId": 1920,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 1154380868,
+        "parentWaterBody": "Lough Eidin",
+        "parentOsmId": 1920,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 195307407,
+        "parentWaterBody": "Lough Eidin",
+        "parentOsmId": 1920,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 188545090,
+        "parentWaterBody": "Garadice Lake",
+        "parentOsmId": 1921,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 188545094,
+        "parentWaterBody": "Garadice Lake",
+        "parentOsmId": 1921,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 186289753,
+        "parentWaterBody": "Garadice Lake",
+        "parentOsmId": 1921,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 1106588016,
+        "parentWaterBody": "Garadice Lake",
+        "parentOsmId": 1921,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 8166847,
+        "parentWaterBody": "The Three Brooks Lake",
+        "parentOsmId": 1988,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 16102472,
+        "parentWaterBody": null,
+        "parentOsmId": 3634,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 22747400,
+        "parentWaterBody": null,
+        "parentOsmId": 4772,
+        "inDataset": false,
+        "place": "islet"
+      },
+      {
+        "osmWayId": 4890602,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 4890604,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 4890605,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667385,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667392,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667388,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667390,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667393,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      },
+      {
+        "osmWayId": 55667387,
+        "parentWaterBody": "Loch Coruisk",
+        "parentOsmId": 6343,
+        "inDataset": false,
+        "place": null
+      }
+    ]
+  },
+  "wikidata": {
+    "rowsWithoutEnGaGdLabel": 0,
+    "labelLooksLikeQid": 0,
+    "alreadyInDataset": 0,
+    "samples": []
+  },
+  "wikipedia": {
+    "category": "Category:Unnamed_islands",
+    "memberCount": 0,
+    "islandishTitles": 0,
+    "notLinkedFromDatasetByTitle": 0,
+    "samples": []
+  },
+  "wikidataSupplement": {
+    "ukNoEnglishLabel": {
+      "inRemit": 3,
+      "inDataset": 2,
+      "samples": [
+        {
+          "wikidata": "Q9679",
+          "label": "Q9679",
+          "lat": 50.7,
+          "lng": -1.3,
+          "inDataset": true
+        },
+        {
+          "wikidata": "Q1788486",
+          "label": "Q1788486",
+          "lat": 49.891,
+          "lng": -6.343,
+          "inDataset": true
+        },
+        {
+          "wikidata": "Q25635068",
+          "label": "Q25635068",
+          "lat": 58.1,
+          "lng": -6.48333,
+          "inDataset": false
+        }
+      ]
+    }
+  }
+}

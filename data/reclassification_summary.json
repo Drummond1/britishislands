@@ -1,0 +1,29 @@
+{
+  "total": 6776,
+  "skippedTierA_B": 1358,
+  "kept_unchanged": 5324,
+  "changed": 94,
+  "byTier": {
+    "osm-coastline": 4343,
+    "wikidata-p206": 732,
+    "land-in-no-water": 116,
+    "osm-water-pip": 133,
+    "osm-water-near": 94
+  },
+  "byTypeBefore": {
+    "lake": 1257,
+    "sea": 4991,
+    "unknown": 210,
+    "river": 318
+  },
+  "byTypeAfter": {
+    "lake": 1313,
+    "sea": 4991,
+    "unknown": 116,
+    "river": 356
+  },
+  "transitions": {
+    "unknown→river": 38,
+    "unknown→lake": 56
+  }
+}

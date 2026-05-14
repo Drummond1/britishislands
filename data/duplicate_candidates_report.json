@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-05-13T13:01:24",
+  "maxKm": 0.5,
+  "minNameSim": 0.75,
+  "candidatePairs": 4,
+  "pairs": [
+    {
+      "distanceKm": 0.1673,
+      "nameSimilarity": 0.75,
+      "a": {
+        "id": "osm-way-931995094",
+        "name": "A'Chorr-sgeir",
+        "lat": 56.33894,
+        "lng": -6.42854,
+        "nation": "Scotland"
+      },
+      "b": {
+        "id": "osm-way-931995093",
+        "name": "A'Chorr-sgeir Muigh",
+        "lat": 56.3396,
+        "lng": -6.43098,
+        "nation": "Scotland"
+      }
+    },
+    {
+      "distanceKm": 0.1738,
+      "nameSimilarity": 1.0,
+      "a": {
+        "id": "osm-way-151153378",
+        "name": "Holm of Beosetter",
+        "lat": 60.18825,
+        "lng": -1.11824,
+        "nation": "Scotland"
+      },
+      "b": {
+        "id": "osm-way-151252301",
+        "name": "Holm Skerry of Beosetter",
+        "lat": 60.18702,
+        "lng": -1.12018,
+        "nation": "Scotland"
+      }
+    },
+    {
+      "distanceKm": 0.1906,
+      "nameSimilarity": 0.75,
+      "a": {
+        "id": "osm-way-1346682498",
+        "name": "Eilean locrach nan Clach Corr",
+        "lat": 57.49057,
+        "lng": -7.2887,
+        "nation": "Scotland"
+      },
+      "b": {
+        "id": "osm-way-1346682500",
+        "name": "Eilean nan Clach Corr",
+        "lat": 57.49187,
+        "lng": -7.28662,
+        "nation": "Scotland"
+      }
+    },
+    {
+      "distanceKm": 0.3384,
+      "nameSimilarity": 1.0,
+      "a": {
+        "id": "osm-way-8603690",
+        "name": "Uyea",
+        "lat": 60.66949,
+        "lng": -0.89752,
+        "nation": "Scotland"
+      },
+      "b": {
+        "id": "csv-geocoded-Q282210",
+        "name": "Uyea",
+        "lat": 60.6667,
+        "lng": -0.9,
+        "nation": "Scotland"
+      }
+    }
+  ]
+}

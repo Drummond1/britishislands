@@ -1,0 +1,3856 @@
+[
+  {
+    "id": "osm-way-1135425736",
+    "name": "Anker's Island",
+    "nation": "Ireland",
+    "lat": 52.81263,
+    "lng": -7.35652,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 10433033,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 10433033,
+        "bodyName": "",
+        "distanceM": 1.8,
+        "areaKm2": 0.0862
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104322906",
+    "name": "Annaghminnogue",
+    "nation": "Ireland",
+    "lat": 53.46475,
+    "lng": -9.34992,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Corrib",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 189915,
+        "wikidata": "Q848917"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 189915,
+        "bodyName": "Lough Corrib",
+        "distanceM": 33.6,
+        "areaKm2": 171.5885
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1112518083",
+    "name": "Ash Island",
+    "nation": "Ireland",
+    "lat": 53.47233,
+    "lng": -7.41501,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Ennell",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 4065566,
+        "wikidata": "Q2639357"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4065566,
+        "bodyName": "Lough Ennell",
+        "distanceM": 125.7,
+        "areaKm2": 11.4317
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26718728",
+    "name": "Ash Island",
+    "nation": "Ireland",
+    "lat": 53.22972,
+    "lng": -7.96694,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 50.9,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "wd-Q24658713",
+    "name": "Balbithan Island",
+    "nation": "Scotland",
+    "lat": 57.24168,
+    "lng": -2.33691,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 1753201,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1753201,
+        "bodyName": "",
+        "distanceM": 136.2,
+        "areaKm2": 0.7193
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104256098",
+    "name": "Banragh Island",
+    "nation": "Ireland",
+    "lat": 53.26736,
+    "lng": -8.03688,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 96.1,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1112111235",
+    "name": "Bawn Island",
+    "nation": "Ireland",
+    "lat": 53.91285,
+    "lng": -8.43984,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Gara",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 338226,
+        "wikidata": "Q6686123"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 338226,
+        "bodyName": "Lough Gara",
+        "distanceM": 18.4,
+        "areaKm2": 12.5225
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-2981832",
+    "name": "Belle Isle",
+    "nation": "Northern Ireland",
+    "lat": 54.26702,
+    "lng": -7.55872,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Erne Upper",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 58902,
+        "wikidata": "Q11878874"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 58902,
+        "bodyName": "Lough Erne Upper",
+        "distanceM": 86.8,
+        "areaKm2": 38.5005
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-4294907",
+    "name": "Big Island",
+    "nation": "Ireland",
+    "lat": 53.16628,
+    "lng": -8.10405,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 75.8,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-15030227",
+    "name": "Bishop's Islands",
+    "nation": "Ireland",
+    "lat": 53.26115,
+    "lng": -8.03502,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 235.4,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "osm-way-44896657",
+    "name": "Boswell's Holme",
+    "nation": "England",
+    "lat": 52.18327,
+    "lng": -0.53473,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 15504257,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 15504257,
+        "bodyName": "",
+        "distanceM": 409.5,
+        "areaKm2": 0.0102
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-6142455",
+    "name": "Carrigeenagur",
+    "nation": "Ireland",
+    "lat": 53.58424,
+    "lng": -9.30001,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 51.7,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-6134814",
+    "name": "Carrigeenturlough",
+    "nation": "Ireland",
+    "lat": 53.61419,
+    "lng": -9.30855,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 21.6,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-way-351529339",
+    "name": "Castle Island",
+    "nation": "Ireland",
+    "lat": 53.7077,
+    "lng": -9.29131,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Cloon Lough",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 17901519,
+        "wikidata": "Q33239850"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 17901519,
+        "bodyName": "Cloon Lough",
+        "distanceM": 184.6,
+        "areaKm2": 0.0959
+      }
+    ]
+  },
+  {
+    "id": "wd-Q24673846",
+    "name": "Castle Island",
+    "nation": "Northern Ireland",
+    "lat": 54.36541,
+    "lng": -5.67534,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 19697732,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 19697732,
+        "bodyName": "",
+        "distanceM": 347.2,
+        "areaKm2": 0.5053
+      }
+    ]
+  },
+  {
+    "id": "wd-Q1070604",
+    "name": "Chesil Beach",
+    "nation": "England",
+    "lat": 50.604,
+    "lng": -2.516,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": "lagoon",
+      "parentWaterBody": {
+        "name": "The Fleet",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2396690,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2396690,
+        "bodyName": "The Fleet",
+        "distanceM": 87.8,
+        "areaKm2": 5.0003
+      }
+    ]
+  },
+  {
+    "id": "osm-way-868122831",
+    "name": "Clitherow's Island",
+    "nation": "England",
+    "lat": 51.49087,
+    "lng": -0.32175,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 3295636,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 3295636,
+        "bodyName": "",
+        "distanceM": 82.2,
+        "areaKm2": 0.0227
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104332766",
+    "name": "Coarse Island",
+    "nation": "Ireland",
+    "lat": 54.07575,
+    "lng": -9.24427,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Conn",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 12980,
+        "wikidata": "Q949985"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 12980,
+        "bodyName": "Lough Conn",
+        "distanceM": 41.5,
+        "areaKm2": 46.9333
+      }
+    ]
+  },
+  {
+    "id": "wd-Q5138901",
+    "name": "Cobholm Island",
+    "nation": "England",
+    "lat": 52.6064,
+    "lng": 1.71513,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1632447,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1632447,
+        "bodyName": "",
+        "distanceM": 270.4,
+        "areaKm2": 0.002
+      }
+    ]
+  },
+  {
+    "id": "osm-way-984205610",
+    "name": "Cottage Island",
+    "nation": "Ireland",
+    "lat": 52.14284,
+    "lng": -7.93642,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2004668,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2004668,
+        "bodyName": "",
+        "distanceM": 23.8,
+        "areaKm2": 5.8165
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-3927523",
+    "name": "Cow Island",
+    "nation": "Ireland",
+    "lat": 53.57202,
+    "lng": -9.32407,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 22.4,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-way-372223318",
+    "name": "Coxes Lock",
+    "nation": "England",
+    "lat": 51.36637,
+    "lng": -0.47722,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2006497,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2006497,
+        "bodyName": "",
+        "distanceM": 378.4,
+        "areaKm2": 0.0438
+      }
+    ]
+  },
+  {
+    "id": "wd-Q56663344",
+    "name": "crannog 450m ESE of Rough Loch",
+    "nation": "Scotland",
+    "lat": 54.80927,
+    "lng": -4.61885,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Elrig Loch",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 14919750,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 14919750,
+        "bodyName": "Elrig Loch",
+        "distanceM": 404.9,
+        "areaKm2": 0.1903
+      }
+    ]
+  },
+  {
+    "id": "osm-node-8737250472",
+    "name": "Cricket Bat Willow Island",
+    "nation": "England",
+    "lat": 52.21218,
+    "lng": -0.27961,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 20451257,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 20451257,
+        "bodyName": "",
+        "distanceM": 115.2,
+        "areaKm2": 0.0053
+      }
+    ]
+  },
+  {
+    "id": "wd-Q116779948",
+    "name": "Crock Island",
+    "nation": "Ireland",
+    "lat": 52.52004,
+    "lng": -8.53774,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Gur",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 934609,
+        "wikidata": "Q604502"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 934609,
+        "bodyName": "Lough Gur",
+        "distanceM": 106.0,
+        "areaKm2": 0.727
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104340151",
+    "name": "Curley's Island",
+    "nation": "Ireland",
+    "lat": 53.30857,
+    "lng": -8.0269,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 30.8,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26717913",
+    "name": "Derrymore Island",
+    "nation": "Ireland",
+    "lat": 53.94667,
+    "lng": -8.42694,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Gara",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 338226,
+        "wikidata": "Q6686123"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 338226,
+        "bodyName": "Lough Gara",
+        "distanceM": 62.4,
+        "areaKm2": 12.5225
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1153375613",
+    "name": "Dockery's Island",
+    "nation": "Ireland",
+    "lat": 53.86422,
+    "lng": -7.98927,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Boderg",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2218662,
+        "wikidata": "Q22083885"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2218662,
+        "bodyName": "Lough Boderg",
+        "distanceM": 28.4,
+        "areaKm2": 4.9244
+      }
+    ]
+  },
+  {
+    "id": "osm-way-321659320",
+    "name": "Duck Island",
+    "nation": "England",
+    "lat": 53.73415,
+    "lng": -1.34622,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "British Coal Pool",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 17902609,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 17902609,
+        "bodyName": "British Coal Pool",
+        "distanceM": 257.5,
+        "areaKm2": 0.0553
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1112518082",
+    "name": "Dysart Island",
+    "nation": "Ireland",
+    "lat": 53.46791,
+    "lng": -7.41303,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Ennell",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 4065566,
+        "wikidata": "Q2639357"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4065566,
+        "bodyName": "Lough Ennell",
+        "distanceM": 118.5,
+        "areaKm2": 11.4317
+      }
+    ]
+  },
+  {
+    "id": "osm-way-103248941",
+    "name": "Eilean na h-Aibhne",
+    "nation": "Scotland",
+    "lat": 57.92506,
+    "lng": -4.40379,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": "pond",
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 15535103,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 15535103,
+        "bodyName": "",
+        "distanceM": 465.9,
+        "areaKm2": 0.0005
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26717992",
+    "name": "Eonish",
+    "nation": "Northern Ireland",
+    "lat": 54.02028,
+    "lng": -7.48167,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Oughter",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 5170872,
+        "wikidata": "Q3756406"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 5170872,
+        "bodyName": "Lough Oughter",
+        "distanceM": 179.7,
+        "areaKm2": 5.0825
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26715737",
+    "name": "Foaty Island",
+    "nation": "Ireland",
+    "lat": 51.89611,
+    "lng": -8.30139,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 7495329,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 7495329,
+        "bodyName": "",
+        "distanceM": 498.5,
+        "areaKm2": 0.0036
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104323059",
+    "name": "Foorannagh",
+    "nation": "Ireland",
+    "lat": 53.46051,
+    "lng": -9.32542,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Corrib",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 189915,
+        "wikidata": "Q848917"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 189915,
+        "bodyName": "Lough Corrib",
+        "distanceM": 57.9,
+        "areaKm2": 171.5885
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-4294908",
+    "name": "Friars Island",
+    "nation": "Ireland",
+    "lat": 53.1662,
+    "lng": -8.08919,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 298.5,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-4057786",
+    "name": "Galloon Island",
+    "nation": "Northern Ireland",
+    "lat": 54.15514,
+    "lng": -7.40943,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4057787,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4057787,
+        "bodyName": "",
+        "distanceM": 30.1,
+        "areaKm2": 0.6606
+      }
+    ]
+  },
+  {
+    "id": "wd-Q25392672",
+    "name": "Giant’s Grave",
+    "nation": "England",
+    "lat": 52.18417,
+    "lng": 0.17083,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 4027608,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4027608,
+        "bodyName": "",
+        "distanceM": 30.0,
+        "areaKm2": 0.0009
+      }
+    ]
+  },
+  {
+    "id": "osm-way-243669731",
+    "name": "Goat Island",
+    "nation": "Ireland",
+    "lat": 52.30195,
+    "lng": -7.00054,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2311841,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2311841,
+        "bodyName": "",
+        "distanceM": 402.4,
+        "areaKm2": 7.0399
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26718707",
+    "name": "Golden Island",
+    "nation": "Ireland",
+    "lat": 53.4125,
+    "lng": -7.93667,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4214062,
+        "bodyName": "",
+        "distanceM": 146.2,
+        "areaKm2": 14.3207
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-15657447",
+    "name": "Grievelurgan",
+    "nation": "Ireland",
+    "lat": 53.39305,
+    "lng": -9.11868,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Corrib",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 189915,
+        "wikidata": "Q848917"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 189915,
+        "bodyName": "Lough Corrib",
+        "distanceM": 9.0,
+        "areaKm2": 171.5885
+      }
+    ]
+  },
+  {
+    "id": "osm-way-326570905",
+    "name": "Grove Island",
+    "nation": "Ireland",
+    "lat": 53.72176,
+    "lng": -6.40914,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 5246145,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 5246145,
+        "bodyName": "",
+        "distanceM": 81.7,
+        "areaKm2": 0.0427
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1462062150",
+    "name": "Grove Island",
+    "nation": "Ireland",
+    "lat": 52.66761,
+    "lng": -8.61784,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 6235781,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 6235781,
+        "bodyName": "",
+        "distanceM": 52.8,
+        "areaKm2": 0.0832
+      }
+    ]
+  },
+  {
+    "id": "osm-way-203359496",
+    "name": "Grubb's Island",
+    "nation": "Ireland",
+    "lat": 52.35158,
+    "lng": -7.7061,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 3271896,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 3271896,
+        "bodyName": "",
+        "distanceM": 9.1,
+        "areaKm2": 20.844
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1302089260",
+    "name": "Holy Island",
+    "nation": "England",
+    "lat": 51.29651,
+    "lng": -0.66699,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Stanley Pool",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 966372,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 966372,
+        "bodyName": "Stanley Pool",
+        "distanceM": 305.2,
+        "areaKm2": 0.0212
+      }
+    ]
+  },
+  {
+    "id": "osm-way-384682558",
+    "name": "Hulses Island",
+    "nation": "England",
+    "lat": 53.22688,
+    "lng": -2.53769,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 78574,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 78574,
+        "bodyName": "",
+        "distanceM": 56.6,
+        "areaKm2": 0.1101
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104363593",
+    "name": "Humphrey's Island",
+    "nation": "Northern Ireland",
+    "lat": 54.36474,
+    "lng": -7.66645,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lower Lough Erne",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 12552,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 12552,
+        "bodyName": "Lower Lough Erne",
+        "distanceM": 126.9,
+        "areaKm2": 114.3359
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1155907409",
+    "name": "Illanamadiska",
+    "nation": "Ireland",
+    "lat": 53.8211,
+    "lng": -8.17291,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Clooncullaan Lough",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2937898,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2937898,
+        "bodyName": "Clooncullaan Lough",
+        "distanceM": 22.6,
+        "areaKm2": 0.1913
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1153437277",
+    "name": "Illangarve",
+    "nation": "Ireland",
+    "lat": 53.83121,
+    "lng": -8.04929,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Grange Lough",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2638752,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2638752,
+        "bodyName": "Grange Lough",
+        "distanceM": 27.2,
+        "areaKm2": 1.5994
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1266284440",
+    "name": "Illangub",
+    "nation": "Ireland",
+    "lat": 53.96519,
+    "lng": -9.20085,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Cullin",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2674923,
+        "wikidata": "Q3776431"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2674923,
+        "bodyName": "Lough Cullin",
+        "distanceM": 16.9,
+        "areaKm2": 10.0904
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-20324645",
+    "name": "Illanmurriny",
+    "nation": "Ireland",
+    "lat": 55.04734,
+    "lng": -8.32182,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Béal Abhainn An Chláidigh",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 6928939,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 6928939,
+        "bodyName": "Béal Abhainn An Chláidigh",
+        "distanceM": 0.6,
+        "areaKm2": 2.8949
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104324602",
+    "name": "Illaunaskeagh",
+    "nation": "Ireland",
+    "lat": 53.37338,
+    "lng": -9.10931,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Corrib",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 189915,
+        "wikidata": "Q848917"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 189915,
+        "bodyName": "Lough Corrib",
+        "distanceM": 51.2,
+        "areaKm2": 171.5885
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1123939015",
+    "name": "Illaunnamoona Island",
+    "nation": "Ireland",
+    "lat": 53.49593,
+    "lng": -8.18005,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Croan",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "bodyName": "Lough Croan",
+        "distanceM": 23.4,
+        "areaKm2": 0.407
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1123930286",
+    "name": "Inchnagower",
+    "nation": "Ireland",
+    "lat": 53.49043,
+    "lng": -8.17197,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Croan",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "bodyName": "Lough Croan",
+        "distanceM": 44.5,
+        "areaKm2": 0.407
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1123930285",
+    "name": "Inchnagreeve",
+    "nation": "Ireland",
+    "lat": 53.48915,
+    "lng": -8.16992,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Croan",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 15031203,
+        "bodyName": "Lough Croan",
+        "distanceM": 73.9,
+        "areaKm2": 0.407
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1304539736",
+    "name": "Ingon Island",
+    "nation": "Ireland",
+    "lat": 53.59623,
+    "lng": -9.44362,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 46.6,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-3006275",
+    "name": "Inishmore",
+    "nation": "Northern Ireland",
+    "lat": 54.27018,
+    "lng": -7.58234,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Barry",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2624828,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2624828,
+        "bodyName": "Lough Barry",
+        "distanceM": 150.8,
+        "areaKm2": 0.1057
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-12412821",
+    "name": "Kelham Island",
+    "nation": "England",
+    "lat": 53.3879,
+    "lng": -1.4697,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 12412819,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 12412819,
+        "bodyName": "",
+        "distanceM": 130.2,
+        "areaKm2": 0.0401
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-9499902",
+    "name": "King's Island",
+    "nation": "Ireland",
+    "lat": 52.6729,
+    "lng": -8.62519,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 6231279,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 6231279,
+        "bodyName": "",
+        "distanceM": 144.3,
+        "areaKm2": 6.3383
+      }
+    ]
+  },
+  {
+    "id": "osm-node-10998043066",
+    "name": "Lang Haugh",
+    "nation": "Scotland",
+    "lat": 55.87545,
+    "lng": -4.04494,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": "pond",
+      "parentWaterBody": {
+        "name": "Tarry Lochan",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 17367450,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 17367450,
+        "bodyName": "Tarry Lochan",
+        "distanceM": 10.5,
+        "areaKm2": 0.0074
+      }
+    ]
+  },
+  {
+    "id": "wd-Q6488324",
+    "name": "Lapp's Island",
+    "nation": "Ireland",
+    "lat": 51.89911,
+    "lng": -8.46409,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2077531,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2077531,
+        "bodyName": "",
+        "distanceM": 63.6,
+        "areaKm2": 0.1582
+      }
+    ]
+  },
+  {
+    "id": "osm-way-203358454",
+    "name": "Little Island",
+    "nation": "Ireland",
+    "lat": 52.35111,
+    "lng": -7.70035,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "bodyName": "",
+        "distanceM": 33.3,
+        "areaKm2": 0.0172
+      }
+    ]
+  },
+  {
+    "id": "osm-node-5556532316",
+    "name": "Long Ait",
+    "nation": "England",
+    "lat": 51.48481,
+    "lng": -0.90523,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 557199,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 557199,
+        "bodyName": "",
+        "distanceM": 4.6,
+        "areaKm2": 0.3567
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1117241603",
+    "name": "Long Island",
+    "nation": "Ireland",
+    "lat": 53.78547,
+    "lng": -7.89572,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Forbes",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2998902,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2998902,
+        "bodyName": "Lough Forbes",
+        "distanceM": 35.6,
+        "areaKm2": 3.0748
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1154261110",
+    "name": "Long Island",
+    "nation": "Ireland",
+    "lat": 54.01795,
+    "lng": -8.26911,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Key",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1608914,
+        "wikidata": "Q2746303"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1608914,
+        "bodyName": "Lough Key",
+        "distanceM": 19.5,
+        "areaKm2": 9.1689
+      }
+    ]
+  },
+  {
+    "id": "wd-Q104363965",
+    "name": "Magurk's Island",
+    "nation": "Northern Ireland",
+    "lat": 54.38053,
+    "lng": -7.67467,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lower Lough Erne",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 12552,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 12552,
+        "bodyName": "Lower Lough Erne",
+        "distanceM": 20.5,
+        "areaKm2": 114.3359
+      }
+    ]
+  },
+  {
+    "id": "wd-Q59728286",
+    "name": "Nun's Island",
+    "nation": "Ireland",
+    "lat": 53.27477,
+    "lng": -9.0606,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": "canal",
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 14318925,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 14318925,
+        "bodyName": "",
+        "distanceM": 7.2,
+        "areaKm2": 0.0083
+      }
+    ]
+  },
+  {
+    "id": "wd-Q26717915",
+    "name": "O'Reilly's Island",
+    "nation": "Northern Ireland",
+    "lat": 54.07222,
+    "lng": -8.0525,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Allen",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1208000,
+        "wikidata": "Q1366974"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1208000,
+        "bodyName": "Lough Allen",
+        "distanceM": 27.2,
+        "areaKm2": 34.0119
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1083328923",
+    "name": "Otter Island",
+    "nation": "Ireland",
+    "lat": 53.85495,
+    "lng": -7.94465,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Bofin",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2207675,
+        "wikidata": "Q22083887"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2207675,
+        "bodyName": "Lough Bofin",
+        "distanceM": 21.1,
+        "areaKm2": 4.9626
+      }
+    ]
+  },
+  {
+    "id": "osm-way-428787007",
+    "name": "Rabbit Island",
+    "nation": "Ireland",
+    "lat": 53.85476,
+    "lng": -7.94103,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Bofin",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2207675,
+        "wikidata": "Q22083887"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2207675,
+        "bodyName": "Lough Bofin",
+        "distanceM": 130.5,
+        "areaKm2": 4.9626
+      }
+    ]
+  },
+  {
+    "id": "osm-way-402547416",
+    "name": "Rack Isle",
+    "nation": "England",
+    "lat": 51.75945,
+    "lng": -1.83495,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 1912845,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1912845,
+        "bodyName": "",
+        "distanceM": 36.0,
+        "areaKm2": 0.271
+      }
+    ]
+  },
+  {
+    "id": "osm-node-4080623488",
+    "name": "Rat Island",
+    "nation": "Ireland",
+    "lat": 53.66012,
+    "lng": -9.24243,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Carra",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207971,
+        "wikidata": "Q1871364"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207971,
+        "bodyName": "Lough Carra",
+        "distanceM": 8.5,
+        "areaKm2": 15.7491
+      }
+    ]
+  },
+  {
+    "id": "osm-way-897055997",
+    "name": "Rayn's Island",
+    "nation": "England",
+    "lat": 52.71845,
+    "lng": -1.11897,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": "pond",
+      "parentWaterBody": {
+        "name": "Tern Pool",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 4030388,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4030388,
+        "bodyName": "Tern Pool",
+        "distanceM": 203.1,
+        "areaKm2": 0.0281
+      }
+    ]
+  },
+  {
+    "id": "wd-Q24639232",
+    "name": "Reedy Flat",
+    "nation": "Northern Ireland",
+    "lat": 54.51667,
+    "lng": -6.48333,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Neagh",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1121118,
+        "wikidata": "Q206942"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1121118,
+        "bodyName": "Lough Neagh",
+        "distanceM": 213.7,
+        "areaKm2": 380.4172
+      }
+    ]
+  },
+  {
+    "id": "osm-way-355834409",
+    "name": "Robins Island",
+    "nation": "Ireland",
+    "lat": 53.48297,
+    "lng": -7.97478,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Ree",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 178933,
+        "wikidata": "Q608133"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 178933,
+        "bodyName": "Lough Ree",
+        "distanceM": 17.5,
+        "areaKm2": 103.9123
+      }
+    ]
+  },
+  {
+    "id": "osm-node-765050763",
+    "name": "Robinson Crusoe Island",
+    "nation": "England",
+    "lat": 52.19821,
+    "lng": 0.11747,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Mill Pond",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1943297,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1943297,
+        "bodyName": "Mill Pond",
+        "distanceM": 288.2,
+        "areaKm2": 0.0116
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-6081119",
+    "name": "Rough Island",
+    "nation": "Ireland",
+    "lat": 53.65031,
+    "lng": -9.2907,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 23.4,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-6081120",
+    "name": "Seerillaun",
+    "nation": "Ireland",
+    "lat": 53.65697,
+    "lng": -9.28633,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 12.1,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1337734762",
+    "name": "Sidelings Island",
+    "nation": "England",
+    "lat": 51.75612,
+    "lng": -1.27215,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 1083245,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1083245,
+        "bodyName": "",
+        "distanceM": 18.9,
+        "areaKm2": 0.1131
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-7149690",
+    "name": "Snow Island",
+    "nation": "England",
+    "lat": 53.64078,
+    "lng": -1.77576,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 5427732,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 5427732,
+        "bodyName": "",
+        "distanceM": 101.9,
+        "areaKm2": 0.0365
+      }
+    ]
+  },
+  {
+    "id": "wd-Q105722173",
+    "name": "South Inch",
+    "nation": "Scotland",
+    "lat": 56.3904,
+    "lng": -3.4332,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": "pond",
+      "parentWaterBody": {
+        "name": "",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 4821021,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 4821021,
+        "bodyName": "",
+        "distanceM": 63.6,
+        "areaKm2": 0.0083
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1305440828",
+    "name": "Streches Island",
+    "nation": "Ireland",
+    "lat": 52.35109,
+    "lng": -7.70493,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "bodyName": "",
+        "distanceM": 25.9,
+        "areaKm2": 0.0172
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1305440827",
+    "name": "Suir Island",
+    "nation": "Ireland",
+    "lat": 52.35111,
+    "lng": -7.70048,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 7127106,
+        "bodyName": "",
+        "distanceM": 37.8,
+        "areaKm2": 0.0172
+      }
+    ]
+  },
+  {
+    "id": "osm-way-38091387",
+    "name": "The Naight",
+    "nation": "England",
+    "lat": 51.86418,
+    "lng": -2.25336,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 900006,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 900006,
+        "bodyName": "",
+        "distanceM": 0.5,
+        "areaKm2": 2.6247
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1367178468",
+    "name": "The Upper Island",
+    "nation": "England",
+    "lat": 51.71961,
+    "lng": -1.78598,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "The Broadwater",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1914049,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1914049,
+        "bodyName": "The Broadwater",
+        "distanceM": 12.3,
+        "areaKm2": 0.0433
+      }
+    ]
+  },
+  {
+    "id": "wd-Q2453024",
+    "name": "Thorney Island",
+    "nation": "England",
+    "lat": 51.4983,
+    "lng": -0.12889,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "St. James's Park Lake",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 276130,
+        "wikidata": "Q21333980"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 276130,
+        "bodyName": "St. James's Park Lake",
+        "distanceM": 475.1,
+        "areaKm2": 0.0532
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1097309815",
+    "name": "Wargrave Marsh",
+    "nation": "England",
+    "lat": 51.51441,
+    "lng": -0.87503,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 28951,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 28951,
+        "bodyName": "",
+        "distanceM": 454.0,
+        "areaKm2": 2.0921
+      }
+    ]
+  },
+  {
+    "id": "osm-way-607378406",
+    "name": "Weybridge Ait",
+    "nation": "England",
+    "lat": 51.37839,
+    "lng": -0.46052,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2001566,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2001566,
+        "bodyName": "",
+        "distanceM": 35.9,
+        "areaKm2": 0.0518
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1308448914",
+    "name": "White Lilies Island",
+    "nation": "England",
+    "lat": 51.48697,
+    "lng": -0.62802,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 28949,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 28949,
+        "bodyName": "",
+        "distanceM": 61.3,
+        "areaKm2": 0.1942
+      }
+    ]
+  },
+  {
+    "id": "osm-way-607165894",
+    "name": "Whittets Ait",
+    "nation": "England",
+    "lat": 51.37917,
+    "lng": -0.45861,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 2001806,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2001806,
+        "bodyName": "",
+        "distanceM": 84.0,
+        "areaKm2": 0.1849
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-15657448",
+    "name": "Willyrogue Island",
+    "nation": "Ireland",
+    "lat": 53.39651,
+    "lng": -9.11573,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Corrib",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 189915,
+        "wikidata": "Q848917"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 189915,
+        "bodyName": "Lough Corrib",
+        "distanceM": 42.7,
+        "areaKm2": 171.5885
+      }
+    ]
+  },
+  {
+    "id": "osm-relation-6081121",
+    "name": "Wiskey Island",
+    "nation": "Ireland",
+    "lat": 53.65483,
+    "lng": -9.28692,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Lough Mask",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "wikidata": "Q1768048"
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 1207969,
+        "bodyName": "Lough Mask",
+        "distanceM": 16.9,
+        "areaKm2": 83.7316
+      }
+    ]
+  },
+  {
+    "id": "osm-way-326571056",
+    "name": "Yellow Island",
+    "nation": "Ireland",
+    "lat": 53.71981,
+    "lng": -6.40083,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 18646817,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 18646817,
+        "bodyName": "",
+        "distanceM": 123.4,
+        "areaKm2": 0.1295
+      }
+    ]
+  },
+  {
+    "id": "osm-way-1506030645",
+    "name": "Ynys Dôl-lleian",
+    "nation": "Wales",
+    "lat": 53.00611,
+    "lng": -4.1004,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "river",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "",
+        "type": "river",
+        "osmType": "relation",
+        "osmId": 3637772,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "medium"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 3637772,
+        "bodyName": "",
+        "distanceM": 10.1,
+        "areaKm2": 0.1635
+      }
+    ]
+  },
+  {
+    "id": "csv-geocoded-Q26272407",
+    "name": "Great Arthur House Including Boiler House",
+    "nation": "England",
+    "lat": 51.5221146,
+    "lng": -0.095984665,
+    "before": {
+      "type": "unknown",
+      "subtype": null,
+      "parentWaterBody": null,
+      "classification": {
+        "source": "land-in-no-water",
+        "confidence": "low"
+      }
+    },
+    "after": {
+      "type": "lake",
+      "subtype": null,
+      "parentWaterBody": {
+        "name": "Barbican Lake",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 2094128,
+        "wikidata": ""
+      },
+      "classification": {
+        "source": "osm-water-near",
+        "confidence": "low"
+      }
+    },
+    "evidence": [
+      {
+        "source": "osm-water-near",
+        "osmType": "relation",
+        "osmId": 2094128,
+        "bodyName": "Barbican Lake",
+        "distanceM": 297.9,
+        "areaKm2": 0.0074
+      }
+    ]
+  }
+]
