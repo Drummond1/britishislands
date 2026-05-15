@@ -1326,6 +1326,9 @@ function refreshGalleryInPlace(island) {
 function renderDetails(island) {
   els.listSection.hidden = true;
   els.details.hidden = false;
+  if (mobileNav.isActive()) {
+    document.body.dataset.islandDetail = "open";
+  }
   els.sidebar.scrollTop = 0;
 
   const typeLabel =
@@ -2262,6 +2265,9 @@ els.back.addEventListener("click", () => {
 function releaseIslandDetailView({ clearUrl = false } = {}) {
   els.details.hidden = true;
   els.listSection.hidden = false;
+  if (mobileNav.isActive()) {
+    document.body.dataset.islandDetail = "closed";
+  }
   state.activeId = null;
   if (state.activePolygon) {
     map.removeLayer(state.activePolygon);
@@ -4359,6 +4365,13 @@ const mobileNav = (() => {
     }, 180);
   }
 
+  function syncMobileSidebarPanels() {
+    const detailOpen = !els.details.hidden;
+    els.listSection.hidden = detailOpen;
+    document.body.dataset.islandDetail = detailOpen ? "open" : "closed";
+    if (!detailOpen) scheduleRenderListWindow();
+  }
+
   function setView(next, { skipChatSync = false } = {}) {
     if (!isActive()) return;
     view = next;
@@ -4379,8 +4392,7 @@ const mobileNav = (() => {
       releaseIslandDetailView();
     }
     if (next === "islands") {
-      els.listSection.hidden = false;
-      scheduleRenderListWindow();
+      syncMobileSidebarPanels();
     }
     if (next === "trip") {
       loadFerries()
@@ -4405,7 +4417,11 @@ const mobileNav = (() => {
   nav?.addEventListener("click", (e) => {
     const btn = e.target.closest(".mobile-nav__btn");
     if (!btn?.dataset.mobileView) return;
-    setView(btn.dataset.mobileView);
+    const next = btn.dataset.mobileView;
+    if (next === "islands" && view === "islands" && !els.details.hidden) {
+      releaseIslandDetailView({ clearUrl: true });
+    }
+    setView(next);
   });
 
   filtersToggle?.addEventListener("click", () => {
