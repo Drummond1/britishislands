@@ -1,7 +1,7 @@
 {
   "agent": "source_verifier",
-  "inputCandidates": 549,
-  "verified": 549,
+  "inputCandidates": 550,
+  "verified": 550,
   "rejected": 0,
   "records": [
     {
@@ -20047,6 +20047,63 @@
         {
           "name": "wikipedia",
           "url": "https://en.wikipedia.org/wiki/Tarbert,_County_Kerry",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "candidateId": "wp-Q15543901",
+      "name": "Wolf Rock Lighthouse",
+      "lat": 49.95,
+      "lng": -5.81,
+      "nation": "England",
+      "featureKind": "island",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "wikidata": "Q15543901",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+      "aliases": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "scanConfidence": "high",
+      "sourceHints": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Cornwall",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "verified": true,
+      "verificationConfidence": "high",
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Cornwall",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q15543901",
+          "url": "https://www.wikidata.org/wiki/Q15543901",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
           "license": "CC-BY-SA-4.0"
         }
       ],

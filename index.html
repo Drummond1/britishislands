@@ -62,6 +62,14 @@
       <div class="topbar-actions">
         <a class="topbar-link" href="ferries/">Ferries</a>
         <button
+          type="button"
+          class="topbar-link topbar-link--btn"
+          id="crowd-suggest-btn"
+          title="Suggest a missing island or unnamed pin (opens GitHub)"
+        >
+          Suggest island
+        </button>
+        <button
           class="topbar-filters-toggle"
           id="filters-toggle"
           type="button"
@@ -87,6 +95,14 @@
         <select id="nation-filter" aria-label="Filter by nation">
           <option value="">All nations</option>
         </select>
+        <select id="favorites-filter" aria-label="Saved islands list">
+          <option value="">All islands</option>
+          <option value="favorites">Saved only</option>
+        </select>
+        <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
+          <input type="checkbox" id="crowd-show-toggle" checked />
+          <span>Crowd pins</span>
+        </label>
         <label class="toggle" title="Group nearby markers into clusters">
           <input type="checkbox" id="cluster-toggle" checked />
           <span>Cluster</span>
@@ -129,12 +145,71 @@
       </aside>
 
       <section class="map-wrap">
+        <div id="crowd-modal" class="crowd-modal" hidden>
+          <div class="crowd-modal__backdrop" id="crowd-modal-backdrop" tabindex="-1"></div>
+          <div
+            class="crowd-modal__panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="crowd-modal-title"
+          >
+            <h2 id="crowd-modal-title" class="crowd-modal__title">Suggest an island</h2>
+            <div id="crowd-step-pick" class="crowd-step">
+              <p class="crowd-modal__lead">
+                Click the map once to drop a pin. You can leave the name empty if you only want others
+                to see where to look.
+              </p>
+              <p class="crowd-modal__fine">
+                Submissions open in GitHub (free account). Maintainers publish approved pins to the map;
+                atlas merges need sources per <a href="docs/ETHICS.md" target="_blank" rel="noopener">ETHICS</a>.
+              </p>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">
+                Cancel
+              </button>
+            </div>
+            <div id="crowd-step-form" class="crowd-step" hidden>
+              <p id="crowd-coords-label" class="crowd-coords-label"></p>
+              <label class="crowd-field">
+                <span>Proposed name <em class="crowd-optional">(optional)</em></span>
+                <input id="crowd-field-name" type="text" autocomplete="off" placeholder="Leave blank if unknown" />
+              </label>
+              <label class="crowd-field">
+                <span>What you see <em class="crowd-optional">(optional)</em></span>
+                <textarea id="crowd-field-note" rows="3" placeholder="e.g. small skerry, wooded islet in the loch"></textarea>
+              </label>
+              <label class="crowd-field">
+                <span>Name source URL <em class="crowd-optional">(optional)</em></span>
+                <input id="crowd-field-source" type="url" placeholder="Wikipedia, OSM, gazetteer…" />
+              </label>
+              <label class="crowd-field">
+                <span>Credit / handle <em class="crowd-optional">(optional)</em></span>
+                <input id="crowd-field-credit" type="text" autocomplete="off" placeholder="How you want to appear on the map" />
+              </label>
+              <label class="crowd-field">
+                <span>Existing crowd pin id <em class="crowd-optional">(optional)</em></span>
+                <input id="crowd-field-existing-id" type="text" autocomplete="off" placeholder="Only if naming someone else’s pin — copy from popup" />
+              </label>
+              <div class="crowd-modal__actions">
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-github-submit">
+                  Open GitHub to submit ↗
+                </button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">
+                  Pick again
+                </button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="map" role="application" aria-label="Map of British islands"></div>
         <div class="legend" aria-hidden="true">
           <span><i class="dot dot--sea"></i> Sea</span>
           <span><i class="dot dot--lake"></i> Lake</span>
           <span><i class="dot dot--river"></i> River</span>
           <span><i class="dot dot--unknown"></i> Unverified</span>
+          <span><i class="dot dot--crowd"></i> Crowd</span>
         </div>
         <section class="trip-planner" aria-labelledby="trip-planner-title">
           <h2 class="trip-planner__title" id="trip-planner-title">Ferry trip planner</h2>
@@ -319,6 +394,8 @@
     -->
     <script src="https://unpkg.com/proj4@2.10.0/dist/proj4.js"></script>
     <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
+    <!-- Optional: set your live HTTPS origin if canonical/share URLs differ from location (CDN, path rewrite).
+         Example: <script>window.IOB_SITE_ORIGIN = "https://your.domain";</script> -->
     <script src="app.js" type="module"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
 {
   "agent": "data_enrichment",
-  "inputVerified": 549,
+  "inputVerified": 550,
   "readyForMerge": 5,
-  "needsManualReview": 544,
+  "needsManualReview": 545,
   "records": [
     {
       "id": "old-man-of-stoer",
@@ -28840,6 +28840,74 @@
       ],
       "discovery": {
         "candidateId": "wp-Q7493669",
+        "scanConfidence": "high",
+        "verificationConfidence": "high",
+        "needsReview": true,
+        "notes": []
+      }
+    },
+    {
+      "id": "wolf-rock-lighthouse",
+      "name": "Wolf Rock Lighthouse",
+      "nation": "England",
+      "type": "sea",
+      "subtype": null,
+      "tidal": false,
+      "archipelago": "",
+      "lat": 49.95,
+      "lng": -5.81,
+      "areaKm2": null,
+      "population": null,
+      "highestPointM": null,
+      "highestPointName": "",
+      "shortDescription": "",
+      "history": "",
+      "geography": "",
+      "transport": "",
+      "accommodation": "",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+      "wikidata": "Q15543901",
+      "image": "",
+      "images": [],
+      "tags": [
+        "island",
+        "wikipedia-list"
+      ],
+      "source": "discovery",
+      "osmType": null,
+      "osmId": null,
+      "osmPlace": "island",
+      "parentWaterBody": null,
+      "classification": {
+        "source": "discovery-pipeline",
+        "confidence": "high"
+      },
+      "sources": [
+        {
+          "name": "Wikipedia island list",
+          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Cornwall",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "Wikipedia article",
+          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "name": "wikidata",
+          "ref": "Q15543901",
+          "url": "https://www.wikidata.org/wiki/Q15543901",
+          "license": "CC0"
+        },
+        {
+          "name": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "aliases": [],
+      "discovery": {
+        "candidateId": "wp-Q15543901",
         "scanConfidence": "high",
         "verificationConfidence": "high",
         "needsReview": true,

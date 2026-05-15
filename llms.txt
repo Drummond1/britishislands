@@ -1,0 +1,15 @@
+# Isles of Britain
+> Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies (sea, lake, and river), with maps, photos, and transport context.
+
+## Entry points
+- Main app: /
+- Island profile (deep link): /?island=<id>   (example: ?island=isle-of-skye)
+- Ferry guides: /ferries/
+
+## For machines
+- Prefer linking to /?island=<id> for a specific island. Island ids are stable slugs in `data/islands.json`.
+- Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
+
+## Generated
+- sitemap.xml (if site origin configured)
+- This file (llms.txt)

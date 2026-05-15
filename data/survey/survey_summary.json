@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-05-15T23:19:11Z",
+  "remit": {
+    "bbox": [
+      49.0,
+      -10.5,
+      61.5,
+      2.5
+    ],
+    "note": "in_remit per discovery.common"
+  },
+  "atlasIslandCount": 7043,
+  "atlasNameConfidenceBreakdown": {
+    "medium": 6574,
+    "high": 461,
+    "low": 7,
+    "unconfirmed": 1
+  },
+  "pipelineSourceFile": "data/discovery/verification.json",
+  "pipelineCandidates": 550,
+  "pipelineMatchedAtlas": 274,
+  "outstandingNotInAtlas": 276,
+  "scanReportUnnamedOrUnlocated": 79,
+  "scanReportMissingCandidates": 1,
+  "lastReviewReportCounts": {
+    "added": 1,
+    "addedProvisional": 1,
+    "merged": 549,
+    "skippedDuplicate": 0,
+    "skippedUncertain": 0,
+    "skippedExistingReview": 0
+  },
+  "closureHints": {
+    "added": 1,
+    "merged": 549,
+    "skippedUncertain": 0
+  }
+}

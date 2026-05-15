@@ -1,0 +1,17 @@
+island_name,population,year,source,attribution,households,age_under_16,age_16_64,age_65_plus,gaelic_speakers,welsh_speakers,irish_speakers
+# SAMPLE — replace with the full official NRS table before running `ingest_census_2022.py --commit`.
+# Source: "Scotland's Inhabited Islands" report from NRS 2022.
+# https://www.nrscotland.gov.uk/publications/scotlands-census-2022-rounded-population-estimates/
+# Rename this file to `census2022_nrs.csv` once verified.
+Isle of Skye,10008,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Lewis and Harris,21031,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Mull,3049,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Islay,3498,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Arran,4679,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Tiree,653,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Iona,177,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Coll,210,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Eigg,108,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Rum,40,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Canna,11,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,
+Muck,32,2022,nrs-2022,"© Crown copyright, National Records of Scotland (OGL v3.0)",,,,,,

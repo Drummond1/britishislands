@@ -1279,3 +1279,223 @@
   Haswell-Smith, Vision of Britain, and OS MasterMap remain reference-only.
 - **Open items kicked to QUEUE.md**: Human review of uncertain discovery rows;
   stage OS Open Names / NRS boundary feeds when files are available.
+
+---
+
+## 2026-05-15 — Ask / chatbot Hebrides and recommendation ranking
+
+- **Goal**: Fix misleading results (e.g. "Isleworth" on Hebrides queries) and
+  return sensible visitor picks.
+- **What changed**: `app.js` — map bare "Hebrides" to Inner + Outer Hebrides;
+  detect "worth visiting" / "best islands" / numbered pick lists; default
+  those to **sea** islands; rank with quality boosts; require whole-word
+  keyword matches on names; filter micro-islets for regional recommendations;
+  clearer `composeChatResponse` copy.
+- **Outcome**: Hebrides questions resolve to Scottish archipelago scope with
+  Skye/Mull/Lewis-style results instead of spurious substring matches.
+
+- **Follow-up (same day)**: Trip planner / itinerary banner — banner was
+  `prepend`ed under the sticky topbar (`z-index` 500 vs 1000), so links were
+  not receiving taps; mount banner after `header.topbar`, raise trip panel
+  above Leaflet controls, disable pointer events on off-canvas sidebar for
+  map/trip/ask views.
+
+---
+
+## 2026-05-15 — Provisional discovery inserts (`unconfirmed`)
+
+- **Goal**: Add discovery candidates not already represented on the map, with a
+  **clear non-final** classification when the pipeline is uncertain.
+- **What changed**:
+  - `docs/DATA-SCHEMA.md` — `classification.confidence` adds **`unconfirmed`**;
+    optional **`classification.reviewHint`**.
+  - `scripts/discovery/common.py` — `find_existing_match(..., loose=…)` so
+    review-flagged rows never use the global 0.5 km fallback (avoids bogus
+    merges).
+  - `scripts/discovery/site_update.py` — match **before** insert; with
+    `--include-uncertain`, insert only strict no-match rows as new islands with
+    `_apply_unconfirmed_classification`; report `addedProvisional`.
+  - `scripts/discover_islands_pipeline.py` — clarified `--include-uncertain`
+    help text.
+  - `docs/DISCOVERY-PIPELINE.md` — same.
+  - `app.js` + `styles.css` — details panel + list badge for `unconfirmed`.
+- **Outcome / counts**: **549** merged (they were already in the atlas under
+  the same OSM/Wikidata/name key); **1** insert (**Wolf Rock Lighthouse**,
+  Cornwall list / Wikidata, no hero image) at **7,309** islands. Backup
+  `data/islands.json.before-discovery-20260515T051857Z`.
+
+---
+
+## 2026-05-15 — Marine Regions cache + discovery merge persistence
+
+- **Goal**: Wire report-recommended **Marine Regions** gazetteer sampling without
+  user-supplied files; ensure discovery merges persist when no new rows are
+  inserted.
+- **What changed**:
+  - Populated `data/cache_discovery_marine_regions.json` (first grid fetch).
+  - `scripts/discovery/site_update.py` — `--apply` now takes a backup and
+    writes `islands.json` when there are merge-only updates (`merged` or
+    `skipped_existing_review` / curated merges), not only `added` rows.
+  - `scripts/discovery/marine_regions_gazetteer.py` — docstring notes the
+    lat/long endpoint often yields **zero** strict `Island` features inside
+    the UK bbox.
+  - Docs: `DISCOVERY-PIPELINE.md` (six-stage title, `catalog_scanner` in
+    examples), `DATA-SOURCES.md` (Marine Regions row 2a).
+- **Outcome / counts**: **0** new islands from Marine Regions this pass; **5**
+  existing records enriched via catalog discovery merge (still **7,308**
+  islands). Backup `data/islands.json.before-discovery-20260515T044747Z`.
+- **Open items**: Tune Marine Regions ingestion (alternate API / place types) or
+  stage **OS Open Names** CSV for name discovery; NBN/GBIF/JNCC remain
+  enrichment-first per `DISCOVERY-SOURCES.md`.
+
+---
+
+## 2026-05-15 — Trip planner: ferry graph load race
+
+- **Goal**: Fix Ferry trip planner so **Plan route** returns a real itinerary
+  after typing island names.
+- **What changed**:
+  - `app.js` — `_islandsIndexReady` promise settled from `loadIslands()` before
+    the island index is used; `loadFerries()` chains off it so
+    `buildFerryIslandRefIndex()` / `resolveFerryIslandId()` never run on an
+    empty `byId`. Stale cached ferries with routes but an empty graph are
+    dropped when islands finish loading. Clearer errors when an island has no
+    ferry endpoint or no multi-hop chain. `planTripBetween` returns a
+    `summary` string; trip status shows it. `_renderItineraryBanner` tolerates
+    missing `byId` entries. `loadFerries` clears `ferriesPromise` in `finally`
+    so in-flight dedup still works.
+  - `styles.css` — itinerary banner `z-index: 1101` (above `.topbar` 1000);
+    `.itinerary-banner__unknown` for orphan ids.
+  - `docs/STATE.md` — note the behaviour fix.
+- **Outcome**: Mull → Iona (and similar) plans again on first load; users still
+  see an honest message when no ferry chain exists in `ferries.json`.
+
+---
+
+## 2026-05-15 — Saved islands (hearts, local list)
+
+- **Goal**: Let users mark islands of interest and browse a saved-only list.
+- **What changed**:
+  - `index.html` — `favorites-filter` select (All / Saved only) in top filters.
+  - `app.js` — `localStorage` key `iobFavoriteIslandIds`; heart on list rows and
+    detail header; `Saved islands` list heading when filtered; map markers get
+    a pink ring when saved; `resetAtlasHome` clears the saved filter.
+  - `styles.css` — list row split (`island-card` + `island-card__main` + `island-card__fav`);
+    `.details-title-row` + `.details-fav`.
+- **Outcome**: Favourites stay on this device only (no sync); combine with type
+  / nation / search as usual.
+
+---
+
+## 2026-05-15 — Suggest a correction (GitHub, source-required)
+
+- **Goal**: Let visitors report wrong island data without on-site registration or
+  direct edits to `islands.json`.
+- **What changed**:
+  - `.github/ISSUE_TEMPLATE/island-data-correction.md` — maintainer checklist.
+  - `app.js` — `buildCorrectionIssueUrl`, `renderCorrectionReport` on detail
+    panel; `window.IOB_CORRECTION_REPO` override.
+  - `styles.css` — `.correction-report` block.
+  - `docs/QUEUE.md` — cleared stale P0 overnight row; noted missing enrichment caches.
+  - `docs/STATE.md`, `docs/INDEX.md`.
+- **Outcome**: Users open a pre-filled GitHub issue with island id, coords, and
+  OSM/Wikidata links; evidence section is mandatory in the template copy.
+
+---
+
+## 2026-05-15 — SEO + GEO (island profiles, crawlers)
+
+- **Goal**: Better search and generative discovery for island deep links without
+  changing the visible atlas UI.
+- **What changed**:
+  - `seo-meta.js` — on island open: `title`, description, canonical, Open Graph,
+    Twitter Cards, JSON-LD `Island` + `GeoCoordinates`; restores defaults when
+    the detail panel closes. Optional `window.IOB_SITE_ORIGIN` for production host.
+  - `app.js` — calls `applyIslandSeo` / `resetIslandSeo` from `focusIsland` /
+    `releaseIslandDetailView`.
+  - `scripts/generate_seo_artifacts.py` — writes `llms.txt`; with
+    `IOB_SITE_ORIGIN` / `--site-origin`, also `sitemap.xml` + `robots.txt`;
+    optional `--landing-dir` for thin redirect HTML stubs.
+  - `llms.txt` (generated), `docs/SEO-GEO.md`, `docs/INDEX.md`, `docs/ARCHITECTURE.md`,
+    `index.html` comment, `docs/STATE.md`.
+- **Outcome**: Shareable `?island=` URLs get machine-readable summaries; deploy
+  with a real origin to emit sitemap + robots.
+
+---
+
+## 2026-05-15 — Terrestrial OSM rocks removed from atlas + discovery filter
+
+- **Goal**: Stop treating **inland named boulders / crags** (OSM `natural=rock`,
+  mis-imported as marine `type: sea`) as islands; keep **coastal** stacks and
+  intertidal rocks.
+- **What changed**:
+  - `scripts/discovery/common.py` — `is_terrestrial_inland_rock()` using
+    `land_polygons.pickle` + simplified boundary (fast) and
+    `TERRESTRIAL_ROCK_MIN_INLAND_DEG` (default **0.02** ° ≈ 2 km; override via
+    `IOB_TERR_ROCK_MIN_DEG`).
+  - `scripts/discovery/site_update.py` — refuses **new inserts** for the same
+    terrestrial rock pattern (report `skippedTerrestrialRock`).
+  - `scripts/prune_terrestrial_rocks.py` — one-shot removal from `islands.json`
+    (never deletes `curated` / `curated.json` ids).
+  - `data/terrestrial_rocks_prune_report.json` — **266** removed rows; backup
+    `islands.json.before-terrestrial-rock-prune-20260515T231858Z.bak`.
+  - Regenerated `data/discovery/candidates_scan.json`, `data/survey/*` (ledger
+    still pairs stale `verification.json`; outstanding count inflated until
+    verifier refresh).
+  - `docs/STATE.md`.
+- **Outcome**: Atlas **7,309 → 7,043**; **old-man-of-stoer**-class coastal rocks
+  stay; **devils-chimney**-class inland formations go. Re-run
+  `discover_islands_pipeline` verification stage when you want a clean ledger
+  vs verification.
+
+---
+
+## 2026-05-15 — Survey landmass ledger (executable)
+
+- **Goal**: Turn the survey **prompt** into something you can run without Overpass:
+  one JSON ledger + summary counts for closure reporting.
+- **What changed**:
+  - `scripts/survey_landmass_ledger.py` — builds `data/survey/landmass_ledger.json`
+    (every atlas row + every verification/enrichment pipeline row) and
+    `survey_summary.json`; pipeline match uses **strict**
+    `find_existing_match(..., loose=False)` so “outstanding” means no OSM/QID/name+proximity hit.
+  - `data/survey/README.md` — regenerate instructions.
+  - `docs/PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md`, `docs/INDEX.md`, `docs/STATE.md`
+    — point to the script and artifacts.
+- **Outcome**: After this run, **550** verified discovery candidates all matched the
+  atlas; **0** strict outstanding; scan report still carries **79** unnamed/unlocated
+  elements for OSM hygiene follow-up.
+
+---
+
+## 2026-05-15 — Comprehensive landmass survey prompt (multi-agent briefing)
+
+- **Goal**: Single reusable **copy/paste prompt** for orchestrating a full-remit
+  landmass + naming sweep aligned with UK_BBOX / `in_remit` and AGENTS.md
+  (~50 mi UK+Ireland scope).
+- **What changed**: `docs/PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md` (succinct prompt
+  block + agent roles + ledger columns + closure report template + honest note
+  on 3 m detection vs OSM/open-data limits). Linked from `docs/INDEX.md`.
+- **Outcome**: Humans/agents run tiles → OSM/inland/gazetteer → name resolver →
+  merge with existing discovery rules; track outstanding rows in a survey ledger.
+
+---
+
+## 2026-05-15 — Crowd-sourced island pins (GitHub triage)
+
+- **Goal**: Light-touch way to suggest missing islands or unnamed locations: map
+  pin + optional name, note, name-source URL, credit; unnamed-only pins
+  encouraged; visible distinction from atlas markers; optional recognition in
+  published pin data.
+- **What changed**:
+  - `data/crowd_pins.json` (schema v1, starts empty), `crowd-pins.js`,
+    `app.js` integration (layer, modal, GitHub issue URLs), `index.html` (Suggest
+    island, Crowd pins toggle, legend), `styles.css` (modal, popup, legend dot,
+    map pick cursor).
+  - `docs/CROWD-PINS.md` maintainer workflow; `docs/INDEX.md`, `docs/STATE.md`,
+    `AGENTS.md` pointers.
+  - Typo fix in modal copy: “Maintainers” (was “Maintainerrs”).
+- **Outcome / counts**: No change to `islands.json`; community layer ready when
+  pins are added from triaged issues.
+- **Open items**: Promote vetted pins to the atlas only via normal provenance
+    (`docs/ETHICS.md`).

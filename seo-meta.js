@@ -1,0 +1,222 @@
+/**
+ * Island SEO / structured-data head tags — updates <title>, meta description,
+ * Open Graph, Twitter Cards, canonical URL, and JSON-LD. No visible DOM changes.
+ *
+ * Set window.IOB_SITE_ORIGIN (e.g. "https://example.com") if the public URL
+ * differs from location.origin (CDN, reverse proxy).
+ */
+
+let _baselineTitle = "";
+let _baselineDescription = "";
+
+function siteOrigin() {
+  if (typeof window === "undefined") return "";
+  const o = window.IOB_SITE_ORIGIN;
+  if (o && typeof o === "string") return o.replace(/\/$/, "");
+  return window.location.origin;
+}
+
+function pagePathname() {
+  if (typeof window === "undefined") return "/";
+  return window.location.pathname || "/";
+}
+
+function absoluteUrl(href) {
+  if (!href || typeof href !== "string") return "";
+  const h = href.trim();
+  if (h.startsWith("https://") || h.startsWith("http://")) return h;
+  if (h.startsWith("//")) return `https:${h}`;
+  try {
+    return new URL(h, siteOrigin() + pagePathname()).toString();
+  } catch {
+    return "";
+  }
+}
+
+function canonicalUrlForIsland(islandId) {
+  try {
+    const origin = siteOrigin();
+    const path = pagePathname();
+    const u = new URL(path, origin);
+    u.search = "";
+    u.hash = "";
+    u.searchParams.set("island", islandId);
+    return u.toString();
+  } catch {
+    return "";
+  }
+}
+
+function upsertMetaByName(name, content) {
+  let el = document.querySelector(`meta[name="${CSS.escape(name)}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("name", name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function upsertMetaProperty(prop, content) {
+  let el = document.querySelector(`meta[property="${CSS.escape(prop)}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("property", prop);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function upsertLink(rel, href) {
+  let el = document.querySelector(`link[rel="${CSS.escape(rel)}"]`);
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+}
+
+function nationToCountryHint(nation) {
+  const n = String(nation || "");
+  if (n === "Ireland") return "IE";
+  if (n === "Northern Ireland" || n === "England" || n === "Scotland" || n === "Wales")
+    return "GB";
+  if (n === "Crown Dependency") return "GB"; /* bailiwicks: rough aggregate */
+  return n || undefined;
+}
+
+function buildDescription(island) {
+  const parts = [];
+  const t = island.type === "lake" ? "lake island" : island.type === "river" ? "river island" : "island";
+  parts.push(`${island.name} — ${t} in ${island.nation || "the British Isles"}.`);
+  if (island.shortDescription) {
+    parts.push(String(island.shortDescription).replace(/\s+/g, " ").trim().slice(0, 280));
+  } else if (island.archipelago) {
+    parts.push(`Part of ${island.archipelago}.`);
+  }
+  parts.push("Explore on the Isles of Britain visual atlas — map, photos, transport and ferry context.");
+  return parts.join(" ").slice(0, 320);
+}
+
+function injectJsonLd(data) {
+  let el = document.getElementById("iob-jsonld-island");
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = "iob-jsonld-island";
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+function removeJsonLd() {
+  document.getElementById("iob-jsonld-island")?.remove();
+}
+
+export function initSeoBaseline() {
+  _baselineTitle = document.title || "Isles of Britain — A Visual Atlas";
+  _baselineDescription =
+    document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
+}
+
+export function applyIslandSeo(island) {
+  if (!island || !island.id) return;
+
+  const title = `${island.name} — Isles of Britain`;
+  const desc = buildDescription(island);
+  const canonical = canonicalUrlForIsland(island.id);
+  const pageUrl = canonical || (typeof window !== "undefined" ? window.location.href : "");
+
+  document.title = title;
+  upsertMetaByName("description", desc);
+
+  if (canonical) upsertLink("canonical", canonical);
+
+  upsertMetaProperty("og:type", "article");
+  upsertMetaProperty("og:title", title);
+  upsertMetaProperty("og:description", desc);
+  if (pageUrl) upsertMetaProperty("og:url", pageUrl);
+
+  const img = island.image || (Array.isArray(island.images) && island.images[0]?.url) || "";
+  const ogImg = absoluteUrl(img);
+  if (ogImg) upsertMetaProperty("og:image", ogImg);
+
+  upsertMetaByName("twitter:card", ogImg ? "summary_large_image" : "summary");
+  upsertMetaByName("twitter:title", title);
+  upsertMetaByName("twitter:description", desc);
+  if (ogImg) upsertMetaByName("twitter:image", ogImg);
+
+  const geoCountry = nationToCountryHint(island.nation);
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Island",
+    name: island.name,
+    description: (island.shortDescription || desc).slice(0, 2000),
+    url: pageUrl || undefined,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: island.lat,
+      longitude: island.lng,
+    },
+  };
+  if (geoCountry) schema.addressCountry = geoCountry;
+  if (island.population != null && island.population !== "") {
+    schema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "population",
+        value: Number(island.population),
+      },
+    ];
+  }
+  const sameAs = [];
+  if (island.wikipedia) sameAs.push(island.wikipedia);
+  if (island.wikidata) sameAs.push(`https://www.wikidata.org/wiki/${island.wikidata}`);
+  if (sameAs.length) schema.sameAs = sameAs;
+  if (island.parentWaterBody?.name) {
+    schema.containedInPlace = {
+      "@type": "Place",
+      name: island.parentWaterBody.name,
+      additionalType: island.parentWaterBody.type === "river" ? "https://schema.org/RiverBodyOfWater" : "https://schema.org/LakeBodyOfWater",
+    };
+  }
+
+  injectJsonLd(schema);
+}
+
+export function resetIslandSeo() {
+  document.title = _baselineTitle;
+  if (_baselineDescription) {
+    upsertMetaByName("description", _baselineDescription);
+  }
+  document.querySelector('link[rel="canonical"]')?.remove();
+  [
+    "og:type",
+    "og:title",
+    "og:description",
+    "og:url",
+    "og:image",
+    "twitter:card",
+    "twitter:title",
+    "twitter:description",
+    "twitter:image",
+  ].forEach((key) => {
+    const sel = key.startsWith("og:")
+      ? `meta[property="${CSS.escape(key)}"]`
+      : `meta[name="${CSS.escape(key)}"]`;
+    document.querySelector(sel)?.remove();
+  });
+  removeJsonLd();
+}
+
+function bootstrapBaseline() {
+  if (typeof document === "undefined") return;
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => initSeoBaseline(), { once: true });
+  } else {
+    initSeoBaseline();
+  }
+}
+
+bootstrapBaseline();

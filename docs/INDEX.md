@@ -19,6 +19,7 @@ Single map of every document in this repository. Always start at the top.
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Code layout, data flow, how the frontend renders 6k+ islands. |
 | [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec with every field, type, and example. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
+| [`SEO-GEO.md`](SEO-GEO.md) | Island profile SEO + JSON-LD; sitemap / `llms.txt` / optional static landings. |
 
 ## Tier 3 — Methodology
 
@@ -26,10 +27,12 @@ Single map of every document in this repository. Always start at the top.
 |------|---------|
 | [`METHODOLOGY-INLAND.md`](METHODOLOGY-INLAND.md) | Tier A + Tier B inland classifier deep-dive. |
 | [`MEASUREMENTS.md`](MEASUREMENTS.md) | Area (`areaKm2`) + elevation (`highestPointM`) sources, methods, licensing, and confidence. |
-| [`PRD-USER-CONTRIBUTIONS.md`](PRD-USER-CONTRIBUTIONS.md) | Draft PRD for interactive features (accounts, photo uploads, community content, moderation). Not yet built. |
+| [`PRD-USER-CONTRIBUTIONS.md`](PRD-USER-CONTRIBUTIONS.md) | Draft PRD for accounts, photo uploads, moderation. **Shipped v1:** source-linked corrections via GitHub issues (detail panel + `.github/ISSUE_TEMPLATE/island-data-correction.md`). **Crowd pins:** suggest missing islands / unnamed pins → `docs/CROWD-PINS.md` + `data/crowd_pins.json`. |
+| [`CROWD-PINS.md`](CROWD-PINS.md) | Community pin workflow: GitHub triage, `crowd_pins.json` fields, ethics. |
 | [`DISCOVERY-SOURCES.md`](DISCOVERY-SOURCES.md) | Catalogue of ~85 evaluated discovery sources. |
 | [`DISCOVERY-PIPELINE.md`](DISCOVERY-PIPELINE.md) | Five-agent review-first discovery workflow and artifact paths. |
 | [`NEXT-SESSION-PLAN.md`](NEXT-SESSION-PLAN.md) | Rolling, executable plan for the next ingestion phase. |
+| [`PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md`](PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md) | **Multi-agent briefing:** full remit landmass sweep, naming certainty, ledger + closure report (copy/paste prompt). Executable ledger: `scripts/survey_landmass_ledger.py` → `data/survey/`. |
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
 | [`OS-MAPS.md`](OS-MAPS.md) | OS Maps detail-view integration: API key setup + the EPSG:27700 Leisure upgrade path. |
@@ -53,6 +56,9 @@ Single map of every document in this repository. Always start at the top.
 
 **"I'm changing the UI."**
 → `ARCHITECTURE.md` (frontend section) → `app.js`/`styles.css`/`index.html`
+
+**"I'm triaging community map pins."**
+→ `CROWD-PINS.md` → `data/crowd_pins.json`
 
 **"I'm verifying a data run."**
 → `VALIDATION.md` → spot-check a sample → check the relevant `data/*_report.json`

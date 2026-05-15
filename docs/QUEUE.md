@@ -6,18 +6,15 @@
 
 ## P0 — currently in flight
 
-- `scripts/overnight_runner.sh` (PID 71005, started 2026-05-12 20:30 UTC):
-  1. `enrich_descriptions_wikipedia.py` — **done** at 21:04 UTC
-     (~1180 candidates processed; report written to
-     `data/description_enrichment_report.json`).
-  2. `enrich_images_v5.py` (PID 98773) — **mid-run**, ~6–10 h.
-  3. Report-only audits (duplicates, coordinates, broken links) —
-     queued.
+- _(none verified 2026-05-15)_ — prior `overnight_runner` / `enrich_images_v5`
+  entries are **stale** (autonomous run stalled on Commons 429 per STATE).
+  Re-check PIDs before trusting old queue rows.
 
-## P0b — staged but not yet applied (this session, 2026-05-12)
+## P0b — staged but not yet applied (enrichment caches missing locally)
 
-Five new enrichments are STAGED (per-source cache files), awaiting
-the overnight chain to finish before the single atomic merge runs.
+Five enrichment ingest scripts are documented; **cache files are not present**
+in this workspace yet (`data/cache_dobih.json`, etc.). Run each
+`ingest_*.py --fetch --commit` before `bash scripts/apply_enrichments.sh`.
 
 - **Hills** (DoBIH classifications) — `scripts/ingest_hills_dobih.py`
   → `data/cache_dobih.json`. Wikidata SPARQL covers ~854 hills with

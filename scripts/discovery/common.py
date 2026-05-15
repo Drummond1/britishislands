@@ -120,6 +120,15 @@ def get_json(url: str, params: dict[str, Any] | None = None, timeout: int = 90) 
     return json.loads(_open(req, timeout))
 
 
+def fetch_json(url: str, timeout: int = 90) -> Any:
+    """GET JSON from a full URL (object or array). Same retry policy as get_json."""
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+    )
+    return json.loads(_open(req, timeout))
+
+
 def post_sparql(query: str) -> dict:
     body = urllib.parse.urlencode({"query": query}).encode()
     req = urllib.request.Request(
@@ -265,7 +274,7 @@ def build_island_index(islands: list[dict]) -> dict[str, Any]:
     }
 
 
-def find_existing_match(candidate: dict, index: dict[str, Any]) -> dict | None:
+def find_existing_match(candidate: dict, index: dict[str, Any], *, loose: bool = True) -> dict | None:
     osm_type = candidate.get("osmType")
     osm_id = candidate.get("osmId")
     if osm_type and osm_id is not None:
@@ -279,7 +288,89 @@ def find_existing_match(candidate: dict, index: dict[str, Any]) -> dict | None:
     for existing in index["name"].get(key, []):
         if haversine_km(candidate["lat"], candidate["lng"], existing["lat"], existing["lng"]) <= PROXIMITY_KM:
             return existing
+    if not loose:
+        return None
     for existing in index["all"]:
         if haversine_km(candidate["lat"], candidate["lng"], existing["lat"], existing["lng"]) <= 0.5:
             return existing
     return None
+
+
+# --- Terrestrial OSM rock filter (inland boulders / crags, not charted islets) ---
+# Degrees from the simplified UK+IE land outline; ~0.02° ≈ 1.5–2 km — keeps
+# coastal stacks that sit just "inside" the coarse polygon.
+TERRESTRIAL_ROCK_MIN_INLAND_DEG = float(
+    os.environ.get("IOB_TERR_ROCK_MIN_DEG", "0.02")
+)
+_LAND_MULTIPOLYGON: Any = None
+_LAND_MULTIPOLYGON_UNAVAILABLE: bool = False
+_LAND_PREP: Any = None
+_LAND_BOUNDARY_SIMPL: Any = None
+
+
+def land_multipolygon() -> Any | None:
+    """Return shapely MultiPolygon land mask, or None if pickle missing / unloadable."""
+    global _LAND_MULTIPOLYGON, _LAND_MULTIPOLYGON_UNAVAILABLE
+    if _LAND_MULTIPOLYGON_UNAVAILABLE:
+        return None
+    if _LAND_MULTIPOLYGON is not None:
+        return _LAND_MULTIPOLYGON
+    import pickle
+
+    lp = DATA / "land_polygons.pickle"
+    if not lp.exists():
+        _LAND_MULTIPOLYGON_UNAVAILABLE = True
+        return None
+    try:
+        _LAND_MULTIPOLYGON = pickle.load(open(lp, "rb"))
+    except Exception:
+        _LAND_MULTIPOLYGON_UNAVAILABLE = True
+        return None
+    return _LAND_MULTIPOLYGON
+
+
+def _land_prep() -> Any | None:
+    global _LAND_PREP
+    if _LAND_PREP is False:
+        return None
+    land = land_multipolygon()
+    if land is None:
+        _LAND_PREP = False
+        return None
+    if _LAND_PREP is None:
+        from shapely.prepared import prep
+
+        _LAND_PREP = prep(land)
+    return _LAND_PREP
+
+
+def _land_boundary_simplified() -> Any | None:
+    """Cheap inland-depth proxy (~0.003 deg ≈ 250 m tolerance)."""
+    global _LAND_BOUNDARY_SIMPL
+    if _LAND_BOUNDARY_SIMPL is False:
+        return None
+    land = land_multipolygon()
+    if land is None:
+        _LAND_BOUNDARY_SIMPL = False
+        return None
+    if _LAND_BOUNDARY_SIMPL is None:
+        _LAND_BOUNDARY_SIMPL = land.boundary.simplify(0.003, preserve_topology=True)
+    return _LAND_BOUNDARY_SIMPL
+
+
+def is_terrestrial_inland_rock(lat: float, lng: float, feature_kind: str | None) -> bool:
+    """True when a named rock is on dry land, well away from the simplified coastline."""
+    if (feature_kind or "").lower() != "rock":
+        return False
+    try:
+        from shapely.geometry import Point
+    except ImportError:
+        return False
+    prep_land = _land_prep()
+    bnd = _land_boundary_simplified()
+    if prep_land is None or bnd is None:
+        return False
+    pt = Point(float(lng), float(lat))
+    if not prep_land.contains(pt):
+        return False
+    return bnd.distance(pt) > TERRESTRIAL_ROCK_MIN_INLAND_DEG

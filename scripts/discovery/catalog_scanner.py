@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import os
 import re
 import sys
 import time
@@ -10,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from . import common as c
+from . import marine_regions_gazetteer as mrg
 
 SCRIPTS = Path(__file__).resolve().parents[1]
 if str(SCRIPTS) not in sys.path:
@@ -29,6 +31,11 @@ WIKI_LIST_TITLES = [
     "List of islands of Shetland",
     "List of islands of the Channel Islands",
     "List of islands of the Isle of Man",
+    "List of islands of Northern Ireland",
+    "List of islands of the Firth of Clyde",
+    "List of islands of the Clyde",
+    "List of islands of Cornwall",
+    "List of islands of Dorset",
 ]
 
 SKIP_LINK_PREFIXES = (
@@ -468,6 +475,19 @@ def run(*, limit: int | None = None) -> dict[str, Any]:
     source_counts["dobih"] = len(dobih_rows)
     collected.extend(dobih_rows)
 
+    try:
+        if os.environ.get("DISCOVERY_SKIP_MARINE") == "1":
+            mr_rows = []
+            print("→ Marine Regions: skipped (DISCOVERY_SKIP_MARINE=1)", file=sys.stderr)
+        else:
+            mr_refresh = os.environ.get("DISCOVERY_REFRESH_MARINE") == "1"
+            mr_rows = mrg.collect_candidates(refresh=mr_refresh)
+    except Exception as exc:
+        print(f"  marine_regions failed: {exc!r}", file=sys.stderr)
+        mr_rows = []
+    source_counts["marine_regions"] = len(mr_rows)
+    collected.extend(mr_rows)
+
     collected = _dedupe_candidates(collected)
 
     missing: list[dict[str, Any]] = []
@@ -505,6 +525,11 @@ def run(*, limit: int | None = None) -> dict[str, Any]:
                 "name": "OS MasterMap",
                 "status": "reference-only",
                 "reason": "Commercial product; use OS Open Names / Boundary-Line instead.",
+            },
+            {
+                "name": "NBN Atlas / GBIF / JNCC marine layers",
+                "status": "enrichment-not-gazetteer",
+                "reason": "Biodiversity and MPA context — use for tags/enrichment, not bulk island discovery.",
             },
             {
                 "name": "NRS / ONS inhabited-island tables",

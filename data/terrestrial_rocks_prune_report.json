@@ -1,0 +1,2137 @@
+{
+  "prunedAt": "2026-05-15T23:18:58Z",
+  "rule": "osmPlace==rock AND type==sea AND NOT curated AND is_terrestrial_inland_rock() (min inland deg 0.02)",
+  "previousCount": 7309,
+  "newCount": 7043,
+  "removedCount": 266,
+  "removed": [
+    {
+      "id": "adam-and-eve",
+      "name": "Adam and Eve",
+      "lat": 53.1149,
+      "lng": -3.9975,
+      "osmType": "node",
+      "osmId": 10068557018
+    },
+    {
+      "id": "adel-crags",
+      "name": "Adel Crags",
+      "lat": 53.85753,
+      "lng": -1.57325,
+      "osmType": "node",
+      "osmId": 2593945452
+    },
+    {
+      "id": "agassiz-rock",
+      "name": "Agassiz Rock",
+      "lat": 55.91928,
+      "lng": -3.18655,
+      "osmType": "node",
+      "osmId": 292057320
+    },
+    {
+      "id": "all-mhad-barn",
+      "name": "All-mhad Barn",
+      "lat": 57.03697,
+      "lng": -3.25902,
+      "osmType": "node",
+      "osmId": 13071436308
+    },
+    {
+      "id": "anchor-stone",
+      "name": "Anchor Stone",
+      "lat": 50.3796,
+      "lng": -3.58834,
+      "osmType": "way",
+      "osmId": 222510791
+    },
+    {
+      "id": "baboon-rock",
+      "name": "Baboon Rock",
+      "lat": 50.42668,
+      "lng": -3.57984,
+      "osmType": "way",
+      "osmId": 59993027
+    },
+    {
+      "id": "ballykeeffe-mass-rock",
+      "name": "Ballykeeffe Mass Rock",
+      "lat": 52.61638,
+      "lng": -7.3909,
+      "osmType": "node",
+      "osmId": 8722586372
+    },
+    {
+      "id": "battle-stones",
+      "name": "Battle Stones",
+      "lat": 52.54481,
+      "lng": -2.75983,
+      "osmType": "way",
+      "osmId": 1256703422
+    },
+    {
+      "id": "bearstone-rock",
+      "name": "Bearstone Rock",
+      "lat": 53.1767,
+      "lng": -2.00666,
+      "osmType": "way",
+      "osmId": 1071985247
+    },
+    {
+      "id": "big-stane-o-carn-beag",
+      "name": "Big Stane o Carn Beag",
+      "lat": 57.0356,
+      "lng": -2.9763,
+      "osmType": "way",
+      "osmId": 1226295229
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "lat": 51.28901,
+      "lng": -2.73806,
+      "osmType": "node",
+      "osmId": 944869681
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "lat": 53.57391,
+      "lng": -8.03165,
+      "osmType": "node",
+      "osmId": 10762001566
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "lat": 54.92597,
+      "lng": -7.50963,
+      "osmType": "node",
+      "osmId": 11997818505
+    },
+    {
+      "id": "black-rocks",
+      "name": "Black Rocks",
+      "lat": 53.60717,
+      "lng": -9.33074,
+      "osmType": "way",
+      "osmId": 1263257764
+    },
+    {
+      "id": "blackalder-tor",
+      "name": "Blackalder Tor",
+      "lat": 50.43658,
+      "lng": -4.01701,
+      "osmType": "node",
+      "osmId": 13604070726
+    },
+    {
+      "id": "blakey-tor",
+      "name": "Blakey Tor",
+      "lat": 50.54624,
+      "lng": -3.95931,
+      "osmType": "node",
+      "osmId": 13604070725
+    },
+    {
+      "id": "bobs-rock",
+      "name": "Bob's Rock",
+      "lat": 52.93103,
+      "lng": -1.26844,
+      "osmType": "way",
+      "osmId": 51369953
+    },
+    {
+      "id": "bog-boulder",
+      "name": "Bog Boulder",
+      "lat": 53.15657,
+      "lng": -1.99379,
+      "osmType": "way",
+      "osmId": 1085637645
+    },
+    {
+      "id": "bonnet-stone",
+      "name": "Bonnet Stone",
+      "lat": 56.2492,
+      "lng": -3.30909,
+      "osmType": "node",
+      "osmId": 3024239663
+    },
+    {
+      "id": "boulder",
+      "name": "Boulder",
+      "lat": 53.46572,
+      "lng": -2.23432,
+      "osmType": "node",
+      "osmId": 9813490342
+    },
+    {
+      "id": "bowermans-nose",
+      "name": "Bowerman's Nose",
+      "lat": 50.61027,
+      "lng": -3.78077,
+      "osmType": "way",
+      "osmId": 1228686612
+    },
+    {
+      "id": "boxing-glove-stones",
+      "name": "Boxing Glove stones",
+      "lat": 53.40479,
+      "lng": -1.8869,
+      "osmType": "node",
+      "osmId": 13460132935
+    },
+    {
+      "id": "bradys-crag",
+      "name": "Brady's Crag",
+      "lat": 55.02404,
+      "lng": -2.09804,
+      "osmType": "node",
+      "osmId": 2167142718
+    },
+    {
+      "id": "browns-towers",
+      "name": "Brown's Towers",
+      "lat": 56.922,
+      "lng": -2.79637,
+      "osmType": "node",
+      "osmId": 9148506760
+    },
+    {
+      "id": "burglar-buttress",
+      "name": "Burglar Buttress",
+      "lat": 53.37767,
+      "lng": -1.54537,
+      "osmType": "node",
+      "osmId": 8154393695
+    },
+    {
+      "id": "bwa-maen",
+      "name": "Bwa Maen",
+      "lat": 51.7596,
+      "lng": -3.57428,
+      "osmType": "node",
+      "osmId": 9363954112
+    },
+    {
+      "id": "c11",
+      "name": "C11",
+      "lat": 53.74305,
+      "lng": -7.13443,
+      "osmType": "way",
+      "osmId": 541530384
+    },
+    {
+      "id": "c14",
+      "name": "C14",
+      "lat": 53.74305,
+      "lng": -7.13442,
+      "osmType": "way",
+      "osmId": 541530380
+    },
+    {
+      "id": "c18",
+      "name": "C18",
+      "lat": 53.74305,
+      "lng": -7.1344,
+      "osmType": "way",
+      "osmId": 541530376
+    },
+    {
+      "id": "c5",
+      "name": "C5",
+      "lat": 53.74303,
+      "lng": -7.13442,
+      "osmType": "way",
+      "osmId": 541530388
+    },
+    {
+      "id": "cakes-of-bread",
+      "name": "Cakes of Bread",
+      "lat": 53.40757,
+      "lng": -1.7029,
+      "osmType": "node",
+      "osmId": 9995569537
+    },
+    {
+      "id": "carlin-maggie",
+      "name": "Carlin Maggie",
+      "lat": 56.22535,
+      "lng": -3.31753,
+      "osmType": "node",
+      "osmId": 3861470683
+    },
+    {
+      "id": "carn-enoch",
+      "name": "Carn Enoch",
+      "lat": 51.99594,
+      "lng": -4.89727,
+      "osmType": "way",
+      "osmId": 105597256
+    },
+    {
+      "id": "carnane-rock",
+      "name": "Carnane Rock",
+      "lat": 52.56906,
+      "lng": -8.59596,
+      "osmType": "node",
+      "osmId": 13703838304
+    },
+    {
+      "id": "carr-stones",
+      "name": "Carr Stones",
+      "lat": 54.75723,
+      "lng": -1.93415,
+      "osmType": "node",
+      "osmId": 13184459665
+    },
+    {
+      "id": "carraig-na-sasanac",
+      "name": "Carraig-na-Sasanac",
+      "lat": 53.86571,
+      "lng": -7.0746,
+      "osmType": "node",
+      "osmId": 3721529431
+    },
+    {
+      "id": "carreg-cannan",
+      "name": "Carreg Cannan",
+      "lat": 53.11856,
+      "lng": -3.99581,
+      "osmType": "node",
+      "osmId": 4296202678
+    },
+    {
+      "id": "carreg-ddiddos",
+      "name": "Carreg Ddiddos",
+      "lat": 52.33093,
+      "lng": -3.75629,
+      "osmType": "node",
+      "osmId": 12248073500
+    },
+    {
+      "id": "carricknagore-rock",
+      "name": "Carricknagore Rock",
+      "lat": 53.95034,
+      "lng": -7.34317,
+      "osmType": "node",
+      "osmId": 3454967826
+    },
+    {
+      "id": "carrigaloe-rock",
+      "name": "Carrigaloe Rock",
+      "lat": 52.40845,
+      "lng": -7.5204,
+      "osmType": "node",
+      "osmId": 7818054851
+    },
+    {
+      "id": "carrignawaddra",
+      "name": "Carrignawaddra",
+      "lat": 52.18952,
+      "lng": -10.23817,
+      "osmType": "way",
+      "osmId": 1450099279
+    },
+    {
+      "id": "carsons-stone",
+      "name": "Carsons Stone",
+      "lat": 55.11681,
+      "lng": -4.36845,
+      "osmType": "node",
+      "osmId": 9706618879
+    },
+    {
+      "id": "castle-rock",
+      "name": "Castle Rock",
+      "lat": 51.7587,
+      "lng": -8.99467,
+      "osmType": "way",
+      "osmId": 1254212981
+    },
+    {
+      "id": "castle-wilson",
+      "name": "Castle Wilson",
+      "lat": 57.13762,
+      "lng": -3.08031,
+      "osmType": "node",
+      "osmId": 5186744234
+    },
+    {
+      "id": "cat-craig",
+      "name": "Cat Craig",
+      "lat": 55.01569,
+      "lng": -3.94405,
+      "osmType": "node",
+      "osmId": 7710153201
+    },
+    {
+      "id": "cave-like-boulders",
+      "name": "Cave-like boulders",
+      "lat": 50.62089,
+      "lng": -3.73656,
+      "osmType": "node",
+      "osmId": 2364573980
+    },
+    {
+      "id": "cerrig-lladron",
+      "name": "Cerrig Lladron",
+      "lat": 51.95525,
+      "lng": -4.81193,
+      "osmType": "way",
+      "osmId": 1013746283
+    },
+    {
+      "id": "clach-an-locha",
+      "name": "Clach an Locha",
+      "lat": 58.04908,
+      "lng": -4.23226,
+      "osmType": "node",
+      "osmId": 9212990463
+    },
+    {
+      "id": "clach-nan-con-fionn",
+      "name": "Clach nan Con-fionn",
+      "lat": 57.48106,
+      "lng": -5.42206,
+      "osmType": "node",
+      "osmId": 478873986
+    },
+    {
+      "id": "clochmaloo",
+      "name": "Clochmaloo",
+      "lat": 57.34945,
+      "lng": -2.85884,
+      "osmType": "way",
+      "osmId": 1340663886
+    },
+    {
+      "id": "cloghadoolarty-rock",
+      "name": "Cloghadoolarty Rock",
+      "lat": 52.56852,
+      "lng": -8.5669,
+      "osmType": "way",
+      "osmId": 1495931595
+    },
+    {
+      "id": "cloghleagh-rock",
+      "name": "Cloghleagh Rock",
+      "lat": 52.83052,
+      "lng": -8.79236,
+      "osmType": "node",
+      "osmId": 9690677782
+    },
+    {
+      "id": "cloven-stane",
+      "name": "Cloven Stane",
+      "lat": 60.74491,
+      "lng": -0.88348,
+      "osmType": "node",
+      "osmId": 7461297074
+    },
+    {
+      "id": "conjuring-stone",
+      "name": "Conjuring Stone",
+      "lat": 54.06197,
+      "lng": -1.28565,
+      "osmType": "node",
+      "osmId": 13469068045
+    },
+    {
+      "id": "corhidlin-rock",
+      "name": "Corhidlin Rock",
+      "lat": 56.90601,
+      "lng": -2.77031,
+      "osmType": "node",
+      "osmId": 10546549958
+    },
+    {
+      "id": "cow",
+      "name": "Cow",
+      "lat": 53.917,
+      "lng": -1.80297,
+      "osmType": "way",
+      "osmId": 718116061
+    },
+    {
+      "id": "cow-crag",
+      "name": "Cow Crag",
+      "lat": 55.67856,
+      "lng": -2.08517,
+      "osmType": "way",
+      "osmId": 534761597
+    },
+    {
+      "id": "crawlaw-stone",
+      "name": "Crawlaw Stone",
+      "lat": 54.5441,
+      "lng": -2.10217,
+      "osmType": "node",
+      "osmId": 4598501448
+    },
+    {
+      "id": "creag-an-aonaich",
+      "name": "Creag an Aonaich",
+      "lat": 56.39715,
+      "lng": -4.16765,
+      "osmType": "node",
+      "osmId": 10315181936
+    },
+    {
+      "id": "creag-an-dronnaig",
+      "name": "Creag an Dronnaig",
+      "lat": 56.39681,
+      "lng": -4.15878,
+      "osmType": "node",
+      "osmId": 10315182013
+    },
+    {
+      "id": "criss-cross-rock",
+      "name": "Criss-Cross Rock",
+      "lat": 55.28685,
+      "lng": -1.96473,
+      "osmType": "way",
+      "osmId": 678087673
+    },
+    {
+      "id": "cup-rock",
+      "name": "Cup rock",
+      "lat": 53.40488,
+      "lng": -1.8559,
+      "osmType": "node",
+      "osmId": 13460132937
+    },
+    {
+      "id": "defiance",
+      "name": "Defiance",
+      "lat": 53.25273,
+      "lng": -1.58301,
+      "osmType": "node",
+      "osmId": 7886672498
+    },
+    {
+      "id": "devils-chair",
+      "name": "Devil's Chair",
+      "lat": 52.58642,
+      "lng": -2.93367,
+      "osmType": "way",
+      "osmId": 369553950
+    },
+    {
+      "id": "devils-chimney",
+      "name": "Devil's Chimney",
+      "lat": 51.86419,
+      "lng": -2.07929,
+      "osmType": "node",
+      "osmId": 1089669845
+    },
+    {
+      "id": "devils-pulpit",
+      "name": "Devil's Pulpit",
+      "lat": 56.03349,
+      "lng": -4.41572,
+      "osmType": "node",
+      "osmId": 4437036006
+    },
+    {
+      "id": "devils-stone",
+      "name": "Devil's Stone",
+      "lat": 54.28757,
+      "lng": -2.08819,
+      "osmType": "way",
+      "osmId": 1046075730
+    },
+    {
+      "id": "devils-thumb",
+      "name": "Devil's Thumb",
+      "lat": 55.11418,
+      "lng": -6.92619,
+      "osmType": "node",
+      "osmId": 9681307070
+    },
+    {
+      "id": "dinas-rock",
+      "name": "Dinas Rock",
+      "lat": 51.75954,
+      "lng": -3.57785,
+      "osmType": "node",
+      "osmId": 9363954111
+    },
+    {
+      "id": "dinosaur-rock",
+      "name": "Dinosaur rock",
+      "lat": 53.40442,
+      "lng": -1.8803,
+      "osmType": "node",
+      "osmId": 13460132936
+    },
+    {
+      "id": "dish-stone",
+      "name": "Dish Stone",
+      "lat": 53.51283,
+      "lng": -1.95569,
+      "osmType": "node",
+      "osmId": 13688134451
+    },
+    {
+      "id": "dolly-roggin",
+      "name": "Dolly Roggin",
+      "lat": 54.01575,
+      "lng": -1.99486,
+      "osmType": "node",
+      "osmId": 13244700762
+    },
+    {
+      "id": "doon-rock",
+      "name": "Doon Rock",
+      "lat": 53.57489,
+      "lng": -9.43409,
+      "osmType": "way",
+      "osmId": 1304621210
+    },
+    {
+      "id": "druids-altar",
+      "name": "Druid's Altar",
+      "lat": 53.25006,
+      "lng": -9.48549,
+      "osmType": "node",
+      "osmId": 12056088601
+    },
+    {
+      "id": "druids-chair",
+      "name": "Druid's Chair",
+      "lat": 53.89918,
+      "lng": -1.81708,
+      "osmType": "node",
+      "osmId": 411733763
+    },
+    {
+      "id": "druids-idol",
+      "name": "Druid's Idol",
+      "lat": 54.0822,
+      "lng": -1.68655,
+      "osmType": "node",
+      "osmId": 8026129524
+    },
+    {
+      "id": "druids-stone",
+      "name": "Druid's Stone",
+      "lat": 53.38366,
+      "lng": -1.79918,
+      "osmType": "node",
+      "osmId": 3639801953
+    },
+    {
+      "id": "eagle-rock",
+      "name": "Eagle Rock",
+      "lat": 50.53648,
+      "lng": -3.8013,
+      "osmType": "way",
+      "osmId": 232333915
+    },
+    {
+      "id": "eagle-stone",
+      "name": "Eagle Stone",
+      "lat": 53.26085,
+      "lng": -1.60789,
+      "osmType": "node",
+      "osmId": 303570911
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "lat": 52.503,
+      "lng": -2.04316,
+      "osmType": "node",
+      "osmId": 12499403718
+    },
+    {
+      "id": "fairy-stones",
+      "name": "Fairy Stones",
+      "lat": 54.05842,
+      "lng": -0.67257,
+      "osmType": "node",
+      "osmId": 7810523524
+    },
+    {
+      "id": "far-crags",
+      "name": "Far Crags",
+      "lat": 54.06778,
+      "lng": -1.76932,
+      "osmType": "way",
+      "osmId": 979660245
+    },
+    {
+      "id": "farbrega-rock",
+      "name": "Farbrega Rock",
+      "lat": 53.01545,
+      "lng": -9.1103,
+      "osmType": "node",
+      "osmId": 10944178904
+    },
+    {
+      "id": "flat-crags",
+      "name": "Flat Crags",
+      "lat": 54.06042,
+      "lng": -1.76032,
+      "osmType": "way",
+      "osmId": 979661165
+    },
+    {
+      "id": "four-wise-monkeys-rock",
+      "name": "Four Wise Monkeys rock",
+      "lat": 53.40467,
+      "lng": -1.88446,
+      "osmType": "node",
+      "osmId": 13452607106
+    },
+    {
+      "id": "freshbrook-henge",
+      "name": "Freshbrook Henge",
+      "lat": 51.55092,
+      "lng": -1.83876,
+      "osmType": "node",
+      "osmId": 13749897365
+    },
+    {
+      "id": "gaerstone",
+      "name": "Gaerstone",
+      "lat": 52.5358,
+      "lng": -2.77958,
+      "osmType": "node",
+      "osmId": 321808773
+    },
+    {
+      "id": "gentle-slab-boulder",
+      "name": "Gentle Slab Boulder",
+      "lat": 53.15651,
+      "lng": -1.99339,
+      "osmType": "way",
+      "osmId": 1085637644
+    },
+    {
+      "id": "giants-rock---rock-of-aglaish",
+      "name": "Giant's Rock - Rock of Aglaish",
+      "lat": 52.3881,
+      "lng": -8.20831,
+      "osmType": "node",
+      "osmId": 12035305847
+    },
+    {
+      "id": "giants-stone",
+      "name": "Giant's Stone",
+      "lat": 57.34885,
+      "lng": -2.86217,
+      "osmType": "way",
+      "osmId": 1340663887
+    },
+    {
+      "id": "giants-bed",
+      "name": "Giants Bed",
+      "lat": 52.58588,
+      "lng": -6.3997,
+      "osmType": "node",
+      "osmId": 3107561116
+    },
+    {
+      "id": "giants-rock",
+      "name": "Giants Rock",
+      "lat": 54.29302,
+      "lng": -8.19311,
+      "osmType": "node",
+      "osmId": 7560040349
+    },
+    {
+      "id": "gib-torr-rocks",
+      "name": "Gib Torr Rocks",
+      "lat": 53.17687,
+      "lng": -1.97338,
+      "osmType": "way",
+      "osmId": 145315838
+    },
+    {
+      "id": "glacial-boulders",
+      "name": "Glacial Boulders",
+      "lat": 52.4418,
+      "lng": -1.94577,
+      "osmType": "node",
+      "osmId": 12542839469
+    },
+    {
+      "id": "gladstone-rock",
+      "name": "Gladstone Rock",
+      "lat": 53.04991,
+      "lng": -4.06281,
+      "osmType": "node",
+      "osmId": 255601877
+    },
+    {
+      "id": "gortnahoughtee-mass-rock",
+      "name": "Gortnahoughtee Mass Rock",
+      "lat": 51.80193,
+      "lng": -9.16113,
+      "osmType": "node",
+      "osmId": 8752401012
+    },
+    {
+      "id": "grey-horse-stone",
+      "name": "Grey Horse Stone",
+      "lat": 54.39498,
+      "lng": -0.53443,
+      "osmType": "node",
+      "osmId": 13528866337
+    },
+    {
+      "id": "grey-stone",
+      "name": "Grey Stone",
+      "lat": 53.88303,
+      "lng": -1.52261,
+      "osmType": "node",
+      "osmId": 12534423914
+    },
+    {
+      "id": "grey-stone",
+      "name": "Grey Stone",
+      "lat": 54.00821,
+      "lng": -1.84398,
+      "osmType": "node",
+      "osmId": 13239792199
+    },
+    {
+      "id": "gunnoch-rock",
+      "name": "Gunnoch Rock",
+      "lat": 54.96896,
+      "lng": -5.09342,
+      "osmType": "node",
+      "osmId": 11755636676
+    },
+    {
+      "id": "hangershell-rock",
+      "name": "Hangershell Rock",
+      "lat": 50.4186,
+      "lng": -3.89464,
+      "osmType": "way",
+      "osmId": 156952540
+    },
+    {
+      "id": "hanging-stone",
+      "name": "Hanging Stone",
+      "lat": 53.84074,
+      "lng": -2.04519,
+      "osmType": "node",
+      "osmId": 12543273095
+    },
+    {
+      "id": "hanging-stone",
+      "name": "Hanging Stone",
+      "lat": 54.513,
+      "lng": -1.08794,
+      "osmType": "way",
+      "osmId": 1078746357
+    },
+    {
+      "id": "harston-rock",
+      "name": "Harston Rock",
+      "lat": 53.02791,
+      "lng": -1.94965,
+      "osmType": "way",
+      "osmId": 450659816
+    },
+    {
+      "id": "haystack-rock",
+      "name": "Haystack Rock",
+      "lat": 53.91281,
+      "lng": -1.80318,
+      "osmType": "node",
+      "osmId": 3940962606
+    },
+    {
+      "id": "hemlock-stone",
+      "name": "Hemlock Stone",
+      "lat": 52.94305,
+      "lng": -1.2581,
+      "osmType": "way",
+      "osmId": 51370184
+    },
+    {
+      "id": "hern-stones",
+      "name": "Hern Stones",
+      "lat": 53.45487,
+      "lng": -1.86254,
+      "osmType": "node",
+      "osmId": 2352835010
+    },
+    {
+      "id": "hobb-stones",
+      "name": "Hobb Stones",
+      "lat": 53.45512,
+      "lng": -1.53623,
+      "osmType": "node",
+      "osmId": 9812797404
+    },
+    {
+      "id": "horse-rock",
+      "name": "Horse Rock",
+      "lat": 57.48452,
+      "lng": -2.79906,
+      "osmType": "node",
+      "osmId": 529968995
+    },
+    {
+      "id": "hurkling-stone",
+      "name": "Hurkling Stone",
+      "lat": 53.29577,
+      "lng": -1.59749,
+      "osmType": "node",
+      "osmId": 1481166531
+    },
+    {
+      "id": "hurkling-stones",
+      "name": "Hurkling Stones",
+      "lat": 53.38639,
+      "lng": -1.69728,
+      "osmType": "node",
+      "osmId": 3693235786
+    },
+    {
+      "id": "hurkling-stones",
+      "name": "Hurkling Stones",
+      "lat": 53.44824,
+      "lng": -1.64107,
+      "osmType": "node",
+      "osmId": 6813160683
+    },
+    {
+      "id": "hurle-stone",
+      "name": "Hurle Stone",
+      "lat": 55.5162,
+      "lng": -1.939,
+      "osmType": "node",
+      "osmId": 1263938940
+    },
+    {
+      "id": "idol-stone",
+      "name": "Idol Stone",
+      "lat": 53.90949,
+      "lng": -1.79953,
+      "osmType": "node",
+      "osmId": 747747867
+    },
+    {
+      "id": "ingleberry-rock",
+      "name": "Ingleberry Rock",
+      "lat": 52.75115,
+      "lng": -1.27575,
+      "osmType": "node",
+      "osmId": 9812853781
+    },
+    {
+      "id": "ivy-tor",
+      "name": "Ivy Tor",
+      "lat": 50.72593,
+      "lng": -3.9447,
+      "osmType": "node",
+      "osmId": 13606105331
+    },
+    {
+      "id": "john-knoxs-pulpit",
+      "name": "John Knox's Pulpit",
+      "lat": 56.2379,
+      "lng": -3.30981,
+      "osmType": "node",
+      "osmId": 7429860064
+    },
+    {
+      "id": "jonaman",
+      "name": "Jonaman",
+      "lat": 54.22834,
+      "lng": -1.88565,
+      "osmType": "node",
+      "osmId": 13310580320
+    },
+    {
+      "id": "jubilee-rock",
+      "name": "Jubilee Rock",
+      "lat": 53.2436,
+      "lng": -1.60459,
+      "osmType": "node",
+      "osmId": 8822397694
+    },
+    {
+      "id": "kilroosk-rock",
+      "name": "Kilroosk Rock",
+      "lat": 54.33888,
+      "lng": -8.17707,
+      "osmType": "node",
+      "osmId": 3787617904
+    },
+    {
+      "id": "kings-chair",
+      "name": "King's Chair",
+      "lat": 55.53774,
+      "lng": -2.02416,
+      "osmType": "node",
+      "osmId": 1175119639
+    },
+    {
+      "id": "kit-rocks",
+      "name": "Kit Rocks",
+      "lat": 50.62777,
+      "lng": -3.96249,
+      "osmType": "node",
+      "osmId": 4398885020
+    },
+    {
+      "id": "l2",
+      "name": "L2",
+      "lat": 53.74303,
+      "lng": -7.13438,
+      "osmType": "way",
+      "osmId": 541530393
+    },
+    {
+      "id": "lion-rock",
+      "name": "Lion Rock",
+      "lat": 51.2825,
+      "lng": -2.76643,
+      "osmType": "node",
+      "osmId": 6083451966
+    },
+    {
+      "id": "lion-rock",
+      "name": "Lion Rock",
+      "lat": 51.92891,
+      "lng": -8.57816,
+      "osmType": "node",
+      "osmId": 9652341127
+    },
+    {
+      "id": "little-alms-cliff",
+      "name": "Little Alms Cliff",
+      "lat": 53.96602,
+      "lng": -1.64722,
+      "osmType": "way",
+      "osmId": 390869752
+    },
+    {
+      "id": "little-summit-boulder",
+      "name": "Little Summit Boulder",
+      "lat": 53.15671,
+      "lng": -1.99389,
+      "osmType": "way",
+      "osmId": 1085637648
+    },
+    {
+      "id": "loaf-and-cheese-rock",
+      "name": "Loaf and Cheese Rock",
+      "lat": 53.15482,
+      "lng": -1.97458,
+      "osmType": "node",
+      "osmId": 10222682370
+    },
+    {
+      "id": "long-stoop",
+      "name": "Long Stoop",
+      "lat": 53.99334,
+      "lng": -1.68239,
+      "osmType": "node",
+      "osmId": 13473370213
+    },
+    {
+      "id": "lovers-leap",
+      "name": "Lover's Leap",
+      "lat": 53.18426,
+      "lng": -6.15346,
+      "osmType": "node",
+      "osmId": 1657523032
+    },
+    {
+      "id": "lowcock-stoop",
+      "name": "Lowcock Stoop",
+      "lat": 54.0262,
+      "lng": -1.82792,
+      "osmType": "node",
+      "osmId": 2504734490
+    },
+    {
+      "id": "maes-newyddion-woods",
+      "name": "Maes Newyddion Woods",
+      "lat": 53.09289,
+      "lng": -3.83501,
+      "osmType": "node",
+      "osmId": 12191662137
+    },
+    {
+      "id": "manstone-rock",
+      "name": "Manstone Rock",
+      "lat": 52.58198,
+      "lng": -2.93507,
+      "osmType": "way",
+      "osmId": 369553945
+    },
+    {
+      "id": "market-stone",
+      "name": "Market Stone",
+      "lat": 52.10506,
+      "lng": -1.50477,
+      "osmType": "node",
+      "osmId": 2891349480
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 53.20318,
+      "lng": -6.2633,
+      "osmType": "node",
+      "osmId": 317256035
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 53.00278,
+      "lng": -7.1195,
+      "osmType": "node",
+      "osmId": 369941036
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 53.52678,
+      "lng": -8.93452,
+      "osmType": "node",
+      "osmId": 559694010
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 52.89672,
+      "lng": -8.3288,
+      "osmType": "node",
+      "osmId": 4857881238
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 52.06135,
+      "lng": -9.46401,
+      "osmType": "node",
+      "osmId": 9925347702
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "lat": 54.10429,
+      "lng": -8.85771,
+      "osmType": "node",
+      "osmId": 11071216443
+    },
+    {
+      "id": "matterhorn-arete",
+      "name": "Matterhorn Arete",
+      "lat": 53.936,
+      "lng": -1.59381,
+      "osmType": "node",
+      "osmId": 2464464836
+    },
+    {
+      "id": "monnington-falls",
+      "name": "Monnington Falls",
+      "lat": 52.08029,
+      "lng": -2.91222,
+      "osmType": "way",
+      "osmId": 126776547
+    },
+    {
+      "id": "moss-pinnacle",
+      "name": "Moss Pinnacle",
+      "lat": 56.57632,
+      "lng": -3.60132,
+      "osmType": "node",
+      "osmId": 11917700969
+    },
+    {
+      "id": "mother-cap",
+      "name": "Mother Cap",
+      "lat": 53.3211,
+      "lng": -1.6242,
+      "osmType": "node",
+      "osmId": 1219966095
+    },
+    {
+      "id": "mushroom-rock",
+      "name": "Mushroom rock",
+      "lat": 53.38944,
+      "lng": -1.79207,
+      "osmType": "node",
+      "osmId": 13460229020
+    },
+    {
+      "id": "napes-needle",
+      "name": "Napes Needle",
+      "lat": 54.47909,
+      "lng": -3.22162,
+      "osmType": "node",
+      "osmId": 3989935681
+    },
+    {
+      "id": "navnis-rock",
+      "name": "Navni's Rock",
+      "lat": 53.15826,
+      "lng": -3.85396,
+      "osmType": "node",
+      "osmId": 8200695133
+    },
+    {
+      "id": "needle-rock",
+      "name": "Needle Rock",
+      "lat": 51.83795,
+      "lng": -2.62158,
+      "osmType": "node",
+      "osmId": 2342057140
+    },
+    {
+      "id": "neils-stone",
+      "name": "Neils Stone",
+      "lat": 55.78153,
+      "lng": -4.42447,
+      "osmType": "node",
+      "osmId": 9839885920
+    },
+    {
+      "id": "nichol-chair",
+      "name": "Nichol Chair",
+      "lat": 54.62896,
+      "lng": -2.40285,
+      "osmType": "node",
+      "osmId": 5997651920
+    },
+    {
+      "id": "noels-nipple",
+      "name": "Noel's Nipple",
+      "lat": 52.38407,
+      "lng": -8.19413,
+      "osmType": "node",
+      "osmId": 2452456453
+    },
+    {
+      "id": "old-man-of-tarsuinn",
+      "name": "Old Man of Tarsuinn",
+      "lat": 55.62199,
+      "lng": -5.24192,
+      "osmType": "node",
+      "osmId": 9952528665
+    },
+    {
+      "id": "old-moss-crags",
+      "name": "Old Moss Crags",
+      "lat": 54.06533,
+      "lng": -1.77906,
+      "osmType": "way",
+      "osmId": 979661168
+    },
+    {
+      "id": "old-wifes-stone",
+      "name": "Old Wife's Stone",
+      "lat": 54.35737,
+      "lng": -1.13962,
+      "osmType": "node",
+      "osmId": 13473089807
+    },
+    {
+      "id": "paddys-crossing",
+      "name": "Paddy's Crossing",
+      "lat": 53.80448,
+      "lng": -1.4784,
+      "osmType": "node",
+      "osmId": 7094153791
+    },
+    {
+      "id": "palatines-rock",
+      "name": "Palatine's Rock",
+      "lat": 52.3571,
+      "lng": -8.44329,
+      "osmType": "node",
+      "osmId": 11842446824
+    },
+    {
+      "id": "pancake-stone",
+      "name": "Pancake Stone",
+      "lat": 53.91204,
+      "lng": -1.79742,
+      "osmType": "node",
+      "osmId": 1103305292
+    },
+    {
+      "id": "parc-meurig",
+      "name": "Parc Meurig",
+      "lat": 53.17742,
+      "lng": -4.06205,
+      "osmType": "node",
+      "osmId": 12190172640
+    },
+    {
+      "id": "pembroke-stone",
+      "name": "Pembroke Stone",
+      "lat": 53.94912,
+      "lng": -1.98456,
+      "osmType": "node",
+      "osmId": 6612546742
+    },
+    {
+      "id": "piper-stones",
+      "name": "Piper stones",
+      "lat": 53.60121,
+      "lng": -1.91435,
+      "osmType": "node",
+      "osmId": 12012838911
+    },
+    {
+      "id": "pots-and-pans-stone",
+      "name": "Pots and Pans Stone",
+      "lat": 53.54233,
+      "lng": -1.98626,
+      "osmType": "node",
+      "osmId": 3709726717
+    },
+    {
+      "id": "quarry-rock",
+      "name": "Quarry Rock",
+      "lat": 51.8375,
+      "lng": -2.62664,
+      "osmType": "node",
+      "osmId": 2342057136
+    },
+    {
+      "id": "queens-chair",
+      "name": "Queen's Chair",
+      "lat": 54.02317,
+      "lng": -2.62031,
+      "osmType": "node",
+      "osmId": 4172701668
+    },
+    {
+      "id": "r2",
+      "name": "R2",
+      "lat": 53.74304,
+      "lng": -7.13437,
+      "osmType": "way",
+      "osmId": 541530382
+    },
+    {
+      "id": "rankling-stone",
+      "name": "Rankling Stone",
+      "lat": 53.79315,
+      "lng": -1.63867,
+      "osmType": "node",
+      "osmId": 2955107448
+    },
+    {
+      "id": "ravens-craig",
+      "name": "Raven's Craig",
+      "lat": 54.90241,
+      "lng": -3.83999,
+      "osmType": "node",
+      "osmId": 8766177095
+    },
+    {
+      "id": "ravens-rock",
+      "name": "Raven's Rock",
+      "lat": 53.92918,
+      "lng": -7.21672,
+      "osmType": "way",
+      "osmId": 1186545311
+    },
+    {
+      "id": "rive-rocks",
+      "name": "Rive Rocks",
+      "lat": 53.72345,
+      "lng": -2.09024,
+      "osmType": "node",
+      "osmId": 2448192221
+    },
+    {
+      "id": "rivelin-needle",
+      "name": "Rivelin Needle",
+      "lat": 53.3814,
+      "lng": -1.58293,
+      "osmType": "node",
+      "osmId": 2609729134
+    },
+    {
+      "id": "robin-hoods-stone",
+      "name": "Robin Hood's Stone",
+      "lat": 54.59325,
+      "lng": -2.13401,
+      "osmType": "node",
+      "osmId": 7392285857
+    },
+    {
+      "id": "robin-hoods-stone",
+      "name": "Robin Hood's stone",
+      "lat": 53.89638,
+      "lng": -1.90673,
+      "osmType": "node",
+      "osmId": 13800943517
+    },
+    {
+      "id": "rock-of-ages",
+      "name": "Rock of Ages",
+      "lat": 51.32541,
+      "lng": -2.75324,
+      "osmType": "node",
+      "osmId": 384964562
+    },
+    {
+      "id": "rock-of-roosca",
+      "name": "Rock of Roosca",
+      "lat": 52.32805,
+      "lng": -7.92613,
+      "osmType": "way",
+      "osmId": 1036677439
+    },
+    {
+      "id": "rockery",
+      "name": "Rockery",
+      "lat": 53.81009,
+      "lng": -1.74446,
+      "osmType": "node",
+      "osmId": 6840867805
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "lat": 55.2041,
+      "lng": -4.48106,
+      "osmType": "node",
+      "osmId": 5530467043
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "lat": 54.02246,
+      "lng": -1.87838,
+      "osmType": "node",
+      "osmId": 6761554595
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "lat": 54.08626,
+      "lng": -7.99413,
+      "osmType": "node",
+      "osmId": 7608859349
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "lat": 51.73067,
+      "lng": -3.21675,
+      "osmType": "node",
+      "osmId": 12190218376
+    },
+    {
+      "id": "rocks",
+      "name": "Rocks",
+      "lat": 55.78398,
+      "lng": -4.44256,
+      "osmType": "node",
+      "osmId": 8598765438
+    },
+    {
+      "id": "rocks-of-clashnair",
+      "name": "Rocks of Clashnair",
+      "lat": 57.29053,
+      "lng": -3.00668,
+      "osmType": "way",
+      "osmId": 1234485288
+    },
+    {
+      "id": "rolling-rock",
+      "name": "Rolling Rock",
+      "lat": 54.49461,
+      "lng": -2.89491,
+      "osmType": "node",
+      "osmId": 7434602420
+    },
+    {
+      "id": "round-stones",
+      "name": "Round Stones",
+      "lat": 54.06416,
+      "lng": -1.76432,
+      "osmType": "way",
+      "osmId": 979661161
+    },
+    {
+      "id": "rowantree-crags",
+      "name": "Rowantree Crags",
+      "lat": 54.05922,
+      "lng": -1.76381,
+      "osmType": "way",
+      "osmId": 979661167
+    },
+    {
+      "id": "royal-soverin",
+      "name": "Royal Soverin",
+      "lat": 53.25266,
+      "lng": -1.58293,
+      "osmType": "node",
+      "osmId": 7886672499
+    },
+    {
+      "id": "saint-brigits-chair",
+      "name": "Saint Brigit's Chair",
+      "lat": 52.95267,
+      "lng": -6.62707,
+      "osmType": "node",
+      "osmId": 12772845469
+    },
+    {
+      "id": "saint-brigits-mass-stone",
+      "name": "Saint Brigit's Mass Stone",
+      "lat": 52.95193,
+      "lng": -6.63125,
+      "osmType": "node",
+      "osmId": 12772807164
+    },
+    {
+      "id": "saint-patricks-chair",
+      "name": "Saint Patrick's Chair",
+      "lat": 54.39084,
+      "lng": -7.08136,
+      "osmType": "node",
+      "osmId": 1929713200
+    },
+    {
+      "id": "saint-patricks-rock",
+      "name": "Saint Patrick's Rock",
+      "lat": 52.86379,
+      "lng": -8.39048,
+      "osmType": "node",
+      "osmId": 5295933502
+    },
+    {
+      "id": "scalpeen-rock",
+      "name": "Scalpeen Rock",
+      "lat": 53.12294,
+      "lng": -8.61981,
+      "osmType": "node",
+      "osmId": 12070510762
+    },
+    {
+      "id": "scroggy-mass-rock",
+      "name": "Scroggy Mass Rock",
+      "lat": 54.87731,
+      "lng": -6.53736,
+      "osmType": "node",
+      "osmId": 10119237789
+    },
+    {
+      "id": "sepulchre-stone",
+      "name": "Sepulchre Stone",
+      "lat": 53.91899,
+      "lng": -1.86389,
+      "osmType": "node",
+      "osmId": 7565135460
+    },
+    {
+      "id": "sgòr-a-bhalgaire",
+      "name": "Sgòr a' Bhalgaire",
+      "lat": 57.32759,
+      "lng": -3.38295,
+      "osmType": "way",
+      "osmId": 832147867
+    },
+    {
+      "id": "sharpitor",
+      "name": "Sharpitor",
+      "lat": 50.62019,
+      "lng": -3.7374,
+      "osmType": "node",
+      "osmId": 13606105332
+    },
+    {
+      "id": "sharpstones",
+      "name": "Sharpstones",
+      "lat": 52.54338,
+      "lng": -2.73606,
+      "osmType": "node",
+      "osmId": 8693270797
+    },
+    {
+      "id": "sheeps-tor",
+      "name": "Sheeps Tor",
+      "lat": 50.49588,
+      "lng": -4.02405,
+      "osmType": "way",
+      "osmId": 475848746
+    },
+    {
+      "id": "sheepstone",
+      "name": "Sheepstone",
+      "lat": 53.36185,
+      "lng": -1.61304,
+      "osmType": "node",
+      "osmId": 7646177262
+    },
+    {
+      "id": "shepherds-rock",
+      "name": "Shepherd's Rock",
+      "lat": 52.59387,
+      "lng": -2.9256,
+      "osmType": "way",
+      "osmId": 369553946
+    },
+    {
+      "id": "ship-rock",
+      "name": "Ship Rock",
+      "lat": 51.83783,
+      "lng": -2.62428,
+      "osmType": "node",
+      "osmId": 2342057132
+    },
+    {
+      "id": "shuttleworth-rocks",
+      "name": "Shuttleworth Rocks",
+      "lat": 53.78387,
+      "lng": -2.11848,
+      "osmType": "node",
+      "osmId": 8269906528
+    },
+    {
+      "id": "sill",
+      "name": "Sill",
+      "lat": 53.74305,
+      "lng": -7.13441,
+      "osmType": "way",
+      "osmId": 541530375
+    },
+    {
+      "id": "slopey-blocks",
+      "name": "Slopey Blocks",
+      "lat": 53.43778,
+      "lng": -1.61963,
+      "osmType": "node",
+      "osmId": 7084221556
+    },
+    {
+      "id": "smallfield-roof",
+      "name": "Smallfield Roof",
+      "lat": 53.44157,
+      "lng": -1.62387,
+      "osmType": "node",
+      "osmId": 6813160684
+    },
+    {
+      "id": "springfield",
+      "name": "Springfield",
+      "lat": 53.28486,
+      "lng": -6.37935,
+      "osmType": "node",
+      "osmId": 7089594721
+    },
+    {
+      "id": "standing-stone",
+      "name": "Standing stone",
+      "lat": 50.2205,
+      "lng": -5.24626,
+      "osmType": "node",
+      "osmId": 4306336937
+    },
+    {
+      "id": "stepped-roof",
+      "name": "Stepped Roof",
+      "lat": 53.32024,
+      "lng": -1.62045,
+      "osmType": "node",
+      "osmId": 7737629437
+    },
+    {
+      "id": "stone-chari",
+      "name": "Stone chari",
+      "lat": 53.09418,
+      "lng": -1.6388,
+      "osmType": "node",
+      "osmId": 13502358144
+    },
+    {
+      "id": "strut-stear",
+      "name": "Strut Stear",
+      "lat": 54.25848,
+      "lng": -1.83374,
+      "osmType": "node",
+      "osmId": 13727980621
+    },
+    {
+      "id": "summer-lodge-stone",
+      "name": "Summer Lodge Stone",
+      "lat": 54.19311,
+      "lng": -1.85307,
+      "osmType": "way",
+      "osmId": 689288192
+    },
+    {
+      "id": "table-rock",
+      "name": "Table Rock",
+      "lat": 51.68919,
+      "lng": -2.51119,
+      "osmType": "node",
+      "osmId": 653761090
+    },
+    {
+      "id": "the-accessible-pinnacle",
+      "name": "The Accessible Pinnacle",
+      "lat": 55.94608,
+      "lng": -3.15222,
+      "osmType": "node",
+      "osmId": 8517868195
+    },
+    {
+      "id": "the-anvil",
+      "name": "The Anvil",
+      "lat": 53.38152,
+      "lng": -1.84247,
+      "osmType": "node",
+      "osmId": 13452510539
+    },
+    {
+      "id": "the-back-motte",
+      "name": "The Back Motte",
+      "lat": 52.96718,
+      "lng": -6.47061,
+      "osmType": "node",
+      "osmId": 10594134057
+    },
+    {
+      "id": "the-beehive",
+      "name": "The Beehive",
+      "lat": 53.32196,
+      "lng": -1.62544,
+      "osmType": "node",
+      "osmId": 13439580104
+    },
+    {
+      "id": "the-black-stairs",
+      "name": "The Black Stairs",
+      "lat": 52.95816,
+      "lng": -6.48046,
+      "osmType": "node",
+      "osmId": 10589672889
+    },
+    {
+      "id": "the-bridestone-bottleneck",
+      "name": "The Bridestone (Bottleneck)",
+      "lat": 53.73702,
+      "lng": -2.10265,
+      "osmType": "node",
+      "osmId": 2445789973
+    },
+    {
+      "id": "the-bulmer-stone",
+      "name": "The Bulmer Stone",
+      "lat": 54.52905,
+      "lng": -1.55306,
+      "osmType": "node",
+      "osmId": 11817106227
+    },
+    {
+      "id": "the-cow-calf",
+      "name": "The Cow & Calf",
+      "lat": 54.02406,
+      "lng": -1.87153,
+      "osmType": "relation",
+      "osmId": 13147963
+    },
+    {
+      "id": "the-devils-mill-stone",
+      "name": "The Devil’s Mill Stone",
+      "lat": 54.46206,
+      "lng": -2.3519,
+      "osmType": "node",
+      "osmId": 6395589186
+    },
+    {
+      "id": "the-earth-pillars",
+      "name": "The Earth Pillars",
+      "lat": 57.59357,
+      "lng": -3.11428,
+      "osmType": "way",
+      "osmId": 1423698067
+    },
+    {
+      "id": "the-garden-shed",
+      "name": "The Garden Shed",
+      "lat": 53.32031,
+      "lng": -1.61969,
+      "osmType": "node",
+      "osmId": 7737629428
+    },
+    {
+      "id": "the-grey-man-of-merrick",
+      "name": "The Grey Man of Merrick",
+      "lat": 55.13017,
+      "lng": -4.45393,
+      "osmType": "node",
+      "osmId": 9706625452
+    },
+    {
+      "id": "the-grouse-stone",
+      "name": "The Grouse Stone",
+      "lat": 57.65983,
+      "lng": -5.5533,
+      "osmType": "node",
+      "osmId": 3599397409
+    },
+    {
+      "id": "the-head-stone",
+      "name": "The Head Stone",
+      "lat": 53.3826,
+      "lng": -1.61702,
+      "osmType": "node",
+      "osmId": 1059379179
+    },
+    {
+      "id": "the-hopestone",
+      "name": "The Hopestone",
+      "lat": 53.04575,
+      "lng": -1.94759,
+      "osmType": "node",
+      "osmId": 11887630077
+    },
+    {
+      "id": "the-lion-and-the-lamb",
+      "name": "The Lion and the Lamb",
+      "lat": 54.47367,
+      "lng": -3.03919,
+      "osmType": "way",
+      "osmId": 621458785
+    },
+    {
+      "id": "the-love-stone",
+      "name": "The Love Stone",
+      "lat": 54.45909,
+      "lng": -0.93107,
+      "osmType": "node",
+      "osmId": 8402693744
+    },
+    {
+      "id": "the-millennium-stone",
+      "name": "The Millennium Stone",
+      "lat": 52.85567,
+      "lng": -1.26508,
+      "osmType": "node",
+      "osmId": 4596744460
+    },
+    {
+      "id": "the-old-man-of-mow",
+      "name": "The Old Man of Mow",
+      "lat": 53.11504,
+      "lng": -2.21324,
+      "osmType": "node",
+      "osmId": 4687787944
+    },
+    {
+      "id": "the-philosophers-stone",
+      "name": "The Philosopher's Stone",
+      "lat": 56.54054,
+      "lng": -3.6677,
+      "osmType": "node",
+      "osmId": 9456610148
+    },
+    {
+      "id": "the-pillar",
+      "name": "The pillar",
+      "lat": 54.41642,
+      "lng": -3.05863,
+      "osmType": "node",
+      "osmId": 7689144705
+    },
+    {
+      "id": "the-salt-cellar",
+      "name": "The Salt Cellar",
+      "lat": 53.40029,
+      "lng": -1.70633,
+      "osmType": "node",
+      "osmId": 3526037532
+    },
+    {
+      "id": "the-sharstone",
+      "name": "The Sharstone",
+      "lat": 53.40163,
+      "lng": -2.24937,
+      "osmType": "node",
+      "osmId": 6657316661
+    },
+    {
+      "id": "the-slab",
+      "name": "The Slab",
+      "lat": 51.46179,
+      "lng": -2.63268,
+      "osmType": "way",
+      "osmId": 1099500009
+    },
+    {
+      "id": "the-stripped-flags",
+      "name": "The Stripped Flags",
+      "lat": 52.93074,
+      "lng": -6.44386,
+      "osmType": "node",
+      "osmId": 10589639477
+    },
+    {
+      "id": "the-ten-commandments-carved-stone",
+      "name": "The Ten Commandments (Carved stone)",
+      "lat": 50.54392,
+      "lng": -3.78652,
+      "osmType": "node",
+      "osmId": 1885962325
+    },
+    {
+      "id": "the-thumb-boulder",
+      "name": "The Thumb Boulder",
+      "lat": 53.18155,
+      "lng": -4.05055,
+      "osmType": "node",
+      "osmId": 12186707628
+    },
+    {
+      "id": "the-trinnacle",
+      "name": "The Trinnacle",
+      "lat": 53.5399,
+      "lng": -1.94561,
+      "osmType": "node",
+      "osmId": 13064651112
+    },
+    {
+      "id": "the-turf-stack-rock",
+      "name": "The Turf Stack Rock",
+      "lat": 54.15013,
+      "lng": -8.7846,
+      "osmType": "node",
+      "osmId": 2711028692
+    },
+    {
+      "id": "the-whales-back",
+      "name": "The Whale's Back",
+      "lat": 57.26308,
+      "lng": -4.98599,
+      "osmType": "node",
+      "osmId": 2592358345
+    },
+    {
+      "id": "the-winking-man",
+      "name": "The Winking Man",
+      "lat": 53.16006,
+      "lng": -1.97121,
+      "osmType": "node",
+      "osmId": 2292262858
+    },
+    {
+      "id": "the-witchs-tooth",
+      "name": "The Witch's Tooth",
+      "lat": 51.33633,
+      "lng": -0.55379,
+      "osmType": "node",
+      "osmId": 11491709936
+    },
+    {
+      "id": "the-woman-and-the-organ",
+      "name": "The Woman and the Organ",
+      "lat": 54.47506,
+      "lng": -3.04082,
+      "osmType": "way",
+      "osmId": 621461523
+    },
+    {
+      "id": "thiefs-rock",
+      "name": "Thief's Rock",
+      "lat": 57.48404,
+      "lng": -2.80021,
+      "osmType": "node",
+      "osmId": 529968993
+    },
+    {
+      "id": "three-fingers-rock",
+      "name": "Three Fingers Rock",
+      "lat": 52.54779,
+      "lng": -2.78156,
+      "osmType": "node",
+      "osmId": 322067259
+    },
+    {
+      "id": "three-ships",
+      "name": "Three Ships",
+      "lat": 53.25271,
+      "lng": -1.58307,
+      "osmType": "node",
+      "osmId": 473879437
+    },
+    {
+      "id": "tinnock-rock",
+      "name": "Tinnock Rock",
+      "lat": 52.28414,
+      "lng": -6.92017,
+      "osmType": "way",
+      "osmId": 244233062
+    },
+    {
+      "id": "toothill-rock",
+      "name": "Toothill Rock",
+      "lat": 52.97984,
+      "lng": -1.90048,
+      "osmType": "node",
+      "osmId": 2282979214
+    },
+    {
+      "id": "tristis-rock",
+      "name": "Tristis Rock",
+      "lat": 50.42538,
+      "lng": -3.91815,
+      "osmType": "node",
+      "osmId": 2322537743
+    },
+    {
+      "id": "truttle-stones",
+      "name": "Truttle Stones",
+      "lat": 57.4639,
+      "lng": -2.8283,
+      "osmType": "way",
+      "osmId": 1136736504
+    },
+    {
+      "id": "tun-stone",
+      "name": "Tun Stone",
+      "lat": 53.99128,
+      "lng": -2.01213,
+      "osmType": "node",
+      "osmId": 6594356733
+    },
+    {
+      "id": "tyermans-stone",
+      "name": "Tyerman's Stone",
+      "lat": 54.35815,
+      "lng": -1.1726,
+      "osmType": "node",
+      "osmId": 13275544575
+    },
+    {
+      "id": "victory",
+      "name": "Victory",
+      "lat": 53.25279,
+      "lng": -1.58313,
+      "osmType": "node",
+      "osmId": 7886672497
+    },
+    {
+      "id": "wain-stones",
+      "name": "Wain Stones",
+      "lat": 53.45988,
+      "lng": -1.86321,
+      "osmType": "node",
+      "osmId": 2352835011
+    },
+    {
+      "id": "walnut-whip",
+      "name": "Walnut Whip",
+      "lat": 53.32064,
+      "lng": -1.62036,
+      "osmType": "node",
+      "osmId": 7737629433
+    },
+    {
+      "id": "wee-craig",
+      "name": "Wee Craig",
+      "lat": 55.91556,
+      "lng": -3.54308,
+      "osmType": "node",
+      "osmId": 8963873467
+    },
+    {
+      "id": "whaleback-boulder",
+      "name": "Whaleback Boulder",
+      "lat": 50.50576,
+      "lng": -4.00894,
+      "osmType": "node",
+      "osmId": 7563924430
+    },
+    {
+      "id": "wheel-stones",
+      "name": "Wheel Stones",
+      "lat": 53.39327,
+      "lng": -1.69757,
+      "osmType": "node",
+      "osmId": 1778380426
+    },
+    {
+      "id": "whetstone",
+      "name": "Whetstone",
+      "lat": 52.20402,
+      "lng": -3.08458,
+      "osmType": "node",
+      "osmId": 8658452812
+    },
+    {
+      "id": "whirlaw-rocks",
+      "name": "Whirlaw Rocks",
+      "lat": 53.72982,
+      "lng": -2.10177,
+      "osmType": "node",
+      "osmId": 2449344470
+    },
+    {
+      "id": "white-hagmark",
+      "name": "White Hagmark",
+      "lat": 60.7431,
+      "lng": -0.91655,
+      "osmType": "node",
+      "osmId": 7461346995
+    },
+    {
+      "id": "white-rock",
+      "name": "White Rock",
+      "lat": 54.17361,
+      "lng": -8.81514,
+      "osmType": "node",
+      "osmId": 2463721157
+    },
+    {
+      "id": "white-rock",
+      "name": "White Rock",
+      "lat": 50.73075,
+      "lng": -3.9311,
+      "osmType": "node",
+      "osmId": 12381320453
+    },
+    {
+      "id": "witchs-cave",
+      "name": "Witch's Cave",
+      "lat": 56.2551,
+      "lng": -3.24295,
+      "osmType": "node",
+      "osmId": 8599790010
+    },
+    {
+      "id": "wolf-stones",
+      "name": "Wolf Stones",
+      "lat": 53.75472,
+      "lng": -2.12956,
+      "osmType": "node",
+      "osmId": 2450607779
+    },
+    {
+      "id": "worm-stones",
+      "name": "Worm Stones",
+      "lat": 53.4197,
+      "lng": -1.93699,
+      "osmType": "node",
+      "osmId": 6227299823
+    },
+    {
+      "id": "yawning-stone",
+      "name": "Yawning Stone",
+      "lat": 53.18441,
+      "lng": -2.00041,
+      "osmType": "node",
+      "osmId": 11697543630
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Orchestrate the five-agent island discovery pipeline.
+Orchestrate the six-stage island discovery pipeline.
 
 Stages:
   1. map_scanner       — OSM coastline / offshore feature scan
-  2. source_verifier   — Wikidata / Wikipedia / OSM provenance check
-  3. photo_finder      — licence-safe Commons / pageimage harvest
-  4. enricher          — schema-shaped records + review flags
-  5. site_update       — gated merge into data/islands.json
+  2. catalog_scanner   — Wikidata + Wikipedia lists + DoBIH + Marine Regions (+ optional OS Open Names CSV)
+  3. source_verifier   — Wikidata / Wikipedia / OSM provenance check
+  4. photo_finder      — licence-safe Commons / pageimage harvest
+  5. enricher          — schema-shaped records + review flags
+  6. site_update       — gated merge into data/islands.json
 
 Default behaviour is review-first: no writes to islands.json unless
 `--apply` is passed to the site_update stage (or the full pipeline with
@@ -16,6 +17,7 @@ Default behaviour is review-first: no writes to islands.json unless
 Examples:
     python3 scripts/discover_islands_pipeline.py
     python3 scripts/discover_islands_pipeline.py --stage=map_scanner --no-cache
+    python3 scripts/discover_islands_pipeline.py --stage=catalog_scanner
     python3 scripts/discover_islands_pipeline.py --stage=site_update --apply
     python3 scripts/discover_islands_pipeline.py --limit=50
 """
@@ -65,7 +67,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--include-uncertain",
         action="store_true",
-        help="Let site_update consider records flagged for manual review.",
+        help=(
+            "site_update: merge all candidates into existing matches first; "
+            "then insert previously skipped review-flagged rows as new islands "
+            "with classification.confidence=unconfirmed (requires --apply to write)."
+        ),
     )
     return parser.parse_args()
 

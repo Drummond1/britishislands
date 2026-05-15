@@ -176,8 +176,9 @@ set when `images[]` is non-empty.
 | Field | Type | Notes |
 |---|---|---|
 | `source` | enum | `curated`, `osm`, `osm-inland`, `wikidata-discovery`, `csv-import`, … one per ingestion path. |
-| `classification.source` | enum | `manual`, `tier-a`, `tier-b`, `tier-c`, `tier-d`. See `METHODOLOGY-INLAND.md`. |
-| `classification.confidence` | enum | `high`, `medium`, `low`. |
+| `classification.source` | enum | `manual`, `tier-a`, `tier-b`, `tier-c`, `tier-d`, `discovery-pipeline`. See `METHODOLOGY-INLAND.md` for tier labels. |
+| `classification.confidence` | enum | `high`, `medium`, `low`, **`unconfirmed`**. The last marks a row shown on the map for exploration that **did not** pass the discovery pipeline’s automatic review gate (e.g. missing licence-safe hero image, medium/low verification). It is **not** a claim that the feature is a recognised island. |
+| `classification.reviewHint` | string / null | Optional short machine-oriented note (e.g. why `unconfirmed` was applied). Shown in the UI for transparency. |
 
 ## Adding a new field
 

@@ -2,8 +2,75 @@
 
 > Update this file whenever counts, schema, or running processes change.
 > Stamp the date at the top of each section so we can spot drift.
-
 ## Last updated
+
+**2026-05-15 (crowd pins v1)** — **Community suggestion layer:** `data/crowd_pins.json`
+(maintainer-curated) + map overlay (gold markers), **Suggest island** modal →
+pre-filled GitHub issue, **Crowd pins** toggle. Implementation: `crowd-pins.js`,
+`app.js`, styles for modal/popup/legend. Workflow: `docs/CROWD-PINS.md`.
+
+**2026-05-15 (SEO + GEO)** — Runtime head tags in `seo-meta.js` (canonical, OG,
+Twitter, JSON-LD `Island`); `scripts/generate_seo_artifacts.py` for `llms.txt` +
+optional `sitemap.xml` / `robots.txt` / thin `--landing-dir` stubs. See
+`docs/SEO-GEO.md`.
+
+**2026-05-15 (terrestrial rock prune)** — Removed **266** non-curated atlas rows:
+`osmPlace: rock` + `type: sea` points on **dry land** (well inland of the
+simplified UK+IE outline — see `TERRESTRIAL_ROCK_MIN_INLAND_DEG` in
+`scripts/discovery/common.py`). Coastal / intertidal stacks (e.g. offshore
+sea stacks) **kept**. Script: `scripts/prune_terrestrial_rocks.py --apply`;
+audit `data/terrestrial_rocks_prune_report.json`; backup
+`data/islands.json.before-terrestrial-rock-prune-20260515T231858Z.bak`.
+`map_scanner` now skips the same pattern (`skippedTerrestrialRocks` in
+`data/discovery/candidates_scan.json`). **`islands.json` → 7,043** rows.
+Discovery **`verification.json` / survey strict “outstanding”** are now **stale**
+for former rock OSM ids until you re-run the verifier / ledger pass you trust.
+
+**2026-05-15 (survey ledger runner)** — **`scripts/survey_landmass_ledger.py`**
+reconciles `data/islands.json` + `data/discovery/verification.json` (strict
+`find_existing_match`, loose=False) into `data/survey/landmass_ledger.json` and
+`survey_summary.json`. Latest run after rock prune: atlas **7,043** rows; note
+verification bundle still lists many **off-atlas** rock OSM rows that were
+**intentionally pruned** — re-run discovery merge or regenerate verification before
+trusting **outstanding** counts.
+
+**2026-05-15 (survey prompt)** — **`docs/PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md`**
+— multi-agent copy/paste briefing for full remit landmass + naming sweep, survey
+ledger + closure report template; 3 m × 3 m stated as **policy minimum** with
+OSM/open-data reality check (not literal wall-to-wall 3 m enumeration).
+
+**2026-05-15 (corrections v1)** — **Suggest a correction** on every island detail
+panel: pre-filled GitHub issue (`Drummond1/britishislands`) with island id,
+coordinates, OSM/Wikidata links, and required evidence section. Template at
+`.github/ISSUE_TEMPLATE/island-data-correction.md`. No on-site accounts;
+maintainer review only. Override repo via `window.IOB_CORRECTION_REPO`.
+
+**2026-05-15 (provisional discovery)** — **Unconfirmed classification + site merge.**
+`site_update --include-uncertain --apply`: **549** discovery rows merged into
+existing atlas records (strict OSM / Wikidata / name match; no global 0.5 km
+glue for review-flagged rows). **1** new row: **Wolf Rock Lighthouse** with
+`classification.confidence: "unconfirmed"` + `reviewHint` (see
+`DATA-SCHEMA.md`). `islands.json` **7,309** (+1). Backup
+`data/islands.json.before-discovery-20260515T051857Z`.
+
+**2026-05-15 (trip planner)** — **Ferry trip planner race fix.** `loadFerries()`
+could resolve before `islands.json` finished, so `buildFerryIslandRefIndex()`
+ran on an empty `byId` and cached an empty ferry graph; Plan route then always
+failed until hard refresh. Ferries now wait on `_islandsIndexReady`; islands
+load settles that promise; stale empty graphs are invalidated on island load.
+Itinerary banner `z-index` raised above the top bar; status line shows a
+text summary of the route.
+
+**2026-05-15 05:00 UTC+1** — **Marine Regions discovery cache + site_update fix.**
+First full `getGazetteerRecordsByLatLong` grid cached at
+`data/cache_discovery_marine_regions.json` (54 cells). Under strict
+`placeType=Island` + project bbox, the gazetteer returned **no** usable island
+points (only macro / off-remit centroids); the hook remains for transparency
+and future filter tuning. **`site_update --apply`** now writes
+`islands.json` when there are **merge-only** updates (wikidata/osm/sources on
+existing rows), not only new inserts — fixed regression where 5 merges would
+stay in-memory. Applied merge pass: **5** enriched existing islands (count
+still **7,308**); backup `data/islands.json.before-discovery-20260515T044747Z`.
 
 **2026-05-14 22:45 UTC+1** — **Multi-source catalog discovery applied.**
 `scripts/discovery/catalog_scanner.py` harvests Wikidata, Wikipedia island
@@ -352,13 +419,10 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| _(none)_ | — | — | — | No write-pipelines active on `islands.json` as of 2026-05-14 22:45 UTC+1. |
+| _(none)_ | — | — | — | No write-pipelines on `islands.json`. |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
 | ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
-| ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded by autonomous run; verify no live PID before trusting this row. |
-| `python3 -m http.server 8767` (PID 60358) | 2026-05-11 17:02 | persistent | main agent | Local preview at <http://localhost:8767>. Logs at `/tmp/preview_server.log`. |
-| `python3 scripts/enrich_images_v4.py` (PID 63436) | 2026-05-11 18:01 | ~90 min | main agent | Builds `data/galleries.json` (additional photos per island, separate file so it doesn't bloat `islands.json`'s first paint). Checkpointed every 100 islands. Logs at `/tmp/enrich_v4.log`. |
-| `python3 scripts/geocode_csv_skips.py` (PID 64221) | 2026-05-11 18:25 | ~30 min | main agent | Tries to recover the 235 CSV-skipped rows via Wikidata `wbsearchentities` + bbox filtering. Caches at `data/cache_wbsearch.json` / `data/cache_wb_claims.json`. Logs at `/tmp/csv_geocode.log`. |
+| ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded; see QUEUE.md. |
 | ~~`python3 scripts/compute_drive_times.py` (PID 70453)~~ ✅ done 2026-05-11 20:25 | 2026-05-11 19:55 | ~30 min | main agent | OSRM batch drive-time bands from London / Glasgow / Edinburgh / Belfast / Dublin to each mainland terminal. Now uses `curl` via `subprocess` after diagnosing a Python TLS handshake failure against the public OSRM demo server. **Result**: 535 of 538 mainland terminals populated; 3 unreachable in OSRM's road graph. |
 
 ### Completed today (2026-05-11)
@@ -397,6 +461,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 | `islands.json` | 5.9 MB | 11:33 | Canonical dataset. |
 | `islands.json.before-ingest` | 4.5 MB | 11:33 | Pre-discovery-ingest backup. |
 | `curated.json` | 34 KB | 2026-05-10 22:05 | Hand-curated 27-island spine. Do **not** delete entries. |
+| `crowd_pins.json` | small | 2026-05-15 | Maintainer-curated community pins (separate from `islands.json`). See `docs/CROWD-PINS.md`. |
 | `osm_raw.json` | 1.2 MB | 2026-05-10 22:26 | Cached Overpass island response. |
 | `water_raw.json` | 274 MB | 2026-05-11 07:16 | Cached Overpass water-body response (large). |
 | `inland_classification_report.json` | 159 KB | 11:33 | Audit trail for Tier A + B classifier. |
@@ -447,6 +512,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   scores 6,748 islands per keystroke with prefix / word-start / substring
   / subsequence matching, diacritic-insensitive. Sort is by score not
   alphabetic when a query is active; alphabetic when the box is empty.
+- **Crowd pins**: optional gold markers from `data/crowd_pins.json`; **Suggest
+  island** opens a map pick + GitHub issue (no on-site accounts). Toggle
+  **Crowd pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
 - **Chatbot ("Island finder")**: floating "Ask" button bottom-right opens a
   chat panel. Local-only NLU. Recognises nation, type, subtype, archipelago,
   feature, size, sort, **proximity (`near <city>` / `within N km of …`,

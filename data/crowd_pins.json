@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "about": "Maintainer-curated community pins. Add rows when triaging GitHub issues (see docs/CROWD-PINS.md). Empty pins array is valid.",
+  "pins": []
+}

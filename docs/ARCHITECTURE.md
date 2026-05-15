@@ -10,7 +10,8 @@ ingestion code.
 ├── Frontend (no build step)
 │   ├── index.html          ← page shell, script + CSS links
 │   ├── styles.css          ← all styling (CSS variables for theme)
-│   └── app.js              ← ES module entrypoint
+│   ├── app.js              ← ES module entrypoint
+│   └── seo-meta.js         ← per-island <title>, meta, OG/Twitter, JSON-LD
 │
 ├── Data (canonical artefacts)
 │   ├── data/islands.json   ← THE dataset shipped to the browser

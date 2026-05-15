@@ -110,6 +110,7 @@ def run(*, use_cache: bool = True, limit: int | None = None) -> dict[str, Any]:
     matched = 0
     out_of_remit = 0
     unnamed = 0
+    skipped_terrestrial_rocks = 0
     for el in raw.get("elements", []):
         candidate = _normalize_element(el)
         if not candidate:
@@ -117,6 +118,11 @@ def run(*, use_cache: bool = True, limit: int | None = None) -> dict[str, Any]:
             continue
         if candidate["nation"] == "British Isles":
             out_of_remit += 1
+            continue
+        if c.is_terrestrial_inland_rock(
+            candidate["lat"], candidate["lng"], candidate.get("featureKind")
+        ):
+            skipped_terrestrial_rocks += 1
             continue
         if c.find_existing_match(candidate, index):
             matched += 1
@@ -132,6 +138,7 @@ def run(*, use_cache: bool = True, limit: int | None = None) -> dict[str, Any]:
         "elementsScanned": len(raw.get("elements", [])),
         "alreadyInDatabase": matched,
         "outOfRemit": out_of_remit,
+        "skippedTerrestrialRocks": skipped_terrestrial_rocks,
         "unnamedOrUnlocated": unnamed,
         "missingCandidates": len(missing),
         "candidates": missing,
@@ -139,7 +146,8 @@ def run(*, use_cache: bool = True, limit: int | None = None) -> dict[str, Any]:
     c.save_json(c.SCAN_PATH, report)
     print(
         f"Map Scanner: {len(missing)} missing candidates "
-        f"({matched} already in DB, {out_of_remit} out of remit)",
+        f"({matched} already in DB, {out_of_remit} out of remit, "
+        f"{skipped_terrestrial_rocks} terrestrial rocks skipped)",
         file=sys.stderr,
     )
     return report

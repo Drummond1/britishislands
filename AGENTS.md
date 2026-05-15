@@ -62,8 +62,11 @@ needed.
 ├── index.html               ← entry HTML (incl. chat launcher + panel)
 ├── styles.css               ← all styling
 ├── app.js                   ← Leaflet + UI logic + chatbot (ES module)
+├── crowd-pins.js            ← community pins: fetch + GitHub issue URLs + popups
+├── seo-meta.js              ← per-island head tags + JSON-LD (SEO / GEO)
 ├── data/
 │   ├── islands.json         ← canonical dataset (DO NOT hand-edit)
+│   ├── crowd_pins.json      ← maintainer-curated community pins (see docs/CROWD-PINS.md)
 │   ├── curated.json         ← hand-curated spine of 27 islands
 │   ├── osm_raw.json         ← cached Overpass response (islands)
 │   ├── water_raw.json       ← cached Overpass response (water bodies)
@@ -88,6 +91,7 @@ needed.
 │   ├── METHODOLOGY-INLAND.md← Tier A + B classifier deep-dive
 │   ├── VALIDATION.md        ← canonical regression set
 │   ├── IMAGE-SOURCES.md     ← brainstorm + source registry (provenance)
+│   ├── CROWD-PINS.md        ← community pin triage + `crowd_pins.json` fields
 │   ├── ETHICS.md            ← permanent ethics charter
 │   ├── DISCOVERY-SOURCES.md ← catalogue of evaluated data sources
 │   └── NEXT-SESSION-PLAN.md ← rolling action plan

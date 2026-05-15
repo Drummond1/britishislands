@@ -12,6 +12,14 @@
  *    Get a free key at https://osdatahub.os.uk/ (250k tiles / month).
  */
 
+import { applyIslandSeo, resetIslandSeo } from "./seo-meta.js";
+import {
+  fetchCrowdPins,
+  buildNewCrowdSuggestionIssueUrl,
+  crowdPinPopupHtml,
+  CROWD_MARKER_STYLE,
+} from "./crowd-pins.js";
+
 const TYPE_COLORS = {
   sea: "#4ea3ff",
   lake: "#6cd3a3",
@@ -27,6 +35,9 @@ const OVERPASS_ENDPOINTS = [
   "https://overpass.kumi.systems/api/interpreter",
   "https://overpass.openstreetmap.fr/api/interpreter",
 ];
+
+/** Settled once `state.islands` / `state.byId` are ready or load failed. */
+let _islandsIndexReady = null;
 
 const state = {
   islands: [],
@@ -45,6 +56,10 @@ const state = {
   ferryRoutesByIsland: null, // Map<islandId, route[]> built after loadFerries
   causeways: null,          // lazy-loaded array of tidal/bridge causeway records
   causewaysPromise: null,
+  favoriteIds: null,        // Set<islandId> persisted in localStorage
+  crowdPins: [],
+  crowdLayer: null,
+  crowdMapClickHandler: null,
 };
 
 // ---------- Ferries (lazy-loaded) ----------
@@ -203,12 +218,21 @@ function refreshTripPlannerDatalist() {
 function loadFerries() {
   if (state.ferries) return Promise.resolve(state.ferries);
   if (state.ferriesPromise) return state.ferriesPromise;
-  state.ferryIslandRef = buildFerryIslandRefIndex();
-  state.ferriesPromise = Promise.all([
-    fetch("data/ferries.json").then((r) => (r.ok ? r.json() : { routes: [] })),
-    fetch("data/ferry_terminals.json").then((r) => (r.ok ? r.json() : { terminals: [] })),
-    fetch("data/operators.json").then((r) => (r.ok ? r.json() : { operators: [] })),
-  ])
+  // Ferry ↔ island resolution needs `state.byId` (wikidata/osm/slug joins).
+  // If we build the graph before islands.json finishes, the graph stays empty
+  // forever because this promise is cached.
+  state.ferriesPromise = (_islandsIndexReady ?? Promise.resolve())
+    .catch(() => {
+      /* islands.json may have failed; still build whatever graph we can */
+    })
+    .then(() => {
+      state.ferryIslandRef = buildFerryIslandRefIndex();
+      return Promise.all([
+        fetch("data/ferries.json").then((r) => (r.ok ? r.json() : { routes: [] })),
+        fetch("data/ferry_terminals.json").then((r) => (r.ok ? r.json() : { terminals: [] })),
+        fetch("data/operators.json").then((r) => (r.ok ? r.json() : { operators: [] })),
+      ]);
+    })
     .then(([ferriesDoc, termsDoc, opsDoc]) => {
       const routes = Array.isArray(ferriesDoc.routes) ? ferriesDoc.routes : [];
       const terminals = Array.isArray(termsDoc.terminals) ? termsDoc.terminals : [];
@@ -263,6 +287,9 @@ function loadFerries() {
       state.ferryRoutesByIsland = new Map();
       state.ferryGraph = new Map();
       return state.ferries;
+    })
+    .finally(() => {
+      state.ferriesPromise = null;
     });
   return state.ferriesPromise;
 }
@@ -316,6 +343,15 @@ function findFerryItinerary(startId, endId) {
   return { path, edges, totalDurationMin: dist.get(end) || 0 };
 }
 
+/** Plain-text summary for trip status + banner fallback. */
+function _formatItinerarySummary(it) {
+  const names = it.path.map((id) => state.byId.get(id)?.name || id).join(" → ");
+  const h = Math.floor(it.totalDurationMin / 60);
+  const m = it.totalDurationMin % 60;
+  const dur = h ? (m ? `${h}h ${m}m` : `${h}h`) : `${m}m`;
+  return `${names} · ~${dur} at sea · ${it.edges.length} crossing${it.edges.length === 1 ? "" : "s"}`;
+}
+
 // Render a banner at the top of the details panel showing the chosen
 // itinerary (used when the URL contains ?trip=startId,endId).
 function tryRenderItineraryFromUrl() {
@@ -339,11 +375,41 @@ function tryRenderItineraryFromUrl() {
   }
 }
 
+function _mountItineraryBanner(banner) {
+  const topbar = document.querySelector("header.topbar");
+  if (topbar) {
+    topbar.insertAdjacentElement("afterend", banner);
+  } else if (!banner.parentNode) {
+    document.body.prepend(banner);
+  }
+}
+
+/** Clicks on island links in the itinerary (SPA + reliable hit target). */
+function _onItineraryBannerClick(e) {
+  const a = e.target.closest("a[href]");
+  if (!a) return;
+  const href = a.getAttribute("href") || "";
+  if (!href.startsWith("?island=")) return;
+  e.preventDefault();
+  try {
+    const q = href.startsWith("?") ? href.slice(1) : href;
+    const id = new URLSearchParams(q).get("island");
+    if (id && state.byId?.has(id)) {
+      focusIsland(id, { fly: true });
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
 function _renderItineraryBanner(it) {
-  const stops = it.path
-    .map((id) => state.byId.get(id))
-    .filter(Boolean)
-    .map((isl) => `<a href="?island=${encodeURIComponent(isl.id)}">${escapeHtml(isl.name)}</a>`);
+  const stops = it.path.map((id) => {
+    const isl = state.byId.get(id);
+    if (isl) {
+      return `<a href="?island=${encodeURIComponent(isl.id)}">${escapeHtml(isl.name)}</a>`;
+    }
+    return `<span class="itinerary-banner__unknown">${escapeHtml(id)}</span>`;
+  });
   if (!stops.length) return;
   const h = Math.floor(it.totalDurationMin / 60);
   const m = it.totalDurationMin % 60;
@@ -353,7 +419,10 @@ function _renderItineraryBanner(it) {
     banner = document.createElement("div");
     banner.id = "itinerary-banner";
     banner.className = "itinerary-banner";
-    document.body.prepend(banner);
+    banner.addEventListener("click", _onItineraryBannerClick);
+    _mountItineraryBanner(banner);
+  } else {
+    _mountItineraryBanner(banner);
   }
   banner.innerHTML = `
     <strong>Suggested ferry itinerary:</strong>
@@ -448,7 +517,7 @@ function planTripBetween(startQuery, endQuery) {
   if (!startId || !endId) {
     return Promise.resolve({
       ok: false,
-      error: "Couldn't match both islands — try the full island name.",
+      error: "Couldn't match both islands — try the full island name from the list.",
     });
   }
   if (startId === endId) {
@@ -458,12 +527,35 @@ function planTripBetween(startQuery, endQuery) {
   url.searchParams.set("trip", `${startId},${endId}`);
   window.history.replaceState(null, "", url.toString());
   return loadFerries().then(() => {
+    const adj = state.ferryGraph;
+    const start = resolveFerryIslandId(startId, null, null) || startId;
+    const end = resolveFerryIslandId(endId, null, null) || endId;
+    if (!adj || adj.size === 0) {
+      return { ok: false, error: "Ferry data is still loading or unavailable. Try again in a moment." };
+    }
+    const startName = state.byId.get(start)?.name || startQuery.trim();
+    const endName = state.byId.get(end)?.name || endQuery.trim();
+    if (!adj.has(start)) {
+      return {
+        ok: false,
+        error: `No ferry routes in the atlas touch «${startName}». Try an island that appears in the From/To suggestions after ferries load, or check the Ferries guides.`,
+      };
+    }
+    if (!adj.has(end)) {
+      return {
+        ok: false,
+        error: `No ferry routes in the atlas touch «${endName}». Try an island that appears in the From/To suggestions after ferries load, or check the Ferries guides.`,
+      };
+    }
     const it = findFerryItinerary(startId, endId);
     if (!it) {
-      return { ok: false, error: "No ferry route found between those islands in the atlas." };
+      return {
+        ok: false,
+        error: `No connected ferry chain between «${startName}» and «${endName}» in this dataset (islands may be linked by bridge or a route we have not mapped yet).`,
+      };
     }
     _renderItineraryBanner(it);
-    return { ok: true, itinerary: it, startId, endId };
+    return { ok: true, itinerary: it, startId, endId, summary: _formatItinerarySummary(it) };
   });
 }
 
@@ -497,7 +589,9 @@ function initTripPlanner() {
         status.textContent = res?.error || "Couldn't plan that trip.";
         return;
       }
-      status.textContent = "Itinerary ready — see the banner above the map.";
+      status.textContent = res.summary
+        ? `${res.summary} — tap a name in the banner under the header for island details.`
+        : "Itinerary ready — tap an island name in the banner under the header, or open Islands.";
     });
   });
 
@@ -552,9 +646,11 @@ function getOsMapsKey() {
 const els = {
   list: document.getElementById("island-list"),
   count: document.getElementById("result-count"),
+  listHeading: document.getElementById("list-heading"),
   search: document.getElementById("search"),
   typeFilter: document.getElementById("type-filter"),
   nationFilter: document.getElementById("nation-filter"),
+  favoritesFilter: document.getElementById("favorites-filter"),
   basemap: document.getElementById("basemap"),
   cluster: document.getElementById("cluster-toggle"),
   details: document.getElementById("island-details"),
@@ -563,6 +659,140 @@ const els = {
   back: document.getElementById("back-button"),
   sidebar: document.getElementById("sidebar"),
 };
+
+// ---------- Saved islands (local only; localStorage) ----------
+const FAVORITES_STORAGE_KEY = "iobFavoriteIslandIds";
+
+function readFavoriteIdsFromStorage() {
+  try {
+    const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((x) => typeof x === "string") : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function initFavoritesState() {
+  state.favoriteIds = new Set(readFavoriteIdsFromStorage());
+}
+
+function persistFavoriteIds() {
+  try {
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...state.favoriteIds]));
+  } catch (_) {
+    /* private mode / quota */
+  }
+}
+
+function isFavoriteIsland(id) {
+  return !!(id && state.favoriteIds?.has(id));
+}
+
+function toggleFavoriteIsland(id) {
+  if (!id || !state.favoriteIds) return;
+  if (state.favoriteIds.has(id)) state.favoriteIds.delete(id);
+  else state.favoriteIds.add(id);
+  persistFavoriteIds();
+  scheduleRenderListWindow();
+  rebuildMarkerLayer();
+  syncDetailsFavoriteButton(id);
+}
+
+function syncDetailsFavoriteButton(islandId) {
+  const btn = document.getElementById("details-favorite-btn");
+  if (!btn || state.activeId !== islandId) return;
+  const on = isFavoriteIsland(islandId);
+  btn.setAttribute("aria-pressed", on ? "true" : "false");
+  btn.setAttribute("aria-label", on ? "Remove from saved islands" : "Save island to list");
+  btn.textContent = on ? "♥" : "♡";
+  btn.classList.toggle("is-favorite", on);
+}
+
+// ---------- Suggest a correction (GitHub issues; no accounts on-site) ----------
+// Override at deploy time: window.IOB_CORRECTION_REPO = "owner/repo"
+const CORRECTION_REPO_DEFAULT = "Drummond1/britishislands";
+
+function correctionRepoSlug() {
+  if (typeof window !== "undefined" && window.IOB_CORRECTION_REPO) {
+    return String(window.IOB_CORRECTION_REPO).replace(/^https?:\/\/github\.com\//i, "").replace(/\/$/, "");
+  }
+  return CORRECTION_REPO_DEFAULT;
+}
+
+function buildCorrectionIssueUrl(island) {
+  const title = `Data correction: ${island.name}`;
+  const lines = [
+    "## Island",
+    "",
+    `- **Atlas id**: \`${island.id}\``,
+    `- **Display name**: ${island.name}`,
+    `- **Nation**: ${island.nation || "—"}`,
+    `- **Type**: ${island.type || "—"}${island.subtype ? ` (${island.subtype})` : ""}`,
+    `- **Coordinates**: ${island.lat}, ${island.lng}`,
+    island.archipelago ? `- **Archipelago**: ${island.archipelago}` : "",
+    island.wikidata
+      ? `- **Wikidata**: https://www.wikidata.org/wiki/${encodeURIComponent(island.wikidata)}`
+      : "",
+    island.osmType && island.osmId != null
+      ? `- **OpenStreetMap**: https://www.openstreetmap.org/${island.osmType}/${island.osmId}`
+      : "",
+    island.source ? `- **Atlas source tag**: ${island.source}` : "",
+    "",
+    "## What is wrong?",
+    "",
+    "<!-- Describe the error (name, type, location, population, duplicate, etc.) -->",
+    "",
+    "## Proposed correction",
+    "",
+    "<!-- What should the atlas show instead? -->",
+    "",
+    "## Evidence (required)",
+    "",
+    "Link at least one authoritative or open-licence source (OSM, Wikidata, official stats, gazetteer, operator page):",
+    "",
+    "- ",
+    "",
+    "## Optional contact",
+    "",
+    "<!-- Email if you want a reply when we have reviewed this -->",
+  ].filter(Boolean);
+  const body = lines.join("\n");
+  const params = new URLSearchParams({ title, body });
+  return `https://github.com/${correctionRepoSlug()}/issues/new?${params.toString()}`;
+}
+
+function renderCorrectionReport(island) {
+  const issueUrl = buildCorrectionIssueUrl(island);
+  const curatedNote =
+    island.source === "curated"
+      ? `<p class="correction-report__note">This is a <strong>curated spine</strong> entry — we only change it after checking your sources against our regression set.</p>`
+      : "";
+  const unconfirmedNote =
+    island.classification?.confidence === "unconfirmed"
+      ? `<p class="correction-report__note">This row is marked <strong>not confirmed</strong> in the atlas; your report helps us verify or remove it.</p>`
+      : "";
+  return `
+    <div class="section correction-report">
+      <h3>Suggest a correction</h3>
+      <p class="correction-report__lead">
+        The map does not accept direct edits in the browser. Report mistakes here with a
+        <strong>link to a source</strong> (OpenStreetMap, Wikidata, official statistics, or similar).
+        A maintainer reviews the evidence before any change is merged.
+      </p>
+      ${curatedNote}
+      ${unconfirmedNote}
+      <p class="correction-report__actions">
+        <a class="correction-report__btn" href="${escapeAttr(issueUrl)}" target="_blank" rel="noopener noreferrer">
+          Open correction form on GitHub ↗
+        </a>
+      </p>
+      <p class="correction-report__fine">
+        No account on this site is required. You need a free GitHub account to submit the form,
+        or you can copy the pre-filled text from the opened page and email the project maintainer instead.
+      </p>
+    </div>`;
+}
 
 // ---------- Map ----------
 const map = L.map("map", {
@@ -685,6 +915,127 @@ els.cluster.addEventListener("change", () => {
   activeMarkerLayer.addTo(map);
 });
 
+// ---------- Crowd-sourced pins (community layer) ----------
+function clearCrowdMapPicker() {
+  if (state.crowdMapClickHandler && map) {
+    map.off("click", state.crowdMapClickHandler);
+    state.crowdMapClickHandler = null;
+  }
+  const wrap = document.getElementById("map");
+  if (wrap) wrap.classList.remove("map--crowd-pick");
+}
+
+function rebuildCrowdPinsLayer() {
+  if (!map) return;
+  if (state.crowdLayer) {
+    map.removeLayer(state.crowdLayer);
+    state.crowdLayer = null;
+  }
+  state.crowdLayer = L.layerGroup();
+  for (const pin of state.crowdPins) {
+    if (pin.lat == null || pin.lng == null) continue;
+    const m = L.circleMarker([pin.lat, pin.lng], { ...CROWD_MARKER_STYLE });
+    m.bindPopup(crowdPinPopupHtml(pin), { maxWidth: 320, className: "crowd-popup-wrap" });
+    state.crowdLayer.addLayer(m);
+  }
+  syncCrowdLayerVisibility();
+}
+
+function syncCrowdLayerVisibility() {
+  if (!state.crowdLayer || !map) return;
+  const el = document.getElementById("crowd-show-toggle");
+  const on = !el || el.checked;
+  if (on && !map.hasLayer(state.crowdLayer)) state.crowdLayer.addTo(map);
+  if (!on && map.hasLayer(state.crowdLayer)) map.removeLayer(state.crowdLayer);
+}
+
+async function loadCrowdPinsAndRender() {
+  state.crowdPins = await fetchCrowdPins();
+  rebuildCrowdPinsLayer();
+}
+
+function initCrowdSuggestUi() {
+  const modal = document.getElementById("crowd-modal");
+  const btnOpen = document.getElementById("crowd-suggest-btn");
+  const stepPick = document.getElementById("crowd-step-pick");
+  const stepForm = document.getElementById("crowd-step-form");
+  const backdrop = document.getElementById("crowd-modal-backdrop");
+  const cancelPick = document.getElementById("crowd-cancel-pick");
+  const closeForm = document.getElementById("crowd-close-form");
+  const pickAgain = document.getElementById("crowd-pick-again");
+  const githubBtn = document.getElementById("crowd-github-submit");
+  const coordsEl = document.getElementById("crowd-coords-label");
+  const toggle = document.getElementById("crowd-show-toggle");
+
+  if (!modal || !btnOpen) return;
+
+  function closeModal() {
+    clearCrowdMapPicker();
+    modal.hidden = true;
+    stepPick.hidden = false;
+    stepForm.hidden = true;
+  }
+
+  function showForm(lat, lng) {
+    stepPick.hidden = true;
+    stepForm.hidden = false;
+    coordsEl.textContent = `Pin: ${lat.toFixed(5)}, ${lng.toFixed(5)} (WGS84)`;
+    modal.dataset.crowdLat = String(lat);
+    modal.dataset.crowdLng = String(lng);
+  }
+
+  function startPick() {
+    clearCrowdMapPicker();
+    stepPick.hidden = false;
+    stepForm.hidden = true;
+    const wrap = document.getElementById("map");
+    if (wrap) wrap.classList.add("map--crowd-pick");
+    const handler = (e) => {
+      clearCrowdMapPicker();
+      showForm(e.latlng.lat, e.latlng.lng);
+    };
+    state.crowdMapClickHandler = handler;
+    map.on("click", handler);
+  }
+
+  btnOpen.addEventListener("click", () => {
+    modal.hidden = false;
+    startPick();
+  });
+  backdrop?.addEventListener("click", closeModal);
+  cancelPick?.addEventListener("click", closeModal);
+  closeForm?.addEventListener("click", closeModal);
+  pickAgain?.addEventListener("click", () => {
+    startPick();
+  });
+  githubBtn?.addEventListener("click", () => {
+    const lat = Number(modal.dataset.crowdLat);
+    const lng = Number(modal.dataset.crowdLng);
+    const name = document.getElementById("crowd-field-name")?.value || "";
+    const note = document.getElementById("crowd-field-note")?.value || "";
+    const nameSourceUrl = document.getElementById("crowd-field-source")?.value || "";
+    const credit = document.getElementById("crowd-field-credit")?.value || "";
+    const existingPinId = document.getElementById("crowd-field-existing-id")?.value || "";
+    const url = buildNewCrowdSuggestionIssueUrl({
+      lat,
+      lng,
+      name,
+      note,
+      nameSourceUrl,
+      credit,
+      existingPinId,
+    });
+    try {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch (_) {
+      window.location.href = url;
+    }
+    closeModal();
+  });
+
+  toggle?.addEventListener("change", () => syncCrowdLayerVisibility());
+}
+
 
 function syncIslandUrl(id) {
   try {
@@ -715,6 +1066,10 @@ function applyRouteFromUrl() {
 
 // ---------- Data load ----------
 async function loadIslands() {
+  let settleIslandsIndex;
+  _islandsIndexReady = new Promise((r) => {
+    settleIslandsIndex = r;
+  });
   try {
     const res = await fetch("data/islands.json");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -723,13 +1078,30 @@ async function loadIslands() {
   } catch (error) {
     console.error("Failed to load islands.json", error);
     els.list.innerHTML = `<li class="island-card" style="color:#ff8a8a">Failed to load island data: ${error.message}. Are you serving the site over HTTP (not file://)?</li>`;
+    settleIslandsIndex?.();
     return;
   }
 
+  settleIslandsIndex?.();
+  // Recover from an older race where ferries.json loaded before islands.json
+  // and cached an empty ferry graph forever.
+  if (
+    state.ferries?.routes?.length
+    && (!state.ferryGraph || state.ferryGraph.size === 0)
+  ) {
+    state.ferries = null;
+    state.ferriesPromise = null;
+    state.ferryIslandIds = null;
+    state.ferryRoutesByIsland = null;
+    state.ferryGraph = null;
+    state.ferryIslandRef = null;
+  }
+  initFavoritesState();
   populateNationFilter();
   fillTripPlannerIslands();
   applyFilters();
   applyRouteFromUrl();
+  loadCrowdPinsAndRender();
 }
 
 function fillTripPlannerIslands() {
@@ -825,13 +1197,24 @@ function applyFilters() {
   const q = _searchNorm(els.search.value);
   const type = els.typeFilter.value;
   const nation = els.nationFilter.value;
+  const favOnly = els.favoritesFilter?.value === "favorites";
+
+  if (els.listHeading) {
+    els.listHeading.textContent = favOnly ? "Saved islands" : "Islands";
+  }
+
+  const passesScope = (i) => {
+    if (type && i.type !== type) return false;
+    if (nation && i.nation !== nation) return false;
+    if (favOnly && !isFavoriteIsland(i.id)) return false;
+    return true;
+  };
 
   if (q) {
     // Score and rank.
     const scored = [];
     for (const i of state.islands) {
-      if (type && i.type !== type) continue;
-      if (nation && i.nation !== nation) continue;
+      if (!passesScope(i)) continue;
       const s = _scoreIsland(i, q);
       if (s > -Infinity) scored.push({ island: i, score: s });
     }
@@ -841,11 +1224,7 @@ function applyFilters() {
     );
     state.filtered = scored.map((x) => x.island);
   } else {
-    state.filtered = state.islands.filter((i) => {
-      if (type && i.type !== type) return false;
-      if (nation && i.nation !== nation) return false;
-      return true;
-    });
+    state.filtered = state.islands.filter(passesScope);
     state.filtered.sort((a, b) => a.name.localeCompare(b.name));
   }
 
@@ -853,9 +1232,10 @@ function applyFilters() {
   rebuildMarkerLayer();
 }
 
-[els.search, els.typeFilter, els.nationFilter].forEach((el) =>
-  el.addEventListener("input", applyFilters),
-);
+[els.search, els.typeFilter, els.nationFilter, els.favoritesFilter].forEach((el) => {
+  if (!el) return;
+  el.addEventListener("input", applyFilters);
+});
 
 // ---------- Virtualised list ----------
 let listScroller = null;
@@ -930,20 +1310,26 @@ function renderListWindow() {
   for (let i = first; i < last; i++) {
     const island = state.filtered[i];
     if (!island) continue;
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "island-card" + (island.id === state.activeId ? " is-active" : "");
-    card.style.height = `${ROW_HEIGHT - 8}px`;
-    card.dataset.id = island.id;
-    card.setAttribute(
+    const wrap = document.createElement("div");
+    wrap.className = "island-card" + (island.id === state.activeId ? " is-active" : "");
+    wrap.dataset.id = island.id;
+
+    const main = document.createElement("button");
+    main.type = "button";
+    main.className = "island-card__main";
+    main.style.height = `${ROW_HEIGHT - 8}px`;
+    main.setAttribute(
       "aria-label",
       `${island.name}, ${island.nation}, ${formatPopulation(island.population)}`,
     );
     const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
-    card.innerHTML = `
+    const unconfirmed = island.classification?.confidence === "unconfirmed";
+    const fav = isFavoriteIsland(island.id);
+    main.innerHTML = `
       <div class="island-card__title">
         <span class="dot dot--${island.type}"></span>
         ${escapeHtml(island.name)}
+        ${unconfirmed ? '<span class="island-card__unconfirmed" title="Not confirmed — see island details">?</span>' : ""}
         ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
       </div>
       <div class="island-card__meta">
@@ -952,8 +1338,36 @@ function renderListWindow() {
         <span>${formatPopulation(island.population)}</span>
       </div>
     `;
-    card.addEventListener("click", () => focusIsland(island.id, { fly: true }));
-    listInner.appendChild(card);
+    main.addEventListener("click", () => focusIsland(island.id, { fly: true }));
+
+    const favBtn = document.createElement("button");
+    favBtn.type = "button";
+    favBtn.className = "island-card__fav" + (fav ? " is-favorite" : "");
+    favBtn.dataset.favId = island.id;
+    favBtn.setAttribute("aria-pressed", fav ? "true" : "false");
+    favBtn.setAttribute(
+      "aria-label",
+      fav ? "Remove from saved islands" : "Save island to list",
+    );
+    favBtn.title = fav ? "Remove from saved" : "Save to list";
+    favBtn.textContent = fav ? "♥" : "♡";
+    favBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleFavoriteIsland(island.id);
+      const on = isFavoriteIsland(island.id);
+      favBtn.classList.toggle("is-favorite", on);
+      favBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      favBtn.setAttribute(
+        "aria-label",
+        on ? "Remove from saved islands" : "Save island to list",
+      );
+      favBtn.title = on ? "Remove from saved" : "Save to list";
+      favBtn.textContent = on ? "♥" : "♡";
+    });
+
+    wrap.appendChild(main);
+    wrap.appendChild(favBtn);
+    listInner.appendChild(wrap);
   }
 }
 
@@ -964,13 +1378,14 @@ function makeMarker(island) {
     4,
     Math.min(14, Math.log10((island.areaKm2 || 0.05) + 1) * 6 + 4),
   );
+  const fav = isFavoriteIsland(island.id);
 
   const marker = L.circleMarker([island.lat, island.lng], {
     radius,
-    color: "#ffffff",
-    weight: 1.2,
+    color: fav ? "#ff5c8a" : "#ffffff",
+    weight: fav ? 2.2 : 1.2,
     fillColor: color,
-    fillOpacity: 0.9,
+    fillOpacity: fav ? 0.95 : 0.9,
   });
 
   marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
@@ -1035,6 +1450,8 @@ function focusIsland(id, { fly } = { fly: true }) {
     if (state.activeId !== id) return;
     refreshFerriesInPlace(island);
   });
+
+  applyIslandSeo(island);
 }
 
 // Drop-in replacement for the ferry block when ferries.json has finished
@@ -1368,14 +1785,25 @@ function renderDetails(island) {
     });
   }
   if (island.classification && island.classification.source !== "manual") {
-    const conf =
-      { high: "High", medium: "Medium", low: "Low" }[island.classification.confidence] ||
-      "—";
+    const confRaw = island.classification.confidence;
+    const confLabel =
+      confRaw === "unconfirmed"
+        ? "Not confirmed"
+        : { high: "High", medium: "Medium", low: "Low" }[confRaw] || "—";
+    let value = `<span style="font-size:12px">${escapeHtml(
+      island.classification.source,
+    )} · ${escapeHtml(confLabel)} confidence</span>`;
+    if (confRaw === "unconfirmed") {
+      value += `<br><span style="font-size:11px;color:var(--river)">Shown for exploration — not verified as a definitive island record.</span>`;
+      if (island.classification.reviewHint) {
+        value += `<br><span style="font-size:11px;color:var(--text-muted)">${escapeHtml(
+          island.classification.reviewHint,
+        )}</span>`;
+      }
+    }
     stats.push({
       label: "Classified by",
-      value: `<span style="font-size:12px">${escapeHtml(
-        island.classification.source,
-      )} · ${conf} confidence</span>`,
+      value,
     });
   }
 
@@ -1408,10 +1836,18 @@ function renderDetails(island) {
     : "";
 
   const gallery = renderGallery(island);
+  const favActive = isFavoriteIsland(island.id);
 
   els.detailsContent.innerHTML = `
     ${gallery}
-    <h2 class="details-title">${escapeHtml(island.name)}</h2>
+    <div class="details-title-row">
+      <h2 class="details-title">${escapeHtml(island.name)}</h2>
+      <button type="button" id="details-favorite-btn" class="details-fav${
+        favActive ? " is-favorite" : ""
+      }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
+        favActive ? "Remove from saved islands" : "Save island to list"
+      }">${favActive ? "♥" : "♡"}</button>
+    </div>
     ${altNames}
     ${island.shortDescription ? `<p class="details-subtitle">${escapeHtml(island.shortDescription)}</p>` : ""}
 
@@ -1468,8 +1904,15 @@ function renderDetails(island) {
       }
     </div>
 
+    ${renderCorrectionReport(island)}
+
     ${sourcesBlock}
   `;
+
+  document.getElementById("details-favorite-btn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleFavoriteIsland(island.id);
+  });
 
   renderDetailMap(island);
 }
@@ -2263,6 +2706,7 @@ els.back.addEventListener("click", () => {
 });
 
 function releaseIslandDetailView({ clearUrl = false } = {}) {
+  resetIslandSeo();
   els.details.hidden = true;
   els.listSection.hidden = false;
   if (mobileNav.isActive()) {
@@ -2286,6 +2730,7 @@ function resetAtlasHome() {
   els.search.value = "";
   els.typeFilter.value = "";
   els.nationFilter.value = "";
+  if (els.favoritesFilter) els.favoritesFilter.value = "";
   applyFilters();
   document.body.classList.remove("filters-open");
   document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
@@ -2691,6 +3136,24 @@ function chatTokens(text) {
   return text.toLowerCase().normalize("NFKD");
 }
 
+/** Escape a string for safe use inside a RegExp. */
+function chatEscapeRe(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
+ * True when `token` appears in `hay` as a whole token (not as a substring
+ * inside another word — avoids "worth" matching "Isleworth").
+ */
+function chatWholeWord(hay, token) {
+  if (!hay || !token || token.length < 2) return false;
+  const re = new RegExp(
+    "(?:^|[^a-z0-9à-ÿ])" + chatEscapeRe(token) + "(?:$|[^a-z0-9à-ÿ])",
+    "i",
+  );
+  return re.test(" " + hay + " ");
+}
+
 function parseChatQuery(rawText) {
   const text = chatTokens(rawText);
   const q = {
@@ -2705,6 +3168,10 @@ function parseChatQuery(rawText) {
     sizeMax: null,
     near: null,        // { name, lat, lng, radiusKm }
     keywords: [],
+    /** "Worth visiting" / best / recommend — rank visitor-worthy islands. */
+    recommendationIntent: false,
+    /** Parsed count (e.g. "five islands") for recommendation replies. */
+    recommendN: null,
     // Ferry intent — set when the user clearly wants ferry-accessible
     // islands or the routes themselves.
     ferryIntent: false,
@@ -2728,6 +3195,18 @@ function parseChatQuery(rawText) {
   for (const [arch, syn] of Object.entries(CHAT_ARCHIPELAGOS)) {
     if (syn.some((w) => text.includes(w))) q.archipelagos.add(arch);
   }
+  // "The Hebrides" / "in the Hebrides" — treat as both Inner + Outer unless
+  // the user already narrowed to one chain.
+  if (
+    (/\bhebrides\b/.test(text) || /\bhebridean\b/.test(text)) &&
+    !/\binner\s+hebrides\b/.test(text) &&
+    !/\bouter\s+hebrides\b/.test(text) &&
+    !/\bwestern\s+isles\b/.test(text)
+  ) {
+    q.archipelagos.add("Inner Hebrides");
+    q.archipelagos.add("Outer Hebrides");
+  }
+
   for (const [feat, syn] of Object.entries(CHAT_FEATURES)) {
     if (syn.some((w) => text.includes(w))) q.features.add(feat);
   }
@@ -2787,6 +3266,60 @@ function parseChatQuery(rawText) {
     }
   }
 
+  // ----- "Worth visiting" / best-of lists -----
+  const wordToRecommendN = {
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    eleven: 11,
+    twelve: 12,
+  };
+  let numPick = text.match(
+    /\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s+islands?\b/,
+  );
+  if (!numPick) {
+    numPick = text.match(
+      /\b(?:give|list|name|pick|tell)\s+(?:me\s+)?(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\b/,
+    );
+  }
+  if (!numPick) {
+    numPick = text.match(
+      /\b(?:top|best)\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\b/,
+    );
+  }
+  if (!numPick) {
+    numPick = text.match(
+      /\b(?:top|best)\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+islands?\b/,
+    );
+  }
+  if (numPick) {
+    const rawN = numPick[1];
+    const n = /^\d+$/.test(rawN)
+      ? parseInt(rawN, 10)
+      : wordToRecommendN[rawN] ?? null;
+    if (n != null && n >= 1 && n <= 25) q.recommendN = n;
+  }
+  if (
+    /\b(worth\s+visiting|worth\s+a\s+visit|nice\s+to\s+visit|good\s+to\s+visit|places?\s+to\s+visit|must-?see|must\s+see|recommend(?:ations?)?|suggested\s+islands?|best\s+islands?|top\s+islands?|famous\s+islands?|great\s+islands?|interesting\s+islands?)\b/.test(
+      text,
+    )
+  ) {
+    q.recommendationIntent = true;
+  }
+  if (!q.recommendationIntent && q.recommendN && (q.archipelagos.size || q.nations.size)) {
+    q.recommendationIntent = true;
+  }
+  if (q.recommendationIntent && !q.types.size) {
+    q.types.add("sea");
+  }
+
   // "smaller than X km", "larger than X km"
   let m = text.match(/(?:smaller|less than|under)\s+(\d+(?:\.\d+)?)\s*(?:km2|km²|sq km|square km|km)/);
   if (m) q.sizeMax = parseFloat(m[1]);
@@ -2837,6 +3370,9 @@ function parseChatQuery(rawText) {
     "in", "of", "to", "for", "find", "i", "want", "you", "have", "are",
     "is", "that", "where", "which", "what", "any", "some", "all", "near",
     "off", "on", "from",
+    "worth", "visiting", "visit", "worthwhile", "recommend", "recommendation",
+    "recommendations", "suggestion", "suggestions", "beautiful", "famous",
+    "interesting", "picks", "seeing", "hebrides", "hebridean",
   ];
   for (const w of stripList) {
     residual = residual.split(" " + w + " ").join(" ");
@@ -2896,6 +3432,19 @@ function scoreChatIsland(island, q) {
 
   if (q.sizeMin != null && (island.areaKm2 || 0) < q.sizeMin) return -Infinity;
   if (q.sizeMax != null && (island.areaKm2 || 0) > q.sizeMax) return -Infinity;
+
+  // Visitor "best of" lists: drop anonymous micro-islets in a region.
+  if (q.recommendationIntent && (q.archipelagos.size || q.nations.size)) {
+    const area = island.areaKm2 || 0;
+    const pop = island.population || 0;
+    const hasImg = (island.images && island.images.length) || island.image;
+    const substantial =
+      area >= 3 ||
+      pop > 0 ||
+      island.source === "curated" ||
+      (hasImg && area >= 0.8);
+    if (!substantial) return -Infinity;
+  }
 
   // Proximity hard filter and scoring.
   if (q.near) {
@@ -2981,15 +3530,29 @@ function scoreChatIsland(island, q) {
   const nameHay = (island.name || "").toLowerCase();
   let nameHits = 0;
   for (const k of q.keywords) {
-    if (nameHay.includes(k)) {
+    if (k.length < 3) continue;
+    if (chatWholeWord(nameHay, k)) {
       score += 5;
       nameHits++;
-    } else if (hay.includes(k)) {
+    } else if (chatWholeWord(hay, k)) {
       score += 1;
     }
   }
   // Reward an exact-name match heavily so "Belle Isle" lands the right island.
   if (q.keywords.length && nameHits === q.keywords.length) score += 4;
+
+  if (q.recommendationIntent) {
+    if ((island.population || 0) > 500) score += 2.2;
+    else if ((island.population || 0) > 50) score += 1.6;
+    else if ((island.population || 0) > 0) score += 1.1;
+    if (island.shortDescription && island.shortDescription.length > 100) score += 1.8;
+    else if (island.shortDescription && island.shortDescription.length > 50) score += 1;
+    if (island.images && island.images.length) score += 1.8;
+    else if (island.image) score += 1.2;
+    if ((island.areaKm2 || 0) > 200) score += 1.6;
+    else if ((island.areaKm2 || 0) > 30) score += 0.9;
+    if (island.wikipedia) score += 0.5;
+  }
 
   if (island.images && island.images.length) score += 0.6;
   if (island.population) score += 0.3;
@@ -3000,6 +3563,11 @@ function scoreChatIsland(island, q) {
 
 function searchChatIslands(rawText, limit = 6) {
   const q = parseChatQuery(rawText);
+  const outLimit = q.recommendationIntent
+    ? q.recommendN && q.recommendN >= 1 && q.recommendN <= 25
+      ? q.recommendN
+      : 8
+    : limit;
   const scored = [];
   for (const i of state.islands) {
     if (!i || typeof i !== "object") continue;
@@ -3024,10 +3592,10 @@ function searchChatIslands(rawText, limit = 6) {
       const bv = b.island[q.sort.sortBy];
       return q.sort.dir === "desc" ? bv - av : av - bv;
     });
-    return { query: q, results: sortable.slice(0, limit), total: sortable.length };
+    return { query: q, results: sortable.slice(0, outLimit), total: sortable.length };
   }
   scored.sort((a, b) => b.score - a.score);
-  return { query: q, results: scored.slice(0, limit), total: scored.length };
+  return { query: q, results: scored.slice(0, outLimit), total: scored.length };
 }
 
 // ----- Direct-answer engine -----
@@ -3376,6 +3944,19 @@ function composeChatResponse({ query, results, total }) {
     );
   }
   const parts = [];
+  if (query.recommendationIntent) {
+    const whereBits = [];
+    if (query.archipelagos.size) {
+      whereBits.push([...query.archipelagos].join(" · "));
+    }
+    if (query.nations.size) {
+      whereBits.push([...query.nations].join("/"));
+    }
+    const whereStr = whereBits.length ? ` in **${whereBits.join(" · ")}**` : "";
+    parts.push(
+      `Here are **${results.length}** sea-island picks${whereStr} — larger or inhabited places with solid atlas coverage (photos, descriptions, or ferries).`,
+    );
+  }
   const totalLabel = total === 1 ? "1 match" : `${total.toLocaleString()} matches`;
   const facets = [];
   if (query.nations.size) facets.push([...query.nations].join("/"));
@@ -3389,9 +3970,15 @@ function composeChatResponse({ query, results, total }) {
     facets.push(`within ${km} km of ${query.near.name}`);
   }
   if (query.sort) facets.push("(sorted by " + query.sort.sortBy + ")");
-  parts.push(`Found ${totalLabel} for ${facets.join(" ")}.`);
-  if (results.length < total) {
-    parts.push(`Showing the top ${results.length}.`);
+  if (!query.recommendationIntent) {
+    parts.push(`Found ${totalLabel} for ${facets.join(" ")}.`);
+    if (results.length < total) {
+      parts.push(`Showing the top ${results.length}.`);
+    }
+  } else if (total > results.length) {
+    parts.push(
+      `${total.toLocaleString()} islands passed the filters; these ${results.length} rank highest for visitor appeal in the atlas data.`,
+    );
   }
   return parts.join(" ");
 }
@@ -4439,6 +5026,7 @@ const mobileNav = (() => {
 document.getElementById("home-link")?.addEventListener("click", resetAtlasHome);
 
 loadIslands();
+initCrowdSuggestUi();
 initTripPlanner();
 chatAutoLoadFromUrl();
 tryRenderItineraryFromUrl();

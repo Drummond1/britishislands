@@ -1,9 +1,9 @@
 {
-  "startedAt": "2026-05-12T21:02:17+00:00",
-  "islandsProcessed": 6776,
-  "rspbReservesAvailable": 0,
+  "startedAt": "2026-05-15T23:10:40+00:00",
+  "islandsProcessed": 7309,
+  "rspbReservesAvailable": 61,
   "overridesLoaded": 25,
-  "islandsWithReserve": 0,
+  "islandsWithReserve": 10,
   "islandsWithColony": 30,
   "  ofWhich_curated": 22,
   "  ofWhich_textOnly": 8,
@@ -11,7 +11,7 @@
     {
       "id": "osm-way-495525351",
       "name": "Ailsa Craig",
-      "reserves": 0,
+      "reserves": 1,
       "colonies": 6,
       "speciesSample": [
         "gannet",
@@ -63,7 +63,7 @@
     {
       "id": "wd-Q2755722",
       "name": "Coquet Island",
-      "reserves": 0,
+      "reserves": 1,
       "colonies": 1,
       "speciesSample": [
         "roseate-tern"
@@ -77,6 +77,13 @@
       "speciesSample": [
         "cormorant"
       ]
+    },
+    {
+      "id": "osm-way-3468508",
+      "name": "Craiglethy",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
     },
     {
       "id": "fair-isle",
@@ -140,6 +147,20 @@
       ]
     },
     {
+      "id": "osm-way-33754245",
+      "name": "Holm",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
+      "id": "hook-island-w139412875",
+      "name": "Hook Island",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
       "id": "osm-relation-3077272",
       "name": "Inner Farne",
       "reserves": 0,
@@ -153,6 +174,20 @@
       ]
     },
     {
+      "id": "iona",
+      "name": "Iona",
+      "reserves": 3,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
+      "id": "osm-way-405130618",
+      "name": "Island",
+      "reserves": 2,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
       "id": "osm-way-3469279",
       "name": "Isle of May",
       "reserves": 0,
@@ -164,6 +199,20 @@
         "razorbill",
         "shag"
       ]
+    },
+    {
+      "id": "little-ailsa",
+      "name": "Little Ailsa",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
+      "id": "wd-Q56664163",
+      "name": "Loch of Kinnordy, crannog 500m NW of Balbrydie",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
     },
     {
       "id": "lundy",
@@ -236,6 +285,13 @@
       ]
     },
     {
+      "id": "osm-way-148455446",
+      "name": "Penton Hook Island",
+      "reserves": 1,
+      "colonies": 0,
+      "speciesSample": []
+    },
+    {
       "id": "osm-way-1213396832",
       "name": "Puffin Island",
       "reserves": 0,
@@ -277,6 +333,19 @@
         "kittiwake",
         "fulmar",
         "puffin"
+      ]
+    },
+    {
+      "id": "shiant-islands-garbh-eilean-eilean-an-tighe-eilean-mhuire-galta-morbeag",
+      "name": "Shiant Islands (Garbh Eilean, Eilean an Tighe, Eilean Mhuire + Galta Mòr/Beag)",
+      "reserves": 0,
+      "colonies": 6,
+      "speciesSample": [
+        "puffin",
+        "guillemot",
+        "razorbill",
+        "kittiwake",
+        "fulmar"
       ]
     },
     {
@@ -352,21 +421,8 @@
         "kittiwake",
         "fulmar"
       ]
-    },
-    {
-      "id": "shiant-islands-garbh-eilean-eilean-an-tighe-eilean-mhuire-galta-morbeag",
-      "name": "Shiant Islands (Garbh Eilean, Eilean an Tighe, Eilean Mhuire + Galta Mòr/Beag)",
-      "reserves": 0,
-      "colonies": 6,
-      "speciesSample": [
-        "puffin",
-        "guillemot",
-        "razorbill",
-        "kittiwake",
-        "fulmar"
-      ]
     }
   ],
-  "dryRun": true,
+  "dryRun": false,
   "ethicsCompliance": "ETHICS.md §5 honoured: island-level only, no precise colony coords, no per-nest or count data ingested."
 }

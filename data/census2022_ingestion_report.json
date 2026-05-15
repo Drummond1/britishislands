@@ -1,6 +1,6 @@
 {
-  "startedAt": "2026-05-12T21:02:10+00:00",
-  "islandsLoaded": 6776,
+  "startedAt": "2026-05-15T23:10:30+00:00",
+  "islandsLoaded": 7309,
   "stagedCount": 10,
   "stagedByNation": {
     "nrs": 10
@@ -128,5 +128,5 @@
       "year": 2022
     }
   ],
-  "dryRun": true
+  "dryRun": false
 }

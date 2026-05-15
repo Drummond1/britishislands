@@ -1,59 +1,20 @@
 {
   "agent": "site_update",
-  "generatedAt": "2026-05-14T21:42:53.524031+00:00",
+  "generatedAt": "2026-05-15T05:18:57.843117+00:00",
   "dryRun": false,
   "includeUncertain": true,
-  "inputRecords": 549,
+  "inputRecords": 550,
   "added": [
     {
-      "id": "tarbert-county-kerry",
-      "name": "Tarbert, County Kerry",
-      "nation": "Ireland"
-    },
-    {
-      "id": "blackwater-bank",
-      "name": "blackwater bank",
-      "nation": "Ireland"
-    },
-    {
-      "id": "careg-goch",
-      "name": "Careg Goch",
-      "nation": "Wales"
-    },
-    {
-      "id": "the-inch",
-      "name": "The Inch",
-      "nation": "Scotland"
-    },
-    {
-      "id": "eilean-glas-scalpay",
-      "name": "Eilean Glas, Scalpay",
-      "nation": "Scotland"
-    },
-    {
-      "id": "morrich-more",
-      "name": "Morrich More",
-      "nation": "Scotland"
-    },
-    {
-      "id": "islands-of-furness",
-      "name": "Islands of Furness",
+      "id": "wolf-rock-lighthouse",
+      "name": "Wolf Rock Lighthouse",
       "nation": "England"
-    },
+    }
+  ],
+  "addedProvisional": [
     {
-      "id": "spike-island-bristol",
-      "name": "Spike Island, Bristol",
-      "nation": "England"
-    },
-    {
-      "id": "sunk-island",
-      "name": "Sunk Island",
-      "nation": "England"
-    },
-    {
-      "id": "mochras",
-      "name": "Mochras",
-      "nation": "Wales"
+      "id": "wolf-rock-lighthouse",
+      "name": "Wolf Rock Lighthouse"
     }
   ],
   "merged": [
@@ -75,6 +36,11 @@
     {
       "id": "grey-stone",
       "name": "Grey Stone",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "tarbert-county-kerry",
+      "name": "Tarbert, County Kerry",
       "reason": "merged_into_existing"
     },
     {
@@ -2751,18 +2717,64 @@
       "id": "sumbiarsteinur",
       "name": "Sumbiarsteinur",
       "reason": "merged_into_existing"
+    },
+    {
+      "id": "blackwater-bank",
+      "name": "blackwater bank",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "careg-goch",
+      "name": "Careg Goch",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "the-inch",
+      "name": "The Inch",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "eilean-glas-scalpay",
+      "name": "Eilean Glas, Scalpay",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "morrich-more",
+      "name": "Morrich More",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "islands-of-furness",
+      "name": "Islands of Furness",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "spike-island-bristol",
+      "name": "Spike Island, Bristol",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "sunk-island",
+      "name": "Sunk Island",
+      "reason": "merged_into_existing"
+    },
+    {
+      "id": "mochras",
+      "name": "Mochras",
+      "reason": "merged_into_existing"
     }
   ],
   "skippedDuplicate": [],
   "skippedUncertain": [],
   "skippedExistingReview": [],
   "counts": {
-    "added": 10,
-    "merged": 539,
+    "added": 1,
+    "addedProvisional": 1,
+    "merged": 549,
     "skippedDuplicate": 0,
     "skippedUncertain": 0,
     "skippedExistingReview": 0
   },
-  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-20260514T214253Z",
-  "finalIslandCount": 7308
+  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-20260515T051857Z",
+  "finalIslandCount": 7309
 }
