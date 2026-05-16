@@ -143,6 +143,21 @@ body {
   accent-color: var(--accent);
 }
 
+.toggle--pending {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.toggle--pending input:disabled {
+  cursor: wait;
+}
+
+.topbar-controls select#area-min-filter,
+.topbar-controls select#subtype-filter,
+.topbar-controls select#confidence-filter {
+  min-width: 128px;
+}
+
 /* ===== Cluster styling overrides ===== */
 .marker-cluster-small,
 .marker-cluster-medium,
@@ -1677,21 +1692,6 @@ body {
     max-width: calc(100% - 24px);
   }
 
-  body[data-mobile-view="trip"] .trip-planner {
-    left: calc(12px + var(--safe-left));
-    right: calc(12px + var(--safe-right));
-    bottom: calc(12px + var(--safe-bottom));
-    width: auto;
-    max-height: min(52vh, 420px);
-    overflow: auto;
-    z-index: 1060;
-    touch-action: manipulation;
-  }
-
-  body[data-mobile-view="map"] .trip-planner {
-    display: none;
-  }
-
   .chat-launcher {
     display: none;
   }
@@ -1703,7 +1703,7 @@ body {
     bottom: 0;
     z-index: 1200;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4px;
     padding: 6px calc(8px + var(--safe-right)) calc(6px + var(--safe-bottom))
       calc(8px + var(--safe-left));

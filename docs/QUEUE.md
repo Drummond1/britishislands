@@ -178,6 +178,11 @@ for source / licence / refresh-cadence detail.
 
 ## P2 — backlog (in rough order)
 
+- **Gallery v4 / v5 photo enrichment resume** — UI **Has photo** filter is live
+  (~3,345 / 7,041 on index `image` stub). Re-run `enrich_images_v4.py` /
+  `enrich_images_v5.py` with `--cache` when Commons rate limits clear (see
+  STATE overnight stall note) to raise atlas coverage; then rebuild index.
+
 - **Elevation follow-ups** (highest points shipped 2026-05-12):
   - 95.7 % of islands are `n/a` because they have no OSM-tagged peak.
     Phase 2: sample SRTM 1-arc-sec or OS Terrain 50 inside each

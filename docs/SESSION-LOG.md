@@ -1569,3 +1569,24 @@
     `iobFavoritesEmail` + existing `iobFavoriteIslandIds`.
   - `styles.css` — favorites modal.
 - **Outcome**: List/hearts work on-device after email; no server sync yet.
+
+---
+
+## 2026-05-16 — Tier 1 discovery filters; trip planner removed
+
+- **Goal**: Ship sidebar discovery filters (photo, ferry, elevation, area,
+  subtype, confidence) and drop the map trip-planner UI while keeping ferry
+  data for list icons and detail panels.
+- **What changed**:
+  - `index.html` — discovery toggles/selects in `#topbar-filters`; removed
+    `.trip-planner` block and mobile **Trip** nav button.
+  - `app.js` — `applyFilters()` discovery predicates; `islandHasPhoto` /
+    `islandHasElevation`; photos-first secondary sort; `loadFerries()` on
+    boot; chat `CHAT_*` synonyms (photo, ferry islands, large, summit,
+    curated); removed itinerary / trip-planner JS.
+  - `styles.css` — pending ferry toggle; mobile nav 3-column grid.
+- **Outcome / counts**: ~3,345 islands match **Has photo** on index stub
+  (`image` field); ferry filter enables after ferry JSON loads. No pipeline
+  runs.
+- **Open items kicked to QUEUE.md**: Resume `enrich_images_v4` / v5 when caches
+  allow (photo coverage still below full atlas).

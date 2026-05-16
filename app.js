@@ -190,33 +190,19 @@ function resolveFerryIslandId(rawId, terminal, route) {
   return _nearestSeaIslandId(lat, lon);
 }
 
-function _addFerryGraphEdge(adj, fromId, toId, route) {
-  if (!fromId || !toId || fromId === toId) return;
-  const dur = Number.isFinite(route.durationMinutes) ? route.durationMinutes : 120;
-  if (!adj.has(fromId)) adj.set(fromId, []);
-  if (!adj.has(toId)) adj.set(toId, []);
-  adj.get(fromId).push({ other: toId, durationMin: dur, routeId: route.id });
-  adj.get(toId).push({ other: fromId, durationMin: dur, routeId: route.id });
-}
-
-function refreshTripPlannerDatalist() {
-  const list = document.getElementById("trip-islands");
-  if (!list || !state.ferryGraph?.size) return;
-  list.replaceChildren();
-  const names = [];
-  for (const id of state.ferryGraph.keys()) {
-    const isl = state.byId.get(id);
-    if (isl?.name) names.push(isl.name);
+function syncFerryDiscoveryFilter() {
+  const ferryToggle = els.filterFerry;
+  if (!ferryToggle) return;
+  const ready = state.ferryIslandIds != null;
+  ferryToggle.disabled = !ready;
+  const wrap = document.getElementById("filter-ferry-wrap");
+  if (wrap) {
+    wrap.classList.toggle("toggle--pending", !ready);
+    wrap.title = ready
+      ? "Show only islands served by a mapped ferry route"
+      : "Loading ferry routes…";
   }
-  names.sort((a, b) => a.localeCompare(b));
-  const frag = document.createDocumentFragment();
-  for (const name of names) {
-    const opt = document.createElement("option");
-    opt.value = name;
-    frag.appendChild(opt);
-  }
-  list.appendChild(frag);
-  list.dataset.filled = "1";
+  if (!ready) ferryToggle.checked = false;
 }
 
 function loadFerries() {
@@ -245,7 +231,6 @@ function loadFerries() {
       const opById = new Map(operators.map((o) => [o.id, o]));
       const byIsland = new Map();
       const islandIds = new Set();
-      const adj = new Map();
       for (const r of routes) {
         const fromTerm = termById.get(r.terminals?.from?.terminalId);
         const toTerm = termById.get(r.terminals?.to?.terminalId);
@@ -272,16 +257,14 @@ function loadFerries() {
           byIsland.get(islId).push(enriched);
           islandIds.add(islId);
         }
-        _addFerryGraphEdge(adj, fromIsl, toIsl, r);
       }
       state.ferries = { routes, terminals, operators, termById, opById };
       state.ferryIslandIds = islandIds;
       state.ferryRoutesByIsland = byIsland;
-      state.ferryGraph = adj;
       try {
+        syncFerryDiscoveryFilter();
         if (shouldRenderListWindow()) scheduleRenderListWindow();
       } catch (_) { /* noop */ }
-      try { refreshTripPlannerDatalist(); } catch (_) { /* noop */ }
       return state.ferries;
     })
     .catch((err) => {
@@ -289,7 +272,7 @@ function loadFerries() {
       state.ferries = { routes: [], terminals: [], operators: [], termById: new Map(), opById: new Map() };
       state.ferryIslandIds = new Set();
       state.ferryRoutesByIsland = new Map();
-      state.ferryGraph = new Map();
+      try { syncFerryDiscoveryFilter(); } catch (_) { /* noop */ }
       return state.ferries;
     })
     .finally(() => {
@@ -304,138 +287,6 @@ function findFerriesForIsland(islandId) {
   return state.ferryRoutesByIsland.get(key) || [];
 }
 
-// Dijkstra over the ferry graph. Returns { path: [islandId, ...],
-// edges: [routeId, ...], totalDurationMin } or null when unreachable.
-function findFerryItinerary(startId, endId) {
-  const adj = state.ferryGraph;
-  const start = resolveFerryIslandId(startId, null, null) || startId;
-  const end = resolveFerryIslandId(endId, null, null) || endId;
-  if (!adj || !adj.has(start) || !adj.has(end)) return null;
-  if (start === end) return { path: [start], edges: [], totalDurationMin: 0 };
-  const dist = new Map();
-  const prev = new Map();
-  const edgeUsed = new Map();
-  dist.set(start, 0);
-  const queue = [[0, start]];
-  const visited = new Set();
-  while (queue.length) {
-    queue.sort((a, b) => a[0] - b[0]);
-    const [d, u] = queue.shift();
-    if (visited.has(u)) continue;
-    visited.add(u);
-    if (u === end) break;
-    for (const e of (adj.get(u) || [])) {
-      if (visited.has(e.other)) continue;
-      const alt = d + e.durationMin;
-      if (alt < (dist.get(e.other) ?? Infinity)) {
-        dist.set(e.other, alt);
-        prev.set(e.other, u);
-        edgeUsed.set(e.other, e.routeId);
-        queue.push([alt, e.other]);
-      }
-    }
-  }
-  if (!prev.has(end) && start !== end) return null;
-  const path = [end];
-  const edges = [];
-  let cur = end;
-  while (prev.has(cur)) {
-    edges.unshift(edgeUsed.get(cur));
-    cur = prev.get(cur);
-    path.unshift(cur);
-  }
-  return { path, edges, totalDurationMin: dist.get(end) || 0 };
-}
-
-/** Plain-text summary for trip status + banner fallback. */
-function _formatItinerarySummary(it) {
-  const names = it.path.map((id) => state.byId.get(id)?.name || id).join(" → ");
-  const h = Math.floor(it.totalDurationMin / 60);
-  const m = it.totalDurationMin % 60;
-  const dur = h ? (m ? `${h}h ${m}m` : `${h}h`) : `${m}m`;
-  return `${names} · ~${dur} at sea · ${it.edges.length} crossing${it.edges.length === 1 ? "" : "s"}`;
-}
-
-// Render a banner at the top of the details panel showing the chosen
-// itinerary (used when the URL contains ?trip=startId,endId).
-function tryRenderItineraryFromUrl() {
-  try {
-    const url = new URL(window.location.href);
-    const trip = url.searchParams.get("trip");
-    if (!trip) return;
-    if (mobileNav.isActive()) mobileNav.setView("trip");
-    const [startId, endId] = trip.split(",").map((s) => s.trim()).filter(Boolean);
-    if (!startId || !endId) return;
-    loadFerries().then(() => {
-      const it = findFerryItinerary(startId, endId);
-      if (!it) {
-        console.warn("No ferry itinerary from", startId, "to", endId);
-        return;
-      }
-      _renderItineraryBanner(it);
-    });
-  } catch (_) {
-    /* non-fatal */
-  }
-}
-
-function _mountItineraryBanner(banner) {
-  const topbar = document.querySelector("header.topbar");
-  if (topbar) {
-    topbar.insertAdjacentElement("afterend", banner);
-  } else if (!banner.parentNode) {
-    document.body.prepend(banner);
-  }
-}
-
-/** Clicks on island links in the itinerary (SPA + reliable hit target). */
-function _onItineraryBannerClick(e) {
-  const a = e.target.closest("a[href]");
-  if (!a) return;
-  const href = a.getAttribute("href") || "";
-  if (!href.startsWith("?island=")) return;
-  e.preventDefault();
-  try {
-    const q = href.startsWith("?") ? href.slice(1) : href;
-    const id = new URLSearchParams(q).get("island");
-    if (id && state.byId?.has(id)) {
-      focusIsland(id, { fly: true });
-    }
-  } catch (_) {
-    /* non-fatal */
-  }
-}
-
-function _renderItineraryBanner(it) {
-  const stops = it.path.map((id) => {
-    const isl = state.byId.get(id);
-    if (isl) {
-      return `<a href="?island=${encodeURIComponent(isl.id)}">${escapeHtml(isl.name)}</a>`;
-    }
-    return `<span class="itinerary-banner__unknown">${escapeHtml(id)}</span>`;
-  });
-  if (!stops.length) return;
-  const h = Math.floor(it.totalDurationMin / 60);
-  const m = it.totalDurationMin % 60;
-  const dur = h ? (m ? `${h}h ${m}m` : `${h}h`) : `${m}m`;
-  let banner = document.getElementById("itinerary-banner");
-  if (!banner) {
-    banner = document.createElement("div");
-    banner.id = "itinerary-banner";
-    banner.className = "itinerary-banner";
-    banner.addEventListener("click", _onItineraryBannerClick);
-    _mountItineraryBanner(banner);
-  } else {
-    _mountItineraryBanner(banner);
-  }
-  banner.innerHTML = `
-    <strong>Suggested ferry itinerary:</strong>
-    <span class="itinerary-banner__stops">${stops.join(" <span class=\"itinerary-banner__arrow\">→</span> ")}</span>
-    <span class="itinerary-banner__meta">~${dur} at sea over ${it.edges.length} crossing${it.edges.length === 1 ? "" : "s"}</span>
-    <button type="button" class="itinerary-banner__close" aria-label="Dismiss">×</button>
-  `;
-  banner.querySelector(".itinerary-banner__close")?.addEventListener("click", () => banner.remove());
-}
 
 // data/causeways.json is tiny (~3 KB) but still lazy-loaded for parity
 // with the other ferry data files.
@@ -507,113 +358,6 @@ function showIslandOnMap(id) {
   loadAndShowPolygon(island);
 }
 
-function resolveTripIslandId(query) {
-  const q = (query || "").trim();
-  if (!q) return null;
-  if (state.byId.has(q)) return q;
-  const hit = _findIslandByName(q);
-  return hit?.id || null;
-}
-
-function planTripBetween(startQuery, endQuery) {
-  const startId = resolveTripIslandId(startQuery);
-  const endId = resolveTripIslandId(endQuery);
-  if (!startId || !endId) {
-    return Promise.resolve({
-      ok: false,
-      error: "Couldn't match both islands — try the full island name from the list.",
-    });
-  }
-  if (startId === endId) {
-    return Promise.resolve({ ok: false, error: "Choose two different islands." });
-  }
-  const url = new URL(window.location.href);
-  url.searchParams.set("trip", `${startId},${endId}`);
-  window.history.replaceState(null, "", url.toString());
-  return loadFerries().then(() => {
-    const adj = state.ferryGraph;
-    const start = resolveFerryIslandId(startId, null, null) || startId;
-    const end = resolveFerryIslandId(endId, null, null) || endId;
-    if (!adj || adj.size === 0) {
-      return { ok: false, error: "Ferry data is still loading or unavailable. Try again in a moment." };
-    }
-    const startName = state.byId.get(start)?.name || startQuery.trim();
-    const endName = state.byId.get(end)?.name || endQuery.trim();
-    if (!adj.has(start)) {
-      return {
-        ok: false,
-        error: `No ferry routes in the atlas touch «${startName}». Try an island that appears in the From/To suggestions after ferries load, or check the Ferries guides.`,
-      };
-    }
-    if (!adj.has(end)) {
-      return {
-        ok: false,
-        error: `No ferry routes in the atlas touch «${endName}». Try an island that appears in the From/To suggestions after ferries load, or check the Ferries guides.`,
-      };
-    }
-    const it = findFerryItinerary(startId, endId);
-    if (!it) {
-      return {
-        ok: false,
-        error: `No connected ferry chain between «${startName}» and «${endName}» in this dataset (islands may be linked by bridge or a route we have not mapped yet).`,
-      };
-    }
-    _renderItineraryBanner(it);
-    return { ok: true, itinerary: it, startId, endId, summary: _formatItinerarySummary(it) };
-  });
-}
-
-function initTripPlanner() {
-  const form = document.getElementById("trip-form");
-  const fromInput = document.getElementById("trip-from");
-  const toInput = document.getElementById("trip-to");
-  const status = document.getElementById("trip-status");
-  const list = document.getElementById("trip-islands");
-  if (!form || !fromInput || !toInput || !list) return;
-
-  const fillList = () => {
-    if (list.dataset.filled || !state.islands?.length) return;
-    const frag = document.createDocumentFragment();
-    for (const isl of state.islands) {
-      if (!isl?.name) continue;
-      const opt = document.createElement("option");
-      opt.value = isl.name;
-      frag.appendChild(opt);
-    }
-    list.appendChild(frag);
-    list.dataset.filled = "1";
-  };
-  fillList();
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (status) status.textContent = "Planning…";
-    planTripBetween(fromInput.value, toInput.value).then((res) => {
-      if (!status) return;
-      if (!res || res.ok === false) {
-        status.textContent = res?.error || "Couldn't plan that trip.";
-        return;
-      }
-      status.textContent = res.summary
-        ? `${res.summary} — tap a name in the banner under the header for island details.`
-        : "Itinerary ready — tap an island name in the banner under the header, or open Islands.";
-    });
-  });
-
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const trip = params.get("trip");
-    if (trip) {
-      const [startId, endId] = trip.split(",").map((s) => s.trim());
-      const a = state.byId.get(startId);
-      const b = state.byId.get(endId);
-      if (a) fromInput.value = a.name;
-      if (b) toInput.value = b.name;
-    }
-  } catch (_) {
-    /* non-fatal */
-  }
-}
-
 // Lazy-fetch data/galleries.json on first island click. Extra images live
 // in a separate file so they don't bloat the initial islands.json payload.
 function loadGalleries() {
@@ -655,6 +399,12 @@ const els = {
   typeFilter: document.getElementById("type-filter"),
   nationFilter: document.getElementById("nation-filter"),
   favoritesFilter: document.getElementById("favorites-filter"),
+  filterPhoto: document.getElementById("filter-photo"),
+  filterFerry: document.getElementById("filter-ferry"),
+  filterElevation: document.getElementById("filter-elevation"),
+  areaMinFilter: document.getElementById("area-min-filter"),
+  subtypeFilter: document.getElementById("subtype-filter"),
+  confidenceFilter: document.getElementById("confidence-filter"),
   basemap: document.getElementById("basemap"),
   cluster: document.getElementById("cluster-toggle"),
   details: document.getElementById("island-details"),
@@ -1334,10 +1084,6 @@ function applyRouteFromUrl() {
     const islandId = params.get("island");
     if (islandId && state.byId?.has(islandId)) {
       focusIsland(islandId, { fly: true });
-      return;
-    }
-    if (params.get("trip") && mobileNav.isActive()) {
-      mobileNav.setView("trip");
     }
   } catch (_) {
     /* non-fatal */
@@ -1370,9 +1116,10 @@ async function loadIslands() {
         usedIndex = true;
         initFavoritesState();
         populateNationFilter();
-        fillTripPlannerIslands();
+        populateSubtypeFilter();
         applyFilters();
         loadCrowdPinsAndRender();
+        loadFerries().catch(() => {});
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       }
     }
@@ -1407,29 +1154,13 @@ async function loadIslands() {
     return;
   }
 
-  // Recover from an older race where ferries.json loaded before islands.json
-  // and cached an empty ferry graph forever.
-  if (
-    state.ferries?.routes?.length
-    && (!state.ferryGraph || state.ferryGraph.size === 0)
-  ) {
-    state.ferries = null;
-    state.ferriesPromise = null;
-    state.ferryIslandIds = null;
-    state.ferryRoutesByIsland = null;
-    state.ferryGraph = null;
-    state.ferryIslandRef = null;
-  }
   initFavoritesState();
   populateNationFilter();
-  fillTripPlannerIslands();
+  populateSubtypeFilter();
   applyFilters();
   applyRouteFromUrl();
   loadCrowdPinsAndRender();
-}
-
-function fillTripPlannerIslands() {
-  // Trip suggestions are filled lazily from ferry-connected islands only.
+  loadFerries().catch(() => {});
 }
 
 function populateNationFilter() {
@@ -1445,6 +1176,48 @@ function populateNationFilter() {
     opt.textContent = nation;
     sel.appendChild(opt);
   }
+}
+
+function populateSubtypeFilter() {
+  const sel = els.subtypeFilter;
+  if (!sel) return;
+  const subtypes = Array.from(
+    new Set(state.islands.map((i) => i.subtype).filter(Boolean)),
+  ).sort();
+  const keep = sel.querySelector('option[value=""]');
+  sel.replaceChildren(keep);
+  for (const sub of subtypes) {
+    const opt = document.createElement("option");
+    opt.value = sub;
+    opt.textContent = formatSubtypeLabel(sub);
+    sel.appendChild(opt);
+  }
+}
+
+function islandHasPhoto(island) {
+  if (!island) return false;
+  if (island.images?.length) return true;
+  if (island.image) return true;
+  const extra = state.galleries?.[island.id];
+  return Array.isArray(extra) && extra.length > 0;
+}
+
+function islandHasElevation(island) {
+  if (!island) return false;
+  if (typeof island.highestPointM === "number" && Number.isFinite(island.highestPointM)) {
+    return true;
+  }
+  const conf = island.highestPointConfidence;
+  return Boolean(conf && conf !== "n/a");
+}
+
+function listSortCompare(a, b, { photosFirst = false } = {}) {
+  if (photosFirst) {
+    const ap = islandHasPhoto(a) ? 1 : 0;
+    const bp = islandHasPhoto(b) ? 1 : 0;
+    if (ap !== bp) return bp - ap;
+  }
+  return a.name.localeCompare(b.name);
 }
 
 // ---------- Filtering ----------
@@ -1525,6 +1298,13 @@ function applyFilters() {
   const type = els.typeFilter.value;
   const nation = els.nationFilter.value;
   const favOnly = els.favoritesFilter?.value === "favorites";
+  const photoOnly = Boolean(els.filterPhoto?.checked);
+  const ferryOnly = Boolean(els.filterFerry?.checked);
+  const elevationOnly = Boolean(els.filterElevation?.checked);
+  const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
+  const subtype = els.subtypeFilter?.value || "";
+  const confidence = els.confidenceFilter?.value || "";
+  const photosFirst = photoOnly;
 
   if (els.listHeading) {
     els.listHeading.textContent = favOnly ? "Saved islands" : "Islands";
@@ -1534,6 +1314,20 @@ function applyFilters() {
     if (type && i.type !== type) return false;
     if (nation && i.nation !== nation) return false;
     if (favOnly && !isFavoriteIsland(i.id)) return false;
+    if (photoOnly && !islandHasPhoto(i)) return false;
+    if (ferryOnly) {
+      if (!state.ferryIslandIds?.has(i.id)) return false;
+    }
+    if (elevationOnly && !islandHasElevation(i)) return false;
+    if (areaMin > 0 && (i.areaKm2 || 0) < areaMin) return false;
+    if (subtype && i.subtype !== subtype) return false;
+    if (confidence === "curated" && i.source !== "curated") return false;
+    if (
+      confidence === "hide-unconfirmed"
+      && i.classification?.confidence === "unconfirmed"
+    ) {
+      return false;
+    }
     return true;
   };
 
@@ -1545,23 +1339,37 @@ function applyFilters() {
       const s = _scoreIsland(i, q);
       if (s > -Infinity) scored.push({ island: i, score: s });
     }
-    // Stable secondary: name ascending so equal scores are predictable.
+    // Stable secondary: photos first (when enabled), then name.
     scored.sort((a, b) =>
-      b.score - a.score || a.island.name.localeCompare(b.island.name),
+      b.score - a.score
+        || listSortCompare(a.island, b.island, { photosFirst }),
     );
     state.filtered = scored.map((x) => x.island);
   } else {
     state.filtered = state.islands.filter(passesScope);
-    state.filtered.sort((a, b) => a.name.localeCompare(b.name));
+    state.filtered.sort((a, b) => listSortCompare(a, b, { photosFirst }));
   }
 
   renderList();
   rebuildMarkerLayer();
 }
 
-[els.search, els.typeFilter, els.nationFilter].forEach((el) => {
+[
+  els.search,
+  els.typeFilter,
+  els.nationFilter,
+  els.areaMinFilter,
+  els.subtypeFilter,
+  els.confidenceFilter,
+].forEach((el) => {
   if (!el) return;
   el.addEventListener("input", applyFilters);
+  el.addEventListener("change", applyFilters);
+});
+
+[els.filterPhoto, els.filterFerry, els.filterElevation].forEach((el) => {
+  if (!el) return;
+  el.addEventListener("change", applyFilters);
 });
 
 if (els.favoritesFilter) {
@@ -3070,11 +2878,16 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
 
 function resetAtlasHome() {
   releaseIslandDetailView({ clearUrl: true });
-  document.getElementById("itinerary-banner")?.remove();
   els.search.value = "";
   els.typeFilter.value = "";
   els.nationFilter.value = "";
   if (els.favoritesFilter) els.favoritesFilter.value = "";
+  if (els.filterPhoto) els.filterPhoto.checked = false;
+  if (els.filterFerry) els.filterFerry.checked = false;
+  if (els.filterElevation) els.filterElevation.checked = false;
+  if (els.areaMinFilter) els.areaMinFilter.value = "";
+  if (els.subtypeFilter) els.subtypeFilter.value = "";
+  if (els.confidenceFilter) els.confidenceFilter.value = "";
   applyFilters();
   document.body.classList.remove("filters-open");
   document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
@@ -3357,7 +3170,10 @@ const CHAT_FEATURES = {
   castle: ["castle", "fortress", "tower house", "keep"],
   abbey: ["abbey", "priory", "monastery", "monastic", "convent", "nunnery"],
   broch: ["broch", "hillfort", "iron age"],
-  ferry: ["ferry", "ferries", "calmac", "passenger boat"],
+  ferry: ["ferry", "ferries", "calmac", "passenger boat", "ferry-accessible",
+    "ferry accessible", "ferry served", "ferry islands"],
+  photo: ["photo", "photos", "photograph", "photographs", "pictured", "with image",
+    "has a photo", "has photo", "with photos"],
   bridge: ["bridge"],
   causeway: ["causeway", "tidal road", "walk across"],
   lighthouse: ["lighthouse", "beacon"],
@@ -3528,6 +3344,10 @@ function parseChatQuery(rawText) {
     ferrySeasonWanted: null,      // 'year-round' | 'summer-only'
     ferryOperatorWanted: null,    // operator-id substring match
     ferryFromPort: null,          // free-text port name to match against terminal names
+    photoOnly: false,
+    elevationOnly: false,
+    curatedOnly: false,
+    hideUnconfirmed: false,
     semanticTags: new Set(),
     nearUnresolved: null,
   };
@@ -3674,6 +3494,24 @@ function parseChatQuery(rawText) {
   if (m) q.sizeMax = parseFloat(m[1]);
   m = text.match(/(?:larger|bigger|more than|over)\s+(\d+(?:\.\d+)?)\s*(?:km2|km²|sq km|square km|km)/);
   if (m) q.sizeMin = parseFloat(m[1]);
+  if (/\blarge\s+islands?\b|\bbig\s+islands?\b/.test(text) && q.sizeMin == null) {
+    q.sizeMin = 10;
+  }
+  if (/\b(with\s+)?(a\s+)?photos?\b|\bhas\s+(a\s+)?photo\b|\bpictured\b/.test(text)) {
+    q.photoOnly = true;
+  }
+  if (/\b(with\s+)?elevation\b|\bhigh\s+point\b|\bhas\s+a\s+summit\b/.test(text)) {
+    q.elevationOnly = true;
+  }
+  if (/\bcurated\s+only\b|\bcanonical\s+islands?\b/.test(text)) {
+    q.curatedOnly = true;
+  }
+  if (/\bhide\s+unconfirmed\b|\bconfirmed\s+only\b|\bno\s+unconfirmed\b/.test(text)) {
+    q.hideUnconfirmed = true;
+  }
+  if (/\bferry[- ]?(accessible|access|served)\b|\bferry\s+islands?\b/.test(text)) {
+    q.ferryIntent = true;
+  }
 
   // Proximity: "within N miles/km of <place>" → radius + place.
   // Or "near <place>" / "off <place>" / "around <place>" → default 100 km.
@@ -3781,6 +3619,12 @@ function scoreChatIsland(island, q) {
 
   if (q.sizeMin != null && (island.areaKm2 || 0) < q.sizeMin) return -Infinity;
   if (q.sizeMax != null && (island.areaKm2 || 0) > q.sizeMax) return -Infinity;
+  if (q.photoOnly && !islandHasPhoto(island)) return -Infinity;
+  if (q.elevationOnly && !islandHasElevation(island)) return -Infinity;
+  if (q.curatedOnly && island.source !== "curated") return -Infinity;
+  if (q.hideUnconfirmed && island.classification?.confidence === "unconfirmed") {
+    return -Infinity;
+  }
 
   // Visitor "best of" lists: drop anonymous micro-islets in a region.
   if (q.recommendationIntent && (q.archipelagos.size || q.nations.size)) {
@@ -3869,6 +3713,8 @@ function scoreChatIsland(island, q) {
       else score -= 3;
     } else if (feat === "tidal" && island.subtype === "estuary") {
       score += 4;
+    } else if (feat === "photo" && islandHasPhoto(island)) {
+      score += 4;
     } else if (hits > 0) {
       score += 2 + Math.min(3, hits);
     } else if (q.features.size === 1) {
@@ -3943,7 +3789,12 @@ function searchChatIslands(rawText, limit = 6) {
     });
     return { query: q, results: sortable.slice(0, outLimit), total: sortable.length };
   }
-  scored.sort((a, b) => b.score - a.score);
+  const photosFirst = q.photoOnly;
+  scored.sort(
+    (a, b) =>
+      b.score - a.score
+        || listSortCompare(a.island, b.island, { photosFirst }),
+  );
   return { query: q, results: scored.slice(0, outLimit), total: scored.length };
 }
 
@@ -5330,12 +5181,6 @@ const mobileNav = (() => {
     if (next === "islands") {
       syncMobileSidebarPanels();
     }
-    if (next === "trip") {
-      loadFerries()
-        .then(() => refreshTripPlannerDatalist())
-        .catch(() => {});
-      window.setTimeout(() => document.getElementById("trip-from")?.focus(), 60);
-    }
     syncMapSize();
   }
 
@@ -5377,6 +5222,4 @@ document.getElementById("home-link")?.addEventListener("click", resetAtlasHome);
 loadIslands();
 initFavoritesAccessUi();
 initCrowdSuggestUi();
-initTripPlanner();
 chatAutoLoadFromUrl();
-tryRenderItineraryFromUrl();

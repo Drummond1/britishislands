@@ -4,6 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-16 (discovery filters + trip planner removed)** — Topbar discovery
+filters: **Has photo**, **Ferry** (enabled after `loadFerries()`), **Summit**,
+area band (≥1 / ≥10 km²), subtype, curated / hide unconfirmed. Photo filter
+sorts with-photo islands first. Ferry trip planner overlay + mobile **Trip** tab
+removed; list **⛴** icon and detail **How to get there** unchanged. Chat
+synonyms extended (ferry, photo, large, summit, curated).
+
 **2026-05-16 (saved islands email gate)** — Hearts + **Saved** list require a one-time email
 (`iobFavoritesEmail` in localStorage); island ids stay in `iobFavoriteIslandIds` on-device only.
 
@@ -537,9 +544,14 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   wired up). See `loadGalleries` / `ensureGalleryMerged` /
   `refreshGalleryInPlace` in `app.js`.
 - **Sidebar search is fuzzy/typeahead** as of 2026-05-11: the search box
-  scores 6,748 islands per keystroke with prefix / word-start / substring
-  / subsequence matching, diacritic-insensitive. Sort is by score not
-  alphabetic when a query is active; alphabetic when the box is empty.
+  scores islands per keystroke with prefix / word-start / substring /
+  subsequence matching, diacritic-insensitive. Sort is by score when a query
+  is active; alphabetic when the box is empty (with-photo first when **Has
+  photo** is on).
+- **Discovery filters** (2026-05-16): topbar toggles/selects for photo,
+  ferry-accessible, summit/elevation, minimum area, subtype, and
+  curated / hide-unconfirmed. Ferries preload after islands load so the
+  ferry filter enables without opening an island first.
 - **Crowd pins**: optional gold markers from `data/crowd_pins.json`; **Suggest
   island** opens a map pick + GitHub issue (no on-site accounts). Toggle
   **Crowd pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
@@ -559,11 +571,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   Trainline + Discover Cars affiliate links, "Book ↗" CTA) and a
   separate "Causeway access" block for tidal-causeway islands. The detail
   map renders dashed-polyline ferry routes + terminal markers; the
-  sidebar shows a `⛴` icon next to ferry-accessible islands. The ferry
-  network powers a Dijkstra-backed multi-island itinerary builder
-  triggered via `?trip=startId,endId`. SEO landing pages (12 of them)
-  ship under `ferries/` with `TouristTrip` JSON-LD per route. See
-  [`FERRIES.md`](FERRIES.md).
+  sidebar shows a `⛴` icon next to ferry-accessible islands. SEO landing
+  pages (12 of them) ship under `ferries/` with `TouristTrip` JSON-LD per
+  route. (Trip-planner overlay removed 2026-05-16.) See [`FERRIES.md`](FERRIES.md).
 
 ---
 

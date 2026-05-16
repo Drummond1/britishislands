@@ -107,6 +107,31 @@
           <option value="">All islands</option>
           <option value="favorites">Saved only</option>
         </select>
+        <label class="toggle" title="Islands with at least one photo in the atlas">
+          <input type="checkbox" id="filter-photo" />
+          <span>Has photo</span>
+        </label>
+        <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
+          <input type="checkbox" id="filter-ferry" disabled />
+          <span>Ferry</span>
+        </label>
+        <label class="toggle" title="Islands with a mapped summit / highest point">
+          <input type="checkbox" id="filter-elevation" />
+          <span>Summit</span>
+        </label>
+        <select id="area-min-filter" aria-label="Minimum island area">
+          <option value="">Any area</option>
+          <option value="1">≥ 1 km²</option>
+          <option value="10">≥ 10 km²</option>
+        </select>
+        <select id="subtype-filter" aria-label="Filter by island subtype">
+          <option value="">All subtypes</option>
+        </select>
+        <select id="confidence-filter" aria-label="Classification confidence">
+          <option value="">All records</option>
+          <option value="curated">Curated only</option>
+          <option value="hide-unconfirmed">Hide unconfirmed</option>
+        </select>
         <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
           <input type="checkbox" id="crowd-show-toggle" checked />
           <span>Crowd pins</span>
@@ -238,36 +263,6 @@
           <span><i class="dot dot--crowd"></i> Crowd</span>
           <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
         </div>
-        <section class="trip-planner" aria-labelledby="trip-planner-title">
-          <h2 class="trip-planner__title" id="trip-planner-title">Ferry trip planner</h2>
-          <form class="trip-planner__form" id="trip-form">
-            <label class="trip-planner__field">
-              <span>From island</span>
-              <input
-                id="trip-from"
-                name="from"
-                type="search"
-                list="trip-islands"
-                placeholder="e.g. Mull"
-                autocomplete="off"
-              />
-            </label>
-            <label class="trip-planner__field">
-              <span>To island</span>
-              <input
-                id="trip-to"
-                name="to"
-                type="search"
-                list="trip-islands"
-                placeholder="e.g. Iona"
-                autocomplete="off"
-              />
-            </label>
-            <button class="trip-planner__submit" type="submit">Plan route</button>
-          </form>
-          <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
-          <datalist id="trip-islands"></datalist>
-        </section>
       </section>
     </main>
 
@@ -396,10 +391,6 @@
       <button type="button" class="mobile-nav__btn" data-mobile-view="islands">
         <span class="mobile-nav__icon" aria-hidden="true">☰</span>
         <span class="mobile-nav__label">Islands</span>
-      </button>
-      <button type="button" class="mobile-nav__btn" data-mobile-view="trip">
-        <span class="mobile-nav__icon" aria-hidden="true">⛴</span>
-        <span class="mobile-nav__label">Trip</span>
       </button>
       <button type="button" class="mobile-nav__btn" data-mobile-view="ask">
         <span class="mobile-nav__icon" aria-hidden="true">✦</span>
