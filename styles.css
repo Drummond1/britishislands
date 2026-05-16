@@ -233,6 +233,29 @@ body {
   display: none;
 }
 
+/* Pick step: bottom sheet only — map stays clickable (pointer-events pass through) */
+.crowd-modal--picking {
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.crowd-modal--picking .crowd-modal__backdrop {
+  display: none;
+}
+
+.crowd-modal--picking .crowd-modal__panel {
+  pointer-events: auto;
+  width: min(100%, 480px);
+  margin: 0 16px max(16px, var(--safe-bottom));
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.crowd-modal--picking + #map,
+.map-wrap:has(.crowd-modal--picking) #map {
+  cursor: crosshair;
+}
+
 .crowd-modal__backdrop {
   position: absolute;
   inset: 0;
@@ -530,6 +553,154 @@ body {
   font-size: 14px;
   line-height: 1;
   vertical-align: middle;
+}
+
+/* ----- Explore topic chips ----- */
+.discover-panel {
+  padding: 10px 12px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.discover-panel[hidden] {
+  display: none;
+}
+
+.discover-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.discover-chip {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.discover-chip:hover,
+.discover-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--text);
+  outline: none;
+}
+
+.discover-chip.is-active {
+  background: var(--accent-soft);
+  border-color: rgba(78, 163, 255, 0.45);
+  color: var(--accent);
+}
+
+.discover-panel__hint {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.discover-panel__hint[hidden] {
+  display: none;
+}
+
+/* ----- Featured / notable islands strip ----- */
+.featured-strip {
+  padding: 10px 12px 4px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.featured-strip[hidden] {
+  display: none;
+}
+
+.featured-strip__title {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.featured-strip__scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.featured-card {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  scroll-snap-align: start;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.featured-card:hover,
+.featured-card:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.featured-card__img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg);
+}
+
+.featured-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  font-size: 28px;
+  color: var(--text-muted);
+  background: var(--bg);
+}
+
+.featured-card__body {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featured-card__name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.featured-card__blurb {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ===== Island list ===== */
@@ -2312,6 +2483,214 @@ body {
   }
 }
 
+
+/* ===== P0b enrichment detail blocks ===== */
+.stat-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.enrichment-attribution {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.population-detail {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.population-detail summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.population-detail__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 8px 0 0;
+}
+
+.population-detail__grid dt {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.population-detail__grid dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.hills-on {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.hills-on__title {
+  margin: 0 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hills-on__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hills-on__list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.hill-name {
+  font-weight: 600;
+}
+
+.hill-class {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.hill-class-munro {
+  color: #f4d35e;
+  border-color: rgba(244, 211, 94, 0.45);
+  background: rgba(244, 211, 94, 0.12);
+}
+
+.hill-class-corbett,
+.hill-class-graham,
+.hill-class-donald {
+  color: var(--lake);
+  border-color: rgba(108, 211, 163, 0.45);
+  background: rgba(108, 211, 163, 0.1);
+}
+
+.hill-class-marilyn,
+.hill-class-hump,
+.hill-class-hewitt {
+  color: var(--accent);
+  border-color: rgba(78, 163, 255, 0.35);
+  background: rgba(78, 163, 255, 0.1);
+}
+
+.hill-ele {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.hills-on__more {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.lighthouses__nav-warning {
+  font-size: 12px;
+  color: var(--river);
+  background: rgba(255, 180, 120, 0.08);
+  border: 1px solid rgba(255, 180, 120, 0.25);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 0 0 10px;
+}
+
+.lighthouses__subtitle,
+.reserves-wildlife__subtitle {
+  margin: 10px 0 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.lighthouse,
+.reserve {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lighthouse:last-child,
+.reserve:last-child {
+  border-bottom: none;
+}
+
+.lighthouse__name,
+.reserve__name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lighthouse-meta,
+.reserve__meta {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.lighthouse__links {
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.wildlife-colonies__note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+
+.wildlife-colonies__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.colony-species {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+}
+
+.colony-species-scheduled {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--river);
+  margin-left: 4px;
+}
+
+.colony-species-season {
+  color: var(--text-muted);
+  font-size: 11px;
+}
 
 /* ===== Ferry "How to get there" block ===== */
 .ferry-section {

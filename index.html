@@ -161,6 +161,14 @@
             <h2 id="list-heading">Islands</h2>
             <span class="count" id="result-count">0</span>
           </header>
+          <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
+            <div class="discover-chips" id="discover-chips" role="tablist"></div>
+            <p class="discover-panel__hint" id="discover-hint" hidden></p>
+          </section>
+          <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
+            <h3 id="featured-heading" class="featured-strip__title">Notable islands</h3>
+            <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
+          </section>
           <ul id="island-list" class="island-list__items"></ul>
         </section>
 
@@ -189,8 +197,8 @@
             <h2 id="crowd-modal-title" class="crowd-modal__title">Suggest an island</h2>
             <div id="crowd-step-pick" class="crowd-step">
               <p class="crowd-modal__lead">
-                Click the map once to drop a pin. You can leave the name empty if you only want others
-                to see where to look.
+                <strong>Step 1 — Drop a pin.</strong> Click anywhere on the map above (crosshair cursor).
+                A gold marker shows your spot. You can leave the name blank on the next step.
               </p>
               <p class="crowd-modal__fine">
                 On the next step you can submit here — no GitHub account. Maintainers review before pins
@@ -451,6 +459,8 @@
          Example: <script>window.IOB_SITE_ORIGIN = "https://your.domain";</script> -->
     <!-- Optional: native crowd suggestions (FormSubmit / Formspree / Web3Forms). See data/crowd_suggest_config.example.json
          Example: <script>window.IOB_SUGGEST_CONFIG = { provider: "formsubmit", formsubmitEmail: "you@example.com" };</script> -->
+    <!-- Optional: OS Maps key — copy config.local.example.js to config.local.js and uncomment:
+         <script src="config.local.js"></script> -->
     <script src="app.js" type="module"></script>
   </body>
 </html>

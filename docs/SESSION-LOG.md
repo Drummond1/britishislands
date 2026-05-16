@@ -1572,6 +1572,19 @@
 
 ---
 
+## 2026-05-16 — Photo priority queue, featured strip, v5 queue flag
+
+- **Goal**: Prioritise hero-image enrichment and surface notable islands in the UI.
+- **What changed**:
+  - `scripts/build_image_priority_queue.py` → `data/image_priority_queue.json` (3,444 without images).
+  - `enrich_images_v5.py --queue-file` for tier-ordered runs.
+  - `scripts/build_featured_islands.py` → `data/featured_islands.json` (120 picks).
+  - Sidebar **Notable islands** horizontal strip (`app.js`, `index.html`, `styles.css`).
+  - `docs/QUEUE.md` P1 photo coverage commands.
+- **Outcome**: Featured strip live after regen; run v5 with queue file for batched lead-photo backfill.
+
+---
+
 ## 2026-05-16 — Tier 1 discovery filters; trip planner removed
 
 - **Goal**: Ship sidebar discovery filters (photo, ferry, elevation, area,
@@ -1590,3 +1603,23 @@
   runs.
 - **Open items kicked to QUEUE.md**: Resume `enrich_images_v4` / v5 when caches
   allow (photo coverage still below full atlas).
+
+---
+
+## 2026-05-16 — Deploy: explore topics, P0b enrichments (partial), detail UI
+
+- **Goal**: Ship curated “what to explore?” starting points, notable strip,
+  enrichment detail panels, and merge staged lighthouse/wildlife/census caches.
+- **What changed**:
+  - `data/discovery_topics.json` + `scripts/build_discovery_topics.py` — explore
+    chips (notable, island-hopping, thames-eyots, high-summits); `?explore=`.
+  - `data/featured_islands.json` + `scripts/build_featured_islands.py`.
+  - `scripts/apply_enrichments.py` — smoke-test ids fixed to OSM relation ids.
+  - Applied caches → `islands.json` (lighthouses 297, wildlife colonies 30,
+    RSPB reserves 10).
+  - `app.js` — explore UI, P0b detail renderers; removed crowd debug instrumentation.
+  - `config.local.example.js` for OS Maps key setup.
+  - Rebuilt `islands_index.json`.
+- **Outcome / counts**: 7,041 islands; index ~10.2 MB. Hills/geology not applied.
+- **Open items kicked to QUEUE.md**: DoBIH CSV or Wikidata retry for hills;
+  `ingest_geology_bgs.py --fetch --commit` locally; full NRS census CSV.

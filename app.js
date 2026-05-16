@@ -62,8 +62,13 @@ const state = {
   crowdPins: [],
   crowdLayer: null,
   crowdMapClickHandler: null,
+  crowdDraftMarker: null,
   crowdSuggestConfig: null,
   favoritesMapLayer: null,
+  featuredIslands: null,
+  discoveryTopics: null,
+  activeExploreTopic: null,
+  exploreIslandIds: null,
 };
 
 // ---------- Ferries (lazy-loaded) ----------
@@ -849,6 +854,33 @@ els.cluster.addEventListener("change", () => {
 });
 
 // ---------- Crowd-sourced pins (community layer) ----------
+function clearCrowdDraftMarker() {
+  if (state.crowdDraftMarker && map) {
+    try {
+      map.removeLayer(state.crowdDraftMarker);
+    } catch (_) {
+      /* ignore */
+    }
+    state.crowdDraftMarker = null;
+  }
+}
+
+function setCrowdPickMode(on) {
+  const modal = document.getElementById("crowd-modal");
+  if (modal) modal.classList.toggle("crowd-modal--picking", Boolean(on));
+}
+
+function setCrowdDraftMarker(lat, lng) {
+  if (!map) return;
+  clearCrowdDraftMarker();
+  state.crowdDraftMarker = L.circleMarker([lat, lng], {
+    ...CROWD_MARKER_STYLE,
+    radius: 11,
+    weight: 3,
+  });
+  state.crowdDraftMarker.addTo(map);
+}
+
 function clearCrowdMapPicker() {
   if (state.crowdMapClickHandler && map) {
     map.off("click", state.crowdMapClickHandler);
@@ -856,6 +888,8 @@ function clearCrowdMapPicker() {
   }
   const wrap = document.getElementById("map");
   if (wrap) wrap.classList.remove("map--crowd-pick");
+  clearCrowdDraftMarker();
+  setCrowdPickMode(false);
 }
 
 function rebuildCrowdPinsLayer() {
@@ -965,6 +999,7 @@ function initCrowdSuggestUi() {
 
   function showForm(lat, lng, opts = {}) {
     hideFormError();
+    setCrowdPickMode(false);
     showStep("form");
     coordsEl.textContent = `Pin: ${lat.toFixed(5)}, ${lng.toFixed(5)} (WGS84)`;
     modal.dataset.crowdLat = String(lat);
@@ -979,13 +1014,20 @@ function initCrowdSuggestUi() {
     clearCrowdMapPicker();
     hideFormError();
     showStep("pick");
+    setCrowdPickMode(true);
     const wrap = document.getElementById("map");
     if (wrap) wrap.classList.add("map--crowd-pick");
     const handler = (e) => {
-      clearCrowdMapPicker();
+      if (state.crowdMapClickHandler && map) {
+        map.off("click", state.crowdMapClickHandler);
+        state.crowdMapClickHandler = null;
+      }
+      if (wrap) wrap.classList.remove("map--crowd-pick");
+      setCrowdDraftMarker(e.latlng.lat, e.latlng.lng);
       showForm(e.latlng.lat, e.latlng.lng);
     };
     state.crowdMapClickHandler = handler;
+    if (!map) return;
     map.on("click", handler);
   }
 
@@ -993,6 +1035,7 @@ function initCrowdSuggestUi() {
     modal.hidden = false;
     if (opts.lat != null && opts.lng != null) {
       clearCrowdMapPicker();
+      setCrowdDraftMarker(Number(opts.lat), Number(opts.lng));
       showForm(Number(opts.lat), Number(opts.lng), opts);
     } else {
       resetCrowdFormFields();
@@ -1003,12 +1046,16 @@ function initCrowdSuggestUi() {
   window.openCrowdSuggestModal = openCrowdModal;
 
   btnOpen.addEventListener("click", () => openCrowdModal());
-  backdrop?.addEventListener("click", closeModal);
+  backdrop?.addEventListener("click", () => {
+    if (modal.classList.contains("crowd-modal--picking")) return;
+    closeModal();
+  });
   cancelPick?.addEventListener("click", closeModal);
   closeForm?.addEventListener("click", closeModal);
   successDone?.addEventListener("click", closeModal);
   pickAgain?.addEventListener("click", () => {
     resetCrowdFormFields();
+    clearCrowdDraftMarker();
     startPick();
   });
 
@@ -1084,6 +1131,11 @@ function applyRouteFromUrl() {
     const islandId = params.get("island");
     if (islandId && state.byId?.has(islandId)) {
       focusIsland(islandId, { fly: true });
+      return;
+    }
+    const exploreId = params.get("explore");
+    if (exploreId && state.discoveryTopics?.some((t) => t.id === exploreId)) {
+      setExploreTopic(exploreId, { skipUrl: true });
     }
   } catch (_) {
     /* non-fatal */
@@ -1120,6 +1172,7 @@ async function loadIslands() {
         applyFilters();
         loadCrowdPinsAndRender();
         loadFerries().catch(() => {});
+        loadFeaturedIslands().catch(() => {});
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       }
     }
@@ -1161,6 +1214,153 @@ async function loadIslands() {
   applyRouteFromUrl();
   loadCrowdPinsAndRender();
   loadFerries().catch(() => {});
+  loadFeaturedIslands().catch(() => {});
+  loadDiscoveryTopics().catch(() => {});
+}
+
+async function loadFeaturedIslands() {
+  try {
+    const res = await fetch("data/featured_islands.json");
+    if (!state.activeExploreTopic) {
+      if (!res.ok) return;
+      const data = await res.json();
+      const rows = Array.isArray(data?.islands) ? data.islands : [];
+      state.featuredIslands = rows.filter((r) => r?.id && state.byId?.has(r.id));
+      renderExploreStrip(state.featuredIslands, "Notable islands");
+    }
+  } catch (e) {
+    console.warn("featured_islands.json unavailable", e);
+  }
+}
+
+async function loadDiscoveryTopics() {
+  try {
+    const res = await fetch("data/discovery_topics.json");
+    if (!res.ok) return;
+    const data = await res.json();
+    state.discoveryTopics = Array.isArray(data?.topics) ? data.topics : [];
+    renderDiscoverChips();
+    document.getElementById("discover-panel")?.removeAttribute("hidden");
+    const exploreId = new URLSearchParams(window.location.search).get("explore");
+    if (exploreId && state.discoveryTopics.some((t) => t.id === exploreId)) {
+      setExploreTopic(exploreId, { skipUrl: true });
+    }
+  } catch (e) {
+    console.warn("discovery_topics.json unavailable", e);
+  }
+}
+
+function renderDiscoverChips() {
+  const host = document.getElementById("discover-chips");
+  if (!host || !state.discoveryTopics?.length) return;
+  host.replaceChildren();
+  const mk = (id, label, pressed) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "discover-chip" + (pressed ? " is-active" : "");
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-selected", pressed ? "true" : "false");
+    b.dataset.topicId = id;
+    b.textContent = label;
+    return b;
+  };
+  const all = mk("", "All", !state.activeExploreTopic);
+  all.addEventListener("click", () => clearExploreTopic());
+  host.appendChild(all);
+  for (const t of state.discoveryTopics) {
+    const b = mk(t.id, t.title, state.activeExploreTopic === t.id);
+    b.addEventListener("click", () => setExploreTopic(t.id));
+    host.appendChild(b);
+  }
+}
+
+function syncExploreUrl(topicId) {
+  try {
+    const url = new URL(window.location.href);
+    if (topicId) url.searchParams.set("explore", topicId);
+    else url.searchParams.delete("explore");
+    window.history.replaceState(null, "", url.toString());
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
+function clearExploreTopic() {
+  state.activeExploreTopic = null;
+  state.exploreIslandIds = null;
+  const hint = document.getElementById("discover-hint");
+  if (hint) {
+    hint.hidden = true;
+    hint.textContent = "";
+  }
+  renderDiscoverChips();
+  syncExploreUrl(null);
+  loadFeaturedIslands().catch(() => {});
+  applyFilters();
+}
+
+function setExploreTopic(topicId, { skipUrl = false } = {}) {
+  const topic = state.discoveryTopics?.find((t) => t.id === topicId);
+  if (!topic) return;
+  state.activeExploreTopic = topicId;
+  state.exploreIslandIds = new Set(
+    (topic.islandIds || []).filter((id) => state.byId?.has(id)),
+  );
+  const hint = document.getElementById("discover-hint");
+  if (hint) {
+    hint.hidden = false;
+    hint.textContent = topic.subtitle || "";
+  }
+  const presets = topic.filterPresets || {};
+  if (els.filterPhoto) els.filterPhoto.checked = Boolean(presets.photosFirst);
+  if (els.filterFerry) els.filterFerry.checked = Boolean(presets.ferry);
+  if (els.filterElevation) els.filterElevation.checked = Boolean(presets.elevation);
+  renderDiscoverChips();
+  renderExploreStrip(topic.islands || [], topic.title);
+  if (!skipUrl) syncExploreUrl(topicId);
+  applyFilters();
+  const pts = (topic.islands || [])
+    .map((r) => state.byId.get(r.id))
+    .filter((i) => i && i.lat != null && i.lng != null);
+  if (pts.length && typeof L !== "undefined" && map) {
+    const bounds = L.latLngBounds(pts.map((i) => [i.lat, i.lng]));
+    map.fitBounds(bounds.pad(0.12), { maxZoom: 9, duration: 0.6 });
+  }
+}
+
+function renderExploreStrip(rows, title) {
+  const strip = document.getElementById("featured-strip");
+  const scroll = document.getElementById("featured-strip-scroll");
+  const heading = document.getElementById("featured-heading");
+  if (!strip || !scroll || !rows?.length) {
+    if (strip) strip.hidden = true;
+    return;
+  }
+  if (heading) heading.textContent = title || "Explore";
+  strip.hidden = false;
+  scroll.replaceChildren();
+  for (const row of rows) {
+    const island = state.byId.get(row.id);
+    if (!island) continue;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "featured-card";
+    btn.setAttribute("role", "listitem");
+    btn.setAttribute("aria-label", `${row.name}, ${row.nation || island.nation}`);
+    const thumb = row.thumbUrl || island.image;
+    const imgHtml = thumb
+      ? `<img class="featured-card__img" src="${escapeAttr(thumb)}" alt="" loading="lazy" />`
+      : `<span class="featured-card__placeholder" aria-hidden="true">◍</span>`;
+    const blurb = row.shortDescription || island.shortDescription || "";
+    btn.innerHTML = `
+      ${imgHtml}
+      <span class="featured-card__body">
+        <span class="featured-card__name">${escapeHtml(row.name)}</span>
+        ${blurb ? `<span class="featured-card__blurb">${escapeHtml(blurb)}</span>` : ""}
+      </span>`;
+    btn.addEventListener("click", () => focusIsland(row.id, { fly: true }));
+    scroll.appendChild(btn);
+  }
 }
 
 function populateNationFilter() {
@@ -1304,13 +1504,17 @@ function applyFilters() {
   const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
   const subtype = els.subtypeFilter?.value || "";
   const confidence = els.confidenceFilter?.value || "";
-  const photosFirst = photoOnly;
+  const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
 
+  const topic = state.discoveryTopics?.find((t) => t.id === state.activeExploreTopic);
   if (els.listHeading) {
-    els.listHeading.textContent = favOnly ? "Saved islands" : "Islands";
+    if (favOnly) els.listHeading.textContent = "Saved islands";
+    else if (topic) els.listHeading.textContent = topic.title;
+    else els.listHeading.textContent = "Islands";
   }
 
   const passesScope = (i) => {
+    if (state.exploreIslandIds && !state.exploreIslandIds.has(i.id)) return false;
     if (type && i.type !== type) return false;
     if (nation && i.nation !== nation) return false;
     if (favOnly && !isFavoriteIsland(i.id)) return false;
@@ -1517,17 +1721,24 @@ function renderListWindow() {
 // ---------- Markers ----------
 function makeMarker(island) {
   const color = TYPE_COLORS[island.type] || TYPE_COLORS.sea;
-  const radius = Math.max(
+  let radius = Math.max(
     4,
     Math.min(14, Math.log10((island.areaKm2 || 0.05) + 1) * 6 + 4),
   );
+  let fillColor = color;
+  let fillOpacity = 0.9;
+  if (state.exploreIslandIds?.has(island.id)) {
+    fillColor = "#f4d35e";
+    radius = Math.min(16, radius + 2);
+    fillOpacity = 1;
+  }
 
   const marker = L.circleMarker([island.lat, island.lng], {
     radius,
     color: "#ffffff",
     weight: 1.2,
-    fillColor: color,
-    fillOpacity: 0.9,
+    fillColor,
+    fillOpacity,
   });
 
   marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
@@ -1920,12 +2131,16 @@ function renderDetails(island) {
     { label: "Nation", value: island.nation || "—" },
     { label: "Archipelago", value: island.archipelago || "—" },
     { label: "Area", value: formatAreaRow(island) },
-    { label: "Population", value: formatPopulation(island.population) },
+    { label: "Population", value: formatPopulationCell(island) },
     {
       label: "Highest point",
       value: formatHighPointRow(island),
     },
   ];
+  const bedrock = formatBedrockStat(island);
+  if (bedrock) {
+    stats.push({ label: "Bedrock", value: bedrock });
+  }
   if (parentLabel) {
     stats.push({ label: "In water body", value: parentLabel });
   }
@@ -2014,6 +2229,9 @@ function renderDetails(island) {
         )
         .join("")}
     </div>
+
+    ${renderMaritimeAidsSection(island)}
+    ${renderReservesWildlifeSection(island)}
 
     ${tags ? `<div class="tags">${tags}</div>` : ""}
 
@@ -2895,7 +3113,9 @@ function resetAtlasHome() {
     const url = new URL(window.location.href);
     url.searchParams.delete("trip");
     url.searchParams.delete("ask");
+    url.searchParams.delete("explore");
     url.searchParams.delete("island");
+    clearExploreTopic();
     window.history.replaceState(null, "", url.toString());
   } catch (_) {
     /* non-fatal */
@@ -3040,6 +3260,293 @@ function overpassToGeoJSON(payload) {
   return { type: "FeatureCollection", features };
 }
 
+// ---------- Enrichment detail renderers (P0b) ----------
+const HILL_CLASS_SLUG = {
+  Munro: "munro",
+  Furth: "furth",
+  Corbett: "corbett",
+  Graham: "graham",
+  Donald: "donald",
+  Murdo: "murdo",
+  Marilyn: "marilyn",
+  HuMP: "hump",
+  Hewitt: "hewitt",
+  Nuttall: "nuttall",
+  Wainwright: "wainwright",
+  Birkett: "birkett",
+};
+
+const WILDLIFE_SPECIES_LABELS = {
+  gannet: "Northern gannet",
+  puffin: "Atlantic puffin",
+  kittiwake: "Black-legged kittiwake",
+  guillemot: "Common guillemot",
+  razorbill: "Razorbill",
+  fulmar: "Northern fulmar",
+  "manx-shearwater": "Manx shearwater",
+  "storm-petrel": "European storm petrel",
+  "leachs-petrel": "Leach's storm petrel",
+  "arctic-tern": "Arctic tern",
+  "common-tern": "Common tern",
+  "roseate-tern": "Roseate tern",
+  "sandwich-tern": "Sandwich tern",
+  "little-tern": "Little tern",
+  eider: "Common eider",
+  shag: "European shag",
+  cormorant: "Great cormorant",
+  "great-skua": "Great skua",
+  "arctic-skua": "Arctic skua",
+  "herring-gull": "Herring gull",
+  "black-headed-gull": "Black-headed gull",
+  "lesser-black-backed-gull": "Lesser black-backed gull",
+  "great-black-backed-gull": "Great black-backed gull",
+  "black-guillemot": "Black guillemot",
+  "red-throated-diver": "Red-throated diver",
+  "black-throated-diver": "Black-throated diver",
+  "great-northern-diver": "Great northern diver",
+  "white-tailed-eagle": "White-tailed eagle",
+  "golden-eagle": "Golden eagle",
+  peregrine: "Peregrine falcon",
+  "hen-harrier": "Hen harrier",
+  merlin: "Merlin",
+  "short-eared-owl": "Short-eared owl",
+  corncrake: "Corncrake",
+  chough: "Red-billed chough",
+  "grey-seal": "Grey seal",
+  "common-seal": "Common seal",
+  "harbour-porpoise": "Harbour porpoise",
+  "common-dolphin": "Short-beaked common dolphin",
+  "bottlenose-dolphin": "Bottlenose dolphin",
+  "minke-whale": "Minke whale",
+  "basking-shark": "Basking shark",
+  otter: "Eurasian otter",
+};
+
+function formatSpeciesLabel(speciesId) {
+  if (!speciesId) return "";
+  return (
+    WILDLIFE_SPECIES_LABELS[speciesId] ||
+    speciesId
+      .split("-")
+      .map((w) => capitalize(w))
+      .join(" ")
+  );
+}
+
+function enrichmentAttribution(text) {
+  if (!text) return "";
+  return `<p class="enrichment-attribution">${escapeHtml(text)}</p>`;
+}
+
+function formatPopulationCell(island) {
+  let html = formatPopulation(island.population);
+  if (island.populationYear) {
+    html += ` <span class="stat-meta">· census ${escapeHtml(String(island.populationYear))}</span>`;
+  }
+  if (island.populationConfidence && island.populationConfidence !== "n/a") {
+    const conf =
+      { high: "official island figure", medium: "aggregated estimate", low: "indicative" }[
+        island.populationConfidence
+      ] || island.populationConfidence;
+    html += ` <span class="stat-meta">· ${escapeHtml(conf)}</span>`;
+  }
+  const pd = island.populationDetails;
+  if (!pd || typeof pd !== "object") return html;
+
+  const rows = [];
+  if (pd.households != null) {
+    rows.push(
+      `<dt>Households</dt><dd>${escapeHtml(new Intl.NumberFormat("en-GB").format(pd.households))}</dd>`,
+    );
+  }
+  const ages = pd.ageStructure;
+  if (ages && typeof ages === "object") {
+    if (ages.under16 != null) {
+      rows.push(`<dt>Under 16</dt><dd>${escapeHtml(String(ages.under16))}</dd>`);
+    }
+    if (ages["16to64"] != null) {
+      rows.push(`<dt>Aged 16–64</dt><dd>${escapeHtml(String(ages["16to64"]))}</dd>`);
+    }
+    if (ages["65plus"] != null) {
+      rows.push(`<dt>65 and over</dt><dd>${escapeHtml(String(ages["65plus"]))}</dd>`);
+    }
+  }
+  if (pd.gaelicSpeakers != null) {
+    rows.push(`<dt>Gaelic speakers</dt><dd>${escapeHtml(String(pd.gaelicSpeakers))}</dd>`);
+  }
+  if (pd.welshSpeakers != null) {
+    rows.push(`<dt>Welsh speakers</dt><dd>${escapeHtml(String(pd.welshSpeakers))}</dd>`);
+  }
+  if (pd.irishSpeakers != null) {
+    rows.push(`<dt>Irish speakers</dt><dd>${escapeHtml(String(pd.irishSpeakers))}</dd>`);
+  }
+  if (!rows.length) return html;
+
+  html += `<details class="population-detail"><summary>Census breakdown</summary><dl class="population-detail__grid">${rows.join("")}</dl></details>`;
+  if (island.populationAttribution) {
+    html += enrichmentAttribution(island.populationAttribution);
+  }
+  return html;
+}
+
+function formatBedrockStat(island) {
+  const bed = island.geology?.bedrock;
+  if (!bed?.name) return "";
+  const parts = [escapeHtml(bed.name)];
+  if (bed.lithology) parts.push(`<span class="stat-meta">${escapeHtml(bed.lithology)}</span>`);
+  if (bed.ageStart) {
+    const age =
+      bed.ageStart === bed.ageEnd || !bed.ageEnd
+        ? bed.ageStart
+        : `${bed.ageStart} – ${bed.ageEnd}`;
+    parts.push(`<span class="stat-meta">${escapeHtml(age)}</span>`);
+  }
+  let html = parts.join(" ");
+  if (island.geology?.attribution) {
+    html += enrichmentAttribution(island.geology.attribution);
+  }
+  return html;
+}
+
+function renderHillsOnBlock(island) {
+  const hills = island.hillsOn;
+  if (!Array.isArray(hills) || !hills.length) return "";
+  const cap = 6;
+  const shown = hills.slice(0, cap);
+  const extra = hills.length - shown.length;
+  const items = shown
+    .map((h) => {
+      const topClass = (h.classifications || [])[0] || "";
+      const slug = HILL_CLASS_SLUG[topClass] || "other";
+      const cls = topClass
+        ? `<span class="hill-class hill-class-${slug}">${escapeHtml(topClass)}</span>`
+        : "";
+      const ele =
+        h.elevationM != null
+          ? `<span class="hill-ele">${escapeHtml(String(h.elevationM))} m</span>`
+          : "";
+      const wiki = h.wikipedia
+        ? ` <a class="hill-link" href="${escapeAttr(h.wikipedia)}" target="_blank" rel="noopener">↗</a>`
+        : "";
+      return `<li><span class="hill-name">${escapeHtml(h.name || "Summit")}</span>${cls}${ele}${wiki}</li>`;
+    })
+    .join("");
+  const more =
+    extra > 0 ? `<p class="hills-on__more">${extra} more classified summit${extra === 1 ? "" : "s"} on this island</p>` : "";
+  return `<div class="hills-on">
+    <h4 class="hills-on__title">Classified hills</h4>
+    <ul class="hills-on__list">${items}</ul>
+    ${more}
+    ${enrichmentAttribution(island.hillsOnAttribution)}
+  </div>`;
+}
+
+function renderMaritimeAidsSection(island) {
+  const lights = island.lighthouses;
+  if (!Array.isArray(lights) || !lights.length) return "";
+  const onshore = [];
+  const offshore = [];
+  for (const l of lights) {
+    (l.offshore ? offshore : onshore).push(l);
+  }
+  const renderOne = (l) => {
+    const meta = [];
+    if (l.characteristic) meta.push(escapeHtml(l.characteristic));
+    if (l.rangeNm != null) meta.push(`${escapeHtml(String(l.rangeNm))} nm`);
+    if (l.heightM != null) meta.push(`${escapeHtml(String(l.heightM))} m tower`);
+    if (l.establishedYear) meta.push(`since ${escapeHtml(String(l.establishedYear))}`);
+    if (l.operator) meta.push(escapeHtml(l.operator));
+    if (l.status && l.status !== "unknown") meta.push(escapeHtml(l.status));
+    const metaHtml = meta.length
+      ? `<p class="lighthouse-meta">${meta.join(" · ")}</p>`
+      : "";
+    const wiki = l.wikipedia
+      ? `<a href="${escapeAttr(l.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>`
+      : "";
+    const osm =
+      l.osmType && l.osmId != null
+        ? `<a href="https://www.openstreetmap.org/${escapeAttr(l.osmType)}/${l.osmId}" target="_blank" rel="noopener">OSM ↗</a>`
+        : "";
+    const links = [wiki, osm].filter(Boolean).join(" · ");
+    return `<article class="lighthouse">
+      <h4 class="lighthouse__name">${escapeHtml(l.name || "Lighthouse")}</h4>
+      ${metaHtml}
+      ${links ? `<p class="lighthouse__links">${links}</p>` : ""}
+    </article>`;
+  };
+  const list = (arr, title) =>
+    arr.length
+      ? `<div class="lighthouses__group"><h4 class="lighthouses__subtitle">${escapeHtml(title)}</h4>${arr.map(renderOne).join("")}</div>`
+      : "";
+  return `<div class="section lighthouses">
+    <h3>Maritime aids</h3>
+    <p class="lighthouses__nav-warning" role="note"><strong>Not for navigation.</strong> Summaries for interest only — verify with official charts and notices to mariners.</p>
+    ${list(onshore, "On island")}
+    ${list(offshore, "Offshore (within 200 m)")}
+    ${enrichmentAttribution(island.lighthousesAttribution)}
+  </div>`;
+}
+
+function renderReservesWildlifeSection(island) {
+  const reserves = island.rspbReserves;
+  const colonies = island.wildlifeColonies;
+  const hasReserves = Array.isArray(reserves) && reserves.length;
+  const hasColonies = Array.isArray(colonies) && colonies.length;
+  if (!hasReserves && !hasColonies) return "";
+
+  let reservesHtml = "";
+  if (hasReserves) {
+    const cards = reserves
+      .map((r) => {
+        const meta = [];
+        if (r.designation) meta.push(escapeHtml(r.designation));
+        if (r.areaHa != null) meta.push(`${escapeHtml(String(r.areaHa))} ha`);
+        if (r.established) meta.push(`from ${escapeHtml(String(r.established))}`);
+        const link = r.url
+          ? `<a href="${escapeAttr(r.url)}" target="_blank" rel="noopener">Reserve page ↗</a>`
+          : "";
+        return `<article class="reserve">
+          <h4 class="reserve__name">${escapeHtml(r.name || "Nature reserve")}</h4>
+          ${meta.length ? `<p class="reserve__meta">${meta.join(" · ")}</p>` : ""}
+          ${link}
+        </article>`;
+      })
+      .join("");
+    reservesHtml = `<div class="reserves"><h4 class="reserves-wildlife__subtitle">Reserves</h4>${cards}</div>`;
+  }
+
+  let coloniesHtml = "";
+  if (hasColonies) {
+    const chips = colonies
+      .map((c) => {
+        const label = formatSpeciesLabel(c.species);
+        const sched =
+          c.scheduleListed === true
+            ? ' <span class="colony-species-scheduled" title="Protected schedule species — disturbance risks offence">protected</span>'
+            : "";
+        const season = c.season ? ` <span class="colony-species-season">${escapeHtml(c.season)}</span>` : "";
+        return `<li class="colony-species colony-species-${escapeAttr(c.species || "unknown")}">${escapeHtml(label)}${sched}${season}</li>`;
+      })
+      .join("");
+    coloniesHtml = `<div class="wildlife-colonies">
+      <h4 class="reserves-wildlife__subtitle">Breeding &amp; resident wildlife</h4>
+      <p class="wildlife-colonies__note">Island-level presence only — no colony counts or nest locations.</p>
+      <ul class="wildlife-colonies__list">${chips}</ul>
+    </div>`;
+  }
+
+  const attr = [island.rspbReservesAttribution, island.wildlifeColoniesAttribution]
+    .filter(Boolean)
+    .join(" ");
+
+  return `<div class="section reserves-wildlife">
+    <h3>Reserves &amp; wildlife</h3>
+    ${reservesHtml}
+    ${coloniesHtml}
+    ${enrichmentAttribution(attr)}
+  </div>`;
+}
+
 // ---------- Helpers ----------
 function formatPopulation(n) {
   if (n === 0) return "Uninhabited";
@@ -3057,7 +3564,9 @@ function formatArea(km2) {
 }
 
 function formatHighPointRow(island) {
+  const hillsBlock = renderHillsOnBlock(island);
   if (island.highestPointM == null) {
+    if (hillsBlock) return hillsBlock;
     return `<span title="No surveyed peak or Wikidata elevation found inside this island's polygon.">—</span>`;
   }
   const namePart = island.highestPointName
@@ -3065,7 +3574,7 @@ function formatHighPointRow(island) {
     : "";
   const value = `${island.highestPointM} m${namePart}`;
   const conf = island.highestPointConfidence;
-  if (!conf || conf === "n/a") return value;
+  if (!conf || conf === "n/a") return value + hillsBlock;
   const sourceLabel =
     {
       "osm-peak": "OSM surveyed peak",
@@ -3073,9 +3582,9 @@ function formatHighPointRow(island) {
       "manual": "hand-curated",
     }[island.highestPointSource] || "";
   if (conf === "estimate") {
-    return `${value} <span style="color:var(--text-muted);font-size:12px">· estimate${sourceLabel ? " · " + sourceLabel : ""}</span>`;
+    return `${value} <span style="color:var(--text-muted);font-size:12px">· estimate${sourceLabel ? " · " + sourceLabel : ""}</span>${hillsBlock}`;
   }
-  return `${value} <span style="color:var(--text-muted);font-size:12px">· ${sourceLabel || "high confidence"}</span>`;
+  return `${value} <span style="color:var(--text-muted);font-size:12px">· ${sourceLabel || "high confidence"}</span>${hillsBlock}`;
 }
 
 function formatAreaRow(island) {

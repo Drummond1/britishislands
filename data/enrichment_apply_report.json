@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-05-16T13:07:48+00:00",
+  "dryRun": false,
+  "applied": {
+    "lighthouses": 297,
+    "wildlife": 38,
+    "census": 10
+  },
+  "backup": "islands.json.before-enrichments-20260516T130748Z",
+  "skippedNewer": [],
+  "smokeChecksPassed": [
+    "isle-of-skye",
+    "osm-relation-6045364",
+    "isle-of-wight",
+    "osm-relation-3998376",
+    "eel-pie-island"
+  ],
+  "overnightFinished": true
+}

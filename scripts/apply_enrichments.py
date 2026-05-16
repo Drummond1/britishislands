@@ -58,9 +58,9 @@ CACHES = {
 # the curated regression spine (see docs/VALIDATION.md).
 SMOKE_IDS = {
     "isle-of-skye":   {"nation": "Scotland", "type": "sea"},
-    "achill-island":  {"nation": "Ireland",  "type": "sea"},
+    "osm-relation-6045364": {"nation": "Ireland", "type": "sea"},  # Achill
     "isle-of-wight":  {"nation": "England",  "type": "sea"},
-    "devenish-island": {"nation": "Northern Ireland", "type": "lake"},
+    "osm-relation-3998376": {"nation": "Northern Ireland", "type": "lake"},  # Devenish
     # Eel Pie Island has a Thames-list classification; check it still has osmId.
     "eel-pie-island": {"nation": "England",  "type": "river"},
 }

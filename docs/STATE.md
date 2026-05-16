@@ -4,6 +4,20 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-16 (deploy: explore topics + P0b partial apply)** — **Explore** chips:
+`data/discovery_topics.json` (notable, island-hopping, thames-eyots, high-summits);
+`?explore=<id>` deep links; `scripts/build_discovery_topics.py`. **P0b applied**
+(lighthouses **297**, wildlife **38**, census **10** islands) — detail UI for
+hills/lighthouses/wildlife/bedrock/census breakdown in `app.js`. **Notable strip**
+`featured_islands.json` (120). `islands_index.json` rebuilt (~10.2 MB). Hills/geology
+caches still pending. OS key: `config.local.example.js` (copy → `config.local.js`).
+
+**2026-05-16 (featured strip + image priority queue)** — Sidebar **Notable islands**
+(`data/featured_islands.json`, 120 rows). Priority queue for v5:
+`data/image_priority_queue.json` (3,444 without lead image). Regenerate via
+`scripts/build_featured_islands.py` / `build_image_priority_queue.py`; run
+`enrich_images_v5.py --queue-file data/image_priority_queue.json` for backfill.
+
 **2026-05-16 (discovery filters + trip planner removed)** — Topbar discovery
 filters: **Has photo**, **Ferry** (enabled after `loadFerries()`), **Summit**,
 area band (≥1 / ≥10 km²), subtype, curated / hide unconfirmed. Photo filter
@@ -450,7 +464,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| _(none)_ | — | — | — | No write-pipelines on `islands.json`. |
+| _(none)_ | — | — | — | P0b partial apply done; hills (DoBIH/Wikidata) + geology WMS still to run locally. |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
 | ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
 | ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded; see QUEUE.md. |

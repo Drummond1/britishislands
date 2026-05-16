@@ -1,0 +1,1964 @@
+{
+  "schemaVersion": 1,
+  "about": "Curated explore topics; regenerate via scripts/build_discovery_topics.py",
+  "topics": [
+    {
+      "id": "notable",
+      "title": "Notable islands",
+      "subtitle": "Hand-picked classics — the curated spine of the atlas.",
+      "chatHint": "iconic islands with photos",
+      "filterPresets": {
+        "photosFirst": true
+      },
+      "count": 27,
+      "islandIds": [
+        "isle-of-skye",
+        "mull",
+        "arran",
+        "lewis-and-harris",
+        "isle-of-man",
+        "islay",
+        "mainland-shetland",
+        "st-kilda",
+        "bute",
+        "mainland-orkney",
+        "isle-of-wight",
+        "fair-isle",
+        "anglesey",
+        "jersey",
+        "lundy",
+        "rathlin",
+        "guernsey",
+        "iona",
+        "inchcailloch",
+        "belle-isle-windermere",
+        "scilly-st-marys",
+        "staffa",
+        "burgh-island",
+        "lindisfarne",
+        "brownsea",
+        "isle-of-dogs",
+        "eel-pie-island"
+      ],
+      "islands": [
+        {
+          "id": "isle-of-skye",
+          "name": "Isle of Skye",
+          "nation": "Scotland",
+          "lat": 57.273,
+          "lng": -6.215,
+          "shortDescription": "The largest of the Inner Hebrides, famed for the Cuillin mountains, dramatic coastlines, and the Old Man of Storr.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Man_of_Storr%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "bridge",
+            "hiking",
+            "iconic"
+          ],
+          "highestPointM": 992.0
+        },
+        {
+          "id": "mull",
+          "name": "Isle of Mull",
+          "nation": "Scotland",
+          "lat": 56.45,
+          "lng": -5.95,
+          "shortDescription": "Mountainous Inner Hebridean island known for white-tailed eagles, the colourful waterfront of Tobermory, and the gateway to Iona and Staffa.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_More_%28Mull%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "wildlife",
+            "ferry",
+            "iona",
+            "staffa",
+            "tobermory"
+          ],
+          "highestPointM": 966.0
+        },
+        {
+          "id": "arran",
+          "name": "Isle of Arran",
+          "nation": "Scotland",
+          "lat": 55.58,
+          "lng": -5.21,
+          "shortDescription": "Often called 'Scotland in miniature', combining Highland-style mountains in the north with rolling Lowland scenery in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arran_%40_New_Years_Eve_31.12.2009_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "geology",
+            "castle"
+          ],
+          "highestPointM": 874.0
+        },
+        {
+          "id": "lewis-and-harris",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.215,
+          "lng": -6.55,
+          "shortDescription": "The largest island in Scotland, with the rolling moorland of Lewis in the north and the rugged hills of Harris in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "beaches",
+            "ferry",
+            "flights",
+            "standing-stones",
+            "gaelic"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "isle-of-man",
+          "name": "Isle of Man",
+          "nation": "Crown Dependency",
+          "lat": 54.236,
+          "lng": -4.548,
+          "shortDescription": "Self-governing Crown Dependency in the middle of the Irish Sea, famed for the TT motorcycle races and the Manx Gaelic language.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Man_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "crown-dependency",
+            "ferry",
+            "flights",
+            "tt-races"
+          ],
+          "highestPointM": 621.0
+        },
+        {
+          "id": "islay",
+          "name": "Islay",
+          "nation": "Scotland",
+          "lat": 55.78,
+          "lng": -6.21,
+          "shortDescription": "The 'Queen of the Hebrides', world-famous for its peated single malt whiskies and rich birdlife.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wfm_islay_landsat.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "whisky",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 491.0
+        },
+        {
+          "id": "mainland-shetland",
+          "name": "Mainland (Shetland)",
+          "nation": "Scotland",
+          "lat": 60.3,
+          "lng": -1.3,
+          "shortDescription": "Britain's most northerly large island, closer to Bergen than to Edinburgh, with deep voes, sea cliffs and Up Helly Aa fire festivals.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lerwick_Harbour.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "norse",
+            "cliffs",
+            "ferry",
+            "flights",
+            "fire-festival"
+          ],
+          "highestPointM": 450.0
+        },
+        {
+          "id": "st-kilda",
+          "name": "St Kilda (Hirta)",
+          "nation": "Scotland",
+          "lat": 57.815,
+          "lng": -8.578,
+          "shortDescription": "Remote, dual UNESCO World Heritage Site 41 miles west of the Outer Hebrides; evacuated in 1930 and now home only to a small military and conservation team.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "world-heritage",
+            "uninhabited",
+            "remote",
+            "seabirds",
+            "evacuation"
+          ],
+          "highestPointM": 430.0
+        },
+        {
+          "id": "bute",
+          "name": "Isle of Bute",
+          "nation": "Scotland",
+          "lat": 55.83,
+          "lng": -5.11,
+          "shortDescription": "A gentle, accessible Clyde island with the Victorian resort town of Rothesay and the Gothic-revival Mount Stuart House.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bute_satellite.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "victorian",
+            "ferry",
+            "stately-home"
+          ],
+          "highestPointM": 278.0
+        },
+        {
+          "id": "mainland-orkney",
+          "name": "Mainland (Orkney)",
+          "nation": "Scotland",
+          "lat": 58.985,
+          "lng": -3.034,
+          "shortDescription": "The largest of the Orkney Islands, dense with Neolithic monuments including Skara Brae, Maeshowe and the Ring of Brodgar.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainland1.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "neolithic",
+            "world-heritage",
+            "ferry",
+            "flights",
+            "history"
+          ],
+          "highestPointM": 275.0
+        },
+        {
+          "id": "isle-of-wight",
+          "name": "Isle of Wight",
+          "nation": "England",
+          "lat": 50.687,
+          "lng": -1.308,
+          "shortDescription": "Diamond-shaped island off Hampshire, famous for the Needles, Osborne House and one of Europe's largest music festivals.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/IsleOfWightFromTheISS.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "ferry",
+            "hovercraft",
+            "festival",
+            "victorian"
+          ],
+          "highestPointM": 242.0
+        },
+        {
+          "id": "fair-isle",
+          "name": "Fair Isle",
+          "nation": "Scotland",
+          "lat": 59.535,
+          "lng": -1.633,
+          "shortDescription": "Britain's most remote inhabited island, midway between Orkney and Shetland — famed for knitwear, seabirds, and rare bird sightings.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fair_Isle_-_West_cliffs.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "remote",
+            "knitwear",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 217.0
+        },
+        {
+          "id": "anglesey",
+          "name": "Anglesey (Ynys Môn)",
+          "nation": "Wales",
+          "lat": 53.27,
+          "lng": -4.35,
+          "shortDescription": "The largest Welsh island, separated from the mainland by the Menai Strait and crossed by Telford's and Stephenson's bridges.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Menai_Suspension_Bridge_Dec_09.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "bridge",
+            "ferry-port",
+            "castles",
+            "coast-path"
+          ],
+          "highestPointM": 178.0
+        },
+        {
+          "id": "jersey",
+          "name": "Jersey",
+          "nation": "Crown Dependency",
+          "lat": 49.214,
+          "lng": -2.131,
+          "shortDescription": "Largest of the Channel Islands, 14 miles from the French coast — a Crown Dependency with its own parliament and currency.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jersey_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "crown-dependency",
+            "ferry",
+            "flights",
+            "occupation"
+          ],
+          "highestPointM": 143.0
+        },
+        {
+          "id": "lundy",
+          "name": "Lundy",
+          "nation": "England",
+          "lat": 51.179,
+          "lng": -4.667,
+          "shortDescription": "Granite island in the Bristol Channel; a marine nature reserve owned by the National Trust and run by the Landmark Trust.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Jetty%2C_Lundy.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "nature-reserve",
+            "puffins",
+            "ferry",
+            "helicopter",
+            "landmark-trust"
+          ],
+          "highestPointM": 138.0
+        },
+        {
+          "id": "rathlin",
+          "name": "Rathlin Island",
+          "nation": "Northern Ireland",
+          "lat": 55.295,
+          "lng": -6.198,
+          "shortDescription": "Northern Ireland's only permanently inhabited offshore island, famed for its seabird colonies and the Robert the Bruce cave.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_leg_of_Rathlin_Island_looking_towards_Fear_Head.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "seabirds",
+            "ferry",
+            "lighthouse",
+            "northern-ireland"
+          ],
+          "highestPointM": 134.0
+        },
+        {
+          "id": "guernsey",
+          "name": "Guernsey",
+          "nation": "Crown Dependency",
+          "lat": 49.4657,
+          "lng": -2.5853,
+          "shortDescription": "Second-largest Channel Island, with the picturesque harbour of St Peter Port and a strong maritime tradition.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guernsey_from_the_air_-_geograph.ci_-_371.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "crown-dependency",
+            "ferry",
+            "flights",
+            "harbour"
+          ],
+          "highestPointM": 110.0
+        },
+        {
+          "id": "iona",
+          "name": "Iona",
+          "nation": "Scotland",
+          "lat": 56.33,
+          "lng": -6.41,
+          "shortDescription": "Tiny island off Mull's western tip; the spiritual cradle of Christianity in Scotland and home to Iona Abbey.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Iona_Abbey_-_October_2018_-_Andrew_Gray_-_12.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "pilgrimage",
+            "abbey",
+            "ferry",
+            "small"
+          ],
+          "highestPointM": 101.0
+        },
+        {
+          "id": "inchcailloch",
+          "name": "Inchcailloch",
+          "nation": "Scotland",
+          "lat": 56.087,
+          "lng": -4.578,
+          "shortDescription": "Wooded island in Loch Lomond, part of the Loch Lomond National Nature Reserve, with a circular trail and the ruined chapel of St Kentigerna.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Innisnacailleach.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "loch",
+            "nature-reserve",
+            "wild-camping",
+            "uninhabited"
+          ],
+          "highestPointM": 85
+        },
+        {
+          "id": "belle-isle-windermere",
+          "name": "Belle Isle (Windermere)",
+          "nation": "England",
+          "lat": 54.367,
+          "lng": -2.929,
+          "shortDescription": "The largest of Windermere's islands and the only one ever permanently inhabited; site of England's first round house, built in 1774.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Roundhouse_on_Belle_Isle_-_geograph.org.uk_-_792364.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "lake-district",
+            "private",
+            "round-house"
+          ],
+          "highestPointM": 60
+        },
+        {
+          "id": "scilly-st-marys",
+          "name": "St Mary's (Isles of Scilly)",
+          "nation": "England",
+          "lat": 49.917,
+          "lng": -6.299,
+          "shortDescription": "The largest of the subtropical-feeling Isles of Scilly, 28 miles south-west of Land's End.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hugh_Town_Rooftops_-_geograph.org.uk_-_2308903.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "beaches",
+            "ferry",
+            "flights",
+            "subtropical"
+          ],
+          "highestPointM": 51.0
+        },
+        {
+          "id": "staffa",
+          "name": "Staffa",
+          "nation": "Scotland",
+          "lat": 56.43,
+          "lng": -6.34,
+          "shortDescription": "Uninhabited basalt island famed for Fingal's Cave, whose hexagonal columns inspired Mendelssohn's overture.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fingals_Cave%2C_Staffa_-_geograph.org.uk_-_30215.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "geology",
+            "uninhabited",
+            "boat-trip",
+            "iconic"
+          ],
+          "highestPointM": 42.0
+        },
+        {
+          "id": "burgh-island",
+          "name": "Burgh Island",
+          "nation": "England",
+          "lat": 50.276,
+          "lng": -3.901,
+          "shortDescription": "Tidal island off the South Devon coast, famous for its 1929 art-deco hotel, the haunt of Agatha Christie, Noël Coward and the Beatles.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burgh_Island.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "tidal",
+            "art-deco",
+            "agatha-christie",
+            "sea-tractor"
+          ],
+          "highestPointM": 33
+        },
+        {
+          "id": "lindisfarne",
+          "name": "Lindisfarne (Holy Island)",
+          "nation": "England",
+          "lat": 55.681,
+          "lng": -1.802,
+          "shortDescription": "Tidal island off the Northumberland coast, cradle of Celtic Christianity in England and home to the iconic Lindisfarne Castle.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LindisfarneCastleHolyIsland.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "tidal",
+            "causeway",
+            "monastery",
+            "castle"
+          ],
+          "highestPointM": 30
+        },
+        {
+          "id": "brownsea",
+          "name": "Brownsea Island",
+          "nation": "England",
+          "lat": 50.6909,
+          "lng": -1.9617,
+          "shortDescription": "National Trust island in Poole Harbour, birthplace of the Scout movement and a stronghold for native red squirrels.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brownsea_Island_OS_OpenData_map.png?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "national-trust",
+            "scouts",
+            "red-squirrels",
+            "boat-trip"
+          ],
+          "highestPointM": 25
+        },
+        {
+          "id": "isle-of-dogs",
+          "name": "Isle of Dogs",
+          "nation": "England",
+          "lat": 51.4934,
+          "lng": -0.0166,
+          "shortDescription": "Peninsula formed by a Thames meander in east London, technically an island since the West India Docks were cut across its neck in 1802; now home to Canary Wharf.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Dogs%2C_West_India_Docks_lock_-_geograph.org.uk_-_789131.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "thames",
+            "london",
+            "docklands",
+            "skyscrapers"
+          ],
+          "highestPointM": 10
+        },
+        {
+          "id": "eel-pie-island",
+          "name": "Eel Pie Island",
+          "nation": "England",
+          "lat": 51.4471,
+          "lng": -0.327,
+          "shortDescription": "Small inhabited island in the Thames at Twickenham, legendary for its 1960s music venue that hosted The Rolling Stones, The Who and Pink Floyd.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/EelPieIsland01.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "thames",
+            "music-history",
+            "footbridge",
+            "inhabited"
+          ],
+          "highestPointM": 5
+        }
+      ]
+    },
+    {
+      "id": "island-hopping",
+      "title": "Island-hopping",
+      "subtitle": "Ferry-linked sea islands worth chaining into a route.",
+      "chatHint": "ferry islands near Skye with photos",
+      "filterPresets": {
+        "ferry": true,
+        "photosFirst": true
+      },
+      "count": 42,
+      "islandIds": [
+        "osm-relation-6188599",
+        "osm-relation-8495304",
+        "osm-relation-4092586",
+        "osm-relation-15708714",
+        "osm-relation-6046655",
+        "rathlin",
+        "osm-way-2956937",
+        "osm-relation-12913146",
+        "osm-relation-8158177",
+        "osm-way-200890709",
+        "osm-way-4558807",
+        "osm-way-1493746554",
+        "osm-way-3469279",
+        "osm-way-27013704",
+        "brownsea",
+        "osm-relation-6046170",
+        "osm-relation-3235264",
+        "osm-way-4569287",
+        "osm-relation-2856487",
+        "osm-way-1493746497",
+        "osm-way-4569291",
+        "osm-way-40201357",
+        "osm-way-8591076",
+        "osm-way-128067375",
+        "osm-way-4569263",
+        "osm-way-4555538",
+        "osm-relation-3970636",
+        "osm-relation-8815463",
+        "osm-way-4554355",
+        "osm-way-4007191",
+        "osm-way-93349036",
+        "osm-way-4569222",
+        "osm-relation-3077272",
+        "osm-way-65017623",
+        "osm-relation-3077274",
+        "osm-way-730876541",
+        "osm-way-4563499",
+        "osm-relation-3866223",
+        "osm-way-205056872",
+        "osm-way-490111575",
+        "osm-way-1150257129",
+        "osm-relation-3226229"
+      ],
+      "islands": [
+        {
+          "id": "osm-relation-6188599",
+          "name": "Clare Island",
+          "nation": "Ireland",
+          "lat": 53.80809,
+          "lng": -9.99869,
+          "shortDescription": "Pop. 138; Grace O'Malley",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 462.0
+        },
+        {
+          "id": "osm-relation-8495304",
+          "name": "Cape Clear Island",
+          "nation": "Ireland",
+          "lat": 51.43698,
+          "lng": -9.49425,
+          "shortDescription": "Clear Island or Cape Clear Island (officially known by its Irish name: Cléire, and sometimes also called Oileán Chléire) is an island off the south-west coast of County Cork in Ireland. It is the southernmost inhabited part of Ireland and had a population of 110 people as of the ",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/CapeClearInnerHarbourFromHill.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 212.8
+        },
+        {
+          "id": "osm-relation-4092586",
+          "name": "Kerrera",
+          "nation": "Scotland",
+          "lat": 56.39799,
+          "lng": -5.53964,
+          "shortDescription": "Pop. 61",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kerrera_-_geograph.org.uk_-_662081.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 189.0
+        },
+        {
+          "id": "osm-relation-15708714",
+          "name": "Eriskay",
+          "nation": "Scotland",
+          "lat": 57.07555,
+          "lng": -7.2931,
+          "shortDescription": "Pop. 158; causeway",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eriskay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 185.0
+        },
+        {
+          "id": "osm-relation-6046655",
+          "name": "Bardsey Island",
+          "nation": "Wales",
+          "lat": 52.75689,
+          "lng": -4.7912,
+          "shortDescription": "Bardsey Island (Welsh: Ynys Enlli), known as the legendary \"Island of 20,000 Saints\", is located 1.9 miles (3.1 km) off the Llŷn Peninsula in the Welsh county of Gwynedd. The Welsh name means \"The Island in the Currents\", while its English name refers to the \"Island of the Bards\"",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bardsey_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 167.0
+        },
+        {
+          "id": "rathlin",
+          "name": "Rathlin Island",
+          "nation": "Northern Ireland",
+          "lat": 55.295,
+          "lng": -6.198,
+          "shortDescription": "Northern Ireland's only permanently inhabited offshore island, famed for its seabird colonies and the Robert the Bruce cave.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_leg_of_Rathlin_Island_looking_towards_Fear_Head.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "seabirds",
+            "ferry",
+            "lighthouse",
+            "northern-ireland"
+          ],
+          "highestPointM": 134.0
+        },
+        {
+          "id": "osm-way-2956937",
+          "name": "Sark",
+          "nation": "Crown Dependency",
+          "lat": 49.42835,
+          "lng": -2.36262,
+          "shortDescription": "Pop. ~500",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sark-aerial.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 114.0
+        },
+        {
+          "id": "osm-relation-12913146",
+          "name": "Alderney",
+          "nation": "Crown Dependency",
+          "lat": 49.71701,
+          "lng": -2.19675,
+          "shortDescription": "Pop. ~2,100",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alderney_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 90.0
+        },
+        {
+          "id": "osm-relation-8158177",
+          "name": "Inishmaan",
+          "nation": "Ireland",
+          "lat": 53.08371,
+          "lng": -9.5911,
+          "shortDescription": "Pop. 184",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inisheer_landscape.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 79.0
+        },
+        {
+          "id": "osm-way-200890709",
+          "name": "Torsa",
+          "nation": "Scotland",
+          "lat": 56.25789,
+          "lng": -5.61666,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_northern_tip_of_Torsa.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 62.0
+        },
+        {
+          "id": "osm-way-4558807",
+          "name": "Tory Island",
+          "nation": "Ireland",
+          "lat": 55.26443,
+          "lng": -8.22189,
+          "shortDescription": "Pop. 141",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tory_Island_Cliffs_2005_08_10.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 59.0
+        },
+        {
+          "id": "osm-way-1493746554",
+          "name": "Caldey Island",
+          "nation": "Wales",
+          "lat": 51.63659,
+          "lng": -4.69207,
+          "shortDescription": "Caldey Island (Welsh: Ynys Bŷr) is a small island near Tenby, Pembrokeshire, Wales, less than 1 mile (1.6 km) off the coast. With a recorded history going back over 1,500 years, it is one of the holy islands of Britain.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_Coast_of_Caldey_Island._-_geograph.org.uk_-_113045.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 56.0
+        },
+        {
+          "id": "osm-way-3469279",
+          "name": "Isle of May",
+          "nation": "Scotland",
+          "lat": 56.18696,
+          "lng": -2.55609,
+          "shortDescription": "Bird observatory; lighthouse",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_May_Stevenson_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 50.0
+        },
+        {
+          "id": "osm-way-27013704",
+          "name": "Grassholm",
+          "nation": "Ireland",
+          "lat": 51.73123,
+          "lng": -5.47957,
+          "shortDescription": "~39,000 gannet pairs (~10% world pop)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gannets_on_Grassholm_-_geograph.org.uk_-_174369.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 42.0
+        },
+        {
+          "id": "brownsea",
+          "name": "Brownsea Island",
+          "nation": "England",
+          "lat": 50.6909,
+          "lng": -1.9617,
+          "shortDescription": "National Trust island in Poole Harbour, birthplace of the Scout movement and a stronghold for native red squirrels.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brownsea_Island_OS_OpenData_map.png?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "national-trust",
+            "scouts",
+            "red-squirrels",
+            "boat-trip"
+          ],
+          "highestPointM": 25
+        },
+        {
+          "id": "osm-relation-6046170",
+          "name": "Lismore",
+          "nation": "Scotland",
+          "lat": 56.51132,
+          "lng": -5.51303,
+          "shortDescription": "Pop. 190",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/CastleCoeffinLismore-ARuinedMacDougallStronghold%28ColinSmith%29Aug1995.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3235264",
+          "name": "Inisheer",
+          "nation": "Ireland",
+          "lat": 53.05698,
+          "lng": -9.52871,
+          "shortDescription": "Pop. 343",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inisheer_Ruins.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569287",
+          "name": "Wyre",
+          "nation": "Scotland",
+          "lat": 59.11939,
+          "lng": -2.98118,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wyre.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-2856487",
+          "name": "Skomer",
+          "nation": "Wales",
+          "lat": 51.7367,
+          "lng": -5.29165,
+          "shortDescription": "Manx shearwater & puffin reserve",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skomer_Island_South_Wales.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1493746497",
+          "name": "Skokholm",
+          "nation": "Wales",
+          "lat": 51.69842,
+          "lng": -5.27739,
+          "shortDescription": "Britain's first bird observatory (1933)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skokholm_Island%2C_Lighthouse_-_geograph.org.uk_-_555852.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569291",
+          "name": "Papa Stronsay",
+          "nation": "Scotland",
+          "lat": 59.15193,
+          "lng": -2.58957,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Light_on_Papa_Stronsay._-_geograph.org.uk_-_531453.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-40201357",
+          "name": "Bruray",
+          "nation": "Scotland",
+          "lat": 60.42642,
+          "lng": -0.74932,
+          "shortDescription": "Bruray is one of the three Out Skerries islands of Shetland, and contains Scotland's most easterly settlement. It is separated from Housay by North Mouth and South Mouth.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Outskerriesnorthmouth.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-8591076",
+          "name": "Linga",
+          "nation": "Scotland",
+          "lat": 60.66626,
+          "lng": -0.97889,
+          "shortDescription": "Linga is a small uninhabited island in the Bluemull Sound, Shetland, Scotland. It is one of many islands in Shetland called Linga.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lingayell.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-128067375",
+          "name": "Spike Island",
+          "nation": "Ireland",
+          "lat": 51.83417,
+          "lng": -8.28581,
+          "shortDescription": "Spike Island (Irish: Inis Píc) is an island of 103 acres (42 ha) in Cork Harbour, Ireland. Originally the site of a monastic settlement, the island is dominated by an 18th-century bastion fort now named Fort Mitchel.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Entry_of_Fort_Mitchel_on_Spike_Island_1.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569263",
+          "name": "Helliar Holm",
+          "nation": "Scotland",
+          "lat": 59.02286,
+          "lng": -2.9019,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saeva_Ness_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4555538",
+          "name": "Haulbowline",
+          "nation": "Ireland",
+          "lat": 51.84116,
+          "lng": -8.30118,
+          "shortDescription": "Naval base; pop. 148",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/L%C3%89_Niamh_--_Cork_Harbour.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3970636",
+          "name": "Whale Island",
+          "nation": "England",
+          "lat": 50.817,
+          "lng": -1.09713,
+          "shortDescription": "Whale Island is a small island in Portsmouth Harbour, close by Portsea Island. It is home to HMS Excellent, the oldest shore training establishment within the Royal Navy, and the location of the Navy Command Headquarters.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Whale_Island%2C_Portsmouth%2C_1976_-_geograph.org.uk_-_345367.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-8815463",
+          "name": "Easdale",
+          "nation": "Scotland",
+          "lat": 56.29209,
+          "lng": -5.65823,
+          "shortDescription": "Slate Islands; Pop. 61",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Easdale._-_geograph.org.uk_-_450893.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4554355",
+          "name": "Dinish Island",
+          "nation": "Ireland",
+          "lat": 51.6484,
+          "lng": -9.90161,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bear_Haven_from_Dinish_Island_-_geograph.org.uk_-_7782013.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4007191",
+          "name": "Eilean nan Gobhar",
+          "nation": "Scotland",
+          "lat": 55.83726,
+          "lng": -5.93315,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Modern_Lighthouse_-_geograph.org.uk_-_642307.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-93349036",
+          "name": "Salt Island",
+          "nation": "Wales",
+          "lat": 53.31678,
+          "lng": -4.62358,
+          "shortDescription": "Salt Island (Welsh: Ynys yr Halen) is joined to Holy Island, Anglesey, in North Wales. It is a natural provider of shelter for the town's Old Harbour from the Irish Sea and is part of the Port of Holyhead.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/YnysHalen.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569222",
+          "name": "Holm of Houton",
+          "nation": "Scotland",
+          "lat": 58.91069,
+          "lng": -3.18847,
+          "shortDescription": "The Holm of Houton is one of the southern Orkney islands.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferry_approaching_the_Houton_pier._-_geograph.org.uk_-_345266.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3077272",
+          "name": "Inner Farne",
+          "nation": "Scotland",
+          "lat": 55.6167,
+          "lng": -1.6554,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Atlantic_puffins_on_Inner_Farne_island_-_geograph.org.uk_-_5640347.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-65017623",
+          "name": "Cindery Island",
+          "nation": "England",
+          "lat": 51.80305,
+          "lng": 1.03014,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_past_a_buoy_in_Brightlingsea_Creek_towards_Cindery_Island_-_geograph.org.uk_-_6545453.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3077274",
+          "name": "Staple Island",
+          "nation": "Scotland",
+          "lat": 55.63063,
+          "lng": -1.62398,
+          "shortDescription": "Staple Island is a small rocky island, or skerry, that is one of the Outer Group of the Farne Islands in Northumberland, England. The Farne Islands are a designated National Nature Reserve.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Staple_Island.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-730876541",
+          "name": "Eilean na Beithe",
+          "nation": "Scotland",
+          "lat": 56.62066,
+          "lng": -6.04836,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_na_Beithe_and_Calve_Island_-_geograph.org.uk_-_7623364.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4563499",
+          "name": "Crab Island",
+          "nation": "Ireland",
+          "lat": 53.01632,
+          "lng": -9.41242,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Crab_Island_-_geograph.org.uk_-_4688924.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3866223",
+          "name": "Goat Island",
+          "nation": "Scotland",
+          "lat": 58.20313,
+          "lng": -6.38097,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Coastguard_Station_-_geograph.org.uk_-_1245536.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-205056872",
+          "name": "Inn Island",
+          "nation": "Scotland",
+          "lat": 56.56125,
+          "lng": -5.42033,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skerry_at_the_southern_tip_of_Inn_Island_-_geograph.org.uk_-_951932.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-490111575",
+          "name": "Skeo of Holm",
+          "nation": "Scotland",
+          "lat": 60.32941,
+          "lng": -1.02524,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Head%2C_Whalsay%2C_Shetland_-_geograph.org.uk_-_145740.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1150257129",
+          "name": "Inner Holm",
+          "nation": "Scotland",
+          "lat": 58.95902,
+          "lng": -3.28925,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inner_Holm.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3226229",
+          "name": "Rat Island",
+          "nation": "England",
+          "lat": 51.16304,
+          "lng": -4.65233,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Coastal_Environments_-_Looking_across_the_Lundy_Island_Landing_Stage_from_Rat_Island%2C_Bristol_Channel%2C_United_Kingdom_%289605673095%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "bare_rock"
+          ],
+          "highestPointM": null
+        }
+      ]
+    },
+    {
+      "id": "thames-eyots",
+      "title": "Thames eyots",
+      "subtitle": "River islands and aits on the Thames.",
+      "chatHint": "Thames river islands",
+      "filterPresets": {},
+      "count": 24,
+      "islandIds": [
+        "thames-reading-berkshire",
+        "isle-of-dogs",
+        "thames-kingston-upon-thames",
+        "eel-pie-island",
+        "thames-brentford",
+        "thames-chiswick",
+        "thames-datchet",
+        "thames-dorney",
+        "thames-hampton-london",
+        "thames-henley-on-thames",
+        "thames-hurley-berkshire",
+        "thames-hythe-end",
+        "thames-isleworth",
+        "thames-kemble-gloucestershire",
+        "thames-maidenhead",
+        "thames-medmenham",
+        "thames-oxford",
+        "thames-richmond-london",
+        "thames-staines-upon-thames",
+        "thames-surbiton",
+        "thames-tilehurst",
+        "thames-twickenham",
+        "thames-weybridge",
+        "thames-windsor-berkshire"
+      ],
+      "islands": [
+        {
+          "id": "thames-reading-berkshire",
+          "name": "Reading, Berkshire",
+          "nation": "England",
+          "lat": 51.45417,
+          "lng": -0.97306,
+          "shortDescription": "Reading ( RED-ing) is a borough in Berkshire, England, and the county town of Berkshire. It is Berkshire's largest town, with a total population of 203,795 in its built-up area as of 2021.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Broad_Street%2C_Reading_-_geograph.org.uk_-_2864164.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": 61.0
+        },
+        {
+          "id": "isle-of-dogs",
+          "name": "Isle of Dogs",
+          "nation": "England",
+          "lat": 51.4934,
+          "lng": -0.0166,
+          "shortDescription": "Peninsula formed by a Thames meander in east London, technically an island since the West India Docks were cut across its neck in 1802; now home to Canary Wharf.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Dogs%2C_West_India_Docks_lock_-_geograph.org.uk_-_789131.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "thames",
+            "london",
+            "docklands",
+            "skyscrapers"
+          ],
+          "highestPointM": 10
+        },
+        {
+          "id": "thames-kingston-upon-thames",
+          "name": "Kingston upon Thames",
+          "nation": "England",
+          "lat": 51.4103,
+          "lng": -0.2995,
+          "shortDescription": "Kingston upon Thames, colloquially known as Kingston, is a town in the Royal Borough of Kingston upon Thames, south-west London, England. It is situated on the River Thames, 10 miles (16 km) south-west of Charing Cross.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kingston_Market_Square.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": 10.0
+        },
+        {
+          "id": "eel-pie-island",
+          "name": "Eel Pie Island",
+          "nation": "England",
+          "lat": 51.4471,
+          "lng": -0.327,
+          "shortDescription": "Small inhabited island in the Thames at Twickenham, legendary for its 1960s music venue that hosted The Rolling Stones, The Who and Pink Floyd.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/EelPieIsland01.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "thames",
+            "music-history",
+            "footbridge",
+            "inhabited"
+          ],
+          "highestPointM": 5
+        },
+        {
+          "id": "thames-brentford",
+          "name": "Brentford",
+          "nation": "England",
+          "lat": 51.486,
+          "lng": -0.31,
+          "shortDescription": "Brentford is a suburban town in West London, England and part of the London Borough of Hounslow. It lies at the confluence of the River Brent and the Thames, 8 miles (13 km) west of Charing Cross.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brentford_skyline_4670.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-chiswick",
+          "name": "Chiswick",
+          "nation": "England",
+          "lat": 51.49,
+          "lng": -0.26,
+          "shortDescription": "Chiswick ( CHIZ-ik) is a district in West London, split between the London boroughs of Hounslow and Ealing. It contains Hogarth's House, the former residence of the 18th-century English artist William Hogarth, Chiswick House, a neo-Palladian villa regarded as one of the finest in",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Nicholas_church_Chiswick_806r.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-datchet",
+          "name": "Datchet",
+          "nation": "England",
+          "lat": 51.4841,
+          "lng": -0.5762,
+          "shortDescription": "Datchet is a village and civil parish in the Royal Borough of Windsor and Maidenhead in Berkshire, England, on the north bank of the River Thames. Historically part of Buckinghamshire, and the Stoke Hundred, the village was eventually transferred to Berkshire, under the Local Gov",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Datchet_Village_centre_-_geograph.org.uk_-_25730.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-dorney",
+          "name": "Dorney",
+          "nation": "England",
+          "lat": 51.502,
+          "lng": -0.676,
+          "shortDescription": "Dorney is a village and civil parish in Buckinghamshire, England. It borders the River Thames to the west and south, and is bisected by the Jubilee River.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Palmer_Arms%2C_Dorney_-_geograph.org.uk_-_383444.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-hampton-london",
+          "name": "Hampton, London",
+          "nation": "England",
+          "lat": 51.422,
+          "lng": -0.367,
+          "shortDescription": "Hampton is a suburb of Greater London on the north bank of the River Thames, in the London Borough of Richmond upon Thames, England, and the historic county of Middlesex. Hampton is bounded by Bushy Park to the east (and to the north of St Albans Riverside facing Tagg's Island), ",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamptonreach01.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-henley-on-thames",
+          "name": "Henley-on-Thames",
+          "nation": "England",
+          "lat": 51.5357,
+          "lng": -0.903,
+          "shortDescription": "Henley-on-Thames ( HEN-lee) is a town and civil parish on the River Thames, in the South Oxfordshire district, in Oxfordshire, England, 9 miles (14 km) northeast of Reading, 7 miles (11 km) west of Maidenhead, 23 miles (37 km) southeast of Oxford and 37 miles (60 km) west of Lond",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Town_Hall%2C_Henley_-_geograph.org.uk_-_36320.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-hurley-berkshire",
+          "name": "Hurley, Berkshire",
+          "nation": "England",
+          "lat": 51.543,
+          "lng": -0.808,
+          "shortDescription": "Hurley is a village and rural civil parish in Berkshire, England. Its riverside is agricultural, except for Hurley Priory, as are the outskirts of the village.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ye_Olde_Bell_-_geograph.org.uk_-_523364.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-hythe-end",
+          "name": "Hythe End",
+          "nation": "England",
+          "lat": 51.458,
+          "lng": -0.552,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/High_St_-_geograph.org.uk_-_4734001.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-isleworth",
+          "name": "Isleworth",
+          "nation": "England",
+          "lat": 51.466,
+          "lng": -0.336,
+          "shortDescription": "Isleworth ( EYE-zəl-wərth) is a suburban town in the London Borough of Hounslow, west London, England. Its main retail street London Road becomes Hounslow High Street and adjoining Treaty Centre for shopping centre only a few hundred metres away from its westernmost point.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Church_Street_Isleworth_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-kemble-gloucestershire",
+          "name": "Kemble, Gloucestershire",
+          "nation": "England",
+          "lat": 51.68333,
+          "lng": -2.01667,
+          "shortDescription": "Kemble is a village in the civil parish of Kemble and Ewen, in the Cotswold district of Gloucestershire, England. Historically part of Wiltshire, it lies 4 miles (6.4 km) from Cirencester and is the settlement closest to Thames Head, the source of the River Thames.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cotswold_airport_at_kemble_from_helicopter_arp.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-maidenhead",
+          "name": "Maidenhead",
+          "nation": "England",
+          "lat": 51.523,
+          "lng": -0.722,
+          "shortDescription": "Maidenhead is a market town in the Royal Borough of Windsor and Maidenhead in the county of Berkshire, England. It lies on the southwestern bank of the River Thames, which at this point forms the border with Buckinghamshire.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Queen_St_-_geograph.org.uk_-_7169578.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-medmenham",
+          "name": "Medmenham",
+          "nation": "England",
+          "lat": 51.554,
+          "lng": -0.838,
+          "shortDescription": "Medmenham () is a village and civil parish in south-west Buckinghamshire, England. It is on the River Thames, about 3+1⁄2 miles (5.6 km) southwest of Marlow and 3 miles (4.8 km) east of Henley-on-Thames.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferry_Lane%2C_Medmenham_-_geograph.org.uk_-_963316.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-oxford",
+          "name": "Oxford",
+          "nation": "England",
+          "lat": 51.75194,
+          "lng": -1.25778,
+          "shortDescription": "Oxford ( ) is a cathedral city and non-metropolitan district in Oxfordshire, England, of which it is the county town. The city is home to the University of Oxford, the oldest university in the English-speaking world; it has buildings in every style of English architecture since l",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Oxford_from_Boars_Hill.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-richmond-london",
+          "name": "Richmond, London",
+          "nation": "England",
+          "lat": 51.456,
+          "lng": -0.301,
+          "shortDescription": "Richmond is a town in south-west London, 8.2 miles (13.2 km) west-southwest of Charing Cross. It stands on the River Thames, and features many parks and open spaces, including Richmond Park, and many protected conservation areas, which include much of Richmond Hill.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Richmond_Riverside%2C_London_-_Sept_2008.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-staines-upon-thames",
+          "name": "Staines-upon-Thames",
+          "nation": "England",
+          "lat": 51.434,
+          "lng": -0.511,
+          "shortDescription": "Staines-upon-Thames, commonly known simply as Staines, is a market town in northwest Surrey, England, around 17 miles (28 kilometres) west of central London. It is in the Borough of Spelthorne, at the confluence of the River Thames and Colne.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Staines_from_the_air.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-surbiton",
+          "name": "Surbiton",
+          "nation": "England",
+          "lat": 51.394,
+          "lng": -0.307,
+          "shortDescription": "Surbiton is a suburban neighbourhood in South West London, within the Royal Borough of Kingston upon Thames (RBK). It is next to the River Thames, 11 miles (18 km) southwest of Charing Cross.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Central_Surbiton_-_geograph.org.uk_-_1077777.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-tilehurst",
+          "name": "Tilehurst",
+          "nation": "England",
+          "lat": 51.4579,
+          "lng": -1.0406,
+          "shortDescription": "Tilehurst is a village on the western outskirts of the town of Reading in the English county of Berkshire, England. It is partly within the boundaries of the Borough of Reading, a part sometimes referred to as Tilehurst Within, and partly in the district of West Berkshire, referr",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Catherine_of_Siena%2C_Little_Heath_-_geograph.org.uk_-_1539010.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-twickenham",
+          "name": "Twickenham",
+          "nation": "England",
+          "lat": 51.449,
+          "lng": -0.337,
+          "shortDescription": "Twickenham ( TWICK-ən-əm) is an affluent suburban district of London, England, on the River Thames 9.9 miles (15.9 km) southwest of Charing Cross. Historically in Middlesex, since 1965 it has formed part of the London Borough of Richmond upon Thames, whose administrative headquar",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Twickenham_rugby.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-weybridge",
+          "name": "Weybridge",
+          "nation": "England",
+          "lat": 51.362,
+          "lng": -0.453,
+          "shortDescription": "Weybridge () is a town in the Borough of Elmbridge in Surrey, England, around 17 mi (27 km) south-west of central London. The settlement is recorded as Waigebrugge and Weibrugge in the 7th century and the name derives from a crossing point of the River Wey, which flows into the R",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/10-16_Hanger_Hill%2C_Weybridge_-_geograph.org.uk_-_903285.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "thames-windsor-berkshire",
+          "name": "Windsor, Berkshire",
+          "nation": "England",
+          "lat": 51.4791,
+          "lng": -0.6095,
+          "shortDescription": "Windsor is a historic town in the Royal Borough of Windsor and Maidenhead in Berkshire, England. It is home to Windsor Castle, one of the official residences of the British monarch.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_%28England%29-center.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "thames",
+            "eyot",
+            "river"
+          ],
+          "highestPointM": null
+        }
+      ]
+    },
+    {
+      "id": "high-summits",
+      "title": "High summits",
+      "subtitle": "Islands with peaks 600 m and above.",
+      "chatHint": "islands with summits",
+      "filterPresets": {
+        "elevation": true,
+        "photosFirst": true
+      },
+      "count": 13,
+      "islandIds": [
+        "osm-relation-6038068",
+        "osm-relation-7681896",
+        "isle-of-skye",
+        "mull",
+        "arran",
+        "osm-relation-929839",
+        "osm-relation-7220346",
+        "lewis-and-harris",
+        "osm-relation-9603390",
+        "osm-relation-4619204",
+        "osm-relation-6045364",
+        "isle-of-man",
+        "osm-relation-380670"
+      ],
+      "islands": [
+        {
+          "id": "osm-relation-6038068",
+          "name": "Great Britain",
+          "nation": "England",
+          "lat": 54.31539,
+          "lng": -2.23233,
+          "shortDescription": "This is the relation for the island of Great Britain - the mainland. It should not include other islands and should not be confused with the country of the United Kingdom.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Satellite_image_of_Great_Britain_and_Northern_Ireland_in_April_2002.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 1345.0
+        },
+        {
+          "id": "osm-relation-7681896",
+          "name": "Ireland",
+          "nation": "Ireland",
+          "lat": 53.41523,
+          "lng": -7.95622,
+          "shortDescription": "Ireland is an island in the North Atlantic Ocean, in Northwestern Europe. Geopolitically, the island is divided between the Republic of Ireland (officially named Ireland – a sovereign state covering five-sixths of the island) and Northern Ireland (part of the United Kingdom – cov",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_%28MODIS%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 1038.6
+        },
+        {
+          "id": "isle-of-skye",
+          "name": "Isle of Skye",
+          "nation": "Scotland",
+          "lat": 57.273,
+          "lng": -6.215,
+          "shortDescription": "The largest of the Inner Hebrides, famed for the Cuillin mountains, dramatic coastlines, and the Old Man of Storr.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Man_of_Storr%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "bridge",
+            "hiking",
+            "iconic"
+          ],
+          "highestPointM": 992.0
+        },
+        {
+          "id": "mull",
+          "name": "Isle of Mull",
+          "nation": "Scotland",
+          "lat": 56.45,
+          "lng": -5.95,
+          "shortDescription": "Mountainous Inner Hebridean island known for white-tailed eagles, the colourful waterfront of Tobermory, and the gateway to Iona and Staffa.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_More_%28Mull%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "wildlife",
+            "ferry",
+            "iona",
+            "staffa",
+            "tobermory"
+          ],
+          "highestPointM": 966.0
+        },
+        {
+          "id": "arran",
+          "name": "Isle of Arran",
+          "nation": "Scotland",
+          "lat": 55.58,
+          "lng": -5.21,
+          "shortDescription": "Often called 'Scotland in miniature', combining Highland-style mountains in the north with rolling Lowland scenery in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arran_%40_New_Years_Eve_31.12.2009_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "geology",
+            "castle"
+          ],
+          "highestPointM": 874.0
+        },
+        {
+          "id": "osm-relation-929839",
+          "name": "Isle of Rum",
+          "nation": "Scotland",
+          "lat": 56.99765,
+          "lng": -6.34924,
+          "shortDescription": "Small Isles; Pop. 31",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Harris%2C_Isle_of_Rum.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 812.0
+        },
+        {
+          "id": "osm-relation-7220346",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.12182,
+          "lng": -6.63556,
+          "shortDescription": "Largest Scottish island; pop. 19,680 (2022); Lewis & Harris joined by land",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "lewis-and-harris",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.215,
+          "lng": -6.55,
+          "shortDescription": "The largest island in Scotland, with the rolling moorland of Lewis in the north and the rugged hills of Harris in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "beaches",
+            "ferry",
+            "flights",
+            "standing-stones",
+            "gaelic"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "osm-relation-9603390",
+          "name": "Harris",
+          "nation": "Scotland",
+          "lat": 57.88969,
+          "lng": -6.89884,
+          "shortDescription": "Harris (Scottish Gaelic: Na Hearadh, pronounced [nə ˈhɛɾəɣ] ) is the southern and more mountainous part of Lewis and Harris, the largest island in the Outer Hebrides, Scotland. Although not an island itself, Harris is often referred to in opposition to the Isle of Lewis as the Is",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Road_Harris.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "osm-relation-4619204",
+          "name": "Jura",
+          "nation": "Scotland",
+          "lat": 55.97068,
+          "lng": -5.892,
+          "shortDescription": "Pop. 258; Paps of Jura",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jura_seen_from_Bunnahabhain_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 785.0
+        },
+        {
+          "id": "osm-relation-6045364",
+          "name": "Achill Island",
+          "nation": "Ireland",
+          "lat": 53.95215,
+          "lng": -10.08654,
+          "shortDescription": "Achill Island (; Irish: Acaill, Oileán Acla) is located off the west coast of Ireland in the historical barony of Burrishoole, County Mayo. It is the largest of the Irish isles and has an area of approximately 148 km2 (57 sq mi).",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beautiful_Achill_Islands_in_County_Mayo_of_Ireland.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 688.0
+        },
+        {
+          "id": "isle-of-man",
+          "name": "Isle of Man",
+          "nation": "Crown Dependency",
+          "lat": 54.236,
+          "lng": -4.548,
+          "shortDescription": "Self-governing Crown Dependency in the middle of the Irish Sea, famed for the TT motorcycle races and the Manx Gaelic language.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Man_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "crown-dependency",
+            "ferry",
+            "flights",
+            "tt-races"
+          ],
+          "highestPointM": 621.0
+        },
+        {
+          "id": "osm-relation-380670",
+          "name": "South Uist",
+          "nation": "Scotland",
+          "lat": 57.25093,
+          "lng": -7.32503,
+          "shortDescription": "Pop. 1,650; highest Hebridean peak outside Skye (620 m)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_Uist_machair_%28timniblett%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 620.0
+        }
+      ]
+    }
+  ]
+}
