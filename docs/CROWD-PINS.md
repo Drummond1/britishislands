@@ -15,8 +15,20 @@ append approved rows to `data/crowd_pins.json`. Nothing is merged into
 ### Native submit configuration
 
 Static hosting cannot write to the repo from the browser. Configure one provider in
-`data/crowd_suggest_config.json` (see `data/crowd_suggest_config.example.json`) or
+`data/crowd_suggest_config.json` (see `data/crowd_suggest_config.example.json`), or
 override before `app.js`:
+
+**Production (GitHub Pages):** add repository secret `CROWD_FORM_EMAIL` with a
+[FormSubmit](https://formsubmit.co/) inbox you control. The
+`.github/workflows/pages.yml` workflow injects it into `crowd_suggest_config.json`
+on each deploy. Until the secret is set, contributors can use **Send via GitHub**,
+**Send via email app** (mailto with pre-filled body), or copy the issue text.
+
+**Local:** copy `config.local.example.js` → `config.local.js` (gitignored) or run:
+
+`CROWD_FORM_EMAIL=you@example.com python3 scripts/prepare_crowd_config.py`
+
+Override before `app.js` (alternative):
 
 ```html
 <script>

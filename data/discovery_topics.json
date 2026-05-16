@@ -1959,6 +1959,3335 @@
           "highestPointM": 620.0
         }
       ]
+    },
+    {
+      "id": "scotland-classics",
+      "title": "Scotland classics",
+      "subtitle": "Curated and photographed Scottish islands — a sensible place to start.",
+      "chatHint": "Scottish islands with photos",
+      "filterPresets": {
+        "photosFirst": true
+      },
+      "count": 40,
+      "islandIds": [
+        "isle-of-skye",
+        "mull",
+        "arran",
+        "osm-relation-929839",
+        "osm-relation-7220346",
+        "lewis-and-harris",
+        "osm-relation-9603390",
+        "osm-relation-4619204",
+        "osm-relation-380670",
+        "osm-relation-1663893",
+        "islay",
+        "osm-relation-12597159",
+        "mainland-shetland",
+        "osm-relation-376677",
+        "osm-relation-8815440",
+        "osm-relation-8305331",
+        "st-kilda",
+        "osm-relation-8249591",
+        "osm-way-1169080225",
+        "osm-relation-1663615",
+        "osm-way-25393114",
+        "osm-relation-380646",
+        "osm-way-788981363",
+        "osm-relation-380685",
+        "osm-way-495525351",
+        "osm-way-4003348",
+        "osm-relation-6046465",
+        "osm-relation-8311963",
+        "osm-relation-6045406",
+        "bute",
+        "mainland-orkney",
+        "osm-way-885235014",
+        "osm-relation-14940656",
+        "osm-relation-9395600",
+        "osm-relation-13008771",
+        "osm-relation-2291884",
+        "fair-isle",
+        "osm-way-245364392",
+        "osm-relation-8684336",
+        "osm-way-4004501"
+      ],
+      "islands": [
+        {
+          "id": "isle-of-skye",
+          "name": "Isle of Skye",
+          "nation": "Scotland",
+          "lat": 57.273,
+          "lng": -6.215,
+          "shortDescription": "The largest of the Inner Hebrides, famed for the Cuillin mountains, dramatic coastlines, and the Old Man of Storr.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Man_of_Storr%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "bridge",
+            "hiking",
+            "iconic"
+          ],
+          "highestPointM": 992.0
+        },
+        {
+          "id": "mull",
+          "name": "Isle of Mull",
+          "nation": "Scotland",
+          "lat": 56.45,
+          "lng": -5.95,
+          "shortDescription": "Mountainous Inner Hebridean island known for white-tailed eagles, the colourful waterfront of Tobermory, and the gateway to Iona and Staffa.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_More_%28Mull%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "wildlife",
+            "ferry",
+            "iona",
+            "staffa",
+            "tobermory"
+          ],
+          "highestPointM": 966.0
+        },
+        {
+          "id": "arran",
+          "name": "Isle of Arran",
+          "nation": "Scotland",
+          "lat": 55.58,
+          "lng": -5.21,
+          "shortDescription": "Often called 'Scotland in miniature', combining Highland-style mountains in the north with rolling Lowland scenery in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arran_%40_New_Years_Eve_31.12.2009_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "geology",
+            "castle"
+          ],
+          "highestPointM": 874.0
+        },
+        {
+          "id": "osm-relation-929839",
+          "name": "Isle of Rum",
+          "nation": "Scotland",
+          "lat": 56.99765,
+          "lng": -6.34924,
+          "shortDescription": "Small Isles; Pop. 31",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Harris%2C_Isle_of_Rum.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 812.0
+        },
+        {
+          "id": "osm-relation-7220346",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.12182,
+          "lng": -6.63556,
+          "shortDescription": "Largest Scottish island; pop. 19,680 (2022); Lewis & Harris joined by land",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "lewis-and-harris",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.215,
+          "lng": -6.55,
+          "shortDescription": "The largest island in Scotland, with the rolling moorland of Lewis in the north and the rugged hills of Harris in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "beaches",
+            "ferry",
+            "flights",
+            "standing-stones",
+            "gaelic"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "osm-relation-9603390",
+          "name": "Harris",
+          "nation": "Scotland",
+          "lat": 57.88969,
+          "lng": -6.89884,
+          "shortDescription": "Harris (Scottish Gaelic: Na Hearadh, pronounced [nə ˈhɛɾəɣ] ) is the southern and more mountainous part of Lewis and Harris, the largest island in the Outer Hebrides, Scotland. Although not an island itself, Harris is often referred to in opposition to the Isle of Lewis as the Is",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Road_Harris.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "osm-relation-4619204",
+          "name": "Jura",
+          "nation": "Scotland",
+          "lat": 55.97068,
+          "lng": -5.892,
+          "shortDescription": "Pop. 258; Paps of Jura",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jura_seen_from_Bunnahabhain_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 785.0
+        },
+        {
+          "id": "osm-relation-380670",
+          "name": "South Uist",
+          "nation": "Scotland",
+          "lat": 57.25093,
+          "lng": -7.32503,
+          "shortDescription": "Pop. 1,650; highest Hebridean peak outside Skye (620 m)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_Uist_machair_%28timniblett%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 620.0
+        },
+        {
+          "id": "osm-relation-1663893",
+          "name": "Raasay",
+          "nation": "Scotland",
+          "lat": 57.41746,
+          "lng": -6.03353,
+          "shortDescription": "Pop. 187",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/RaasayIsland2.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 494.0
+        },
+        {
+          "id": "islay",
+          "name": "Islay",
+          "nation": "Scotland",
+          "lat": 55.78,
+          "lng": -6.21,
+          "shortDescription": "The 'Queen of the Hebrides', world-famous for its peated single malt whiskies and rich birdlife.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wfm_islay_landsat.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "whisky",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 491.0
+        },
+        {
+          "id": "osm-relation-12597159",
+          "name": "Hoy",
+          "nation": "Scotland",
+          "lat": 58.85204,
+          "lng": -3.30262,
+          "shortDescription": "Pop. 392; Old Man of Hoy stack",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoy_Orkney_Landesinnere.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 481.0
+        },
+        {
+          "id": "mainland-shetland",
+          "name": "Mainland (Shetland)",
+          "nation": "Scotland",
+          "lat": 60.3,
+          "lng": -1.3,
+          "shortDescription": "Britain's most northerly large island, closer to Bergen than to Edinburgh, with deep voes, sea cliffs and Up Helly Aa fire festivals.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lerwick_Harbour.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "norse",
+            "cliffs",
+            "ferry",
+            "flights",
+            "fire-festival"
+          ],
+          "highestPointM": 450.0
+        },
+        {
+          "id": "osm-relation-376677",
+          "name": "Shetland",
+          "nation": "Scotland",
+          "lat": 60.24498,
+          "lng": -1.37657,
+          "shortDescription": "The Mainland is the principal island of Shetland in Scotland. Covering an area of 899 km2 (347 sq mi), the island contains Shetland's only burgh, Lerwick, which is the main administrative centre, and major point of Shetland's ferry and air connections.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Klippen_bei_Eshaness3_5845.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 450.0
+        },
+        {
+          "id": "osm-relation-8815440",
+          "name": "Scarba",
+          "nation": "Scotland",
+          "lat": 56.17989,
+          "lng": -5.711,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Scarba1.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 449.0
+        },
+        {
+          "id": "osm-relation-8305331",
+          "name": "Hirta",
+          "nation": "Scotland",
+          "lat": 57.81357,
+          "lng": -8.58366,
+          "shortDescription": "St Kilda WHS; abandoned 1930",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Kilda_Village_Bay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 430.0
+        },
+        {
+          "id": "st-kilda",
+          "name": "St Kilda (Hirta)",
+          "nation": "Scotland",
+          "lat": 57.815,
+          "lng": -8.578,
+          "shortDescription": "Remote, dual UNESCO World Heritage Site 41 miles west of the Outer Hebrides; evacuated in 1930 and now home only to a small military and conservation team.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "world-heritage",
+            "uninhabited",
+            "remote",
+            "seabirds",
+            "evacuation"
+          ],
+          "highestPointM": 430.0
+        },
+        {
+          "id": "osm-relation-8249591",
+          "name": "Foula",
+          "nation": "Scotland",
+          "lat": 60.13379,
+          "lng": -2.07791,
+          "shortDescription": "Pop. 17; remote",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ham_Foula.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 418.0
+        },
+        {
+          "id": "osm-way-1169080225",
+          "name": "Scalpay",
+          "nation": "Scotland",
+          "lat": 57.29951,
+          "lng": -5.9714,
+          "shortDescription": "Scalpay (; Scottish Gaelic: Sgalpaigh) is an inhabited island in the Inner Hebrides of Scotland which has a population of 4.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Scalpay%2C_Inner_Hebrides.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 396.0
+        },
+        {
+          "id": "osm-relation-1663615",
+          "name": "Eigg",
+          "nation": "Scotland",
+          "lat": 56.90793,
+          "lng": -6.16101,
+          "shortDescription": "Small Isles; Pop. 95",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Chathastail%2C_lighthouse_-_geograph.org.uk_-_916403.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 393.0
+        },
+        {
+          "id": "osm-way-25393114",
+          "name": "Boreray",
+          "nation": "Scotland",
+          "lat": 57.87012,
+          "lng": -8.48997,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boreray_from_Conachair.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 384.0
+        },
+        {
+          "id": "osm-relation-380646",
+          "name": "Barra",
+          "nation": "Scotland",
+          "lat": 57.0011,
+          "lng": -7.46562,
+          "shortDescription": "Pop. 1,209; Castlebay",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagh_Halaman_Barra.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 383.0
+        },
+        {
+          "id": "osm-way-788981363",
+          "name": "Soay",
+          "nation": "Scotland",
+          "lat": 57.82869,
+          "lng": -8.63728,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inselsoay.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 376.0
+        },
+        {
+          "id": "osm-relation-380685",
+          "name": "North Uist",
+          "nation": "Scotland",
+          "lat": 57.6038,
+          "lng": -7.30612,
+          "shortDescription": "Pop. 1,254; causeway-linked",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/North_Uist_near_Solas.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 347.0
+        },
+        {
+          "id": "osm-way-495525351",
+          "name": "Ailsa Craig",
+          "nation": "Scotland",
+          "lat": 55.25241,
+          "lng": -5.11526,
+          "shortDescription": "Curling-stone granite; gannetry",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ailsa_Craig_Scotland_2022.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 340.0
+        },
+        {
+          "id": "osm-way-4003348",
+          "name": "Holy Island",
+          "nation": "Scotland",
+          "lat": 55.52425,
+          "lng": -5.07467,
+          "shortDescription": "Pop. 17; Buddhist retreat",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lighthouse_Holy_Isle_SE.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 314.0
+        },
+        {
+          "id": "osm-relation-6046465",
+          "name": "Ulva",
+          "nation": "Scotland",
+          "lat": 56.48054,
+          "lng": -6.20539,
+          "shortDescription": "Pop. 6",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Basaltcliffsulva.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 313.0
+        },
+        {
+          "id": "osm-relation-8311963",
+          "name": "Scarp",
+          "nation": "Scotland",
+          "lat": 58.02054,
+          "lng": -7.13534,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/North_Coast_of_Scarp_-_geograph.org.uk_-_190108.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 308.0
+        },
+        {
+          "id": "osm-relation-6045406",
+          "name": "Unst",
+          "nation": "Scotland",
+          "lat": 60.75952,
+          "lng": -0.87162,
+          "shortDescription": "Pop. 644; northernmost UK",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burra_Stack%2C_Unst_-_geograph.org.uk_-_116634.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 285.0
+        },
+        {
+          "id": "bute",
+          "name": "Isle of Bute",
+          "nation": "Scotland",
+          "lat": 55.83,
+          "lng": -5.11,
+          "shortDescription": "A gentle, accessible Clyde island with the Victorian resort town of Rothesay and the Gothic-revival Mount Stuart House.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bute_satellite.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "victorian",
+            "ferry",
+            "stately-home"
+          ],
+          "highestPointM": 278.0
+        },
+        {
+          "id": "mainland-orkney",
+          "name": "Mainland (Orkney)",
+          "nation": "Scotland",
+          "lat": 58.985,
+          "lng": -3.034,
+          "shortDescription": "The largest of the Orkney Islands, dense with Neolithic monuments including Skara Brae, Maeshowe and the Ring of Brodgar.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainland1.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "neolithic",
+            "world-heritage",
+            "ferry",
+            "flights",
+            "history"
+          ],
+          "highestPointM": 275.0
+        },
+        {
+          "id": "osm-way-885235014",
+          "name": "Mingulay",
+          "nation": "Scotland",
+          "lat": 56.81347,
+          "lng": -7.64245,
+          "shortDescription": "Abandoned 1912; major gannet/puffin colony",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Western_cliffs_of_Mingulay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 273.0
+        },
+        {
+          "id": "osm-relation-14940656",
+          "name": "Taransay",
+          "nation": "Scotland",
+          "lat": 57.89849,
+          "lng": -7.03696,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/West_Loch_Tarbert%2C_Isle_of_Harris_and_Lewis%2C_Scotland%2C_23_April_2011_-_Flickr_-_PhillipC.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 267.0
+        },
+        {
+          "id": "osm-relation-9395600",
+          "name": "Eilean Shona",
+          "nation": "Scotland",
+          "lat": 56.79845,
+          "lng": -5.84831,
+          "shortDescription": "Pop. 9",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eileanshonaoldschool.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 265.0
+        },
+        {
+          "id": "osm-relation-13008771",
+          "name": "Rousay",
+          "nation": "Scotland",
+          "lat": 59.16315,
+          "lng": -3.03562,
+          "shortDescription": "Pop. 236",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mary%27s_Church_and_graveyard_-_geograph.org.uk_-_1302073.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 250.0
+        },
+        {
+          "id": "osm-relation-2291884",
+          "name": "Bressay",
+          "nation": "Scotland",
+          "lat": 60.14603,
+          "lng": -1.09661,
+          "shortDescription": "Pop. 345",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bressay_Lighthouse_a.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 226.0
+        },
+        {
+          "id": "fair-isle",
+          "name": "Fair Isle",
+          "nation": "Scotland",
+          "lat": 59.535,
+          "lng": -1.633,
+          "shortDescription": "Britain's most remote inhabited island, midway between Orkney and Shetland — famed for knitwear, seabirds, and rare bird sightings.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fair_Isle_-_West_cliffs.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "remote",
+            "knitwear",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 217.0
+        },
+        {
+          "id": "osm-way-245364392",
+          "name": "Seaforth Island",
+          "nation": "Scotland",
+          "lat": 57.99672,
+          "lng": -6.72678,
+          "shortDescription": "Seaforth Island (Scottish Gaelic: Eilean Shìphoirt/Shìophoirt or Mulag) is an uninhabited island in the Outer Hebrides of Scotland. Unlike many other islands of the Outer Hebrides which are mainly surrounded by open sea, Seaforth Island lies in a narrow fjord-like sea loch named ",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Seaforth_Island_-_geograph.org.uk_-_626987.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 217.0
+        },
+        {
+          "id": "osm-relation-8684336",
+          "name": "Yell",
+          "nation": "Scotland",
+          "lat": 60.60806,
+          "lng": -1.09233,
+          "shortDescription": "Pop. 904",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouster.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 210.0
+        },
+        {
+          "id": "osm-way-4004501",
+          "name": "Canna",
+          "nation": "Scotland",
+          "lat": 57.05666,
+          "lng": -6.54856,
+          "shortDescription": "Small Isles; Pop. 9",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Canna_%28Canaigh%29_18.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 210.0
+        }
+      ]
+    },
+    {
+      "id": "inner-hebrides",
+      "title": "Inner Hebrides",
+      "subtitle": "Sea islands of the Inner Hebrides — Mull, Skye, Islay, and neighbours.",
+      "chatHint": "Inner Hebrides ferry islands",
+      "filterPresets": {},
+      "count": 36,
+      "islandIds": [
+        "isle-of-skye",
+        "mull",
+        "osm-relation-929839",
+        "osm-relation-4619204",
+        "osm-relation-1663893",
+        "islay",
+        "osm-relation-8815440",
+        "osm-relation-1663615",
+        "osm-relation-6046465",
+        "osm-relation-9395600",
+        "osm-way-4004501",
+        "osm-relation-4092586",
+        "osm-relation-12605305",
+        "osm-relation-8245962",
+        "osm-relation-3833751",
+        "osm-relation-6045516",
+        "osm-relation-6045455",
+        "osm-relation-12895654",
+        "osm-relation-1240445",
+        "osm-relation-13736431",
+        "osm-relation-5420246",
+        "iona",
+        "osm-relation-6949620",
+        "osm-relation-8815517",
+        "osm-way-200773375",
+        "osm-way-201143858",
+        "osm-way-200758469",
+        "osm-way-200890709",
+        "osm-relation-4230734",
+        "osm-way-4004498",
+        "osm-way-200745352",
+        "osm-way-4005122",
+        "osm-way-144465265",
+        "osm-way-59314536",
+        "osm-way-4009664",
+        "staffa"
+      ],
+      "islands": [
+        {
+          "id": "isle-of-skye",
+          "name": "Isle of Skye",
+          "nation": "Scotland",
+          "lat": 57.273,
+          "lng": -6.215,
+          "shortDescription": "The largest of the Inner Hebrides, famed for the Cuillin mountains, dramatic coastlines, and the Old Man of Storr.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Man_of_Storr%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "mountains",
+            "ferry",
+            "bridge",
+            "hiking",
+            "iconic"
+          ],
+          "highestPointM": 992.0
+        },
+        {
+          "id": "mull",
+          "name": "Isle of Mull",
+          "nation": "Scotland",
+          "lat": 56.45,
+          "lng": -5.95,
+          "shortDescription": "Mountainous Inner Hebridean island known for white-tailed eagles, the colourful waterfront of Tobermory, and the gateway to Iona and Staffa.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_More_%28Mull%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "wildlife",
+            "ferry",
+            "iona",
+            "staffa",
+            "tobermory"
+          ],
+          "highestPointM": 966.0
+        },
+        {
+          "id": "osm-relation-929839",
+          "name": "Isle of Rum",
+          "nation": "Scotland",
+          "lat": 56.99765,
+          "lng": -6.34924,
+          "shortDescription": "Small Isles; Pop. 31",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Harris%2C_Isle_of_Rum.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 812.0
+        },
+        {
+          "id": "osm-relation-4619204",
+          "name": "Jura",
+          "nation": "Scotland",
+          "lat": 55.97068,
+          "lng": -5.892,
+          "shortDescription": "Pop. 258; Paps of Jura",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jura_seen_from_Bunnahabhain_-_panoramio.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 785.0
+        },
+        {
+          "id": "osm-relation-1663893",
+          "name": "Raasay",
+          "nation": "Scotland",
+          "lat": 57.41746,
+          "lng": -6.03353,
+          "shortDescription": "Pop. 187",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/RaasayIsland2.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 494.0
+        },
+        {
+          "id": "islay",
+          "name": "Islay",
+          "nation": "Scotland",
+          "lat": 55.78,
+          "lng": -6.21,
+          "shortDescription": "The 'Queen of the Hebrides', world-famous for its peated single malt whiskies and rich birdlife.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wfm_islay_landsat.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "whisky",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 491.0
+        },
+        {
+          "id": "osm-relation-8815440",
+          "name": "Scarba",
+          "nation": "Scotland",
+          "lat": 56.17989,
+          "lng": -5.711,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Scarba1.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 449.0
+        },
+        {
+          "id": "osm-relation-1663615",
+          "name": "Eigg",
+          "nation": "Scotland",
+          "lat": 56.90793,
+          "lng": -6.16101,
+          "shortDescription": "Small Isles; Pop. 95",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Chathastail%2C_lighthouse_-_geograph.org.uk_-_916403.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 393.0
+        },
+        {
+          "id": "osm-relation-6046465",
+          "name": "Ulva",
+          "nation": "Scotland",
+          "lat": 56.48054,
+          "lng": -6.20539,
+          "shortDescription": "Pop. 6",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Basaltcliffsulva.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 313.0
+        },
+        {
+          "id": "osm-relation-9395600",
+          "name": "Eilean Shona",
+          "nation": "Scotland",
+          "lat": 56.79845,
+          "lng": -5.84831,
+          "shortDescription": "Pop. 9",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eileanshonaoldschool.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 265.0
+        },
+        {
+          "id": "osm-way-4004501",
+          "name": "Canna",
+          "nation": "Scotland",
+          "lat": 57.05666,
+          "lng": -6.54856,
+          "shortDescription": "Small Isles; Pop. 9",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Canna_%28Canaigh%29_18.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 210.0
+        },
+        {
+          "id": "osm-relation-4092586",
+          "name": "Kerrera",
+          "nation": "Scotland",
+          "lat": 56.39799,
+          "lng": -5.53964,
+          "shortDescription": "Pop. 61",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kerrera_-_geograph.org.uk_-_662081.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 189.0
+        },
+        {
+          "id": "osm-relation-12605305",
+          "name": "Carna",
+          "nation": "Scotland",
+          "lat": 56.66098,
+          "lng": -5.88357,
+          "shortDescription": "Carna or Càrna is an island in Loch Sunart, an arm of the sea, close to the Ardnamurchan peninsula, on the west coast of Scotland.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Southeast_of_Carna_-_geograph.org.uk_-_1347773.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 170.0
+        },
+        {
+          "id": "osm-relation-8245962",
+          "name": "Gometra",
+          "nation": "Scotland",
+          "lat": 56.48593,
+          "lng": -6.28116,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gometra-Ulva-Bruecke.png?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 155.0
+        },
+        {
+          "id": "osm-relation-3833751",
+          "name": "Seil",
+          "nation": "Scotland",
+          "lat": 56.29611,
+          "lng": -5.61756,
+          "shortDescription": "Pop. 580; Bridge over the Atlantic",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clachan_Bridge_2005-05-07.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 146.0
+        },
+        {
+          "id": "osm-relation-6045516",
+          "name": "Colonsay",
+          "nation": "Scotland",
+          "lat": 56.08093,
+          "lng": -6.2063,
+          "shortDescription": "Pop. 117",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kiloran_Bay_from_Carnan_Eoin_-_geograph.org.uk_-_24801.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 143.0
+        },
+        {
+          "id": "osm-relation-6045455",
+          "name": "Tiree",
+          "nation": "Scotland",
+          "lat": 56.49837,
+          "lng": -6.86119,
+          "shortDescription": "Pop. 700",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiree%2C_Balephuil_Bay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 140.0
+        },
+        {
+          "id": "osm-relation-12895654",
+          "name": "Muck",
+          "nation": "Scotland",
+          "lat": 56.83566,
+          "lng": -6.2462,
+          "shortDescription": "Small Isles; Pop. 28",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Port_Mor%2C_Muck.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 137.0
+        },
+        {
+          "id": "osm-relation-1240445",
+          "name": "Tanera More",
+          "nation": "Scotland",
+          "lat": 58.01198,
+          "lng": -5.40222,
+          "shortDescription": "Summer Isles",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rocky_Coastline_on_Rubha_D%C3%B9nan_-_geograph.org.uk_-_1278497.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 124.0
+        },
+        {
+          "id": "osm-relation-13736431",
+          "name": "Eilean Tigh",
+          "nation": "Scotland",
+          "lat": 57.51157,
+          "lng": -6.00339,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Tigh_-_geograph.org.uk_-_934875.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 111.0
+        },
+        {
+          "id": "osm-relation-5420246",
+          "name": "Coll",
+          "nation": "Scotland",
+          "lat": 56.62723,
+          "lng": -6.58069,
+          "shortDescription": "Pop. 176",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Traigh_Feall_-_Isle_of_Coll.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 103.0
+        },
+        {
+          "id": "iona",
+          "name": "Iona",
+          "nation": "Scotland",
+          "lat": 56.33,
+          "lng": -6.41,
+          "shortDescription": "Tiny island off Mull's western tip; the spiritual cradle of Christianity in Scotland and home to Iona Abbey.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Iona_Abbey_-_October_2018_-_Andrew_Gray_-_12.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "pilgrimage",
+            "abbey",
+            "ferry",
+            "small"
+          ],
+          "highestPointM": 101.0
+        },
+        {
+          "id": "osm-relation-6949620",
+          "name": "Gigha",
+          "nation": "Scotland",
+          "lat": 55.68769,
+          "lng": -5.74303,
+          "shortDescription": "Pop. 187; community-owned",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Blaeu_-_Atlas_of_Scotland_1654_-_CANTYRA_-_Kintyre.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 100.0
+        },
+        {
+          "id": "osm-relation-8815517",
+          "name": "Luing",
+          "nation": "Scotland",
+          "lat": 56.2295,
+          "lng": -5.6417,
+          "shortDescription": "Pop. 178",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Luing_sheep.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 94.0
+        },
+        {
+          "id": "osm-way-200773375",
+          "name": "Shuna",
+          "nation": "Scotland",
+          "lat": 56.2127,
+          "lng": -5.60367,
+          "shortDescription": "Pop. 2",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shunaisland.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 90.0
+        },
+        {
+          "id": "osm-way-201143858",
+          "name": "Eileach an Naoimh",
+          "nation": "Scotland",
+          "lat": 56.22289,
+          "lng": -5.80841,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eileach_an_Naoimh_Monk%27s_cell.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 80.0
+        },
+        {
+          "id": "osm-way-200758469",
+          "name": "Eilean Mhic Chrion",
+          "nation": "Scotland",
+          "lat": 56.17354,
+          "lng": -5.53814,
+          "shortDescription": "Some inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Buildings_at_Bagh_Innvraig%2C_Eilean_Mhic_Chrion_-_geograph.org.uk_-_1525572.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 63.0
+        },
+        {
+          "id": "osm-way-200890709",
+          "name": "Torsa",
+          "nation": "Scotland",
+          "lat": 56.25789,
+          "lng": -5.61666,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_northern_tip_of_Torsa.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 62.0
+        },
+        {
+          "id": "osm-relation-4230734",
+          "name": "Wiay",
+          "nation": "Scotland",
+          "lat": 57.33734,
+          "lng": -6.49986,
+          "shortDescription": "Wiay, pronounced \"waya\" (Gaelic: Fuidheigh) is an uninhabited island in Loch Bracadale, off the coast of the Isle of Skye Wiay is approximately 1.3 kilometres (3⁄4 mile) wide by 2.1 kilometres (1+1⁄4 mi) long and lies 1.3 km (3⁄4 mi) west of Ullinish, and 1+1⁄2 mi (2.5 km) north ",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wiayskye.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 61.0
+        },
+        {
+          "id": "osm-way-4004498",
+          "name": "Sanday",
+          "nation": "Scotland",
+          "lat": 57.04931,
+          "lng": -6.49037,
+          "shortDescription": "Small Isles; Pop. 4",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanday_%28Sandaigh%29_Dun_Mor_1.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 59.0
+        },
+        {
+          "id": "osm-way-200745352",
+          "name": "Eilean Righ",
+          "nation": "Scotland",
+          "lat": 56.15754,
+          "lng": -5.54111,
+          "shortDescription": "Some inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Righ_from_Eilean_Mhic_Chrion.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 55.0
+        },
+        {
+          "id": "osm-way-4005122",
+          "name": "Harlosh Island",
+          "nation": "Scotland",
+          "lat": 57.3626,
+          "lng": -6.5268,
+          "shortDescription": "Harlosh Island is one of four islands to be found in Skye's Loch Bracadale. Harlosh Island is one mile (1.5 kilometres) from the coast of the Duirinish Peninsula and four miles (six kilometres) from the coast of the Minginish peninsula.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_south_end_of_Harlosh_Island_-_geograph.org.uk_-_1212827.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 53.0
+        },
+        {
+          "id": "osm-way-144465265",
+          "name": "Texa",
+          "nation": "Scotland",
+          "lat": 55.61716,
+          "lng": -6.14301,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Texa_Island.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 50.0
+        },
+        {
+          "id": "osm-way-59314536",
+          "name": "Tanera Beag",
+          "nation": "Scotland",
+          "lat": 58.00991,
+          "lng": -5.44628,
+          "shortDescription": "Summer Isles",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tanarabeag.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 49.0
+        },
+        {
+          "id": "osm-way-4009664",
+          "name": "Inch Kenneth",
+          "nation": "Scotland",
+          "lat": 56.4414,
+          "lng": -6.15783,
+          "shortDescription": "Pop. 0 (occ.)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lochnakealislands.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 49.0
+        },
+        {
+          "id": "staffa",
+          "name": "Staffa",
+          "nation": "Scotland",
+          "lat": 56.43,
+          "lng": -6.34,
+          "shortDescription": "Uninhabited basalt island famed for Fingal's Cave, whose hexagonal columns inspired Mendelssohn's overture.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fingals_Cave%2C_Staffa_-_geograph.org.uk_-_30215.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "geology",
+            "uninhabited",
+            "boat-trip",
+            "iconic"
+          ],
+          "highestPointM": 42.0
+        }
+      ]
+    },
+    {
+      "id": "outer-hebrides",
+      "title": "Outer Hebrides",
+      "subtitle": "Lewis and Harris, Uists, Barra, and the western seaboard.",
+      "chatHint": "Outer Hebrides islands",
+      "filterPresets": {},
+      "count": 36,
+      "islandIds": [
+        "osm-relation-7220346",
+        "lewis-and-harris",
+        "osm-relation-380670",
+        "osm-relation-8305331",
+        "st-kilda",
+        "osm-way-25393114",
+        "osm-relation-380646",
+        "osm-way-788981363",
+        "osm-relation-380685",
+        "osm-relation-8311963",
+        "osm-way-885235014",
+        "osm-relation-14940656",
+        "osm-way-711432296",
+        "osm-way-25393138",
+        "osm-way-201303279",
+        "osm-relation-2797155",
+        "osm-relation-15708714",
+        "osm-way-28218749",
+        "osm-way-28206121",
+        "osm-relation-380684",
+        "osm-way-28220976",
+        "osm-way-715175196",
+        "osm-relation-931253",
+        "osm-way-4011674",
+        "osm-relation-2789916",
+        "osm-relation-15708718",
+        "osm-way-233105297",
+        "osm-way-4012744",
+        "osm-relation-15708717",
+        "osm-way-20594001",
+        "osm-way-4012450",
+        "wd-Q3777204",
+        "osm-relation-17639258",
+        "osm-way-1225410691",
+        "osm-relation-12323925",
+        "osm-relation-6046451"
+      ],
+      "islands": [
+        {
+          "id": "osm-relation-7220346",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.12182,
+          "lng": -6.63556,
+          "shortDescription": "Largest Scottish island; pop. 19,680 (2022); Lewis & Harris joined by land",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "lewis-and-harris",
+          "name": "Lewis and Harris",
+          "nation": "Scotland",
+          "lat": 58.215,
+          "lng": -6.55,
+          "shortDescription": "The largest island in Scotland, with the rolling moorland of Lewis in the north and the rugged hills of Harris in the south.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "beaches",
+            "ferry",
+            "flights",
+            "standing-stones",
+            "gaelic"
+          ],
+          "highestPointM": 799.0
+        },
+        {
+          "id": "osm-relation-380670",
+          "name": "South Uist",
+          "nation": "Scotland",
+          "lat": 57.25093,
+          "lng": -7.32503,
+          "shortDescription": "Pop. 1,650; highest Hebridean peak outside Skye (620 m)",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_Uist_machair_%28timniblett%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 620.0
+        },
+        {
+          "id": "osm-relation-8305331",
+          "name": "Hirta",
+          "nation": "Scotland",
+          "lat": 57.81357,
+          "lng": -8.58366,
+          "shortDescription": "St Kilda WHS; abandoned 1930",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Kilda_Village_Bay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 430.0
+        },
+        {
+          "id": "st-kilda",
+          "name": "St Kilda (Hirta)",
+          "nation": "Scotland",
+          "lat": 57.815,
+          "lng": -8.578,
+          "shortDescription": "Remote, dual UNESCO World Heritage Site 41 miles west of the Outer Hebrides; evacuated in 1930 and now home only to a small military and conservation team.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "world-heritage",
+            "uninhabited",
+            "remote",
+            "seabirds",
+            "evacuation"
+          ],
+          "highestPointM": 430.0
+        },
+        {
+          "id": "osm-way-25393114",
+          "name": "Boreray",
+          "nation": "Scotland",
+          "lat": 57.87012,
+          "lng": -8.48997,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boreray_from_Conachair.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 384.0
+        },
+        {
+          "id": "osm-relation-380646",
+          "name": "Barra",
+          "nation": "Scotland",
+          "lat": 57.0011,
+          "lng": -7.46562,
+          "shortDescription": "Pop. 1,209; Castlebay",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagh_Halaman_Barra.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 383.0
+        },
+        {
+          "id": "osm-way-788981363",
+          "name": "Soay",
+          "nation": "Scotland",
+          "lat": 57.82869,
+          "lng": -8.63728,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inselsoay.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 376.0
+        },
+        {
+          "id": "osm-relation-380685",
+          "name": "North Uist",
+          "nation": "Scotland",
+          "lat": 57.6038,
+          "lng": -7.30612,
+          "shortDescription": "Pop. 1,254; causeway-linked",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/North_Uist_near_Solas.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 347.0
+        },
+        {
+          "id": "osm-relation-8311963",
+          "name": "Scarp",
+          "nation": "Scotland",
+          "lat": 58.02054,
+          "lng": -7.13534,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/North_Coast_of_Scarp_-_geograph.org.uk_-_190108.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 308.0
+        },
+        {
+          "id": "osm-way-885235014",
+          "name": "Mingulay",
+          "nation": "Scotland",
+          "lat": 56.81347,
+          "lng": -7.64245,
+          "shortDescription": "Abandoned 1912; major gannet/puffin colony",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Western_cliffs_of_Mingulay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 273.0
+        },
+        {
+          "id": "osm-relation-14940656",
+          "name": "Taransay",
+          "nation": "Scotland",
+          "lat": 57.89849,
+          "lng": -7.03696,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/West_Loch_Tarbert%2C_Isle_of_Harris_and_Lewis%2C_Scotland%2C_23_April_2011_-_Flickr_-_PhillipC.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 267.0
+        },
+        {
+          "id": "osm-way-711432296",
+          "name": "Sandray",
+          "nation": "Scotland",
+          "lat": 56.89122,
+          "lng": -7.51594,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Blick_vom_S%C3%BCden_der_Insel_Vatersay_nach_Sandray.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 207.0
+        },
+        {
+          "id": "osm-way-25393138",
+          "name": "Stac an Armin",
+          "nation": "Scotland",
+          "lat": 57.88053,
+          "lng": -8.49609,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stac_an_Armin_and_Boreray.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 196.0
+        },
+        {
+          "id": "osm-way-201303279",
+          "name": "Berneray",
+          "nation": "Scotland",
+          "lat": 56.78404,
+          "lng": -7.63637,
+          "shortDescription": "Southernmost Outer Hebridean point; lighthouse",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Barrahead.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 193.0
+        },
+        {
+          "id": "osm-relation-2797155",
+          "name": "Vatersay",
+          "nation": "Scotland",
+          "lat": 56.92912,
+          "lng": -7.52985,
+          "shortDescription": "Pop. 83; causeway to Barra",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vatersay_Fae057.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 190.0
+        },
+        {
+          "id": "osm-relation-15708714",
+          "name": "Eriskay",
+          "nation": "Scotland",
+          "lat": 57.07555,
+          "lng": -7.2931,
+          "shortDescription": "Pop. 158; causeway",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eriskay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 185.0
+        },
+        {
+          "id": "osm-way-28218749",
+          "name": "Dùn",
+          "nation": "Scotland",
+          "lat": 57.79686,
+          "lng": -8.56192,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Kilda_Village_Bay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 178.0
+        },
+        {
+          "id": "osm-way-28206121",
+          "name": "Stac Lee",
+          "nation": "Scotland",
+          "lat": 57.86628,
+          "lng": -8.5103,
+          "shortDescription": "St Kilda WHS",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Kilda_Stac_Lee.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 172.0
+        },
+        {
+          "id": "osm-relation-380684",
+          "name": "Benbecula",
+          "nation": "Scotland",
+          "lat": 57.44642,
+          "lng": -7.3049,
+          "shortDescription": "Pop. 1,255; airport hub",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Benbecula_Beach.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 124.0
+        },
+        {
+          "id": "osm-way-28220976",
+          "name": "North Rona",
+          "nation": "Scotland",
+          "lat": 59.12514,
+          "lng": -5.82641,
+          "shortDescription": "Most remote inhabited British island historically",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Coming_up_to_toa_Rona_-_geograph.org.uk_-_1044279.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 108.0
+        },
+        {
+          "id": "osm-way-715175196",
+          "name": "Fuiay",
+          "nation": "Scotland",
+          "lat": 56.9961,
+          "lng": -7.36956,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fuidheigh_-_Rubha_na_Maighdein_-_geograph.org.uk_-_1477679.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 107.0
+        },
+        {
+          "id": "osm-relation-931253",
+          "name": "Scalpay",
+          "nation": "Scotland",
+          "lat": 57.86459,
+          "lng": -6.6775,
+          "shortDescription": "Pop. 282; bridged 1997",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Scalpay_-_Outer_Hebrides.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 104.0
+        },
+        {
+          "id": "osm-way-4011674",
+          "name": "Gighay",
+          "nation": "Scotland",
+          "lat": 57.02021,
+          "lng": -7.33206,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Along_the_coast_of_Gighay-Gioghaigh_-_geograph.org.uk_-_1477240.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 95.0
+        },
+        {
+          "id": "osm-relation-2789916",
+          "name": "Berneray",
+          "nation": "Scotland",
+          "lat": 57.71971,
+          "lng": -7.18629,
+          "shortDescription": "Pop. 142; causeway to N Uist",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Farmstead_footings_by_Loch_Beag_Bhuirgh%2C_Be%C3%A0rnaraigh-Berneray_-_geograph.org.uk_-_8103077.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 93.0
+        },
+        {
+          "id": "osm-relation-15708718",
+          "name": "Fuday",
+          "nation": "Scotland",
+          "lat": 57.05231,
+          "lng": -7.38713,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Fuday-Fuideigh_-_geograph.org.uk_-_1362071.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 89.0
+        },
+        {
+          "id": "osm-way-233105297",
+          "name": "Eilean Mhealasta",
+          "nation": "Scotland",
+          "lat": 58.07975,
+          "lng": -7.12835,
+          "shortDescription": "Cleared 19th c.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Mhealasta_-_geograph.org.uk_-_3668948.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 77.0
+        },
+        {
+          "id": "osm-way-4012744",
+          "name": "Eilean Liubhaird",
+          "nation": "Scotland",
+          "lat": 58.00105,
+          "lng": -6.43107,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Liubhard.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 75.0
+        },
+        {
+          "id": "osm-relation-15708717",
+          "name": "Hellisay",
+          "nation": "Scotland",
+          "lat": 57.01262,
+          "lng": -7.34613,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hellisay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 72.0
+        },
+        {
+          "id": "osm-way-20594001",
+          "name": "Sùla Sgeir",
+          "nation": "Scotland",
+          "lat": 59.09576,
+          "lng": -6.15598,
+          "shortDescription": "Atlantic outlier",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sula_Sgeir_from_the_South_West.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 70.0
+        },
+        {
+          "id": "osm-way-4012450",
+          "name": "Ensay",
+          "nation": "Scotland",
+          "lat": 57.7632,
+          "lng": -7.08428,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ensaystone.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 49.0
+        },
+        {
+          "id": "wd-Q3777204",
+          "name": "Flodaigh",
+          "nation": "Scotland",
+          "lat": 58.1936,
+          "lng": -6.92944,
+          "shortDescription": "Causeway-linked; Pop. 4",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_across_to_Flodaigh_-_geograph.org.uk_-_509789.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "wikidata"
+          ],
+          "highestPointM": 48.0
+        },
+        {
+          "id": "osm-relation-17639258",
+          "name": "Killegray",
+          "nation": "Scotland",
+          "lat": 57.74104,
+          "lng": -7.07899,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Killegray.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 45.0
+        },
+        {
+          "id": "osm-way-1225410691",
+          "name": "Hermetray",
+          "nation": "Scotland",
+          "lat": 57.65634,
+          "lng": -7.05145,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheep_grazing_on_Hermetray_-_geograph-4575768.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 35.0
+        },
+        {
+          "id": "osm-relation-12323925",
+          "name": "Grimsay",
+          "nation": "Scotland",
+          "lat": 57.48832,
+          "lng": -7.2385,
+          "shortDescription": "Pop. 149",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baghmor.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 22.0
+        },
+        {
+          "id": "osm-relation-6046451",
+          "name": "Great Bernera",
+          "nation": "Scotland",
+          "lat": 58.23025,
+          "lng": -6.83769,
+          "shortDescription": "Pop. 212; bridged",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lobsterponds.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        }
+      ]
+    },
+    {
+      "id": "orkney-shetland",
+      "title": "Orkney & Shetland",
+      "subtitle": "Northern isles — dramatic coasts, birds, and ferry links from the mainland.",
+      "chatHint": "Orkney or Shetland islands",
+      "filterPresets": {},
+      "count": 40,
+      "islandIds": [
+        "osm-relation-12597159",
+        "mainland-shetland",
+        "osm-relation-8249591",
+        "osm-relation-6045406",
+        "mainland-orkney",
+        "osm-relation-13008771",
+        "osm-relation-2291884",
+        "fair-isle",
+        "osm-relation-8684336",
+        "osm-way-8590977",
+        "osm-relation-12659130",
+        "osm-relation-3148465",
+        "osm-relation-6045499",
+        "osm-way-10303169",
+        "osm-relation-3601567",
+        "osm-relation-12597197",
+        "osm-way-8590968",
+        "osm-relation-13370324",
+        "osm-way-173383816",
+        "osm-way-262106470",
+        "osm-relation-8752131",
+        "osm-relation-3148462",
+        "osm-relation-12597289",
+        "osm-relation-8752130",
+        "osm-way-1149754247",
+        "osm-way-4569319",
+        "osm-relation-12885353",
+        "osm-way-179220328",
+        "osm-way-28223661",
+        "osm-way-8590712",
+        "osm-way-4569210",
+        "osm-relation-17748758",
+        "osm-way-701398670",
+        "osm-relation-3075243",
+        "osm-relation-12597195",
+        "osm-relation-15671047",
+        "osm-way-4569530",
+        "osm-way-4569485",
+        "osm-way-4569287",
+        "osm-way-1149758596"
+      ],
+      "islands": [
+        {
+          "id": "osm-relation-12597159",
+          "name": "Hoy",
+          "nation": "Scotland",
+          "lat": 58.85204,
+          "lng": -3.30262,
+          "shortDescription": "Pop. 392; Old Man of Hoy stack",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoy_Orkney_Landesinnere.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 481.0
+        },
+        {
+          "id": "mainland-shetland",
+          "name": "Mainland (Shetland)",
+          "nation": "Scotland",
+          "lat": 60.3,
+          "lng": -1.3,
+          "shortDescription": "Britain's most northerly large island, closer to Bergen than to Edinburgh, with deep voes, sea cliffs and Up Helly Aa fire festivals.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lerwick_Harbour.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "norse",
+            "cliffs",
+            "ferry",
+            "flights",
+            "fire-festival"
+          ],
+          "highestPointM": 450.0
+        },
+        {
+          "id": "osm-relation-8249591",
+          "name": "Foula",
+          "nation": "Scotland",
+          "lat": 60.13379,
+          "lng": -2.07791,
+          "shortDescription": "Pop. 17; remote",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ham_Foula.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 418.0
+        },
+        {
+          "id": "osm-relation-6045406",
+          "name": "Unst",
+          "nation": "Scotland",
+          "lat": 60.75952,
+          "lng": -0.87162,
+          "shortDescription": "Pop. 644; northernmost UK",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burra_Stack%2C_Unst_-_geograph.org.uk_-_116634.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 285.0
+        },
+        {
+          "id": "mainland-orkney",
+          "name": "Mainland (Orkney)",
+          "nation": "Scotland",
+          "lat": 58.985,
+          "lng": -3.034,
+          "shortDescription": "The largest of the Orkney Islands, dense with Neolithic monuments including Skara Brae, Maeshowe and the Ring of Brodgar.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainland1.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "neolithic",
+            "world-heritage",
+            "ferry",
+            "flights",
+            "history"
+          ],
+          "highestPointM": 275.0
+        },
+        {
+          "id": "osm-relation-13008771",
+          "name": "Rousay",
+          "nation": "Scotland",
+          "lat": 59.16315,
+          "lng": -3.03562,
+          "shortDescription": "Pop. 236",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mary%27s_Church_and_graveyard_-_geograph.org.uk_-_1302073.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 250.0
+        },
+        {
+          "id": "osm-relation-2291884",
+          "name": "Bressay",
+          "nation": "Scotland",
+          "lat": 60.14603,
+          "lng": -1.09661,
+          "shortDescription": "Pop. 345",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bressay_Lighthouse_a.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 226.0
+        },
+        {
+          "id": "fair-isle",
+          "name": "Fair Isle",
+          "nation": "Scotland",
+          "lat": 59.535,
+          "lng": -1.633,
+          "shortDescription": "Britain's most remote inhabited island, midway between Orkney and Shetland — famed for knitwear, seabirds, and rare bird sightings.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fair_Isle_-_West_cliffs.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "remote",
+            "knitwear",
+            "birds",
+            "ferry",
+            "flights"
+          ],
+          "highestPointM": 217.0
+        },
+        {
+          "id": "osm-relation-8684336",
+          "name": "Yell",
+          "nation": "Scotland",
+          "lat": 60.60806,
+          "lng": -1.09233,
+          "shortDescription": "Pop. 904",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouster.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 210.0
+        },
+        {
+          "id": "osm-way-8590977",
+          "name": "Noss",
+          "nation": "Scotland",
+          "lat": 60.14318,
+          "lng": -1.02522,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Noss_Pundsgeo.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 181.0
+        },
+        {
+          "id": "osm-relation-12659130",
+          "name": "Muckle Roe",
+          "nation": "Scotland",
+          "lat": 60.36817,
+          "lng": -1.42731,
+          "shortDescription": "Pop. 130; bridged",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lighthouse_Muckle_Roe_-_geograph.org.uk_-_629323.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 172.0
+        },
+        {
+          "id": "osm-relation-3148465",
+          "name": "Westray",
+          "nation": "Scotland",
+          "lat": 59.29443,
+          "lng": -2.954,
+          "shortDescription": "Pop. 566",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/WestrayNoupHeadLighthouse.JPG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 169.0
+        },
+        {
+          "id": "osm-relation-6045499",
+          "name": "Fetlar",
+          "nation": "Scotland",
+          "lat": 60.59742,
+          "lng": -0.85704,
+          "shortDescription": "Pop. 66",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brough_Lodge%2C_Fetlar_-_geograph.org.uk_-_1028553.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 159.0
+        },
+        {
+          "id": "osm-way-10303169",
+          "name": "Whalsay",
+          "nation": "Scotland",
+          "lat": 60.35579,
+          "lng": -0.96936,
+          "shortDescription": "Pop. 1,005",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Haa%2C_Clett_Head%2C_Whalsay%2C_Shetland_-_geograph.org.uk_-_145732.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 122.0
+        },
+        {
+          "id": "osm-relation-3601567",
+          "name": "South Ronaldsay",
+          "nation": "Scotland",
+          "lat": 58.7845,
+          "lng": -2.95727,
+          "shortDescription": "Pop. 984; linked by Churchill Barriers",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Windwick%2C_South_Ronaldsay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 118.0
+        },
+        {
+          "id": "osm-relation-12597197",
+          "name": "Eday",
+          "nation": "Scotland",
+          "lat": 59.19428,
+          "lng": -2.78066,
+          "shortDescription": "Pop. 102",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lighthouse_on_Calf_Sound%2C_Eday_-_geograph.org.uk_-_33187.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 102.0
+        },
+        {
+          "id": "osm-way-8590968",
+          "name": "Vaila",
+          "nation": "Scotland",
+          "lat": 60.20061,
+          "lng": -1.5845,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Muckle_Flaes_and_Vaila_from_Culswick.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 91.0
+        },
+        {
+          "id": "osm-relation-13370324",
+          "name": "Vementry",
+          "nation": "Scotland",
+          "lat": 60.32618,
+          "lng": -1.46467,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vementry.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 90.0
+        },
+        {
+          "id": "osm-way-173383816",
+          "name": "Papa Stour",
+          "nation": "Scotland",
+          "lat": 60.33064,
+          "lng": -1.69974,
+          "shortDescription": "Pop. 7",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aesha_Head%2C_Papa_Stour.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 87.0
+        },
+        {
+          "id": "osm-way-262106470",
+          "name": "Papa Little",
+          "nation": "Scotland",
+          "lat": 60.33213,
+          "lng": -1.39076,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Western_edge_of_Rit_Ness%2C_Papa_Little_-_geograph.org.uk_-_886954.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 82.0
+        },
+        {
+          "id": "osm-relation-8752131",
+          "name": "East Burra",
+          "nation": "Scotland",
+          "lat": 60.06865,
+          "lng": -1.31882,
+          "shortDescription": "Pop. 105",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_from_south_end_of_East_Burra_Shetland.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 81.0
+        },
+        {
+          "id": "osm-relation-3148462",
+          "name": "Burray",
+          "nation": "Scotland",
+          "lat": 58.85786,
+          "lng": -2.91067,
+          "shortDescription": "Pop. 445; linked by causeway",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burray_Cliffs.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 80.0
+        },
+        {
+          "id": "osm-relation-12597289",
+          "name": "Shapinsay",
+          "nation": "Scotland",
+          "lat": 59.05245,
+          "lng": -2.86698,
+          "shortDescription": "Pop. 299",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Geo_of_Ork_by_C_Michael_Hogan.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 65.0
+        },
+        {
+          "id": "osm-relation-8752130",
+          "name": "West Burra",
+          "nation": "Scotland",
+          "lat": 60.07973,
+          "lng": -1.34409,
+          "shortDescription": "Pop. 772; bridged",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trondra_West_Burra_Bridge.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 63.0
+        },
+        {
+          "id": "osm-way-1149754247",
+          "name": "Graemsay",
+          "nation": "Scotland",
+          "lat": 58.93025,
+          "lng": -3.28971,
+          "shortDescription": "Pop. 21",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Graemsay_Island_seen_from_the_northwest.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 62.0
+        },
+        {
+          "id": "osm-way-4569319",
+          "name": "Calf of Eday",
+          "nation": "Scotland",
+          "lat": 59.23831,
+          "lng": -2.73269,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Calfofeday.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 54.0
+        },
+        {
+          "id": "osm-relation-12885353",
+          "name": "Stroma",
+          "nation": "Scotland",
+          "lat": 58.68183,
+          "lng": -3.12036,
+          "shortDescription": "Caithness administratively but Orkney geographically; uninhabited since 1962",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stromalighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 53.0
+        },
+        {
+          "id": "osm-way-179220328",
+          "name": "Mousa",
+          "nation": "Scotland",
+          "lat": 59.999,
+          "lng": -1.17582,
+          "shortDescription": "Mousa famous broch; uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mousa.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 43.0
+        },
+        {
+          "id": "osm-way-28223661",
+          "name": "Sule Stack",
+          "nation": "Scotland",
+          "lat": 59.02398,
+          "lng": -4.50635,
+          "shortDescription": "Northern gannet stack",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stack_Skerry.PNG?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 36.0
+        },
+        {
+          "id": "osm-way-8590712",
+          "name": "Hascosay",
+          "nation": "Scotland",
+          "lat": 60.60811,
+          "lng": -0.99156,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/House_on_Hascosay_-_geograph.org.uk_-_1470084.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 28.0
+        },
+        {
+          "id": "osm-way-4569210",
+          "name": "Switha",
+          "nation": "Scotland",
+          "lat": 58.79951,
+          "lng": -3.10284,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%27Hells_Gate%27_and_Switha_-_geograph.org.uk_-_1532198.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 28.0
+        },
+        {
+          "id": "osm-relation-17748758",
+          "name": "Auskerry",
+          "nation": "Scotland",
+          "lat": 59.03187,
+          "lng": -2.56821,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Auskerry_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 18.0
+        },
+        {
+          "id": "osm-way-701398670",
+          "name": "Holm of Grimbister",
+          "nation": "Scotland",
+          "lat": 59.00396,
+          "lng": -3.08249,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Causeway_to_the_Holm_of_Grimbister_-_geograph.org.uk_-_1312791.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": 8.0
+        },
+        {
+          "id": "osm-relation-3075243",
+          "name": "Sanday",
+          "nation": "Scotland",
+          "lat": 59.24849,
+          "lng": -2.54587,
+          "shortDescription": "Pop. 491",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Start_Point_light.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-12597195",
+          "name": "Stronsay",
+          "nation": "Scotland",
+          "lat": 59.11662,
+          "lng": -2.60837,
+          "shortDescription": "Pop. 321",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/PicVat.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-15671047",
+          "name": "Flotta",
+          "nation": "Scotland",
+          "lat": 58.83131,
+          "lng": -3.10615,
+          "shortDescription": "Pop. 77; oil terminal",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flotta_2007%2C_aerial_%28geograph_3147704%29.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569530",
+          "name": "Papa Westray",
+          "nation": "Scotland",
+          "lat": 59.35485,
+          "lng": -2.88955,
+          "shortDescription": "Pop. 95",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Papay_Beach.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569485",
+          "name": "North Ronaldsay",
+          "nation": "Scotland",
+          "lat": 59.37023,
+          "lng": -2.41006,
+          "shortDescription": "Pop. 59",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/North_Ronaldsay_Lighthouse_-_geograph.org.uk_-_1759322.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569287",
+          "name": "Wyre",
+          "nation": "Scotland",
+          "lat": 59.11939,
+          "lng": -2.98118,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wyre.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1149758596",
+          "name": "Fara",
+          "nation": "Scotland",
+          "lat": 58.84485,
+          "lng": -3.16553,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Farahouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": false,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        }
+      ]
+    },
+    {
+      "id": "scotland-ferry-hops",
+      "title": "Scotland ferry hops",
+      "subtitle": "Scottish sea islands you can reach by ferry from the mainland.",
+      "chatHint": "Scottish ferry islands near Oban",
+      "filterPresets": {
+        "ferry": true,
+        "photosFirst": true
+      },
+      "count": 42,
+      "islandIds": [
+        "osm-relation-4092586",
+        "osm-relation-15708714",
+        "osm-way-200890709",
+        "osm-way-3469279",
+        "osm-relation-6046170",
+        "osm-way-4569287",
+        "osm-way-4569291",
+        "osm-way-40201357",
+        "osm-way-8591076",
+        "osm-way-4569263",
+        "osm-relation-8815463",
+        "osm-way-4007191",
+        "osm-way-4569222",
+        "osm-relation-3077272",
+        "osm-relation-3077274",
+        "osm-way-730876541",
+        "osm-relation-3866223",
+        "osm-way-205056872",
+        "osm-way-490111575",
+        "osm-way-1150257129",
+        "osm-way-1032656642",
+        "osm-way-205378257",
+        "osm-way-416167612",
+        "osm-way-205489795",
+        "osm-way-1210700844",
+        "osm-way-4005210",
+        "osm-way-207095261",
+        "osm-way-4004486",
+        "osm-way-704413716",
+        "osm-way-171874011",
+        "osm-way-836138100",
+        "osm-way-4010386",
+        "osm-way-4010491",
+        "osm-way-63502638",
+        "osm-way-115733381",
+        "osm-way-656976594",
+        "osm-way-230351832",
+        "osm-way-95670291",
+        "osm-way-222757416",
+        "osm-way-374466241",
+        "wd-Q2978986",
+        "wd-Q136651053"
+      ],
+      "islands": [
+        {
+          "id": "osm-relation-4092586",
+          "name": "Kerrera",
+          "nation": "Scotland",
+          "lat": 56.39799,
+          "lng": -5.53964,
+          "shortDescription": "Pop. 61",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kerrera_-_geograph.org.uk_-_662081.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 189.0
+        },
+        {
+          "id": "osm-relation-15708714",
+          "name": "Eriskay",
+          "nation": "Scotland",
+          "lat": 57.07555,
+          "lng": -7.2931,
+          "shortDescription": "Pop. 158; causeway",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eriskay.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": 185.0
+        },
+        {
+          "id": "osm-way-200890709",
+          "name": "Torsa",
+          "nation": "Scotland",
+          "lat": 56.25789,
+          "lng": -5.61666,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_northern_tip_of_Torsa.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 62.0
+        },
+        {
+          "id": "osm-way-3469279",
+          "name": "Isle of May",
+          "nation": "Scotland",
+          "lat": 56.18696,
+          "lng": -2.55609,
+          "shortDescription": "Bird observatory; lighthouse",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_May_Stevenson_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": 50.0
+        },
+        {
+          "id": "osm-relation-6046170",
+          "name": "Lismore",
+          "nation": "Scotland",
+          "lat": 56.51132,
+          "lng": -5.51303,
+          "shortDescription": "Pop. 190",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/CastleCoeffinLismore-ARuinedMacDougallStronghold%28ColinSmith%29Aug1995.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569287",
+          "name": "Wyre",
+          "nation": "Scotland",
+          "lat": 59.11939,
+          "lng": -2.98118,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Wyre.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569291",
+          "name": "Papa Stronsay",
+          "nation": "Scotland",
+          "lat": 59.15193,
+          "lng": -2.58957,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Light_on_Papa_Stronsay._-_geograph.org.uk_-_531453.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-40201357",
+          "name": "Bruray",
+          "nation": "Scotland",
+          "lat": 60.42642,
+          "lng": -0.74932,
+          "shortDescription": "Bruray is one of the three Out Skerries islands of Shetland, and contains Scotland's most easterly settlement. It is separated from Housay by North Mouth and South Mouth.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Outskerriesnorthmouth.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-8591076",
+          "name": "Linga",
+          "nation": "Scotland",
+          "lat": 60.66626,
+          "lng": -0.97889,
+          "shortDescription": "Linga is a small uninhabited island in the Bluemull Sound, Shetland, Scotland. It is one of many islands in Shetland called Linga.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lingayell.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569263",
+          "name": "Helliar Holm",
+          "nation": "Scotland",
+          "lat": 59.02286,
+          "lng": -2.9019,
+          "shortDescription": "Uninhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saeva_Ness_Lighthouse.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-8815463",
+          "name": "Easdale",
+          "nation": "Scotland",
+          "lat": 56.29209,
+          "lng": -5.65823,
+          "shortDescription": "Slate Islands; Pop. 61",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Easdale._-_geograph.org.uk_-_450893.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4007191",
+          "name": "Eilean nan Gobhar",
+          "nation": "Scotland",
+          "lat": 55.83726,
+          "lng": -5.93315,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Modern_Lighthouse_-_geograph.org.uk_-_642307.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4569222",
+          "name": "Holm of Houton",
+          "nation": "Scotland",
+          "lat": 58.91069,
+          "lng": -3.18847,
+          "shortDescription": "The Holm of Houton is one of the southern Orkney islands.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferry_approaching_the_Houton_pier._-_geograph.org.uk_-_345266.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3077272",
+          "name": "Inner Farne",
+          "nation": "Scotland",
+          "lat": 55.6167,
+          "lng": -1.6554,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Atlantic_puffins_on_Inner_Farne_island_-_geograph.org.uk_-_5640347.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3077274",
+          "name": "Staple Island",
+          "nation": "Scotland",
+          "lat": 55.63063,
+          "lng": -1.62398,
+          "shortDescription": "Staple Island is a small rocky island, or skerry, that is one of the Outer Group of the Farne Islands in Northumberland, England. The Farne Islands are a designated National Nature Reserve.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Staple_Island.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-730876541",
+          "name": "Eilean na Beithe",
+          "nation": "Scotland",
+          "lat": 56.62066,
+          "lng": -6.04836,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_na_Beithe_and_Calve_Island_-_geograph.org.uk_-_7623364.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-relation-3866223",
+          "name": "Goat Island",
+          "nation": "Scotland",
+          "lat": 58.20313,
+          "lng": -6.38097,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Coastguard_Station_-_geograph.org.uk_-_1245536.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-205056872",
+          "name": "Inn Island",
+          "nation": "Scotland",
+          "lat": 56.56125,
+          "lng": -5.42033,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skerry_at_the_southern_tip_of_Inn_Island_-_geograph.org.uk_-_951932.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-490111575",
+          "name": "Skeo of Holm",
+          "nation": "Scotland",
+          "lat": 60.32941,
+          "lng": -1.02524,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Head%2C_Whalsay%2C_Shetland_-_geograph.org.uk_-_145740.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1150257129",
+          "name": "Inner Holm",
+          "nation": "Scotland",
+          "lat": 58.95902,
+          "lng": -3.28925,
+          "shortDescription": "Some only seasonally inhabited",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inner_Holm.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1032656642",
+          "name": "Brei Holm",
+          "nation": "Scotland",
+          "lat": 60.32696,
+          "lng": -1.66065,
+          "shortDescription": "Brei Holm is a tiny tidal islet in the western Shetland Islands. It is due east of Papa Stour, to which it is connected at low tide, just outside Housa Voe.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brei_Holm_and_Maiden_Stack_-_geograph.org.uk_-_3271773.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-205378257",
+          "name": "Rubha Dearg",
+          "nation": "Scotland",
+          "lat": 56.83385,
+          "lng": -5.12049,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Loch_Linnhe_near_Rubha_Dearg_-_geograph.org.uk_-_8191207.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-416167612",
+          "name": "Sgeir Lach",
+          "nation": "Scotland",
+          "lat": 56.4777,
+          "lng": -6.14949,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sgeir_Lach_-_geograph.org.uk_-_5937125.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-205489795",
+          "name": "Eilean Dubh",
+          "nation": "Scotland",
+          "lat": 57.15056,
+          "lng": -7.30338,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_new_marina_at_Lochboisdale_-_geograph.org.uk_-_4542102.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1210700844",
+          "name": "East Islet",
+          "nation": "Scotland",
+          "lat": 55.64653,
+          "lng": -4.84068,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse_Island_Beacon._-_geograph.org.uk_-_1738288.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4005210",
+          "name": "Eilean Àird nan Gobhar",
+          "nation": "Scotland",
+          "lat": 57.34941,
+          "lng": -6.08835,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_%C3%80ird_nan_Gobhar%2C_Raasay_-_geograph.org.uk_-_7885408.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-207095261",
+          "name": "Flod Sgeir",
+          "nation": "Scotland",
+          "lat": 56.88183,
+          "lng": -6.12268,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Eigg%2C_Flod_Sgeir_beacon_-_geograph.org.uk_-_916197.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4004486",
+          "name": "Alman",
+          "nation": "Scotland",
+          "lat": 57.05955,
+          "lng": -6.48758,
+          "shortDescription": "Alman is a small islet located in Scotland, covering an area of 0.0035 km². It is situated at latitude 57.05955 and longitude -6.48758, along the coastline.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_down_to_Alman_and_Sanday_-_geograph.org.uk_-_6201236.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-704413716",
+          "name": "Eilean Maol",
+          "nation": "Scotland",
+          "lat": 57.06063,
+          "lng": -5.8904,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Maol_-_geograph.org.uk_-_1885198.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-171874011",
+          "name": "Eilean na Freing",
+          "nation": "Scotland",
+          "lat": 56.32868,
+          "lng": -6.37006,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_na_Freing_-_geograph.org.uk_-_5009905.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-836138100",
+          "name": "Eilean Staosnaig",
+          "nation": "Scotland",
+          "lat": 56.06112,
+          "lng": -6.19462,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Unnamed_beach_by_Eilean_Staosnaig_-_geograph.org.uk_-_307534.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "bare_rock"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4010386",
+          "name": "Eilean Fuam",
+          "nation": "Scotland",
+          "lat": 57.69872,
+          "lng": -7.17768,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Fuam_-_geograph.org.uk_-_1498848.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-4010491",
+          "name": "Ciosmul",
+          "nation": "Scotland",
+          "lat": 56.95211,
+          "lng": -7.48731,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kisimul_Castle_20090609.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-63502638",
+          "name": "Eilean Casaig",
+          "nation": "Scotland",
+          "lat": 57.59628,
+          "lng": -7.15986,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MV_Isle_of_Lewis_-_geograph.org.uk_-_4500162.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-115733381",
+          "name": "Sgeir Liath",
+          "nation": "Scotland",
+          "lat": 55.6241,
+          "lng": -6.19157,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sgeir_Fhada_-_geograph.org.uk_-_5439633.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-656976594",
+          "name": "Craiganteugh",
+          "nation": "Scotland",
+          "lat": 56.06418,
+          "lng": -2.7265,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hummel_Ridges_-_geograph.org.uk_-_1368000.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-230351832",
+          "name": "The Fludir",
+          "nation": "Scotland",
+          "lat": 60.63395,
+          "lng": -0.91514,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Fludir_-_geograph.org.uk_-_2172459.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-95670291",
+          "name": "Sgeir Dhearg",
+          "nation": "Scotland",
+          "lat": 57.01042,
+          "lng": -5.82666,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_%22Western_Isles%22_passing_Sgeir_Dhearg_inbound_for_Mallaig_-_geograph.org.uk_-_7761318.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-222757416",
+          "name": "Sgeir-mrethhaid",
+          "nation": "Scotland",
+          "lat": 56.41332,
+          "lng": -5.48865,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Oban%2C_below_Pulpit_Hill_-_geograph.org.uk_-_3993762.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-374466241",
+          "name": "Sgor Beag",
+          "nation": "Scotland",
+          "lat": 56.5074,
+          "lng": -6.79713,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Filling_station_and_garage_-_geograph.org.uk_-_317240.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "wd-Q2978986",
+          "name": "Clett",
+          "nation": "Scotland",
+          "lat": 58.62361,
+          "lng": -3.5425,
+          "shortDescription": "Clett is a name used for many uninhabited Scottish islets and one to the south, though also in the area inhabited by Vikings. They include - One at 58.623644°N 3.5424908°W, near the north coast of Caithness, just to the west Holborn Head north of Scrabster.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Rock_-_geograph.org.uk_-_1293.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "wikidata"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "wd-Q136651053",
+          "name": "Eilean Buidhe",
+          "nation": "Scotland",
+          "lat": 55.9302,
+          "lng": -5.1731,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Buidhe%2C_A_Burnt_Island_-_geograph.org.uk_-_2742702.jpg?width=640",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "wikidata"
+          ],
+          "highestPointM": null
+        }
+      ]
     }
   ]
 }

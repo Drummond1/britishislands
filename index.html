@@ -289,6 +289,7 @@
               <p id="crowd-form-error" class="crowd-form-error" hidden role="alert"></p>
               <div class="crowd-modal__actions">
                 <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-github-submit">Send via GitHub ↗</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-mailto-submit" hidden>Send via email app</button>
                 <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-native-submit" hidden>Send contribution</button>
                 <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">Change location</button>
                 <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">Close</button>
@@ -501,10 +502,9 @@
     <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
     <!-- Optional: set your live HTTPS origin if canonical/share URLs differ from location (CDN, path rewrite).
          Example: <script>window.IOB_SITE_ORIGIN = "https://your.domain";</script> -->
-    <!-- Optional: native crowd suggestions (FormSubmit / Formspree / Web3Forms). See data/crowd_suggest_config.example.json
-         Example: <script>window.IOB_SUGGEST_CONFIG = { provider: "formsubmit", formsubmitEmail: "you@example.com" };</script> -->
-    <!-- Optional: OS Maps key — copy config.local.example.js to config.local.js and uncomment:
-         <script src="config.local.js"></script> -->
+    <script src="crowd-config.js"></script>
+    <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
+    <script src="config.local.js" onerror="void 0"></script>
     <script src="app.js" type="module"></script>
   </body>
 </html>

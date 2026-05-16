@@ -22,6 +22,7 @@ import {
   isCrowdSuggestConfigured,
   validateContributionFields,
   submitCrowdSuggestion,
+  formatCrowdSuggestionBody,
 } from "./crowd-pins.js";
 
 const TYPE_COLORS = {
@@ -1018,16 +1019,25 @@ function applyContributeFormUi(kind) {
 function updateContributeSubmitButtons(cfg) {
   const nativeBtn = document.getElementById("crowd-native-submit");
   const githubBtn = document.getElementById("crowd-github-submit");
+  const mailtoBtn = document.getElementById("crowd-mailto-submit");
   const hint = document.getElementById("crowd-config-hint");
   const configured = isCrowdSuggestConfigured(cfg);
   if (nativeBtn) {
     nativeBtn.hidden = !configured;
     nativeBtn.textContent = "Send contribution";
   }
+  if (mailtoBtn) {
+    mailtoBtn.hidden = configured;
+    mailtoBtn.classList.toggle("crowd-modal__btn--primary", !configured);
+    mailtoBtn.classList.toggle("crowd-modal__btn--ghost", configured);
+  }
   if (githubBtn) {
-    githubBtn.classList.toggle("crowd-modal__btn--primary", !configured);
-    githubBtn.classList.toggle("crowd-modal__btn--ghost", configured);
-    githubBtn.textContent = configured ? "Send via GitHub ↗" : "Send via GitHub (recommended) ↗";
+    githubBtn.classList.remove("crowd-modal__btn--primary");
+    githubBtn.classList.add("crowd-modal__btn--ghost");
+    if (configured && nativeBtn) {
+      nativeBtn.classList.add("crowd-modal__btn--primary");
+      nativeBtn.classList.remove("crowd-modal__btn--ghost");
+    }
   }
   if (nativeBtn && !configured) {
     nativeBtn.classList.remove("crowd-modal__btn--primary");
@@ -1039,7 +1049,7 @@ function updateContributeSubmitButtons(cfg) {
     } else {
       hint.hidden = false;
       hint.textContent =
-        "One-click send needs a site email config. Use “Send via GitHub” (works now) — same form, pre-filled.";
+        "One-click send: add GitHub repo secret CROWD_FORM_EMAIL (FormSubmit) or set config.local.js. Until then use GitHub, email app, or copy the pre-filled issue.";
     }
   }
 }
@@ -1321,7 +1331,24 @@ function initCrowdSuggestUi() {
     }
   }
 
+  function submitContributionViaMailto() {
+    hideFormError();
+    const fields = readCrowdFormFields(modal);
+    const v = validateContributionFields(fields);
+    if (!v.ok) {
+      showFormError(v.message);
+      return;
+    }
+    const body = formatCrowdSuggestionBody(fields);
+    const label = fields.name?.trim() || "Unnamed island pin";
+    const subject = encodeURIComponent(`Isles of Britain — ${label}`);
+    const mailto = `mailto:?subject=${subject}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    showStep("success");
+  }
+
   githubBtn?.addEventListener("click", () => submitContribution(true));
+  document.getElementById("crowd-mailto-submit")?.addEventListener("click", submitContributionViaMailto);
   nativeBtn?.addEventListener("click", () => submitContribution(false));
 
   document.addEventListener("click", (e) => {
@@ -1560,6 +1587,18 @@ function setExploreTopic(topicId, { skipUrl = false } = {}) {
   if (els.filterPhoto) els.filterPhoto.checked = Boolean(presets.photosFirst);
   if (els.filterFerry) els.filterFerry.checked = Boolean(presets.ferry);
   if (els.filterElevation) els.filterElevation.checked = Boolean(presets.elevation);
+  const scotlandTopics = new Set([
+    "scotland-classics",
+    "inner-hebrides",
+    "outer-hebrides",
+    "orkney-shetland",
+    "scotland-ferry-hops",
+  ]);
+  if (els.nationFilter && scotlandTopics.has(topicId)) {
+    els.nationFilter.value = "Scotland";
+    activeScotlandQuick = null;
+    renderScotlandQuickChips();
+  }
   renderDiscoverChips();
   renderExploreStrip(topic.islands || [], topic.title);
   if (!skipUrl) syncExploreUrl(topicId);

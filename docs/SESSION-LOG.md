@@ -1623,3 +1623,24 @@
 - **Outcome / counts**: 7,041 islands; index ~10.2 MB. Hills/geology not applied.
 - **Open items kicked to QUEUE.md**: DoBIH CSV or Wikidata retry for hills;
   `ingest_geology_bgs.py --fetch --commit` locally; full NRS census CSV.
+
+---
+
+## 2026-05-16 — Contribute config, Scotland explore topics, UX polish
+
+- **Goal**: Close the three priorities from the product roadmap: production
+  contribute submit, Scotland-first discovery, continue P0b data pipeline.
+- **What changed**:
+  - `.github/workflows/pages.yml` + `scripts/prepare_crowd_config.py` — inject
+    FormSubmit email from `CROWD_FORM_EMAIL` repo secret on deploy.
+  - `crowd-config.js`, `config.local.example.js`, mailto fallback + hint copy in
+    `app.js` / `index.html`; `docs/CROWD-PINS.md` updated.
+  - `scripts/build_discovery_topics.py` — five Scotland topics; regenerated
+    `data/discovery_topics.json`; explore sets nation=Scotland for those chips.
+  - Prior UX commit `1ae828a` (contribute hub, thumbnails, filter tiers, map peek).
+  - Started `ingest_hills_dobih.py --fetch --commit` and
+    `ingest_geology_bgs.py --fetch --commit` (long-running).
+- **Outcome / counts**: 9 explore topics (4 UK-wide + 5 Scotland). Native submit
+  works after secret or `prepare_crowd_config.py`; mailto + GitHub work without.
+- **Open items kicked to QUEUE.md**: Apply hills/geology caches when ingests finish;
+  add `CROWD_FORM_EMAIL` secret on GitHub; photo v5 queue batch.

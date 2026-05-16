@@ -150,6 +150,42 @@ def main() -> int:
     ]
     summit_ids = pick_ids(summits, limit=args.limit_summits)
 
+    scotland = [i for i in islands if i.get("nation") == "Scotland"]
+
+    def archipelago_match(isl: dict, needle: str) -> bool:
+        arch = (isl.get("archipelago") or "").lower()
+        return needle.lower() in arch
+
+    scotland_classics = pick_ids(
+        [i for i in scotland if i.get("id") in curated_by_id or has_photo(i)],
+        limit=40,
+    )
+    inner_hebrides = pick_ids(
+        [i for i in scotland if archipelago_match(i, "inner hebrides") and i.get("type") == "sea"],
+        limit=36,
+    )
+    outer_hebrides = pick_ids(
+        [i for i in scotland if archipelago_match(i, "outer hebrides") and i.get("type") == "sea"],
+        limit=36,
+    )
+    orkney_shetland = pick_ids(
+        [
+            i
+            for i in scotland
+            if (archipelago_match(i, "orkney") or archipelago_match(i, "shetland"))
+            and i.get("type") == "sea"
+        ],
+        limit=40,
+    )
+    scotland_ferry = pick_ids(
+        [
+            i
+            for i in scotland
+            if i.get("id") in ferry_set and i.get("type") == "sea"
+        ],
+        limit=42,
+    )
+
     def topic(tid, title, subtitle, island_ids, *, chat_hint="", filter_presets=None):
         cards = [card_row(by_id[iid], curated_by_id, ferry_set) for iid in island_ids if iid in by_id]
         return {
@@ -194,6 +230,43 @@ def main() -> int:
             summit_ids,
             chat_hint="islands with summits",
             filter_presets={"elevation": True, "photosFirst": True},
+        ),
+        topic(
+            "scotland-classics",
+            "Scotland classics",
+            "Curated and photographed Scottish islands — a sensible place to start.",
+            scotland_classics,
+            chat_hint="Scottish islands with photos",
+            filter_presets={"photosFirst": True},
+        ),
+        topic(
+            "inner-hebrides",
+            "Inner Hebrides",
+            "Sea islands of the Inner Hebrides — Mull, Skye, Islay, and neighbours.",
+            inner_hebrides,
+            chat_hint="Inner Hebrides ferry islands",
+        ),
+        topic(
+            "outer-hebrides",
+            "Outer Hebrides",
+            "Lewis and Harris, Uists, Barra, and the western seaboard.",
+            outer_hebrides,
+            chat_hint="Outer Hebrides islands",
+        ),
+        topic(
+            "orkney-shetland",
+            "Orkney & Shetland",
+            "Northern isles — dramatic coasts, birds, and ferry links from the mainland.",
+            orkney_shetland,
+            chat_hint="Orkney or Shetland islands",
+        ),
+        topic(
+            "scotland-ferry-hops",
+            "Scotland ferry hops",
+            "Scottish sea islands you can reach by ferry from the mainland.",
+            scotland_ferry,
+            chat_hint="Scottish ferry islands near Oban",
+            filter_presets={"ferry": True, "photosFirst": True},
         ),
     ]
 

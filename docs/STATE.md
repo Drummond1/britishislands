@@ -4,6 +4,17 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-16 (contribute config + Scotland explore + UX deploy)** — **Contribute:**
+GitHub Pages workflow `.github/workflows/pages.yml` injects `CROWD_FORM_EMAIL` secret
+into `data/crowd_suggest_config.json`; `scripts/prepare_crowd_config.py`;
+`crowd-config.js` + optional `config.local.js`; mailto fallback in modal.
+**Scotland explore:** five new topics in `discovery_topics.json` (classics, Inner/
+Outer Hebrides, Orkney & Shetland, ferry hops) via `build_discovery_topics.py`.
+**UX:** Scotland quick-filter chips, filter tiers, list thumbnails, mobile map peek
+(commit `1ae828a` + follow-ups). **P0b in flight:** `ingest_hills_dobih.py` and
+`ingest_geology_bgs.py` running locally — apply with
+`python3 scripts/apply_enrichments.py --apply --yes --only hills geology` when caches land.
+
 **2026-05-16 (deploy: explore topics + P0b partial apply)** — **Explore** chips:
 `data/discovery_topics.json` (notable, island-hopping, thames-eyots, high-summits);
 `?explore=<id>` deep links; `scripts/build_discovery_topics.py`. **P0b applied**
