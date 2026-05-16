@@ -7,10 +7,28 @@ append approved rows to `data/crowd_pins.json`. Nothing is merged into
 
 ## User flow (frontend)
 
-1. **Suggest island** (top bar) → click the map once → optional fields → **Open
-   GitHub to submit**.
+1. **Suggest island** (top bar) → click the map once → optional fields → **Submit
+   suggestion** (in-app; no GitHub account). Optional **Submit via GitHub** fallback.
 2. **Crowd pins** toggle shows gold `circleMarker`s from `data/crowd_pins.json`.
-3. Popups link **Suggest a name** for unnamed pins (new issue with pin id).
+3. Popups: **Suggest a name** opens the same in-app form (pin id prefilled).
+
+### Native submit configuration
+
+Static hosting cannot write to the repo from the browser. Configure one provider in
+`data/crowd_suggest_config.json` (see `data/crowd_suggest_config.example.json`) or
+override before `app.js`:
+
+```html
+<script>
+  window.IOB_SUGGEST_CONFIG = {
+    provider: "formsubmit",
+    formsubmitEmail: "suggestions@yourdomain.com"
+  };
+</script>
+```
+
+Supported `provider` values: `formsubmit`, `formspree`, `web3forms`, `webhook`.
+FormSubmit sends email to the address you verify on first use (free tier).
 
 Override the issue repo with `window.IOB_CORRECTION_REPO` (same as corrections),
 or the default `Drummond1/britishislands` is used (`crowd-pins.js`).

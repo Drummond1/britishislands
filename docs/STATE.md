@@ -4,6 +4,30 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-16 (saved islands email gate)** — Hearts + **Saved** list require a one-time email
+(`iobFavoritesEmail` in localStorage); island ids stay in `iobFavoriteIslandIds` on-device only.
+
+**2026-05-16 (native crowd submit)** — In-app **Submit suggestion** for crowd pins
+(FormSubmit / Formspree / Web3Forms / webhook via `data/crowd_suggest_config.json` or
+`window.IOB_SUGGEST_CONFIG`). GitHub issue remains optional fallback. See
+`docs/CROWD-PINS.md`.
+
+**2026-05-16 (Wikidata→OSM backfill)** — `compute_island_areas.py --fetch-osm` (39 new
+Wikidata→OSM cache lookups). **`scripts/backfill_osm_from_wikidata.py --apply`**: **83**
+rows gained `osmType`/`osmId` (**6,193** / 7,041 now have OSM ids; **848** still without).
+Report `data/osm_wikidata_backfill_report.json`. Regenerated `islands_index.json`.
+Discovery dry-run: **1** merge candidate; survey ledger **0** strict outstanding.
+Backup `data/islands.json.before-osm-backfill-*`.
+
+**2026-05-16 (map first paint + data hygiene)** — **`islands.json` → 7,041** rows
+(removed **2** bogus csv-geocoded non-islands: Q26272407 Great Arthur House,
+Q66227635 Thorney Island school). **`data/islands_index.json`** slim payload
+(~4.5 MB) + two-phase fetch/merge in `app.js` (`loadIslands`). Details panel
+**subtype chip** (green pill). **`scripts/build_islands_index.py`** — run after
+any `islands.json` edit; see `docs/PIPELINE.md` §5b. **`scripts/recompute_nation_admin1.py`**
+(dry-run / experimental): Natural Earth admin-1 **must not** be bulk-applied
+— mis-tags NI/ROI and GB border; cache `data/cache_ne10m_admin1_uk_ie.geojson`.
+
 **2026-05-15 (crowd pins v1)** — **Community suggestion layer:** `data/crowd_pins.json`
 (maintainer-curated) + map overlay (gold markers), **Suggest island** modal →
 pre-filled GitHub issue, **Crowd pins** toggle. Implementation: `crowd-pins.js`,
@@ -459,6 +483,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 | File | Size | Last write | Purpose |
 |---|---|---|---|
 | `islands.json` | 5.9 MB | 11:33 | Canonical dataset. |
+| `islands_index.json` | ~4.5 MB | 2026-05-16 | Slim map/list/search scaffold; regenerate with `scripts/build_islands_index.py`. |
 | `islands.json.before-ingest` | 4.5 MB | 11:33 | Pre-discovery-ingest backup. |
 | `curated.json` | 34 KB | 2026-05-10 22:05 | Hand-curated 27-island spine. Do **not** delete entries. |
 | `crowd_pins.json` | small | 2026-05-15 | Maintainer-curated community pins (separate from `islands.json`). See `docs/CROWD-PINS.md`. |
@@ -487,6 +512,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 ## 4. Frontend state
 
+- **Two-phase island load**: `data/islands_index.json` first (then merge
+  `data/islands.json` in place) so the map can paint sooner on slow links;
+  regenerate the index after every `islands.json` mutation.
 - Static app served by `python3 -m http.server` (currently port 8767).
 - Marker clustering: **on** by default (`#cluster-toggle`).
 - List virtualisation: **active** (renders only visible items, ~30 at a time).
@@ -559,8 +587,10 @@ the full set):
   `METHODOLOGY-INLAND.md` §6.
 - `population` is only set for ~141 curated/Wikidata-enriched entries — most
   small islands lack population data anywhere upstream.
-- ~880 entries still lack an `osmId` (mostly Wikidata-only discoveries). They
-  cannot have a polygon overlay until matched.
+- **848** entries still lack an `osmId` (mostly Wikidata-only; OSM has no
+  `wikidata=` tag on a way/relation for **841** cached misses). Polygon overlay
+  needs `osmType`+`osmId` (way/relation). Re-run `backfill_osm_from_wikidata.py`
+  after refreshing cache.
 - Belle Isle (Windermere) has no Wikidata Q-ID, so no image source — should
   resolve in v3 via Commons geosearch.
 - **`areaKm2` mis-scaling (mostly fixed at 15:25).** Root cause: not

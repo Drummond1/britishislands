@@ -127,6 +127,18 @@ PY
 Then update [`STATE.md`](STATE.md) and append a [`SESSION-LOG.md`](SESSION-LOG.md)
 entry.
 
+## 5b. Regenerate `islands_index.json` (frontend first paint)
+
+After **any** change to `data/islands.json`, refresh the slim map/list payload:
+
+```bash
+python3 scripts/build_islands_index.py
+```
+
+The browser loads `data/islands_index.json` first (~half the bytes of the full
+dataset — long prose and image galleries omitted), then merges full records
+from `islands.json` in place (`app.js` → `loadIslands`).
+
 ## 6. Preview
 
 ```bash

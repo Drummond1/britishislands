@@ -8892,8 +8892,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q723406"
+      {
+        "name": "openstreetmap",
+        "ref": "relation/12628627",
+        "url": "https://www.openstreetmap.org/relation/12628627",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q723406",
     "images": [
@@ -8922,7 +8926,9 @@
       "gd": "Na h-Eileanan Ascrib",
       "ga": "Na h-Eileanan Ascrib",
       "fr": "îles Ascrib"
-    }
+    },
+    "osmType": "relation",
+    "osmId": 12628627
   },
   {
     "id": "osm-way-49901777",
@@ -13960,6 +13966,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1348711133",
+        "url": "https://www.openstreetmap.org/way/1348711133",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -13969,7 +13981,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Barry Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Barry_Island",
-    "descriptionFetchedAt": "2026-05-12T20:31:42+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:31:42+00:00",
+    "osmType": "way",
+    "osmId": 1348711133
   },
   {
     "id": "osm-way-27471686",
@@ -22327,6 +22341,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1121896417",
+        "url": "https://www.openstreetmap.org/way/1121896417",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -22347,7 +22367,9 @@
     "descriptionSource": "llm-gpt-4o-mini",
     "descriptionConfidence": "draft",
     "descriptionAttribution": "AI-drafted from atlas facts on record (review before treating as authoritative).",
-    "descriptionFetchedAt": "2026-05-14T19:55:47+00:00"
+    "descriptionFetchedAt": "2026-05-14T19:55:47+00:00",
+    "osmType": "way",
+    "osmId": 1121896417
   },
   {
     "id": "wd-Q27627601",
@@ -22399,6 +22421,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/723976781",
+        "url": "https://www.openstreetmap.org/way/723976781",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -22408,7 +22436,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Black Middens” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Black_Middens",
-    "descriptionFetchedAt": "2026-05-12T20:32:28+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:32:28+00:00",
+    "osmType": "way",
+    "osmId": 723976781
   },
   {
     "id": "osm-way-23650920",
@@ -26604,6 +26634,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1221253709",
+        "url": "https://www.openstreetmap.org/way/1221253709",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -26613,7 +26649,9 @@
     "descriptionSource": "llm-gpt-4o-mini",
     "descriptionConfidence": "draft",
     "descriptionAttribution": "AI-drafted from atlas facts on record (review before treating as authoritative).",
-    "descriptionFetchedAt": "2026-05-14T19:57:56+00:00"
+    "descriptionFetchedAt": "2026-05-14T19:57:56+00:00",
+    "osmType": "way",
+    "osmId": 1221253709
   },
   {
     "id": "osm-way-208467308",
@@ -29633,6 +29671,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/754330518",
+        "url": "https://www.openstreetmap.org/way/754330518",
+        "license": "ODbL"
       }
     ],
     "heritageDesignation": "scheduled monument",
@@ -29648,7 +29692,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Breachacha crannog” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Breachacha_crannog",
-    "descriptionFetchedAt": "2026-05-12T20:33:10+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:33:10+00:00",
+    "osmType": "way",
+    "osmId": 754330518
   },
   {
     "id": "wd-Q34792689",
@@ -31715,6 +31761,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/726867504",
+        "url": "https://www.openstreetmap.org/way/726867504",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -31724,7 +31776,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Brough Holm” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Brough_Holm",
-    "descriptionFetchedAt": "2026-05-12T20:33:27+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:33:27+00:00",
+    "osmType": "way",
+    "osmId": 726867504
   },
   {
     "id": "osm-way-4569428",
@@ -33129,6 +33183,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1116116747",
+        "url": "https://www.openstreetmap.org/way/1116116747",
+        "license": "ODbL"
       }
     ],
     "heritageDesignation": "scheduled monument",
@@ -33144,7 +33204,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Buiston Loch” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Buiston_Loch",
-    "descriptionFetchedAt": "2026-05-12T20:33:32+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:33:32+00:00",
+    "osmType": "way",
+    "osmId": 1116116747
   },
   {
     "id": "bull-island-w49140368",
@@ -33257,6 +33319,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/5496743",
+        "url": "https://www.openstreetmap.org/relation/5496743",
+        "license": "ODbL"
       }
     ],
     "areaSource": null,
@@ -33266,7 +33334,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Bull Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Bull_Island",
-    "descriptionFetchedAt": "2026-05-12T20:33:33+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:33:33+00:00",
+    "osmType": "relation",
+    "osmId": 5496743
   },
   {
     "id": "osm-way-4554779",
@@ -34782,8 +34852,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q1016854"
+      {
+        "name": "openstreetmap",
+        "ref": "relation/14351933",
+        "url": "https://www.openstreetmap.org/relation/14351933",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q1016854",
     "images": [
@@ -34810,7 +34884,9 @@
     "names": {
       "en": "Burnt Islands",
       "fr": "îles Burnt"
-    }
+    },
+    "osmType": "relation",
+    "osmId": 14351933
   },
   {
     "id": "osm-way-4001433",
@@ -37236,6 +37312,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/12597357",
+        "url": "https://www.openstreetmap.org/relation/12597357",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -37262,7 +37344,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 12597357
   },
   {
     "id": "osm-way-205500003",
@@ -40596,6 +40680,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387384455",
+        "url": "https://www.openstreetmap.org/way/1387384455",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -40612,7 +40702,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387384455
   },
   {
     "id": "osm-way-236692709",
@@ -49842,6 +49934,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/19163455",
+        "url": "https://www.openstreetmap.org/relation/19163455",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -49850,7 +49948,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 19163455
   },
   {
     "id": "osm-way-205823850",
@@ -51459,8 +51559,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q217058"
+      {
+        "name": "openstreetmap",
+        "ref": "way/276673910",
+        "url": "https://www.openstreetmap.org/way/276673910",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q217058",
     "images": [
@@ -51488,7 +51592,9 @@
       "en": "Castle Stalker",
       "ga": "Caisteal an Stalcair",
       "fr": "château de Stalker"
-    }
+    },
+    "osmType": "way",
+    "osmId": 276673910
   },
   {
     "id": "osm-way-351920531",
@@ -53788,6 +53894,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/123227804",
+        "url": "https://www.openstreetmap.org/way/123227804",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -53809,7 +53921,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Chesil Beach” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Chesil_Beach",
-    "descriptionFetchedAt": "2026-05-12T20:35:16+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:35:16+00:00",
+    "osmType": "way",
+    "osmId": 123227804
   },
   {
     "id": "wd-Q24651604",
@@ -60971,6 +61085,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1121925770",
+        "url": "https://www.openstreetmap.org/way/1121925770",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -60987,7 +61107,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1121925770
   },
   {
     "id": "osm-way-4012354",
@@ -61204,6 +61326,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/26682666",
+        "url": "https://www.openstreetmap.org/way/26682666",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -61221,7 +61349,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 26682666
   },
   {
     "id": "osm-way-4010806",
@@ -66353,6 +66483,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/23069670",
+        "url": "https://www.openstreetmap.org/way/23069670",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -66371,7 +66507,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Crane Park Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Crane_Park_Island",
-    "descriptionFetchedAt": "2026-05-12T20:36:30+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:36:30+00:00",
+    "osmType": "way",
+    "osmId": 23069670
   },
   {
     "id": "osm-way-690221773",
@@ -66828,6 +66966,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387390469",
+        "url": "https://www.openstreetmap.org/way/1387390469",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -66844,7 +66988,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387390469
   },
   {
     "id": "wd-Q56665888",
@@ -67142,12 +67288,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117347069",
+        "url": "https://www.openstreetmap.org/way/1117347069",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117347069
   },
   {
     "id": "wd-Q56663890",
@@ -67254,6 +67408,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/202179153",
+        "url": "https://www.openstreetmap.org/way/202179153",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -67270,7 +67430,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 202179153
   },
   {
     "id": "wd-Q56661801",
@@ -67309,12 +67471,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117263065",
+        "url": "https://www.openstreetmap.org/way/1117263065",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117263065
   },
   {
     "id": "wd-Q56663901",
@@ -67366,6 +67536,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117262341",
+        "url": "https://www.openstreetmap.org/way/1117262341",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -67382,7 +67558,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117262341
   },
   {
     "id": "wd-Q56663104",
@@ -67421,6 +67599,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387338766",
+        "url": "https://www.openstreetmap.org/way/1387338766",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -67437,7 +67621,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387338766
   },
   {
     "id": "wd-Q56666960",
@@ -67489,6 +67675,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117254653",
+        "url": "https://www.openstreetmap.org/way/1117254653",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -67499,7 +67691,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "medium",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117254653
   },
   {
     "id": "osm-way-274965313",
@@ -67655,6 +67849,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387281931",
+        "url": "https://www.openstreetmap.org/way/1387281931",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -67671,7 +67871,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387281931
   },
   {
     "id": "wd-Q27118701",
@@ -70227,6 +70429,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1008656107",
+        "url": "https://www.openstreetmap.org/way/1008656107",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -70243,7 +70451,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1008656107
   },
   {
     "id": "osm-way-493291072",
@@ -71829,8 +72039,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q783776"
+      {
+        "name": "openstreetmap",
+        "ref": "relation/9619907",
+        "url": "https://www.openstreetmap.org/relation/9619907",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q783776",
     "images": [
@@ -71859,7 +72073,9 @@
       "gd": "Na h-Eileanan Cròlainneach",
       "ga": "Na h-Eileanan Cròlainneach",
       "fr": "îles Crowlin"
-    }
+    },
+    "osmType": "relation",
+    "osmId": 9619907
   },
   {
     "id": "osm-way-188988451",
@@ -73113,6 +73329,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387302397",
+        "url": "https://www.openstreetmap.org/way/1387302397",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -73129,7 +73351,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387302397
   },
   {
     "id": "osm-way-183405669",
@@ -75401,6 +75625,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3870380",
+        "url": "https://www.openstreetmap.org/relation/3870380",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -75413,7 +75643,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Datchet” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Datchet",
-    "descriptionFetchedAt": "2026-05-12T20:37:28+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:37:28+00:00",
+    "osmType": "relation",
+    "osmId": 3870380
   },
   {
     "id": "osm-relation-3009840",
@@ -81163,6 +81395,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3687011",
+        "url": "https://www.openstreetmap.org/relation/3687011",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -81175,7 +81413,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Dorney” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Dorney",
-    "descriptionFetchedAt": "2026-05-12T20:38:03+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:38:03+00:00",
+    "osmType": "relation",
+    "osmId": 3687011
   },
   {
     "id": "osm-way-773577555",
@@ -87996,6 +88236,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1341826386",
+        "url": "https://www.openstreetmap.org/way/1341826386",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -88013,7 +88259,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1341826386
   },
   {
     "id": "wd-Q24645818",
@@ -106307,6 +106555,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387309777",
+        "url": "https://www.openstreetmap.org/way/1387309777",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -106323,7 +106577,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387309777
   },
   {
     "id": "osm-way-25382151",
@@ -129492,12 +129748,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/637611980",
+        "url": "https://www.openstreetmap.org/way/637611980",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 637611980
   },
   {
     "id": "osm-relation-15708714",
@@ -131215,6 +131479,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387389005",
+        "url": "https://www.openstreetmap.org/way/1387389005",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -131231,7 +131501,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387389005
   },
   {
     "id": "wd-Q373978",
@@ -131283,6 +131555,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/348787096",
+        "url": "https://www.openstreetmap.org/way/348787096",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -131300,7 +131578,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "medium",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 348787096
   },
   {
     "id": "osm-way-4010872",
@@ -134085,12 +134365,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/251565309",
+        "url": "https://www.openstreetmap.org/way/251565309",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 251565309
   },
   {
     "id": "wd-Q27118637",
@@ -134484,6 +134772,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/4012955",
+        "url": "https://www.openstreetmap.org/way/4012955",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -134501,7 +134795,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": "osm-peak",
-    "highestPointConfidence": "high"
+    "highestPointConfidence": "high",
+    "osmType": "way",
+    "osmId": 4012955
   },
   {
     "id": "osm-way-47903159",
@@ -134839,6 +135135,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1244910739",
+        "url": "https://www.openstreetmap.org/way/1244910739",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -134848,7 +135150,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Flodday, Loch Maddy” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Flodday,_Loch_Maddy",
-    "descriptionFetchedAt": "2026-05-12T20:41:19+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:41:19+00:00",
+    "osmType": "way",
+    "osmId": 1244910739
   },
   {
     "id": "osm-way-1217591243",
@@ -153206,51 +153510,6 @@
     "highestPointConfidence": "n/a",
     "names": {
       "en": "Greasamull"
-    }
-  },
-  {
-    "id": "csv-geocoded-Q26272407",
-    "name": "Great Arthur House Including Boiler House",
-    "nation": "England",
-    "archipelago": "Isles of Scilly (Eastern Isles)",
-    "lat": 51.5221146,
-    "lng": -0.095984665,
-    "type": "unknown",
-    "areaKm2": 0.0005,
-    "population": null,
-    "shortDescription": "",
-    "longDescription": "",
-    "tags": [],
-    "source": "csv-geocoded",
-    "sources": [
-      "csv-geocoded",
-      "wikidata:Q26272407"
-    ],
-    "wikidata": "Q26272407",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Arthur_House%2C_Golden_Lane_Estate%2C_London.jpg?width=800",
-        "source": "wikidata",
-        "sourceRef": "Q26272407",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Great_Arthur_House,_Golden_Lane_Estate,_London.jpg",
-        "license": "CC BY-SA 4.0",
-        "attribution": "Photo by Paul the Archivist, via Wikimedia Commons (CC BY-SA 4.0)",
-        "caption": "Great Arthur House, Golden Lane Estate, London"
-      }
-    ],
-    "classification": {
-      "source": "manual-override",
-      "confidence": "high"
-    },
-    "classificationNote": "Building in the Barbican Estate, City of London. Not a geographic island. Should be removed from the dataset entirely; keeping it as 'unknown' until the upstream CSV is cleaned.",
-    "areaSource": "osm-via-wikidata-way",
-    "areaConfidence": "medium",
-    "highestPointM": null,
-    "highestPointName": null,
-    "highestPointSource": null,
-    "highestPointConfidence": "n/a",
-    "names": {
-      "en": "Great Arthur House Including Boiler House"
     }
   },
   {
@@ -177061,6 +177320,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3871243",
+        "url": "https://www.openstreetmap.org/relation/3871243",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -177073,7 +177338,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Hurley, Berkshire” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Hurley,_Berkshire",
-    "descriptionFetchedAt": "2026-05-12T20:45:28+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:45:28+00:00",
+    "osmType": "relation",
+    "osmId": 3871243
   },
   {
     "id": "wd-Q24641644",
@@ -177508,6 +177775,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3870366",
+        "url": "https://www.openstreetmap.org/relation/3870366",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -177516,7 +177789,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 3870366
   },
   {
     "id": "osm-way-685488919",
@@ -181637,12 +181912,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/407698766",
+        "url": "https://www.openstreetmap.org/way/407698766",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 407698766
   },
   {
     "id": "osm-way-41360848",
@@ -188134,6 +188417,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/265054463",
+        "url": "https://www.openstreetmap.org/way/265054463",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -188151,7 +188440,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 265054463
   },
   {
     "id": "osm-way-66158461",
@@ -200347,12 +200638,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/4563650",
+        "url": "https://www.openstreetmap.org/way/4563650",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 4563650
   },
   {
     "id": "osm-relation-5763894",
@@ -210297,8 +210596,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q17827710"
+      {
+        "name": "openstreetmap",
+        "ref": "way/223001479",
+        "url": "https://www.openstreetmap.org/way/223001479",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q17827710",
     "images": [
@@ -210320,7 +210623,9 @@
     "highestPointConfidence": "n/a",
     "names": {
       "en": "Keepers' Houses, Kyleakin Lighthouse, Eilean Ban"
-    }
+    },
+    "osmType": "way",
+    "osmId": 223001479
   },
   {
     "id": "osm-relation-4767051",
@@ -210712,6 +211017,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/6066918",
+        "url": "https://www.openstreetmap.org/relation/6066918",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -210724,7 +211035,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Kemble, Gloucestershire” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Kemble,_Gloucestershire",
-    "descriptionFetchedAt": "2026-05-12T20:49:53+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:49:53+00:00",
+    "osmType": "relation",
+    "osmId": 6066918
   },
   {
     "id": "wd-Q24640040",
@@ -217138,6 +217451,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/157534012",
+        "url": "https://www.openstreetmap.org/way/157534012",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
@@ -217147,7 +217466,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Lampay” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Lampay",
-    "descriptionFetchedAt": "2026-05-12T20:50:41+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:50:41+00:00",
+    "osmType": "way",
+    "osmId": 157534012
   },
   {
     "id": "osm-way-183357729",
@@ -217564,12 +217885,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1116260496",
+        "url": "https://www.openstreetmap.org/way/1116260496",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1116260496
   },
   {
     "id": "wd-Q24640243",
@@ -217722,6 +218051,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1494670101",
+        "url": "https://www.openstreetmap.org/way/1494670101",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -217742,7 +218077,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Lapp's Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Lapp%27s_Island",
-    "descriptionFetchedAt": "2026-05-12T20:50:46+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:50:46+00:00",
+    "osmType": "way",
+    "osmId": 1494670101
   },
   {
     "id": "osm-way-533340006",
@@ -219957,6 +220294,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/16751661",
+        "url": "https://www.openstreetmap.org/relation/16751661",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -219974,7 +220317,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 16751661
   },
   {
     "id": "wd-Q27118681",
@@ -227289,6 +227634,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/57946806",
+        "url": "https://www.openstreetmap.org/way/57946806",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227305,7 +227656,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 57946806
   },
   {
     "id": "wd-Q56665242",
@@ -227401,6 +227754,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/953390820",
+        "url": "https://www.openstreetmap.org/way/953390820",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227417,7 +227776,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 953390820
   },
   {
     "id": "wd-Q56663135",
@@ -227456,6 +227817,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387386116",
+        "url": "https://www.openstreetmap.org/way/1387386116",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227472,7 +227839,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387386116
   },
   {
     "id": "wd-Q56663120",
@@ -227511,6 +227880,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387385613",
+        "url": "https://www.openstreetmap.org/way/1387385613",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227527,7 +227902,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "medium",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387385613
   },
   {
     "id": "wd-Q56663117",
@@ -227566,6 +227943,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387386950",
+        "url": "https://www.openstreetmap.org/way/1387386950",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227582,7 +227965,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387386950
   },
   {
     "id": "wd-Q56665809",
@@ -227699,6 +228084,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117398506",
+        "url": "https://www.openstreetmap.org/way/1117398506",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -227715,7 +228106,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117398506
   },
   {
     "id": "wd-Q56668587",
@@ -227837,6 +228230,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/4024855",
+        "url": "https://www.openstreetmap.org/relation/4024855",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -227845,7 +228244,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 4024855
   },
   {
     "id": "wd-Q1867235",
@@ -227965,6 +228366,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117262827",
+        "url": "https://www.openstreetmap.org/way/1117262827",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -227979,7 +228386,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117262827
   },
   {
     "id": "wd-Q56662007",
@@ -228156,6 +228565,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/4023212",
+        "url": "https://www.openstreetmap.org/relation/4023212",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -228166,7 +228581,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": "wikidata-p2044",
-    "highestPointConfidence": "estimate"
+    "highestPointConfidence": "estimate",
+    "osmType": "relation",
+    "osmId": 4023212
   },
   {
     "id": "wd-Q56664163",
@@ -228350,6 +228767,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387342377",
+        "url": "https://www.openstreetmap.org/way/1387342377",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -228366,7 +228789,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387342377
   },
   {
     "id": "wd-Q56665790",
@@ -228484,6 +228909,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/179753144",
+        "url": "https://www.openstreetmap.org/way/179753144",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -228500,7 +228931,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 179753144
   },
   {
     "id": "wd-Q43372925",
@@ -228551,6 +228984,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/131223977",
+        "url": "https://www.openstreetmap.org/way/131223977",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -228567,7 +229006,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 131223977
   },
   {
     "id": "wd-Q80022957",
@@ -235949,6 +236390,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/13998730",
+        "url": "https://www.openstreetmap.org/relation/13998730",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -235961,7 +236408,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Maidenhead” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Maidenhead",
-    "descriptionFetchedAt": "2026-05-12T20:52:43+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:52:43+00:00",
+    "osmType": "relation",
+    "osmId": 13998730
   },
   {
     "id": "osm-way-4010596",
@@ -236208,7 +236657,17 @@
     "areaSource": "osm-coastline-polygon",
     "areaConfidence": "high",
     "highestPointSource": "osm-peak",
-    "highestPointConfidence": "high"
+    "highestPointConfidence": "high",
+    "osmType": "relation",
+    "osmId": 376677,
+    "sources": [
+      {
+        "name": "openstreetmap",
+        "ref": "relation/376677",
+        "url": "https://www.openstreetmap.org/relation/376677",
+        "license": "ODbL"
+      }
+    ]
   },
   {
     "id": "osm-way-239176316",
@@ -239072,6 +239531,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3730392",
+        "url": "https://www.openstreetmap.org/relation/3730392",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -239084,7 +239549,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Medmenham” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Medmenham",
-    "descriptionFetchedAt": "2026-05-12T20:52:56+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:52:56+00:00",
+    "osmType": "relation",
+    "osmId": 3730392
   },
   {
     "id": "wd-Q24658968",
@@ -259618,6 +260085,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/394037",
+        "url": "https://www.openstreetmap.org/relation/394037",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -259634,7 +260107,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Oxford” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Oxford",
-    "descriptionFetchedAt": "2026-05-12T20:55:09+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:55:09+00:00",
+    "osmType": "relation",
+    "osmId": 394037
   },
   {
     "id": "osm-way-41105626",
@@ -266359,6 +266834,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387362312",
+        "url": "https://www.openstreetmap.org/way/1387362312",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -266373,7 +266854,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387362312
   },
   {
     "id": "osm-relation-3969458",
@@ -267328,6 +267811,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/6701391",
+        "url": "https://www.openstreetmap.org/relation/6701391",
+        "license": "ODbL"
       }
     ],
     "areaSource": null,
@@ -267337,7 +267826,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Principality of Sealand” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Principality_of_Sealand",
-    "descriptionFetchedAt": "2026-05-12T20:55:52+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:55:52+00:00",
+    "osmType": "relation",
+    "osmId": 6701391
   },
   {
     "id": "osm-way-28448235",
@@ -271647,6 +272138,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/115074",
+        "url": "https://www.openstreetmap.org/relation/115074",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -271659,7 +272156,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Reading, Berkshire” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Reading,_Berkshire",
-    "descriptionFetchedAt": "2026-05-12T20:56:22+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:56:22+00:00",
+    "osmType": "relation",
+    "osmId": 115074
   },
   {
     "id": "osm-way-4011484",
@@ -272066,6 +272565,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/48318113",
+        "url": "https://www.openstreetmap.org/way/48318113",
+        "license": "ODbL"
       }
     ],
     "provenance": {
@@ -272083,7 +272588,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 48318113
   },
   {
     "id": "osm-way-40473097",
@@ -276829,8 +277336,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q17829062"
+      {
+        "name": "openstreetmap",
+        "ref": "way/210631930",
+        "url": "https://www.openstreetmap.org/way/210631930",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q17829062",
     "images": [
@@ -276857,7 +277368,9 @@
     "names": {
       "en": "Rona Lighthouse",
       "fr": "phare de South Rona"
-    }
+    },
+    "osmType": "way",
+    "osmId": 210631930
   },
   {
     "id": "osm-relation-15589231",
@@ -277926,6 +278439,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/17710484",
+        "url": "https://www.openstreetmap.org/relation/17710484",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -277940,7 +278459,9 @@
     "areaSource": null,
     "areaConfidence": "n/a",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "relation",
+    "osmId": 17710484
   },
   {
     "id": "osm-way-218914985",
@@ -307127,12 +307648,20 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1221253740",
+        "url": "https://www.openstreetmap.org/way/1221253740",
+        "license": "ODbL"
       }
     ],
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1221253740
   },
   {
     "id": "osm-way-952692107",
@@ -318176,6 +318705,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/12882317",
+        "url": "https://www.openstreetmap.org/relation/12882317",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -318194,7 +318729,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Spike Island, Widnes” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Spike_Island,_Widnes",
-    "descriptionFetchedAt": "2026-05-12T20:59:39+00:00"
+    "descriptionFetchedAt": "2026-05-12T20:59:39+00:00",
+    "osmType": "relation",
+    "osmId": 12882317
   },
   {
     "id": "spike-island-bristol",
@@ -319728,7 +320265,17 @@
     "areaSource": "osm-coastline-polygon",
     "areaConfidence": "medium",
     "highestPointSource": "osm-peak",
-    "highestPointConfidence": "high"
+    "highestPointConfidence": "high",
+    "osmType": "relation",
+    "osmId": 3068059,
+    "sources": [
+      {
+        "name": "openstreetmap",
+        "ref": "relation/3068059",
+        "url": "https://www.openstreetmap.org/relation/3068059",
+        "license": "ODbL"
+      }
+    ]
   },
   {
     "id": "osm-way-995659024",
@@ -325500,6 +326047,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387109684",
+        "url": "https://www.openstreetmap.org/way/1387109684",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -325516,7 +326069,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387109684
   },
   {
     "id": "osm-relation-18028211",
@@ -328391,8 +328946,8 @@
       "wikipedia-list"
     ],
     "source": "discovery",
-    "osmType": null,
-    "osmId": null,
+    "osmType": "relation",
+    "osmId": 583462,
     "osmPlace": "island",
     "parentWaterBody": null,
     "classification": {
@@ -328420,6 +328975,12 @@
         "name": "wikipedia",
         "url": "https://en.wikipedia.org/wiki/Sunk_Island",
         "license": "CC-BY-SA-4.0"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/583462",
+        "url": "https://www.openstreetmap.org/relation/583462",
+        "license": "ODbL"
       }
     ]
   },
@@ -341421,45 +341982,6 @@
     "descriptionFetchedAt": "2026-05-12T21:01:52+00:00"
   },
   {
-    "id": "csv-geocoded-Q66227635",
-    "name": "Thorney Island Community Primary School",
-    "nation": "England",
-    "archipelago": "Hampshire (Chichester Hbr)",
-    "lat": 50.8221517,
-    "lng": -0.9326345,
-    "type": "sea",
-    "areaKm2": 0.0104,
-    "population": null,
-    "shortDescription": "",
-    "longDescription": "",
-    "tags": [],
-    "source": "csv-geocoded",
-    "sources": [
-      "csv-geocoded",
-      "wikidata:Q66227635"
-    ],
-    "wikidata": "Q66227635",
-    "images": [],
-    "classification": {
-      "source": "manual-override",
-      "confidence": "high"
-    },
-    "parentWaterBody": {
-      "name": "Chichester Harbour",
-      "type": "sea"
-    },
-    "classificationNote": "On the same peninsula. School, not actually a separate island -- but inherits the parent body.",
-    "areaSource": "osm-via-wikidata-way",
-    "areaConfidence": "high",
-    "highestPointM": null,
-    "highestPointName": null,
-    "highestPointSource": null,
-    "highestPointConfidence": "n/a",
-    "names": {
-      "en": "Thorney Island Community Primary School"
-    }
-  },
-  {
     "id": "osm-way-37691392",
     "name": "Thousla Rock",
     "nation": "Crown Dependency",
@@ -347990,8 +348512,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q282210"
+      {
+        "name": "openstreetmap",
+        "ref": "relation/8343046",
+        "url": "https://www.openstreetmap.org/relation/8343046",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q282210",
     "images": [
@@ -348017,7 +348543,9 @@
     "descriptionFetchedAt": "2026-05-12T21:03:50+00:00",
     "names": {
       "en": "Uyea"
-    }
+    },
+    "osmType": "relation",
+    "osmId": 8343046
   },
   {
     "id": "osm-way-8591079",
@@ -349974,8 +350502,12 @@
     "tags": [],
     "source": "csv-geocoded",
     "sources": [
-      "csv-geocoded",
-      "wikidata:Q2785373"
+      {
+        "name": "openstreetmap",
+        "ref": "way/92905733",
+        "url": "https://www.openstreetmap.org/way/92905733",
+        "license": "ODbL"
+      }
     ],
     "wikidata": "Q2785373",
     "images": [
@@ -350002,7 +350534,9 @@
     "names": {
       "en": "Walney Aerodrome",
       "fr": "aérodrome de Barrow/Walney Island"
-    }
+    },
+    "osmType": "way",
+    "osmId": 92905733
   },
   {
     "id": "osm-way-48995095",
@@ -354106,6 +354640,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1117263304",
+        "url": "https://www.openstreetmap.org/way/1117263304",
+        "license": "ODbL"
       }
     ],
     "parentWaterBody": {
@@ -354120,7 +354660,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1117263304
   },
   {
     "id": "wd-Q56666963",
@@ -354159,6 +354701,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/1387287458",
+        "url": "https://www.openstreetmap.org/way/1387287458",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -354173,7 +354721,9 @@
     "areaSource": "osm-via-wikidata-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "osmType": "way",
+    "osmId": 1387287458
   },
   {
     "id": "wd-Q24636749",
@@ -354981,6 +355531,12 @@
         "licence": "CC0",
         "retrieved": "2026-05-11",
         "attribution": "Wikidata contributors (CC0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "way/23352087",
+        "url": "https://www.openstreetmap.org/way/23352087",
+        "license": "ODbL"
       }
     ],
     "classification": {
@@ -354999,7 +355555,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Wilderness Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Wilderness_Island",
-    "descriptionFetchedAt": "2026-05-12T21:03:07+00:00"
+    "descriptionFetchedAt": "2026-05-12T21:03:07+00:00",
+    "osmType": "way",
+    "osmId": 23352087
   },
   {
     "id": "willow-island-w308796425",
@@ -355340,6 +355898,12 @@
         "licence": "CC BY-SA 4.0",
         "retrieved": "2026-05-11",
         "attribution": "Wikipedia contributors (CC BY-SA 4.0)"
+      },
+      {
+        "name": "openstreetmap",
+        "ref": "relation/14215419",
+        "url": "https://www.openstreetmap.org/relation/14215419",
+        "license": "ODbL"
       }
     ],
     "names": {
@@ -355352,7 +355916,9 @@
     "descriptionSource": "wikipedia-lead-extract",
     "descriptionConfidence": "high",
     "descriptionAttribution": "From Wikipedia article “Windsor, Berkshire” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Windsor,_Berkshire",
-    "descriptionFetchedAt": "2026-05-12T21:03:09+00:00"
+    "descriptionFetchedAt": "2026-05-12T21:03:09+00:00",
+    "osmType": "relation",
+    "osmId": 14215419
   },
   {
     "id": "wd-Q24636775",

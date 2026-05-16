@@ -101,8 +101,151 @@ export function buildNewCrowdSuggestionIssueUrl(fields) {
   return `https://github.com/${crowdIssueRepoSlug()}/issues/new?${params.toString()}`;
 }
 
-export function buildNameCrowdPinIssueUrl(pin) {
-  const title = `Name crowd pin ${pin.id}`;
+let _suggestConfigPromise = null;
+
+/** Load routing for native submit (`window.IOB_SUGGEST_CONFIG` overrides JSON). */
+export async function loadCrowdSuggestConfig() {
+  if (typeof window !== "undefined" && window.IOB_SUGGEST_CONFIG && typeof window.IOB_SUGGEST_CONFIG === "object") {
+    return normalizeCrowdSuggestConfig(window.IOB_SUGGEST_CONFIG);
+  }
+  if (!_suggestConfigPromise) {
+    _suggestConfigPromise = fetch("data/crowd_suggest_config.json", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((raw) => normalizeCrowdSuggestConfig(raw))
+      .catch(() => normalizeCrowdSuggestConfig({}));
+  }
+  return _suggestConfigPromise;
+}
+
+function normalizeCrowdSuggestConfig(raw) {
+  return {
+    provider: String(raw?.provider || "none").toLowerCase(),
+    formsubmitEmail: String(raw?.formsubmitEmail || "").trim(),
+    formspreeId: String(raw?.formspreeId || "").trim(),
+    web3formsAccessKey: String(raw?.web3formsAccessKey || "").trim(),
+    webhookUrl: String(raw?.webhookUrl || "").trim(),
+    subject: String(raw?.subject || "Isles of Britain — crowd island suggestion").trim(),
+  };
+}
+
+export function isCrowdSuggestConfigured(config) {
+  const p = String(config?.provider || "none").toLowerCase();
+  if (p === "formsubmit") return Boolean(config?.formsubmitEmail);
+  if (p === "formspree") return Boolean(config?.formspreeId);
+  if (p === "web3forms") return Boolean(config?.web3formsAccessKey);
+  if (p === "webhook") return Boolean(config?.webhookUrl);
+  return false;
+}
+
+export function formatCrowdSuggestionBody(fields) {
+  const {
+    lat,
+    lng,
+    name = "",
+    note = "",
+    nameSourceUrl = "",
+    credit = "",
+    existingPinId = "",
+    contactEmail = "",
+  } = fields;
+  return [
+    "Crowd island suggestion (Isles of Britain)",
+    "",
+    `Coordinates: ${lat}, ${lng} (WGS84)`,
+    `Map: https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=15/${lat}/${lng}`,
+    "",
+    `Suggested name: ${String(name).trim() || "(unnamed pin — location only)"}`,
+    `Note: ${String(note).trim() || "—"}`,
+    `Name source URL: ${String(nameSourceUrl).trim() || "—"}`,
+    `Credit / recognition: ${String(credit).trim() || "—"}`,
+    `Existing crowd pin id: ${String(existingPinId).trim() || "—"}`,
+    `Contact (optional): ${String(contactEmail).trim() || "—"}`,
+    "",
+    `Submitted from: ${typeof location !== "undefined" ? location.href : "—"}`,
+    `Time (UTC): ${new Date().toISOString()}`,
+  ].join("\n");
+}
+
+/** POST to FormSubmit, Formspree, Web3Forms, or a custom webhook. */
+export async function submitCrowdSuggestion(fields, config) {
+  const cfg = config || (await loadCrowdSuggestConfig());
+  const body = formatCrowdSuggestionBody(fields);
+  const subject = cfg.subject;
+  const label = fields.name?.trim() || "Unnamed island pin";
+
+  if (cfg.provider === "formsubmit" && cfg.formsubmitEmail) {
+    const fd = new FormData();
+    fd.append("_subject", subject);
+    fd.append("_template", "table");
+    fd.append("_captcha", "false");
+    fd.append("name", label);
+    fd.append("message", body);
+    if (fields.contactEmail?.trim()) fd.append("_replyto", fields.contactEmail.trim());
+    const res = await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(cfg.formsubmitEmail)}`,
+      { method: "POST", body: fd, headers: { Accept: "application/json" } },
+    );
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data?.message || `Submit failed (${res.status})`);
+    return { provider: "formsubmit" };
+  }
+
+  if (cfg.provider === "formspree" && cfg.formspreeId) {
+    const res = await fetch(`https://formspree.io/f/${cfg.formspreeId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: subject,
+        name: label,
+        message: body,
+        email: fields.contactEmail?.trim() || undefined,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data?.error || `Submit failed (${res.status})`);
+    return { provider: "formspree" };
+  }
+
+  if (cfg.provider === "web3forms" && cfg.web3formsAccessKey) {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: cfg.web3formsAccessKey,
+        subject,
+        from_name: label,
+        message: body,
+        email: fields.contactEmail?.trim() || "anonymous@findmyisland.com",
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data?.success === false) {
+      throw new Error(data?.message || `Submit failed (${res.status})`);
+    }
+    return { provider: "web3forms" };
+  }
+
+  if (cfg.provider === "webhook" && cfg.webhookUrl) {
+    const res = await fetch(cfg.webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ subject, name: label, body, fields }),
+    });
+    if (!res.ok) throw new Error(`Submit failed (${res.status})`);
+    return { provider: "webhook" };
+  }
+
+  throw new Error(
+    "Online submission is not configured on this site. The maintainer can set data/crowd_suggest_config.json.",
+  );
+}
+
+export function buildNameCrowdPinIssueUrl(pin, fields = {}) {
+  const name = (fields.name || "").trim();
+  const nameSourceUrl = (fields.nameSourceUrl || "").trim();
+  const credit = (fields.credit || "").trim();
+  const note = (fields.note || "").trim();
+  const title = `Name crowd pin ${pin.id}: ${name || "proposal"}`;
   const lines = [
     "## Existing crowd pin",
     "",
@@ -113,15 +256,16 @@ export function buildNameCrowdPinIssueUrl(pin) {
     "",
     "## Proposed name",
     "",
-    "<!-- Your suggested name -->",
+    name || "_Unknown — help identify_",
     "",
+    note ? ["## What you see", "", note, ""].join("\n") : "",
     "## Name source (optional)",
     "",
-    "<!-- URL to Wikipedia, OSM, gazetteer, etc. -->",
+    nameSourceUrl || "_—_",
     "",
     "## Credit (optional)",
     "",
-    "<!-- How you'd like to appear -->",
+    credit || "_Anonymous_",
     "",
   ].filter(Boolean);
   const body = lines.join("\n");
@@ -157,7 +301,14 @@ export function crowdPinPopupHtml(pin) {
       ${src}
       ${creditsBlock}
       <p class="crowd-popup__id"><code>${esc(pin.id)}</code></p>
-      <a class="crowd-popup__action" href="${esc(simpleNameIssue)}" target="_blank" rel="noopener noreferrer">Suggest a name ↗</a>
+      <button
+        type="button"
+        class="crowd-popup__action crowd-popup__action--suggest-name"
+        data-crowd-id="${esc(pin.id)}"
+        data-crowd-lat="${Number(pin.lat)}"
+        data-crowd-lng="${Number(pin.lng)}"
+      >Suggest a name</button>
+      <a class="crowd-popup__action crowd-popup__action--github" href="${esc(simpleNameIssue)}" target="_blank" rel="noopener noreferrer">GitHub issue ↗</a>
     </div>`;
 }
 

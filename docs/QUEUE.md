@@ -122,7 +122,10 @@ for source / licence / refresh-cadence detail.
   when it's England; the underlying bbox-based `nation_for()` in
   `fetch_islands.py` is sloppy near the Severn / Solway / Foyle
   boundaries. Replace with a point-in-polygon test against admin
-  boundaries (Natural Earth or OS Boundary-Line).
+  boundaries (Natural Earth admin-1). **`scripts/recompute_nation_admin1.py`**
+  is a **dry-run prototype** — current polygon order mis-tags NI/ROI and
+  Scotland/England; do **not** bulk `--apply` until boundary / ordering rules
+  are fixed (overrides list, Lough Neagh handling, etc.).
 - **Drop dataset stowaways.** Two CSV-geocoded entries that aren't
   geographic islands (`csv-geocoded-Q26272407` Great Arthur House and
   `csv-geocoded-Q66227635` Thorney Island Community Primary School)

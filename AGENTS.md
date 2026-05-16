@@ -66,6 +66,7 @@ needed.
 ├── seo-meta.js              ← per-island head tags + JSON-LD (SEO / GEO)
 ├── data/
 │   ├── islands.json         ← canonical dataset (DO NOT hand-edit)
+│   ├── islands_index.json   ← slim first paint; run scripts/build_islands_index.py after islands edits
 │   ├── crowd_pins.json      ← maintainer-curated community pins (see docs/CROWD-PINS.md)
 │   ├── curated.json         ← hand-curated spine of 27 islands
 │   ├── osm_raw.json         ← cached Overpass response (islands)

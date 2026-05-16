@@ -1,0 +1,292 @@
+{
+  "generatedAt": "2026-05-16T06:35:20Z",
+  "dryRun": false,
+  "islandsTotal": 7041,
+  "wouldBackfill": 83,
+  "skippedAlreadyHasOsm": 6110,
+  "skippedNoWikidata": 7,
+  "skippedCacheMissOrMissing": 841,
+  "skippedNodeOnly": 0,
+  "sample": [
+    {
+      "id": "csv-geocoded-Q723406",
+      "name": "Ascrib Islands",
+      "wikidata": "Q723406",
+      "osmType": "relation",
+      "osmId": 12628627
+    },
+    {
+      "id": "wd-Q1770146",
+      "name": "Barry Island",
+      "wikidata": "Q1770146",
+      "osmType": "way",
+      "osmId": 1348711133
+    },
+    {
+      "id": "wd-Q47011897",
+      "name": "Black Loch Crannog",
+      "wikidata": "Q47011897",
+      "osmType": "way",
+      "osmId": 1121896417
+    },
+    {
+      "id": "wd-Q27627601",
+      "name": "Black Middens",
+      "wikidata": "Q27627601",
+      "osmType": "way",
+      "osmId": 723976781
+    },
+    {
+      "id": "wd-Q45896935",
+      "name": "Bogha Ruadh",
+      "wikidata": "Q45896935",
+      "osmType": "way",
+      "osmId": 1221253709
+    },
+    {
+      "id": "wd-Q4959118",
+      "name": "Breachacha crannog",
+      "wikidata": "Q4959118",
+      "osmType": "way",
+      "osmId": 754330518
+    },
+    {
+      "id": "wd-Q4975766",
+      "name": "Brough Holm",
+      "wikidata": "Q4975766",
+      "osmType": "way",
+      "osmId": 726867504
+    },
+    {
+      "id": "wd-Q27835248",
+      "name": "Buiston crannog",
+      "wikidata": "Q27835248",
+      "osmType": "way",
+      "osmId": 1116116747
+    },
+    {
+      "id": "wd-Q3778009",
+      "name": "Bull Island",
+      "wikidata": "Q3778009",
+      "osmType": "relation",
+      "osmId": 5496743
+    },
+    {
+      "id": "csv-geocoded-Q1016854",
+      "name": "Burnt Islands",
+      "wikidata": "Q1016854",
+      "osmType": "relation",
+      "osmId": 14351933
+    },
+    {
+      "id": "wd-Q10967366",
+      "name": "Calbha Mor",
+      "wikidata": "Q10967366",
+      "osmType": "relation",
+      "osmId": 12597357
+    },
+    {
+      "id": "wd-Q56663122",
+      "name": "Carn Dubh,crannog E of Inverinan",
+      "wikidata": "Q56663122",
+      "osmType": "way",
+      "osmId": 1387384455
+    },
+    {
+      "id": "crannog-wp-carse-loch",
+      "name": "Carse Loch",
+      "wikidata": "Q5046860",
+      "osmType": "relation",
+      "osmId": 19163455
+    },
+    {
+      "id": "csv-geocoded-Q217058",
+      "name": "Castle Stalker",
+      "wikidata": "Q217058",
+      "osmType": "way",
+      "osmId": 276673910
+    },
+    {
+      "id": "wd-Q1070604",
+      "name": "Chesil Beach",
+      "wikidata": "Q1070604",
+      "osmType": "way",
+      "osmId": 123227804
+    },
+    {
+      "id": "wd-Q115309314",
+      "name": "Coolure Demesne crannóg",
+      "wikidata": "Q115309314",
+      "osmType": "way",
+      "osmId": 1121925770
+    },
+    {
+      "id": "wd-Q2755722",
+      "name": "Coquet Island",
+      "wikidata": "Q2755722",
+      "osmType": "way",
+      "osmId": 26682666
+    },
+    {
+      "id": "wd-Q15211942",
+      "name": "Crane Park Island",
+      "wikidata": "Q15211942",
+      "osmType": "way",
+      "osmId": 23069670
+    },
+    {
+      "id": "wd-Q56663130",
+      "name": "crannog 1100m SW of Innis Errich",
+      "wikidata": "Q56663130",
+      "osmType": "way",
+      "osmId": 1387390469
+    },
+    {
+      "id": "wd-Q56667708",
+      "name": "crannog 460m NE of Mar Hall",
+      "wikidata": "Q56667708",
+      "osmType": "way",
+      "osmId": 1117347069
+    },
+    {
+      "id": "wd-Q56663107",
+      "name": "crannog 600m SE of Lochawe",
+      "wikidata": "Q56663107",
+      "osmType": "way",
+      "osmId": 202179153
+    },
+    {
+      "id": "wd-Q56661801",
+      "name": "crannog 600m SSE of Redcastle",
+      "wikidata": "Q56661801",
+      "osmType": "way",
+      "osmId": 1117263065
+    },
+    {
+      "id": "wd-Q56663901",
+      "name": "crannog 600m W of Ederline",
+      "wikidata": "Q56663901",
+      "osmType": "way",
+      "osmId": 1117262341
+    },
+    {
+      "id": "wd-Q56663104",
+      "name": "crannog 800m W of Achlian",
+      "wikidata": "Q56663104",
+      "osmType": "way",
+      "osmId": 1387338766
+    },
+    {
+      "id": "wd-Q56666960",
+      "name": "crannog 800m WSW of Stonehouse",
+      "wikidata": "Q56666960",
+      "osmType": "way",
+      "osmId": 1117254653
+    },
+    {
+      "id": "wd-Q56663119",
+      "name": "crannogs 750m NE & 200m N of Rockhill Farm",
+      "wikidata": "Q56663119",
+      "osmType": "way",
+      "osmId": 1387281931
+    },
+    {
+      "id": "wd-Q116779948",
+      "name": "Crock Island",
+      "wikidata": "Q116779948",
+      "osmType": "way",
+      "osmId": 1008656107
+    },
+    {
+      "id": "csv-geocoded-Q783776",
+      "name": "Crowlin Islands",
+      "wikidata": "Q783776",
+      "osmType": "relation",
+      "osmId": 9619907
+    },
+    {
+      "id": "wd-Q56661793",
+      "name": "Cults Loch, crannog 770m ESE of Castle Kennedy House",
+      "wikidata": "Q56661793",
+      "osmType": "way",
+      "osmId": 1387302397
+    },
+    {
+      "id": "thames-datchet",
+      "name": "Datchet",
+      "wikidata": "Q285778",
+      "osmType": "relation",
+      "osmId": 3870380
+    },
+    {
+      "id": "thames-dorney",
+      "name": "Dorney",
+      "wikidata": "Q2498737",
+      "osmType": "relation",
+      "osmId": 3687011
+    },
+    {
+      "id": "wd-Q3397169",
+      "name": "East Mouse",
+      "wikidata": "Q3397169",
+      "osmType": "way",
+      "osmId": 1341826386
+    },
+    {
+      "id": "wd-Q56667913",
+      "name": "Eilean Fraoch,crannog 100m S of,Loch Avich",
+      "wikidata": "Q56667913",
+      "osmType": "way",
+      "osmId": 1387309777
+    },
+    {
+      "id": "wd-Q29015459",
+      "name": "Eriska,crannog on S shore of",
+      "wikidata": "Q29015459",
+      "osmType": "way",
+      "osmId": 637611980
+    },
+    {
+      "id": "wd-Q81680246",
+      "name": "Fasnacloich crannog",
+      "wikidata": "Q81680246",
+      "osmType": "way",
+      "osmId": 1387389005
+    },
+    {
+      "id": "wd-Q373978",
+      "name": "Fastnet Rock",
+      "wikidata": "Q373978",
+      "osmType": "way",
+      "osmId": 348787096
+    },
+    {
+      "id": "wd-Q104320963",
+      "name": "Flat Island",
+      "wikidata": "Q104320963",
+      "osmType": "way",
+      "osmId": 251565309
+    },
+    {
+      "id": "wd-Q3777204",
+      "name": "Flodaigh",
+      "wikidata": "Q3777204",
+      "osmType": "way",
+      "osmId": 4012955
+    },
+    {
+      "id": "wd-Q19585637",
+      "name": "Flodday",
+      "wikidata": "Q19585637",
+      "osmType": "way",
+      "osmId": 1244910739
+    },
+    {
+      "id": "thames-hurley-berkshire",
+      "name": "Hurley, Berkshire",
+      "wikidata": "Q8546656",
+      "osmType": "relation",
+      "osmId": 3871243
+    }
+  ]
+}

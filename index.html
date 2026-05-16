@@ -64,6 +64,14 @@
         <button
           type="button"
           class="topbar-link topbar-link--btn"
+          id="saved-islands-btn"
+          title="Your hearted islands (email required)"
+        >
+          Saved
+        </button>
+        <button
+          type="button"
+          class="topbar-link topbar-link--btn"
           id="crowd-suggest-btn"
           title="Suggest a missing island or unnamed pin (opens GitHub)"
         >
@@ -160,8 +168,9 @@
                 to see where to look.
               </p>
               <p class="crowd-modal__fine">
-                Submissions open in GitHub (free account). Maintainers publish approved pins to the map;
-                atlas merges need sources per <a href="docs/ETHICS.md" target="_blank" rel="noopener">ETHICS</a>.
+                On the next step you can submit here — no GitHub account. Maintainers review before pins
+                appear on the map. Atlas merges still need sources per
+                <a href="docs/ETHICS.md" target="_blank" rel="noopener">ETHICS</a>.
               </p>
               <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">
                 Cancel
@@ -189,9 +198,17 @@
                 <span>Existing crowd pin id <em class="crowd-optional">(optional)</em></span>
                 <input id="crowd-field-existing-id" type="text" autocomplete="off" placeholder="Only if naming someone else’s pin — copy from popup" />
               </label>
+              <label class="crowd-field">
+                <span>Your email <em class="crowd-optional">(optional — only if you want a reply)</em></span>
+                <input id="crowd-field-email" type="email" autocomplete="email" placeholder="you@example.com" />
+              </label>
+              <p id="crowd-form-error" class="crowd-form-error" hidden role="alert"></p>
               <div class="crowd-modal__actions">
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-github-submit">
-                  Open GitHub to submit ↗
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-native-submit">
+                  Submit suggestion
+                </button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-github-submit">
+                  Submit via GitHub ↗
                 </button>
                 <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">
                   Pick again
@@ -200,6 +217,15 @@
                   Close
                 </button>
               </div>
+            </div>
+            <div id="crowd-step-success" class="crowd-step" hidden>
+              <p class="crowd-modal__lead">Thanks — your suggestion was sent for review.</p>
+              <p class="crowd-modal__fine">
+                Approved pins are added to the map by maintainers. You can suggest another location anytime.
+              </p>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-success-done">
+                Done
+              </button>
             </div>
           </div>
         </div>
@@ -210,6 +236,7 @@
           <span><i class="dot dot--river"></i> River</span>
           <span><i class="dot dot--unknown"></i> Unverified</span>
           <span><i class="dot dot--crowd"></i> Crowd</span>
+          <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
         </div>
         <section class="trip-planner" aria-labelledby="trip-planner-title">
           <h2 class="trip-planner__title" id="trip-planner-title">Ferry trip planner</h2>
@@ -380,6 +407,41 @@
       </button>
     </nav>
 
+    <div id="favorites-access-modal" class="favorites-modal" hidden>
+      <div class="favorites-modal__backdrop" id="favorites-access-backdrop" tabindex="-1"></div>
+      <div
+        class="favorites-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="favorites-access-title"
+      >
+        <h2 id="favorites-access-title" class="favorites-modal__title">Save islands</h2>
+        <p class="favorites-modal__lead">
+          Enter your email once to heart islands and open your saved list. Everything stays in this
+          browser for now — we only use your email to unlock the feature.
+        </p>
+        <label class="favorites-field">
+          <span>Email</span>
+          <input
+            id="favorites-email-input"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          />
+        </label>
+        <p id="favorites-access-error" class="favorites-access-error" hidden role="alert"></p>
+        <div class="favorites-modal__actions">
+          <button type="button" class="favorites-modal__btn favorites-modal__btn--primary" id="favorites-access-continue">
+            Continue
+          </button>
+          <button type="button" class="favorites-modal__btn favorites-modal__btn--ghost" id="favorites-access-cancel">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -396,6 +458,8 @@
     <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
     <!-- Optional: set your live HTTPS origin if canonical/share URLs differ from location (CDN, path rewrite).
          Example: <script>window.IOB_SITE_ORIGIN = "https://your.domain";</script> -->
+    <!-- Optional: native crowd suggestions (FormSubmit / Formspree / Web3Forms). See data/crowd_suggest_config.example.json
+         Example: <script>window.IOB_SUGGEST_CONFIG = { provider: "formsubmit", formsubmitEmail: "you@example.com" };</script> -->
     <script src="app.js" type="module"></script>
   </body>
 </html>

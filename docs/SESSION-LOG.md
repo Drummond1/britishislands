@@ -1499,3 +1499,73 @@
   pins are added from triaged issues.
 - **Open items**: Promote vetted pins to the atlas only via normal provenance
     (`docs/ETHICS.md`).
+
+---
+
+## 2026-05-16 — Map first paint, subtype chip, CSV stowaway drop
+
+- **Goal**: Work down the map-improvement priority list: smaller initial payload,
+  data hygiene, clearer subtype UI; stage nation-by-admin1 for future careful use.
+- **What changed**:
+  - **`data/islands_index.json`** + **`scripts/build_islands_index.py`** — strips
+    long prose / `sources` / `images[]` / etc. (~4.5 MiB vs ~10 MiB full).
+  - **`app.js` `loadIslands`** — fetch index first (optional), paint after rAF,
+    then fetch **`islands.json`** and merge in place; length mismatch falls back
+    to full-only; **`mergeIslandDetailFromFull`**, **`populateNationFilter`** reset
+    (no duplicate options).
+  - **Removed** `csv-geocoded-Q26272407` and `csv-geocoded-Q66227635` from
+    **`data/islands.json`** (non-island buildings).
+  - **Details panel** — **`subtype-chips` / `subtype-chip`** + **`formatSubtypeLabel`**;
+    stat “Type” line is sea/lake/river island only (subtype no longer duplicated there).
+  - **`scripts/recompute_nation_admin1.py`** — Natural Earth 10m admin-1 **dry-run**
+    script; **not applied** (would mis-tag NI/ROI and GB border). Documented as
+    experimental.
+  - **`docs/PIPELINE.md` §5b**, **`docs/ARCHITECTURE.md`**, **`docs/STATE.md`**,
+    **`AGENTS.md`**, **`styles.css`**.
+- **Outcome / counts**: Atlas **7,043 → 7,041**; faster perceived load when both
+  JSONs are deployed; index must be regenerated after every full-dataset edit.
+
+---
+
+## 2026-05-16 — Wikidata→OSM backfill + discovery refresh
+
+- **Goal**: Attach OSM way/relation ids to Wikidata-only atlas rows so detail-map
+  polygon overlays work; refresh discovery verification and survey ledger.
+- **What changed**:
+  - `scripts/backfill_osm_from_wikidata.py` (dry-run + `--apply`) reading
+    `cache_osm_geometries.json`.
+  - `compute_island_areas.py --fetch-osm` (39 new Step C lookups).
+  - Applied **83** OSM id backfills; `data/osm_wikidata_backfill_report.json`.
+  - `python3 scripts/build_islands_index.py`.
+  - `discover_islands_pipeline.py` (dry-run): 1 merge candidate, 0 new inserts.
+  - `survey_landmass_ledger.py` → `data/survey/survey_summary.json` (0 strict outstanding).
+  - Backup `data/islands.json.before-osm-backfill-*`.
+- **Outcome / counts**: Islands with `osmId` **6,110 → 6,193**; **848** still without
+  (no OSM element tagged with their Wikidata id in Overpass cache).
+
+---
+
+## 2026-05-16 — Native crowd island suggestions
+
+- **Goal**: Let visitors submit island/name suggestions on-site without opening GitHub.
+- **What changed**:
+  - `crowd-pins.js` — `submitCrowdSuggestion`, FormSubmit/Formspree/Web3Forms/webhook
+    routing, `loadCrowdSuggestConfig`.
+  - `app.js` — modal success step, **Submit suggestion** button, popup **Suggest a name**
+    opens in-app form; optional GitHub fallback.
+  - `index.html` — form fields + success step; updated copy.
+  - `data/crowd_suggest_config.json` + `.example.json`; `docs/CROWD-PINS.md`.
+- **Outcome / counts**: UX complete; **requires** `formsubmitEmail` (or other provider)
+  in config before submissions reach maintainers.
+
+---
+
+## 2026-05-16 — Saved islands email gate
+
+- **Goal**: Hearted island list requires a one-time email; keep UX lightweight.
+- **What changed**:
+  - `index.html` — **Saved** topbar button, email unlock modal.
+  - `app.js` — `ensureFavoritesAccess`, gate hearts + **Saved only** filter; localStorage
+    `iobFavoritesEmail` + existing `iobFavoriteIslandIds`.
+  - `styles.css` — favorites modal.
+- **Outcome**: List/hearts work on-device after email; no server sync yet.

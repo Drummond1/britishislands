@@ -14,7 +14,8 @@ ingestion code.
 │   └── seo-meta.js         ← per-island <title>, meta, OG/Twitter, JSON-LD
 │
 ├── Data (canonical artefacts)
-│   ├── data/islands.json   ← THE dataset shipped to the browser
+│   ├── data/islands.json   ← THE dataset shipped to the browser (full records)
+│   ├── data/islands_index.json ← slim first paint; run `scripts/build_islands_index.py` after edits
 │   ├── data/curated.json   ← hand-curated 27-island spine
 │   ├── data/*_raw.json     ← cached upstream API responses
 │   ├── data/cache_*.json   ← per-script polite-fetch caches
@@ -154,7 +155,7 @@ See [`PIPELINE.md`](PIPELINE.md) for the exact run order and CLI flags.
 
 | Function | Role |
 |---|---|
-| `init()` | bootstraps map, fetches `islands.json`, wires UI events |
+| `init()` | bootstraps map, fetches `islands_index.json` then merges `islands.json`, wires UI |
 | `populateNationFilter(islands)` | builds nation `<select>` from data |
 | `applyFilters()` | computes filtered island set (search + nation) |
 | `renderList(islands)` | top-level list render; calls `renderListWindow` |

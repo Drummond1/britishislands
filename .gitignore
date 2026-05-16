@@ -54,6 +54,9 @@ data/islands.json.tmp
 data/gtfs/
 *.gtfs.zip
 
+# --- MLX LoRA fine-tuning (local adapter weights) ---------------------------
+adapters/
+
 # --- Tooling --------------------------------------------------------------
 # Cursor-specific runtime artefacts (terminals, agent transcripts).
 .cursor/projects/
