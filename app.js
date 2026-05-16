@@ -15,10 +15,12 @@
 import { applyIslandSeo, resetIslandSeo } from "./seo-meta.js";
 import {
   fetchCrowdPins,
-  buildNewCrowdSuggestionIssueUrl,
+  buildContributionIssueUrl,
   crowdPinPopupHtml,
   CROWD_MARKER_STYLE,
   loadCrowdSuggestConfig,
+  isCrowdSuggestConfigured,
+  validateContributionFields,
   submitCrowdSuggestion,
 } from "./crowd-pins.js";
 
@@ -29,7 +31,7 @@ const TYPE_COLORS = {
   unknown: "#b08bd1",
 };
 
-const ROW_HEIGHT = 64; // px, must match .island-card sizing
+const ROW_HEIGHT = 76; // px, must match .island-card sizing (incl. thumbnail)
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
 
 const OVERPASS_ENDPOINTS = [
@@ -69,7 +71,17 @@ const state = {
   discoveryTopics: null,
   activeExploreTopic: null,
   exploreIslandIds: null,
+  mobileDetailSuspended: false,
 };
+
+const SCOTLAND_QUICK_FILTERS = [
+  { id: "scotland", label: "All Scotland", nation: "Scotland" },
+  { id: "scotland-ferry", label: "Ferry access", nation: "Scotland", ferry: true },
+  { id: "scotland-photo", label: "With photos", nation: "Scotland", photo: true },
+  { id: "scotland-sea", label: "Sea islands", nation: "Scotland", type: "sea" },
+];
+
+let activeScotlandQuick = null;
 
 // ---------- Ferries (lazy-loaded) ----------
 // data/ferries.json + data/ferry_terminals.json + data/operators.json are
@@ -669,22 +681,23 @@ function renderCorrectionReport(island) {
       : "";
   return `
     <div class="section correction-report">
-      <h3>Suggest a correction</h3>
+      <h3>Contribute improvements</h3>
       <p class="correction-report__lead">
-        The map does not accept direct edits in the browser. Report mistakes here with a
-        <strong>link to a source</strong> (OpenStreetMap, Wikidata, official statistics, or similar).
-        A maintainer reviews the evidence before any change is merged.
+        Suggest a better <strong>name</strong>, <strong>description</strong>, or <strong>photo links</strong>.
+        If you propose a name, add a source link so we can verify it.
       </p>
       ${curatedNote}
       ${unconfirmedNote}
       <p class="correction-report__actions">
-        <a class="correction-report__btn" href="${escapeAttr(issueUrl)}" target="_blank" rel="noopener noreferrer">
-          Open correction form on GitHub ↗
+        <button type="button" class="correction-report__btn correction-report__btn--primary" data-contribute-island="${escapeAttr(island.id)}">
+          Edit this island…
+        </button>
+        <a class="correction-report__btn correction-report__btn--ghost" href="${escapeAttr(issueUrl)}" target="_blank" rel="noopener noreferrer">
+          GitHub form ↗
         </a>
       </p>
       <p class="correction-report__fine">
-        No account on this site is required. You need a free GitHub account to submit the form,
-        or you can copy the pre-filled text from the opened page and email the project maintainer instead.
+        Atlas islands use coloured dots. Community suggestions use <strong>gold pins</strong> until approved.
       </p>
     </div>`;
 }
@@ -922,6 +935,9 @@ async function loadCrowdPinsAndRender() {
 }
 
 function readCrowdFormFields(modal) {
+  const kind = document.getElementById("crowd-field-kind")?.value || "new_pin";
+  const atlasId = document.getElementById("crowd-field-atlas-id")?.value || "";
+  const island = atlasId ? state.byId.get(atlasId) : null;
   return {
     lat: Number(modal.dataset.crowdLat),
     lng: Number(modal.dataset.crowdLng),
@@ -931,6 +947,12 @@ function readCrowdFormFields(modal) {
     credit: document.getElementById("crowd-field-credit")?.value || "",
     existingPinId: document.getElementById("crowd-field-existing-id")?.value || "",
     contactEmail: document.getElementById("crowd-field-email")?.value || "",
+    photoUrls: document.getElementById("crowd-field-photos")?.value || "",
+    proposedChanges: document.getElementById("crowd-field-proposed")?.value || "",
+    contributionKind: kind,
+    atlasIslandId: atlasId,
+    atlasIslandName: island?.name || "",
+    skipSourceCheck: Boolean(document.getElementById("crowd-field-skip-source")?.checked),
   };
 }
 
@@ -942,19 +964,107 @@ function resetCrowdFormFields() {
     "crowd-field-credit",
     "crowd-field-existing-id",
     "crowd-field-email",
+    "crowd-field-photos",
+    "crowd-field-proposed",
+    "crowd-field-atlas-id",
   ]) {
     const el = document.getElementById(id);
     if (el) el.value = "";
   }
+  const kindEl = document.getElementById("crowd-field-kind");
+  if (kindEl) kindEl.value = "new_pin";
+  const nameLabel = document.getElementById("crowd-label-name");
+  if (nameLabel) nameLabel.textContent = "Name";
+  const skip = document.getElementById("crowd-field-skip-source");
+  if (skip) skip.checked = false;
+}
+
+function applyContributeFormUi(kind) {
+  const banner = document.getElementById("crowd-context-banner");
+  const proposedWrap = document.getElementById("crowd-field-proposed-wrap");
+  const pinWrap = document.getElementById("crowd-field-pin-id-wrap");
+  const coordsEl = document.getElementById("crowd-coords-label");
+  const kindEl = document.getElementById("crowd-field-kind");
+  if (kindEl) kindEl.value = kind;
+
+  if (banner) {
+    if (kind === "fix_atlas") {
+      const aid = document.getElementById("crowd-field-atlas-id")?.value || "";
+      const isl = aid ? state.byId.get(aid) : null;
+      banner.hidden = false;
+      banner.className = "crowd-context-banner crowd-context-banner--atlas";
+      banner.textContent = isl
+        ? `Atlas island “${isl.name}” — link sources for name changes; we review before updates go live.`
+        : "Atlas island — your changes are reviewed with linked sources before they go live.";
+    } else if (kind === "update_pin") {
+      banner.hidden = false;
+      banner.className = "crowd-context-banner crowd-context-banner--community";
+      banner.textContent =
+        "Community pin — appears as a gold marker after maintainer approval.";
+    } else {
+      banner.hidden = false;
+      banner.className = "crowd-context-banner crowd-context-banner--community";
+      banner.textContent =
+        "New community pin — not in the main atlas until verified and sourced.";
+    }
+  }
+  if (proposedWrap) proposedWrap.hidden = kind !== "fix_atlas";
+  if (pinWrap) pinWrap.hidden = kind === "fix_atlas";
+  if (coordsEl && kind === "fix_atlas") {
+    coordsEl.textContent = "Location taken from the atlas island you have open.";
+  }
+}
+
+function updateContributeSubmitButtons(cfg) {
+  const nativeBtn = document.getElementById("crowd-native-submit");
+  const githubBtn = document.getElementById("crowd-github-submit");
+  const hint = document.getElementById("crowd-config-hint");
+  const configured = isCrowdSuggestConfigured(cfg);
+  if (nativeBtn) {
+    nativeBtn.hidden = !configured;
+    nativeBtn.textContent = "Send contribution";
+  }
+  if (githubBtn) {
+    githubBtn.classList.toggle("crowd-modal__btn--primary", !configured);
+    githubBtn.classList.toggle("crowd-modal__btn--ghost", configured);
+    githubBtn.textContent = configured ? "Send via GitHub ↗" : "Send via GitHub (recommended) ↗";
+  }
+  if (nativeBtn && !configured) {
+    nativeBtn.classList.remove("crowd-modal__btn--primary");
+    nativeBtn.classList.add("crowd-modal__btn--ghost");
+  }
+  if (hint) {
+    if (configured) {
+      hint.hidden = true;
+    } else {
+      hint.hidden = false;
+      hint.textContent =
+        "One-click send needs a site email config. Use “Send via GitHub” (works now) — same form, pre-filled.";
+    }
+  }
+}
+
+function prefillCrowdFormFromPin(pin) {
+  if (!pin) return;
+  const nameEl = document.getElementById("crowd-field-name");
+  const noteEl = document.getElementById("crowd-field-note");
+  const srcEl = document.getElementById("crowd-field-source");
+  const idEl = document.getElementById("crowd-field-existing-id");
+  if (nameEl && pin.name) nameEl.value = pin.name;
+  if (noteEl && pin.note) noteEl.value = pin.note;
+  if (srcEl && pin.nameSourceUrl) srcEl.value = pin.nameSourceUrl;
+  if (idEl) idEl.value = pin.id || "";
 }
 
 function initCrowdSuggestUi() {
   const modal = document.getElementById("crowd-modal");
   const btnOpen = document.getElementById("crowd-suggest-btn");
+  const stepHub = document.getElementById("crowd-step-hub");
   const stepPick = document.getElementById("crowd-step-pick");
   const stepForm = document.getElementById("crowd-step-form");
   const stepSuccess = document.getElementById("crowd-step-success");
   const backdrop = document.getElementById("crowd-modal-backdrop");
+  const hubCancel = document.getElementById("crowd-hub-cancel");
   const cancelPick = document.getElementById("crowd-cancel-pick");
   const closeForm = document.getElementById("crowd-close-form");
   const pickAgain = document.getElementById("crowd-pick-again");
@@ -963,12 +1073,16 @@ function initCrowdSuggestUi() {
   const successDone = document.getElementById("crowd-success-done");
   const formError = document.getElementById("crowd-form-error");
   const coordsEl = document.getElementById("crowd-coords-label");
+  const pickContext = document.getElementById("crowd-pick-context");
   const toggle = document.getElementById("crowd-show-toggle");
 
   if (!modal || !btnOpen) return;
 
+  let contributeKind = "new_pin";
+
   loadCrowdSuggestConfig().then((cfg) => {
     state.crowdSuggestConfig = cfg;
+    updateContributeSubmitButtons(cfg);
   });
 
   function hideFormError() {
@@ -984,8 +1098,9 @@ function initCrowdSuggestUi() {
   }
 
   function showStep(which) {
-    stepPick.hidden = which !== "pick";
-    stepForm.hidden = which !== "form";
+    if (stepHub) stepHub.hidden = which !== "hub";
+    if (stepPick) stepPick.hidden = which !== "pick";
+    if (stepForm) stepForm.hidden = which !== "form";
     if (stepSuccess) stepSuccess.hidden = which !== "success";
   }
 
@@ -993,28 +1108,63 @@ function initCrowdSuggestUi() {
     clearCrowdMapPicker();
     hideFormError();
     modal.hidden = true;
-    showStep("pick");
+    contributeKind = "new_pin";
+    showStep("hub");
     resetCrowdFormFields();
   }
 
   function showForm(lat, lng, opts = {}) {
     hideFormError();
     setCrowdPickMode(false);
+    const kind = opts.kind || contributeKind;
+    contributeKind = kind;
+    applyContributeFormUi(kind);
     showStep("form");
-    coordsEl.textContent = `Pin: ${lat.toFixed(5)}, ${lng.toFixed(5)} (WGS84)`;
+    if (coordsEl && kind !== "fix_atlas") {
+      coordsEl.textContent = `Pin: ${lat.toFixed(5)}, ${lng.toFixed(5)} (WGS84)`;
+    }
     modal.dataset.crowdLat = String(lat);
     modal.dataset.crowdLng = String(lng);
     if (opts.existingPinId) {
       const idEl = document.getElementById("crowd-field-existing-id");
       if (idEl) idEl.value = opts.existingPinId;
     }
+    if (opts.atlasIslandId) {
+      const aEl = document.getElementById("crowd-field-atlas-id");
+      if (aEl) aEl.value = opts.atlasIslandId;
+      const isl = state.byId.get(opts.atlasIslandId);
+      const proposedEl = document.getElementById("crowd-field-proposed");
+      if (isl && proposedEl) {
+        proposedEl.placeholder = `What to change about “${isl.name}” — name, description, photos…`;
+      }
+      const nameLabel = document.getElementById("crowd-label-name");
+      if (nameLabel) {
+        nameLabel.textContent =
+          kind === "fix_atlas" ? "New name (only if changing)" : "Name";
+      }
+    }
+    if (opts.prefillPin) prefillCrowdFormFromPin(opts.prefillPin);
+    loadCrowdSuggestConfig().then((cfg) => {
+      state.crowdSuggestConfig = cfg;
+      updateContributeSubmitButtons(cfg);
+    });
   }
 
-  function startPick() {
+  function startPick(kind, hintText) {
+    contributeKind = kind || "new_pin";
     clearCrowdMapPicker();
     hideFormError();
     showStep("pick");
     setCrowdPickMode(true);
+    if (pickContext) {
+      if (hintText) {
+        pickContext.hidden = false;
+        pickContext.textContent = hintText;
+        pickContext.className = "crowd-context-banner crowd-context-banner--community";
+      } else {
+        pickContext.hidden = true;
+      }
+    }
     const wrap = document.getElementById("map");
     if (wrap) wrap.classList.add("map--crowd-pick");
     const handler = (e) => {
@@ -1024,82 +1174,160 @@ function initCrowdSuggestUi() {
       }
       if (wrap) wrap.classList.remove("map--crowd-pick");
       setCrowdDraftMarker(e.latlng.lat, e.latlng.lng);
-      showForm(e.latlng.lat, e.latlng.lng);
+      showForm(e.latlng.lat, e.latlng.lng, { kind: contributeKind });
     };
     state.crowdMapClickHandler = handler;
     if (!map) return;
     map.on("click", handler);
   }
 
+  function openContributeHub() {
+    modal.hidden = false;
+    showStep("hub");
+    hideFormError();
+  }
+
   function openCrowdModal(opts = {}) {
     modal.hidden = false;
+    if (opts.kind === "fix_atlas" && opts.atlasIslandId) {
+      const isl = state.byId.get(opts.atlasIslandId);
+      if (isl) {
+        contributeKind = "fix_atlas";
+        resetCrowdFormFields();
+        showForm(isl.lat, isl.lng, opts);
+        return;
+      }
+    }
     if (opts.lat != null && opts.lng != null) {
       clearCrowdMapPicker();
+      contributeKind = opts.kind || (opts.existingPinId ? "update_pin" : "new_pin");
       setCrowdDraftMarker(Number(opts.lat), Number(opts.lng));
       showForm(Number(opts.lat), Number(opts.lng), opts);
     } else {
-      resetCrowdFormFields();
-      startPick();
+      openContributeHub();
     }
   }
 
   window.openCrowdSuggestModal = openCrowdModal;
+  window.openContributeForIsland = (islandId) => {
+    const isl = state.byId.get(islandId);
+    if (!isl) return;
+    openCrowdModal({
+      kind: "fix_atlas",
+      atlasIslandId: islandId,
+      lat: isl.lat,
+      lng: isl.lng,
+    });
+  };
 
-  btnOpen.addEventListener("click", () => openCrowdModal());
+  btnOpen.addEventListener("click", () => openContributeHub());
+  document.getElementById("contribute-new-pin")?.addEventListener("click", () => {
+    resetCrowdFormFields();
+    startPick("new_pin");
+  });
+  document.getElementById("contribute-update-pin")?.addEventListener("click", () => {
+    resetCrowdFormFields();
+    startPick(
+      "update_pin",
+      "Click a gold community pin on the map, or drop a new pin if you are adding one.",
+    );
+  });
+  document.getElementById("contribute-fix-atlas")?.addEventListener("click", () => {
+    resetCrowdFormFields();
+    if (state.activeId && state.byId.has(state.activeId)) {
+      openCrowdModal({
+        kind: "fix_atlas",
+        atlasIslandId: state.activeId,
+        lat: state.byId.get(state.activeId).lat,
+        lng: state.byId.get(state.activeId).lng,
+      });
+      return;
+    }
+    hideFormError();
+    showStep("hub");
+    showFormError(
+      "Open an island from the list first (so we know which atlas entry you mean), then tap Contribute → Improve an atlas island.",
+    );
+  });
+  hubCancel?.addEventListener("click", closeModal);
   backdrop?.addEventListener("click", () => {
     if (modal.classList.contains("crowd-modal--picking")) return;
     closeModal();
   });
-  cancelPick?.addEventListener("click", closeModal);
+  cancelPick?.addEventListener("click", () => {
+    clearCrowdMapPicker();
+    openContributeHub();
+  });
   closeForm?.addEventListener("click", closeModal);
   successDone?.addEventListener("click", closeModal);
   pickAgain?.addEventListener("click", () => {
+    const kind = document.getElementById("crowd-field-kind")?.value || contributeKind;
     resetCrowdFormFields();
     clearCrowdDraftMarker();
-    startPick();
-  });
-
-  githubBtn?.addEventListener("click", () => {
-    const fields = readCrowdFormFields(modal);
-    const url = buildNewCrowdSuggestionIssueUrl(fields);
-    try {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } catch (_) {
-      window.location.href = url;
+    if (kind === "fix_atlas") {
+      const aid = state.activeId;
+      const isl = aid ? state.byId.get(aid) : null;
+      if (isl) {
+        showForm(isl.lat, isl.lng, { kind: "fix_atlas", atlasIslandId: aid });
+        return;
+      }
     }
-    closeModal();
+    startPick(kind);
   });
 
-  nativeBtn?.addEventListener("click", async () => {
+  async function submitContribution(viaGithub) {
     hideFormError();
     const fields = readCrowdFormFields(modal);
-    if (!Number.isFinite(fields.lat) || !Number.isFinite(fields.lng)) {
-      showFormError("Pick a location on the map first.");
+    const v = validateContributionFields(fields);
+    if (!v.ok) {
+      showFormError(v.message);
+      return;
+    }
+    if (fields.contributionKind !== "fix_atlas") {
+      if (!Number.isFinite(fields.lat) || !Number.isFinite(fields.lng)) {
+        showFormError("Pick a location on the map first.");
+        return;
+      }
+    }
+    if (viaGithub) {
+      const url = buildContributionIssueUrl(fields);
+      try {
+        window.open(url, "_blank", "noopener,noreferrer");
+      } catch (_) {
+        window.location.href = url;
+      }
+      showStep("success");
       return;
     }
     const cfg = state.crowdSuggestConfig || (await loadCrowdSuggestConfig());
     state.crowdSuggestConfig = cfg;
+    if (!isCrowdSuggestConfigured(cfg)) {
+      showFormError("Use “Send via GitHub” — one-click send is not configured on this site yet.");
+      return;
+    }
     nativeBtn.disabled = true;
     const prevLabel = nativeBtn.textContent;
     nativeBtn.textContent = "Sending…";
     try {
       await submitCrowdSuggestion(fields, cfg);
-      resetCrowdFormFields();
       showStep("success");
     } catch (err) {
-      const msg = err?.message || "Could not send your suggestion.";
-      showFormError(msg);
-      if (githubBtn && !githubBtn.hidden) {
-        showFormError(`${msg} You can still use “Submit via GitHub”.`);
-      }
+      showFormError(
+        `${err?.message || "Could not send."} Try “Send via GitHub” — it works without site setup.`,
+      );
     } finally {
       nativeBtn.disabled = false;
       nativeBtn.textContent = prevLabel;
     }
-  });
+  }
+
+  githubBtn?.addEventListener("click", () => submitContribution(true));
+  nativeBtn?.addEventListener("click", () => submitContribution(false));
 
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest?.(".crowd-popup__action--suggest-name");
+    const btn = e.target.closest?.(
+      ".crowd-popup__action--edit-details, .crowd-popup__action--suggest-name",
+    );
     if (!btn) return;
     e.preventDefault();
     const lat = Number(btn.dataset.crowdLat);
@@ -1107,7 +1335,22 @@ function initCrowdSuggestUi() {
     const existingPinId = btn.dataset.crowdId || "";
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
     map.closePopup();
-    openCrowdModal({ lat, lng, existingPinId });
+    const pin = state.crowdPins.find((p) => p.id === existingPinId);
+    openCrowdModal({
+      lat,
+      lng,
+      existingPinId,
+      kind: "update_pin",
+      prefillPin: pin,
+    });
+  });
+
+  els.detailsContent?.addEventListener("click", (e) => {
+    const btn = e.target.closest?.("[data-contribute-island]");
+    if (!btn) return;
+    e.preventDefault();
+    const id = btn.getAttribute("data-contribute-island");
+    if (id) openContributeForIsland(id);
   });
 
   toggle?.addEventListener("change", () => syncCrowdLayerVisibility());
@@ -1169,6 +1412,7 @@ async function loadIslands() {
         initFavoritesState();
         populateNationFilter();
         populateSubtypeFilter();
+        renderScotlandQuickChips();
         applyFilters();
         loadCrowdPinsAndRender();
         loadFerries().catch(() => {});
@@ -1210,6 +1454,7 @@ async function loadIslands() {
   initFavoritesState();
   populateNationFilter();
   populateSubtypeFilter();
+  renderScotlandQuickChips();
   applyFilters();
   applyRouteFromUrl();
   loadCrowdPinsAndRender();
@@ -1411,6 +1656,228 @@ function islandHasElevation(island) {
   return Boolean(conf && conf !== "n/a");
 }
 
+function islandThumbUrl(island) {
+  if (!island) return null;
+  const img = island.images?.[0];
+  if (img?.thumbUrl) return img.thumbUrl;
+  if (img?.url) return img.url;
+  if (island.image) return island.image;
+  const extra = state.galleries?.[island.id]?.[0];
+  if (extra?.thumbUrl) return extra.thumbUrl;
+  if (extra?.url) return extra.url;
+  return null;
+}
+
+function renderScotlandQuickChips() {
+  const host = document.getElementById("scotland-quick-chips");
+  if (!host) return;
+  host.replaceChildren();
+  for (const preset of SCOTLAND_QUICK_FILTERS) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className =
+      "scotland-quick__chip" + (activeScotlandQuick === preset.id ? " is-active" : "");
+    b.textContent = preset.label;
+    b.addEventListener("click", () => applyScotlandQuickFilter(preset));
+    host.appendChild(b);
+  }
+}
+
+function applyScotlandQuickFilter(preset) {
+  if (activeScotlandQuick === preset.id) {
+    activeScotlandQuick = null;
+    if (els.nationFilter) els.nationFilter.value = "";
+    if (els.typeFilter) els.typeFilter.value = "";
+    if (els.filterPhoto) els.filterPhoto.checked = false;
+    if (els.filterFerry) els.filterFerry.checked = false;
+    renderScotlandQuickChips();
+    applyFilters();
+    return;
+  }
+  activeScotlandQuick = preset.id;
+  if (state.activeExploreTopic) {
+    state.activeExploreTopic = null;
+    state.exploreIslandIds = null;
+    const hint = document.getElementById("discover-hint");
+    if (hint) {
+      hint.hidden = true;
+      hint.textContent = "";
+    }
+    renderDiscoverChips();
+    syncExploreUrl(null);
+    loadFeaturedIslands().catch(() => {});
+  }
+  if (els.nationFilter) els.nationFilter.value = preset.nation || "";
+  if (els.typeFilter) els.typeFilter.value = preset.type || "";
+  if (els.filterPhoto) els.filterPhoto.checked = Boolean(preset.photo);
+  if (els.filterFerry && !els.filterFerry.disabled) {
+    els.filterFerry.checked = Boolean(preset.ferry);
+  }
+  renderScotlandQuickChips();
+  applyFilters();
+  if (preset.nation === "Scotland" && map) {
+    map.setView([57.2, -4.5], 6, { animate: true, duration: 0.5 });
+  }
+}
+
+function resetAllFilters() {
+  activeScotlandQuick = null;
+  if (els.search) els.search.value = "";
+  if (els.typeFilter) els.typeFilter.value = "";
+  if (els.nationFilter) els.nationFilter.value = "";
+  if (els.favoritesFilter) els.favoritesFilter.value = "";
+  if (els.areaMinFilter) els.areaMinFilter.value = "";
+  if (els.subtypeFilter) els.subtypeFilter.value = "";
+  if (els.confidenceFilter) els.confidenceFilter.value = "";
+  if (els.filterPhoto) els.filterPhoto.checked = false;
+  if (els.filterFerry) els.filterFerry.checked = false;
+  if (els.filterElevation) els.filterElevation.checked = false;
+  renderScotlandQuickChips();
+  if (state.activeExploreTopic) clearExploreTopic();
+  else applyFilters();
+}
+
+function renderActiveFilterChips() {
+  const host = document.getElementById("active-filter-chips");
+  if (!host) return;
+  const chips = [];
+  const q = els.search?.value?.trim();
+  if (q) {
+    chips.push({
+      label: `Search: ${q}`,
+      clear: () => {
+        if (els.search) els.search.value = "";
+      },
+    });
+  }
+  if (els.nationFilter?.value) {
+    chips.push({
+      label: els.nationFilter.value,
+      clear: () => {
+        els.nationFilter.value = "";
+        activeScotlandQuick = null;
+        renderScotlandQuickChips();
+      },
+    });
+  }
+  if (els.typeFilter?.value) {
+    const labels = { sea: "Sea", lake: "Loch / lake", river: "River", unknown: "Needs review" };
+    chips.push({
+      label: labels[els.typeFilter.value] || els.typeFilter.value,
+      clear: () => {
+        els.typeFilter.value = "";
+      },
+    });
+  }
+  if (els.favoritesFilter?.value === "favorites") {
+    chips.push({
+      label: "Saved",
+      clear: () => {
+        els.favoritesFilter.value = "";
+      },
+    });
+  }
+  if (els.filterPhoto?.checked) {
+    chips.push({
+      label: "Has photo",
+      clear: () => {
+        els.filterPhoto.checked = false;
+      },
+    });
+  }
+  if (els.filterFerry?.checked) {
+    chips.push({
+      label: "Ferry",
+      clear: () => {
+        els.filterFerry.checked = false;
+      },
+    });
+  }
+  if (els.filterElevation?.checked) {
+    chips.push({
+      label: "Summit",
+      clear: () => {
+        els.filterElevation.checked = false;
+      },
+    });
+  }
+  const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
+  if (areaMin > 0) {
+    chips.push({
+      label: `≥ ${areaMin} km²`,
+      clear: () => {
+        if (els.areaMinFilter) els.areaMinFilter.value = "";
+      },
+    });
+  }
+  if (els.subtypeFilter?.value) {
+    chips.push({
+      label: formatSubtypeLabel(els.subtypeFilter.value),
+      clear: () => {
+        els.subtypeFilter.value = "";
+      },
+    });
+  }
+  if (els.confidenceFilter?.value) {
+    const confLabels = {
+      curated: "Curated",
+      "hide-unconfirmed": "Hide needs review",
+    };
+    chips.push({
+      label: confLabels[els.confidenceFilter.value] || els.confidenceFilter.value,
+      clear: () => {
+        els.confidenceFilter.value = "";
+      },
+    });
+  }
+  if (state.activeExploreTopic) {
+    const t = state.discoveryTopics?.find((x) => x.id === state.activeExploreTopic);
+    if (t) {
+      chips.push({
+        label: t.title,
+        clear: () => clearExploreTopic(),
+      });
+    }
+  }
+  host.hidden = chips.length === 0;
+  host.replaceChildren();
+  for (const chip of chips) {
+    const el = document.createElement("span");
+    el.className = "filter-chip";
+    const label = document.createElement("span");
+    label.textContent = chip.label;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "filter-chip__clear";
+    btn.setAttribute("aria-label", `Remove filter: ${chip.label}`);
+    btn.textContent = "×";
+    btn.addEventListener("click", () => {
+      chip.clear();
+      applyFilters();
+    });
+    el.append(label, btn);
+    host.appendChild(el);
+  }
+}
+
+function updateMapIslandPeek(islandId) {
+  const bar = document.getElementById("map-island-peek");
+  const nameEl = document.getElementById("map-island-peek-name");
+  if (!bar || !nameEl) return;
+  const isl = islandId ? state.byId.get(islandId) : null;
+  if (!isl || !mobileNav.isActive() || mobileNav.view !== "map") {
+    bar.hidden = true;
+    return;
+  }
+  nameEl.textContent = isl.name;
+  bar.hidden = false;
+}
+
+function hideMapIslandPeek() {
+  const bar = document.getElementById("map-island-peek");
+  if (bar) bar.hidden = true;
+}
+
 function listSortCompare(a, b, { photosFirst = false } = {}) {
   if (photosFirst) {
     const ap = islandHasPhoto(a) ? 1 : 0;
@@ -1504,9 +1971,8 @@ function applyFilters() {
   const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
   const subtype = els.subtypeFilter?.value || "";
   const confidence = els.confidenceFilter?.value || "";
-  const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
-
   const topic = state.discoveryTopics?.find((t) => t.id === state.activeExploreTopic);
+  const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
   if (els.listHeading) {
     if (favOnly) els.listHeading.textContent = "Saved islands";
     else if (topic) els.listHeading.textContent = topic.title;
@@ -1556,6 +2022,7 @@ function applyFilters() {
 
   renderList();
   rebuildMarkerLayer();
+  renderActiveFilterChips();
 }
 
 [
@@ -1681,17 +2148,24 @@ function renderListWindow() {
     const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
     const unconfirmed = island.classification?.confidence === "unconfirmed";
     const fav = isFavoriteIsland(island.id);
+    const thumb = islandThumbUrl(island);
+    const thumbHtml = thumb
+      ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" loading="lazy" decoding="async" />`
+      : `<span class="island-card__thumb island-card__thumb--empty" aria-hidden="true">No photo</span>`;
     main.innerHTML = `
-      <div class="island-card__title">
-        <span class="dot dot--${island.type}"></span>
-        ${escapeHtml(island.name)}
-        ${unconfirmed ? '<span class="island-card__unconfirmed" title="Not confirmed — see island details">?</span>' : ""}
-        ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
-      </div>
-      <div class="island-card__meta">
-        <span>${escapeHtml(island.nation)}</span>
-        ${island.archipelago ? `<span>${escapeHtml(island.archipelago)}</span>` : ""}
-        <span>${formatPopulation(island.population)}</span>
+      ${thumbHtml}
+      <div class="island-card__text">
+        <div class="island-card__title">
+          <span class="dot dot--${island.type}"></span>
+          ${escapeHtml(island.name)}
+          ${unconfirmed ? '<span class="island-card__unconfirmed" title="Needs review">?</span>' : ""}
+          ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
+        </div>
+        <div class="island-card__meta">
+          <span>${escapeHtml(island.nation)}</span>
+          ${island.archipelago ? `<span>${escapeHtml(island.archipelago)}</span>` : ""}
+          <span>${formatPopulation(island.population)}</span>
+        </div>
       </div>
     `;
     main.addEventListener("click", () => focusIsland(island.id, { fly: true }));
@@ -2207,7 +2681,10 @@ function renderDetails(island) {
   els.detailsContent.innerHTML = `
     ${gallery}
     <div class="details-title-row">
-      <h2 class="details-title">${escapeHtml(island.name)}</h2>
+      <div class="details-title-block">
+        <span class="layer-badge layer-badge--atlas" title="Verified atlas island">Atlas</span>
+        <h2 class="details-title">${escapeHtml(island.name)}</h2>
+      </div>
       <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
@@ -2217,6 +2694,10 @@ function renderDetails(island) {
     ${subtypeChips}
     ${altNames}
     ${island.shortDescription ? `<p class="details-subtitle">${escapeHtml(island.shortDescription)}</p>` : ""}
+
+    <div class="trip-priority-block">
+    ${renderFerries(island)}
+    </div>
 
     <div class="stat-grid">
       ${stats
@@ -2237,8 +2718,6 @@ function renderDetails(island) {
 
     ${richSections}
     ${osmHint}
-
-    ${renderFerries(island)}
 
     <div class="section detail-map-section">
       <h3>Detailed map</h3>
@@ -3077,6 +3556,8 @@ els.back.addEventListener("click", () => {
 
 function releaseIslandDetailView({ clearUrl = false } = {}) {
   resetIslandSeo();
+  state.mobileDetailSuspended = false;
+  hideMapIslandPeek();
   els.details.hidden = true;
   els.listSection.hidden = false;
   if (mobileNav.isActive()) {
@@ -5684,11 +6165,28 @@ const mobileNav = (() => {
     } else if (!skipChatSync && chatEls.panel?.classList.contains("is-open")) {
       chatClose();
     }
-    if (next === "map" && !els.details.hidden) {
-      releaseIslandDetailView();
+    if (next === "map") {
+      if (!els.details.hidden && state.activeId) {
+        state.mobileDetailSuspended = true;
+        els.details.hidden = true;
+        els.listSection.hidden = true;
+        document.body.dataset.islandDetail = "suspended";
+        updateMapIslandPeek(state.activeId);
+      } else {
+        hideMapIslandPeek();
+      }
+    } else {
+      hideMapIslandPeek();
     }
     if (next === "islands") {
-      syncMobileSidebarPanels();
+      if (state.mobileDetailSuspended && state.activeId) {
+        state.mobileDetailSuspended = false;
+        els.details.hidden = false;
+        els.listSection.hidden = true;
+        document.body.dataset.islandDetail = "open";
+      } else {
+        syncMobileSidebarPanels();
+      }
     }
     syncMapSize();
   }
@@ -5727,6 +6225,14 @@ const mobileNav = (() => {
 })();
 
 document.getElementById("home-link")?.addEventListener("click", resetAtlasHome);
+
+document.getElementById("filter-reset-btn")?.addEventListener("click", resetAllFilters);
+
+document.getElementById("map-island-peek")?.addEventListener("click", () => {
+  if (!state.activeId) return;
+  mobileNav.setView("islands");
+  focusIsland(state.activeId, { fly: false });
+});
 
 loadIslands();
 initFavoritesAccessUi();

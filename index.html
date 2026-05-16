@@ -42,6 +42,12 @@
       href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -54,7 +60,7 @@
         <div>
           <h1>Isles of Britain</h1>
           <p class="tagline">
-            A visual atlas of UK islands — sea, river and lake.
+            Discover Scotland’s islands and the coasts of Britain &amp; Ireland.
           </p>
         </div>
       </button>
@@ -71,11 +77,11 @@
         </button>
         <button
           type="button"
-          class="topbar-link topbar-link--btn"
+          class="topbar-link topbar-link--btn topbar-link--contribute"
           id="crowd-suggest-btn"
-          title="Suggest a missing island or unnamed pin (opens GitHub)"
+          title="Add a new pin, update a community pin, or suggest atlas changes"
         >
-          Suggest island
+          Contribute
         </button>
         <button
           class="topbar-filters-toggle"
@@ -87,69 +93,77 @@
           Filters
         </button>
         <div class="topbar-controls" id="topbar-filters">
-        <input
-          id="search"
-          type="search"
-          placeholder="Search by name, region, tag…"
-          aria-label="Search islands"
-        />
-        <select id="type-filter" aria-label="Filter by island type">
-          <option value="">All types</option>
-          <option value="sea">Sea islands</option>
-          <option value="lake">Lake islands</option>
-          <option value="river">River islands</option>
-          <option value="unknown">Unverified</option>
-        </select>
-        <select id="nation-filter" aria-label="Filter by nation">
-          <option value="">All nations</option>
-        </select>
-        <select id="favorites-filter" aria-label="Saved islands list">
-          <option value="">All islands</option>
-          <option value="favorites">Saved only</option>
-        </select>
-        <label class="toggle" title="Islands with at least one photo in the atlas">
-          <input type="checkbox" id="filter-photo" />
-          <span>Has photo</span>
-        </label>
-        <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
-          <input type="checkbox" id="filter-ferry" disabled />
-          <span>Ferry</span>
-        </label>
-        <label class="toggle" title="Islands with a mapped summit / highest point">
-          <input type="checkbox" id="filter-elevation" />
-          <span>Summit</span>
-        </label>
-        <select id="area-min-filter" aria-label="Minimum island area">
-          <option value="">Any area</option>
-          <option value="1">≥ 1 km²</option>
-          <option value="10">≥ 10 km²</option>
-        </select>
-        <select id="subtype-filter" aria-label="Filter by island subtype">
-          <option value="">All subtypes</option>
-        </select>
-        <select id="confidence-filter" aria-label="Classification confidence">
-          <option value="">All records</option>
-          <option value="curated">Curated only</option>
-          <option value="hide-unconfirmed">Hide unconfirmed</option>
-        </select>
-        <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
-          <input type="checkbox" id="crowd-show-toggle" checked />
-          <span>Crowd pins</span>
-        </label>
-        <label class="toggle" title="Group nearby markers into clusters">
-          <input type="checkbox" id="cluster-toggle" checked />
-          <span>Cluster</span>
-        </label>
-        <select id="basemap" aria-label="Choose base map">
-          <option value="osm">Standard (OpenStreetMap)</option>
-          <option value="topo">Topographic (OpenTopoMap)</option>
-          <option value="satellite">Satellite (Esri)</option>
-          <option value="cartoLight">Light (CARTO)</option>
-          <option value="cartoDark">Dark (CARTO)</option>
-          <option value="osMaps" disabled>
-            OS Maps (open an island to add a key)
-          </option>
-        </select>
+          <div class="filter-tier filter-tier--essential">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search islands, archipelago, Gaelic name…"
+              aria-label="Search islands"
+            />
+            <select id="nation-filter" aria-label="Filter by nation">
+              <option value="">All nations</option>
+            </select>
+            <select id="type-filter" aria-label="Filter by island type">
+              <option value="">All types</option>
+              <option value="sea">Sea islands</option>
+              <option value="lake">Loch / lake islands</option>
+              <option value="river">River islands</option>
+              <option value="unknown">Needs review</option>
+            </select>
+            <label class="toggle" title="Islands with at least one photo in the atlas">
+              <input type="checkbox" id="filter-photo" />
+              <span>Has photo</span>
+            </label>
+            <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
+              <input type="checkbox" id="filter-ferry" disabled />
+              <span>Ferry</span>
+            </label>
+            <label class="toggle" title="Islands with a mapped summit / highest point">
+              <input type="checkbox" id="filter-elevation" />
+              <span>Summit</span>
+            </label>
+          </div>
+          <details class="filter-tier filter-tier--more">
+            <summary class="filter-tier__summary">More filters</summary>
+            <div class="filter-tier__body">
+              <select id="favorites-filter" aria-label="Saved islands list">
+                <option value="">All islands</option>
+                <option value="favorites">Saved only</option>
+              </select>
+              <select id="area-min-filter" aria-label="Minimum island area">
+                <option value="">Any area</option>
+                <option value="1">≥ 1 km²</option>
+                <option value="10">≥ 10 km²</option>
+              </select>
+              <select id="subtype-filter" aria-label="Filter by island subtype">
+                <option value="">All subtypes</option>
+              </select>
+              <select id="confidence-filter" aria-label="Classification confidence">
+                <option value="">All records</option>
+                <option value="curated">Curated only</option>
+                <option value="hide-unconfirmed">Hide needs review</option>
+              </select>
+              <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
+                <input type="checkbox" id="crowd-show-toggle" checked />
+                <span>Crowd pins</span>
+              </label>
+              <label class="toggle" title="Group nearby markers into clusters">
+                <input type="checkbox" id="cluster-toggle" checked />
+                <span>Cluster</span>
+              </label>
+              <select id="basemap" aria-label="Choose base map">
+                <option value="osm">Standard (OpenStreetMap)</option>
+                <option value="topo">Topographic (OpenTopoMap)</option>
+                <option value="satellite">Satellite (Esri)</option>
+                <option value="cartoLight">Light (CARTO)</option>
+                <option value="cartoDark">Dark (CARTO)</option>
+                <option value="osMaps" disabled>
+                  OS Maps (open an island to add a key)
+                </option>
+              </select>
+              <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all filters</button>
+            </div>
+          </details>
         </div>
       </div>
     </header>
@@ -161,6 +175,11 @@
             <h2 id="list-heading">Islands</h2>
             <span class="count" id="result-count">0</span>
           </header>
+          <div class="scotland-quick" id="scotland-quick" aria-label="Quick filters for Scotland">
+            <p class="scotland-quick__label">Explore Scotland</p>
+            <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
+          </div>
+          <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
           <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
             <div class="discover-chips" id="discover-chips" role="tablist"></div>
             <p class="discover-panel__hint" id="discover-hint" hidden></p>
@@ -194,81 +213,106 @@
             aria-modal="true"
             aria-labelledby="crowd-modal-title"
           >
-            <h2 id="crowd-modal-title" class="crowd-modal__title">Suggest an island</h2>
-            <div id="crowd-step-pick" class="crowd-step">
-              <p class="crowd-modal__lead">
-                <strong>Step 1 — Drop a pin.</strong> Click anywhere on the map above (crosshair cursor).
-                A gold marker shows your spot. You can leave the name blank on the next step.
-              </p>
+            <h2 id="crowd-modal-title" class="crowd-modal__title">Contribute</h2>
+            <div id="crowd-step-hub" class="crowd-step">
+              <p class="crowd-modal__lead">What would you like to do?</p>
+              <div class="contribute-hub">
+                <button type="button" class="contribute-hub__card" id="contribute-new-pin">
+                  <span class="contribute-hub__badge contribute-hub__badge--community">Community</span>
+                  <span class="contribute-hub__title">New island or pin</span>
+                  <span class="contribute-hub__desc">Drop a gold pin where something is missing from the atlas.</span>
+                </button>
+                <button type="button" class="contribute-hub__card" id="contribute-update-pin">
+                  <span class="contribute-hub__badge contribute-hub__badge--community">Community</span>
+                  <span class="contribute-hub__title">Update a community pin</span>
+                  <span class="contribute-hub__desc">Add a name, photo link, or notes to an existing gold pin.</span>
+                </button>
+                <button type="button" class="contribute-hub__card" id="contribute-fix-atlas">
+                  <span class="contribute-hub__badge contribute-hub__badge--atlas">Atlas</span>
+                  <span class="contribute-hub__title">Improve an atlas island</span>
+                  <span class="contribute-hub__desc">Suggest name, text, or photo fixes for an island already in the list.</span>
+                </button>
+              </div>
               <p class="crowd-modal__fine">
-                On the next step you can submit here — no GitHub account. Maintainers review before pins
-                appear on the map. Atlas merges still need sources per
-                <a href="docs/ETHICS.md" target="_blank" rel="noopener">ETHICS</a>.
+                <strong>Gold pins</strong> = community suggestions under review.
+                <strong>Coloured dots</strong> = verified atlas islands.
               </p>
-              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">
-                Cancel
-              </button>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-hub-cancel">Cancel</button>
+            </div>
+            <div id="crowd-step-pick" class="crowd-step" hidden>
+              <p class="crowd-modal__lead"><strong>Drop a pin on the map</strong> (crosshair). A gold marker shows your spot.</p>
+              <p id="crowd-pick-context" class="crowd-context-banner" hidden></p>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">Cancel</button>
             </div>
             <div id="crowd-step-form" class="crowd-step" hidden>
+              <p id="crowd-context-banner" class="crowd-context-banner" hidden></p>
               <p id="crowd-coords-label" class="crowd-coords-label"></p>
+              <input type="hidden" id="crowd-field-kind" value="new_pin" />
+              <input type="hidden" id="crowd-field-atlas-id" value="" />
+              <label class="crowd-field" id="crowd-field-proposed-wrap" hidden>
+                <span>What should change?</span>
+                <textarea id="crowd-field-proposed" rows="2" placeholder="e.g. name spelling, description, population…"></textarea>
+              </label>
               <label class="crowd-field">
-                <span>Proposed name <em class="crowd-optional">(optional)</em></span>
+                <span id="crowd-label-name">Name</span>
                 <input id="crowd-field-name" type="text" autocomplete="off" placeholder="Leave blank if unknown" />
               </label>
               <label class="crowd-field">
-                <span>What you see <em class="crowd-optional">(optional)</em></span>
-                <textarea id="crowd-field-note" rows="3" placeholder="e.g. small skerry, wooded islet in the loch"></textarea>
+                <span>Name source <em class="crowd-optional" id="crowd-source-optional">(link required if you add a name)</em></span>
+                <input id="crowd-field-source" type="url" placeholder="Wikipedia, OSM, gazetteer…" />
+              </label>
+              <label class="crowd-field crowd-field--checkbox">
+                <input id="crowd-field-skip-source" type="checkbox" />
+                <span>No public link yet</span>
               </label>
               <label class="crowd-field">
-                <span>Name source URL <em class="crowd-optional">(optional)</em></span>
-                <input id="crowd-field-source" type="url" placeholder="Wikipedia, OSM, gazetteer…" />
+                <span>Description &amp; details</span>
+                <textarea id="crowd-field-note" rows="3" placeholder="What you see, transport, history…"></textarea>
+              </label>
+              <label class="crowd-field">
+                <span>Photo links <em class="crowd-optional">(one URL per line)</em></span>
+                <textarea id="crowd-field-photos" rows="2" placeholder="https://commons.wikimedia.org/…"></textarea>
               </label>
               <label class="crowd-field">
                 <span>Credit / handle <em class="crowd-optional">(optional)</em></span>
-                <input id="crowd-field-credit" type="text" autocomplete="off" placeholder="How you want to appear on the map" />
+                <input id="crowd-field-credit" type="text" autocomplete="off" placeholder="How you want to appear" />
+              </label>
+              <label class="crowd-field" id="crowd-field-pin-id-wrap">
+                <span>Community pin id <em class="crowd-optional">(if updating a gold pin)</em></span>
+                <input id="crowd-field-existing-id" type="text" autocomplete="off" placeholder="From the pin popup" />
               </label>
               <label class="crowd-field">
-                <span>Existing crowd pin id <em class="crowd-optional">(optional)</em></span>
-                <input id="crowd-field-existing-id" type="text" autocomplete="off" placeholder="Only if naming someone else’s pin — copy from popup" />
-              </label>
-              <label class="crowd-field">
-                <span>Your email <em class="crowd-optional">(optional — only if you want a reply)</em></span>
+                <span>Your email <em class="crowd-optional">(optional)</em></span>
                 <input id="crowd-field-email" type="email" autocomplete="email" placeholder="you@example.com" />
               </label>
+              <p id="crowd-config-hint" class="crowd-config-hint" hidden></p>
               <p id="crowd-form-error" class="crowd-form-error" hidden role="alert"></p>
               <div class="crowd-modal__actions">
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-native-submit">
-                  Submit suggestion
-                </button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-github-submit">
-                  Submit via GitHub ↗
-                </button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">
-                  Pick again
-                </button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">
-                  Close
-                </button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-github-submit">Send via GitHub ↗</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-native-submit" hidden>Send contribution</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">Change location</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">Close</button>
               </div>
             </div>
             <div id="crowd-step-success" class="crowd-step" hidden>
-              <p class="crowd-modal__lead">Thanks — your suggestion was sent for review.</p>
-              <p class="crowd-modal__fine">
-                Approved pins are added to the map by maintainers. You can suggest another location anytime.
-              </p>
-              <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-success-done">
-                Done
-              </button>
+              <p class="crowd-modal__lead">Thanks — we received your contribution.</p>
+              <p class="crowd-modal__fine" id="crowd-success-detail">Reviewers check sources before gold pins or atlas updates go live.</p>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-success-done">Done</button>
             </div>
           </div>
         </div>
-        <div id="map" role="application" aria-label="Map of British islands"></div>
-        <div class="legend" aria-hidden="true">
-          <span><i class="dot dot--sea"></i> Sea</span>
-          <span><i class="dot dot--lake"></i> Lake</span>
+        <button type="button" class="map-island-peek" id="map-island-peek" hidden>
+          <span class="map-island-peek__name" id="map-island-peek-name"></span>
+          <span class="map-island-peek__cta">View island →</span>
+        </button>
+                <div id="map" role="application" aria-label="Map of British islands"></div>
+        <div class="legend" role="list" aria-label="Map legend">
+          <span role="listitem"><i class="dot dot--sea"></i> Sea</span>
+          <span role="listitem"><i class="dot dot--lake"></i> Loch / lake</span>
           <span><i class="dot dot--river"></i> River</span>
-          <span><i class="dot dot--unknown"></i> Unverified</span>
-          <span><i class="dot dot--crowd"></i> Crowd</span>
+          <span role="listitem"><i class="dot dot--unknown"></i> Needs review</span>
+          <span role="listitem"><i class="dot dot--explore"></i> Topic</span>
+          <span role="listitem"><i class="dot dot--crowd"></i> Community</span>
           <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
         </div>
       </section>

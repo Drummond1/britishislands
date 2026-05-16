@@ -58,7 +58,7 @@ function formatCreditsLines(pin) {
 /**
  * Build GitHub new-issue URL for a fresh suggestion from the in-app form.
  */
-export function buildNewCrowdSuggestionIssueUrl(fields) {
+export function buildContributionIssueUrl(fields) {
   const lat = Number(fields.lat);
   const lng = Number(fields.lng);
   const name = (fields.name || "").trim();
@@ -66,39 +66,24 @@ export function buildNewCrowdSuggestionIssueUrl(fields) {
   const nameSourceUrl = (fields.nameSourceUrl || "").trim();
   const credit = (fields.credit || "").trim();
   const existingPinId = (fields.existingPinId || "").trim();
+  const kind = fields.contributionKind || "new_pin";
+  const atlasId = (fields.atlasIslandId || "").trim();
+  const atlasName = (fields.atlasIslandName || "").trim();
 
-  const title = `Crowd island: ${name || "Unnamed pin"}`;
-  const lines = [
-    "## Location",
-    "",
-    `- **Latitude**: ${lat}`,
-    `- **Longitude**: ${lng}`,
-    existingPinId ? `- **Existing crowd pin id**: \`${existingPinId}\`` : "",
-    "",
-    "## Name (optional)",
-    "",
-    name || "_Unknown — help identify_",
-    "",
-    "## What you see (optional)",
-    "",
-    note || "_—_",
-    "",
-    "## Name source URL (optional)",
-    "",
-    nameSourceUrl || "_—_",
-    "",
-    "## Credit (optional)",
-    "",
-    credit || "_Anonymous_",
-    "",
-    "## For reviewers",
-    "",
-    "Please triage per `docs/CROWD-PINS.md` and `docs/ETHICS.md`.",
-    "",
-  ].filter((x) => x !== "");
-  const body = lines.join("\n");
+  let title = `Crowd island: ${name || "Unnamed pin"}`;
+  if (kind === "fix_atlas" && atlasId) {
+    title = `Atlas update: ${atlasName || atlasId}`;
+  } else if (kind === "update_pin" && existingPinId) {
+    title = `Community pin update: ${existingPinId}`;
+  }
+
+  const body = formatCrowdSuggestionBody(fields);
   const params = new URLSearchParams({ title, body });
   return `https://github.com/${crowdIssueRepoSlug()}/issues/new?${params.toString()}`;
+}
+
+export function buildNewCrowdSuggestionIssueUrl(fields) {
+  return buildContributionIssueUrl(fields);
 }
 
 let _suggestConfigPromise = null;
@@ -137,6 +122,52 @@ export function isCrowdSuggestConfigured(config) {
   return false;
 }
 
+/** Soft verification: names should cite a public source when possible. */
+export function validateContributionFields(fields) {
+  const name = String(fields?.name || "").trim();
+  const source = String(fields?.nameSourceUrl || "").trim();
+  const skip = Boolean(fields?.skipSourceCheck);
+  const note = String(fields?.note || "").trim();
+  const proposed = String(fields?.proposedChanges || "").trim();
+  const photos = String(fields?.photoUrls || "").trim();
+  const kind = fields?.contributionKind || "new_pin";
+
+  if (kind === "fix_atlas") {
+    if (!proposed && !note && !name && !photos) {
+      return {
+        ok: false,
+        message:
+          "Describe what you want to improve — use “What should change?”, description, name, or photo links.",
+      };
+    }
+  } else if (!name && !note && !photos) {
+    return {
+      ok: false,
+      message: "Add at least a name, description, or photo link so reviewers know what you mean.",
+    };
+  }
+
+  if (name && !source && !skip) {
+    return {
+      ok: false,
+      message:
+        "Please add a name source link (Wikipedia, OSM, gazetteer, etc.) so we can verify the name. " +
+        "Or tick “No public link yet” below.",
+    };
+  }
+  if (source) {
+    try {
+      const u = new URL(source);
+      if (!/^https?:$/i.test(u.protocol)) {
+        return { ok: false, message: "Source link must start with http:// or https://" };
+      }
+    } catch {
+      return { ok: false, message: "Source link doesn’t look like a valid URL." };
+    }
+  }
+  return { ok: true };
+}
+
 export function formatCrowdSuggestionBody(fields) {
   const {
     lat,
@@ -147,23 +178,51 @@ export function formatCrowdSuggestionBody(fields) {
     credit = "",
     existingPinId = "",
     contactEmail = "",
+    photoUrls = "",
+    contributionKind = "new_pin",
+    atlasIslandId = "",
+    atlasIslandName = "",
+    proposedChanges = "",
   } = fields;
-  return [
-    "Crowd island suggestion (Isles of Britain)",
+  const kindLabel =
+    {
+      new_pin: "New island / map pin",
+      update_pin: "Update community pin",
+      fix_atlas: "Suggest atlas changes",
+    }[contributionKind] || contributionKind;
+
+  const photos = String(photoUrls)
+    .split(/\n/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  const lines = [
+    "Isles of Britain — contributor submission",
     "",
-    `Coordinates: ${lat}, ${lng} (WGS84)`,
-    `Map: https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=15/${lat}/${lng}`,
+    `Type: ${kindLabel}`,
+    contributionKind === "fix_atlas" && atlasIslandId
+      ? `Atlas island: ${atlasIslandName || atlasIslandId} (id: ${atlasIslandId})`
+      : "",
+    Number.isFinite(lat) && Number.isFinite(lng)
+      ? `Coordinates: ${lat}, ${lng} (WGS84)`
+      : "",
+    Number.isFinite(lat) && Number.isFinite(lng)
+      ? `Map: https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=15/${lat}/${lng}`
+      : "",
     "",
-    `Suggested name: ${String(name).trim() || "(unnamed pin — location only)"}`,
-    `Note: ${String(note).trim() || "—"}`,
+    `Suggested name: ${String(name).trim() || "(unchanged / unnamed)"}`,
+    `Description / notes: ${String(note).trim() || "—"}`,
+    proposedChanges ? `Proposed changes: ${String(proposedChanges).trim()}` : "",
     `Name source URL: ${String(nameSourceUrl).trim() || "—"}`,
+    photos.length ? `Photo URLs:\n${photos.map((u) => `- ${u}`).join("\n")}` : "Photo URLs: —",
     `Credit / recognition: ${String(credit).trim() || "—"}`,
     `Existing crowd pin id: ${String(existingPinId).trim() || "—"}`,
     `Contact (optional): ${String(contactEmail).trim() || "—"}`,
     "",
     `Submitted from: ${typeof location !== "undefined" ? location.href : "—"}`,
     `Time (UTC): ${new Date().toISOString()}`,
-  ].join("\n");
+  ].filter(Boolean);
+  return lines.join("\n");
 }
 
 /** POST to FormSubmit, Formspree, Web3Forms, or a custom webhook. */
@@ -303,11 +362,11 @@ export function crowdPinPopupHtml(pin) {
       <p class="crowd-popup__id"><code>${esc(pin.id)}</code></p>
       <button
         type="button"
-        class="crowd-popup__action crowd-popup__action--suggest-name"
+        class="crowd-popup__action crowd-popup__action--edit-details"
         data-crowd-id="${esc(pin.id)}"
         data-crowd-lat="${Number(pin.lat)}"
         data-crowd-lng="${Number(pin.lng)}"
-      >Suggest a name</button>
+      >Add or edit details</button>
       <a class="crowd-popup__action crowd-popup__action--github" href="${esc(simpleNameIssue)}" target="_blank" rel="noopener noreferrer">GitHub issue ↗</a>
     </div>`;
 }
