@@ -4,6 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-17 (SEO discoverability)** — Committed **`sitemap.xml`** (7,042 URLs) and
+**`robots.txt`** for `https://www.findmyisland.com`. **`index.html`** sets
+`window.IOB_SITE_ORIGIN` for canonical/OG URLs. **Pages workflow** runs
+`generate_seo_artifacts.py` on deploy (refreshes sitemap/robots + **`profiles/`**
+thin HTML stubs, gitignored locally). Island meta in-browser remains **`seo-meta.js`**
+(client-side); crawlers get sitemap + optional static landings.
+
 **2026-05-17 (deploy: map UX, trip planner, index stubs)** — **Map:** larger touch
 targets (`tapTolerance` 22, min radius 7, invisible hit halo), viewport-culled markers
 at zoom ≤7. **Ferries:** “Plan crossing” sidebar form restores `?trip=` Dijkstra

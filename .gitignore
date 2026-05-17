@@ -57,6 +57,9 @@ data/gtfs/
 # --- MLX LoRA fine-tuning (local adapter weights) ---------------------------
 adapters/
 
+# CI-generated thin island HTML stubs (see scripts/generate_seo_artifacts.py)
+profiles/
+
 # --- Tooling --------------------------------------------------------------
 # Cursor-specific runtime artefacts (terminals, agent transcripts).
 .cursor/projects/

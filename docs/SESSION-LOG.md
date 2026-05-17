@@ -1668,3 +1668,23 @@
 - **Open items kicked to QUEUE.md**: Retry `enrich_images_v5.py` off-peak; drop
   `data/dobih_v17_3.csv` + `ingest_hills_dobih.py --dobih-csv … --commit`; set
   `CROWD_FORM_EMAIL` on GitHub for native crowd submit.
+- **Deploy**: pushed `main` at **`e595c90`**. `.github/workflows/pages.yml` is
+  committed locally but **not** on remote — push rejected without `workflow` OAuth
+  scope; add the file manually or re-push with workflow permissions.
+
+## 2026-05-17 — SEO sitemap + robots + deploy hook
+
+- **Goal**: Make island deep links discoverable to crawlers (not only client-side
+  `seo-meta.js` after JS).
+- **What changed**:
+  - Ran `IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifacts.py`
+    → committed **`sitemap.xml`** (7,042 URLs) and **`robots.txt`**.
+  - **`index.html`**: `window.IOB_SITE_ORIGIN = "https://www.findmyisland.com"` for
+    canonical/OG when the atlas loads.
+  - **`.github/workflows/pages.yml`**: deploy step regenerates SEO artifacts and
+    **`profiles/<id>.html`** thin stubs (gitignored; ship in Pages artifact only).
+  - **`.gitignore`**: `profiles/`.
+- **Outcome / counts**: Production should serve `/sitemap.xml` and `/robots.txt`;
+  optional ~7k static landings on each Pages build.
+- **Open items**: Submit sitemap in Search Console; consider pre-rendered island HTML
+  in `index.html` later if crawlers ignore SPA meta.
