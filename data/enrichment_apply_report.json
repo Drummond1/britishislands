@@ -1,12 +1,10 @@
 {
-  "startedAt": "2026-05-16T13:07:48+00:00",
+  "startedAt": "2026-05-16T20:05:18+00:00",
   "dryRun": false,
   "applied": {
-    "lighthouses": 297,
-    "wildlife": 38,
-    "census": 10
+    "geology": 3647
   },
-  "backup": "islands.json.before-enrichments-20260516T130748Z",
+  "backup": "islands.json.before-enrichments-20260516T200517Z",
   "skippedNewer": [],
   "smokeChecksPassed": [
     "isle-of-skye",

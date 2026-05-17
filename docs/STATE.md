@@ -11,9 +11,10 @@ into `data/crowd_suggest_config.json`; `scripts/prepare_crowd_config.py`;
 **Scotland explore:** five new topics in `discovery_topics.json` (classics, Inner/
 Outer Hebrides, Orkney & Shetland, ferry hops) via `build_discovery_topics.py`.
 **UX:** Scotland quick-filter chips, filter tiers, list thumbnails, mobile map peek
-(commit `1ae828a` + follow-ups). **P0b in flight:** `ingest_hills_dobih.py` and
-`ingest_geology_bgs.py` running locally — apply with
-`python3 scripts/apply_enrichments.py --apply --yes --only hills geology` when caches land.
+(commit `1ae828a` + follow-ups). **P0b geology done (2026-05-16):** BGS ingest finished
+(~2.3 h); `cache_bgs.json` (3,647 islands; 2,086 bedrock, 723 superficial); applied to
+`islands.json` + index rebuilt. Hills ingest still **blocked** (Wikidata 429) — use
+`--dobih-csv` or retry off-peak.
 
 **2026-05-16 (deploy: explore topics + P0b partial apply)** — **Explore** chips:
 `data/discovery_topics.json` (notable, island-hopping, thames-eyots, high-summits);
@@ -475,7 +476,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| _(none)_ | — | — | — | P0b partial apply done; hills (DoBIH/Wikidata) + geology WMS still to run locally. |
+| _(none)_ | — | — | — | P0b: geology applied locally; hills still pending (DoBIH CSV or Wikidata retry). |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
 | ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
 | ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded; see QUEUE.md. |

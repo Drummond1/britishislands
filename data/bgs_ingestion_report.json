@@ -1,12 +1,38 @@
 {
-  "startedAt": "2026-05-12T21:02:56+00:00",
-  "islandsProcessed": 10,
-  "newWMSFetches": 10,
-  "islandsWithBedrock": 1,
-  "islandsWithSuperficial": 0,
-  "islandsOutsideGB": 0,
-  "islandsMissingBedrock": 9,
+  "startedAt": "2026-05-16T17:47:30+00:00",
+  "islandsProcessed": 7041,
+  "newWMSFetches": 5464,
+  "islandsWithBedrock": 2086,
+  "islandsWithSuperficial": 723,
+  "islandsOutsideGB": 1562,
+  "islandsMissingBedrock": 3393,
   "sampleAudit": [
+    {
+      "id": "old-pier",
+      "name": "(old pier)",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Dinantian",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Dinantian",
+        "ageEnd": "Dinantian",
+        "ageStartMa": 354.0,
+        "ageEndMa": 327.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "50-peaks-view",
+      "name": "50 Peaks View",
+      "bedrock": {
+        "name": "Tremadoc Rocks (Undifferentiated)",
+        "lithology": "Mudstone, Siltstone And Sandstone",
+        "ageStart": "Tremadoc",
+        "ageEnd": "Tremadoc",
+        "ageStartMa": 495.0,
+        "ageEndMa": 485.0
+      },
+      "superficial": null
+    },
     {
       "id": "osm-way-201143881",
       "name": "A' Chùli",
@@ -19,7 +45,666 @@
         "ageEndMa": 545.0
       },
       "superficial": null
+    },
+    {
+      "id": "osm-way-45834131",
+      "name": "Aber Isle",
+      "bedrock": {
+        "name": "Strathmore Group",
+        "lithology": "Sandstone With Subordinate Conglomerate, Siltstone And Mudstone",
+        "ageStart": "Emsian",
+        "ageEnd": "Emsian",
+        "ageStartMa": 400.0,
+        "ageEndMa": 391.0
+      },
+      "superficial": {
+        "name": "Superficial Deposits Not Mapped [For Digital Map Use Only]",
+        "lithology": "Rock (Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-1411678839",
+      "name": "Abi Island",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "wd-Q56665781",
+      "name": "Achnacree Moss,crannog 210m SW of Moss Cottage",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Silurian To Devonian",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Silurian",
+        "ageEnd": "Devonian",
+        "ageStartMa": 443.0,
+        "ageEndMa": 354.0
+      },
+      "superficial": {
+        "name": "Peat",
+        "lithology": "Peat"
+      }
+    },
+    {
+      "id": "agglestone-rock",
+      "name": "Agglestone Rock",
+      "bedrock": {
+        "name": "Bracklesham Group And Barton Group (Undifferentiated)",
+        "lithology": "Sand, Silt And Clay",
+        "ageStart": "Eocene",
+        "ageEnd": "Eocene",
+        "ageStartMa": 54.8,
+        "ageEndMa": 33.7
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-relation-3516492",
+      "name": "Aghinish",
+      "bedrock": {
+        "name": "Tyrone Group",
+        "lithology": "Limestone, Mudstone, Sandstone And Siltstone, With Subordinate Chert, Coal And Conglomerate",
+        "ageStart": "Courceyan",
+        "ageEnd": "Asbian",
+        "ageStartMa": 354.0,
+        "ageEndMa": 330.4
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-495525351",
+      "name": "Ailsa Craig",
+      "bedrock": {
+        "name": "Unnamed Igneous Intrusion, Palaeogene",
+        "lithology": "Felsic-Rock",
+        "ageStart": "Palaeogene",
+        "ageEnd": "Palaeogene",
+        "ageStartMa": 65.0,
+        "ageEndMa": 23.8
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-262271337",
+      "name": "Aiplin",
+      "bedrock": {
+        "name": "Southern Highland Group",
+        "lithology": "Psammite And Pelite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Mid Cambrian",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 505.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-292853241",
+      "name": "Aird Chaol",
+      "bedrock": {
+        "name": "Unnamed Igneous Intrusion, Palaeoproterozoic",
+        "lithology": "Felsic-Rock",
+        "ageStart": "Palaeoproterozoic",
+        "ageEnd": "Palaeoproterozoic",
+        "ageStartMa": 2500.0,
+        "ageEndMa": 1600.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-4012953",
+      "name": "Aird Orasay",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-1116340578",
+      "name": "Alfie's Island",
+      "bedrock": {
+        "name": "White Chalk Subgroup",
+        "lithology": "Chalk",
+        "ageStart": "Cenomanian",
+        "ageEnd": "Maastrichtian",
+        "ageStartMa": 98.9,
+        "ageEndMa": 65.0
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-60437249",
+      "name": "Alice's Bower",
+      "bedrock": {
+        "name": "Stratheden Group",
+        "lithology": "Sandstone And Conglomerate, Interbedded",
+        "ageStart": "Late Devonian",
+        "ageEnd": "Late Devonian",
+        "ageStartMa": 370.0,
+        "ageEndMa": 354.0
+      },
+      "superficial": {
+        "name": "Superficial Deposits Not Mapped [For Digital Map Use Only]",
+        "lithology": "Rock (Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-3466037",
+      "name": "Alloa Inch",
+      "bedrock": {
+        "name": "Clackmannan Group",
+        "lithology": "Sedimentary Rock Cycles, Clackmannan Group Type",
+        "ageStart": "Brigantian",
+        "ageEnd": "Langsettian (Westphalian A)",
+        "ageStartMa": 330.4,
+        "ageEndMa": 313.5
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-58010945",
+      "name": "Alney Island",
+      "bedrock": {
+        "name": "Lias Group",
+        "lithology": "Mudstone, Siltstone, Limestone And Sandstone",
+        "ageStart": "Rhaetian",
+        "ageEnd": "Aalenian",
+        "ageStartMa": 209.6,
+        "ageEndMa": 176.5
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-48923000",
+      "name": "Am Balg",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-171882819",
+      "name": "Am Buachaille",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Palaeogene",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Palaeogene",
+        "ageEnd": "Palaeogene",
+        "ageStartMa": 65.0,
+        "ageEndMa": 23.8
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-985212915",
+      "name": "Am Fraoch Eilean",
+      "bedrock": {
+        "name": "Argyll Group",
+        "lithology": "Quartzite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-56779559",
+      "name": "Am Fraoch-eilean",
+      "bedrock": {
+        "name": "Morar Group",
+        "lithology": "Psammite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-4011355",
+      "name": "An Corran",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-66364361",
+      "name": "An Dun",
+      "bedrock": {
+        "name": "Argyll Group",
+        "lithology": "Psammite, Semipelite And Pelite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": {
+        "name": "Till",
+        "lithology": "Diamicton"
+      }
+    },
+    {
+      "id": "wd-Q24659164",
+      "name": "An Garbh-eilean",
+      "bedrock": {
+        "name": "Torridon Group",
+        "lithology": "Sandstone And Mudstone",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-715371329",
+      "name": "An Laogh",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-4005167",
+      "name": "An Stac",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Palaeogene",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Palaeogene",
+        "ageEnd": "Palaeogene",
+        "ageStartMa": 65.0,
+        "ageEndMa": 23.8
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-relation-11619425",
+      "name": "An Steidh",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Palaeogene",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Palaeogene",
+        "ageEnd": "Palaeogene",
+        "ageStartMa": 65.0,
+        "ageEndMa": 23.8
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-87296746",
+      "name": "An t-Eilean Garbh",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-374415256",
+      "name": "An t-Eilean Glas",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-374415406",
+      "name": "An t-Eilean Liath",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "an-t-eilean-meadhoin-w94828436",
+      "name": "An t-Eilean Meadhoin",
+      "bedrock": {
+        "name": "Morar Group",
+        "lithology": "Psammite, Semipelite And Pelite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": {
+        "name": "Superficial Deposits Not Mapped [For Digital Map Use Only]",
+        "lithology": "Rock (Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-relation-4573198",
+      "name": "Andersey Island",
+      "bedrock": {
+        "name": "West Walton Formation, Ampthill Clay Formation And Kimmeridge Clay Formation (Undifferentiated)",
+        "lithology": "Mudstone, Siltstone And Sandstone",
+        "ageStart": "Oxfordian",
+        "ageEnd": "Kimmeridgian",
+        "ageStartMa": 159.4,
+        "ageEndMa": 145.6
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "anglesey",
+      "name": "Anglesey (Ynys Môn)",
+      "bedrock": {
+        "name": "Upper Cambrian, Including Tremadoc",
+        "lithology": "Metasedimentary Rock",
+        "ageStart": "Late Cambrian",
+        "ageEnd": "Tremadoc",
+        "ageStartMa": 505.0,
+        "ageEndMa": 485.0
+      },
+      "superficial": {
+        "name": "Till",
+        "lithology": "Diamicton"
+      }
+    },
+    {
+      "id": "osm-way-236730548",
+      "name": "Annet",
+      "bedrock": {
+        "name": "Unnamed Igneous Intrusion, Carboniferous To Permian",
+        "lithology": "Felsic-Rock",
+        "ageStart": "Carboniferous",
+        "ageEnd": "Permian",
+        "ageStartMa": 354.0,
+        "ageEndMa": 248.2
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-55536611",
+      "name": "Appletree Eyot",
+      "bedrock": {
+        "name": "White Chalk Subgroup",
+        "lithology": "Chalk",
+        "ageStart": "Cenomanian",
+        "ageEnd": "Maastrichtian",
+        "ageStartMa": 98.9,
+        "ageEndMa": 65.0
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "ardmhor-rock",
+      "name": "Ardmhor Rock",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-relation-15750034",
+      "name": "Ardwall Isle",
+      "bedrock": {
+        "name": "Hawick Group",
+        "lithology": "Wacke",
+        "ageStart": "Llandovery",
+        "ageEnd": "Wenlock",
+        "ageStartMa": 443.0,
+        "ageEndMa": 423.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "armchair-rock",
+      "name": "Armchair Rock",
+      "bedrock": {
+        "name": "Devonian Rocks (Undifferentiated)",
+        "lithology": "Limestone, Mudstone And Calcareous Mudstone",
+        "ageStart": "Devonian",
+        "ageEnd": "Devonian",
+        "ageStartMa": 417.0,
+        "ageEndMa": 354.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-993778051",
+      "name": "Arnamul",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Gneiss",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-49901777",
+      "name": "Ash Island",
+      "bedrock": {
+        "name": "Thames Group",
+        "lithology": "Clay, Silt, Sand And Gravel",
+        "ageStart": "Eocene",
+        "ageEnd": "Eocene",
+        "ageStartMa": 54.8,
+        "ageEndMa": 33.7
+      },
+      "superficial": {
+        "name": "River Terrace Deposits (Undifferentiated)",
+        "lithology": "Sand And Gravel"
+      }
+    },
+    {
+      "id": "ash-island-w119050044",
+      "name": "Ash Island",
+      "bedrock": {
+        "name": "Hawick Group",
+        "lithology": "Wacke",
+        "ageStart": "Llandovery",
+        "ageEnd": "Wenlock",
+        "ageStartMa": 443.0,
+        "ageEndMa": 423.0
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-409793711",
+      "name": "Asparagus Island",
+      "bedrock": {
+        "name": "Unnamed Igneous Intrusion, Devonian",
+        "lithology": "Ultramafitite",
+        "ageStart": "Devonian",
+        "ageEnd": "Devonian",
+        "ageStartMa": 417.0,
+        "ageEndMa": 354.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "wd-Q124373236",
+      "name": "Auchie Island",
+      "bedrock": {
+        "name": "Kirkcolm Formation",
+        "lithology": "Wacke",
+        "ageStart": "Caradoc",
+        "ageEnd": "Caradoc",
+        "ageStartMa": 458.0,
+        "ageEndMa": 449.0
+      },
+      "superficial": {
+        "name": "Till",
+        "lithology": "Diamicton"
+      }
+    },
+    {
+      "id": "osm-relation-17748758",
+      "name": "Auskerry",
+      "bedrock": {
+        "name": "Middle Old Red Sandstone (Undifferentiated)",
+        "lithology": "Conglomerate, Sandstone, Siltstone And Mudstone",
+        "ageStart": "Mid Devonian",
+        "ageEnd": "Mid Devonian",
+        "ageStartMa": 391.0,
+        "ageEndMa": 370.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-189081978",
+      "name": "Baboons",
+      "bedrock": {
+        "name": "West Walton Formation, Ampthill Clay Formation And Kimmeridge Clay Formation (Undifferentiated)",
+        "lithology": "Mudstone, Siltstone And Sandstone",
+        "ageStart": "Oxfordian",
+        "ageEnd": "Kimmeridgian",
+        "ageStartMa": 159.4,
+        "ageEndMa": 145.6
+      },
+      "superficial": {
+        "name": "Lacustrine Deposits (Undifferentiated)",
+        "lithology": "Clay (Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-way-4009575",
+      "name": "Bac Beag",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Palaeogene",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Palaeogene",
+        "ageEnd": "Palaeogene",
+        "ageStartMa": 65.0,
+        "ageEndMa": 23.8
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-way-202176591",
+      "name": "Baden Tomain",
+      "bedrock": {
+        "name": "Argyll Group",
+        "lithology": "Psammite, Semipelite And Pelite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "wd-Q24658713",
+      "name": "Balbithan Island",
+      "bedrock": {
+        "name": "Unnamed Igneous Intrusion, Ordovician To Silurian",
+        "lithology": "Felsic-Rock",
+        "ageStart": "Ordovician",
+        "ageEnd": "Silurian",
+        "ageStartMa": 495.0,
+        "ageEndMa": 417.0
+      },
+      "superficial": {
+        "name": "Alluvium",
+        "lithology": "Clay (Undifferentiated) And Silt (Undifferentiated) And Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "osm-relation-13146202",
+      "name": "Baleshare",
+      "bedrock": {
+        "name": "Lewisian Complex",
+        "lithology": "Metasedimentary Rock",
+        "ageStart": "Archaean",
+        "ageEnd": "Proterozoic",
+        "ageStartMa": 4600.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": {
+        "name": "Blown Sand",
+        "lithology": "Sand(Undifferentiated)"
+      }
+    },
+    {
+      "id": "wd-Q116875402",
+      "name": "Balhepburn Island",
+      "bedrock": {
+        "name": "Unnamed Extrusive Rocks, Silurian To Devonian",
+        "lithology": "Mafic Lava And Mafic Tuff",
+        "ageStart": "Silurian",
+        "ageEnd": "Devonian",
+        "ageStartMa": 443.0,
+        "ageEndMa": 354.0
+      },
+      "superficial": null
+    },
+    {
+      "id": "osm-relation-3998532",
+      "name": "Ballymagaghran Island",
+      "bedrock": {
+        "name": "Moine Supergroup",
+        "lithology": "Gneissose Psammite And Gneissose Semipelite",
+        "ageStart": "Neoproterozoic",
+        "ageEnd": "Neoproterozoic",
+        "ageStartMa": 1000.0,
+        "ageEndMa": 545.0
+      },
+      "superficial": null
     }
   ],
-  "dryRun": true
+  "dryRun": false
 }
