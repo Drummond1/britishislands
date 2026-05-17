@@ -87,14 +87,21 @@ def main() -> int:
 
     ordered_ids: list[str] = []
     seen: set[str] = set()
+    seen_names: set[str] = set()
 
     for cid in curated_rows:
         if not isinstance(cid, dict):
             continue
         iid = cid.get("id")
-        if iid and iid in by_id and iid not in seen:
-            ordered_ids.append(iid)
-            seen.add(iid)
+        if not iid or iid not in by_id or iid in seen:
+            continue
+        name_key = (by_id[iid].get("name") or "").strip().lower()
+        if name_key and name_key in seen_names:
+            continue
+        if name_key:
+            seen_names.add(name_key)
+        ordered_ids.append(iid)
+        seen.add(iid)
 
     ranked = sorted(
         [i for i in islands if i.get("id") and i["id"] not in seen],
@@ -103,6 +110,11 @@ def main() -> int:
     for i in ranked:
         if len(ordered_ids) >= args.limit:
             break
+        name_key = (i.get("name") or "").strip().lower()
+        if name_key and name_key in seen_names:
+            continue
+        if name_key:
+            seen_names.add(name_key)
         ordered_ids.append(i["id"])
         seen.add(i["id"])
 

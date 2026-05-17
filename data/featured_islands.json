@@ -928,19 +928,6 @@
       "tier": "atlas"
     },
     {
-      "id": "osm-relation-7220346",
-      "name": "Lewis and Harris",
-      "nation": "Scotland",
-      "type": "sea",
-      "lat": 58.12182,
-      "lng": -6.63556,
-      "shortDescription": "Largest Scottish island; pop. 19,680 (2022); Lewis & Harris joined by land",
-      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis_and_Harris_by_Sentinel-2.jpg?width=640",
-      "hasPhoto": true,
-      "ferry": false,
-      "tier": "atlas"
-    },
-    {
       "id": "osm-relation-376677",
       "name": "Shetland",
       "nation": "Scotland",
@@ -1560,6 +1547,19 @@
       "lng": -2.07791,
       "shortDescription": "Pop. 17; remote",
       "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ham_Foula.jpg?width=640",
+      "hasPhoto": true,
+      "ferry": false,
+      "tier": "atlas"
+    },
+    {
+      "id": "osm-relation-5497270",
+      "name": "Inch",
+      "nation": "Northern Ireland",
+      "type": "sea",
+      "lat": 55.06625,
+      "lng": -7.49631,
+      "shortDescription": "Inch Island (Irish: An Inis, meaning 'the island') is in Lough Swilly, a sea lough in County Donegal on the northern coast of Ireland. Inch is also the name of the civil parish covering the island.",
+      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inch_island_donegal.png?width=640",
       "hasPhoto": true,
       "ferry": false,
       "tier": "atlas"
