@@ -45,15 +45,57 @@ FormSubmit sends email to the address you verify on first use (free tier).
 Override the issue repo with `window.IOB_CORRECTION_REPO` (same as corrections),
 or the default `Drummond1/britishislands` is used (`crowd-pins.js`).
 
-## Maintainer triage
+## Maintainer triage workflow
 
-1. Read the issue — check location is in project remit (~50 mi UK + Ireland).
-2. Deduplicate: same skerry already in `islands.json`? Skip or close with id.
-3. If keeping as a **community pin only**, add an object to `pins` in
-   `data/crowd_pins.json`.
-4. If promoting to the atlas, run the normal ingestion / discovery path with
-   OSM/Wikidata (or other allowed sources); do **not** add atlas rows from
-   coordinates alone.
+Work newest-first. Each submission should end in one of: **close (duplicate)**,
+**community pin only**, or **promote to atlas**.
+
+### 1. Intake
+
+- Read the issue or FormSubmit email — confirm coordinates are in remit (~50 mi of
+  UK + Ireland, including inland river/lake islands where relevant).
+- Check `nameSourceUrl` when a name is proposed; reject or ask for a public source
+  if the label is contentious or unsourced.
+- Never paste contributor email addresses into `crowd_pins.json` or issues.
+
+### 2. Deduplicate
+
+- Search `islands.json` / the live map at the same coordinates (±100 m).
+- Search existing `crowd_pins.json` for the same skerry.
+- If the feature is already an atlas island, close with the canonical `id` and thank
+  the reporter.
+
+### 3. Community pin only
+
+When the suggestion is useful on the map but not yet atlas-ready:
+
+1. Assign the next stable id: `crowd-YYYY-NNN`.
+2. Append to `data/crowd_pins.json` → `pins[]` with `lat`, `lng`, optional `name`,
+   `note`, `nameSourceUrl`, `status: "open"`, and `credits[]` (pin / named roles).
+3. Commit with a one-line note referencing the GitHub issue number.
+4. Close the issue: “Shown as community pin `crowd-…`”.
+
+### 4. Promote to atlas
+
+When OSM/Wikidata (or another allowed source in `docs/DATA-SOURCES.md`) backs the
+feature:
+
+1. Run the normal discovery / ingestion path — e.g.
+   `python3 scripts/discover_islands_pipeline.py --stage=catalog_scanner` then
+   verifier → enricher → `site_update --apply` after review.
+2. **Do not** hand-add rows from coordinates alone; provenance is mandatory
+   (`docs/ETHICS.md`, `docs/DATA-SCHEMA.md`).
+3. Set the crowd pin `status` to `merged` (or remove the pin if redundant).
+4. Run `python3 scripts/build_islands_index.py` after `islands.json` changes.
+5. Close the issue with the new atlas `id`.
+
+### 5. Production deploy
+
+- Crowd overlay ships with the static site; merging `crowd_pins.json` to `main`
+  updates production on the next GitHub Pages deploy.
+- Native submit needs secret `CROWD_FORM_EMAIL` in the repo (see
+  `.github/workflows/pages.yml`); without it, contributors use GitHub / mailto
+  fallbacks only.
 
 ## `crowd_pins.json` shape
 

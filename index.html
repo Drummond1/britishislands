@@ -184,6 +184,36 @@
             <div class="discover-chips" id="discover-chips" role="tablist"></div>
             <p class="discover-panel__hint" id="discover-hint" hidden></p>
           </section>
+          <section class="trip-planner" aria-labelledby="trip-planner-title">
+            <h2 class="trip-planner__title" id="trip-planner-title">Plan crossing</h2>
+            <form class="trip-planner__form" id="trip-form">
+              <label class="trip-planner__field">
+                <span>From island</span>
+                <input
+                  id="trip-from"
+                  name="from"
+                  type="search"
+                  list="trip-islands"
+                  placeholder="e.g. Mull"
+                  autocomplete="off"
+                />
+              </label>
+              <label class="trip-planner__field">
+                <span>To island</span>
+                <input
+                  id="trip-to"
+                  name="to"
+                  type="search"
+                  list="trip-islands"
+                  placeholder="e.g. Iona"
+                  autocomplete="off"
+                />
+              </label>
+              <button class="trip-planner__submit" type="submit">Plan route</button>
+            </form>
+            <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
+            <datalist id="trip-islands"></datalist>
+          </section>
           <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
             <h3 id="featured-heading" class="featured-strip__title">Notable islands</h3>
             <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>

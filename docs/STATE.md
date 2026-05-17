@@ -4,6 +4,15 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-17 (deploy: map UX, trip planner, index stubs)** — **Map:** larger touch
+targets (`tapTolerance` 22, min radius 7, invisible hit halo), viewport-culled markers
+at zoom ≤7. **Ferries:** “Plan crossing” sidebar form restores `?trip=` Dijkstra
+itinerary banner; per-island **freshness** note from `lastVerified`. **Index:**
+`islands_index.json` carries `hasImage` stub (images still merged from full JSON).
+**Blocked:** v5 photos (Commons 429, 0 adoptions / 280 attempts); hills (Wikidata 429,
+no `cache_dobih.json`; DoBIH CSV absent). **Discovery:** bounded `catalog_scanner`
+`--limit=15` (cache only, 0 new candidates).
+
 **2026-05-16 (contribute config + Scotland explore + UX deploy)** — **Contribute:**
 GitHub Pages workflow `.github/workflows/pages.yml` injects `CROWD_FORM_EMAIL` secret
 into `data/crowd_suggest_config.json`; `scripts/prepare_crowd_config.py`;
@@ -476,7 +485,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| _(none)_ | — | — | — | P0b: geology applied locally; hills still pending (DoBIH CSV or Wikidata retry). |
+| _(none)_ | — | — | — | v5/hills blocked on Commons/Wikidata 429; retry off-peak or use DoBIH CSV. |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
 | ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
 | ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded; see QUEUE.md. |
@@ -547,7 +556,11 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 - **Two-phase island load**: `data/islands_index.json` first (then merge
   `data/islands.json` in place) so the map can paint sooner on slow links;
-  regenerate the index after every `islands.json` mutation.
+  index rows include `hasImage` for filters; regenerate after every `islands.json`
+  mutation. At zoom ≤7, only markers inside the viewport are painted (pan/zoom
+  refreshes the layer).
+- **Plan crossing**: sidebar form builds `?trip=startId,endId` and shows an
+  itinerary banner under the header (ferry graph from `loadFerries()`).
 - Static app served by `python3 -m http.server` (currently port 8767).
 - Marker clustering: **on** by default (`#cluster-toggle`).
 - List virtualisation: **active** (renders only visible items, ~30 at a time).

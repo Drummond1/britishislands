@@ -59,6 +59,7 @@ const state = {
   ferriesPromise: null,
   ferryIslandIds: null,     // Set<islandId> of islands reachable by a ferry route
   ferryRoutesByIsland: null, // Map<islandId, route[]> built after loadFerries
+  ferryGraph: null,         // Map<islandId, {other, durationMin, routeId}[]>
   causeways: null,          // lazy-loaded array of tidal/bridge causeway records
   causewaysPromise: null,
   favoriteIds: null,        // Set<islandId> persisted in localStorage
@@ -208,6 +209,239 @@ function resolveFerryIslandId(rawId, terminal, route) {
   return _nearestSeaIslandId(lat, lon);
 }
 
+function _addFerryGraphEdge(adj, fromId, toId, route) {
+  if (!fromId || !toId || fromId === toId) return;
+  const dur = Number.isFinite(route.durationMinutes) ? route.durationMinutes : 120;
+  if (!adj.has(fromId)) adj.set(fromId, []);
+  if (!adj.has(toId)) adj.set(toId, []);
+  adj.get(fromId).push({ other: toId, durationMin: dur, routeId: route.id });
+  adj.get(toId).push({ other: fromId, durationMin: dur, routeId: route.id });
+}
+
+function refreshTripPlannerDatalist() {
+  const list = document.getElementById("trip-islands");
+  if (!list || !state.ferryGraph?.size) return;
+  list.replaceChildren();
+  const names = [];
+  for (const id of state.ferryGraph.keys()) {
+    const isl = state.byId.get(id);
+    if (isl?.name) names.push(isl.name);
+  }
+  names.sort((a, b) => a.localeCompare(b));
+  const frag = document.createDocumentFragment();
+  for (const name of names) {
+    const opt = document.createElement("option");
+    opt.value = name;
+    frag.appendChild(opt);
+  }
+  list.appendChild(frag);
+  list.dataset.filled = "ferry";
+}
+
+function findFerryItinerary(startId, endId) {
+  const adj = state.ferryGraph;
+  const start = resolveFerryIslandId(startId, null, null) || startId;
+  const end = resolveFerryIslandId(endId, null, null) || endId;
+  if (!adj || !adj.has(start) || !adj.has(end)) return null;
+  if (start === end) return { path: [start], edges: [], totalDurationMin: 0 };
+  const dist = new Map();
+  const prev = new Map();
+  const edgeUsed = new Map();
+  dist.set(start, 0);
+  const queue = [[0, start]];
+  const visited = new Set();
+  while (queue.length) {
+    queue.sort((a, b) => a[0] - b[0]);
+    const [d, u] = queue.shift();
+    if (visited.has(u)) continue;
+    visited.add(u);
+    if (u === end) break;
+    for (const e of adj.get(u) || []) {
+      if (visited.has(e.other)) continue;
+      const alt = d + e.durationMin;
+      if (alt < (dist.get(e.other) ?? Infinity)) {
+        dist.set(e.other, alt);
+        prev.set(e.other, u);
+        edgeUsed.set(e.other, e.routeId);
+        queue.push([alt, e.other]);
+      }
+    }
+  }
+  if (!prev.has(end) && start !== end) return null;
+  const path = [end];
+  const edges = [];
+  let cur = end;
+  while (prev.has(cur)) {
+    edges.unshift(edgeUsed.get(cur));
+    cur = prev.get(cur);
+    path.unshift(cur);
+  }
+  return { path, edges, totalDurationMin: dist.get(end) || 0 };
+}
+
+function _formatItinerarySummary(it) {
+  const names = it.path.map((id) => state.byId.get(id)?.name || id).join(" → ");
+  const h = Math.floor(it.totalDurationMin / 60);
+  const m = it.totalDurationMin % 60;
+  const dur = h ? (m ? `${h}h ${m}m` : `${h}h`) : `${m}m`;
+  return `${names} · ~${dur} at sea · ${it.edges.length} crossing${it.edges.length === 1 ? "" : "s"}`;
+}
+
+function resolveTripIslandId(query) {
+  const q = (query || "").trim();
+  if (!q) return null;
+  if (state.byId.has(q)) return q;
+  const hit = _findIslandByName(q);
+  return hit?.id || null;
+}
+
+function planTripBetween(startQuery, endQuery) {
+  const startId = resolveTripIslandId(startQuery);
+  const endId = resolveTripIslandId(endQuery);
+  if (!startId || !endId) {
+    return Promise.resolve({
+      ok: false,
+      error: "Couldn't match both islands — try the full island name from the suggestions.",
+    });
+  }
+  if (startId === endId) {
+    return Promise.resolve({ ok: false, error: "Choose two different islands." });
+  }
+  const url = new URL(window.location.href);
+  url.searchParams.set("trip", `${startId},${endId}`);
+  window.history.replaceState(null, "", url.toString());
+  return loadFerries().then(() => {
+    const adj = state.ferryGraph;
+    const start = resolveFerryIslandId(startId, null, null) || startId;
+    const end = resolveFerryIslandId(endId, null, null) || endId;
+    if (!adj || adj.size === 0) {
+      return { ok: false, error: "Ferry data is still loading. Try again in a moment." };
+    }
+    const startName = state.byId.get(start)?.name || startQuery.trim();
+    const endName = state.byId.get(end)?.name || endQuery.trim();
+    if (!adj.has(start)) {
+      return {
+        ok: false,
+        error: `No mapped ferry routes touch «${startName}». Pick an island from the suggestions.`,
+      };
+    }
+    if (!adj.has(end)) {
+      return {
+        ok: false,
+        error: `No mapped ferry routes touch «${endName}». Pick an island from the suggestions.`,
+      };
+    }
+    const it = findFerryItinerary(startId, endId);
+    if (!it) {
+      return {
+        ok: false,
+        error: `No ferry chain between «${startName}» and «${endName}» in this dataset.`,
+      };
+    }
+    _renderItineraryBanner(it);
+    return { ok: true, itinerary: it, startId, endId, summary: _formatItinerarySummary(it) };
+  });
+}
+
+function tryRenderItineraryFromUrl() {
+  try {
+    const trip = new URLSearchParams(window.location.search).get("trip");
+    if (!trip) return;
+    const [startId, endId] = trip.split(",").map((s) => s.trim()).filter(Boolean);
+    if (!startId || !endId) return;
+    loadFerries().then(() => {
+      const it = findFerryItinerary(startId, endId);
+      if (it) _renderItineraryBanner(it);
+    });
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
+function _mountItineraryBanner(banner) {
+  const topbar = document.querySelector("header.topbar");
+  if (topbar) topbar.insertAdjacentElement("afterend", banner);
+  else if (!banner.parentNode) document.body.prepend(banner);
+}
+
+function _onItineraryBannerClick(e) {
+  const a = e.target.closest("a[href]");
+  if (!a) return;
+  const href = a.getAttribute("href") || "";
+  if (!href.startsWith("?island=")) return;
+  e.preventDefault();
+  try {
+    const q = href.startsWith("?") ? href.slice(1) : href;
+    const id = new URLSearchParams(q).get("island");
+    if (id && state.byId?.has(id)) focusIsland(id, { fly: true });
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
+function _renderItineraryBanner(it) {
+  const stops = it.path.map((id) => {
+    const isl = state.byId.get(id);
+    if (isl) {
+      return `<a href="?island=${encodeURIComponent(isl.id)}">${escapeHtml(isl.name)}</a>`;
+    }
+    return `<span class="itinerary-banner__unknown">${escapeHtml(id)}</span>`;
+  });
+  if (!stops.length) return;
+  const h = Math.floor(it.totalDurationMin / 60);
+  const m = it.totalDurationMin % 60;
+  const dur = h ? (m ? `${h}h ${m}m` : `${h}h`) : `${m}m`;
+  let banner = document.getElementById("itinerary-banner");
+  if (!banner) {
+    banner = document.createElement("div");
+    banner.id = "itinerary-banner";
+    banner.className = "itinerary-banner";
+    banner.addEventListener("click", _onItineraryBannerClick);
+  }
+  _mountItineraryBanner(banner);
+  banner.innerHTML = `
+    <strong>Suggested ferry crossing:</strong>
+    <span class="itinerary-banner__stops">${stops.join(' <span class="itinerary-banner__arrow">→</span> ')}</span>
+    <span class="itinerary-banner__meta">~${dur} at sea · ${it.edges.length} leg${it.edges.length === 1 ? "" : "s"}</span>
+    <button type="button" class="itinerary-banner__close" aria-label="Dismiss">×</button>
+  `;
+  banner.querySelector(".itinerary-banner__close")?.addEventListener("click", () => banner.remove());
+}
+
+function initTripPlanner() {
+  const form = document.getElementById("trip-form");
+  const fromInput = document.getElementById("trip-from");
+  const toInput = document.getElementById("trip-to");
+  const status = document.getElementById("trip-status");
+  if (!form || !fromInput || !toInput) return;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (status) status.textContent = "Planning…";
+    planTripBetween(fromInput.value, toInput.value).then((res) => {
+      if (!status) return;
+      if (!res || res.ok === false) {
+        status.textContent = res?.error || "Couldn't plan that crossing.";
+        return;
+      }
+      status.textContent = res.summary
+        ? `${res.summary} — see banner under the header.`
+        : "Crossing planned.";
+    });
+  });
+  try {
+    const trip = new URLSearchParams(window.location.search).get("trip");
+    if (trip) {
+      const [startId, endId] = trip.split(",").map((s) => s.trim());
+      const a = state.byId.get(startId);
+      const b = state.byId.get(endId);
+      if (a) fromInput.value = a.name;
+      if (b) toInput.value = b.name;
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
+}
+
 function syncFerryDiscoveryFilter() {
   const ferryToggle = els.filterFerry;
   if (!ferryToggle) return;
@@ -249,6 +483,7 @@ function loadFerries() {
       const opById = new Map(operators.map((o) => [o.id, o]));
       const byIsland = new Map();
       const islandIds = new Set();
+      const adj = new Map();
       for (const r of routes) {
         const fromTerm = termById.get(r.terminals?.from?.terminalId);
         const toTerm = termById.get(r.terminals?.to?.terminalId);
@@ -275,11 +510,14 @@ function loadFerries() {
           byIsland.get(islId).push(enriched);
           islandIds.add(islId);
         }
+        _addFerryGraphEdge(adj, fromIsl, toIsl, r);
       }
       state.ferries = { routes, terminals, operators, termById, opById };
       state.ferryIslandIds = islandIds;
       state.ferryRoutesByIsland = byIsland;
+      state.ferryGraph = adj;
       try {
+        refreshTripPlannerDatalist();
         syncFerryDiscoveryFilter();
         if (shouldRenderListWindow()) scheduleRenderListWindow();
       } catch (_) { /* noop */ }
@@ -290,6 +528,7 @@ function loadFerries() {
       state.ferries = { routes: [], terminals: [], operators: [], termById: new Map(), opById: new Map() };
       state.ferryIslandIds = new Set();
       state.ferryRoutesByIsland = new Map();
+      state.ferryGraph = new Map();
       try { syncFerryDiscoveryFilter(); } catch (_) { /* noop */ }
       return state.ferries;
     })
@@ -711,7 +950,11 @@ const map = L.map("map", {
   maxZoom: 18,
   worldCopyJump: true,
   preferCanvas: true,
+  tapTolerance: 22,
 });
+
+const LOW_ZOOM_MARKER_MAX = 7;
+let markerViewportTimer = null;
 
 const baseLayers = {
   osm: L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -1406,7 +1649,9 @@ function applyRouteFromUrl() {
     const exploreId = params.get("explore");
     if (exploreId && state.discoveryTopics?.some((t) => t.id === exploreId)) {
       setExploreTopic(exploreId, { skipUrl: true });
+      return;
     }
+    if (params.get("trip")) tryRenderItineraryFromUrl();
   } catch (_) {
     /* non-fatal */
   }
@@ -1680,6 +1925,7 @@ function populateSubtypeFilter() {
 
 function islandHasPhoto(island) {
   if (!island) return false;
+  if (island.hasImage === true) return true;
   if (island.images?.length) return true;
   if (island.image) return true;
   const extra = state.galleries?.[island.id];
@@ -2232,32 +2478,50 @@ function renderListWindow() {
 }
 
 // ---------- Markers ----------
+function islandsForMarkerPaint() {
+  const list = state.filtered;
+  if (!list.length || map.getZoom() > LOW_ZOOM_MARKER_MAX) return list;
+  const bounds = map.getBounds().pad(0.12);
+  return list.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lng) && bounds.contains([i.lat, i.lng]));
+}
+
 function makeMarker(island) {
   const color = TYPE_COLORS[island.type] || TYPE_COLORS.sea;
   let radius = Math.max(
-    4,
-    Math.min(14, Math.log10((island.areaKm2 || 0.05) + 1) * 6 + 4),
+    7,
+    Math.min(15, Math.log10((island.areaKm2 || 0.05) + 1) * 6 + 5),
   );
   let fillColor = color;
   let fillOpacity = 0.9;
   if (state.exploreIslandIds?.has(island.id)) {
     fillColor = "#f4d35e";
-    radius = Math.min(16, radius + 2);
+    radius = Math.min(17, radius + 2);
     fillOpacity = 1;
   }
 
-  const marker = L.circleMarker([island.lat, island.lng], {
+  const onActivate = () => focusIsland(island.id, { fly: false });
+  const hitRadius = Math.max(16, radius + 10);
+  const hit = L.circleMarker([island.lat, island.lng], {
+    radius: hitRadius,
+    stroke: false,
+    fillColor: "#000",
+    fillOpacity: 0.001,
+    className: "marker-hit",
+    interactive: true,
+  });
+  const vis = L.circleMarker([island.lat, island.lng], {
     radius,
     color: "#ffffff",
     weight: 1.2,
     fillColor,
     fillOpacity,
+    className: "marker-vis",
   });
+  vis.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+  hit.on("click", onActivate);
+  vis.on("click", onActivate);
 
-  marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
-  marker.on("click", () => focusIsland(island.id, { fly: false }));
-
-  return marker;
+  return L.layerGroup([hit, vis]);
 }
 
 function rebuildMarkerLayer() {
@@ -2269,7 +2533,8 @@ function rebuildMarkerLayer() {
   state.markers.clear();
 
   const layer = activeMarkerLayer;
-  for (const island of state.filtered) {
+  const paintSet = islandsForMarkerPaint();
+  for (const island of paintSet) {
     // Saved islands are shown as ♥ markers on favoritesMapLayer (always visible).
     if (hasFavoritesAccess() && isFavoriteIsland(island.id)) continue;
     const m = makeMarker(island);
@@ -2282,6 +2547,16 @@ function rebuildMarkerLayer() {
   }
   rebuildFavoritesMapLayer();
 }
+
+function scheduleMarkerViewportRefresh() {
+  if (markerViewportTimer) clearTimeout(markerViewportTimer);
+  markerViewportTimer = setTimeout(() => {
+    markerViewportTimer = null;
+    if (map.getZoom() <= LOW_ZOOM_MARKER_MAX) rebuildMarkerLayer();
+  }, 120);
+}
+
+map.on("moveend zoomend", scheduleMarkerViewportRefresh);
 
 // ---------- Details panel ----------
 function focusIsland(id, { fly } = { fly: true }) {
@@ -2368,6 +2643,27 @@ const _FERRY_FREQ_LABEL = {
   "on-demand": "On demand",
 };
 
+function _ferryFreshnessNote(routes) {
+  if (!routes?.length) return "";
+  const dates = routes
+    .map((r) => r.lastVerified)
+    .filter(Boolean)
+    .map((d) => Date.parse(d))
+    .filter((t) => Number.isFinite(t));
+  if (!dates.length) {
+    return `<p class="ferry-freshness">Route schedules are indicative — confirm times with the operator before you travel.</p>`;
+  }
+  const newest = new Date(Math.max(...dates));
+  const oldest = new Date(Math.min(...dates));
+  const staleCount = routes.filter((r) => r.lastVerified && _routeIsStale(r.lastVerified, 180)).length;
+  const fmt = (d) => d.toISOString().slice(0, 10);
+  let line = `Data last verified between ${fmt(oldest)} and ${fmt(newest)}.`;
+  if (staleCount > 0) {
+    line += ` ${staleCount} connection${staleCount === 1 ? "" : "s"} marked stale (>180 days) — check the operator timetable.`;
+  }
+  return `<p class="ferry-freshness">${escapeHtml(line)}</p>`;
+}
+
 function _routeIsStale(lastVerifiedStr, maxDays) {
   if (!lastVerifiedStr) return false;
   const t = Date.parse(lastVerifiedStr);
@@ -2423,12 +2719,14 @@ function renderFerries(island) {
   const sorted = routes.slice().sort((a, b) => _ferryRouteScore(a) - _ferryRouteScore(b));
   const cards = sorted.map((r) => _renderFerryCard(r, island)).join("");
   const causewayBlock = causeway ? _renderCausewayBlock(causeway) : "";
+  const freshnessNote = _ferryFreshnessNote(sorted);
 
   const title = routes.length ? "How to get there" : "Causeway access";
 
   return `<div class="section ferry-section" id="ferry-block">
     <h3>${escapeHtml(title)}</h3>
     ${routes.length ? `<p class="ferry-subtitle">${sorted.length} ferry connection${sorted.length === 1 ? "" : "s"} published for this island.</p>` : ""}
+    ${freshnessNote}
     ${causewayBlock}
     ${cards ? `<div class="ferry-card-list">${cards}</div>` : ""}
     ${routes.length ? `<p class="ferry-disclosure">Some onward-travel links below are affiliate links (<abbr title="Sponsored / commission-paying link">sponsored</abbr>) - they cost you nothing extra and help keep this atlas free. Ferry operator links are not affiliated.</p>` : ""}
@@ -6276,4 +6574,5 @@ document.getElementById("map-island-peek")?.addEventListener("click", () => {
 loadIslands();
 initFavoritesAccessUi();
 initCrowdSuggestUi();
+initTripPlanner();
 chatAutoLoadFromUrl();

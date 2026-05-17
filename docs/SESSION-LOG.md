@@ -1644,3 +1644,27 @@
   works after secret or `prepare_crowd_config.py`; mailto + GitHub work without.
 - **Open items kicked to QUEUE.md**: Apply hills/geology caches when ingests finish;
   add `CROWD_FORM_EMAIL` secret on GitHub; photo v5 queue batch.
+
+---
+
+## 2026-05-17 — Map UX, trip planner, deploy (photos/hills blocked)
+
+- **Goal**: Run P1 photo v5 queue, hills ingest, map/mobile polish, first-paint
+  performance, ferry crossing UI, bounded discovery, and push production.
+- **What changed**:
+  - `app.js` / `styles.css` / `index.html` — `tapTolerance` 22, larger markers +
+    invisible hit halo, viewport marker culling at zoom ≤7, restored ferry graph +
+    “Plan crossing” form + `?trip=` itinerary banner, ferry `lastVerified` freshness
+    blurb on detail panel.
+  - `scripts/build_islands_index.py` — `hasImage` stub on index rows; rebuilt
+    `data/islands_index.json`.
+  - `docs/CROWD-PINS.md` — expanded maintainer triage (intake → pin → atlas promote).
+  - `.github/workflows/pages.yml` — Pages deploy with optional `CROWD_FORM_EMAIL`.
+  - Bounded `discover_islands_pipeline.py --stage=catalog_scanner --limit=15` (cached).
+- **Outcome / counts**: **7,041** islands; **3,597** with lead images (unchanged —
+  v5 attempted 280 queue rows, **0** adoptions due to Commons HTTP 429; P18-only
+  batch also 0). Hills: Wikidata SPARQL **429** after ~3 min, no `cache_dobih.json`
+  (DoBIH CSV not present). Catalog scan: **0** new candidates.
+- **Open items kicked to QUEUE.md**: Retry `enrich_images_v5.py` off-peak; drop
+  `data/dobih_v17_3.csv` + `ingest_hills_dobih.py --dobih-csv … --commit`; set
+  `CROWD_FORM_EMAIL` on GitHub for native crowd submit.

@@ -3554,6 +3554,17 @@ body {
 }
 
 /* ===== Trip planner (map overlay) ===== */
+.marker-hit {
+  cursor: pointer;
+}
+
+.ferry-freshness {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--muted, #8fa3b8);
+}
+
 .trip-planner {
   position: absolute;
   left: 12px;

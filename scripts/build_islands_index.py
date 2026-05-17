@@ -31,7 +31,10 @@ DROP_KEYS = frozenset(
 
 
 def slim_record(island: dict) -> dict:
-    return {k: v for k, v in island.items() if k not in DROP_KEYS}
+    row = {k: v for k, v in island.items() if k not in DROP_KEYS}
+    images = island.get("images") or []
+    row["hasImage"] = bool(images or island.get("image"))
+    return row
 
 
 def main() -> None:
