@@ -1884,9 +1884,13 @@ function renderExploreStrip(rows, title) {
   if (heading) heading.textContent = title || "Explore";
   strip.hidden = false;
   scroll.replaceChildren();
+  const seenNames = new Set();
   for (const row of rows) {
     const island = state.byId.get(row.id);
     if (!island) continue;
+    const nameKey = (row.name || island.name || "").trim().toLowerCase();
+    if (nameKey && seenNames.has(nameKey)) continue;
+    if (nameKey) seenNames.add(nameKey);
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "featured-card";
@@ -2495,15 +2499,20 @@ function renderListWindow() {
 
 // ---------- Markers ----------
 function islandsForMarkerPaint() {
-  const list = state.filtered;
+  const list = state.filtered.length ? state.filtered : state.islands;
   if (!list.length) return list;
   const z = map.getZoom();
+  const bounds = map.getBounds();
+  if (!bounds?.isValid?.()) return list;
   // Always cull to the viewport — painting the full filtered set at high zoom
   // left thousands of canvas circles and caused dark streaks on the map.
   const pad = z <= LOW_ZOOM_MARKER_MAX ? 0.15 : z <= 11 ? 0.1 : 0.06;
-  const bounds = map.getBounds().pad(pad);
+  const padded = bounds.pad(pad);
   return list.filter(
-    (i) => Number.isFinite(i.lat) && Number.isFinite(i.lng) && bounds.contains([i.lat, i.lng]),
+    (i) =>
+      Number.isFinite(i.lat) &&
+      Number.isFinite(i.lng) &&
+      padded.contains([i.lat, i.lng]),
   );
 }
 
@@ -2536,6 +2545,9 @@ function makeMarker(island) {
 }
 
 function rebuildMarkerLayer() {
+  if (!state.islands.length) return;
+  const bounds = map.getBounds();
+  if (!bounds?.isValid?.()) return;
   // Clear & rebuild the active marker layer with the currently-filtered set.
   // Markers are cheap to recreate; reusing them across cluster/flat would
   // double the memory.
@@ -2560,7 +2572,8 @@ function rebuildMarkerLayer() {
   // #region agent log
   const paintN = islandsForMarkerPaint().length;
   const hitEls = document.querySelectorAll(".marker-hit").length;
-  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-3", hypothesisId: "H7", location: "app.js:rebuildMarkerLayer", message: "markers rebuilt", data: { zoom: map.getZoom(), paintN, markersOnLayer: state.markers.size, preferCanvas: true }, timestamp: Date.now() }) }).catch(() => {});
+  const b = map.getBounds();
+  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-4", hypothesisId: "H8", location: "app.js:rebuildMarkerLayer", message: "markers rebuilt", data: { zoom: map.getZoom(), paintN, filteredLen: state.filtered.length, islandsLen: state.islands.length, boundsValid: b?.isValid?.(), markersOnLayer: state.markers.size }, timestamp: Date.now() }) }).catch(() => {});
   // #endregion
 }
 
