@@ -440,6 +440,22 @@ function initTripPlanner() {
   } catch (_) {
     /* non-fatal */
   }
+  // #region agent log
+  requestAnimationFrame(() => {
+    const tp = document.querySelector(".trip-planner");
+    const mapEl = document.getElementById("map");
+    if (!tp) return;
+    const tr = tp.getBoundingClientRect();
+    const mr = mapEl?.getBoundingClientRect();
+    const overlapsMap =
+      mr &&
+      tr.left < mr.right &&
+      tr.right > mr.left &&
+      tr.top < mr.bottom &&
+      tr.bottom > mr.top;
+    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-2", hypothesisId: "H6", location: "app.js:initTripPlanner", message: "trip-planner layout", data: { position: getComputedStyle(tp).position, inSidebar: !!tp.closest(".sidebar"), overlapsMap, tripRect: { t: Math.round(tr.top), l: Math.round(tr.left), b: Math.round(tr.bottom) }, mapRect: mr ? { t: Math.round(mr.top), b: Math.round(mr.bottom) } : null }, timestamp: Date.now() }) }).catch(() => {});
+  });
+  // #endregion
 }
 
 function syncFerryDiscoveryFilter() {
@@ -2480,9 +2496,15 @@ function renderListWindow() {
 // ---------- Markers ----------
 function islandsForMarkerPaint() {
   const list = state.filtered;
-  if (!list.length || map.getZoom() > LOW_ZOOM_MARKER_MAX) return list;
-  const bounds = map.getBounds().pad(0.12);
-  return list.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lng) && bounds.contains([i.lat, i.lng]));
+  if (!list.length) return list;
+  const z = map.getZoom();
+  // Always cull to the viewport — painting the full filtered set at high zoom
+  // left thousands of canvas circles and caused dark streaks on the map.
+  const pad = z <= LOW_ZOOM_MARKER_MAX ? 0.15 : z <= 11 ? 0.1 : 0.06;
+  const bounds = map.getBounds().pad(pad);
+  return list.filter(
+    (i) => Number.isFinite(i.lat) && Number.isFinite(i.lng) && bounds.contains([i.lat, i.lng]),
+  );
 }
 
 function makeMarker(island) {
@@ -2499,29 +2521,18 @@ function makeMarker(island) {
     fillOpacity = 1;
   }
 
-  const onActivate = () => focusIsland(island.id, { fly: false });
-  const hitRadius = Math.max(16, radius + 10);
-  const hit = L.circleMarker([island.lat, island.lng], {
-    radius: hitRadius,
-    stroke: false,
-    fillColor: "#000",
-    fillOpacity: 0.001,
-    className: "marker-hit",
-    interactive: true,
-  });
-  const vis = L.circleMarker([island.lat, island.lng], {
-    radius,
+  const paintRadius = Math.max(radius, 10);
+  const marker = L.circleMarker([island.lat, island.lng], {
+    radius: paintRadius,
     color: "#ffffff",
     weight: 1.2,
     fillColor,
     fillOpacity,
     className: "marker-vis",
   });
-  vis.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
-  hit.on("click", onActivate);
-  vis.on("click", onActivate);
-
-  return L.layerGroup([hit, vis]);
+  marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+  marker.on("click", () => focusIsland(island.id, { fly: false }));
+  return marker;
 }
 
 function rebuildMarkerLayer() {
@@ -2546,13 +2557,18 @@ function rebuildMarkerLayer() {
     }
   }
   rebuildFavoritesMapLayer();
+  // #region agent log
+  const paintN = islandsForMarkerPaint().length;
+  const hitEls = document.querySelectorAll(".marker-hit").length;
+  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-3", hypothesisId: "H7", location: "app.js:rebuildMarkerLayer", message: "markers rebuilt", data: { zoom: map.getZoom(), paintN, markersOnLayer: state.markers.size, preferCanvas: true }, timestamp: Date.now() }) }).catch(() => {});
+  // #endregion
 }
 
 function scheduleMarkerViewportRefresh() {
   if (markerViewportTimer) clearTimeout(markerViewportTimer);
   markerViewportTimer = setTimeout(() => {
     markerViewportTimer = null;
-    if (map.getZoom() <= LOW_ZOOM_MARKER_MAX) rebuildMarkerLayer();
+    rebuildMarkerLayer();
   }, 120);
 }
 
@@ -2569,6 +2585,9 @@ function focusIsland(id, { fly } = { fly: true }) {
   scheduleRenderListWindow();
 
   renderDetails(island);
+  // #region agent log
+  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", hypothesisId: "H4", location: "app.js:focusIsland", message: "island focused", data: { id, zoom: map.getZoom(), markerHits: document.querySelectorAll(".marker-hit").length, hasPoly: !!state.activePolygon }, timestamp: Date.now() }) }).catch(() => {});
+  // #endregion
   if (mobileNav.isActive()) mobileNav.setView("islands");
 
   if (fly) {
@@ -3717,27 +3736,77 @@ function section(title, body) {
   `;
 }
 
+/** Normalise Commons / Wikimedia URLs to a stable dedup key (same photo, many URL forms). */
+function normalizeCommonsFileName(name) {
+  let n = decodeURIComponent(String(name || "")).replace(/\.[a-z0-9]+$/i, "");
+  n = n.replace(/_/g, " ");
+  n = n.replace(/\s*,\s*\d{4}[-–]\d{2}[-–]\d{2}.*$/i, "");
+  n = n.replace(/\s*\(geograph[^)]*\)\s*/gi, "");
+  return n.trim().toLowerCase().replace(/\s+/g, "_");
+}
+
+function imageDedupKey(img) {
+  if (!img) return "";
+  if (img.fileName) return normalizeCommonsFileName(img.fileName);
+  const u = img.url || img.fullUrl || "";
+  if (!u) return "";
+  const decoded = decodeURIComponent(u);
+  let m = decoded.match(/(?:FilePath\/|\/wiki\/(?:File|Image):)([^?#]+)/i);
+  if (m) return normalizeCommonsFileName(m[1]);
+  m = decoded.match(/\/commons\/(?:thumb\/)?[a-f0-9]\/[a-f0-9]{2}\/([^/?#]+)/i);
+  if (m) return normalizeCommonsFileName(m[1]);
+  m = decoded.match(/\/([^/?#]+\.(?:jpe?g|png|gif|webp|svg))(?:\?|$)/i);
+  if (m) return normalizeCommonsFileName(m[1]);
+  return u.split("?")[0].toLowerCase();
+}
+
+function dedupeImagesByKey(images) {
+  const seen = new Set();
+  const out = [];
+  for (const img of images) {
+    const key = imageDedupKey(img);
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    out.push(img);
+  }
+  return out;
+}
+
 // Merge the lead image(s) from islands.json with the lazily-loaded
 // extras from data/galleries.json. Lead image(s) always come first;
 // extras are appended in script order. Mutates `island.images` once the
 // merge has been applied so subsequent renders don't redo the work.
 function ensureGalleryMerged(island) {
   if (!state.galleries) return; // not loaded yet — skip; will be re-rendered
-  if (island.__galleryMerged) return;
+  if (island.__galleryMerged) {
+    if (Array.isArray(island.images) && island.images.length > 1) {
+      island.images = dedupeImagesByKey(island.images);
+    }
+    return;
+  }
   const extras = state.galleries[island.id];
   if (Array.isArray(extras) && extras.length) {
     const lead = Array.isArray(island.images) ? island.images : [];
-    const have = new Set(lead.map((x) => x.fileName || x.url));
+    const have = new Set(lead.map((x) => imageDedupKey(x)));
     const merged = lead.slice();
     for (const ex of extras) {
-      const key = ex.fileName || ex.url;
+      const key = imageDedupKey(ex);
       if (key && have.has(key)) continue;
       merged.push({ ...ex, primary: false });
-      have.add(key);
+      if (key) have.add(key);
     }
-    island.images = merged;
+    island.images = dedupeImagesByKey(merged);
+  } else if (Array.isArray(island.images) && island.images.length > 1) {
+    island.images = dedupeImagesByKey(island.images);
   }
   island.__galleryMerged = true;
+  // #region agent log
+  if (island.id?.includes("aigas")) {
+    const imgs = Array.isArray(island.images) ? island.images : [];
+    const keys = imgs.map((x, i) => ({ i, key: imageDedupKey(x), url: (x.url || "").slice(0, 80) }));
+    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix", hypothesisId: "H1", location: "app.js:ensureGalleryMerged", message: "gallery merged", data: { id: island.id, count: imgs.length, keys }, timestamp: Date.now() }) }).catch(() => {});
+  }
+  // #endregion
 }
 
 function renderGallery(island) {
@@ -3762,15 +3831,27 @@ function renderGallery(island) {
   const heroHtml = renderHeroImg(primary, island.name);
   const attribution = renderAttribution(primary);
 
+  // #region agent log
+  if (island.id?.includes("aigas")) {
+    const dupPairs = [];
+    for (let a = 0; a < images.length; a++) {
+      for (let b = a + 1; b < images.length; b++) {
+        if (images[a].url === images[b].url) dupPairs.push([a, b, "same-url"]);
+      }
+    }
+    const thumbOnly = images.length - 1;
+    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix", hypothesisId: "H2", location: "app.js:renderGallery", message: "thumb strip", data: { id: island.id, imageCount: images.length, primaryIdx, thumbOnly, dupPairs, urls: images.map((x, i) => ({ i, u: (x.url || "").slice(0, 70) })) }, timestamp: Date.now() }) }).catch(() => {});
+  }
+  // #endregion
+
+  const thumbIndices = images.map((_, idx) => idx).filter((idx) => idx !== primaryIdx);
   const thumbStrip =
-    images.length > 1
-      ? `<div class="thumb-strip" role="tablist" aria-label="Island images">${images
+    thumbIndices.length > 0
+      ? `<div class="thumb-strip" role="tablist" aria-label="Island images">${thumbIndices
           .map(
-            (img, idx) => `
-              <button class="thumb${
-                idx === primaryIdx ? " is-active" : ""
-              }" data-img-idx="${idx}" role="tab" aria-selected="${idx === primaryIdx}" aria-label="Image ${idx + 1}">
-                <img src="${escapeAttr(img.url)}" alt="" loading="lazy" onerror="this.style.opacity='0.25'"/>
+            (idx) => `
+              <button class="thumb" data-img-idx="${idx}" role="tab" aria-selected="false" aria-label="Image ${idx + 1}">
+                <img src="${escapeAttr(images[idx].url)}" alt="" loading="lazy" onerror="this.style.opacity='0.25'"/>
               </button>`,
           )
           .join("")}</div>`
