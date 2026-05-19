@@ -67,6 +67,15 @@ SMOKE_IDS = {
     "eel-pie-island": {"nation": "England",  "type": "river"},
 }
 
+# Property cache is authoritative: islands absent from the cache lose listing fields.
+PROPERTY_FIELDS = (
+    "propertyListings",
+    "propertyListingsSource",
+    "propertyListingsConfidence",
+    "propertyListingsAttribution",
+    "propertyListingsFetchedAt",
+)
+
 
 def _atomic_write_json(path: Path, payload: Any) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
@@ -151,6 +160,7 @@ def main() -> int:
     # 4. Plan the merge.  Don't mutate islands yet; build a diff plan.
     plan: list[dict] = []
     counts: dict[str, int] = {name: 0 for name in loaded}
+    removals: dict[str, int] = {name: 0 for name in loaded}
     skipped_newer: list[dict] = []
     for name, cache in loaded.items():
         for iid, payload in cache.items():
@@ -167,10 +177,21 @@ def main() -> int:
                     continue
             plan.append({"name": name, "id": iid, "payload": payload})
             counts[name] += 1
+        if name == "property":
+            for iid, isl in by_id.items():
+                if iid in cache:
+                    continue
+                if any(k in isl for k in PROPERTY_FIELDS):
+                    plan.append({"name": name, "id": iid, "payload": {},
+                                 "remove": PROPERTY_FIELDS})
+                    removals[name] += 1
 
     print(f"  plan: {sum(counts.values()):,} field-group adoptions")
     for name, c in counts.items():
         print(f"    {name:11s} +{c:,}")
+    for name, c in removals.items():
+        if c:
+            print(f"    {name:11s} -{c:,} (stale)")
     if skipped_newer:
         print(f"  skipped (existing newer): {len(skipped_newer)}")
 
@@ -215,6 +236,8 @@ def main() -> int:
         isl = by_id[step["id"]]
         for k, v in step["payload"].items():
             isl[k] = v
+        for k in step.get("remove") or ():
+            isl.pop(k, None)
 
     # 8. Read-back validation.
     print("  validating result …")
@@ -245,6 +268,7 @@ def main() -> int:
         "startedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "dryRun": False,
         "applied": counts,
+        "removed": {k: v for k, v in removals.items() if v},
         "backup": backup.name,
         "skippedNewer": skipped_newer,
         "smokeChecksPassed": list(SMOKE_IDS.keys()),

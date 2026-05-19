@@ -1672,6 +1672,17 @@
   committed locally but **not** on remote — push rejected without `workflow` OAuth
   scope; add the file manually or re-push with workflow permissions.
 
+## 2026-05-19 — Orchestrated property listing research (sub-agents)
+
+- **Goal**: Expand for-sale islands using only verifiable broker URLs (no fabricated content).
+- **What changed**:
+  - Sub-agents: broker desk research + `islands.json` ID matching.
+  - `data/discovery/property_listings_verified.json` — 10 verified listings.
+  - Replaced `data/curated_property_listings.json` (removed Canna/IoW/generic URLs).
+  - `scripts/sync_curated_property_listings.py` — manifest → ingest → apply → index.
+- **Outcome / counts**: **10** islands with `propertyListings[]` (was 6 with placeholders).
+- **Open items**: Inishbarna / Inishskehan etc. need OSM ingest before linking; Homedata API after licence check.
+
 ## 2026-05-19 — For-sale map markers + list links
 
 - **Goal**: Clearly identify for-sale islands on the home map and link to listings.

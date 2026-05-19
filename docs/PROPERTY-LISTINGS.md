@@ -52,5 +52,18 @@ No full street addresses or owner names in shipped JSON ([`ETHICS.md`](ETHICS.md
 
 ## Maintaining curated links
 
-Edit `data/curated_property_listings.json`, then re-run ingest + apply + `build_islands_index.py`.
-Replace URLs when listings expire; prefer specialist brokers for whole-island sales.
+1. Add rows to `data/discovery/property_listings_verified.json` (research manifest) **or** edit `data/curated_property_listings.json` directly.
+2. Each row must include a **broker URL that names the island** — no generic search pages.
+3. Run:
+
+```bash
+python3 scripts/sync_curated_property_listings.py
+```
+
+That copies the verified manifest → curated file → ingest → `apply_enrichments` → `build_islands_index.py`.
+
+The property cache is **authoritative**: any island that previously had `propertyListings[]` but is absent from the latest curated ingest will have those fields removed on apply.
+
+Islands named on broker sites but **missing from** `islands.json` (e.g. some Vladi-only spellings) must be ingested via normal OSM discovery first — do not invent atlas rows.
+
+Replace URLs when listings expire or sell; remove rows when pages go offline.

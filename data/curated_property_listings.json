@@ -1,69 +1,110 @@
 {
   "meta": {
-    "version": 1,
-    "description": "Maintainer-curated outbound links for islands on the market. Verify URLs before relying on them; replace when listings change.",
-    "updatedAt": "2026-05-17"
+    "version": 2,
+    "description": "Maintainer-curated outbound links only — each row must name a specific island on a live broker page. No generic portal searches.",
+    "updatedAt": "2026-05-19",
+    "researchFile": "data/discovery/property_listings_verified.json"
   },
   "listings": [
     {
-      "islandId": "osm-relation-1240445",
-      "title": "Tanera Mòr — whole island estate",
-      "url": "https://www.vladi-private-islands.com/islands-for-sale/scotland",
+      "islandId": "osm-way-200773375",
+      "title": "Shuna Island — 1,110-acre estate (Knight Frank)",
+      "url": "https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/oban-41048_ebr012505187/",
       "listingType": "whole_island",
       "source": "curated",
-      "sourceListingId": "curated-tanera-mor-1",
-      "priceDisplay": "POA",
-      "notes": "Category search on specialist broker; confirm active listing on broker site."
+      "sourceListingId": "knightfrank-shuna-uklaf-2026",
+      "priceDisplay": "Offers in excess of £5,500,000",
+      "notes": "Page names Shuna Island, Arduaine/Oban. Verified on UK Land & Farms syndicating Knight Frank."
     },
     {
-      "islandId": "osm-relation-8245962",
-      "title": "Gometra — whole island",
-      "url": "https://www.vladi-private-islands.com/islands-for-sale/scotland",
-      "listingType": "whole_island",
-      "source": "curated",
-      "sourceListingId": "curated-gometra-1",
-      "priceDisplay": "POA",
-      "notes": "Specialist broker category; island may not always be listed."
-    },
-    {
-      "islandId": "osm-relation-9395600",
-      "title": "Eilean Shona — private island estate",
-      "url": "https://www.knightfrank.co.uk/properties/residential/for-sale/",
-      "listingType": "whole_island",
-      "source": "curated",
-      "sourceListingId": "curated-eilean-shona-1",
-      "priceDisplay": "POA",
-      "notes": "Search Knight Frank for Eilean Shona; replace URL when a live listing exists."
-    },
-    {
-      "islandId": "osm-relation-6046465",
-      "title": "Ulva — island and estate",
-      "url": "https://www.galbraithgroup.com/commercial/property-search/",
-      "listingType": "whole_island",
-      "source": "curated",
-      "sourceListingId": "curated-ulva-1",
-      "priceDisplay": "POA",
-      "notes": "Regional land agent search; verify current availability."
-    },
-    {
-      "islandId": "osm-way-4004501",
-      "title": "Canna — community-owned (reference)",
-      "url": "https://www.isleofcanna.com/",
+      "islandId": "osm-way-200912404",
+      "title": "Insh Island — Savills auction lot (90 acres)",
+      "url": "https://auctions.savills.co.uk/auctions/21--22-april-2026-221/insh-island-clachan-seil-oban-argyll-and-bute-pa34-4tn-22377",
       "listingType": "land",
       "source": "curated",
-      "sourceListingId": "curated-canna-info-1",
-      "priceDisplay": null,
-      "notes": "Illustrative: not for sale — shows curated link pattern for island estates."
+      "sourceListingId": "savills-insh-22377",
+      "priceDisplay": "Auction 22 Apr 2026",
+      "notes": "Savills names Insh Island; uninhabited; check auction date/status before bidding."
     },
     {
-      "islandId": "isle-of-wight",
-      "title": "Isle of Wight — residential listings (Rightmove search)",
-      "url": "https://www.rightmove.co.uk/property-for-sale/find.html?locationIdentifier=REGION%5E876",
+      "islandId": "osm-relation-4230732",
+      "title": "Island of Soay — croft and house (Strutt & Parker)",
+      "url": "https://struttandparker.com/properties/island-of-soay",
       "listingType": "residential",
       "source": "curated",
-      "sourceListingId": "curated-iow-rightmove-search",
-      "priceDisplay": "varies",
-      "notes": "Deep link to portal search — not scraped; user verifies on Rightmove."
+      "sourceListingId": "strutt-soay-2026",
+      "priceDisplay": "Offers over £975,000",
+      "notes": "Listing describes South Soay croft/house; not necessarily entire island."
+    },
+    {
+      "islandId": "osm-way-3619206",
+      "title": "Eilean Mullagrach — Summer Isles cabin site",
+      "url": "https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/26241_inv240138/",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "galbraith-mullagrach-uklaf",
+      "priceDisplay": "£500,000",
+      "notes": "Galbraith marketing; UKLAF syndication. Names Eilean Mullagrach."
+    },
+    {
+      "islandId": "osm-relation-14940681",
+      "title": "Gasker Island — uninhabited (Galbraith)",
+      "url": "https://www.galbraithgroup.com/property/inv250127-gasker-island-isle-of-harris-outer-hebrides-hs3-3hl/",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "galbraith-gasker-inv250127",
+      "priceDisplay": "Offers over £120,000",
+      "notes": "Page status Under Offer (May 2026); still a named broker listing."
+    },
+    {
+      "islandId": "osm-way-4563603",
+      "title": "Shore Island — Shannon Estuary (Vladi)",
+      "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/shore-island",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "vladi-shore-island",
+      "priceDisplay": "€900,000",
+      "notes": "Vladi active sale page naming Shore Island."
+    },
+    {
+      "islandId": "osm-way-4554655",
+      "title": "Calf Island Middle — West Cork (Vladi)",
+      "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/middle-calf-island",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "vladi-middle-calf",
+      "priceDisplay": "€1,100,000",
+      "notes": "Broker page title Middle Calf Island; atlas name Calf Island Middle."
+    },
+    {
+      "islandId": "osm-relation-3998378",
+      "title": "Long Island — Lower Lough Erne residence",
+      "url": "https://www.lslauctions.com/PropertyLotDetail-MOFC-3657703/for-sale/long-island-lower-lough-erne-enniskillen",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "montgomery-long-island-lough-erne",
+      "priceDisplay": "Guide £550,000",
+      "notes": "LSL/Montgomery Finlay; names Long Island, Lower Lough Erne."
+    },
+    {
+      "islandId": "osm-relation-3516496",
+      "title": "Creaghawaddy Island — portion (McCaffrey Bros)",
+      "url": "https://www.mccaffreybros.com/creaghawaddy-island-upper-lough-erne-lisnaskea/1060009",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "mccaffrey-creaghawaddy-1060009",
+      "priceDisplay": "Offers over £85,000",
+      "notes": "For sale; circa 6 acres (portion of island), not whole island."
+    },
+    {
+      "islandId": "osm-relation-4029093",
+      "title": "Creelogh, Gorumna Island — coastal holding (DNG)",
+      "url": "https://martinoconnor.dngauctions.ie/lot/details/109306",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "dng-gorumna-creelogh-109306",
+      "priceDisplay": "From €145,000",
+      "notes": "Auction lot on Gorumna Island; marketed as near-island coastal holding."
     }
   ]
 }
