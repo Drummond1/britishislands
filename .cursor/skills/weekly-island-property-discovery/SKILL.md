@@ -105,6 +105,10 @@ Update `docs/STATE.md` for-sale count. Append one `SESSION-LOG.md` block with `+
 Scheduled workflow `.github/workflows/property-discovery-weekly.yml` runs registry sync weekly.
 Research still requires this skill in Cursor (sub-agents); CI refreshes counts/docs from committed data.
 
+**If the workflow is not on GitHub yet** (Cursor push lacks `workflow` scope), follow
+[`docs/GITHUB-WORKFLOW-WEEKLY-PROPERTY.md`](../../../docs/GITHUB-WORKFLOW-WEEKLY-PROPERTY.md)
+— paste the YAML in **Actions → New workflow** once.
+
 ## Troubleshooting
 
 | Issue | Action |

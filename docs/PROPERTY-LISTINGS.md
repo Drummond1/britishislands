@@ -126,4 +126,5 @@ once per week; launches four regional sub-agents, then the scripts above.
 | `data/for_sale_islands_summary.json` | Slim counts stub |
 
 GitHub Actions: `.github/workflows/property-discovery-weekly.yml` (Mondays 06:00 UTC,
-registry refresh; research still via Cursor skill).
+registry refresh; research still via Cursor skill). **Setup (paste workflow on GitHub):**
+[`GITHUB-WORKFLOW-WEEKLY-PROPERTY.md`](GITHUB-WORKFLOW-WEEKLY-PROPERTY.md).
