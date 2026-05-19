@@ -32,6 +32,10 @@ const TYPE_COLORS = {
   unknown: "#b08bd1",
 };
 
+/** Distinct map/list styling for islands with a property listing link on file. */
+const FOR_SALE_MARKER_FILL = "#e8a838";
+const FOR_SALE_MARKER_STROKE = "#1a1200";
+
 const ROW_HEIGHT = 76; // px, must match .island-card sizing (incl. thumbnail)
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
 
@@ -60,6 +64,7 @@ const state = {
   ferryIslandIds: null,     // Set<islandId> of islands reachable by a ferry route
   ferryRoutesByIsland: null, // Map<islandId, route[]> built after loadFerries
   ferryGraph: null,         // Map<islandId, {other, durationMin, routeId}[]>
+  propertyListingIslandIds: null, // Set<islandId> with ≥1 for-sale outbound link
   causeways: null,          // lazy-loaded array of tidal/bridge causeway records
   causewaysPromise: null,
   favoriteIds: null,        // Set<islandId> persisted in localStorage
@@ -69,6 +74,7 @@ const state = {
   crowdDraftMarker: null,
   crowdSuggestConfig: null,
   favoritesMapLayer: null,
+  propertyListingMapLayer: null,
   featuredIslands: null,
   discoveryTopics: null,
   activeExploreTopic: null,
@@ -473,6 +479,70 @@ function syncFerryDiscoveryFilter() {
   if (!ready) ferryToggle.checked = false;
 }
 
+function islandHasPropertyListing(island) {
+  if (!island) return false;
+  if (island.hasPropertyListing === true) return true;
+  if (Array.isArray(island.propertyListings) && island.propertyListings.length > 0) {
+    return true;
+  }
+  return Boolean(state.propertyListingIslandIds?.has(island.id));
+}
+
+function initPropertyListingState() {
+  const ids = new Set();
+  for (const i of state.islands) {
+    if (islandHasPropertyListing(i)) ids.add(i.id);
+  }
+  state.propertyListingIslandIds = ids;
+  syncPropertyListingFilter();
+  rebuildPropertyListingMapLayer();
+}
+
+function syncPropertyListingFilter() {
+  const toggle = els.filterForSale;
+  if (!toggle) return;
+  const ready = state.propertyListingIslandIds != null;
+  toggle.disabled = !ready;
+  const wrap = document.getElementById("filter-for-sale-wrap");
+  if (wrap) {
+    wrap.classList.toggle("toggle--pending", !ready);
+    wrap.title = ready
+      ? "Show only islands with a known property listing link"
+      : "Loading property listings…";
+  }
+  if (!ready) toggle.checked = false;
+  const n = state.propertyListingIslandIds?.size ?? 0;
+  const countEl = document.getElementById("for-sale-count");
+  if (countEl) countEl.textContent = n ? `(${n})` : "";
+}
+
+function primaryPropertyListing(island) {
+  const rows = island?.propertyListings;
+  if (!Array.isArray(rows) || !rows.length) return null;
+  return rows.find((r) => r?.url) || rows[0];
+}
+
+function propertyListingPopupHtml(island) {
+  const rows = island.propertyListings || [];
+  const links = rows
+    .filter((r) => r?.url)
+    .map((r) => {
+      const typeLabel = _LISTING_TYPE_LABEL[r.listingType] || r.listingType || "Listing";
+      const price = r.priceDisplay || (r.priceGBP != null ? `£${Number(r.priceGBP).toLocaleString("en-GB")}` : "");
+      return `<li class="sale-popup__item">
+        <a href="${escapeAttr(r.url)}" target="_blank" rel="noopener noreferrer" class="sale-popup__link">${escapeHtml(r.title || "View listing")} ↗</a>
+        <span class="sale-popup__meta">${escapeHtml(typeLabel)}${price ? ` · ${escapeHtml(price)}` : ""}</span>
+      </li>`;
+    })
+    .join("");
+  return `<div class="sale-popup">
+    <p class="sale-popup__title"><strong>${escapeHtml(island.name)}</strong></p>
+    <p class="sale-popup__lead">Property link${rows.length === 1 ? "" : "s"} (opens external site):</p>
+    <ul class="sale-popup__list">${links}</ul>
+    <button type="button" class="sale-popup__atlas-btn" data-island-id="${escapeAttr(island.id)}">Island profile</button>
+  </div>`;
+}
+
 function loadFerries() {
   if (state.ferries) return Promise.resolve(state.ferries);
   if (state.ferriesPromise) return state.ferriesPromise;
@@ -675,6 +745,7 @@ const els = {
   filterPhoto: document.getElementById("filter-photo"),
   filterFerry: document.getElementById("filter-ferry"),
   filterElevation: document.getElementById("filter-elevation"),
+  filterForSale: document.getElementById("filter-for-sale"),
   areaMinFilter: document.getElementById("area-min-filter"),
   subtypeFilter: document.getElementById("subtype-filter"),
   confidenceFilter: document.getElementById("confidence-filter"),
@@ -807,6 +878,7 @@ function completeFavoritesAccess() {
     closeFavoritesAccessModal(false);
     updateSavedUiChrome();
     rebuildFavoritesMapLayer();
+  rebuildPropertyListingMapLayer();
     rebuildMarkerLayer();
     const next = favoritesAccessPending;
     favoritesAccessPending = null;
@@ -1101,6 +1173,64 @@ function makeFavoriteHeartMarker(island) {
   });
   marker.on("click", () => focusIsland(island.id, { fly: false }));
   return marker;
+}
+
+function getPropertyListingMapPane() {
+  if (!map.getPane("propertyListingPane")) {
+    const pane = map.createPane("propertyListingPane");
+    pane.style.zIndex = "640";
+  }
+  return "propertyListingPane";
+}
+
+function makeForSaleMapMarker(island) {
+  const marker = L.marker([island.lat, island.lng], {
+    icon: L.divIcon({
+      className: "map-sale-marker",
+      html: '<span class="map-sale-marker__ring" aria-hidden="true"></span><span class="map-sale-marker__badge">£</span>',
+      iconSize: [34, 34],
+      iconAnchor: [17, 17],
+    }),
+    pane: getPropertyListingMapPane(),
+    zIndexOffset: 850,
+  });
+  const lead = primaryPropertyListing(island);
+  const tip = lead?.url
+    ? `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><a class="map-sale-tooltip__link" href="${escapeAttr(lead.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></span>`
+    : `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}</span>`;
+  marker.bindTooltip(tip, {
+    direction: "top",
+    offset: [0, -14],
+    className: "map-sale-tooltip-wrap",
+    interactive: true,
+  });
+  marker.bindPopup(propertyListingPopupHtml(island), {
+    maxWidth: 300,
+    className: "sale-popup-wrap",
+  });
+  marker.on("popupopen", (ev) => {
+    const btn = ev.popup.getElement()?.querySelector(".sale-popup__atlas-btn");
+    btn?.addEventListener("click", () => {
+      map.closePopup();
+      focusIsland(island.id, { fly: false });
+    });
+  });
+  marker.on("click", () => focusIsland(island.id, { fly: false }));
+  return marker;
+}
+
+function rebuildPropertyListingMapLayer() {
+  if (!map || !state.propertyListingIslandIds) return;
+  if (!state.propertyListingMapLayer) {
+    state.propertyListingMapLayer = L.layerGroup();
+    state.propertyListingMapLayer.addTo(map);
+  }
+  state.propertyListingMapLayer.clearLayers();
+  for (const id of state.propertyListingIslandIds) {
+    const island = state.byId.get(id);
+    if (!island || !Number.isFinite(island.lat) || !Number.isFinite(island.lng)) continue;
+    state.propertyListingMapLayer.addLayer(makeForSaleMapMarker(island));
+  }
 }
 
 function rebuildFavoritesMapLayer() {
@@ -1740,6 +1870,7 @@ async function loadIslands() {
   }
 
   initFavoritesState();
+  initPropertyListingState();
   populateNationFilter();
   populateSubtypeFilter();
   renderScotlandQuickChips();
@@ -2106,6 +2237,14 @@ function renderActiveFilterChips() {
       },
     });
   }
+  if (els.filterForSale?.checked) {
+    chips.push({
+      label: "For sale",
+      clear: () => {
+        els.filterForSale.checked = false;
+      },
+    });
+  }
   const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
   if (areaMin > 0) {
     chips.push({
@@ -2272,6 +2411,7 @@ function applyFilters() {
   const favOnly = els.favoritesFilter?.value === "favorites";
   const photoOnly = Boolean(els.filterPhoto?.checked);
   const ferryOnly = Boolean(els.filterFerry?.checked);
+  const forSaleOnly = Boolean(els.filterForSale?.checked);
   const elevationOnly = Boolean(els.filterElevation?.checked);
   const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
   const subtype = els.subtypeFilter?.value || "";
@@ -2293,6 +2433,7 @@ function applyFilters() {
     if (ferryOnly) {
       if (!state.ferryIslandIds?.has(i.id)) return false;
     }
+    if (forSaleOnly && !islandHasPropertyListing(i)) return false;
     if (elevationOnly && !islandHasElevation(i)) return false;
     if (areaMin > 0 && (i.areaKm2 || 0) < areaMin) return false;
     if (subtype && i.subtype !== subtype) return false;
@@ -2343,7 +2484,7 @@ function applyFilters() {
   el.addEventListener("change", applyFilters);
 });
 
-[els.filterPhoto, els.filterFerry, els.filterElevation].forEach((el) => {
+[els.filterPhoto, els.filterFerry, els.filterElevation, els.filterForSale].forEach((el) => {
   if (!el) return;
   el.addEventListener("change", applyFilters);
 });
@@ -2439,7 +2580,12 @@ function renderListWindow() {
     const island = state.filtered[i];
     if (!island) continue;
     const wrap = document.createElement("div");
-    wrap.className = "island-card" + (island.id === state.activeId ? " is-active" : "");
+    const hasListing = islandHasPropertyListing(island);
+    const listingLead = hasListing ? primaryPropertyListing(island) : null;
+    wrap.className =
+      "island-card" +
+      (island.id === state.activeId ? " is-active" : "") +
+      (hasListing ? " island-card--for-sale" : "");
     wrap.dataset.id = island.id;
 
     const main = document.createElement("button");
@@ -2465,6 +2611,7 @@ function renderListWindow() {
           ${escapeHtml(island.name)}
           ${unconfirmed ? '<span class="island-card__unconfirmed" title="Needs review">?</span>' : ""}
           ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
+          ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
         </div>
         <div class="island-card__meta">
           <span>${escapeHtml(island.nation)}</span>
@@ -2492,6 +2639,18 @@ function renderListWindow() {
     });
 
     wrap.appendChild(main);
+    if (listingLead?.url) {
+      const listBtn = document.createElement("a");
+      listBtn.className = "island-card__listing-link";
+      listBtn.href = listingLead.url;
+      listBtn.target = "_blank";
+      listBtn.rel = "noopener noreferrer";
+      listBtn.title = listingLead.title || "Open property listing";
+      listBtn.setAttribute("aria-label", `Open property listing for ${island.name}`);
+      listBtn.textContent = "Listing ↗";
+      listBtn.addEventListener("click", (e) => e.stopPropagation());
+      wrap.appendChild(listBtn);
+    }
     wrap.appendChild(favBtn);
     listInner.appendChild(wrap);
   }
@@ -2524,22 +2683,58 @@ function makeMarker(island) {
   );
   let fillColor = color;
   let fillOpacity = 0.9;
+  let strokeColor = "#ffffff";
+  let strokeWeight = 1.2;
+  let className = "marker-vis";
   if (state.exploreIslandIds?.has(island.id)) {
     fillColor = "#f4d35e";
     radius = Math.min(17, radius + 2);
     fillOpacity = 1;
   }
+  const onSale = islandHasPropertyListing(island);
+  if (onSale) {
+    fillColor = FOR_SALE_MARKER_FILL;
+    strokeColor = FOR_SALE_MARKER_STROKE;
+    strokeWeight = 2.4;
+    radius = Math.min(18, radius + 3);
+    fillOpacity = 1;
+    className = "marker-vis marker-vis--for-sale";
+  }
 
-  const paintRadius = Math.max(radius, 10);
+  const paintRadius = Math.max(radius, onSale ? 12 : 10);
   const marker = L.circleMarker([island.lat, island.lng], {
     radius: paintRadius,
-    color: "#ffffff",
-    weight: 1.2,
+    color: strokeColor,
+    weight: strokeWeight,
     fillColor,
     fillOpacity,
-    className: "marker-vis",
+    className,
   });
-  marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+  if (onSale) {
+    const lead = primaryPropertyListing(island);
+    const tip = lead?.url
+      ? `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><a class="map-sale-tooltip__link" href="${escapeAttr(lead.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></span>`
+      : `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}</span>`;
+    marker.bindTooltip(tip, {
+      direction: "top",
+      offset: [0, -6],
+      className: "map-sale-tooltip-wrap",
+      interactive: true,
+    });
+    marker.bindPopup(propertyListingPopupHtml(island), {
+      maxWidth: 300,
+      className: "sale-popup-wrap",
+    });
+    marker.on("popupopen", (ev) => {
+      const btn = ev.popup.getElement()?.querySelector(".sale-popup__atlas-btn");
+      btn?.addEventListener("click", () => {
+        map.closePopup();
+        focusIsland(island.id, { fly: false });
+      });
+    });
+  } else {
+    marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+  }
   marker.on("click", () => focusIsland(island.id, { fly: false }));
   return marker;
 }
@@ -2560,6 +2755,8 @@ function rebuildMarkerLayer() {
   for (const island of paintSet) {
     // Saved islands are shown as ♥ markers on favoritesMapLayer (always visible).
     if (hasFavoritesAccess() && isFavoriteIsland(island.id)) continue;
+    // For-sale islands use dedicated £ badges on propertyListingMapLayer (always on map).
+    if (islandHasPropertyListing(island)) continue;
     const m = makeMarker(island);
     state.markers.set(island.id, m);
     if (layer === clusterLayer) {
@@ -2569,6 +2766,7 @@ function rebuildMarkerLayer() {
     }
   }
   rebuildFavoritesMapLayer();
+  rebuildPropertyListingMapLayer();
   // #region agent log
   const paintN = islandsForMarkerPaint().length;
   const hitEls = document.querySelectorAll(".marker-hit").length;
@@ -2733,6 +2931,40 @@ function _localTerminalName(term) {
     }
   }
   return null;
+}
+
+const _LISTING_TYPE_LABEL = {
+  whole_island: "Whole island",
+  residential: "Residential",
+  land: "Land",
+};
+
+function renderPropertyListings(island) {
+  const listings = island.propertyListings;
+  if (!Array.isArray(listings) || !listings.length) {
+    return "";
+  }
+  const items = listings
+    .map((L) => {
+      const typeLabel = _LISTING_TYPE_LABEL[L.listingType] || L.listingType || "Listing";
+      const price = L.priceDisplay || (L.priceGBP != null ? `£${Number(L.priceGBP).toLocaleString("en-GB")}` : "");
+      const conf =
+        L.matchedConfidence === "low"
+          ? ' <span class="property-listing__low" title="Match needs verification">?</span>'
+          : "";
+      const src = L.source ? `<span class="property-listing__source">${escapeHtml(L.source)}</span>` : "";
+      return `<li class="property-listing">
+        <a class="property-listing__link" href="${escapeAttr(L.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(L.title || "View listing")} ↗</a>
+        <span class="property-listing__meta">${escapeHtml(typeLabel)}${price ? ` · ${escapeHtml(price)}` : ""}${conf} ${src}</span>
+      </li>`;
+    })
+    .join("");
+  return `<div class="section property-listings-section">
+    <h3>On the market</h3>
+    <p class="property-listings__lead">Outbound links to estate agents and brokers — not hosted by this atlas. Confirm price and availability on the source site.</p>
+    <ul class="property-listing-list">${items}</ul>
+    <p class="property-listings__disclaimer">We are not an estate agent. Listings may be incomplete or out of date.</p>
+  </div>`;
 }
 
 function renderFerries(island) {
@@ -3066,6 +3298,7 @@ function renderDetails(island) {
 
     <div class="trip-priority-block">
     ${renderFerries(island)}
+    ${renderPropertyListings(island)}
     </div>
 
     <div class="stat-grid">
@@ -4014,6 +4247,7 @@ function resetAtlasHome() {
   if (els.favoritesFilter) els.favoritesFilter.value = "";
   if (els.filterPhoto) els.filterPhoto.checked = false;
   if (els.filterFerry) els.filterFerry.checked = false;
+  if (els.filterForSale) els.filterForSale.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
   if (els.areaMinFilter) els.areaMinFilter.value = "";
   if (els.subtypeFilter) els.subtypeFilter.value = "";
@@ -4610,6 +4844,8 @@ const CHAT_FEATURES = {
     "community", "town", "city"],
   walkable: ["walkable", "you can walk", "walk to"],
   remote: ["remote", "isolated", "far", "lonely", "outermost"],
+  forsale: ["for sale", "on the market", "buy", "buying", "property", "listing",
+    "listings", "estate agent", "for-sale"],
 };
 
 const CHAT_SORTS = {
@@ -5136,6 +5372,10 @@ function scoreChatIsland(island, q) {
       score += 4;
     } else if (feat === "photo" && islandHasPhoto(island)) {
       score += 4;
+    } else if (feat === "forsale" && islandHasPropertyListing(island)) {
+      score += 5;
+    } else if (feat === "forsale") {
+      score -= 3;
     } else if (hits > 0) {
       score += 2 + Math.min(3, hits);
     } else if (q.features.size === 1) {

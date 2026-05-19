@@ -1,0 +1,29 @@
+# Isles of Britain — Supabase local/dev config
+# https://supabase.com/docs/guides/cli/config
+
+project_id = "isles-of-britain"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:8765"
+additional_redirect_urls = ["https://www.findmyisland.com"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true

@@ -2015,7 +2015,9 @@ body {
   border-radius: 10px;
   padding: 8px 12px;
   display: flex;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  max-width: min(96vw, 520px);
   font-size: 12px;
   z-index: 500;
 }
@@ -3426,6 +3428,205 @@ body {
   font-size: 12px;
   vertical-align: 0;
   opacity: 0.85;
+}
+.island-card--for-sale {
+  border-left: 3px solid var(--for-sale, #e8a838);
+  background: linear-gradient(
+    90deg,
+    rgba(232, 168, 56, 0.12) 0%,
+    transparent 48%
+  );
+}
+.island-card__sale-pill {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #1a1200;
+  background: var(--for-sale, #e8a838);
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.island-card__listing-link {
+  flex-shrink: 0;
+  align-self: center;
+  margin-right: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1a1200;
+  background: var(--for-sale, #e8a838);
+  border-radius: 6px;
+  border: 1px solid rgba(26, 18, 0, 0.25);
+  white-space: nowrap;
+}
+.island-card__listing-link:hover {
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+.for-sale-count {
+  font-size: 11px;
+  opacity: 0.85;
+  font-weight: 600;
+}
+.map-sale-marker {
+  background: transparent;
+  border: none;
+}
+.map-sale-marker__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--for-sale, #e8a838);
+  box-shadow: 0 0 0 2px rgba(15, 22, 32, 0.85), 0 2px 8px rgba(0, 0, 0, 0.35);
+  animation: sale-marker-pulse 2s ease-in-out infinite;
+}
+.map-sale-marker__badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1a1200;
+  background: var(--for-sale, #e8a838);
+  border-radius: 50%;
+  border: 2px solid #1a1200;
+}
+@keyframes sale-marker-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+.map-sale-tooltip-wrap {
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 6px 8px;
+  border: 1px solid var(--for-sale, #e8a838);
+}
+.map-sale-tooltip__link {
+  color: var(--for-sale, #e8a838);
+  font-weight: 600;
+}
+.marker-vis--for-sale {
+  filter: drop-shadow(0 0 4px rgba(232, 168, 56, 0.65));
+}
+.sale-popup-wrap .leaflet-popup-content-wrapper {
+  border-color: var(--for-sale, #e8a838);
+}
+.sale-popup__title {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+.sale-popup__lead {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.sale-popup__list {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+.sale-popup__item {
+  margin-bottom: 8px;
+}
+.sale-popup__link {
+  display: block;
+  font-weight: 600;
+  color: var(--for-sale, #e8a838);
+  margin-bottom: 2px;
+}
+.sale-popup__meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.sale-popup__atlas-btn {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  cursor: pointer;
+}
+.sale-popup__atlas-btn:hover {
+  border-color: var(--accent);
+}
+.dot--for-sale {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  font-style: normal;
+  color: #1a1200;
+  background: var(--for-sale, #e8a838);
+  border-radius: 50%;
+  border: 1px solid #1a1200;
+}
+.property-listings-section {
+  margin-top: 0.5rem;
+}
+.property-listings__lead,
+.property-listings__disclaimer {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0 0 0.75rem;
+}
+.property-listing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.property-listing {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  background: var(--surface-elevated, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+.property-listing__link {
+  display: block;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+.property-listing__link:hover {
+  text-decoration: underline;
+}
+.property-listing__meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.property-listing__source {
+  text-transform: capitalize;
+}
+.property-listing__low {
+  color: var(--river, #c9a227);
+  font-weight: 700;
 }
 .island-card__unconfirmed {
   display: inline-block;

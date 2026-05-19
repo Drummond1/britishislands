@@ -122,6 +122,14 @@
               <input type="checkbox" id="filter-elevation" />
               <span>Summit</span>
             </label>
+            <label
+              class="toggle toggle--pending"
+              id="filter-for-sale-wrap"
+              title="Loading property listings…"
+            >
+              <input type="checkbox" id="filter-for-sale" disabled />
+              <span>For sale <span id="for-sale-count" class="for-sale-count"></span></span>
+            </label>
           </div>
           <details class="filter-tier filter-tier--more">
             <summary class="filter-tier__summary">More filters</summary>
@@ -344,6 +352,7 @@
           <span role="listitem"><i class="dot dot--unknown"></i> Needs review</span>
           <span role="listitem"><i class="dot dot--explore"></i> Topic</span>
           <span role="listitem"><i class="dot dot--crowd"></i> Community</span>
+          <span role="listitem"><i class="dot dot--for-sale" aria-hidden="true">£</i> For sale</span>
           <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
         </div>
       </section>

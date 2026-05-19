@@ -1,0 +1,11 @@
+{
+  "startedAt": "2026-05-19T05:44:27+00:00",
+  "source": "all",
+  "dryRun": false,
+  "raw": 6,
+  "matched": 6,
+  "unmatched": 0,
+  "lowConfidence": 0,
+  "unmatchedAudit": [],
+  "islandsWithListings": 6
+}

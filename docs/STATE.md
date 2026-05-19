@@ -4,6 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-19 (property listings — for sale)** — **For sale** layer: curated outbound
+links on **6** islands (`propertyListings[]`); topbar filter + detail **On the market**
+section; `hasPropertyListing` on `islands_index.json`. Pipeline:
+`ingest_property_listings.py` → `cache_property_listings.json` → `apply_enrichments.py`.
+Rightmove/Zoopla scrape **not** used (`data/discovery/property_sources.json`). Optional
+Homedata via `HOMEDATA_API_KEY` after Terms review. See `docs/PROPERTY-LISTINGS.md`.
+
 **2026-05-17 (SEO discoverability)** — Committed **`sitemap.xml`** (7,042 URLs) and
 **`robots.txt`** for `https://www.findmyisland.com`. **`index.html`** sets
 `window.IOB_SITE_ORIGIN` for canonical/OG URLs. **Pages workflow** runs

@@ -171,6 +171,44 @@ set when `images[]` is non-empty.
 - Never derive an image from a free-text search (e.g. "google for Foo Island").
 - Only one image may have `primary: true` per record.
 
+### Property listings (for sale — outbound links)
+
+Optional field group. **Link-out only** — no scraped portal HTML, photos, or
+full addresses (see `docs/PROPERTY-LISTINGS.md` and `ETHICS.md` §3).
+
+| Field | Type | Notes |
+|---|---|---|
+| `propertyListings` | array | Zero or more active listing stubs. |
+| `propertyListingsSource` | string | e.g. `curated`, `homedata`, `curated+homedata`. |
+| `propertyListingsConfidence` | enum | `high`, `medium`, `low` — worst-case across matches on the island. |
+| `propertyListingsAttribution` | string | Human-readable source / disclaimer. |
+| `propertyListingsFetchedAt` | ISO-8601 | Last ingest run. |
+
+Each `propertyListings[]` entry:
+
+```json
+{
+  "id": "a1b2c3d4e5f67890",
+  "listingType": "whole_island",
+  "status": "for_sale",
+  "title": "Tanera Mòr — whole island estate",
+  "url": "https://example.com/listing",
+  "source": "curated",
+  "sourceListingId": "curated-tanera-mor-1",
+  "priceGBP": null,
+  "priceDisplay": "POA",
+  "matchedMethod": "curated",
+  "matchedConfidence": "high",
+  "offshore": false
+}
+```
+
+| `listingType` | `whole_island`, `residential`, `land` |
+| `matchedMethod` | `curated`, `polygon`, `proximity`, `name` |
+| `matchedConfidence` | `high`, `medium`, `low` |
+
+Staged in `data/cache_property_listings.json`; applied via `apply_enrichments.py`.
+
 ### Provenance / classification
 
 | Field | Type | Notes |

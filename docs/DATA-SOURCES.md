@@ -135,6 +135,20 @@ re-reads the result to verify the JSON is still parseable and that
 the curated regression spine (Skye, Devenish, Achill, Isle of Wight,
 Eel Pie) hasn't drifted.
 
+### B.6 — Property listings (for sale — outbound links)
+
+| | |
+|---|---|
+| **Source (MVP)** | Maintainer-curated [`data/curated_property_listings.json`](../data/curated_property_listings.json) |
+| **Source (optional)** | [Homedata UK](https://homedata.co.uk/docs) live-listings API (`HOMEDATA_API_KEY`) |
+| **Licence** | Link-out only; no HTML scrape. Homedata: verify [Terms](https://homedata.co.uk/terms) before static redistribution. |
+| **Refresh** | Weekly manual or scheduled `ingest_property_listings.py` + `apply_enrichments.py --only property` |
+| **Script** | `scripts/discover_property_apis.py`, `scripts/ingest_property_listings.py`, `scripts/import_curated_property_listings.py` |
+| **Attribution string** | `Outbound links to third-party estate agents and brokers; not scraped from Rightmove or Zoopla. Verify status on the source site.` |
+| **Rejected** | Rightmove, Zoopla, OnTheMarket scrape — see `data/discovery/property_sources.json` |
+
+See [`PROPERTY-LISTINGS.md`](PROPERTY-LISTINGS.md).
+
 ---
 
 ## D. License compatibility matrix
@@ -147,6 +161,7 @@ Eel Pie) hasn't drifted.
 | `wildlifeColonies[]`         | OGL 3.0 (JNCC) + PSI (NPWS) + CC-BY-SA 4.0 (Wikipedia) | OGL 3.0 + CC-BY-SA 4.0 (combined; project ships under CC-BY-SA 4.0 by default) |
 | `geology`                    | OGL 3.0 (BGS)                      | OGL 3.0 (attribution carried) |
 | `population` family          | OGL 3.0 + OGL IoM + PSI Re-use      | OGL 3.0 (attribution carried) |
+| `propertyListings[]`         | Third-party site Terms (link-out)   | No redistribution of listing media; URLs + metadata only |
 
 When in doubt, the **most restrictive incoming licence** propagates
 through the project's redistribution chain. Per ETHICS §1, every

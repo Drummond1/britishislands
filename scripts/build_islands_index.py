@@ -34,6 +34,8 @@ def slim_record(island: dict) -> dict:
     row = {k: v for k, v in island.items() if k not in DROP_KEYS}
     images = island.get("images") or []
     row["hasImage"] = bool(images or island.get("image"))
+    listings = island.get("propertyListings") or []
+    row["hasPropertyListing"] = bool(listings)
     return row
 
 

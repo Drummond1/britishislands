@@ -1672,6 +1672,36 @@
   committed locally but **not** on remote — push rejected without `workflow` OAuth
   scope; add the file manually or re-push with workflow permissions.
 
+## 2026-05-19 — For-sale map markers + list links
+
+- **Goal**: Clearly identify for-sale islands on the home map and link to listings.
+- **What changed**: Gold **£** map badges (always visible layer), legend entry, list **For sale** pill + **Listing ↗** button, map popup/tooltip with outbound links.
+- **Outcome**: Six curated listing islands stand out at default zoom.
+
+## 2026-05-19 — Island property listings (for sale)
+
+- **Goal**: Show which islands have known for-sale listings via ethical outbound links.
+- **What changed**:
+  - `scripts/discover_property_apis.py` → `data/discovery/property_sources.json`
+  - `scripts/ingest_property_listings.py`, `scripts/import_curated_property_listings.py`
+  - `data/curated_property_listings.json` (6 seed links)
+  - `propertyListings[]` schema in `docs/DATA-SCHEMA.md`; `apply_enrichments` + index stub
+  - UI: **For sale** filter, list badge, detail panel, chat synonyms
+  - `docs/PROPERTY-LISTINGS.md`, `docs/DATA-SOURCES.md` §B.6
+- **Outcome / counts**: **6** islands with listing links applied to `islands.json`.
+- **Open items**: Homedata API key + licence sign-off; expand curated file as brokers publish.
+
+## 2026-05-17 — Supabase schema scaffolding
+
+- **Goal**: Prepare Postgres + Auth for contributions and cross-device saved islands.
+- **What changed**:
+  - `supabase/migrations/20260517000000_initial_contributions.sql` — profiles, submissions,
+    community_photos/text, reports, audit_log, saved_islands, RLS, storage bucket.
+  - `supabase/config.toml`, `supabase-client.js`, `.env.local.example`, `docs/SUPABASE.md`,
+    `scripts/check_supabase.py`, `config.local.example.js` Supabase vars.
+- **Outcome**: Repo-ready; user creates project at supabase.com and runs migration in SQL Editor.
+- **Open items**: Paste keys into `.env.local` / `config.local.js`; wire auth UI in `app.js`.
+
 ## 2026-05-17 — SEO sitemap + robots + deploy hook
 
 - **Goal**: Make island deep links discoverable to crawlers (not only client-side

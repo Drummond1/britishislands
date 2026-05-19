@@ -10,6 +10,7 @@ Inputs (any subset can be missing — only present caches are applied):
 * ``data/cache_wildlife.json``      RSPB reserves + wildlife colonies
 * ``data/cache_bgs.json``           geology
 * ``data/cache_census2022.json``    population + populationDetails
+* ``data/cache_property_listings.json``  property for-sale outbound links
 
 Safety contract
 ---------------
@@ -52,6 +53,7 @@ CACHES = {
     "wildlife":    DATA / "cache_wildlife.json",
     "geology":     DATA / "cache_bgs.json",
     "census":      DATA / "cache_census2022.json",
+    "property":    DATA / "cache_property_listings.json",
 }
 
 # Smoke-check islands that must remain intact post-merge.  These are

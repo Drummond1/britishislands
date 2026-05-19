@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Maintainer-curated outbound links for islands on the market. Verify URLs before relying on them; replace when listings change.",
+    "updatedAt": "2026-05-17"
+  },
+  "listings": [
+    {
+      "islandId": "osm-relation-1240445",
+      "title": "Tanera Mòr — whole island estate",
+      "url": "https://www.vladi-private-islands.com/islands-for-sale/scotland",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "curated-tanera-mor-1",
+      "priceDisplay": "POA",
+      "notes": "Category search on specialist broker; confirm active listing on broker site."
+    },
+    {
+      "islandId": "osm-relation-8245962",
+      "title": "Gometra — whole island",
+      "url": "https://www.vladi-private-islands.com/islands-for-sale/scotland",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "curated-gometra-1",
+      "priceDisplay": "POA",
+      "notes": "Specialist broker category; island may not always be listed."
+    },
+    {
+      "islandId": "osm-relation-9395600",
+      "title": "Eilean Shona — private island estate",
+      "url": "https://www.knightfrank.co.uk/properties/residential/for-sale/",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "curated-eilean-shona-1",
+      "priceDisplay": "POA",
+      "notes": "Search Knight Frank for Eilean Shona; replace URL when a live listing exists."
+    },
+    {
+      "islandId": "osm-relation-6046465",
+      "title": "Ulva — island and estate",
+      "url": "https://www.galbraithgroup.com/commercial/property-search/",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "curated-ulva-1",
+      "priceDisplay": "POA",
+      "notes": "Regional land agent search; verify current availability."
+    },
+    {
+      "islandId": "osm-way-4004501",
+      "title": "Canna — community-owned (reference)",
+      "url": "https://www.isleofcanna.com/",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "curated-canna-info-1",
+      "priceDisplay": null,
+      "notes": "Illustrative: not for sale — shows curated link pattern for island estates."
+    },
+    {
+      "islandId": "isle-of-wight",
+      "title": "Isle of Wight — residential listings (Rightmove search)",
+      "url": "https://www.rightmove.co.uk/property-for-sale/find.html?locationIdentifier=REGION%5E876",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "curated-iow-rightmove-search",
+      "priceDisplay": "varies",
+      "notes": "Deep link to portal search — not scraped; user verifies on Rightmove."
+    }
+  ]
+}
