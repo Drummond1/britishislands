@@ -1,0 +1,46 @@
+[
+  {
+    "islandName": "Thorne Island",
+    "nation": "Wales",
+    "broker": "Strutt & Parker",
+    "url": "https://struttandparker.com/properties/angle",
+    "listingType": "whole_island",
+    "priceDisplay": "Offers in excess of £3,000,000",
+    "status": "for_sale",
+    "notes": "Grade II* fort on private island off Angle; page names Thorne Island throughout.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "High Island, Claddaghduff",
+    "nation": "Ireland",
+    "broker": "Spencer Auctioneers",
+    "url": "https://www.myhome.ie/residential/brochure/high-island-claddaghduff-galway/4310632",
+    "listingType": "land",
+    "priceDisplay": "€1,250,000",
+    "status": "for_sale",
+    "notes": "Ardoileán (High Island) ~80 acres off Connemara; agent brochure on MyHome.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Taggs Island, Hampton",
+    "nation": "England",
+    "broker": "Absolute Homes",
+    "url": "https://www.absolute-homes.co.uk/property/4-bedroom-2-storey-houseboat-in-hampton/",
+    "listingType": "residential",
+    "priceDisplay": "Guide Price £725,000",
+    "status": "for_sale",
+    "notes": "4-bed houseboat on Taggs Island, River Thames.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Horse Island, Loop Head",
+    "nation": "Ireland",
+    "broker": "Lisney",
+    "url": "https://www.myhome.ie/residential/brochure/dunmore-bay-horse-island-loop-head-kilbaha-co-clare/4692569",
+    "listingType": "whole_island",
+    "priceDisplay": "€9,750,000",
+    "status": "for_sale",
+    "notes": "Estate includes private Horse Island via land bridge at Loop Head.",
+    "pageNamesIsland": true
+  }
+]

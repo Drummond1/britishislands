@@ -8,6 +8,7 @@ We do **not** scrape Rightmove, Zoopla, or OnTheMarket (see `data/discovery/prop
 | Tier | Source | Status |
 |------|--------|--------|
 | MVP | [`data/curated_property_listings.json`](../data/curated_property_listings.json) | **Active** — maintainer-edited links |
+| **Tier 3** | Multi-broker desk research + URL verify | **Active** — see below |
 | Evaluate | [Homedata](https://homedata.co.uk/docs) live-listings API | Behind `HOMEDATA_API_KEY`; confirm Terms before baking into `islands.json` |
 | Reject | Rightmove / Zoopla / OTM scrape | Blocked by [`ETHICS.md`](ETHICS.md) |
 
@@ -77,3 +78,26 @@ Replace URLs when listings expire or sell; remove rows when pages go offline.
 | `residential` | Named island but house/plot on an island (not whole island) | Soay croft, Boa Island cottage, Thames Ditton |
 
 Rows in `pendingAtlasIngest` in the verified manifest are live broker pages for islands **not yet** in `islands.json` — ingest via OSM discovery first, then add to `verified`.
+
+### Tier 3 — broker desk research (2026-05-19)
+
+Systematic pass across specialist broker sites (Scotland, Ireland/NI, England/Wales
+sub-agents): Galbraith, Strutt & Parker, Savills auctions, Bell Ingram, UKLAF, Vladi,
+Private Islands Online, MyHome agent brochures (not aggregator scrape), Sibleys/Scilly
+agents, Absolute Homes Thames eyots, Lisney, etc. No Rightmove/Zoopla.
+
+```bash
+# 1. Consolidate research → data/discovery/property_tier3_raw.json (array)
+# 2. Match + verify + merge into verified manifest
+python3 scripts/discover_property_tier3.py --apply
+# 3. One-shot sync to map
+python3 scripts/sync_curated_property_listings.py
+```
+
+Supporting scripts:
+
+- `scripts/match_property_listing_islands.py` — name/alias/hint matching to `islands.json`
+- `data/discovery/property_tier3_report.json` — accept/reject audit per run
+
+**Counts (2026-05-19):** verified manifest **29** islands (was **17**); **12** new atlas
+islands with `propertyListings[]` after Tier 3 apply.

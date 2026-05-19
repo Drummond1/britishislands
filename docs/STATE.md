@@ -4,12 +4,18 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
-**2026-05-19 (property listings — deep broker pass)** — **17** islands with
-`propertyListings[]` after multi-agent research (whole-island + named-island homes).
-Added: Inchmarnock, Eilean Mòr (Loch Sunart), Inishturk (Upper Lough Erne), Inis Barna
-(Vladi Inishbarna), Boa Island, Thames Ditton Island, Pharaoh's Island. Manifest:
-`data/discovery/property_listings_verified.json` (`pendingAtlasIngest` for gaps).
-Refresh: `python3 scripts/sync_curated_property_listings.py`.
+**2026-05-19 (property listings — Tier 3 broker crawl)** — **29** islands with
+`propertyListings[]` (**+12** new vs prior **17**). Tier 3 desk research across
+Scotland / Ireland / England-Wales broker sites; `scripts/discover_property_tier3.py`
++ `scripts/match_property_listing_islands.py`. New islands include Eilean Righ,
+Thorne Island, High Island, Whiddy, Heir, Kerrera, Turbot, Inishmicatreer, Arranmore,
+Horse Island (Loop Head), St Agnes (Scilly), Taggs Island. Manifest:
+`data/discovery/property_listings_verified.json`. Refresh:
+`python3 scripts/sync_curated_property_listings.py`.
+
+**2026-05-19 (property listings — deep broker pass)** — First verified manifest (**17**
+islands): Inchmarnock, Eilean Mòr (Loch Sunart), Inishturk (ULE), Inis Barna, Boa
+Island, Thames Ditton, Pharaoh's Island, etc.
 
 **2026-05-19 (property listings — for sale UI)** — Gold **£** map markers, filter,
 detail **On the market** section; `hasPropertyListing` on index. See

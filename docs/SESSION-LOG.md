@@ -1744,3 +1744,22 @@
   optional ~7k static landings on each Pages build.
 - **Open items**: Submit sitemap in Search Console; consider pre-rendered island HTML
   in `index.html` later if crawlers ignore SPA meta.
+
+## 2026-05-19 — Property listings Tier 3 (multi-broker crawl)
+
+- **Goal**: Expand “for sale” coverage via legal broker desk research (no
+  Rightmove/Zoopla scrape); wire new islands into the map.
+- **What changed**:
+  - Three region sub-agents (Scotland, Ireland/NI, England/Wales) returned broker
+    URLs; consolidated to `data/discovery/property_tier3_raw.json`.
+  - New: `scripts/match_property_listing_islands.py`, `scripts/discover_property_tier3.py`,
+    `data/discovery/property_tier3_report.json`, `property_tier3_supplement.json`.
+  - Merged **29** rows in `data/discovery/property_listings_verified.json`; ran
+    `sync_curated_property_listings.py` → `islands.json` + `islands_index.json`.
+  - Docs: `PROPERTY-LISTINGS.md` Tier 3 section; `STATE.md` counts.
+- **Outcome / counts**: **29** islands with `propertyListings[]` (was **17**); **12 new**
+  islands: Eilean Righ, Thorne Island, High Island, Horse Island, Whiddy, Heir, Kerrera,
+  Turbot, Inishmicatreer, Arranmore, St Agnes, Taggs Island.
+- **Open items**: `pendingAtlasIngest` (e.g. Inishskehan, Cameron Island Lough Derg,
+  Oran Island if added to OSM); refresh stale MyHome IDs periodically; Thorne Strutt URL
+  apex/www mirror quirk documented in manifest notes.

@@ -1,0 +1,145 @@
+[
+  {
+    "islandName": "Isle of Kerrera",
+    "nation": "Scotland",
+    "broker": "Bell Ingram",
+    "url": "https://www.bellingram.co.uk/property/ferry-house-kerrera-oban-argyll-and-bute-pa34-4sx/",
+    "listingType": "residential",
+    "priceDisplay": "Guide Price £180,000",
+    "status": "for_sale",
+    "notes": "Page shows For Sale for Ferry House on Kerrera.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Eilean Righ",
+    "nation": "Scotland",
+    "broker": "Private Islands Online",
+    "url": "https://www.privateislandsonline.com/europe/scotland/argyll-island",
+    "listingType": "whole_island",
+    "priceDisplay": "Price Upon Request",
+    "status": "for_sale",
+    "notes": "Detail page explicitly states For Sale; Scottish private island.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Turbot Island, Clifden",
+    "nation": "Ireland",
+    "broker": "Sherry Fitzgerald Mangan (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/turbot-island-clifden-co-galway/4719772",
+    "listingType": "site sale",
+    "priceDisplay": "€30,000",
+    "status": "for_sale",
+    "notes": "7.25-acre holding with shore frontage on Turbot Island.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Inish Turbot, Clifden",
+    "nation": "Ireland",
+    "broker": "Matt O'Sullivan Auctioneers (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/inish-turbot-clifden-galway/4800648",
+    "listingType": "residential sale on island",
+    "priceDisplay": "€300,000",
+    "status": "for_sale",
+    "notes": "3-bed cottage on Inish Turbot with private-boat access.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Inishmacatreer, Cross, Headford",
+    "nation": "Ireland",
+    "broker": "Michelle Burke Auctioneer and Letting Agent (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/inishmacatreer-cross-headford-county-galway/4939197",
+    "listingType": "residential sale on island",
+    "priceDisplay": "€457,500",
+    "status": "for_sale",
+    "notes": "4-bed house on Inishmacatreer island with causeway access.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Arranmore Island (Illion), Burtonport",
+    "nation": "Ireland",
+    "broker": "Campbells Auctioneers (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/illion-arranmore-island-burtonport-donegal/4832226",
+    "listingType": "residential sale on island",
+    "priceDisplay": "€114,950",
+    "status": "for_sale",
+    "notes": "Donegal island listing; converted unit on south-facing site, ferry-served island.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Heir Island South, West Cork",
+    "nation": "Ireland",
+    "broker": "Pat Maguire Properties (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/heir-island-south-islands-west-cork/4638757",
+    "listingType": "residential island sale",
+    "priceDisplay": "€650,000",
+    "status": "for_sale",
+    "notes": "3-bed island dwelling with private jetty and c.16 acres.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Dunmore Bay & Horse Island, Loop Head",
+    "nation": "Ireland",
+    "broker": "Lisney Sotheby’s International Realty (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/dunmore-bay-horse-island-loop-head-kilbaha-co-clare/4692569",
+    "listingType": "estate sale including private island",
+    "priceDisplay": "€9,750,000",
+    "status": "for_sale",
+    "notes": "Luxury home and lands including private island via land bridge.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Whiddy Island, Bantry",
+    "nation": "Ireland",
+    "broker": "Sherry FitzGerald Country Homes, Farms & Estates (MyHome direct agent page)",
+    "url": "https://www.myhome.ie/residential/brochure/whiddy-island-bantry-county-cork/4948708",
+    "listingType": "private treaty / tender island holding",
+    "priceDisplay": "€4,000,000",
+    "status": "for_sale",
+    "notes": "Large Whiddy Island holding including Rabbit Island; private treaty or tender.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Thorne Island (off Angle, Pembrokeshire)",
+    "nation": "Wales",
+    "broker": "Strutt & Parker",
+    "url": "https://struttandparker.com/properties/angle",
+    "listingType": "whole-island",
+    "priceDisplay": "Offers In Excess Of £3,000,000",
+    "status": "for_sale",
+    "notes": "Private island with historic fort; explicit island listing.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Rose Cottage (St Agnes, Isles of Scilly)",
+    "nation": "England",
+    "broker": "Sibleys Island Homes",
+    "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=235",
+    "listingType": "home-on-island",
+    "priceDisplay": "£295,000",
+    "status": "for_sale",
+    "notes": "Unexpectedly back on market; price reduced.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "High Island, Claddaghduff",
+    "nation": "Ireland",
+    "broker": "Spencer Auctioneers",
+    "url": "https://www.myhome.ie/residential/brochure/high-island-claddaghduff-galway/4449448",
+    "listingType": "island_land_sale",
+    "priceDisplay": "€1,250,000",
+    "status": "for_sale",
+    "notes": "~80 acres on High Island, Connemara",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Taggs Island, Hampton",
+    "nation": "England",
+    "broker": "Absolute Homes",
+    "url": "https://www.absolute-homes.co.uk/property/taggs-island-2-bedroom-houseboat-in-hampton-tw12/",
+    "listingType": "residential",
+    "priceDisplay": "Guide Price £725,000",
+    "status": "for_sale",
+    "notes": "Houseboat on Taggs Island Thames",
+    "pageNamesIsland": true
+  }
+]
