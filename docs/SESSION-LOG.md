@@ -1745,6 +1745,20 @@
 - **Open items**: Submit sitemap in Search Console; consider pre-rendered island HTML
   in `index.html` later if crawlers ignore SPA meta.
 
+## 2026-05-19 — Property listings Tier 4 + weekly tracking system
+
+- **Goal**: Obscure-broker crawl, recurring weekly skill, easy full-list tracking.
+- **What changed**:
+  - Tier 4 sub-agent sweep; **+8** islands (37 total): Eilean Loch Oscair, Trannish,
+    Cruit, Eel Pie, Garrick's Ait, Wheatley's Eyot, Bryher, St Martin's.
+  - `scripts/property_listings_registry.py`, `scripts/run_property_discovery_weekly.py`,
+    `data/discovery/property_obscure_sources.json`, generated `docs/FOR-SALE-ISLANDS.md`.
+  - Skill `.cursor/skills/weekly-island-property-discovery/`; GH workflow
+    `property-discovery-weekly.yml` (Mondays 06:00 UTC registry refresh).
+- **Outcome / counts**: **37** for-sale islands; full list at `docs/FOR-SALE-ISLANDS.md`.
+- **Open items**: Run skill weekly in Cursor for new research; `pendingAtlasIngest`
+  islands still need OSM discovery.
+
 ## 2026-05-19 — Property listings Tier 3 (multi-broker crawl)
 
 - **Goal**: Expand “for sale” coverage via legal broker desk research (no

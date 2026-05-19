@@ -99,5 +99,31 @@ Supporting scripts:
 - `scripts/match_property_listing_islands.py` — name/alias/hint matching to `islands.json`
 - `data/discovery/property_tier3_report.json` — accept/reject audit per run
 
-**Counts (2026-05-19):** verified manifest **29** islands (was **17**); **12** new atlas
-islands with `propertyListings[]` after Tier 3 apply.
+**Counts (2026-05-19):** verified manifest **37** islands; **full list:**
+[`docs/FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) (auto-generated).
+
+### Tier 4+ — obscure brokers + weekly skill
+
+Broader catalogue: `data/discovery/property_obscure_sources.json`.
+
+```bash
+# Weekly orchestrator (after sub-agent research → property_tier4_obscure_raw.json)
+python3 scripts/run_property_discovery_weekly.py --apply-tier4
+
+# Registry / human list only
+python3 scripts/property_listings_registry.py --update --print
+```
+
+**Cursor skill:** `.cursor/skills/weekly-island-property-discovery/SKILL.md` — run at least
+once per week; launches four regional sub-agents, then the scripts above.
+
+**Tracking:**
+
+| File | Purpose |
+|------|---------|
+| [`docs/FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) | **Full list** (table, counts, links) |
+| `data/discovery/property_listings_registry.json` | Machine registry + run history |
+| `data/for_sale_islands_summary.json` | Slim counts stub |
+
+GitHub Actions: `.github/workflows/property-discovery-weekly.yml` (Mondays 06:00 UTC,
+registry refresh; research still via Cursor skill).

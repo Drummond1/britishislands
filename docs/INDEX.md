@@ -22,6 +22,7 @@ Single map of every document in this repository. Always start at the top.
 | [`SEO-GEO.md`](SEO-GEO.md) | Island profile SEO + JSON-LD; sitemap / `llms.txt` / optional static landings. |
 | [`SUPABASE.md`](SUPABASE.md) | Supabase project setup, schema, RLS, keys, storage bucket. |
 | [`PROPERTY-LISTINGS.md`](PROPERTY-LISTINGS.md) | For-sale outbound links: curated + optional Homedata; no portal scraping. |
+| [`FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) | **Full list** of islands currently on the market (generated table + counts). |
 
 ## Tier 3 — Methodology
 

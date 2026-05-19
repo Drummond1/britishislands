@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "description": "Tier 4+ obscure broker catalogue for weekly island for-sale discovery. No Rightmove/Zoopla.",
+  "updatedAt": "2026-05-19",
+  "regions": {
+    "scotland": [
+      {"broker": "John Clegg & Co", "domain": "johnclegg.co.uk", "query": "site:johnclegg.co.uk island OR isle"},
+      {"broker": "Galbraith", "domain": "galbraithgroup.com", "query": "site:galbraithgroup.com island"},
+      {"broker": "Bell Ingram", "domain": "bellingram.co.uk", "query": "site:bellingram.co.uk island OR \"private island\""},
+      {"broker": "UK Land & Farms", "domain": "uklandandfarms.co.uk", "query": "site:uklandandfarms.co.uk \"Island\" \"For Sale\" scotland"},
+      {"broker": "CKD Galbraith", "domain": "ckdfutures.com", "query": "site:ckdgalbraith.co.uk island scotland"},
+      {"broker": "Scottish Land & Estates", "domain": "scottishlandandestates.co.uk", "query": "site:scottishlandandestates.co.uk island"},
+      {"broker": "Savills Scotland", "domain": "savills.co.uk", "query": "site:search.savills.com scotland island"},
+      {"broker": "Highland Property", "domain": "highlandproperty.scot", "query": "site:highlandproperty.scot island"},
+      {"broker": "Robb Residential", "domain": "robbresidential.co.uk", "query": "robb residential island scotland for sale"},
+      {"broker": "Goldcrest Land", "domain": "goldcrestland.co.uk", "query": "goldcrest island scotland for sale"}
+    ],
+    "ireland_ni": [
+      {"broker": "Vladi Private Islands", "domain": "vladi-private-islands.de", "query": "site:vladi-private-islands.de/en/islands-for-sale ireland"},
+      {"broker": "McCaffrey Bros", "domain": "mccaffreybros.com", "query": "site:mccaffreybros.com island"},
+      {"broker": "Caplis", "domain": "caplis.ie", "query": "site:caplis.ie island"},
+      {"broker": "Lisney", "domain": "lisney.com", "query": "site:lisney.com island lough"},
+      {"broker": "Sherry FitzGerald", "domain": "sherryfitz.ie", "query": "site:sherryfitz.ie island"},
+      {"broker": "DNG", "domain": "dng.ie", "query": "site:dng.ie OR site:dngauctions.ie island"},
+      {"broker": "LSL / Livestock-Live", "domain": "livestock-live.com", "query": "site:livestock-live.com island fermanagh OR erne"},
+      {"broker": "Irish Land & Farms", "domain": "irishlandandfarms.ie", "query": "site:irishlandandfarms.ie island"},
+      {"broker": "Achill Island Property", "domain": "achillproperty.ie", "query": "site:achillproperty.ie site land"},
+      {"broker": "Dominic J Daly", "domain": "dominicjdaly.com", "query": "site:dominicjdaly.com island"},
+      {"broker": "PropertyPal", "domain": "propertypal.com", "query": "site:propertypal.com island fermanagh"}
+    ],
+    "england_wales": [
+      {"broker": "Absolute Homes", "domain": "absolute-homes.co.uk", "query": "site:absolute-homes.co.uk island OR eyot OR ait"},
+      {"broker": "N&N Richmond", "domain": "nnrichmond.co.uk", "query": "site:nnrichmond.co.uk eyot OR island"},
+      {"broker": "Chase Buchanan", "domain": "chasebuchanan.co.uk", "query": "site:chasebuchanan.co.uk eel pie OR island"},
+      {"broker": "Sibleys Scilly", "domain": "sibleysonscilly.co.uk", "query": "site:sibleysonscilly.co.uk Properties SalesDetail"},
+      {"broker": "Scilly Estate Agents", "domain": "scillyestateagents.com", "query": "site:scillyestateagents.com island for sale"},
+      {"broker": "Carter Jonas", "domain": "carterjonas.co.uk", "query": "site:carterjonas.co.uk island OR ynys"},
+      {"broker": "Fisher German", "domain": "fishergerman.co.uk", "query": "site:fishergerman.co.uk island"},
+      {"broker": "Smiths Gore", "domain": "smithsgore.com", "query": "site:smithsgore.com island"},
+      {"broker": "Phia", "domain": "phia.co.uk", "query": "site:phia.co.uk island"},
+      {"broker": "Savills eyots", "domain": "savills.co.uk", "query": "site:savills.co.uk eyot OR ait thames"}
+    ],
+    "global_specialists": [
+      {"broker": "Private Islands Online", "domain": "privateislandsonline.com", "query": "site:privateislandsonline.com europe"},
+      {"broker": "Vladi", "domain": "vladi-private-islands.de", "query": "site:vladi-private-islands.de for-sale europe-atlantic"},
+      {"broker": "Private Islands Inc", "domain": "privateislandsinc.com", "query": "site:privateislandsinc.com UK OR Ireland"}
+    ]
+  }
+}

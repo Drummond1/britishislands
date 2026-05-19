@@ -28,9 +28,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "discovery"
-RAW = DATA / "property_tier3_raw.json"
+DEFAULT_RAW = DATA / "property_tier3_raw.json"
 VERIFIED = DATA / "property_listings_verified.json"
-REPORT = DATA / "property_tier3_report.json"
+DEFAULT_REPORT = DATA / "property_tier3_report.json"
 USER_AGENT = "isles-of-britain/0.9 (discover_property_tier3; link-check)"
 
 SOLD_RE = re.compile(
@@ -122,13 +122,13 @@ def check_url(url: str, timeout: float = 20.0) -> dict:
     return {"ok": True, "http": code, "reason": "live"}
 
 
-def to_verified_row(m: dict) -> dict:
+def to_verified_row(m: dict, *, tier_label: str = "Tier 3") -> dict:
     ltype = LISTING_TYPE_MAP.get((m.get("listingType") or "").lower(), "residential")
     if m.get("listingType") in ("whole_island", "land", "residential"):
         ltype = m["listingType"]
     title = m.get("title") or f"{m.get('matchedName', m.get('islandName'))} — {m.get('broker', 'listing')}"
     notes = (
-        f"Tier 3 desk research ({m.get('matchMethod', '?')}, {m.get('matchConfidence', '?')}). "
+        f"{tier_label} desk research ({m.get('matchMethod', '?')}, {m.get('matchConfidence', '?')}). "
         f"{m.get('notes', '')}"
     ).strip()
     return {
@@ -150,11 +150,16 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true", help="Merge new rows into verified manifest")
     ap.add_argument("--skip-fetch", action="store_true", help="Skip URL checks (match only)")
     ap.add_argument("--delay", type=float, default=1.0, help="Seconds between URL checks")
+    ap.add_argument("--raw", type=Path, default=DEFAULT_RAW, help="Research JSON array input")
+    ap.add_argument("--report", type=Path, default=None, help="Report output path")
+    ap.add_argument("--tier-label", default="Tier 3", help="Label for notes field")
     args = ap.parse_args()
 
-    if not RAW.is_file():
-        sys.exit(f"Missing {RAW}")
-    raw = json.loads(RAW.read_text(encoding="utf-8"))
+    raw_path = args.raw
+    report_path = args.report or DATA / f"{raw_path.stem}_report.json"
+    if not raw_path.is_file():
+        sys.exit(f"Missing {raw_path}")
+    raw = json.loads(raw_path.read_text(encoding="utf-8"))
     if not isinstance(raw, list):
         sys.exit("property_tier3_raw.json must be a JSON array")
 
@@ -163,7 +168,7 @@ def main() -> int:
     matched_path = DATA / "property_tier3_matched.json"
     subprocess.check_call(
         [sys.executable, str(ROOT / "scripts" / "match_property_listing_islands.py"),
-         str(RAW), "-o", str(matched_path)],
+         str(raw_path), "-o", str(matched_path)],
         cwd=ROOT,
     )
     matched = json.loads(matched_path.read_text(encoding="utf-8"))
@@ -221,7 +226,7 @@ def main() -> int:
             report["rejected"].append({**m, "reason": f"url_check:{check.get('reason')}"})
             print(f"  reject {m.get('islandName')}: {check.get('reason')}", flush=True)
             continue
-        row = to_verified_row(m)
+        row = to_verified_row(m, tier_label=args.tier_label)
         if iid in existing_ids:
             report["rejected"].append({**row, "reason": "island_already_listed"})
             continue
@@ -233,8 +238,8 @@ def main() -> int:
     report["previousVerifiedCount"] = len(existing.get("verified") or [])
     report["proposedTotal"] = report["previousVerifiedCount"] + len(new_rows)
 
-    REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"\nReport → {REPORT}")
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"\nReport → {report_path}")
     print(f"New islands: {len(new_rows)}")
 
     if args.apply and new_rows:

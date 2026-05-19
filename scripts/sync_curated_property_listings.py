@@ -40,6 +40,10 @@ def main() -> int:
     ):
         print("+", " ".join(cmd))
         subprocess.check_call(cmd, cwd=ROOT)
+    subprocess.check_call(
+        [sys.executable, str(ROOT / "scripts/property_listings_registry.py"), "--update"],
+        cwd=ROOT,
+    )
     return 0
 
 

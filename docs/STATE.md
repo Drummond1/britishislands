@@ -4,6 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-19 (property listings — Tier 4 obscure + weekly system)** — **37** islands
+with `propertyListings[]` (**+8** vs 29 after Tier 3). Tier 4 obscure brokers;
+**full list:** `docs/FOR-SALE-ISLANDS.md`; registry:
+`data/discovery/property_listings_registry.json`; skill:
+`.cursor/skills/weekly-island-property-discovery/`; workflow:
+`.github/workflows/property-discovery-weekly.yml`.
+
 **2026-05-19 (property listings — Tier 3 broker crawl)** — **29** islands with
 `propertyListings[]` (**+12** new vs prior **17**). Tier 3 desk research across
 Scotland / Ireland / England-Wales broker sites; `scripts/discover_property_tier3.py`

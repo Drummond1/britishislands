@@ -1,0 +1,855 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-19T13:26:03+00:00",
+  "totalIslandsWithListings": 37,
+  "verifiedManifest": "data/discovery/property_listings_verified.json",
+  "humanDoc": "docs/FOR-SALE-ISLANDS.md",
+  "islands": [
+    {
+      "islandId": "osm-relation-3217444",
+      "name": "Bryher",
+      "nation": "England",
+      "areaKm2": 1.1769,
+      "lat": 49.95444,
+      "lng": -6.3566,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Bryher — Sibleys Island Homes (Jenford & Annex)",
+          "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=292",
+          "listingType": "residential",
+          "priceDisplay": "£975,000",
+          "source": "curated",
+          "sourceListingId": "tier3-sibleys-island-homes-uk-properties-salesdetail-unittypeid-"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:26:03+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "eel-pie-island",
+      "name": "Eel Pie Island",
+      "nation": "England",
+      "areaKm2": 0.0378,
+      "lat": 51.4471,
+      "lng": -0.327,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eel Pie Island — Chase Buchanan",
+          "url": "https://www.chasebuchanan.co.uk/properties/21539655/sales/YLK250154",
+          "listingType": "residential",
+          "priceDisplay": "£1,850,000",
+          "source": "curated",
+          "sourceListingId": "tier3-chase-buchanan-o-uk-properties-21539655-sales-ylk250154"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-157810927",
+      "name": "Garrick's Ait",
+      "nation": "England",
+      "areaKm2": 0.0041,
+      "lat": 51.41159,
+      "lng": -0.3604,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Garrick's Ait — Absolute Homes",
+          "url": "https://www.absolute-homes.co.uk/property/2-bedroom-detached-on-private-thames-island/",
+          "listingType": "residential",
+          "priceDisplay": "Guide Price £400,000",
+          "source": "curated",
+          "sourceListingId": "tier3-absolute-homes-droom-detached-on-private-thames-island"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-148442098",
+      "name": "Pharaoh's Island",
+      "nation": "England",
+      "areaKm2": 0.0154,
+      "lat": 51.38239,
+      "lng": -0.46529,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Pharaoh's Island — Shepperton bungalow (Absolute Homes)",
+          "url": "https://www.absolute-homes.co.uk/property/detached-riverside-bungalow-on-private-island-shepperton/",
+          "listingType": "residential",
+          "priceDisplay": "Guide £675,000",
+          "source": "curated",
+          "sourceListingId": "absolute-pharaohs-island"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3198786",
+      "name": "St Agnes",
+      "nation": "England",
+      "areaKm2": 1.0504,
+      "lat": 49.89045,
+      "lng": -6.34468,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "St Agnes — Sibleys Island Homes",
+          "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=235",
+          "listingType": "residential",
+          "priceDisplay": "£295,000",
+          "source": "curated",
+          "sourceListingId": "tier3-sibleys-island-homes-uk-properties-salesdetail-unittypeid-"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3210701",
+      "name": "St Martin's",
+      "nation": "England",
+      "areaKm2": 2.2003,
+      "lat": 49.96516,
+      "lng": -6.28313,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "St Martin's — Sibleys Island Homes (Menawethan)",
+          "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=181",
+          "listingType": "residential",
+          "priceDisplay": "£450,000",
+          "source": "curated",
+          "sourceListingId": "tier4-sibleys-st-martins-181"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:26:03+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-49901778",
+      "name": "Tagg's Island",
+      "nation": "England",
+      "areaKm2": 0.0204,
+      "lat": 51.40909,
+      "lng": -0.35264,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Tagg's Island — Absolute Homes",
+          "url": "https://www.absolute-homes.co.uk/property/4-bedroom-2-storey-houseboat-in-hampton/",
+          "listingType": "residential",
+          "priceDisplay": "Guide Price £725,000",
+          "source": "curated",
+          "sourceListingId": "tier3-absolute-homes-4-bedroom-2-storey-houseboat-in-hampton"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-48076585",
+      "name": "Thames Ditton Island",
+      "nation": "England",
+      "areaKm2": 0.0182,
+      "lat": 51.39454,
+      "lng": -0.33161,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "The Island — Thames Ditton home (Absolute Homes)",
+          "url": "https://www.absolute-homes.co.uk/property/the-island-thames-ditton/",
+          "listingType": "residential",
+          "priceDisplay": "Offers over £1,000,000",
+          "source": "curated",
+          "sourceListingId": "absolute-thames-ditton-island"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-157812309",
+      "name": "Wheatley's Eyot (south)",
+      "nation": "England",
+      "areaKm2": 0.0253,
+      "lat": 51.39597,
+      "lng": -0.41833,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Wheatley's Eyot (south) — N&N Richmond",
+          "url": "https://www.nnrichmond.co.uk/wheatleyseyotsunburyonthames",
+          "listingType": "residential",
+          "priceDisplay": "Asking Price £550,000",
+          "source": "curated",
+          "sourceListingId": "tier3-n-n-richmond-hmond-co-uk-wheatleyseyotsunburyonthames"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-8156739",
+      "name": "Arranmore",
+      "nation": "Ireland",
+      "areaKm2": 18.3198,
+      "lat": 54.9959,
+      "lng": -8.52751,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Arranmore — Campbells Auctioneers (MyHome direct agent page)",
+          "url": "https://www.myhome.ie/residential/brochure/illion-arranmore-island-burtonport-donegal/4832226",
+          "listingType": "residential",
+          "priceDisplay": "€114,950",
+          "source": "curated",
+          "sourceListingId": "tier3-campbells-auctioneer-anmore-island-burtonport-donegal-4832"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4554655",
+      "name": "Calf Island Middle",
+      "nation": "Ireland",
+      "areaKm2": 0.2692,
+      "lat": 51.47874,
+      "lng": -9.50579,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Calf Island Middle — West Cork (Vladi)",
+          "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/middle-calf-island",
+          "listingType": "whole_island",
+          "priceDisplay": "€1,100,000",
+          "source": "curated",
+          "sourceListingId": "vladi-middle-calf"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-9126999",
+      "name": "Cruit Island",
+      "nation": "Ireland",
+      "areaKm2": 3.2505,
+      "lat": 55.03289,
+      "lng": -8.4224,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Cruit Island — Campbells Auctioneers",
+          "url": "https://www.propertynews.com/cruit-island-kincasslagh/678489",
+          "listingType": "land",
+          "priceDisplay": "Guide Price €65,000",
+          "source": "curated",
+          "sourceListingId": "tier3-campbells-auctioneer-news-com-cruit-island-kincasslagh-678"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-4029093",
+      "name": "Gorumna Island",
+      "nation": "Ireland",
+      "areaKm2": 24.8567,
+      "lat": 53.25448,
+      "lng": -9.68287,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Creelogh, Gorumna Island — coastal holding (DNG)",
+          "url": "https://martinoconnor.dngauctions.ie/lot/details/109306",
+          "listingType": "residential",
+          "priceDisplay": "From €145,000",
+          "source": "curated",
+          "sourceListingId": "dng-gorumna-creelogh-109306"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-190629034",
+      "name": "Heir Island",
+      "nation": "Ireland",
+      "areaKm2": 1.6795,
+      "lat": 51.49428,
+      "lng": -9.43963,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Heir Island — Pat Maguire Properties (MyHome direct agent page)",
+          "url": "https://www.myhome.ie/residential/brochure/heir-island-south-islands-west-cork/4638757",
+          "listingType": "residential",
+          "priceDisplay": "€650,000",
+          "source": "curated",
+          "sourceListingId": "tier3-pat-maguire-properti-r-island-south-islands-west-cork-4638"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4562311",
+      "name": "High Island",
+      "nation": "Ireland",
+      "areaKm2": 0.3898,
+      "lat": 53.54576,
+      "lng": -10.25559,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "High Island — Spencer Auctioneers",
+          "url": "https://www.myhome.ie/residential/brochure/high-island-claddaghduff-galway/4310632",
+          "listingType": "land",
+          "priceDisplay": "€1,250,000",
+          "source": "curated",
+          "sourceListingId": "tier3-spencer-auctioneers-high-island-claddaghduff-galway-431063"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4554537",
+      "name": "Horse Island",
+      "nation": "Ireland",
+      "areaKm2": 0.7628,
+      "lat": 51.51621,
+      "lng": -9.46872,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Horse Island — Lisney",
+          "url": "https://www.myhome.ie/residential/brochure/dunmore-bay-horse-island-loop-head-kilbaha-co-clare/4692569",
+          "listingType": "whole_island",
+          "priceDisplay": "€9,750,000",
+          "source": "curated",
+          "sourceListingId": "tier3-lisney-sland-loop-head-kilbaha-co-clare-4692569"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4562119",
+      "name": "Inis Barna",
+      "nation": "Ireland",
+      "areaKm2": 0.1033,
+      "lat": 53.62846,
+      "lng": -9.87815,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inishbarna Island — Killary Fjord (Vladi)",
+          "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/inishbarna-island",
+          "listingType": "whole_island",
+          "priceDisplay": "Open to offers",
+          "source": "curated",
+          "sourceListingId": "vladi-inishbarna"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3395357",
+      "name": "Inishmicatreer",
+      "nation": "Ireland",
+      "areaKm2": 1.0977,
+      "lat": 53.49781,
+      "lng": -9.24928,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inishmicatreer — Michelle Burke Auctioneer and Letting Agent (MyHome direct agent page)",
+          "url": "https://www.myhome.ie/residential/brochure/inishmacatreer-cross-headford-county-galway/4939197",
+          "listingType": "residential",
+          "priceDisplay": "€457,500",
+          "source": "curated",
+          "sourceListingId": "tier3-michelle-burke-aucti-eer-cross-headford-county-galway-4939"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4563603",
+      "name": "Shore Island",
+      "nation": "Ireland",
+      "areaKm2": 0.1206,
+      "lat": 52.69394,
+      "lng": -9.05636,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Shore Island — Shannon Estuary (Vladi)",
+          "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/shore-island",
+          "listingType": "whole_island",
+          "priceDisplay": "€900,000",
+          "source": "curated",
+          "sourceListingId": "vladi-shore-island"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-6925696",
+      "name": "Turbot Island",
+      "nation": "Ireland",
+      "areaKm2": 0.8294,
+      "lat": 53.50058,
+      "lng": -10.15161,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Turbot Island — Sherry Fitzgerald Mangan (MyHome direct agent page)",
+          "url": "https://www.myhome.ie/residential/brochure/turbot-island-clifden-co-galway/4719772",
+          "listingType": "residential",
+          "priceDisplay": "€30,000",
+          "source": "curated",
+          "sourceListingId": "tier3-sherry-fitzgerald-ma-turbot-island-clifden-co-galway-47197"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-5725196",
+      "name": "Whiddy Island",
+      "nation": "Ireland",
+      "areaKm2": 4.2762,
+      "lat": 51.69265,
+      "lng": -9.50666,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Whiddy Island — Sherry FitzGerald Country Homes, Farms & Estates (MyHome direct agent page)",
+          "url": "https://www.myhome.ie/residential/brochure/whiddy-island-bantry-county-cork/4948708",
+          "listingType": "residential",
+          "priceDisplay": "€4,000,000",
+          "source": "curated",
+          "sourceListingId": "tier3-sherry-fitzgerald-co-whiddy-island-bantry-county-cork-4948"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3512150",
+      "name": "Boa Island",
+      "nation": "Northern Ireland",
+      "areaKm2": 6.1915,
+      "lat": 54.51734,
+      "lng": -7.84217,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "11 Waters Edge — Boa Island, Lough Erne (LSL)",
+          "url": "https://www.lslauctions.com/PropertyLotDetail-MOFC-3657417/for-sale/11-waters-edge-boa-island-enniskillen-belleek",
+          "listingType": "residential",
+          "priceDisplay": "Guide £350,000",
+          "source": "curated",
+          "sourceListingId": "lsl-boa-island-waters-edge"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3516496",
+      "name": "Creaghawaddy Island",
+      "nation": "Northern Ireland",
+      "areaKm2": 0.0501,
+      "lat": 54.21919,
+      "lng": -7.50007,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Creaghawaddy Island — portion (McCaffrey Bros)",
+          "url": "https://www.mccaffreybros.com/creaghawaddy-island-upper-lough-erne-lisnaskea/1060009",
+          "listingType": "land",
+          "priceDisplay": "Offers over £85,000",
+          "source": "curated",
+          "sourceListingId": "mccaffrey-creaghawaddy-1060009"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3516509",
+      "name": "Inishturk",
+      "nation": "Northern Ireland",
+      "areaKm2": 0.1566,
+      "lat": 54.21921,
+      "lng": -7.50924,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inishturk Island — Upper Lough Erne (McCaffrey Bros)",
+          "url": "https://www.mccaffreybros.com/inishturk-island-upper-lough-erne-lisnaskea/1036693",
+          "listingType": "land",
+          "priceDisplay": "Offers over £250,000",
+          "source": "curated",
+          "sourceListingId": "mccaffrey-inishturk-erne-1036693"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3998378",
+      "name": "Long Island",
+      "nation": "Northern Ireland",
+      "areaKm2": 0.0492,
+      "lat": 54.40976,
+      "lng": -7.68384,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Long Island — Lower Lough Erne residence",
+          "url": "https://www.lslauctions.com/PropertyLotDetail-MOFC-3657703/for-sale/long-island-lower-lough-erne-enniskillen",
+          "listingType": "residential",
+          "priceDisplay": "Guide £550,000",
+          "source": "curated",
+          "sourceListingId": "montgomery-long-island-lough-erne"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-3516655",
+      "name": "Trannish",
+      "nation": "Northern Ireland",
+      "areaKm2": 0.5534,
+      "lat": 54.21044,
+      "lng": -7.50262,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Trannish — Gordon Robinson / PropertyPal",
+          "url": "https://propertypal.com/trannish-island-lisnaskea/985589",
+          "listingType": "land",
+          "priceDisplay": "Price on application",
+          "source": "curated",
+          "sourceListingId": "tier3-gordon-robinson-prop-pal-com-trannish-island-lisnaskea-985"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-205056852",
+      "name": "Eilean Loch Oscair",
+      "nation": "Scotland",
+      "areaKm2": 0.0404,
+      "lat": 56.55274,
+      "lng": -5.4783,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eilean Loch Oscair — UK Land & Farms",
+          "url": "https://www.uklandandfarms.co.uk/search/detail.aspx?PropertyRef=41048_EDN012493486",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers in excess of £125,000",
+          "source": "curated",
+          "sourceListingId": "tier3-uk-land-farms-tail-aspx-propertyref-41048-edn012493486"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-3619206",
+      "name": "Eilean Mullagrach",
+      "nation": "Scotland",
+      "areaKm2": 0.4231,
+      "lat": 58.04826,
+      "lng": -5.46153,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eilean Mullagrach — Summer Isles cabin site",
+          "url": "https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/26241_inv240138/",
+          "listingType": "land",
+          "priceDisplay": "£500,000",
+          "source": "curated",
+          "sourceListingId": "galbraith-mullagrach-uklaf"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-750275320",
+      "name": "Eilean Mòr",
+      "nation": "Scotland",
+      "areaKm2": 0.1244,
+      "lat": 56.68219,
+      "lng": -5.66124,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eilean Mor — Loch Sunart island (Bell Ingram)",
+          "url": "https://www.bellingram.co.uk/property/eilean-mor-strontian-acharacle-highland-ph36-4hx/",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers over £275,000",
+          "source": "curated",
+          "sourceListingId": "bellingram-eilean-mor-sunart-2026"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-200745352",
+      "name": "Eilean Righ",
+      "nation": "Scotland",
+      "areaKm2": 0.9636,
+      "lat": 56.15754,
+      "lng": -5.54111,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eilean Righ — Private Islands Online",
+          "url": "https://www.privateislandsonline.com/europe/scotland/argyll-island",
+          "listingType": "whole_island",
+          "priceDisplay": "Price Upon Request",
+          "source": "curated",
+          "sourceListingId": "tier3-private-islands-onli-online-com-europe-scotland-argyll-isl"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-14940681",
+      "name": "Gasker",
+      "nation": "Scotland",
+      "areaKm2": 0.2294,
+      "lat": 57.98336,
+      "lng": -7.28853,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Gasker Island — uninhabited (Galbraith)",
+          "url": "https://www.galbraithgroup.com/property/inv250127-gasker-island-isle-of-harris-outer-hebrides-hs3-3hl/",
+          "listingType": "land",
+          "priceDisplay": "Offers over £120,000",
+          "source": "curated",
+          "sourceListingId": "galbraith-gasker-inv250127"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4002996",
+      "name": "Inchmarnock",
+      "nation": "Scotland",
+      "areaKm2": 2.602,
+      "lat": 55.79058,
+      "lng": -5.15782,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inchmarnock Island — private island estate (Strutt & Parker)",
+          "url": "https://struttandparker.com/properties/straad",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers over £2,000,000",
+          "source": "curated",
+          "sourceListingId": "strutt-inchmarnock-straad-2026"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-200912404",
+      "name": "Insh Island",
+      "nation": "Scotland",
+      "areaKm2": 0.3654,
+      "lat": 56.31255,
+      "lng": -5.66909,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Insh Island — Savills auction lot (90 acres)",
+          "url": "https://auctions.savills.co.uk/auctions/21--22-april-2026-221/insh-island-clachan-seil-oban-argyll-and-bute-pa34-4tn-22377",
+          "listingType": "land",
+          "priceDisplay": "Auction 22 Apr 2026",
+          "source": "curated",
+          "sourceListingId": "savills-insh-22377"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-4092586",
+      "name": "Kerrera",
+      "nation": "Scotland",
+      "areaKm2": 12.0579,
+      "lat": 56.39799,
+      "lng": -5.53964,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Kerrera — Bell Ingram",
+          "url": "https://www.bellingram.co.uk/property/ferry-house-kerrera-oban-argyll-and-bute-pa34-4sx/",
+          "listingType": "residential",
+          "priceDisplay": "Guide Price £180,000",
+          "source": "curated",
+          "sourceListingId": "tier3-bell-ingram-e-kerrera-oban-argyll-and-bute-pa34-4sx"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-200773375",
+      "name": "Shuna",
+      "nation": "Scotland",
+      "areaKm2": 4.492,
+      "lat": 56.2127,
+      "lng": -5.60367,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Shuna Island — 1,110-acre estate (Knight Frank)",
+          "url": "https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/oban-41048_ebr012505187/",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers in excess of £5,500,000",
+          "source": "curated",
+          "sourceListingId": "knightfrank-shuna-uklaf-2026"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-relation-4230732",
+      "name": "Soay",
+      "nation": "Scotland",
+      "areaKm2": 10.097,
+      "lat": 57.14741,
+      "lng": -6.21789,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Island of Soay — croft and house (Strutt & Parker)",
+          "url": "https://struttandparker.com/properties/island-of-soay",
+          "listingType": "residential",
+          "priceDisplay": "Offers over £975,000",
+          "source": "curated",
+          "sourceListingId": "strutt-soay-2026"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    },
+    {
+      "islandId": "osm-way-4001735",
+      "name": "Thorne Island",
+      "nation": "Wales",
+      "areaKm2": 0.01,
+      "lat": 51.69168,
+      "lng": -5.11776,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Thorne Island — Strutt & Parker",
+          "url": "https://struttandparker.com/properties/angle",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers in excess of £3,000,000",
+          "source": "curated",
+          "sourceListingId": "tier3-strutt-parker-tps-struttandparker-com-properties-angle"
+        }
+      ],
+      "firstSeenAt": "2026-05-19T13:25:27+00:00",
+      "lastSeenAt": "2026-05-19T13:26:03+00:00"
+    }
+  ],
+  "runs": [
+    {
+      "runAt": "2026-05-19T13:25:27+00:00",
+      "source": "registry_sync",
+      "addedCount": 36,
+      "removedCount": 0,
+      "addedIslandIds": [
+        "eel-pie-island",
+        "osm-relation-14940681",
+        "osm-relation-3198786",
+        "osm-relation-3395357",
+        "osm-relation-3512150",
+        "osm-relation-3516496",
+        "osm-relation-3516509",
+        "osm-relation-3516655",
+        "osm-relation-3998378",
+        "osm-relation-4029093",
+        "osm-relation-4092586",
+        "osm-relation-4230732",
+        "osm-relation-5725196",
+        "osm-relation-6925696",
+        "osm-relation-8156739",
+        "osm-relation-9126999",
+        "osm-way-148442098",
+        "osm-way-157810927",
+        "osm-way-157812309",
+        "osm-way-190629034",
+        "osm-way-200745352",
+        "osm-way-200773375",
+        "osm-way-200912404",
+        "osm-way-205056852",
+        "osm-way-3619206",
+        "osm-way-4001735",
+        "osm-way-4002996",
+        "osm-way-4554537",
+        "osm-way-4554655",
+        "osm-way-4562119",
+        "osm-way-4562311",
+        "osm-way-4563603",
+        "osm-way-48076585",
+        "osm-way-49901778",
+        "osm-way-750275320",
+        "scilly-st-marys"
+      ],
+      "removedIslandIds": []
+    },
+    {
+      "runAt": "2026-05-19T13:25:27+00:00",
+      "addedCount": 0,
+      "removedCount": 0,
+      "addedIslandIds": [],
+      "removedIslandIds": [],
+      "source": "tier4_apply",
+      "verifiedCount": 36
+    },
+    {
+      "runAt": "2026-05-19T13:26:03+00:00",
+      "source": "registry_sync",
+      "addedCount": 2,
+      "removedCount": 1,
+      "addedIslandIds": [
+        "osm-relation-3210701",
+        "osm-relation-3217444"
+      ],
+      "removedIslandIds": [
+        "scilly-st-marys"
+      ]
+    }
+  ]
+}

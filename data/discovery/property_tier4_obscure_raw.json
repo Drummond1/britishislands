@@ -1,0 +1,90 @@
+[
+  {
+    "islandName": "Eilean Loch Oscair",
+    "nation": "Scotland",
+    "broker": "UK Land & Farms",
+    "url": "https://www.uklandandfarms.co.uk/search/detail.aspx?PropertyRef=41048_EDN012493486",
+    "listingType": "whole_island",
+    "priceDisplay": "Offers in excess of £125,000",
+    "status": "for_sale",
+    "notes": "Uninhabited island croft off Lismore; Knight Frank syndication.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Trannish Island",
+    "nation": "Northern Ireland",
+    "broker": "Gordon Robinson / PropertyPal",
+    "url": "https://propertypal.com/trannish-island-lisnaskea/985589",
+    "listingType": "land",
+    "priceDisplay": "Price on application",
+    "status": "for_sale",
+    "notes": "~25 acres Upper Lough Erne leisure holding.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Cruit Island",
+    "nation": "Ireland",
+    "broker": "Campbells Auctioneers",
+    "url": "https://www.propertynews.com/cruit-island-kincasslagh/678489",
+    "listingType": "land",
+    "priceDisplay": "Guide Price €65,000",
+    "status": "for_sale",
+    "notes": "Residential site on Cruit Island, Donegal.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Eel Pie Island",
+    "nation": "England",
+    "broker": "Chase Buchanan",
+    "url": "https://www.chasebuchanan.co.uk/properties/21539655/sales/YLK250154",
+    "listingType": "residential",
+    "priceDisplay": "£1,850,000",
+    "status": "for_sale",
+    "notes": "Modernist house Aquarius on Eel Pie Island, Twickenham.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Garrick's Ait",
+    "nation": "England",
+    "broker": "Absolute Homes",
+    "url": "https://www.absolute-homes.co.uk/property/2-bedroom-detached-on-private-thames-island/",
+    "listingType": "residential",
+    "priceDisplay": "Guide Price £400,000",
+    "status": "for_sale",
+    "notes": "Private Thames ait, Hampton.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Wheatley's Eyot",
+    "nation": "England",
+    "broker": "N&N Richmond",
+    "url": "https://www.nnrichmond.co.uk/wheatleyseyotsunburyonthames",
+    "listingType": "residential",
+    "priceDisplay": "Asking Price £550,000",
+    "status": "for_sale",
+    "notes": "The Shack on Wheatley's Eyot, Sunbury.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Bryher",
+    "nation": "England",
+    "broker": "Sibleys Island Homes",
+    "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=292",
+    "listingType": "residential",
+    "priceDisplay": "£975,000",
+    "status": "for_sale",
+    "notes": "Jenford & Annex, Bryher, Isles of Scilly.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "St Martin's",
+    "nation": "England",
+    "broker": "Sibleys Island Homes",
+    "url": "https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=181",
+    "listingType": "residential",
+    "priceDisplay": "£450,000",
+    "status": "for_sale",
+    "notes": "Menawethan, St Martin's, Isles of Scilly.",
+    "pageNamesIsland": true
+  }
+]

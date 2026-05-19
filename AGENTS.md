@@ -113,6 +113,15 @@ permalink on page load. No external API calls — everything runs in the
 browser. To extend it, add synonyms to the `CHAT_*` dictionaries or
 extra cities to `CHAT_PLACES`.
 
+### Islands for sale (property listings)
+
+Outbound broker links only — no Rightmove/Zoopla scrape. **Full list (read this first):**
+[`docs/FOR-SALE-ISLANDS.md`](docs/FOR-SALE-ISLANDS.md). Machine registry:
+`data/discovery/property_listings_registry.json`. Weekly refresh: Cursor skill
+`.cursor/skills/weekly-island-property-discovery/SKILL.md` or
+`python3 scripts/run_property_discovery_weekly.py`. Pipeline detail:
+[`docs/PROPERTY-LISTINGS.md`](docs/PROPERTY-LISTINGS.md).
+
 ### OS Maps detail view
 
 The island details panel includes a second Leaflet map (`#detail-map`,
