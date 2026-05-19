@@ -1183,39 +1183,49 @@ function getPropertyListingMapPane() {
   return "propertyListingPane";
 }
 
+function wireForSaleMarkerInteractions(marker, island) {
+  marker.bindPopup(propertyListingPopupHtml(island), {
+    maxWidth: 300,
+    className: "sale-popup-wrap",
+    autoPanPadding: L.point(24, 24),
+  });
+  marker.bindTooltip(
+    `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><span class="map-sale-tooltip__hint">Tap pin for listing links</span></span>`,
+    {
+      direction: "top",
+      offset: [0, -14],
+      className: "map-sale-tooltip-wrap",
+      interactive: false,
+    },
+  );
+  marker.on("popupopen", (ev) => {
+    const root = ev.popup.getElement();
+    if (!root) return;
+    L.DomEvent.disableClickPropagation(root);
+    root.querySelector(".sale-popup__atlas-btn")?.addEventListener("click", (e) => {
+      L.DomEvent.stop(e);
+      map.closePopup();
+      focusIsland(island.id, { fly: false });
+    });
+  });
+  marker.on("click", (e) => {
+    L.DomEvent.stopPropagation(e);
+    marker.openPopup();
+  });
+}
+
 function makeForSaleMapMarker(island) {
   const marker = L.marker([island.lat, island.lng], {
     icon: L.divIcon({
       className: "map-sale-marker",
       html: '<span class="map-sale-marker__ring" aria-hidden="true"></span><span class="map-sale-marker__badge">£</span>',
-      iconSize: [34, 34],
-      iconAnchor: [17, 17],
+      iconSize: [26, 26],
+      iconAnchor: [13, 13],
     }),
     pane: getPropertyListingMapPane(),
     zIndexOffset: 400,
   });
-  const lead = primaryPropertyListing(island);
-  const tip = lead?.url
-    ? `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><a class="map-sale-tooltip__link" href="${escapeAttr(lead.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></span>`
-    : `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}</span>`;
-  marker.bindTooltip(tip, {
-    direction: "top",
-    offset: [0, -14],
-    className: "map-sale-tooltip-wrap",
-    interactive: true,
-  });
-  marker.bindPopup(propertyListingPopupHtml(island), {
-    maxWidth: 300,
-    className: "sale-popup-wrap",
-  });
-  marker.on("popupopen", (ev) => {
-    const btn = ev.popup.getElement()?.querySelector(".sale-popup__atlas-btn");
-    btn?.addEventListener("click", () => {
-      map.closePopup();
-      focusIsland(island.id, { fly: false });
-    });
-  });
-  marker.on("click", () => focusIsland(island.id, { fly: false }));
+  wireForSaleMarkerInteractions(marker, island);
   return marker;
 }
 
@@ -2711,31 +2721,11 @@ function makeMarker(island) {
     className,
   });
   if (onSale) {
-    const lead = primaryPropertyListing(island);
-    const tip = lead?.url
-      ? `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><a class="map-sale-tooltip__link" href="${escapeAttr(lead.url)}" target="_blank" rel="noopener noreferrer">Open listing ↗</a></span>`
-      : `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}</span>`;
-    marker.bindTooltip(tip, {
-      direction: "top",
-      offset: [0, -6],
-      className: "map-sale-tooltip-wrap",
-      interactive: true,
-    });
-    marker.bindPopup(propertyListingPopupHtml(island), {
-      maxWidth: 300,
-      className: "sale-popup-wrap",
-    });
-    marker.on("popupopen", (ev) => {
-      const btn = ev.popup.getElement()?.querySelector(".sale-popup__atlas-btn");
-      btn?.addEventListener("click", () => {
-        map.closePopup();
-        focusIsland(island.id, { fly: false });
-      });
-    });
+    wireForSaleMarkerInteractions(marker, island);
   } else {
     marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+    marker.on("click", () => focusIsland(island.id, { fly: false }));
   }
-  marker.on("click", () => focusIsland(island.id, { fly: false }));
   return marker;
 }
 
@@ -2984,6 +2974,10 @@ function renderFerries(island) {
   const cards = sorted.map((r) => _renderFerryCard(r, island)).join("");
   const causewayBlock = causeway ? _renderCausewayBlock(causeway) : "";
   const freshnessNote = _ferryFreshnessNote(sorted);
+  const scrollHint =
+    sorted.length > 3
+      ? `<p class="ferry-card-list__scroll-hint">${sorted.length} connections — scroll to see all</p>`
+      : "";
 
   const title = routes.length ? "How to get there" : "Causeway access";
 
@@ -2992,7 +2986,7 @@ function renderFerries(island) {
     ${routes.length ? `<p class="ferry-subtitle">${sorted.length} ferry connection${sorted.length === 1 ? "" : "s"} published for this island.</p>` : ""}
     ${freshnessNote}
     ${causewayBlock}
-    ${cards ? `<div class="ferry-card-list">${cards}</div>` : ""}
+    ${cards ? `<div class="ferry-card-list ferry-card-list--scrollable" role="region" aria-label="Ferry connections">${cards}</div>${scrollHint}` : ""}
     ${routes.length ? `<p class="ferry-disclosure">Some onward-travel links below are affiliate links (<abbr title="Sponsored / commission-paying link">sponsored</abbr>) - they cost you nothing extra and help keep this atlas free. Ferry operator links are not affiliated.</p>` : ""}
   </div>`;
 }
@@ -3296,10 +3290,7 @@ function renderDetails(island) {
     ${altNames}
     ${island.shortDescription ? `<p class="details-subtitle">${escapeHtml(island.shortDescription)}</p>` : ""}
 
-    <div class="trip-priority-block">
-    ${renderFerries(island)}
     ${renderPropertyListings(island)}
-    </div>
 
     <div class="stat-grid">
       ${stats
@@ -3320,6 +3311,8 @@ function renderDetails(island) {
 
     ${richSections}
     ${osmHint}
+
+    ${renderFerries(island)}
 
     <div class="section detail-map-section">
       <h3>Detailed map</h3>

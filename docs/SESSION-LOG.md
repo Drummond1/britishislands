@@ -1672,6 +1672,11 @@
   committed locally but **not** on remote — push rejected without `workflow` OAuth
   scope; add the file manually or re-push with workflow permissions.
 
+## 2026-05-19 — For-sale map pins + profile layout fixes
+
+- **Map pins**: £ markers open popup on tap; listing links no longer hijacked by `focusIsland`. Tooltip is non-interactive; links live in popup with touch-sized targets.
+- **Profile**: **On the market** moved under title; **How to get there** moved above detail map. Ferry cards scroll (~3 visible) when more than three routes.
+
 ## 2026-05-19 — Deep property listing research (multi-agent pass)
 
 - **Goal**: Find additional live island listings (small/large) within GB+IE scope; no fabricated URLs.
