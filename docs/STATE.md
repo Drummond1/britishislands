@@ -4,12 +4,12 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
-**2026-05-19 (property listings — verified broker pass)** — **10** islands with
-`propertyListings[]` from live broker pages (Knight Frank, Savills, Strutt & Parker,
-Galbraith, Vladi, McCaffrey Bros, DNG, LSL). Research manifest:
-`data/discovery/property_listings_verified.json`. Refresh:
-`python3 scripts/sync_curated_property_listings.py`. Removed placeholder/generic rows
-(Canna, IoW Rightmove search, category-only URLs).
+**2026-05-19 (property listings — deep broker pass)** — **17** islands with
+`propertyListings[]` after multi-agent research (whole-island + named-island homes).
+Added: Inchmarnock, Eilean Mòr (Loch Sunart), Inishturk (Upper Lough Erne), Inis Barna
+(Vladi Inishbarna), Boa Island, Thames Ditton Island, Pharaoh's Island. Manifest:
+`data/discovery/property_listings_verified.json` (`pendingAtlasIngest` for gaps).
+Refresh: `python3 scripts/sync_curated_property_listings.py`.
 
 **2026-05-19 (property listings — for sale UI)** — Gold **£** map markers, filter,
 detail **On the market** section; `hasPropertyListing` on index. See

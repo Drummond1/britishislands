@@ -14,7 +14,27 @@
       "source": "curated",
       "sourceListingId": "knightfrank-shuna-uklaf-2026",
       "priceDisplay": "Offers in excess of £5,500,000",
-      "notes": "Page names Shuna Island, Arduaine/Oban. Verified on UK Land & Farms syndicating Knight Frank."
+      "notes": "Page names Shuna Island, Arduaine/Oban. UK Land & Farms syndicating Knight Frank."
+    },
+    {
+      "islandId": "osm-way-4002996",
+      "title": "Inchmarnock Island — private island estate (Strutt & Parker)",
+      "url": "https://struttandparker.com/properties/straad",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "strutt-inchmarnock-straad-2026",
+      "priceDisplay": "Offers over £2,000,000",
+      "notes": "662-acre island + Port House on Bute shore; page names Inchmarnock Island."
+    },
+    {
+      "islandId": "osm-way-750275320",
+      "title": "Eilean Mor — Loch Sunart island (Bell Ingram)",
+      "url": "https://www.bellingram.co.uk/property/eilean-mor-strontian-acharacle-highland-ph36-4hx/",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "bellingram-eilean-mor-sunart-2026",
+      "priceDisplay": "Offers over £275,000",
+      "notes": "Approx. 30 acres; uninhabited; atlas name Eilean Mòr. Also on UKLAF OBN240163."
     },
     {
       "islandId": "osm-way-200912404",
@@ -44,7 +64,7 @@
       "source": "curated",
       "sourceListingId": "galbraith-mullagrach-uklaf",
       "priceDisplay": "£500,000",
-      "notes": "Galbraith marketing; UKLAF syndication. Names Eilean Mullagrach."
+      "notes": "Galbraith marketing; UKLAF syndication. Names Eilean Mullagrach / Mullagrach Island."
     },
     {
       "islandId": "osm-relation-14940681",
@@ -77,6 +97,16 @@
       "notes": "Broker page title Middle Calf Island; atlas name Calf Island Middle."
     },
     {
+      "islandId": "osm-way-4562119",
+      "title": "Inishbarna Island — Killary Fjord (Vladi)",
+      "url": "https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/inishbarna-island",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "vladi-inishbarna",
+      "priceDisplay": "Open to offers",
+      "notes": "Vladi names Inishbarna Island; atlas OSM name Inis Barna (same fjord locality)."
+    },
+    {
       "islandId": "osm-relation-3998378",
       "title": "Long Island — Lower Lough Erne residence",
       "url": "https://www.lslauctions.com/PropertyLotDetail-MOFC-3657703/for-sale/long-island-lower-lough-erne-enniskillen",
@@ -97,6 +127,26 @@
       "notes": "For sale; circa 6 acres (portion of island), not whole island."
     },
     {
+      "islandId": "osm-relation-3516509",
+      "title": "Inishturk Island — Upper Lough Erne (McCaffrey Bros)",
+      "url": "https://www.mccaffreybros.com/inishturk-island-upper-lough-erne-lisnaskea/1036693",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "mccaffrey-inishturk-erne-1036693",
+      "priceDisplay": "Offers over £250,000",
+      "notes": "22 acres with derelict dwelling on island; not Mayo Inishturk (osm-relation-5763894)."
+    },
+    {
+      "islandId": "osm-relation-3512150",
+      "title": "11 Waters Edge — Boa Island, Lough Erne (LSL)",
+      "url": "https://www.lslauctions.com/PropertyLotDetail-MOFC-3657417/for-sale/11-waters-edge-boa-island-enniskillen-belleek",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "lsl-boa-island-waters-edge",
+      "priceDisplay": "Guide £350,000",
+      "notes": "Holiday home on Boa Island; page names Boa Island explicitly."
+    },
+    {
       "islandId": "osm-relation-4029093",
       "title": "Creelogh, Gorumna Island — coastal holding (DNG)",
       "url": "https://martinoconnor.dngauctions.ie/lot/details/109306",
@@ -105,6 +155,26 @@
       "sourceListingId": "dng-gorumna-creelogh-109306",
       "priceDisplay": "From €145,000",
       "notes": "Auction lot on Gorumna Island; marketed as near-island coastal holding."
+    },
+    {
+      "islandId": "osm-way-48076585",
+      "title": "The Island — Thames Ditton home (Absolute Homes)",
+      "url": "https://www.absolute-homes.co.uk/property/the-island-thames-ditton/",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "absolute-thames-ditton-island",
+      "priceDisplay": "Offers over £1,000,000",
+      "notes": "Detached home on Thames Ditton Island; not freehold of whole eyot."
+    },
+    {
+      "islandId": "osm-way-148442098",
+      "title": "Pharaoh's Island — Shepperton bungalow (Absolute Homes)",
+      "url": "https://www.absolute-homes.co.uk/property/detached-riverside-bungalow-on-private-island-shepperton/",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "absolute-pharaohs-island",
+      "priceDisplay": "Guide £675,000",
+      "notes": "Private island home on River Thames; boat access."
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
-  "startedAt": "2026-05-19T06:19:36+00:00",
+  "startedAt": "2026-05-19T07:27:41+00:00",
   "source": "curated",
   "dryRun": false,
-  "raw": 10,
-  "matched": 10,
+  "raw": 17,
+  "matched": 17,
   "unmatched": 0,
   "lowConfidence": 0,
   "unmatchedAudit": [],
-  "islandsWithListings": 10
+  "islandsWithListings": 17
 }

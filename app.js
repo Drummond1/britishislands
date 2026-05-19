@@ -33,8 +33,8 @@ const TYPE_COLORS = {
 };
 
 /** Distinct map/list styling for islands with a property listing link on file. */
-const FOR_SALE_MARKER_FILL = "#e8a838";
-const FOR_SALE_MARKER_STROKE = "#1a1200";
+const FOR_SALE_MARKER_FILL = "#c4a062";
+const FOR_SALE_MARKER_STROKE = "#5a6d82";
 
 const ROW_HEIGHT = 76; // px, must match .island-card sizing (incl. thumbnail)
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
@@ -1192,7 +1192,7 @@ function makeForSaleMapMarker(island) {
       iconAnchor: [17, 17],
     }),
     pane: getPropertyListingMapPane(),
-    zIndexOffset: 850,
+    zIndexOffset: 400,
   });
   const lead = primaryPropertyListing(island);
   const tip = lead?.url
@@ -2695,13 +2695,13 @@ function makeMarker(island) {
   if (onSale) {
     fillColor = FOR_SALE_MARKER_FILL;
     strokeColor = FOR_SALE_MARKER_STROKE;
-    strokeWeight = 2.4;
-    radius = Math.min(18, radius + 3);
-    fillOpacity = 1;
+    strokeWeight = 1.8;
+    radius = Math.min(16, radius + 1);
+    fillOpacity = 0.92;
     className = "marker-vis marker-vis--for-sale";
   }
 
-  const paintRadius = Math.max(radius, onSale ? 12 : 10);
+  const paintRadius = Math.max(radius, onSale ? 10 : 10);
   const marker = L.circleMarker([island.lat, island.lng], {
     radius: paintRadius,
     color: strokeColor,

@@ -67,3 +67,13 @@ The property cache is **authoritative**: any island that previously had `propert
 Islands named on broker sites but **missing from** `islands.json` (e.g. some Vladi-only spellings) must be ingested via normal OSM discovery first — do not invent atlas rows.
 
 Replace URLs when listings expire or sell; remove rows when pages go offline.
+
+### Listing tiers (research manifest)
+
+| Tier | Meaning | Examples |
+|------|---------|----------|
+| `whole_island` | Broker markets the island title or whole island estate | Shuna, Inchmarnock, Eilean Mòr (Loch Sunart), Vladi Ireland |
+| `land` | Named island parcel / auction lot | Insh Island, Gasker, Creaghawaddy portion |
+| `residential` | Named island but house/plot on an island (not whole island) | Soay croft, Boa Island cottage, Thames Ditton |
+
+Rows in `pendingAtlasIngest` in the verified manifest are live broker pages for islands **not yet** in `islands.json` — ingest via OSM discovery first, then add to `verified`.

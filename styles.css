@@ -15,6 +15,9 @@
   --mist: rgba(163, 181, 201, 0.1);
   --peat: #14110d;
   --gold: #e8c44a;
+  --for-sale: #c4a062;
+  --for-sale-soft: rgba(196, 160, 98, 0.22);
+  --for-sale-ring: rgba(196, 160, 98, 0.45);
   --shadow: 0 10px 32px rgba(0, 0, 0, 0.42);
   --radius: 12px;
   --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
@@ -3430,10 +3433,10 @@ body {
   opacity: 0.85;
 }
 .island-card--for-sale {
-  border-left: 3px solid var(--for-sale, #e8a838);
+  border-left: 2px solid var(--for-sale-ring);
   background: linear-gradient(
     90deg,
-    rgba(232, 168, 56, 0.12) 0%,
+    var(--for-sale-soft) 0%,
     transparent 48%
   );
 }
@@ -3442,11 +3445,12 @@ body {
   margin-left: 6px;
   padding: 1px 7px;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #1a1200;
-  background: var(--for-sale, #e8a838);
+  color: var(--for-sale);
+  background: var(--for-sale-soft);
+  border: 1px solid var(--for-sale-ring);
   border-radius: 4px;
   vertical-align: middle;
 }
@@ -3456,16 +3460,16 @@ body {
   margin-right: 4px;
   padding: 6px 10px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
-  color: #1a1200;
-  background: var(--for-sale, #e8a838);
+  color: var(--for-sale);
+  background: var(--for-sale-soft);
   border-radius: 6px;
-  border: 1px solid rgba(26, 18, 0, 0.25);
+  border: 1px solid var(--for-sale-ring);
   white-space: nowrap;
 }
 .island-card__listing-link:hover {
-  filter: brightness(1.08);
+  background: color-mix(in srgb, var(--for-sale-soft) 60%, var(--for-sale) 40%);
   text-decoration: none;
 }
 .for-sale-count {
@@ -3479,54 +3483,43 @@ body {
 }
 .map-sale-marker__ring {
   position: absolute;
-  inset: 0;
+  inset: 2px;
   border-radius: 50%;
-  border: 3px solid var(--for-sale, #e8a838);
-  box-shadow: 0 0 0 2px rgba(15, 22, 32, 0.85), 0 2px 8px rgba(0, 0, 0, 0.35);
-  animation: sale-marker-pulse 2s ease-in-out infinite;
+  border: 1.5px solid var(--for-sale-ring);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
 }
 .map-sale-marker__badge {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
-  font-size: 13px;
-  font-weight: 800;
-  color: #1a1200;
-  background: var(--for-sale, #e8a838);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--for-sale);
+  background: color-mix(in srgb, var(--bg-elev) 72%, var(--for-sale) 28%);
   border-radius: 50%;
-  border: 2px solid #1a1200;
-}
-@keyframes sale-marker-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.12);
-    opacity: 0.85;
-  }
+  border: 1px solid var(--for-sale-ring);
 }
 .map-sale-tooltip-wrap {
   font-size: 12px;
   line-height: 1.35;
   padding: 6px 8px;
-  border: 1px solid var(--for-sale, #e8a838);
+  border: 1px solid var(--border);
 }
 .map-sale-tooltip__link {
-  color: var(--for-sale, #e8a838);
+  color: var(--for-sale);
   font-weight: 600;
 }
 .marker-vis--for-sale {
-  filter: drop-shadow(0 0 4px rgba(232, 168, 56, 0.65));
+  filter: drop-shadow(0 0 2px rgba(196, 160, 98, 0.35));
 }
 .sale-popup-wrap .leaflet-popup-content-wrapper {
-  border-color: var(--for-sale, #e8a838);
+  border-color: var(--border);
 }
 .sale-popup__title {
   margin: 0 0 6px;
@@ -3548,7 +3541,7 @@ body {
 .sale-popup__link {
   display: block;
   font-weight: 600;
-  color: var(--for-sale, #e8a838);
+  color: var(--for-sale);
   margin-bottom: 2px;
 }
 .sale-popup__meta {
@@ -3573,15 +3566,15 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
-  font-size: 10px;
-  font-weight: 800;
+  width: 12px;
+  height: 12px;
+  font-size: 9px;
+  font-weight: 600;
   font-style: normal;
-  color: #1a1200;
-  background: var(--for-sale, #e8a838);
+  color: var(--for-sale);
+  background: color-mix(in srgb, var(--bg-elev) 72%, var(--for-sale) 28%);
   border-radius: 50%;
-  border: 1px solid #1a1200;
+  border: 1px solid var(--for-sale-ring);
 }
 .property-listings-section {
   margin-top: 0.5rem;

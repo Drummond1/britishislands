@@ -1672,6 +1672,16 @@
   committed locally but **not** on remote — push rejected without `workflow` OAuth
   scope; add the file manually or re-push with workflow permissions.
 
+## 2026-05-19 — Deep property listing research (multi-agent pass)
+
+- **Goal**: Find additional live island listings (small/large) within GB+IE scope; no fabricated URLs.
+- **Agents**: Scotland brokers, Ireland/England/Wales brokers, atlas ID matcher, Thames/Orkney sweep.
+- **What changed**: `property_listings_verified.json` expanded **10 → 17**; sync applied to `islands.json`.
+- **New islands linked**: Inchmarnock, Eilean Mòr (Loch Sunart), Inishturk (Lough Erne NI), Inis Barna,
+  Boa Island, Thames Ditton Island, Pharaoh's Island.
+- **Excluded / pending**: Inishskehan (not in atlas), Dumsey Eyot (not in atlas), Hallsmead Ait (auction
+  passed), Little Ross (news only), Vladi GB archive listings.
+
 ## 2026-05-19 — Orchestrated property listing research (sub-agents)
 
 - **Goal**: Expand for-sale islands using only verifiable broker URLs (no fabricated content).
