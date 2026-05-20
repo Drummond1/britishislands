@@ -1754,7 +1754,7 @@
   - `scripts/property_listings_registry.py`, `scripts/run_property_discovery_weekly.py`,
     `data/discovery/property_obscure_sources.json`, generated `docs/FOR-SALE-ISLANDS.md`.
   - Skill `.cursor/skills/weekly-island-property-discovery/`; GH workflow
-    `property-discovery-weekly.yml` (Mondays 06:00 UTC registry refresh).
+    `.github/workflows/main.yml` (Mondays 06:00 UTC registry refresh).
 - **Outcome / counts**: **37** for-sale islands; full list at `docs/FOR-SALE-ISLANDS.md`.
 - **Open items**: Run skill weekly in Cursor for new research; `pendingAtlasIngest`
   islands still need OSM discovery.

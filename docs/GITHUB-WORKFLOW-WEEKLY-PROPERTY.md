@@ -5,19 +5,36 @@ Two related pieces:
 | Piece | Where | What it does |
 |-------|--------|----------------|
 | **Cursor skill** | `.cursor/skills/weekly-island-property-discovery/SKILL.md` | Already in the repo. In Cursor, ask to *run the weekly island property discovery skill* — sub-agents search brokers, then scripts update the map. |
-| **GitHub Action** | `.github/workflows/property-discovery-weekly.yml` | Refreshes `docs/FOR-SALE-ISLANDS.md` and the registry every Monday (no broker research in CI). |
+| **GitHub Action** | `.github/workflows/main.yml` | Refreshes `docs/FOR-SALE-ISLANDS.md` and the registry every Monday (no broker research in CI). |
 
-Cursor’s git push often **cannot** add workflow files (OAuth lacks `workflow` scope). Add the Action manually once using the steps below.
+**Status:** Workflow is live on `main` (commit `929d7e6`).
+
+### Run it now
+
+1. Open **https://github.com/Drummond1/britishislands/actions/workflows/main.yml**
+2. Click **Run workflow** → branch `main` → **Run workflow**
+3. Open the run → confirm job **refresh-registry** succeeds.
+
+### One-time permission check
+
+**Settings → Actions → General → Workflow permissions** → **Read and write permissions** → Save.  
+(Without this, the auto-commit step at the end of the job will fail.)
 
 ---
 
-## Add the workflow on GitHub (≈3 minutes)
+## Add the workflow on GitHub (only if missing)
+
+Skip this section if `.github/workflows/main.yml` already exists on GitHub.
+
+---
+
+## Original manual setup (≈3 minutes)
 
 1. Open your repo: **https://github.com/Drummond1/britishislands**
 2. Go to **Actions** → **New workflow** → **set up a workflow yourself** (or **Create new workflow**).
-3. Name the file exactly:  
-   `property-discovery-weekly.yml`  
-   (under `.github/workflows/`).
+3. Name the file:  
+   `main.yml`  
+   (under `.github/workflows/` — any `*.yml` name works; this repo uses `main.yml`).
 4. Delete the template contents and paste the YAML from the next section.
 5. Click **Commit changes…** → commit to `main`.
 6. **Settings** → **Actions** → **General** → **Workflow permissions** → choose **Read and write permissions** → Save.  
@@ -74,7 +91,7 @@ jobs:
 ```
 
 The same file lives locally at  
-`.github/workflows/property-discovery-weekly.yml` if you prefer to copy from your machine.
+`.github/workflows/main.yml`.
 
 ---
 

@@ -9,7 +9,7 @@ with `propertyListings[]` (**+8** vs 29 after Tier 3). Tier 4 obscure brokers;
 **full list:** `docs/FOR-SALE-ISLANDS.md`; registry:
 `data/discovery/property_listings_registry.json`; skill:
 `.cursor/skills/weekly-island-property-discovery/`; workflow:
-`.github/workflows/property-discovery-weekly.yml`.
+`.github/workflows/main.yml`.
 
 **2026-05-19 (property listings — Tier 3 broker crawl)** — **29** islands with
 `propertyListings[]` (**+12** new vs prior **17**). Tier 3 desk research across
