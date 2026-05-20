@@ -1,0 +1,38 @@
+name: Weekly property discovery
+
+on:
+  schedule:
+    # Mondays 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh for-sale registry and docs
+        run: |
+          python3 scripts/run_property_discovery_weekly.py --registry-only
+
+      - name: Commit registry updates if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/FOR-SALE-ISLANDS.md \
+            data/discovery/property_listings_registry.json \
+            data/for_sale_islands_summary.json
+          if git diff --staged --quiet; then
+            echo "No registry changes"
+          else
+            git commit -m "chore: weekly for-sale island registry refresh"
+            git push
+          fi
