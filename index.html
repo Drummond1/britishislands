@@ -25,8 +25,42 @@
     <title>Isles of Britain — A Visual Atlas</title>
     <meta
       name="description"
-      content="Explore the islands of the United Kingdom and Crown Dependencies — sea, river and lake — on an interactive map with history, transport and accommodation info."
+      content="Explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland."
     />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://www.findmyisland.com/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.findmyisland.com/sitemap.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Isles of Britain" />
+    <meta property="og:title" content="Isles of Britain — A Visual Atlas" />
+    <meta
+      property="og:description"
+      content="Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides."
+    />
+    <meta property="og:url" content="https://www.findmyisland.com/" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Isles of Britain — A Visual Atlas" />
+    <meta
+      name="twitter:description"
+      content="Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Isles of Britain",
+        "alternateName": ["Find My Island", "findmyisland.com"],
+        "url": "https://www.findmyisland.com/",
+        "description": "Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies.",
+        "inLanguage": "en-GB",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Isles of Britain",
+          "url": "https://www.findmyisland.com/"
+        }
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -50,6 +84,13 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#sidebar">Skip to island list</a>
+    <div id="app-loading" class="app-loading" aria-live="polite" aria-busy="true">
+      <div class="app-loading__inner">
+        <span class="app-loading__mark" aria-hidden="true">◍</span>
+        <p class="app-loading__text">Loading the atlas…</p>
+      </div>
+    </div>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -91,15 +132,29 @@
           aria-controls="topbar-filters"
         >
           Filters
+          <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
         </button>
         <div class="topbar-controls" id="topbar-filters">
           <div class="filter-tier filter-tier--essential">
-            <input
-              id="search"
-              type="search"
-              placeholder="Search islands, archipelago, Gaelic name…"
-              aria-label="Search islands"
-            />
+            <div class="search-field">
+              <input
+                id="search"
+                type="search"
+                placeholder="Search islands, archipelago, Gaelic name…"
+                aria-label="Search islands"
+                autocomplete="off"
+                title="Press / to focus search from anywhere"
+              />
+              <button
+                type="button"
+                class="search-field__clear"
+                id="search-clear"
+                hidden
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+            </div>
             <select id="nation-filter" aria-label="Filter by nation">
               <option value="">All nations</option>
             </select>
@@ -181,52 +236,116 @@
         <section class="island-list" id="island-list-section">
           <header class="sidebar-section-header">
             <h2 id="list-heading">Islands</h2>
-            <span class="count" id="result-count">0</span>
+            <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
-          <div class="scotland-quick" id="scotland-quick" aria-label="Quick filters for Scotland">
-            <p class="scotland-quick__label">Explore Scotland</p>
-            <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
+          <p class="sidebar-section-label">Discover</p>
+          <div class="browse-quick" id="browse-quick" aria-label="Quick filters">
+            <div class="browse-quick__chips" id="browse-quick-chips"></div>
           </div>
           <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
           <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
             <div class="discover-chips" id="discover-chips" role="tablist"></div>
             <p class="discover-panel__hint" id="discover-hint" hidden></p>
           </section>
-          <section class="trip-planner" aria-labelledby="trip-planner-title">
-            <h2 class="trip-planner__title" id="trip-planner-title">Plan crossing</h2>
-            <form class="trip-planner__form" id="trip-form">
-              <label class="trip-planner__field">
-                <span>From island</span>
-                <input
-                  id="trip-from"
-                  name="from"
-                  type="search"
-                  list="trip-islands"
-                  placeholder="e.g. Mull"
-                  autocomplete="off"
-                />
-              </label>
-              <label class="trip-planner__field">
-                <span>To island</span>
-                <input
-                  id="trip-to"
-                  name="to"
-                  type="search"
-                  list="trip-islands"
-                  placeholder="e.g. Iona"
-                  autocomplete="off"
-                />
-              </label>
-              <button class="trip-planner__submit" type="submit">Plan route</button>
-            </form>
-            <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
-            <datalist id="trip-islands"></datalist>
-          </section>
           <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
             <h3 id="featured-heading" class="featured-strip__title">Notable islands</h3>
             <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
           </section>
-          <ul id="island-list" class="island-list__items"></ul>
+          <div class="scotland-quick" id="scotland-quick" aria-label="Quick filters for Scotland">
+            <p class="scotland-quick__label">Explore Scotland</p>
+            <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
+          </div>
+
+          <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
+          <details class="trip-planner trip-planner--collapse">
+            <summary class="trip-planner__summary" id="trip-planner-title">Plan a ferry crossing</summary>
+            <div class="trip-planner__body">
+              <form class="trip-planner__form" id="trip-form">
+                <label class="trip-planner__field">
+                  <span>From island</span>
+                  <input
+                    id="trip-from"
+                    name="from"
+                    type="search"
+                    list="trip-islands"
+                    placeholder="e.g. Mull"
+                    autocomplete="off"
+                  />
+                </label>
+                <label class="trip-planner__field">
+                  <span>To island</span>
+                  <input
+                    id="trip-to"
+                    name="to"
+                    type="search"
+                    list="trip-islands"
+                    placeholder="e.g. Iona"
+                    autocomplete="off"
+                  />
+                </label>
+                <button class="trip-planner__submit" type="submit">Plan route</button>
+              </form>
+              <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
+              <datalist id="trip-islands"></datalist>
+            </div>
+          </details>
+          <!-- IOB_CRAWL_LINKS_START -->
+        <footer class="crawl-links crawl-links--seo" aria-label="Guides and notable islands">
+          <p class="crawl-links__heading">Guides &amp; notable islands</p>
+          <div class="crawl-links__grid">
+            <section>
+              <h3 class="crawl-links__sub">Ferry guides</h3>
+              <ul class="crawl-links__list">
+        <li><a href="/ferries/">All ferry guides</a></li>
+        <li><a href="/ferries/hebrides/">Hebrides</a></li>
+        <li><a href="/ferries/orkney/">Orkney</a></li>
+        <li><a href="/ferries/shetland/">Shetland</a></li>
+        <li><a href="/ferries/isle-of-wight/">Isle of Wight</a></li>
+        <li><a href="/ferries/isles-of-scilly/">Isles of Scilly</a></li>
+        <li><a href="/ferries/isle-of-man/">Isle of Man</a></li>
+        <li><a href="/ferries/channel-islands/">Channel Islands</a></li>
+        <li><a href="/ferries/scottish/">Scottish islands</a></li>
+        <li><a href="/ferries/welsh/">Wales</a></li>
+        <li><a href="/ferries/ireland/">Ireland</a></li>
+        <li><a href="/ferries/northern-ireland/">Northern Ireland</a></li>
+        <li><a href="/ferries/calmac/">CalMac</a></li>
+              </ul>
+            </section>
+            <section>
+              <h3 class="crawl-links__sub">Notable islands</h3>
+              <ul class="crawl-links__list">
+        <li><a href="/profiles/anglesey.html">Anglesey (Ynys Môn)</a></li>
+        <li><a href="/profiles/belle-isle-windermere.html">Belle Isle (Windermere)</a></li>
+        <li><a href="/profiles/brownsea.html">Brownsea Island</a></li>
+        <li><a href="/profiles/burgh-island.html">Burgh Island</a></li>
+        <li><a href="/profiles/eel-pie-island.html">Eel Pie Island</a></li>
+        <li><a href="/profiles/fair-isle.html">Fair Isle</a></li>
+        <li><a href="/profiles/guernsey.html">Guernsey</a></li>
+        <li><a href="/profiles/inchcailloch.html">Inchcailloch</a></li>
+        <li><a href="/profiles/iona.html">Iona</a></li>
+        <li><a href="/profiles/islay.html">Islay</a></li>
+        <li><a href="/profiles/arran.html">Isle of Arran</a></li>
+        <li><a href="/profiles/bute.html">Isle of Bute</a></li>
+        <li><a href="/profiles/isle-of-dogs.html">Isle of Dogs</a></li>
+        <li><a href="/profiles/isle-of-man.html">Isle of Man</a></li>
+        <li><a href="/profiles/mull.html">Isle of Mull</a></li>
+        <li><a href="/profiles/isle-of-skye.html">Isle of Skye</a></li>
+        <li><a href="/profiles/isle-of-wight.html">Isle of Wight</a></li>
+        <li><a href="/profiles/jersey.html">Jersey</a></li>
+        <li><a href="/profiles/lewis-and-harris.html">Lewis and Harris</a></li>
+        <li><a href="/profiles/lindisfarne.html">Lindisfarne (Holy Island)</a></li>
+        <li><a href="/profiles/lundy.html">Lundy</a></li>
+        <li><a href="/profiles/mainland-orkney.html">Mainland (Orkney)</a></li>
+        <li><a href="/profiles/mainland-shetland.html">Mainland (Shetland)</a></li>
+        <li><a href="/profiles/rathlin.html">Rathlin Island</a></li>
+        <li><a href="/profiles/st-kilda.html">St Kilda (Hirta)</a></li>
+        <li><a href="/profiles/scilly-st-marys.html">St Mary&#x27;s (Isles of Scilly)</a></li>
+        <li><a href="/profiles/staffa.html">Staffa</a></li>
+              </ul>
+            </section>
+          </div>
+        </footer>
+<!-- IOB_CRAWL_LINKS_END -->
         </section>
 
         <section class="island-details" id="island-details" hidden>
@@ -236,7 +355,7 @@
             type="button"
             aria-label="Back to island list"
           >
-            ← Back to list
+            ← Islands
           </button>
           <div id="details-content"></div>
         </section>
@@ -344,7 +463,12 @@
           <span class="map-island-peek__name" id="map-island-peek-name"></span>
           <span class="map-island-peek__cta">View island →</span>
         </button>
-                <div id="map" role="application" aria-label="Map of British islands"></div>
+        <div id="map-hint" class="map-hint" role="status" hidden>
+          <p class="map-hint__text">Tap a dot on the map, or open the <strong>Islands</strong> tab to browse.</p>
+          <button type="button" class="map-hint__close" id="map-hint-close" aria-label="Dismiss map hint">×</button>
+        </div>
+        <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
+        <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
         <div class="legend" role="list" aria-label="Map legend">
           <span role="listitem"><i class="dot dot--sea"></i> Sea</span>
           <span role="listitem"><i class="dot dot--lake"></i> Loch / lake</span>
@@ -490,6 +614,8 @@
       </button>
     </nav>
 
+    <div id="app-toast" class="app-toast" role="status" aria-live="polite" hidden></div>
+
     <div id="favorites-access-modal" class="favorites-modal" hidden>
       <div class="favorites-modal__backdrop" id="favorites-access-backdrop" tabindex="-1"></div>
       <div
@@ -525,6 +651,15 @@
       </div>
     </div>
 
+    <div id="image-lightbox" class="lightbox" hidden>
+      <div class="lightbox__backdrop" tabindex="-1"></div>
+      <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Island photo">
+        <button type="button" class="lightbox__close" aria-label="Close photo">×</button>
+        <img class="lightbox__img" alt="" />
+        <p class="lightbox__caption"></p>
+      </div>
+    </div>
+
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -540,6 +675,7 @@
     <script src="https://unpkg.com/proj4@2.10.0/dist/proj4.js"></script>
     <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
     <script>window.IOB_SITE_ORIGIN = "https://www.findmyisland.com";</script>
+    <script src="seo-head.js"></script>
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>

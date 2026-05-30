@@ -35,6 +35,7 @@ config.local.*
 # --- Generated / cache data we DO NOT want in version control ---------------
 # Re-fetchable from upstream APIs in minutes; would bloat the repo.
 data/cache_*.json
+data/cache_*.geojson
 data/water_raw.json
 data/water_raw_v2.json
 data/coastline_raw.json
@@ -62,6 +63,9 @@ adapters/
 
 # CI-generated thin island HTML stubs (see scripts/generate_seo_artifacts.py)
 profiles/
+
+# Nation shards for deferred frontend load (see scripts/build_islands_index.py)
+data/shards/
 
 # --- Tooling --------------------------------------------------------------
 # Cursor-specific runtime artefacts (terminals, agent transcripts).

@@ -4,6 +4,23 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-30 (Google indexing — profile sitemap + static homepage SEO)** — Sitemap
+now lists **7,055** URLs: home, 13 ferry guides, **7,041** `/profiles/<id>.html`
+static pages (not `?island=` query strings). Homepage ships canonical, OG/Twitter,
+`WebSite` JSON-LD, crawl-link footer; `seo-head.js` for Search Console verification.
+Regenerate: `IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifacts.py --landing-dir profiles`.
+See `docs/SEO-GEO.md`.
+
+**2026-05-30 (usability pass — deferred load, placeholders, lightbox, discoverability, a11y)** —
+Frontend paints from `islands_index.json` + `thumbUrl` stubs, then merges **7 nation shards**
+(`data/shards/*.json`) in parallel instead of blocking on monolithic `islands.json`.
+**Browse quick filters** (Has photo / Ferry / For sale + top explore topics) promoted above
+the list; trip planner demoted. Type-tinted **photo placeholders** in list + detail hero.
+**Gallery lightbox** on hero click. **Keyboard** ↑/↓ through virtualised list; filter drawer
+focus trap on mobile. Chat gazetteer extended (+12 ferry hubs). v5 photo batch (**80** attempts,
+**0** adoptions — Commons **429**). Regenerate index + shards:
+`python3 scripts/build_islands_index.py` (Pages workflow runs this on deploy).
+
 **2026-05-19 (property listings — Tier 4 obscure + weekly system)** — **37** islands
 with `propertyListings[]` (**+8** vs 29 after Tier 3). Tier 4 obscure brokers;
 **full list:** `docs/FOR-SALE-ISLANDS.md`; registry:
@@ -585,11 +602,12 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 ## 4. Frontend state
 
-- **Two-phase island load**: `data/islands_index.json` first (then merge
-  `data/islands.json` in place) so the map can paint sooner on slow links;
-  index rows include `hasImage` for filters; regenerate after every `islands.json`
-  mutation. At zoom ≤7, only markers inside the viewport are painted (pan/zoom
-  refreshes the layer).
+- **Two-phase island load**: `data/islands_index.json` first (includes `thumbUrl` for list
+  thumbnails), then parallel **nation shards** from `data/shards/` merge full records in
+  the background (`loadFullIslandRecordsBackground`); falls back to monolithic
+  `data/islands.json` if shards/manifest missing. Regenerate via
+  `scripts/build_islands_index.py` (also run on GitHub Pages deploy). At zoom ≤7, only
+  markers inside the viewport are painted (pan/zoom refreshes the layer).
 - **Plan crossing**: sidebar form builds `?trip=startId,endId` and shows an
   itinerary banner under the header (ferry graph from `loadFerries()`).
 - Static app served by `python3 -m http.server` (currently port 8767).

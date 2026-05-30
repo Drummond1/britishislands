@@ -32,33 +32,37 @@ alternate CDN hostname).
 |--------|------|
 | `llms.txt` | Always — short briefing + URL patterns for AI crawlers |
 | `sitemap.xml`, `robots.txt` | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
+| `profiles/<id>.html` | With `--landing-dir profiles` (Pages deploy; gitignored locally) |
+| `index.html` crawl links | Patched between `IOB_CRAWL_LINKS_*` markers |
 
 ```bash
-# Minimal check-in (no absolute URLs):
-python3 scripts/generate_seo_artifacts.py
-
-# Production (replace with your live origin):
-IOB_SITE_ORIGIN=https://example.com python3 scripts/generate_seo_artifacts.py
-```
-
-**Sitemap size:** one URL per island plus the home page (~7k+ URLs). Within
-search-engine sitemap limits; split later if the dataset grows massively.
-
-### Optional thin landing pages
-
-Thousands of tiny static files can help hosts that don’t execute JS for bots, or
-for share URLs that resolve without query strings:
-
-```bash
-python3 scripts/generate_seo_artifacts.py \
-  --site-origin https://example.com \
+# Production (matches GitHub Pages workflow):
+IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifacts.py \
   --landing-dir profiles
 ```
 
-Each `profiles/<id>.html` includes basic meta tags, `canonical` to
-`/?island=<id>`, and an immediate redirect to the live atlas. **Do not commit**
-that directory unless your repo is OK with ~7k new files; many teams generate
-this only in CI before deploy.
+**Sitemap (2026-05-30):** homepage + 13 ferry guides + 7,041 static profile URLs
+(`/profiles/<id>.html`). Curated islands get higher `priority`. Query-string
+`/?island=` URLs are omitted when profile pages are generated.
+
+### Google Search Console
+
+1. Add property `https://www.findmyisland.com`
+2. Verify via HTML tag: set `window.IOB_GOOGLE_SITE_VERIFICATION` in `config.local.js`
+   (see `config.local.example.js`); `seo-head.js` injects the meta tag at load.
+3. Submit sitemap: `https://www.findmyisland.com/sitemap.xml`
+4. Use URL Inspection → Request indexing on `/` and a few `/profiles/*.html` pages
+
+### Static homepage SEO
+
+`index.html` ships canonical, Open Graph, Twitter Card, `WebSite` JSON-LD, and
+`robots` index directives in plain HTML. Island panels still update head tags via
+`seo-meta.js`.
+
+### Profile landing pages
+
+Each `profiles/<id>.html` has self-canonical URL, `Island` JSON-LD, OG tags, and a
+link to the interactive atlas. Generated on every Pages deploy; not committed locally.
 
 ## ETHICS
 

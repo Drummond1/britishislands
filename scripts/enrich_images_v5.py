@@ -1080,6 +1080,11 @@ def main() -> int:
                    help="Process only the island with this id and print the result.")
     p.add_argument("--no-backup", action="store_true",
                    help="Skip writing islands.json.before-v5 (dangerous).")
+    p.add_argument(
+        "--queue-file",
+        default="",
+        help="JSON from scripts/build_image_priority_queue.py — process ids in tier order first.",
+    )
     args = p.parse_args()
 
     islands = json.loads(ISLANDS.read_text(encoding="utf-8"))
@@ -1110,6 +1115,19 @@ def main() -> int:
         "skipped": [],         # [{id, name, reason}]
     }
     pending = [i for i in islands if not (i.get("images") or [])]
+    if args.queue_file:
+        qpath = Path(args.queue_file)
+        if not qpath.is_file():
+            print(f"WARN: queue file not found: {qpath}", file=sys.stderr)
+        else:
+            qdata = json.loads(qpath.read_text(encoding="utf-8"))
+            order = qdata.get("ids") if isinstance(qdata, dict) else qdata
+            if isinstance(order, list):
+                rank = {str(i): n for n, i in enumerate(order)}
+                pending.sort(
+                    key=lambda i: (rank.get(i.get("id", ""), 10**9), (i.get("name") or "").lower()),
+                )
+                print(f"  ordered by queue file ({len(order):,} ids)", flush=True)
     if args.test:
         pending = [i for i in islands if i.get("id") == args.test]
     if args.limit:

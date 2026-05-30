@@ -158,7 +158,7 @@ def _curl_post(url: str, data: dict[str, str], timeout: int = 120,
     for k, v in data.items():
         args_base += ["--data-urlencode", f"{k}={v}"]
     args_base.append(url)
-    backoffs = [3.0, 10.0, 30.0, 90.0, 240.0]
+    backoffs = [5.0, 15.0, 45.0, 120.0, 300.0, 600.0]
     last_status = None
     for attempt in range(max_retries):
         res = subprocess.run(args_base, capture_output=True, timeout=timeout + 30)
@@ -420,12 +420,125 @@ SELECT ?h ?hLabel ?lat ?lon ?ele ?dobih ?wp WHERE {{
 }}
 """
 
+# Single request for all hill classes — avoids 12× rate-limit hits on WDQS.
+_SPARQL_ALL_TMPL = """
+SELECT ?h ?hLabel ?classQ ?lat ?lon ?ele ?dobih ?wp WHERE {{
+  VALUES ?classQ {{ {values} }}
+  ?h wdt:P31 ?classQ .
+  OPTIONAL {{ ?h p:P625 ?stmt . ?stmt psv:P625 ?coord .
+             ?coord wikibase:geoLatitude ?lat ; wikibase:geoLongitude ?lon . }}
+  OPTIONAL {{ ?h wdt:P2044 ?ele . }}
+  OPTIONAL {{ ?h wdt:P5283 ?dobih . }}
+  OPTIONAL {{ ?wp schema:about ?h ; schema:isPartOf <https://en.wikipedia.org/> . }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+}}
+"""
+
+QID_TO_CLASS = {qid: label for label, qid in CLASS_QID.items()}
+
+
+def _parse_wikidata_bindings(rows: list) -> dict[str, dict]:
+    """Merge SPARQL bindings into Q-ID keyed hill records with classifications."""
+    merged: dict[str, dict] = {}
+    for b in rows:
+        uri = (b.get("h") or {}).get("value", "")
+        q = uri.rsplit("/", 1)[-1] if uri else ""
+        if not q.startswith("Q"):
+            continue
+        class_uri = (b.get("classQ") or {}).get("value", "")
+        class_q = class_uri.rsplit("/", 1)[-1] if class_uri else ""
+        class_label = QID_TO_CLASS.get(class_q)
+        rec = merged.setdefault(q, {
+            "wikidata": q,
+            "name": None,
+            "lat": None,
+            "lng": None,
+            "elevationM": None,
+            "dobihId": None,
+            "wikipedia": None,
+            "classifications": [],
+        })
+        if class_label and class_label not in rec["classifications"]:
+            rec["classifications"].append(class_label)
+        nm = (b.get("hLabel") or {}).get("value") or None
+        if nm and not nm.startswith("Q") and not rec["name"]:
+            rec["name"] = nm
+        la = (b.get("lat") or {}).get("value")
+        lo = (b.get("lon") or {}).get("value")
+        if la and lo and rec["lat"] is None:
+            try:
+                rec["lat"] = float(la)
+                rec["lng"] = float(lo)
+            except ValueError:
+                pass
+        el = (b.get("ele") or {}).get("value")
+        if el and rec["elevationM"] is None:
+            try:
+                rec["elevationM"] = float(el)
+            except ValueError:
+                pass
+        db = (b.get("dobih") or {}).get("value")
+        if db and rec["dobihId"] is None:
+            try:
+                rec["dobihId"] = int(db)
+            except ValueError:
+                pass
+        wp = (b.get("wp") or {}).get("value")
+        if wp and not rec["wikipedia"]:
+            rec["wikipedia"] = wp
+    for rec in merged.values():
+        rec["classifications"] = sorted(
+            rec.get("classifications") or [],
+            key=lambda c: CLASS_RANK.get(c, 99),
+        )
+    return merged
+
+
+def fetch_wikidata_hills_combined(*, cache: dict | None = None) -> dict[str, dict]:
+    """One SPARQL query for all hill P31 types (polite to WDQS rate limits)."""
+    cache = cache if cache is not None else {}
+    cache.setdefault("classes", {})
+    cache.setdefault("meta", {"fetchedAt": None})
+    values = " ".join(f"wd:{qid}" for qid in CLASS_QID.values())
+    print("  SPARQL combined (all hill classes, single request)…", flush=True)
+    try:
+        raw = _curl_post(
+            WD_SPARQL,
+            {"query": _SPARQL_ALL_TMPL.format(values=values), "format": "json"},
+            timeout=300,
+            max_retries=8,
+        )
+    except Exception as exc:
+        print(f"    combined query failed: {exc}", file=sys.stderr)
+        return {}
+    try:
+        payload = json.loads(raw.decode("utf-8"))
+    except Exception as exc:
+        print(f"    JSON decode failed: {exc}", file=sys.stderr)
+        return {}
+    rows = (payload.get("results") or {}).get("bindings") or []
+    merged = _parse_wikidata_bindings(rows)
+    print(f"    +{len(merged):,} hills from combined query", flush=True)
+    # Mirror into per-class cache buckets for compatibility.
+    for label in CLASS_QID:
+        cache["classes"][label] = {}
+    for q, rec in merged.items():
+        for label in rec.get("classifications") or []:
+            cache["classes"].setdefault(label, {})[q] = {
+                k: v for k, v in rec.items() if k != "classifications"
+            }
+            cache["classes"][label][q]["classifications"] = [label]
+    cache["meta"]["fetchedAt"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    _atomic_write_json(WD_HILLS_CACHE, cache)
+    return merged
+
 
 def fetch_wikidata_hills(*, force: bool = False, cache: dict | None = None) -> dict[str, dict]:
     """Return a dict keyed by Q-ID with hill metadata, classifications merged."""
     cache = cache if cache is not None else {}
     cache.setdefault("classes", {})           # classLabel -> {qid -> rec}
     cache.setdefault("meta", {"fetchedAt": None})
+    consecutive_429 = 0
     for label, qid in CLASS_QID.items():
         if (not force) and cache["classes"].get(label):
             continue
@@ -434,10 +547,21 @@ def fetch_wikidata_hills(*, force: bool = False, cache: dict | None = None) -> d
             raw = _curl_post(WD_SPARQL,
                              {"query": _SPARQL_TMPL.format(qid=qid),
                               "format": "json"},
-                             timeout=120)
+                             timeout=120,
+                             max_retries=8)
         except Exception as exc:
             print(f"    failed: {exc}", file=sys.stderr)
+            if "429" in str(exc) or "giving up" in str(exc).lower():
+                consecutive_429 += 1
+            if consecutive_429 >= 2:
+                print(
+                    "  Aborting per-class SPARQL — Wikidata rate limit (HTTP 429). "
+                    "Retry in a few hours, or use --dobih-csv.",
+                    file=sys.stderr,
+                )
+                break
             continue
+        consecutive_429 = 0
         try:
             payload = json.loads(raw.decode("utf-8"))
         except Exception as exc:
@@ -488,7 +612,7 @@ def fetch_wikidata_hills(*, force: bool = False, cache: dict | None = None) -> d
         cache["meta"]["fetchedAt"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
         _atomic_write_json(WD_HILLS_CACHE, cache)
         print(f"    +{len(by_qid)} hills (cache flushed)", flush=True)
-        time.sleep(1.5)            # polite throttle on the public endpoint
+        time.sleep(8.0)            # polite throttle between per-class fallbacks
     # Merge classes per Q-ID.
     merged: dict[str, dict] = {}
     for label, by_qid in cache["classes"].items():
@@ -545,7 +669,10 @@ def main() -> int:
     have_wd_cache = bool((wd_cache or {}).get("classes"))
     if args.fetch:
         print("Wikidata SPARQL fallback (live)…", flush=True)
-        wd_hills = fetch_wikidata_hills(force=True, cache=wd_cache)
+        wd_hills = fetch_wikidata_hills_combined(cache=wd_cache)
+        if not wd_hills:
+            print("  Combined query empty — falling back to per-class SPARQL…", flush=True)
+            wd_hills = fetch_wikidata_hills(force=True, cache=wd_cache)
         sources_used.append("wikidata-sparql")
     elif have_wd_cache:
         print("Wikidata SPARQL fallback (using cached data only)…", flush=True)

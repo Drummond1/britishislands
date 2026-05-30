@@ -70,6 +70,18 @@ for source / licence / refresh-cadence detail.
   session.  `docs/SCHEMA-ENRICHMENTS-2026-05-13.md` §7 documents
   where each new section would go and what CSS classes to introduce.
 
+## P1 — photo coverage (priority queue + v5)
+
+- **Priority queue** — `python3 scripts/build_image_priority_queue.py` →
+  `data/image_priority_queue.json` (curated → ferry → large area → Wikidata).
+- **Lead images (v5)** — polite run with caches (DELAY_S=1.2s in script):
+  `python3 scripts/enrich_images_v5.py --queue-file data/image_priority_queue.json`
+  Resume with `--limit N` for batches; then `python3 scripts/build_islands_index.py`.
+- **Gallery extras (v4)** — after leads exist:
+  `python3 scripts/enrich_images_v4.py --limit 500` (Commons 429: reuse caches).
+- **Featured strip** — `python3 scripts/build_featured_islands.py` →
+  `data/featured_islands.json` (sidebar **Notable islands**; regenerate after atlas edits).
+
 - (nothing else — all prior P0 jobs from earlier sessions have completed.)
 
 ## P0a — recently completed
@@ -168,13 +180,9 @@ for source / licence / refresh-cadence detail.
    Ireland) tile sources as fourth/fifth basemaps in the switcher when
    the island's nation matches. See `docs/OS-MAPS.md` future-work.
 
-5. **Initial-payload performance**: pre-cluster server-side at low zoom
-   levels so the initial network response is <1 MB instead of the 8 MB
-   we currently ship. Two cheap approaches:
-   - bucket islands into a 0.5°×0.5° grid at zoom ≤ 6 and ship cluster
-     summaries; load detail rows on-demand by viewport; or
-   - emit per-nation JSON files plus a tiny index, so the marker layer
-     fetches only what's visible.
+5. **Initial-payload performance**: ~~pre-cluster server-side at low zoom~~ **partial
+   (2026-05-30)** — nation shards + deferred merge shipped; index carries `thumbUrl`.
+   Remaining: zoom ≤6 grid cluster summaries if index stays >10 MiB.
 
 ## P2 — backlog (in rough order)
 
@@ -261,13 +269,14 @@ for source / licence / refresh-cadence detail.
   photo using Commons category traversal; UI gallery in the details
   panel.~~ Shipped 2026-05-11. Extras live in `data/galleries.json`
   (separate file, lazy-fetched on first island click); UI thumb-strip
-  already supports it. Follow-up: optional lightbox / full-screen
-  viewer for the hero image.
+  already supports it. ~~Follow-up: optional lightbox / full-screen
+  viewer for the hero image.~~ Shipped 2026-05-30.
 - **Accommodation booking links**: ethical-only sources (B&B listings on
   visitscotland / visitwales / discoverni / failteireland with attribution);
   never affiliate or harvested without consent.
-- **A11y audit**: keyboard navigation through the virtualised list, ARIA labels
-  on the map.
+- **A11y audit**: ~~keyboard navigation through the virtualised list~~ (partial 2026-05-30:
+  ↑/↓ + Enter on list); ~~Escape closes detail/filters~~; ~~`/` focuses search~~;
+  ~~map live region + richer tooltips~~; remaining: full keyboard path to individual markers.
 
 ## P3 — open questions
 

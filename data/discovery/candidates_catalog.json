@@ -6,7 +6,7 @@
     61.5,
     2.5
   ],
-  "islandsInDatabase": 7308,
+  "islandsInDatabase": 7041,
   "sourceCounts": {
     "wikidata": 2644,
     "wikipedia_thames": 30,
@@ -45,41 +45,9 @@
     }
   ],
   "catalogCandidates": 2689,
-  "alreadyInDatabase": 2688,
+  "alreadyInDatabase": 2689,
   "outOfRemit": 0,
-  "missingCandidates": 1,
-  "candidates": [
-    {
-      "candidateId": "wp-Q15543901",
-      "name": "Wolf Rock Lighthouse",
-      "lat": 49.95,
-      "lng": -5.81,
-      "nation": "England",
-      "featureKind": "island",
-      "osmType": null,
-      "osmId": null,
-      "osmPlace": "island",
-      "wikidata": "Q15543901",
-      "wikipedia": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
-      "aliases": [],
-      "tags": [
-        "island",
-        "wikipedia-list"
-      ],
-      "scanConfidence": "high",
-      "sourceHints": [
-        {
-          "name": "Wikipedia island list",
-          "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Cornwall",
-          "license": "CC-BY-SA-4.0"
-        },
-        {
-          "name": "Wikipedia article",
-          "url": "https://en.wikipedia.org/wiki/Wolf_Rock_Lighthouse",
-          "license": "CC-BY-SA-4.0"
-        }
-      ]
-    }
-  ],
-  "mergedScanCandidates": 550
+  "missingCandidates": 0,
+  "candidates": [],
+  "mergedScanCandidates": 1
 }

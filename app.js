@@ -80,7 +80,28 @@ const state = {
   activeExploreTopic: null,
   exploreIslandIds: null,
   mobileDetailSuspended: false,
+  loadedShards: new Set(),
+  shardLoads: new Map(),
+  fullRecordsReady: false,
 };
+
+const NATION_SHARD = {
+  Scotland: "scotland",
+  Ireland: "ireland",
+  England: "england",
+  "Northern Ireland": "northern-ireland",
+  Wales: "wales",
+  "Crown Dependency": "crown-dependency",
+  "Isle of Man": "isle-of-man",
+};
+
+const BROWSE_QUICK_FILTERS = [
+  { id: "photo", label: "Has photo", photo: true },
+  { id: "ferry", label: "Ferry", ferry: true },
+  { id: "for-sale", label: "For sale", forSale: true },
+];
+
+let activeBrowseQuick = null;
 
 const SCOTLAND_QUICK_FILTERS = [
   { id: "scotland", label: "All Scotland", nation: "Scotland" },
@@ -446,22 +467,6 @@ function initTripPlanner() {
   } catch (_) {
     /* non-fatal */
   }
-  // #region agent log
-  requestAnimationFrame(() => {
-    const tp = document.querySelector(".trip-planner");
-    const mapEl = document.getElementById("map");
-    if (!tp) return;
-    const tr = tp.getBoundingClientRect();
-    const mr = mapEl?.getBoundingClientRect();
-    const overlapsMap =
-      mr &&
-      tr.left < mr.right &&
-      tr.right > mr.left &&
-      tr.top < mr.bottom &&
-      tr.bottom > mr.top;
-    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-2", hypothesisId: "H6", location: "app.js:initTripPlanner", message: "trip-planner layout", data: { position: getComputedStyle(tp).position, inSidebar: !!tp.closest(".sidebar"), overlapsMap, tripRect: { t: Math.round(tr.top), l: Math.round(tr.left), b: Math.round(tr.bottom) }, mapRect: mr ? { t: Math.round(mr.top), b: Math.round(mr.bottom) } : null }, timestamp: Date.now() }) }).catch(() => {});
-  });
-  // #endregion
 }
 
 function syncFerryDiscoveryFilter() {
@@ -1820,9 +1825,91 @@ function mergeIslandDetailFromFull(stub, full) {
   for (const k of Object.keys(full)) {
     stub[k] = full[k];
   }
+  stub.__fullMerged = true;
+}
+
+function nationShardSlug(nation) {
+  return NATION_SHARD[nation] || "other";
+}
+
+async function loadNationShard(slug) {
+  if (state.loadedShards.has(slug)) return;
+  if (state.shardLoads.has(slug)) {
+    await state.shardLoads.get(slug);
+    return;
+  }
+  const job = (async () => {
+    const res = await fetch(`data/shards/${slug}.json`);
+    if (!res.ok) throw new Error(`shard ${slug}: HTTP ${res.status}`);
+    const rows = await res.json();
+    if (!Array.isArray(rows)) throw new Error(`shard ${slug}: invalid JSON`);
+    for (const full of rows) {
+      const stub = state.byId.get(full.id);
+      if (stub) mergeIslandDetailFromFull(stub, full);
+    }
+    state.loadedShards.add(slug);
+  })();
+  state.shardLoads.set(slug, job);
+  try {
+    await job;
+  } finally {
+    state.shardLoads.delete(slug);
+  }
+}
+
+async function ensureNationShardLoaded(nation) {
+  const slug = nationShardSlug(nation);
+  await loadNationShard(slug);
+}
+
+async function loadMonolithicIslandFallback() {
+  const res = await fetch("data/islands.json");
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const fullRows = await res.json();
+  if (!Array.isArray(fullRows) || !fullRows.length) {
+    throw new Error("islands.json empty");
+  }
+  const fullById = new Map(fullRows.map((i) => [i.id, i]));
+  for (const row of state.islands) {
+    const full = fullById.get(row.id);
+    if (full) mergeIslandDetailFromFull(row, full);
+  }
+  state.fullRecordsReady = true;
+}
+
+async function loadFullIslandRecordsBackground() {
+  try {
+    const mRes = await fetch("data/shards/manifest.json");
+    if (!mRes.ok) {
+      await loadMonolithicIslandFallback();
+      return;
+    }
+    const manifest = await mRes.json();
+    const shards = Array.isArray(manifest?.shards) ? manifest.shards : [];
+    if (!shards.length) {
+      await loadMonolithicIslandFallback();
+      return;
+    }
+    await Promise.all(shards.map((s) => loadNationShard(s.slug || s.file.replace(/\.json$/, ""))));
+    state.fullRecordsReady = true;
+  } catch (err) {
+    console.warn("Nation shard load failed; falling back to islands.json", err);
+    try {
+      await loadMonolithicIslandFallback();
+    } catch (fallbackErr) {
+      console.error("Failed to load full island records", fallbackErr);
+    }
+  } finally {
+    scheduleRenderListWindow();
+    if (state.activeId) {
+      const island = state.byId.get(state.activeId);
+      if (island) renderDetails(island);
+    }
+  }
 }
 
 async function loadIslands() {
+  setAppLoading(true);
   let settleIslandsIndex;
   _islandsIndexReady = new Promise((r) => {
     settleIslandsIndex = r;
@@ -1841,42 +1928,39 @@ async function loadIslands() {
         populateNationFilter();
         populateSubtypeFilter();
         renderScotlandQuickChips();
+        renderBrowseQuickChips();
         applyFilters();
         loadCrowdPinsAndRender();
         loadFerries().catch(() => {});
         loadFeaturedIslands().catch(() => {});
+        loadDiscoveryTopics().catch(() => {});
+        loadFullIslandRecordsBackground().catch(() => {});
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       }
     }
 
-    const res = await fetch("data/islands.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const fullRows = await res.json();
-    if (!Array.isArray(fullRows) || !fullRows.length) {
-      throw new Error("islands.json empty");
-    }
-
-    if (usedIndex && state.islands.length === fullRows.length) {
-      const fullById = new Map(fullRows.map((i) => [i.id, i]));
-      for (const row of state.islands) {
-        const full = fullById.get(row.id);
-        if (full) mergeIslandDetailFromFull(row, full);
-      }
-    } else {
-      if (usedIndex) {
-        console.warn(
-          "islands_index.json length mismatch vs islands.json; using full dataset only",
-        );
+    if (!usedIndex) {
+      const res = await fetch("data/islands.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const fullRows = await res.json();
+      if (!Array.isArray(fullRows) || !fullRows.length) {
+        throw new Error("islands.json empty");
       }
       state.islands = fullRows;
       state.byId = new Map(fullRows.map((i) => [i.id, i]));
+      for (const row of state.islands) {
+        row.__fullMerged = true;
+      }
+      state.fullRecordsReady = true;
+      settleIslandsIndex?.();
     }
-    settleIslandsIndex?.();
   } catch (error) {
     console.error("Failed to load islands.json", error);
     els.list.innerHTML = `<li class="island-card" style="color:#ff8a8a">Failed to load island data: ${error.message}. Are you serving the site over HTTP (not file://)?</li>`;
     settleIslandsIndex?.();
     return;
+  } finally {
+    setAppLoading(false);
   }
 
   initFavoritesState();
@@ -1884,12 +1968,13 @@ async function loadIslands() {
   populateNationFilter();
   populateSubtypeFilter();
   renderScotlandQuickChips();
+  renderBrowseQuickChips();
   applyFilters();
   applyRouteFromUrl();
   loadCrowdPinsAndRender();
   loadFerries().catch(() => {});
   loadFeaturedIslands().catch(() => {});
-  loadDiscoveryTopics().catch(() => {});
+  if (!state.discoveryTopics) loadDiscoveryTopics().catch(() => {});
 }
 
 async function loadFeaturedIslands() {
@@ -1914,7 +1999,9 @@ async function loadDiscoveryTopics() {
     const data = await res.json();
     state.discoveryTopics = Array.isArray(data?.topics) ? data.topics : [];
     renderDiscoverChips();
+    renderBrowseQuickChips();
     document.getElementById("discover-panel")?.removeAttribute("hidden");
+    scheduleRenderListWindow();
     const exploreId = new URLSearchParams(window.location.search).get("explore");
     if (exploreId && state.discoveryTopics.some((t) => t.id === exploreId)) {
       setExploreTopic(exploreId, { skipUrl: true });
@@ -1968,6 +2055,7 @@ function clearExploreTopic() {
     hint.textContent = "";
   }
   renderDiscoverChips();
+  renderBrowseQuickChips();
   syncExploreUrl(null);
   loadFeaturedIslands().catch(() => {});
   applyFilters();
@@ -1976,6 +2064,7 @@ function clearExploreTopic() {
 function setExploreTopic(topicId, { skipUrl = false } = {}) {
   const topic = state.discoveryTopics?.find((t) => t.id === topicId);
   if (!topic) return;
+  activeBrowseQuick = null;
   state.activeExploreTopic = topicId;
   state.exploreIslandIds = new Set(
     (topic.islandIds || []).filter((id) => state.byId?.has(id)),
@@ -2002,6 +2091,7 @@ function setExploreTopic(topicId, { skipUrl = false } = {}) {
     renderScotlandQuickChips();
   }
   renderDiscoverChips();
+  renderBrowseQuickChips();
   renderExploreStrip(topic.islands || [], topic.title);
   if (!skipUrl) syncExploreUrl(topicId);
   applyFilters();
@@ -2051,6 +2141,7 @@ function renderExploreStrip(rows, title) {
     btn.addEventListener("click", () => focusIsland(row.id, { fly: true }));
     scroll.appendChild(btn);
   }
+  scheduleRenderListWindow();
 }
 
 function populateNationFilter() {
@@ -2104,6 +2195,7 @@ function islandHasElevation(island) {
 
 function islandThumbUrl(island) {
   if (!island) return null;
+  if (island.thumbUrl) return island.thumbUrl;
   const img = island.images?.[0];
   if (img?.thumbUrl) return img.thumbUrl;
   if (img?.url) return img.url;
@@ -2112,6 +2204,88 @@ function islandThumbUrl(island) {
   if (extra?.thumbUrl) return extra.thumbUrl;
   if (extra?.url) return extra.url;
   return null;
+}
+
+function emptyThumbIcon(type) {
+  return ({ sea: "≋", lake: "◉", river: "∿", unknown: "?" })[type] || "◍";
+}
+
+function renderEmptyThumb(island) {
+  const type = island?.type || "sea";
+  return `<span class="island-card__thumb island-card__thumb--empty island-card__thumb--${escapeAttr(type)}" aria-hidden="true">${emptyThumbIcon(type)}</span>`;
+}
+
+function renderPhotoPlaceholderHero(island) {
+  const type = island?.type || "sea";
+  return `<div class="details-hero details-hero--placeholder" id="details-hero" data-island-id="${escapeAttr(island.id)}">
+    <div class="hero-placeholder hero-placeholder--${escapeAttr(type)}" aria-hidden="true">
+      <span class="hero-placeholder__icon">${emptyThumbIcon(type)}</span>
+      <span class="hero-placeholder__label">${escapeHtml(capitalize(type))} island · photo coming soon</span>
+    </div>
+  </div>`;
+}
+
+function renderBrowseQuickChips() {
+  const host = document.getElementById("browse-quick-chips");
+  if (!host) return;
+  host.replaceChildren();
+  for (const preset of BROWSE_QUICK_FILTERS) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className =
+      "browse-quick__chip" + (activeBrowseQuick === preset.id ? " is-active" : "");
+    b.textContent = preset.label;
+    b.addEventListener("click", () => applyBrowseQuickFilter(preset));
+    host.appendChild(b);
+  }
+  if (state.discoveryTopics?.length) {
+    for (const topic of state.discoveryTopics.slice(0, 3)) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className =
+        "browse-quick__chip browse-quick__chip--explore" +
+        (state.activeExploreTopic === topic.id ? " is-active" : "");
+      b.textContent = topic.label || topic.title || topic.id;
+      b.addEventListener("click", () => setExploreTopic(topic.id));
+      host.appendChild(b);
+    }
+  }
+}
+
+function applyBrowseQuickFilter(preset) {
+  if (activeBrowseQuick === preset.id) {
+    activeBrowseQuick = null;
+    if (els.filterPhoto) els.filterPhoto.checked = false;
+    if (els.filterFerry) els.filterFerry.checked = false;
+    if (els.filterForSale) els.filterForSale.checked = false;
+    renderBrowseQuickChips();
+    applyFilters();
+    return;
+  }
+  activeBrowseQuick = preset.id;
+  if (state.activeExploreTopic) {
+    state.activeExploreTopic = null;
+    state.exploreIslandIds = null;
+    const hint = document.getElementById("discover-hint");
+    if (hint) {
+      hint.hidden = true;
+      hint.textContent = "";
+    }
+    renderDiscoverChips();
+  }
+  if (activeScotlandQuick) {
+    activeScotlandQuick = null;
+    renderScotlandQuickChips();
+  }
+  if (els.nationFilter) els.nationFilter.value = "";
+  if (els.typeFilter) els.typeFilter.value = "";
+  if (els.filterPhoto) els.filterPhoto.checked = Boolean(preset.photo);
+  if (els.filterFerry) els.filterFerry.checked = Boolean(preset.ferry && !els.filterFerry?.disabled);
+  if (els.filterForSale) {
+    els.filterForSale.checked = Boolean(preset.forSale && !els.filterForSale?.disabled);
+  }
+  renderBrowseQuickChips();
+  applyFilters();
 }
 
 function renderScotlandQuickChips() {
@@ -2141,6 +2315,8 @@ function applyScotlandQuickFilter(preset) {
     return;
   }
   activeScotlandQuick = preset.id;
+  activeBrowseQuick = null;
+  renderBrowseQuickChips();
   if (state.activeExploreTopic) {
     state.activeExploreTopic = null;
     state.exploreIslandIds = null;
@@ -2168,6 +2344,7 @@ function applyScotlandQuickFilter(preset) {
 
 function resetAllFilters() {
   activeScotlandQuick = null;
+  activeBrowseQuick = null;
   if (els.search) els.search.value = "";
   if (els.typeFilter) els.typeFilter.value = "";
   if (els.nationFilter) els.nationFilter.value = "";
@@ -2179,6 +2356,7 @@ function resetAllFilters() {
   if (els.filterFerry) els.filterFerry.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
   renderScotlandQuickChips();
+  renderBrowseQuickChips();
   if (state.activeExploreTopic) clearExploreTopic();
   else applyFilters();
 }
@@ -2479,6 +2657,8 @@ function applyFilters() {
   renderList();
   rebuildMarkerLayer();
   renderActiveFilterChips();
+  updateFiltersToggleBadge();
+  syncSearchClearButton();
 }
 
 [
@@ -2557,25 +2737,71 @@ function ensureListScaffolding() {
   window.addEventListener("resize", scheduleRenderListWindow);
 }
 
+function formatResultCount(filtered, total) {
+  const f = Number(filtered) || 0;
+  const t = Number(total) || 0;
+  if (!t || f === t) return f.toLocaleString();
+  return `${f.toLocaleString()} of ${t.toLocaleString()}`;
+}
+
 function renderList() {
   ensureListScaffolding();
-  els.count.textContent = state.filtered.length.toString();
-  listSpacer.style.height = `${state.filtered.length * ROW_HEIGHT}px`;
+  els.count.textContent = formatResultCount(state.filtered.length, state.islands.length);
+  listSpacer.style.height = `${Math.max(state.filtered.length, 1) * ROW_HEIGHT}px`;
   // Reset scroll to top when filter changes
   listScroller.scrollTop = 0;
   scheduleRenderListWindow();
 }
 
+function getListScrollTopInRows() {
+  if (!listScroller || !els.list) return 0;
+  const listTopInScroller =
+    listScroller.scrollTop +
+    (els.list.getBoundingClientRect().top - listScroller.getBoundingClientRect().top);
+  return Math.max(0, listScroller.scrollTop - listTopInScroller);
+}
+
+function getListContentOffset() {
+  if (!listScroller || !els.list) return 0;
+  return listScroller.scrollTop - getListScrollTopInRows();
+}
+
+function renderListEmptyOrSkeleton(total) {
+  listInner.style.transform = "translateY(0)";
+  listSpacer.style.height = "200px";
+  if (document.body.classList.contains("app-is-loading")) {
+    listInner.innerHTML = Array.from({ length: 7 }, () =>
+      `<div class="list-skeleton" aria-hidden="true"><span class="list-skeleton__thumb"></span><span class="list-skeleton__lines"><i></i><i></i></span></div>`,
+    ).join("");
+    return;
+  }
+  if (!state.islands.length) {
+    listInner.innerHTML =
+      `<div class="list-empty" role="status"><p class="list-empty__title">Could not load islands</p><p class="list-empty__hint">Serve the site over HTTP, not <code>file://</code>.</p></div>`;
+    return;
+  }
+  const hasQuery = Boolean(els.search?.value?.trim());
+  listInner.innerHTML = `
+    <div class="list-empty" role="status">
+      <p class="list-empty__title">No islands match</p>
+      <p class="list-empty__hint">${hasQuery ? "Try a shorter name or clear the search." : "Relax filters or explore a quick filter above."}</p>
+      <button type="button" class="list-empty__btn" data-action="clear-filters">Clear filters</button>
+    </div>`;
+  listInner.querySelector("[data-action='clear-filters']")?.addEventListener("click", () => {
+    resetAllFilters();
+  });
+}
+
 function renderListWindow() {
   if (!listInner || !shouldRenderListWindow()) return;
-  // Sidebar scrolls as a whole; subtract the section header to get the
-  // offset into the list.
-  const headerHeight =
-    els.list.parentElement.querySelector(".sidebar-section-header")
-      ?.offsetHeight || 0;
-  const scrollTop = Math.max(0, listScroller.scrollTop - headerHeight);
+  const scrollTop = getListScrollTopInRows();
   const viewportH = listScroller.clientHeight;
   const total = state.filtered.length;
+
+  if (total === 0) {
+    renderListEmptyOrSkeleton(total);
+    return;
+  }
 
   const first = Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - VIEWPORT_PADDING);
   const last = Math.min(
@@ -2606,13 +2832,18 @@ function renderListWindow() {
       "aria-label",
       `${island.name}, ${island.nation}, ${formatPopulation(island.population)}`,
     );
+    if (island.id === state.activeId) {
+      main.setAttribute("aria-current", "true");
+    } else {
+      main.removeAttribute("aria-current");
+    }
     const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
     const unconfirmed = island.classification?.confidence === "unconfirmed";
     const fav = isFavoriteIsland(island.id);
     const thumb = islandThumbUrl(island);
     const thumbHtml = thumb
       ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" loading="lazy" decoding="async" />`
-      : `<span class="island-card__thumb island-card__thumb--empty" aria-hidden="true">No photo</span>`;
+      : renderEmptyThumb(island);
     main.innerHTML = `
       ${thumbHtml}
       <div class="island-card__text">
@@ -2723,7 +2954,8 @@ function makeMarker(island) {
   if (onSale) {
     wireForSaleMarkerInteractions(marker, island);
   } else {
-    marker.bindTooltip(island.name, { direction: "top", offset: [0, -4] });
+    const tip = `${island.name} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
+    marker.bindTooltip(tip, { direction: "top", offset: [0, -4] });
     marker.on("click", () => focusIsland(island.id, { fly: false }));
   }
   return marker;
@@ -2757,12 +2989,7 @@ function rebuildMarkerLayer() {
   }
   rebuildFavoritesMapLayer();
   rebuildPropertyListingMapLayer();
-  // #region agent log
-  const paintN = islandsForMarkerPaint().length;
-  const hitEls = document.querySelectorAll(".marker-hit").length;
-  const b = map.getBounds();
-  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix-4", hypothesisId: "H8", location: "app.js:rebuildMarkerLayer", message: "markers rebuilt", data: { zoom: map.getZoom(), paintN, filteredLen: state.filtered.length, islandsLen: state.islands.length, boundsValid: b?.isValid?.(), markersOnLayer: state.markers.size }, timestamp: Date.now() }) }).catch(() => {});
-  // #endregion
+  updateMapStatus(paintSet.length, state.filtered.length || state.islands.length);
 }
 
 function scheduleMarkerViewportRefresh() {
@@ -2777,45 +3004,56 @@ map.on("moveend zoomend", scheduleMarkerViewportRefresh);
 
 // ---------- Details panel ----------
 function focusIsland(id, { fly } = { fly: true }) {
-  const island = state.byId.get(id);
-  if (!island) return;
+  const stub = state.byId.get(id);
+  if (!stub) return;
 
+  dismissMapHint();
   state.activeId = id;
   syncIslandUrl(id);
-  // Re-render list so the active card is highlighted (cheap because virtualised)
   scheduleRenderListWindow();
 
-  renderDetails(island);
-  // #region agent log
-  fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", hypothesisId: "H4", location: "app.js:focusIsland", message: "island focused", data: { id, zoom: map.getZoom(), markerHits: document.querySelectorAll(".marker-hit").length, hasPoly: !!state.activePolygon }, timestamp: Date.now() }) }).catch(() => {});
-  // #endregion
-  if (mobileNav.isActive()) mobileNav.setView("islands");
+  const openIsland = (island) => {
+    if (!island || state.activeId !== id) return;
+    renderDetails(island);
+    if (mobileNav.isActive()) mobileNav.setView("islands");
 
-  if (fly) {
-    const targetZoom = island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
-    map.flyTo([island.lat, island.lng], targetZoom, { duration: 0.7 });
+    if (fly) {
+      const targetZoom =
+        island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
+      if (prefersReducedMotion()) {
+        map.setView([island.lat, island.lng], targetZoom);
+      } else {
+        map.flyTo([island.lat, island.lng], targetZoom, { duration: 0.7 });
+      }
+    }
+
+    loadAndShowPolygon(island);
+
+    loadGalleries().then(() => {
+      if (state.activeId !== id) return;
+      if (island.__galleryMerged) return;
+      const extras = state.galleries[id];
+      if (!Array.isArray(extras) || !extras.length) return;
+      refreshGalleryInPlace(island);
+    });
+
+    Promise.all([loadFerries(), loadCauseways()]).then(() => {
+      if (state.activeId !== id) return;
+      refreshFerriesInPlace(island);
+    });
+
+    applyIslandSeo(island);
+  };
+
+  if (stub.__fullMerged) {
+    openIsland(stub);
+    return;
   }
 
-  loadAndShowPolygon(island);
-
-  // Lazy-fetch the gallery extras and re-render the hero block once they
-  // arrive. Subsequent island clicks reuse the cached galleries dict.
-  loadGalleries().then(() => {
-    if (state.activeId !== id) return;  // user navigated away while loading
-    if (island.__galleryMerged) return; // already had extras for this island
-    const extras = state.galleries[id];
-    if (!Array.isArray(extras) || !extras.length) return;
-    refreshGalleryInPlace(island);
-  });
-
-  // Lazy-fetch the ferry data and re-render the "How to get there" block
-  // once it arrives. Subsequent island clicks are synchronous.
-  Promise.all([loadFerries(), loadCauseways()]).then(() => {
-    if (state.activeId !== id) return;
-    refreshFerriesInPlace(island);
-  });
-
-  applyIslandSeo(island);
+  openIsland(stub);
+  ensureNationShardLoaded(stub.nation)
+    .then(() => openIsland(state.byId.get(id)))
+    .catch((err) => console.warn("Could not load full island record", err));
 }
 
 // Drop-in replacement for the ferry block when ferries.json has finished
@@ -3270,7 +3508,7 @@ function renderDetails(island) {
        </div>`
     : "";
 
-  const gallery = renderGallery(island);
+  const gallery = renderGallery(island) || renderPhotoPlaceholderHero(island);
   const favActive = isFavoriteIsland(island.id);
 
   els.detailsContent.innerHTML = `
@@ -3280,11 +3518,14 @@ function renderDetails(island) {
         <span class="layer-badge layer-badge--atlas" title="Verified atlas island">Atlas</span>
         <h2 class="details-title">${escapeHtml(island.name)}</h2>
       </div>
-      <button type="button" id="details-favorite-btn" class="details-fav${
+      <div class="details-actions">
+        <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Link</button>
+        <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
         favActive ? "Remove from saved islands" : "Save island to list"
       }">${favActive ? "♥" : "♡"}</button>
+      </div>
     </div>
     ${subtypeChips}
     ${altNames}
@@ -3357,6 +3598,13 @@ function renderDetails(island) {
     e.preventDefault();
     toggleFavoriteIsland(island.id);
   });
+
+  document.getElementById("details-share-btn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    shareIslandLink(island);
+  });
+
+  requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
 
   renderDetailMap(island);
 }
@@ -4039,13 +4287,6 @@ function ensureGalleryMerged(island) {
     island.images = dedupeImagesByKey(island.images);
   }
   island.__galleryMerged = true;
-  // #region agent log
-  if (island.id?.includes("aigas")) {
-    const imgs = Array.isArray(island.images) ? island.images : [];
-    const keys = imgs.map((x, i) => ({ i, key: imageDedupKey(x), url: (x.url || "").slice(0, 80) }));
-    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix", hypothesisId: "H1", location: "app.js:ensureGalleryMerged", message: "gallery merged", data: { id: island.id, count: imgs.length, keys }, timestamp: Date.now() }) }).catch(() => {});
-  }
-  // #endregion
 }
 
 function renderGallery(island) {
@@ -4069,19 +4310,6 @@ function renderGallery(island) {
   const primary = images[primaryIdx];
   const heroHtml = renderHeroImg(primary, island.name);
   const attribution = renderAttribution(primary);
-
-  // #region agent log
-  if (island.id?.includes("aigas")) {
-    const dupPairs = [];
-    for (let a = 0; a < images.length; a++) {
-      for (let b = a + 1; b < images.length; b++) {
-        if (images[a].url === images[b].url) dupPairs.push([a, b, "same-url"]);
-      }
-    }
-    const thumbOnly = images.length - 1;
-    fetch("http://127.0.0.1:7720/ingest/def19690-94b9-4670-be7c-26220155de0a", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "5f60f5" }, body: JSON.stringify({ sessionId: "5f60f5", runId: "post-fix", hypothesisId: "H2", location: "app.js:renderGallery", message: "thumb strip", data: { id: island.id, imageCount: images.length, primaryIdx, thumbOnly, dupPairs, urls: images.map((x, i) => ({ i, u: (x.url || "").slice(0, 70) })) }, timestamp: Date.now() }) }).catch(() => {});
-  }
-  // #endregion
 
   const thumbIndices = images.map((_, idx) => idx).filter((idx) => idx !== primaryIdx);
   const thumbStrip =
@@ -4109,8 +4337,9 @@ function renderGallery(island) {
 
 function renderHeroImg(img, fallbackAlt) {
   const src = img.fullUrl || img.url || "";
+  const display = img.url || src;
   const caption = (img.caption || fallbackAlt || "").trim();
-  return `<img class="hero-img" src="${escapeAttr(src)}" alt="${escapeAttr(
+  return `<img class="hero-img hero-img--lightbox" src="${escapeAttr(display)}" data-full-url="${escapeAttr(src || display)}" alt="${escapeAttr(
     caption || fallbackAlt,
   )}" loading="lazy" onerror="window.__heroFallback && window.__heroFallback(this)"/>`;
 }
@@ -4885,6 +5114,18 @@ const CHAT_PLACES = {
   "St Peter Port": [49.4555, -2.5368],
   Kirkwall: [58.981, -2.961],
   Lerwick: [60.1551, -1.1469],
+  Tobermory: [56.623, -6.069],
+  Portree: [57.412, -6.194],
+  Stromness: [58.965, -3.296],
+  Rothesay: [55.836, -5.056],
+  Tarbert: [55.866, -5.406],
+  Fishguard: [51.994, -4.976],
+  Pembroke: [51.675, -4.919],
+  Tralee: [52.271, -9.703],
+  Larne: [54.850, -5.816],
+  Campbeltown: [55.424, -5.604],
+  Uig: [57.586, -6.376],
+  Armadale: [57.064, -5.896],
 };
 const CHAT_PLACE_KEYS = Object.keys(CHAT_PLACES);
 
@@ -5782,7 +6023,7 @@ function composeChatResponse({ query, results, total }) {
     if (query.nearUnresolved) {
       return (
         `I couldn't find “${query.nearUnresolved}” in the atlas gazetteer. ` +
-        "Try a major ferry town — Oban, Mallaig, Ullapool, Stornoway, Penzance, Holyhead — " +
+        "Try a major ferry town — Oban, Mallaig, Portree, Tobermory, Stromness, Ullapool, Penzance, Holyhead — " +
         "or ask without a place filter."
       );
     }
@@ -6090,6 +6331,14 @@ function chatRenderBot(text, { suggestions, results, query, badge } = {}) {
         actions.appendChild(mapBtn);
         actions.appendChild(detailBtn);
         body.appendChild(actions);
+
+        btn.addEventListener("click", () => {
+          focusIsland(isl.id);
+          if (typeof mobileNav !== "undefined" && mobileNav.isActive()) {
+            mobileNav.setView("islands", { skipChatSync: true });
+          }
+          if (window.innerWidth <= 900) chatClose();
+        });
 
         list.appendChild(btn);
         renderedCount++;
@@ -6851,6 +7100,8 @@ const mobileNav = (() => {
       } else {
         syncMobileSidebarPanels();
       }
+      scheduleRenderListWindow();
+      requestAnimationFrame(() => renderListWindow());
     }
     syncMapSize();
   }
@@ -6898,8 +7149,304 @@ document.getElementById("map-island-peek")?.addEventListener("click", () => {
   focusIsland(state.activeId, { fly: false });
 });
 
+function scrollListToIndex(index) {
+  if (!listScroller || index < 0) return;
+  listScroller.scrollTop = getListContentOffset() + index * ROW_HEIGHT;
+}
+
+function initListKeyboardNav() {
+  if (!els.list) return;
+  els.list.setAttribute("role", "list");
+  document.addEventListener("keydown", (e) => {
+    if (!state.filtered.length || !els.details.hidden) return;
+    if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view !== "islands") {
+      return;
+    }
+    if (!["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) return;
+    const focusInSidebar = els.sidebar?.contains(document.activeElement);
+    if (!focusInSidebar) return;
+    const cur = state.filtered.findIndex((i) => i.id === state.activeId);
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      const nextIdx = cur < 0 ? 0 : Math.min(cur + 1, state.filtered.length - 1);
+      const next = state.filtered[nextIdx];
+      if (!next) return;
+      state.activeId = next.id;
+      scheduleRenderListWindow();
+      scrollListToIndex(nextIdx);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      const nextIdx = cur < 0 ? 0 : Math.max(cur - 1, 0);
+      const next = state.filtered[nextIdx];
+      if (!next) return;
+      state.activeId = next.id;
+      scheduleRenderListWindow();
+      scrollListToIndex(nextIdx);
+    } else if (e.key === "Enter" && cur >= 0) {
+      e.preventDefault();
+      focusIsland(state.filtered[cur].id, { fly: true });
+    }
+  });
+}
+
+function initImageLightbox() {
+  const lb = document.getElementById("image-lightbox");
+  if (!lb || !els.detailsContent) return;
+  const img = lb.querySelector(".lightbox__img");
+  const caption = lb.querySelector(".lightbox__caption");
+  const closeBtn = lb.querySelector(".lightbox__close");
+  if (!img || !closeBtn) return;
+
+  const close = () => {
+    lb.hidden = true;
+    img.removeAttribute("src");
+    document.body.classList.remove("lightbox-open");
+  };
+
+  closeBtn.addEventListener("click", close);
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target.classList.contains("lightbox__backdrop")) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lb.hidden) close();
+  });
+
+  els.detailsContent.addEventListener("click", (e) => {
+    const heroImg = e.target.closest(".hero-img--lightbox");
+    if (!heroImg) return;
+    const full = heroImg.dataset.fullUrl || heroImg.src;
+    if (!full) return;
+    img.src = full;
+    img.alt = heroImg.alt || "";
+    if (caption) caption.textContent = heroImg.alt || "";
+    lb.hidden = false;
+    document.body.classList.add("lightbox-open");
+    closeBtn.focus();
+  });
+}
+
+function initFilterFocusTrap() {
+  const panel = document.getElementById("topbar-filters");
+  const toggle = document.getElementById("filters-toggle");
+  if (!panel || !toggle) return;
+
+  toggle.addEventListener("click", () => {
+    window.setTimeout(() => {
+      if (!document.body.classList.contains("filters-open")) return;
+      const first = panel.querySelector("input, select, button:not(.topbar-filters-toggle)");
+      first?.focus?.();
+    }, 0);
+  });
+
+  panel.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || !document.body.classList.contains("filters-open")) return;
+    const focusables = [...panel.querySelectorAll("input, select, button, summary")].filter(
+      (el) => !el.disabled && el.offsetParent !== null,
+    );
+    if (focusables.length < 2) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+}
+
+// ---------- UX polish (loading, empty states, hints) ----------
+function setAppLoading(on) {
+  const el = document.getElementById("app-loading");
+  document.body.classList.toggle("app-is-loading", on);
+  if (el) {
+    el.hidden = !on;
+    el.setAttribute("aria-busy", on ? "true" : "false");
+  }
+}
+
+function countActiveFilters() {
+  let n = 0;
+  if (els.search?.value?.trim()) n += 1;
+  if (els.typeFilter?.value) n += 1;
+  if (els.nationFilter?.value) n += 1;
+  if (els.favoritesFilter?.value === "favorites") n += 1;
+  if (parseFloat(els.areaMinFilter?.value) > 0) n += 1;
+  if (els.subtypeFilter?.value) n += 1;
+  if (els.confidenceFilter?.value) n += 1;
+  if (els.filterPhoto?.checked) n += 1;
+  if (els.filterFerry?.checked) n += 1;
+  if (els.filterForSale?.checked) n += 1;
+  if (els.filterElevation?.checked) n += 1;
+  if (state.activeExploreTopic) n += 1;
+  if (activeBrowseQuick) n += 1;
+  if (activeScotlandQuick) n += 1;
+  return n;
+}
+
+function updateFiltersToggleBadge() {
+  const badge = document.getElementById("filters-active-badge");
+  if (!badge) return;
+  const n = countActiveFilters();
+  badge.textContent = String(n);
+  badge.hidden = n === 0;
+  badge.setAttribute("aria-hidden", n === 0 ? "true" : "false");
+}
+
+function syncSearchClearButton() {
+  const btn = document.getElementById("search-clear");
+  if (!btn || !els.search) return;
+  const has = Boolean(els.search.value.trim());
+  btn.hidden = !has;
+  els.search.classList.toggle("search-field--filled", has);
+}
+
+function initSearchClear() {
+  const btn = document.getElementById("search-clear");
+  if (!btn || !els.search) return;
+  els.search.addEventListener("input", syncSearchClearButton);
+  btn.addEventListener("click", () => {
+    els.search.value = "";
+    els.search.focus();
+    syncSearchClearButton();
+    applyFilters();
+  });
+  syncSearchClearButton();
+}
+
+function dismissMapHint() {
+  const hint = document.getElementById("map-hint");
+  if (!hint || hint.hidden) return;
+  hint.hidden = true;
+  try {
+    localStorage.setItem("iob_map_hint_dismissed", "1");
+  } catch {
+    /* ignore */
+  }
+}
+
+function initMapHint() {
+  const hint = document.getElementById("map-hint");
+  const close = document.getElementById("map-hint-close");
+  if (!hint) return;
+  try {
+    if (localStorage.getItem("iob_map_hint_dismissed") === "1") return;
+  } catch {
+    /* ignore */
+  }
+  hint.hidden = false;
+  close?.addEventListener("click", dismissMapHint);
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function islandShareUrl(island) {
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.searchParams.set("island", island.id);
+  return url.toString();
+}
+
+let toastTimer = 0;
+function showToast(message, ms = 2400) {
+  const el = document.getElementById("app-toast");
+  if (!el) return;
+  el.textContent = message;
+  el.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => {
+    el.hidden = true;
+  }, ms);
+}
+
+async function shareIslandLink(island) {
+  const url = islandShareUrl(island);
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: `${island.name} — Isles of Britain`,
+        text: island.shortDescription || island.name,
+        url,
+      });
+      return;
+    } catch (err) {
+      if (err?.name === "AbortError") return;
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    showToast("Link copied to clipboard");
+  } catch {
+    showToast("Could not copy link");
+  }
+}
+
+function updateMapStatus(visibleCount, filteredCount) {
+  const el = document.getElementById("map-status");
+  if (!el) return;
+  const total = filteredCount.toLocaleString();
+  const visible = visibleCount.toLocaleString();
+  if (visibleCount === filteredCount) {
+    el.textContent = `${total} islands shown on map. Tab to map, then click a dot to open.`;
+  } else {
+    el.textContent = `${visible} of ${total} filtered islands visible in this view. Click a dot to open.`;
+  }
+}
+
+function isTypingTarget(el) {
+  if (!el) return false;
+  const tag = el.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || el.isContentEditable;
+}
+
+function initGlobalKeyboardShortcuts() {
+  document.addEventListener("keydown", (e) => {
+    const lb = document.getElementById("image-lightbox");
+    const lightboxOpen = lb && !lb.hidden;
+    const chatOpen = chatEls?.panel?.classList.contains("is-open");
+    const favModal = document.getElementById("favorites-access-modal");
+    const favModalOpen = favModal && !favModal.hidden;
+    const crowdModal = document.getElementById("crowd-modal");
+    const crowdOpen = crowdModal && !crowdModal.hidden;
+
+    if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      if (isTypingTarget(document.activeElement)) return;
+      e.preventDefault();
+      els.search?.focus();
+      els.search?.select();
+      return;
+    }
+
+    if (e.key !== "Escape") return;
+    if (lightboxOpen || chatOpen || favModalOpen || crowdOpen) return;
+
+    if (document.body.classList.contains("filters-open")) {
+      document.body.classList.remove("filters-open");
+      document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+      return;
+    }
+
+    if (!els.details.hidden) {
+      e.preventDefault();
+      releaseIslandDetailView({ clearUrl: true });
+      if (mobileNav.isActive()) mobileNav.setView("islands");
+      scheduleRenderListWindow();
+      els.search?.focus();
+    }
+  });
+}
+
 loadIslands();
 initFavoritesAccessUi();
 initCrowdSuggestUi();
 initTripPlanner();
+initImageLightbox();
+initListKeyboardNav();
+initFilterFocusTrap();
+initSearchClear();
+initMapHint();
+initGlobalKeyboardShortcuts();
 chatAutoLoadFromUrl();

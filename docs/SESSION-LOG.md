@@ -1777,3 +1777,71 @@
 - **Open items**: `pendingAtlasIngest` (e.g. Inishskehan, Cameron Island Lough Derg,
   Oran Island if added to OSM); refresh stale MyHome IDs periodically; Thorne Strutt URL
   apex/www mirror quirk documented in manifest notes.
+
+## 2026-05-30 — Usability pass (deferred load, discoverability, a11y)
+
+- **Goal**: Implement priority usability improvements — faster first paint, better empty
+  states, easier discovery, lightbox, keyboard navigation.
+- **What changed**:
+  - `scripts/build_islands_index.py` — emits `thumbUrl` on index rows + `data/shards/`
+    nation JSON + manifest; `.gitignore` shards; Pages workflow runs build step.
+  - `app.js` — deferred shard merge; browse quick-filter chips; type-tinted photo
+    placeholders; gallery lightbox; list keyboard nav; filter focus trap; extended
+    `CHAT_PLACES`; removed stale debug ingest calls.
+  - `index.html` / `styles.css` — sidebar reorder (browse → explore → notable → Scotland →
+    trip planner); lightbox markup.
+  - v5 photo batch: `--limit 80` on priority queue — **0** adoptions (Commons **429**).
+- **Outcome / counts**: Index **7,041** rows, **3,597** with `thumbUrl`; **7** nation shards
+  (~15 MiB total). Map/list interactive after index fetch; full detail merges in background.
+- **Open items**: Resume v5 off-peak; Ireland/NI detail basemaps (QUEUE P1); full a11y audit
+  for map markers.
+
+## 2026-05-30 — Mobile island list tap fix
+
+- **Goal**: Fix island rows not responding on first tap on mobile.
+- **Root cause**: Virtual list scroll math only subtracted the section header, not the browse/
+  explore/featured/trip-planner blocks above the list (misaligned hit targets); iOS
+  double-tap from `tabindex="0"` + `role="listbox"` on `#island-list`.
+- **Fix**: Geometric list offset via `getListScrollTopInRows()`; removed listbox tabindex;
+  force list re-render when switching to Islands tab; chat result cards open profile on tap;
+  `touch-action: manipulation` on list buttons.
+
+## 2026-05-30 — Google indexing acceleration (SEO)
+
+- **Goal**: Improve crawlability and indexing speed for findmyisland.com.
+- **What changed**:
+  - `index.html` — static canonical, OG/Twitter, `WebSite` JSON-LD, crawl-link footer.
+  - `seo-head.js` + `config.local.example.js` — optional Google Search Console verification.
+  - `seo-meta.js` — restore homepage meta when closing island panel.
+  - `scripts/generate_seo_artifacts.py` — sitemap lists home + ferries + `/profiles/*.html`
+    (not `?island=`); priority tiers; richer profile HTML with self-canonical + JSON-LD.
+  - Regenerated `sitemap.xml` (7,055 URLs), `robots.txt`, `llms.txt`.
+- **Outcome**: Deploy generates 7,041 profile stubs on Pages; submit sitemap in Search Console
+  after adding verification token to `config.local.js` on deploy (or inject via secret later).
+- **Open items**: User must verify in Search Console and request indexing; indexing still
+  takes days–weeks.
+
+## 2026-05-30 — UX polish pass
+
+- **Goal**: Top-tier usability polish — clearer hierarchy, feedback, and mobile flow.
+- **What changed**:
+  - `index.html` — skip link; loading overlay; search clear button; filter active badge;
+    map onboarding hint; island list before trip planner; trip planner in collapsible
+    `<details>`; crawl links moved below list; “← Islands” back label.
+  - `app.js` — loading/empty/skeleton states; `N of M` result count; filter badge count;
+    search clear sync; map hint dismiss on first island open.
+  - `styles.css` — supporting styles for above + sidebar flex growth for the list.
+- **Outcome**: Faster orientation on first visit; filters and search easier to reset; list
+  remains primary in the sidebar column.
+
+## 2026-05-30 — UX polish pass (continued)
+
+- **Goal**: Shareability, keyboard power-use, map/list a11y, reduced motion.
+- **What changed**:
+  - `app.js` — **Link** button on island profile (native share or clipboard + toast);
+    `/` focuses search; **Escape** closes filters then detail panel; `aria-current` on active
+    list row; focus moves to back button on open; map status live region; richer marker
+    tooltips; `prefers-reduced-motion` uses instant `setView` instead of `flyTo`.
+  - `index.html` — toast host; map `tabindex="0"` + screen-reader status region.
+  - `styles.css` — details action row, toast, map focus ring, reduced-motion transitions.
+- **Outcome**: Sharable permalinks, faster keyboard workflow, better screen-reader map context.

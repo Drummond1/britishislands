@@ -1,0 +1,55 @@
+# Build GitHub Pages artifact with optional crowd-submit email from repo secret.
+# Settings → Secrets → CROWD_FORM_EMAIL (FormSubmit inbox you verify once).
+
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inject crowd submit config
+        env:
+          CROWD_FORM_EMAIL: ${{ secrets.CROWD_FORM_EMAIL }}
+        run: |
+          if [ -n "${CROWD_FORM_EMAIL}" ]; then
+            python3 scripts/prepare_crowd_config.py --email "${CROWD_FORM_EMAIL}"
+          else
+            echo "CROWD_FORM_EMAIL secret not set — native submit stays off (GitHub fallback only)."
+          fi
+
+      - name: Generate SEO artifacts
+        env:
+          IOB_SITE_ORIGIN: https://www.findmyisland.com
+        run: |
+          python3 scripts/generate_seo_artifacts.py --landing-dir profiles
+
+      - name: Build islands index and nation shards
+        run: python3 scripts/build_islands_index.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

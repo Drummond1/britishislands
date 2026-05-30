@@ -1,15 +1,18 @@
-# Isles of Britain
+# Isles of Britain (findmyisland.com)
 > Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies (sea, lake, and river), with maps, photos, and transport context.
 
 ## Entry points
 - Main app: /
-- Island profile (deep link): /?island=<id>   (example: ?island=isle-of-skye)
+- Island profile (interactive): /?island=<id>   (example: ?island=isle-of-skye)
+- Island profile (static HTML for crawlers): /profiles/<id>.html
 - Ferry guides: /ferries/
+- Sitemap: /sitemap.xml
 
 ## For machines
-- Prefer linking to /?island=<id> for a specific island. Island ids are stable slugs in `data/islands.json`.
+- Prefer /profiles/<id>.html in sitemaps and citations; it links to the live atlas.
+- Island ids are stable slugs in `data/islands.json`.
 - Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
 
 ## Generated
-- sitemap.xml (if site origin configured)
+- sitemap.xml (when site origin configured)
 - This file (llms.txt)

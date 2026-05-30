@@ -6,6 +6,22 @@
  * differs from location.origin (CDN, reverse proxy).
  */
 
+const HOME_SEO = {
+  title: "Isles of Britain — A Visual Atlas",
+  description:
+    "Explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland.",
+  canonical: "https://www.findmyisland.com/",
+  ogType: "website",
+  ogTitle: "Isles of Britain — A Visual Atlas",
+  ogDescription:
+    "Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides.",
+  ogUrl: "https://www.findmyisland.com/",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Isles of Britain — A Visual Atlas",
+  twitterDescription:
+    "Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles.",
+};
+
 let _baselineTitle = "";
 let _baselineDescription = "";
 
@@ -186,27 +202,19 @@ export function applyIslandSeo(island) {
 }
 
 export function resetIslandSeo() {
-  document.title = _baselineTitle;
-  if (_baselineDescription) {
-    upsertMetaByName("description", _baselineDescription);
-  }
-  document.querySelector('link[rel="canonical"]')?.remove();
-  [
-    "og:type",
-    "og:title",
-    "og:description",
-    "og:url",
-    "og:image",
-    "twitter:card",
-    "twitter:title",
-    "twitter:description",
-    "twitter:image",
-  ].forEach((key) => {
-    const sel = key.startsWith("og:")
-      ? `meta[property="${CSS.escape(key)}"]`
-      : `meta[name="${CSS.escape(key)}"]`;
-    document.querySelector(sel)?.remove();
-  });
+  const home = HOME_SEO;
+  document.title = _baselineTitle || home.title;
+  upsertMetaByName("description", _baselineDescription || home.description);
+  upsertLink("canonical", home.canonical);
+  upsertMetaProperty("og:type", home.ogType);
+  upsertMetaProperty("og:title", home.ogTitle);
+  upsertMetaProperty("og:description", home.ogDescription);
+  upsertMetaProperty("og:url", home.ogUrl);
+  document.querySelector('meta[property="og:image"]')?.remove();
+  upsertMetaByName("twitter:card", home.twitterCard);
+  upsertMetaByName("twitter:title", home.twitterTitle);
+  upsertMetaByName("twitter:description", home.twitterDescription);
+  document.querySelector('meta[name="twitter:image"]')?.remove();
   removeJsonLd();
 }
 

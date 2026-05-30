@@ -129,15 +129,21 @@ entry.
 
 ## 5b. Regenerate `islands_index.json` (frontend first paint)
 
-After **any** change to `data/islands.json`, refresh the slim map/list payload:
+After **any** change to `data/islands.json`, refresh the slim map/list payload
+and nation shards:
 
 ```bash
 python3 scripts/build_islands_index.py
 ```
 
-The browser loads `data/islands_index.json` first (~half the bytes of the full
-dataset — long prose and image galleries omitted), then merges full records
-from `islands.json` in place (`app.js` → `loadIslands`).
+The browser loads `data/islands_index.json` first (long prose and image
+galleries omitted; `thumbUrl` + `hasImage` stubs kept for list thumbnails),
+paints the map and list, then merges full records from parallel
+`data/shards/*.json` loads in the background (`app.js` → `loadIslands`).
+If shards are missing, it falls back to monolithic `data/islands.json`.
+
+GitHub Pages runs this script on deploy (`.github/workflows/pages.yml`).
+Locally, run it after atlas edits — shards are gitignored.
 
 ## 6. Preview
 

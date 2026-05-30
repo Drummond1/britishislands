@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Static island profiles (generated on deploy)
+Allow: /profiles/
+
 Sitemap: https://www.findmyisland.com/sitemap.xml
