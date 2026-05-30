@@ -2746,8 +2746,11 @@ function formatResultCount(filtered, total) {
 
 function renderList() {
   ensureListScaffolding();
-  els.count.textContent = formatResultCount(state.filtered.length, state.islands.length);
-  listSpacer.style.height = `${Math.max(state.filtered.length, 1) * ROW_HEIGHT}px`;
+  const filtered = state.filtered.length;
+  const total = state.islands.length;
+  els.count.textContent = formatResultCount(filtered, total);
+  els.count.classList.toggle("count--filtered", total > 0 && filtered !== total);
+  listSpacer.style.height = `${Math.max(filtered, 1) * ROW_HEIGHT}px`;
   // Reset scroll to top when filter changes
   listScroller.scrollTop = 0;
   scheduleRenderListWindow();
@@ -3518,14 +3521,6 @@ function renderDetails(island) {
         <span class="layer-badge layer-badge--atlas" title="Verified atlas island">Atlas</span>
         <h2 class="details-title">${escapeHtml(island.name)}</h2>
       </div>
-      <div class="details-actions">
-        <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Link</button>
-        <button type="button" id="details-favorite-btn" class="details-fav${
-        favActive ? " is-favorite" : ""
-      }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
-        favActive ? "Remove from saved islands" : "Save island to list"
-      }">${favActive ? "♥" : "♡"}</button>
-      </div>
     </div>
     ${subtypeChips}
     ${altNames}
@@ -3593,6 +3588,17 @@ function renderDetails(island) {
 
     ${sourcesBlock}
   `;
+
+  const toolbar = document.getElementById("details-toolbar-actions");
+  if (toolbar) {
+    toolbar.innerHTML = `
+      <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Link</button>
+      <button type="button" id="details-favorite-btn" class="details-fav${
+        favActive ? " is-favorite" : ""
+      }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
+        favActive ? "Remove from saved islands" : "Save island to list"
+      }">${favActive ? "♥" : "♡"}</button>`;
+  }
 
   document.getElementById("details-favorite-btn")?.addEventListener("click", (e) => {
     e.preventDefault();

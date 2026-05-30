@@ -1845,3 +1845,14 @@
   - `index.html` — toast host; map `tabindex="0"` + screen-reader status region.
   - `styles.css` — details action row, toast, map focus ring, reduced-motion transitions.
 - **Outcome**: Sharable permalinks, faster keyboard workflow, better screen-reader map context.
+
+## 2026-05-30 — UX polish pass (design wave 3)
+
+- **Goal**: Refine visual hierarchy, mobile map chrome, and profile toolbar.
+- **What changed**:
+  - Sticky **details toolbar** (back + Link + heart) on mobile profiles.
+  - **Collapsible map key** on mobile; always visible on desktop.
+  - Search **⌕ icon**; filter toggles highlight when active; accent **result count** when filtered.
+  - Hero **gradient overlay**; external links as **button grid**; featured strip scroll fade.
+  - Desktop **keyboard hint** under list; mobile nav **active tab indicator**; glass top bar.
+- **Outcome**: Cleaner map on phones, clearer filter feedback, more polished island profiles.

@@ -137,6 +137,7 @@
         <div class="topbar-controls" id="topbar-filters">
           <div class="filter-tier filter-tier--essential">
             <div class="search-field">
+              <span class="search-field__icon" aria-hidden="true">⌕</span>
               <input
                 id="search"
                 type="search"
@@ -257,6 +258,7 @@
           </div>
 
           <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
+          <p class="sidebar-kbd-hint" aria-hidden="true"><kbd>/</kbd> search · <kbd>↑</kbd><kbd>↓</kbd> browse · <kbd>Enter</kbd> open</p>
           <details class="trip-planner trip-planner--collapse">
             <summary class="trip-planner__summary" id="trip-planner-title">Plan a ferry crossing</summary>
             <div class="trip-planner__body">
@@ -349,14 +351,17 @@
         </section>
 
         <section class="island-details" id="island-details" hidden>
-          <button
-            class="back-button"
-            id="back-button"
-            type="button"
-            aria-label="Back to island list"
-          >
-            ← Islands
-          </button>
+          <header class="details-toolbar" id="details-toolbar">
+            <button
+              class="back-button"
+              id="back-button"
+              type="button"
+              aria-label="Back to island list"
+            >
+              ← Islands
+            </button>
+            <div class="details-toolbar__actions" id="details-toolbar-actions"></div>
+          </header>
           <div id="details-content"></div>
         </section>
       </aside>
@@ -469,7 +474,9 @@
         </div>
         <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
         <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
-        <div class="legend" role="list" aria-label="Map legend">
+        <details class="legend-wrap">
+          <summary class="legend-wrap__toggle">Map key</summary>
+          <div class="legend" role="list" aria-label="Map legend">
           <span role="listitem"><i class="dot dot--sea"></i> Sea</span>
           <span role="listitem"><i class="dot dot--lake"></i> Loch / lake</span>
           <span><i class="dot dot--river"></i> River</span>
@@ -478,7 +485,8 @@
           <span role="listitem"><i class="dot dot--crowd"></i> Community</span>
           <span role="listitem"><i class="dot dot--for-sale" aria-hidden="true">£</i> For sale</span>
           <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
-        </div>
+          </div>
+        </details>
       </section>
     </main>
 
