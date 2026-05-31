@@ -4,6 +4,11 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-31 (homepage load v3 — sub-7s interactive target)** — Index prefetch at module init;
+boot skips marker rebuild + 7k sort; loader dismisses after list paints; markers build in
+**350-row rAF chunks** after idle; lazy tooltips at zoom ≤7; **proj4** + **island-3d** load on
+demand only; `index.html` preloads index JSON. Push via SSH to `main`.
+
 **2026-05-31 (atlas load fix v2 — compact index, lazy shards, _site deploy)** —
 First paint from v2 **`islands_index.json`** (~**0.9 MiB**, short-key stubs; was ~12 MiB).
 Unnamed overlay lazy (~**0.8 MiB**). Nation shards merge **on demand** when opening a

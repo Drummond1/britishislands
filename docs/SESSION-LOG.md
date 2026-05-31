@@ -1986,3 +1986,12 @@
   - `app.js` — `parseIndexPayload` / `expandIndexRow`; hide loader before `applyFilters`; defer crowd pins / ferries / featured / discovery to `requestIdleCallback`; **removed eager shard preload** — full records merge on demand via `ensureNationShardLoaded()` when opening a profile.
   - `.github/workflows/pages.yml` — run `prepare_pages_artifact.py`, deploy `_site/` (omits monolithic `islands.json`).
 - **Outcome**: First paint ~**0.9 MiB** index gzip ~100–150 KiB; no 19 MB shard parse at startup; production artifact drops **27 MB** `islands.json` when CI workflow deploys.
+
+## 2026-05-31 — Homepage load speed v3 (interactive under 7s)
+
+- **Goal**: findmyisland.com homepage interactive within **7s** (target sub-3s on typical 4G).
+- **Root cause**: Loader hid before **7,041-marker** sync rebuild + full-table sort; **Three.js** + **proj4** blocked script waterfall; index fetch started late.
+- **What changed**:
+  - `app.js` — prefetch `islands_index.json` at module init; boot `applyFilters({ skipMarkers, skipSort })`; dismiss loader after list paints; **chunked** deferred marker build via `requestIdleCallback`; lazy tooltips at zoom ≤7; boot grace on `moveend` rebuild; dynamic `import()` for island-3d; on-demand proj4; block monolith fallback on production.
+  - `index.html` — preload index + modulepreload app.js; remove sync proj4 scripts (~95 KB raw).
+- **Outcome**: Spinner clears after list virtual window; markers paint in background chunks; critical path ~**30 KB** lighter scripts.

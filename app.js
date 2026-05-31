@@ -24,7 +24,36 @@ import {
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
 } from "./crowd-pins.js";
-import { mountIsland3D, destroyIsland3D, isShowcase3DIsland } from "./island-3d.js";
+/** Showcase islands with pre-generated 3D terrain (see island-3d.js). */
+const SHOWCASE_3D_IDS = new Set([
+  "staffa",
+  "iona",
+  "st-kilda",
+  "lindisfarne",
+  "lundy",
+  "brownsea",
+  "rathlin",
+  "burgh-island",
+  "fair-isle",
+  "inchcailloch",
+]);
+
+function isShowcase3DIsland(id) {
+  return SHOWCASE_3D_IDS.has(id);
+}
+
+let _island3dModulePromise = null;
+function loadIsland3dModule() {
+  if (!_island3dModulePromise) {
+    _island3dModulePromise = import("./island-3d.js");
+  }
+  return _island3dModulePromise;
+}
+
+/** Start index fetch during module init (parallel with map setup). */
+const _indexPayloadPromise = fetch("data/islands_index.json").then((res) =>
+  res.ok ? res.json() : Promise.reject(new Error(`index HTTP ${res.status}`)),
+);
 
 const TYPE_COLORS = {
   sea: "#4ea3ff",
@@ -74,6 +103,7 @@ const state = {
   markers: new Map(),       // id -> L.circleMarker
   polygonCache: new Map(),  // id -> GeoJSON layer
   activeId: null,
+  booting: false,
   activePolygon: null,
   detailMap: null,          // secondary OS-style Leaflet map in details panel
   galleries: null,          // lazy-loaded: id -> [extra image record, ...]
@@ -599,7 +629,6 @@ function initPropertyListingState() {
   }
   state.propertyListingIslandIds = ids;
   syncPropertyListingFilter();
-  rebuildPropertyListingMapLayer();
 }
 
 function syncPropertyListingFilter() {
@@ -2037,15 +2066,25 @@ async function loadUnnamedIslandOverlay() {
 
 async function loadIslands() {
   setAppLoading(true);
+  state.booting = true;
+  markerBootGraceUntil = Date.now() + 1500;
   let settleIslandsIndex;
   _islandsIndexReady = new Promise((r) => {
     settleIslandsIndex = r;
   });
   let usedIndex = false;
   try {
-    const idxRes = await fetch("data/islands_index.json");
-    if (idxRes.ok) {
-      const indexPayload = await idxRes.json();
+    let indexPayload = null;
+    try {
+      indexPayload = await _indexPayloadPromise;
+    } catch (_) {
+      /* prefetch failed — retry below */
+    }
+    if (!indexPayload) {
+      const idxRes = await fetch("data/islands_index.json");
+      if (idxRes.ok) indexPayload = await idxRes.json();
+    }
+    if (indexPayload) {
       const indexRows = parseIndexPayload(indexPayload);
       if (indexRows.length > 0) {
         state.islands = indexRows;
@@ -2058,11 +2097,13 @@ async function loadIslands() {
         populateSubtypeFilter();
         renderScotlandQuickChips();
         renderBrowseQuickChips();
-        await new Promise((r) => requestAnimationFrame(r));
-        setAppLoading(false);
-        applyFilters();
+        applyFilters({ skipMarkers: true, skipSort: true });
         applyRouteFromUrl();
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+        setAppLoading(false);
+        state.booting = false;
         runWhenIdle(() => {
+          rebuildMarkerLayer({ chunked: true });
           loadCrowdPinsAndRender();
           loadFerries().catch(() => {});
           loadFeaturedIslands().catch(() => {});
@@ -2073,6 +2114,9 @@ async function loadIslands() {
     }
 
     if (!usedIndex) {
+      if (prefersProductionShardLoad()) {
+        throw new Error("Atlas index unavailable — refresh or try again shortly");
+      }
       const res = await fetch("data/islands.json");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const fullRows = await res.json();
@@ -2094,6 +2138,7 @@ async function loadIslands() {
     return;
   } finally {
     setAppLoading(false);
+    state.booting = false;
   }
 
   initFavoritesState();
@@ -2735,7 +2780,8 @@ function _scoreIsland(island, q) {
   return -Infinity;
 }
 
-function applyFilters() {
+function applyFilters(opts = {}) {
+  const { skipMarkers = false, skipSort = false } = opts;
   const q = _searchNorm(els.search.value);
   const type = els.typeFilter.value;
   const nation = els.nationFilter.value;
@@ -2796,11 +2842,13 @@ function applyFilters() {
     state.filtered = scored.map((x) => x.island);
   } else {
     state.filtered = state.islands.filter(passesScope);
-    state.filtered.sort((a, b) => listSortCompare(a, b, { photosFirst }));
+    if (!skipSort) {
+      state.filtered.sort((a, b) => listSortCompare(a, b, { photosFirst }));
+    }
   }
 
   renderList();
-  rebuildMarkerLayer();
+  if (!skipMarkers) rebuildMarkerLayer();
   renderActiveFilterChips();
   updateFiltersToggleBadge();
   syncSearchClearButton();
@@ -3120,44 +3168,80 @@ function makeMarker(island) {
     const tip = unnamed
       ? `${label} — name not yet recorded · ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`
       : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
-    marker.bindTooltip(tip, { direction: "top", offset: [0, -4] });
+    const lazyTooltip = map.getZoom() <= LOW_ZOOM_MARKER_MAX;
+    if (lazyTooltip) {
+      marker.on("mouseover", function bindLazyTooltip() {
+        if (!this.getTooltip?.()) {
+          this.bindTooltip(tip, { direction: "top", offset: [0, -4] });
+        }
+        this.openTooltip?.();
+        this.off("mouseover", bindLazyTooltip);
+      });
+    } else {
+      marker.bindTooltip(tip, { direction: "top", offset: [0, -4] });
+    }
     marker.on("click", () => focusIsland(island.id, { fly: false }));
   }
   return marker;
 }
 
-function rebuildMarkerLayer() {
+let markerBuildGen = 0;
+let markerBootGraceUntil = 0;
+const MARKER_CHUNK_SIZE = 350;
+
+function addMarkerToLayer(island, layer) {
+  if (hasFavoritesAccess() && isFavoriteIsland(island.id)) return null;
+  if (islandHasPropertyListing(island)) return null;
+  const m = makeMarker(island);
+  state.markers.set(island.id, m);
+  if (layer === clusterLayer) clusterLayer.addLayer(m);
+  else flatLayer.addLayer(m);
+  return m;
+}
+
+function rebuildMarkerLayer(opts = {}) {
+  const { chunked = false } = opts;
   if (!state.islands.length) return;
-  const bounds = map.getBounds();
-  if (!bounds?.isValid?.()) return;
-  // Clear & rebuild the active marker layer with the currently-filtered set.
-  // Markers are cheap to recreate; reusing them across cluster/flat would
-  // double the memory.
+  if (!map?.getBounds?.()?.isValid?.()) {
+    map.whenReady(() => rebuildMarkerLayer(opts));
+    return;
+  }
+
+  const gen = ++markerBuildGen;
   clusterLayer.clearLayers();
   flatLayer.clearLayers();
   state.markers.clear();
 
   const layer = activeMarkerLayer;
   const paintSet = islandsForMarkerPaint();
-  for (const island of paintSet) {
-    // Saved islands are shown as ♥ markers on favoritesMapLayer (always visible).
-    if (hasFavoritesAccess() && isFavoriteIsland(island.id)) continue;
-    // For-sale islands use dedicated £ badges on propertyListingMapLayer (always on map).
-    if (islandHasPropertyListing(island)) continue;
-    const m = makeMarker(island);
-    state.markers.set(island.id, m);
-    if (layer === clusterLayer) {
-      clusterLayer.addLayer(m);
-    } else {
-      flatLayer.addLayer(m);
-    }
+
+  if (!chunked || paintSet.length <= MARKER_CHUNK_SIZE) {
+    for (const island of paintSet) addMarkerToLayer(island, layer);
+    rebuildFavoritesMapLayer();
+    rebuildPropertyListingMapLayer();
+    updateMapStatus(paintSet.length, state.filtered.length || state.islands.length);
+    return;
   }
-  rebuildFavoritesMapLayer();
-  rebuildPropertyListingMapLayer();
-  updateMapStatus(paintSet.length, state.filtered.length || state.islands.length);
+
+  let offset = 0;
+  const paintChunk = () => {
+    if (gen !== markerBuildGen) return;
+    const end = Math.min(offset + MARKER_CHUNK_SIZE, paintSet.length);
+    for (let i = offset; i < end; i++) addMarkerToLayer(paintSet[i], layer);
+    offset = end;
+    if (offset < paintSet.length) {
+      requestAnimationFrame(paintChunk);
+      return;
+    }
+    rebuildFavoritesMapLayer();
+    rebuildPropertyListingMapLayer();
+    updateMapStatus(paintSet.length, state.filtered.length || state.islands.length);
+  };
+  requestAnimationFrame(paintChunk);
 }
 
 function scheduleMarkerViewportRefresh() {
+  if (Date.now() < markerBootGraceUntil) return;
   if (markerViewportTimer) clearTimeout(markerViewportTimer);
   markerViewportTimer = setTimeout(() => {
     markerViewportTimer = null;
@@ -3681,7 +3765,11 @@ function renderDetails(island) {
   const sourcesBlock = renderSourcesBlock(island);
 
   const prev3dView = document.getElementById("island-3d-view");
-  if (prev3dView) destroyIsland3D(prev3dView);
+  if (prev3dView) {
+    loadIsland3dModule()
+      .then((m) => m.destroyIsland3D(prev3dView))
+      .catch(() => {});
+  }
 
   const richSections =
     section("History", island.history) +
@@ -3829,11 +3917,36 @@ function renderDetails(island) {
   if (isShowcase3DIsland(island.id)) {
     const view3d = document.getElementById("island-3d-view");
     if (view3d) {
-      mountIsland3D(view3d, island, { autoRotate: true });
+      loadIsland3dModule()
+        .then((m) => m.mountIsland3D(view3d, island, { autoRotate: true }))
+        .catch(() => {});
     }
   }
 
   renderDetailMap(island);
+}
+
+// proj4 + proj4leaflet load on demand (detail map only — not homepage critical path).
+let _proj4LoadPromise = null;
+function ensureProj4() {
+  if (typeof proj4 !== "undefined" && typeof L !== "undefined" && L.Proj) {
+    return Promise.resolve();
+  }
+  if (_proj4LoadPromise) return _proj4LoadPromise;
+  _proj4LoadPromise = new Promise((resolve, reject) => {
+    const s1 = document.createElement("script");
+    s1.src = "https://unpkg.com/proj4@2.10.0/dist/proj4.js";
+    s1.onload = () => {
+      const s2 = document.createElement("script");
+      s2.src = "https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js";
+      s2.onload = () => resolve();
+      s2.onerror = () => reject(new Error("proj4leaflet load failed"));
+      document.head.appendChild(s2);
+    };
+    s1.onerror = () => reject(new Error("proj4 load failed"));
+    document.head.appendChild(s1);
+  });
+  return _proj4LoadPromise;
 }
 
 // Cached British National Grid CRS (EPSG:27700), built lazily via
@@ -3922,6 +4035,17 @@ function renderDetailMap(island) {
     return;
   }
   container.style.display = "";
+
+  ensureProj4()
+    .catch(() => {})
+    .finally(() => renderDetailMapInner(island));
+}
+
+function renderDetailMapInner(island) {
+  const container = document.getElementById("detail-map");
+  const hintEl = document.getElementById("detail-map-hint");
+  const switcher = document.getElementById("detail-map-switcher");
+  if (!container) return;
 
   const key = getOsMapsKey();
   const inGB = isInGreatBritainForLeisure(island);
