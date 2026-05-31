@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-05-31T19:35:11.150541+00:00",
+  "duplicateIdGroups": 4,
+  "reassigned": [
+    {
+      "oldId": "black-rock",
+      "newId": "osm-node-7633022311",
+      "name": "Black Rock",
+      "osmId": 7633022311,
+      "lat": 55.0819,
+      "lng": -7.48338
+    },
+    {
+      "oldId": "black-rock",
+      "newId": "osm-node-7843636371",
+      "name": "Black Rock",
+      "osmId": 7843636371,
+      "lat": 54.62314,
+      "lng": -8.39887
+    },
+    {
+      "oldId": "black-rock",
+      "newId": "osm-node-8148500795",
+      "name": "Black Rock",
+      "osmId": 8148500795,
+      "lat": 54.0398,
+      "lng": -6.1519
+    },
+    {
+      "oldId": "black-rock",
+      "newId": "osm-node-9154783745",
+      "name": "Black Rock",
+      "osmId": 9154783745,
+      "lat": 50.70839,
+      "lng": -1.5103
+    },
+    {
+      "oldId": "cannon-rock",
+      "newId": "osm-way-1225547241",
+      "name": "Cannon Rock",
+      "osmId": 1225547241,
+      "lat": 53.38144,
+      "lng": -6.0538
+    },
+    {
+      "oldId": "cannon-rock",
+      "newId": "osm-way-1434461262",
+      "name": "Cannon Rock",
+      "osmId": 1434461262,
+      "lat": 52.23625,
+      "lng": -10.3518
+    },
+    {
+      "oldId": "sgeir-dhubh",
+      "newId": "osm-node-9938307605",
+      "name": "Sgeir Dhubh",
+      "osmId": 9938307605,
+      "lat": 57.31839,
+      "lng": -6.10863
+    },
+    {
+      "oldId": "sgeir-dhubh",
+      "newId": "osm-way-52718335",
+      "name": "Sgeir Dhubh",
+      "osmId": 52718335,
+      "lat": 57.56486,
+      "lng": -5.76663
+    },
+    {
+      "oldId": "sgeir-dhubh",
+      "newId": "osm-way-223606728",
+      "name": "Sgeir Dhubh",
+      "osmId": 223606728,
+      "lat": 57.51576,
+      "lng": -5.6518
+    },
+    {
+      "oldId": "sgeir-dhubh",
+      "newId": "osm-way-1180735560",
+      "name": "Sgeir Dhubh",
+      "osmId": 1180735560,
+      "lat": 57.34902,
+      "lng": -6.11305
+    },
+    {
+      "oldId": "split-rock",
+      "newId": "osm-node-3244375880",
+      "name": "Split Rock",
+      "osmId": 3244375880,
+      "lat": 54.27475,
+      "lng": -8.9244
+    },
+    {
+      "oldId": "split-rock",
+      "newId": "osm-node-8726333515",
+      "name": "Split Rock",
+      "osmId": 8726333515,
+      "lat": 50.6268,
+      "lng": -2.3303
+    }
+  ],
+  "backupPath": "data/islands.json.before-id-fix-20260531T193510Z"
+}

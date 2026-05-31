@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-05-31T19:40:01.825818+00:00",
+  "source": "terrarium",
+  "attribution": "Terrain elevation from Mapzen Terrarium tiles on AWS Open Data (elevation-tiles-prod); decode: (R×256 + G + B/256) − 32768 m.",
+  "islands": [
+    {
+      "id": "staffa",
+      "name": "Staffa",
+      "bounds": [
+        -6.348345,
+        56.429831,
+        -6.335218,
+        56.441858
+      ],
+      "gridW": 224,
+      "gridH": 224,
+      "zoom": 14,
+      "minElev": -11.22,
+      "maxElev": 23.38,
+      "file": "staffa.json"
+    },
+    {
+      "id": "iona",
+      "name": "Iona",
+      "bounds": [
+        -6.454438,
+        56.300057,
+        -6.371847,
+        56.357589
+      ],
+      "gridW": 96,
+      "gridH": 96,
+      "zoom": 12,
+      "minElev": 0.65,
+      "maxElev": 79.57,
+      "file": "iona.json"
+    },
+    {
+      "id": "st-kilda",
+      "name": "St Kilda (Hirta)",
+      "bounds": [
+        -8.675473,
+        57.777487,
+        -8.454766,
+        57.895708
+      ],
+      "gridW": 96,
+      "gridH": 96,
+      "zoom": 12,
+      "minElev": -5.36,
+      "maxElev": 356.02,
+      "file": "st-kilda.json"
+    },
+    {
+      "id": "lindisfarne",
+      "name": "Lindisfarne (Holy Island)",
+      "bounds": [
+        -1.866207,
+        55.664462,
+        -1.767006,
+        55.692553
+      ],
+      "gridW": 128,
+      "gridH": 128,
+      "zoom": 12,
+      "minElev": -0.42,
+      "maxElev": 20.01,
+      "file": "lindisfarne.json"
+    },
+    {
+      "id": "lundy",
+      "name": "Lundy",
+      "bounds": [
+        -4.684738,
+        51.151889,
+        -4.648969,
+        51.209119
+      ],
+      "gridW": 128,
+      "gridH": 128,
+      "zoom": 12,
+      "minElev": -3.59,
+      "maxElev": 94.85,
+      "file": "lundy.json"
+    },
+    {
+      "id": "brownsea",
+      "name": "Brownsea Island",
+      "bounds": [
+        -1.992668,
+        50.684405,
+        -1.951068,
+        50.699161
+      ],
+      "gridW": 160,
+      "gridH": 160,
+      "zoom": 13,
+      "minElev": -0.69,
+      "maxElev": 29.1,
+      "file": "brownsea.json"
+    },
+    {
+      "id": "rathlin",
+      "name": "Rathlin Island",
+      "bounds": [
+        -6.304246,
+        55.250396,
+        -6.150071,
+        55.321264
+      ],
+      "gridW": 64,
+      "gridH": 64,
+      "zoom": 11,
+      "minElev": 0.0,
+      "maxElev": 96.34,
+      "file": "rathlin.json"
+    },
+    {
+      "id": "burgh-island",
+      "name": "Burgh Island",
+      "bounds": [
+        -3.903094,
+        50.277332,
+        -3.901185,
+        50.278102
+      ],
+      "gridW": 256,
+      "gridH": 256,
+      "zoom": 14,
+      "minElev": -1.84,
+      "maxElev": 9.8,
+      "file": "burgh-island.json"
+    },
+    {
+      "id": "fair-isle",
+      "name": "Fair Isle",
+      "bounds": [
+        -1.667423,
+        59.505096,
+        -1.587758,
+        59.560076
+      ],
+      "gridW": 96,
+      "gridH": 96,
+      "zoom": 12,
+      "minElev": 0.0,
+      "maxElev": 102.0,
+      "file": "fair-isle.json"
+    },
+    {
+      "id": "inchcailloch",
+      "name": "Inchcailloch",
+      "bounds": [
+        -4.565631,
+        56.071268,
+        -4.547207,
+        56.084978
+      ],
+      "gridW": 192,
+      "gridH": 192,
+      "zoom": 13,
+      "minElev": 8.0,
+      "maxElev": 64.9,
+      "file": "inchcailloch.json"
+    }
+  ],
+  "failures": []
+}

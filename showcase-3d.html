@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f1620" />
+    <title>3D terrain showcase — Isles of Britain</title>
+    <meta
+      name="description"
+      content="Interactive 3D elevation models of ten iconic British and Irish islands, from Staffa to St Kilda."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="showcase-3d-page">
+      <a class="showcase-3d-page__back" href="./">← Back to the atlas</a>
+      <h1>3D terrain showcase</h1>
+      <p class="showcase-3d-page__lead">
+        Ten iconic islands rendered from Mapzen Terrarium elevation tiles. Drag to orbit;
+        open any card for the full atlas profile.
+      </p>
+      <div id="showcase-3d-grid" class="showcase-3d-grid" aria-live="polite"></div>
+    </main>
+    <script type="module">
+      import {
+        mountIsland3D,
+        destroyIsland3D,
+        SHOWCASE_3D_ISLAND_META,
+      } from "./island-3d.js";
+
+      const grid = document.getElementById("showcase-3d-grid");
+
+      for (const meta of SHOWCASE_3D_ISLAND_META) {
+        const card = document.createElement("article");
+        card.className = "showcase-3d-card";
+        card.innerHTML = `
+          <h2>${escapeHtml(meta.name)}</h2>
+          <p class="showcase-3d-card__meta">${escapeHtml(meta.nation)}</p>
+          <div class="island-3d-view" data-island-id="${escapeAttr(meta.id)}"></div>
+          <a class="showcase-3d-card__link" href="./?island=${encodeURIComponent(meta.id)}">Open in atlas →</a>
+        `;
+        grid.appendChild(card);
+        const view = card.querySelector(".island-3d-view");
+        mountIsland3D(view, { id: meta.id, name: meta.name }, { autoRotate: true });
+      }
+
+      window.addEventListener("pagehide", () => {
+        grid.querySelectorAll(".island-3d-view").forEach((el) => destroyIsland3D(el));
+      });
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function escapeAttr(s) {
+        return escapeHtml(s);
+      }
+    </script>
+  </body>
+</html>

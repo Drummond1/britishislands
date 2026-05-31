@@ -1867,3 +1867,72 @@
   profile only; `.profile-body` containment; stat cards single-column below 420px, word-wrap on
   long fields; `data-island-detail` state on all viewports.
 - **Outcome**: Profile facts readable on phone, tablet, and desktop without list row ghosting.
+
+## 2026-05-31 — Fix duplicate discovery ids stacking map markers
+
+- **Goal**: Stop homonym discovery rows (e.g. four “Sgeir Dhubh” rocks) spiderfying as one cluster.
+- **Root cause**: Discovery pipeline used bare `slugify(name)` ids; four rows shared `sgeir-dhubh`.
+  Nation-shard merge copied the same full record onto every stub, collapsing all four to one lat/lng.
+- **What changed**:
+  - `scripts/fix_duplicate_discovery_ids.py` — reassigned **12** rows across **4** slug-collision
+    groups (`sgeir-dhubh`, `black-rock`, `cannon-rock`, `split-rock`) to `osm-{type}-{id}` ids.
+  - `scripts/discovery/common.py` + `enricher.py` — new `canonical_island_id()` for future ingests.
+  - `app.js` — shard merge skips / resolves by `osmId` when slug ids collide.
+  - Rebuilt `islands_index.json` + nation shards.
+- **Outcome**: Each homonym rock keeps its own marker at the correct coordinate; Eilean Donan
+  `osm-way-3493088` shows as a single pin again at that location.
+
+## 2026-05-31 — Chatbot relevance + LLM precision pass
+
+- **Goal**: Stop surfacing irrelevant island cards; use LLM only for islands it explicitly cites.
+- **What changed** (`app.js`):
+  - Hard feature filters (`chatIslandHasFeature`) — castle, puffins, ferry, etc. must match structured data or text; weak substring hits no longer pass.
+  - Relative relevance cutoff (`chatApplyRelevanceCutoff`) trims low-scoring tail matches before display or LLM handoff.
+  - Keyword-only queries require a name/description hit.
+  - Count/superlative intents show zero or one card (not six arbitrary matches).
+  - Structured intents (lookup/compare/count) bypass LLM to avoid padding.
+  - LLM prompt: empty `islandIds` when none fit; never pad; includes `relevanceScore`.
+  - AI results: only validated candidate ids — removed fallback to top-5 local results.
+  - Temperature lowered to 0.45 for tighter selection.
+- **Outcome**: Chat answers stay focused; island cards appear only when truly relevant.
+
+## 2026-05-31 — Chatbot relevance pass 2
+
+- **Broad-query guard**: nation-only / type-only queries (e.g. “Scottish islands”) now prompt
+  the user to narrow — no random island cards.
+- **LLM citation filter** (`chatFilterLLMResults`): re-scores cited ids, intersects with island
+  names in the answer text, caps at 5.
+- **Tighter cutoff**: higher min scores, cliff-drop when score falls >7 below the top match.
+- **Feature text**: whole-word matching only; mountain requires hill data or peak ≥500 m.
+- **Structured answers**: removed fallbacks that padded lookup/count/compare with search results.
+- **LLM payload**: includes parsed query facets so the model knows applied filters.
+
+## 2026-05-31 — 3D terrain viewer (Three.js showcase)
+
+- **Goal**: Vanilla ES-module 3D elevation viewer for ten showcase islands; no build step.
+- **What changed**:
+  - `island-3d.js` — `mountIsland3D`, `destroyIsland3D`, `isShowcase3DIsland`; Three.js 0.170
+    CDN imports; displaced plane mesh, elevation colours, water plane, OrbitControls.
+  - `app.js` — “3D terrain” section before detail map for showcase ids; dispose on re-render.
+  - `styles.css` — `.island-3d-view` + showcase landing grid tokens.
+  - `showcase-3d.html` — grid demo page linking back to atlas.
+  - `scripts/build_island_terrain.py` — Overpass outline + Terrarium DEM sampling; masks off-island cells.
+  - `data/terrain/*.json` — heightmaps for all **10** showcase islands (Staffa −11…23 m through St Kilda to 356 m).
+- **Outcome**: Interactive 3D terrain on profiles and `/showcase-3d.html`. Regenerate:
+  `python3 scripts/build_island_terrain.py --cache`.
+
+## 2026-05-30 — Visual design refinement (2026 SaaS polish)
+
+- **Goal**: Improve typography, spacing, hierarchy, buttons, forms, mobile, and accessibility without changing behaviour.
+- **What changed** (`styles.css`):
+  - Expanded design tokens (`:root`): surfaces, type scale, 8px spacing grid, shadows, focus rings, `--sidebar-w`.
+  - Top bar: glass backdrop, tokenised padding, display-font brand title.
+  - Unified form controls: consistent min-height, radius, focus ring across filters, modals, chat, trip planner.
+  - Button system: topbar links, modal CTAs, back/actions — shared hover, focus-visible, touch targets.
+  - Sidebar & island cards: list padding, card spacing, thumb size, active-state shadow.
+  - Chip system: browse/discover/Scotland chips — consistent sizing and focus rings.
+  - Profile panel: display-font titles, stat cards, section label typography.
+  - Chat & modals: rounded panels, header hierarchy, accessible close/focus states.
+  - Mobile nav: stronger active indicator, safe-area padding, bottom-sheet chat radius.
+  - Global `:focus-visible` baseline; expanded `prefers-reduced-motion` overrides.
+- **Outcome**: Cohesive dark atlas UI aligned with modern SaaS standards; no JS or schema changes.

@@ -24,6 +24,7 @@ import {
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
 } from "./crowd-pins.js";
+import { mountIsland3D, destroyIsland3D, isShowcase3DIsland } from "./island-3d.js";
 
 const TYPE_COLORS = {
   sea: "#4ea3ff",
@@ -1822,6 +1823,15 @@ function applyRouteFromUrl() {
 /** Merge `full` island record keys onto stub (same object refs as in state.islands). */
 function mergeIslandDetailFromFull(stub, full) {
   if (!stub || !full) return;
+  // Homonym stubs can share a slug id but point at different OSM features — never
+  // overwrite coordinates from the wrong full record.
+  if (
+    stub.osmId != null &&
+    full.osmId != null &&
+    stub.osmId !== full.osmId
+  ) {
+    return;
+  }
   for (const k of Object.keys(full)) {
     stub[k] = full[k];
   }
@@ -1870,8 +1880,21 @@ async function loadMonolithicIslandFallback() {
     throw new Error("islands.json empty");
   }
   const fullById = new Map(fullRows.map((i) => [i.id, i]));
+  const fullByOsm = new Map(
+    fullRows
+      .filter((i) => i.osmId != null)
+      .map((i) => [`${i.osmType || "x"}:${i.osmId}`, i]),
+  );
   for (const row of state.islands) {
-    const full = fullById.get(row.id);
+    let full = fullById.get(row.id);
+    if (
+      full &&
+      row.osmId != null &&
+      full.osmId != null &&
+      row.osmId !== full.osmId
+    ) {
+      full = fullByOsm.get(`${row.osmType || "x"}:${row.osmId}`) || null;
+    }
     if (full) mergeIslandDetailFromFull(row, full);
   }
   state.fullRecordsReady = true;
@@ -3520,6 +3543,9 @@ function renderDetails(island) {
   const altNames = renderAltNames(island);
   const sourcesBlock = renderSourcesBlock(island);
 
+  const prev3dView = document.getElementById("island-3d-view");
+  if (prev3dView) destroyIsland3D(prev3dView);
+
   const richSections =
     section("History", island.history) +
     section("Geography", island.geography) +
@@ -3579,6 +3605,16 @@ function renderDetails(island) {
     ${osmHint}
 
     ${renderFerries(island)}
+
+    ${
+      isShowcase3DIsland(island.id)
+        ? `<div class="section island-3d-section">
+      <h3>3D terrain</h3>
+      <div id="island-3d-view" class="island-3d-view"></div>
+      <p class="island-3d__hint">Elevation from Mapzen Terrarium DEM · drag to orbit · <a href="showcase-3d.html">All 10 showcase islands</a></p>
+    </div>`
+        : ""
+    }
 
     <div class="section detail-map-section">
       <h3>Detailed map</h3>
@@ -3641,6 +3677,13 @@ function renderDetails(island) {
   });
 
   requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
+
+  if (isShowcase3DIsland(island.id)) {
+    const view3d = document.getElementById("island-3d-view");
+    if (view3d) {
+      mountIsland3D(view3d, island, { autoRotate: true });
+    }
+  }
 
   renderDetailMap(island);
 }
@@ -5499,6 +5542,45 @@ function parseChatQuery(rawText) {
   return q;
 }
 
+function chatIslandHasFeature(island, feat, hay) {
+  switch (feat) {
+    case "inhabited":
+      return (island.population || 0) > 0;
+    case "uninhabited":
+      return !island.population || island.population === 0;
+    case "tidal":
+      return island.subtype === "tidal" || island.tidal === true;
+    case "photo":
+      return islandHasPhoto(island);
+    case "forsale":
+      return islandHasPropertyListing(island);
+    case "ferry":
+      return !!(state.ferryRoutesByIsland?.get(island.id)?.length);
+    case "mountain":
+      if (Array.isArray(island.hillsOn) && island.hillsOn.length) return true;
+      if (typeof island.highestPointM === "number" && island.highestPointM >= 500) return true;
+      break;
+    case "lighthouse":
+      if (Array.isArray(island.lighthouses) && island.lighthouses.length) return true;
+      break;
+    case "wildlife":
+      if (Array.isArray(island.wildlifeColonies) && island.wildlifeColonies.length) return true;
+      break;
+    case "bridge":
+    case "causeway":
+    case "walkable":
+      if (findCausewayForIsland(island)) return true;
+      break;
+    default:
+      break;
+  }
+  const syn = CHAT_FEATURES[feat] || [];
+  for (const w of syn) {
+    if (w.length >= 3 && chatWholeWord(hay, w)) return true;
+  }
+  return false;
+}
+
 function chatHaystack(island) {
   // Defensive: tags is normally an array but a malformed record could ship
   // it as a string / object / null.  Coerce safely to a flat string.
@@ -5622,35 +5704,13 @@ function scoreChatIsland(island, q) {
         if (hay.includes(w)) hits++;
       }
       if (hits > 0) score += 3 + Math.min(3, hits);
-      else if (q.semanticTags.size === 1) score -= 2;
+      else return -Infinity;
     }
   }
 
   for (const feat of q.features) {
-    const syn = CHAT_FEATURES[feat] || [];
-    let hits = 0;
-    for (const w of syn) {
-      if (hay.includes(w)) hits++;
-    }
-    if (feat === "inhabited") {
-      if ((island.population || 0) > 0) score += 4;
-      else if (q.features.has("inhabited")) score -= 3;
-    } else if (feat === "uninhabited") {
-      if (!island.population) score += 4;
-      else score -= 3;
-    } else if (feat === "tidal" && island.subtype === "estuary") {
-      score += 4;
-    } else if (feat === "photo" && islandHasPhoto(island)) {
-      score += 4;
-    } else if (feat === "forsale" && islandHasPropertyListing(island)) {
-      score += 5;
-    } else if (feat === "forsale") {
-      score -= 3;
-    } else if (hits > 0) {
-      score += 2 + Math.min(3, hits);
-    } else if (q.features.size === 1) {
-      score -= 1;
-    }
+    if (!chatIslandHasFeature(island, feat, hay)) return -Infinity;
+    score += feat === "forsale" ? 5 : feat === "photo" ? 4 : 3;
   }
 
   const nameHay = (island.name || "").toLowerCase();
@@ -5666,6 +5726,27 @@ function scoreChatIsland(island, q) {
   }
   // Reward an exact-name match heavily so "Belle Isle" lands the right island.
   if (q.keywords.length && nameHits === q.keywords.length) score += 4;
+
+  // Keyword-only queries must hit the name or description — don't return
+  // random islands that only matched a nation/type facet elsewhere.
+  if (q.keywords.length && nameHits === 0) {
+    let kwHit = false;
+    for (const k of q.keywords) {
+      if (k.length < 3) continue;
+      if (chatWholeWord(hay, k) || chatWholeWord(nameHay, k)) {
+        kwHit = true;
+        break;
+      }
+    }
+    const hasFacet =
+      q.nations.size ||
+      q.archipelagos.size ||
+      q.near ||
+      q.features.size ||
+      q.semanticTags.size ||
+      q.ferryIntent;
+    if (!kwHit && !hasFacet) return -Infinity;
+  }
 
   if (q.recommendationIntent) {
     if ((island.population || 0) > 500) score += 2.2;
@@ -5687,7 +5768,120 @@ function scoreChatIsland(island, q) {
   return score;
 }
 
-function searchChatIslands(rawText, limit = 6) {
+/** Drop weak tail matches so the UI and LLM only see genuinely relevant islands. */
+function chatApplyRelevanceCutoff(scored, q, outLimit) {
+  if (!scored.length) return { results: [], total: 0 };
+  const top = scored[0].score;
+  const hasSpecificIntent =
+    q.features.size ||
+    q.semanticTags.size ||
+    q.keywords.length ||
+    q.ferryIntent ||
+    q.near ||
+    q.recommendationIntent;
+  let minScore;
+  if (q.recommendationIntent) {
+    minScore = Math.max(9, top * 0.78);
+  } else if (hasSpecificIntent) {
+    minScore = Math.max(7, top * 0.65);
+  } else if (q.nations.size || q.archipelagos.size || q.types.size) {
+    minScore = Math.max(6, top * 0.5);
+  } else {
+    minScore = 5;
+  }
+  const kept = [];
+  for (const x of scored) {
+    if (x.score < minScore) continue;
+    if (kept.length && top - x.score > 7) break;
+    kept.push(x);
+    if (kept.length >= outLimit) break;
+  }
+  return { results: kept, total: kept.length };
+}
+
+/** True when the query would match thousands of islands with no real constraint. */
+function chatQueryTooBroad(q) {
+  if (
+    q.recommendationIntent ||
+    q.sort ||
+    q.near ||
+    q.ferryIntent ||
+    q.features.size ||
+    q.semanticTags.size ||
+    q.keywords.length ||
+    q.sizeMin != null ||
+    q.sizeMax != null ||
+    q.photoOnly ||
+    q.elevationOnly ||
+    q.curatedOnly
+  ) {
+    return false;
+  }
+  if (q.archipelagos.size) return false;
+  const scopeFacets =
+    (q.nations.size ? 1 : 0) + (q.types.size ? 1 : 0) + (q.subtypes.size ? 1 : 0);
+  return scopeFacets <= 2;
+}
+
+function chatBroadQueryHint(q) {
+  const bits = [];
+  if (q.nations.size) bits.push([...q.nations].join("/"));
+  if (q.types.size) bits.push([...q.types].join("/") + " islands");
+  const scope = bits.length ? bits.join(" · ") : "the whole atlas";
+  return (
+    `That covers **${scope}** — too many islands to list usefully. ` +
+    "Try adding a **feature** (castle, ferry, puffins), **near Oban**, " +
+    "**largest/highest**, or **islands worth visiting in …**."
+  );
+}
+
+function chatIslandsMentionedInAnswer(answer, candidates) {
+  if (!answer || !candidates?.length) return [];
+  const lower = String(answer).toLowerCase();
+  const hits = [];
+  for (const c of candidates) {
+    const name = c.island?.name;
+    if (!name || name.length < 3) continue;
+    const n = name.toLowerCase();
+    if (lower.includes(n)) {
+      hits.push(c);
+      continue;
+    }
+    const words = n.split(/\s+/).filter((w) => w.length > 3);
+    if (words.some((w) => chatWholeWord(lower, w))) hits.push(c);
+  }
+  return hits;
+}
+
+/** Keep only LLM citations that re-pass scoring and match the answer text. */
+function chatFilterLLMResults(llm, candidates, query) {
+  if (!candidates.length) return [];
+  const byId = new Map(candidates.map((c) => [c.island.id, c]));
+  const topScore = candidates[0].score;
+  const minScore = Math.max(7, topScore * 0.68);
+
+  let ids = (llm.islandIds || []).filter((id) => byId.has(id));
+  ids = ids.filter((id) => {
+    try {
+      return scoreChatIsland(byId.get(id).island, query) >= minScore;
+    } catch (_) {
+      return false;
+    }
+  });
+
+  const mentioned = chatIslandsMentionedInAnswer(llm.answer, candidates);
+  if (mentioned.length) {
+    const mentionIds = new Set(mentioned.map((m) => m.island.id));
+    const fromMention = ids.filter((id) => mentionIds.has(id));
+    if (fromMention.length) ids = fromMention;
+    else ids = [...mentionIds].filter((id) => byId.has(id));
+  }
+
+  const cap = query.recommendN && query.recommendN >= 1 ? query.recommendN : 5;
+  return ids.slice(0, cap).map((id) => byId.get(id)?.island).filter(Boolean);
+}
+
+function searchChatIslands(rawText, limit = 4) {
   const q = parseChatQuery(rawText);
   const outLimit = q.recommendationIntent
     ? q.recommendN && q.recommendN >= 1 && q.recommendN <= 25
@@ -5718,7 +5912,8 @@ function searchChatIslands(rawText, limit = 6) {
       const bv = b.island[q.sort.sortBy];
       return q.sort.dir === "desc" ? bv - av : av - bv;
     });
-    return { query: q, results: sortable.slice(0, outLimit), total: sortable.length };
+    const trimmed = chatApplyRelevanceCutoff(sortable, q, outLimit);
+    return { query: q, results: trimmed.results, total: trimmed.total };
   }
   const photosFirst = q.photoOnly;
   scored.sort(
@@ -5726,7 +5921,8 @@ function searchChatIslands(rawText, limit = 6) {
       b.score - a.score
         || listSortCompare(a.island, b.island, { photosFirst }),
   );
-  return { query: q, results: scored.slice(0, outLimit), total: scored.length };
+  const trimmed = chatApplyRelevanceCutoff(scored, q, outLimit);
+  return { query: q, results: trimmed.results, total: trimmed.total };
 }
 
 // ----- Direct-answer engine -----
@@ -5928,7 +6124,7 @@ function answerIntent(intent, query) {
     if (n === 0) return { answer: `I couldn't find any islands${facetStr}.`, results: [] };
     return {
       answer: `There ${n === 1 ? "is 1 island" : `are ${_CHAT_NUMBER_FMT.format(n)} islands`} matching${facetStr}.`,
-      results: filtered.slice(0, 6),
+      results: [],
     };
   }
 
@@ -5945,7 +6141,7 @@ function answerIntent(intent, query) {
     const intro = intent.which.charAt(0).toUpperCase() + intent.which.slice(1);
     return {
       answer: `${intro}: ${w.name}${whereStr} — ${sup.value}.`,
-      results: sup.ranking,
+      results: [w],
     };
   }
 
@@ -6036,7 +6232,7 @@ function answerIntent(intent, query) {
       }
       return {
         answer: `Total area of ${_CHAT_NUMBER_FMT.format(n)} matching islands: ${_fmtKm2(total)}.`,
-        results: pool.slice().sort((x, y) => (y.areaKm2 || 0) - (x.areaKm2 || 0)).slice(0, 5),
+        results: [],
       };
     }
     if (attr === "population") {
@@ -6046,7 +6242,7 @@ function answerIntent(intent, query) {
       }
       return {
         answer: `Combined population of ${_CHAT_NUMBER_FMT.format(n)} inhabited matching islands: ${_CHAT_NUMBER_FMT.format(total)}.`,
-        results: pool.slice().sort((x, y) => (y.population || 0) - (x.population || 0)).slice(0, 5),
+        results: [],
       };
     }
   }
@@ -6133,9 +6329,10 @@ function chatOpen() {
   setTimeout(() => chatEls.input.focus(), 50);
   if (!chatEls.messages.dataset.bootstrapped) {
     chatRenderBot(
-      "Hi! Ask me anything about British or Scottish islands — counts, sizes, peaks, comparisons, or what's near a place. " +
-        "I'll answer directly and surface the islands you mean. Everything runs locally; no data leaves your browser.",
-      { suggestions: CHAT_SUGGESTIONS }
+      "Hi! Ask about islands — sizes, peaks, ferries, what's near Oban, or islands worth visiting. " +
+        "I'll answer directly and only show islands that match your question. " +
+        "Enable **Smart answers (AI)** in settings for richer replies (your API key stays in this browser).",
+      { suggestions: CHAT_SUGGESTIONS },
     );
     chatEls.messages.dataset.bootstrapped = "1";
   }
@@ -6422,7 +6619,7 @@ const LLM_PROVIDERS = {
 };
 
 const LLM_HISTORY_TURNS = 6;
-const LLM_CANDIDATE_LIMIT = 12;
+const LLM_CANDIDATE_LIMIT = 8;
 
 function chatLLMGetSettings() {
   try {
@@ -6456,7 +6653,7 @@ function chatLLMSaveSettings(patch) {
 // blowing the prompt budget — descriptions trimmed at ~480 chars,
 // history/transport at ~340.  Empty fields are dropped so the model isn't
 // tempted to comment on missing data.
-function chatLLMSerialiseIsland(isl) {
+function chatLLMSerialiseIsland(isl, relevanceScore) {
   if (!isl || typeof isl !== "object") return null;
   const trim = (s, n) =>
     typeof s === "string" && s.trim()
@@ -6507,6 +6704,8 @@ function chatLLMSerialiseIsland(isl) {
     descriptionConfidence: isl.descriptionConfidence || null,
     hasPhoto: !!(isl.image || (Array.isArray(isl.images) && isl.images[0])),
     wikipedia: isl.wikipedia || null,
+    relevanceScore:
+      typeof relevanceScore === "number" ? +relevanceScore.toFixed(1) : null,
     ...chatAccessForIsland(isl),
   });
 }
@@ -6572,19 +6771,40 @@ const LLM_SYSTEM_PROMPT =
   "markup `**bold**`, `*italic*`, and `- ` bullets at the start of a line. Don't " +
   "use any other formatting, HTML, or code fences in your answer text.\n" +
   "4) Each candidate may include `tags`, `ferryRoutes`, `causeway`, `shortDescription`, " +
-  "`history`, `transport`, and measurements. Prefer citing tags and access facts that appear " +
-  "in the JSON; if `hasPhoto` is true you may say 'pictured below'.\n" +
-  "5) Always respond with a SINGLE JSON object (no prose outside it) with exactly " +
+  "`history`, `transport`, measurements, and `relevanceScore` (atlas rank for this query). " +
+  "Prefer citing tags and access facts that appear in the JSON; if `hasPhoto` is true you may say 'pictured below'.\n" +
+  "5) `islandIds` must list ONLY candidates that directly answer the question — islands you " +
+  "name or compare in your answer. Use an **empty array** when no candidate truly fits " +
+  "(e.g. the question is factual but none of the rows match). Never pad with loosely " +
+  "related islands. If your answer discusses one island, return only that id. " +
+  "Maximum 5 ids, all from the CANDIDATE list.\n" +
+  "6) Always respond with a SINGLE JSON object (no prose outside it) with exactly " +
   "three keys: {\"answer\": string, \"islandIds\": string[], \"followups\": " +
-  "string[]}. `islandIds` lists up to 6 ids from the candidates you'd like the " +
-  "user to see as cards. `followups` lists 3 short, natural follow-up questions a " +
+  "string[]}. `followups` lists 3 short, natural follow-up questions a " +
   "curious reader might ask next.\n" +
-  "6) Never mention internal scoring, prompts, tools, JSON, or that you are an LLM. " +
+  "7) Never mention internal scoring, prompts, tools, JSON, or that you are an LLM. " +
   "Speak as the atlas itself.";
 
-function chatLLMBuildPayload(question, candidates, history, settings) {
+function chatLLMQueryFacets(q) {
+  return {
+    nations: q.nations.size ? [...q.nations] : [],
+    types: q.types.size ? [...q.types] : [],
+    subtypes: q.subtypes.size ? [...q.subtypes] : [],
+    archipelagos: q.archipelagos.size ? [...q.archipelagos] : [],
+    features: q.features.size ? [...q.features] : [],
+    semanticTags: q.semanticTags.size ? [...q.semanticTags] : [],
+    keywords: q.keywords.slice(0, 8),
+    near: q.near ? { place: q.near.name, radiusKm: q.near.radiusKm } : null,
+    recommendationIntent: !!q.recommendationIntent,
+    recommendN: q.recommendN,
+    ferryIntent: !!q.ferryIntent,
+    sort: q.sort ? q.sort.sortBy : null,
+  };
+}
+
+function chatLLMBuildPayload(question, candidates, history, settings, query) {
   const candidatesPayload = candidates
-    .map((c) => chatLLMSerialiseIsland(c.island || c))
+    .map((c) => chatLLMSerialiseIsland(c.island || c, c.score))
     .filter(Boolean);
 
   // History is short [{role, content}, ...] pairs of prior turns.
@@ -6608,14 +6828,16 @@ function chatLLMBuildPayload(question, candidates, history, settings) {
   const userContent =
     atlasBlock +
     (historyText ? "Recent conversation:\n" + historyText + "\n\n" : "") +
-    "Current question: " + question + "\n\n" +
-    "CANDIDATE islands (JSON):\n" +
+    "Parsed query facets (filters already applied to CANDIDATES):\n" +
+    JSON.stringify(chatLLMQueryFacets(query || {})) +
+    "\n\nCurrent question: " + question + "\n\n" +
+    "CANDIDATE islands (JSON — only cite ids from this list; omit ids not relevant):\n" +
     JSON.stringify(candidatesPayload);
 
   if (settings.provider === "anthropic") {
     return {
       model: settings.model,
-      temperature: 0.65,
+      temperature: 0.45,
       max_tokens: 900,
       system: LLM_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userContent }],
@@ -6624,7 +6846,7 @@ function chatLLMBuildPayload(question, candidates, history, settings) {
   // OpenAI default
   return {
     model: settings.model,
-    temperature: 0.65,
+    temperature: 0.45,
     max_tokens: 900,
     response_format: { type: "json_object" },
     messages: [
@@ -6634,12 +6856,12 @@ function chatLLMBuildPayload(question, candidates, history, settings) {
   };
 }
 
-async function chatLLMCall(question, candidates, history, settings) {
+async function chatLLMCall(question, candidates, history, settings, query) {
   const provider = LLM_PROVIDERS[settings.provider];
   if (!provider) throw new Error("Unknown provider: " + settings.provider);
   if (!settings.apiKey) throw new Error("No API key configured");
 
-  const body = chatLLMBuildPayload(question, candidates, history, settings);
+  const body = chatLLMBuildPayload(question, candidates, history, settings, query);
   const headers = { "Content-Type": "application/json" };
   if (settings.provider === "openai") {
     headers["Authorization"] = "Bearer " + settings.apiKey;
@@ -6706,12 +6928,14 @@ async function chatLLMTest(settings) {
     islandIds: [],
     followups: [],
   };
-  const fakeCands = [chatLLMSerialiseIsland(state.islands?.[0] || {})];
+  const fakeIsland = state.islands?.[0];
+  const fakeCands = fakeIsland ? [{ island: fakeIsland, score: 12 }] : [];
   const res = await chatLLMCall(
     "Reply with the JSON object: " + JSON.stringify(probe),
     fakeCands.filter(Boolean),
     [],
     settings,
+    parseChatQuery("test"),
   );
   return res;
 }
@@ -6917,6 +7141,31 @@ function chatSubmit(text) {
       const r = searchChatIslands(t, LLM_CANDIDATE_LIMIT);
       thinking.remove();
 
+      // Structured factual questions (count, lookup, compare, superlative)
+      // get a direct answer first — no LLM padding with loosely related cards.
+      let intent = null;
+      let direct = null;
+      try {
+        intent = detectAnswerIntent(t);
+        if (intent) direct = answerIntent(intent, r.query);
+      } catch (intentErr) {
+        console.warn("[chat] answer-engine error", intentErr);
+      }
+      if (
+        direct &&
+        intent &&
+        ["lookup", "compare", "superlative", "count", "aggregate"].includes(intent.kind)
+      ) {
+        const wrappedDirect = (direct.results || []).map((x) => ({ island: x }));
+        chatRenderBot(direct.answer, { results: wrappedDirect, query: r.query });
+        return;
+      }
+
+      if (chatQueryTooBroad(r.query)) {
+        chatRenderBot(chatBroadQueryHint(r.query), { suggestions: CHAT_SUGGESTIONS });
+        return;
+      }
+
       const aiSettings = chatLLMGetSettings();
       const aiActive = aiSettings.enabled && aiSettings.apiKey && r.results.length > 0;
 
@@ -6927,16 +7176,11 @@ function chatSubmit(text) {
         aiThinking.textContent = `Thinking with ${LLM_PROVIDERS[aiSettings.provider]?.label || "AI"}…`;
         chatAppend(aiThinking);
         try {
-          const llm = await chatLLMCall(t, r.results, chatHistory, aiSettings);
+          const llm = await chatLLMCall(t, r.results, chatHistory, aiSettings, r.query);
           aiThinking.remove();
 
-          // Resolve cited island ids back to records; fall back to the
-          // local top results if the LLM cited nothing usable.
-          const cited = (llm.islandIds || [])
-            .map((id) => state.islands.find((i) => i && i.id === id))
-            .filter(Boolean);
-          const wrapped = (cited.length ? cited : r.results.slice(0, 5).map((x) => x.island))
-            .map((isl) => ({ island: isl }));
+          const cited = chatFilterLLMResults(llm, r.results, r.query);
+          const wrapped = cited.map((isl) => ({ island: isl }));
 
           chatHistory.push({ role: "user", content: t });
           chatHistory.push({ role: "assistant", content: llm.answer });
@@ -6952,48 +7196,19 @@ function chatSubmit(text) {
         } catch (llmErr) {
           aiThinking.remove();
           console.warn("[chat] LLM call failed; falling back to local engine", llmErr);
-          // Tell the user once that AI failed, then continue with local.
           const note = document.createElement("div");
           note.className = "chat-msg chat-msg--system";
           note.textContent =
             "AI is unreachable (" + (llmErr.message || "error") +
             ") — showing local results instead.";
           chatAppend(note);
-          // Fall through to local engine below.
         }
       }
 
       // Local engine (also the fallback path when AI is off or failed).
-      // Direct-answer pass: if the question is a count/superlative/lookup/
-      // comparison/aggregate, prepend a one-sentence factual answer and
-      // surface the most relevant islands for that answer.  Defensive:
-      // if intent detection or answer-building throws, just fall through
-      // to the standard search-results path rather than blanking the
-      // whole reply.
-      let intent = null;
-      let direct = null;
-      try {
-        intent = detectAnswerIntent(t);
-        if (intent) direct = answerIntent(intent, r.query);
-      } catch (intentErr) {
-        console.warn("[chat] answer-engine error", intentErr);
-        intent = null;
-        direct = null;
-      }
       if (direct) {
-        // chatRenderBot expects [{island, score}, ...]; answerIntent
-        // returns plain island objects, so wrap them.  Fall back to the
-        // already-wrapped r.results when the direct branch has none.
-        const wrappedDirect = (direct.results || []).map((x) => ({
-          island: x,
-        }));
-        const results = wrappedDirect.length ? wrappedDirect : r.results;
-        const tail = r.results.length && intent && intent.kind === "count"
-          ? "" // count answer already says "there are N"
-          : results.length
-          ? ""
-          : " " + composeChatResponse(r);
-        chatRenderBot(direct.answer + tail, { results, query: r.query });
+        const wrappedDirect = (direct.results || []).map((x) => ({ island: x }));
+        chatRenderBot(direct.answer, { results: wrappedDirect, query: r.query });
         return;
       }
 

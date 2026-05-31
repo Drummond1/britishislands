@@ -28,7 +28,7 @@ def _needs_review(candidate: dict) -> bool:
 def _to_island_record(candidate: dict) -> dict:
     name = candidate["name"]
     record = {
-        "id": c.slugify(name),
+        "id": c.canonical_island_id(candidate),
         "name": name,
         "nation": candidate.get("nation") or c.nation_for(candidate["lat"], candidate["lng"]),
         "type": _island_type(candidate),

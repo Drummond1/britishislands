@@ -191,6 +191,18 @@ def slugify(name: str, prefix: str = "") -> str:
     return f"{prefix}{s or 'island'}"
 
 
+def canonical_island_id(record: dict) -> str:
+    """Stable id for atlas rows — prefer OSM / Wikidata over bare name slugs."""
+    osm_type = record.get("osmType")
+    osm_id = record.get("osmId")
+    if osm_type and osm_id:
+        return f"osm-{osm_type}-{osm_id}"
+    wikidata = record.get("wikidata")
+    if wikidata:
+        return f"wd-{wikidata}"
+    return slugify(record.get("name") or "island")
+
+
 def name_key(name: str) -> str:
     s = (name or "").lower()
     s = re.sub(r"\(.*?\)", "", s)
