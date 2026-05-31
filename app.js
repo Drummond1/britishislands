@@ -102,7 +102,14 @@ const state = {
   loadedShards: new Set(),
   shardLoads: new Map(),
   fullRecordsReady: false,
+  unnamedOverlayLoaded: false,
+  unnamedOverlayLoading: null,
 };
+
+function prefersProductionShardLoad() {
+  const host = window.location.hostname.replace(/^www\./, "");
+  return host === "findmyisland.com";
+}
 
 const NATION_SHARD = {
   Scotland: "scotland",
@@ -1827,6 +1834,14 @@ function applyRouteFromUrl() {
       focusIsland(islandId, { fly: true });
       return;
     }
+    if (islandId && islandId.startsWith("osm-")) {
+      loadUnnamedIslandOverlay()
+        .then(() => {
+          if (state.byId.has(islandId)) focusIsland(islandId, { fly: true });
+        })
+        .catch(() => {});
+      return;
+    }
     const exploreId = params.get("explore");
     if (exploreId && state.discoveryTopics?.some((t) => t.id === exploreId)) {
       setExploreTopic(exploreId, { skipUrl: true });
@@ -1919,27 +1934,68 @@ async function loadMonolithicIslandFallback() {
   state.fullRecordsReady = true;
 }
 
+async function loadUnnamedIslandOverlay() {
+  if (state.unnamedOverlayLoaded) return;
+  if (state.unnamedOverlayLoading) {
+    await state.unnamedOverlayLoading;
+    return;
+  }
+  state.unnamedOverlayLoading = (async () => {
+    const res = await fetch("data/islands_unnamed_index.json");
+    if (!res.ok) throw new Error(`unnamed index HTTP ${res.status}`);
+    const rows = await res.json();
+    if (!Array.isArray(rows) || !rows.length) {
+      state.unnamedOverlayLoaded = true;
+      return;
+    }
+    for (const row of rows) {
+      if (state.byId.has(row.id)) continue;
+      state.islands.push(row);
+      state.byId.set(row.id, row);
+    }
+    state.unnamedOverlayLoaded = true;
+  })();
+  try {
+    await state.unnamedOverlayLoading;
+  } finally {
+    state.unnamedOverlayLoading = null;
+  }
+}
+
 async function loadFullIslandRecordsBackground() {
   try {
     const mRes = await fetch("data/shards/manifest.json");
     if (!mRes.ok) {
+      if (prefersProductionShardLoad()) {
+        console.error("Nation shards missing on production — detail records unavailable");
+        return;
+      }
       await loadMonolithicIslandFallback();
       return;
     }
     const manifest = await mRes.json();
     const shards = Array.isArray(manifest?.shards) ? manifest.shards : [];
     if (!shards.length) {
+      if (prefersProductionShardLoad()) {
+        console.error("Empty shard manifest on production");
+        return;
+      }
       await loadMonolithicIslandFallback();
       return;
     }
-    await Promise.all(shards.map((s) => loadNationShard(s.slug || s.file.replace(/\.json$/, ""))));
+    for (const s of shards) {
+      const slug = s.slug || String(s.file || "").replace(/\.json$/, "");
+      if (slug) await loadNationShard(slug);
+    }
     state.fullRecordsReady = true;
   } catch (err) {
-    console.warn("Nation shard load failed; falling back to islands.json", err);
-    try {
-      await loadMonolithicIslandFallback();
-    } catch (fallbackErr) {
-      console.error("Failed to load full island records", fallbackErr);
+    console.warn("Nation shard load failed", err);
+    if (!prefersProductionShardLoad()) {
+      try {
+        await loadMonolithicIslandFallback();
+      } catch (fallbackErr) {
+        console.error("Failed to load full island records", fallbackErr);
+      }
     }
   } finally {
     scheduleRenderListWindow();
@@ -2304,30 +2360,40 @@ function applyBrowseQuickFilter(preset) {
     applyFilters();
     return;
   }
-  activeBrowseQuick = preset.id;
-  if (state.activeExploreTopic) {
-    state.activeExploreTopic = null;
-    state.exploreIslandIds = null;
-    const hint = document.getElementById("discover-hint");
-    if (hint) {
-      hint.hidden = true;
-      hint.textContent = "";
+  const activate = async () => {
+    activeBrowseQuick = preset.id;
+    if (state.activeExploreTopic) {
+      state.activeExploreTopic = null;
+      state.exploreIslandIds = null;
+      const hint = document.getElementById("discover-hint");
+      if (hint) {
+        hint.hidden = true;
+        hint.textContent = "";
+      }
+      renderDiscoverChips();
     }
-    renderDiscoverChips();
-  }
-  if (activeScotlandQuick) {
-    activeScotlandQuick = null;
-    renderScotlandQuickChips();
-  }
-  if (els.nationFilter) els.nationFilter.value = "";
-  if (els.typeFilter) els.typeFilter.value = "";
-  if (els.filterPhoto) els.filterPhoto.checked = Boolean(preset.photo);
-  if (els.filterFerry) els.filterFerry.checked = Boolean(preset.ferry && !els.filterFerry?.disabled);
-  if (els.filterForSale) {
-    els.filterForSale.checked = Boolean(preset.forSale && !els.filterForSale?.disabled);
-  }
-  renderBrowseQuickChips();
-  applyFilters();
+    if (activeScotlandQuick) {
+      activeScotlandQuick = null;
+      renderScotlandQuickChips();
+    }
+    if (els.nationFilter) els.nationFilter.value = "";
+    if (els.typeFilter) els.typeFilter.value = "";
+    if (els.filterPhoto) els.filterPhoto.checked = Boolean(preset.photo);
+    if (els.filterFerry) els.filterFerry.checked = Boolean(preset.ferry && !els.filterFerry?.disabled);
+    if (els.filterForSale) {
+      els.filterForSale.checked = Boolean(preset.forSale && !els.filterForSale?.disabled);
+    }
+    if (preset.unnamed) {
+      try {
+        await loadUnnamedIslandOverlay();
+      } catch (err) {
+        console.warn("Unnamed island overlay unavailable", err);
+      }
+    }
+    renderBrowseQuickChips();
+    applyFilters();
+  };
+  void activate();
 }
 
 function renderScotlandQuickChips() {
@@ -2674,6 +2740,7 @@ function applyFilters() {
     ) {
       return false;
     }
+    if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i)) return false;
     if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
     return true;
   };

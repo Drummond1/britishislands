@@ -2,8 +2,8 @@
 """
 Emit data/islands_index.json — compact first paint for the web app.
 
-Strips long prose, full sources, and image galleries. The browser fetches this
-before data/islands.json and merges full records in place (see app.js loadIslands).
+Also writes data/islands_unnamed_index.json (lazy-loaded overlay) and
+data/shards/*.json nation files for deferred detail merge in app.js.
 
 Run after any change to data/islands.json:
   python3 scripts/build_islands_index.py
@@ -27,7 +27,7 @@ NATION_SHARD: dict[str, str] = {
     "Isle of Man": "isle-of-man",
 }
 
-# Omitted from index; merged later from islands.json / nation shards.
+# Omitted from index; merged later from nation shards.
 DROP_KEYS = frozenset(
     {
         "history",
@@ -37,8 +37,21 @@ DROP_KEYS = frozenset(
         "sources",
         "provenance",
         "images",
+        "discoveryConfidence",
+        "discoverySourceKind",
+        "shortDescription",
+        "wikipedia",
+        "wikidata",
+        "aliases",
     }
 )
+
+
+def is_unnamed(island: dict) -> bool:
+    if island.get("nameStatus") == "unknown":
+        return True
+    tags = island.get("tags") or []
+    return "unnamed" in tags
 
 
 def lead_thumb_url(island: dict) -> str | None:
@@ -59,6 +72,48 @@ def slim_record(island: dict) -> dict:
         row["thumbUrl"] = thumb
     listings = island.get("propertyListings") or []
     row["hasPropertyListing"] = bool(listings)
+    cls = row.get("classification")
+    if isinstance(cls, dict):
+        row["classification"] = {
+            k: cls[k]
+            for k in ("source", "confidence")
+            if k in cls
+        }
+    parent = row.get("parentWaterBody")
+    if isinstance(parent, dict):
+        row["parentWaterBody"] = {
+            k: parent[k]
+            for k in ("name", "type")
+            if parent.get(k)
+        }
+    return row
+
+
+def slim_unnamed_stub(island: dict) -> dict:
+    parent = island.get("parentWaterBody") or {}
+    row = {
+        "id": island["id"],
+        "name": island.get("name") or "Unnamed island",
+        "nameStatus": "unknown",
+        "nation": island.get("nation"),
+        "type": island.get("type"),
+        "subtype": island.get("subtype"),
+        "lat": island["lat"],
+        "lng": island["lng"],
+        "areaKm2": island.get("areaKm2"),
+        "osmType": island.get("osmType"),
+        "osmId": island.get("osmId"),
+        "source": island.get("source"),
+        "tags": ["unnamed"],
+        "hasImage": False,
+        "hasPropertyListing": False,
+        "classification": {"confidence": "high", "source": "unnamed-discovery"},
+    }
+    if parent.get("name") or parent.get("type"):
+        row["parentWaterBody"] = {
+            "name": parent.get("name") or "",
+            "type": parent.get("type") or "",
+        }
     return row
 
 
@@ -110,16 +165,26 @@ def write_shards(data: list[dict]) -> None:
 def main() -> None:
     src = ROOT / "data" / "islands.json"
     out = ROOT / "data" / "islands_index.json"
+    unnamed_out = ROOT / "data" / "islands_unnamed_index.json"
     data = json.loads(src.read_text(encoding="utf-8"))
-    slim = [slim_record(x) for x in data]
+
+    main_rows = [slim_record(x) for x in data if not is_unnamed(x)]
+    unnamed_rows = [slim_unnamed_stub(x) for x in data if is_unnamed(x)]
+
     out.write_text(
-        json.dumps(slim, separators=(",", ":"), ensure_ascii=False) + "\n",
+        json.dumps(main_rows, separators=(",", ":"), ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    unnamed_out.write_text(
+        json.dumps(unnamed_rows, separators=(",", ":"), ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     write_shards(data)
     print(
-        f"wrote {len(slim)} rows -> {out.name} "
+        f"wrote {len(main_rows)} rows -> {out.name} "
         f"({out.stat().st_size / 1024 / 1024:.2f} MiB); "
+        f"{len(unnamed_rows)} unnamed -> {unnamed_out.name} "
+        f"({unnamed_out.stat().st_size / 1024 / 1024:.2f} MiB); "
         f"full {src.name} {src.stat().st_size / 1024 / 1024:.2f} MiB",
     )
 

@@ -70,3 +70,6 @@ data/shards/
 # --- Tooling --------------------------------------------------------------
 # Cursor-specific runtime artefacts (terminals, agent transcripts).
 .cursor/projects/
+
+# CI-staged GitHub Pages output (see scripts/prepare_pages_artifact.py)
+_site/

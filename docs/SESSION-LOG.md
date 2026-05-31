@@ -1956,3 +1956,21 @@
   unnamed fetch retried when Overpass geom cache is populated (`--cache` after fetch).
 - **Regenerate**: `python3 scripts/discover_unnamed_islands.py --cache --apply`
   then `python3 scripts/build_islands_index.py`.
+
+## 2026-05-31 — Production load speed (shards deploy + split index)
+
+- **Goal**: Fix slow/blocked atlas load on findmyisland.com; ship profile landings.
+- **Root cause**: Nation shards and `profiles/` are gitignored — GitHub Pages artifact
+  from `path: .` never included them → 404 → browser fell back to **index + 27 MB
+  `islands.json`** (~43 MB).
+- **What changed**:
+  - `scripts/prepare_pages_artifact.py` — stages `_site/` with forced shards +
+    profiles; **omits monolithic `islands.json`** from production.
+  - `.github/workflows/pages.yml` — upload `_site` not repo root.
+  - `build_islands_index.py` — split **`islands_index.json`** (7,041 named) +
+    **`islands_unnamed_index.json`** (4,310 lazy overlay); slimmer index fields.
+  - `app.js` — sequential shard merge; no monolithic fallback on findmyisland.com;
+    unnamed overlay loads only for **Unnamed** filter / OSM deep links; default map
+    hides unnamed pins.
+- **Outcome**: Home first paint ~**12 MB** index + background shards (~19 MB split);
+  unnamed +**1.7 MB** on demand; **7,033** profile landings ship in CI artifact.
