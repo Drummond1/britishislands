@@ -45,11 +45,14 @@ jobs:
       - name: Build islands index and nation shards
         run: python3 scripts/build_islands_index.py
 
+      - name: Stage Pages artifact (shards, profiles; omit monolithic JSON)
+        run: python3 scripts/prepare_pages_artifact.py
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - id: deployment
         uses: actions/deploy-pages@v4
