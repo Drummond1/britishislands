@@ -1936,3 +1936,23 @@
   - Mobile nav: stronger active indicator, safe-area padding, bottom-sheet chat radius.
   - Global `:focus-visible` baseline; expanded `prefers-reduced-motion` overrides.
 - **Outcome**: Cohesive dark atlas UI aligned with modern SaaS standards; no JS or schema changes.
+
+## 2026-05-31 — Unnamed island discovery + orange map pins
+
+- **Goal**: Discover genuine unnamed island landmasses at ≥98% OSM confidence; show
+  them on the map with a distinct pin colour for later crowdsourced naming.
+- **What changed**:
+  - `scripts/discover_unnamed_islands.py` — scans OSM inner rings of inland water
+    multipolygons (and optional standalone `place=island|islet` with geometry);
+    confidence floor 0.98; dedupe; `--apply` merge with provenance.
+  - **+4,310** records merged (`nameStatus: unknown`, `source: osm-unnamed`,
+    placeholder name `Unnamed island`, `tags: ["unnamed","needs-name"]`).
+  - `app.js` — orange markers (`#fb923c`), list “Needs name” pill, profile banner
+    + Contribute CTA, **Unnamed** browse chip + map legend entry.
+  - `styles.css` — `.dot--unnamed`, banner, card styling.
+  - `docs/DATA-SCHEMA.md` — `nameStatus` field documented.
+  - Rebuilt `islands_index.json` + nation shards (**11,351** islands total).
+- **Outcome**: Unnamed loch/river islets visible as orange pins; standalone sea
+  unnamed fetch retried when Overpass geom cache is populated (`--cache` after fetch).
+- **Regenerate**: `python3 scripts/discover_unnamed_islands.py --cache --apply`
+  then `python3 scripts/build_islands_index.py`.

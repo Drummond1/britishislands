@@ -81,7 +81,8 @@ There is no top-level metadata wrapper. Total size is in
 | Field | Type | Required | Notes |
 |---|---|---|---|
 | `id` | string | yes | Stable, lowercase-hyphenated, ASCII-folded name. Disambiguated by parent body or island group on collision. **Never regenerated** for an existing island. |
-| `name` | string | yes | Canonical English display name. Diacritics allowed (e.g. `Sgùrr na h-Iolaire`). |
+| `name` | string | yes | Canonical English display name. Diacritics allowed (e.g. `Sgùrr na h-Iolaire`). For landmasses without any published name, use the placeholder **`Unnamed island`** and set `nameStatus` to `unknown` — never invent a proper name. |
+| `nameStatus` | enum / null | no | `unknown` when the landmass is mapped (usually via OSM) but no reliable name exists yet; omit or `null` when `name` is a real identifier. Crowdsourcing target for Contribute flows. |
 | `nation` | enum | yes (after classification) | One of `Scotland`, `England`, `Wales`, `Northern Ireland`, `Ireland`, `Crown Dependency`. `null` for unclassified outliers (which are then filtered out before shipping). |
 
 ### Geometry / location

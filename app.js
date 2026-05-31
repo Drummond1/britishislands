@@ -37,6 +37,24 @@ const TYPE_COLORS = {
 const FOR_SALE_MARKER_FILL = "#c4a062";
 const FOR_SALE_MARKER_STROKE = "#5a6d82";
 
+/** Unnamed / undiscovered landmasses awaiting crowdsourced names (nameStatus=unknown). */
+const UNNAMED_MARKER_FILL = "#fb923c";
+const UNNAMED_MARKER_STROKE = "#ea580c";
+
+function isUnnamedIsland(island) {
+  if (!island) return false;
+  if (island.nameStatus === "unknown") return true;
+  return (island.tags || []).includes("unnamed");
+}
+
+function islandDisplayName(island) {
+  if (isUnnamedIsland(island)) {
+    const parent = island.parentWaterBody?.name;
+    return parent ? `Unnamed · ${parent}` : "Unnamed island";
+  }
+  return island.name || "Unnamed island";
+}
+
 const ROW_HEIGHT = 76; // px, must match .island-card sizing (incl. thumbnail)
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
 
@@ -100,6 +118,7 @@ const BROWSE_QUICK_FILTERS = [
   { id: "photo", label: "Has photo", photo: true },
   { id: "ferry", label: "Ferry", ferry: true },
   { id: "for-sale", label: "For sale", forSale: true },
+  { id: "unnamed", label: "Unnamed", unnamed: true },
 ];
 
 let activeBrowseQuick = null;
@@ -2655,6 +2674,7 @@ function applyFilters() {
     ) {
       return false;
     }
+    if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
     return true;
   };
 
@@ -2846,27 +2866,30 @@ function renderListWindow() {
     const wrap = document.createElement("div");
     const hasListing = islandHasPropertyListing(island);
     const listingLead = hasListing ? primaryPropertyListing(island) : null;
+    const unnamed = isUnnamedIsland(island);
     wrap.className =
       "island-card" +
       (island.id === state.activeId ? " is-active" : "") +
-      (hasListing ? " island-card--for-sale" : "");
+      (hasListing ? " island-card--for-sale" : "") +
+      (unnamed ? " island-card--unnamed" : "");
     wrap.dataset.id = island.id;
 
     const main = document.createElement("button");
     main.type = "button";
     main.className = "island-card__main";
     main.style.height = `${ROW_HEIGHT - 8}px`;
+    const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
+    const unconfirmed = island.classification?.confidence === "unconfirmed";
+    const displayName = islandDisplayName(island);
     main.setAttribute(
       "aria-label",
-      `${island.name}, ${island.nation}, ${formatPopulation(island.population)}`,
+      `${displayName}, ${island.nation}, ${formatPopulation(island.population)}`,
     );
     if (island.id === state.activeId) {
       main.setAttribute("aria-current", "true");
     } else {
       main.removeAttribute("aria-current");
     }
-    const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
-    const unconfirmed = island.classification?.confidence === "unconfirmed";
     const fav = isFavoriteIsland(island.id);
     const thumb = islandThumbUrl(island);
     const thumbHtml = thumb
@@ -2876,8 +2899,9 @@ function renderListWindow() {
       ${thumbHtml}
       <div class="island-card__text">
         <div class="island-card__title">
-          <span class="dot dot--${island.type}"></span>
-          ${escapeHtml(island.name)}
+          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : `<span class="dot dot--${island.type}"></span>`}
+          ${escapeHtml(displayName)}
+          ${unnamed ? '<span class="island-card__unnamed-pill">Needs name</span>' : ""}
           ${unconfirmed ? '<span class="island-card__unconfirmed" title="Needs review">?</span>' : ""}
           ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
           ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
@@ -2955,7 +2979,15 @@ function makeMarker(island) {
   let strokeColor = "#ffffff";
   let strokeWeight = 1.2;
   let className = "marker-vis";
-  if (state.exploreIslandIds?.has(island.id)) {
+  const unnamed = isUnnamedIsland(island);
+  if (unnamed) {
+    fillColor = UNNAMED_MARKER_FILL;
+    strokeColor = UNNAMED_MARKER_STROKE;
+    strokeWeight = 2;
+    fillOpacity = 0.95;
+    radius = Math.min(14, Math.max(8, radius));
+    className = "marker-vis marker-vis--unnamed";
+  } else if (state.exploreIslandIds?.has(island.id)) {
     fillColor = "#f4d35e";
     radius = Math.min(17, radius + 2);
     fillOpacity = 1;
@@ -2982,7 +3014,10 @@ function makeMarker(island) {
   if (onSale) {
     wireForSaleMarkerInteractions(marker, island);
   } else {
-    const tip = `${island.name} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
+    const label = islandDisplayName(island);
+    const tip = unnamed
+      ? `${label} — name not yet recorded · ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`
+      : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
     marker.bindTooltip(tip, { direction: "top", offset: [0, -4] });
     marker.on("click", () => focusIsland(island.id, { fly: false }));
   }
@@ -3569,13 +3604,24 @@ function renderDetails(island) {
 
   const gallery = renderGallery(island) || renderPhotoPlaceholderHero(island);
   const favActive = isFavoriteIsland(island.id);
+  const unnamed = isUnnamedIsland(island);
+  const title = islandDisplayName(island);
+  const unnamedBanner = unnamed
+    ? `<div class="unnamed-banner" role="note">
+        <strong>Name not yet recorded.</strong>
+        This landmass is mapped in OpenStreetMap but has no published name in our sources.
+        Use <button type="button" class="unnamed-banner__link" data-contribute-island="${escapeAttr(island.id)}">Contribute</button>
+        to suggest a name with a source link.
+      </div>`
+    : "";
 
   els.detailsContent.innerHTML = `
     ${gallery}
+    ${unnamedBanner}
     <div class="details-title-row">
       <div class="details-title-block">
-        <span class="layer-badge layer-badge--atlas" title="Verified atlas island">Atlas</span>
-        <h2 class="details-title">${escapeHtml(island.name)}</h2>
+        <span class="layer-badge ${unnamed ? "layer-badge--unnamed" : "layer-badge--atlas"}" title="${unnamed ? "Unnamed landmass — crowdsourcing welcome" : "Verified atlas island"}">${unnamed ? "Unnamed" : "Atlas"}</span>
+        <h2 class="details-title">${escapeHtml(title)}</h2>
       </div>
     </div>
     ${subtypeChips}
