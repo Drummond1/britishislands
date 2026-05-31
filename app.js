@@ -2703,6 +2703,7 @@ let listInner = null;
 let listRenderRaf = 0;
 
 function shouldRenderListWindow() {
+  if (els.details && !els.details.hidden) return false;
   if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view !== "islands") {
     return false;
   }
@@ -2727,6 +2728,7 @@ function ensureListScaffolding() {
   listSpacer.style.height = "0px";
   listSpacer.style.pointerEvents = "none";
   listInner = document.createElement("div");
+  listInner.className = "list-virtual-inner";
   listInner.style.position = "absolute";
   listInner.style.top = "0";
   listInner.style.left = "8px";
@@ -3406,12 +3408,29 @@ function refreshGalleryInPlace(island) {
   if (fresh) hero.replaceWith(fresh);
 }
 
+function setListVirtualLayerPaused(paused) {
+  if (!listInner) return;
+  listInner.style.visibility = paused ? "hidden" : "";
+  listInner.style.pointerEvents = paused ? "none" : "";
+  if (paused) listInner.innerHTML = "";
+}
+
+function shouldPauseListVirtualLayer() {
+  if (!state.activeId) return false;
+  if (!els.details.hidden) return true;
+  if (state.mobileDetailSuspended) return true;
+  return false;
+}
+
+function syncListVirtualPauseState() {
+  setListVirtualLayerPaused(shouldPauseListVirtualLayer());
+}
+
 function renderDetails(island) {
   els.listSection.hidden = true;
   els.details.hidden = false;
-  if (mobileNav.isActive()) {
-    document.body.dataset.islandDetail = "open";
-  }
+  document.body.dataset.islandDetail = "open";
+  syncListVirtualPauseState();
   els.sidebar.scrollTop = 0;
 
   const typeLabel =
@@ -3449,15 +3468,17 @@ function renderDetails(island) {
   ];
   const bedrock = formatBedrockStat(island);
   if (bedrock) {
-    stats.push({ label: "Bedrock", value: bedrock });
+    stats.push({ label: "Bedrock", value: bedrock, wide: true, multiline: true });
   }
   if (parentLabel) {
-    stats.push({ label: "In water body", value: parentLabel });
+    stats.push({ label: "In water body", value: parentLabel, wide: true, multiline: true });
   }
   if (island.heritageDesignation) {
     stats.push({
       label: "Heritage",
-      value: `<span style="font-size:12px">${escapeHtml(island.heritageDesignation)}</span>`,
+      value: escapeHtml(island.heritageDesignation),
+      wide: true,
+      multiline: true,
     });
   }
   if (island.classification && island.classification.source !== "manual") {
@@ -3480,8 +3501,17 @@ function renderDetails(island) {
     stats.push({
       label: "Classified by",
       value,
+      wide: true,
+      multiline: true,
     });
   }
+
+  const statClass = (s) => {
+    let c = "stat";
+    if (s.wide) c += " stat--wide";
+    if (s.multiline) c += " stat--multiline";
+    return c;
+  };
 
   const tags = (island.tags || [])
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
@@ -3528,11 +3558,11 @@ function renderDetails(island) {
 
     ${renderPropertyListings(island)}
 
-    <div class="stat-grid">
+    <div class="stat-grid" role="list" aria-label="Island facts">
       ${stats
         .map(
           (s) => `
-        <div class="stat">
+        <div class="${statClass(s)}" role="listitem">
           <div class="stat__label">${escapeHtml(s.label)}</div>
           <div class="stat__value">${s.value}</div>
         </div>`,
@@ -4334,7 +4364,7 @@ function renderGallery(island) {
     <div class="details-hero" id="details-hero" data-island-id="${escapeAttr(
       island.id,
     )}" data-active-idx="${primaryIdx}">
-      ${heroHtml}
+      <div class="details-hero__media">${heroHtml}</div>
       ${attribution}
       ${thumbStrip}
     </div>
@@ -4452,10 +4482,9 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
   hideMapIslandPeek();
   els.details.hidden = true;
   els.listSection.hidden = false;
-  if (mobileNav.isActive()) {
-    document.body.dataset.islandDetail = "closed";
-  }
   state.activeId = null;
+  document.body.dataset.islandDetail = "closed";
+  syncListVirtualPauseState();
   if (state.activePolygon) {
     map.removeLayer(state.activePolygon);
     state.activePolygon = null;
@@ -4465,6 +4494,7 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
     state.detailMap = null;
   }
   if (clearUrl) syncIslandUrl(null);
+  scheduleRenderListWindow();
 }
 
 function resetAtlasHome() {
@@ -7065,6 +7095,7 @@ const mobileNav = (() => {
     const detailOpen = !els.details.hidden;
     els.listSection.hidden = detailOpen;
     document.body.dataset.islandDetail = detailOpen ? "open" : "closed";
+    syncListVirtualPauseState();
     if (!detailOpen) scheduleRenderListWindow();
   }
 
@@ -7090,6 +7121,7 @@ const mobileNav = (() => {
         els.details.hidden = true;
         els.listSection.hidden = true;
         document.body.dataset.islandDetail = "suspended";
+        syncListVirtualPauseState();
         updateMapIslandPeek(state.activeId);
       } else {
         hideMapIslandPeek();
@@ -7103,6 +7135,7 @@ const mobileNav = (() => {
         els.details.hidden = false;
         els.listSection.hidden = true;
         document.body.dataset.islandDetail = "open";
+        syncListVirtualPauseState();
       } else {
         syncMobileSidebarPanels();
       }

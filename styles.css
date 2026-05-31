@@ -1570,6 +1570,67 @@ body.lightbox-open {
 /* ===== Details panel ===== */
 .island-details {
   padding: 16px;
+  position: relative;
+  z-index: 5;
+  background: var(--bg-elev);
+  isolation: isolate;
+}
+
+.island-details[hidden] {
+  display: none !important;
+}
+
+#island-list-section[hidden] {
+  display: none !important;
+}
+
+body[data-island-detail="open"] #island-list-section,
+body[data-island-detail="suspended"] #island-list-section {
+  display: none !important;
+}
+
+body[data-island-detail="open"] .sidebar {
+  overflow: hidden;
+}
+
+body[data-island-detail="open"] .island-details:not([hidden]) {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  contain: layout style;
+}
+
+.profile-body > * {
+  max-width: 100%;
+}
+
+.profile-body .section,
+.profile-body .ferry-section,
+.profile-body .detail-map-section,
+.profile-body .property-listings-section {
+  min-width: 0;
+}
+
+.details-title-row,
+.details-title-block {
+  min-width: 0;
+}
+
+.details-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .details-toolbar {
@@ -1613,19 +1674,33 @@ body.lightbox-open {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  position: relative;
 }
 
-.details-hero:has(.hero-img)::after {
+.details-hero__media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.details-hero:has(.hero-img) .details-hero__media::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 45%;
-  border-radius: 0 0 var(--radius) var(--radius);
-  background: linear-gradient(to top, rgba(12, 18, 25, 0.55), transparent);
+  height: 40%;
+  background: linear-gradient(to top, rgba(12, 18, 25, 0.45), transparent);
   pointer-events: none;
+}
+
+.details-hero:has(.hero-img)::after {
+  content: none;
+}
+
+.details-hero__media .hero-img {
+  display: block;
+  width: 100%;
+  border-radius: 0;
 }
 
 .details-hero .hero-img {
@@ -1994,29 +2069,62 @@ body.lightbox-open {
 
 .stat-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin: 12px 0;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+@media (min-width: 420px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat--wide {
+    grid-column: 1 / -1;
+  }
 }
 
 .stat {
   background: var(--bg-soft);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.stat--wide {
+  grid-column: 1 / -1;
+}
+
+.stat--multiline .stat__value {
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .stat__label {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 1px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .stat__value {
   font-weight: 600;
   font-size: 14px;
-  margin-top: 2px;
+  margin-top: 4px;
+  line-height: 1.35;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.stat__value .stat__muted,
+.stat__value span[style*="text-muted"] {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
 }
 
 .tags {
@@ -2039,7 +2147,7 @@ body.lightbox-open {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .subtype-chip {
@@ -2716,11 +2824,18 @@ body.lightbox-open {
     pointer-events: none;
   }
 
-  body[data-mobile-view="islands"][data-island-detail="open"] .island-list {
-    display: none;
+  body[data-mobile-view="islands"][data-island-detail="open"] .island-list,
+  body[data-island-detail="open"] #island-list-section {
+    display: none !important;
   }
 
-  body[data-mobile-view="islands"][data-island-detail="open"] .island-details {
+  body[data-mobile-view="islands"][data-island-detail="open"] .island-details,
+  body[data-island-detail="open"] .island-details {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     flex: 1 1 auto;
     min-height: 0;
     padding: calc(12px + var(--safe-top)) calc(12px + var(--safe-right))
@@ -2749,8 +2864,12 @@ body.lightbox-open {
   }
 
   body[data-mobile-view="islands"][data-island-detail="open"] .stat-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  body[data-mobile-view="islands"][data-island-detail="open"] .stat--wide {
+    grid-column: 1;
   }
 
   body[data-mobile-view="islands"][data-island-detail="open"] .details-title {
@@ -4363,6 +4482,14 @@ body.lightbox-open {
 #island-list.island-list__items {
   flex: 1 1 auto;
   min-height: 10rem;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
+}
+
+.list-virtual-inner {
+  z-index: 1;
+  will-change: transform;
 }
 
 .search-field {

@@ -1856,3 +1856,14 @@
   - Hero **gradient overlay**; external links as **button grid**; featured strip scroll fade.
   - Desktop **keyboard hint** under list; mobile nav **active tab indicator**; glass top bar.
 - **Outcome**: Cleaner map on phones, clearer filter feedback, more polished island profiles.
+
+## 2026-05-31 — Fix overlapping text in island profiles
+
+- **Goal**: Stop virtual list rows painting over profile stat cards; improve stat layout on all devices.
+- **Root cause**: Absolutely positioned virtual list layer bled through the sidebar stack when
+  profile and list shared the scroll container.
+- **Fix**: Pause/clear list layer whenever a profile is active (including map-tab suspend);
+  clip `#island-list`; full-screen profile overlay on mobile; desktop sidebar scrolls inside
+  profile only; `.profile-body` containment; stat cards single-column below 420px, word-wrap on
+  long fields; `data-island-detail` state on all viewports.
+- **Outcome**: Profile facts readable on phone, tablet, and desktop without list row ghosting.
