@@ -1965,8 +1965,10 @@
   `islands.json`** (~43 MB).
 - **What changed**:
   - `scripts/prepare_pages_artifact.py` — stages `_site/` with forced shards +
-    profiles; **omits monolithic `islands.json`** from production.
-  - `.github/workflows/pages.yml` — upload `_site` not repo root.
+    profiles; omits monolithic `islands.json` (wire in Pages workflow when OAuth
+    `workflow` scope available).
+  - **`data/shards/`** + **`profiles/`** force-added to git so current Pages
+    deploy (`path: .`) serves them (manifest was 404 before).
   - `build_islands_index.py` — split **`islands_index.json`** (7,041 named) +
     **`islands_unnamed_index.json`** (4,310 lazy overlay); slimmer index fields.
   - `app.js` — sequential shard merge; no monolithic fallback on findmyisland.com;
