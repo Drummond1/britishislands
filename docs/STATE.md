@@ -4,6 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-05-31 (atlas load fix v2 — compact index, lazy shards, _site deploy)** —
+First paint from v2 **`islands_index.json`** (~**0.9 MiB**, short-key stubs; was ~12 MiB).
+Unnamed overlay lazy (~**0.8 MiB**). Nation shards merge **on demand** when opening a
+profile (`ensureNationShardLoaded`) — no startup preload of all ~19 MiB shards. Pages CI
+stages **`_site/`** via `prepare_pages_artifact.py` (omits monolithic `islands.json`).
+Regenerate: `python3 scripts/build_islands_index.py`.
+
 **2026-05-30 (Google indexing — profile sitemap + static homepage SEO)** — Sitemap
 now lists **7,055** URLs: home, 13 ferry guides, **7,041** `/profiles/<id>.html`
 static pages (not `?island=` query strings). Homepage ships canonical, OG/Twitter,
@@ -602,12 +609,13 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 ## 4. Frontend state
 
-- **Two-phase island load**: `data/islands_index.json` first (includes `thumbUrl` for list
-  thumbnails), then parallel **nation shards** from `data/shards/` merge full records in
-  the background (`loadFullIslandRecordsBackground`); falls back to monolithic
-  `data/islands.json` if shards/manifest missing. Regenerate via
-  `scripts/build_islands_index.py` (also run on GitHub Pages deploy). At zoom ≤7, only
-  markers inside the viewport are painted (pan/zoom refreshes the layer).
+- **Two-phase island load**: v2 compact **`data/islands_index.json`** (~0.9 MiB; `version` +
+  short keys expanded in `app.js`) paints map + list first. Full records merge **on demand**
+  from nation shards when a profile opens (`ensureNationShardLoaded`); monolithic
+  `data/islands.json` is omitted from production `_site/` artifact and only used as local
+  dev fallback if index missing. Regenerate via `scripts/build_islands_index.py` (Pages
+  workflow runs this + `prepare_pages_artifact.py`). At zoom ≤7, only markers inside the
+  viewport are painted (pan/zoom refreshes the layer).
 - **Plan crossing**: sidebar form builds `?trip=startId,endId` and shows an
   itinerary banner under the header (ferry graph from `loadFerries()`).
 - Static app served by `python3 -m http.server` (currently port 8767).

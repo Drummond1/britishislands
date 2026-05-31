@@ -111,6 +111,78 @@ function prefersProductionShardLoad() {
   return host === "findmyisland.com";
 }
 
+/** Expand v2 compact index row (short keys) into atlas island stub. */
+function expandIndexRow(row) {
+  if (!row) return row;
+  if (row.name !== undefined) return row;
+  const island = {
+    id: row.id,
+    name: row.n,
+    lat: row.y,
+    lng: row.x,
+    type: row.t || "sea",
+    nation: row.o || "",
+  };
+  if (row.a != null) island.areaKm2 = row.a;
+  if (row.g) island.archipelago = row.g;
+  if (row.s) island.subtype = row.s;
+  if (row.p != null) island.population = row.p;
+  if (row.h) island.highestPointM = row.h;
+  if (row.ot) island.osmType = row.ot;
+  if (row.oi != null) island.osmId = row.oi;
+  if (row.img) island.hasImage = true;
+  if (row.sale) island.hasPropertyListing = true;
+  if (row.c) island.classification = { confidence: row.c };
+  return island;
+}
+
+function expandUnnamedRow(row) {
+  if (!row) return row;
+  if (row.nameStatus === "unknown") return row;
+  if (row.ns !== "unknown") return expandIndexRow(row);
+  const island = {
+    id: row.id,
+    name: "Unnamed island",
+    nameStatus: "unknown",
+    lat: row.y,
+    lng: row.x,
+    type: row.t || "lake",
+    nation: row.o || "",
+    tags: ["unnamed"],
+    hasImage: false,
+    hasPropertyListing: false,
+    classification: { confidence: "high", source: "unnamed-discovery" },
+  };
+  if (row.a != null) island.areaKm2 = row.a;
+  if (row.s) island.subtype = row.s;
+  if (row.ot) island.osmType = row.ot;
+  if (row.oi != null) island.osmId = row.oi;
+  if (row.wb || row.wt) {
+    island.parentWaterBody = { name: row.wb || "", type: row.wt || "" };
+  }
+  return island;
+}
+
+function parseIndexPayload(raw) {
+  if (Array.isArray(raw)) return raw.map(expandIndexRow);
+  if (raw && Array.isArray(raw.rows)) return raw.rows.map(expandIndexRow);
+  return [];
+}
+
+function parseUnnamedPayload(raw) {
+  if (Array.isArray(raw)) return raw.map(expandUnnamedRow);
+  if (raw && Array.isArray(raw.rows)) return raw.rows.map(expandUnnamedRow);
+  return [];
+}
+
+function runWhenIdle(fn, timeoutMs = 2500) {
+  if (typeof requestIdleCallback === "function") {
+    requestIdleCallback(fn, { timeout: timeoutMs });
+  } else {
+    setTimeout(fn, 80);
+  }
+}
+
 const NATION_SHARD = {
   Scotland: "scotland",
   Ireland: "ireland",
@@ -1944,11 +2016,12 @@ async function loadUnnamedIslandOverlay() {
     const res = await fetch("data/islands_unnamed_index.json");
     if (!res.ok) throw new Error(`unnamed index HTTP ${res.status}`);
     const rows = await res.json();
-    if (!Array.isArray(rows) || !rows.length) {
+    const expanded = parseUnnamedPayload(rows);
+    if (!expanded.length) {
       state.unnamedOverlayLoaded = true;
       return;
     }
-    for (const row of rows) {
+    for (const row of expanded) {
       if (state.byId.has(row.id)) continue;
       state.islands.push(row);
       state.byId.set(row.id, row);
@@ -1962,50 +2035,6 @@ async function loadUnnamedIslandOverlay() {
   }
 }
 
-async function loadFullIslandRecordsBackground() {
-  try {
-    const mRes = await fetch("data/shards/manifest.json");
-    if (!mRes.ok) {
-      if (prefersProductionShardLoad()) {
-        console.error("Nation shards missing on production — detail records unavailable");
-        return;
-      }
-      await loadMonolithicIslandFallback();
-      return;
-    }
-    const manifest = await mRes.json();
-    const shards = Array.isArray(manifest?.shards) ? manifest.shards : [];
-    if (!shards.length) {
-      if (prefersProductionShardLoad()) {
-        console.error("Empty shard manifest on production");
-        return;
-      }
-      await loadMonolithicIslandFallback();
-      return;
-    }
-    for (const s of shards) {
-      const slug = s.slug || String(s.file || "").replace(/\.json$/, "");
-      if (slug) await loadNationShard(slug);
-    }
-    state.fullRecordsReady = true;
-  } catch (err) {
-    console.warn("Nation shard load failed", err);
-    if (!prefersProductionShardLoad()) {
-      try {
-        await loadMonolithicIslandFallback();
-      } catch (fallbackErr) {
-        console.error("Failed to load full island records", fallbackErr);
-      }
-    }
-  } finally {
-    scheduleRenderListWindow();
-    if (state.activeId) {
-      const island = state.byId.get(state.activeId);
-      if (island) renderDetails(island);
-    }
-  }
-}
-
 async function loadIslands() {
   setAppLoading(true);
   let settleIslandsIndex;
@@ -2016,24 +2045,30 @@ async function loadIslands() {
   try {
     const idxRes = await fetch("data/islands_index.json");
     if (idxRes.ok) {
-      const indexRows = await idxRes.json();
-      if (Array.isArray(indexRows) && indexRows.length > 0) {
+      const indexPayload = await idxRes.json();
+      const indexRows = parseIndexPayload(indexPayload);
+      if (indexRows.length > 0) {
         state.islands = indexRows;
         state.byId = new Map(indexRows.map((i) => [i.id, i]));
         settleIslandsIndex?.();
         usedIndex = true;
         initFavoritesState();
+        initPropertyListingState();
         populateNationFilter();
         populateSubtypeFilter();
         renderScotlandQuickChips();
         renderBrowseQuickChips();
+        await new Promise((r) => requestAnimationFrame(r));
+        setAppLoading(false);
         applyFilters();
-        loadCrowdPinsAndRender();
-        loadFerries().catch(() => {});
-        loadFeaturedIslands().catch(() => {});
-        loadDiscoveryTopics().catch(() => {});
-        loadFullIslandRecordsBackground().catch(() => {});
-        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+        applyRouteFromUrl();
+        runWhenIdle(() => {
+          loadCrowdPinsAndRender();
+          loadFerries().catch(() => {});
+          loadFeaturedIslands().catch(() => {});
+          if (!state.discoveryTopics) loadDiscoveryTopics().catch(() => {});
+        });
+        return;
       }
     }
 

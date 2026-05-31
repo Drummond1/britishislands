@@ -1976,3 +1976,13 @@
     hides unnamed pins.
 - **Outcome**: Home first paint ~**12 MB** index + background shards (~19 MB split);
   unnamed +**1.7 MB** on demand; **7,033** profile landings ship in CI artifact.
+
+## 2026-05-31 — Atlas load fix v2 (compact index + lazy shards)
+
+- **Goal**: Fix atlas still feeling broken after shard deploy — reduce parse/blocking on main thread.
+- **Root cause**: Index stubs still ~**12 MB** (descriptions/thumbs in list payload); startup eagerly fetched and parsed **all 7 nation shards** (~19 MB) before the UI settled.
+- **What changed**:
+  - `build_islands_index.py` — v2 compact index (`version` + short keys): **7041** rows **~0.9 MiB** (was ~12 MiB); unnamed overlay **~0.8 MiB**.
+  - `app.js` — `parseIndexPayload` / `expandIndexRow`; hide loader before `applyFilters`; defer crowd pins / ferries / featured / discovery to `requestIdleCallback`; **removed eager shard preload** — full records merge on demand via `ensureNationShardLoaded()` when opening a profile.
+  - `.github/workflows/pages.yml` — run `prepare_pages_artifact.py`, deploy `_site/` (omits monolithic `islands.json`).
+- **Outcome**: First paint ~**0.9 MiB** index gzip ~100–150 KiB; no 19 MB shard parse at startup; production artifact drops **27 MB** `islands.json` when CI workflow deploys.
