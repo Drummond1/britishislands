@@ -131,7 +131,7 @@ function islandDisplayName(island) {
   return island.name || "Unnamed island";
 }
 
-const ROW_HEIGHT = 76; // px, must match .island-card sizing (incl. thumbnail)
+const ROW_HEIGHT = 100; // px — card body + margin-bottom (see .island-card in styles.css)
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
 
 const OVERPASS_ENDPOINTS = [

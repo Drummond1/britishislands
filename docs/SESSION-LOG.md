@@ -1995,3 +1995,19 @@
   - `app.js` — prefetch `islands_index.json` at module init; boot `applyFilters({ skipMarkers, skipSort })`; dismiss loader after list paints; **chunked** deferred marker build via `requestIdleCallback`; lazy tooltips at zoom ≤7; boot grace on `moveend` rebuild; dynamic `import()` for island-3d; on-demand proj4; block monolith fallback on production.
   - `index.html` — preload index + modulepreload app.js; remove sync proj4 scripts (~95 KB raw).
 - **Outcome**: Spinner clears after list virtual window; markers paint in background chunks; critical path ~**30 KB** lighter scripts.
+
+## 2026-06-01 — Documentation review (agent context)
+
+- **Goal**: Retain context efficiently for future sessions; document recent production architecture.
+- **What changed**:
+  - **New:** `docs/AGENT-QUICKREF.md` (one-page cheat sheet), `DEPLOYMENT.md`, `FRONTEND-PERFORMANCE.md`, `3D-TERRAIN.md`.
+  - **Updated:** `ARCHITECTURE.md` (runtime flow, deployment, module map), `AGENTS.md` (production URL, file tree, reading order), `INDEX.md` (reading paths).
+- **Outcome**: Agents can diagnose load/deploy/3D issues without replaying May 2026 session history.
+
+## 2026-06-01 — Airbnb-tier visual polish (CSS-only)
+
+- **Goal**: Elevate findmyisland.com UI to hosted-marketplace quality without breaking behaviour.
+- **What changed**:
+  - `styles.css` — layered card surfaces, pill search + nav controls, listing-style island rows (shadow/hover), profile hero radius, refined loader + chat launcher, mobile bottom nav; **removed ~600 lines** of duplicate “Design refinement 2026” overrides (single source of truth).
+  - `app.js` — `ROW_HEIGHT` 100 to match taller list cards (virtual scroll).
+- **Outcome**: Cleaner hierarchy and whitespace; no JS feature changes.
