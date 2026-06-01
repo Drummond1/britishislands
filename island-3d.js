@@ -3,8 +3,8 @@
  * Heightmaps: data/terrain/{id}.json (Mapzen Terrarium DEM).
  */
 
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js";
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 /** Showcase islands with pre-generated terrain tiles. */
 const SHOWCASE_3D_IDS = new Set([
