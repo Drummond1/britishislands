@@ -95,8 +95,6 @@ def _should_skip_file(path: Path, rel: str) -> bool:
     if rel.startswith("data/discovery/") and path.suffix == ".json":
         # Large discovery audit JSONs — not needed on the static site
         return True
-    if rel.startswith("data/terrain/"):
-        return True
     return False
 
 
@@ -136,6 +134,7 @@ def main() -> None:
     # Force-include CI outputs that .gitignore hides from git (may not be in copy_tree if absent)
     for forced in (
         ROOT / "data" / "shards",
+        ROOT / "data" / "terrain",
         ROOT / "profiles",
         ROOT / "sitemap.xml",
         ROOT / "robots.txt",

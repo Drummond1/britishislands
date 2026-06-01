@@ -299,12 +299,24 @@ export async function mountIsland3D(container, island, options = {}) {
   const reducedMotion = prefersReducedMotion();
   const autoRotate = !reducedMotion && options.autoRotate !== false;
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  let renderer;
+  let scene;
+  let controls;
+  let frameId;
+  let ro;
+  try {
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  } catch (err) {
+    setContainerState(container, "error", "WebGL unavailable in this browser");
+    return;
+  }
+
+  try {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setClearColor(0x0f1620, 1);
   container.appendChild(renderer.domElement);
 
-  const scene = new THREE.Scene();
+  scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0x0f1620, 800, 3200);
 
   const { geo, seaLevel, yScale, widthM, depthM } = buildTerrainGeometry(terrain);
@@ -346,7 +358,7 @@ export async function mountIsland3D(container, island, options = {}) {
   camera.position.set(span * 0.35, span * 0.55, span * 0.85);
   camera.lookAt(0, span * 0.08, 0);
 
-  const controls = new OrbitControls(camera, renderer.domElement);
+  controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.06;
   controls.target.set(0, span * 0.06, 0);
@@ -365,11 +377,14 @@ export async function mountIsland3D(container, island, options = {}) {
     renderer.setSize(w, h, false);
   };
 
-  const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
+  ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
   ro?.observe(container);
   resize();
+  if (container.clientWidth < 1 || container.clientHeight < 1) {
+    requestAnimationFrame(resize);
+  }
 
-  let frameId = 0;
+  frameId = 0;
   const animate = () => {
     frameId = requestAnimationFrame(animate);
     controls.update();
@@ -412,6 +427,20 @@ export async function mountIsland3D(container, island, options = {}) {
 
   instances.set(container, instance);
   setContainerState(container, "ready");
+  } catch (err) {
+    console.warn("3D terrain render failed", islandId, err);
+    renderer?.dispose?.();
+    if (renderer?.domElement?.parentNode === container) {
+      container.removeChild(renderer.domElement);
+    }
+    setContainerState(
+      container,
+      "error",
+      err?.message?.includes("Invalid terrain")
+        ? "Terrain data invalid"
+        : "Could not render 3D terrain",
+    );
+  }
 }
 
 /**

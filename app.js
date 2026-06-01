@@ -43,11 +43,58 @@ function isShowcase3DIsland(id) {
 }
 
 let _island3dModulePromise = null;
+let _terrainMountGen = 0;
+
 function loadIsland3dModule() {
   if (!_island3dModulePromise) {
     _island3dModulePromise = import("./island-3d.js");
   }
   return _island3dModulePromise;
+}
+
+function cancelTerrainMount() {
+  _terrainMountGen += 1;
+}
+
+function showTerrainMountError(container, err) {
+  if (!container) return;
+  container.classList.remove("island-3d-view--loading", "island-3d-view--ready");
+  container.classList.add("island-3d-view--error");
+  let status = container.querySelector(".island-3d-view__status");
+  if (!status) {
+    status = document.createElement("p");
+    status.className = "island-3d-view__status";
+    status.setAttribute("role", "status");
+    container.appendChild(status);
+  }
+  const msg = err?.message || String(err || "Could not load 3D terrain");
+  status.textContent = msg.includes("import") || msg.includes("Failed to fetch")
+    ? "3D viewer failed to load — check your connection and refresh"
+    : msg;
+}
+
+/** Mount terrain after layout; survives double renderDetails from shard merge. */
+function scheduleIsland3DMount(island) {
+  if (!isShowcase3DIsland(island?.id)) return;
+  const gen = ++_terrainMountGen;
+  const islandId = island.id;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (gen !== _terrainMountGen || state.activeId !== islandId) return;
+      const view3d = document.getElementById("island-3d-view");
+      if (!view3d) return;
+      loadIsland3dModule()
+        .then((m) => {
+          if (gen !== _terrainMountGen || state.activeId !== islandId) return;
+          return m.mountIsland3D(view3d, island, { autoRotate: true });
+        })
+        .catch((err) => {
+          console.warn("3D terrain mount failed", islandId, err);
+          if (gen !== _terrainMountGen || !view3d.isConnected) return;
+          showTerrainMountError(view3d, err);
+        });
+    });
+  });
 }
 
 /** Start index fetch during module init (parallel with map setup). */
@@ -3264,6 +3311,7 @@ function focusIsland(id, { fly } = { fly: true }) {
   const openIsland = (island) => {
     if (!island || state.activeId !== id) return;
     renderDetails(island);
+    scheduleIsland3DMount(island);
     if (mobileNav.isActive()) mobileNav.setView("islands");
 
     if (fly) {
@@ -3764,6 +3812,7 @@ function renderDetails(island) {
   const altNames = renderAltNames(island);
   const sourcesBlock = renderSourcesBlock(island);
 
+  cancelTerrainMount();
   const prev3dView = document.getElementById("island-3d-view");
   if (prev3dView) {
     loadIsland3dModule()
@@ -3913,15 +3962,6 @@ function renderDetails(island) {
   });
 
   requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
-
-  if (isShowcase3DIsland(island.id)) {
-    const view3d = document.getElementById("island-3d-view");
-    if (view3d) {
-      loadIsland3dModule()
-        .then((m) => m.mountIsland3D(view3d, island, { autoRotate: true }))
-        .catch(() => {});
-    }
-  }
 
   renderDetailMap(island);
 }
