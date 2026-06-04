@@ -471,23 +471,24 @@
           <span class="map-island-peek__cta">View island →</span>
         </button>
         <div id="map-hint" class="map-hint" role="status" hidden>
-          <p class="map-hint__text">Tap a dot on the map, or open the <strong>Islands</strong> tab to browse.</p>
+          <p class="map-hint__text">Tap a pin on the map, or open the <strong>Islands</strong> tab to browse.</p>
           <button type="button" class="map-hint__close" id="map-hint-close" aria-label="Dismiss map hint">×</button>
         </div>
         <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
         <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
         <details class="legend-wrap">
           <summary class="legend-wrap__toggle">Map key</summary>
-          <div class="legend" role="list" aria-label="Map legend">
-          <span role="listitem"><i class="dot dot--sea"></i> Sea</span>
-          <span role="listitem"><i class="dot dot--lake"></i> Loch / lake</span>
-          <span><i class="dot dot--river"></i> River</span>
-          <span role="listitem"><i class="dot dot--unknown"></i> Needs review</span>
-          <span role="listitem"><i class="dot dot--unnamed"></i> Unnamed</span>
-          <span role="listitem"><i class="dot dot--explore"></i> Topic</span>
-          <span role="listitem"><i class="dot dot--crowd"></i> Community</span>
-          <span role="listitem"><i class="dot dot--for-sale" aria-hidden="true">£</i> For sale</span>
-          <span><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
+          <div class="legend" role="list" aria-label="Map pin colours">
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--sea" aria-hidden="true"></i> Sea</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--lake" aria-hidden="true"></i> Loch / lake</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--river" aria-hidden="true"></i> River</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--unknown" aria-hidden="true"></i> Needs review</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--unnamed" aria-hidden="true"></i> Unnamed <span class="legend__glyph-hint" aria-hidden="true">?</span></span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--explore" aria-hidden="true"></i> Topic</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--for-sale" aria-hidden="true"></i> For sale</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--cluster" aria-hidden="true"></i> Cluster</span>
+            <span class="legend__item" role="listitem"><i class="legend-pin legend-pin--crowd" aria-hidden="true"></i> Community</span>
+            <span class="legend__item" role="listitem"><i class="legend-heart" aria-hidden="true">♥</i> Saved</span>
           </div>
         </details>
       </section>

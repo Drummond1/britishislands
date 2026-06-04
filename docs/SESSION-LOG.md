@@ -16,7 +16,25 @@
 
 ---
 
-## 2026-05-10 — Initial prototype
+## 2026-06-02 — Web photo URL discovery harvester
+
+- **Goal**: ETHICS-safe “outside the box” licensed photo discovery from open-web
+  links (Wikidata P973/P856, Wikipedia external links, DuckDuckGo HTML, og:image
+  on OGL/CC/gov pages) without social scraping.
+- **What changed**:
+  - Added `scripts/discover_island_photo_urls.py` — priority queue (curated →
+    ferry → large area → wikidata), host allowlist verification, staging to
+    `data/staging/adoptions/web-discovery.json`, cache
+    `data/cache_web_photo_discovery.json`.
+  - Fixed Wikipedia `extlinks` API call (removed invalid `elprotocol` param).
+  - Batch `wbgetentities` prefetch for P973/P856 + enwiki sitelink; HTTP 429
+    backoff; DuckDuckGo lite fallback.
+- **Outcome / counts**: `--limit 200` pass → **0 staged** (priority tier is
+  obscure Hebridean islets with sparse P973/extlinks; Wikimedia 429 during run).
+  Manual geograph `/photo/` verify path confirmed working. Re-run with
+  `--refresh --delay 3` after API cooldown for named enwiki islands.
+- **Open items kicked to QUEUE.md**: none.
+
 
 - **Goal**: Stand up a static web app that lists and maps every island within
   ~50 miles of the UK & Ireland.
@@ -2011,3 +2029,408 @@
   - `styles.css` — layered card surfaces, pill search + nav controls, listing-style island rows (shadow/hover), profile hero radius, refined loader + chat launcher, mobile bottom nav; **removed ~600 lines** of duplicate “Design refinement 2026” overrides (single source of truth).
   - `app.js` — `ROW_HEIGHT` 100 to match taller list cards (virtual scroll).
 - **Outcome**: Cleaner hierarchy and whitespace; no JS feature changes.
+
+## 2026-06-02 — Wikidata P373 Commons category harvester
+
+- **Goal**: Fill named atlas islands with Q-IDs but no photo via Wikidata **P373**
+  (Commons category), bypassing v3’s commonswiki sitelink-only lookup.
+- **What changed**:
+  - **New:** `scripts/enrich_images_wikidata_p373.py` — `wbgetentities` P373,
+    `categorymembers`, quality/name scoring (v3 parity + filename name-match pass),
+    `source: commons-category-p373`, cache `data/cache_wikidata_p373.json`,
+    report `data/image_enrichment_wikidata_p373_report.json`, `--named-only`,
+    `--limit`, atomic writes.
+- **v3 diagnosis**: `enrich_images_v3` source A uses **commonswiki sitelink**, not
+  P373 — explains `image_enrichment_v3_report.json` **0** commons-category adoptions
+  on 3,500 targets (sitelink absent even when P373 exists on other islands).
+- **Run**: `--named-only --limit 300` → **0 adoptions** (297/300 targets lack P373;
+  3 with P373 only contain Admiralty charts / outline SVGs; `Sealwatching1444.jpg`
+  false-positive on v3 `seal` non-photo regex). Full pending scan: **9/963** named
+  Q-ID islands have P373; none yielded a licensable landscape photo.
+- **Outcome**: Script ready for incremental re-runs; low yield on current pending
+  pool (mostly shoals/banks without Commons photo categories).
+
+## 2026-06-02 — Verified photo push toward 6,000 (multi-agent)
+
+- **Goal**: Raise named-atlas photo coverage past **6,000** with ~**90%** confidence and verification on each adoption.
+- **What changed**:
+  - **Agents (parallel):** `scripts/verify_island_images.py` (confidence scoring + audit report); `scripts/adopt_photos_from_cache.py` (cache-only high-confidence adoptions); `scripts/enrich_images_geosearch_verified.py`; v5 flags `--min-confidence high`, `--named-only`, `--delay`, `--geosearch-radius`; `data/photo_push_analysis.json`.
+  - **Orchestrator:** `scripts/run_photo_push.sh` (sequential single-writer pipeline; lock file).
+  - **Runs:** v5 p18 (+15 high), osm-tags (+4), cache adopt (+**~266** commons-text-search with `imageConfidence: high` + `verifiedAt`); index + shards rebuilt.
+  - **Verification:** `data/image_verification_report.json` — bands ≥90 / 80–89 / <80; suspect list for geosearch name mismatches.
+- **Outcome / counts**: Named atlas **3,597 → 3,863** with lead photo (**+266** verified this session). Gap to 6,000: **2,137**. Commons **429** rate limits block live text-search/geosearch API batches (0 adoptions from live attempts). Overnight `run_photo_push.sh` started for off-peak retries.
+- **Open items**: Resume push when Commons limits clear; do **not** run v3/v5 writers in parallel (checkpoint overwrite risk); consider `--fix-suspect` on legacy geosearch leads separately from count target.
+
+## 2026-06-02 — Diverse photo sources push (+414)
+
+- **Goal**: Maximize new verified lead photos for named atlas islands using disparate sources (outside v5-only path).
+- **What changed**:
+  - Added **`scripts/run_diverse_photo_sources.sh`** (lock file, sequential phases).
+  - Ran full pipeline: `adopt_photos_from_cache`, `enrich_images_geograph_commons` (cache-only), `enrich_images_wikidata_p373`, `enrich_images_multilang_wiki`, `enrich_images_openverse` (2×200), v5 p18/osm-tags; Mapillary skipped (no token).
+- **Outcome / counts**: Named with photo **3,871 → 4,285** (**+414**). Breakdown: **geograph-via-commons 411**, cache adopt **3**, openverse **2**; P373 / multilang / v5 API phases **0** (867/876 Q-IDs lack P373+sitelink; Commons live paths still thin). Index rebuilt. Verification: **1,136 ≥90**, **1,485** at 80–89, **1,664** &lt;80 on 4,285 leads.
+- **Open items**: Re-run `enrich_images_geograph_commons.py --cache-only` after more `cache_commons_text` keys; Openverse batches when API healthy; `MAPILLARY_ACCESS_TOKEN` for tiny islets; v5 text-search off-peak for remaining **2,756** without photo.
+
+## 2026-06-02 — Multilang Wikipedia / Wikivoyage pageimages
+
+- **Goal**: Photo islands still missing images via cy/ga/gd/fr/de Wikipedia and Wikivoyage sitelinks (priority: en Wikivoyage → Celtic wikis → fr/de).
+- **What changed**:
+  - **New:** `scripts/enrich_images_multilang_wiki.py` — Wikidata sitelinks, per-wiki `pageimages`, Commons licence via v5 `fetch_commons_meta`; caches `cache_multilang_sitelinks.json`, `cache_multilang_pageimages.json`; report `image_enrichment_multilang_report.json`; named-only default; source codes `wikivoyage`, `wikipedia-cy`, etc.
+- **Outcome / counts**: Pilot `--limit 200` — **1** adoption (`csv-geocoded-Q108407584` via `wikipedia-de`, CC BY-SA 2.0); **200** attempted; only **5** multilang page titles among first 200 Q-ID queue (sparse sitelinks). One Wikidata **429** during sitelink prefetch (30s backoff, continued).
+- **Open items**: Run larger batch off-peak; most pending named islands lack cy/ga/gd/fr/de/Wikivoyage sitelinks — pair with P373 / geosearch sources for volume.
+
+## 2026-06-02 — Mapillary street-level enrichment script
+
+- **Goal**: Prototype CC-BY-SA Mapillary v4 photos for small named islands still without `images[]`.
+- **What changed**: `scripts/enrich_images_mapillary.py` — bbox query + 300 m centroid check, optional `areaKm2 < 0.5` filter, `imageConfidence: medium`, cache + report; dry-run `--limit 50`.
+- **Outcome / counts**: Graph API **requires** token (`Invalid OAuth 2.0 Access Token` without one). **0** adoptions in workspace (no `MAPILLARY_ACCESS_TOKEN` set). Probe + report at `data/image_enrichment_mapillary_report.json`.
+- **Open items**: Register client token at mapillary.com/dashboard/developers; re-run with `MAPILLARY_ACCESS_TOKEN=MLY|… python3 scripts/enrich_images_mapillary.py --limit 50`.
+
+## 2026-06-02 — Category-coloured map pins + legend
+
+- **Goal**: Distinct, accessible map pin colours per island category (type, unnamed, topic, for-sale) with a polished map key on light OSM tiles.
+- **What changed**:
+  - **`app.js`**: Replaced viewport `circleMarker` paints with `L.divIcon` teardrop pins (`MAP_PIN_SVG`, `getIslandPinCategory`, `makeCategoryPinIcon`); neutral custom cluster bubbles (`makeClusterIcon`); for-sale layer uses gold pin + £ glyph (same interactions).
+  - **`styles.css`**: Pin fill tokens aligned to `:root` (`--explore`, `--cluster`, `--pin-stroke`); `.map-pin--*` / `.map-pin__glyph` badges (`?`, `◆`, `£`); compact 2-column `.legend` with `.legend-pin` swatches.
+  - **`index.html`**: Map key items match pin categories + cluster row; map hint copy “pin” not “dot”.
+- **Outcome / counts**: Seven pin categories + neutral clusters; for-sale still on dedicated pane (excluded from cluster). Boot path unchanged (chunked `rebuildMarkerLayer`, lazy tooltips ≤7).
+- **Open items**: None — photo/has-image pin variant deferred to avoid legend clutter.
+
+## 2026-06-02 — Openverse image enrichment
+
+- **Goal**: Lead photos for named atlas islands without `images[]` via Openverse API (CC0 / PDM / BY / BY-SA only).
+- **What changed**:
+  - **New:** `scripts/enrich_images_openverse.py` — name + nation query, optional `lat`/`lon` bias, v5 word-boundary name match, 15 km geo (5 km generic names), caches `data/cache_openverse.json`, report `data/image_enrichment_openverse_report.json`, backup `islands.json.before-openverse`.
+- **Outcome / counts**: Pilot `--limit 100 --named-only` — **2** adoptions (**2%** hit rate): `osm-way-186667713` (Abbey Island, CC-BY-SA-2.0 Flickr), `osm-way-146468873` (Aigeach, CC-BY-SA-2.0). API healthy; strict name/geo filters reject most homonyms.
+- **Open items**: Larger off-peak batch on distinctive Gaelic/English names; consider Gaelic `names.*` in Openverse query string.
+
+## 2026-06-02 — Wikidata P373 Commons staging pass
+
+- **Goal**: Harvest P373 (+ commonswiki sitelink fallback) for photoless Q-ID islands; stage adoptions without touching `islands.json`.
+- **What changed**:
+  - **`scripts/enrich_images_wikidata_p373.py`**: default output `data/staging/adoptions/p373-commons.json`; `--apply` opt-in for `islands.json`; P373 then sitelink category resolution; name-match + quality pick (v3 parity).
+  - **Caches warmed** (cache-first): `data/cache_wikidata_p373.json` (963 Q-IDs, **9** with P373).
+- **Outcome / counts**: `--named-only --limit 500` then full **876** photoless Q-ID pool — **0 staged**. Breakdown: **867** no category; **9** category but members are maps/charts only (`no_photo`). v3 `commons-category: 0` explained: v3 never read P373; for this pool P373-only gain is **0** (all 9 with P373 already had sitelink); sitelink-only among photoless = **0**.
+- **Open items**: P373/geosearch not viable for volume on this queue — prioritize geosearch-verified, multilang wiki, Openverse, cache commons-text per `run_photo_push.sh`.
+
+## 2026-06-02 — Staged photo adoptions merge (single writer)
+
+- **Goal**: Safely merge parallel harvester output from `data/staging/adoptions/*.json` into `islands.json` after a 10-minute soak.
+- **What changed**:
+  - **`scripts/merge_staged_photo_adoptions.py`**: dedupe by island id (highest confidence); backup `islands.json.before-staged-merge`; atomic write; lead-photo-only; stamp `imageConfidence` + `verifiedAt`; report `data/staged_merge_report.json`; rebuild index.
+  - **`docs/STATE.md`**: merger row in Currently running (cleared when done).
+- **Outcome / counts**: 10 min soak → **4** staging files (**416** raw rows). **Merged +5** (`openverse` only). **Skipped 411** (`geograph-commons.json` — island already had lead photo). **0** cross-file dedupe conflicts. Named atlas with photo **4,285 → 4,290** (+5). Gap to 6,000: **2,751**.
+- **Open items**: Re-run geograph staging against islands still without photos, or apply geograph via `--apply` on a fresh index snapshot; investigate why 411 geograph candidates already had photos at merge time.
+
+## 2026-06-02 — Commons text warm + regional category staging
+
+- **Goal**: Maximise Commons coverage without geosearch 429s — warm text cache, re-run Geograph-on-Commons cache pass, stage regional category matches.
+- **What changed**:
+  - **New:** `scripts/warm_commons_text_cache.py` — `"{name}"` + `"{name}" geograph` into `cache_commons_text.json`; `--delay 3`; stop on HTTP 429; no `islands.json` writes.
+  - **New:** `scripts/enrich_images_commons_regional.py` — nation root categories + cached per-island category scan (`--cache-only`); stages `data/staging/adoptions/commons-deep.json`.
+  - Re-ran `enrich_images_geograph_commons.py --cache-only` before/after warm.
+- **Outcome / counts**: Warm `--limit 500` — **+1** cache key (`3,002 → 3,003`); stopped on **429** after ~2 queries (Commons hot). Geograph cache-only re-run — **0** staged (photoless queue **2,751**; prior geograph merges already applied). Regional — **2** staged via cached categories: Stac Levenish, Piper's Island. Live Scotland root walk saw **126** files, **0** name matches (strict `_mentions`; API 429 on follow-up searches).
+- **Open items**: Resume `warm_commons_text_cache.py` off-peak until ~2,700 missing keys filled; then geograph `--cache-only` again; regional live pass when 429 clears.
+
+## 2026-06-02 — Flickr + Europeana + Openverse photo staging
+
+- **Goal**: Lead photos for named atlas islands without `images[]` via Europeana, Flickr CC/Commons, and extended Openverse (`--limit 800`).
+- **What changed**:
+  - **New:** `scripts/enrich_images_flickr_europeana.py` — Europeana `reusability=open` + `TYPE:IMAGE`, Flickr `photos.search` (licences 4/5/9/10), tag-feed fallback when no `FLICKR_API_KEY`; caches `cache_europeana.json`, `cache_flickr_cc.json`, `cache_flickr_commons_feed.json`; stages `flickr-europeana.json`.
+  - **`enrich_images_openverse.py`**: `MAX_LIMIT` raised **500 → 800**.
+  - **`.env.local.example`**: documented `EUROPEANA_API_KEY`, `FLICKR_API_KEY`.
+- **Outcome / counts**: No API keys in env — Europeana/Flickr API skipped; feed fallback **0** (Flickr JSON feeds omit CC licence URLs). `flickr-europeana.json` **0** staged (50-island probe). Openverse `--limit 800 --named-only` — **+3** staged (`openverse.json`): Cliffs of Moher row, Cruagh, De'il's Heid. **2,751** named still photoless.
+- **Open items**: Add Europeana + Flickr keys to `.env.local`, re-run `enrich_images_flickr_europeana.py`; merge new staging via `merge_staged_photo_adoptions.py`.
+
+## 2026-06-02 — OGL / public-sector tourism photo staging
+
+- **Goal**: Allowlisted OGL/CC harvest from UK/Ireland public open data (not press libraries); stage with name match.
+- **What changed**:
+  - **New:** `scripts/enrich_images_ogl_tourism.py` — Commons regional island categories (261 cats, 8,543 files indexed); data.gov.uk CKAN OGL image resource indexer; blocks NatureScot/NE/NRW/Fáilte/VisitScotland/Canmore with reasons in report; prioritises islands with filename candidates before `--limit`.
+  - **Outputs:** `data/staging/adoptions/ogl-tourism.json`, `data/cache_ogl_commons_regional.json`, `data/image_enrichment_ogl_tourism_report.json`.
+- **Outcome / counts**: `--named-only --limit 400` — **21 staged** (all `commons-regional-category`; CC-BY-SA/BY-4.0 via Commons). **21** of 2,751 named photoless had filename candidates in regional trees; data.gov.uk OGL image resources **0**. Blocked sources documented (7). Some homonym risk on generic names (“The Field”, “Goose Island”).
+- **Open items**: Merge via `merge_staged_photo_adoptions.py`; manual review homonyms; expand data.gov.uk seeds or trove.scot when machine OGL path exists.
+
+## 2026-06-02 — iNaturalist CC observation staging
+
+- **Goal**: Lead photos for small named islands without `images[]` via iNaturalist research-grade CC observations near centroid.
+- **What changed**:
+  - **New:** `scripts/enrich_images_inaturalist.py` — named index only; eligibility `areaKm2` < 1 or skerry-like; API query radius 0.5 km; adopt within 300 m; landscape/coastal filter (habitat taxa, coastal place text, landscape aspect); explicit CC on observation + photo; stages `data/staging/adoptions/inaturalist.json`; cache `data/cache_inaturalist.json`; report `data/image_enrichment_inaturalist_report.json`.
+- **Outcome / counts**: `--named-only --limit 300` — **18 staged** (**6%** hit rate). Licences: CC-BY-4.0, CC-BY-SA-4.0, CC0-1.0. Most small Hebridean skerries have zero iNat coverage within 500 m.
+- **Open items**: Merge via `merge_staged_photo_adoptions.py`; optional wider batch on English/Welsh coastal islets with higher iNat density.
+
+## 2026-06-02 — Internet Archive / NLS / BL Flickr / Wellcome staging
+
+- **Goal**: Historical open photos from Archive, NLS, British Library Flickr Commons, and Wellcome; stage with strict licence + name match.
+- **What changed**:
+  - **New:** `scripts/enrich_images_archive_nls.py` — IA `advancedsearch.php` (`mediatype:image`, PD/CC filter in code), NLS digital gallery probe (no public JSON API), NLS + BL Flickr Commons feeds (`14456531@N07`, `12403504@N02`) and optional `FLICKR_API_KEY` REST (`license=7`), Wellcome `/catalogue/v2/images` with name-only query fallback; unified `data/cache_archive_nls.json`; stages `data/staging/adoptions/archive-nls.json`.
+- **Outcome / counts**: API probe — **IA ok**, **Wellcome ok**, **NLS gallery unavailable**, **BL/NLS Flickr feeds ok** (no `FLICKR_API_KEY`). `--named-only --limit 300` (~83 min): **1** staged (**0.3%**) — Wellcome `ararat` / Mount Ararat homonym; cleared from `archive-nls.json`; `_title_mentions_nation` guard added. **0** from IA/BL/NLS Flickr under strict licence + name rules. Re-run recommended for a clean batch.
+- **Open items**: Let `--limit 300` finish; merge via `merge_staged_photo_adoptions.py`; add `FLICKR_API_KEY` for BL/NLS text search.
+
+## 2026-06-02 — Staged photo merge #2 (OGL + iNat + regional)
+
+- **Goal**: Single-writer merge of new staging after diverse/geograph push; rebuild index.
+- **What changed**:
+  - Polled ~20 min until no process held `islands.json` open (`archive_nls` still staging-only).
+  - **`merge_staged_photo_adoptions.py`** (unified path — not per-harvester `--apply`).
+  - `python3 scripts/build_islands_index.py`.
+  - **`docs/STATE.md`**: merge #2 counts + Currently running.
+- **Outcome / counts**: **+45** merged — **commons-regional-category 23**, **inaturalist-obs 18**, **openverse 3**, **wellcome-collection 1** (by staging file: ogl-tourism 21, inaturalist 18, openverse 3, commons-deep 2, archive-nls 1; 2 ogl rows deduped with commons-deep). Named with photo **4,290 → 4,335**. Cumulative today: diverse push **+414** (incl. **411** `geograph-via-commons` on islands before staged merge #1); merge #1 **+5** openverse; merge #2 **+45**. Gap to 6,000: **2,706**.
+- **Open items**: Let `archive_nls` finish and merge again; re-stage geograph for remaining photoless queue.
+
+## 2026-06-02 — Staged merge soak + index verify (subagent)
+
+- **Goal**: Poll until harvesters finish staging; ensure single-writer merge; rebuild index + verify images.
+- **What changed**:
+  - Polled `data/staging/adoptions/*.json` every **90 s** for **45 min** (no `--apply` writers; blocked concurrent merges until clear).
+  - Fixed `merge_staged_photo_adoptions.py` backup to `shutil.copy2` **before** in-memory edits.
+  - Waited for `enrich_images_archive_nls.py --limit 300` (~83 min total; **1** staged, homonym-only).
+  - Post-soak `merge_staged_photo_adoptions.py`: **0** new (44 deduped candidates skipped — already had photo from merge #2).
+  - `build_islands_index.py` + `verify_island_images.py`.
+  - **`docs/STATE.md`**: soak + verify counts; archive_nls complete.
+- **Outcome / counts**: Named with photo **4,335** / 7,041. Merge #2 sources (already applied): **commons-regional-category 23**, **inaturalist-obs 18**, **openverse 3**, **wellcome-collection 1**. Verification bands: **≥90** 1,136 / **80–89** 1,485 / **<80** 1,714. Gap to **6,000**: **2,665**.
+- **Open items**: Re-stage geograph for **2,706** photoless named islands; resume Commons cache warm off-peak; v5 text-search when 429 clears.
+
+- **Verify fix** (`verify_island_images.py --fix-suspect --min-confidence 85` + index rebuild): named with photo **4,335 → 2,621** (**−1,714** leads &lt;85 removed; **Brothers** / **Brake** / **Barrels** openverse false positives cleared). Gap to **6,000**: **3,379**. Backup: `data/islands.json.before-verify`.
+
+## 2026-06-02 — Revert broad verify --fix-suspect (correction)
+
+- **Goal**: Undo accidental mass removal from `--fix-suspect --min-confidence 85`; keep only the three intended Openverse false positives removed.
+- **What changed**:
+  - Restored `data/islands.json` from `data/islands.json.before-verify` (atomic replace; backup validated as JSON list, 11,351 islands).
+  - Removed lead photo only for `osm-way-236692704` (Brothers), `wd-Q24654332` (Brake), `wd-Q24657075` (Barrels) where lead `source` was `openverse` (verify score 45, suspect).
+  - `python3 scripts/build_islands_index.py`.
+- **Outcome / counts**: Named with photo **4,332** (was **4,335** pre-verify; **2,621** after erroneous fix). **Do not** re-run broad `--fix-suspect` without per-source policy.
+
+## 2026-06-04 — Verified staged merge audit (20 rows)
+
+- **Goal**: After strict gate, merge only `adoptions-verified/` if any photoless; report overlap with existing `images[]`.
+- **What changed**: Pre-merge audit of **inaturalist.json** (18) + **commons-deep.json** (2); dry-run `merge_staged_photo_adoptions.py` (verified dir default). `data/staged_merge_report.json` updated (dry_run). **No** `islands.json` write; no script change (`prefer adoptions-verified` already in `merge_staged_photo_adoptions.py`).
+- **Outcome / counts**: **0** newly merged, **20** already present (skipped has image). Named with photo **4,332** unchanged. Did **not** run `verify_island_images.py --fix-suspect`.
+
+## 2026-06-04 — Strict staged photo verification gate
+
+- **Goal**: Pre-merge gate requiring two independent signals (entity + geo/name/anchor) before any future staged merge.
+- **What changed**:
+  - Added `scripts/verify_staged_photos_strict.py` (scores 0–100; ≥90 needs signal A + B; rejects name-only).
+  - `--remove-openverse-without-geo` flag for future Openverse filtering.
+  - Wrote `data/staging/adoptions-verified/*.json` and `data/staging/adoptions_strict_verify_report.json`.
+- **Outcome / counts**: **44** staged rows in → **20** passed: **commons-deep 2/2**, **inaturalist 18/18**; **ogl-tourism 0/21**, **openverse 0/3** (homonyms / regional-category without island entity). Empty staging files mirrored with zero adoptions. **No** `islands.json` write.
+- **Open items**: Merge only from `adoptions-verified/` after review; re-stage ogl-tourism with island-specific Commons categories or Wikidata/OSM entity links.
+
+## 2026-06-04 — Photo discovery ideas doc
+
+- **Goal**: Catalogue outside-the-box, high-confidence photo sources beyond Wikimedia geosearch/Openverse.
+- **What changed**:
+  - Added `docs/PHOTO-DISCOVERY-IDEAS.md` (35 ideas + verification ladder + top-10 yield×confidence ranking).
+  - Linked from `docs/INDEX.md` (Tier 3).
+- **Outcome / counts**: Documentation only; no dataset or pipeline changes.
+- **Open items**: Prioritise depicts=Q (#3) and all-language pageimages (#6) in next enrichment pass per doc ranking.
+
+## 2026-06-04 — Unconventional harvesters (all-lang wiki, PCW, Dúchas)
+
+- **Goal**: Build and run three staging-only photo harvesters with caching.
+- **What changed**:
+  - `scripts/enrich_images_wikipedia_alllangs.py` → `wikipedia-alllangs.json` (wbgetentities all sitelinks; pageimages batched per wiki; high confidence = title name match).
+  - `scripts/enrich_images_peoples_collection_wales.py` → `pcw.json` (discover `keywords` + item HTML parse; OGL/CC only; excludes Creative Archive NC).
+  - `scripts/enrich_images_duchas.py` → `duchas.json` (CBÉG probe; documents CC BY-NC policy block).
+  - `.env.local.example`: `DUCHAS_API_KEY` / `GAOIS_API_KEY` placeholders.
+- **Outcome / counts** (staging only, **0** merged):
+  - **wikipedia-alllangs** `--limit 400`: **0** staged (400 attempted; title-matched pageimages on this pool were SVG locator maps, e.g. cebwiki `*location_map.svg`; Wikimedia 429 during prefetch).
+  - **pcw** `--limit 100`: **52** Wales photoless attempted, **0** staged (discover noise / `licence-blocked:creative-archive-nc` / no name match).
+  - **duchas** `--limit 50`: **0** staged; no API key; **not viable** for merge under `ETHICS.md` (default licence CC BY-NC 4.0).
+- **Open items**: Re-run all-lang wiki with higher `--delay` on smaller named subset; PCW only useful where items carry CC/OGL not Creative Archive; Dúchas needs Gaois key + licence policy exception (unlikely).
+
+## 2026-06-04 — Europeana geo, BL Flickr deep, SCRAN probe
+
+- **Goal**: Three staging harvesters with dual-signal (name + geo) verification and `--limit 400` attempts.
+- **What changed**:
+  - `scripts/photo_staging_dual.py` — shared name+geo gate for staging.
+  - `scripts/enrich_images_europeana_geo.py` → `europeana-geo.json` (Search API + `WHERE` geo qf; `EUROPEANA_API_KEY`; documents public endpoints when key unset).
+  - `scripts/enrich_images_bl_flickr_deep.py` → `bl-flickr-deep.json` (BL Flickr `photos.search`, licence 7 only; `FLICKR_API_KEY`).
+  - `scripts/enrich_images_scran.py` → `scran.json` (endpoint probe; skip harvest — no open API).
+  - `.env.local.example` — key comments for Europeana + BL scripts.
+- **Outcome / counts** (smoke, keys unset): **europeana-geo 0**, **bl-flickr-deep 0**, **scran 0** staged; SCRAN viability `no_open_api`. Reports under `data/image_enrichment_{europeana_geo,bl_flickr_deep,scran}_report.json`.
+- **Open items**: Re-run with keys in `.env.local` at `--limit 400`; merge via `verify_staged_photos_strict.py` then `merge_staged_photo_adoptions.py`.
+
+## 2026-06-04 — Commons archipelago category sweep
+
+- **Goal**: Wider-than-regional Commons category traversal with full file index,
+  v5 word-boundary filename matching, dual-signal staging.
+- **What changed**:
+  - `scripts/enrich_images_commons_archipelago_sweep.py` — **36** broad roots
+    (Scotland/Ireland/Wales/England/Thames/Channel Islands/county firths, etc.),
+    `--build-index` / `--match`, cache `data/cache_commons_archipelago_index.json`,
+    staging `data/staging/adoptions/commons-archipelago.json`.
+  - Dual signal: island-specific subcategory **or** filename `_mentions` +
+    nation/archipelago anchor in caption/categories.
+- **Outcome / counts** (staging only): index **13,309** files / **374** categories;
+  **15** island candidates, **9** staged (**6** rejected `no-dual-signal`).
+  Commons **429** during Ireland subcat walk (30s backoff). Report:
+  `data/image_enrichment_commons_archipelago_report.json`.
+- **Open items**: Human review before merge (e.g. homonym Duck Island ×4, Ardillaun
+  vs Ardoileán file); re-run match with warmed `cache_commons.json` after 429 cool-down.
+
+## 2026-06-04 — Wikipedia gallery wikitext harvester
+
+- **Goal**: Mine embedded Commons files from island Wikipedia articles (not just
+  pageimage lead), with caption/alt name gate and Commons licence verification.
+- **What changed**:
+  - `scripts/enrich_images_wikipedia_gallery.py` — wikitext via MediaWiki
+    `revisions`, parsers for `[[File:]]`, `<gallery>`, `{{multiple image}}`,
+    infobox `| image =`; staging `data/staging/adoptions/wikipedia-gallery.json`;
+    caches `cache_wikipedia_gallery_{sitelinks,wikitext}.json`.
+- **Outcome / counts** (smoke `--limit 30` after sitelink prefetch): **706** named
+  photoless with a `*wiki` article; **0** staged (stub articles / maps / strict
+  caption gate). Parser verified on Iona wikitext (would stage `TyIonaNunnery…`
+  when not already imaged). Report: `data/image_enrichment_wikipedia_gallery_report.json`.
+- **Open items**: Full `--limit 500` after 429 cool-down; consider infobox
+  filename-only match when `File:` name contains island token.
+
+## 2026-06-04 — Heritage OGL photo staging (NHLE / Canmore / Cadw)
+
+- **Goal**: Stage OGL/CC island photos from UK heritage registers with strict
+  name + place + documented licence; document blocked sources.
+- **What changed**:
+  - `scripts/enrich_images_heritage_ogl.py` — probes NHLE ArcGIS, HES Canmore
+    MapServer (`inspire.hes.scot`), Cadw Listed Buildings WFS; optional HTML
+    og:image parse on list-entry / Canmore / Cadw report URLs; staging
+    `data/staging/adoptions/heritage-ogl.json`; cache `data/cache_heritage_ogl.json`.
+- **Outcome / counts**: `--named-only --limit 300` → **0 staged** (300 no_match).
+  **APIs working**: `historic-england-nhle-arcgis`, `hes-canmore-points`,
+  `cadw-listed-wfs`. **Blocked**: legacy `canmore.org.uk` WAF, `trove.scot` 403,
+  NHLE `hasAttachments=false`, Heritage Gateway no national image API, Coflein /
+  HE Archive / Cadw reports without OGL photo URLs. Report:
+  `data/image_enrichment_heritage_ogl_report.json`.
+- **Open items**: None — metadata APIs usable for enrichment flags; photos need
+  Commons/Geograph or manual trove licence per asset.
+
+## 2026-06-04 — Panoramax + OpenAerialMap geo CC harvesters
+
+- **Goal**: Stage CC street-level (Panoramax) and CC orthomosaic (OAM) lead
+  photos for tiny named islands without images; `--limit 150` each.
+- **What changed**:
+  - `scripts/enrich_images_panoramax.py` — Panoramax STAC `/api/search` bbox,
+    250 m centroid gate, CC-BY-SA only, `areaKm2` < 0.3; staging
+    `data/staging/adoptions/panoramax.json`; cache `data/cache_panoramax.json`.
+  - `scripts/enrich_images_openaerialmap.py` — STAC-style bbox via
+    `GET https://api.openaerialmap.org/meta`, centroid-in-footprint, CC-BY /
+    CC-BY-SA / CC0 only (no NC); staging `openaerialmap.json`;
+    cache `data/cache_openaerialmap.json`. Fixed HTTP→HTTPS (308) on OAM API.
+- **Outcome / counts**: Panoramax **1** staged / 150 attempted (`osm-way-1002798076`,
+  75 m). OpenAerialMap **0** staged / 150 attempted (sparse UAV coverage at islet
+  scale). Reports: `data/image_enrichment_{panoramax,openaerialmap}_report.json`.
+- **Open items**: None — merge via `verify_staged_photos_strict.py` then
+  `merge_staged_photo_adoptions.py` if the Panoramax row passes dual-signal gate.
+
+## 2026-06-04 — Wikidata depicts (P180) Commons staging
+
+- **Goal**: High-confidence novel source — Commons files whose structured data
+  explicitly **depicts** the island Q-ID (complement to Wikidata P18 / pageimages).
+- **What changed**:
+  - Added `scripts/enrich_images_wikidata_depicts.py` — discovery via Commons
+    `haswbstatement:P180=<Q-ID>`, batched WDQS reverse depicts prefetch, optional
+    Commons WCQS (OAuth); verification reads MediaInfo `statements.P180` (not
+    `claims`); full Commons `extmetadata` for licence/attribution; staging
+    `data/staging/adoptions/wikidata-depicts.json`; cache
+    `data/cache_wikidata_depicts.json` (sets serialised as lists).
+- **Outcome / counts**: `--named-only --limit 500` → **5 staged** / 500 attempted
+  (**1%**); **495** `no_candidates` (no indexed depicts on obscure photoless Q-IDs).
+  Examples: Furze Island, Carbery Island, Calf Island East/Middle/West (shared
+  Dunmanus Bay / Illaunkearagh Commons files). Smoke on Q107393 (Isle of Skye):
+  24 search hits, 5 verified — pipeline OK; Skye already has a lead photo. Report:
+  `data/image_enrichment_wikidata_depicts_report.json`.
+- **Open items**: Re-run remaining **363** photoless Q-ID pool (`--limit 0` or
+  offset queue); merge after `verify_staged_photos_strict.py`; expect low yield
+  until more SDC depicts are added on Commons.
+
+## 2026-06-04 — Commons depicts-Q (P180 + P921) staging
+
+- **Goal**: PHOTO-DISCOVERY ideas #1–#3 — reverse Commons/Wikidata graph for files
+  whose structured data depicts or has main subject = island Q-ID (~95% when P180
+  verified).
+- **What changed**:
+  - Added `scripts/enrich_images_commons_depicts_q.py` — Commons search
+    `P180`/`P921`, batched WDQS (`wdt:P180`/`P921`), optional Commons WCQS;
+    MediaInfo verification (P180 preferred over P921 for confidence); staging
+    `commons-depicts-q.json`; cache `cache_commons_depicts_q.json` (claim sets
+    serialised as lists).
+- **Outcome / counts**: `--named-only --limit 600` → **6 staged** / 600 (**1%**);
+  **594** `no_candidates`; **6** P180 / **0** P921-only. Same Dunmanus / Illaunkearagh
+  cluster as wikidata-depicts pass (Furze Island, Carbery, Calf East/Middle/West).
+  Report: `data/image_enrichment_commons_depicts_q_report.json`.
+- **Open items**: Merge after strict verify; re-run `--limit 0` on remaining **263**
+  photoless named Q-IDs; P921 yield likely low for rock islets per discovery doc.
+
+## 2026-06-04 — OSM bulk tag Overpass staging
+
+- **Goal**: One-pass harvest of OSM `image` / `wikimedia_commons` / `wikipedia:*` /
+  `wikidata` for all named photoless islands with OSM ids; stage via v5
+  `try_osm_tags`.
+- **What changed**:
+  - Added `scripts/enrich_images_osm_bulk.py` — 63-tile bbox Overpass (curl POST
+    like v5), shared `cache_osm_tags_v5.json` + `cache_osm_tags_bulk.json`,
+    id-batch fallback for keys still without photo tags, staging
+    `osm-bulk.json`. Flags: `--skip-bbox`, `--cache-only`, `--force`.
+- **Outcome / counts**: Full named pool **2,235** OSM keys (~**30 min** bbox pass,
+  **58/63** tiles OK; **5** tiles timed out/WAF). Id fallback refreshed cache.
+  **0 staged** — photo-tagged elements in cache either already have atlas photos
+  (Geograph/File: on other islands) or tags point at non-adoptable hosts /
+  wrong Wikipedia leads. Report: `data/image_enrichment_osm_bulk_report.json`.
+- **Open items**: None; confirms v5 OSM path largely exhausted for photoless pool.
+
+## 2026-06-04 — KartaView + GBIF geo photo staging
+
+- **Goal**: CC geo-tagged lead photos from KartaView/OpenStreetCam and GBIF
+  research-grade occurrences with strict centroid verification; stage only.
+- **What changed**:
+  - Added `scripts/enrich_images_kartaview.py` — OpenStreetCam 2.0 API,
+    CC-BY-SA, `areaKm2` < 0.3, 200 m verify, `kartaview.json` +
+    `cache_kartaview.json`.
+  - Added `scripts/enrich_images_gbif.py` — iNaturalist research-grade dataset
+    on GBIF, CC0/BY/BY-SA StillImage media, 300 m verify, `gbif.json` +
+    `cache_gbif.json`.
+- **Outcome / counts**: `--named-only --limit 200` each — **kartaview 1** staged
+  (Blake's Island @ 198 m); **gbif 0** staged (no CC StillImage within 300 m on
+  first-200 photoless queue). Reports:
+  `data/image_enrichment_kartaview_report.json`,
+  `data/image_enrichment_gbif_report.json`.
+- **Open items**: Merge kartaview row after verify; GBIF yield may improve on
+  coastal/small-island priority queue (current head is inland/obscure names).
+
+## 2026-06-04 — Verified staged merge after 60 min harvest soak
+
+- **Goal**: Wait for harvesters + strict staged verify, merge only from
+  `adoptions-verified/`, single writer with backup and index rebuild.
+- **What changed**:
+  - Extended `scripts/verify_staged_photos_strict.py` (dual-signal scoring,
+    depicts-Q / archipelago / iNaturalist sources; min score 90).
+  - Extended `scripts/merge_staged_photo_adoptions.py` (prefer verified dir,
+    timestamped backup, inline verify fallback for raw staging).
+  - Polled staging 60 min (2 min interval) until harvesters idle.
+  - Merged **9** new photos from **34** verified rows (**66** raw staged).
+- **Outcome / counts**: Named with photo **4,341** (was **4,332**); gap to **6,000**
+  **1,659**. Sources merged: **commons-depicts-q 6**, **commons-archipelago-category 3**.
+  **20** verified rows skipped (already had `images[]`). Backup
+  `data/islands.json.before-staged-merge-20260604T071708Z.bak`.
+- **Open items**: **25** verified rows still not merged (prior photos); ogl-tourism /
+  openverse / kartaview / panoramax failed strict gate (min 90).
+
+## 2026-06-04 — 90 min enrich poll + idempotent verified merge
+
+- **Goal**: Wait for all `enrich_images_*` harvesters to finish, re-run strict
+  staged verify on full `adoptions/`, merge from `adoptions-verified/` only,
+  rebuild index; report photo counts (no aggressive `--fix-suspect`).
+- **What changed**:
+  - Polled every **2 min** (Python `scripts/enrich_images_*` only) until idle
+    (~**30 min**; gbif, kartaview, openaerialmap, heritage_ogl, wikidata_depicts,
+    commons_depicts_q, osm_bulk completed during soak).
+  - `verify_staged_photos_strict.py` → **34 / 66** accepted (**51.5%**).
+  - `merge_staged_photo_adoptions.py` (verified dir) → **0** new; **29** deduped
+    candidates all already had `images[]` (earlier **+9** merge at 07:17).
+  - `build_islands_index.py` + nation shards refreshed.
+  - `docs/STATE.md` updated.
+- **Outcome / counts**: Named with photo **4,341** / 7,041; gap to **6,000**
+  **1,659**. Strict gate pass **34/66**. This merge pass `merged_by_source`: _(none)_.
+  Prior same-day merge: **commons-depicts-q 6**, **commons-archipelago-category 3**.
+- **Open items**: ogl-tourism (**21** @ conf 85) and openverse (**3**) still fail
+  min-90 gate; kartaview/panoramax at 80 without dual signal.

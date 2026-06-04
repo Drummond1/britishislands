@@ -38,6 +38,12 @@
   --unnamed: #fb923c;
   --unnamed-soft: rgba(251, 146, 60, 0.16);
   --unnamed-ring: rgba(251, 146, 60, 0.45);
+  --explore: #f4d35e;
+  --explore-ring: rgba(201, 168, 32, 0.55);
+  --pin-stroke: rgba(255, 255, 255, 0.92);
+  --pin-shadow: rgba(15, 30, 50, 0.38);
+  --cluster: #3d5a80;
+  --cluster-ring: rgba(255, 255, 255, 0.9);
 
   /* —— Elevation —— */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -376,19 +382,40 @@ body {
   min-width: 128px;
 }
 
-/* ===== Cluster styling overrides ===== */
-.marker-cluster-small,
-.marker-cluster-medium,
-.marker-cluster-large {
-  background-color: rgba(78, 163, 255, 0.25);
+/* ===== Cluster styling (neutral on light OSM water) ===== */
+.leaflet-div-icon.map-cluster-icon {
+  background: transparent !important;
+  border: none !important;
 }
 
-.marker-cluster-small div,
-.marker-cluster-medium div,
-.marker-cluster-large div {
-  background-color: rgba(78, 163, 255, 0.85);
-  color: white;
-  font-weight: 600;
+.map-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cluster) 88%, #fff 12%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  border: 2px solid var(--cluster-ring);
+  box-shadow:
+    0 1px 3px var(--pin-shadow),
+    0 0 0 1px rgba(15, 30, 50, 0.12);
+}
+
+.map-cluster--medium {
+  font-size: 13px;
+}
+
+.map-cluster--large {
+  font-size: 14px;
+}
+
+.map-cluster__count {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Highlighted island polygon overlay */
@@ -472,7 +499,7 @@ body {
 }
 
 .dot--explore {
-  background: #f4d35e;
+  background: var(--explore);
   border: 1px solid #c9a820;
 }
 
@@ -1708,8 +1735,116 @@ body.lightbox-open {
   box-shadow: 0 0 0 1px rgba(120, 53, 15, 0.5), 0 0 6px var(--unnamed-soft);
 }
 
-.marker-vis--unnamed {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+.marker-vis--unnamed,
+.marker-vis--explore {
+  filter: drop-shadow(0 1px 2px var(--pin-shadow));
+}
+
+/* ===== Category map pins (divIcon teardrop) ===== */
+.leaflet-div-icon.map-pin-icon,
+.leaflet-div-icon.map-sale-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.map-pin {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 1px 2px var(--pin-shadow));
+}
+
+.map-pin__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map-pin__body {
+  stroke: var(--pin-stroke);
+  stroke-width: 1.25;
+  paint-order: stroke fill;
+}
+
+.map-pin__gleam {
+  fill: rgba(255, 255, 255, 0.42);
+  stroke: none;
+}
+
+.map-pin--sea .map-pin__body {
+  fill: var(--sea);
+}
+
+.map-pin--lake .map-pin__body {
+  fill: var(--lake);
+}
+
+.map-pin--river .map-pin__body {
+  fill: var(--river);
+}
+
+.map-pin--unknown .map-pin__body {
+  fill: var(--unknown);
+}
+
+.map-pin--unnamed .map-pin__body {
+  fill: var(--unnamed);
+  stroke: #fff7ed;
+}
+
+.map-pin--explore .map-pin__body {
+  fill: var(--explore);
+  stroke: #fef9c3;
+}
+
+.map-pin--for-sale .map-pin__body {
+  fill: var(--for-sale);
+  stroke: #fffbeb;
+}
+
+.map-pin__glyph {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11px;
+  height: 11px;
+  padding: 0 2px;
+  border-radius: 50%;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+.map-pin__glyph--unnamed {
+  color: #431407;
+  background: #fff7ed;
+  font-size: 9px;
+}
+
+.map-pin__glyph--explore {
+  color: #713f12;
+  background: #fef9c3;
+  font-size: 7px;
+  letter-spacing: -0.05em;
+}
+
+.map-pin__glyph--sale {
+  color: var(--for-sale);
+  background: color-mix(in srgb, var(--bg-elev) 68%, var(--for-sale) 32%);
+  min-width: 13px;
+  height: 13px;
+  font-size: 9px;
+  font-weight: 700;
+  border-color: var(--for-sale-ring);
+  top: 20%;
 }
 
 .island-card--unnamed {
@@ -2787,7 +2922,7 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   bottom: 16px;
   left: 16px;
   z-index: 500;
-  max-width: min(96vw, 520px);
+  max-width: min(96vw, 420px);
 }
 
 .legend-wrap__toggle {
@@ -2820,22 +2955,130 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
 .legend {
   position: static;
   margin-top: 8px;
-  background: rgba(15, 22, 32, 0.85);
-  backdrop-filter: blur(6px);
+  background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
+  backdrop-filter: blur(10px);
   color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  font-size: 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  font-size: 11px;
+  line-height: 1.2;
+  box-shadow: var(--shadow-sm);
 }
 
-.legend span {
+.legend__item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+  min-width: 0;
+}
+
+.legend__item--span2 {
+  grid-column: 1 / -1;
+}
+
+.legend-pin {
+  flex: 0 0 auto;
+  width: 11px;
+  height: 15px;
+  background: var(--sea);
+  clip-path: polygon(50% 0%, 88% 32%, 72% 100%, 50% 86%, 28% 100%, 12% 32%);
+  border: none;
+  box-shadow:
+    0 0 0 1px var(--pin-stroke),
+    0 1px 2px var(--pin-shadow);
+}
+
+.legend-pin--sea {
+  background: var(--sea);
+}
+
+.legend-pin--lake {
+  background: var(--lake);
+}
+
+.legend-pin--river {
+  background: var(--river);
+}
+
+.legend-pin--unknown {
+  background: var(--unknown);
+}
+
+.legend-pin--unnamed {
+  background: var(--unnamed);
+  box-shadow:
+    0 0 0 1px #fff7ed,
+    0 1px 2px var(--pin-shadow);
+}
+
+.legend-pin--explore {
+  background: var(--explore);
+}
+
+.legend-pin--for-sale {
+  background: var(--for-sale);
+  position: relative;
+}
+
+.legend-pin--for-sale::after {
+  content: "£";
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform: translate(-50%, -50%);
+  font-size: 6px;
+  font-weight: 800;
+  font-style: normal;
+  color: var(--for-sale);
+  text-shadow: 0 0 2px #fff;
+}
+
+.legend-pin--crowd {
+  background: #f5c542;
+  box-shadow: 0 0 0 1px rgba(61, 46, 10, 0.5), 0 1px 2px var(--pin-shadow);
+}
+
+.legend-pin--cluster {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cluster);
+  clip-path: none;
+  box-shadow: 0 0 0 2px var(--cluster-ring), 0 1px 2px var(--pin-shadow);
+}
+
+.legend-heart {
+  flex: 0 0 auto;
+  font-size: 13px;
+  line-height: 1;
+  color: #e85d7a;
+  filter: drop-shadow(0 1px 1px var(--pin-shadow));
+}
+
+.legend__glyph-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  border-radius: 50%;
+  font-size: 7px;
+  font-weight: 800;
+  color: #431407;
+  background: #fff7ed;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  vertical-align: middle;
+}
+
+.legend__glyph-hint--sale {
+  color: var(--for-sale);
+  background: color-mix(in srgb, var(--bg-elev) 70%, var(--for-sale) 30%);
+  font-size: 8px;
 }
 
 /* ===== Leaflet popup tweaks ===== */
@@ -4395,32 +4638,7 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   font-weight: 600;
 }
 .map-sale-marker {
-  background: transparent;
-  border: none;
-}
-.map-sale-marker__ring {
-  position: absolute;
-  inset: 2px;
-  border-radius: 50%;
-  border: 1.5px solid var(--for-sale-ring);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  opacity: 0.9;
-}
-.map-sale-marker__badge {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--for-sale);
-  background: color-mix(in srgb, var(--bg-elev) 72%, var(--for-sale) 28%);
-  border-radius: 50%;
-  border: 1px solid var(--for-sale-ring);
+  /* Pin body styled via .map-pin--for-sale */
 }
 .map-sale-tooltip-wrap {
   font-size: 12px;
@@ -4434,7 +4652,7 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   font-weight: 400;
 }
 .marker-vis--for-sale {
-  filter: drop-shadow(0 0 2px rgba(196, 160, 98, 0.35));
+  filter: drop-shadow(0 1px 2px rgba(196, 160, 98, 0.45));
 }
 .sale-popup-wrap .leaflet-popup-content-wrapper {
   border-color: var(--border);

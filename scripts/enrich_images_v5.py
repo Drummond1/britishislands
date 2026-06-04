@@ -38,6 +38,9 @@ Run::
     python3 scripts/enrich_images_v5.py --source p18          # one source
     python3 scripts/enrich_images_v5.py --test sgeir-bhuidhe  # one island
     python3 scripts/enrich_images_v5.py --limit 100           # short pass
+    python3 scripts/enrich_images_v5.py --min-confidence high # strict adoption
+    python3 scripts/enrich_images_v5.py --named-only          # 7,041 index ids only
+    python3 scripts/enrich_images_v5.py --geosearch-radius 500  # tighter geosearch
 
 Outputs::
 
@@ -64,12 +67,15 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
+from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 ISLANDS = DATA / "islands.json"
+ISLANDS_INDEX = DATA / "islands_index.json"
 BACKUP = DATA / "islands.json.before-v5"
 
 # Caches.
@@ -379,6 +385,46 @@ def fetch_commons_meta(filenames: list[str], cache: dict) -> dict[str, dict]:
         _save(CACHE_COMMONS, cache)
         time.sleep(DELAY_S)
     return {n: cache.get(n, {}) for n in norm}
+
+
+@dataclass
+class EnrichmentConfig:
+    """Runtime options from CLI flags (defaults match pre-flag behaviour)."""
+
+    high_confidence: bool = False
+    geosearch_radius_m: int = 1500
+    text_search_max_km: float = 15.0
+
+    @classmethod
+    def from_args(cls, args: argparse.Namespace) -> "EnrichmentConfig":
+        high = getattr(args, "min_confidence", None) == "high"
+        return cls(
+            high_confidence=high,
+            geosearch_radius_m=int(args.geosearch_radius),
+            text_search_max_km=5.0 if high else 15.0,
+        )
+
+
+def _stamp_verified_adoption(rec: dict, cfg: EnrichmentConfig) -> dict:
+    if cfg.high_confidence:
+        rec = dict(rec)
+        rec["imageConfidence"] = "high"
+        rec["verifiedAt"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    return rec
+
+
+def _load_named_index_ids() -> set[str]:
+    if not ISLANDS_INDEX.is_file():
+        print(f"WARN: {ISLANDS_INDEX.name} missing; --named-only ignored",
+              file=sys.stderr)
+        return set()
+    payload = json.loads(ISLANDS_INDEX.read_text(encoding="utf-8"))
+    rows = payload.get("rows") if isinstance(payload, dict) else payload
+    if not isinstance(rows, list):
+        print(f"WARN: unexpected {ISLANDS_INDEX.name} shape; --named-only ignored",
+              file=sys.stderr)
+        return set()
+    return {str(r.get("id", "")).strip() for r in rows if r.get("id")}
 
 
 def build_image_record_from_commons(
@@ -906,6 +952,7 @@ def try_commons_text_search(
     cache_commons: dict,
     cache_text: dict,
     report_rejected: list,
+    cfg: EnrichmentConfig,
 ) -> dict | None:
     name = (island.get("name") or "").strip()
     if len(name) < 4:
@@ -941,7 +988,7 @@ def try_commons_text_search(
             continue
         # Then geographic verification (the trans-Atlantic homonym guard).
         ok, reason = _passes_geo_anchor(
-            island, coords.get(_canon(f)), m, max_km=15.0
+            island, coords.get(_canon(f)), m, max_km=cfg.text_search_max_km
         )
         if not ok:
             report_rejected.append({
@@ -960,16 +1007,18 @@ def try_commons_geosearch_wide(
     cache_commons: dict,
     cache_geo: dict,
     report_rejected: list,
+    cfg: EnrichmentConfig,
 ) -> dict | None:
     lat = island.get("lat")
     lon = island.get("lng") if island.get("lng") is not None else island.get("lon")
     if lat is None or lon is None:
         return None
-    key = f"{lat:.4f},{lon:.4f};1500"
+    radius_m = cfg.geosearch_radius_m
+    key = f"{lat:.4f},{lon:.4f};{radius_m}"
     if key in cache_geo:
         hits = cache_geo[key]
     else:
-        hits = commons_geosearch(float(lat), float(lon), 1500)
+        hits = commons_geosearch(float(lat), float(lon), radius_m)
         cache_geo[key] = hits
         _save(CACHE_COMMONS_GEO, cache_geo)
         time.sleep(DELAY_S)
@@ -981,8 +1030,9 @@ def try_commons_geosearch_wide(
     candidates = [h["title"] for h in keep[:8]]
     metas = fetch_commons_meta(candidates, cache_commons)
     variants = _name_variants(island)
-    # Adoption rule: name match required AND distance ≤ 1500 m (the
-    # geosearch already enforced 1500 m; restate it as a safety belt).
+    # Adoption rule: name match required AND distance ≤ radius (the
+    # geosearch already enforced radius_m; restate it as a safety belt).
+    max_dist_km = radius_m / 1000.0 * 1.05
     for h in keep[:8]:
         fname = h["title"]
         m = metas.get(_canon(fname), {})
@@ -1004,12 +1054,12 @@ def try_commons_geosearch_wide(
             )
         except Exception:
             dist_km = -1
-        if dist_km > 1.6:  # 1500 m safety check
+        if dist_km > max_dist_km:
             report_rejected.append({
                 "id": island.get("id"),
                 "source": "commons-geosearch",
                 "file": fname,
-                "reason": f"distance {dist_km:.2f} km > 1.6 km",
+                "reason": f"distance {dist_km:.2f} km > {max_dist_km:.2f} km",
             })
             continue
         rec = build_image_record_from_commons(fname, m, "commons-geosearch", island["id"])
@@ -1072,6 +1122,7 @@ ALL_SOURCES = ["p18", "osm-tags", "text-search", "geosearch-wide"]
 
 
 def main() -> int:
+    global DELAY_S
     p = argparse.ArgumentParser()
     p.add_argument("--source", choices=ALL_SOURCES + ["all"], default="all")
     p.add_argument("--limit", type=int, default=0,
@@ -1085,7 +1136,38 @@ def main() -> int:
         default="",
         help="JSON from scripts/build_image_priority_queue.py — process ids in tier order first.",
     )
+    p.add_argument(
+        "--min-confidence",
+        choices=["high"],
+        default=None,
+        help="Strict mode: skip geosearch-wide, tighten text-search geo (5 km), "
+        "stamp adopted images with imageConfidence=high and verifiedAt.",
+    )
+    p.add_argument(
+        "--geosearch-radius",
+        type=int,
+        default=1500,
+        metavar="METERS",
+        help="Commons geosearch radius in metres for geosearch-wide (default 1500). "
+        "Ignored when --min-confidence high (geosearch skipped).",
+    )
+    p.add_argument(
+        "--named-only",
+        action="store_true",
+        help="Only islands whose id appears in data/islands_index.json (named atlas).",
+    )
+    p.add_argument(
+        "--delay",
+        type=float,
+        default=None,
+        metavar="SECONDS",
+        help=f"Seconds between API calls (default {DELAY_S}).",
+    )
     args = p.parse_args()
+    if args.delay is not None:
+        DELAY_S = max(0.0, float(args.delay))
+        print(f"  API delay: {DELAY_S}s between calls", flush=True)
+    cfg = EnrichmentConfig.from_args(args)
 
     islands = json.loads(ISLANDS.read_text(encoding="utf-8"))
     if not isinstance(islands, list):
@@ -1115,6 +1197,13 @@ def main() -> int:
         "skipped": [],         # [{id, name, reason}]
     }
     pending = [i for i in islands if not (i.get("images") or [])]
+    if args.named_only:
+        named_ids = _load_named_index_ids()
+        if named_ids:
+            before = len(pending)
+            pending = [i for i in pending if i.get("id") in named_ids]
+            print(f"  --named-only: {len(pending):,} of {before:,} pending in index",
+                  flush=True)
     if args.queue_file:
         qpath = Path(args.queue_file)
         if not qpath.is_file():
@@ -1136,6 +1225,9 @@ def main() -> int:
     print(f"Pending islands without images: {len(pending):,}", flush=True)
 
     sources_to_run = ALL_SOURCES if args.source == "all" else [args.source]
+    if cfg.high_confidence and "geosearch-wide" in sources_to_run:
+        sources_to_run = [s for s in sources_to_run if s != "geosearch-wide"]
+        print("  --min-confidence high: skipping geosearch-wide", flush=True)
 
     # ---- Pre-fetch phase: batch the cheap sources up-front so the
     #      per-island loop becomes cache lookups instead of N×APIs.
@@ -1181,17 +1273,17 @@ def main() -> int:
                     rec = try_osm_tags(island, cache_osm, cache_commons, cache_wp_pi)
                 elif s == "text-search":
                     rec = try_commons_text_search(island, cache_commons, cache_text,
-                                                  report["rejected"])
+                                                  report["rejected"], cfg)
                 elif s == "geosearch-wide":
                     rec = try_commons_geosearch_wide(island, cache_commons, cache_geo,
-                                                     report["rejected"])
+                                                     report["rejected"], cfg)
                 else:
                     continue
             except Exception as exc:
                 print(f"  {island.get('id')} {s} crashed: {exc!r}", file=sys.stderr)
                 continue
             if rec:
-                return rec, s
+                return _stamp_verified_adoption(rec, cfg), s
         return None, ""
 
     pending_set = {i.get("id") for i in pending}
@@ -1208,15 +1300,23 @@ def main() -> int:
         n_attempted += 1
         if rec:
             isl.setdefault("images", []).append(rec)
-            report["adopted"].append({
+            adopted_row = {
                 "id": isl["id"],
                 "name": isl.get("name", ""),
                 "source": rec.get("source"),
                 "license": rec.get("license"),
                 "sourcePageUrl": rec.get("sourcePageUrl"),
-            })
+            }
+            if rec.get("imageConfidence"):
+                adopted_row["imageConfidence"] = rec["imageConfidence"]
+            if rec.get("verifiedAt"):
+                adopted_row["verifiedAt"] = rec["verifiedAt"]
+            report["adopted"].append(adopted_row)
             n_adopted += 1
-            print(f"  ✓ [{n_attempted:5d}/{len(pending):5d}] {isl['id']:45s} via {source_used:14s} → {rec.get('source'):22s} ({rec.get('license')})", flush=True)
+            conf = f" [{rec.get('imageConfidence')}]" if rec.get("imageConfidence") else ""
+            print(f"  ✓ [{n_attempted:5d}/{len(pending):5d}] {isl['id']:45s} via {source_used:14s} → {rec.get('source'):22s} ({rec.get('license')}){conf}", flush=True)
+            if args.test:
+                print(json.dumps(rec, ensure_ascii=False, indent=2), flush=True)
         else:
             report["rejected"].append({
                 "id": isl["id"],

@@ -11,12 +11,16 @@ Single map of every document in this repository. Always start at the top.
 | [`QUEUE.md`](QUEUE.md) | Pending follow-ups, in priority order. | After every session. |
 | [`SESSION-LOG.md`](SESSION-LOG.md) | Chronological log of session-by-session changes. | Append after every material session. |
 | [`ETHICS.md`](ETHICS.md) | **Permanent** guardrails for data sourcing, attribution, privacy. | Rarely; only when a new ethical concern emerges. |
+| [`AGENT-QUICKREF.md`](AGENT-QUICKREF.md) | **One-page agent cheat sheet** — production, boot path, troubleshooting index. | When live-site/debug context needed; after Tier 1. |
 
-## Tier 2 — Architecture & schema
+## Tier 2 — Architecture, deploy & performance
 
 | File | Purpose |
 |------|---------|
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Code layout, data flow, how the frontend renders 6k+ islands. |
+| [`DEPLOYMENT.md`](DEPLOYMENT.md) | GitHub Pages, `_site/` artifact, findmyisland.com, push notes. |
+| [`FRONTEND-PERFORMANCE.md`](FRONTEND-PERFORMANCE.md) | Homepage load path, index v2, markers, deferred fetches. |
+| [`3D-TERRAIN.md`](3D-TERRAIN.md) | Showcase 3D islands, import map, mount lifecycle, build script. |
 | [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec with every field, type, and example. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
 | [`SEO-GEO.md`](SEO-GEO.md) | Island profile SEO + JSON-LD; sitemap / `llms.txt` / optional static landings. |
@@ -39,6 +43,7 @@ Single map of every document in this repository. Always start at the top.
 | [`PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md`](PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md) | **Multi-agent briefing:** full remit landmass sweep, naming certainty, ledger + closure report (copy/paste prompt). Executable ledger: `scripts/survey_landmass_ledger.py` → `data/survey/`. |
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
+| [`PHOTO-DISCOVERY-IDEAS.md`](PHOTO-DISCOVERY-IDEAS.md) | 35 high-confidence photo discovery ideas (beyond geosearch/Openverse); top-10 ranking. |
 | [`OS-MAPS.md`](OS-MAPS.md) | OS Maps detail-view integration: API key setup + the EPSG:27700 Leisure upgrade path. |
 | [`FERRIES.md`](FERRIES.md) | Ferry-routes feature: operator inventory (54 operators), data sources (OSM + GTFS + manual), refresh cadence, terminal-mapping rules, UI surface. |
 | [`DATA-SOURCES.md`](DATA-SOURCES.md) | Registry of every external dataset ingested into `islands.json`: licence, refresh cadence, attribution string, consuming script. |
@@ -47,7 +52,13 @@ Single map of every document in this repository. Always start at the top.
 ## Reading order by goal
 
 **"I'm a new agent, what is this?"**
-→ `AGENTS.md` → `STATE.md` → `QUEUE.md`
+→ `AGENTS.md` → `STATE.md` → `QUEUE.md` → `AGENT-QUICKREF.md`
+
+**"Live site broken (slow load, 404, blank 3D)."**
+→ `AGENT-QUICKREF.md` → `FRONTEND-PERFORMANCE.md` / `DEPLOYMENT.md` / `3D-TERRAIN.md`
+
+**"I'm deploying to production."**
+→ `DEPLOYMENT.md` → verify curl checks → `SESSION-LOG.md`
 
 **"I need to change the dataset / run ingestion."**
 → `AGENTS.md` → `STATE.md` → `PIPELINE.md` → `ETHICS.md` → run, then update `STATE.md` + `SESSION-LOG.md`
@@ -59,7 +70,7 @@ Single map of every document in this repository. Always start at the top.
 → `NEXT-SESSION-PLAN.md` → `DISCOVERY-SOURCES.md` → `DISCOVERY-PIPELINE.md` → `ETHICS.md` → `METHODOLOGY-INLAND.md` if inland-related
 
 **"I'm changing the UI."**
-→ `ARCHITECTURE.md` (frontend section) → `app.js`/`styles.css`/`index.html`
+→ `ARCHITECTURE.md` (frontend section) → `FRONTEND-PERFORMANCE.md` if load-related → `app.js`/`styles.css`/`index.html`
 
 **"I'm triaging community map pins."**
 → `CROWD-PINS.md` → `data/crowd_pins.json`

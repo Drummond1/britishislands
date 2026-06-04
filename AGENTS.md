@@ -18,6 +18,9 @@ Stack: **vanilla HTML/CSS/ES-modules + Leaflet + Leaflet.markercluster**, with
 **Python scripts** for data ingestion. No build step. Serve locally with
 `python3 -m http.server`.
 
+**Production:** https://www.findmyisland.com (GitHub Pages from `main`). See
+[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ## 2. The single source of truth
 
 Read these in order before any action that touches data or scope:
@@ -31,8 +34,10 @@ Read these in order before any action that touches data or scope:
 5. [`docs/ETHICS.md`](docs/ETHICS.md) — **non-negotiable** guardrails for data
    sourcing, attribution, privacy, and licensing. The ethics charter wins over
    every other guideline in this repo.
+6. [`docs/AGENT-QUICKREF.md`](docs/AGENT-QUICKREF.md) — **one-page cheat sheet**
+   (production URL, boot sequence, “if X broken read Y”).
 
-After those five, branch into the topic-specific docs from `INDEX.md` only as
+After those six, branch into the topic-specific docs from `INDEX.md` only as
 needed.
 
 ## 3. Hard rules (do not break)
@@ -59,14 +64,19 @@ needed.
 .
 ├── AGENTS.md                ← you are here
 ├── README.md                ← public-facing project doc
-├── index.html               ← entry HTML (incl. chat launcher + panel)
+├── index.html               ← entry HTML (import map, preload index, chat launcher)
 ├── styles.css               ← all styling
 ├── app.js                   ← Leaflet + UI logic + chatbot (ES module)
+├── island-3d.js             ← Three.js terrain (dynamic import; see docs/3D-TERRAIN.md)
+├── showcase-3d.html         ← gallery of 10 showcase 3D models
 ├── crowd-pins.js            ← community pins: fetch + GitHub issue URLs + popups
 ├── seo-meta.js              ← per-island head tags + JSON-LD (SEO / GEO)
 ├── data/
 │   ├── islands.json         ← canonical dataset (DO NOT hand-edit)
-│   ├── islands_index.json   ← slim first paint; run scripts/build_islands_index.py after islands edits
+│   ├── islands_index.json   ← v2 compact first paint (~0.9 MB); run build_islands_index.py
+│   ├── islands_unnamed_index.json ← lazy unnamed overlay (4,310)
+│   ├── shards/              ← nation JSON shards (gitignored locally; CI + force-add)
+│   ├── terrain/             ← 3D heightmaps for 10 showcase islands
 │   ├── crowd_pins.json      ← maintainer-curated community pins (see docs/CROWD-PINS.md)
 │   ├── curated.json         ← hand-curated spine of 27 islands
 │   ├── osm_raw.json         ← cached Overpass response (islands)
@@ -87,6 +97,10 @@ needed.
 │   ├── QUEUE.md             ← pending follow-ups
 │   ├── SESSION-LOG.md       ← chronological session log
 │   ├── ARCHITECTURE.md      ← code + data-flow overview
+│   ├── AGENT-QUICKREF.md    ← one-page agent cheat sheet (read for live-site/debug)
+│   ├── DEPLOYMENT.md        ← GitHub Pages / findmyisland.com
+│   ├── FRONTEND-PERFORMANCE.md ← homepage load path, index v2, markers
+│   ├── 3D-TERRAIN.md        ← showcase islands, import map, mount lifecycle
 │   ├── DATA-SCHEMA.md       ← island record spec
 │   ├── PIPELINE.md          ← how to rebuild end-to-end
 │   ├── METHODOLOGY-INLAND.md← Tier A + B classifier deep-dive
@@ -164,3 +178,6 @@ rules, and the upgrade path to EPSG:27700 OS Leisure live in
   id.
 - "Why is this image here?" `image_enrichment_report.json` with sourcePageUrl.
 - "How do I rebuild from scratch?" `docs/PIPELINE.md`.
+- Homepage slow or loader stuck? [`docs/FRONTEND-PERFORMANCE.md`](docs/FRONTEND-PERFORMANCE.md).
+- 3D terrain blank or Three.js error? [`docs/3D-TERRAIN.md`](docs/3D-TERRAIN.md).
+- Deploy or production 404? [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).

@@ -102,20 +102,63 @@ const _indexPayloadPromise = fetch("data/islands_index.json").then((res) =>
   res.ok ? res.json() : Promise.reject(new Error(`index HTTP ${res.status}`)),
 );
 
-const TYPE_COLORS = {
-  sea: "#4ea3ff",
-  lake: "#6cd3a3",
-  river: "#f5b04a",
-  unknown: "#b08bd1",
-};
+const MAP_PIN_SVG = `<svg class="map-pin__svg" viewBox="0 0 20 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="map-pin__body" d="M10 1C5.86 1 2.5 4.86 2.5 9.5c0 5.4 6.2 14.2 7.5 16.5 1.3-2.3 7.5-11.1 7.5-16.5C17.5 4.86 14.14 1 10 1z"/>
+  <circle class="map-pin__gleam" cx="10" cy="8.5" r="2.8"/>
+</svg>`;
 
-/** Distinct map/list styling for islands with a property listing link on file. */
-const FOR_SALE_MARKER_FILL = "#c4a062";
-const FOR_SALE_MARKER_STROKE = "#5a6d82";
+function getIslandPinCategory(island) {
+  if (isUnnamedIsland(island)) return "unnamed";
+  if (state.exploreIslandIds?.has(island.id)) return "explore";
+  const t = island.type;
+  if (t === "lake" || t === "river" || t === "unknown") return t;
+  return "sea";
+}
 
-/** Unnamed / undiscovered landmasses awaiting crowdsourced names (nameStatus=unknown). */
-const UNNAMED_MARKER_FILL = "#fb923c";
-const UNNAMED_MARKER_STROKE = "#ea580c";
+function pinBadgeHtml(category) {
+  if (category === "unnamed") {
+    return '<span class="map-pin__glyph map-pin__glyph--unnamed" aria-hidden="true">?</span>';
+  }
+  if (category === "explore") {
+    return '<span class="map-pin__glyph map-pin__glyph--explore" aria-hidden="true">◆</span>';
+  }
+  return "";
+}
+
+function pinSizeForIsland(island, category) {
+  let size = Math.max(
+    20,
+    Math.min(30, Math.log10((island.areaKm2 || 0.05) + 1) * 5 + 18),
+  );
+  if (category === "unnamed") size = Math.min(28, Math.max(22, size));
+  if (category === "explore") size = Math.min(32, size + 2);
+  return Math.round(size);
+}
+
+function makeCategoryPinIcon(category, size) {
+  const h = size;
+  const w = Math.round(size * 0.72);
+  const badge = pinBadgeHtml(category);
+  return L.divIcon({
+    className: `map-pin-icon leaflet-div-icon map-pin-icon--${category}`,
+    html: `<span class="map-pin map-pin--${category}">${MAP_PIN_SVG}${badge}</span>`,
+    iconSize: [w, h],
+    iconAnchor: [Math.round(w / 2), h],
+    popupAnchor: [0, -h + 4],
+  });
+}
+
+function makeClusterIcon(cluster) {
+  const n = cluster.getChildCount();
+  const size = n < 10 ? 36 : n < 50 ? 42 : 48;
+  const tier = n < 10 ? "small" : n < 50 ? "medium" : "large";
+  return L.divIcon({
+    html: `<span class="map-cluster map-cluster--${tier}"><span class="map-cluster__count">${n}</span></span>`,
+    className: `map-cluster-icon map-cluster-icon--${tier}`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+}
 
 function isUnnamedIsland(island) {
   if (!island) return false;
@@ -147,7 +190,7 @@ const state = {
   islands: [],
   filtered: [],
   byId: new Map(),
-  markers: new Map(),       // id -> L.circleMarker
+  markers: new Map(),       // id -> L.Marker (category pin)
   polygonCache: new Map(),  // id -> GeoJSON layer
   activeId: null,
   booting: false,
@@ -1322,6 +1365,7 @@ const clusterLayer = L.markerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 50,
   spiderfyOnMaxZoom: true,
+  iconCreateFunction: makeClusterIcon,
 });
 const flatLayer = L.layerGroup();
 let activeMarkerLayer = clusterLayer;
@@ -1395,12 +1439,14 @@ function wireForSaleMarkerInteractions(marker, island) {
 }
 
 function makeForSaleMapMarker(island) {
+  const size = 28;
+  const w = Math.round(size * 0.72);
   const marker = L.marker([island.lat, island.lng], {
     icon: L.divIcon({
-      className: "map-sale-marker",
-      html: '<span class="map-sale-marker__ring" aria-hidden="true"></span><span class="map-sale-marker__badge">£</span>',
-      iconSize: [26, 26],
-      iconAnchor: [13, 13],
+      className: "map-pin-icon map-pin-icon--for-sale map-sale-marker",
+      html: `<span class="map-pin map-pin--for-sale">${MAP_PIN_SVG}<span class="map-pin__glyph map-pin__glyph--sale" aria-hidden="true">£</span></span>`,
+      iconSize: [w, size],
+      iconAnchor: [Math.round(w / 2), size],
     }),
     pane: getPropertyListingMapPane(),
     zIndexOffset: 400,
@@ -3166,69 +3212,32 @@ function islandsForMarkerPaint() {
 }
 
 function makeMarker(island) {
-  const color = TYPE_COLORS[island.type] || TYPE_COLORS.sea;
-  let radius = Math.max(
-    7,
-    Math.min(15, Math.log10((island.areaKm2 || 0.05) + 1) * 6 + 5),
-  );
-  let fillColor = color;
-  let fillOpacity = 0.9;
-  let strokeColor = "#ffffff";
-  let strokeWeight = 1.2;
-  let className = "marker-vis";
-  const unnamed = isUnnamedIsland(island);
-  if (unnamed) {
-    fillColor = UNNAMED_MARKER_FILL;
-    strokeColor = UNNAMED_MARKER_STROKE;
-    strokeWeight = 2;
-    fillOpacity = 0.95;
-    radius = Math.min(14, Math.max(8, radius));
-    className = "marker-vis marker-vis--unnamed";
-  } else if (state.exploreIslandIds?.has(island.id)) {
-    fillColor = "#f4d35e";
-    radius = Math.min(17, radius + 2);
-    fillOpacity = 1;
-  }
-  const onSale = islandHasPropertyListing(island);
-  if (onSale) {
-    fillColor = FOR_SALE_MARKER_FILL;
-    strokeColor = FOR_SALE_MARKER_STROKE;
-    strokeWeight = 1.8;
-    radius = Math.min(16, radius + 1);
-    fillOpacity = 0.92;
-    className = "marker-vis marker-vis--for-sale";
-  }
-
-  const paintRadius = Math.max(radius, onSale ? 10 : 10);
-  const marker = L.circleMarker([island.lat, island.lng], {
-    radius: paintRadius,
-    color: strokeColor,
-    weight: strokeWeight,
-    fillColor,
-    fillOpacity,
-    className,
+  const category = getIslandPinCategory(island);
+  const unnamed = category === "unnamed";
+  const size = pinSizeForIsland(island, category);
+  const marker = L.marker([island.lat, island.lng], {
+    icon: makeCategoryPinIcon(category, size),
+    className: `marker-vis marker-vis--${category}`,
   });
-  if (onSale) {
-    wireForSaleMarkerInteractions(marker, island);
+
+  const label = islandDisplayName(island);
+  const tip = unnamed
+    ? `${label} — name not yet recorded · ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`
+    : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
+  const lazyTooltip = map.getZoom() <= LOW_ZOOM_MARKER_MAX;
+  const tipOffset = [0, -Math.round(size * 0.35)];
+  if (lazyTooltip) {
+    marker.on("mouseover", function bindLazyTooltip() {
+      if (!this.getTooltip?.()) {
+        this.bindTooltip(tip, { direction: "top", offset: tipOffset });
+      }
+      this.openTooltip?.();
+      this.off("mouseover", bindLazyTooltip);
+    });
   } else {
-    const label = islandDisplayName(island);
-    const tip = unnamed
-      ? `${label} — name not yet recorded · ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`
-      : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
-    const lazyTooltip = map.getZoom() <= LOW_ZOOM_MARKER_MAX;
-    if (lazyTooltip) {
-      marker.on("mouseover", function bindLazyTooltip() {
-        if (!this.getTooltip?.()) {
-          this.bindTooltip(tip, { direction: "top", offset: [0, -4] });
-        }
-        this.openTooltip?.();
-        this.off("mouseover", bindLazyTooltip);
-      });
-    } else {
-      marker.bindTooltip(tip, { direction: "top", offset: [0, -4] });
-    }
-    marker.on("click", () => focusIsland(island.id, { fly: false }));
+    marker.bindTooltip(tip, { direction: "top", offset: tipOffset });
   }
+  marker.on("click", () => focusIsland(island.id, { fly: false }));
   return marker;
 }
 
