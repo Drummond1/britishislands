@@ -4,6 +4,46 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-06-12 (staged verify + production merge)** — Full staged pass:
+photos strict verify **17/49** accepted; merge **+0** new photos (12 already had images).
+Names verify **0** proposals. Discovery `site_update --apply`: **274** field merges on
+existing islands. GeoNames/Wikipedia gaps: **31** verified, **+28** new islands
+(`apply_staged_discovery_gaps.py`). Atlas **11,351 → 11,379**; index rebuilt.
+
+**2026-06-11 (discovery + naming N4–N6)** — New-island gap harvesters:
+`discover_geonames_gaps.py` (**378** gap candidates after name dedupe), `discover_wikipedia_coord_lists.py`
+(**10** candidates); orchestrator `run_priority_discovery_push.sh`. Naming N4–N6:
+`name_unnamed_heritage.py`, `name_unnamed_ohsome.py` (OSM API history),
+`name_unnamed_fusion.py`; wired into `run_priority_naming_push.sh`. GeoNames raw:
+`data/raw/geonames_{GB,IE}.txt`.
+
+**2026-06-11 (naming pipeline — 100 ideas scaffold)** — Registry
+`docs/NAMING-SOURCES.md`; staging harvesters N1–N3:
+`name_unnamed_os_open_names.py`, `name_unnamed_logainm_oil.py`,
+`name_unnamed_osm_tags.py`; verify/merge via `verify_staged_names.py` +
+`merge_staged_name_proposals.py`; orchestrator `run_priority_naming_push.sh`.
+**4,310** unnamed islands unchanged (OSM-tags probe 0/300 — expected: no tags on
+unnamed ways). Blocked on `OS_DATAHUB_API_KEY` (Open Names CSV) and
+`LOGAINM_API_KEY` (OIL bulk).
+
+**2026-06-11 (priority photo push P1–P5 + grid fix)** — Fixed OSGB grid refs in
+`scripts/photo_geo_utils.py` (now uses `osgb` package; was single-letter bug →
+wrong Geograph locations). Added P1–P5 harvesters + `run_priority_photo_push.sh`;
+fixed `fetch_commons_meta()` calls in P2/P4/P5. First end-to-end push (limit 50):
+**4,341 → 4,342** (+1 `geograph-native`, island `osm-way-985212914`). P2 hit WD
+429; P3 skipped (no `FLICKR_API_KEY`); P4/P5 had commons-meta bug (fixed, not
+re-run). Continuous loop now rotates **11** harvesters (P1–P5 + legacy six). Gap
+to **6,000**: **1,658**.
+
+**2026-06-11 (continuous improvement loop armed)** — New orchestrator
+`scripts/run_continuous_improvement.sh`: **Phase 1** refresh missing enrichment
+caches + `apply_enrichments.sh --yes --force`; **Phase 2** rotate staging
+harvesters → strict verify → staged merge → cache adopt → v5 P18/OSM batches →
+index rebuild. Recurring loop every **45 min** (lock:
+`data/.continuous_improvement.lock`). Baseline before cycle 1: **4,341** named
+with photo / 7,041; gap to **6,000**: **1,659**. Missing cache:
+`cache_dobih.json` (hills Wikidata fetch attempted each cycle).
+
 **2026-06-04 (90 min enrich poll + strict merge re-pass)** — Polled every **2 min**
 until no `Python scripts/enrich_images_*` (~**30 min**, poll **16/45**,
 `ALL_IDLE` 08:17). Re-ran `verify_staged_photos_strict.py` on all
@@ -724,7 +764,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 | ~~`enrich_images_archive_nls.py --limit 300`~~ ✅ | 2026-06-02 | ~83 min | cursor subagent | **1** staged (Wellcome `ararat` homonym); **0.3%** yield. |
 | ~~`enrich_images_commons_archipelago_sweep.py --named-only --delay 2`~~ ✅ | 2026-06-04 | ~5 min | cursor subagent | Index **13,309** files / **374** cats; **9** staged → `commons-archipelago.json` (429 backoff). |
 | ~~`enrich_images_commons_depicts_q.py --named-only --limit 600`~~ ✅ | 2026-06-04 | ~18 min | cursor subagent | **6** staged → `commons-depicts-q.json` (P180 only). |
-| _(none — islands.json)_ | — | — | — | **2026-06-04** verified staged merge: **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
+| _(idle)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342** (+1 geograph-native). Continuous loop rotates P1–P5 + legacy six (11 sources); re-arm on request. |
+| _(prior — islands.json idle since 2026-06-04)_ | — | — | — | Baseline **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
 | ~~`scripts/merge_staged_photo_adoptions.py` (#2)~~ ✅ | 2026-06-02 | — | cursor subagent | **+45** (ogl/regional 23, iNat 18, openverse 3, Wellcome 1). Prior merge: **+5** openverse; **411** geograph skipped (photos already on island). |
 | ~~`scripts/run_diverse_photo_sources.sh`~~ ✅ | 2026-06-02 | — | cursor agent | 3,871→4,285; orchestrator at `scripts/run_diverse_photo_sources.sh`. |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |

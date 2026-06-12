@@ -1,31 +1,15 @@
 {
   "agent": "site_update",
-  "generatedAt": "2026-05-15T05:18:57.843117+00:00",
+  "generatedAt": "2026-06-12T11:29:31.187969+00:00",
   "dryRun": false,
-  "includeUncertain": true,
+  "includeUncertain": false,
   "inputRecords": 550,
-  "added": [
-    {
-      "id": "wolf-rock-lighthouse",
-      "name": "Wolf Rock Lighthouse",
-      "nation": "England"
-    }
-  ],
-  "addedProvisional": [
-    {
-      "id": "wolf-rock-lighthouse",
-      "name": "Wolf Rock Lighthouse"
-    }
-  ],
+  "added": [],
+  "addedProvisional": [],
   "merged": [
     {
       "id": "old-man-of-stoer",
       "name": "Old Man of Stoer",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "devils-chimney",
-      "name": "Devil's Chimney",
       "reason": "merged_into_existing"
     },
     {
@@ -34,18 +18,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "grey-stone",
-      "name": "Grey Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "tarbert-county-kerry",
       "name": "Tarbert, County Kerry",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "gladstone-rock",
-      "name": "Gladstone Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -54,58 +28,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "agassiz-rock",
-      "name": "Agassiz Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "eagle-stone",
-      "name": "Eagle Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "maidens-rock",
       "name": "Maiden's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "gaerstone",
-      "name": "Gaerstone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "three-fingers-rock",
-      "name": "Three Fingers Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rock-of-ages",
-      "name": "Rock of Ages",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "druids-chair",
-      "name": "Druid's Chair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "three-ships",
-      "name": "Three Ships",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "clach-nan-con-fionn",
-      "name": "Clach nan Con-fionn",
       "reason": "merged_into_existing"
     },
     {
@@ -119,23 +43,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "thiefs-rock",
-      "name": "Thief's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "horse-rock",
-      "name": "Horse Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "greencliff-rock",
       "name": "Greencliff Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -151,11 +60,6 @@
     {
       "id": "pound-rock",
       "name": "Pound Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "table-rock",
-      "name": "Table Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -179,11 +83,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "idol-stone",
-      "name": "Idol Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "darlings-rock",
       "name": "Darling's Rock",
       "reason": "merged_into_existing"
@@ -194,43 +93,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "black-rock",
-      "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-head-stone",
-      "name": "The Head Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "pancake-stone",
-      "name": "Pancake Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "kings-chair",
-      "name": "King's Chair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mother-cap",
-      "name": "Mother Cap",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hurle-stone",
-      "name": "Hurle Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "butter-rock",
       "name": "Butter Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hurkling-stone",
-      "name": "Hurkling Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -249,33 +113,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "lovers-leap",
-      "name": "Lover's Leap",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "jobbles-rock",
       "name": "Jobbles Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "wheel-stones",
-      "name": "Wheel Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-ten-commandments-carved-stone",
-      "name": "The Ten Commandments (Carved stone)",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "saint-patricks-chair",
-      "name": "Saint Patrick's Chair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bradys-crag",
-      "name": "Brady's Crag",
       "reason": "merged_into_existing"
     },
     {
@@ -294,111 +133,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "toothill-rock",
-      "name": "Toothill Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-winking-man",
-      "name": "The Winking Man",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "tristis-rock",
-      "name": "Tristis Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "ship-rock",
-      "name": "Ship Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "quarry-rock",
-      "name": "Quarry Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "needle-rock",
-      "name": "Needle Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hern-stones",
-      "name": "Hern Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "wain-stones",
-      "name": "Wain Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cave-like-boulders",
-      "name": "Cave-like boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-bridestone-bottleneck",
-      "name": "The Bridestone (Bottleneck)",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rive-rocks",
-      "name": "Rive Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "whirlaw-rocks",
-      "name": "Whirlaw Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "wolf-stones",
-      "name": "Wolf Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "noels-nipple",
-      "name": "Noel's Nipple",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "white-rock",
-      "name": "White Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "matterhorn-arete",
-      "name": "Matterhorn Arete",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "lowcock-stoop",
-      "name": "Lowcock Stoop",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-whales-back",
-      "name": "The Whale's Back",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "adel-crags",
-      "name": "Adel Crags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rivelin-needle",
-      "name": "Rivelin Needle",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-turf-stack-rock",
-      "name": "The Turf Stack Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "basteirs-tooth",
       "name": "Basteir's Tooth",
       "reason": "merged_into_existing"
@@ -409,11 +143,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "market-stone",
-      "name": "Market Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "doig-rock",
       "name": "Doig rock",
       "reason": "merged_into_existing"
@@ -421,26 +150,11 @@
     {
       "id": "doig-rock",
       "name": "Doig rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rankling-stone",
-      "name": "Rankling Stone",
       "reason": "merged_into_existing"
     },
     {
       "id": "the-white-lady",
       "name": "The White Lady",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bonnet-stone",
-      "name": "Bonnet Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "giants-bed",
-      "name": "Giants Bed",
       "reason": "merged_into_existing"
     },
     {
@@ -459,7 +173,7 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "split-rock",
+      "id": "osm-node-3244375880",
       "name": "Split Rock",
       "reason": "merged_into_existing"
     },
@@ -471,16 +185,6 @@
     {
       "id": "dinham-rock",
       "name": "Dinham Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carricknagore-rock",
-      "name": "Carricknagore Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-salt-cellar",
-      "name": "The Salt Cellar",
       "reason": "merged_into_existing"
     },
     {
@@ -514,43 +218,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-grouse-stone",
-      "name": "The Grouse Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "druids-stone",
-      "name": "Druid's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "garston-rocks",
       "name": "Garston Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hurkling-stones",
-      "name": "Hurkling Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "pots-and-pans-stone",
-      "name": "Pots and Pans Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carraig-na-sasanac",
-      "name": "Carraig-na-Sasanac",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "kilroosk-rock",
-      "name": "Kilroosk Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carlin-maggie",
-      "name": "Carlin Maggie",
       "reason": "merged_into_existing"
     },
     {
@@ -559,33 +228,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "haystack-rock",
-      "name": "Haystack Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "tobys-rock",
       "name": "Toby's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "napes-needle",
-      "name": "Napes Needle",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "queens-chair",
-      "name": "Queen's Chair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carreg-cannan",
-      "name": "Carreg Cannan",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "standing-stone",
-      "name": "Standing stone",
       "reason": "merged_into_existing"
     },
     {
@@ -594,43 +238,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "kit-rocks",
-      "name": "Kit Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "devils-pulpit",
-      "name": "Devil's Pulpit",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "nicodemus-knob",
       "name": "Nicodemus Knob",
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-millennium-stone",
-      "name": "The Millennium Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "crawlaw-stone",
-      "name": "Crawlaw Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "buddo-rock",
       "name": "Buddo Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-old-man-of-mow",
-      "name": "The Old Man of Mow",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -644,18 +258,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "castle-wilson",
-      "name": "Castle Wilson",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "eaglais-bhreagach-natural-arch",
       "name": "Eaglais Bhreagach Natural Arch",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "saint-patricks-rock",
-      "name": "Saint Patrick's Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -666,11 +270,6 @@
     {
       "id": "blackchurch-rock",
       "name": "Blackchurch Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rocking-stone",
-      "name": "Rocking Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -694,48 +293,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "nichol-chair",
-      "name": "Nichol Chair",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "roan-heads",
       "name": "Roan Heads",
       "reason": "merged_into_existing"
     },
     {
-      "id": "lion-rock",
-      "name": "Lion Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "worm-stones",
-      "name": "Worm Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-devils-mill-stone",
-      "name": "The Devil’s Mill Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "cock-of-arran",
       "name": "Cock of Arran",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "tun-stone",
-      "name": "Tun Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "pembroke-stone",
-      "name": "Pembroke Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-sharstone",
-      "name": "The Sharstone",
       "reason": "merged_into_existing"
     },
     {
@@ -759,28 +323,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "rocking-stone",
-      "name": "Rocking Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "50-peaks-view",
       "name": "50 Peaks View",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hurkling-stones",
-      "name": "Hurkling Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "smallfield-roof",
-      "name": "Smallfield Roof",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rockery",
-      "name": "Rockery",
       "reason": "merged_into_existing"
     },
     {
@@ -789,113 +333,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "slopey-blocks",
-      "name": "Slopey Blocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "springfield",
-      "name": "Springfield",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "paddys-crossing",
-      "name": "Paddy's Crossing",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "robin-hoods-stone",
-      "name": "Robin Hood's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "john-knoxs-pulpit",
-      "name": "John Knox's Pulpit",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rolling-rock",
-      "name": "Rolling Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cloven-stane",
-      "name": "Cloven Stane",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "white-hagmark",
-      "name": "White Hagmark",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "old-hartley-standing-stone",
       "name": "Old Hartley Standing Stone",
       "reason": "merged_into_existing"
     },
     {
-      "id": "giants-rock",
-      "name": "Giants Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "whaleback-boulder",
-      "name": "Whaleback Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sepulchre-stone",
-      "name": "Sepulchre Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rocking-stone",
-      "name": "Rocking Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "black-rock",
+      "id": "osm-node-7633022311",
       "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sheepstone",
-      "name": "Sheepstone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-pillar",
-      "name": "The pillar",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cat-craig",
-      "name": "Cat Craig",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-garden-shed",
-      "name": "The Garden Shed",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "walnut-whip",
-      "name": "Walnut Whip",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "stepped-roof",
-      "name": "Stepped Roof",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "fairy-stones",
-      "name": "Fairy Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carrigaloe-rock",
-      "name": "Carrigaloe Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -904,28 +348,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-7843636371",
       "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "victory",
-      "name": "Victory",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "defiance",
-      "name": "Defiance",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "royal-soverin",
-      "name": "Royal Soverin",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "druids-idol",
-      "name": "Druid's Idol",
       "reason": "merged_into_existing"
     },
     {
@@ -934,13 +358,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-8148500795",
       "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "burglar-buttress",
-      "name": "Burglar Buttress",
       "reason": "merged_into_existing"
     },
     {
@@ -949,18 +368,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "navnis-rock",
-      "name": "Navni's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "mass-rock",
       "name": "Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "shuttleworth-rocks",
-      "name": "Shuttleworth Rocks",
       "reason": "merged_into_existing"
     },
     {
@@ -984,18 +393,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-love-stone",
-      "name": "The Love Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "cerrig-duon",
       "name": "Cerrig Duon",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-accessible-pinnacle",
-      "name": "The Accessible Pinnacle",
       "reason": "merged_into_existing"
     },
     {
@@ -1011,16 +410,6 @@
     {
       "id": "carreg-bica",
       "name": "Carreg Bica",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rocks",
-      "name": "Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "witchs-cave",
-      "name": "Witch's Cave",
       "reason": "merged_into_existing"
     },
     {
@@ -1044,48 +433,18 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "whetstone",
-      "name": "Whetstone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sharpstones",
-      "name": "Sharpstones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "ballykeeffe-mass-rock",
-      "name": "Ballykeeffe Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "wagon-rock",
       "name": "Wagon Rock",
       "reason": "merged_into_existing"
     },
     {
-      "id": "split-rock",
+      "id": "osm-node-8726333515",
       "name": "Split Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "gortnahoughtee-mass-rock",
-      "name": "Gortnahoughtee Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "ravens-craig",
-      "name": "Raven's Craig",
       "reason": "merged_into_existing"
     },
     {
       "id": "lickeen",
       "name": "Lickeen",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "jubilee-rock",
-      "name": "Jubilee Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -1119,18 +478,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "wee-craig",
-      "name": "Wee Craig",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "fossil-worm-track",
       "name": "Fossil Worm Track",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "browns-towers",
-      "name": "Brown's Towers",
       "reason": "merged_into_existing"
     },
     {
@@ -1139,7 +488,7 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-9154783745",
       "name": "Black Rock",
       "reason": "merged_into_existing"
     },
@@ -1174,11 +523,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "clach-an-locha",
-      "name": "Clach an Locha",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carrigeen",
       "name": "Carrigeen",
       "reason": "merged_into_existing"
@@ -1189,16 +533,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "dinas-rock",
-      "name": "Dinas Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bwa-maen",
-      "name": "Bwa Maen",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carrick-philip",
       "name": "Carrick Philip",
       "reason": "merged_into_existing"
@@ -1206,11 +540,6 @@
     {
       "id": "the-caamstone",
       "name": "The Caamstone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-philosophers-stone",
-      "name": "The Philosopher's Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -1294,68 +623,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "lion-rock",
-      "name": "Lion Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "devils-thumb",
-      "name": "Devil's Thumb",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cloghleagh-rock",
-      "name": "Cloghleagh Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cloghleagh-rock",
-      "name": "Cloghleagh Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carsons-stone",
-      "name": "Carsons Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-grey-man-of-merrick",
-      "name": "The Grey Man of Merrick",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "golden-rock",
       "name": "Golden Rock",
       "reason": "merged_into_existing"
     },
     {
-      "id": "hobb-stones",
-      "name": "Hobb Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "ingleberry-rock",
-      "name": "Ingleberry Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "boulder",
-      "name": "Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "neils-stone",
-      "name": "Neils Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "sliddery-stone",
       "name": "Sliddery Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -1384,7 +658,7 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-node-9938307605",
       "name": "Sgeir Dhubh",
       "reason": "merged_into_existing"
     },
@@ -1394,18 +668,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "old-man-of-tarsuinn",
-      "name": "Old Man of Tarsuinn",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carrickvara",
       "name": "Carrickvara",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cakes-of-bread",
-      "name": "Cakes of Bread",
       "reason": "merged_into_existing"
     },
     {
@@ -1429,16 +693,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "adam-and-eve",
-      "name": "Adam and Eve",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "scroggy-mass-rock",
-      "name": "Scroggy Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "creggan-dhoo",
       "name": "Creggan Dhoo",
       "reason": "merged_into_existing"
@@ -1454,56 +708,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "loaf-and-cheese-rock",
-      "name": "Loaf and Cheese Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "creag-an-aonaich",
-      "name": "Creag an Aonaich",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "creag-an-dronnaig",
-      "name": "Creag an Dronnaig",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "corhidlin-rock",
-      "name": "Corhidlin Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-stripped-flags",
-      "name": "The Stripped Flags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-black-stairs",
-      "name": "The Black Stairs",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-back-motte",
-      "name": "The Back Motte",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "black-rock",
-      "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "farbrega-rock",
-      "name": "Farbrega Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mass-rock",
-      "name": "Mass Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "turnabout-rock",
       "name": "Turnabout Rock",
       "reason": "merged_into_existing"
@@ -1511,11 +715,6 @@
     {
       "id": "da-rønnie-stane",
       "name": "Da Rønnie Stane",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-witchs-tooth",
-      "name": "The Witch's Tooth",
       "reason": "merged_into_existing"
     },
     {
@@ -1539,38 +738,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "yawning-stone",
-      "name": "Yawning Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "gunnoch-rock",
-      "name": "Gunnoch Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "crow-rock",
       "name": "Crow Rock",
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-bulmer-stone",
-      "name": "The Bulmer Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "palatines-rock",
-      "name": "Palatine's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "the-pinnacle",
       "name": "The Pinnacle",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-hopestone",
-      "name": "The Hopestone",
       "reason": "merged_into_existing"
     },
     {
@@ -1619,38 +793,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "moss-pinnacle",
-      "name": "Moss Pinnacle",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "black-rock",
-      "name": "Black Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "piper-stones",
-      "name": "Piper stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "giants-rock---rock-of-aglaish",
-      "name": "Giant's Rock - Rock of Aglaish",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "the-drongs",
       "name": "The Drongs",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "druids-altar",
-      "name": "Druid's Altar",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "scalpeen-rock",
-      "name": "Scalpeen Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -1759,88 +903,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-thumb-boulder",
-      "name": "The Thumb Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "parc-meurig",
-      "name": "Parc Meurig",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rocking-stone",
-      "name": "Rocking Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "maes-newyddion-woods",
-      "name": "Maes Newyddion Woods",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carreg-ddiddos",
-      "name": "Carreg Ddiddos",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "white-rock",
-      "name": "White Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "edwin-richards-quarry-boulders",
-      "name": "Edwin Richards Quarry Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "edwin-richards-quarry-boulders",
-      "name": "Edwin Richards Quarry Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "edwin-richards-quarry-boulders",
-      "name": "Edwin Richards Quarry Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "edwin-richards-quarry-boulders",
-      "name": "Edwin Richards Quarry Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "edwin-richards-quarry-boulders",
-      "name": "Edwin Richards Quarry Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "glacial-boulders",
-      "name": "Glacial Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "glacial-boulders",
-      "name": "Glacial Boulders",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hanging-stone",
-      "name": "Hanging Stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "johnnie-dows-pulpit",
       "name": "Johnnie Dow's Pulpit",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "saint-brigits-mass-stone",
-      "name": "Saint Brigit's Mass Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "saint-brigits-chair",
-      "name": "Saint Brigit's Chair",
       "reason": "merged_into_existing"
     },
     {
@@ -1864,16 +928,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-trinnacle",
-      "name": "The Trinnacle",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "all-mhad-barn",
-      "name": "All-mhad Barn",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "clach-mhòr-nan-aonaigean",
       "name": "Clach Mhòr nan Aonaigean",
       "reason": "merged_into_existing"
@@ -1894,11 +948,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "carr-stones",
-      "name": "Carr Stones",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "leac-an-t-suiridhiche",
       "name": "Leac an t-Suiridhiche",
       "reason": "merged_into_existing"
@@ -1906,26 +955,6 @@
     {
       "id": "clach-shomhairl",
       "name": "Clach Shomhairl",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "grey-stone",
-      "name": "Grey Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "dolly-roggin",
-      "name": "Dolly Roggin",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "tyermans-stone",
-      "name": "Tyerman's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "jonaman",
-      "name": "Jonaman",
       "reason": "merged_into_existing"
     },
     {
@@ -1949,68 +978,8 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "the-beehive",
-      "name": "The Beehive",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "salmon-rock",
       "name": "Salmon Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-anvil",
-      "name": "The Anvil",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "four-wise-monkeys-rock",
-      "name": "Four Wise Monkeys rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "boxing-glove-stones",
-      "name": "Boxing Glove stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "dinosaur-rock",
-      "name": "Dinosaur rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cup-rock",
-      "name": "Cup rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mushroom-rock",
-      "name": "Mushroom rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "conjuring-stone",
-      "name": "Conjuring Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "old-wifes-stone",
-      "name": "Old Wife's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "long-stoop",
-      "name": "Long Stoop",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "stone-chari",
-      "name": "Stone chari",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "grey-horse-stone",
-      "name": "Grey Horse Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -2034,68 +1003,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "blakey-tor",
-      "name": "Blakey Tor",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "blackalder-tor",
-      "name": "Blackalder Tor",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "ivy-tor",
-      "name": "Ivy Tor",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sharpitor",
-      "name": "Sharpitor",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "dish-stone",
-      "name": "Dish Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carnane-rock",
-      "name": "Carnane Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carraig-an-chait",
       "name": "Carraig an Chait",
       "reason": "merged_into_existing"
     },
     {
-      "id": "strut-stear",
-      "name": "Strut Stear",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "freshbrook-henge",
-      "name": "Freshbrook Henge",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "robin-hoods-stone",
-      "name": "Robin Hood's stone",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "pans-rocks",
       "name": "Pans Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bobs-rock",
-      "name": "Bob's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hemlock-stone",
-      "name": "Hemlock Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -2109,7 +1023,7 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-52718335",
       "name": "Sgeir Dhubh",
       "reason": "merged_into_existing"
     },
@@ -2144,11 +1058,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "baboon-rock",
-      "name": "Baboon Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "sgeir-greadach",
       "name": "Sgeir Greadach",
       "reason": "merged_into_existing"
@@ -2169,53 +1078,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "carn-enoch",
-      "name": "Carn Enoch",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "mother-cap",
-      "name": "Mother Cap",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "monnington-falls",
-      "name": "Monnington Falls",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "gib-torr-rocks",
-      "name": "Gib Torr Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hangershell-rock",
-      "name": "Hangershell Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "anchor-stone",
-      "name": "Anchor Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-223606728",
       "name": "Sgeir Dhubh",
       "reason": "merged_into_existing"
     },
     {
       "id": "sgeirean-buidhe",
       "name": "Sgeirean Buidhe",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "eagle-rock",
-      "name": "Eagle Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "tinnock-rock",
-      "name": "Tinnock Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -2254,26 +1123,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "manstone-rock",
-      "name": "Manstone Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "shepherds-rock",
-      "name": "Shepherd's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "devils-chair",
-      "name": "Devil's Chair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "little-alms-cliff",
-      "name": "Little Alms Cliff",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carrigavaddra",
       "name": "Carrigavaddra",
       "reason": "merged_into_existing"
@@ -2291,86 +1140,11 @@
     {
       "id": "carrigavaddra",
       "name": "Carrigavaddra",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "harston-rock",
-      "name": "Harston Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sheeps-tor",
-      "name": "Sheeps Tor",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cow-crag",
-      "name": "Cow Crag",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "sill",
-      "name": "Sill",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "c18",
-      "name": "C18",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "c14",
-      "name": "C14",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "r2",
-      "name": "R2",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "c11",
-      "name": "C11",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "c5",
-      "name": "C5",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "l2",
-      "name": "L2",
       "reason": "merged_into_existing"
     },
     {
       "id": "the-star",
       "name": "The Star",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-lion-and-the-lamb",
-      "name": "The Lion and the Lamb",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-woman-and-the-organ",
-      "name": "The Woman and the Organ",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "criss-cross-rock",
-      "name": "Criss-Cross Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "summer-lodge-stone",
-      "name": "Summer Lodge Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cow",
-      "name": "Cow",
       "reason": "merged_into_existing"
     },
     {
@@ -2399,11 +1173,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "sgòr-a-bhalgaire",
-      "name": "Sgòr a' Bhalgaire",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "digue-de-mer",
       "name": "Digue de Mer",
       "reason": "merged_into_existing"
@@ -2424,73 +1193,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "far-crags",
-      "name": "Far Crags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "round-stones",
-      "name": "Round Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "round-stones",
-      "name": "Round Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "flat-crags",
-      "name": "Flat Crags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "round-stones",
-      "name": "Round Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rowantree-crags",
-      "name": "Rowantree Crags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "old-moss-crags",
-      "name": "Old Moss Crags",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cerrig-lladron",
-      "name": "Cerrig Lladron",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rock-of-roosca",
-      "name": "Rock of Roosca",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "minane-rock",
       "name": "Minane Rock",
       "reason": "merged_into_existing"
     },
     {
-      "id": "devils-stone",
-      "name": "Devil's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bearstone-rock",
-      "name": "Bearstone Rock",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "nevi-skerry",
       "name": "Nevi Skerry",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "hanging-stone",
-      "name": "Hanging Stone",
       "reason": "merged_into_existing"
     },
     {
@@ -2509,36 +1218,6 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "gentle-slab-boulder",
-      "name": "Gentle Slab Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bog-boulder",
-      "name": "Bog Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "little-summit-boulder",
-      "name": "Little Summit Boulder",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-slab",
-      "name": "The Slab",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "truttle-stones",
-      "name": "Truttle Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "truttle-stones",
-      "name": "Truttle Stones",
-      "reason": "merged_into_existing"
-    },
-    {
       "id": "carrickmary-more",
       "name": "Carrickmary more",
       "reason": "merged_into_existing"
@@ -2549,53 +1228,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-1180735560",
       "name": "Sgeir Dhubh",
       "reason": "merged_into_existing"
     },
     {
-      "id": "ravens-rock",
-      "name": "Raven's Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cannon-rock",
+      "id": "osm-way-1225547241",
       "name": "Cannon Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "big-stane-o-carn-beag",
-      "name": "Big Stane o Carn Beag",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "bowermans-nose",
-      "name": "Bowerman's Nose",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "rocks-of-clashnair",
-      "name": "Rocks of Clashnair",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "castle-rock",
-      "name": "Castle Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "battle-stones",
-      "name": "Battle Stones",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "black-rocks",
-      "name": "Black Rocks",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "doon-rock",
-      "name": "Doon Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -2619,33 +1258,13 @@
       "reason": "merged_into_existing"
     },
     {
-      "id": "clochmaloo",
-      "name": "Clochmaloo",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "giants-stone",
-      "name": "Giant's Stone",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-earth-pillars",
-      "name": "The Earth Pillars",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cannon-rock",
+      "id": "osm-way-1434461262",
       "name": "Cannon Rock",
       "reason": "merged_into_existing"
     },
     {
       "id": "carrigtuler",
       "name": "Carrigtuler",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "carrignawaddra",
-      "name": "Carrignawaddra",
       "reason": "merged_into_existing"
     },
     {
@@ -2661,11 +1280,6 @@
     {
       "id": "old-maid-rock",
       "name": "Old Maid Rock",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "cloghadoolarty-rock",
-      "name": "Cloghadoolarty Rock",
       "reason": "merged_into_existing"
     },
     {
@@ -2706,11 +1320,6 @@
     {
       "id": "hellurók",
       "name": "Hellurók",
-      "reason": "merged_into_existing"
-    },
-    {
-      "id": "the-cow-calf",
-      "name": "The Cow & Calf",
       "reason": "merged_into_existing"
     },
     {
@@ -2762,19 +1371,1407 @@
       "id": "mochras",
       "name": "Mochras",
       "reason": "merged_into_existing"
+    },
+    {
+      "id": "wolf-rock-lighthouse",
+      "name": "Wolf Rock Lighthouse",
+      "reason": "merged_into_existing"
     }
   ],
   "skippedDuplicate": [],
   "skippedUncertain": [],
   "skippedExistingReview": [],
+  "skippedTerrestrialRock": [
+    {
+      "id": "devils-chimney",
+      "name": "Devil's Chimney",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "grey-stone",
+      "name": "Grey Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gladstone-rock",
+      "name": "Gladstone Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "agassiz-rock",
+      "name": "Agassiz Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "eagle-stone",
+      "name": "Eagle Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gaerstone",
+      "name": "Gaerstone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "three-fingers-rock",
+      "name": "Three Fingers Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rock-of-ages",
+      "name": "Rock of Ages",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "druids-chair",
+      "name": "Druid's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "three-ships",
+      "name": "Three Ships",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "clach-nan-con-fionn",
+      "name": "Clach nan Con-fionn",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "thiefs-rock",
+      "name": "Thief's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "horse-rock",
+      "name": "Horse Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "table-rock",
+      "name": "Table Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "idol-stone",
+      "name": "Idol Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-head-stone",
+      "name": "The Head Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "pancake-stone",
+      "name": "Pancake Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "kings-chair",
+      "name": "King's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mother-cap",
+      "name": "Mother Cap",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hurle-stone",
+      "name": "Hurle Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hurkling-stone",
+      "name": "Hurkling Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "lovers-leap",
+      "name": "Lover's Leap",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "wheel-stones",
+      "name": "Wheel Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-ten-commandments-carved-stone",
+      "name": "The Ten Commandments (Carved stone)",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "saint-patricks-chair",
+      "name": "Saint Patrick's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bradys-crag",
+      "name": "Brady's Crag",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "toothill-rock",
+      "name": "Toothill Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-winking-man",
+      "name": "The Winking Man",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "tristis-rock",
+      "name": "Tristis Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ship-rock",
+      "name": "Ship Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "quarry-rock",
+      "name": "Quarry Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "needle-rock",
+      "name": "Needle Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hern-stones",
+      "name": "Hern Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "wain-stones",
+      "name": "Wain Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cave-like-boulders",
+      "name": "Cave-like boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-bridestone-bottleneck",
+      "name": "The Bridestone (Bottleneck)",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rive-rocks",
+      "name": "Rive Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "whirlaw-rocks",
+      "name": "Whirlaw Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "wolf-stones",
+      "name": "Wolf Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "noels-nipple",
+      "name": "Noel's Nipple",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "white-rock",
+      "name": "White Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "matterhorn-arete",
+      "name": "Matterhorn Arete",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "lowcock-stoop",
+      "name": "Lowcock Stoop",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-whales-back",
+      "name": "The Whale's Back",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "adel-crags",
+      "name": "Adel Crags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rivelin-needle",
+      "name": "Rivelin Needle",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-turf-stack-rock",
+      "name": "The Turf Stack Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "market-stone",
+      "name": "Market Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rankling-stone",
+      "name": "Rankling Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bonnet-stone",
+      "name": "Bonnet Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "giants-bed",
+      "name": "Giants Bed",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carricknagore-rock",
+      "name": "Carricknagore Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-salt-cellar",
+      "name": "The Salt Cellar",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-grouse-stone",
+      "name": "The Grouse Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "druids-stone",
+      "name": "Druid's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hurkling-stones",
+      "name": "Hurkling Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "pots-and-pans-stone",
+      "name": "Pots and Pans Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carraig-na-sasanac",
+      "name": "Carraig-na-Sasanac",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "kilroosk-rock",
+      "name": "Kilroosk Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carlin-maggie",
+      "name": "Carlin Maggie",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "haystack-rock",
+      "name": "Haystack Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "napes-needle",
+      "name": "Napes Needle",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "queens-chair",
+      "name": "Queen's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carreg-cannan",
+      "name": "Carreg Cannan",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "standing-stone",
+      "name": "Standing stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "kit-rocks",
+      "name": "Kit Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "devils-pulpit",
+      "name": "Devil's Pulpit",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-millennium-stone",
+      "name": "The Millennium Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "crawlaw-stone",
+      "name": "Crawlaw Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-old-man-of-mow",
+      "name": "The Old Man of Mow",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "castle-wilson",
+      "name": "Castle Wilson",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "saint-patricks-rock",
+      "name": "Saint Patrick's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "nichol-chair",
+      "name": "Nichol Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "lion-rock",
+      "name": "Lion Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "worm-stones",
+      "name": "Worm Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-devils-mill-stone",
+      "name": "The Devil’s Mill Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "tun-stone",
+      "name": "Tun Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "pembroke-stone",
+      "name": "Pembroke Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-sharstone",
+      "name": "The Sharstone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hurkling-stones",
+      "name": "Hurkling Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "smallfield-roof",
+      "name": "Smallfield Roof",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rockery",
+      "name": "Rockery",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "slopey-blocks",
+      "name": "Slopey Blocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "springfield",
+      "name": "Springfield",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "paddys-crossing",
+      "name": "Paddy's Crossing",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "robin-hoods-stone",
+      "name": "Robin Hood's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "john-knoxs-pulpit",
+      "name": "John Knox's Pulpit",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rolling-rock",
+      "name": "Rolling Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cloven-stane",
+      "name": "Cloven Stane",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "white-hagmark",
+      "name": "White Hagmark",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "giants-rock",
+      "name": "Giants Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "whaleback-boulder",
+      "name": "Whaleback Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sepulchre-stone",
+      "name": "Sepulchre Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sheepstone",
+      "name": "Sheepstone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-pillar",
+      "name": "The pillar",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cat-craig",
+      "name": "Cat Craig",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-garden-shed",
+      "name": "The Garden Shed",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "walnut-whip",
+      "name": "Walnut Whip",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "stepped-roof",
+      "name": "Stepped Roof",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "fairy-stones",
+      "name": "Fairy Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carrigaloe-rock",
+      "name": "Carrigaloe Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "victory",
+      "name": "Victory",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "defiance",
+      "name": "Defiance",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "royal-soverin",
+      "name": "Royal Soverin",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "druids-idol",
+      "name": "Druid's Idol",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "burglar-buttress",
+      "name": "Burglar Buttress",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "navnis-rock",
+      "name": "Navni's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "shuttleworth-rocks",
+      "name": "Shuttleworth Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-love-stone",
+      "name": "The Love Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-accessible-pinnacle",
+      "name": "The Accessible Pinnacle",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocks",
+      "name": "Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "witchs-cave",
+      "name": "Witch's Cave",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "whetstone",
+      "name": "Whetstone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sharpstones",
+      "name": "Sharpstones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ballykeeffe-mass-rock",
+      "name": "Ballykeeffe Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gortnahoughtee-mass-rock",
+      "name": "Gortnahoughtee Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ravens-craig",
+      "name": "Raven's Craig",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "jubilee-rock",
+      "name": "Jubilee Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "wee-craig",
+      "name": "Wee Craig",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "browns-towers",
+      "name": "Brown's Towers",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "clach-an-locha",
+      "name": "Clach an Locha",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "dinas-rock",
+      "name": "Dinas Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bwa-maen",
+      "name": "Bwa Maen",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-philosophers-stone",
+      "name": "The Philosopher's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "lion-rock",
+      "name": "Lion Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "devils-thumb",
+      "name": "Devil's Thumb",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cloghleagh-rock",
+      "name": "Cloghleagh Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cloghleagh-rock",
+      "name": "Cloghleagh Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carsons-stone",
+      "name": "Carsons Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-grey-man-of-merrick",
+      "name": "The Grey Man of Merrick",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hobb-stones",
+      "name": "Hobb Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ingleberry-rock",
+      "name": "Ingleberry Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "boulder",
+      "name": "Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "neils-stone",
+      "name": "Neils Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "old-man-of-tarsuinn",
+      "name": "Old Man of Tarsuinn",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cakes-of-bread",
+      "name": "Cakes of Bread",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "adam-and-eve",
+      "name": "Adam and Eve",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "scroggy-mass-rock",
+      "name": "Scroggy Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "loaf-and-cheese-rock",
+      "name": "Loaf and Cheese Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "creag-an-aonaich",
+      "name": "Creag an Aonaich",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "creag-an-dronnaig",
+      "name": "Creag an Dronnaig",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "corhidlin-rock",
+      "name": "Corhidlin Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-stripped-flags",
+      "name": "The Stripped Flags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-black-stairs",
+      "name": "The Black Stairs",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-back-motte",
+      "name": "The Back Motte",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "farbrega-rock",
+      "name": "Farbrega Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mass-rock",
+      "name": "Mass Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-witchs-tooth",
+      "name": "The Witch's Tooth",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "yawning-stone",
+      "name": "Yawning Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gunnoch-rock",
+      "name": "Gunnoch Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-bulmer-stone",
+      "name": "The Bulmer Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "palatines-rock",
+      "name": "Palatine's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-hopestone",
+      "name": "The Hopestone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "moss-pinnacle",
+      "name": "Moss Pinnacle",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "black-rock",
+      "name": "Black Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "piper-stones",
+      "name": "Piper stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "giants-rock---rock-of-aglaish",
+      "name": "Giant's Rock - Rock of Aglaish",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "druids-altar",
+      "name": "Druid's Altar",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "scalpeen-rock",
+      "name": "Scalpeen Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-thumb-boulder",
+      "name": "The Thumb Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "parc-meurig",
+      "name": "Parc Meurig",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocking-stone",
+      "name": "Rocking Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "maes-newyddion-woods",
+      "name": "Maes Newyddion Woods",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carreg-ddiddos",
+      "name": "Carreg Ddiddos",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "white-rock",
+      "name": "White Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "edwin-richards-quarry-boulders",
+      "name": "Edwin Richards Quarry Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "glacial-boulders",
+      "name": "Glacial Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "glacial-boulders",
+      "name": "Glacial Boulders",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hanging-stone",
+      "name": "Hanging Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "saint-brigits-mass-stone",
+      "name": "Saint Brigit's Mass Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "saint-brigits-chair",
+      "name": "Saint Brigit's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-trinnacle",
+      "name": "The Trinnacle",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "all-mhad-barn",
+      "name": "All-mhad Barn",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carr-stones",
+      "name": "Carr Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "grey-stone",
+      "name": "Grey Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "dolly-roggin",
+      "name": "Dolly Roggin",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "tyermans-stone",
+      "name": "Tyerman's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "jonaman",
+      "name": "Jonaman",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-beehive",
+      "name": "The Beehive",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-anvil",
+      "name": "The Anvil",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "four-wise-monkeys-rock",
+      "name": "Four Wise Monkeys rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "boxing-glove-stones",
+      "name": "Boxing Glove stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "dinosaur-rock",
+      "name": "Dinosaur rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cup-rock",
+      "name": "Cup rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mushroom-rock",
+      "name": "Mushroom rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "conjuring-stone",
+      "name": "Conjuring Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "old-wifes-stone",
+      "name": "Old Wife's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "long-stoop",
+      "name": "Long Stoop",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "stone-chari",
+      "name": "Stone chari",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "grey-horse-stone",
+      "name": "Grey Horse Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "blakey-tor",
+      "name": "Blakey Tor",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "blackalder-tor",
+      "name": "Blackalder Tor",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ivy-tor",
+      "name": "Ivy Tor",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sharpitor",
+      "name": "Sharpitor",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "dish-stone",
+      "name": "Dish Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carnane-rock",
+      "name": "Carnane Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "strut-stear",
+      "name": "Strut Stear",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "freshbrook-henge",
+      "name": "Freshbrook Henge",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "robin-hoods-stone",
+      "name": "Robin Hood's stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bobs-rock",
+      "name": "Bob's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hemlock-stone",
+      "name": "Hemlock Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "baboon-rock",
+      "name": "Baboon Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carn-enoch",
+      "name": "Carn Enoch",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "mother-cap",
+      "name": "Mother Cap",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "monnington-falls",
+      "name": "Monnington Falls",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gib-torr-rocks",
+      "name": "Gib Torr Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hangershell-rock",
+      "name": "Hangershell Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "anchor-stone",
+      "name": "Anchor Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "eagle-rock",
+      "name": "Eagle Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "tinnock-rock",
+      "name": "Tinnock Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "manstone-rock",
+      "name": "Manstone Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "shepherds-rock",
+      "name": "Shepherd's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "devils-chair",
+      "name": "Devil's Chair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "little-alms-cliff",
+      "name": "Little Alms Cliff",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "harston-rock",
+      "name": "Harston Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sheeps-tor",
+      "name": "Sheeps Tor",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cow-crag",
+      "name": "Cow Crag",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sill",
+      "name": "Sill",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "c18",
+      "name": "C18",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "c14",
+      "name": "C14",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "r2",
+      "name": "R2",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "c11",
+      "name": "C11",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "c5",
+      "name": "C5",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "l2",
+      "name": "L2",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-lion-and-the-lamb",
+      "name": "The Lion and the Lamb",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-woman-and-the-organ",
+      "name": "The Woman and the Organ",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "criss-cross-rock",
+      "name": "Criss-Cross Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "summer-lodge-stone",
+      "name": "Summer Lodge Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cow",
+      "name": "Cow",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "sgòr-a-bhalgaire",
+      "name": "Sgòr a' Bhalgaire",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "far-crags",
+      "name": "Far Crags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "round-stones",
+      "name": "Round Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "round-stones",
+      "name": "Round Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "flat-crags",
+      "name": "Flat Crags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "round-stones",
+      "name": "Round Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rowantree-crags",
+      "name": "Rowantree Crags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "old-moss-crags",
+      "name": "Old Moss Crags",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cerrig-lladron",
+      "name": "Cerrig Lladron",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rock-of-roosca",
+      "name": "Rock of Roosca",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "devils-stone",
+      "name": "Devil's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bearstone-rock",
+      "name": "Bearstone Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "hanging-stone",
+      "name": "Hanging Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "gentle-slab-boulder",
+      "name": "Gentle Slab Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bog-boulder",
+      "name": "Bog Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "little-summit-boulder",
+      "name": "Little Summit Boulder",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-slab",
+      "name": "The Slab",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "truttle-stones",
+      "name": "Truttle Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "truttle-stones",
+      "name": "Truttle Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "ravens-rock",
+      "name": "Raven's Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "big-stane-o-carn-beag",
+      "name": "Big Stane o Carn Beag",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "bowermans-nose",
+      "name": "Bowerman's Nose",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "rocks-of-clashnair",
+      "name": "Rocks of Clashnair",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "castle-rock",
+      "name": "Castle Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "battle-stones",
+      "name": "Battle Stones",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "black-rocks",
+      "name": "Black Rocks",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "doon-rock",
+      "name": "Doon Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "clochmaloo",
+      "name": "Clochmaloo",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "giants-stone",
+      "name": "Giant's Stone",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-earth-pillars",
+      "name": "The Earth Pillars",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "carrignawaddra",
+      "name": "Carrignawaddra",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "cloghadoolarty-rock",
+      "name": "Cloghadoolarty Rock",
+      "reason": "terrestrial_inland_rock"
+    },
+    {
+      "id": "the-cow-calf",
+      "name": "The Cow & Calf",
+      "reason": "terrestrial_inland_rock"
+    }
+  ],
   "counts": {
-    "added": 1,
-    "addedProvisional": 1,
-    "merged": 549,
+    "added": 0,
+    "addedProvisional": 0,
+    "merged": 274,
     "skippedDuplicate": 0,
     "skippedUncertain": 0,
-    "skippedExistingReview": 0
+    "skippedExistingReview": 0,
+    "skippedTerrestrialRock": 276
   },
-  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-20260515T051857Z",
-  "finalIslandCount": 7309
+  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-20260612T112931Z",
+  "finalIslandCount": 11351
 }

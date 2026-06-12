@@ -1,0 +1,154 @@
+{
+  "started": "2026-06-12T11:44:11+00:00",
+  "dryRun": false,
+  "input": 388,
+  "verified": 31,
+  "rejected": 357,
+  "skippedExistingMatch": 3,
+  "skippedDuplicate": 0,
+  "added": 28,
+  "addedIslands": [
+    {
+      "id": "wd-Q24643587",
+      "name": "Gaa Sand",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q56667212",
+      "name": "Virda Field",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q25635110",
+      "name": "Mid Hill",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q25634954",
+      "name": "Blotchnie Fiold",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q25634959",
+      "name": "Fitty Hill",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q25197396",
+      "name": "Porth Island",
+      "nation": "England"
+    },
+    {
+      "id": "wd-Q7592680",
+      "name": "St Boniface Down",
+      "nation": "England"
+    },
+    {
+      "id": "wd-Q20618308",
+      "name": "Dun I",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q54191468",
+      "name": "Ward of Clett",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q814804",
+      "name": "Beinn Shleibhe",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q1867249",
+      "name": "Eilean Mhic Iain",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q56665184",
+      "name": "Dun Ghallain",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q126207511",
+      "name": "Glas-Eileanan",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q56665227",
+      "name": "Eilean na Carraidh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q31097968",
+      "name": "Eilean Uillne",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q7458607",
+      "name": "Sexton's Burrow",
+      "nation": "England"
+    },
+    {
+      "id": "wd-Q6084068",
+      "name": "Isle of Whithorn",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q103903432",
+      "name": "Eilean Thunga",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q110954880",
+      "name": "\u00c0rd Neackie",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q7999579",
+      "name": "Wigg Island",
+      "nation": "Wales"
+    },
+    {
+      "id": "wd-Q109568030",
+      "name": "Sillock Holm",
+      "nation": "Scotland"
+    },
+    {
+      "id": "wd-Q107357393",
+      "name": "Y Glyn",
+      "nation": "Wales"
+    },
+    {
+      "id": "wd-Q2725983",
+      "name": "Greenham",
+      "nation": "England"
+    },
+    {
+      "id": "wd-Q123470268",
+      "name": "Fobney Island",
+      "nation": "England"
+    },
+    {
+      "id": "wd-Q104303639",
+      "name": "Brick Island",
+      "nation": "Ireland"
+    },
+    {
+      "id": "wd-Q26718719",
+      "name": "Clera Island",
+      "nation": "Ireland"
+    },
+    {
+      "id": "wd-Q124362316",
+      "name": "Angus Rock",
+      "nation": "Northern Ireland"
+    },
+    {
+      "id": "wd-Q5535288",
+      "name": "Geokaun",
+      "nation": "Ireland"
+    }
+  ],
+  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-gaps-20260612T114411Z",
+  "finalIslandCount": 11379
+}

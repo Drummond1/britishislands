@@ -2434,3 +2434,92 @@
   Prior same-day merge: **commons-depicts-q 6**, **commons-archipelago-category 3**.
 - **Open items**: ogl-tourism (**21** @ conf 85) and openverse (**3**) still fail
   min-90 gate; kartaview/panoramax at 80 without dual signal.
+
+## 2026-06-11 — Continuous improvement loop (enrichments + photos)
+
+- **Goal**: Run both priority tracks on a recurring schedule — enrichment apply
+  and photo coverage toward 6,000 — without parallel `islands.json` writers.
+- **What changed**:
+  - Added `scripts/run_continuous_improvement.sh` — Phase 1: fetch missing
+    enrichment caches (`cache_dobih.json` still absent) + `apply_enrichments.sh
+    --yes --force`; Phase 2: rotate staging harvesters (6-source cycle),
+    strict verify, staged merge, cache adopt, v5 P18/OSM limited batches, index
+    rebuild. State file `data/.continuous_improvement_state.json`.
+  - Armed **45 min** recurring shell loop (`AGENT_LOOP_TICK_CONTINUOUS_IMPROVE`).
+  - Updated `docs/STATE.md`, `docs/QUEUE.md`.
+- **Outcome / counts**: Cycle 1 in flight; baseline **4,341** named with photo /
+  7,041; gap **1,659**.
+- **Open items**: DoBIH CSV signup for full hills list; UI rendering for enrichment
+  field groups; stop loop on request (`kill` loop PID + clear lock if stuck).
+
+## 2026-06-11 — Priority photo harvesters P1–P5 (grid fix + first merge)
+
+- **Goal**: Implement top-five photo-source priorities from brainstorm; fix Geograph
+  grid-ref bug blocking P1; run verify → merge → index; wire into continuous loop.
+- **What changed**:
+  - `scripts/photo_geo_utils.py` — OSGB refs via `osgb.format_grid` (was
+    single-letter formula → e.g. Furze Brake `O003094` instead of `SU035946`).
+  - P1–P5 scripts + `scripts/run_priority_photo_push.sh` orchestrator.
+  - Fixed `fetch_commons_meta([fname], cache)` in `enrich_images_wikipedia_embedded.py`,
+    `enrich_images_commons_county.py`, `enrich_images_wd_nearby_p18.py`; P2 429
+    backoff on Wikidata.
+  - `run_continuous_improvement.sh` — 11-source rotation (P1–P5 before legacy six).
+  - `verify_staged_photos_strict.py` — base scores for new sources (prior session).
+- **Outcome / counts**: `run_priority_photo_push.sh` limit **50**: P1 staged **1**
+  (`geograph-native` / `osm-way-985212914`); strict verify **1/1**; merge **+1**.
+  Named with photo **4,342** / 7,041; gap to **6,000** **1,658**. P3 skipped
+  (no Flickr key); P2 429; P4/P5 crashed pre-fix.
+- **Open items**: Re-run full push after fixes; add `FLICKR_API_KEY` for P3; larger
+  `PHOTO_PUSH_LIMIT` soak; naming brainstorm (100 approaches) still unimplemented.
+
+## 2026-06-11 — Unnamed island naming pipeline (100 ideas → N1–N3)
+
+- **Goal**: Start implementing the 100 high-confidence naming approaches for
+  ~4,310 `nameStatus=unknown` islands; stage → verify → merge without inventing names.
+- **What changed**:
+  - `docs/NAMING-SOURCES.md` — full 100-idea registry with tiers, status, runbook.
+  - `scripts/name_staging_utils.py`, `verify_staged_names.py`,
+    `merge_staged_name_proposals.py`, `run_priority_naming_push.sh`.
+  - Harvesters: `name_unnamed_os_open_names.py` (#16), `name_unnamed_logainm_oil.py`
+    (#31), `name_unnamed_osm_tags.py` (#1–2); `fetch_os_open_names.py`.
+  - Merge adds optional `nameProvenance` object on adopted islands.
+  - `docs/INDEX.md`, `docs/STATE.md`, `docs/QUEUE.md` updated.
+- **Outcome / counts**: Unnamed **4,310** (unchanged). OSM-tags probe **0/300**
+  (all `no name tags` — expected for current unnamed pool). N1/N2 blocked on API keys.
+- **Open items**: Fetch OS Open Names CSV; Logainm OIL bulk with Gaois key; implement
+  N4 Canmore/NHLE (#46, #49), N5 ohsome (#3), N6 fusion (#99).
+
+## 2026-06-11 — Discovery push D1–D2 + naming N4–N6
+
+- **Goal**: Launch new island discovery approaches and complete naming harvesters N4–N6.
+- **What changed**:
+  - `discover_geonames_gaps.py`, `discover_wikipedia_coord_lists.py`,
+    `run_priority_discovery_push.sh`, `docs/DISCOVERY-PUSH.md`.
+  - `name_unnamed_heritage.py`, `name_unnamed_ohsome.py` (OSM API history after
+    ohsome 404), `name_unnamed_fusion.py`; `run_priority_naming_push.sh` updated.
+  - `verify_staged_names.py` — fusion + heritage source gates.
+- **Outcome / counts**: GeoNames **378** gap candidates (`candidates_geonames.json`);
+  Wikipedia coords **10** gaps. Atlas **7,041** unchanged. Naming smoke tests 0/15
+  heritage, 0/30 OSM history on first unnamed batch (expected for never-named ways).
+- **Open items**: Re-run Wikipedia lists after 429; verifier pass on GeoNames gaps;
+  Wikidata SPARQL island gap harvester (DISCOVERY-SOURCES action #1).
+
+## 2026-06-12 — Staged verify + production merge (photos, names, discovery)
+
+- **Goal**: Verify all staged photo/name/discovery candidates and merge verified rows
+  into `islands.json` + rebuild index.
+- **What changed**:
+  - Ran `verify_staged_photos_strict.py` → **17/49** accepted.
+  - `merge_staged_photo_adoptions.py` → **0** new photos (12 deduped, already had images).
+  - `verify_staged_names.py` / `merge_staged_name_proposals.py` → **0** (empty proposals).
+  - `discover_islands_pipeline.py --stage=site_update --apply` → **274** merges into
+    existing islands (field enrichment, not new records).
+  - New `apply_staged_discovery_gaps.py` — Wikidata verify on 388 GeoNames/Wikipedia
+    gap candidates → **+28** new islands.
+  - `build_islands_index.py` refreshed.
+- **Outcome / counts**: Atlas **11,351 → 11,379** (+28 islands); index named **7,041 → 7,069**
+  (+28); named with photo **4,342** (unchanged); unnamed **4,310** (unchanged).
+  Backups: `islands.json.before-discovery-20260612T112931Z`,
+  `islands.json.before-discovery-gaps-20260612T114411Z`.
+- **Open items**: Git push to GitHub Pages for live site; review 28 new `unconfirmed`
+  discovery rows (some Wikidata matches may be hills/stacks); 357 gap candidates rejected.
