@@ -8,6 +8,8 @@ site loads index + shards instead of ~40+ MiB of duplicate JSON.
 
 Run in CI after generate_seo_artifacts.py and build_islands_index.py:
   python3 scripts/prepare_pages_artifact.py
+
+Includes /islands/{nation}/{slug}/ landings and legacy /profiles/ redirects.
 """
 
 from __future__ import annotations
@@ -135,7 +137,9 @@ def main() -> None:
     for forced in (
         ROOT / "data" / "shards",
         ROOT / "data" / "terrain",
+        ROOT / "data" / "seo_path_by_id.json",
         ROOT / "profiles",
+        ROOT / "islands",
         ROOT / "sitemap.xml",
         ROOT / "robots.txt",
         ROOT / "llms.txt",
@@ -160,10 +164,15 @@ def main() -> None:
 
     shard_count = len(list((OUT / "data" / "shards").glob("*.json"))) - 1
     profile_count = len(list((OUT / "profiles").glob("*.html"))) if (OUT / "profiles").exists() else 0
+    island_pages = 0
+    islands_root = OUT / "islands"
+    if islands_root.exists():
+        island_pages = sum(1 for _ in islands_root.rglob("index.html"))
     index_mb = (OUT / "data" / "islands_index.json").stat().st_size / 1024 / 1024
     print(
         f"Staged _site/ — index {index_mb:.2f} MiB, {shard_count} nation shards, "
-        f"{profile_count} profile landings, monolithic islands.json omitted",
+        f"{profile_count} legacy profile redirects, {island_pages} /islands/ pages, "
+        f"monolithic islands.json omitted",
         file=sys.stderr,
     )
 

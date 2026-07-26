@@ -210,13 +210,19 @@ def clean_extract(text: str, island_name: str) -> str | None:
     text = re.sub(r"\s+", " ", text).strip()
     if not text:
         return None
-    # Sanity check: the extract should mention the island name at least once.
-    # We allow case/diacritic-insensitive match by stripping non-alphanumerics.
+    # Sanity check: prefer a direct name hit; else accept if a meaningful
+    # token (≥4 chars, not a generic place word) appears in the extract.
     norm = lambda s: re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
-    if island_name and norm(island_name) not in norm(text):
-        # Look at the first token alone (helps for "Iona" matching "Iona Abbey")
-        first = norm(island_name).split(" ", 1)[0]
-        if first and first not in norm(text):
+    ntext = norm(text)
+    nname = norm(island_name)
+    if island_name and nname and nname not in ntext:
+        first = nname.split(" ", 1)[0]
+        tokens = [t for t in nname.split() if len(t) >= 4 and t not in {
+            "island", "islands", "isle", "isles", "rock", "rocks", "skerry",
+            "holm", "inch", "eilean", "ynys", "oilean",
+        }]
+        hit = (first and len(first) >= 3 and first in ntext) or any(t in ntext for t in tokens)
+        if not hit:
             return None
     # Keep at most 2 sentences-ish for the card; full text via Wikipedia link.
     parts = re.split(r"(?<=[\.\!\?])\s+(?=[A-Z])", text)
@@ -226,15 +232,52 @@ def clean_extract(text: str, island_name: str) -> str | None:
     return short or None
 
 
+def is_exhausted_candidate(isl: dict, cache: dict[str, Any]) -> bool:
+    """True when cache already proves this island won't yield a lead extract."""
+    wp_url = isl.get("wikipedia")
+    title = parse_wikipedia_title(wp_url) if wp_url else None
+    qid = isl.get("wikidata")
+    if not title and qid:
+        cached_title = cache.get(f"wd:{qid}")
+        if cached_title == "":
+            return True
+        if isinstance(cached_title, str) and cached_title:
+            title = cached_title
+    if not title and not qid and not wp_url:
+        return True
+    if title:
+        cached = cache.get(f"wp:{title}")
+        if cached in (None, {}):
+            # Only treat explicit empty dict as exhausted (None = not tried).
+            if cached == {}:
+                return True
+        elif isinstance(cached, dict):
+            extract = (cached.get("extract") or "").strip()
+            if extract and not clean_extract(extract, isl.get("name") or ""):
+                return True
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0,
                     help="process at most N candidates (0 = no limit)")
+    ap.add_argument(
+        "--queue-file",
+        type=Path,
+        default=None,
+        help="JSON queue from build_description_priority_queue.py (ids processed in order)",
+    )
     ap.add_argument("--checkpoint", type=int, default=50,
                     help="flush islands.json every N adoptions")
     ap.add_argument("--dry-run", action="store_true",
                     help="report only, do not mutate islands.json")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument(
+        "--include-exhausted",
+        action="store_true",
+        help="retry cache-proven dead ends (default: skip them so --limit advances)",
+    )
     args = ap.parse_args()
 
     islands = load_json(ISLANDS, [])
@@ -244,17 +287,56 @@ def main():
     cache = load_json(CACHE, {})
 
     # Identify candidates.
+    by_id_idx = {isl.get("id"): idx for idx, isl in enumerate(islands) if isinstance(isl, dict) and isl.get("id")}
     candidates: list[int] = []
-    for idx, isl in enumerate(islands):
-        if not isinstance(isl, dict):
-            continue
-        sd = (isl.get("shortDescription") or "").strip()
-        if sd:
-            continue
-        if not (isl.get("wikipedia") or isl.get("wikidata")):
-            continue
-        candidates.append(idx)
-    print(f"candidates with empty shortDescription + wd/wp link: {len(candidates)}")
+    skipped_exhausted = 0
+    if args.queue_file:
+        qdata = load_json(args.queue_file, {})
+        raw_queue = None
+        if isinstance(qdata, dict):
+            raw_queue = qdata.get("ids") or qdata.get("queue")
+        else:
+            raw_queue = qdata
+        if not isinstance(raw_queue, list):
+            print(f"! invalid queue file: {args.queue_file}", file=sys.stderr)
+            sys.exit(1)
+        for entry in raw_queue:
+            if isinstance(entry, dict):
+                iid = entry.get("id")
+                # SEO queue marks needDescription; skip photo-only gaps.
+                if entry.get("needDescription") is False:
+                    continue
+            else:
+                iid = entry
+            if not iid:
+                continue
+            idx = by_id_idx.get(iid)
+            if idx is None:
+                continue
+            isl = islands[idx]
+            if (isl.get("shortDescription") or "").strip():
+                continue
+            if not args.include_exhausted and is_exhausted_candidate(isl, cache):
+                skipped_exhausted += 1
+                continue
+            candidates.append(idx)
+        print(f"queue candidates from {args.queue_file.name}: {len(candidates)}")
+    else:
+        for idx, isl in enumerate(islands):
+            if not isinstance(isl, dict):
+                continue
+            sd = (isl.get("shortDescription") or "").strip()
+            if sd:
+                continue
+            if not (isl.get("wikipedia") or isl.get("wikidata")):
+                continue
+            if not args.include_exhausted and is_exhausted_candidate(isl, cache):
+                skipped_exhausted += 1
+                continue
+            candidates.append(idx)
+        print(f"candidates with empty shortDescription + wd/wp link: {len(candidates)}")
+    if skipped_exhausted:
+        print(f"  skipped exhausted (cache): {skipped_exhausted}")
     if args.limit:
         candidates = candidates[: args.limit]
         print(f"  (limited to {args.limit})")

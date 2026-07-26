@@ -889,6 +889,19 @@
       "tier": "atlas"
     },
     {
+      "id": "osm-way-1210249467",
+      "name": "An Caol",
+      "nation": "Scotland",
+      "type": "sea",
+      "lat": 56.82931,
+      "lng": -5.10673,
+      "shortDescription": "An Caol is a small sea island located in Scotland, covering an area of 0.0287 km². It is characterized by its coastline.",
+      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/An_Caol_landscape_-_geograph.org.uk_-_935022.jpg?width=800",
+      "hasPhoto": true,
+      "ferry": true,
+      "tier": "atlas"
+    },
+    {
       "id": "osm-way-4004486",
       "name": "Alman",
       "nation": "Scotland",
@@ -1547,19 +1560,6 @@
       "lng": -2.07791,
       "shortDescription": "Pop. 17; remote",
       "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ham_Foula.jpg?width=640",
-      "hasPhoto": true,
-      "ferry": false,
-      "tier": "atlas"
-    },
-    {
-      "id": "osm-relation-5497270",
-      "name": "Inch",
-      "nation": "Northern Ireland",
-      "type": "sea",
-      "lat": 55.06625,
-      "lng": -7.49631,
-      "shortDescription": "Inch Island (Irish: An Inis, meaning 'the island') is in Lough Swilly, a sea lough in County Donegal on the northern coast of Ireland. Inch is also the name of the civil parish covering the island.",
-      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inch_island_donegal.png?width=640",
       "hasPhoto": true,
       "ferry": false,
       "tier": "atlas"

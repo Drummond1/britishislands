@@ -23,7 +23,8 @@ Single map of every document in this repository. Always start at the top.
 | [`3D-TERRAIN.md`](3D-TERRAIN.md) | Showcase 3D islands, import map, mount lifecycle, build script. |
 | [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec with every field, type, and example. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
-| [`SEO-GEO.md`](SEO-GEO.md) | Island profile SEO + JSON-LD; sitemap / `llms.txt` / optional static landings. |
+| [`SEO-GEO.md`](SEO-GEO.md) | Island SEO + JSON-LD; **`/islands/{nation}/{slug}/` URLs**; sitemap / `llms.txt`; continuous SEO/GEO loop. |
+| [`GSC-CTR-FINDINGS.md`](GSC-CTR-FINDINGS.md) | Search Console diagnosis: impressions without clicks; position filters; URL inspection; winnable queries. |
 | [`SUPABASE.md`](SUPABASE.md) | Supabase project setup, schema, RLS, keys, storage bucket. |
 | [`PROPERTY-LISTINGS.md`](PROPERTY-LISTINGS.md) | For-sale outbound links: curated + optional Homedata; no portal scraping. |
 | [`FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) | **Full list** of islands currently on the market (generated table + counts). |
@@ -44,6 +45,8 @@ Single map of every document in this repository. Always start at the top.
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
 | [`PHOTO-DISCOVERY-IDEAS.md`](PHOTO-DISCOVERY-IDEAS.md) | 35 high-confidence photo discovery ideas (beyond geosearch/Openverse); top-10 ranking. |
+| [`NAMING-SOURCES.md`](NAMING-SOURCES.md) | 100 high-confidence naming approaches for ~4,310 unnamed islands; implementation registry + runbook. |
+| [`DISCOVERY-PUSH.md`](DISCOVERY-PUSH.md) | New-island gap discovery harvesters (GeoNames, Wikipedia coords, OSM scanner) + runbook. |
 | [`OS-MAPS.md`](OS-MAPS.md) | OS Maps detail-view integration: API key setup + the EPSG:27700 Leisure upgrade path. |
 | [`FERRIES.md`](FERRIES.md) | Ferry-routes feature: operator inventory (54 operators), data sources (OSM + GTFS + manual), refresh cadence, terminal-mapping rules, UI surface. |
 | [`DATA-SOURCES.md`](DATA-SOURCES.md) | Registry of every external dataset ingested into `islands.json`: licence, refresh cadence, attribution string, consuming script. |

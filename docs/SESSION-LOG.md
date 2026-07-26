@@ -2523,3 +2523,100 @@
   `islands.json.before-discovery-gaps-20260612T114411Z`.
 - **Open items**: Git push to GitHub Pages for live site; review 28 new `unconfirmed`
   discovery rows (some Wikidata matches may be hills/stacks); 357 gap candidates rejected.
+
+## 2026-06-12 — Learner UX priorities P1–P5
+
+- **Goal**: Make the atlas more useful for learning about islands with a simpler,
+  story-first UI (priorities from product review).
+- **What changed**:
+  - **P1** — `With stories` quick filter (`islandHasStory`); sparse profile lede
+    when no `shortDescription`; `build_description_priority_queue.py` (Wikipedia-URL
+    tier first); `enrich_descriptions_wikipedia.py --queue-file`; **+16** Wikipedia
+    lead extracts.
+  - **P2** — Default **Hide needs review** on confidence filter; sidebar reordered
+    (Notable islands → Explore topics → filter chips); chip labels renamed
+    (Picture-ready, Ferry access, Unnamed survey).
+  - **P3** — Profile hierarchy: key-facts strip (3), related islands (archipelago /
+    water body), **All facts** + **Sources & provenance** collapsed `<details>`.
+  - **P4** — Ferry block already titled “How to get there”; moved above map; maritime /
+    wildlife sections unchanged (data already on records).
+  - **P5** — `CHAT_LEARNING_STARTERS` + visible starter chips in Ask drawer.
+  - `app.js`, `index.html`, `styles.css`; index rebuilt.
+- **Outcome / counts**: Named with `shortDescription` **1,536 → 1,552**; ~**4,590**
+  named islands with photo or story; queue **1,599** Wikidata-linked gaps remain.
+- **Open items**: Continue Wikipedia queue pass (98 direct URL + 1,501 Wikidata-only
+  need sitelink harvest); consider multilang Wikipedia for Gaelic/Welsh islands.
+
+## 2026-07-26 — SEO / GEO continuous improvement loop
+
+- **Goal**: Continually improve findmyisland.com for search engines and generative
+  engines (sitemap, llms.txt, profile meta, descriptions, OG photos).
+- **What changed**:
+  - `scripts/audit_seo_geo_coverage.py` — 0–100 readiness score + priority queue +
+    history JSONL.
+  - `scripts/run_seo_geo_improvement.sh` — rotating cycle (descriptions → photos →
+    featured → artifacts) → index rebuild → `generate_seo_artifacts.py` → live probe.
+  - `enrich_descriptions_wikipedia.py` accepts SEO queue object rows / `ids`.
+  - Docs: `SEO-GEO.md`, `INDEX.md`, `QUEUE.md`, `STATE.md`.
+- **Outcome / counts**: Baseline avg **48.14**, both **18.5%**; photo cycle **+1**
+  OG image; live probe **allOk** on `/`, sitemap, robots, llms.txt, Skye profile.
+  Recurring loop armed every **60 min**.
+- **Open items**: Push regenerated sitemap/llms to production when ready; Wikidata
+  sitelink preflight for description queue yield.
+
+## 2026-07-26 — Nation + name-slug public URLs
+
+- **Goal**: SEO/GEO-friendly URLs by country + place name (no keyword stuffing in slugs).
+- **What changed**:
+  - `scripts/seo_paths.py` — nation segments, slugify, collision disambiguation, titles.
+  - `generate_seo_artifacts.py` — `/islands/{nation}/{slug}/` landings, nation hubs,
+    sitemap (**11,401** URLs), `llms.txt`, `data/seo_path_by_id.json`; legacy
+    `/profiles/<id>.html` noindex-redirects to new canonicals.
+  - `build_islands_index.py` — stamps `seoPath` on shard records.
+  - `seo-meta.js` — canonical from `seoPath`; title
+    `{name}, {nation} — map & profile | Find My Island`.
+  - Pages artifact + `.gitignore` for `islands/`; live probe paths updated.
+  - Docs: `SEO-GEO.md`, `DATA-SCHEMA.md`, STATE, QUEUE.
+- **Outcome / counts**: **11,379** island landings + 7 nation hubs; examples
+  `/islands/ireland/achill-island/`, `/islands/scotland/isle-of-skye/`,
+  `/islands/northern-ireland/rathlin/`.
+- **Open items**: Commit + push to `main` so GitHub Pages publishes the new URLs;
+  re-submit sitemap in Search Console after deploy.
+
+## 2026-07-26 — GSC CTR diagnosis + brand title
+
+- **Goal**: Explain 0 clicks despite rising impressions; wire actionable GSC
+  findings and SERP brand alignment.
+- **What changed**:
+  - Connected Search Console API / MCP; pulled Apr–Jul 2026 performance.
+  - `docs/GSC-CTR-FINDINGS.md` — overview, ≤10/≤20 filters, pages, URL inspection,
+    20 winnable queries.
+  - Homepage + `seo-meta.js` HOME_SEO → **Find My Island — Isles of Britain atlas**.
+  - `/ferries/calmac/` title/description → islands-served / ferry map (not booking).
+  - Linked from `INDEX.md`, `SEO-GEO.md`; QUEUE deploy note for `/islands/…`.
+- **Outcome / counts**: **0** clicks, **1,839** impressions, avg pos **76.5**;
+  ≤20 positions: **9** queries / **9** impressions; top page
+  `/?island=scilly-st-marys` (**565** imp). `/islands/…` not indexed (undeployed).
+- **Open items**: Deploy nation+slug URLs; request indexing on hubs + Scilly/Bute/
+  Staffa/Anglesey; re-check ≤20 in 2–4 weeks.
+
+## 2026-07-26 — GSC connected; SEO fixes from live data
+
+- **Goal**: Use Google Search Console to continue SEO/GEO optimisation.
+- **GSC (28d)**: 1,614 impressions, 0 clicks, avg position 77.4; sitemap OK.
+- **Finding**: Google indexes `/?island=` because profile HTML meta-refreshed into the SPA.
+- **What changed**:
+  - Removed auto-refresh from `/islands/{nation}/{slug}/` landings.
+  - `seo-meta.js`: `noindex,follow` on `?island=` when `seoPath` canonical exists.
+  - Ferry landings: drop “OSM node …” titles; absolute canonicals; link to `seoPath`.
+  - `data/gsc_seo_snapshot.json` priority list (Scilly, Anglesey, Bute, CalMac, …).
+- **Open**: Commit + deploy; then GSC URL Inspection on new paths.
+
+## 2026-07-26 — GSC-driven SEO loop armed
+
+- **Goal**: Continuously improve SEO/GEO from Search Console priorities.
+- **What changed**: `scripts/run_gsc_driven_seo.sh`; richer island landings (key facts,
+  image, nation hub link); 60 min loop `AGENT_LOOP_TICK_gsc_seo` (PID 16338).
+- **Cycle**: avg still **48.26** / both **18.7%**; GSC priority islands already have
+  desc+photo; live `/islands/` still **404**.
+- **Open**: Deploy to Pages so GSC can index nation-slug URLs.

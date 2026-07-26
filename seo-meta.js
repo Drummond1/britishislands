@@ -7,17 +7,17 @@
  */
 
 const HOME_SEO = {
-  title: "Isles of Britain — A Visual Atlas",
+  title: "Find My Island — Isles of Britain atlas",
   description:
-    "Explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland.",
+    "Find My Island: explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland.",
   canonical: "https://www.findmyisland.com/",
   ogType: "website",
-  ogTitle: "Isles of Britain — A Visual Atlas",
+  ogTitle: "Find My Island — Isles of Britain atlas",
   ogDescription:
     "Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides.",
   ogUrl: "https://www.findmyisland.com/",
   twitterCard: "summary_large_image",
-  twitterTitle: "Isles of Britain — A Visual Atlas",
+  twitterTitle: "Find My Island — Isles of Britain atlas",
   twitterDescription:
     "Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles.",
 };
@@ -49,11 +49,21 @@ function absoluteUrl(href) {
   }
 }
 
-function canonicalUrlForIsland(islandId) {
+/**
+ * Prefer public /islands/{nation}/{slug}/ when island.seoPath is present
+ * (stamped by build_islands_index / generate_seo_artifacts). Fall back to
+ * legacy ?island= deep link only when missing.
+ */
+function canonicalUrlForIsland(island) {
   try {
     const origin = siteOrigin();
-    const path = pagePathname();
-    const u = new URL(path, origin);
+    const seoPath = island && typeof island.seoPath === "string" ? island.seoPath.trim() : "";
+    if (seoPath.startsWith("/islands/")) {
+      return `${origin}${seoPath.endsWith("/") ? seoPath : `${seoPath}/`}`;
+    }
+    const islandId = island && island.id;
+    if (!islandId) return "";
+    const u = new URL(pagePathname(), origin);
     u.search = "";
     u.hash = "";
     u.searchParams.set("island", islandId);
@@ -61,6 +71,13 @@ function canonicalUrlForIsland(islandId) {
   } catch {
     return "";
   }
+}
+
+function pageTitleForIsland(island) {
+  const name = island.name || island.id || "Island";
+  const nation = (island.nation || "").trim();
+  if (nation) return `${name}, ${nation} — map & profile | Find My Island`;
+  return `${name} — map & profile | Find My Island`;
 }
 
 function upsertMetaByName(name, content) {
@@ -131,7 +148,7 @@ function removeJsonLd() {
 }
 
 export function initSeoBaseline() {
-  _baselineTitle = document.title || "Isles of Britain — A Visual Atlas";
+  _baselineTitle = document.title || HOME_SEO.title;
   _baselineDescription =
     document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
 }
@@ -139,15 +156,26 @@ export function initSeoBaseline() {
 export function applyIslandSeo(island) {
   if (!island || !island.id) return;
 
-  const title = `${island.name} — Isles of Britain`;
+  const title = pageTitleForIsland(island);
   const desc = buildDescription(island);
-  const canonical = canonicalUrlForIsland(island.id);
+  const canonical = canonicalUrlForIsland(island);
   const pageUrl = canonical || (typeof window !== "undefined" ? window.location.href : "");
 
   document.title = title;
   upsertMetaByName("description", desc);
 
   if (canonical) upsertLink("canonical", canonical);
+
+  // SPA ?island= URLs must not compete with /islands/{nation}/{slug}/ in Google.
+  // Keep them crawlable via follow, but noindex the query-string view.
+  try {
+    const q = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+    if (q && q.has("island") && canonical && canonical.includes("/islands/")) {
+      upsertMetaByName("robots", "noindex,follow,max-image-preview:large");
+    }
+  } catch {
+    /* ignore */
+  }
 
   upsertMetaProperty("og:type", "article");
   upsertMetaProperty("og:title", title);
@@ -206,6 +234,8 @@ export function resetIslandSeo() {
   document.title = _baselineTitle || home.title;
   upsertMetaByName("description", _baselineDescription || home.description);
   upsertLink("canonical", home.canonical);
+  // Restore default indexing when leaving an island deep-link
+  upsertMetaByName("robots", "index,follow,max-image-preview:large");
   upsertMetaProperty("og:type", home.ogType);
   upsertMetaProperty("og:title", home.ogTitle);
   upsertMetaProperty("og:description", home.ogDescription);

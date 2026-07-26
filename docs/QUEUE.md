@@ -4,11 +4,60 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
+## P0 — GSC-driven SEO loop (armed 2026-07-26)
+
+- **[in flight]** `scripts/run_gsc_driven_seo.sh` every **60 min** (sentinel
+  `AGENT_LOOP_TICK_gsc_seo`). Uses `data/gsc_seo_snapshot.json` + GSC MCP on ticks.
+  Blocked for live impact until `/islands/` deploy.
+
+## P0 — GSC + deploy (2026-07-26)
+
+- **[blocked on deploy]** Nation-slug URLs + no-refresh landings + ferry title fix
+  must ship to Pages before GSC can index `/islands/…`. After push: Request indexing
+  on hubs + top GSC islands (see `data/gsc_seo_snapshot.json`).
+- ~~GSC snapshot + meta-refresh fix + SPA noindex + CalMac title cleanup~~ ✅ local
+
+## P0 — nation + name-slug URLs (2026-07-26)
+
+- ~~**Canonical `/islands/{nation}/{slug}/` URLs**~~ ✅ Implemented locally
+  (`seo_paths.py`, generator, hubs, legacy redirects, `seoPath` on shards).
+  **Needs deploy** (push + Pages) before live GSC/probe sees new paths.
+  GSC URL Inspection (2026-07-26): `/islands/scotland/` and
+  `/islands/wales/anglesey/` = **URL unknown to Google**. Priority after deploy:
+  request indexing on hubs + Scilly St Mary's, Bute, Staffa, Anglesey.
+  See `docs/GSC-CTR-FINDINGS.md`.
+
+## P0 — SEO / GEO continuous loop (armed 2026-07-26)
+
+- **[in flight] SEO/GEO improvement loop** — `scripts/run_seo_geo_improvement.sh`
+  every **60 min**. Audit → rotate descriptions/photos/featured/artifacts →
+  regenerate sitemap/`llms.txt`/profiles → live probe. Baseline avg score
+  **~48**, both (desc+photo) **~18.5%**; target **50% both / avg ≥70**.
+  Lock: `data/.seo_geo_improvement.lock`. See `docs/SEO-GEO.md`.
+
+## P0 — learner UX (shipped 2026-06-12)
+
+- ~~**Story-first browse** — `With stories` chip, sparse profile lede, default hide
+  unconfirmed, Notable/Explore above list, profile key facts + related islands,
+  chat starters.~~ ✅ See SESSION-LOG 2026-06-12 learner UX.
+- **Description queue pass** — `python3 scripts/build_description_priority_queue.py`
+  then `enrich_descriptions_wikipedia.py --queue-file data/description_priority_queue.json
+  --limit 200` (first batch **+16**; **1,599** Wikidata-linked candidates remain).
+
 ## P0 — currently in flight
 
-- _(none verified 2026-05-15)_ — prior `overnight_runner` / `enrich_images_v5`
-  entries are **stale** (autonomous run stalled on Commons 429 per STATE).
-  Re-check PIDs before trusting old queue rows.
+- **[in flight] Priority naming push N1–N6** — `docs/NAMING-SOURCES.md`;
+  `run_priority_naming_push.sh`. **N1–N6 implemented**; N1/N2 need API keys +
+  data files. Baseline **4,310** unnamed (heritage/ohsome yields sparse on random
+  samples — run full pass).
+- **[in flight] Priority discovery push D1–D4** — `docs/DISCOVERY-PUSH.md`;
+  `run_priority_discovery_push.sh`. **D1 GeoNames: 378 gap candidates** staged;
+  D2 Wikipedia coords: 10 gaps (re-run after 429 cooldown). Review via
+  `discover_islands_pipeline.py` verifier → `site_update --apply`.
+- **Priority photo push P1–P5** — `scripts/run_priority_photo_push.sh` (grid fix
+  applied **2026-06-11**; first merge **+1**). Re-run with `PHOTO_PUSH_LIMIT=200`;
+  add `FLICKR_API_KEY` to `.env.local` for P3. Continuous loop now includes P1–P5
+  in 11-source rotation (`run_continuous_improvement.sh`); re-arm 45 min loop when ready.
 
 ## P0b — staged but not yet applied (enrichment caches missing locally)
 

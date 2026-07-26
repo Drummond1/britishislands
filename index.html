@@ -22,17 +22,17 @@
       rel="apple-touch-icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%230f1620'/%3E%3Ccircle cx='90' cy='90' r='52' fill='none' stroke='%234ea3ff' stroke-width='10'/%3E%3Ccircle cx='90' cy='90' r='18' fill='%234ea3ff'/%3E%3C/svg%3E"
     />
-    <title>Isles of Britain — A Visual Atlas</title>
+    <title>Find My Island — Isles of Britain atlas</title>
     <meta
       name="description"
-      content="Explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland."
+      content="Find My Island: explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://www.findmyisland.com/" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.findmyisland.com/sitemap.xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Isles of Britain" />
-    <meta property="og:title" content="Isles of Britain — A Visual Atlas" />
+    <meta property="og:site_name" content="Find My Island" />
+    <meta property="og:title" content="Find My Island — Isles of Britain atlas" />
     <meta
       property="og:description"
       content="Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides."
@@ -40,7 +40,7 @@
     <meta property="og:url" content="https://www.findmyisland.com/" />
     <meta property="og:locale" content="en_GB" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Isles of Britain — A Visual Atlas" />
+    <meta name="twitter:title" content="Find My Island — Isles of Britain atlas" />
     <meta
       name="twitter:description"
       content="Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles."
@@ -49,8 +49,8 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Isles of Britain",
-        "alternateName": ["Find My Island", "findmyisland.com"],
+        "name": "Find My Island",
+        "alternateName": ["Isles of Britain", "findmyisland.com"],
         "url": "https://www.findmyisland.com/",
         "description": "Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies.",
         "inLanguage": "en-GB",
@@ -102,30 +102,35 @@
         <span class="brand-mark" aria-hidden="true">◍</span>
         <div>
           <h1>Isles of Britain</h1>
-          <p class="tagline">
-            Discover Scotland’s islands and the coasts of Britain &amp; Ireland.
-          </p>
+          <p class="tagline">7,000+ islands on one map</p>
         </div>
       </button>
 
+      <div class="topbar-search">
+        <div class="search-field search-field--hero">
+          <span class="search-field__icon" aria-hidden="true">⌕</span>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search islands…"
+            aria-label="Search islands"
+            autocomplete="off"
+            title="Press / to focus search from anywhere"
+          />
+          <button
+            type="button"
+            class="search-field__clear"
+            id="search-clear"
+            hidden
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
       <div class="topbar-actions">
-        <a class="topbar-link" href="ferries/">Ferries</a>
-        <button
-          type="button"
-          class="topbar-link topbar-link--btn"
-          id="saved-islands-btn"
-          title="Your hearted islands (email required)"
-        >
-          Saved
-        </button>
-        <button
-          type="button"
-          class="topbar-link topbar-link--btn topbar-link--contribute"
-          id="crowd-suggest-btn"
-          title="Add a new pin, update a community pin, or suggest atlas changes"
-        >
-          Contribute
-        </button>
+        <a class="topbar-link topbar-link--quiet" href="ferries/">Ferries</a>
         <button
           class="topbar-filters-toggle"
           id="filters-toggle"
@@ -136,101 +141,115 @@
           Filters
           <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
         </button>
-        <div class="topbar-controls" id="topbar-filters">
-          <div class="filter-tier filter-tier--essential">
-            <div class="search-field">
-              <span class="search-field__icon" aria-hidden="true">⌕</span>
-              <input
-                id="search"
-                type="search"
-                placeholder="Search islands, archipelago, Gaelic name…"
-                aria-label="Search islands"
-                autocomplete="off"
-                title="Press / to focus search from anywhere"
-              />
-              <button
-                type="button"
-                class="search-field__clear"
-                id="search-clear"
-                hidden
-                aria-label="Clear search"
-              >
-                ×
-              </button>
-            </div>
-            <select id="nation-filter" aria-label="Filter by nation">
-              <option value="">All nations</option>
-            </select>
-            <select id="type-filter" aria-label="Filter by island type">
-              <option value="">All types</option>
-              <option value="sea">Sea islands</option>
-              <option value="lake">Loch / lake islands</option>
-              <option value="river">River islands</option>
-              <option value="unknown">Needs review</option>
-            </select>
-            <label class="toggle" title="Islands with at least one photo in the atlas">
-              <input type="checkbox" id="filter-photo" />
-              <span>Has photo</span>
-            </label>
-            <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
-              <input type="checkbox" id="filter-ferry" disabled />
-              <span>Ferry</span>
-            </label>
-            <label class="toggle" title="Islands with a mapped summit / highest point">
-              <input type="checkbox" id="filter-elevation" />
-              <span>Summit</span>
-            </label>
-            <label
-              class="toggle toggle--pending"
-              id="filter-for-sale-wrap"
-              title="Loading property listings…"
+        <div class="topbar-more" id="topbar-more">
+          <button
+            type="button"
+            class="topbar-link topbar-link--btn topbar-more__toggle"
+            id="topbar-more-toggle"
+            aria-expanded="false"
+            aria-controls="topbar-more-menu"
+            aria-haspopup="true"
+            title="More actions"
+          >
+            More
+          </button>
+          <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
+            <button
+              type="button"
+              class="topbar-more__item"
+              id="saved-islands-btn"
+              role="menuitem"
+              title="Your hearted islands (email required)"
             >
-              <input type="checkbox" id="filter-for-sale" disabled />
-              <span>For sale <span id="for-sale-count" class="for-sale-count"></span></span>
-            </label>
+              Saved islands
+            </button>
+            <button
+              type="button"
+              class="topbar-more__item"
+              id="crowd-suggest-btn"
+              role="menuitem"
+              title="Add a new pin, update a community pin, or suggest atlas changes"
+            >
+              Contribute
+            </button>
           </div>
-          <details class="filter-tier filter-tier--more">
-            <summary class="filter-tier__summary">More filters</summary>
-            <div class="filter-tier__body">
-              <select id="favorites-filter" aria-label="Saved islands list">
-                <option value="">All islands</option>
-                <option value="favorites">Saved only</option>
-              </select>
-              <select id="area-min-filter" aria-label="Minimum island area">
-                <option value="">Any area</option>
-                <option value="1">≥ 1 km²</option>
-                <option value="10">≥ 10 km²</option>
-              </select>
-              <select id="subtype-filter" aria-label="Filter by island subtype">
-                <option value="">All subtypes</option>
-              </select>
-              <select id="confidence-filter" aria-label="Classification confidence">
-                <option value="">All records</option>
-                <option value="curated">Curated only</option>
-                <option value="hide-unconfirmed">Hide needs review</option>
-              </select>
-              <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
-                <input type="checkbox" id="crowd-show-toggle" checked />
-                <span>Crowd pins</span>
-              </label>
-              <label class="toggle" title="Group nearby markers into clusters">
-                <input type="checkbox" id="cluster-toggle" checked />
-                <span>Cluster</span>
-              </label>
-              <select id="basemap" aria-label="Choose base map">
-                <option value="osm">Standard (OpenStreetMap)</option>
-                <option value="topo">Topographic (OpenTopoMap)</option>
-                <option value="satellite">Satellite (Esri)</option>
-                <option value="cartoLight">Light (CARTO)</option>
-                <option value="cartoDark">Dark (CARTO)</option>
-                <option value="osMaps" disabled>
-                  OS Maps (open an island to add a key)
-                </option>
-              </select>
-              <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all filters</button>
-            </div>
-          </details>
         </div>
+      </div>
+
+      <div class="topbar-controls" id="topbar-filters">
+        <div class="filter-tier filter-tier--essential">
+          <select id="nation-filter" aria-label="Filter by nation">
+            <option value="">All nations</option>
+          </select>
+          <select id="type-filter" aria-label="Filter by island type">
+            <option value="">All types</option>
+            <option value="sea">Sea islands</option>
+            <option value="lake">Loch / lake islands</option>
+            <option value="river">River islands</option>
+            <option value="unknown">Needs review</option>
+          </select>
+          <label class="toggle" title="Islands with at least one photo in the atlas">
+            <input type="checkbox" id="filter-photo" />
+            <span>Has photo</span>
+          </label>
+          <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
+            <input type="checkbox" id="filter-ferry" disabled />
+            <span>Ferry</span>
+          </label>
+          <label class="toggle" title="Islands with a mapped summit / highest point">
+            <input type="checkbox" id="filter-elevation" />
+            <span>Summit</span>
+          </label>
+          <label
+            class="toggle toggle--pending"
+            id="filter-for-sale-wrap"
+            title="Loading property listings…"
+          >
+            <input type="checkbox" id="filter-for-sale" disabled />
+            <span>For sale <span id="for-sale-count" class="for-sale-count"></span></span>
+          </label>
+        </div>
+        <details class="filter-tier filter-tier--more">
+          <summary class="filter-tier__summary">More filters</summary>
+          <div class="filter-tier__body">
+            <select id="favorites-filter" aria-label="Saved islands list">
+              <option value="">All islands</option>
+              <option value="favorites">Saved only</option>
+            </select>
+            <select id="area-min-filter" aria-label="Minimum island area">
+              <option value="">Any area</option>
+              <option value="1">≥ 1 km²</option>
+              <option value="10">≥ 10 km²</option>
+            </select>
+            <select id="subtype-filter" aria-label="Filter by island subtype">
+              <option value="">All subtypes</option>
+            </select>
+            <select id="confidence-filter" aria-label="Classification confidence">
+              <option value="">All records</option>
+              <option value="curated">Curated only</option>
+              <option value="hide-unconfirmed" selected>Hide needs review</option>
+            </select>
+            <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
+              <input type="checkbox" id="crowd-show-toggle" checked />
+              <span>Crowd pins</span>
+            </label>
+            <label class="toggle" title="Group nearby markers into clusters">
+              <input type="checkbox" id="cluster-toggle" checked />
+              <span>Cluster</span>
+            </label>
+            <select id="basemap" aria-label="Choose base map">
+              <option value="osm">Standard (OpenStreetMap)</option>
+              <option value="topo">Topographic (OpenTopoMap)</option>
+              <option value="satellite">Satellite (Esri)</option>
+              <option value="cartoLight">Light (CARTO)</option>
+              <option value="cartoDark">Dark (CARTO)</option>
+              <option value="osMaps" disabled>
+                OS Maps (open an island to add a key)
+              </option>
+            </select>
+            <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all filters</button>
+          </div>
+        </details>
       </div>
     </header>
 
@@ -241,59 +260,66 @@
             <h2 id="list-heading">Islands</h2>
             <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
-          <p class="sidebar-section-label">Discover</p>
-          <div class="browse-quick" id="browse-quick" aria-label="Quick filters">
-            <div class="browse-quick__chips" id="browse-quick-chips"></div>
-          </div>
-          <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
-          <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
-            <div class="discover-chips" id="discover-chips" role="tablist"></div>
-            <p class="discover-panel__hint" id="discover-hint" hidden></p>
-          </section>
-          <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
-            <h3 id="featured-heading" class="featured-strip__title">Notable islands</h3>
-            <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
-          </section>
-          <div class="scotland-quick" id="scotland-quick" aria-label="Quick filters for Scotland">
-            <p class="scotland-quick__label">Explore Scotland</p>
-            <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
+
+          <div class="sidebar-explore" id="sidebar-explore">
+            <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
+              <h3 id="featured-heading" class="featured-strip__title">Notable</h3>
+              <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
+            </section>
+            <div class="browse-quick" id="browse-quick" aria-label="Quick filters">
+              <div class="browse-quick__chips" id="browse-quick-chips"></div>
+            </div>
+            <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
+              <details class="discover-panel__details">
+                <summary class="discover-panel__summary">Topics</summary>
+                <div class="discover-chips" id="discover-chips" role="tablist"></div>
+                <p class="discover-panel__hint" id="discover-hint" hidden></p>
+              </details>
+            </section>
+            <div class="scotland-quick" id="scotland-quick" hidden aria-label="Quick filters for Scotland">
+              <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
+            </div>
+            <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
           </div>
 
           <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
-          <p class="sidebar-kbd-hint" aria-hidden="true"><kbd>/</kbd> search · <kbd>↑</kbd><kbd>↓</kbd> browse · <kbd>Enter</kbd> open</p>
-          <details class="trip-planner trip-planner--collapse">
-            <summary class="trip-planner__summary" id="trip-planner-title">Plan a ferry crossing</summary>
-            <div class="trip-planner__body">
-              <form class="trip-planner__form" id="trip-form">
-                <label class="trip-planner__field">
-                  <span>From island</span>
-                  <input
-                    id="trip-from"
-                    name="from"
-                    type="search"
-                    list="trip-islands"
-                    placeholder="e.g. Mull"
-                    autocomplete="off"
-                  />
-                </label>
-                <label class="trip-planner__field">
-                  <span>To island</span>
-                  <input
-                    id="trip-to"
-                    name="to"
-                    type="search"
-                    list="trip-islands"
-                    placeholder="e.g. Iona"
-                    autocomplete="off"
-                  />
-                </label>
-                <button class="trip-planner__submit" type="submit">Plan route</button>
-              </form>
-              <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
-              <datalist id="trip-islands"></datalist>
-            </div>
-          </details>
-          <!-- IOB_CRAWL_LINKS_START -->
+
+          <details class="sidebar-extras">
+            <summary class="sidebar-extras__summary">Tools &amp; guides</summary>
+            <div class="sidebar-extras__body">
+              <details class="trip-planner trip-planner--collapse">
+                <summary class="trip-planner__summary" id="trip-planner-title">Plan a ferry crossing</summary>
+                <div class="trip-planner__body">
+                  <form class="trip-planner__form" id="trip-form">
+                    <label class="trip-planner__field">
+                      <span>From island</span>
+                      <input
+                        id="trip-from"
+                        name="from"
+                        type="search"
+                        list="trip-islands"
+                        placeholder="e.g. Mull"
+                        autocomplete="off"
+                      />
+                    </label>
+                    <label class="trip-planner__field">
+                      <span>To island</span>
+                      <input
+                        id="trip-to"
+                        name="to"
+                        type="search"
+                        list="trip-islands"
+                        placeholder="e.g. Iona"
+                        autocomplete="off"
+                      />
+                    </label>
+                    <button class="trip-planner__submit" type="submit">Plan route</button>
+                  </form>
+                  <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
+                  <datalist id="trip-islands"></datalist>
+                </div>
+              </details>
+              <!-- IOB_CRAWL_LINKS_START -->
         <footer class="crawl-links" aria-label="Guides and notable islands">
           <p class="crawl-links__heading">Guides &amp; notable islands</p>
           <div class="crawl-links__grid">
@@ -316,40 +342,54 @@
               </ul>
             </section>
             <section>
+              <h3 class="crawl-links__sub">Islands by country</h3>
+              <ul class="crawl-links__list">
+        <li><a href="/islands/scotland/">Scottish islands map</a></li>
+        <li><a href="/islands/ireland/">Irish islands map</a></li>
+        <li><a href="/islands/england/">English islands map</a></li>
+        <li><a href="/islands/wales/">Welsh islands map</a></li>
+        <li><a href="/islands/northern-ireland/">Northern Ireland islands map</a></li>
+        <li><a href="/islands/crown-dependencies/">Crown Dependency islands map</a></li>
+        <li><a href="/islands/isle-of-man/">Isle of Man islands map</a></li>
+              </ul>
+            </section>
+            <section>
               <h3 class="crawl-links__sub">Notable islands</h3>
               <ul class="crawl-links__list">
-        <li><a href="/profiles/anglesey.html">Anglesey (Ynys Môn)</a></li>
-        <li><a href="/profiles/belle-isle-windermere.html">Belle Isle (Windermere)</a></li>
-        <li><a href="/profiles/brownsea.html">Brownsea Island</a></li>
-        <li><a href="/profiles/burgh-island.html">Burgh Island</a></li>
-        <li><a href="/profiles/eel-pie-island.html">Eel Pie Island</a></li>
-        <li><a href="/profiles/fair-isle.html">Fair Isle</a></li>
-        <li><a href="/profiles/guernsey.html">Guernsey</a></li>
-        <li><a href="/profiles/inchcailloch.html">Inchcailloch</a></li>
-        <li><a href="/profiles/iona.html">Iona</a></li>
-        <li><a href="/profiles/islay.html">Islay</a></li>
-        <li><a href="/profiles/arran.html">Isle of Arran</a></li>
-        <li><a href="/profiles/bute.html">Isle of Bute</a></li>
-        <li><a href="/profiles/isle-of-dogs.html">Isle of Dogs</a></li>
-        <li><a href="/profiles/isle-of-man.html">Isle of Man</a></li>
-        <li><a href="/profiles/mull.html">Isle of Mull</a></li>
-        <li><a href="/profiles/isle-of-skye.html">Isle of Skye</a></li>
-        <li><a href="/profiles/isle-of-wight.html">Isle of Wight</a></li>
-        <li><a href="/profiles/jersey.html">Jersey</a></li>
-        <li><a href="/profiles/lewis-and-harris.html">Lewis and Harris</a></li>
-        <li><a href="/profiles/lindisfarne.html">Lindisfarne (Holy Island)</a></li>
-        <li><a href="/profiles/lundy.html">Lundy</a></li>
-        <li><a href="/profiles/mainland-orkney.html">Mainland (Orkney)</a></li>
-        <li><a href="/profiles/mainland-shetland.html">Mainland (Shetland)</a></li>
-        <li><a href="/profiles/rathlin.html">Rathlin Island</a></li>
-        <li><a href="/profiles/st-kilda.html">St Kilda (Hirta)</a></li>
-        <li><a href="/profiles/scilly-st-marys.html">St Mary&#x27;s (Isles of Scilly)</a></li>
-        <li><a href="/profiles/staffa.html">Staffa</a></li>
+        <li><a href="/islands/wales/anglesey/">Anglesey (Ynys Môn)</a></li>
+        <li><a href="/islands/england/belle-isle-windermere/">Belle Isle (Windermere)</a></li>
+        <li><a href="/islands/england/brownsea/">Brownsea Island</a></li>
+        <li><a href="/islands/england/burgh-island/">Burgh Island</a></li>
+        <li><a href="/islands/england/eel-pie-island/">Eel Pie Island</a></li>
+        <li><a href="/islands/scotland/fair-isle/">Fair Isle</a></li>
+        <li><a href="/islands/crown-dependencies/guernsey/">Guernsey</a></li>
+        <li><a href="/islands/scotland/inchcailloch/">Inchcailloch</a></li>
+        <li><a href="/islands/scotland/iona/">Iona</a></li>
+        <li><a href="/islands/scotland/islay/">Islay</a></li>
+        <li><a href="/islands/scotland/arran/">Isle of Arran</a></li>
+        <li><a href="/islands/scotland/bute/">Isle of Bute</a></li>
+        <li><a href="/islands/england/isle-of-dogs/">Isle of Dogs</a></li>
+        <li><a href="/islands/crown-dependencies/isle-of-man/">Isle of Man</a></li>
+        <li><a href="/islands/scotland/mull/">Isle of Mull</a></li>
+        <li><a href="/islands/scotland/isle-of-skye/">Isle of Skye</a></li>
+        <li><a href="/islands/england/isle-of-wight/">Isle of Wight</a></li>
+        <li><a href="/islands/crown-dependencies/jersey/">Jersey</a></li>
+        <li><a href="/islands/scotland/lewis-and-harris/">Lewis and Harris</a></li>
+        <li><a href="/islands/england/lindisfarne/">Lindisfarne (Holy Island)</a></li>
+        <li><a href="/islands/england/lundy/">Lundy</a></li>
+        <li><a href="/islands/scotland/mainland-orkney/">Mainland (Orkney)</a></li>
+        <li><a href="/islands/scotland/mainland-shetland/">Mainland (Shetland)</a></li>
+        <li><a href="/islands/northern-ireland/rathlin/">Rathlin Island</a></li>
+        <li><a href="/islands/scotland/st-kilda/">St Kilda (Hirta)</a></li>
+        <li><a href="/islands/england/scilly-st-marys/">St Mary&#x27;s (Isles of Scilly)</a></li>
+        <li><a href="/islands/scotland/staffa/">Staffa</a></li>
               </ul>
             </section>
           </div>
         </footer>
 <!-- IOB_CRAWL_LINKS_END -->
+            </div>
+          </details>
         </section>
 
         <section class="island-details" id="island-details" hidden>
@@ -592,6 +632,7 @@
         </div>
         <p class="chat-settings__status" id="chat-ai-status" aria-live="polite"></p>
       </section>
+      <div class="chat-starters" id="chat-starters" aria-label="Suggested questions"></div>
       <div
         class="chat-panel__messages"
         id="chat-messages"
@@ -603,7 +644,7 @@
           type="text"
           id="chat-input"
           name="q"
-          placeholder="e.g. How tall is Skye? · Largest island in Wales? · Mull vs Islay"
+          placeholder="e.g. Islands near Oban · Ferry Hebrides · Largest Welsh islands"
           aria-label="Describe what you're looking for"
           required
         />
@@ -693,6 +734,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js" type="module"></script>
+    <script src="app.js?v=ux-simplify-1" type="module"></script>
   </body>
 </html>

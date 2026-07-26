@@ -160,10 +160,18 @@ def _operator_label(op):
     return op.get("shortName") or op.get("name") or "Unknown operator"
 
 
-def _terminal_name(t):
+def _terminal_name(t, island_lookup=None):
+    """Human label; avoid publishing raw 'OSM node …' placeholders."""
     if not t:
         return "—"
-    return (t.get("names") or {}).get("en") or t.get("name") or "—"
+    name = (t.get("names") or {}).get("en") or t.get("name") or ""
+    if name and not str(name).startswith("OSM "):
+        return name
+    iid = t.get("islandId")
+    if island_lookup and iid and iid in island_lookup:
+        iname = island_lookup[iid].get("name") or iid
+        return f"{iname} terminal"
+    return "Ferry terminal"
 
 
 def _route_card(route, term_lookup, operator_lookup, island_lookup):
@@ -183,14 +191,19 @@ def _route_card(route, term_lookup, operator_lookup, island_lookup):
         ipath = _term_island(term) or route["terminals"][side].get("islandId")
         if ipath and ipath in island_lookup:
             isl = island_lookup[ipath]
-            island_link = f'<a href="../../?island={html.escape(ipath)}" class="lp-card__island-link">Open {html.escape(isl.get("name") or "island")} ↗</a>'
+            seo = isl.get("seoPath") or f"/?island={ipath}"
+            label = isl.get("name") or "island"
+            island_link = (
+                f'<a href="{html.escape(seo)}" class="lp-card__island-link">'
+                f"Open {html.escape(label)} ↗</a>"
+            )
             break
 
     return f"""
     <article class="lp-card">
       <header class="lp-card__head">
         <span class="lp-card__op">{html.escape(op_label)}</span>
-        <h3 class="lp-card__title">{html.escape(_terminal_name(t_from))} → {html.escape(_terminal_name(t_to))}</h3>
+        <h3 class="lp-card__title">{html.escape(_terminal_name(t_from, island_lookup))} → {html.escape(_terminal_name(t_to, island_lookup))}</h3>
       </header>
       <ul class="lp-card__meta">
         <li>{html.escape(route.get("type") or "—")}</li>
@@ -207,14 +220,15 @@ def _route_card(route, term_lookup, operator_lookup, island_lookup):
     """
 
 
-def _route_jsonld(route, term_lookup, operator_lookup):
+def _route_jsonld(route, term_lookup, operator_lookup, island_lookup=None):
     op = operator_lookup.get(route.get("operatorId"))
     t_from = term_lookup.get(route["terminals"]["from"]["terminalId"]) or {}
     t_to = term_lookup.get(route["terminals"]["to"]["terminalId"]) or {}
     obj = {
         "@context": "https://schema.org",
         "@type": "TouristTrip",
-        "name": route.get("name") or f"{_terminal_name(t_from)} to {_terminal_name(t_to)} ferry",
+        "name": route.get("name")
+        or f"{_terminal_name(t_from, island_lookup)} to {_terminal_name(t_to, island_lookup)} ferry",
         "description": (route.get("timetable") or {}).get("notes", "") or "Published ferry route.",
         "provider": ({
             "@type": "Organization",
@@ -223,12 +237,12 @@ def _route_jsonld(route, term_lookup, operator_lookup):
         } if op else None),
         "departureLocation": ({
             "@type": "Place",
-            "name": _terminal_name(t_from),
+            "name": _terminal_name(t_from, island_lookup),
             "geo": {"@type": "GeoCoordinates", "latitude": t_from.get("lat"), "longitude": t_from.get("lon")},
         } if t_from else None),
         "arrivalLocation": ({
             "@type": "Place",
-            "name": _terminal_name(t_to),
+            "name": _terminal_name(t_to, island_lookup),
             "geo": {"@type": "GeoCoordinates", "latitude": t_to.get("lat"), "longitude": t_to.get("lon")},
         } if t_to else None),
         "url": route.get("bookingUrl"),
@@ -242,21 +256,22 @@ def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
     body_intro = f"<p class=\"lp-intro\">{html.escape(desc)}</p>"
     cards = "\n".join(_route_card(r, term_lookup, operator_lookup, island_lookup) for r in routes)
     jsonlds = "\n".join(
-        f'<script type="application/ld+json">{json.dumps(_route_jsonld(r, term_lookup, operator_lookup), ensure_ascii=False)}</script>'
+        f'<script type="application/ld+json">{json.dumps(_route_jsonld(r, term_lookup, operator_lookup, island_lookup), ensure_ascii=False)}</script>'
         for r in routes
     )
-    canonical = f"/ferries/{slug}/"
+    canonical = f"https://www.findmyisland.com/ferries/{slug}/"
     today = date.today().isoformat()
+    page_title = f"{title} — ferry map | Find My Island"
     return f"""<!doctype html>
 <html lang="en">
 <head>
 {GTM_HEAD}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{html.escape(title)} | Isles of Britain</title>
+  <title>{html.escape(page_title)}</title>
   <meta name="description" content="{html.escape(desc)}" />
   <link rel="canonical" href="{html.escape(canonical)}" />
-  <meta property="og:title" content="{html.escape(title)}" />
+  <meta property="og:title" content="{html.escape(page_title)}" />
   <meta property="og:description" content="{html.escape(desc)}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{html.escape(canonical)}" />
@@ -305,10 +320,20 @@ def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
 
 
 def main() -> int:
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from seo_paths import assign_seo_paths
+
     ferries_doc = json.loads(FERRIES_PATH.read_text(encoding="utf-8"))
     terms_doc = json.loads(TERMINALS_PATH.read_text(encoding="utf-8"))
     ops_doc = json.loads(OPERATORS_PATH.read_text(encoding="utf-8"))
     islands = json.loads(ISLANDS_PATH.read_text(encoding="utf-8"))
+    paths = assign_seo_paths(islands)
+    for isl in islands:
+        sp = paths.get(str(isl.get("id") or ""))
+        if sp:
+            isl["seoPath"] = sp.path
 
     routes = ferries_doc.get("routes", [])
     term_lookup = {t["id"]: t for t in terms_doc.get("terminals", [])}

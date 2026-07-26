@@ -63,6 +63,8 @@ adapters/
 
 # CI-generated thin island HTML stubs (see scripts/generate_seo_artifacts.py)
 profiles/
+# Nation + name-slug landings (canonical SEO URLs)
+islands/
 
 # Nation shards for deferred frontend load (see scripts/build_islands_index.py)
 data/shards/

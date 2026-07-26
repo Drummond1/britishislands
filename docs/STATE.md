@@ -4,6 +4,40 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-26 (GSC-driven loop)** — `scripts/run_gsc_driven_seo.sh` + richer `/islands/` landings (key facts). Loop every **60 min**. Live `/islands/` still **404** until deploy.
+
+**2026-07-26 (GSC CTR diagnosis)** — Live Search Console API: **0 clicks / 1,839
+impressions / avg pos 76.5** (Apr–Jul). Position ≤20 ≈ **9** one-imp queries.
+`/islands/…` unknown to Google (not deployed). Full write-up:
+`docs/GSC-CTR-FINDINGS.md`. Homepage title → **Find My Island — Isles of Britain
+atlas**; CalMac guide retitled toward map/islands-served intent.
+**Follow-up this session:** removed profile meta-refresh (was feeding `/?island=`
+indexation); SPA `noindex` on `?island=`; ferry “OSM node” titles cleaned;
+`data/gsc_seo_snapshot.json`. **Deploy still required.**
+
+**2026-07-26 (nation + name-slug URLs)** — Canonical public paths are now
+`/islands/{nation}/{slug}/` (e.g. `/islands/ireland/achill-island/`). Nation hubs
+at `/islands/scotland/` … `/islands/ireland/` etc. Legacy `/profiles/<id>.html`
+become noindex redirects. `seoPath` stamped on shards; `data/seo_path_by_id.json`
+map; titles `{name}, {nation} — map & profile | Find My Island`. Sitemap **11,401**
+URLs. See `docs/SEO-GEO.md` + `scripts/seo_paths.py`.
+
+**2026-07-26 (SEO/GEO continuous loop)** — Added `scripts/audit_seo_geo_coverage.py`
+and `scripts/run_seo_geo_improvement.sh` (rotate photos/descriptions/featured;
+rebuild index + sitemap/robots/llms.txt/profiles; live probe). Looser description
+name-match + staging photo harvesters in photos phase. Through cycle **13**:
+avg **48.14→48.26**, desc **1,552→1,566** (+14), photo **4,343→4,354** earlier then
+stable **4,354**, both **18.7%**. Live probe allOk. Recurring every **60 min**
+(PID armed).
+
+**2026-06-12 (learner UX P1–P5)** — Learning-first UI pass: **With stories**
+browse chip (`islandHasStory`), default **hide needs review**, sidebar reordered
+(Notable → Explore topics → filters), profile hierarchy (key facts strip, sparse
+lede, related islands, collapsed facts/provenance), chat learning starters.
+Description queue `build_description_priority_queue.py` + Wikipedia pass **+16**
+shortDescriptions (**1,552** named with prose, **~4,590** with photo or story).
+Index rebuilt.
+
 **2026-06-12 (staged verify + production merge)** — Full staged pass:
 photos strict verify **17/49** accepted; merge **+0** new photos (12 already had images).
 Names verify **0** proposals. Discovery `site_update --apply`: **274** field merges on
@@ -760,17 +794,18 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| `run_seo_geo_improvement.sh` loop (60 min) | 2026-07-26 | recurring | cursor agent | Lock `data/.seo_geo_improvement.lock`. Rotates descriptions/photos/featured/artifacts. |
+| _(idle photo continuous)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342**. Re-arm `run_continuous_improvement.sh` on request. |
+| _(prior — islands.json idle since 2026-06-04)_ | — | — | — | Baseline **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
 | ~~`enrich_images_openverse.py --limit 800`~~ ✅ | 2026-06-02 | — | cursor subagent | **+3** staged → `openverse.json` (800 considered; cache-heavy). |
 | ~~`enrich_images_archive_nls.py --limit 300`~~ ✅ | 2026-06-02 | ~83 min | cursor subagent | **1** staged (Wellcome `ararat` homonym); **0.3%** yield. |
 | ~~`enrich_images_commons_archipelago_sweep.py --named-only --delay 2`~~ ✅ | 2026-06-04 | ~5 min | cursor subagent | Index **13,309** files / **374** cats; **9** staged → `commons-archipelago.json` (429 backoff). |
 | ~~`enrich_images_commons_depicts_q.py --named-only --limit 600`~~ ✅ | 2026-06-04 | ~18 min | cursor subagent | **6** staged → `commons-depicts-q.json` (P180 only). |
-| _(idle)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342** (+1 geograph-native). Continuous loop rotates P1–P5 + legacy six (11 sources); re-arm on request. |
-| _(prior — islands.json idle since 2026-06-04)_ | — | — | — | Baseline **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
 | ~~`scripts/merge_staged_photo_adoptions.py` (#2)~~ ✅ | 2026-06-02 | — | cursor subagent | **+45** (ogl/regional 23, iNat 18, openverse 3, Wellcome 1). Prior merge: **+5** openverse; **411** geograph skipped (photos already on island). |
-| ~~`scripts/run_diverse_photo_sources.sh`~~ ✅ | 2026-06-02 | — | cursor agent | 3,871→4,285; orchestrator at `scripts/run_diverse_photo_sources.sh`. |
+| ~~`scripts/run_diverse_photo_sources.sh`~~ ✅ | 2026-06-02 | — | — | 3,871→4,285; orchestrator at `scripts/run_diverse_photo_sources.sh`. |
 | ~~`scripts/enrich_names.py` → …~~ | 2026-05-14 20:30 UTC+1 | — | — | Superseded / not running. |
 | ~~`scripts/autonomous_run.sh`~~ | 2026-05-14 06:45 UTC | — | — | Stalled on Commons 429 during image v5. |
-| ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 UTC | — | — | Superseded; see QUEUE.md. |
+| ~~`scripts/overnight_runner.sh` (PID 71005)~~ | 2026-05-12 20:30 | — | — | Superseded; see QUEUE.md. |
 | ~~`python3 scripts/compute_drive_times.py` (PID 70453)~~ ✅ done 2026-05-11 20:25 | 2026-05-11 19:55 | ~30 min | main agent | OSRM batch drive-time bands from London / Glasgow / Edinburgh / Belfast / Dublin to each mainland terminal. Now uses `curl` via `subprocess` after diagnosing a Python TLS handshake failure against the public OSRM demo server. **Result**: 535 of 538 mainland terminals populated; 3 unreachable in OSRM's road graph. |
 
 ### Completed today (2026-05-11)

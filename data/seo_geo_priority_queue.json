@@ -1,0 +1,8884 @@
+{
+  "schemaVersion": 1,
+  "generated": "2026-07-26T20:53:46Z",
+  "source": "audit_seo_geo_coverage.py",
+  "queue": [
+    {
+      "id": "osm-way-490111575",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010491",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554355",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007191",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3335698",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3077272",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563499",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3226229",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-171874011",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157316163",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873710",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q130261352",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q136651053",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24641530",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24641570",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24651711",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q26715610",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q26716273",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q27118701",
+      "score": 60,
+      "tier": 2,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24638216",
+      "score": 30,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q56665798",
+      "score": 30,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-207233499",
+      "score": 55,
+      "tier": 2,
+      "gaps": [
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "victoria-park-playing-fields-w707417290",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-956947728",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-65017623",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-730876541",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3866223",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205056872",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205378257",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-715807953",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-416167612",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205489795",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-727269545",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1210700844",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4005210",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-207095261",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-704413716",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-836138100",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010386",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-63502638",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-115733381",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "darbys-garden-w314598656",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-183357730",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-656976594",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-428161769",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-304978158",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230351832",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-166260199",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-222757416",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-374466241",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-95670291",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-12299006737",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-1828403992",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-2152115968",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-603814233",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-239883527",
+      "score": 45,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-33754251",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563035",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-349636041",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-387337697",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-302522103",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-329288185",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-166604218",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-701842744",
+      "score": 15,
+      "tier": 2,
+      "gaps": [
+        "description",
+        "photo",
+        "sameAs"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-93211713",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-2580366",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-93351281",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-17135722",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-8609285",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563007",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4557217",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561927",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4562744",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561954",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4554558",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3516651",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-917227026",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-191310149",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-169885379",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-119928347",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563589",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-250415714",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-12005439",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q4959118",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "morrich-more",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q22084019",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24639260",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q5647107",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q6804126",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q6917510",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q7994722",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-359435873",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-13365942",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-219575236",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-9225240",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-16735230",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-247487489",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-290058068",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010536",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-9117800",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4012842",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314679",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-47903159",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-700654038",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4002139",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314506",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "hook-island-w139412875",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314342",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-381672991",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314639",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-238427341",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-238155325",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-191626774",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236692717",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-885693823",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236950458",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-239279392",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-48097346",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236857280",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1387598959",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-209470263",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-226403270",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1319819016",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-206524224",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-314858442",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "clogher-head",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "crow-rock",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "le-pinacle",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "thames-hythe-end",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q20618308",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24639421",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24643587",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q30973524",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q54191468",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q7848387",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q814804",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010563",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "bolands-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "brackinish-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "burren-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "careg-goch",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "cock-of-arran",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "cork-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "devils-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "fourquie",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "golden-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "herring-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "maen-piscar",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "priests-rock",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "roan-heads",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "sharks-fin",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "the-nev",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "valtos-rocks",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q1867249",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q25634954",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q25634959",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q25635110",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26718719",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563739",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3335585",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-6836978",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4559561",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4562121",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-93351277",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563029",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-375708564",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-178144112",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-4077820",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-11587635",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561685",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-44954829",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4562821",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3581015",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4559337",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4554459",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-65712514",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4559338",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-47702827",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4563622",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4560457",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-5208398",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-3404631",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3474542",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3625566",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561972",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-3998532",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-345094290",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-903949864",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-938083302",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q104256098",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q104322906",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q116505278",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q123485102",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q130372994",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24636700",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24638069",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24638982",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24640627",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24641373",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24641428",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24644002",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656394",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656408",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656421",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656441",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656446",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656447",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656498",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656721",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656879",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656895",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656902",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656912",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24656990",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24657075",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24657122",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24657172",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659026",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659098",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659107",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659160",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659636",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q24659667",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26716288",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26717456",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26717728",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26717951",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26718287",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26718468",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q26718728",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q27118660",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q27118667",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q27118686",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q27118715",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-relation-8202107",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-8609284",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-9734931",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-6565329",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-49024605",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3395357",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-248703441",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4913801",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-367724521",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4557014",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554556",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-356038960",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4555134",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-182626259",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1029675050",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554647",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563072",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562126",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4004965",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010384",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562884",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-11372923",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-278074546",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-65712541",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-45181422",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554655",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561049",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4557268",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561907",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-209273199",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-220520080",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554663",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-14041949",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4557216",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-48362942",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-12895725",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-417180122",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559343",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1241230142",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1227605098",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563350",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-4070971",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-247914630",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-177975499",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200757726",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562534",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200760321",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-4767051",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-26224456",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-32942459",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-2511753",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563261",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-251050444",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-6565331",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563872",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4560604",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009731",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-25382322",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-201107677",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4008672",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-11587585",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-47704655",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-6565330",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563280",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010385",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3534585",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157530132",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-75809674",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-6395140",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200762467",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559951",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-83041128",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563567",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3618141",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200815442",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-127628517",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998518",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561715",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-127628516",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4558951",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200613540",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-349642834",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157530139",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554542",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563865",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-144456324",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562000",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4558415",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202389712",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-9893580",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200763658",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-25382253",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-403957490",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4004036",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561797",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009727",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-201149159",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563005",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007095",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28206816",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-958933255",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-220261100",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-219578340",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q45897021",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157530143",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-710018316",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "eilean-a-phidhir-w94828432",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009282",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3484373",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205603918",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-44964373",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4004033",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3618196",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-209876024",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-127628518",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-249299551",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-210085053",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998379",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3493136",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554451",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-163970500",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-60213153",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4012354",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-6957984",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-45065727",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-169823265",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563287",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-39871990",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-56208199",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561794",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-406750585",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-934207518",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007186",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010488",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3488238",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-8609287",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-711688597",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007190",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-146366366",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-124660665",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-247398251",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-40473100",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-680699822",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-25377539",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007400",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-318839655",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-134871627",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4012626",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3619017",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3121406",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998433",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-186507790",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-2957292",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-353547155",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-186289752",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-219578347",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-40201348",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-47704658",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-407698765",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-72620793",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-187179833",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-201933688",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4005008",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-71443000",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554322",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-186507793",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4013010",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-20318350",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-11920331",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-94483924",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563665",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "eilean-bàn-w94828437",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1305440827",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200743797",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4012258",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-711404037",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563666",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230115077",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559830",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4010172",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-73908596",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-47704656",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009568",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157534018",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563620",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-190760506",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554535",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563871",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-13728146",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-199999624",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-60437745",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-65718346",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4569185",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4569155",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3625576",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4564166",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009566",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4564053",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205056852",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-95677109",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-680695921",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-10041228",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200764361",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009593",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-6104522",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1154777964",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-183405676",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-6135675",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3997946",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28206831",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200764039",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-209273251",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-262432176",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202739649",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-144504240",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007188",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-227073456",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4006865",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3331137",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3507340",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-117381875",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-255902009",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200762485",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009677",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-25382151",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314609",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-262432178",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-625108729",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-133154542",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-163637368",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921367",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4003969",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559797",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-18818068",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-846470429",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938066822",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-18386935",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-353547157",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563147",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562002",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-885235015",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559198",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59314610",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554785",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-37770316",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-7282328",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-987348298",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4559544",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157530147",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-93221320",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202754661",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554779",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4564161",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009710",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-35536169",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230356524",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-405130618",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-255265384",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-867217389",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-207341895",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009675",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561926",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-47704657",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4569181",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-985250268",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-11025962",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3625571",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200814790",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009667",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-381672743",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009652",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009676",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921366",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921350",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-322267458",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-146346233",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3512136",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-116104846",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-403957796",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-8132072",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-60450595",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-670974927",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "kelso-ana-w143207507",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-503778137",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3613865",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938057685",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3326260",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-151153378",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-229406540",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-49982804",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59462472",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4831821",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230764977",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563386",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-261452880",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-18386925",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-26526912",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-27382765",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921369",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4233801",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-103218882",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-403957943",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998453",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1493746582",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28275035",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938087084",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-251491994",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-234568444",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554607",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59319019",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-493291072",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-60319857",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-180201341",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4558825",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157534021",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554452",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-26526920",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-311395170",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4005186",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-93208276",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230468774",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-66691419",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28224108",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938103577",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998485",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-40201349",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1300873443",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "craigroy-island-w795320944",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-201905535",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "brinacory-island-w76465045",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563053",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-867191680",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009651",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-115835801",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-188988733",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202754658",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-700655151",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-95316139",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-409793719",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-237775398",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-2956905",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-2985958",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236518974",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-318357003",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28274730",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4562006",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-157534996",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009565",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-6135677",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938087083",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-310224625",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-130435031",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-428793502",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-17814917",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-771992354",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-207983419",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554597",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1245685800",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-40520959",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4009560",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4560826",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230351838",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "cock-island-w351529342",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-547601092",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-227484882",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-385864524",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3998537",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28275037",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202739654",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-10221721",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-239078680",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3494642",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-41113812",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554321",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-244640919",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-9639188",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-169445609",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938066786",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4563570",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-589702847",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28448235",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4557026",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-252748038",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-589702846",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-12658790",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-128501476",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-42327211",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4007189",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-173781320",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-2957293",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3077273",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1489811189",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-353547149",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4550017",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-44945692",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-617148633",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-200019562",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-304960830",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-431547277",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-329053690",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4554802",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-431547276",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921802",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-12658924",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-349633052",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1297149135",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938066826",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-724780047",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-890119753",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56665807",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-118949938",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-229408476",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-4561693",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-61921362",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-64297811",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230351830",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-503778128",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938066821",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3625578",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-315913762",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-788970093",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-17249525",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-211539849",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-13304103",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-589702852",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q80050277",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-183405720",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236950452",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-3375216",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-504223051",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-183357742",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-188960567",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-205106771",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-315544322",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-414813207",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-541110904",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56661801",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-199137732",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-349633053",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-413990404",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-59236004",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3516650",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1116096861",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-223611529",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-229408462",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-28271542",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-446495636",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-616542990",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3187245",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-223842677",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-310224626",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-349633057",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56663107",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-18028211",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-510707993",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-938066787",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56663154",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56666960",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56667637",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-1193017806",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-230464912",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236692729",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236692738",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-414813206",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-446495637",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-541110905",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-883875276",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56667708",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q17827710",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-relation-3184538",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-236857282",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-590265082",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-687457476",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q43372925",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-202754656",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-277704482",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-835031691",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q29015459",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56663122",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-223842666",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-890119758",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56661793",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56663901",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56666097",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q56667838",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q66022746",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q108188171",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q108407584",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q109568554",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q17828185",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q24638319",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q24638551",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q24639351",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q24659597",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q29552470",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "csv-geocoded-Q31118312",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-13604252557",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-13604252571",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-3130894028",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-3130895666",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-318474791",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-3507326517",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-3874096453",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-534125821",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-node-60171070",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-414411878",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "osm-way-415263009",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "pound-rock",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "the-inch",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q101577967",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q101784887",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q104348833",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q104363593",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q106963443",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q108140384",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q109568010",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q109568037",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q109568557",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q109570097",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q109787110",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q10981603",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q110044390",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q110207998",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q112945058",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q1140655",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q114833764",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q115111640",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q115453907",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q115473746",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q115570922",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q115574572",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723084",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723212",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723267",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723281",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723292",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116723328",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873639",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873653",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873655",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873657",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873663",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873666",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873683",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873686",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873729",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873761",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873767",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873792",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116873811",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116875420",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116875449",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116879110",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116883527",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116885075",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116890290",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116896855",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q116910328",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q118464735",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q123519301",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124335492",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124343664",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124343669",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124343695",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124372734",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124378363",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    }
+  ],
+  "ids": [
+    "osm-way-490111575",
+    "osm-way-4010491",
+    "osm-way-4554355",
+    "osm-way-4007191",
+    "osm-relation-3335698",
+    "osm-relation-3077272",
+    "osm-way-4563499",
+    "osm-relation-3226229",
+    "osm-way-171874011",
+    "osm-way-157316163",
+    "wd-Q116873710",
+    "wd-Q130261352",
+    "wd-Q136651053",
+    "wd-Q24641530",
+    "wd-Q24641570",
+    "wd-Q24651711",
+    "wd-Q26715610",
+    "wd-Q26716273",
+    "wd-Q27118701",
+    "wd-Q24638216",
+    "wd-Q56665798",
+    "osm-way-207233499",
+    "victoria-park-playing-fields-w707417290",
+    "osm-way-956947728",
+    "osm-way-65017623",
+    "osm-way-730876541",
+    "osm-relation-3866223",
+    "osm-way-205056872",
+    "osm-way-205378257",
+    "osm-way-715807953",
+    "osm-way-416167612",
+    "osm-way-205489795",
+    "osm-way-727269545",
+    "osm-way-1210700844",
+    "osm-way-4005210",
+    "osm-way-207095261",
+    "osm-way-704413716",
+    "osm-way-836138100",
+    "osm-way-4010386",
+    "osm-way-63502638",
+    "osm-way-115733381",
+    "darbys-garden-w314598656",
+    "osm-way-183357730",
+    "osm-way-656976594",
+    "osm-way-428161769",
+    "osm-way-304978158",
+    "osm-way-230351832",
+    "osm-way-166260199",
+    "osm-way-222757416",
+    "osm-way-374466241",
+    "osm-way-95670291",
+    "osm-node-12299006737",
+    "osm-node-1828403992",
+    "osm-node-2152115968",
+    "osm-node-603814233",
+    "osm-way-239883527",
+    "osm-way-33754251",
+    "osm-way-4563035",
+    "osm-way-349636041",
+    "osm-way-387337697",
+    "osm-way-302522103",
+    "osm-way-329288185",
+    "osm-way-166604218",
+    "osm-way-701842744",
+    "osm-way-93211713",
+    "osm-relation-2580366",
+    "osm-way-93351281",
+    "osm-relation-17135722",
+    "osm-relation-8609285",
+    "osm-way-4563007",
+    "osm-way-4557217",
+    "osm-way-4561927",
+    "osm-way-4562744",
+    "osm-way-4561954",
+    "osm-way-4554558",
+    "osm-relation-3516651",
+    "osm-way-917227026",
+    "osm-way-191310149",
+    "osm-way-169885379",
+    "osm-way-119928347",
+    "osm-way-4563589",
+    "osm-way-250415714",
+    "osm-relation-12005439",
+    "wd-Q4959118",
+    "morrich-more",
+    "wd-Q22084019",
+    "wd-Q24639260",
+    "wd-Q5647107",
+    "wd-Q6804126",
+    "wd-Q6917510",
+    "wd-Q7994722",
+    "osm-way-359435873",
+    "osm-relation-13365942",
+    "osm-way-219575236",
+    "osm-relation-9225240",
+    "osm-relation-16735230",
+    "osm-way-247487489",
+    "osm-way-290058068",
+    "osm-way-4010536",
+    "osm-relation-9117800",
+    "osm-way-4012842",
+    "osm-way-59314679",
+    "osm-way-47903159",
+    "osm-way-700654038",
+    "osm-way-4002139",
+    "osm-way-59314506",
+    "hook-island-w139412875",
+    "osm-way-59314342",
+    "osm-way-381672991",
+    "osm-way-59314639",
+    "osm-way-238427341",
+    "osm-way-238155325",
+    "osm-way-191626774",
+    "osm-way-236692717",
+    "osm-way-885693823",
+    "osm-way-236950458",
+    "osm-way-239279392",
+    "osm-way-48097346",
+    "osm-way-236857280",
+    "osm-way-1387598959",
+    "osm-way-209470263",
+    "osm-way-226403270",
+    "osm-way-1319819016",
+    "osm-way-206524224",
+    "osm-way-314858442",
+    "clogher-head",
+    "crow-rock",
+    "le-pinacle",
+    "thames-hythe-end",
+    "wd-Q20618308",
+    "wd-Q24639421",
+    "wd-Q24643587",
+    "wd-Q30973524",
+    "wd-Q54191468",
+    "wd-Q7848387",
+    "wd-Q814804",
+    "osm-way-4010563",
+    "bolands-rock",
+    "brackinish-rock",
+    "burren-rock",
+    "careg-goch",
+    "cock-of-arran",
+    "cork-rock",
+    "devils-rock",
+    "fourquie",
+    "golden-rock",
+    "herring-rock",
+    "maen-piscar",
+    "priests-rock",
+    "roan-heads",
+    "sharks-fin",
+    "the-nev",
+    "valtos-rocks",
+    "wd-Q1867249",
+    "wd-Q25634954",
+    "wd-Q25634959",
+    "wd-Q25635110",
+    "wd-Q26718719",
+    "osm-way-4563739",
+    "osm-relation-3335585",
+    "osm-relation-6836978",
+    "osm-way-4559561",
+    "osm-way-4562121",
+    "osm-way-93351277",
+    "osm-way-4563029",
+    "osm-way-375708564",
+    "osm-way-178144112",
+    "osm-relation-4077820",
+    "osm-relation-11587635",
+    "osm-way-4561685",
+    "osm-way-44954829",
+    "osm-way-4562821",
+    "osm-relation-3581015",
+    "osm-way-4559337",
+    "osm-way-4554459",
+    "osm-way-65712514",
+    "osm-way-4559338",
+    "osm-way-47702827",
+    "osm-way-4563622",
+    "osm-way-4560457",
+    "osm-relation-5208398",
+    "osm-way-3404631",
+    "osm-relation-3474542",
+    "osm-relation-3625566",
+    "osm-way-4561972",
+    "osm-relation-3998532",
+    "osm-way-345094290",
+    "osm-way-903949864",
+    "osm-way-938083302",
+    "wd-Q104256098",
+    "wd-Q104322906",
+    "wd-Q116505278",
+    "wd-Q123485102",
+    "wd-Q130372994",
+    "wd-Q24636700",
+    "wd-Q24638069",
+    "wd-Q24638982",
+    "wd-Q24640627",
+    "wd-Q24641373",
+    "wd-Q24641428",
+    "wd-Q24644002",
+    "wd-Q24656394",
+    "wd-Q24656408",
+    "wd-Q24656421",
+    "wd-Q24656441",
+    "wd-Q24656446",
+    "wd-Q24656447",
+    "wd-Q24656498",
+    "wd-Q24656721",
+    "wd-Q24656879",
+    "wd-Q24656895",
+    "wd-Q24656902",
+    "wd-Q24656912",
+    "wd-Q24656990",
+    "wd-Q24657075",
+    "wd-Q24657122",
+    "wd-Q24657172",
+    "wd-Q24659026",
+    "wd-Q24659098",
+    "wd-Q24659107",
+    "wd-Q24659160",
+    "wd-Q24659636",
+    "wd-Q24659667",
+    "wd-Q26716288",
+    "wd-Q26717456",
+    "wd-Q26717728",
+    "wd-Q26717951",
+    "wd-Q26718287",
+    "wd-Q26718468",
+    "wd-Q26718728",
+    "wd-Q27118660",
+    "wd-Q27118667",
+    "wd-Q27118686",
+    "wd-Q27118715",
+    "osm-relation-8202107",
+    "osm-relation-8609284",
+    "osm-relation-9734931",
+    "osm-relation-6565329",
+    "osm-way-49024605",
+    "osm-relation-3395357",
+    "osm-way-248703441",
+    "osm-way-4913801",
+    "osm-way-367724521",
+    "osm-way-4557014",
+    "osm-way-4554556",
+    "osm-way-356038960",
+    "osm-way-4555134",
+    "osm-way-182626259",
+    "osm-way-1029675050",
+    "osm-way-4554647",
+    "osm-way-4563072",
+    "osm-way-4562126",
+    "osm-way-4004965",
+    "osm-way-4010384",
+    "osm-way-4562884",
+    "osm-relation-11372923",
+    "osm-way-278074546",
+    "osm-way-65712541",
+    "osm-way-45181422",
+    "osm-way-4554655",
+    "osm-way-4561049",
+    "osm-way-4557268",
+    "osm-way-4561907",
+    "osm-way-209273199",
+    "osm-way-220520080",
+    "osm-way-4554663",
+    "osm-relation-14041949",
+    "osm-way-4557216",
+    "osm-way-48362942",
+    "osm-relation-12895725",
+    "osm-way-417180122",
+    "osm-way-4559343",
+    "osm-way-1241230142",
+    "osm-way-1227605098",
+    "osm-way-4563350",
+    "osm-relation-4070971",
+    "osm-way-247914630",
+    "osm-way-177975499",
+    "osm-way-200757726",
+    "osm-way-4562534",
+    "osm-way-200760321",
+    "osm-relation-4767051",
+    "osm-way-26224456",
+    "osm-way-32942459",
+    "osm-relation-2511753",
+    "osm-way-4563261",
+    "osm-way-251050444",
+    "osm-relation-6565331",
+    "osm-way-4563872",
+    "osm-way-4560604",
+    "osm-way-4009731",
+    "osm-way-25382322",
+    "osm-way-201107677",
+    "osm-way-4008672",
+    "osm-relation-11587585",
+    "osm-way-47704655",
+    "osm-relation-6565330",
+    "osm-way-4563280",
+    "osm-way-4010385",
+    "osm-relation-3534585",
+    "osm-way-157530132",
+    "osm-way-75809674",
+    "osm-relation-6395140",
+    "osm-way-200762467",
+    "osm-way-4559951",
+    "osm-way-83041128",
+    "osm-way-4563567",
+    "osm-way-3618141",
+    "osm-way-200815442",
+    "osm-way-127628517",
+    "osm-relation-3998518",
+    "osm-way-4561715",
+    "osm-way-127628516",
+    "osm-way-4558951",
+    "osm-way-200613540",
+    "osm-way-349642834",
+    "osm-way-157530139",
+    "osm-way-4554542",
+    "osm-way-4563865",
+    "osm-way-144456324",
+    "osm-way-4562000",
+    "osm-way-4558415",
+    "osm-way-202389712",
+    "osm-relation-9893580",
+    "osm-way-200763658",
+    "osm-way-25382253",
+    "osm-way-403957490",
+    "osm-way-4004036",
+    "osm-way-4561797",
+    "osm-way-4009727",
+    "osm-way-201149159",
+    "osm-way-4563005",
+    "osm-way-4007095",
+    "osm-way-28206816",
+    "osm-way-958933255",
+    "osm-way-220261100",
+    "osm-way-219578340",
+    "wd-Q45897021",
+    "osm-way-157530143",
+    "osm-way-710018316",
+    "eilean-a-phidhir-w94828432",
+    "osm-way-4009282",
+    "osm-relation-3484373",
+    "osm-way-205603918",
+    "osm-way-44964373",
+    "osm-way-4004033",
+    "osm-way-3618196",
+    "osm-way-209876024",
+    "osm-way-127628518",
+    "osm-way-249299551",
+    "osm-way-210085053",
+    "osm-relation-3998379",
+    "osm-way-3493136",
+    "osm-way-4554451",
+    "osm-way-163970500",
+    "osm-way-60213153",
+    "osm-way-4012354",
+    "osm-way-6957984",
+    "osm-way-45065727",
+    "osm-way-169823265",
+    "osm-way-4563287",
+    "osm-way-39871990",
+    "osm-way-56208199",
+    "osm-way-4561794",
+    "osm-way-406750585",
+    "osm-way-934207518",
+    "osm-way-4007186",
+    "osm-way-4010488",
+    "osm-relation-3488238",
+    "osm-relation-8609287",
+    "osm-way-711688597",
+    "osm-way-4007190",
+    "osm-way-146366366",
+    "osm-way-124660665",
+    "osm-way-247398251",
+    "osm-way-40473100",
+    "osm-way-680699822",
+    "osm-way-25377539",
+    "osm-way-4007400",
+    "osm-way-318839655",
+    "osm-way-134871627",
+    "osm-way-4012626",
+    "osm-way-3619017",
+    "osm-way-3121406",
+    "osm-relation-3998433",
+    "osm-way-186507790",
+    "osm-way-2957292",
+    "osm-way-353547155",
+    "osm-way-186289752",
+    "osm-way-219578347",
+    "osm-way-40201348",
+    "osm-way-47704658",
+    "osm-way-407698765",
+    "osm-way-72620793",
+    "osm-way-187179833",
+    "osm-way-201933688",
+    "osm-way-4005008",
+    "osm-way-71443000",
+    "osm-way-4554322",
+    "osm-way-186507793",
+    "osm-way-4013010",
+    "osm-relation-20318350",
+    "osm-relation-11920331",
+    "osm-way-94483924",
+    "osm-way-4563665",
+    "eilean-bàn-w94828437",
+    "osm-way-1305440827",
+    "osm-way-200743797",
+    "osm-way-4012258",
+    "osm-way-711404037",
+    "osm-way-4563666",
+    "osm-way-230115077",
+    "osm-way-4559830",
+    "osm-way-4010172",
+    "osm-way-73908596",
+    "osm-way-47704656",
+    "osm-way-4009568",
+    "osm-way-157534018",
+    "osm-way-4563620",
+    "osm-way-190760506",
+    "osm-way-4554535",
+    "osm-way-4563871",
+    "osm-relation-13728146",
+    "osm-way-199999624",
+    "osm-way-60437745",
+    "osm-way-65718346",
+    "osm-way-4569185",
+    "osm-way-4569155",
+    "osm-relation-3625576",
+    "osm-way-4564166",
+    "osm-way-4009566",
+    "osm-way-4564053",
+    "osm-way-205056852",
+    "osm-way-95677109",
+    "osm-way-680695921",
+    "osm-relation-10041228",
+    "osm-way-200764361",
+    "osm-way-4009593",
+    "osm-relation-6104522",
+    "osm-way-1154777964",
+    "osm-way-183405676",
+    "osm-way-6135675",
+    "osm-way-3997946",
+    "osm-way-28206831",
+    "osm-way-200764039",
+    "osm-way-209273251",
+    "osm-way-262432176",
+    "osm-way-202739649",
+    "osm-way-144504240",
+    "osm-way-4007188",
+    "osm-way-227073456",
+    "osm-way-4006865",
+    "osm-way-3331137",
+    "osm-relation-3507340",
+    "osm-way-117381875",
+    "osm-way-255902009",
+    "osm-way-200762485",
+    "osm-way-4009677",
+    "osm-way-25382151",
+    "osm-way-59314609",
+    "osm-way-262432178",
+    "osm-way-625108729",
+    "osm-way-133154542",
+    "osm-way-163637368",
+    "osm-way-61921367",
+    "osm-way-4003969",
+    "osm-way-4559797",
+    "osm-way-18818068",
+    "osm-way-846470429",
+    "osm-way-938066822",
+    "osm-relation-18386935",
+    "osm-way-353547157",
+    "osm-way-4563147",
+    "osm-way-4562002",
+    "osm-way-885235015",
+    "osm-way-4559198",
+    "osm-way-59314610",
+    "osm-way-4554785",
+    "osm-way-37770316",
+    "osm-relation-7282328",
+    "osm-way-987348298",
+    "osm-way-4559544",
+    "osm-way-157530147",
+    "osm-way-93221320",
+    "osm-way-202754661",
+    "osm-way-4554779",
+    "osm-way-4564161",
+    "osm-way-4009710",
+    "osm-way-35536169",
+    "osm-way-230356524",
+    "osm-way-405130618",
+    "osm-way-255265384",
+    "osm-way-867217389",
+    "osm-way-207341895",
+    "osm-way-4009675",
+    "osm-way-4561926",
+    "osm-way-47704657",
+    "osm-way-4569181",
+    "osm-way-985250268",
+    "osm-relation-11025962",
+    "osm-relation-3625571",
+    "osm-way-200814790",
+    "osm-way-4009667",
+    "osm-way-381672743",
+    "osm-way-4009652",
+    "osm-way-4009676",
+    "osm-way-61921366",
+    "osm-way-61921350",
+    "osm-way-322267458",
+    "osm-way-146346233",
+    "osm-relation-3512136",
+    "osm-way-116104846",
+    "osm-way-403957796",
+    "osm-way-8132072",
+    "osm-way-60450595",
+    "osm-way-670974927",
+    "kelso-ana-w143207507",
+    "osm-way-503778137",
+    "osm-way-3613865",
+    "osm-way-938057685",
+    "osm-way-3326260",
+    "osm-way-151153378",
+    "osm-way-229406540",
+    "osm-way-49982804",
+    "osm-way-59462472",
+    "osm-way-4831821",
+    "osm-way-230764977",
+    "osm-way-4563386",
+    "osm-way-261452880",
+    "osm-relation-18386925",
+    "osm-way-26526912",
+    "osm-way-27382765",
+    "osm-way-61921369",
+    "osm-way-4233801",
+    "osm-way-103218882",
+    "osm-way-403957943",
+    "osm-relation-3998453",
+    "osm-way-1493746582",
+    "osm-way-28275035",
+    "osm-way-938087084",
+    "osm-way-251491994",
+    "osm-way-234568444",
+    "osm-way-4554607",
+    "osm-way-59319019",
+    "osm-way-493291072",
+    "osm-way-60319857",
+    "osm-way-180201341",
+    "osm-way-4558825",
+    "osm-way-157534021",
+    "osm-way-4554452",
+    "osm-way-26526920",
+    "osm-way-311395170",
+    "osm-way-4005186",
+    "osm-way-93208276",
+    "osm-way-230468774",
+    "osm-way-66691419",
+    "osm-way-28224108",
+    "osm-way-938103577",
+    "osm-relation-3998485",
+    "osm-way-40201349",
+    "osm-way-1300873443",
+    "craigroy-island-w795320944",
+    "osm-way-201905535",
+    "brinacory-island-w76465045",
+    "osm-way-4563053",
+    "osm-way-867191680",
+    "osm-way-4009651",
+    "osm-way-115835801",
+    "osm-way-188988733",
+    "osm-way-202754658",
+    "osm-way-700655151",
+    "osm-way-95316139",
+    "osm-way-409793719",
+    "osm-way-237775398",
+    "osm-way-2956905",
+    "osm-relation-2985958",
+    "osm-way-236518974",
+    "osm-way-318357003",
+    "osm-way-28274730",
+    "osm-way-4562006",
+    "osm-way-157534996",
+    "osm-way-4009565",
+    "osm-way-6135677",
+    "osm-way-938087083",
+    "osm-way-310224625",
+    "osm-way-130435031",
+    "osm-way-428793502",
+    "osm-relation-17814917",
+    "osm-way-771992354",
+    "osm-way-207983419",
+    "osm-way-4554597",
+    "osm-way-1245685800",
+    "osm-way-40520959",
+    "osm-way-4009560",
+    "osm-way-4560826",
+    "osm-way-230351838",
+    "cock-island-w351529342",
+    "osm-way-547601092",
+    "osm-way-227484882",
+    "osm-way-385864524",
+    "osm-relation-3998537",
+    "osm-way-28275037",
+    "osm-way-202739654",
+    "osm-relation-10221721",
+    "osm-way-239078680",
+    "osm-way-3494642",
+    "osm-way-41113812",
+    "osm-way-4554321",
+    "osm-way-244640919",
+    "osm-relation-9639188",
+    "osm-way-169445609",
+    "osm-way-938066786",
+    "osm-way-4563570",
+    "osm-way-589702847",
+    "osm-way-28448235",
+    "osm-way-4557026",
+    "osm-way-252748038",
+    "osm-way-589702846",
+    "osm-relation-12658790",
+    "osm-way-128501476",
+    "osm-way-42327211",
+    "osm-way-4007189",
+    "osm-way-173781320",
+    "osm-way-2957293",
+    "osm-relation-3077273",
+    "osm-way-1489811189",
+    "osm-way-353547149",
+    "osm-way-4550017",
+    "osm-way-44945692",
+    "osm-way-617148633",
+    "osm-way-200019562",
+    "osm-way-304960830",
+    "osm-way-431547277",
+    "osm-way-329053690",
+    "osm-way-4554802",
+    "osm-way-431547276",
+    "osm-way-61921802",
+    "osm-relation-12658924",
+    "osm-way-349633052",
+    "osm-way-1297149135",
+    "osm-way-938066826",
+    "osm-way-724780047",
+    "osm-way-890119753",
+    "wd-Q56665807",
+    "osm-way-118949938",
+    "osm-way-229408476",
+    "osm-way-4561693",
+    "osm-way-61921362",
+    "osm-way-64297811",
+    "osm-way-230351830",
+    "osm-way-503778128",
+    "osm-way-938066821",
+    "osm-relation-3625578",
+    "osm-way-315913762",
+    "osm-way-788970093",
+    "osm-relation-17249525",
+    "osm-way-211539849",
+    "osm-relation-13304103",
+    "osm-way-589702852",
+    "wd-Q80050277",
+    "osm-way-183405720",
+    "osm-way-236950452",
+    "osm-way-3375216",
+    "osm-way-504223051",
+    "osm-way-183357742",
+    "osm-way-188960567",
+    "osm-way-205106771",
+    "osm-way-315544322",
+    "osm-way-414813207",
+    "osm-way-541110904",
+    "wd-Q56661801",
+    "osm-way-199137732",
+    "osm-way-349633053",
+    "osm-way-413990404",
+    "osm-way-59236004",
+    "osm-relation-3516650",
+    "osm-way-1116096861",
+    "osm-way-223611529",
+    "osm-way-229408462",
+    "osm-way-28271542",
+    "osm-way-446495636",
+    "osm-way-616542990",
+    "osm-relation-3187245",
+    "osm-way-223842677",
+    "osm-way-310224626",
+    "osm-way-349633057",
+    "wd-Q56663107",
+    "osm-relation-18028211",
+    "osm-way-510707993",
+    "osm-way-938066787",
+    "wd-Q56663154",
+    "wd-Q56666960",
+    "wd-Q56667637",
+    "osm-way-1193017806",
+    "osm-way-230464912",
+    "osm-way-236692729",
+    "osm-way-236692738",
+    "osm-way-414813206",
+    "osm-way-446495637",
+    "osm-way-541110905",
+    "osm-way-883875276",
+    "wd-Q56667708",
+    "csv-geocoded-Q17827710",
+    "osm-relation-3184538",
+    "osm-way-236857282",
+    "osm-way-590265082",
+    "osm-way-687457476",
+    "wd-Q43372925",
+    "osm-way-202754656",
+    "osm-way-277704482",
+    "osm-way-835031691",
+    "wd-Q29015459",
+    "wd-Q56663122",
+    "osm-way-223842666",
+    "osm-way-890119758",
+    "wd-Q56661793",
+    "wd-Q56663901",
+    "wd-Q56666097",
+    "wd-Q56667838",
+    "wd-Q66022746",
+    "csv-geocoded-Q108188171",
+    "csv-geocoded-Q108407584",
+    "csv-geocoded-Q109568554",
+    "csv-geocoded-Q17828185",
+    "csv-geocoded-Q24638319",
+    "csv-geocoded-Q24638551",
+    "csv-geocoded-Q24639351",
+    "csv-geocoded-Q24659597",
+    "csv-geocoded-Q29552470",
+    "csv-geocoded-Q31118312",
+    "osm-node-13604252557",
+    "osm-node-13604252571",
+    "osm-node-3130894028",
+    "osm-node-3130895666",
+    "osm-node-318474791",
+    "osm-node-3507326517",
+    "osm-node-3874096453",
+    "osm-node-534125821",
+    "osm-node-60171070",
+    "osm-way-414411878",
+    "osm-way-415263009",
+    "pound-rock",
+    "the-inch",
+    "wd-Q101577967",
+    "wd-Q101784887",
+    "wd-Q104348833",
+    "wd-Q104363593",
+    "wd-Q106963443",
+    "wd-Q108140384",
+    "wd-Q109568010",
+    "wd-Q109568037",
+    "wd-Q109568557",
+    "wd-Q109570097",
+    "wd-Q109787110",
+    "wd-Q10981603",
+    "wd-Q110044390",
+    "wd-Q110207998",
+    "wd-Q112945058",
+    "wd-Q1140655",
+    "wd-Q114833764",
+    "wd-Q115111640",
+    "wd-Q115453907",
+    "wd-Q115473746",
+    "wd-Q115570922",
+    "wd-Q115574572",
+    "wd-Q116723084",
+    "wd-Q116723212",
+    "wd-Q116723267",
+    "wd-Q116723281",
+    "wd-Q116723292",
+    "wd-Q116723328",
+    "wd-Q116873639",
+    "wd-Q116873653",
+    "wd-Q116873655",
+    "wd-Q116873657",
+    "wd-Q116873663",
+    "wd-Q116873666",
+    "wd-Q116873683",
+    "wd-Q116873686",
+    "wd-Q116873729",
+    "wd-Q116873761",
+    "wd-Q116873767",
+    "wd-Q116873792",
+    "wd-Q116873811",
+    "wd-Q116875420",
+    "wd-Q116875449",
+    "wd-Q116879110",
+    "wd-Q116883527",
+    "wd-Q116885075",
+    "wd-Q116890290",
+    "wd-Q116896855",
+    "wd-Q116910328",
+    "wd-Q118464735",
+    "wd-Q123519301",
+    "wd-Q124335492",
+    "wd-Q124343664",
+    "wd-Q124343669",
+    "wd-Q124343695",
+    "wd-Q124372734",
+    "wd-Q124378363"
+  ]
+}

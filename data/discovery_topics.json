@@ -578,16 +578,16 @@
         "osm-way-4007191",
         "osm-way-93349036",
         "osm-way-4569222",
+        "osm-relation-3335698",
+        "osm-way-956947728",
         "osm-relation-3077272",
         "osm-way-65017623",
         "osm-relation-3077274",
         "osm-way-730876541",
         "osm-way-4563499",
         "osm-relation-3866223",
-        "osm-way-205056872",
-        "osm-way-490111575",
-        "osm-way-1150257129",
-        "osm-relation-3226229"
+        "osm-way-1210249467",
+        "osm-way-205056872"
       ],
       "islands": [
         {
@@ -1093,6 +1093,37 @@
           "highestPointM": null
         },
         {
+          "id": "osm-relation-3335698",
+          "name": "Port Island",
+          "nation": "Ireland",
+          "lat": 53.60878,
+          "lng": -10.21317,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell_Fort%2C_Port_Island%2C_Inishbofin_-_geograph.org.uk_-_199476.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-956947728",
+          "name": "Lamalum",
+          "nation": "Scotland",
+          "lat": 57.00459,
+          "lng": -7.39074,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cliffs_below_Lamalum_-_geograph.org.uk_-_4403089.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
           "id": "osm-relation-3077272",
           "name": "Inner Farne",
           "nation": "Scotland",
@@ -1186,6 +1217,22 @@
           "highestPointM": null
         },
         {
+          "id": "osm-way-1210249467",
+          "name": "An Caol",
+          "nation": "Scotland",
+          "lat": 56.82931,
+          "lng": -5.10673,
+          "shortDescription": "An Caol is a small sea island located in Scotland, covering an area of 0.0287 km². It is characterized by its coastline.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/An_Caol_landscape_-_geograph.org.uk_-_935022.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
           "id": "osm-way-205056872",
           "name": "Inn Island",
           "nation": "Scotland",
@@ -1198,54 +1245,6 @@
           "tags": [
             "islet",
             "coastline"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "osm-way-490111575",
-          "name": "Skeo of Holm",
-          "nation": "Scotland",
-          "lat": 60.32941,
-          "lng": -1.02524,
-          "shortDescription": "",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Head%2C_Whalsay%2C_Shetland_-_geograph.org.uk_-_145740.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "islet",
-            "coastline"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "osm-way-1150257129",
-          "name": "Inner Holm",
-          "nation": "Scotland",
-          "lat": 58.95902,
-          "lng": -3.28925,
-          "shortDescription": "Some only seasonally inhabited",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inner_Holm.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "islet",
-            "coastline"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "osm-relation-3226229",
-          "name": "Rat Island",
-          "nation": "England",
-          "lat": 51.16304,
-          "lng": -4.65233,
-          "shortDescription": "",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Coastal_Environments_-_Looking_across_the_Lundy_Island_Landing_Stage_from_Rat_Island%2C_Bristol_Channel%2C_United_Kingdom_%289605673095%29.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "island",
-            "bare_rock"
           ],
           "highestPointM": null
         }
@@ -4591,10 +4590,12 @@
         "osm-relation-8815463",
         "osm-way-4007191",
         "osm-way-4569222",
+        "osm-way-956947728",
         "osm-relation-3077272",
         "osm-relation-3077274",
         "osm-way-730876541",
         "osm-relation-3866223",
+        "osm-way-1210249467",
         "osm-way-205056872",
         "osm-way-490111575",
         "osm-way-1150257129",
@@ -4613,13 +4614,11 @@
         "osm-way-4010491",
         "osm-way-63502638",
         "osm-way-115733381",
+        "osm-way-183357730",
         "osm-way-656976594",
         "osm-way-230351832",
         "osm-way-95670291",
-        "osm-way-222757416",
-        "osm-way-374466241",
-        "wd-Q2978986",
-        "wd-Q136651053"
+        "osm-way-222757416"
       ],
       "islands": [
         {
@@ -4827,6 +4826,22 @@
           "highestPointM": null
         },
         {
+          "id": "osm-way-956947728",
+          "name": "Lamalum",
+          "nation": "Scotland",
+          "lat": 57.00459,
+          "lng": -7.39074,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cliffs_below_Lamalum_-_geograph.org.uk_-_4403089.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "islet",
+            "coastline"
+          ],
+          "highestPointM": null
+        },
+        {
           "id": "osm-relation-3077272",
           "name": "Inner Farne",
           "nation": "Scotland",
@@ -4884,6 +4899,22 @@
           "ferry": true,
           "tags": [
             "island"
+          ],
+          "highestPointM": null
+        },
+        {
+          "id": "osm-way-1210249467",
+          "name": "An Caol",
+          "nation": "Scotland",
+          "lat": 56.82931,
+          "lng": -5.10673,
+          "shortDescription": "An Caol is a small sea island located in Scotland, covering an area of 0.0287 km². It is characterized by its coastline.",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/An_Caol_landscape_-_geograph.org.uk_-_935022.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island",
+            "coastline"
           ],
           "highestPointM": null
         },
@@ -5176,6 +5207,21 @@
           "highestPointM": null
         },
         {
+          "id": "osm-way-183357730",
+          "name": "Little Holm",
+          "nation": "Scotland",
+          "lat": 60.38369,
+          "lng": -1.13058,
+          "shortDescription": "",
+          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Little_Holm%2C_Yell_Sound_-_geograph.org.uk_-_5804708.jpg?width=800",
+          "hasPhoto": true,
+          "ferry": true,
+          "tags": [
+            "island"
+          ],
+          "highestPointM": null
+        },
+        {
           "id": "osm-way-656976594",
           "name": "Craiganteugh",
           "nation": "Scotland",
@@ -5236,54 +5282,6 @@
           "tags": [
             "islet",
             "coastline"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "osm-way-374466241",
-          "name": "Sgor Beag",
-          "nation": "Scotland",
-          "lat": 56.5074,
-          "lng": -6.79713,
-          "shortDescription": "",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Filling_station_and_garage_-_geograph.org.uk_-_317240.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "islet",
-            "coastline"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "wd-Q2978986",
-          "name": "Clett",
-          "nation": "Scotland",
-          "lat": 58.62361,
-          "lng": -3.5425,
-          "shortDescription": "Clett is a name used for many uninhabited Scottish islets and one to the south, though also in the area inhabited by Vikings. They include - One at 58.623644°N 3.5424908°W, near the north coast of Caithness, just to the west Holborn Head north of Scrabster.",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Rock_-_geograph.org.uk_-_1293.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "island",
-            "wikidata"
-          ],
-          "highestPointM": null
-        },
-        {
-          "id": "wd-Q136651053",
-          "name": "Eilean Buidhe",
-          "nation": "Scotland",
-          "lat": 55.9302,
-          "lng": -5.1731,
-          "shortDescription": "",
-          "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Buidhe%2C_A_Burnt_Island_-_geograph.org.uk_-_2742702.jpg?width=640",
-          "hasPhoto": true,
-          "ferry": true,
-          "tags": [
-            "island",
-            "wikidata"
           ],
           "highestPointM": null
         }

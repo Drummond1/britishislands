@@ -1,15 +1,45 @@
 # SEO and GEO for island profiles
 
-This project is a **static SPA** (`index.html` + `app.js`). Deep links use
-`/?island=<id>` (stable slug from `data/islands.json`).
+This project is a **static SPA** (`index.html` + `app.js`). Interactive deep
+links use `/?island=<id>` (stable internal id). **Canonical public URLs** for
+crawlers and citations are nation + name-slug paths:
+
+```
+/islands/{nation}/{slug}/
+```
+
+Examples:
+
+- `/islands/scotland/isle-of-skye/`
+- `/islands/ireland/achill-island/`
+- `/islands/northern-ireland/rathlin/`
+
+Nation hubs (where “map” intent belongs): `/islands/ireland/`, `/islands/scotland/`, …
+
+Do **not** stuff keywords like `map` into per-island slugs. Put map intent in
+hub titles and page `<title>` templates instead.
+
+## URL rules (`scripts/seo_paths.py`)
+
+| Piece | Rule |
+|-------|------|
+| Nation segment | From `nation`: `scotland`, `ireland`, `england`, `wales`, `northern-ireland`, `crown-dependencies`, `isle-of-man` |
+| Slug | ASCII-folded place name; curated human `id` kept when already a clean slug; collisions get parent water / archipelago / id suffix |
+| Unnamed | Slug falls back to stable `id` (often `osm-…`) |
+| Internal `id` | **Never** regenerated — still used for `?island=` and data joins |
+| Legacy | `/profiles/<id>.html` → redirect + `noindex`, canonical points at `/islands/…` |
+
+Shard records get `seoPath` stamped by `build_islands_index.py`. Lookup file:
+`data/seo_path_by_id.json` (written by `generate_seo_artifacts.py`).
 
 ## What runs in the browser (no visible UI change)
 
 `seo-meta.js` (imported from `app.js`) updates the document head whenever an
 island detail panel opens, and restores the homepage defaults when it closes:
 
-- `<title>`, `meta name=description`
-- `link rel=canonical` (uses `window.IOB_SITE_ORIGIN` when set, else `location.origin`)
+- `<title>` — `{name}, {nation} — map & profile | Find My Island`
+- `meta name=description`
+- `link rel=canonical` → `seoPath` when present
 - Open Graph (`og:*`) and Twitter Card tags
 - JSON-LD `@type: Island` with `geo`, `addressCountry`, `sameAs` (Wikipedia /
   Wikidata), optional `containedInPlace` for lake/river parents, optional
@@ -32,26 +62,56 @@ alternate CDN hostname).
 |--------|------|
 | `llms.txt` | Always — short briefing + URL patterns for AI crawlers |
 | `sitemap.xml`, `robots.txt` | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
-| `profiles/<id>.html` | With `--landing-dir profiles` (Pages deploy; gitignored locally) |
+| `islands/` | Nation hubs + `/islands/{nation}/{slug}/index.html` |
+| `profiles/<id>.html` | With `--landing-dir profiles` — legacy redirects |
+| `data/seo_path_by_id.json` | id → public path map |
 | `index.html` crawl links | Patched between `IOB_CRAWL_LINKS_*` markers |
 
 ```bash
 # Production (matches GitHub Pages workflow):
 IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifacts.py \
   --landing-dir profiles
+python3 scripts/build_islands_index.py   # stamps seoPath onto shards
 ```
 
-**Sitemap (2026-05-30):** homepage + 13 ferry guides + 7,041 static profile URLs
-(`/profiles/<id>.html`). Curated islands get higher `priority`. Query-string
-`/?island=` URLs are omitted when profile pages are generated.
+**Sitemap:** homepage + `/islands/` + nation hubs + ferry guides + every
+`/islands/{nation}/{slug}/` profile. Curated islands get higher `priority`.
+Legacy `/profiles/` URLs are **not** listed (they noindex-redirect).
 
-### Google Search Console
+## Google Search Console (connected 2026-07-26)
 
-1. Add property `https://www.findmyisland.com`
-2. Verify via HTML tag: set `window.IOB_GOOGLE_SITE_VERIFICATION` in `config.local.js`
-   (see `config.local.example.js`); `seo-head.js` injects the meta tag at load.
-3. Submit sitemap: `https://www.findmyisland.com/sitemap.xml`
-4. Use URL Inspection → Request indexing on `/` and a few `/profiles/*.html` pages
+Property: `sc-domain:findmyisland.com`. Snapshot: `data/gsc_seo_snapshot.json`.
+
+| Metric (28d to 2026-07-25) | Value |
+|----------------------------|-------|
+| Impressions | **1,614** |
+| Clicks | **0** |
+| Avg position | **77.4** |
+| Sitemap | Submitted OK (0 errors) |
+
+### What GSC showed
+
+1. Google is indexing **`/?island=`** SPA URLs (e.g. Scilly **563** impressions) because
+   old profile HTML used **instant meta-refresh** into the atlas — treated as a redirect.
+2. New **`/islands/{nation}/{slug}/`** URLs were **unknown** until deploy.
+3. Best early ranking surface: **`/ferries/calmac/`** (279 impressions, ~position 51).
+4. Strong query clusters: Anglesey, Brownsea, Bute, CalMac/ferries, Scilly.
+
+### Fixes applied from this data
+
+- Remove meta-refresh from island landings (indexable HTML stays on `/islands/…`).
+- SPA `?island=` views: `noindex,follow` + canonical → `seoPath`.
+- Ferry landings: stop showing “OSM node …” titles; absolute canonicals; links to `seoPath`.
+- Priority list of GSC islands in `data/gsc_seo_snapshot.json`.
+
+### After each deploy
+
+1. Confirm sitemap still submitted in GSC.
+2. URL Inspection → Request indexing on `/islands/`, nation hubs, and top GSC islands
+   (`scilly-st-marys`, `anglesey`, `bute`, `lewis-and-harris`, CalMac ferry page).
+3. Re-pull GSC in ~2 weeks; expect `/?island=` impressions to fall as `/islands/` rises.
+
+Live CTR / ranking diagnosis (2026-07-26 API pull): [`GSC-CTR-FINDINGS.md`](GSC-CTR-FINDINGS.md).
 
 ### Static homepage SEO
 
@@ -61,15 +121,41 @@ IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifa
 
 ### Profile landing pages
 
-Each `profiles/<id>.html` has self-canonical URL, `Island` JSON-LD, OG tags, and a
-link to the interactive atlas. Generated on every Pages deploy; not committed locally.
+Each `/islands/{nation}/{slug}/` page has self-canonical URL, `Island` JSON-LD,
+OG tags, and a link/redirect to the interactive atlas. Generated on every Pages
+deploy; not committed locally (`islands/` and `profiles/` are gitignored).
 
-## ETHICS
+## Continuous SEO / GEO improvement loop
 
-Descriptions and structured data come from the same `islands.json` fields as the
-UI. Do not invent facts for SEO; follow `docs/ETHICS.md` and dataset provenance.
+Orchestrator: `scripts/run_seo_geo_improvement.sh`.
 
-## Related
+Each cycle (safe to run repeatedly; single-writer lock
+`data/.seo_geo_improvement.lock`):
 
-- [`ARCHITECTURE.md`](ARCHITECTURE.md) — frontend data flow
-- [`DATA-SCHEMA.md`](DATA-SCHEMA.md) — island field definitions
+1. **Audit** — `audit_seo_geo_coverage.py` scores named islands 0–100
+   (description 40 · photo 30 · sameAs 15 · geo 10 · nation 5) and writes
+   `data/seo_geo_priority_queue.json` + `data/seo_geo_coverage_report.json`.
+2. **Rotate enrichment** (cycle % 4):
+   - `descriptions` — Wikipedia lead extracts (description queue then SEO queue)
+   - `photos` — high-confidence P18 / OSM tag images ordered by SEO queue (OG)
+   - `featured` — rebuild notable strip + discovery topics + featured desc gaps
+   - `artifacts` — featured refresh only
+3. **Publish** — `build_islands_index.py` + `generate_seo_artifacts.py`
+   (sitemap, robots, llms.txt, `/islands/` HTML, legacy profile redirects).
+4. **Probe live** — GET `/`, `/sitemap.xml`, `/robots.txt`, `/llms.txt`,
+   `/islands/`, nation hub, sample profile, legacy redirect →
+   `data/seo_geo_live_probe.json`.
+
+```bash
+# One cycle
+bash scripts/run_seo_geo_improvement.sh
+
+# Recurring every hour
+while true; do
+  bash scripts/run_seo_geo_improvement.sh || true
+  sleep 3600
+done
+```
+
+Env knobs: `IOB_SITE_ORIGIN`, `SEO_GEO_DESC_LIMIT` (default 60),
+`SEO_GEO_PHOTO_LIMIT` (default 80).

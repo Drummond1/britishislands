@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "generated": "2026-07-26T18:18:53Z",
+  "property": "sc-domain:findmyisland.com",
+  "period": {
+    "from": "2026-06-28",
+    "to": "2026-07-25"
+  },
+  "overview": {
+    "clicks": 0,
+    "impressions": 1614,
+    "ctr": 0.0,
+    "avgPosition": 77.4
+  },
+  "sitemap": {
+    "url": "https://www.findmyisland.com/sitemap.xml",
+    "lastSubmitted": "2026-07-26T10:07:31Z",
+    "errors": 0,
+    "warnings": 0
+  },
+  "findings": [
+    "Google indexes /?island= URLs as canonical because profile HTML used meta-refresh to the SPA.",
+    "New /islands/{nation}/{slug}/ URLs are unknown to Google until deploy.",
+    "Best near-term ranking opportunity: /ferries/calmac/ (279 impressions, position ~51).",
+    "Top island demand: Scilly St Mary's, Anglesey, Bute, Lewis & Harris."
+  ],
+  "topPagesByImpressions": [
+    {
+      "key": "scilly-st-marys",
+      "impressions": 563,
+      "liveUrl": "/?island=scilly-st-marys"
+    },
+    {
+      "key": "calmac-ferries",
+      "impressions": 279,
+      "liveUrl": "/ferries/calmac/"
+    },
+    {
+      "key": "anglesey",
+      "impressions": 132,
+      "liveUrl": "/?island=anglesey"
+    },
+    {
+      "key": "bute",
+      "impressions": 98,
+      "liveUrl": "/?island=bute"
+    },
+    {
+      "key": "shetland-ferries",
+      "impressions": 88,
+      "liveUrl": "/ferries/shetland/"
+    },
+    {
+      "key": "scottish-ferries",
+      "impressions": 74,
+      "liveUrl": "/ferries/scottish/"
+    },
+    {
+      "key": "lewis-and-harris",
+      "impressions": 63,
+      "liveUrl": "/?island=lewis-and-harris"
+    },
+    {
+      "key": "home",
+      "impressions": 42,
+      "liveUrl": "/"
+    },
+    {
+      "key": "staffa",
+      "impressions": 38,
+      "liveUrl": "/?island=staffa"
+    },
+    {
+      "key": "isle-of-man-ferries",
+      "impressions": 31,
+      "liveUrl": "/ferries/isle-of-man/"
+    },
+    {
+      "key": "isle-of-dogs",
+      "impressions": 30,
+      "liveUrl": "/?island=isle-of-dogs"
+    },
+    {
+      "key": "isle-of-wight",
+      "impressions": 25,
+      "liveUrl": "/?island=isle-of-wight"
+    },
+    {
+      "key": "brownsea",
+      "impressions": 24,
+      "liveUrl": "/?island=brownsea"
+    },
+    {
+      "key": "mainland-orkney",
+      "impressions": 23,
+      "liveUrl": "/?island=mainland-orkney"
+    },
+    {
+      "key": "st-kilda",
+      "impressions": 21,
+      "liveUrl": "/?island=st-kilda"
+    }
+  ],
+  "priorityIslandIds": [
+    "scilly-st-marys",
+    "anglesey",
+    "bute",
+    "lewis-and-harris",
+    "staffa",
+    "isle-of-dogs",
+    "isle-of-wight",
+    "brownsea",
+    "mainland-orkney",
+    "st-kilda"
+  ],
+  "postDeployIndexing": [
+    {
+      "id": "scilly-st-marys",
+      "seoPath": "/islands/england/scilly-st-marys/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "anglesey",
+      "seoPath": "/islands/wales/anglesey/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "bute",
+      "seoPath": "/islands/scotland/bute/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "lewis-and-harris",
+      "seoPath": "/islands/scotland/lewis-and-harris/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "staffa",
+      "seoPath": "/islands/scotland/staffa/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "isle-of-dogs",
+      "seoPath": "/islands/england/isle-of-dogs/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "isle-of-wight",
+      "seoPath": "/islands/england/isle-of-wight/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "brownsea",
+      "seoPath": "/islands/england/brownsea/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "mainland-orkney",
+      "seoPath": "/islands/scotland/mainland-orkney/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    },
+    {
+      "id": "st-kilda",
+      "seoPath": "/islands/scotland/st-kilda/",
+      "gscAction": "Request indexing on seoPath after deploy; remove ?island= from Google index via canonical+noindex"
+    }
+  ],
+  "lastGscDrivenCycle": {
+    "at": "2026-07-26T20:53:46Z",
+    "islandsDirDeployed": false,
+    "averageScore": 48.26,
+    "pctBoth": 18.7,
+    "withDescription": 1566,
+    "withPhoto": 4354
+  },
+  "gscRefreshedAt": "2026-07-26T20:53:46Z"
+}

@@ -3,14 +3,16 @@
 Generate crawlers / GEO-friendly artifacts for the static atlas.
 
 Outputs (when --site-origin is set):
-  - sitemap.xml — home, ferry guides, static profile pages (preferred for indexing)
+  - sitemap.xml — home, nation hubs, ferry guides, /islands/{nation}/{slug}/
   - robots.txt — allows all, points to sitemap
 
 Always written:
   - llms.txt — project summary for AI crawlers
+  - data/seo_path_by_id.json — id → public path (for tooling / probes)
 
 Optional:
-  - --landing-dir DIR — static HTML per island (profiles/<id>.html on deploy)
+  - --landing-dir DIR — also write legacy /profiles/<id>.html redirects
+  - /islands/.../index.html canonical landings + nation hubs
   - Patches index.html crawl-link block between IOB_CRAWL_LINKS markers
 
 Examples:
@@ -25,16 +27,30 @@ import html
 import json
 import os
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from seo_paths import (  # noqa: E402
+    NATION_HUB_BLURB,
+    NATION_HUB_TITLE,
+    NATION_SEGMENT,
+    assign_seo_paths,
+    nation_segment,
+    page_title,
+)
+
 DATA = ROOT / "data"
 ISLANDS = DATA / "islands.json"
 CURATED = DATA / "curated.json"
 FEATURED = DATA / "featured_islands.json"
+SEO_PATH_MAP = DATA / "seo_path_by_id.json"
 INDEX_HTML = ROOT / "index.html"
+ISLANDS_DIR = ROOT / "islands"
 
 FERRY_LABELS: dict[str, str] = {
     "/ferries/": "All ferry guides",
@@ -145,11 +161,15 @@ def profile_page_html(
     origin: str,
     atlas_href: str,
     profile_path: str,
+    title: str,
 ) -> str:
     iid = isl["id"]
     name = html.escape(str(isl.get("name") or iid), quote=True)
+    nation = html.escape(str(isl.get("nation") or ""), quote=True)
+    title_esc = html.escape(title, quote=True)
     desc_raw = isl.get("shortDescription") or (
-        f"{isl.get('name', '')} — island in {isl.get('nation', 'the British Isles')}."
+        f"{isl.get('name', '')} — island in {isl.get('nation', 'the British Isles')}. "
+        f"Map, location, and profile on Find My Island."
     )
     desc = html.escape(str(desc_raw).replace("\n", " ").strip()[:300], quote=True)
     profile_url = f"{origin}{profile_path}" if origin else profile_path
@@ -161,6 +181,10 @@ def profile_page_html(
 
     lat = isl.get("lat")
     lng = isl.get("lng")
+    address = ""
+    if isl.get("nation"):
+        address = f',\n    "address": {{"@type": "PostalAddress", "addressCountry": {json.dumps(str(isl.get("nation")))}}}'
+
     geo_block = ""
     if lat is not None and lng is not None:
         geo_block = f"""
@@ -170,54 +194,220 @@ def profile_page_html(
     "name": {json.dumps(str(isl.get("name") or iid))},
     "description": {json.dumps(str(desc_raw)[:500])},
     "url": {json.dumps(profile_url)},
-    "geo": {{"@type": "GeoCoordinates", "latitude": {lat}, "longitude": {lng}}}
+    "geo": {{"@type": "GeoCoordinates", "latitude": {lat}, "longitude": {lng}}}{address}
   }}</script>"""
+
+    nation_line = f"<p>{nation}</p>" if nation else ""
+
+    facts: list[str] = []
+    if isl.get("type"):
+        facts.append(f"<li><strong>Type:</strong> {html.escape(str(isl['type']))} island</li>")
+    if isl.get("archipelago"):
+        facts.append(
+            f"<li><strong>Group:</strong> {html.escape(str(isl['archipelago']))}</li>"
+        )
+    if isl.get("areaKm2"):
+        facts.append(
+            f"<li><strong>Area:</strong> {html.escape(str(isl['areaKm2']))} km²</li>"
+        )
+    if isl.get("population") is not None and isl.get("population") != "":
+        facts.append(
+            f"<li><strong>Population:</strong> {html.escape(str(isl['population']))}</li>"
+        )
+    if lat is not None and lng is not None:
+        facts.append(
+            f"<li><strong>Location:</strong> {lat}, {lng} "
+            f"(open on the interactive map)</li>"
+        )
+    facts_block = ""
+    if facts:
+        facts_block = (
+            "  <h2>Key facts</h2>\n  <ul>\n    "
+            + "\n    ".join(facts)
+            + "\n  </ul>\n"
+        )
+
+    hub = ""
+    seg = nation_segment(isl.get("nation"))
+    if seg:
+        hub = (
+            f'  <p>Part of the <a href="/islands/{html.escape(seg, quote=True)}/">'
+            f"{nation or seg} islands map</a>.</p>\n"
+        )
+
+    img_block = ""
+    if img:
+        img_block = (
+            f'  <p><img src="{html.escape(img, quote=True)}" alt="{name}" '
+            f'width="640" loading="lazy"/></p>\n'
+        )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>{name} — Isles of Britain</title>
+  <title>{title_esc}</title>
   <meta name="description" content="{desc}"/>
   <link rel="canonical" href="{html.escape(profile_url, quote=True)}"/>
   <meta name="robots" content="index,follow,max-image-preview:large"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="{name} — Isles of Britain"/>
+  <meta property="og:title" content="{title_esc}"/>
   <meta property="og:description" content="{desc}"/>
   <meta property="og:url" content="{html.escape(profile_url, quote=True)}"/>
 {og_img}  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="{name} — Isles of Britain"/>
+  <meta name="twitter:title" content="{title_esc}"/>
   <meta name="twitter:description" content="{desc}"/>
   <link rel="alternate" href="{html.escape(atlas_url, quote=True)}"/>
-  <meta http-equiv="refresh" content="0; url={atlas_url}"/>
 {geo_block}
 </head>
 <body>
   <header>
     <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
     <h1>{name}</h1>
+    {nation_line}
     <p>{desc}</p>
   </header>
-  <p><a href="{atlas_url}">Open interactive map profile →</a></p>
-  <noscript><p><a href="{atlas_url}">Continue to the atlas</a></p></noscript>
+{img_block}{facts_block}{hub}  <p><a href="{atlas_url}">Open interactive map profile →</a></p>
+  <p><small>Canonical profile for search engines and AI crawlers. Map opens on demand — no auto-redirect.</small></p>
 </body>
 </html>
 """
 
 
-def build_crawl_links_html(islands_by_id: dict[str, dict], curated: set[str]) -> str:
+def legacy_redirect_html(*, new_url: str, atlas_url: str, name: str) -> str:
+    new_esc = html.escape(new_url, quote=True)
+    atlas_esc = html.escape(atlas_url, quote=True)
+    name_esc = html.escape(name, quote=True)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>{name_esc} (moved)</title>
+  <link rel="canonical" href="{new_esc}"/>
+  <meta name="robots" content="noindex,follow"/>
+  <meta http-equiv="refresh" content="0; url={new_esc}"/>
+</head>
+<body>
+  <p>This profile has moved to <a href="{new_esc}">{new_esc}</a>.</p>
+  <p><a href="{atlas_esc}">Open in atlas</a></p>
+</body>
+</html>
+"""
+
+
+def nation_hub_html(
+    *,
+    segment: str,
+    origin: str,
+    atlas_href: str,
+    featured_links: list[tuple[str, str]],
+) -> str:
+    title = NATION_HUB_TITLE.get(segment, f"{segment} islands map")
+    blurb = NATION_HUB_BLURB.get(
+        segment, "Explore islands on the Find My Island interactive atlas."
+    )
+    hub_path = f"/islands/{segment}/"
+    hub_url = f"{origin}{hub_path}"
+    title_esc = html.escape(title, quote=True)
+    blurb_esc = html.escape(blurb, quote=True)
+    items = "\n".join(
+        f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
+        for path, label in featured_links
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{title_esc} | Find My Island</title>
+  <meta name="description" content="{blurb_esc}"/>
+  <link rel="canonical" href="{html.escape(hub_url, quote=True)}"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="{title_esc}"/>
+  <meta property="og:description" content="{blurb_esc}"/>
+  <meta property="og:url" content="{html.escape(hub_url, quote=True)}"/>
+</head>
+<body>
+  <header>
+    <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
+    <h1>{title_esc}</h1>
+    <p>{blurb_esc}</p>
+  </header>
+  <p><a href="{html.escape(atlas_href, quote=True)}">Open the interactive map →</a></p>
+  <h2>Notable islands</h2>
+  <ul>
+{items}
+  </ul>
+</body>
+</html>
+"""
+
+
+def islands_root_html(*, origin: str, atlas_href: str) -> str:
+    links = "\n".join(
+        f'    <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
+        for seg in sorted(set(NATION_SEGMENT.values()))
+    )
+    url = f"{origin}/islands/"
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Islands by country — map | Find My Island</title>
+  <meta name="description" content="Browse islands of Scotland, Ireland, England, Wales, Northern Ireland, and the Crown Dependencies on an interactive map."/>
+  <link rel="canonical" href="{html.escape(url, quote=True)}"/>
+  <meta name="robots" content="index,follow"/>
+</head>
+<body>
+  <header>
+    <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
+    <h1>Islands by country</h1>
+    <p>Choose a nation map hub, then open any island profile.</p>
+  </header>
+  <ul>
+{links}
+  </ul>
+</body>
+</html>
+"""
+
+
+def build_crawl_links_html(
+    islands_by_id: dict[str, dict],
+    curated: set[str],
+    paths: dict,
+) -> str:
     ferry_items = "\n".join(
         f'        <li><a href="{p}">{html.escape(FERRY_LABELS.get(p, p))}</a></li>'
         for p in FERRY_PATHS
     )
+    nation_items = "\n".join(
+        f'        <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
+        for seg in (
+            "scotland",
+            "ireland",
+            "england",
+            "wales",
+            "northern-ireland",
+            "crown-dependencies",
+            "isle-of-man",
+        )
+    )
     curated_ids = [iid for iid in islands_by_id if iid in curated]
     curated_ids.sort(key=lambda i: str(islands_by_id[i].get("name") or i).lower())
-    island_items = "\n".join(
-        f'        <li><a href="/profiles/{html.escape(iid, quote=True)}.html">'
-        f'{html.escape(str(islands_by_id[iid].get("name") or iid))}</a></li>'
-        for iid in curated_ids[:40]
-    )
+    island_items = []
+    for iid in curated_ids[:40]:
+        sp = paths.get(iid)
+        href = sp.path if sp else f"/profiles/{iid}.html"
+        label = str(islands_by_id[iid].get("name") or iid)
+        island_items.append(
+            f'        <li><a href="{html.escape(href, quote=True)}">'
+            f"{html.escape(label)}</a></li>"
+        )
+    island_block = "\n".join(island_items)
     return f"""{CRAWL_LINKS_MARKER_START}
         <footer class="crawl-links" aria-label="Guides and notable islands">
           <p class="crawl-links__heading">Guides &amp; notable islands</p>
@@ -229,9 +419,15 @@ def build_crawl_links_html(islands_by_id: dict[str, dict], curated: set[str]) ->
               </ul>
             </section>
             <section>
+              <h3 class="crawl-links__sub">Islands by country</h3>
+              <ul class="crawl-links__list">
+{nation_items}
+              </ul>
+            </section>
+            <section>
               <h3 class="crawl-links__sub">Notable islands</h3>
               <ul class="crawl-links__list">
-{island_items}
+{island_block}
               </ul>
             </section>
           </div>
@@ -259,6 +455,11 @@ def patch_index_crawl_links(fragment: str) -> bool:
     return True
 
 
+def atlas_href_for_depth(depth: int) -> str:
+    prefix = "/".join([".."] * depth) if depth else "."
+    return f"{prefix}/" if prefix != "." else "./"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
@@ -270,12 +471,17 @@ def main() -> int:
         "--landing-dir",
         type=Path,
         default=None,
-        help="Write profiles/<id>.html static pages (deploy-time; gitignored).",
+        help="Also write legacy profiles/<id>.html redirects (deploy-time; gitignored).",
     )
     ap.add_argument(
         "--skip-index-patch",
         action="store_true",
         help="Do not patch index.html crawl-link block.",
+    )
+    ap.add_argument(
+        "--skip-islands-dir",
+        action="store_true",
+        help="Do not write /islands/ HTML landings (sitemap/llms only).",
     )
     args = ap.parse_args()
 
@@ -283,21 +489,42 @@ def main() -> int:
     islands_by_id = {str(x["id"]): x for x in islands if x.get("id")}
     curated = load_id_set(CURATED)
     featured = load_id_set(FEATURED)
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    paths = assign_seo_paths(islands)
+
+    # Persist id → path for frontend tooling / probes
+    SEO_PATH_MAP.write_text(
+        json.dumps(
+            {
+                "schemaVersion": 1,
+                "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "paths": {iid: sp.path for iid, sp in paths.items()},
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {SEO_PATH_MAP} ({len(paths)} paths)")
+
+    origin = (args.site_origin or "").rstrip("/")
+    write_landings = bool(origin) and not args.skip_islands_dir
 
     llms = f"""# Isles of Britain (findmyisland.com)
 > Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies (sea, lake, and river), with maps, photos, and transport context.
 
 ## Entry points
 - Main app: /
+- Islands by country: /islands/
+- Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
+- Island profile (static HTML for crawlers): /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
 - Island profile (interactive): /?island=<id>   (example: ?island=isle-of-skye)
-- Island profile (static HTML for crawlers): /profiles/<id>.html
+- Legacy redirects: /profiles/<id>.html → canonical /islands/… path
 - Ferry guides: /ferries/
 - Sitemap: /sitemap.xml
 
 ## For machines
-- Prefer /profiles/<id>.html in sitemaps and citations; it links to the live atlas.
-- Island ids are stable slugs in `data/islands.json`.
+- Prefer /islands/{{nation}}/{{slug}}/ in sitemaps and citations; it links to the live atlas.
+- Internal ids remain stable in `data/islands.json` and `?island=` query params.
 - Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
 
 ## Generated
@@ -307,9 +534,6 @@ def main() -> int:
     (ROOT / "llms.txt").write_text(llms, encoding="utf-8")
     print(f"Wrote {ROOT / 'llms.txt'}")
 
-    origin = (args.site_origin or "").rstrip("/")
-    use_profiles = bool(args.landing_dir and origin)
-
     if not origin:
         print(
             "Skip sitemap.xml / robots.txt (set --site-origin or IOB_SITE_ORIGIN).",
@@ -317,6 +541,9 @@ def main() -> int:
         )
     else:
         entries: list[tuple[str, float]] = [(f"{origin}/", 1.0)]
+        entries.append((f"{origin}/islands/", 0.9))
+        for seg in sorted(set(NATION_SEGMENT.values())):
+            entries.append((f"{origin}/islands/{seg}/", 0.88))
         for path in FERRY_PATHS:
             entries.append((f"{origin}{path}", 0.72))
 
@@ -326,18 +553,22 @@ def main() -> int:
             if not iid:
                 continue
             pri = island_priority(str(iid), isl, curated, featured)
-            if use_profiles:
-                entries.append((f"{origin}/profiles/{iid}.html", pri))
+            sp = paths.get(str(iid))
+            if sp:
+                entries.append((f"{origin}{sp.path}", pri))
             else:
                 entries.append((f"{origin}/?island={iid}", pri))
 
         write_urlset(ROOT / "sitemap.xml", entries)
-        print(f"Wrote sitemap.xml ({len(entries)} URLs; profiles={use_profiles})")
+        print(f"Wrote sitemap.xml ({len(entries)} URLs; nation-slug paths)")
 
         robots = f"""User-agent: *
 Allow: /
 
-# Static island profiles (generated on deploy)
+# Nation hubs and name-slug island profiles
+Allow: /islands/
+
+# Legacy profile redirects (noindex; keep for old links)
 Allow: /profiles/
 
 Sitemap: {origin}/sitemap.xml
@@ -345,36 +576,96 @@ Sitemap: {origin}/sitemap.xml
         (ROOT / "robots.txt").write_text(robots, encoding="utf-8")
         print("Wrote robots.txt")
 
-    if args.landing_dir and origin:
-        landing = Path(args.landing_dir)
-        if not landing.is_absolute():
-            landing = ROOT / landing
-        landing.mkdir(parents=True, exist_ok=True)
-        rel = landing.relative_to(ROOT)
-        depth = len(rel.parts)
-        prefix = "/".join([".."] * depth) if depth else "."
-        atlas_href = f"{prefix}/" if prefix != "." else "./"
+    if write_landings:
+        # Clear previous generated tree under islands/ (keep safe)
+        if ISLANDS_DIR.exists():
+            import shutil
+
+            shutil.rmtree(ISLANDS_DIR)
+        ISLANDS_DIR.mkdir(parents=True, exist_ok=True)
+
+        (ISLANDS_DIR / "index.html").write_text(
+            islands_root_html(origin=origin, atlas_href="/"),
+            encoding="utf-8",
+        )
+
+        # Group curated/featured per nation for hub lists
+        by_seg: dict[str, list[tuple[str, str, float]]] = {}
+        for iid, sp in paths.items():
+            isl = islands_by_id.get(iid)
+            if not isl:
+                continue
+            score = island_priority(iid, isl, curated, featured)
+            by_seg.setdefault(sp.nation_segment, []).append(
+                (sp.path, str(isl.get("name") or iid), score)
+            )
+
+        for seg, items in by_seg.items():
+            items.sort(key=lambda t: (-t[2], t[1].lower()))
+            featured_links = [(p, n) for p, n, _ in items[:24]]
+            hub_dir = ISLANDS_DIR / seg
+            hub_dir.mkdir(parents=True, exist_ok=True)
+            (hub_dir / "index.html").write_text(
+                nation_hub_html(
+                    segment=seg,
+                    origin=origin,
+                    atlas_href="/",
+                    featured_links=featured_links,
+                ),
+                encoding="utf-8",
+            )
 
         n = 0
         for isl in islands:
             iid = isl.get("id")
             if not iid:
                 continue
-            profile_path = f"/profiles/{iid}.html"
+            sp = paths.get(str(iid))
+            if not sp:
+                continue
+            out = ROOT / sp.index_rel
+            out.parent.mkdir(parents=True, exist_ok=True)
+            # Depth: islands/nation/slug/index.html → ../../../
             page = profile_page_html(
                 isl,
                 origin=origin,
-                atlas_href=atlas_href,
-                profile_path=profile_path,
+                atlas_href=atlas_href_for_depth(3),
+                profile_path=sp.path,
+                title=page_title(isl),
+            )
+            out.write_text(page, encoding="utf-8")
+            n += 1
+        print(f"Wrote {n} island landings under islands/ + nation hubs")
+
+    if args.landing_dir and origin:
+        landing = Path(args.landing_dir)
+        if not landing.is_absolute():
+            landing = ROOT / landing
+        landing.mkdir(parents=True, exist_ok=True)
+        depth = len(landing.relative_to(ROOT).parts)
+        atlas = atlas_href_for_depth(depth)
+        n = 0
+        for isl in islands:
+            iid = isl.get("id")
+            if not iid:
+                continue
+            sp = paths.get(str(iid))
+            new_url = f"{origin}{sp.path}" if sp else f"{atlas}?island={iid}"
+            atlas_url = f"{atlas}?island={html.escape(str(iid), quote=True)}"
+            page = legacy_redirect_html(
+                new_url=new_url,
+                atlas_url=atlas_url,
+                name=str(isl.get("name") or iid),
             )
             (landing / f"{iid}.html").write_text(page, encoding="utf-8")
             n += 1
-        print(f"Wrote {n} profile pages under {landing}/")
+        print(f"Wrote {n} legacy redirect pages under {landing}/")
 
     if origin and not args.skip_index_patch:
-        patch_index_crawl_links(build_crawl_links_html(islands_by_id, curated))
+        patch_index_crawl_links(
+            build_crawl_links_html(islands_by_id, curated, paths)
+        )
 
-    _ = today  # reserved for future lastmod on static index meta
     return 0
 
 

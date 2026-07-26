@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "generated": "2026-07-26T20:53:38Z",
+  "source": "gsc_seo_snapshot + curated spine",
+  "ids": [
+    "anglesey",
+    "arran",
+    "brownsea",
+    "bute",
+    "eel-pie-island",
+    "inchcailloch",
+    "iona",
+    "isle-of-dogs",
+    "isle-of-man",
+    "isle-of-wight",
+    "lewis-and-harris",
+    "lindisfarne",
+    "lundy",
+    "mainland-orkney",
+    "mull",
+    "rathlin",
+    "scilly-st-marys",
+    "st-kilda",
+    "staffa"
+  ],
+  "items": [
+    {
+      "id": "anglesey",
+      "name": "Anglesey (Ynys M\u00f4n)",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "arran",
+      "name": "Isle of Arran",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "brownsea",
+      "name": "Brownsea Island",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "bute",
+      "name": "Isle of Bute",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "eel-pie-island",
+      "name": "Eel Pie Island",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "inchcailloch",
+      "name": "Inchcailloch",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "iona",
+      "name": "Iona",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "isle-of-dogs",
+      "name": "Isle of Dogs",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "isle-of-man",
+      "name": "Isle of Man",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "isle-of-wight",
+      "name": "Isle of Wight",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "lewis-and-harris",
+      "name": "Lewis and Harris",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "lindisfarne",
+      "name": "Lindisfarne (Holy Island)",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "lundy",
+      "name": "Lundy",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "mainland-orkney",
+      "name": "Mainland (Orkney)",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "mull",
+      "name": "Isle of Mull",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "rathlin",
+      "name": "Rathlin Island",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "scilly-st-marys",
+      "name": "St Mary's (Isles of Scilly)",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "st-kilda",
+      "name": "St Kilda (Hirta)",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    },
+    {
+      "id": "staffa",
+      "name": "Staffa",
+      "seoPath": null,
+      "hasDescription": true,
+      "hasPhoto": true,
+      "reason": "gsc-priority"
+    }
+  ]
+}

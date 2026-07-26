@@ -1,7 +1,10 @@
 User-agent: *
 Allow: /
 
-# Static island profiles (generated on deploy)
+# Nation hubs and name-slug island profiles
+Allow: /islands/
+
+# Legacy profile redirects (noindex; keep for old links)
 Allow: /profiles/
 
 Sitemap: https://www.findmyisland.com/sitemap.xml

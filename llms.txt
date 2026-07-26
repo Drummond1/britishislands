@@ -3,14 +3,17 @@
 
 ## Entry points
 - Main app: /
+- Islands by country: /islands/
+- Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
+- Island profile (static HTML for crawlers): /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
 - Island profile (interactive): /?island=<id>   (example: ?island=isle-of-skye)
-- Island profile (static HTML for crawlers): /profiles/<id>.html
+- Legacy redirects: /profiles/<id>.html → canonical /islands/… path
 - Ferry guides: /ferries/
 - Sitemap: /sitemap.xml
 
 ## For machines
-- Prefer /profiles/<id>.html in sitemaps and citations; it links to the live atlas.
-- Island ids are stable slugs in `data/islands.json`.
+- Prefer /islands/{nation}/{slug}/ in sitemaps and citations; it links to the live atlas.
+- Internal ids remain stable in `data/islands.json` and `?island=` query params.
 - Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
 
 ## Generated

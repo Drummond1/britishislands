@@ -14,9 +14,13 @@ Run after any change to data/islands.json:
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from seo_paths import assign_seo_paths  # noqa: E402
+
 SHARD_DIR = ROOT / "data" / "shards"
 INDEX_VERSION = 2
 
@@ -101,6 +105,18 @@ def slim_unnamed_stub(island: dict) -> dict:
     return row
 
 
+def attach_seo_paths(data: list[dict]) -> None:
+    """Stamp public /islands/{nation}/{slug}/ onto each full record (shards)."""
+    paths = assign_seo_paths(data)
+    for island in data:
+        iid = island.get("id")
+        if not iid:
+            continue
+        sp = paths.get(str(iid))
+        if sp:
+            island["seoPath"] = sp.path
+
+
 def write_shards(data: list[dict]) -> None:
     SHARD_DIR.mkdir(parents=True, exist_ok=True)
     by_slug: dict[str, list[dict]] = {}
@@ -151,6 +167,7 @@ def main() -> None:
     out = ROOT / "data" / "islands_index.json"
     unnamed_out = ROOT / "data" / "islands_unnamed_index.json"
     data = json.loads(src.read_text(encoding="utf-8"))
+    attach_seo_paths(data)
 
     main_rows = [compact_stub(x) for x in data if not is_unnamed(x)]
     unnamed_rows = [slim_unnamed_stub(x) for x in data if is_unnamed(x)]
