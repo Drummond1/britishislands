@@ -253,7 +253,7 @@ def _route_jsonld(route, term_lookup, operator_lookup, island_lookup=None):
 
 def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
     slug, title, desc, _ = spec
-    body_intro = f"<p class=\"lp-intro\">{html.escape(desc)}</p>"
+    body_intro = f"<p class=\"lp-lede\">{html.escape(desc)}</p>"
     cards = "\n".join(_route_card(r, term_lookup, operator_lookup, island_lookup) for r in routes)
     jsonlds = "\n".join(
         f'<script type="application/ld+json">{json.dumps(_route_jsonld(r, term_lookup, operator_lookup, island_lookup), ensure_ascii=False)}</script>'
@@ -277,42 +277,29 @@ def _render_page(spec, routes, term_lookup, operator_lookup, island_lookup):
   <meta property="og:url" content="{html.escape(canonical)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../../styles.css" />
-  <style>
-    body {{ padding: 24px; max-width: 960px; margin: 0 auto; }}
-    .lp-back {{ display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }}
-    .lp-back:hover {{ text-decoration: underline; }}
-    h1 {{ margin: 8px 0 12px; font-size: 28px; }}
-    .lp-intro {{ color: var(--text-soft); font-size: 16px; max-width: 720px; }}
-    .lp-cards {{ display: grid; gap: 14px; margin-top: 18px; }}
-    .lp-card {{
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-    }}
-    .lp-card__head {{ display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }}
-    .lp-card__op {{ font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }}
-    .lp-card__title {{ margin: 0; font-size: 17px; color: var(--text); }}
-    .lp-card__meta {{ list-style: none; padding: 0; margin: 4px 0 6px; display: flex; flex-wrap: wrap; gap: 6px; }}
-    .lp-card__meta li {{ background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 11px; color: var(--text-soft); }}
-    .lp-card__notes {{ font-size: 13px; color: var(--text-soft); margin: 4px 0; }}
-    .lp-card__actions {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }}
-    .lp-card__book {{ background: var(--accent); color: #0a1320; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }}
-    .lp-card__book:hover {{ background: #7ec4ff; }}
-    .lp-card__island-link {{ color: var(--accent); font-size: 13px; padding: 6px 0; }}
-    footer {{ margin-top: 32px; color: var(--text-muted); font-size: 12px; }}
-  </style>
+  <link rel="stylesheet" href="../../landing.css" />
 </head>
-<body>
+<body class="lp">
 {GTM_BODY_NOSCRIPT}
-  <a class="lp-back" href="../../">← Back to the atlas</a>
-  <h1>{html.escape(title)}</h1>
-  {body_intro}
-  <section class="lp-cards">{cards}</section>
-  <footer>
-    {len(routes)} routes shown · last regenerated {today}.
-    Data merged from CalMac & Traveline Scotland GTFS, OpenStreetMap, operator timetables and hand-curated entries.
-  </footer>
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../../">← Atlas</a>
+      <a class="lp-brand" href="../">All ferry guides</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Ferry guide</p>
+      <h1>{html.escape(title)}</h1>
+      {body_intro}
+      <a class="lp-cta" href="../../">Explore on the map →</a>
+      <a class="lp-cta lp-cta--ghost" href="../">All regions</a>
+    </header>
+    <h2 class="lp-section-title">{len(routes)} routes</h2>
+    <section class="lp-cards">{cards}</section>
+    <footer class="lp-foot">
+      Last regenerated {today}. Data merged from CalMac &amp; Traveline Scotland GTFS,
+      OpenStreetMap, operator timetables and hand-curated entries.
+    </footer>
+  </div>
   {jsonlds}
 </body>
 </html>
@@ -373,25 +360,24 @@ def main() -> int:
   <meta name="description" content="A hand-curated catalogue of every published ferry route to islands in the British Isles, the Crown Dependencies and the Republic of Ireland." />
   <link rel="canonical" href="/ferries/" />
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    body {{ padding: 24px; max-width: 1080px; margin: 0 auto; }}
-    .lp-back {{ display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }}
-    h1 {{ font-size: 30px; margin: 8px 0 12px; }}
-    .lp-cards {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }}
-    .lp-card {{ background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 14px; color: var(--text); text-decoration: none; }}
-    .lp-card h3 {{ margin: 0 0 6px; font-size: 17px; color: var(--accent); }}
-    .lp-card p {{ margin: 0; font-size: 13px; color: var(--text-soft); }}
-    .lp-card__count {{ margin-top: 8px; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }}
-    .lp-card:hover {{ border-color: var(--accent); }}
-  </style>
+  <link rel="stylesheet" href="../landing.css" />
 </head>
-<body>
+<body class="lp">
 {GTM_BODY_NOSCRIPT}
-  <a class="lp-back" href="../">← Back to the atlas</a>
-  <h1>Ferries to the islands of Britain and Ireland</h1>
-  <p>Browse every published ferry route by region or by operator. Each page is rebuilt from <code>data/ferries.json</code> and emits Schema.org structured data per route.</p>
-  <section class="lp-cards">{cards}</section>
-  <footer style="margin-top:32px;color:var(--text-muted);font-size:12px;">Last regenerated {today}.</footer>
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../">← Atlas</a>
+      <a class="lp-brand" href="../">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Getting there</p>
+      <h1>Ferries to the islands</h1>
+      <p class="lp-lede">Browse every published ferry route by region or operator, then open the island on the map.</p>
+      <a class="lp-cta" href="../">Back to the map →</a>
+    </header>
+    <section class="lp-cards lp-cards--grid">{cards}</section>
+    <footer class="lp-foot">Last regenerated {today}.</footer>
+  </div>
 </body>
 </html>
 """

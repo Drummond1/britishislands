@@ -4,6 +4,10 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-26 (UX simplify)** — Search-first atlas chrome; quieter sidebar;
+profile jump nav + collapsed secondary facts; shared `landing.css` for ferry +
+`/islands/` click-through pages. Regenerated landings. Local only until deploy.
+
 **2026-07-26 (GSC-driven loop)** — `scripts/run_gsc_driven_seo.sh` + richer `/islands/` landings (key facts). Loop every **60 min**. Live `/islands/` still **404** until deploy.
 
 **2026-07-26 (GSC CTR diagnosis)** — Live Search Console API: **0 clicks / 1,839

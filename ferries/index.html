@@ -14,27 +14,25 @@
   <meta name="description" content="A hand-curated catalogue of every published ferry route to islands in the British Isles, the Crown Dependencies and the Republic of Ireland." />
   <link rel="canonical" href="/ferries/" />
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    body { padding: 24px; max-width: 1080px; margin: 0 auto; }
-    .lp-back { display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }
-    h1 { font-size: 30px; margin: 8px 0 12px; }
-    .lp-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
-    .lp-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 14px; color: var(--text); text-decoration: none; }
-    .lp-card h3 { margin: 0 0 6px; font-size: 17px; color: var(--accent); }
-    .lp-card p { margin: 0; font-size: 13px; color: var(--text-soft); }
-    .lp-card__count { margin-top: 8px; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    .lp-card:hover { border-color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="../landing.css" />
 </head>
-<body>
+<body class="lp">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <a class="lp-back" href="../">← Back to the atlas</a>
-  <h1>Ferries to the islands of Britain and Ireland</h1>
-  <p>Browse every published ferry route by region or by operator. Each page is rebuilt from <code>data/ferries.json</code> and emits Schema.org structured data per route.</p>
-  <section class="lp-cards"><a class="lp-card lp-card--link" href="hebrides/"><h3>Ferries to the Hebrides</h3><p>Every published ferry route to the Outer Hebrides, Inner Hebrides and the Small Isles - operators, sailing times, vessels and journey lengths.</p><p class="lp-card__count">13 routes</p></a>
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../">← Atlas</a>
+      <a class="lp-brand" href="../">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Getting there</p>
+      <h1>Ferries to the islands</h1>
+      <p class="lp-lede">Browse every published ferry route by region or operator, then open the island on the map.</p>
+      <a class="lp-cta" href="../">Back to the map →</a>
+    </header>
+    <section class="lp-cards lp-cards--grid"><a class="lp-card lp-card--link" href="hebrides/"><h3>Ferries to the Hebrides</h3><p>Every published ferry route to the Outer Hebrides, Inner Hebrides and the Small Isles - operators, sailing times, vessels and journey lengths.</p><p class="lp-card__count">13 routes</p></a>
 <a class="lp-card lp-card--link" href="orkney/"><h3>Ferries to Orkney</h3><p>Every published ferry route to the Orkney Islands - NorthLink, Pentland, John o&#x27; Groats, Orkney Ferries inter-island service.</p><p class="lp-card__count">13 routes</p></a>
 <a class="lp-card lp-card--link" href="shetland/"><h3>Ferries to Shetland</h3><p>Every published ferry route to and within Shetland - NorthLink Aberdeen-Lerwick + the Shetland inter-island council network.</p><p class="lp-card__count">2 routes</p></a>
 <a class="lp-card lp-card--link" href="isle-of-wight/"><h3>Ferries to the Isle of Wight</h3><p>All Solent ferries to the Isle of Wight - Wightlink, Red Funnel, Hovertravel - with route times, vessel types and seasonality.</p><p class="lp-card__count">2 routes</p></a>
@@ -46,6 +44,7 @@
 <a class="lp-card lp-card--link" href="ireland/"><h3>Irish island ferries</h3><p>Every published ferry route to a Republic of Ireland island - Aran, Cape Clear, Tory, Inishbofin, Inishturk, Clare, Bere, Sherkin, Spike, Skellig Michael.</p><p class="lp-card__count">23 routes</p></a>
 <a class="lp-card lp-card--link" href="northern-ireland/"><h3>Northern Irish island ferries</h3><p>Rathlin Island Ferry from Ballycastle and the Strangford-Portaferry car ferry.</p><p class="lp-card__count">9 routes</p></a>
 <a class="lp-card lp-card--link" href="calmac/"><h3>CalMac ferry routes</h3><p>Every Caledonian MacBrayne route - sailing times, vessels and seasonality across the west coast of Scotland and the Hebrides.</p><p class="lp-card__count">81 routes</p></a></section>
-  <footer style="margin-top:32px;color:var(--text-muted);font-size:12px;">Last regenerated 2026-07-26.</footer>
+    <footer class="lp-foot">Last regenerated 2026-07-26.</footer>
+  </div>
 </body>
 </html>

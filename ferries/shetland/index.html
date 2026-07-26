@@ -19,41 +19,27 @@
   <meta property="og:url" content="https://www.findmyisland.com/ferries/shetland/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../../styles.css" />
-  <style>
-    body { padding: 24px; max-width: 960px; margin: 0 auto; }
-    .lp-back { display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }
-    .lp-back:hover { text-decoration: underline; }
-    h1 { margin: 8px 0 12px; font-size: 28px; }
-    .lp-intro { color: var(--text-soft); font-size: 16px; max-width: 720px; }
-    .lp-cards { display: grid; gap: 14px; margin-top: 18px; }
-    .lp-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-    }
-    .lp-card__head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
-    .lp-card__op { font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
-    .lp-card__title { margin: 0; font-size: 17px; color: var(--text); }
-    .lp-card__meta { list-style: none; padding: 0; margin: 4px 0 6px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .lp-card__meta li { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 11px; color: var(--text-soft); }
-    .lp-card__notes { font-size: 13px; color: var(--text-soft); margin: 4px 0; }
-    .lp-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-    .lp-card__book { background: var(--accent); color: #0a1320; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }
-    .lp-card__book:hover { background: #7ec4ff; }
-    .lp-card__island-link { color: var(--accent); font-size: 13px; padding: 6px 0; }
-    footer { margin-top: 32px; color: var(--text-muted); font-size: 12px; }
-  </style>
+  <link rel="stylesheet" href="../../landing.css" />
 </head>
-<body>
+<body class="lp">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <a class="lp-back" href="../../">← Back to the atlas</a>
-  <h1>Ferries to Shetland</h1>
-  <p class="lp-intro">Every published ferry route to and within Shetland - NorthLink Aberdeen-Lerwick + the Shetland inter-island council network.</p>
-  <section class="lp-cards">
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../../">← Atlas</a>
+      <a class="lp-brand" href="../">All ferry guides</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Ferry guide</p>
+      <h1>Ferries to Shetland</h1>
+      <p class="lp-lede">Every published ferry route to and within Shetland - NorthLink Aberdeen-Lerwick + the Shetland inter-island council network.</p>
+      <a class="lp-cta" href="../../">Explore on the map →</a>
+      <a class="lp-cta lp-cta--ghost" href="../">All regions</a>
+    </header>
+    <h2 class="lp-section-title">2 routes</h2>
+    <section class="lp-cards">
     <article class="lp-card">
       <header class="lp-card__head">
         <span class="lp-card__op">SIC Ferries</span>
@@ -91,10 +77,11 @@
       </div>
     </article>
     </section>
-  <footer>
-    2 routes shown · last regenerated 2026-07-26.
-    Data merged from CalMac & Traveline Scotland GTFS, OpenStreetMap, operator timetables and hand-curated entries.
-  </footer>
+    <footer class="lp-foot">
+      Last regenerated 2026-07-26. Data merged from CalMac &amp; Traveline Scotland GTFS,
+      OpenStreetMap, operator timetables and hand-curated entries.
+    </footer>
+  </div>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "SF3", "description": "Auto-imported from GTFS feed; reverify each season.", "provider": {"@type": "Organization", "name": "Shetland Inter-Island Ferries", "url": "https://www.shetland.gov.uk/ferries"}, "departureLocation": {"@type": "Place", "name": "Bruray Pier, Out Skerries", "geo": {"@type": "GeoCoordinates", "latitude": 60.4227175, "longitude": -0.7517574}}, "arrivalLocation": {"@type": "Place", "name": "Little Holm terminal", "geo": {"@type": "GeoCoordinates", "latitude": 60.3728202, "longitude": -1.1294243}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "SF3", "description": "Auto-imported from GTFS feed; reverify each season.", "provider": {"@type": "Organization", "name": "Shetland Inter-Island Ferries", "url": "https://www.shetland.gov.uk/ferries"}, "departureLocation": {"@type": "Place", "name": "Little Holm terminal", "geo": {"@type": "GeoCoordinates", "latitude": 60.3728202, "longitude": -1.1294243}}, "arrivalLocation": {"@type": "Place", "name": "Bruray Pier, Out Skerries", "geo": {"@type": "GeoCoordinates", "latitude": 60.4227175, "longitude": -0.7517574}}}</script>
 </body>

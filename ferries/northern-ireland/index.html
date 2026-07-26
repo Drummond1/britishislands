@@ -19,41 +19,27 @@
   <meta property="og:url" content="https://www.findmyisland.com/ferries/northern-ireland/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../../styles.css" />
-  <style>
-    body { padding: 24px; max-width: 960px; margin: 0 auto; }
-    .lp-back { display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }
-    .lp-back:hover { text-decoration: underline; }
-    h1 { margin: 8px 0 12px; font-size: 28px; }
-    .lp-intro { color: var(--text-soft); font-size: 16px; max-width: 720px; }
-    .lp-cards { display: grid; gap: 14px; margin-top: 18px; }
-    .lp-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-    }
-    .lp-card__head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
-    .lp-card__op { font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
-    .lp-card__title { margin: 0; font-size: 17px; color: var(--text); }
-    .lp-card__meta { list-style: none; padding: 0; margin: 4px 0 6px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .lp-card__meta li { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 11px; color: var(--text-soft); }
-    .lp-card__notes { font-size: 13px; color: var(--text-soft); margin: 4px 0; }
-    .lp-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-    .lp-card__book { background: var(--accent); color: #0a1320; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }
-    .lp-card__book:hover { background: #7ec4ff; }
-    .lp-card__island-link { color: var(--accent); font-size: 13px; padding: 6px 0; }
-    footer { margin-top: 32px; color: var(--text-muted); font-size: 12px; }
-  </style>
+  <link rel="stylesheet" href="../../landing.css" />
 </head>
-<body>
+<body class="lp">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <a class="lp-back" href="../../">← Back to the atlas</a>
-  <h1>Northern Irish island ferries</h1>
-  <p class="lp-intro">Rathlin Island Ferry from Ballycastle and the Strangford-Portaferry car ferry.</p>
-  <section class="lp-cards">
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../../">← Atlas</a>
+      <a class="lp-brand" href="../">All ferry guides</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Ferry guide</p>
+      <h1>Northern Irish island ferries</h1>
+      <p class="lp-lede">Rathlin Island Ferry from Ballycastle and the Strangford-Portaferry car ferry.</p>
+      <a class="lp-cta" href="../../">Explore on the map →</a>
+      <a class="lp-cta lp-cta--ghost" href="../">All regions</a>
+    </header>
+    <h2 class="lp-section-title">9 routes</h2>
+    <section class="lp-cards">
     <article class="lp-card">
       <header class="lp-card__head">
         <span class="lp-card__op">DfI NI</span>
@@ -224,10 +210,11 @@
       </div>
     </article>
     </section>
-  <footer>
-    9 routes shown · last regenerated 2026-07-26.
-    Data merged from CalMac & Traveline Scotland GTFS, OpenStreetMap, operator timetables and hand-curated entries.
-  </footer>
+    <footer class="lp-foot">
+      Last regenerated 2026-07-26. Data merged from CalMac &amp; Traveline Scotland GTFS,
+      OpenStreetMap, operator timetables and hand-curated entries.
+    </footer>
+  </div>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "Strangford Ferry (Strangford => Portaferry)", "description": "Published ferry route.", "provider": {"@type": "Organization", "name": "Department for Infrastructure (NI)", "url": "https://www.infrastructure-ni.gov.uk/"}, "departureLocation": {"@type": "Place", "name": "Strangford Quay", "geo": {"@type": "GeoCoordinates", "latitude": 54.3702, "longitude": -5.551}}, "arrivalLocation": {"@type": "Place", "name": "Portaferry Quay", "geo": {"@type": "GeoCoordinates", "latitude": 54.3818, "longitude": -5.5523}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "Rathlin Island Ferry", "description": "Published ferry route.", "departureLocation": {"@type": "Place", "name": "Ferry terminal", "geo": {"@type": "GeoCoordinates", "latitude": 55.2078872, "longitude": -6.2401426}}, "arrivalLocation": {"@type": "Place", "name": "Rathlin Island terminal", "geo": {"@type": "GeoCoordinates", "latitude": 55.2921755, "longitude": -6.1949446}}, "url": "https://www.rathlin-ferry.com/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "Carlingford Lough Ferry", "description": "Published ferry route.", "departureLocation": {"@type": "Place", "name": "Ferry terminal", "geo": {"@type": "GeoCoordinates", "latitude": 54.0343611, "longitude": -6.131243}}, "arrivalLocation": {"@type": "Place", "name": "Green Island terminal", "geo": {"@type": "GeoCoordinates", "latitude": 54.037955, "longitude": -6.099343}}}</script>

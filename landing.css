@@ -1,0 +1,359 @@
+/* Shared reading layout for /ferries/ and /islands/ landings.
+   Uses the same tokens as styles.css — keep both linked. */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+
+:root {
+  --lp-max: 720px;
+  --lp-wide: 960px;
+}
+
+body.lp {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(100% 60% at 50% -10%, rgba(110, 182, 255, 0.1), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 94%, #14110d) 100%);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.lp-shell {
+  width: min(100% - 32px, var(--lp-max));
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.lp-shell--wide {
+  width: min(100% - 32px, var(--lp-wide));
+}
+
+.lp-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-bottom: 28px;
+}
+
+.lp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lp-back:hover,
+.lp-back:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.lp-brand {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.lp-brand:hover {
+  color: var(--text-soft);
+}
+
+.lp-hero {
+  margin-bottom: 28px;
+}
+
+.lp-kicker {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.lp-hero h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.lp-lede {
+  margin: 0;
+  max-width: 38rem;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+}
+
+.lp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0a1320;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.lp-cta:hover,
+.lp-cta:focus-visible {
+  background: var(--accent-hover);
+  outline: none;
+}
+
+.lp-cta--ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  box-shadow: none;
+  margin-left: 8px;
+}
+
+.lp-cta--ghost:hover,
+.lp-cta--ghost:focus-visible {
+  background: var(--accent-muted);
+  color: var(--accent-hover);
+}
+
+.lp-media {
+  margin: 0 0 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
+}
+
+.lp-media img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.lp-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-facts li {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card, var(--bg-elev));
+}
+
+.lp-facts strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.lp-section-title {
+  margin: 32px 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.lp-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.lp-list a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card, var(--bg-elev));
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lp-list a:hover,
+.lp-list a:focus-visible {
+  border-color: var(--accent-border);
+  background: var(--accent-muted);
+  outline: none;
+}
+
+.lp-cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.lp-cards--grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.lp-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.lp-card:hover,
+a.lp-card:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.lp-card h3,
+.lp-card__title {
+  margin: 0;
+  font-size: 17px;
+  color: var(--text);
+}
+
+.lp-card p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.lp-card__count {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lp-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.lp-card__op {
+  font-size: 12px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.lp-card__meta {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lp-card__meta li {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+.lp-card__notes {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin: 4px 0;
+}
+
+.lp-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.lp-card__book {
+  background: var(--accent);
+  color: #0a1320;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.lp-card__book:hover {
+  background: var(--accent-hover);
+}
+
+.lp-card__island-link {
+  color: var(--accent);
+  font-size: 13px;
+  padding: 6px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lp-card__island-link:hover {
+  text-decoration: underline;
+}
+
+.lp-foot {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.lp-foot a {
+  color: var(--accent);
+}
+
+.lp-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .lp-shell {
+    width: min(100% - 24px, var(--lp-max));
+    padding-top: 20px;
+  }
+
+  .lp-cta--ghost {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

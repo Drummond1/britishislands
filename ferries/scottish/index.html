@@ -19,41 +19,27 @@
   <meta property="og:url" content="https://www.findmyisland.com/ferries/scottish/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../../styles.css" />
-  <style>
-    body { padding: 24px; max-width: 960px; margin: 0 auto; }
-    .lp-back { display: inline-block; margin-bottom: 16px; color: var(--accent); text-decoration: none; }
-    .lp-back:hover { text-decoration: underline; }
-    h1 { margin: 8px 0 12px; font-size: 28px; }
-    .lp-intro { color: var(--text-soft); font-size: 16px; max-width: 720px; }
-    .lp-cards { display: grid; gap: 14px; margin-top: 18px; }
-    .lp-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-    }
-    .lp-card__head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
-    .lp-card__op { font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
-    .lp-card__title { margin: 0; font-size: 17px; color: var(--text); }
-    .lp-card__meta { list-style: none; padding: 0; margin: 4px 0 6px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .lp-card__meta li { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: 11px; color: var(--text-soft); }
-    .lp-card__notes { font-size: 13px; color: var(--text-soft); margin: 4px 0; }
-    .lp-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-    .lp-card__book { background: var(--accent); color: #0a1320; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }
-    .lp-card__book:hover { background: #7ec4ff; }
-    .lp-card__island-link { color: var(--accent); font-size: 13px; padding: 6px 0; }
-    footer { margin-top: 32px; color: var(--text-muted); font-size: 12px; }
-  </style>
+  <link rel="stylesheet" href="../../landing.css" />
 </head>
-<body>
+<body class="lp">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <a class="lp-back" href="../../">← Back to the atlas</a>
-  <h1>Scottish island ferries</h1>
-  <p class="lp-intro">Every ferry route to a Scottish island - CalMac, NorthLink, Pentland, Western Ferries, Highland Council, Orkney Ferries, Shetland Inter-Island.</p>
-  <section class="lp-cards">
+  <div class="lp-shell lp-shell--wide">
+    <nav class="lp-nav">
+      <a class="lp-back" href="../../">← Atlas</a>
+      <a class="lp-brand" href="../">All ferry guides</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Ferry guide</p>
+      <h1>Scottish island ferries</h1>
+      <p class="lp-lede">Every ferry route to a Scottish island - CalMac, NorthLink, Pentland, Western Ferries, Highland Council, Orkney Ferries, Shetland Inter-Island.</p>
+      <a class="lp-cta" href="../../">Explore on the map →</a>
+      <a class="lp-cta lp-cta--ghost" href="../">All regions</a>
+    </header>
+    <h2 class="lp-section-title">125 routes</h2>
+    <section class="lp-cards">
     <article class="lp-card">
       <header class="lp-card__head">
         <span class="lp-card__op">CalMac</span>
@@ -2428,10 +2414,11 @@
       </div>
     </article>
     </section>
-  <footer>
-    125 routes shown · last regenerated 2026-07-26.
-    Data merged from CalMac & Traveline Scotland GTFS, OpenStreetMap, operator timetables and hand-curated entries.
-  </footer>
+    <footer class="lp-foot">
+      Last regenerated 2026-07-26. Data merged from CalMac &amp; Traveline Scotland GTFS,
+      OpenStreetMap, operator timetables and hand-curated entries.
+    </footer>
+  </div>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "Barra Ferry / Aiseag Bharraigh", "description": "Published ferry route.", "provider": {"@type": "Organization", "name": "Caledonian MacBrayne", "url": "https://www.calmac.co.uk/"}, "departureLocation": {"@type": "Place", "name": "Sgeir-mrethhaid terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.4123661, "longitude": -5.4764371}}, "arrivalLocation": {"@type": "Place", "name": "Sgor Beag terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.5102895, "longitude": -6.798055}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "OSM node 7127540082 – OSM node 2887172761", "description": "Published ferry route.", "departureLocation": {"@type": "Place", "name": "Eilean-a-beithich terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.2945817, "longitude": -5.6510046}}, "arrivalLocation": {"@type": "Place", "name": "Easdale terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.2922796, "longitude": -5.6542916}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "name": "OSM node 646938576 – OSM node 646938580", "description": "Published ferry route.", "departureLocation": {"@type": "Place", "name": "Torsa terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.2663798, "longitude": -5.6332273}}, "arrivalLocation": {"@type": "Place", "name": "Torsa terminal", "geo": {"@type": "GeoCoordinates", "latitude": 56.2679545, "longitude": -5.6292281}}}</script>

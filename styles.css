@@ -424,7 +424,8 @@ body {
 }
 
 .topbar-controls {
-  display: flex;
+  /* Shown when body.filters-open — see later rule */
+  display: none;
   flex-wrap: wrap;
   gap: 8px;
   align-items: flex-start;
@@ -1189,17 +1190,12 @@ body {
 
 /* ----- Browse quick filters + Scotland quick filters + active filter chips ----- */
 .browse-quick {
-  padding: 10px 12px 6px;
-  border-bottom: 1px solid var(--border);
+  padding: 0;
+  border-bottom: none;
 }
 
 .browse-quick__label {
-  margin: 0 0 8px;
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  display: none;
 }
 
 .browse-quick__chips {
@@ -1300,25 +1296,24 @@ body {
 }
 
 .scotland-quick {
-  padding: 12px 12px 4px;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(61, 143, 212, 0.08) 0%, transparent 100%);
+  padding: 0;
+  border-bottom: none;
+  background: transparent;
+}
+
+.scotland-quick[hidden] {
+  display: none !important;
 }
 
 .scotland-quick__label {
-  margin: 0 0 8px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--sea);
+  display: none;
 }
 
 .scotland-quick__chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .scotland-quick__chip {
@@ -1442,9 +1437,9 @@ body {
 
 /* ----- Featured / notable islands strip ----- */
 .featured-strip {
-  padding: 10px 12px 4px;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-elev);
+  padding: 0;
+  border-bottom: none;
+  background: transparent;
 }
 
 .featured-strip[hidden] {
@@ -3650,7 +3645,7 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
 }
 
 .topbar-filters-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
@@ -3678,6 +3673,23 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   outline: none;
   border-color: var(--accent-border);
   box-shadow: var(--focus-ring);
+}
+
+.topbar-controls {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  flex: 1 1 100%;
+  order: 5;
+  padding: 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+}
+
+body.filters-open .topbar-controls {
+  display: flex;
 }
 
 .mobile-nav {

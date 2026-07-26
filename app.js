@@ -2900,6 +2900,48 @@ function _scoreIsland(island, q) {
   return -Infinity;
 }
 
+function syncScotlandQuickVisibility(nation) {
+  const panel = document.getElementById("scotland-quick");
+  if (!panel) return;
+  const show = nation === "Scotland" || Boolean(activeScotlandQuick);
+  panel.hidden = !show;
+}
+
+function initTopbarMoreMenu() {
+  const root = document.getElementById("topbar-more");
+  const toggle = document.getElementById("topbar-more-toggle");
+  const menu = document.getElementById("topbar-more-menu");
+  if (!root || !toggle || !menu) return;
+
+  const close = () => {
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    menu.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (menu.hidden) open();
+    else close();
+  });
+  menu.addEventListener("click", () => {
+    // Close after choosing an action (buttons handle their own work).
+    window.setTimeout(close, 0);
+  });
+  document.addEventListener("click", (e) => {
+    if (!root.contains(e.target)) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !menu.hidden) {
+      close();
+      toggle.focus();
+    }
+  });
+}
+
 function applyFilters(opts = {}) {
   const { skipMarkers = false, skipSort = false } = opts;
   const q = _searchNorm(els.search.value);
@@ -3827,7 +3869,6 @@ function renderDetails(island) {
   const altNames = renderAltNames(island);
   const sparseLede = renderSparseProfileLede(island);
   const keyFacts = renderKeyFactsStrip(island);
-  const relatedBlock = renderRelatedIslands(island);
   const provenanceBlock = renderProvenanceBlock(island);
 
   cancelTerrainMount();
@@ -3857,6 +3898,16 @@ function renderDetails(island) {
       </div>`
     : "";
 
+  const ferriesHtml = renderFerries(island);
+  const propertyHtml = renderPropertyListings(island);
+  const relatedHtml = renderRelatedIslands(island);
+  const jumpLinks = [
+    ferriesHtml || propertyHtml ? ["profile-get-there", "Get there"] : null,
+    relatedHtml ? ["profile-nearby", "Nearby"] : null,
+    ["profile-map", "Map"],
+    ["profile-more", "More"],
+  ].filter(Boolean);
+
   els.detailsContent.innerHTML = `
     ${gallery}
     ${unnamedBanner}
@@ -3872,11 +3923,25 @@ function renderDetails(island) {
 
     ${keyFacts}
 
-    ${renderPropertyListings(island)}
+    ${
+      jumpLinks.length
+        ? `<nav class="profile-jump" aria-label="On this profile">${jumpLinks
+            .map(
+              ([id, label]) =>
+                `<a class="profile-jump__link" href="#${id}">${escapeHtml(label)}</a>`,
+            )
+            .join("")}</nav>`
+        : ""
+    }
 
-    ${renderFerries(island)}
+    <div id="profile-get-there">
+      ${propertyHtml}
+      ${ferriesHtml}
+    </div>
 
-    ${relatedBlock}
+    <div id="profile-nearby">
+      ${relatedHtml}
+    </div>
 
     <details class="profile-more-facts">
       <summary>All facts &amp; figures</summary>
@@ -3893,11 +3958,6 @@ function renderDetails(island) {
       </div>
     </details>
 
-    ${renderMaritimeAidsSection(island)}
-    ${renderReservesWildlifeSection(island)}
-
-    ${tags ? `<div class="tags">${tags}</div>` : ""}
-
     ${richSections}
 
     ${
@@ -3910,7 +3970,7 @@ function renderDetails(island) {
         : ""
     }
 
-    <div class="section detail-map-section">
+    <div class="section detail-map-section" id="profile-map">
       <h3>Detailed map</h3>
       <div class="detail-map__switcher-row">
         <div id="detail-map-switcher" class="detail-map__switcher" role="group" aria-label="Basemap"></div>
@@ -3922,32 +3982,50 @@ function renderDetails(island) {
 
     <div class="poly-loading" id="poly-status"></div>
 
-    <div class="external-links">
-      ${
-        island.wikipedia
-          ? `<a href="${escapeAttr(island.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>`
-          : `<a href="https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(island.name)}" target="_blank" rel="noopener">Search Wikipedia ↗</a>`
-      }
-      <a href="https://www.google.com/search?q=${encodeURIComponent(
-        island.name + " accommodation",
-      )}" target="_blank" rel="noopener">Find accommodation ↗</a>
-      <a href="https://www.google.com/maps?q=${island.lat},${island.lng}" target="_blank" rel="noopener">Google Maps ↗</a>
-      ${
-        island.osmType && island.osmId
-          ? `<a href="https://www.openstreetmap.org/${island.osmType}/${island.osmId}" target="_blank" rel="noopener">OpenStreetMap ↗</a>`
-          : ""
-      }
-      ${
-        island.wikidata
-          ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(island.wikidata)}" target="_blank" rel="noopener">Wikidata ↗</a>`
-          : ""
-      }
-    </div>
-
-    ${renderCorrectionReport(island)}
-
-    ${provenanceBlock}
+    <details class="profile-secondary" id="profile-more">
+      <summary>More about this island</summary>
+      <div class="profile-secondary__body">
+        ${renderMaritimeAidsSection(island)}
+        ${renderReservesWildlifeSection(island)}
+        ${tags ? `<div class="tags">${tags}</div>` : ""}
+        <div class="external-links">
+          ${
+            island.wikipedia
+              ? `<a href="${escapeAttr(island.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>`
+              : `<a href="https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(island.name)}" target="_blank" rel="noopener">Search Wikipedia ↗</a>`
+          }
+          <a href="https://www.google.com/search?q=${encodeURIComponent(
+            island.name + " accommodation",
+          )}" target="_blank" rel="noopener">Find accommodation ↗</a>
+          <a href="https://www.google.com/maps?q=${island.lat},${island.lng}" target="_blank" rel="noopener">Google Maps ↗</a>
+          ${
+            island.osmType && island.osmId
+              ? `<a href="https://www.openstreetmap.org/${island.osmType}/${island.osmId}" target="_blank" rel="noopener">OpenStreetMap ↗</a>`
+              : ""
+          }
+          ${
+            island.wikidata
+              ? `<a href="https://www.wikidata.org/wiki/${encodeURIComponent(island.wikidata)}" target="_blank" rel="noopener">Wikidata ↗</a>`
+              : ""
+          }
+        </div>
+        ${renderCorrectionReport(island)}
+        ${provenanceBlock}
+      </div>
+    </details>
   `;
+
+  els.detailsContent.querySelectorAll(".profile-jump__link").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href?.startsWith("#")) return;
+      const target = els.detailsContent.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      if (target instanceof HTMLDetailsElement) target.open = true;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 
   els.detailsContent.querySelectorAll("[data-related-id]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -8192,6 +8270,13 @@ function initGlobalKeyboardShortcuts() {
       return;
     }
 
+    const moreMenu = document.getElementById("topbar-more-menu");
+    if (moreMenu && !moreMenu.hidden) {
+      moreMenu.hidden = true;
+      document.getElementById("topbar-more-toggle")?.setAttribute("aria-expanded", "false");
+      return;
+    }
+
     if (!els.details.hidden) {
       e.preventDefault();
       releaseIslandDetailView({ clearUrl: true });
@@ -8213,4 +8298,5 @@ initFilterFocusTrap();
 initSearchClear();
 initMapHint();
 initGlobalKeyboardShortcuts();
+initTopbarMoreMenu();
 chatAutoLoadFromUrl();

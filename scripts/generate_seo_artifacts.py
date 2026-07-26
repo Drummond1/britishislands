@@ -162,6 +162,7 @@ def profile_page_html(
     atlas_href: str,
     profile_path: str,
     title: str,
+    depth: int = 3,
 ) -> str:
     iid = isl["id"]
     name = html.escape(str(isl.get("name") or iid), quote=True)
@@ -197,32 +198,35 @@ def profile_page_html(
     "geo": {{"@type": "GeoCoordinates", "latitude": {lat}, "longitude": {lng}}}{address}
   }}</script>"""
 
-    nation_line = f"<p>{nation}</p>" if nation else ""
+    nation_line = (
+        f'<p class="lp-kicker">{nation}</p>' if nation else ""
+    )
 
     facts: list[str] = []
     if isl.get("type"):
-        facts.append(f"<li><strong>Type:</strong> {html.escape(str(isl['type']))} island</li>")
+        facts.append(
+            f"<li><strong>Type</strong>{html.escape(str(isl['type']))} island</li>"
+        )
     if isl.get("archipelago"):
         facts.append(
-            f"<li><strong>Group:</strong> {html.escape(str(isl['archipelago']))}</li>"
+            f"<li><strong>Group</strong>{html.escape(str(isl['archipelago']))}</li>"
         )
     if isl.get("areaKm2"):
         facts.append(
-            f"<li><strong>Area:</strong> {html.escape(str(isl['areaKm2']))} km²</li>"
+            f"<li><strong>Area</strong>{html.escape(str(isl['areaKm2']))} km²</li>"
         )
     if isl.get("population") is not None and isl.get("population") != "":
         facts.append(
-            f"<li><strong>Population:</strong> {html.escape(str(isl['population']))}</li>"
+            f"<li><strong>Population</strong>{html.escape(str(isl['population']))}</li>"
         )
     if lat is not None and lng is not None:
         facts.append(
-            f"<li><strong>Location:</strong> {lat}, {lng} "
-            f"(open on the interactive map)</li>"
+            f"<li><strong>Location</strong>{lat}, {lng}</li>"
         )
     facts_block = ""
     if facts:
         facts_block = (
-            "  <h2>Key facts</h2>\n  <ul>\n    "
+            '  <ul class="lp-facts">\n    '
             + "\n    ".join(facts)
             + "\n  </ul>\n"
         )
@@ -231,16 +235,19 @@ def profile_page_html(
     seg = nation_segment(isl.get("nation"))
     if seg:
         hub = (
-            f'  <p>Part of the <a href="/islands/{html.escape(seg, quote=True)}/">'
+            f'  <p class="lp-note">Part of the '
+            f'<a href="/islands/{html.escape(seg, quote=True)}/">'
             f"{nation or seg} islands map</a>.</p>\n"
         )
 
     img_block = ""
     if img:
         img_block = (
-            f'  <p><img src="{html.escape(img, quote=True)}" alt="{name}" '
-            f'width="640" loading="lazy"/></p>\n'
+            f'  <figure class="lp-media"><img src="{html.escape(img, quote=True)}" '
+            f'alt="{name}" width="960" loading="lazy"/></figure>\n'
         )
+
+    assets = landing_head_assets(depth)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -259,17 +266,23 @@ def profile_page_html(
   <meta name="twitter:title" content="{title_esc}"/>
   <meta name="twitter:description" content="{desc}"/>
   <link rel="alternate" href="{html.escape(atlas_url, quote=True)}"/>
+{assets}
 {geo_block}
 </head>
-<body>
-  <header>
-    <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
-    <h1>{name}</h1>
-    {nation_line}
-    <p>{desc}</p>
-  </header>
-{img_block}{facts_block}{hub}  <p><a href="{atlas_url}">Open interactive map profile →</a></p>
-  <p><small>Canonical profile for search engines and AI crawlers. Map opens on demand — no auto-redirect.</small></p>
+<body class="lp">
+  <div class="lp-shell">
+    <nav class="lp-nav">
+      <a class="lp-back" href="{html.escape(atlas_href, quote=True)}">← Atlas</a>
+      <a class="lp-brand" href="{html.escape(atlas_href, quote=True)}">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      {nation_line}
+      <h1>{name}</h1>
+      <p class="lp-lede">{desc}</p>
+      <a class="lp-cta" href="{atlas_url}">Open on the map →</a>
+    </header>
+{img_block}{facts_block}{hub}    <p class="lp-note">Canonical profile for search engines and AI crawlers. The map opens on demand — no auto-redirect.</p>
+  </div>
 </body>
 </html>
 """
@@ -302,6 +315,7 @@ def nation_hub_html(
     origin: str,
     atlas_href: str,
     featured_links: list[tuple[str, str]],
+    depth: int = 2,
 ) -> str:
     title = NATION_HUB_TITLE.get(segment, f"{segment} islands map")
     blurb = NATION_HUB_BLURB.get(
@@ -315,6 +329,7 @@ def nation_hub_html(
         f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
         for path, label in featured_links
     )
+    assets = landing_head_assets(depth)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -328,29 +343,37 @@ def nation_hub_html(
   <meta property="og:title" content="{title_esc}"/>
   <meta property="og:description" content="{blurb_esc}"/>
   <meta property="og:url" content="{html.escape(hub_url, quote=True)}"/>
+{assets}
 </head>
-<body>
-  <header>
-    <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
-    <h1>{title_esc}</h1>
-    <p>{blurb_esc}</p>
-  </header>
-  <p><a href="{html.escape(atlas_href, quote=True)}">Open the interactive map →</a></p>
-  <h2>Notable islands</h2>
-  <ul>
+<body class="lp">
+  <div class="lp-shell">
+    <nav class="lp-nav">
+      <a class="lp-back" href="{html.escape(atlas_href, quote=True)}">← Atlas</a>
+      <a class="lp-brand" href="{html.escape(atlas_href, quote=True)}">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Islands by country</p>
+      <h1>{title_esc}</h1>
+      <p class="lp-lede">{blurb_esc}</p>
+      <a class="lp-cta" href="{html.escape(atlas_href, quote=True)}">Open the map →</a>
+    </header>
+    <h2 class="lp-section-title">Notable islands</h2>
+    <ul class="lp-list">
 {items}
-  </ul>
+    </ul>
+  </div>
 </body>
 </html>
 """
 
 
-def islands_root_html(*, origin: str, atlas_href: str) -> str:
+def islands_root_html(*, origin: str, atlas_href: str, depth: int = 1) -> str:
     links = "\n".join(
         f'    <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
         for seg in sorted(set(NATION_SEGMENT.values()))
     )
     url = f"{origin}/islands/"
+    assets = landing_head_assets(depth)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -360,16 +383,24 @@ def islands_root_html(*, origin: str, atlas_href: str) -> str:
   <meta name="description" content="Browse islands of Scotland, Ireland, England, Wales, Northern Ireland, and the Crown Dependencies on an interactive map."/>
   <link rel="canonical" href="{html.escape(url, quote=True)}"/>
   <meta name="robots" content="index,follow"/>
+{assets}
 </head>
-<body>
-  <header>
-    <p><a href="{html.escape(atlas_href, quote=True)}">← Isles of Britain atlas</a></p>
-    <h1>Islands by country</h1>
-    <p>Choose a nation map hub, then open any island profile.</p>
-  </header>
-  <ul>
+<body class="lp">
+  <div class="lp-shell">
+    <nav class="lp-nav">
+      <a class="lp-back" href="{html.escape(atlas_href, quote=True)}">← Atlas</a>
+      <a class="lp-brand" href="{html.escape(atlas_href, quote=True)}">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <p class="lp-kicker">Browse</p>
+      <h1>Islands by country</h1>
+      <p class="lp-lede">Choose a nation map hub, then open any island profile.</p>
+      <a class="lp-cta" href="{html.escape(atlas_href, quote=True)}">Open the map →</a>
+    </header>
+    <ul class="lp-list">
 {links}
-  </ul>
+    </ul>
+  </div>
 </body>
 </html>
 """
@@ -458,6 +489,20 @@ def patch_index_crawl_links(fragment: str) -> bool:
 def atlas_href_for_depth(depth: int) -> str:
     prefix = "/".join([".."] * depth) if depth else "."
     return f"{prefix}/" if prefix != "." else "./"
+
+
+def asset_href_for_depth(depth: int, filename: str) -> str:
+    prefix = "/".join([".."] * depth) if depth else "."
+    return f"{prefix}/{filename}" if prefix != "." else f"./{filename}"
+
+
+def landing_head_assets(depth: int) -> str:
+    styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
+    landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    return (
+        f'  <link rel="stylesheet" href="{styles}"/>\n'
+        f'  <link rel="stylesheet" href="{landing}"/>'
+    )
 
 
 def main() -> int:
@@ -632,6 +677,7 @@ Sitemap: {origin}/sitemap.xml
                 atlas_href=atlas_href_for_depth(3),
                 profile_path=sp.path,
                 title=page_title(isl),
+                depth=3,
             )
             out.write_text(page, encoding="utf-8")
             n += 1

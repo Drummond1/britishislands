@@ -2620,3 +2620,13 @@
 - **Cycle**: avg still **48.26** / both **18.7%**; GSC priority islands already have
   desc+photo; live `/islands/` still **404**.
 - **Open**: Deploy to Pages so GSC can index nation-slug URLs.
+
+## 2026-07-26 — UX simplify (home + landings)
+
+- **Goal**: Vastly simplify home and click-through UX — fewer competing controls, clearer paths.
+- **What changed**:
+  - Atlas: search-first topbar; Saved/Contribute under **More**; quieter sidebar (Notable + quick chips; Topics collapsed; Scotland chips only when Scotland filtered; ferry/guides under **Tools & guides**).
+  - Profile: jump nav (Get there / Nearby / Map / More); secondary links/provenance under **More about this island**.
+  - New `landing.css`; ferry + `/islands/` landings regenerated with clearer hero + CTA to the map.
+- **Outcome**: Local verify on `/`, `/?island=isle-of-skye`, `/ferries/`, `/islands/scotland/isle-of-skye/`.
+- **Open**: Deploy for live impact.
