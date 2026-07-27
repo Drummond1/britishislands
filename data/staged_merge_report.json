@@ -1,0 +1,199 @@
+{
+  "started": "2026-07-27T06:22:01",
+  "dry_run": false,
+  "backup": null,
+  "staging_source": "verified",
+  "load": {
+    "staging_dir": "data/staging/adoptions-verified",
+    "staging_files": [
+      "archive-nls.json",
+      "bl-flickr-deep.json",
+      "commons-archipelago.json",
+      "commons-county.json",
+      "commons-deep.json",
+      "commons-depicts-q.json",
+      "duchas.json",
+      "europeana-geo.json",
+      "flickr-europeana.json",
+      "gbif.json",
+      "geograph-commons.json",
+      "geograph-native.json",
+      "heritage-ogl.json",
+      "inaturalist.json",
+      "kartaview.json",
+      "multilang-wiki.json",
+      "ogl-tourism.json",
+      "openaerialmap.json",
+      "openverse.json",
+      "osm-bulk.json",
+      "p373-commons.json",
+      "panoramax.json",
+      "pcw.json",
+      "scran.json",
+      "wd-nearby-p18.json",
+      "web-discovery.json",
+      "wikidata-depicts.json",
+      "wikipedia-alllangs.json",
+      "wikipedia-embedded.json",
+      "wikipedia-gallery.json"
+    ],
+    "rows_read": 18,
+    "rows_by_file": {
+      "archive-nls.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "bl-flickr-deep.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "commons-archipelago.json": {
+        "raw": 3,
+        "normalised": 3
+      },
+      "commons-county.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "commons-deep.json": {
+        "raw": 2,
+        "normalised": 2
+      },
+      "commons-depicts-q.json": {
+        "raw": 6,
+        "normalised": 6
+      },
+      "duchas.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "europeana-geo.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "flickr-europeana.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "gbif.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "geograph-commons.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "geograph-native.json": {
+        "raw": 2,
+        "normalised": 2
+      },
+      "heritage-ogl.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "inaturalist.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "kartaview.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "multilang-wiki.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "ogl-tourism.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "openaerialmap.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "openverse.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "osm-bulk.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "p373-commons.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "panoramax.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "pcw.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "scran.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "wd-nearby-p18.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "web-discovery.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "wikidata-depicts.json": {
+        "raw": 5,
+        "normalised": 5
+      },
+      "wikipedia-alllangs.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "wikipedia-embedded.json": {
+        "raw": 0,
+        "normalised": 0
+      },
+      "wikipedia-gallery.json": {
+        "raw": 0,
+        "normalised": 0
+      }
+    },
+    "parse_skipped": 0,
+    "staging_source": "verified"
+  },
+  "candidates_deduped": 13,
+  "merged_total": 2,
+  "merged_by_source": {
+    "geograph-native": 2
+  },
+  "merged_by_staging_file": {
+    "geograph-native.json": 2
+  },
+  "skipped_already_has_image": 11,
+  "skipped_missing_island": 0,
+  "named_with_photo_before": 4354,
+  "merged": [
+    {
+      "id": "osm-way-1422328811",
+      "name": "Abbey Meadow",
+      "source": "geograph-native",
+      "staging_file": "geograph-native.json",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-07-27T05:21:20+00:00",
+      "sourcePageUrl": "https://www.geograph.org.uk/photo/6272361"
+    },
+    {
+      "id": "osm-way-46936237",
+      "name": "Bevere Island",
+      "source": "geograph-native",
+      "staging_file": "geograph-native.json",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-07-27T05:21:45+00:00",
+      "sourcePageUrl": "https://www.geograph.org.uk/photo/5577018"
+    }
+  ],
+  "finished": "2026-07-27T06:22:01",
+  "named_with_photo_after": 4356
+}

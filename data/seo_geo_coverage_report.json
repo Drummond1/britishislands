@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-07-26T20:53:46Z",
-  "namedTotal": 7069,
-  "averageScore": 48.26,
+  "generated": "2026-07-27T05:22:53Z",
+  "namedTotal": 7237,
+  "averageScore": 47.5,
   "buckets": {
     "100": 1120,
     "70-99": 307,
-    "40-69": 3169,
-    "0-39": 2473
+    "40-69": 3171,
+    "0-39": 2639
   },
   "withDescription": 1566,
-  "withPhoto": 4354,
+  "withPhoto": 4356,
   "withDescriptionAndPhoto": 1324,
-  "withSameAs": 2792,
-  "pctDescription": 22.2,
-  "pctPhoto": 61.6,
-  "pctBoth": 18.7,
+  "withSameAs": 2793,
+  "pctDescription": 21.6,
+  "pctPhoto": 60.2,
+  "pctBoth": 18.3,
   "gapCounts": {
-    "description": 5503,
-    "photo": 2715,
-    "sameAs": 4277,
+    "description": 5671,
+    "photo": 2881,
+    "sameAs": 4444,
     "geo": 0,
     "nation": 0
   },

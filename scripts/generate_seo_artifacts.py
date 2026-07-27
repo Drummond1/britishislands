@@ -309,6 +309,30 @@ def legacy_redirect_html(*, new_url: str, atlas_url: str, name: str) -> str:
 """
 
 
+# Nation hub → related ferry guide paths (internal links for SEO/GEO).
+NATION_FERRY_LINKS: dict[str, list[tuple[str, str]]] = {
+    "scotland": [
+        ("/ferries/scottish/", "Scottish island ferries"),
+        ("/ferries/calmac/", "CalMac ferry map"),
+        ("/ferries/hebrides/", "Hebrides ferries"),
+        ("/ferries/orkney/", "Orkney ferries"),
+        ("/ferries/shetland/", "Shetland ferries"),
+    ],
+    "ireland": [("/ferries/ireland/", "Ireland island ferries")],
+    "northern-ireland": [("/ferries/northern-ireland/", "Northern Ireland ferries")],
+    "wales": [("/ferries/welsh/", "Wales ferries")],
+    "england": [
+        ("/ferries/isle-of-wight/", "Isle of Wight ferries"),
+        ("/ferries/isles-of-scilly/", "Isles of Scilly boats"),
+    ],
+    "crown-dependencies": [
+        ("/ferries/isle-of-man/", "Isle of Man ferries"),
+        ("/ferries/channel-islands/", "Channel Islands ferries"),
+    ],
+    "isle-of-man": [("/ferries/isle-of-man/", "Isle of Man ferries")],
+}
+
+
 def nation_hub_html(
     *,
     segment: str,
@@ -329,6 +353,32 @@ def nation_hub_html(
         f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
         for path, label in featured_links
     )
+    ferry_rows = NATION_FERRY_LINKS.get(segment) or [("/ferries/", "All ferry guides")]
+    ferry_items = "\n".join(
+        f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
+        for path, label in ferry_rows
+    )
+    other_nations = "\n".join(
+        f'    <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
+        for seg in (
+            "scotland",
+            "ireland",
+            "england",
+            "wales",
+            "northern-ireland",
+            "crown-dependencies",
+            "isle-of-man",
+        )
+        if seg != segment
+    )
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": title,
+        "description": blurb,
+        "url": hub_url,
+        "isPartOf": {"@type": "WebSite", "name": "Find My Island", "url": origin + "/"},
+    }
     assets = landing_head_assets(depth)
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -343,6 +393,7 @@ def nation_hub_html(
   <meta property="og:title" content="{title_esc}"/>
   <meta property="og:description" content="{blurb_esc}"/>
   <meta property="og:url" content="{html.escape(hub_url, quote=True)}"/>
+  <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
 {assets}
 </head>
 <body class="lp">
@@ -360,6 +411,14 @@ def nation_hub_html(
     <h2 class="lp-section-title">Notable islands</h2>
     <ul class="lp-list">
 {items}
+    </ul>
+    <h2 class="lp-section-title">Ferry guides</h2>
+    <ul class="lp-list">
+{ferry_items}
+    </ul>
+    <h2 class="lp-section-title">Other countries</h2>
+    <ul class="lp-list">
+{other_nations}
     </ul>
   </div>
 </body>
@@ -647,7 +706,7 @@ Sitemap: {origin}/sitemap.xml
 
         for seg, items in by_seg.items():
             items.sort(key=lambda t: (-t[2], t[1].lower()))
-            featured_links = [(p, n) for p, n, _ in items[:24]]
+            featured_links = [(p, n) for p, n, _ in items[:48]]
             hub_dir = ISLANDS_DIR / seg
             hub_dir.mkdir(parents=True, exist_ok=True)
             (hub_dir / "index.html").write_text(

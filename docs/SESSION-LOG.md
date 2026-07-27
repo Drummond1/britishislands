@@ -16,6 +16,7 @@
 
 ---
 
+
 ## 2026-06-02 — Web photo URL discovery harvester
 
 - **Goal**: ETHICS-safe “outside the box” licensed photo discovery from open-web
@@ -2630,3 +2631,90 @@
   - New `landing.css`; ferry + `/islands/` landings regenerated with clearer hero + CTA to the map.
 - **Outcome**: Local verify on `/`, `/?island=isle-of-skye`, `/ferries/`, `/islands/scotland/isle-of-skye/`.
 - **Open**: Deploy for live impact.
+
+## 2026-07-26 — Overnight novel discovery + naming (N7–N10, D5–D6)
+
+- **Goal**: Implement recommended novel discovery/naming quick wins and run
+  confirm+overnight loop.
+- **What changed**:
+  - Naming: `name_unnamed_geonames.py` (N7), `name_unnamed_nearby_osm.py` (N8),
+    `name_unnamed_property_adjacent.py` (N9), `name_unnamed_photo_titles.py` (N10,
+    strict proper-name gate after junk revert).
+  - Discovery: `discover_osm_freetext.py` (D5), `discover_seal_haulouts.py` (D6;
+    SSI 2014/185 XML → 59 sites / 16 gaps).
+  - Orchestrator: `run_overnight_discovery_naming.sh --loop` (8 h, 45 min cycles;
+    waits on SEO/CI locks before islands.json writes).
+  - `apply_staged_discovery_gaps.py` now also reads D5/D6 candidate files.
+  - Docs: NAMING-SOURCES, DISCOVERY-PUSH, STATE, QUEUE.
+- **Outcome / counts**: First confirm **unnamed 4,310 → 4,170 (−140)**, mostly
+  GeoNames ≤150 m (e.g. Dun Aonais, Peasholm Island, Eilean na Faoileige). Photo
+  titles tightened after reverting descriptive Commons captions. Discovery apply
+  of 80 candidates: 13 verified / 0 new entities (already matched). Overnight
+  loop armed (PID in STATE).
+- **Open**: Morning check of `.overnight_discovery_naming_state.json`; unblock
+  N1/N2 keys; water-polygon donut-hole moonshot still pending.
+
+## 2026-07-27 — SEO/GEO continue: include-exhausted + photo gaps
+
+GSC-only loop left stopped (saturated). Rebuilt `description_priority_queue` (1570).
+Wikipedia description enrich with `--include-exhausted` on desc queue (150) and
+`seo_geo_priority_queue` (80): **+0 adopted** (mostly no title / name mismatch).
+Built `data/seo_photo_gap_queue.json` (400 of 874 named no-photo with WD/WP).
+Photo passes P18 (120) + osm-tags (80) + wikipedia-embedded (80): **+0 adopted**;
+staged verify 16/56, merge **+0** (11 already had images). Index + SEO artifacts
+rebuilt; audit unchanged **avg 47.49 / both 18.3%** (desc 1566, photo 4354).
+Live `/islands/scotland/` **HTTP 200**. Re-armed hourly `AGENT_LOOP_TICK_seo_geo`
+loop (`descriptions+photos-gap`, cycle 17).
+
+## 2026-07-27 — Wikidata SPARQL gap harvester (discovery-push #5)
+
+- **Goal**: Implement the planned "Wikidata SPARQL island gap" harvester
+  (DISCOVERY-PUSH.md #5) and check for new candidates.
+- **What changed**:
+  - Added `scripts/discover_wikidata_gaps.py` — SPARQL by country statement
+    (`wdt:P17` UK/Ireland/IoM/Jersey/Guernsey) over the island class tree
+    (`wdt:P31/wdt:P279* wd:Q23442`, covers islet/skerry/tidal island/holm
+    subclasses), filtered to the atlas bbox, deduped by Q-ID, matched against
+    `islands.json` via `discovery/common.py` (`find_existing_match`,
+    `in_remit`, `nation_for`). Writes gap-only candidates to
+    `data/discovery/candidates_wikidata.json` (schema matches
+    `candidates_geonames.json`); cache `data/cache_discovery_wikidata_gaps.json`
+    (seeds from the older `cache_wd_islands.json` raw rows when present so a
+    fresh run doesn't re-hit query.wikidata.org for unchanged countries).
+    Never writes `islands.json`.
+  - Verified the matcher isn't over-matching: of 2,644 in-remit Wikidata
+    island items, 2,496 hit an exact Q-ID match, 47 a name+proximity match,
+    101 a loose ≤0.5 km match, **0 unmatched** — i.e. this specific
+    country-scoped query was already fully harvested and merged in an
+    earlier session (`scripts/ingest_sources.py --only=wikidata` /
+    `catalog_scanner`'s `action_wikidata` call), so **0 new gap
+    candidates** today.
+  - Explored the untargeted whole-bbox alternative (`wikibase:box` service,
+    no `P17` requirement) to see whether items lacking a country statement
+    hide real gaps: it's dominated by non-island noise — 22,754 `reef` +
+    18,538 `shoal` (underwater navigation hazards) + 4,030 `crannog` (mostly
+    submerged loch-dwelling remains, already handled more carefully by
+    `action_crannogs`'s above-water filter) — and a combined
+    box+VALUES-class count query 502'd twice (WDQS cost limit). Concluded
+    the country-statement approach is the right trade-off for now; a real
+    "v2" would need per-nation-box tiling + explicit class allowlist
+    (islet/skerry/tidal/tied/lake/artificial island/island castle, excluding
+    reef/shoal/crannog/energy island) plus a spatial index for the match
+    pass against 11k+ atlas islands — left as a follow-up, not attempted
+    live given repeated WDQS 502s.
+- **Outcome / counts**: 0 gap candidates from today's run (all 2,644
+  in-remit Wikidata island items already represented in the 11,380-island
+  atlas). Script is ready to re-run periodically as new Wikidata items with
+  country statements appear.
+- **Open items kicked to QUEUE.md**: v2 class-allowlisted, tiled bbox scan
+  for Wikidata items lacking `P17` (potential real yield, needs careful
+  reef/shoal/crannog filtering and a spatial index).
+
+
+## 2026-07-27 — Continue SEO/GEO (multilang/geograph + hubs)
+
+- **Goal**: Keep improving after GSC queue saturated.
+- **What changed**: Multilang wiki staging (1, rejected strict); geograph-native
+  **+2** photos; nation hubs richer (ferry links, CollectionPage JSON-LD, 48 notables).
+- **Outcome**: avg **47.5**, photos **4,356**, both% **18.3**; loop PID **19423**.
+- **Open**: Deploy hub HTML + photo data; Wikidata sitelinks for desc yield.

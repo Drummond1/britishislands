@@ -4,6 +4,23 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-27 (SEO/GEO continue)** — Hourly loop PID **19423** (`AGENT_LOOP_TICK_seo_geo`). Geograph **+2** photos (4,354→4,356); avg **47.5**. Nation hubs now include ferry cross-links + CollectionPage JSON-LD + 48 notable links. Desc Wikipedia mostly exhausted (no enwiki).
+
+**2026-07-27 (SEO/GEO include-exhausted + photo gaps)** — Continuing SEO/GEO loop
+after GSC-only saturation. Description `--include-exhausted` + photo-gap queue
+(P18/osm-tags/wiki-embedded): **+0 desc / +0 photos** this pass; scores flat
+**avg 47.49 / both 18.3%** (desc **1,566**, photo **4,354**). Live
+`/islands/scotland/` **200**. Hourly `AGENT_LOOP_TICK_seo_geo` re-armed; state
+`lastAction=descriptions+photos-gap` cycle **17**.
+
+
+**2026-07-26 (overnight discovery+naming)** — Implemented N7–N10 + D5–D6;
+first confirm pass named **140** islands (4310→4170 unnamed; mostly GeoNames
+≤150 m). Seal haul-outs: **59** sites parsed, **16** gap candidates staged.
+Overnight loop armed: `run_overnight_discovery_naming.sh --loop` (**8 h**,
+45 min cycles; PID in Currently running). Lock
+`data/.overnight_discovery_naming.lock`.
+
 **2026-07-26 (UX simplify)** — Search-first atlas chrome; quieter sidebar;
 profile jump nav + collapsed secondary facts; shared `landing.css` for ferry +
 `/islands/` click-through pages. Regenerated landings. Local only until deploy.
@@ -798,7 +815,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `run_seo_geo_improvement.sh` loop (60 min) | 2026-07-26 | recurring | cursor agent | Lock `data/.seo_geo_improvement.lock`. Rotates descriptions/photos/featured/artifacts. |
+| `run_overnight_discovery_naming.sh --loop` | 2026-07-26 22:18 BST | ~8 h | cursor agent | Harness PID **44533**. N7–N10 + D5–D6 + verify/merge each ~45 min; logs `logs/overnight-discovery-naming-*.log` + terminal. Lock `data/.overnight_discovery_naming.lock`. |
+| `AGENT_LOOP_TICK_seo_geo` (hourly) | 2026-07-27 06:19 BST | recurring | cursor agent | PID **19423**. `run_seo_geo_improvement.sh` + `--include-exhausted` fallback. Lock `data/.seo_geo_improvement.lock`. Cycle 17 `descriptions+photos-gap`. |
 | _(idle photo continuous)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342**. Re-arm `run_continuous_improvement.sh` on request. |
 | _(prior — islands.json idle since 2026-06-04)_ | — | — | — | Baseline **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
 | ~~`enrich_images_openverse.py --limit 800`~~ ✅ | 2026-06-02 | — | cursor subagent | **+3** staged → `openverse.json` (800 considered; cache-heavy). |
