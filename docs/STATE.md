@@ -4,6 +4,17 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-27 (SEO/GEO sitelink+multilang desc)** — Batch Wikidata sitelink
+preflight (`wdsl:`) + gd/cy/ga/en Wikipedia lead extracts: **+45**
+shortDescriptions after QA (57 raw − 12 wrong sitelink/hill/loch). Scores
+**avg 47.5→47.75**, both% **18.3→18.7**, desc **1,566→1,611**, photo **4,356**.
+Hourly loop PID **19423** still alive.
+
+**2026-07-27 (discovery unlock)** — Agents found overnight +1 was a **verifier
+bottleneck** (GeoNames needed Wikidata). Fixed `name_key`, refined gaps,
+accepted OSM/GeoNames provenance, OpenSeaMap + Wikidata harvesters. Applied
+**+187** then scrubbed **13** false positives → atlas **11,380 → 11,554 (+174)**.
+
 **2026-07-27 (SEO/GEO continue)** — Hourly loop PID **19423** (`AGENT_LOOP_TICK_seo_geo`). Geograph **+2** photos (4,354→4,356); avg **47.5**. Nation hubs now include ferry cross-links + CollectionPage JSON-LD + 48 notable links. Desc Wikipedia mostly exhausted (no enwiki).
 
 **2026-07-27 (SEO/GEO include-exhausted + photo gaps)** — Continuing SEO/GEO loop
@@ -815,8 +826,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `run_overnight_discovery_naming.sh --loop` | 2026-07-26 22:18 BST | ~8 h | cursor agent | Harness PID **44533**. N7–N10 + D5–D6 + verify/merge each ~45 min; logs `logs/overnight-discovery-naming-*.log` + terminal. Lock `data/.overnight_discovery_naming.lock`. |
-| `AGENT_LOOP_TICK_seo_geo` (hourly) | 2026-07-27 06:19 BST | recurring | cursor agent | PID **19423**. `run_seo_geo_improvement.sh` + `--include-exhausted` fallback. Lock `data/.seo_geo_improvement.lock`. Cycle 17 `descriptions+photos-gap`. |
+| `AGENT_LOOP_TICK_seo_geo` (hourly) | 2026-07-27 06:19 BST | recurring | cursor agent | PID **19423**. `run_seo_geo_improvement.sh` + `--include-exhausted` fallback. Lock `data/.seo_geo_improvement.lock`. |
+| ~~`enrich_descriptions_wikipedia.py` sitelink+multilang~~ ✅ | 2026-07-27 ~06:25 BST | — | cursor subagent | Prefetch + multilang pass; **+45** desc after QA. |
+| ~~`run_overnight_discovery_naming.sh --loop`~~ ✅ finished 2026-07-27 04:27 UTC | — | — | cursor agent | 8 cycles; +1 island overnight; naming −27. Superseded by discovery unlock (+174). |
 | _(idle photo continuous)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342**. Re-arm `run_continuous_improvement.sh` on request. |
 | _(prior — islands.json idle since 2026-06-04)_ | — | — | — | Baseline **4,341** / 7,041 named with photo; gap to 6k **1,659**. |
 | ~~`enrich_images_openverse.py --limit 800`~~ ✅ | 2026-06-02 | — | cursor subagent | **+3** staged → `openverse.json` (800 considered; cache-heavy). |

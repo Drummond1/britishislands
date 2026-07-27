@@ -1,12 +1,225 @@
 {
-  "startedAt": "2026-05-14T20:58:07+00:00",
-  "totalIslands": 7298,
-  "candidates": 1575,
-  "adopted": 0,
-  "skippedNoTitle": 1521,
-  "skippedNoExtract": 1,
-  "skippedNameMismatch": 53,
-  "adoptionsByNation": {},
-  "samples": [],
-  "finishedAt": "2026-05-14T21:14:02+00:00"
+  "startedAt": "2026-07-27T05:31:39+00:00",
+  "totalIslands": 11380,
+  "candidates": 69,
+  "multilang": true,
+  "adopted": 57,
+  "skippedNoTitle": 0,
+  "skippedNoExtract": 0,
+  "skippedNameMismatch": 12,
+  "adoptionsByNation": {
+    "Ireland": 20,
+    "Scotland": 27,
+    "England": 2,
+    "Wales": 8
+  },
+  "adoptionsBySource": {
+    "wikipedia-lead-extract": 20,
+    "wikipedia-gd-lead-extract": 15,
+    "wikipedia-ga-lead-extract": 14,
+    "wikipedia-cy-lead-extract": 8
+  },
+  "samples": [
+    {
+      "id": "osm-way-188960567",
+      "name": "Castle Island",
+      "short": "Ballynahinch Lake (Irish: Loch Bhaile na hInse) is a freshwater lake in the west of Ireland. It is located in the Connemara area of County Galway.",
+      "title": "Ballynahinch Lake",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-206524224",
+      "name": "Cherry Island",
+      "short": "Loch Ness (; Scottish Gaelic: Loch Nis [l̪ˠɔx ˈniʃ]) is a large freshwater loch in the Scottish Highlands. It takes its name from the River Ness, which flows from the northern end.",
+      "title": "Loch Ness",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-4010491",
+      "name": "Ciosmul",
+      "short": "Kisimul Castle (Scottish Gaelic: Caisteal Chiosmuil) and also known as Kiessimul Castle, is a medieval castle located on a small island off Castlebay, Barra, in the Outer Hebrides, Scotland. It gets its name from the Norse ciosamul, meaning \"castle island\".",
+      "title": "Kisimul Castle",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-209470263",
+      "name": "Eilean nam Faoileag",
+      "short": "Loch Rannoch (Scottish Gaelic: Loch Raineach) is a freshwater loch in Perth and Kinross, Scotland. It is over 15 kilometres (9.3 mi) long in a west–east direction with an average width of about 1.2 kilometres (0.75 mi), and is deepest at its eastern end, reaching a depth of 130 metres (440 ft).",
+      "title": "Loch Rannoch",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-1387598959",
+      "name": "Eileann Domhnuill a' Spionnaidh",
+      "short": "Ian Armit identifies the islet of Eilean Dòmhnuill (Scottish Gaelic: Eilean Dòmhnaill, Scottish Gaelic pronunciation: [elan ˈt̪õː.ɪʎ], \"The Isle of Donald\"), Loch Olabhat, on North Uist, Scotland, as what may be the earliest crannog. Unstan ware pottery found there suggests a Neolithic period date of 3200–2800 BC.",
+      "title": "Eilean Dòmhnuill",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-47903159",
+      "name": "Floday",
+      "short": "Flodaigh is a small island in Loch Roag on the west coast of Lewis in the Outer Hebrides of Scotland. It is about 33 hectares (82 acres) in extent and the highest point is 48 metres (157 ft).",
+      "title": "Flodaigh, Lewis",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-relation-9225240",
+      "name": "Flodda",
+      "short": "Flodaigh is a tidal island lying to the north of Benbecula and south of Grimsay in the Outer Hebrides, Scotland. It is connected to Benbecula by a causeway.",
+      "title": "Flodaigh",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-relation-13365942",
+      "name": "Housay",
+      "short": "Is buidheann eileanan ann an Sealtainn a tha sna Out Skerries (\"Sgeirean a-muigh\"). Tha daoine a' fuireach ann an Housay agus Bruray.",
+      "title": "Out Skerries",
+      "site": "gdwiki",
+      "source": "wikipedia-gd-lead-extract"
+    },
+    {
+      "id": "osm-relation-9117800",
+      "name": "Inis Gluaire",
+      "short": "'S e eilean faisg air an Muirthead, Chontae Mhaigh Eo sa Chúige Chonnacht ann an Èirinn a th’ann an Inis Gluaire.",
+      "title": "Inis Gluaire",
+      "site": "gdwiki",
+      "source": "wikipedia-gd-lead-extract"
+    },
+    {
+      "id": "osm-way-247487489",
+      "name": "Inis Mhic Cionaithe",
+      "short": "Inchamakinna (Gaeilge:Inse Mic Cionaith) is an island in County Galway, Ireland.",
+      "title": "Inchamakinna",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-4012842",
+      "name": "Keava",
+      "short": "Ceabhaigh is a small island in an arm of Loch Ròg on the west coast of Lewis in the Outer Hebrides of Scotland. It is about 25 hectares (62 acres) in extent.",
+      "title": "Ceabhaigh",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-359435873",
+      "name": "Maoinis",
+      "short": "Maínis or Mweenish is an island off the Connemara coast in the heart of the Conamara Gaeltacht. The island is close to Carna and linked to the mainland by a bridge.",
+      "title": "Maínis",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-219575236",
+      "name": "Scarriff Island",
+      "short": "Scariff Island (Irish: An Scairbh, meaning 'Rugged',) is an island of the Atlantic Ocean in County Kerry, Ireland.",
+      "title": "Scariff Island",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-290058068",
+      "name": "Seanabaily",
+      "short": "Seana Bhaile is a small inhabited island north of Benbecula in the Outer Hebrides of Scotland. It is about 55 hectares (140 acres) in extent and the highest point is 11 metres (36 ft).",
+      "title": "Seana Bhaile",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-relation-16735230",
+      "name": "Sromaigh",
+      "short": "Stromay (Scottish Gaelic: Sròmaigh) is a tidal island off North Uist in the Sound of Harris, Scotland. The low island of Stromay lies between two wide, shallow sea lochs, Loch Mhic Phàil and Loch Aulasary.",
+      "title": "Stromay",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-314858442",
+      "name": "Goose Island",
+      "short": "Ross Island is a claw-shaped peninsula in Killarney National Park, County Kerry. Ross Castle is located here and it is also the site of abandoned copper mines, including some believed to be the earliest in north-western Europe.",
+      "title": "Ross Island, Killarney",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "hook-island-w139412875",
+      "name": "Hook Island",
+      "short": "Howden Dyke Island is a 19-acre (7.7 ha) island in the River Ouse, Yorkshire. More accurately a shoal between seasonally varying flows, the area regularly above water (and covered in trees and vegetation) is roughly 1,380 by 890 feet (420 by 270 m).",
+      "title": "Howden Dyke Island",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-381672991",
+      "name": "Ibister Holm",
+      "short": "Isbister Holm is a small islet in the Shetland islands of Scotland, situated roughly 2 kilometres (1.2 mi) east off the coast of Isbister, Whalsay. The highest point of the islet is about 65 feet (20 m) and it measures roughly 500 metres (1,600 ft) by 250 metres (820 ft).",
+      "title": "Isbister Holm",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-48097346",
+      "name": "Pats Croft Eyot",
+      "short": "Friary Island is an island in the River Thames in England. It is located on the reach above Bell Weir Lock, on the approach to Old Windsor Lock at Wraysbury, Berkshire.",
+      "title": "Friary Island",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-490111575",
+      "name": "Skeo of Holm",
+      "short": "The Holm of Sandwick is an islet, located roughly 100 metres (330 ft) off Haa Ness and the southwestern side of Whalsay, in the Shetland Islands of Scotland. The small groups of islets to the west are called the Flaeshans of Sandwick.",
+      "title": "Holm of Sandwick",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-700654038",
+      "name": "Skerry of Eshaness",
+      "short": "The Isle of Stenness is one of the Shetland Islands, Scotland. It is off north west Mainland in the Northmavine.",
+      "title": "Isle of Stenness",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "osm-way-4010563",
+      "name": "Sursay",
+      "short": "Sursaigh (Scottish Gaelic: Sursaigh) is an island off North Uist in the Sound of Harris, Scotland. It lies 8 kilometres (5.0 mi) northeast of the village of Lochmaddy and there are numerous nearby islands including Stromay, Sgarabhaigh and Tahay.",
+      "title": "Sursaigh",
+      "site": "enwiki",
+      "source": "wikipedia-lead-extract"
+    },
+    {
+      "id": "wd-Q25634954",
+      "name": "Blotchnie Fiold",
+      "short": "'S e beinn ann an Arcaibh, Alba a th' ann am Blotchnie Fiold.",
+      "title": "Blotchnie Fiold",
+      "site": "gdwiki",
+      "source": "wikipedia-gd-lead-extract"
+    },
+    {
+      "id": "osm-way-4554779",
+      "name": "Bull Rock",
+      "short": "Is oileán Éireannach é an Tarbh.",
+      "title": "An Tarbh, Contae Chorcaí",
+      "site": "gawiki",
+      "source": "wikipedia-ga-lead-extract"
+    },
+    {
+      "id": "wd-Q20586546",
+      "name": "Caer Arianrhod",
+      "short": "Ynys fechan greigiog oddi ar arfordir Gwynedd, Cymru, ydy Caer Arianrhod. Saif tua hanner y ffordd rhwng Pontllyfni a Dinas Dinlle, a thua 1 km o'r lan.",
+      "title": "Caer Arianrhod (ynys)",
+      "site": "cywiki",
+      "source": "wikipedia-cy-lead-extract"
+    }
+  ],
+  "finishedAt": "2026-07-27T05:32:50+00:00"
 }

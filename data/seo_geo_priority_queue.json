@@ -1,20 +1,10 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-07-26T20:53:46Z",
+  "generated": "2026-07-27T05:34:11Z",
   "source": "audit_seo_geo_coverage.py",
   "queue": [
     {
       "id": "osm-way-490111575",
-      "score": 60,
-      "tier": 2,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-4010491",
       "score": 60,
       "tier": 2,
       "gaps": [
@@ -787,6 +777,16 @@
       "needPhoto": true
     },
     {
+      "id": "osm-way-4010563",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "osm-way-4561954",
       "score": 70,
       "tier": 3,
@@ -967,117 +967,7 @@
       "needPhoto": true
     },
     {
-      "id": "osm-way-359435873",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-relation-13365942",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-219575236",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-relation-9225240",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-relation-16735230",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-247487489",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-290058068",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-4010536",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-relation-9117800",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-4012842",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-59314679",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-47903159",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -1107,47 +997,7 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-59314506",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "hook-island-w139412875",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-59314342",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-381672991",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-59314639",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -1238,16 +1088,6 @@
     },
     {
       "id": "osm-way-236857280",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-1387598959",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -1415,17 +1255,6 @@
       ],
       "needDescription": true,
       "needPhoto": false
-    },
-    {
-      "id": "osm-way-4010563",
-      "score": 30,
-      "tier": 3,
-      "gaps": [
-        "description",
-        "photo"
-      ],
-      "needDescription": true,
-      "needPhoto": true
     },
     {
       "id": "bolands-rock",
@@ -1615,6 +1444,17 @@
       "needPhoto": true
     },
     {
+      "id": "wd-Q24636625",
+      "score": 30,
+      "tier": 3,
+      "gaps": [
+        "description",
+        "photo"
+      ],
+      "needDescription": true,
+      "needPhoto": true
+    },
+    {
       "id": "wd-Q25634954",
       "score": 30,
       "tier": 3,
@@ -1669,6 +1509,16 @@
       "needPhoto": true
     },
     {
+      "id": "osm-relation-3622036",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "osm-relation-3335585",
       "score": 70,
       "tier": 3,
@@ -1710,6 +1560,26 @@
     },
     {
       "id": "osm-way-93351277",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561753",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4562742",
       "score": 70,
       "tier": 3,
       "gaps": [
@@ -1779,7 +1649,27 @@
       "needPhoto": true
     },
     {
+      "id": "osm-way-4561249",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "osm-way-44954829",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-4561252",
       "score": 70,
       "tier": 3,
       "gaps": [
@@ -1850,6 +1740,16 @@
     },
     {
       "id": "osm-way-47702827",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "osm-way-249509105",
       "score": 70,
       "tier": 3,
       "gaps": [
@@ -1949,6 +1849,16 @@
       "needPhoto": true
     },
     {
+      "id": "osm-way-335324937",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "osm-way-903949864",
       "score": 70,
       "tier": 3,
@@ -1989,6 +1899,16 @@
       "needPhoto": true
     },
     {
+      "id": "wd-Q112131366",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "wd-Q116505278",
       "score": 70,
       "tier": 3,
@@ -2010,6 +1930,36 @@
     },
     {
       "id": "wd-Q130372994",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q13132554",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q20586546",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
+      "id": "wd-Q20622863",
       "score": 70,
       "tier": 3,
       "gaps": [
@@ -2419,6 +2369,16 @@
       "needPhoto": true
     },
     {
+      "id": "wd-Q65295445",
+      "score": 70,
+      "tier": 3,
+      "gaps": [
+        "photo"
+      ],
+      "needDescription": false,
+      "needPhoto": true
+    },
+    {
       "id": "osm-relation-8202107",
       "score": 60,
       "tier": 3,
@@ -2470,16 +2430,6 @@
     },
     {
       "id": "osm-relation-3395357",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-248703441",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -2670,16 +2620,6 @@
     },
     {
       "id": "osm-way-4554655",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-4561049",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -2969,16 +2909,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-4560604",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-4009731",
       "score": 60,
       "tier": 3,
@@ -3180,16 +3110,6 @@
     },
     {
       "id": "osm-relation-3998518",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-4561715",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -3540,16 +3460,6 @@
     },
     {
       "id": "osm-way-3618196",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-209876024",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -4669,16 +4579,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-59314609",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-262432178",
       "score": 60,
       "tier": 3,
@@ -4839,16 +4739,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-59314610",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-4554785",
       "score": 60,
       "tier": 3,
@@ -4929,16 +4819,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-4554779",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-4564161",
       "score": 60,
       "tier": 3,
@@ -5000,16 +4880,6 @@
     },
     {
       "id": "osm-way-867217389",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-207341895",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -5910,16 +5780,6 @@
     },
     {
       "id": "osm-way-938087083",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-310224625",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -6879,16 +6739,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-446495636",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-616542990",
       "score": 60,
       "tier": 3,
@@ -6910,16 +6760,6 @@
     },
     {
       "id": "osm-way-223842677",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-310224626",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -7619,16 +7459,6 @@
       "needPhoto": false
     },
     {
-      "id": "wd-Q10981603",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "wd-Q110044390",
       "score": 60,
       "tier": 3,
@@ -8077,11 +7907,180 @@
       ],
       "needDescription": true,
       "needPhoto": false
+    },
+    {
+      "id": "wd-Q124475198",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q124476325",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q125365707",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q125392696",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q125429387",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q126087958",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q126088258",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q126920100",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q129167797",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q130371253",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q130372594",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q1313029",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q136648156",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q136651029",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q136651040",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q18519397",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q1867235",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
     }
   ],
   "ids": [
     "osm-way-490111575",
-    "osm-way-4010491",
     "osm-way-4554355",
     "osm-way-4007191",
     "osm-relation-3335698",
@@ -8153,6 +8152,7 @@
     "osm-way-4557217",
     "osm-way-4561927",
     "osm-way-4562744",
+    "osm-way-4010563",
     "osm-way-4561954",
     "osm-way-4554558",
     "osm-relation-3516651",
@@ -8171,25 +8171,10 @@
     "wd-Q6804126",
     "wd-Q6917510",
     "wd-Q7994722",
-    "osm-way-359435873",
-    "osm-relation-13365942",
-    "osm-way-219575236",
-    "osm-relation-9225240",
-    "osm-relation-16735230",
-    "osm-way-247487489",
-    "osm-way-290058068",
     "osm-way-4010536",
-    "osm-relation-9117800",
-    "osm-way-4012842",
-    "osm-way-59314679",
-    "osm-way-47903159",
     "osm-way-700654038",
     "osm-way-4002139",
-    "osm-way-59314506",
     "hook-island-w139412875",
-    "osm-way-59314342",
-    "osm-way-381672991",
-    "osm-way-59314639",
     "osm-way-238427341",
     "osm-way-238155325",
     "osm-way-191626774",
@@ -8199,7 +8184,6 @@
     "osm-way-239279392",
     "osm-way-48097346",
     "osm-way-236857280",
-    "osm-way-1387598959",
     "osm-way-209470263",
     "osm-way-226403270",
     "osm-way-1319819016",
@@ -8216,7 +8200,6 @@
     "wd-Q54191468",
     "wd-Q7848387",
     "wd-Q814804",
-    "osm-way-4010563",
     "bolands-rock",
     "brackinish-rock",
     "burren-rock",
@@ -8234,23 +8217,29 @@
     "the-nev",
     "valtos-rocks",
     "wd-Q1867249",
+    "wd-Q24636625",
     "wd-Q25634954",
     "wd-Q25634959",
     "wd-Q25635110",
     "wd-Q26718719",
     "osm-way-4563739",
+    "osm-relation-3622036",
     "osm-relation-3335585",
     "osm-relation-6836978",
     "osm-way-4559561",
     "osm-way-4562121",
     "osm-way-93351277",
+    "osm-way-4561753",
+    "osm-way-4562742",
     "osm-way-4563029",
     "osm-way-375708564",
     "osm-way-178144112",
     "osm-relation-4077820",
     "osm-relation-11587635",
     "osm-way-4561685",
+    "osm-way-4561249",
     "osm-way-44954829",
+    "osm-way-4561252",
     "osm-way-4562821",
     "osm-relation-3581015",
     "osm-way-4559337",
@@ -8258,6 +8247,7 @@
     "osm-way-65712514",
     "osm-way-4559338",
     "osm-way-47702827",
+    "osm-way-249509105",
     "osm-way-4563622",
     "osm-way-4560457",
     "osm-relation-5208398",
@@ -8267,13 +8257,18 @@
     "osm-way-4561972",
     "osm-relation-3998532",
     "osm-way-345094290",
+    "osm-way-335324937",
     "osm-way-903949864",
     "osm-way-938083302",
     "wd-Q104256098",
     "wd-Q104322906",
+    "wd-Q112131366",
     "wd-Q116505278",
     "wd-Q123485102",
     "wd-Q130372994",
+    "wd-Q13132554",
+    "wd-Q20586546",
+    "wd-Q20622863",
     "wd-Q24636700",
     "wd-Q24638069",
     "wd-Q24638982",
@@ -8314,13 +8309,13 @@
     "wd-Q27118667",
     "wd-Q27118686",
     "wd-Q27118715",
+    "wd-Q65295445",
     "osm-relation-8202107",
     "osm-relation-8609284",
     "osm-relation-9734931",
     "osm-relation-6565329",
     "osm-way-49024605",
     "osm-relation-3395357",
-    "osm-way-248703441",
     "osm-way-4913801",
     "osm-way-367724521",
     "osm-way-4557014",
@@ -8340,7 +8335,6 @@
     "osm-way-65712541",
     "osm-way-45181422",
     "osm-way-4554655",
-    "osm-way-4561049",
     "osm-way-4557268",
     "osm-way-4561907",
     "osm-way-209273199",
@@ -8369,7 +8363,6 @@
     "osm-way-251050444",
     "osm-relation-6565331",
     "osm-way-4563872",
-    "osm-way-4560604",
     "osm-way-4009731",
     "osm-way-25382322",
     "osm-way-201107677",
@@ -8391,7 +8384,6 @@
     "osm-way-200815442",
     "osm-way-127628517",
     "osm-relation-3998518",
-    "osm-way-4561715",
     "osm-way-127628516",
     "osm-way-4558951",
     "osm-way-200613540",
@@ -8427,7 +8419,6 @@
     "osm-way-44964373",
     "osm-way-4004033",
     "osm-way-3618196",
-    "osm-way-209876024",
     "osm-way-127628518",
     "osm-way-249299551",
     "osm-way-210085053",
@@ -8539,7 +8530,6 @@
     "osm-way-200762485",
     "osm-way-4009677",
     "osm-way-25382151",
-    "osm-way-59314609",
     "osm-way-262432178",
     "osm-way-625108729",
     "osm-way-133154542",
@@ -8556,7 +8546,6 @@
     "osm-way-4562002",
     "osm-way-885235015",
     "osm-way-4559198",
-    "osm-way-59314610",
     "osm-way-4554785",
     "osm-way-37770316",
     "osm-relation-7282328",
@@ -8565,7 +8554,6 @@
     "osm-way-157530147",
     "osm-way-93221320",
     "osm-way-202754661",
-    "osm-way-4554779",
     "osm-way-4564161",
     "osm-way-4009710",
     "osm-way-35536169",
@@ -8573,7 +8561,6 @@
     "osm-way-405130618",
     "osm-way-255265384",
     "osm-way-867217389",
-    "osm-way-207341895",
     "osm-way-4009675",
     "osm-way-4561926",
     "osm-way-47704657",
@@ -8664,7 +8651,6 @@
     "osm-way-4009565",
     "osm-way-6135677",
     "osm-way-938087083",
-    "osm-way-310224625",
     "osm-way-130435031",
     "osm-way-428793502",
     "osm-relation-17814917",
@@ -8760,11 +8746,9 @@
     "osm-way-223611529",
     "osm-way-229408462",
     "osm-way-28271542",
-    "osm-way-446495636",
     "osm-way-616542990",
     "osm-relation-3187245",
     "osm-way-223842677",
-    "osm-way-310224626",
     "osm-way-349633057",
     "wd-Q56663107",
     "osm-relation-18028211",
@@ -8834,7 +8818,6 @@
     "wd-Q109568557",
     "wd-Q109570097",
     "wd-Q109787110",
-    "wd-Q10981603",
     "wd-Q110044390",
     "wd-Q110207998",
     "wd-Q112945058",
@@ -8879,6 +8862,23 @@
     "wd-Q124343669",
     "wd-Q124343695",
     "wd-Q124372734",
-    "wd-Q124378363"
+    "wd-Q124378363",
+    "wd-Q124475198",
+    "wd-Q124476325",
+    "wd-Q125365707",
+    "wd-Q125392696",
+    "wd-Q125429387",
+    "wd-Q126087958",
+    "wd-Q126088258",
+    "wd-Q126920100",
+    "wd-Q129167797",
+    "wd-Q130371253",
+    "wd-Q130372594",
+    "wd-Q1313029",
+    "wd-Q136648156",
+    "wd-Q136651029",
+    "wd-Q136651040",
+    "wd-Q18519397",
+    "wd-Q1867235"
   ]
 }

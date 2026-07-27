@@ -2718,3 +2718,28 @@ loop (`descriptions+photos-gap`, cycle 17).
   **+2** photos; nation hubs richer (ferry links, CollectionPage JSON-LD, 48 notables).
 - **Outcome**: avg **47.5**, photos **4,356**, both% **18.3**; loop PID **19423**.
 - **Open**: Deploy hub HTML + photo data; Wikidata sitelinks for desc yield.
+
+## 2026-07-27 — Agent discovery unlock (+174 islands)
+
+- **Goal**: Continue finding new islands after overnight added only +1 entity.
+- **Agents**: diagnose gap verify failures; Wikidata SPARQL harvester; map/OpenSeaMap scan.
+- **Root cause**: `source_verifier` required Wikidata for GeoNames gaps → 92% reject;
+  GeoNames "gaps" mostly false (name_key missed "island of"; 1 km too tight).
+- **What changed**:
+  - Fixed `discovery/common.name_key`; `refine_geonames_gaps.py` (378→179 strict);
+  - Verifier accepts OSM + GeoNames/SSI open provenance (with mistag filters);
+  - `discover_openseamap_rocks.py` (12 candidates); `discover_wikidata_gaps.py` (0 gaps — already harvested);
+  - Apply **+187**, scrubbed 13 false positives (Great Britain, Mynydd Bodafon, salt marshes, …).
+- **Outcome**: Atlas **11,380 → 11,554 (+174)**; index rebuilt.
+- **Open**: OS Open Names still blocked on API key; review unconfirmed classification on new rows; Gallant Buoys / chart rocks may need seamark subtype review.
+
+
+## 2026-07-27 — SEO/GEO sitelink preflight + multilang descriptions
+
+- **Goal**: Unblock dry Wikipedia description enrich (enwiki-exhausted) via Wikidata sitelink harvest + Celtic/Scots leads.
+- **What changed**:
+  - Extended `scripts/enrich_descriptions_wikipedia.py`: batched `wbgetentities` preflight (`--prefetch-sitelinks` / `--refresh-sitelinks`), `wdsl:` multilang map in `cache_wp_lead_extracts.json`, `--multilang` gd/cy/ga/sco/gv extracts, title-match + hill/loch rejection.
+  - Prefetch **1,569** Q-IDs → **37** enwiki + **75** any preferred sitelink; limited enrich pass; reverted **12** bad sitelink/hill/loch adoptions.
+  - Rebuilt index + SEO artifacts; audit refreshed.
+- **Outcome / counts**: Adopted **+45** (en 12, gd 11, ga 14, cy 8). Desc **1,566→1,611**; avg **47.5→47.75**; both% **18.3→18.7**; photos **4,356** unchanged. Loop PID **19423** alive.
+- **Open**: Remaining preferred-sitelink pool thin (~30 after QA); wider langs (fr/de) or LLM descriptions next; keep title-gate tight.
