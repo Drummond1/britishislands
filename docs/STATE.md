@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-27 (overnight SEO/GEO autonomous)** — Armed `scripts/run_overnight_seo_geo.sh --loop` (**8 h**, **45 min** cycles). Self-contained: rotates `run_seo_geo_improvement.sh` + multilang descriptions + photo-gap harvest; rebuilds `/islands/` artifacts; auto-pushes on score gains (`SEO_GEO_OVERNIGHT_PUSH=1`). Lock `data/.overnight_seo_geo.lock`. Replaces agent-wake hourly loop (PID 19423 stopped).
+
 **2026-07-27 (SEO/GEO sitelink+multilang desc)** — Batch Wikidata sitelink
 preflight (`wdsl:`) + gd/cy/ga/en Wikipedia lead extracts: **+45**
 shortDescriptions after QA (57 raw − 12 wrong sitelink/hill/loch). Scores
@@ -826,7 +828,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `AGENT_LOOP_TICK_seo_geo` (hourly) | 2026-07-27 06:19 BST | recurring | cursor agent | PID **19423**. `run_seo_geo_improvement.sh` + `--include-exhausted` fallback. Lock `data/.seo_geo_improvement.lock`. |
+| `run_overnight_seo_geo.sh --loop` | 2026-07-27 | ~8 h | autonomous bash | PID **26495** (`data/.overnight_seo_geo.pid`). Lock `data/.overnight_seo_geo.lock`. Auto-push on gains. |
+| ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash. |
 | ~~`enrich_descriptions_wikipedia.py` sitelink+multilang~~ ✅ | 2026-07-27 ~06:25 BST | — | cursor subagent | Prefetch + multilang pass; **+45** desc after QA. |
 | ~~`run_overnight_discovery_naming.sh --loop`~~ ✅ finished 2026-07-27 04:27 UTC | — | — | cursor agent | 8 cycles; +1 island overnight; naming −27. Superseded by discovery unlock (+174). |
 | _(idle photo continuous)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342**. Re-arm `run_continuous_improvement.sh` on request. |

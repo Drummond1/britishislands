@@ -733,6 +733,19 @@
       "tier": "atlas"
     },
     {
+      "id": "osm-way-490111575",
+      "name": "Skeo of Holm",
+      "nation": "Scotland",
+      "type": "sea",
+      "lat": 60.32941,
+      "lng": -1.02524,
+      "shortDescription": "The Holm of Sandwick is an islet, located roughly 100 metres (330 ft) off Haa Ness and the southwestern side of Whalsay, in the Shetland Islands of Scotland. The small groups of islets to the west are called the Flaeshans of Sandwick.",
+      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clett_Head%2C_Whalsay%2C_Shetland_-_geograph.org.uk_-_145740.jpg?width=640",
+      "hasPhoto": true,
+      "ferry": true,
+      "tier": "atlas"
+    },
+    {
       "id": "osm-way-1150257129",
       "name": "Inner Holm",
       "nation": "Scotland",
@@ -780,6 +793,19 @@
       "lng": -6.31088,
       "shortDescription": "North/Tresco area",
       "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Newford_Island%2C_Porth_Loo%2C_St._Mary%27s_-_geograph.org.uk_-_929337.jpg?width=640",
+      "hasPhoto": true,
+      "ferry": true,
+      "tier": "atlas"
+    },
+    {
+      "id": "osm-way-4010491",
+      "name": "Ciosmul",
+      "nation": "Scotland",
+      "type": "sea",
+      "lat": 56.95211,
+      "lng": -7.48731,
+      "shortDescription": "Kisimul Castle (Scottish Gaelic: Caisteal Chiosmuil) and also known as Kiessimul Castle, is a medieval castle located on a small island off Castlebay, Barra, in the Outer Hebrides, Scotland. It gets its name from the Norse ciosamul, meaning \"castle island\".",
+      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kisimul_Castle_20090609.jpg?width=640",
       "hasPhoto": true,
       "ferry": true,
       "tier": "atlas"
@@ -1534,32 +1560,6 @@
       "lng": -5.61756,
       "shortDescription": "Pop. 580; Bridge over the Atlantic",
       "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clachan_Bridge_2005-05-07.jpg?width=640",
-      "hasPhoto": true,
-      "ferry": false,
-      "tier": "atlas"
-    },
-    {
-      "id": "osm-relation-6046609",
-      "name": "Isle of Walney",
-      "nation": "England",
-      "type": "sea",
-      "lat": 54.0989,
-      "lng": -3.22236,
-      "shortDescription": "Walney Island, also known as the Isle of Walney, is an island off the west coast of England, at the western end of Morecambe Bay in the Irish Sea. The island is in Cumbria and is also located within the boundaries of the historic county of Lancashire.",
-      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jubilee.JPG?width=640",
-      "hasPhoto": true,
-      "ferry": false,
-      "tier": "atlas"
-    },
-    {
-      "id": "osm-relation-8249591",
-      "name": "Foula",
-      "nation": "Scotland",
-      "type": "sea",
-      "lat": 60.13379,
-      "lng": -2.07791,
-      "shortDescription": "Pop. 17; remote",
-      "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ham_Foula.jpg?width=640",
       "hasPhoto": true,
       "ferry": false,
       "tier": "atlas"

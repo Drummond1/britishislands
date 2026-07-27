@@ -2743,3 +2743,12 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Rebuilt index + SEO artifacts; audit refreshed.
 - **Outcome / counts**: Adopted **+45** (en 12, gd 11, ga 14, cy 8). Desc **1,566→1,611**; avg **47.5→47.75**; both% **18.3→18.7**; photos **4,356** unchanged. Loop PID **19423** alive.
 - **Open**: Remaining preferred-sitelink pool thin (~30 after QA); wider langs (fr/de) or LLM descriptions next; keep title-gate tight.
+
+## 2026-07-27 — Autonomous overnight SEO/GEO loop
+
+- **Goal**: Run SEO/GEO improvements overnight without agent input.
+- **What changed**: Added `scripts/run_overnight_seo_geo.sh` (self-contained cycles:
+  rotate enrichment, multilang descriptions, photo gaps, rebuild artifacts,
+  optional auto-push). Stopped agent-wake `AGENT_LOOP_TICK_seo_geo` (PID 19423).
+- **Open**: Loop runs ~8 h; check `logs/overnight-seo-geo-*.log` and
+  `data/.overnight_seo_geo_state.json` in the morning.

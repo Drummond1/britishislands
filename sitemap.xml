@@ -391,6 +391,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://www.findmyisland.com/islands/scotland/ciosmul/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://www.findmyisland.com/islands/ireland/clare-island/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -464,12 +470,6 @@
   </url>
   <url>
     <loc>https://www.findmyisland.com/islands/scotland/fetlar/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.findmyisland.com/islands/scotland/foula/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -601,12 +601,6 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.findmyisland.com/islands/england/isle-of-walney/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://www.findmyisland.com/islands/scotland/jura/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -728,6 +722,12 @@
   </url>
   <url>
     <loc>https://www.findmyisland.com/islands/scotland/shetland/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/islands/scotland/skeo-of-holm/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -4406,12 +4406,6 @@
   </url>
   <url>
     <loc>https://www.findmyisland.com/islands/england/cindery-island-osm-way-65017623/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
-  <url>
-    <loc>https://www.findmyisland.com/islands/scotland/ciosmul/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
@@ -10531,6 +10525,12 @@
     <priority>0.55</priority>
   </url>
   <url>
+    <loc>https://www.findmyisland.com/islands/scotland/foula/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
     <loc>https://www.findmyisland.com/islands/england/foulney-island/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -15302,6 +15302,12 @@
   </url>
   <url>
     <loc>https://www.findmyisland.com/islands/scotland/isle-of-the-blacksmith/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/islands/england/isle-of-walney/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
@@ -22856,12 +22862,6 @@
   </url>
   <url>
     <loc>https://www.findmyisland.com/islands/ireland/skeam-east/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
-  <url>
-    <loc>https://www.findmyisland.com/islands/scotland/skeo-of-holm/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>

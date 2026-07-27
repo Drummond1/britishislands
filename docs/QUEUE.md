@@ -4,6 +4,12 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
+## P0 — overnight SEO/GEO (armed)
+
+- **[in flight]** `bash scripts/run_overnight_seo_geo.sh --loop` — autonomous 8 h /
+  45 min cycles. No agent wake required. Auto-push when avg/desc/photo improve.
+  Lock: `data/.overnight_seo_geo.lock`. See `docs/SEO-GEO.md`.
+
 ## P0 — GSC-driven SEO loop (armed 2026-07-26)
 
 - **[in flight]** `scripts/run_gsc_driven_seo.sh` every **60 min** (sentinel
@@ -46,14 +52,18 @@
 
 ## P0 — currently in flight
 
+- **[in flight] Overnight discovery + naming (2026-07-26)** —
+  `bash scripts/run_overnight_discovery_naming.sh --loop` (8 h). N7 GeoNames
+  reverse already **−140** unnamed (4310→4170). Cycles: D5/D6 + N7–N10 + N3–N5
+  rotate → verify → merge → apply gaps → index. Check morning:
+  `data/.overnight_discovery_naming_state.json` + `logs/overnight-discovery-naming-*.log`.
 - **[in flight] Priority naming push N1–N6** — `docs/NAMING-SOURCES.md`;
-  `run_priority_naming_push.sh`. **N1–N6 implemented**; N1/N2 need API keys +
-  data files. Baseline **4,310** unnamed (heritage/ohsome yields sparse on random
-  samples — run full pass).
-- **[in flight] Priority discovery push D1–D4** — `docs/DISCOVERY-PUSH.md`;
-  `run_priority_discovery_push.sh`. **D1 GeoNames: 378 gap candidates** staged;
-  D2 Wikipedia coords: 10 gaps (re-run after 429 cooldown). Review via
-  `discover_islands_pipeline.py` verifier → `site_update --apply`.
+  `run_priority_naming_push.sh`. **N1–N10 implemented**; N1/N2 need API keys +
+  data files. Baseline now **~4,170** unnamed after N7 confirm.
+- **[in flight] Priority discovery push D1–D6** — `docs/DISCOVERY-PUSH.md`;
+  `run_priority_discovery_push.sh` + overnight. **D6 seal haul-outs: 16** gap
+  candidates; apply pass verified-but-matched (0 new entities this batch).
+  Review via `discover_islands_pipeline.py` verifier → `site_update --apply`.
 - **Priority photo push P1–P5** — `scripts/run_priority_photo_push.sh` (grid fix
   applied **2026-06-11**; first merge **+1**). Re-run with `PHOTO_PUSH_LIMIT=200`;
   add `FLICKR_API_KEY` to `.env.local` for P3. Continuous loop now includes P1–P5
@@ -335,6 +345,17 @@ for source / licence / refresh-cadence detail.
   badge for `tier-d`) or keep it hidden?
 - Privacy: should we suppress islands with a single named resident? See
   `ETHICS.md` §5.
+
+## P2 — Wikidata bbox v2 (2026-07-27)
+
+- `discover_wikidata_gaps.py`'s country-statement scope is exhausted (0 gaps,
+  see SESSION-LOG). Real remaining yield is Wikidata items **without** a
+  `P17` country statement (bot-imported islet/skerry/tidal-island/lake-island
+  stubs). A v2 needs: (a) explicit class allowlist (exclude reef/shoal/
+  crannog/energy-island — confirmed noise), (b) per-`NATION_BOXES` tiled
+  queries to stay under WDQS's cost limit (whole-bbox + class filter 502'd
+  twice), (c) a spatial index (e.g. simple lat/lng grid bucket) for the match
+  pass since candidate counts could be in the tens of thousands.
 
 ---
 
