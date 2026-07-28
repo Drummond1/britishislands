@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (continuous SEO/GEO loop armed)** — Replaced time-boxed overnight with `scripts/run_continuous_seo_geo.sh --loop` (strategy-aligned 5-phase rotation; no deindex). Strategy doc in-repo: `docs/SEO-GEO-STRATEGY.md`. Stop via `data/.continuous_seo_geo.stop`.
+
 **2026-07-28 (batch 2 CWV + GEO + flagship depth)** — Non-blocking homepage/landing fonts; landing hero `fetchpriority=high` + reserved aspect-ratio; Names/Geology sections + collection cross-links on island landings; richer collection hub blurbs; GEO prompt set expanded to **50** + `scripts/run_geo_prompt_benchmark.py`. Production deploy `9c8afb78` live (`/about/`, `/collections/`, sitemap index).
 
 **2026-07-28 (SEO/GEO phase 1-3 foundations)** — Reworked SEO artifacts for people-first indexation without deindexing: JSON-LD `Landform` + identifiers; segmented sitemap index (`core`, `islands-editorial`, `islands`, `ferries-verified`, `collections`); trust pages (`/about/`, `/methodology/`, `/editorial-policy/`, `/corrections/`, `/sources-licensing/`, `/contact/`, `/dataset/`); new collection hubs (`/collections/*`) including `flagship-islands` (30 profiles); richer canonical island landing template (breadcrumbs, section blocks, sources, related links).
@@ -836,8 +838,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| ~~`run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28 05:05 UTC | 2026-07-27 | — | autonomous bash | **11** cycles; avg **47.78→47.81**, desc **1,617→1,621**, photos flat **4,356**. Commit `e6d8bf3a` local (push failed overnight). |
-| ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash. |
+| `run_continuous_seo_geo.sh --loop` (PID **96180**) | 2026-07-28 18:07 BST | ongoing | autonomous bash | Strategy-aligned continuous SEO/GEO. Lock `data/.continuous_seo_geo.lock`. Stop: `touch data/.continuous_seo_geo.stop`. Policy: **no deindex**. Log: `logs/continuous-seo-geo-20260728T170717Z.log`. |
+| ~~`run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28 05:05 UTC | 2026-07-27 | — | autonomous bash | **11** cycles; avg **47.78→47.81**, desc **1,617→1,621**, photos flat **4,356**. Superseded by continuous loop. |
+| ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash, then continuous. |
 | ~~`enrich_descriptions_wikipedia.py` sitelink+multilang~~ ✅ | 2026-07-27 ~06:25 BST | — | cursor subagent | Prefetch + multilang pass; **+45** desc after QA. |
 | ~~`run_overnight_discovery_naming.sh --loop`~~ ✅ finished 2026-07-27 04:27 UTC | — | — | cursor agent | 8 cycles; +1 island overnight; naming −27. Superseded by discovery unlock (+174). |
 | _(idle photo continuous)_ | — | — | — | Priority push **2026-06-11**: **4,341→4,342**. Re-arm `run_continuous_improvement.sh` on request. |

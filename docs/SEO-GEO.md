@@ -171,9 +171,43 @@ done
 Env knobs: `IOB_SITE_ORIGIN`, `SEO_GEO_DESC_LIMIT` (default 60),
 `SEO_GEO_PHOTO_LIMIT` (default 80).
 
-## Overnight autonomous loop (no agent wake)
+## Continuous strategy loop (preferred)
 
-Self-contained bash — runs enrichment without Cursor chat ticks:
+Primary autonomous runner for the 90-day strategy in
+[`SEO-GEO-STRATEGY.md`](SEO-GEO-STRATEGY.md). **Does not stop after 8 hours** —
+runs until a stop file, optional max cycles/hours, or process kill.
+
+```bash
+# Detached continuous loop (45 min between cycles; auto-push on gains)
+nohup env SEO_GEO_CONTINUOUS_PUSH=1 SEO_GEO_SLEEP_SEC=2700 \
+  bash scripts/run_continuous_seo_geo.sh --loop \
+  >> logs/continuous-seo-geo.out 2>&1 &
+
+# Stop cleanly
+touch data/.continuous_seo_geo.stop
+```
+
+Phase rotation (5-cycle):
+
+| Phase | Focus |
+|-------|--------|
+| descriptions | Wikipedia/multilang leads for entity/GEO answers |
+| photos | OG images + named photo-gap harvest |
+| featured-flagship | Featured/topics + flagship editorial audit + desc |
+| authority-artifacts | Landings/hubs/trust/sitemaps + GEO benchmark stub + live probes |
+| gsc-priority | GSC snapshot-driven enrichment when available |
+
+**Policy:** improve coverage and landings; **do not noindex/deindex** Tier C
+atlas pages (project override vs strategy §1). Lock:
+`data/.continuous_seo_geo.lock`. State:
+`data/.continuous_seo_geo_state.json`. History:
+`data/seo_geo_continuous_history.jsonl`.
+
+## Overnight autonomous loop (time-boxed)
+
+Fixed window (default 8 h). Prefer the continuous loop above for ongoing work.
+Set `SEO_GEO_USE_CONTINUOUS=1` to delegate overnight `--loop` to the continuous
+runner with `SEO_GEO_MAX_HOURS=8`.
 
 ```bash
 OVERNIGHT_HOURS=8 OVERNIGHT_SLEEP_SEC=2700 SEO_GEO_OVERNIGHT_PUSH=1 \

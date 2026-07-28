@@ -4,11 +4,18 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
-## P0 — overnight SEO/GEO (armed)
+## P0 — continuous SEO/GEO (armed)
 
-- **[in flight]** `bash scripts/run_overnight_seo_geo.sh --loop` — autonomous 8 h /
-  45 min cycles. No agent wake required. Auto-push when avg/desc/photo improve.
-  Lock: `data/.overnight_seo_geo.lock`. See `docs/SEO-GEO.md`.
+- **[in flight]** `bash scripts/run_continuous_seo_geo.sh --loop` — continuous
+  strategy-aligned cycles (descriptions → photos → flagship → authority → GSC).
+  Does **not** stop after 8 h. Stop: `touch data/.continuous_seo_geo.stop`.
+  Lock: `data/.continuous_seo_geo.lock`. Strategy: `docs/SEO-GEO-STRATEGY.md`
+  (no deindex). See `docs/SEO-GEO.md`.
+
+## P0 — overnight SEO/GEO (superseded by continuous)
+
+- ~~`bash scripts/run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28;
+  replaced by continuous loop above. Overnight remains for time-boxed runs.
 
 ## P0 — GSC-driven SEO loop (armed 2026-07-26)
 

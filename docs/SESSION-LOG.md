@@ -2799,3 +2799,15 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Expanded GEO prompts to **50**; added `scripts/run_geo_prompt_benchmark.py` (weekly stub + archive under `data/geo_prompt_benchmark_runs/`).
 - **Outcome**: Live `/about/`, `/collections/flagship-islands/`, sitemap index verified 200. Batch 2 ready for follow-up push.
 - **Open items kicked to QUEUE.md**: Batch 3 GSC indexing requests + first scored GEO run; optional self-hosted fonts.
+
+
+## 2026-07-28 — Continuous SEO/GEO strategy loop
+
+- **Goal**: Replace the 8-hour overnight stopper with a continuous, strategy-aligned improver.
+- **What changed**:
+  - Added `scripts/run_continuous_seo_geo.sh` — runs until stop file / optional max hours/cycles; rotates descriptions → photos → flagship → authority artifacts → GSC; auto-push on gains; **no deindex**.
+  - Copied strategy into `docs/SEO-GEO-STRATEGY.md` with project override note.
+  - Documented in `docs/SEO-GEO.md`, `INDEX.md`, `QUEUE.md`, `STATE.md`.
+  - Overnight script can delegate via `SEO_GEO_USE_CONTINUOUS=1`.
+- **Outcome**: Continuous loop armed (see STATE Currently running).
+- **Open items kicked to QUEUE.md**: Monitor first continuous cycles; fill scored GEO benchmark when ready.

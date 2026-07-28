@@ -24,6 +24,7 @@ Single map of every document in this repository. Always start at the top.
 | [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec with every field, type, and example. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
 | [`SEO-GEO.md`](SEO-GEO.md) | Island SEO + JSON-LD; **`/islands/{nation}/{slug}/` URLs**; sitemap / `llms.txt`; continuous SEO/GEO loop. |
+| [`SEO-GEO-STRATEGY.md`](SEO-GEO-STRATEGY.md) | Full SEO+GEO strategy brief (90-day roadmap). Continuous loop follows this with no-deindex override. |
 | [`GEO-BENCHMARK.md`](GEO-BENCHMARK.md) | Weekly GEO benchmark cadence: prompt set, citation tracking, and accuracy KPIs. |
 | [`GSC-CTR-FINDINGS.md`](GSC-CTR-FINDINGS.md) | Search Console diagnosis: impressions without clicks; position filters; URL inspection; winnable queries. |
 | [`SUPABASE.md`](SUPABASE.md) | Supabase project setup, schema, RLS, keys, storage bucket. |
