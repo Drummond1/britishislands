@@ -370,5 +370,7 @@ for source / licence / refresh-cadence detail.
 
 ## P0 — SEO/GEO 90-day execution (rolling)
 
-- **[in flight]** Batch 2: expand flagship editorial sections and improve CWV (LCP/CLS) on homepage + canonical island landings.
-- **[pending]** Wire weekly GEO prompt benchmark run into reporting snapshots.
+- ~~Batch 2: expand flagship editorial sections and improve CWV (LCP/CLS) on homepage + canonical island landings.~~ ✅ See SESSION-LOG 2026-07-28 batch 2.
+- ~~Wire weekly GEO prompt benchmark run into reporting snapshots.~~ ✅ `scripts/run_geo_prompt_benchmark.py` + 50-prompt set.
+- **[pending]** Batch 3: request GSC indexing on hubs + top flagship `/islands/` URLs; fill first scored GEO benchmark run; deepen ferry hub last-verified dates.
+- **[pending]** Homepage LCP follow-up: measure field CWV after font change; consider self-hosting DM Serif / Source Sans if third-party fonts remain a bottleneck.

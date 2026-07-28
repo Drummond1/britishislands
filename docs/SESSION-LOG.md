@@ -2788,3 +2788,14 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Added GEO benchmark scaffolding: `docs/GEO-BENCHMARK.md`, `data/geo_prompt_benchmark_prompts.json`, `data/geo_prompt_benchmark_latest.json`.
 - **Outcome / counts**: Sitemap now split for diagnostics and crawl control; trust/governance pages are live in build output; flagship collection includes **30** profiles; all island/static JSON-LD now valid `Landform`.
 - **Open items kicked to QUEUE.md**: Continue expanding editorial depth and CWV optimizations in subsequent batches.
+
+
+## 2026-07-28 — Push SEO/GEO foundation + batch 2 (CWV / GEO / flagship depth)
+
+- **Goal**: Ship phase 1–3 foundations to production, then continue next plan items.
+- **What changed**:
+  - Deployed `9c8afb78` to `main` / GitHub Pages — trust pages, collections, segmented sitemaps, Burgh Island OSM fix, for-sale popup shard load, Landform schema.
+  - Batch 2: non-blocking fonts on homepage + landings; hero image `fetchpriority=high` + `.lp-media` aspect-ratio; Names from `names{}` + Geology sections; archipelago → `/collections/` links; richer collection blurbs/counts.
+  - Expanded GEO prompts to **50**; added `scripts/run_geo_prompt_benchmark.py` (weekly stub + archive under `data/geo_prompt_benchmark_runs/`).
+- **Outcome**: Live `/about/`, `/collections/flagship-islands/`, sitemap index verified 200. Batch 2 ready for follow-up push.
+- **Open items kicked to QUEUE.md**: Batch 3 GSC indexing requests + first scored GEO run; optional self-hosted fonts.

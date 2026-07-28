@@ -82,10 +82,19 @@
     <link rel="modulepreload" href="app.js" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <a class="skip-link" href="#sidebar">Skip to island list</a>

@@ -98,6 +98,18 @@ TRUST_PAGES: dict[str, str] = {
     "/dataset/": "Dataset",
 }
 
+NAME_LANG_LABELS: dict[str, str] = {
+    "en": "English",
+    "gd": "Scottish Gaelic",
+    "ga": "Irish",
+    "cy": "Welsh",
+    "gv": "Manx",
+    "kw": "Cornish",
+    "sco": "Scots",
+    "fr": "French",
+    "alt": "Also known as",
+}
+
 
 def load_id_set(path: Path) -> set[str]:
     if not path.is_file():
@@ -310,9 +322,49 @@ def profile_page_html(
         )
 
     section_chunks: list[str] = []
+    overview = str(isl.get("description") or "").strip()
+    short = str(isl.get("shortDescription") or "").strip()
+    if overview and overview != short:
+        section_chunks.append(
+            '  <section class="lp-section"><h2 class="lp-section-title">Overview</h2>'
+            f"<p>{html.escape(overview)}</p></section>"
+        )
+
+    names_value = str(isl.get("namesSummary") or "").strip()
+    if not names_value:
+        names_obj = isl.get("names")
+        if isinstance(names_obj, dict):
+            bits: list[str] = []
+            primary = str(isl.get("name") or "").strip().lower()
+            for code, label in NAME_LANG_LABELS.items():
+                raw = names_obj.get(code)
+                if not raw:
+                    continue
+                text = str(raw).strip()
+                if not text:
+                    continue
+                if code == "en" and text.lower() == primary:
+                    continue
+                bits.append(f"{label}: {text}")
+            # Deduplicate while preserving order
+            seen: set[str] = set()
+            ordered: list[str] = []
+            for bit in bits:
+                key = bit.lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                ordered.append(bit)
+            names_value = "; ".join(ordered)
+    if names_value:
+        section_chunks.append(
+            '  <section class="lp-section"><h2 class="lp-section-title">Names</h2>'
+            f"<p>{html.escape(names_value)}</p></section>"
+        )
+
     section_map = [
-        ("Names", "namesSummary"),
         ("Geography", "geography"),
+        ("Geology", "geology"),
         ("History", "history"),
         ("Wildlife and conservation", "wildlife"),
         ("How to reach it", "transport"),
@@ -354,14 +406,27 @@ def profile_page_html(
         hub = (
             f'  <p class="lp-note">Part of the '
             f'<a href="/islands/{html.escape(seg, quote=True)}/">'
-            f"{nation or seg} islands map</a>.</p>\n"
+            f"{nation or seg} islands map</a>"
         )
+        arch = str(isl.get("archipelago") or "").strip()
+        collection_slug = ""
+        for spec in collection_specs():
+            want = str(spec.get("match_archipelago") or "").lower()
+            if want and want in arch.lower():
+                collection_slug = spec["slug"]
+                break
+        if collection_slug:
+            hub += (
+                f' and the <a href="/collections/{html.escape(collection_slug, quote=True)}/">'
+                f"{html.escape(arch)}</a> collection"
+            )
+        hub += ".</p>\n"
 
     img_block = ""
     if img:
         img_block = (
             f'  <figure class="lp-media"><img src="{html.escape(img, quote=True)}" '
-            f'alt="{name}" width="960" height="540" loading="lazy" decoding="async"/></figure>\n'
+            f'alt="{name}" width="960" height="540" fetchpriority="high" decoding="async"/></figure>\n'
         )
 
     assets = landing_head_assets(depth)
@@ -645,16 +710,66 @@ def trust_page_html(*, title: str, lede: str, body: list[str], canonical: str, d
 
 def collection_specs() -> list[dict[str, str]]:
     return [
-        {"slug": "inner-hebrides", "title": "Inner Hebrides islands", "match_archipelago": "Inner Hebrides"},
-        {"slug": "outer-hebrides", "title": "Outer Hebrides islands", "match_archipelago": "Outer Hebrides"},
-        {"slug": "orkney", "title": "Orkney islands", "match_archipelago": "Orkney"},
-        {"slug": "shetland", "title": "Shetland islands", "match_archipelago": "Shetland"},
-        {"slug": "isles-of-scilly", "title": "Isles of Scilly", "match_archipelago": "Scilly"},
-        {"slug": "channel-islands", "title": "Channel Islands", "match_archipelago": "Channel Islands"},
-        {"slug": "aran-islands", "title": "Aran Islands", "match_archipelago": "Aran"},
-        {"slug": "loch-lomond", "title": "Islands of Loch Lomond", "match_parent": "Loch Lomond"},
-        {"slug": "lough-corrib", "title": "Islands of Lough Corrib", "match_parent": "Lough Corrib"},
-        {"slug": "thames-islands", "title": "Islands of the River Thames", "match_parent": "Thames"},
+        {
+            "slug": "inner-hebrides",
+            "title": "Inner Hebrides islands",
+            "match_archipelago": "Inner Hebrides",
+            "blurb": "Skye, Mull, Islay, Jura, and neighbouring Inner Hebridean islands — maps, ferry context, and island profiles.",
+        },
+        {
+            "slug": "outer-hebrides",
+            "title": "Outer Hebrides islands",
+            "match_archipelago": "Outer Hebrides",
+            "blurb": "Lewis and Harris, the Uists, Barra, and the wider Outer Hebrides chain on one atlas collection.",
+        },
+        {
+            "slug": "orkney",
+            "title": "Orkney islands",
+            "match_archipelago": "Orkney",
+            "blurb": "Mainland Orkney and the surrounding North Isles and South Isles with verified map profiles.",
+        },
+        {
+            "slug": "shetland",
+            "title": "Shetland islands",
+            "match_archipelago": "Shetland",
+            "blurb": "Shetland Mainland, Yell, Unst, and offshore isles across the northernmost British island group.",
+        },
+        {
+            "slug": "isles-of-scilly",
+            "title": "Isles of Scilly",
+            "match_archipelago": "Scilly",
+            "blurb": "St Mary's, Tresco, Bryher, St Agnes, St Martin's, and other Scilly islands off Cornwall.",
+        },
+        {
+            "slug": "channel-islands",
+            "title": "Channel Islands",
+            "match_archipelago": "Channel Islands",
+            "blurb": "Jersey, Guernsey, Alderney, Sark, and neighbouring Channel Islands on the Find My Island atlas.",
+        },
+        {
+            "slug": "aran-islands",
+            "title": "Aran Islands",
+            "match_archipelago": "Aran",
+            "blurb": "Inis Mór, Inis Meáin, and Inis Oírr — the Aran Islands of Galway Bay.",
+        },
+        {
+            "slug": "loch-lomond",
+            "title": "Islands of Loch Lomond",
+            "match_parent": "Loch Lomond",
+            "blurb": "Inland islands of Loch Lomond, including Inchmurrin and neighbouring loch isles.",
+        },
+        {
+            "slug": "lough-corrib",
+            "title": "Islands of Lough Corrib",
+            "match_parent": "Lough Corrib",
+            "blurb": "Mapped islands across Lough Corrib in County Galway.",
+        },
+        {
+            "slug": "thames-islands",
+            "title": "Islands of the River Thames",
+            "match_parent": "Thames",
+            "blurb": "Eyots and islands along the River Thames, from upstream reaches toward the estuary.",
+        },
     ]
 
 
@@ -682,13 +797,27 @@ def _collection_members(islands: list[dict], spec: dict[str, str], paths: dict[s
     return rows
 
 
-def collection_hub_html(*, title: str, canonical_url: str, items: list[tuple[str, str]], depth: int = 2) -> str:
+def collection_hub_html(
+    *,
+    title: str,
+    canonical_url: str,
+    items: list[tuple[str, str]],
+    depth: int = 2,
+    blurb: str | None = None,
+) -> str:
     assets = landing_head_assets(depth)
     li = "\n".join(
         f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(name)}</a></li>'
         for path, name in items[:250]
     )
-    desc = f"Browse mapped islands in this collection on Find My Island."
+    desc = (blurb or "").strip() or (
+        f"Browse {len(items)} mapped islands in this collection on Find My Island."
+    )
+    count_note = (
+        f'  <p class="lp-note">{len(items)} islands linked from this collection.</p>\n'
+        if items
+        else ""
+    )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -711,11 +840,13 @@ def collection_hub_html(*, title: str, canonical_url: str, items: list[tuple[str
       <a class="lp-brand" href="/">Find My Island</a>
     </nav>
     <header class="lp-hero">
+      <p class="lp-kicker">Collection</p>
       <h1>{html.escape(title)}</h1>
       <p class="lp-lede">{html.escape(desc)}</p>
       <a class="lp-cta" href="/">Open the map →</a>
+      <a class="lp-cta lp-cta--ghost" href="/collections/">All collections</a>
     </header>
-    <ul class="lp-list">
+{count_note}    <ul class="lp-list">
 {li}
     </ul>
   </div>
@@ -826,7 +957,16 @@ def asset_href_for_depth(depth: int, filename: str) -> str:
 def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
     landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    fonts = (
+        "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1"
+        "&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
+    )
     return (
+        '  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n'
+        '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>\n'
+        f'  <link rel="stylesheet" href="{fonts}" media="print" '
+        'onload="this.media=\'all\'"/>\n'
+        f'  <noscript><link rel="stylesheet" href="{fonts}"/></noscript>\n'
         f'  <link rel="stylesheet" href="{styles}"/>\n'
         f'  <link rel="stylesheet" href="{landing}"/>'
     )
@@ -1122,6 +1262,7 @@ Sitemap: {origin}/sitemap.xml
                     title=spec["title"],
                     canonical_url=f"{origin}/collections/{spec['slug']}/",
                     items=members,
+                    blurb=spec.get("blurb"),
                 ),
                 encoding="utf-8",
             )
@@ -1141,6 +1282,10 @@ Sitemap: {origin}/sitemap.xml
                 title="Flagship island profiles",
                 canonical_url=f"{origin}/collections/flagship-islands/",
                 items=flagship_links,
+                blurb=(
+                    "Editorially prioritised British and Irish island profiles with photos, "
+                    "facts, ferry context, and map links — starting points for atlas exploration."
+                ),
             ),
             encoding="utf-8",
         )

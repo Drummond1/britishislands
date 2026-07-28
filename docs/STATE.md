@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (batch 2 CWV + GEO + flagship depth)** — Non-blocking homepage/landing fonts; landing hero `fetchpriority=high` + reserved aspect-ratio; Names/Geology sections + collection cross-links on island landings; richer collection hub blurbs; GEO prompt set expanded to **50** + `scripts/run_geo_prompt_benchmark.py`. Production deploy `9c8afb78` live (`/about/`, `/collections/`, sitemap index).
+
 **2026-07-28 (SEO/GEO phase 1-3 foundations)** — Reworked SEO artifacts for people-first indexation without deindexing: JSON-LD `Landform` + identifiers; segmented sitemap index (`core`, `islands-editorial`, `islands`, `ferries-verified`, `collections`); trust pages (`/about/`, `/methodology/`, `/editorial-policy/`, `/corrections/`, `/sources-licensing/`, `/contact/`, `/dataset/`); new collection hubs (`/collections/*`) including `flagship-islands` (30 profiles); richer canonical island landing template (breadcrumbs, section blocks, sources, related links).
 
 **2026-07-28 (overnight SEO/GEO done)** — Loop finished after **11** cycles (~8 h). Scores: avg **47.78→47.81**, desc **1,617→1,621**, photos **4,356** (flat). Auto-push on cycle 1 failed (commit `e6d8bf3a` still local, `main` ahead 1).

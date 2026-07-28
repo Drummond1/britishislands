@@ -18,8 +18,19 @@ assistant-style answers (not just whether it is mentioned).
 
 Use `data/geo_prompt_benchmark_prompts.json`:
 
-- 50 prompts across maps, entity facts, comparisons, and transport intent.
+- **50** prompts across atlas-map, entity-fact, comparison, transport, language, for-sale, and authority intents.
 - Keep prompt wording stable to preserve comparability over time.
+
+## Runner
+
+```bash
+python3 scripts/run_geo_prompt_benchmark.py --assistant "ChatGPT" --model "…"
+# After manual scoring JSON:
+python3 scripts/run_geo_prompt_benchmark.py --from-scores path/to/scores.json
+```
+
+Writes `data/geo_prompt_benchmark_latest.json` and an append-only archive under
+`data/geo_prompt_benchmark_runs/`.
 
 ## Record per prompt
 
