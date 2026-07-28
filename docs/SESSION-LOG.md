@@ -2811,3 +2811,16 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Overnight script can delegate via `SEO_GEO_USE_CONTINUOUS=1`.
 - **Outcome**: Continuous loop armed (see STATE Currently running).
 - **Open items kicked to QUEUE.md**: Monitor first continuous cycles; fill scored GEO benchmark when ready.
+
+
+## 2026-07-28 — UX: simpler navigation
+
+- **Goal**: Make the atlas easier to navigate — fewer competing labels, clearer primary paths.
+- **What changed**:
+  - Topbar: **Collections** + **Ferries** + **Filter**; More → Saved / Contribute / About (Collections on mobile).
+  - Sidebar: **Browse** + orientation line; Notable → **Start here**; chips **Stories / Photos / Ferries / For sale** (no topic duplication; Unnamed under More filters).
+  - Profile: drop “Atlas” badge; **Share** / **Save**; **← Back**.
+  - Mobile: Map / **List** / Ask; clearer map hint.
+  - Empty state: Clear filters + Search again; count reads “N islands”.
+- **Outcome**: Local chrome/profile navigation simplified without redesigning the visual system.
+- **Open**: Deploy for live impact.

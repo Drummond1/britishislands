@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (UX navigate simplify)** — Clearer atlas chrome: Collections + Filter topbar; Browse/Start here/Show me chips; mobile Map/List/Ask; profile Share/Save + no Atlas badge; unnamed survey under More filters. Continuous SEO loop still armed.
+
 **2026-07-28 (continuous SEO/GEO loop armed)** — Replaced time-boxed overnight with `scripts/run_continuous_seo_geo.sh --loop` (strategy-aligned 5-phase rotation; no deindex). Strategy doc in-repo: `docs/SEO-GEO-STRATEGY.md`. Stop via `data/.continuous_seo_geo.stop`.
 
 **2026-07-28 (batch 2 CWV + GEO + flagship depth)** — Non-blocking homepage/landing fonts; landing hero `fetchpriority=high` + reserved aspect-ratio; Names/Geology sections + collection cross-links on island landings; richer collection hub blurbs; GEO prompt set expanded to **50** + `scripts/run_geo_prompt_benchmark.py`. Production deploy `9c8afb78` live (`/about/`, `/collections/`, sitemap index).

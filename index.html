@@ -141,15 +141,17 @@
       </div>
 
       <div class="topbar-actions">
-        <a class="topbar-link topbar-link--quiet" href="ferries/">Ferries</a>
+        <a class="topbar-link topbar-link--quiet" href="/collections/" title="Browse island groups">Collections</a>
+        <a class="topbar-link topbar-link--quiet" href="/ferries/" title="Ferry guides">Ferries</a>
         <button
           class="topbar-filters-toggle"
           id="filters-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="topbar-filters"
+          title="Filter the map and list"
         >
-          Filters
+          Filter
           <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
         </button>
         <div class="topbar-more" id="topbar-more">
@@ -160,7 +162,7 @@
             aria-expanded="false"
             aria-controls="topbar-more-menu"
             aria-haspopup="true"
-            title="More actions"
+            title="Saved islands and contribute"
           >
             More
           </button>
@@ -172,17 +174,31 @@
               role="menuitem"
               title="Your hearted islands (email required)"
             >
-              Saved islands
+              Saved
             </button>
             <button
               type="button"
               class="topbar-more__item"
               id="crowd-suggest-btn"
               role="menuitem"
-              title="Add a new pin, update a community pin, or suggest atlas changes"
+              title="Suggest a name, pin, or correction"
             >
               Contribute
             </button>
+            <a
+              class="topbar-more__item topbar-more__item--link topbar-more__item--mobile-only"
+              href="/collections/"
+              role="menuitem"
+            >
+              Collections
+            </a>
+            <a
+              class="topbar-more__item topbar-more__item--link"
+              href="/about/"
+              role="menuitem"
+            >
+              About
+            </a>
           </div>
         </div>
       </div>
@@ -240,6 +256,10 @@
               <option value="curated">Curated only</option>
               <option value="hide-unconfirmed" selected>Hide needs review</option>
             </select>
+            <label class="toggle" title="Show unnamed landmasses (survey overlay)">
+              <input type="checkbox" id="filter-unnamed" />
+              <span>Unnamed only</span>
+            </label>
             <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
               <input type="checkbox" id="crowd-show-toggle" checked />
               <span>Crowd pins</span>
@@ -268,16 +288,20 @@
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
         <section class="island-list" id="island-list-section">
           <header class="sidebar-section-header">
-            <h2 id="list-heading">Islands</h2>
+            <div class="sidebar-section-header__text">
+              <h2 id="list-heading">Browse</h2>
+              <p class="sidebar-orient" id="sidebar-orient">Search, or pick a notable island</p>
+            </div>
             <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
 
           <div class="sidebar-explore" id="sidebar-explore">
             <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
-              <h3 id="featured-heading" class="featured-strip__title">Notable</h3>
+              <h3 id="featured-heading" class="featured-strip__title">Start here</h3>
               <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
             </section>
             <div class="browse-quick" id="browse-quick" aria-label="Quick filters">
+              <p class="browse-quick__label" id="browse-quick-label">Show me</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
             <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
@@ -423,7 +447,7 @@
               type="button"
               aria-label="Back to island list"
             >
-              ← Islands
+              ← Back
             </button>
             <div class="details-toolbar__actions" id="details-toolbar-actions"></div>
           </header>
@@ -534,7 +558,7 @@
           <span class="map-island-peek__cta">View island →</span>
         </button>
         <div id="map-hint" class="map-hint" role="status" hidden>
-          <p class="map-hint__text">Tap a pin on the map, or open the <strong>Islands</strong> tab to browse.</p>
+          <p class="map-hint__text">Tap a pin, search above, or open <strong>List</strong> to browse.</p>
           <button type="button" class="map-hint__close" id="map-hint-close" aria-label="Dismiss map hint">×</button>
         </div>
         <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
@@ -677,12 +701,12 @@
 
     <nav class="mobile-nav" id="mobile-nav" aria-label="Primary navigation">
       <button type="button" class="mobile-nav__btn is-active" data-mobile-view="map" aria-current="page">
-        <span class="mobile-nav__icon" aria-hidden="true">🗺</span>
+        <span class="mobile-nav__icon" aria-hidden="true">◎</span>
         <span class="mobile-nav__label">Map</span>
       </button>
       <button type="button" class="mobile-nav__btn" data-mobile-view="islands">
-        <span class="mobile-nav__icon" aria-hidden="true">☰</span>
-        <span class="mobile-nav__label">Islands</span>
+        <span class="mobile-nav__icon" aria-hidden="true">≡</span>
+        <span class="mobile-nav__label">List</span>
       </button>
       <button type="button" class="mobile-nav__btn" data-mobile-view="ask">
         <span class="mobile-nav__icon" aria-hidden="true">✦</span>

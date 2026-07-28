@@ -373,11 +373,10 @@ const NATION_SHARD = {
 };
 
 const BROWSE_QUICK_FILTERS = [
-  { id: "story", label: "With stories", story: true },
-  { id: "photo", label: "Picture-ready", photo: true },
-  { id: "ferry", label: "Ferry access", ferry: true },
+  { id: "story", label: "Stories", story: true },
+  { id: "photo", label: "Photos", photo: true },
+  { id: "ferry", label: "Ferries", ferry: true },
   { id: "for-sale", label: "For sale", forSale: true },
-  { id: "unnamed", label: "Unnamed survey", unnamed: true },
 ];
 
 let activeBrowseQuick = null;
@@ -1043,6 +1042,7 @@ const els = {
   filterFerry: document.getElementById("filter-ferry"),
   filterElevation: document.getElementById("filter-elevation"),
   filterForSale: document.getElementById("filter-for-sale"),
+  filterUnnamed: document.getElementById("filter-unnamed"),
   areaMinFilter: document.getElementById("area-min-filter"),
   subtypeFilter: document.getElementById("subtype-filter"),
   confidenceFilter: document.getElementById("confidence-filter"),
@@ -2654,21 +2654,11 @@ function renderBrowseQuickChips() {
     b.className =
       "browse-quick__chip" + (activeBrowseQuick === preset.id ? " is-active" : "");
     b.textContent = preset.label;
+    b.setAttribute("aria-pressed", activeBrowseQuick === preset.id ? "true" : "false");
     b.addEventListener("click", () => applyBrowseQuickFilter(preset));
     host.appendChild(b);
   }
-  if (state.discoveryTopics?.length) {
-    for (const topic of state.discoveryTopics.slice(0, 3)) {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className =
-        "browse-quick__chip browse-quick__chip--explore" +
-        (state.activeExploreTopic === topic.id ? " is-active" : "");
-      b.textContent = topic.label || topic.title || topic.id;
-      b.addEventListener("click", () => setExploreTopic(topic.id));
-      host.appendChild(b);
-    }
-  }
+  // Topic chips stay under the collapsed Topics panel — avoid duplicating them here.
 }
 
 function applyBrowseQuickFilter(preset) {
@@ -2784,6 +2774,8 @@ function resetAllFilters() {
   if (els.filterPhoto) els.filterPhoto.checked = false;
   if (els.filterFerry) els.filterFerry.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
+  if (els.filterForSale) els.filterForSale.checked = false;
+  if (els.filterUnnamed) els.filterUnnamed.checked = false;
   renderScotlandQuickChips();
   renderBrowseQuickChips();
   if (state.activeExploreTopic) clearExploreTopic();
@@ -2832,7 +2824,7 @@ function renderActiveFilterChips() {
   }
   if (activeBrowseQuick === "story") {
     chips.push({
-      label: "With stories",
+      label: "Stories",
       clear: () => {
         activeBrowseQuick = null;
         renderBrowseQuickChips();
@@ -2841,7 +2833,7 @@ function renderActiveFilterChips() {
   }
   if (els.filterPhoto?.checked) {
     chips.push({
-      label: "Picture-ready",
+      label: "Photos",
       clear: () => {
         els.filterPhoto.checked = false;
         if (activeBrowseQuick === "photo") {
@@ -2853,9 +2845,13 @@ function renderActiveFilterChips() {
   }
   if (els.filterFerry?.checked) {
     chips.push({
-      label: "Ferry",
+      label: "Ferries",
       clear: () => {
         els.filterFerry.checked = false;
+        if (activeBrowseQuick === "ferry") {
+          activeBrowseQuick = null;
+          renderBrowseQuickChips();
+        }
       },
     });
   }
@@ -2864,6 +2860,14 @@ function renderActiveFilterChips() {
       label: "Summit",
       clear: () => {
         els.filterElevation.checked = false;
+      },
+    });
+  }
+  if (els.filterUnnamed?.checked) {
+    chips.push({
+      label: "Unnamed",
+      clear: () => {
+        els.filterUnnamed.checked = false;
       },
     });
   }
@@ -3094,9 +3098,10 @@ function applyFilters(opts = {}) {
   const confidence = els.confidenceFilter?.value || "";
   const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
   if (els.listHeading) {
-    if (favOnly) els.listHeading.textContent = "Saved islands";
+    if (favOnly) els.listHeading.textContent = "Saved";
     else if (topic) els.listHeading.textContent = topic.title;
-    else els.listHeading.textContent = "Islands";
+    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed";
+    else els.listHeading.textContent = "Browse";
   }
 
   const passesScope = (i) => {
@@ -3120,7 +3125,11 @@ function applyFilters(opts = {}) {
     ) {
       return false;
     }
-    if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i)) return false;
+    if (els.filterUnnamed?.checked) {
+      if (!isUnnamedIsland(i)) return false;
+    } else if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i)) {
+      return false;
+    }
     if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
     return true;
   };
@@ -3170,6 +3179,23 @@ function applyFilters(opts = {}) {
   if (!el) return;
   el.addEventListener("change", applyFilters);
 });
+
+if (els.filterUnnamed) {
+  els.filterUnnamed.addEventListener("change", () => {
+    const on = els.filterUnnamed.checked;
+    void (async () => {
+      if (on) {
+        try {
+          await loadUnnamedIslandOverlay();
+        } catch (err) {
+          console.warn("Unnamed island overlay unavailable", err);
+          els.filterUnnamed.checked = false;
+        }
+      }
+      applyFilters();
+    })();
+  });
+}
 
 if (els.favoritesFilter) {
   els.favoritesFilter.addEventListener("change", () => {
@@ -3234,8 +3260,22 @@ function ensureListScaffolding() {
 function formatResultCount(filtered, total) {
   const f = Number(filtered) || 0;
   const t = Number(total) || 0;
-  if (!t || f === t) return f.toLocaleString();
+  if (!t || f === t) return `${f.toLocaleString()} islands`;
   return `${f.toLocaleString()} of ${t.toLocaleString()}`;
+}
+
+function updateSidebarOrient() {
+  const el = document.getElementById("sidebar-orient");
+  if (!el) return;
+  const hasFilters = countActiveFilters() > 0;
+  const hasQuery = Boolean(els.search?.value?.trim());
+  if (hasQuery) {
+    el.textContent = "Matching your search";
+  } else if (hasFilters) {
+    el.textContent = "Filtered list — clear chips to reset";
+  } else {
+    el.textContent = "Search, or pick a notable island";
+  }
 }
 
 function renderList() {
@@ -3244,6 +3284,7 @@ function renderList() {
   const total = state.islands.length;
   els.count.textContent = formatResultCount(filtered, total);
   els.count.classList.toggle("count--filtered", total > 0 && filtered !== total);
+  updateSidebarOrient();
   listSpacer.style.height = `${Math.max(filtered, 1) * ROW_HEIGHT}px`;
   // Reset scroll to top when filter changes
   listScroller.scrollTop = 0;
@@ -3281,11 +3322,22 @@ function renderListEmptyOrSkeleton(total) {
   listInner.innerHTML = `
     <div class="list-empty" role="status">
       <p class="list-empty__title">No islands match</p>
-      <p class="list-empty__hint">${hasQuery ? "Try a shorter name or clear the search." : "Relax filters or explore a quick filter above."}</p>
-      <button type="button" class="list-empty__btn" data-action="clear-filters">Clear filters</button>
+      <p class="list-empty__hint">${
+        hasQuery
+          ? "Try a shorter name, or clear search and browse Start here."
+          : "Clear filters, or tap Stories / Photos above."
+      }</p>
+      <div class="list-empty__actions">
+        <button type="button" class="list-empty__btn" data-action="clear-filters">Clear filters</button>
+        <button type="button" class="list-empty__btn list-empty__btn--ghost" data-action="focus-search">Search again</button>
+      </div>
     </div>`;
   listInner.querySelector("[data-action='clear-filters']")?.addEventListener("click", () => {
     resetAllFilters();
+  });
+  listInner.querySelector("[data-action='focus-search']")?.addEventListener("click", () => {
+    els.search?.focus();
+    els.search?.select?.();
   });
 }
 
@@ -4047,7 +4099,11 @@ function renderDetails(island) {
     ${unnamedBanner}
     <div class="details-title-row">
       <div class="details-title-block">
-        <span class="layer-badge ${unnamed ? "layer-badge--unnamed" : "layer-badge--atlas"}" title="${unnamed ? "Unnamed landmass — crowdsourcing welcome" : "Verified atlas island"}">${unnamed ? "Unnamed" : "Atlas"}</span>
+        ${
+          unnamed
+            ? `<span class="layer-badge layer-badge--unnamed" title="Unnamed landmass — crowdsourcing welcome">Unnamed</span>`
+            : ""
+        }
         <h2 class="details-title">${escapeHtml(title)}</h2>
       </div>
     </div>
@@ -4171,12 +4227,12 @@ function renderDetails(island) {
   const toolbar = document.getElementById("details-toolbar-actions");
   if (toolbar) {
     toolbar.innerHTML = `
-      <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Link</button>
+      <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Share</button>
       <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
-        favActive ? "Remove from saved islands" : "Save island to list"
-      }">${favActive ? "♥" : "♡"}</button>`;
+        favActive ? "Remove from saved islands" : "Save island"
+      }" title="${favActive ? "Saved" : "Save"}">${favActive ? "♥ Saved" : "♡ Save"}</button>`;
   }
 
   document.getElementById("details-favorite-btn")?.addEventListener("click", (e) => {
@@ -5247,9 +5303,14 @@ function resetAtlasHome() {
   if (els.filterFerry) els.filterFerry.checked = false;
   if (els.filterForSale) els.filterForSale.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
+  if (els.filterUnnamed) els.filterUnnamed.checked = false;
   if (els.areaMinFilter) els.areaMinFilter.value = "";
   if (els.subtypeFilter) els.subtypeFilter.value = "";
   if (els.confidenceFilter) els.confidenceFilter.value = "hide-unconfirmed";
+  activeBrowseQuick = null;
+  activeScotlandQuick = null;
+  renderBrowseQuickChips();
+  renderScotlandQuickChips();
   applyFilters();
   document.body.classList.remove("filters-open");
   document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
@@ -8254,6 +8315,7 @@ function countActiveFilters() {
   if (els.filterFerry?.checked) n += 1;
   if (els.filterForSale?.checked) n += 1;
   if (els.filterElevation?.checked) n += 1;
+  if (els.filterUnnamed?.checked) n += 1;
   if (state.activeExploreTopic) n += 1;
   if (activeBrowseQuick) n += 1;
   if (activeScotlandQuick) n += 1;
