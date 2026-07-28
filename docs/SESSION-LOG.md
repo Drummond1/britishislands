@@ -2824,3 +2824,16 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Empty state: Clear filters + Search again; count reads “N islands”.
 - **Outcome**: Local chrome/profile navigation simplified without redesigning the visual system.
 - **Open**: Deploy for live impact.
+
+
+## 2026-07-28 — Visual polish (attractive atlas chrome)
+
+- **Goal**: Make the atlas feel more visually attractive without abandoning the night-sea brand.
+- **What changed**:
+  - Deeper layered background gradients (blue + soft teal wash).
+  - Glass topbar, breathing brand mark, gradient display title.
+  - Featured + list cards: richer surfaces, image zoom, stronger hover lift.
+  - Search field + Ask launcher + key facts + landing CTAs elevated.
+  - Fixed stray CSS after `.details-hero`.
+- **Outcome**: Deployed `f8641957` to Pages.
+- **Open**: None.
