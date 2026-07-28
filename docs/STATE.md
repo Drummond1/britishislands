@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (visual polish)** — Richer night-sea atmosphere, glass topbar, branded mark pulse, elevated featured/list cards with hover motion, stronger search/Ask CTAs; landing hero/CTA polish. Deployed with UX navigate pass.
+
 **2026-07-28 (UX navigate simplify)** — Clearer atlas chrome: Collections + Filter topbar; Browse/Start here/Show me chips; mobile Map/List/Ask; profile Share/Save + no Atlas badge; unnamed survey under More filters. Continuous SEO loop still armed.
 
 **2026-07-28 (continuous SEO/GEO loop armed)** — Replaced time-boxed overnight with `scripts/run_continuous_seo_geo.sh --loop` (strategy-aligned 5-phase rotation; no deindex). Strategy doc in-repo: `docs/SEO-GEO-STRATEGY.md`. Stop via `data/.continuous_seo_geo.stop`.
