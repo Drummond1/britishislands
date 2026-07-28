@@ -30,6 +30,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,6 +88,16 @@ FERRY_PATHS = (
 CRAWL_LINKS_MARKER_START = "<!-- IOB_CRAWL_LINKS_START -->"
 CRAWL_LINKS_MARKER_END = "<!-- IOB_CRAWL_LINKS_END -->"
 
+TRUST_PAGES: dict[str, str] = {
+    "/about/": "About Find My Island",
+    "/methodology/": "Methodology",
+    "/editorial-policy/": "Editorial policy",
+    "/corrections/": "Corrections",
+    "/sources-licensing/": "Sources and licensing",
+    "/contact/": "Contact",
+    "/dataset/": "Dataset",
+}
+
 
 def load_id_set(path: Path) -> set[str]:
     if not path.is_file():
@@ -138,20 +149,62 @@ def sort_islands_for_sitemap(
     return sorted(islands, key=key)
 
 
-def write_urlset(path: Path, entries: list[tuple[str, float]]) -> None:
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+def _ymd_from_iso(s: str) -> str | None:
+    if not s:
+        return None
+    try:
+        return datetime.fromisoformat(s.replace("Z", "+00:00")).strftime("%Y-%m-%d")
+    except Exception:
+        return None
+
+
+def _mtime_ymd(path: Path) -> str:
+    try:
+        return datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d")
+    except Exception:
+        return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def _island_lastmod(isl: dict, default_ymd: str) -> str:
+    # Prefer explicit record timestamps when available; otherwise file mtime.
+    candidates = [
+        _ymd_from_iso(str(isl.get("propertyListingsFetchedAt") or "")),
+        _ymd_from_iso(str(isl.get("imageEnrichmentFetchedAt") or "")),
+        _ymd_from_iso(str(isl.get("nameEnrichmentFetchedAt") or "")),
+    ]
+    for src in isl.get("sources") or []:
+        if isinstance(src, dict):
+            candidates.append(_ymd_from_iso(str(src.get("retrieved") or "")))
+    vals = [c for c in candidates if c]
+    return max(vals) if vals else default_ymd
+
+
+def write_urlset(path: Path, entries: list[tuple[str, float, str]]) -> None:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    for loc, priority in entries:
+    for loc, priority, lastmod in entries:
         lines.append("  <url>")
         lines.append(f"    <loc>{xml_escape(loc)}</loc>")
-        lines.append(f"    <lastmod>{today}</lastmod>")
-        lines.append("    <changefreq>monthly</changefreq>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
         lines.append(f"    <priority>{priority:.2f}</priority>")
         lines.append("  </url>")
     lines.append("</urlset>")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_sitemap_index(path: Path, files: list[tuple[str, str]]) -> None:
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for loc, lastmod in files:
+        lines.append("  <sitemap>")
+        lines.append(f"    <loc>{xml_escape(loc)}</loc>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        lines.append("  </sitemap>")
+    lines.append("</sitemapindex>")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -162,6 +215,7 @@ def profile_page_html(
     atlas_href: str,
     profile_path: str,
     title: str,
+    related_links: list[tuple[str, str]] | None = None,
     depth: int = 3,
 ) -> str:
     iid = isl["id"]
@@ -188,13 +242,37 @@ def profile_page_html(
 
     geo_block = ""
     if lat is not None and lng is not None:
+        identifiers: list[dict[str, Any]] = []
+        if isl.get("osmType") and isl.get("osmId") is not None:
+            identifiers.append(
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "OpenStreetMap",
+                    "value": f"{isl.get('osmType')}/{isl.get('osmId')}",
+                }
+            )
+        if isl.get("wikidata"):
+            identifiers.append(
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "Wikidata",
+                    "value": str(isl.get("wikidata")),
+                }
+            )
+        same_as: list[str] = []
+        if isl.get("wikipedia"):
+            same_as.append(str(isl["wikipedia"]))
+        if isl.get("wikidata"):
+            same_as.append(f"https://www.wikidata.org/wiki/{isl['wikidata']}")
         geo_block = f"""
   <script type="application/ld+json">{{
     "@context": "https://schema.org",
-    "@type": "Island",
+    "@type": "Landform",
     "name": {json.dumps(str(isl.get("name") or iid))},
     "description": {json.dumps(str(desc_raw)[:500])},
     "url": {json.dumps(profile_url)},
+    "identifier": {json.dumps(identifiers[0] if len(identifiers) == 1 else identifiers) if identifiers else "null"},
+    "sameAs": {json.dumps(same_as) if same_as else "null"},
     "geo": {{"@type": "GeoCoordinates", "latitude": {lat}, "longitude": {lng}}}{address}
   }}</script>"""
 
@@ -231,6 +309,45 @@ def profile_page_html(
             + "\n  </ul>\n"
         )
 
+    section_chunks: list[str] = []
+    section_map = [
+        ("Names", "namesSummary"),
+        ("Geography", "geography"),
+        ("History", "history"),
+        ("Wildlife and conservation", "wildlife"),
+        ("How to reach it", "transport"),
+        ("Accommodation", "accommodation"),
+    ]
+    for label, key in section_map:
+        value = str(isl.get(key) or "").strip()
+        if not value:
+            continue
+        section_chunks.append(
+            f'  <section class="lp-section"><h2 class="lp-section-title">{html.escape(label)}</h2><p>{html.escape(value)}</p></section>'
+        )
+    sections_block = "\n".join(section_chunks)
+
+    sources_block = ""
+    src_rows = []
+    for src in isl.get("sources") or []:
+        if not isinstance(src, dict):
+            continue
+        src_name = html.escape(str(src.get("name") or "Source"))
+        src_url = html.escape(str(src.get("url") or ""), quote=True)
+        src_ref = html.escape(str(src.get("ref") or ""))
+        src_lic = html.escape(str(src.get("licence") or ""))
+        if src_url:
+            src_rows.append(
+                f'<li><a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>'
+                f'{f" · {src_ref}" if src_ref else ""}{f" · {src_lic}" if src_lic else ""}</li>'
+            )
+    if src_rows:
+        sources_block = (
+            '  <section class="lp-section"><h2 class="lp-section-title">Sources</h2><ul class="lp-list">\n    '
+            + "\n    ".join(src_rows)
+            + "\n  </ul></section>\n"
+        )
+
     hub = ""
     seg = nation_segment(isl.get("nation"))
     if seg:
@@ -244,10 +361,30 @@ def profile_page_html(
     if img:
         img_block = (
             f'  <figure class="lp-media"><img src="{html.escape(img, quote=True)}" '
-            f'alt="{name}" width="960" loading="lazy"/></figure>\n'
+            f'alt="{name}" width="960" height="540" loading="lazy" decoding="async"/></figure>\n'
         )
 
     assets = landing_head_assets(depth)
+
+    breadcrumb = ""
+    if seg:
+        breadcrumb = (
+            '<nav class="lp-note" aria-label="Breadcrumb">'
+            f'<a href="{html.escape(atlas_href, quote=True)}">Home</a> → '
+            f'<a href="/islands/{html.escape(seg, quote=True)}/">{nation or seg}</a> → '
+            f"{name}</nav>"
+        )
+
+    related_block = ""
+    if related_links:
+        related_items = "\n".join(
+            f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
+            for path, label in related_links[:8]
+        )
+        related_block = (
+            '  <section class="lp-section"><h2 class="lp-section-title">Nearby and related islands</h2>'
+            f'<ul class="lp-list">\n{related_items}\n  </ul></section>\n'
+        )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -275,13 +412,17 @@ def profile_page_html(
       <a class="lp-back" href="{html.escape(atlas_href, quote=True)}">← Atlas</a>
       <a class="lp-brand" href="{html.escape(atlas_href, quote=True)}">Find My Island</a>
     </nav>
+    {breadcrumb}
     <header class="lp-hero">
       {nation_line}
       <h1>{name}</h1>
       <p class="lp-lede">{desc}</p>
       <a class="lp-cta" href="{atlas_url}">Open on the map →</a>
     </header>
-{img_block}{facts_block}{hub}    <p class="lp-note">Canonical profile for search engines and AI crawlers. The map opens on demand — no auto-redirect.</p>
+{img_block}{facts_block}{hub}
+{sections_block}
+{related_block}
+{sources_block}    <p class="lp-note">Last reviewed: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.</p>
   </div>
 </body>
 </html>
@@ -465,6 +606,123 @@ def islands_root_html(*, origin: str, atlas_href: str, depth: int = 1) -> str:
 """
 
 
+def trust_page_html(*, title: str, lede: str, body: list[str], canonical: str, depth: int = 1) -> str:
+    assets = landing_head_assets(depth)
+    paras = "\n".join(f"    <p>{html.escape(p)}</p>" for p in body)
+    title_esc = html.escape(title, quote=True)
+    lede_esc = html.escape(lede, quote=True)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{title_esc} | Find My Island</title>
+  <meta name="description" content="{lede_esc}"/>
+  <link rel="canonical" href="{html.escape(canonical, quote=True)}"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="{title_esc} | Find My Island"/>
+  <meta property="og:description" content="{lede_esc}"/>
+  <meta property="og:url" content="{html.escape(canonical, quote=True)}"/>
+{assets}
+</head>
+<body class="lp">
+  <div class="lp-shell">
+    <nav class="lp-nav">
+      <a class="lp-back" href="/">← Atlas</a>
+      <a class="lp-brand" href="/">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <h1>{title_esc}</h1>
+      <p class="lp-lede">{lede_esc}</p>
+    </header>
+{paras}
+  </div>
+</body>
+</html>
+"""
+
+
+def collection_specs() -> list[dict[str, str]]:
+    return [
+        {"slug": "inner-hebrides", "title": "Inner Hebrides islands", "match_archipelago": "Inner Hebrides"},
+        {"slug": "outer-hebrides", "title": "Outer Hebrides islands", "match_archipelago": "Outer Hebrides"},
+        {"slug": "orkney", "title": "Orkney islands", "match_archipelago": "Orkney"},
+        {"slug": "shetland", "title": "Shetland islands", "match_archipelago": "Shetland"},
+        {"slug": "isles-of-scilly", "title": "Isles of Scilly", "match_archipelago": "Scilly"},
+        {"slug": "channel-islands", "title": "Channel Islands", "match_archipelago": "Channel Islands"},
+        {"slug": "aran-islands", "title": "Aran Islands", "match_archipelago": "Aran"},
+        {"slug": "loch-lomond", "title": "Islands of Loch Lomond", "match_parent": "Loch Lomond"},
+        {"slug": "lough-corrib", "title": "Islands of Lough Corrib", "match_parent": "Lough Corrib"},
+        {"slug": "thames-islands", "title": "Islands of the River Thames", "match_parent": "Thames"},
+    ]
+
+
+def _collection_members(islands: list[dict], spec: dict[str, str], paths: dict[str, Any]) -> list[tuple[str, str]]:
+    rows: list[tuple[str, str]] = []
+    want_arch = str(spec.get("match_archipelago") or "").lower()
+    want_parent = str(spec.get("match_parent") or "").lower()
+    for isl in islands:
+        iid = str(isl.get("id") or "")
+        if not iid:
+            continue
+        sp = paths.get(iid)
+        if not sp:
+            continue
+        arch = str(isl.get("archipelago") or "").lower()
+        parent = str((isl.get("parentWaterBody") or {}).get("name") or "").lower()
+        ok = False
+        if want_arch and want_arch in arch:
+            ok = True
+        if want_parent and want_parent in parent:
+            ok = True
+        if ok:
+            rows.append((sp.path, str(isl.get("name") or iid)))
+    rows.sort(key=lambda r: r[1].lower())
+    return rows
+
+
+def collection_hub_html(*, title: str, canonical_url: str, items: list[tuple[str, str]], depth: int = 2) -> str:
+    assets = landing_head_assets(depth)
+    li = "\n".join(
+        f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(name)}</a></li>'
+        for path, name in items[:250]
+    )
+    desc = f"Browse mapped islands in this collection on Find My Island."
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{html.escape(title, quote=True)} | Find My Island</title>
+  <meta name="description" content="{html.escape(desc, quote=True)}"/>
+  <link rel="canonical" href="{html.escape(canonical_url, quote=True)}"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="{html.escape(title, quote=True)} | Find My Island"/>
+  <meta property="og:description" content="{html.escape(desc, quote=True)}"/>
+  <meta property="og:url" content="{html.escape(canonical_url, quote=True)}"/>
+{assets}
+</head>
+<body class="lp">
+  <div class="lp-shell">
+    <nav class="lp-nav">
+      <a class="lp-back" href="/">← Atlas</a>
+      <a class="lp-brand" href="/">Find My Island</a>
+    </nav>
+    <header class="lp-hero">
+      <h1>{html.escape(title)}</h1>
+      <p class="lp-lede">{html.escape(desc)}</p>
+      <a class="lp-cta" href="/">Open the map →</a>
+    </header>
+    <ul class="lp-list">
+{li}
+    </ul>
+  </div>
+</body>
+</html>
+"""
+
 def build_crawl_links_html(
     islands_by_id: dict[str, dict],
     curated: set[str],
@@ -498,6 +756,10 @@ def build_crawl_links_html(
             f"{html.escape(label)}</a></li>"
         )
     island_block = "\n".join(island_items)
+    trust_items = "\n".join(
+        f'        <li><a href="{path}">{html.escape(label)}</a></li>'
+        for path, label in TRUST_PAGES.items()
+    )
     return f"""{CRAWL_LINKS_MARKER_START}
         <footer class="crawl-links" aria-label="Guides and notable islands">
           <p class="crawl-links__heading">Guides &amp; notable islands</p>
@@ -518,6 +780,12 @@ def build_crawl_links_html(
               <h3 class="crawl-links__sub">Notable islands</h3>
               <ul class="crawl-links__list">
 {island_block}
+              </ul>
+            </section>
+            <section>
+              <h3 class="crawl-links__sub">About this atlas</h3>
+              <ul class="crawl-links__list">
+{trust_items}
               </ul>
             </section>
           </div>
@@ -613,22 +881,23 @@ def main() -> int:
     origin = (args.site_origin or "").rstrip("/")
     write_landings = bool(origin) and not args.skip_islands_dir
 
-    llms = f"""# Isles of Britain (findmyisland.com)
-> Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies (sea, lake, and river), with maps, photos, and transport context.
+    llms = f"""# Find My Island (findmyisland.com)
+> The British & Irish Islands Atlas: visual, data-led island profiles with maps, photos, transport context, and provenance.
 
 ## Entry points
 - Main app: /
 - Islands by country: /islands/
 - Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
-- Island profile (static HTML for crawlers): /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
-- Island profile (interactive): /?island=<id>   (example: ?island=isle-of-skye)
+- Island profile: /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
+- Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
 - Legacy redirects: /profiles/<id>.html → canonical /islands/… path
 - Ferry guides: /ferries/
+- Collections: /collections/
 - Sitemap: /sitemap.xml
 
 ## For machines
-- Prefer /islands/{{nation}}/{{slug}}/ in sitemaps and citations; it links to the live atlas.
-- Internal ids remain stable in `data/islands.json` and `?island=` query params.
+- Prefer /islands/{{nation}}/{{slug}}/ in citations and indexing.
+- Internal ids remain stable in `data/islands.json` and legacy `?island=` query params.
 - Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
 
 ## Generated
@@ -644,27 +913,63 @@ def main() -> int:
             flush=True,
         )
     else:
-        entries: list[tuple[str, float]] = [(f"{origin}/", 1.0)]
-        entries.append((f"{origin}/islands/", 0.9))
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        islands_mtime = _mtime_ymd(ISLANDS)
+        core_entries: list[tuple[str, float, str]] = [(f"{origin}/", 1.0, _mtime_ymd(INDEX_HTML))]
+        core_entries.append((f"{origin}/islands/", 0.9, today))
         for seg in sorted(set(NATION_SEGMENT.values())):
-            entries.append((f"{origin}/islands/{seg}/", 0.88))
+            core_entries.append((f"{origin}/islands/{seg}/", 0.88, today))
+        for path in TRUST_PAGES:
+            core_entries.append((f"{origin}{path}", 0.75, today))
+        core_entries.append((f"{origin}/collections/", 0.78, today))
         for path in FERRY_PATHS:
-            entries.append((f"{origin}{path}", 0.72))
+            core_entries.append((f"{origin}{path}", 0.72, _mtime_ymd(ROOT / path.strip("/") / "index.html")))
 
         sorted_islands = sort_islands_for_sitemap(islands, curated, featured)
+        island_editorial: list[tuple[str, float, str]] = []
+        island_bulk: list[tuple[str, float, str]] = []
         for isl in sorted_islands:
             iid = isl.get("id")
             if not iid:
                 continue
             pri = island_priority(str(iid), isl, curated, featured)
             sp = paths.get(str(iid))
-            if sp:
-                entries.append((f"{origin}{sp.path}", pri))
+            loc = f"{origin}{sp.path}" if sp else f"{origin}/?island={iid}"
+            row = (loc, pri, _island_lastmod(isl, islands_mtime))
+            if str(iid) in curated or str(iid) in featured:
+                island_editorial.append(row)
             else:
-                entries.append((f"{origin}/?island={iid}", pri))
+                island_bulk.append(row)
 
-        write_urlset(ROOT / "sitemap.xml", entries)
-        print(f"Wrote sitemap.xml ({len(entries)} URLs; nation-slug paths)")
+        ferry_entries: list[tuple[str, float, str]] = [
+            (f"{origin}{path}", 0.72, _mtime_ymd(ROOT / path.strip("/") / "index.html"))
+            for path in FERRY_PATHS
+        ]
+
+        collection_entries: list[tuple[str, float, str]] = []
+        for spec in collection_specs():
+            collection_entries.append((f"{origin}/collections/{spec['slug']}/", 0.68, today))
+        collection_entries.append((f"{origin}/collections/flagship-islands/", 0.82, today))
+
+        write_urlset(ROOT / "sitemap-core.xml", core_entries)
+        write_urlset(ROOT / "sitemap-islands-editorial.xml", island_editorial)
+        write_urlset(ROOT / "sitemap-islands.xml", island_bulk)
+        write_urlset(ROOT / "sitemap-ferries-verified.xml", ferry_entries)
+        write_urlset(ROOT / "sitemap-collections.xml", collection_entries)
+        write_sitemap_index(
+            ROOT / "sitemap.xml",
+            [
+                (f"{origin}/sitemap-core.xml", today),
+                (f"{origin}/sitemap-islands-editorial.xml", islands_mtime),
+                (f"{origin}/sitemap-islands.xml", islands_mtime),
+                (f"{origin}/sitemap-ferries-verified.xml", today),
+                (f"{origin}/sitemap-collections.xml", today),
+            ],
+        )
+        print(
+            "Wrote sitemap index + segmented sitemaps "
+            f"(core={len(core_entries)}, editorial={len(island_editorial)}, islands={len(island_bulk)})"
+        )
 
         robots = f"""User-agent: *
 Allow: /
@@ -692,21 +997,98 @@ Sitemap: {origin}/sitemap.xml
             islands_root_html(origin=origin, atlas_href="/"),
             encoding="utf-8",
         )
+        # Trust and governance pages.
+        trust_page_payloads: dict[str, tuple[str, str, list[str]]] = {
+            "/about/": (
+                "About Find My Island",
+                "Find My Island is a data-led atlas of the British and Irish islands.",
+                [
+                    "We map sea, loch, lake, and river islands across the UK, Ireland, and Crown Dependencies.",
+                    "The project combines curated editorial records with open geographic datasets and transparent provenance.",
+                    "Our goal is to make island geography easier to explore, verify, and cite.",
+                ],
+            ),
+            "/methodology/": (
+                "Methodology",
+                "How islands are defined, included, and verified in the atlas.",
+                [
+                    "Inclusion criteria, confidence labels, and source provenance are documented and versioned.",
+                    "Every island record links back to public references such as OpenStreetMap, Wikidata, or curated research.",
+                    "See docs/ETHICS.md and docs/DATA-SCHEMA.md for full policy and field-level definitions.",
+                ],
+            ),
+            "/editorial-policy/": (
+                "Editorial policy",
+                "How we maintain quality, updates, and attribution.",
+                [
+                    "We prioritize verifiable facts, clear attribution, and respectful naming across languages.",
+                    "Machine-generated enrichments are reviewed before being treated as canonical editorial content.",
+                    "When uncertain, records are marked with confidence and preserved transparently.",
+                ],
+            ),
+            "/corrections/": (
+                "Corrections",
+                "How to report a mistake or suggest an improvement.",
+                [
+                    "If you spot an error in naming, geography, transport, or imagery, please send a correction.",
+                    "Include source links whenever possible so updates can be verified quickly.",
+                    "Significant changes are logged in the public session and state documentation.",
+                ],
+            ),
+            "/sources-licensing/": (
+                "Sources and licensing",
+                "Licences, provenance, and data attribution policy.",
+                [
+                    "We only ingest and redistribute data with clear open licensing and required attribution.",
+                    "Each record stores source metadata such as licence, URL, and retrieval date.",
+                    "Licensing and ethics guardrails are documented in docs/ETHICS.md.",
+                ],
+            ),
+            "/contact/": (
+                "Contact",
+                "Get in touch about corrections, partnerships, or data questions.",
+                [
+                    "Use the atlas contribution flow for island fixes and community updates.",
+                    "For editorial, licensing, or research requests, contact the Find My Island team via repository issues.",
+                ],
+            ),
+            "/dataset/": (
+                "Dataset",
+                "Versioned atlas dataset metadata, definitions, and reuse guidance.",
+                [
+                    "The dataset includes island geometry references, metadata, and provenance fields.",
+                    "Machine-readable outputs include islands.json, islands_index.json, nation shards, and SEO path maps.",
+                    "Use source citations and licence obligations when reusing derived outputs.",
+                ],
+            ),
+        }
+        for rel_path, (title, lede, body) in trust_page_payloads.items():
+            out_dir = ROOT / rel_path.strip("/")
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / "index.html").write_text(
+                trust_page_html(
+                    title=title,
+                    lede=lede,
+                    body=body,
+                    canonical=f"{origin}{rel_path}",
+                ),
+                encoding="utf-8",
+            )
 
         # Group curated/featured per nation for hub lists
-        by_seg: dict[str, list[tuple[str, str, float]]] = {}
+        by_seg: dict[str, list[tuple[str, str, str, float]]] = {}
         for iid, sp in paths.items():
             isl = islands_by_id.get(iid)
             if not isl:
                 continue
             score = island_priority(iid, isl, curated, featured)
             by_seg.setdefault(sp.nation_segment, []).append(
-                (sp.path, str(isl.get("name") or iid), score)
+                (iid, sp.path, str(isl.get("name") or iid), score)
             )
 
         for seg, items in by_seg.items():
-            items.sort(key=lambda t: (-t[2], t[1].lower()))
-            featured_links = [(p, n) for p, n, _ in items[:48]]
+            items.sort(key=lambda t: (-t[3], t[2].lower()))
+            featured_links = [(p, n) for _, p, n, _ in items[:48]]
             hub_dir = ISLANDS_DIR / seg
             hub_dir.mkdir(parents=True, exist_ok=True)
             (hub_dir / "index.html").write_text(
@@ -718,6 +1100,50 @@ Sitemap: {origin}/sitemap.xml
                 ),
                 encoding="utf-8",
             )
+
+        collections_root = ROOT / "collections"
+        collections_root.mkdir(parents=True, exist_ok=True)
+        (collections_root / "index.html").write_text(
+            trust_page_html(
+                title="Island collections",
+                lede="Curated collection pages for major archipelagos and water-body groups.",
+                body=["Browse collection hubs such as the Hebrides, Orkney, Shetland, Aran Islands, and Thames islands."],
+                canonical=f"{origin}/collections/",
+                depth=1,
+            ),
+            encoding="utf-8",
+        )
+        for spec in collection_specs():
+            members = _collection_members(islands, spec, paths)
+            out_dir = collections_root / spec["slug"]
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / "index.html").write_text(
+                collection_hub_html(
+                    title=spec["title"],
+                    canonical_url=f"{origin}/collections/{spec['slug']}/",
+                    items=members,
+                ),
+                encoding="utf-8",
+            )
+        flagship_rows: list[tuple[str, str, float]] = []
+        for iid, sp in paths.items():
+            isl = islands_by_id.get(iid)
+            if not isl:
+                continue
+            score = island_priority(iid, isl, curated, featured)
+            if iid in curated or iid in featured:
+                flagship_rows.append((sp.path, str(isl.get("name") or iid), score))
+        flagship_rows.sort(key=lambda r: (-r[2], r[1].lower()))
+        flagship_links = [(path, name) for path, name, _ in flagship_rows[:30]]
+        (collections_root / "flagship-islands").mkdir(parents=True, exist_ok=True)
+        (collections_root / "flagship-islands" / "index.html").write_text(
+            collection_hub_html(
+                title="Flagship island profiles",
+                canonical_url=f"{origin}/collections/flagship-islands/",
+                items=flagship_links,
+            ),
+            encoding="utf-8",
+        )
 
         n = 0
         for isl in islands:
@@ -736,6 +1162,11 @@ Sitemap: {origin}/sitemap.xml
                 atlas_href=atlas_href_for_depth(3),
                 profile_path=sp.path,
                 title=page_title(isl),
+                related_links=[
+                    (path, label)
+                    for rid, path, label, _ in by_seg.get(sp.nation_segment, [])
+                    if rid != str(iid)
+                ][:8],
                 depth=3,
             )
             out.write_text(page, encoding="utf-8")

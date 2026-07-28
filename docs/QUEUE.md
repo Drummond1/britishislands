@@ -367,3 +367,8 @@ for source / licence / refresh-cadence detail.
 - When you finish, **move the item** (cut, not copy) to `SESSION-LOG.md` with
   a brief outcome line.
 - If something is blocked, prefix `[blocked]` and add the blocker beneath it.
+
+## P0 — SEO/GEO 90-day execution (rolling)
+
+- **[in flight]** Batch 2: expand flagship editorial sections and improve CWV (LCP/CLS) on homepage + canonical island landings.
+- **[pending]** Wire weekly GEO prompt benchmark run into reporting snapshots.

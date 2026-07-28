@@ -2764,3 +2764,27 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome**: Clicking Soay (etc.) rewrites visible URL to e.g. `/islands/scotland/soay-outer-hebrides/`. Legacy `?island=` still opens then rewrites.
 - **Open**: Deploy for production; hard refresh of `/islands/…` still serves static landing (SEO) — CTA opens atlas then rewrites to name path.
 
+
+## 2026-07-28 — Fix empty for-sale map popups
+
+- **Goal**: £ pin popups showed "Property links" with no URLs (e.g. Eilean Righ).
+- **Cause**: Markers built from compact index stubs (`sale: 1` only); `propertyListings[]` lives in nation shards and was not loaded before popup HTML was bound.
+- **Fix**: On for-sale pin open, `ensureNationShardLoaded` then refresh popup content.
+
+
+## 2026-07-28 — Fix Burgh Island OSM → was Burgh Point tip
+
+- **Goal**: `/islands/england/burgh-island/` was tied to OSM way 759342412 (*Burgh Point* bare rock), so map/3D showed the southern tip mislabelled as the whole island.
+- **Fix**: Pin curated + islands.json to way **364192804** (Burgh Island); tighten curated name-match so Island≠Point; rebuild terrain (elev ~48 m vs tip ~10 m) + index.
+
+
+## 2026-07-28 — SEO/GEO 90-day execution: foundational rollout (no deindexing)
+
+- **Goal**: Implement the approved SEO/GEO plan while keeping low-quality pages indexable.
+- **What changed**:
+  - `seo-meta.js` — replaced invalid `Island` JSON-LD with `Landform`; added OSM/Wikidata `identifier`; updated brand copy to Find My Island.
+  - `scripts/generate_seo_artifacts.py` — segmented sitemap model (`sitemap.xml` index + `sitemap-core.xml`, `sitemap-islands-editorial.xml`, `sitemap-islands.xml`, `sitemap-ferries-verified.xml`, `sitemap-collections.xml`); improved lastmod strategy; generated trust pages and collection hubs; upgraded canonical island landing template with breadcrumb, richer sections, sources, and related links.
+  - `index.html` + crawl links — standardized visible branding and added crawlable trust links.
+  - Added GEO benchmark scaffolding: `docs/GEO-BENCHMARK.md`, `data/geo_prompt_benchmark_prompts.json`, `data/geo_prompt_benchmark_latest.json`.
+- **Outcome / counts**: Sitemap now split for diagnostics and crawl control; trust/governance pages are live in build output; flagship collection includes **30** profiles; all island/static JSON-LD now valid `Landform`.
+- **Open items kicked to QUEUE.md**: Continue expanding editorial depth and CWV optimizations in subsequent batches.

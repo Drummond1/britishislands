@@ -43,9 +43,9 @@ island detail panel opens, and restores the homepage defaults when it closes:
 - `meta name=description`
 - `link rel=canonical` → `seoPath` when present
 - Open Graph (`og:*`) and Twitter Card tags
-- JSON-LD `@type: Island` with `geo`, `addressCountry`, `sameAs` (Wikipedia /
+- JSON-LD `@type: Landform` with `geo`, `addressCountry`, `sameAs` (Wikipedia /
   Wikidata), optional `containedInPlace` for lake/river parents, optional
-  `population` via `additionalProperty`
+  `population` via `additionalProperty`, plus `identifier` for OSM/Wikidata
 
 Optional one-liner before `app.js` in `index.html`:
 
@@ -63,8 +63,11 @@ alternate CDN hostname).
 | Output | When |
 |--------|------|
 | `llms.txt` | Always — short briefing + URL patterns for AI crawlers |
-| `sitemap.xml`, `robots.txt` | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
+| `sitemap.xml` sitemap index + segmented sitemap files | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
+| `robots.txt` | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
 | `islands/` | Nation hubs + `/islands/{nation}/{slug}/index.html` |
+| `collections/` | Archipelago and water-body hubs (Inner/Outer Hebrides, Orkney, Shetland, etc.) |
+| Trust pages (`/about/`, `/methodology/`, `/editorial-policy/`, `/corrections/`, `/sources-licensing/`, `/contact/`, `/dataset/`) | Generated as crawlable static pages |
 | `profiles/<id>.html` | With `--landing-dir profiles` — legacy redirects |
 | `data/seo_path_by_id.json` | id → public path map |
 | `index.html` crawl links | Patched between `IOB_CRAWL_LINKS_*` markers |
@@ -76,8 +79,14 @@ IOB_SITE_ORIGIN=https://www.findmyisland.com python3 scripts/generate_seo_artifa
 python3 scripts/build_islands_index.py   # stamps seoPath onto shards
 ```
 
-**Sitemap:** homepage + `/islands/` + nation hubs + ferry guides + every
-`/islands/{nation}/{slug}/` profile. Curated islands get higher `priority`.
+**Sitemap model:** `sitemap.xml` indexes:
+
+- `sitemap-core.xml` (home, nation hubs, trust pages, collections root)
+- `sitemap-islands-editorial.xml` (curated + featured)
+- `sitemap-islands.xml` (all other island profiles)
+- `sitemap-ferries-verified.xml`
+- `sitemap-collections.xml`
+
 Legacy `/profiles/` URLs are **not** listed (they noindex-redirect).
 
 ## Google Search Console (connected 2026-07-26)

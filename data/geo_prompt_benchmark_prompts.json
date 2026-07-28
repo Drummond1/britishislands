@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-07-28",
+  "prompts": [
+    {"id": "atlas-map-001", "intent": "atlas-map", "prompt": "What is the best map to explore Scottish islands?"},
+    {"id": "atlas-map-002", "intent": "atlas-map", "prompt": "Show me a map of islands in Ireland and Scotland."},
+    {"id": "entity-fact-001", "intent": "entity-fact", "prompt": "What is the population of Fair Isle?"},
+    {"id": "entity-fact-002", "intent": "entity-fact", "prompt": "How big is Anglesey in square kilometres?"},
+    {"id": "entity-fact-003", "intent": "entity-fact", "prompt": "Where is Burgh Island and how do you reach it?"},
+    {"id": "comparison-001", "intent": "comparison", "prompt": "Compare Skye, Mull, and Islay for size and population."},
+    {"id": "comparison-002", "intent": "comparison", "prompt": "Which Scottish islands are inhabited but small?"},
+    {"id": "transport-001", "intent": "transport", "prompt": "How do I get to Mull by ferry?"},
+    {"id": "transport-002", "intent": "transport", "prompt": "What are the ferry options to the Hebrides?"},
+    {"id": "language-001", "intent": "language", "prompt": "What is the Gaelic name for Islay?"}
+  ]
+}

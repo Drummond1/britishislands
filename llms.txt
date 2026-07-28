@@ -1,19 +1,20 @@
-# Isles of Britain (findmyisland.com)
-> Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies (sea, lake, and river), with maps, photos, and transport context.
+# Find My Island (findmyisland.com)
+> The British & Irish Islands Atlas: visual, data-led island profiles with maps, photos, transport context, and provenance.
 
 ## Entry points
 - Main app: /
 - Islands by country: /islands/
 - Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
-- Island profile (static HTML for crawlers): /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
-- Island profile (interactive): /?island=<id>   (example: ?island=isle-of-skye)
+- Island profile: /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
+- Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
 - Legacy redirects: /profiles/<id>.html → canonical /islands/… path
 - Ferry guides: /ferries/
+- Collections: /collections/
 - Sitemap: /sitemap.xml
 
 ## For machines
-- Prefer /islands/{nation}/{slug}/ in sitemaps and citations; it links to the live atlas.
-- Internal ids remain stable in `data/islands.json` and `?island=` query params.
+- Prefer /islands/{nation}/{slug}/ in citations and indexing.
+- Internal ids remain stable in `data/islands.json` and legacy `?island=` query params.
 - Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
 
 ## Generated

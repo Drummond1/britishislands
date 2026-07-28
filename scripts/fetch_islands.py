@@ -228,9 +228,22 @@ def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
 
 
 def _names_loosely_match(a: str, b: str) -> bool:
+    """True when names refer to the same place (not Island↔Point false friends)."""
+    classifiers = {
+        "point",
+        "rock",
+        "rocks",
+        "ledge",
+        "reef",
+        "skerry",
+        "stack",
+        "scar",
+        "carr",
+    }
+
     def norm(s: str) -> str:
         s = s.lower()
-        s = re.sub(r"\(.*?\)", "", s)             # drop parenthetical
+        s = re.sub(r"\(.*?\)", "", s)  # drop parenthetical
         s = re.sub(r"\bisle of\b|\bisland\b|\bynys\b", "", s)
         s = re.sub(r"[^\w\s]", "", s)
         return re.sub(r"\s+", " ", s).strip()
@@ -238,7 +251,13 @@ def _names_loosely_match(a: str, b: str) -> bool:
     na, nb = norm(a), norm(b)
     if not na or not nb:
         return False
-    return na == nb or na in nb or nb in na
+    if na == nb:
+        return True
+    ta, tb = set(na.split()), set(nb.split())
+    # "Burgh Island" → "burgh" must not match OSM "Burgh Point" → "burgh point"
+    if (ta & classifiers) != (tb & classifiers):
+        return False
+    return na in nb or nb in na
 
 
 def rank_quality(e: dict) -> int:
@@ -320,6 +339,13 @@ def main() -> None:
     matched_osm_ids: set[tuple] = set()
     matches_made = 0
     for c in curated:
+        # Prefer maintainer-pinned OSM ids (avoids Island↔Point near-misses).
+        pinned_type = c.get("osmType")
+        pinned_id = c.get("osmId")
+        if pinned_type and pinned_id is not None:
+            matched_osm_ids.add((pinned_type, pinned_id))
+            matches_made += 1
+            continue
         best, best_d = None, 25.0  # km
         for e in osm_entries:
             if not _names_loosely_match(c["name"], e["name"]):

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "runDate": "",
+  "assistant": "",
+  "model": "",
+  "results": [],
+  "summary": {
+    "promptCount": 0,
+    "findMyIslandCitationRatePct": 0,
+    "accuracyRatePct": 0,
+    "uniqueCitedUrls": 0
+  }
+}

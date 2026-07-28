@@ -551,8 +551,8 @@
     "nation": "England",
     "type": "sea",
     "archipelago": "Devon",
-    "lat": 50.276,
-    "lng": -3.901,
+    "lat": 50.2795,
+    "lng": -3.8998,
     "areaKm2": 0.105,
     "population": 0,
     "highestPointM": 33,
@@ -564,6 +564,9 @@
     "accommodation": "The Burgh Island Hotel (rooms include 'The Beach House' suite); also the Pilchard Inn for food and drink.",
     "wikipedia": "https://en.wikipedia.org/wiki/Burgh_Island",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Burgh_Island.jpg/640px-Burgh_Island.jpg",
-    "tags": ["tidal", "art-deco", "agatha-christie", "sea-tractor"]
+    "tags": ["tidal", "art-deco", "agatha-christie", "sea-tractor"],
+    "osmType": "way",
+    "osmId": 364192804,
+    "wikidata": "Q1014993"
   }
 ]

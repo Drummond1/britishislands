@@ -1,7 +1,7 @@
 /* global L */
 
 /**
- * Isles of Britain — interactive island atlas.
+ * Find My Island — interactive island atlas.
  *
  *  • Loads ~1,000 islands from data/islands.json (curated + OSM).
  *  • Clusters markers for performance (Leaflet.markercluster).
@@ -811,7 +811,7 @@ function primaryPropertyListing(island) {
   return rows.find((r) => r?.url) || rows[0];
 }
 
-function propertyListingPopupHtml(island) {
+function propertyListingPopupHtml(island, { loading = false } = {}) {
   const rows = island.propertyListings || [];
   const links = rows
     .filter((r) => r?.url)
@@ -824,10 +824,18 @@ function propertyListingPopupHtml(island) {
       </li>`;
     })
     .join("");
+  let body;
+  if (links) {
+    body = `<p class="sale-popup__lead">Property link${rows.filter((r) => r?.url).length === 1 ? "" : "s"} (opens external site):</p>
+    <ul class="sale-popup__list">${links}</ul>`;
+  } else if (loading) {
+    body = `<p class="sale-popup__lead">Loading listing link…</p>`;
+  } else {
+    body = `<p class="sale-popup__lead">Open the island profile for the property listing link.</p>`;
+  }
   return `<div class="sale-popup">
     <p class="sale-popup__title"><strong>${escapeHtml(island.name)}</strong></p>
-    <p class="sale-popup__lead">Property link${rows.length === 1 ? "" : "s"} (opens external site):</p>
-    <ul class="sale-popup__list">${links}</ul>
+    ${body}
     <button type="button" class="sale-popup__atlas-btn" data-island-id="${escapeAttr(island.id)}">Island profile</button>
   </div>`;
 }
@@ -1474,11 +1482,13 @@ function getPropertyListingMapPane() {
 }
 
 function wireForSaleMarkerInteractions(marker, island) {
-  marker.bindPopup(propertyListingPopupHtml(island), {
+  const popupOpts = {
     maxWidth: 300,
     className: "sale-popup-wrap",
     autoPanPadding: L.point(24, 24),
-  });
+  };
+  // Index stubs only carry `sale: 1` — listing URLs arrive with the nation shard.
+  marker.bindPopup(propertyListingPopupHtml(island, { loading: true }), popupOpts);
   marker.bindTooltip(
     `<span class="map-sale-tooltip"><strong>For sale</strong> · ${escapeHtml(island.name)}<br><span class="map-sale-tooltip__hint">Tap pin for listing links</span></span>`,
     {
@@ -1488,8 +1498,8 @@ function wireForSaleMarkerInteractions(marker, island) {
       interactive: false,
     },
   );
-  marker.on("popupopen", (ev) => {
-    const root = ev.popup.getElement();
+
+  const bindAtlasButton = (root) => {
     if (!root) return;
     L.DomEvent.disableClickPropagation(root);
     root.querySelector(".sale-popup__atlas-btn")?.addEventListener("click", (e) => {
@@ -1497,10 +1507,28 @@ function wireForSaleMarkerInteractions(marker, island) {
       map.closePopup();
       focusIsland(island.id, { fly: false });
     });
+  };
+
+  const fillPopupFromShard = async () => {
+    if (!Array.isArray(island.propertyListings) || !island.propertyListings.some((r) => r?.url)) {
+      try {
+        await ensureNationShardLoaded(island.nation);
+      } catch (_) {
+        /* non-fatal — fallback copy below */
+      }
+    }
+    marker.setPopupContent(propertyListingPopupHtml(island));
+    bindAtlasButton(marker.getPopup()?.getElement());
+  };
+
+  marker.on("popupopen", (ev) => {
+    bindAtlasButton(ev.popup.getElement());
+    fillPopupFromShard();
   });
   marker.on("click", (e) => {
     L.DomEvent.stopPropagation(e);
     marker.openPopup();
+    fillPopupFromShard();
   });
 }
 
@@ -2032,7 +2060,7 @@ function initCrowdSuggestUi() {
     }
     const body = formatCrowdSuggestionBody(fields);
     const label = fields.name?.trim() || "Unnamed island pin";
-    const subject = encodeURIComponent(`Isles of Britain — ${label}`);
+    const subject = encodeURIComponent(`Find My Island — ${label}`);
     const mailto = `mailto:?subject=${subject}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     showStep("success");
@@ -8317,7 +8345,7 @@ async function shareIslandLink(island) {
   if (navigator.share) {
     try {
       await navigator.share({
-        title: `${island.name} — Isles of Britain`,
+        title: `${island.name} — Find My Island`,
         text: island.shortDescription || island.name,
         url,
       });

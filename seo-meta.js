@@ -7,17 +7,17 @@
  */
 
 const HOME_SEO = {
-  title: "Find My Island — Isles of Britain atlas",
+  title: "Find My Island — The British & Irish Islands Atlas",
   description:
     "Find My Island: explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland.",
   canonical: "https://www.findmyisland.com/",
   ogType: "website",
-  ogTitle: "Find My Island — Isles of Britain atlas",
+  ogTitle: "Find My Island — The British & Irish Islands Atlas",
   ogDescription:
     "Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides.",
   ogUrl: "https://www.findmyisland.com/",
   twitterCard: "summary_large_image",
-  twitterTitle: "Find My Island — Isles of Britain atlas",
+  twitterTitle: "Find My Island — The British & Irish Islands Atlas",
   twitterDescription:
     "Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles.",
 };
@@ -128,7 +128,7 @@ function buildDescription(island) {
   } else if (island.archipelago) {
     parts.push(`Part of ${island.archipelago}.`);
   }
-  parts.push("Explore on the Isles of Britain visual atlas — map, photos, transport and ferry context.");
+  parts.push("Explore on the Find My Island atlas — map, photos, transport and ferry context.");
   return parts.join(" ").slice(0, 320);
 }
 
@@ -198,7 +198,7 @@ export function applyIslandSeo(island) {
   const geoCountry = nationToCountryHint(island.nation);
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Island",
+    "@type": "Landform",
     name: island.name,
     description: (island.shortDescription || desc).slice(0, 2000),
     url: pageUrl || undefined,
@@ -222,6 +222,22 @@ export function applyIslandSeo(island) {
   if (island.wikipedia) sameAs.push(island.wikipedia);
   if (island.wikidata) sameAs.push(`https://www.wikidata.org/wiki/${island.wikidata}`);
   if (sameAs.length) schema.sameAs = sameAs;
+  const identifiers = [];
+  if (island.osmType && island.osmId != null) {
+    identifiers.push({
+      "@type": "PropertyValue",
+      propertyID: "OpenStreetMap",
+      value: `${island.osmType}/${island.osmId}`,
+    });
+  }
+  if (island.wikidata) {
+    identifiers.push({
+      "@type": "PropertyValue",
+      propertyID: "Wikidata",
+      value: island.wikidata,
+    });
+  }
+  if (identifiers.length) schema.identifier = identifiers.length === 1 ? identifiers[0] : identifiers;
   if (island.parentWaterBody?.name) {
     schema.containedInPlace = {
       "@type": "Place",
