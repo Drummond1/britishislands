@@ -838,7 +838,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `run_continuous_seo_geo.sh --loop` (PID **98338**) | 2026-07-28 18:08 BST | ongoing | autonomous bash | Strategy-aligned continuous SEO/GEO. Lock `data/.continuous_seo_geo.lock`. Stop: `touch data/.continuous_seo_geo.stop`. Policy: **no deindex**. Log: `logs/continuous-seo-geo-20260728T170831Z.log` / `logs/continuous-seo-geo.out`. |
+| `run_continuous_seo_geo.sh --loop` (PID **848**, screen `iob-seo-geo`) | 2026-07-28 18:10 BST | ongoing | autonomous bash | Strategy-aligned continuous SEO/GEO. Lock `data/.continuous_seo_geo.lock`. Stop: `touch data/.continuous_seo_geo.stop` or `screen -S iob-seo-geo -X quit`. Policy: **no deindex**. Log: `logs/continuous-seo-geo-20260728T171002Z.log` / `logs/continuous-seo-geo.out`. Re-arm: `bash scripts/arm_continuous_seo_geo.sh`. |
 | ~~`run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28 05:05 UTC | 2026-07-27 | — | autonomous bash | **11** cycles; avg **47.78→47.81**, desc **1,617→1,621**, photos flat **4,356**. Superseded by continuous loop. |
 | ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash, then continuous. |
 | ~~`enrich_descriptions_wikipedia.py` sitelink+multilang~~ ✅ | 2026-07-27 ~06:25 BST | — | cursor subagent | Prefetch + multilang pass; **+45** desc after QA. |

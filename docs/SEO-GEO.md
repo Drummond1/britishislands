@@ -178,13 +178,17 @@ Primary autonomous runner for the 90-day strategy in
 runs until a stop file, optional max cycles/hours, or process kill.
 
 ```bash
-# Detached continuous loop (45 min between cycles; auto-push on gains)
+# Preferred: detach via screen (survives Cursor/agent shells)
+bash scripts/arm_continuous_seo_geo.sh
+
+# Or run directly in a long-lived terminal
 nohup env SEO_GEO_CONTINUOUS_PUSH=1 SEO_GEO_SLEEP_SEC=2700 \
   bash scripts/run_continuous_seo_geo.sh --loop \
   >> logs/continuous-seo-geo.out 2>&1 &
 
 # Stop cleanly
 touch data/.continuous_seo_geo.stop
+# or: screen -S iob-seo-geo -X quit
 ```
 
 Phase rotation (5-cycle):

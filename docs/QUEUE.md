@@ -6,7 +6,8 @@
 
 ## P0 — continuous SEO/GEO (armed)
 
-- **[in flight]** `bash scripts/run_continuous_seo_geo.sh --loop` — continuous
+- **[in flight]** `bash scripts/arm_continuous_seo_geo.sh` →
+  `run_continuous_seo_geo.sh --loop` (screen `iob-seo-geo`) — continuous
   strategy-aligned cycles (descriptions → photos → flagship → authority → GSC).
   Does **not** stop after 8 h. Stop: `touch data/.continuous_seo_geo.stop`.
   Lock: `data/.continuous_seo_geo.lock`. Strategy: `docs/SEO-GEO-STRATEGY.md`
