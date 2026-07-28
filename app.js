@@ -190,6 +190,7 @@ const state = {
   islands: [],
   filtered: [],
   byId: new Map(),
+  bySeoPath: new Map(),     // "/islands/{nation}/{slug}/" -> island id
   markers: new Map(),       // id -> L.Marker (category pin)
   polygonCache: new Map(),  // id -> GeoJSON layer
   activeId: null,
@@ -253,6 +254,7 @@ function expandIndexRow(row) {
   if (row.img) island.hasImage = true;
   if (row.sale) island.hasPropertyListing = true;
   if (row.c) island.classification = { confidence: row.c };
+  if (row.sp) island.seoPath = normalizeSeoPath(row.sp);
   return island;
 }
 
@@ -280,7 +282,64 @@ function expandUnnamedRow(row) {
   if (row.wb || row.wt) {
     island.parentWaterBody = { name: row.wb || "", type: row.wt || "" };
   }
+  if (row.sp) island.seoPath = normalizeSeoPath(row.sp);
   return island;
+}
+
+/** Normalize public island path to `/islands/{nation}/{slug}/`. */
+function normalizeSeoPath(path) {
+  if (!path || typeof path !== "string") return "";
+  const p = path.trim();
+  if (!p.startsWith("/islands/")) return "";
+  return p.endsWith("/") ? p : `${p}/`;
+}
+
+function registerIslandSeoPath(island) {
+  if (!island?.id) return;
+  const sp = normalizeSeoPath(island.seoPath);
+  if (!sp) return;
+  island.seoPath = sp;
+  state.bySeoPath.set(sp, island.id);
+}
+
+function rebuildSeoPathIndex() {
+  state.bySeoPath = new Map();
+  for (const island of state.islands) registerIslandSeoPath(island);
+}
+
+/** Visible URL for an island: prefer name-based /islands/… path. */
+function publicIslandHref(island) {
+  const sp = normalizeSeoPath(island?.seoPath);
+  if (sp) return sp;
+  if (island?.id) return `/?island=${encodeURIComponent(island.id)}`;
+  return "/";
+}
+
+function parseIslandsPathname(pathname) {
+  const path = (pathname || "").replace(/\/+$/, "") || "";
+  const m = path.match(/^\/islands\/([^/]+)\/([^/]+)$/);
+  if (!m) return null;
+  return normalizeSeoPath(`/islands/${m[1]}/${m[2]}/`);
+}
+
+/** Stamp seoPath onto stubs from the generated id→path lookup (covers pre-rebuild index). */
+async function hydrateSeoPathsFromLookup() {
+  try {
+    const res = await fetch("data/seo_path_by_id.json");
+    if (!res.ok) return;
+    const payload = await res.json();
+    const paths = payload && payload.paths;
+    if (!paths || typeof paths !== "object") return;
+    for (const [id, path] of Object.entries(paths)) {
+      const sp = normalizeSeoPath(path);
+      if (!sp) continue;
+      state.bySeoPath.set(sp, id);
+      const stub = state.byId.get(id);
+      if (stub) stub.seoPath = sp;
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
 }
 
 function parseIndexPayload(raw) {
@@ -615,10 +674,16 @@ function _onItineraryBannerClick(e) {
   const a = e.target.closest("a[href]");
   if (!a) return;
   const href = a.getAttribute("href") || "";
-  if (!href.startsWith("?island=")) return;
   e.preventDefault();
   try {
-    const q = href.startsWith("?") ? href.slice(1) : href;
+    if (href.startsWith("/islands/")) {
+      const sp = parseIslandsPathname(href.split("?")[0]);
+      const id = sp && state.bySeoPath.get(sp);
+      if (id && state.byId?.has(id)) focusIsland(id, { fly: true });
+      return;
+    }
+    if (!href.startsWith("?island=") && !href.includes("island=")) return;
+    const q = href.startsWith("?") ? href.slice(1) : href.replace(/^[^\?]+\?/, "");
     const id = new URLSearchParams(q).get("island");
     if (id && state.byId?.has(id)) focusIsland(id, { fly: true });
   } catch (_) {
@@ -630,7 +695,7 @@ function _renderItineraryBanner(it) {
   const stops = it.path.map((id) => {
     const isl = state.byId.get(id);
     if (isl) {
-      return `<a href="?island=${encodeURIComponent(isl.id)}">${escapeHtml(isl.name)}</a>`;
+      return `<a href="${escapeHtml(publicIslandHref(isl))}">${escapeHtml(isl.name)}</a>`;
     }
     return `<span class="itinerary-banner__unknown">${escapeHtml(id)}</span>`;
   });
@@ -2013,30 +2078,65 @@ function initCrowdSuggestUi() {
 function syncIslandUrl(id) {
   try {
     const url = new URL(window.location.href);
-    if (id) url.searchParams.set("island", id);
-    else url.searchParams.delete("island");
-    window.history.replaceState(null, "", url.toString());
+    url.searchParams.delete("island");
+    if (!id) {
+      if (url.pathname.startsWith("/islands/")) url.pathname = "/";
+      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+      return;
+    }
+    const island = state.byId.get(id);
+    registerIslandSeoPath(island);
+    const sp = normalizeSeoPath(island?.seoPath);
+    if (sp) {
+      url.pathname = sp;
+      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+      return;
+    }
+    // Fallback until seoPath is stamped (should be rare after index rebuild).
+    url.pathname = "/";
+    url.searchParams.set("island", id);
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
   } catch (_) {
     /* non-fatal */
   }
 }
 
+function focusIslandFromRouteId(islandId) {
+  if (!islandId) return false;
+  if (state.byId?.has(islandId)) {
+    focusIsland(islandId, { fly: true });
+    return true;
+  }
+  if (islandId.startsWith("osm-")) {
+    loadUnnamedIslandOverlay()
+      .then(() => {
+        if (state.byId.has(islandId)) focusIsland(islandId, { fly: true });
+      })
+      .catch(() => {});
+    return true;
+  }
+  return false;
+}
+
 function applyRouteFromUrl() {
   try {
     const params = new URLSearchParams(window.location.search);
-    const islandId = params.get("island");
-    if (islandId && state.byId?.has(islandId)) {
-      focusIsland(islandId, { fly: true });
-      return;
-    }
-    if (islandId && islandId.startsWith("osm-")) {
+    const seoFromPath = parseIslandsPathname(window.location.pathname);
+    if (seoFromPath) {
+      const pathId = state.bySeoPath.get(seoFromPath);
+      if (focusIslandFromRouteId(pathId)) return;
+      // Path may be an unnamed island not yet in the overlay.
       loadUnnamedIslandOverlay()
         .then(() => {
-          if (state.byId.has(islandId)) focusIsland(islandId, { fly: true });
+          rebuildSeoPathIndex();
+          const id = state.bySeoPath.get(seoFromPath);
+          if (id) focusIsland(id, { fly: true });
         })
         .catch(() => {});
       return;
     }
+    const islandId = params.get("island");
+    if (islandId && focusIslandFromRouteId(islandId)) return;
     const exploreId = params.get("explore");
     if (exploreId && state.discoveryTopics?.some((t) => t.id === exploreId)) {
       setExploreTopic(exploreId, { skipUrl: true });
@@ -2065,6 +2165,7 @@ function mergeIslandDetailFromFull(stub, full) {
     stub[k] = full[k];
   }
   stub.__fullMerged = true;
+  registerIslandSeoPath(stub);
 }
 
 function nationShardSlug(nation) {
@@ -2148,6 +2249,7 @@ async function loadUnnamedIslandOverlay() {
       if (state.byId.has(row.id)) continue;
       state.islands.push(row);
       state.byId.set(row.id, row);
+      registerIslandSeoPath(row);
     }
     state.unnamedOverlayLoaded = true;
   })();
@@ -2183,6 +2285,7 @@ async function loadIslands() {
       if (indexRows.length > 0) {
         state.islands = indexRows;
         state.byId = new Map(indexRows.map((i) => [i.id, i]));
+        rebuildSeoPathIndex();
         settleIslandsIndex?.();
         usedIndex = true;
         initFavoritesState();
@@ -2192,6 +2295,7 @@ async function loadIslands() {
         renderScotlandQuickChips();
         renderBrowseQuickChips();
         applyFilters({ skipMarkers: true, skipSort: true });
+        await hydrateSeoPathsFromLookup();
         applyRouteFromUrl();
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
         setAppLoading(false);
@@ -2222,6 +2326,7 @@ async function loadIslands() {
       for (const row of state.islands) {
         row.__fullMerged = true;
       }
+      rebuildSeoPathIndex();
       state.fullRecordsReady = true;
       settleIslandsIndex?.();
     }
@@ -2242,6 +2347,7 @@ async function loadIslands() {
   renderScotlandQuickChips();
   renderBrowseQuickChips();
   applyFilters();
+  await hydrateSeoPathsFromLookup();
   applyRouteFromUrl();
   loadCrowdPinsAndRender();
   loadFerries().catch(() => {});
@@ -8185,10 +8291,13 @@ function prefersReducedMotion() {
 }
 
 function islandShareUrl(island) {
-  const url = new URL(window.location.href);
-  url.search = "";
-  url.searchParams.set("island", island.id);
-  return url.toString();
+  registerIslandSeoPath(island);
+  const href = publicIslandHref(island);
+  try {
+    return new URL(href, window.location.origin).toString();
+  } catch (_) {
+    return href;
+  }
 }
 
 let toastTimer = 0;

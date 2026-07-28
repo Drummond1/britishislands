@@ -168,9 +168,13 @@ export function applyIslandSeo(island) {
 
   // SPA ?island= URLs must not compete with /islands/{nation}/{slug}/ in Google.
   // Keep them crawlable via follow, but noindex the query-string view.
+  // When the address bar already shows /islands/…, leave indexing alone.
   try {
     const q = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
-    if (q && q.has("island") && canonical && canonical.includes("/islands/")) {
+    const onSeoPath =
+      typeof window !== "undefined" &&
+      (window.location.pathname || "").startsWith("/islands/");
+    if (q && q.has("island") && canonical && canonical.includes("/islands/") && !onSeoPath) {
       upsertMetaByName("robots", "noindex,follow,max-image-preview:large");
     }
   } catch {

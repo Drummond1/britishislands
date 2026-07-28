@@ -4,6 +4,10 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (overnight SEO/GEO done)** — Loop finished after **11** cycles (~8 h). Scores: avg **47.78→47.81**, desc **1,617→1,621**, photos **4,356** (flat). Auto-push on cycle 1 failed (commit `e6d8bf3a` still local, `main` ahead 1).
+
+**2026-07-27 (visible name URLs)** — Atlas `history.replaceState` now shows `/islands/{nation}/{slug}/` on island open (not `?island=`). Index stubs carry `sp`; `<base href="/">` keeps fetches rooted. Index rebuilt 7,237+4,143 with `sp`.
+
 **2026-07-27 (overnight SEO/GEO autonomous)** — Armed `scripts/run_overnight_seo_geo.sh --loop` (**8 h**, **45 min** cycles). Self-contained: rotates `run_seo_geo_improvement.sh` + multilang descriptions + photo-gap harvest; rebuilds `/islands/` artifacts; auto-pushes on score gains (`SEO_GEO_OVERNIGHT_PUSH=1`). Lock `data/.overnight_seo_geo.lock`. Replaces agent-wake hourly loop (PID 19423 stopped).
 
 **2026-07-27 (SEO/GEO sitelink+multilang desc)** — Batch Wikidata sitelink
@@ -828,7 +832,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| `run_overnight_seo_geo.sh --loop` | 2026-07-27 | ~8 h | autonomous bash | PID **26495** (`data/.overnight_seo_geo.pid`). Lock `data/.overnight_seo_geo.lock`. Auto-push on gains. |
+| ~~`run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28 05:05 UTC | 2026-07-27 | — | autonomous bash | **11** cycles; avg **47.78→47.81**, desc **1,617→1,621**, photos flat **4,356**. Commit `e6d8bf3a` local (push failed overnight). |
 | ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash. |
 | ~~`enrich_descriptions_wikipedia.py` sitelink+multilang~~ ✅ | 2026-07-27 ~06:25 BST | — | cursor subagent | Prefetch + multilang pass; **+45** desc after QA. |
 | ~~`run_overnight_discovery_naming.sh --loop`~~ ✅ finished 2026-07-27 04:27 UTC | — | — | cursor agent | 8 cycles; +1 island overnight; naming −27. Superseded by discovery unlock (+174). |

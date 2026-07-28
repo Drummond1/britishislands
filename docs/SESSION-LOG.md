@@ -2752,3 +2752,15 @@ loop (`descriptions+photos-gap`, cycle 17).
   optional auto-push). Stopped agent-wake `AGENT_LOOP_TICK_seo_geo` (PID 19423).
 - **Open**: Loop runs ~8 h; check `logs/overnight-seo-geo-*.log` and
   `data/.overnight_seo_geo_state.json` in the morning.
+
+## 2026-07-27 — Visible name URLs on island open
+
+- **Goal**: Address bar always shows `/islands/{nation}/{slug}/` when an island is opened, not `/?island=osm-…`.
+- **What changed**:
+  - `app.js` — `syncIslandUrl` / share / itinerary use `seoPath`; route parse for `/islands/…`; hydrate from `seo_path_by_id.json`; compact index key `sp`.
+  - `index.html` — `<base href="/">` so path changes do not break `data/` fetches.
+  - `build_islands_index.py` — stamp `sp` on named + unnamed index stubs; rebuilt index (**7,237** + **4,143** all with `sp`).
+  - Docs: `SEO-GEO.md`, `DATA-SCHEMA.md`.
+- **Outcome**: Clicking Soay (etc.) rewrites visible URL to e.g. `/islands/scotland/soay-outer-hebrides/`. Legacy `?island=` still opens then rewrites.
+- **Open**: Deploy for production; hard refresh of `/islands/…` still serves static landing (SEO) — CTA opens atlas then rewrites to name path.
+

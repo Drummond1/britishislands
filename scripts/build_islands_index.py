@@ -77,6 +77,9 @@ def compact_stub(island: dict) -> dict:
     conf = (island.get("classification") or {}).get("confidence")
     if conf and conf != "high":
         row["c"] = conf
+    seo = (island.get("seoPath") or "").strip()
+    if seo.startswith("/islands/"):
+        row["sp"] = seo if seo.endswith("/") else f"{seo}/"
     return row
 
 
@@ -102,6 +105,9 @@ def slim_unnamed_stub(island: dict) -> dict:
     if parent.get("name") or parent.get("type"):
         row["wb"] = parent.get("name") or ""
         row["wt"] = parent.get("type") or ""
+    seo = (island.get("seoPath") or "").strip()
+    if seo.startswith("/islands/"):
+        row["sp"] = seo if seo.endswith("/") else f"{seo}/"
     return row
 
 

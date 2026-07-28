@@ -1,8 +1,8 @@
 # SEO and GEO for island profiles
 
-This project is a **static SPA** (`index.html` + `app.js`). Interactive deep
-links use `/?island=<id>` (stable internal id). **Canonical public URLs** for
-crawlers and citations are nation + name-slug paths:
+This project is a **static SPA** (`index.html` + `app.js`). **Visible atlas URLs**
+(and share links) use the nation + name-slug path. Legacy `/?island=<id>` still
+opens an island, then the address bar is rewritten to the name path.
 
 ```
 /islands/{nation}/{slug}/
@@ -26,11 +26,13 @@ hub titles and page `<title>` templates instead.
 | Nation segment | From `nation`: `scotland`, `ireland`, `england`, `wales`, `northern-ireland`, `crown-dependencies`, `isle-of-man` |
 | Slug | ASCII-folded place name; curated human `id` kept when already a clean slug; collisions get parent water / archipelago / id suffix |
 | Unnamed | Slug falls back to stable `id` (often `osm-…`) |
-| Internal `id` | **Never** regenerated — still used for `?island=` and data joins |
+| Internal `id` | **Never** regenerated — still used for data joins and legacy `?island=` |
 | Legacy | `/profiles/<id>.html` → redirect + `noindex`, canonical points at `/islands/…` |
 
-Shard records get `seoPath` stamped by `build_islands_index.py`. Lookup file:
-`data/seo_path_by_id.json` (written by `generate_seo_artifacts.py`).
+`build_islands_index.py` stamps `seoPath` on shards and compact index key `sp`.
+Lookup file: `data/seo_path_by_id.json` (also written by `generate_seo_artifacts.py`).
+The atlas SPA uses `<base href="/">` so `history.replaceState` to `/islands/…`
+does not break `data/` fetches.
 
 ## What runs in the browser (no visible UI change)
 
@@ -159,3 +161,17 @@ done
 
 Env knobs: `IOB_SITE_ORIGIN`, `SEO_GEO_DESC_LIMIT` (default 60),
 `SEO_GEO_PHOTO_LIMIT` (default 80).
+
+## Overnight autonomous loop (no agent wake)
+
+Self-contained bash — runs enrichment without Cursor chat ticks:
+
+```bash
+OVERNIGHT_HOURS=8 OVERNIGHT_SLEEP_SEC=2700 SEO_GEO_OVERNIGHT_PUSH=1 \
+  bash scripts/run_overnight_seo_geo.sh --loop
+```
+
+Each cycle (~45 min): `run_seo_geo_improvement.sh` + multilang descriptions or
+photo-gap harvest → rebuild index/`/islands/` → audit → **auto-push** when avg,
+description, or photo counts rise. Lock: `data/.overnight_seo_geo.lock`. PID:
+`data/.overnight_seo_geo.pid`. History: `data/seo_geo_overnight_history.jsonl`.
