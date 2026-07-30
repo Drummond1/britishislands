@@ -19,10 +19,10 @@
     "warnings": 0
   },
   "findings": [
-    "Google indexes /?island= URLs as canonical because profile HTML used meta-refresh to the SPA.",
-    "New /islands/{nation}/{slug}/ URLs are unknown to Google until deploy.",
-    "Best near-term ranking opportunity: /ferries/calmac/ (279 impressions, position ~51).",
-    "Top island demand: Scilly St Mary's, Anglesey, Bute, Lewis & Harris."
+    "Canonical /islands/{nation}/{slug}/ landings are live (HTTP 200) as of 2026-07-30.",
+    "Google historically indexed /?island= SPA URLs; request indexing on hubs + top islands.",
+    "Best near-term ranking opportunities: Scilly St Mary's, Bute, Staffa, Anglesey, Lewis & Harris.",
+    "GSC MCP unavailable this session \u2014 use manual URL Inspection from docs/GSC-INDEXING-REQUESTS.md."
   ],
   "topPagesByImpressions": [
     {
@@ -166,12 +166,21 @@
     }
   ],
   "lastGscDrivenCycle": {
-    "at": "2026-07-26T20:53:46Z",
-    "islandsDirDeployed": false,
-    "averageScore": 48.26,
-    "pctBoth": 18.7,
-    "withDescription": 1566,
-    "withPhoto": 4354
+    "at": "2026-07-29T12:01:06Z",
+    "islandsDirDeployed": true,
+    "averageScore": 47.81,
+    "pctBoth": 18.8,
+    "withDescription": 1621,
+    "withPhoto": 4356
   },
-  "gscRefreshedAt": "2026-07-26T20:53:46Z"
+  "gscRefreshedAt": "2026-07-26T20:53:46Z",
+  "islandsDirDeployed": true,
+  "lastDeployProbe": {
+    "at": "2026-07-30T10:52:55Z",
+    "scotlandHubHttp": 200,
+    "sampleIslandHttp": 200,
+    "sampleIsland": "https://www.findmyisland.com/islands/england/scilly-st-marys/"
+  },
+  "indexRequestList": "data/gsc_index_request_urls.json",
+  "indexRequestDoc": "docs/GSC-INDEXING-REQUESTS.md"
 }

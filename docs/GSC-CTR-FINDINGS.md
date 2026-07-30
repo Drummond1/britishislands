@@ -94,8 +94,11 @@ Prioritise after `/islands/…` deploy + indexing. Do **not** chase CalMac booki
 
 ## Next actions
 
-1. **Deploy** nation+slug `/islands/…` + sitemap + ferry landings (QUEUE P0) — still blocked.
-2. **Request indexing** on hubs + top GSC islands once live.
+1. ~~**Deploy** nation+slug `/islands/…`~~ ✅ live HTTP 200 (2026-07-30).
+2. **Request indexing** on hubs + top GSC islands — see
+   [`docs/GSC-INDEXING-REQUESTS.md`](GSC-INDEXING-REQUESTS.md) and
+   `data/gsc_index_request_urls.json` (GSC MCP unavailable this session;
+   manual URL Inspection required).
 3. Strengthen **Scilly St Mary's**, **Bute**, **Staffa**, **Anglesey** content/titles for map intent.
 4. Homepage brand: lead with **Find My Island** in title/OG (done in-repo when shipped).
 5. Re-check position ≤20 in 2–4 weeks.

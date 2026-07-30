@@ -2860,3 +2860,15 @@ loop (`descriptions+photos-gap`, cycle 17).
   there → save modal → back with search preserved). Schema untouched.
 - **Open items kicked to QUEUE.md**: Deploy redesign; optional mobile bottom-sheet
   polish beyond Map/List nav.
+
+
+## 2026-07-30 — GSC indexing pack + description/photo coverage
+
+- **Goal**: Highest-impact follow-ups after redesign ship — (1) Google discovery of `/islands/…`, (2) raise desc+photo coverage.
+- **What changed**:
+  - Removed stale `data/.gsc_seo_improvement.lock` (PID 25470 dead) blocking continuous SEO photos cycle.
+  - Verified live HTTP **200** for nation hubs + priority island landings.
+  - Added `docs/GSC-INDEXING-REQUESTS.md` + `data/gsc_index_request_urls.json` (36 URLs); updated `docs/GSC-CTR-FINDINGS.md` / `docs/QUEUE.md`.
+  - Coverage pass: Wikipedia multilang **+2** descriptions; photo harvesters **+0** (queue exhausted / Commons 429). Regenerated SEO artifacts (`seo_path_by_id` 11,380 paths, sitemaps, landings).
+- **Outcome / counts**: avg **47.82**, both **18.9%**, desc **1,623**, photo **4,356**.
+- **Open items**: Manual GSC Request indexing (MCP server error); reconnect GSC MCP; photo gains need new sources/keys (Flickr etc.).

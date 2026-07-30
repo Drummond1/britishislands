@@ -1,14 +1,14 @@
 {
-  "startedAt": "2026-07-27T21:01:27+00:00",
+  "startedAt": "2026-07-30T10:56:19+00:00",
   "totalIslands": 11380,
-  "candidates": 75,
+  "candidates": 100,
   "multilang": true,
   "adopted": 0,
-  "skippedNoTitle": 63,
-  "skippedNoExtract": 3,
-  "skippedNameMismatch": 9,
+  "skippedNoTitle": 84,
+  "skippedNoExtract": 5,
+  "skippedNameMismatch": 11,
   "adoptionsByNation": {},
   "adoptionsBySource": {},
   "samples": [],
-  "finishedAt": "2026-07-27T21:01:33+00:00"
+  "finishedAt": "2026-07-30T10:56:26+00:00"
 }

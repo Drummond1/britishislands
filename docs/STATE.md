@@ -4,6 +4,9 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-30 (GSC indexing + coverage pass)** — Cleared stale `.gsc_seo_improvement.lock` so continuous SEO loop could resume. Confirmed `/islands/…` hubs+priority landings **HTTP 200**. Built indexing pack `docs/GSC-INDEXING-REQUESTS.md` + `data/gsc_index_request_urls.json` (36 URLs). Coverage pass: **+2** multilang descriptions; photos flat **4,356**. Scores **avg 47.81→47.82**, both **18.8%→18.9%**, desc **1,621→1,623**. Regenerated `seo_path_by_id.json` (**11,380** paths) + sitemaps/landings. GSC MCP unhealthy — manual Request indexing required. Continuous loop still armed.
+
+
 **2026-07-28 (atlas product redesign)** — Map-led discover UX: compact header,
 intent chips, richer cards, filter drawer groups, visitor-first profile +
 grouped ferries, contextual Ask, Search this area. Files: `index.html`,

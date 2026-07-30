@@ -15,9 +15,16 @@
 
 ## P0 — atlas redesign deploy (2026-07-28)
 
-- **[ready]** Product redesign local (`atlas-redesign.css` + `index.html` /
-  `app.js`). Push to `main` / Pages when approved. Optional follow-up: true
-  mobile draggable results bottom sheet (Map/List nav retained for now).
+- ~~Product redesign~~ ✅ shipped `15eb7d24` to Pages (2026-07-30). Optional
+  follow-up: true mobile draggable results bottom sheet.
+
+## P0 — GSC indexing after `/islands/` deploy (2026-07-30)
+
+- **[in flight]** Canonical `/islands/…` landings are **live HTTP 200**.
+  Manual GSC **Request indexing** list ready:
+  `docs/GSC-INDEXING-REQUESTS.md` + `data/gsc_index_request_urls.json` (36 URLs).
+  GSC MCP server currently unhealthy — finish indexing clicks in Search Console.
+  Priority: nation hubs + Scilly St Mary's, Bute, Staffa, Anglesey.
 
 ## P0 — overnight SEO/GEO (superseded by continuous)
 
@@ -28,24 +35,18 @@
 
 - **[in flight]** `scripts/run_gsc_driven_seo.sh` every **60 min** (sentinel
   `AGENT_LOOP_TICK_gsc_seo`). Uses `data/gsc_seo_snapshot.json` + GSC MCP on ticks.
-  Blocked for live impact until `/islands/` deploy.
+  Deploy blocker cleared (hubs live); MCP still needs reconnect for inspect API.
 
 ## P0 — GSC + deploy (2026-07-26)
 
-- **[blocked on deploy]** Nation-slug URLs + no-refresh landings + ferry title fix
-  must ship to Pages before GSC can index `/islands/…`. After push: Request indexing
-  on hubs + top GSC islands (see `data/gsc_seo_snapshot.json`).
-- ~~GSC snapshot + meta-refresh fix + SPA noindex + CalMac title cleanup~~ ✅ local
+- ~~**blocked on deploy**~~ ✅ `/islands/…` live. Remaining: Request indexing
+  (see GSC indexing P0 above).
+- ~~GSC snapshot + meta-refresh fix + SPA noindex + CalMac title cleanup~~ ✅
 
 ## P0 — nation + name-slug URLs (2026-07-26)
 
-- ~~**Canonical `/islands/{nation}/{slug}/` URLs**~~ ✅ Implemented locally
-  (`seo_paths.py`, generator, hubs, legacy redirects, `seoPath` on shards).
-  **Needs deploy** (push + Pages) before live GSC/probe sees new paths.
-  GSC URL Inspection (2026-07-26): `/islands/scotland/` and
-  `/islands/wales/anglesey/` = **URL unknown to Google**. Priority after deploy:
-  request indexing on hubs + Scilly St Mary's, Bute, Staffa, Anglesey.
-  See `docs/GSC-CTR-FINDINGS.md`.
+- ~~**Canonical `/islands/{nation}/{slug}/` URLs**~~ ✅ Implemented and live.
+  See `docs/GSC-CTR-FINDINGS.md` + `docs/GSC-INDEXING-REQUESTS.md`.
 
 ## P0 — SEO / GEO continuous loop (armed 2026-07-26)
 
