@@ -78,6 +78,7 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="atlas-redesign.css" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
     <link rel="modulepreload" href="app.js" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,25 +109,25 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header class="topbar">
-      <button class="brand brand-link" id="home-link" type="button" aria-label="Back to map home">
-        <span class="brand-mark" aria-hidden="true">◍</span>
+    <header class="topbar topbar--atlas">
+      <button class="brand brand-link" id="home-link" type="button" aria-label="Find My Island home">
+        <span class="brand-mark" aria-hidden="true"></span>
         <div>
           <h1>Find My Island</h1>
-          <p class="tagline">7,000+ islands on one map</p>
+          <p class="tagline">The British &amp; Irish Islands Atlas</p>
         </div>
       </button>
 
       <div class="topbar-search">
         <div class="search-field search-field--hero">
-          <span class="search-field__icon" aria-hidden="true">⌕</span>
+          <span class="search-field__icon" aria-hidden="true" data-lucide="search"></span>
           <input
             id="search"
             type="search"
-            placeholder="Search islands…"
+            placeholder="Search islands, places, or groups…"
             aria-label="Search islands"
             autocomplete="off"
-            title="Press / to focus search from anywhere"
+            title="Press / to focus search"
           />
           <button
             type="button"
@@ -135,24 +136,32 @@
             hidden
             aria-label="Clear search"
           >
-            ×
+            <span aria-hidden="true" data-lucide="x"></span>
           </button>
         </div>
       </div>
 
       <div class="topbar-actions">
-        <a class="topbar-link topbar-link--quiet" href="/collections/" title="Browse island groups">Collections</a>
-        <a class="topbar-link topbar-link--quiet" href="/ferries/" title="Ferry guides">Ferries</a>
         <button
           class="topbar-filters-toggle"
           id="filters-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="topbar-filters"
-          title="Filter the map and list"
+          title="Open filters"
         >
-          Filter
+          <span aria-hidden="true" data-lucide="sliders-horizontal"></span>
+          <span class="topbar-filters-toggle__label">Filters</span>
           <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
+        </button>
+        <button
+          type="button"
+          class="topbar-link topbar-link--btn"
+          id="saved-islands-btn"
+          title="Your saved islands"
+        >
+          <span aria-hidden="true" data-lucide="heart"></span>
+          <span class="topbar-link__label">Saved</span>
         </button>
         <div class="topbar-more" id="topbar-more">
           <button
@@ -162,151 +171,168 @@
             aria-expanded="false"
             aria-controls="topbar-more-menu"
             aria-haspopup="true"
-            title="Saved islands and contribute"
+            title="More"
           >
-            More
+            <span aria-hidden="true" data-lucide="more-horizontal"></span>
+            <span class="topbar-link__label">More</span>
           </button>
           <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
-            <button
-              type="button"
-              class="topbar-more__item"
-              id="saved-islands-btn"
-              role="menuitem"
-              title="Your hearted islands (email required)"
-            >
-              Saved
-            </button>
-            <button
-              type="button"
-              class="topbar-more__item"
-              id="crowd-suggest-btn"
-              role="menuitem"
-              title="Suggest a name, pin, or correction"
-            >
-              Contribute
-            </button>
-            <a
-              class="topbar-more__item topbar-more__item--link topbar-more__item--mobile-only"
-              href="/collections/"
-              role="menuitem"
-            >
-              Collections
-            </a>
-            <a
-              class="topbar-more__item topbar-more__item--link"
-              href="/about/"
-              role="menuitem"
-            >
-              About
-            </a>
+            <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Collections</a>
+            <a class="topbar-more__item topbar-more__item--link" href="/ferries/" role="menuitem">Ferry guides</a>
+            <button type="button" class="topbar-more__item" id="crowd-suggest-btn" role="menuitem">Contribute</button>
+            <a class="topbar-more__item topbar-more__item--link" href="/about/" role="menuitem">About</a>
           </div>
         </div>
+        <button
+          type="button"
+          class="topbar-panel-toggle"
+          id="sidebar-collapse-btn"
+          aria-pressed="false"
+          title="Collapse or enlarge the island list"
+          aria-label="Collapse island list"
+        >
+          <span aria-hidden="true" data-lucide="panel-left-close"></span>
+        </button>
       </div>
 
-      <div class="topbar-controls" id="topbar-filters">
-        <div class="filter-tier filter-tier--essential">
-          <select id="nation-filter" aria-label="Filter by nation">
-            <option value="">All nations</option>
-          </select>
-          <select id="type-filter" aria-label="Filter by island type">
-            <option value="">All types</option>
-            <option value="sea">Sea islands</option>
-            <option value="lake">Loch / lake islands</option>
-            <option value="river">River islands</option>
-            <option value="unknown">Needs review</option>
-          </select>
-          <label class="toggle" title="Islands with at least one photo in the atlas">
-            <input type="checkbox" id="filter-photo" />
-            <span>Has photo</span>
-          </label>
-          <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
-            <input type="checkbox" id="filter-ferry" disabled />
-            <span>Ferry</span>
-          </label>
-          <label class="toggle" title="Islands with a mapped summit / highest point">
-            <input type="checkbox" id="filter-elevation" />
-            <span>Summit</span>
-          </label>
-          <label
-            class="toggle toggle--pending"
-            id="filter-for-sale-wrap"
-            title="Loading property listings…"
-          >
-            <input type="checkbox" id="filter-for-sale" disabled />
-            <span>For sale <span id="for-sale-count" class="for-sale-count"></span></span>
-          </label>
+      <div class="topbar-controls filter-drawer" id="topbar-filters" role="dialog" aria-label="Island filters">
+        <div class="filter-drawer__header">
+          <h2 class="filter-drawer__title">Filters</h2>
+          <button type="button" class="filter-drawer__close" id="filters-close" aria-label="Close filters">
+            <span aria-hidden="true" data-lucide="x"></span>
+          </button>
         </div>
-        <details class="filter-tier filter-tier--more">
-          <summary class="filter-tier__summary">More filters</summary>
-          <div class="filter-tier__body">
-            <select id="favorites-filter" aria-label="Saved islands list">
-              <option value="">All islands</option>
-              <option value="favorites">Saved only</option>
+        <div class="filter-drawer__body">
+          <fieldset class="filter-group">
+            <legend>Geography</legend>
+            <select id="nation-filter" aria-label="Nation or country">
+              <option value="">All nations</option>
+            </select>
+            <select id="type-filter" aria-label="Island setting">
+              <option value="">All settings</option>
+              <option value="sea">Sea islands</option>
+              <option value="lake">Loch / lake islands</option>
+              <option value="river">River islands</option>
+              <option value="unknown">Unclassified</option>
             </select>
             <select id="area-min-filter" aria-label="Minimum island area">
               <option value="">Any area</option>
               <option value="1">≥ 1 km²</option>
               <option value="10">≥ 10 km²</option>
             </select>
-            <select id="subtype-filter" aria-label="Filter by island subtype">
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Access</legend>
+            <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
+              <input type="checkbox" id="filter-ferry" disabled />
+              <span>Reachable by ferry</span>
+            </label>
+            <label class="toggle" title="Islands with a mapped summit">
+              <input type="checkbox" id="filter-elevation" />
+              <span>Has a summit</span>
+            </label>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Population</legend>
+            <select id="population-filter" aria-label="Population">
+              <option value="">Any population</option>
+              <option value="inhabited">Inhabited</option>
+              <option value="uninhabited">Uninhabited</option>
+            </select>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Island type</legend>
+            <select id="subtype-filter" aria-label="Island subtype">
               <option value="">All subtypes</option>
             </select>
-            <select id="confidence-filter" aria-label="Classification confidence">
-              <option value="">All records</option>
-              <option value="curated">Curated only</option>
-              <option value="hide-unconfirmed" selected>Hide needs review</option>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Content available</legend>
+            <label class="toggle" title="Islands with at least one photo">
+              <input type="checkbox" id="filter-photo" />
+              <span>With photos</span>
+            </label>
+            <label class="toggle" title="Islands with editorial story text">
+              <input type="checkbox" id="filter-story" />
+              <span>With stories</span>
+            </label>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>For sale</legend>
+            <label class="toggle toggle--pending" id="filter-for-sale-wrap" title="Loading property listings…">
+              <input type="checkbox" id="filter-for-sale" disabled />
+              <span>Currently listed <span id="for-sale-count" class="for-sale-count"></span></span>
+            </label>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Saved &amp; map</legend>
+            <select id="favorites-filter" aria-label="Saved islands">
+              <option value="">All islands</option>
+              <option value="favorites">Saved only</option>
             </select>
-            <label class="toggle" title="Show unnamed landmasses (survey overlay)">
-              <input type="checkbox" id="filter-unnamed" />
-              <span>Unnamed only</span>
-            </label>
-            <label class="toggle" title="Show community-submitted pins from data/crowd_pins.json">
+            <label class="toggle" title="Show community-submitted pins">
               <input type="checkbox" id="crowd-show-toggle" checked />
-              <span>Crowd pins</span>
+              <span>Community pins</span>
             </label>
-            <label class="toggle" title="Group nearby markers into clusters">
+            <label class="toggle" title="Group nearby markers">
               <input type="checkbox" id="cluster-toggle" checked />
-              <span>Cluster</span>
+              <span>Cluster markers</span>
             </label>
-            <select id="basemap" aria-label="Choose base map">
+            <select id="basemap" aria-label="Base map style">
               <option value="osm">Standard (OpenStreetMap)</option>
               <option value="topo">Topographic (OpenTopoMap)</option>
               <option value="satellite">Satellite (Esri)</option>
               <option value="cartoLight">Light (CARTO)</option>
               <option value="cartoDark">Dark (CARTO)</option>
-              <option value="osMaps" disabled>
-                OS Maps (open an island to add a key)
-              </option>
+              <option value="osMaps" disabled>OS Maps (open an island to add a key)</option>
             </select>
-            <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all filters</button>
-          </div>
-        </details>
+          </fieldset>
+          <fieldset class="filter-group filter-group--advanced">
+            <legend>Data quality</legend>
+            <select id="confidence-filter" aria-label="Verification level">
+              <option value="">All records</option>
+              <option value="curated">Curated only</option>
+              <option value="hide-unconfirmed" selected>Hide unverified records</option>
+            </select>
+            <label class="toggle" title="Show unnamed landmasses">
+              <input type="checkbox" id="filter-unnamed" />
+              <span>Unnamed landmasses only</span>
+            </label>
+          </fieldset>
+        </div>
+        <div class="filter-drawer__footer">
+          <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all</button>
+          <button type="button" class="filter-apply-btn" id="filters-apply">
+            Show <span id="filters-apply-count">0</span> results
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="layout">
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
         <section class="island-list" id="island-list-section">
-          <header class="sidebar-section-header">
+          <header class="sidebar-section-header discovery-header">
             <div class="sidebar-section-header__text">
-              <h2 id="list-heading">Browse</h2>
-              <p class="sidebar-orient" id="sidebar-orient">Search, or pick a notable island</p>
+              <h2 id="list-heading" class="discovery-title">Discover British &amp; Irish islands</h2>
+              <p class="sidebar-orient" id="sidebar-orient">Search, filter, or start exploring below</p>
             </div>
             <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
 
           <div class="sidebar-explore" id="sidebar-explore">
-            <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
-              <h3 id="featured-heading" class="featured-strip__title">Start here</h3>
-              <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
-            </section>
-            <div class="browse-quick" id="browse-quick" aria-label="Quick filters">
-              <p class="browse-quick__label" id="browse-quick-label">Show me</p>
+            <div class="browse-quick" id="browse-quick" aria-label="High-value filters">
+              <p class="browse-quick__label" id="browse-quick-label">Quick looks</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
+            <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
+            <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
+              <h3 id="featured-heading" class="featured-strip__title">Start exploring</h3>
+              <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
+            </section>
             <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
               <details class="discover-panel__details">
-                <summary class="discover-panel__summary">Topics</summary>
+                <summary class="discover-panel__summary">More collections &amp; topics</summary>
                 <div class="discover-chips" id="discover-chips" role="tablist"></div>
                 <p class="discover-panel__hint" id="discover-hint" hidden></p>
               </details>
@@ -314,7 +340,6 @@
             <div class="scotland-quick" id="scotland-quick" hidden aria-label="Quick filters for Scotland">
               <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
             </div>
-            <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
           </div>
 
           <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
@@ -554,12 +579,28 @@
           </div>
         </div>
         <button type="button" class="map-island-peek" id="map-island-peek" hidden>
-          <span class="map-island-peek__name" id="map-island-peek-name"></span>
-          <span class="map-island-peek__cta">View island →</span>
+          <span class="map-island-peek__thumb" id="map-island-peek-thumb" hidden></span>
+          <span class="map-island-peek__body">
+            <span class="map-island-peek__name" id="map-island-peek-name"></span>
+            <span class="map-island-peek__meta" id="map-island-peek-meta"></span>
+          </span>
+          <span class="map-island-peek__cta">View island</span>
+        </button>
+        <button
+          type="button"
+          class="map-search-area"
+          id="map-search-area"
+          hidden
+          aria-label="Search islands in the current map area"
+        >
+          <span aria-hidden="true" data-lucide="scan-search"></span>
+          Search this area
         </button>
         <div id="map-hint" class="map-hint" role="status" hidden>
           <p class="map-hint__text">Tap a pin, search above, or open <strong>List</strong> to browse.</p>
-          <button type="button" class="map-hint__close" id="map-hint-close" aria-label="Dismiss map hint">×</button>
+          <button type="button" class="map-hint__close" id="map-hint-close" aria-label="Dismiss map hint">
+            <span aria-hidden="true" data-lucide="x"></span>
+          </button>
         </div>
         <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
         <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
@@ -587,10 +628,11 @@
       type="button"
       aria-controls="chat-panel"
       aria-expanded="false"
-      title="Ask the island finder"
+      title="Help me find an island"
+      data-mode="discover"
     >
-      <span class="chat-launcher__icon" aria-hidden="true">✦</span>
-      <span class="chat-launcher__label">Ask</span>
+      <span class="chat-launcher__icon" aria-hidden="true" data-lucide="message-circle"></span>
+      <span class="chat-launcher__label" id="chat-launcher-label">Help me find an island</span>
     </button>
 
     <aside
@@ -775,12 +817,13 @@
       crossorigin=""
     ></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
     <!-- proj4 + proj4leaflet load on demand when opening the detail map (app.js). -->
     <script>window.IOB_SITE_ORIGIN = "https://www.findmyisland.com";</script>
     <script src="seo-head.js"></script>
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=ux-simplify-1" type="module"></script>
+    <script src="app.js?v=atlas-redesign-1" type="module"></script>
   </body>
 </html>

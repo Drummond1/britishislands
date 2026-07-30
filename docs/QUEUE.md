@@ -13,6 +13,12 @@
   Lock: `data/.continuous_seo_geo.lock`. Strategy: `docs/SEO-GEO-STRATEGY.md`
   (no deindex). See `docs/SEO-GEO.md`.
 
+## P0 — atlas redesign deploy (2026-07-28)
+
+- **[ready]** Product redesign local (`atlas-redesign.css` + `index.html` /
+  `app.js`). Push to `main` / Pages when approved. Optional follow-up: true
+  mobile draggable results bottom sheet (Map/List nav retained for now).
+
 ## P0 — overnight SEO/GEO (superseded by continuous)
 
 - ~~`bash scripts/run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28;

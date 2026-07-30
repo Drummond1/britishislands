@@ -174,7 +174,116 @@ function islandDisplayName(island) {
   return island.name || "Unnamed island";
 }
 
-const ROW_HEIGHT = 100; // px — card body + margin-bottom (see .island-card in styles.css)
+const ROW_HEIGHT = 124; // px — richer discovery cards (see atlas-redesign.css)
+
+function refreshLucideIcons(root = document) {
+  try {
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+      lucide.createIcons({ attrs: { "stroke-width": 2 }, nameAttr: "data-lucide", root });
+    }
+  } catch (_) {
+    /* optional CDN */
+  }
+}
+
+function hasUserDiscoveryIntent() {
+  if (els?.search?.value?.trim()) return true;
+  if (activeBrowseQuick) return true;
+  if (activeScotlandQuick) return true;
+  if (state?.activeExploreTopic) return true;
+  if (els?.filterPhoto?.checked || els?.filterStory?.checked) return true;
+  if (els?.filterFerry?.checked || els?.filterForSale?.checked) return true;
+  if (els?.filterElevation?.checked || els?.filterUnnamed?.checked) return true;
+  if (els?.populationFilter?.value) return true;
+  if (els?.nationFilter?.value || els?.typeFilter?.value) return true;
+  if (els?.favoritesFilter?.value === "favorites") return true;
+  if (parseFloat(els?.areaMinFilter?.value) > 0) return true;
+  if (els?.subtypeFilter?.value) return true;
+  if (state?.mapAreaFilter) return true;
+  return false;
+}
+
+function syncFeaturedStripVisibility() {
+  const strip = document.getElementById("featured-strip");
+  if (!strip) return;
+  if (state.activeExploreTopic) return;
+  if (!state.featuredIslands?.length) {
+    strip.hidden = true;
+    return;
+  }
+  strip.hidden = hasUserDiscoveryIntent();
+}
+
+function syncChatLauncherContext() {
+  const launcher = document.getElementById("chat-launcher");
+  const label = document.getElementById("chat-launcher-label");
+  if (!launcher) return;
+  const island = state.activeId ? state.byId?.get(state.activeId) : null;
+  const detailOpen = els?.details && !els.details.hidden;
+  if (detailOpen && island) {
+    const name = islandDisplayName(island);
+    launcher.dataset.mode = "island";
+    launcher.title = `Ask about ${name}`;
+    if (label) label.textContent = "Ask about this island";
+  } else {
+    launcher.dataset.mode = "discover";
+    launcher.title = "Help me find an island";
+    if (label) label.textContent = "Help me find an island";
+  }
+  refreshLucideIcons(launcher);
+}
+
+function islandAccessMethod(island) {
+  if (!island) return "Private boat";
+  const cw = findCausewayForIsland(island);
+  if (cw) {
+    const t = cw.accessType || "";
+    if (t.includes("bridge")) return "Bridge";
+    if (t.includes("causeway") || t.includes("tidal")) return "Tidal crossing";
+    return "Causeway / bridge";
+  }
+  if (state.ferryIslandIds?.has(island.id)) return "Ferry";
+  const transport = `${island.transport || ""} ${island.shortDescription || ""}`.toLowerCase();
+  if (/\b(flight|airport|airstrip|air service|fly to)\b/.test(transport)) return "Flight";
+  if ((island.population || 0) > 0 && island.type === "sea") return "Private boat";
+  return "Private boat";
+}
+
+function islandDistinguishingQuality(island) {
+  if (!island) return "";
+  if (islandHasPropertyListing(island)) return "Listed for sale";
+  if ((island.shortDescription || "").trim()) {
+    const s = island.shortDescription.trim();
+    return s.length > 72 ? `${s.slice(0, 69)}…` : s;
+  }
+  if (island.archipelago) return island.archipelago;
+  if (islandHasWrittenStory(island)) return "Editorial story";
+  if (islandHasPhoto(island)) return "Photo available";
+  if (island.heritageDesignation) return island.heritageDesignation;
+  if (island.type === "lake") return "Loch / lake island";
+  if (island.type === "river") return "River island";
+  return capitalize(island.type || "Island");
+}
+
+function updateFiltersApplyCount() {
+  const el = document.getElementById("filters-apply-count");
+  if (el) el.textContent = String((state.filtered || []).length.toLocaleString());
+}
+
+function setMarkerHoverSync(islandId, on) {
+  if (!islandId) return;
+  const m = state.markers?.get(islandId);
+  const el = m?.getElement?.();
+  if (el) el.classList.toggle("marker-vis--hover-sync", on);
+  if (m?._icon) m._icon.classList.toggle("marker-vis--hover-sync", on);
+}
+
+function setCardHoverSync(islandId, on) {
+  if (!listInner || !islandId) return;
+  const card = listInner.querySelector(`.island-card[data-id="${CSS.escape(islandId)}"]`);
+  if (card) card.classList.toggle("is-hover-sync", on);
+}
+
 const VIEWPORT_PADDING = 4; // extra rows rendered above/below viewport
 
 const OVERPASS_ENDPOINTS = [
@@ -373,9 +482,11 @@ const NATION_SHARD = {
 };
 
 const BROWSE_QUICK_FILTERS = [
-  { id: "story", label: "Stories", story: true },
-  { id: "photo", label: "Photos", photo: true },
-  { id: "ferry", label: "Ferries", ferry: true },
+  { id: "ferry", label: "Reachable by ferry", ferry: true },
+  { id: "inhabited", label: "Inhabited", inhabited: true },
+  { id: "remote", label: "Remote escapes", remote: true },
+  { id: "story", label: "With stories", story: true },
+  { id: "photo", label: "With photos", photo: true },
   { id: "for-sale", label: "For sale", forSale: true },
 ];
 
@@ -1039,10 +1150,12 @@ const els = {
   nationFilter: document.getElementById("nation-filter"),
   favoritesFilter: document.getElementById("favorites-filter"),
   filterPhoto: document.getElementById("filter-photo"),
+  filterStory: document.getElementById("filter-story"),
   filterFerry: document.getElementById("filter-ferry"),
   filterElevation: document.getElementById("filter-elevation"),
   filterForSale: document.getElementById("filter-for-sale"),
   filterUnnamed: document.getElementById("filter-unnamed"),
+  populationFilter: document.getElementById("population-filter"),
   areaMinFilter: document.getElementById("area-min-filter"),
   subtypeFilter: document.getElementById("subtype-filter"),
   confidenceFilter: document.getElementById("confidence-filter"),
@@ -1118,8 +1231,11 @@ function updateSavedUiChrome() {
   const btn = document.getElementById("saved-islands-btn");
   const n = state.favoriteIds?.size || 0;
   if (!btn) return;
-  if (hasFavoritesAccess() && n > 0) btn.textContent = `Saved (${n})`;
-  else btn.textContent = "Saved";
+  const text = hasFavoritesAccess() && n > 0 ? `Saved (${n})` : "Saved";
+  const label = btn.querySelector(".topbar-link__label");
+  if (label) label.textContent = text;
+  else btn.textContent = text;
+  refreshLucideIcons(btn);
 }
 
 function showSavedIslandsList() {
@@ -1470,6 +1586,8 @@ function makeFavoriteHeartMarker(island) {
     className: "map-heart-tooltip",
   });
   marker.on("click", () => focusIsland(island.id, { fly: false }));
+  marker.on("mouseover", () => setCardHoverSync(island.id, true));
+  marker.on("mouseout", () => setCardHoverSync(island.id, false));
   return marker;
 }
 
@@ -2391,7 +2509,8 @@ async function loadFeaturedIslands() {
       const data = await res.json();
       const rows = Array.isArray(data?.islands) ? data.islands : [];
       state.featuredIslands = rows.filter((r) => r?.id && state.byId?.has(r.id));
-      renderExploreStrip(state.featuredIslands, "Notable islands");
+      renderExploreStrip(state.featuredIslands, "Start exploring");
+      syncFeaturedStripVisibility();
     }
   } catch (e) {
     console.warn("featured_islands.json unavailable", e);
@@ -2665,8 +2784,10 @@ function applyBrowseQuickFilter(preset) {
   if (activeBrowseQuick === preset.id) {
     activeBrowseQuick = null;
     if (els.filterPhoto) els.filterPhoto.checked = false;
+    if (els.filterStory) els.filterStory.checked = false;
     if (els.filterFerry) els.filterFerry.checked = false;
     if (els.filterForSale) els.filterForSale.checked = false;
+    if (els.populationFilter) els.populationFilter.value = "";
     renderBrowseQuickChips();
     applyFilters();
     return;
@@ -2690,9 +2811,15 @@ function applyBrowseQuickFilter(preset) {
     if (els.nationFilter) els.nationFilter.value = "";
     if (els.typeFilter) els.typeFilter.value = "";
     if (els.filterPhoto) els.filterPhoto.checked = Boolean(preset.photo);
+    if (els.filterStory) els.filterStory.checked = Boolean(preset.story);
     if (els.filterFerry) els.filterFerry.checked = Boolean(preset.ferry && !els.filterFerry?.disabled);
     if (els.filterForSale) {
       els.filterForSale.checked = Boolean(preset.forSale && !els.filterForSale?.disabled);
+    }
+    if (els.populationFilter) {
+      if (preset.inhabited) els.populationFilter.value = "inhabited";
+      else if (preset.remote) els.populationFilter.value = "uninhabited";
+      else els.populationFilter.value = "";
     }
     if (preset.unnamed) {
       try {
@@ -2764,14 +2891,22 @@ function applyScotlandQuickFilter(preset) {
 function resetAllFilters() {
   activeScotlandQuick = null;
   activeBrowseQuick = null;
+  state.mapAreaFilter = null;
+  const areaBtn = document.getElementById("map-search-area");
+  if (areaBtn) {
+    areaBtn.hidden = true;
+    areaBtn.dataset.active = "0";
+  }
   if (els.search) els.search.value = "";
   if (els.typeFilter) els.typeFilter.value = "";
   if (els.nationFilter) els.nationFilter.value = "";
   if (els.favoritesFilter) els.favoritesFilter.value = "";
   if (els.areaMinFilter) els.areaMinFilter.value = "";
   if (els.subtypeFilter) els.subtypeFilter.value = "";
+  if (els.populationFilter) els.populationFilter.value = "";
   if (els.confidenceFilter) els.confidenceFilter.value = "hide-unconfirmed";
   if (els.filterPhoto) els.filterPhoto.checked = false;
+  if (els.filterStory) els.filterStory.checked = false;
   if (els.filterFerry) els.filterFerry.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
   if (els.filterForSale) els.filterForSale.checked = false;
@@ -2806,7 +2941,7 @@ function renderActiveFilterChips() {
     });
   }
   if (els.typeFilter?.value) {
-    const labels = { sea: "Sea", lake: "Loch / lake", river: "River", unknown: "Needs review" };
+    const labels = { sea: "Sea", lake: "Loch / lake", river: "River", unknown: "Unclassified" };
     chips.push({
       label: labels[els.typeFilter.value] || els.typeFilter.value,
       clear: () => {
@@ -2822,18 +2957,50 @@ function renderActiveFilterChips() {
       },
     });
   }
-  if (activeBrowseQuick === "story") {
+  if (els.populationFilter?.value === "inhabited" || activeBrowseQuick === "inhabited") {
     chips.push({
-      label: "Stories",
+      label: "Inhabited",
+      clear: () => {
+        if (els.populationFilter) els.populationFilter.value = "";
+        if (activeBrowseQuick === "inhabited") {
+          activeBrowseQuick = null;
+          renderBrowseQuickChips();
+        }
+      },
+    });
+  }
+  if (activeBrowseQuick === "remote") {
+    chips.push({
+      label: "Remote escapes",
       clear: () => {
         activeBrowseQuick = null;
+        if (els.populationFilter) els.populationFilter.value = "";
         renderBrowseQuickChips();
+      },
+    });
+  } else if (els.populationFilter?.value === "uninhabited") {
+    chips.push({
+      label: "Uninhabited",
+      clear: () => {
+        els.populationFilter.value = "";
+      },
+    });
+  }
+  if (els.filterStory?.checked || activeBrowseQuick === "story") {
+    chips.push({
+      label: "With stories",
+      clear: () => {
+        if (els.filterStory) els.filterStory.checked = false;
+        if (activeBrowseQuick === "story") {
+          activeBrowseQuick = null;
+          renderBrowseQuickChips();
+        }
       },
     });
   }
   if (els.filterPhoto?.checked) {
     chips.push({
-      label: "Photos",
+      label: "With photos",
       clear: () => {
         els.filterPhoto.checked = false;
         if (activeBrowseQuick === "photo") {
@@ -2845,12 +3012,25 @@ function renderActiveFilterChips() {
   }
   if (els.filterFerry?.checked) {
     chips.push({
-      label: "Ferries",
+      label: "Reachable by ferry",
       clear: () => {
         els.filterFerry.checked = false;
         if (activeBrowseQuick === "ferry") {
           activeBrowseQuick = null;
           renderBrowseQuickChips();
+        }
+      },
+    });
+  }
+  if (state.mapAreaFilter) {
+    chips.push({
+      label: "Map area",
+      clear: () => {
+        state.mapAreaFilter = null;
+        const areaBtn = document.getElementById("map-search-area");
+        if (areaBtn) {
+          areaBtn.hidden = true;
+          areaBtn.dataset.active = "0";
         }
       },
     });
@@ -2896,15 +3076,15 @@ function renderActiveFilterChips() {
       },
     });
   }
-  if (els.confidenceFilter?.value) {
+  if (els.confidenceFilter?.value && els.confidenceFilter.value !== "hide-unconfirmed") {
     const confLabels = {
-      curated: "Curated",
-      "hide-unconfirmed": "Hide needs review",
+      curated: "Curated only",
+      "hide-unconfirmed": "Hide unverified",
     };
     chips.push({
       label: confLabels[els.confidenceFilter.value] || els.confidenceFilter.value,
       clear: () => {
-        els.confidenceFilter.value = "";
+        els.confidenceFilter.value = "hide-unconfirmed";
       },
     });
   }
@@ -2941,19 +3121,107 @@ function renderActiveFilterChips() {
 function updateMapIslandPeek(islandId) {
   const bar = document.getElementById("map-island-peek");
   const nameEl = document.getElementById("map-island-peek-name");
+  const metaEl = document.getElementById("map-island-peek-meta");
   if (!bar || !nameEl) return;
   const isl = islandId ? state.byId.get(islandId) : null;
   if (!isl || !mobileNav.isActive() || mobileNav.view !== "map") {
     bar.hidden = true;
     return;
   }
-  nameEl.textContent = isl.name;
+  nameEl.textContent = islandDisplayName(isl);
+  if (metaEl) {
+    metaEl.textContent = [isl.nation, islandAccessMethod(isl)].filter(Boolean).join(" · ");
+  }
   bar.hidden = false;
 }
 
 function hideMapIslandPeek() {
   const bar = document.getElementById("map-island-peek");
   if (bar) bar.hidden = true;
+}
+
+function initAtlasChrome() {
+  const closeBtn = document.getElementById("filters-close");
+  const applyBtn = document.getElementById("filters-apply");
+  const collapseBtn = document.getElementById("sidebar-collapse-btn");
+  closeBtn?.addEventListener("click", () => {
+    document.body.classList.remove("filters-open");
+    document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+  });
+  applyBtn?.addEventListener("click", () => {
+    document.body.classList.remove("filters-open");
+    document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+    applyFilters();
+  });
+  collapseBtn?.addEventListener("click", () => {
+    const collapsed = document.body.classList.toggle("sidebar-collapsed");
+    collapseBtn.setAttribute("aria-pressed", collapsed ? "true" : "false");
+    collapseBtn.setAttribute(
+      "aria-label",
+      collapsed ? "Enlarge island list" : "Collapse island list",
+    );
+    const icon = collapseBtn.querySelector("[data-lucide]");
+    if (icon) icon.setAttribute("data-lucide", collapsed ? "panel-left-open" : "panel-left-close");
+    refreshLucideIcons(collapseBtn);
+    window.setTimeout(() => {
+      try {
+        map.invalidateSize();
+      } catch (_) {
+        /* ignore */
+      }
+    }, 200);
+  });
+  // Expand mobile results sheet when tapping the discovery header
+  document.getElementById("list-heading")?.addEventListener("click", () => {
+    if (mobileNav.isActive() && mobileNav.view === "map") {
+      document.body.classList.toggle("sheet-expanded");
+    }
+  });
+  syncChatLauncherContext();
+}
+
+function initMapSearchArea() {
+  const btn = document.getElementById("map-search-area");
+  if (!btn || typeof map === "undefined") return;
+  let moved = false;
+  map.on("movestart", () => {
+    if (state.mapAreaFilter) return;
+    moved = true;
+  });
+  map.on("moveend", () => {
+    if (!moved) return;
+    moved = false;
+    if (state.mapAreaFilter) return;
+    btn.hidden = false;
+    btn.dataset.active = "0";
+    btn.textContent = "";
+    btn.innerHTML =
+      '<span aria-hidden="true" data-lucide="scan-search"></span> Search this area';
+    refreshLucideIcons(btn);
+  });
+  btn.addEventListener("click", () => {
+    if (btn.dataset.active === "1" || state.mapAreaFilter) {
+      state.mapAreaFilter = null;
+      btn.dataset.active = "0";
+      btn.hidden = true;
+      applyFilters();
+      return;
+    }
+    const b = map.getBounds();
+    if (!b?.isValid?.()) return;
+    state.mapAreaFilter = {
+      north: b.getNorth(),
+      south: b.getSouth(),
+      east: b.getEast(),
+      west: b.getWest(),
+    };
+    btn.dataset.active = "1";
+    btn.innerHTML =
+      '<span aria-hidden="true" data-lucide="x"></span> Clear map area';
+    refreshLucideIcons(btn);
+    applyFilters();
+    if (mobileNav.isActive()) mobileNav.setView("islands");
+  });
 }
 
 function listSortCompare(a, b, { photosFirst = false } = {}) {
@@ -3089,19 +3357,28 @@ function applyFilters(opts = {}) {
   const topic = state.discoveryTopics?.find((t) => t.id === state.activeExploreTopic);
   const photoOnly = Boolean(els.filterPhoto?.checked);
   const storyOnly =
-    activeBrowseQuick === "story" || Boolean(topic?.filterPresets?.storyOnly);
+    activeBrowseQuick === "story" ||
+    Boolean(els.filterStory?.checked) ||
+    Boolean(topic?.filterPresets?.storyOnly);
   const ferryOnly = Boolean(els.filterFerry?.checked);
   const forSaleOnly = Boolean(els.filterForSale?.checked);
   const elevationOnly = Boolean(els.filterElevation?.checked);
+  const populationMode = els.populationFilter?.value || "";
+  const remoteOnly = activeBrowseQuick === "remote";
+  const inhabitedOnly =
+    activeBrowseQuick === "inhabited" || populationMode === "inhabited";
+  const uninhabitedOnly = populationMode === "uninhabited" || remoteOnly;
   const areaMin = parseFloat(els.areaMinFilter?.value) || 0;
   const subtype = els.subtypeFilter?.value || "";
   const confidence = els.confidenceFilter?.value || "";
   const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
+  const totalNamed = state.islands.filter((i) => !isUnnamedIsland(i)).length || state.islands.length;
   if (els.listHeading) {
-    if (favOnly) els.listHeading.textContent = "Saved";
+    if (favOnly) els.listHeading.textContent = "Saved islands";
     else if (topic) els.listHeading.textContent = topic.title;
-    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed";
-    else els.listHeading.textContent = "Browse";
+    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed landmasses";
+    else if (hasUserDiscoveryIntent()) els.listHeading.textContent = "Search results";
+    else els.listHeading.textContent = `Discover ${totalNamed.toLocaleString()} British and Irish islands`;
   }
 
   const passesScope = (i) => {
@@ -3109,13 +3386,29 @@ function applyFilters(opts = {}) {
     if (type && i.type !== type) return false;
     if (nation && i.nation !== nation) return false;
     if (favOnly && !isFavoriteIsland(i.id)) return false;
-    if (storyOnly && !islandHasStory(i)) return false;
+    if (storyOnly) {
+      if (els.filterStory?.checked || activeBrowseQuick === "story") {
+        if (!islandHasWrittenStory(i)) return false;
+      } else if (!islandHasStory(i)) {
+        return false;
+      }
+    }
     if (photoOnly && !islandHasPhoto(i)) return false;
     if (ferryOnly) {
       if (!state.ferryIslandIds?.has(i.id)) return false;
     }
     if (forSaleOnly && !islandHasPropertyListing(i)) return false;
     if (elevationOnly && !islandHasElevation(i)) return false;
+    if (inhabitedOnly && !(i.population > 0)) return false;
+    if (uninhabitedOnly && (i.population == null || i.population > 0)) {
+      if (remoteOnly) {
+        if ((i.population || 0) > 0) return false;
+        if (i.type !== "sea") return false;
+        if (state.ferryIslandIds?.has(i.id)) return false;
+      } else if ((i.population || 0) > 0) {
+        return false;
+      }
+    }
     if (areaMin > 0 && (i.areaKm2 || 0) < areaMin) return false;
     if (subtype && i.subtype !== subtype) return false;
     if (confidence === "curated" && i.source !== "curated") return false;
@@ -3131,6 +3424,19 @@ function applyFilters(opts = {}) {
       return false;
     }
     if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
+    if (state.mapAreaFilter) {
+      const b = state.mapAreaFilter;
+      if (
+        !Number.isFinite(i.lat) ||
+        !Number.isFinite(i.lng) ||
+        i.lat < b.south ||
+        i.lat > b.north ||
+        i.lng < b.west ||
+        i.lng > b.east
+      ) {
+        return false;
+      }
+    }
     return true;
   };
 
@@ -3160,6 +3466,9 @@ function applyFilters(opts = {}) {
   renderActiveFilterChips();
   updateFiltersToggleBadge();
   syncSearchClearButton();
+  syncFeaturedStripVisibility();
+  updateFiltersApplyCount();
+  syncChatLauncherContext();
 }
 
 [
@@ -3169,13 +3478,14 @@ function applyFilters(opts = {}) {
   els.areaMinFilter,
   els.subtypeFilter,
   els.confidenceFilter,
+  els.populationFilter,
 ].forEach((el) => {
   if (!el) return;
   el.addEventListener("input", applyFilters);
   el.addEventListener("change", applyFilters);
 });
 
-[els.filterPhoto, els.filterFerry, els.filterElevation, els.filterForSale].forEach((el) => {
+[els.filterPhoto, els.filterStory, els.filterFerry, els.filterElevation, els.filterForSale].forEach((el) => {
   if (!el) return;
   el.addEventListener("change", applyFilters);
 });
@@ -3274,7 +3584,7 @@ function updateSidebarOrient() {
   } else if (hasFilters) {
     el.textContent = "Filtered list — clear chips to reset";
   } else {
-    el.textContent = "Search, or pick a notable island";
+    el.textContent = "Search, filter, or start exploring below";
   }
 }
 
@@ -3382,9 +3692,12 @@ function renderListWindow() {
     const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
     const unconfirmed = island.classification?.confidence === "unconfirmed";
     const displayName = islandDisplayName(island);
+    const access = islandAccessMethod(island);
+    const quality = islandDistinguishingQuality(island);
+    const placeBits = [island.nation, island.archipelago].filter(Boolean).join(" · ");
     main.setAttribute(
       "aria-label",
-      `${displayName}, ${island.nation}, ${formatPopulation(island.population)}`,
+      `${displayName}, ${placeBits}, ${formatPopulation(island.population)}, ${access}`,
     );
     if (island.id === state.activeId) {
       main.setAttribute("aria-current", "true");
@@ -3394,27 +3707,34 @@ function renderListWindow() {
     const fav = isFavoriteIsland(island.id);
     const thumb = islandThumbUrl(island);
     const thumbHtml = thumb
-      ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" loading="lazy" decoding="async" />`
+      ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" width="72" height="72" loading="lazy" decoding="async" />`
       : renderEmptyThumb(island);
     main.innerHTML = `
       ${thumbHtml}
       <div class="island-card__text">
         <div class="island-card__title">
-          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : `<span class="dot dot--${island.type}"></span>`}
+          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : `<span class="dot dot--${island.type}" aria-hidden="true"></span>`}
           ${escapeHtml(displayName)}
           ${unnamed ? '<span class="island-card__unnamed-pill">Needs name</span>' : ""}
-          ${unconfirmed ? '<span class="island-card__unconfirmed" title="Needs review">?</span>' : ""}
-          ${hasFerry ? '<span class="island-card__ferry-icon" title="Ferry-accessible">⛴</span>' : ""}
           ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
         </div>
         <div class="island-card__meta">
-          <span>${escapeHtml(island.nation)}</span>
-          ${island.archipelago ? `<span>${escapeHtml(island.archipelago)}</span>` : ""}
+          <span>${escapeHtml(placeBits || "—")}</span>
           <span>${formatPopulation(island.population)}</span>
+        </div>
+        <div class="island-card__facts">
+          <span class="island-card__pill island-card__pill--access">${escapeHtml(access)}</span>
+          ${quality ? `<span class="island-card__pill island-card__pill--quality">${escapeHtml(quality)}</span>` : ""}
+          ${hasFerry && access !== "Ferry" ? '<span class="island-card__pill">Ferry nearby</span>' : ""}
+          ${unconfirmed ? '<span class="island-card__pill" title="Record not yet fully verified">Unverified</span>' : ""}
         </div>
       </div>
     `;
     main.addEventListener("click", () => focusIsland(island.id, { fly: true }));
+    main.addEventListener("mouseenter", () => setMarkerHoverSync(island.id, true));
+    main.addEventListener("mouseleave", () => setMarkerHoverSync(island.id, false));
+    main.addEventListener("focus", () => setMarkerHoverSync(island.id, true));
+    main.addEventListener("blur", () => setMarkerHoverSync(island.id, false));
 
     const favBtn = document.createElement("button");
     favBtn.type = "button";
@@ -3426,7 +3746,9 @@ function renderListWindow() {
       fav ? "Remove from saved islands" : "Save island to list",
     );
     favBtn.title = fav ? "Remove from saved" : "Save to list";
-    favBtn.textContent = fav ? "♥" : "♡";
+    favBtn.innerHTML = fav
+      ? '<span data-lucide="heart" aria-hidden="true"></span>'
+      : '<span data-lucide="heart" aria-hidden="true"></span>';
     favBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       toggleFavoriteIsland(island.id);
@@ -3448,6 +3770,7 @@ function renderListWindow() {
     wrap.appendChild(favBtn);
     listInner.appendChild(wrap);
   }
+  refreshLucideIcons(listInner);
 }
 
 // ---------- Markers ----------
@@ -3496,6 +3819,8 @@ function makeMarker(island) {
     marker.bindTooltip(tip, { direction: "top", offset: tipOffset });
   }
   marker.on("click", () => focusIsland(island.id, { fly: false }));
+  marker.on("mouseover", () => setCardHoverSync(island.id, true));
+  marker.on("mouseout", () => setCardHoverSync(island.id, false));
   return marker;
 }
 
@@ -3773,7 +4098,30 @@ function renderFerries(island) {
   }
 
   const sorted = routes.slice().sort((a, b) => _ferryRouteScore(a) - _ferryRouteScore(b));
-  const cards = sorted.map((r) => _renderFerryCard(r, island)).join("");
+  const groups = new Map();
+  for (const r of sorted) {
+    const op = r._operator;
+    const opLabel = op ? (op.shortName || op.name) : (r.operatorId || "Operator");
+    const fromName = _bestTerminalName(r._fromTerminal);
+    const toName = _bestTerminalName(r._toTerminal);
+    const key = `${opLabel}|${fromName}|${toName}`;
+    if (!groups.has(key)) groups.set(key, { opLabel, fromName, toName, routes: [] });
+    groups.get(key).routes.push(r);
+  }
+  const cards = [...groups.values()].map((g) => {
+    const primary = g.routes[0];
+    const extras = g.routes.length > 1
+      ? `<p class="ferry-group__op">${g.routes.length} services on this corridor</p>`
+      : `<p class="ferry-group__op">${escapeHtml(g.opLabel)}</p>`;
+    return `<div class="ferry-group">
+      <header class="ferry-group__header">
+        <h4 class="ferry-group__title">${escapeHtml(g.fromName)} → ${escapeHtml(g.toName)}</h4>
+        ${extras}
+      </header>
+      ${_renderFerryCard(primary, island)}
+      ${g.routes.length > 1 ? `<details class="ferry-tech"><summary>Other services on this route</summary>${g.routes.slice(1).map((r) => _renderFerryCard(r, island)).join("")}</details>` : ""}
+    </div>`;
+  }).join("");
   const causewayBlock = causeway ? _renderCausewayBlock(causeway) : "";
   const freshnessNote = _ferryFreshnessNote(sorted);
   const scrollHint =
@@ -3781,10 +4129,14 @@ function renderFerries(island) {
       ? `<p class="ferry-card-list__scroll-hint">${sorted.length} connections — scroll to see all</p>`
       : "";
 
-  const title = routes.length ? "How to get there" : "Causeway access";
+  const title = routes.length ? "Getting there" : "Causeway access";
+  const accessLead = causeway && !routes.length
+    ? ""
+    : `<p class="ferry-subtitle">Human-readable ferry options for visitors — durations, seasonality, and timetable links.</p>`;
 
   return `<div class="section ferry-section" id="ferry-block">
     <h3>${escapeHtml(title)}</h3>
+    ${routes.length ? accessLead : ""}
     ${routes.length ? `<p class="ferry-subtitle">${sorted.length} ferry connection${sorted.length === 1 ? "" : "s"} published for this island.</p>` : ""}
     ${freshnessNote}
     ${causewayBlock}
@@ -3898,15 +4250,15 @@ function _renderFerryCard(route, island) {
       <li><span>${dur}</span></li>
     </ul>
     ${route.timetable?.notes ? `<p class="ferry-card__notes">${escapeHtml(route.timetable.notes)}</p>` : ""}
-    ${dayCounts ? `<p class="ferry-card__schedule" title="Departures per day per direction in this week's schedule">${escapeHtml(dayCounts)}</p>` : ""}
     ${driveBands}
     <div class="ferry-card__actions">
-      ${op_url ? `<a class="ferry-card__book" href="${escapeAttr(op_url)}" target="_blank" rel="noopener">Book / timetable ↗</a>` : ""}
+      ${op_url ? `<a class="ferry-card__book" href="${escapeAttr(op_url)}" target="_blank" rel="noopener">Timetable / book ↗</a>` : ""}
       ${affiliate}
     </div>
     <div class="ferry-card__foot">
-      ${verifiedBlock}
+      ${verifiedBlock ? `<span class="trust-quiet">${verifiedBlock}</span>` : ""}
       ${(route.sources || []).slice(0, 2).map((s) => s.url ? `<a href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.type)} ↗</a>` : "").filter(Boolean).join("")}
+      ${dayCounts || route.id ? `<details class="ferry-tech"><summary>Technical source notes</summary>${dayCounts ? `<p>GTFS weekly departures: ${escapeHtml(dayCounts)}</p>` : ""}${route.id ? `<p>Route id: ${escapeHtml(route.id)}</p>` : ""}${(route.sources || []).map((s) => s.note ? `<p>${escapeHtml(s.note)}</p>` : "").join("")}</details>` : ""}
     </div>
   </article>`;
 }
@@ -4087,11 +4439,29 @@ function renderDetails(island) {
   const ferriesHtml = renderFerries(island);
   const propertyHtml = renderPropertyListings(island);
   const relatedHtml = renderRelatedIslands(island);
+  const accessMethod = islandAccessMethod(island);
+  const hasFerryAccess = Boolean(state.ferryIslandIds?.has(island.id));
+  const inhabitedLabel =
+    island.population === 0
+      ? "Uninhabited"
+      : island.population == null
+        ? "Population unknown"
+        : "Inhabited";
+  const locationLine = [island.nation, island.archipelago].filter(Boolean).join(" · ");
+  const namesBlock = altNames
+    ? `<details class="names-languages"><summary>Names and languages</summary>${altNames}</details>`
+    : "";
+  const primaryCta = hasFerryAccess || ferriesHtml
+    ? `<a class="profile-primary-btn" href="#profile-get-there">View ferry options</a>`
+    : `<a class="profile-primary-btn" href="#profile-get-there">Plan a visit</a>`;
   const jumpLinks = [
-    ferriesHtml || propertyHtml ? ["profile-get-there", "Get there"] : null,
+    ["profile-overview", "Overview"],
+    ferriesHtml || propertyHtml ? ["profile-get-there", "Getting there"] : null,
+    ["profile-know", "Things to know"],
+    richSections || gallery ? ["profile-stories", "Stories & photos"] : null,
     relatedHtml ? ["profile-nearby", "Nearby"] : null,
     ["profile-map", "Map"],
-    ["profile-more", "More"],
+    ["profile-sources", "Sources"],
   ].filter(Boolean);
 
   els.detailsContent.innerHTML = `
@@ -4105,17 +4475,27 @@ function renderDetails(island) {
             : ""
         }
         <h2 class="details-title">${escapeHtml(title)}</h2>
+        ${locationLine ? `<p class="details-location">${escapeHtml(locationLine)}</p>` : ""}
       </div>
     </div>
     ${subtypeChips}
-    ${altNames}
     ${island.shortDescription ? `<p class="details-subtitle">${escapeHtml(island.shortDescription)}</p>` : sparseLede}
 
-    ${keyFacts}
+    <div class="profile-overview-grid" id="profile-overview" role="list" aria-label="At a glance">
+      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Area</span><span class="profile-overview-stat__value">${formatAreaRow(island)}</span></div>
+      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Population</span><span class="profile-overview-stat__value">${formatPopulationCell(island)}</span></div>
+      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Status</span><span class="profile-overview-stat__value">${escapeHtml(inhabitedLabel)}</span></div>
+      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Access</span><span class="profile-overview-stat__value">${escapeHtml(accessMethod)}${hasFerryAccess ? " · Ferry available" : ""}</span></div>
+    </div>
+
+    <div class="profile-hero-actions">
+      ${primaryCta}
+      <button type="button" class="profile-secondary-btn" id="details-share-inline">Share</button>
+    </div>
 
     ${
       jumpLinks.length
-        ? `<nav class="profile-jump" aria-label="On this profile">${jumpLinks
+        ? `<nav class="profile-section-nav profile-jump" aria-label="On this profile">${jumpLinks
             .map(
               ([id, label]) =>
                 `<a class="profile-jump__link" href="#${id}">${escapeHtml(label)}</a>`,
@@ -4124,44 +4504,54 @@ function renderDetails(island) {
         : ""
     }
 
+    ${namesBlock}
+
     <div id="profile-get-there">
       ${propertyHtml}
       ${ferriesHtml}
     </div>
 
+    <section class="section" id="profile-know">
+      <h3>Things to know</h3>
+      ${keyFacts}
+      <details class="profile-more-facts">
+        <summary>All facts &amp; figures</summary>
+        <div class="stat-grid" role="list" aria-label="Island facts">
+          ${stats
+            .map(
+              (s) => `
+            <div class="${statClass(s)}" role="listitem">
+              <div class="stat__label">${escapeHtml(s.label)}</div>
+              <div class="stat__value">${s.value}</div>
+            </div>`,
+            )
+            .join("")}
+        </div>
+      </details>
+      ${renderMaritimeAidsSection(island)}
+      ${renderReservesWildlifeSection(island)}
+    </section>
+
+    <section class="section" id="profile-stories">
+      <h3>Stories and photos</h3>
+      ${richSections || `<p class="trust-quiet">Editorial story text is still being expanded for this island.</p>`}
+      ${
+        isShowcase3DIsland(island.id)
+          ? `<div class="island-3d-section">
+        <h4>3D terrain</h4>
+        <div id="island-3d-view" class="island-3d-view"></div>
+        <p class="island-3d__hint">Elevation from Mapzen Terrarium DEM · drag to orbit · <a href="showcase-3d.html">All 10 showcase islands</a></p>
+      </div>`
+          : ""
+      }
+    </section>
+
     <div id="profile-nearby">
       ${relatedHtml}
     </div>
 
-    <details class="profile-more-facts">
-      <summary>All facts &amp; figures</summary>
-      <div class="stat-grid" role="list" aria-label="Island facts">
-        ${stats
-          .map(
-            (s) => `
-          <div class="${statClass(s)}" role="listitem">
-            <div class="stat__label">${escapeHtml(s.label)}</div>
-            <div class="stat__value">${s.value}</div>
-          </div>`,
-          )
-          .join("")}
-      </div>
-    </details>
-
-    ${richSections}
-
-    ${
-      isShowcase3DIsland(island.id)
-        ? `<div class="section island-3d-section">
-      <h3>3D terrain</h3>
-      <div id="island-3d-view" class="island-3d-view"></div>
-      <p class="island-3d__hint">Elevation from Mapzen Terrarium DEM · drag to orbit · <a href="showcase-3d.html">All 10 showcase islands</a></p>
-    </div>`
-        : ""
-    }
-
     <div class="section detail-map-section" id="profile-map">
-      <h3>Detailed map</h3>
+      <h3>Map</h3>
       <div class="detail-map__switcher-row">
         <div id="detail-map-switcher" class="detail-map__switcher" role="group" aria-label="Basemap"></div>
         <div id="detail-map-keycfg" class="detail-map__keycfg"></div>
@@ -4172,11 +4562,9 @@ function renderDetails(island) {
 
     <div class="poly-loading" id="poly-status"></div>
 
-    <details class="profile-secondary" id="profile-more">
-      <summary>More about this island</summary>
+    <details class="profile-secondary" id="profile-sources" open>
+      <summary>Sources and data</summary>
       <div class="profile-secondary__body">
-        ${renderMaritimeAidsSection(island)}
-        ${renderReservesWildlifeSection(island)}
         ${tags ? `<div class="tags">${tags}</div>` : ""}
         <div class="external-links">
           ${
@@ -4201,6 +4589,7 @@ function renderDetails(island) {
         </div>
         ${renderCorrectionReport(island)}
         ${provenanceBlock}
+        ${renderSourcesBlock(island)}
       </div>
     </details>
   `;
@@ -4232,7 +4621,8 @@ function renderDetails(island) {
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
         favActive ? "Remove from saved islands" : "Save island"
-      }" title="${favActive ? "Saved" : "Save"}">${favActive ? "♥ Saved" : "♡ Save"}</button>`;
+      }" title="${favActive ? "Saved" : "Save"}"><span data-lucide="heart" aria-hidden="true"></span> ${favActive ? "Saved" : "Save"}</button>`;
+    refreshLucideIcons(toolbar);
   }
 
   document.getElementById("details-favorite-btn")?.addEventListener("click", (e) => {
@@ -4240,11 +4630,14 @@ function renderDetails(island) {
     toggleFavoriteIsland(island.id);
   });
 
-  document.getElementById("details-share-btn")?.addEventListener("click", (e) => {
+  const shareHandler = (e) => {
     e.preventDefault();
     shareIslandLink(island);
-  });
+  };
+  document.getElementById("details-share-btn")?.addEventListener("click", shareHandler);
+  document.getElementById("details-share-inline")?.addEventListener("click", shareHandler);
 
+  syncChatLauncherContext();
   requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
 
   renderDetailMap(island);
@@ -5290,6 +5683,7 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
     state.detailMap = null;
   }
   if (clearUrl) syncIslandUrl(null);
+  syncChatLauncherContext();
   scheduleRenderListWindow();
 }
 
@@ -5300,20 +5694,29 @@ function resetAtlasHome() {
   els.nationFilter.value = "";
   if (els.favoritesFilter) els.favoritesFilter.value = "";
   if (els.filterPhoto) els.filterPhoto.checked = false;
+  if (els.filterStory) els.filterStory.checked = false;
   if (els.filterFerry) els.filterFerry.checked = false;
   if (els.filterForSale) els.filterForSale.checked = false;
   if (els.filterElevation) els.filterElevation.checked = false;
   if (els.filterUnnamed) els.filterUnnamed.checked = false;
+  if (els.populationFilter) els.populationFilter.value = "";
   if (els.areaMinFilter) els.areaMinFilter.value = "";
   if (els.subtypeFilter) els.subtypeFilter.value = "";
   if (els.confidenceFilter) els.confidenceFilter.value = "hide-unconfirmed";
+  state.mapAreaFilter = null;
+  const areaBtn = document.getElementById("map-search-area");
+  if (areaBtn) {
+    areaBtn.hidden = true;
+    areaBtn.dataset.active = "0";
+  }
   activeBrowseQuick = null;
   activeScotlandQuick = null;
   renderBrowseQuickChips();
   renderScotlandQuickChips();
   applyFilters();
-  document.body.classList.remove("filters-open");
+  document.body.classList.remove("filters-open", "sidebar-collapsed");
   document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+  syncChatLauncherContext();
   try {
     const url = new URL(window.location.href);
     url.searchParams.delete("trip");
@@ -7090,7 +7493,23 @@ function renderChatStarters() {
   const host = document.getElementById("chat-starters");
   if (!host) return;
   host.replaceChildren();
-  for (const q of CHAT_LEARNING_STARTERS) {
+  const island = state.activeId && els.details && !els.details.hidden
+    ? state.byId.get(state.activeId)
+    : null;
+  const starters = island
+    ? [
+        `How do I get to ${islandDisplayName(island)}?`,
+        `Is ${islandDisplayName(island)} inhabited?`,
+        `What is nearby ${islandDisplayName(island)}?`,
+        "Show ferry-linked islands nearby",
+      ]
+    : [
+        "Ferry-reachable islands with photos",
+        "Remote uninhabited sea islands",
+        "Islands for sale right now",
+        ...CHAT_LEARNING_STARTERS.slice(0, 2),
+      ];
+  for (const q of starters) {
     const b = document.createElement("button");
     b.type = "button";
     b.className = "chat-starter";
@@ -8310,12 +8729,15 @@ function countActiveFilters() {
   if (els.favoritesFilter?.value === "favorites") n += 1;
   if (parseFloat(els.areaMinFilter?.value) > 0) n += 1;
   if (els.subtypeFilter?.value) n += 1;
-  if (els.confidenceFilter?.value) n += 1;
+  if (els.populationFilter?.value) n += 1;
+  if (els.confidenceFilter?.value && els.confidenceFilter.value !== "hide-unconfirmed") n += 1;
   if (els.filterPhoto?.checked) n += 1;
+  if (els.filterStory?.checked) n += 1;
   if (els.filterFerry?.checked) n += 1;
   if (els.filterForSale?.checked) n += 1;
   if (els.filterElevation?.checked) n += 1;
   if (els.filterUnnamed?.checked) n += 1;
+  if (state.mapAreaFilter) n += 1;
   if (state.activeExploreTopic) n += 1;
   if (activeBrowseQuick) n += 1;
   if (activeScotlandQuick) n += 1;
@@ -8498,4 +8920,7 @@ initSearchClear();
 initMapHint();
 initGlobalKeyboardShortcuts();
 initTopbarMoreMenu();
+initAtlasChrome();
+initMapSearchArea();
 chatAutoLoadFromUrl();
+refreshLucideIcons();

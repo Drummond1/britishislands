@@ -4,6 +4,11 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-07-28 (atlas product redesign)** — Map-led discover UX: compact header,
+intent chips, richer cards, filter drawer groups, visitor-first profile +
+grouped ferries, contextual Ask, Search this area. Files: `index.html`,
+`app.js`, `atlas-redesign.css`. Schema unchanged. Not yet pushed to Pages.
+
 **2026-07-28 (visual polish)** — Richer night-sea atmosphere, glass topbar, branded mark pulse, elevated featured/list cards with hover motion, stronger search/Ask CTAs; landing hero/CTA polish. Deployed with UX navigate pass.
 
 **2026-07-28 (UX navigate simplify)** — Clearer atlas chrome: Collections + Filter topbar; Browse/Start here/Show me chips; mobile Map/List/Ask; profile Share/Save + no Atlas badge; unnamed survey under More filters. Continuous SEO loop still armed.

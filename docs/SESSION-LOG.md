@@ -2837,3 +2837,26 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Fixed stray CSS after `.details-hero`.
 - **Outcome**: Deployed `f8641957` to Pages.
 - **Open**: None.
+
+## 2026-07-28 — Atlas product redesign (discover → inspect → access → save)
+
+- **Goal**: Redesign findmyisland.com discovery/map experience while preserving
+  data, deep links, filters, ferries, saved, collections, and the assistant.
+- **What changed**:
+  - Compact atlas header: brand + hero search + Filters + Saved + More;
+    Ferries demoted into More; list collapse control on desktop.
+  - Discovery hierarchy: “Discover N…” title, intent chips (ferry / inhabited /
+    remote / stories / photos / for sale), Start exploring strip (hides after
+    search/filter), richer virtualised result cards (thumb, place, population,
+    access method, distinguishing quality, save).
+  - Structured filter drawer (Geography → Data quality) with Apply count +
+    Clear all; visitor-friendly wording (no raw “needs review” chips by default).
+  - Profile rebuilt around visitor sections (Overview, Getting there, Things to
+    know, Stories/photos, Nearby, Map, Sources); Names expandable; ferries
+    grouped by corridor/operator; GTFS/tech notes collapsed.
+  - Contextual Ask (“Help me find an island” / “Ask about this island”);
+    card↔marker hover sync; “Search this area”; Lucide icons; `atlas-redesign.css`.
+- **Outcome / counts**: Local Skye flow verified (search → profile → Getting
+  there → save modal → back with search preserved). Schema untouched.
+- **Open items kicked to QUEUE.md**: Deploy redesign; optional mobile bottom-sheet
+  polish beyond Map/List nav.
