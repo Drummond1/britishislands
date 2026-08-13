@@ -22,9 +22,10 @@ fastest way to shift crawl attention.
 
 ## Manual steps (highest impact first)
 
-1. Open [Google Search Console](https://search.google.com/search-console) →
+1. **Deploy** this branch so the smaller sitemap and richer landings go live.
+2. Open [Google Search Console](https://search.google.com/search-console) →
    URL Inspection.
-2. Request indexing in this order:
+3. Request indexing in this order:
 
 ### Hubs (do first)
 
@@ -56,7 +57,16 @@ fastest way to shift crawl attention.
 3. Re-check URL Inspection in 3–7 days for “Indexed” vs “Discovered / crawled”.
 4. Re-run CTR snapshot when position ≤20 starts to appear.
 
+## 301 redirects (optional edge)
+
+GitHub Pages cannot 301. `data/legacy_redirects.csv` is a Cloudflare Bulk Redirect
+list (`/profiles/<id>.html` and `/?island=<id>` → canonical `/islands/…`) for
+named islands with descriptions. Import it only after pointing DNS through
+Cloudflare (or another edge that supports bulk 301s). Until then, rely on
+canonical tags + Request indexing.
+
 ## Notes
 
 Quota for “Request indexing” is limited — prioritize hubs + the eight winnable
-islands above before the long tail.
+islands above before the long tail. The sitemap now omits unnamed/thin atlas
+records so Google spends crawl budget on pages that can rank.

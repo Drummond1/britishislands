@@ -2872,3 +2872,24 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Coverage pass: Wikipedia multilang **+2** descriptions; photo harvesters **+0** (queue exhausted / Commons 429). Regenerated SEO artifacts (`seo_path_by_id` 11,380 paths, sitemaps, landings).
 - **Outcome / counts**: avg **47.82**, both **18.9%**, desc **1,623**, photo **4,356**.
 - **Open items**: Manual GSC Request indexing (MCP server error); reconnect GSC MCP; photo gains need new sources/keys (Flickr etc.).
+
+## 2026-08-13 — Indexable /profiles/ landings for SEO/GEO
+
+- **Goal**: Stop hiding thousands of island pages behind `noindex` so search and GEO crawlers can use them.
+- **What changed**:
+  - `scripts/generate_seo_artifacts.py` `--landing-dir profiles` now writes the same full landing HTML as `/islands/…` (`index,follow`, JSON-LD, OG) instead of `noindex` meta-refresh stubs.
+  - Canonical remains `/islands/{nation}/{slug}/`. Sitemap still lists only `/islands/` URLs (no duplicate `/profiles/` locs).
+  - SPA `/?island=` views stay `noindex,follow` so query-string URLs do not compete.
+  - Docs: `docs/SEO-GEO.md`, `robots.txt` comment.
+- **Outcome / counts**: Regenerated `/profiles/*.html` as indexable aliases.
+- **Open items kicked to QUEUE.md**: Deploy so production `/profiles/` pick up `index,follow`; then Request indexing on `/islands/` hubs.
+
+## 2026-08-13 — SEO next actions (sitemap + landings + redirect map)
+
+- **Goal**: Stop asking Google to index 11k thin pages; make the remaining landings readable; prepare real 301s.
+- **What changed**:
+  - Sitemap eligibility: curated/featured + named islands with a description. **1,622** in sitemap, **9,758** omitted (still live/shareable, not `noindex`).
+  - Geology on landings rendered as prose with BGS attribution (was a dict dump). Added water-body and highest-point facts.
+  - `data/legacy_redirects.csv` — Cloudflare Bulk Redirects for `/profiles/` and `/?island=` on eligible islands (**3,244** rows).
+- **Outcome / counts**: editorial **120**, bulk **1,502**, omitted **9,758**.
+- **Open items kicked to QUEUE.md**: Deploy; GSC Request indexing; optional Cloudflare import.

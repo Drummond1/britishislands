@@ -20,11 +20,15 @@
 
 ## P0 — GSC indexing after `/islands/` deploy (2026-07-30)
 
-- **[in flight]** Canonical `/islands/…` landings are **live HTTP 200**.
-  Manual GSC **Request indexing** list ready:
-  `docs/GSC-INDEXING-REQUESTS.md` + `data/gsc_index_request_urls.json` (36 URLs).
+- **[in flight]** Next actions to get clicks (2026-08-13):
+  1. **Deploy** smaller sitemap (1,622 island URLs, not 11,380) + richer landings.
+  2. **Request indexing** in GSC on hubs + Scilly St Mary's, Bute, Staffa, Anglesey
+     (`docs/GSC-INDEXING-REQUESTS.md`).
+  3. Optional: import `data/legacy_redirects.csv` as Cloudflare 301s (Pages cannot 301).
+- Canonical `/islands/…` landings are **live HTTP 200**.
   GSC MCP server currently unhealthy — finish indexing clicks in Search Console.
-  Priority: nation hubs + Scilly St Mary's, Bute, Staffa, Anglesey.
+- ~~`/profiles/` `noindex` stubs~~ ✅ 2026-08-13 — aliases are now full
+  `index,follow` landings (canonical still `/islands/…`). Needs deploy.
 
 ## P0 — overnight SEO/GEO (superseded by continuous)
 

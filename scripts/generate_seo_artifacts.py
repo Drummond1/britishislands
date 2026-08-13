@@ -11,7 +11,8 @@ Always written:
   - data/seo_path_by_id.json — id → public path (for tooling / probes)
 
 Optional:
-  - --landing-dir DIR — also write legacy /profiles/<id>.html redirects
+  - --landing-dir DIR — also write /profiles/<id>.html indexable aliases
+    (full landing HTML + JSON-LD; canonical stays /islands/{nation}/{slug}/)
   - /islands/.../index.html canonical landings + nation hubs
   - Patches index.html crawl-link block between IOB_CRAWL_LINKS markers
 
@@ -23,6 +24,7 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import csv
 import html
 import json
 import os
@@ -50,6 +52,7 @@ ISLANDS = DATA / "islands.json"
 CURATED = DATA / "curated.json"
 FEATURED = DATA / "featured_islands.json"
 SEO_PATH_MAP = DATA / "seo_path_by_id.json"
+LEGACY_REDIRECTS = DATA / "legacy_redirects.csv"
 INDEX_HTML = ROOT / "index.html"
 ISLANDS_DIR = ROOT / "islands"
 
@@ -133,6 +136,68 @@ def island_image_url(isl: dict) -> str:
     return str(isl.get("image") or "").strip()
 
 
+def island_is_unnamed(isl: dict) -> bool:
+    name = str(isl.get("name") or "").strip().lower()
+    return (not name) or name.startswith("unnamed")
+
+
+def island_has_prose(isl: dict) -> bool:
+    return bool(
+        str(isl.get("shortDescription") or "").strip()
+        or str(isl.get("description") or "").strip()
+    )
+
+
+def sitemap_island_eligible(
+    iid: str, isl: dict, curated: set[str], featured: set[str]
+) -> bool:
+    """Ask Google to crawl pages that can compete; keep thin unnamed shareable but out of the sitemap."""
+    if iid in curated or iid in featured:
+        return True
+    if island_is_unnamed(isl):
+        return False
+    return island_has_prose(isl)
+
+
+def format_geology(value: Any) -> str:
+    if isinstance(value, str):
+        return value.strip()
+    if not isinstance(value, dict):
+        return ""
+    bits: list[str] = []
+    bedrock = value.get("bedrock") if isinstance(value.get("bedrock"), dict) else None
+    if bedrock and bedrock.get("name"):
+        lith = str(bedrock.get("lithology") or "").strip()
+        ages = "–".join(
+            p for p in (str(bedrock.get("ageStart") or "").strip(), str(bedrock.get("ageEnd") or "").strip()) if p
+        )
+        piece = str(bedrock["name"])
+        if lith:
+            piece += f" ({lith})"
+        if ages:
+            piece += f", {ages}"
+        bits.append(f"Bedrock: {piece}.")
+    superf = value.get("superficial") if isinstance(value.get("superficial"), dict) else None
+    if superf and superf.get("name"):
+        lith = str(superf.get("lithology") or "").strip()
+        piece = str(superf["name"])
+        if lith:
+            piece += f" ({lith})"
+        bits.append(f"Superficial deposits: {piece}.")
+    attr = str(value.get("attribution") or "").strip()
+    if attr:
+        bits.append(attr)
+    return " ".join(bits)
+
+
+def section_plain_text(key: str, value: Any) -> str:
+    if key == "geology":
+        return format_geology(value)
+    if isinstance(value, str):
+        return value.strip()
+    return ""
+
+
 def island_priority(iid: str, isl: dict, curated: set[str], featured: set[str]) -> float:
     if iid in curated:
         return 0.85
@@ -204,6 +269,64 @@ def write_urlset(path: Path, entries: list[tuple[str, float, str]]) -> None:
         lines.append("  </url>")
     lines.append("</urlset>")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_legacy_redirects_csv(
+    *,
+    origin: str,
+    islands: list[dict],
+    paths: dict,
+    curated: set[str],
+    featured: set[str],
+) -> int:
+    """Cloudflare Bulk Redirects CSV for sitemap-eligible islands only."""
+    origin = origin.rstrip("/")
+    n = 0
+    with LEGACY_REDIRECTS.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(
+            [
+                "source",
+                "target",
+                "status",
+                "preserve_query_string",
+                "include_subdomains",
+                "subpath_matching",
+                "wildcard",
+            ]
+        )
+        for isl in islands:
+            iid = str(isl.get("id") or "")
+            if not iid or not sitemap_island_eligible(iid, isl, curated, featured):
+                continue
+            sp = paths.get(iid)
+            if not sp:
+                continue
+            target = f"{origin}{sp.path}"
+            w.writerow(
+                [
+                    f"{origin}/profiles/{iid}.html",
+                    target,
+                    "301",
+                    "FALSE",
+                    "FALSE",
+                    "FALSE",
+                    "FALSE",
+                ]
+            )
+            w.writerow(
+                [
+                    f"{origin}/?island={iid}",
+                    target,
+                    "301",
+                    "FALSE",
+                    "FALSE",
+                    "FALSE",
+                    "FALSE",
+                ]
+            )
+            n += 2
+    return n
 
 
 def write_sitemap_index(path: Path, files: list[tuple[str, str]]) -> None:
@@ -313,6 +436,20 @@ def profile_page_html(
         facts.append(
             f"<li><strong>Location</strong>{lat}, {lng}</li>"
         )
+    parent = isl.get("parentWaterBody")
+    if isinstance(parent, dict) and parent.get("name"):
+        ptype = str(parent.get("type") or "water").strip()
+        facts.append(
+            f"<li><strong>Water body</strong>{html.escape(str(parent['name']))}"
+            f"{f' ({html.escape(ptype)})' if ptype else ''}</li>"
+        )
+    hp = isl.get("highestPointM")
+    if hp is None:
+        hp = isl.get("highestPoint")
+    if hp is not None and hp != "":
+        facts.append(
+            f"<li><strong>Highest point</strong>{html.escape(str(hp))} m</li>"
+        )
     facts_block = ""
     if facts:
         facts_block = (
@@ -371,7 +508,7 @@ def profile_page_html(
         ("Accommodation", "accommodation"),
     ]
     for label, key in section_map:
-        value = str(isl.get(key) or "").strip()
+        value = section_plain_text(key, isl.get(key))
         if not value:
             continue
         section_chunks.append(
@@ -494,25 +631,39 @@ def profile_page_html(
 """
 
 
-def legacy_redirect_html(*, new_url: str, atlas_url: str, name: str) -> str:
-    new_esc = html.escape(new_url, quote=True)
-    atlas_esc = html.escape(atlas_url, quote=True)
-    name_esc = html.escape(name, quote=True)
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>{name_esc} (moved)</title>
-  <link rel="canonical" href="{new_esc}"/>
-  <meta name="robots" content="noindex,follow"/>
-  <meta http-equiv="refresh" content="0; url={new_esc}"/>
-</head>
-<body>
-  <p>This profile has moved to <a href="{new_esc}">{new_esc}</a>.</p>
-  <p><a href="{atlas_esc}">Open in atlas</a></p>
-</body>
-</html>
-"""
+def islands_by_nation_segment(
+    paths: dict,
+    islands_by_id: dict[str, dict],
+    curated: set[str],
+    featured: set[str],
+) -> dict[str, list[tuple[str, str, str, float]]]:
+    by_seg: dict[str, list[tuple[str, str, str, float]]] = {}
+    for iid, sp in paths.items():
+        isl = islands_by_id.get(iid)
+        if not isl:
+            continue
+        score = island_priority(iid, isl, curated, featured)
+        by_seg.setdefault(sp.nation_segment, []).append(
+            (iid, sp.path, str(isl.get("name") or iid), score)
+        )
+    for items in by_seg.values():
+        items.sort(key=lambda t: (-t[3], t[2].lower()))
+    return by_seg
+
+
+def related_links_for(
+    iid: str,
+    sp: Any | None,
+    by_seg: dict[str, list[tuple[str, str, str, float]]],
+    limit: int = 8,
+) -> list[tuple[str, str]]:
+    if not sp:
+        return []
+    return [
+        (path, label)
+        for rid, path, label, _ in by_seg.get(sp.nation_segment, [])
+        if rid != iid
+    ][:limit]
 
 
 # Nation hub → related ferry guide paths (internal links for SEO/GEO).
@@ -983,7 +1134,7 @@ def main() -> int:
         "--landing-dir",
         type=Path,
         default=None,
-        help="Also write legacy profiles/<id>.html redirects (deploy-time; gitignored).",
+        help="Also write /profiles/<id>.html indexable aliases (deploy-time; gitignored).",
     )
     ap.add_argument(
         "--skip-index-patch",
@@ -1018,6 +1169,7 @@ def main() -> int:
     )
     print(f"Wrote {SEO_PATH_MAP} ({len(paths)} paths)")
 
+    by_seg = islands_by_nation_segment(paths, islands_by_id, curated, featured)
     origin = (args.site_origin or "").rstrip("/")
     write_landings = bool(origin) and not args.skip_islands_dir
 
@@ -1030,7 +1182,7 @@ def main() -> int:
 - Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
 - Island profile: /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
 - Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
-- Legacy redirects: /profiles/<id>.html → canonical /islands/… path
+- Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
 - Ferry guides: /ferries/
 - Collections: /collections/
 - Sitemap: /sitemap.xml
@@ -1068,9 +1220,13 @@ def main() -> int:
         sorted_islands = sort_islands_for_sitemap(islands, curated, featured)
         island_editorial: list[tuple[str, float, str]] = []
         island_bulk: list[tuple[str, float, str]] = []
+        skipped_thin = 0
         for isl in sorted_islands:
             iid = isl.get("id")
             if not iid:
+                continue
+            if not sitemap_island_eligible(str(iid), isl, curated, featured):
+                skipped_thin += 1
                 continue
             pri = island_priority(str(iid), isl, curated, featured)
             sp = paths.get(str(iid))
@@ -1108,8 +1264,18 @@ def main() -> int:
         )
         print(
             "Wrote sitemap index + segmented sitemaps "
-            f"(core={len(core_entries)}, editorial={len(island_editorial)}, islands={len(island_bulk)})"
+            f"(core={len(core_entries)}, editorial={len(island_editorial)}, "
+            f"islands={len(island_bulk)}, omitted_thin={skipped_thin})"
         )
+
+        n_redir = write_legacy_redirects_csv(
+            origin=origin,
+            islands=islands,
+            paths=paths,
+            curated=curated,
+            featured=featured,
+        )
+        print(f"Wrote {LEGACY_REDIRECTS} ({n_redir} redirect rows)")
 
         robots = f"""User-agent: *
 Allow: /
@@ -1117,7 +1283,7 @@ Allow: /
 # Nation hubs and name-slug island profiles
 Allow: /islands/
 
-# Legacy profile redirects (noindex; keep for old links)
+# Legacy /profiles/ aliases (indexable; canonical is /islands/…)
 Allow: /profiles/
 
 Sitemap: {origin}/sitemap.xml
@@ -1215,19 +1381,7 @@ Sitemap: {origin}/sitemap.xml
                 encoding="utf-8",
             )
 
-        # Group curated/featured per nation for hub lists
-        by_seg: dict[str, list[tuple[str, str, str, float]]] = {}
-        for iid, sp in paths.items():
-            isl = islands_by_id.get(iid)
-            if not isl:
-                continue
-            score = island_priority(iid, isl, curated, featured)
-            by_seg.setdefault(sp.nation_segment, []).append(
-                (iid, sp.path, str(isl.get("name") or iid), score)
-            )
-
         for seg, items in by_seg.items():
-            items.sort(key=lambda t: (-t[3], t[2].lower()))
             featured_links = [(p, n) for _, p, n, _ in items[:48]]
             hub_dir = ISLANDS_DIR / seg
             hub_dir.mkdir(parents=True, exist_ok=True)
@@ -1307,11 +1461,7 @@ Sitemap: {origin}/sitemap.xml
                 atlas_href=atlas_href_for_depth(3),
                 profile_path=sp.path,
                 title=page_title(isl),
-                related_links=[
-                    (path, label)
-                    for rid, path, label, _ in by_seg.get(sp.nation_segment, [])
-                    if rid != str(iid)
-                ][:8],
+                related_links=related_links_for(str(iid), sp, by_seg),
                 depth=3,
             )
             out.write_text(page, encoding="utf-8")
@@ -1331,16 +1481,19 @@ Sitemap: {origin}/sitemap.xml
             if not iid:
                 continue
             sp = paths.get(str(iid))
-            new_url = f"{origin}{sp.path}" if sp else f"{atlas}?island={iid}"
-            atlas_url = f"{atlas}?island={html.escape(str(iid), quote=True)}"
-            page = legacy_redirect_html(
-                new_url=new_url,
-                atlas_url=atlas_url,
-                name=str(isl.get("name") or iid),
+            profile_path = sp.path if sp else f"/?island={iid}"
+            page = profile_page_html(
+                isl,
+                origin=origin,
+                atlas_href=atlas,
+                profile_path=profile_path,
+                title=page_title(isl),
+                related_links=related_links_for(str(iid), sp, by_seg),
+                depth=depth,
             )
             (landing / f"{iid}.html").write_text(page, encoding="utf-8")
             n += 1
-        print(f"Wrote {n} legacy redirect pages under {landing}/")
+        print(f"Wrote {n} indexable profile landings under {landing}/")
 
     if origin and not args.skip_index_patch:
         patch_index_crawl_links(

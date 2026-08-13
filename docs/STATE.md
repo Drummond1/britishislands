@@ -4,6 +4,19 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-08-13 (SEO next actions)** — Sitemap now asks Google for **1,622** island
+URLs (120 editorial + 1,502 named-with-description), omitting **9,758** unnamed/thin
+records. Landing geology is prose (not a Python dict dump). Cloudflare-ready
+`data/legacy_redirects.csv` (**3,244** rows) maps `/profiles/` and `/?island=` →
+`/islands/…` for those eligible islands. GitHub Pages still cannot 301 until an
+edge layer is added. Needs deploy + GSC Request indexing.
+
+**2026-08-13 (indexable /profiles/ aliases)** — Stopped emitting `noindex` on
+legacy `/profiles/<id>.html`. Those pages are now full landings (`index,follow`,
+JSON-LD, OG) with canonical still `/islands/{nation}/{slug}/`, so search and GEO
+crawlers that already know the old URLs get real content. SPA `?island=` stays
+`noindex,follow`. Generator: `scripts/generate_seo_artifacts.py --landing-dir profiles`.
+
 **2026-07-30 (GSC indexing + coverage pass)** — Cleared stale `.gsc_seo_improvement.lock` so continuous SEO loop could resume. Confirmed `/islands/…` hubs+priority landings **HTTP 200**. Built indexing pack `docs/GSC-INDEXING-REQUESTS.md` + `data/gsc_index_request_urls.json` (36 URLs). Coverage pass: **+2** multilang descriptions; photos flat **4,356**. Scores **avg 47.81→47.82**, both **18.8%→18.9%**, desc **1,621→1,623**. Regenerated `seo_path_by_id.json` (**11,380** paths) + sitemaps/landings. GSC MCP unhealthy — manual Request indexing required. Continuous loop still armed.
 
 

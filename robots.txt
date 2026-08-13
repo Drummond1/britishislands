@@ -4,7 +4,7 @@ Allow: /
 # Nation hubs and name-slug island profiles
 Allow: /islands/
 
-# Legacy profile redirects (noindex; keep for old links)
+# Legacy /profiles/ aliases (indexable; canonical is /islands/…)
 Allow: /profiles/
 
 Sitemap: https://www.findmyisland.com/sitemap.xml

@@ -7,7 +7,7 @@
 - Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
 - Island profile: /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
 - Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
-- Legacy redirects: /profiles/<id>.html → canonical /islands/… path
+- Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
 - Ferry guides: /ferries/
 - Collections: /collections/
 - Sitemap: /sitemap.xml

@@ -27,7 +27,7 @@ hub titles and page `<title>` templates instead.
 | Slug | ASCII-folded place name; curated human `id` kept when already a clean slug; collisions get parent water / archipelago / id suffix |
 | Unnamed | Slug falls back to stable `id` (often `osm-…`) |
 | Internal `id` | **Never** regenerated — still used for data joins and legacy `?island=` |
-| Legacy | `/profiles/<id>.html` → redirect + `noindex`, canonical points at `/islands/…` |
+| Legacy | `/profiles/<id>.html` — **indexable** full landing (JSON-LD + OG); canonical points at `/islands/…` |
 
 `build_islands_index.py` stamps `seoPath` on shards and compact index key `sp`.
 Lookup file: `data/seo_path_by_id.json` (also written by `generate_seo_artifacts.py`).
@@ -68,7 +68,7 @@ alternate CDN hostname).
 | `islands/` | Nation hubs + `/islands/{nation}/{slug}/index.html` |
 | `collections/` | Archipelago and water-body hubs (Inner/Outer Hebrides, Orkney, Shetland, etc.) |
 | Trust pages (`/about/`, `/methodology/`, `/editorial-policy/`, `/corrections/`, `/sources-licensing/`, `/contact/`, `/dataset/`) | Generated as crawlable static pages |
-| `profiles/<id>.html` | With `--landing-dir profiles` — legacy redirects |
+| `profiles/<id>.html` | With `--landing-dir profiles` — indexable aliases (canonical `/islands/…`) |
 | `data/seo_path_by_id.json` | id → public path map |
 | `index.html` crawl links | Patched between `IOB_CRAWL_LINKS_*` markers |
 
@@ -83,11 +83,13 @@ python3 scripts/build_islands_index.py   # stamps seoPath onto shards
 
 - `sitemap-core.xml` (home, nation hubs, trust pages, collections root)
 - `sitemap-islands-editorial.xml` (curated + featured)
-- `sitemap-islands.xml` (all other island profiles)
+- `sitemap-islands.xml` (**named islands with a description only** — unnamed / thin atlas records stay shareable on `/islands/…` but are omitted so Google does not spend crawl budget on them)
 - `sitemap-ferries-verified.xml`
 - `sitemap-collections.xml`
 
-Legacy `/profiles/` URLs are **not** listed (they noindex-redirect).
+Legacy `/profiles/` URLs are **not** listed in the sitemap (canonical is `/islands/…`). They are still **indexable** landings so crawlers and GEO systems that already know the old URL get full content instead of a `noindex` stub.
+
+**301 redirects:** GitHub Pages cannot emit HTTP 301s. After each generate, `data/legacy_redirects.csv` lists `/profiles/<id>.html` and `/?island=<id>` → `/islands/{nation}/{slug}/` for sitemap-eligible islands (Cloudflare Bulk Redirects). Import that CSV on an edge layer when DNS allows; until then, canonical tags are the only consolidation signal.
 
 ## Google Search Console (connected 2026-07-26)
 
@@ -132,9 +134,11 @@ Live CTR / ranking diagnosis (2026-07-26 API pull): [`GSC-CTR-FINDINGS.md`](GSC-
 
 ### Profile landing pages
 
-Each `/islands/{nation}/{slug}/` page has self-canonical URL, `Island` JSON-LD,
-OG tags, and a link/redirect to the interactive atlas. Generated on every Pages
-deploy; not committed locally (`islands/` and `profiles/` are gitignored).
+Each `/islands/{nation}/{slug}/` page has self-canonical URL, `Landform` JSON-LD,
+OG tags, and a link to the interactive atlas. Legacy `/profiles/<id>.html` pages
+are the same landing HTML with `index,follow` so search and GEO crawlers can
+use them; their canonical still points at `/islands/…`. Generated on every Pages
+deploy; `islands/` and `profiles/` are gitignored.
 
 ## Continuous SEO / GEO improvement loop
 
