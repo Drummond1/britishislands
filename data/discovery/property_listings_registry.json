@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T07:24:25+00:00",
+  "updatedAt": "2026-08-17T06:45:33+00:00",
   "totalIslandsWithListings": 37,
   "verifiedManifest": "data/discovery/property_listings_verified.json",
   "humanDoc": "docs/FOR-SALE-ISLANDS.md",
@@ -24,7 +24,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "eel-pie-island",
@@ -45,7 +45,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-157810927",
@@ -66,7 +66,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-148442098",
@@ -87,7 +87,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3198786",
@@ -108,7 +108,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3210701",
@@ -129,7 +129,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-49901778",
@@ -150,7 +150,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-48076585",
@@ -171,7 +171,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-157812309",
@@ -192,7 +192,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-8156739",
@@ -213,7 +213,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4554655",
@@ -234,7 +234,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-9126999",
@@ -255,7 +255,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-4029093",
@@ -276,7 +276,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-190629034",
@@ -297,7 +297,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4562311",
@@ -318,7 +318,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4554537",
@@ -339,7 +339,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4562119",
@@ -360,7 +360,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3395357",
@@ -381,7 +381,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4563603",
@@ -402,7 +402,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-6925696",
@@ -423,7 +423,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-5725196",
@@ -444,7 +444,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3512150",
@@ -465,7 +465,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3516496",
@@ -486,7 +486,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3516509",
@@ -507,7 +507,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3998378",
@@ -528,7 +528,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-3516655",
@@ -549,7 +549,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-205056852",
@@ -570,7 +570,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-3619206",
@@ -591,7 +591,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-750275320",
@@ -612,7 +612,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-200745352",
@@ -633,7 +633,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-14940681",
@@ -654,7 +654,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4002996",
@@ -675,7 +675,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-200912404",
@@ -696,7 +696,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-4092586",
@@ -717,7 +717,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-200773375",
@@ -738,7 +738,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-relation-4230732",
@@ -759,7 +759,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     },
     {
       "islandId": "osm-way-4001735",
@@ -780,7 +780,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-08-10T07:24:25+00:00"
+      "lastSeenAt": "2026-08-17T06:45:33+00:00"
     }
   ],
   "runs": [
@@ -952,6 +952,15 @@
     },
     {
       "runAt": "2026-08-10T07:24:25+00:00",
+      "addedCount": 0,
+      "removedCount": 0,
+      "addedIslandIds": [],
+      "removedIslandIds": [],
+      "source": "registry_only",
+      "verifiedCount": 37
+    },
+    {
+      "runAt": "2026-08-17T06:45:33+00:00",
       "addedCount": 0,
       "removedCount": 0,
       "addedIslandIds": [],
