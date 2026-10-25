@@ -483,6 +483,7 @@ const INTEREST_CHIP_ICONS = {
   "film-art-music": "clapperboard",
   "whisky-distilleries": "wine",
   "unusual-wildlife": "bird",
+  "tidal-islands": "footprints",
   "for-sale": "key-round",
 };
 
@@ -2711,11 +2712,12 @@ const INTEREST_STORY_FACETS = {
   music: "Music",
   distillery: "Distillery",
   wildlife: "Wildlife",
+  tidal: "Tidal island",
 };
 
 function interestStoryGroups(islandId) {
   const stories = state.interestIndex?.stories || {};
-  const slugs = ["unusual-wildlife", "whisky-distilleries", "film-art-music"];
+  const slugs = ["tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
   const active = state.activeInterestSlug;
   const order =
     active && slugs.includes(active) ? [active, ...slugs.filter((slug) => slug !== active)] : slugs;
@@ -2725,7 +2727,7 @@ function interestStoryGroups(islandId) {
       let items = Array.isArray(stories[slug]?.[islandId]) ? stories[slug][islandId] : [];
       if (
         lead &&
-        (slug === "whisky-distilleries" || slug === "unusual-wildlife") &&
+        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands") &&
         state.activeInterestSlug === slug
       ) {
         items = items.filter((item) => item?.title !== lead?.title);
@@ -2740,7 +2742,9 @@ function interestStoryGroups(islandId) {
             ? "Distilleries on this island"
             : slug === "unusual-wildlife"
               ? "Unusual wildlife"
-              : "Film, art and music",
+              : slug === "tidal-islands"
+                ? "Tidal island"
+                : "Film, art and music",
         intro: "",
         items,
       };
@@ -2752,7 +2756,8 @@ function interestFeatureMode() {
   return (
     Boolean(state.interestFacet) ||
     state.activeInterestSlug === "whisky-distilleries" ||
-    state.activeInterestSlug === "unusual-wildlife"
+    state.activeInterestSlug === "unusual-wildlife" ||
+    state.activeInterestSlug === "tidal-islands"
   );
 }
 
@@ -2765,7 +2770,7 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   if (!slug || slug === "for-sale" || !islandId) return [];
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items)) return [];
-  if (slug === "whisky-distilleries" || slug === "unusual-wildlife" || !facet) return items;
+  if (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || !facet) return items;
   return items.filter((item) => item?.facet === facet);
 }
 
@@ -4347,9 +4352,10 @@ function renderListWindow() {
     const storyThumb = feature || interestStoryThumb(island.id);
     const thumb = storyThumb?.image?.thumbUrl || islandThumbUrl(island);
     const thumbAlt = storyThumb?.title || "";
+    const featureShot = feature?.image?.thumbUrl || (feature ? islandThumbUrl(island) : "");
     const thumbHtml = feature
-      ? feature.image?.thumbUrl
-        ? `<img class="island-card__feature" src="${escapeAttr(feature.image.thumbUrl)}" alt="${escapeAttr(feature.title || "")}" loading="lazy" decoding="async" />`
+      ? featureShot
+        ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(feature.image?.thumbUrl ? feature.title || "" : displayName)}" loading="lazy" decoding="async" />`
         : ""
       : thumb
         ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" loading="lazy" decoding="async" />`
@@ -5056,7 +5062,8 @@ function renderDetails(island) {
   }
 
   const featureHtml = renderInterestFeature(island);
-  const gallery = featureHtml ? "" : renderGallery(island) || renderPhotoPlaceholderHero(island);
+  const featureHasImage = Boolean(interestLeadStory(island?.id)?.image?.thumbUrl);
+  const gallery = featureHtml && featureHasImage ? "" : renderGallery(island) || renderPhotoPlaceholderHero(island);
   const favActive = isFavoriteIsland(island.id);
   const unnamed = isUnnamedIsland(island);
   const title = islandDisplayName(island);

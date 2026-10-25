@@ -3156,6 +3156,13 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Artwork **214 → 386** on **50** islands. Film/art/music **95** islands, **613** rows. Stories **639**, **446** with a picture. Not pushed. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: check Wellcome, MusicBrainz works, and the wildlife file before the next publish.
 
+## 2026-10-25 — Unusual wildlife filter
+
+- **Goal**: Add an atlas filter for rare or unusual wildlife, with a photo of the species and a paragraph about its connection to the island.
+- **What changed**: Six source passes (Scotland, Wales and England, Ireland, the Channel Islands and the Isle of Man, endemics, and open-government pages) fed `scripts/harvest_unusual_wildlife.py`. A row is kept only when the source page itself ties that species to an atlas island as endemic, named for the island, or a clear stronghold. The picture is the species. Sheep, ponies, and cattle are excluded, as are colony coordinates, nest and pair counts, and visit advice. The chip, card, and profile use the same picture-and-paragraph pattern as whisky. `supabase/migrations/20261025170000_unusual_wildlife.sql` adds the wildlife facet and is not applied remotely.
+- **Outcome / counts**: **30** species on **23** islands in `data/interest_index.json`. **22** have an open-licence species photo. Film/art/music stays 95, whisky 12, for sale 42. Local only. Supabase was not reloaded. Not pushed.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the wildlife facet migration. Eight species still have no usable species photo.
+
 ## 2026-10-25 — Interest filter ideas, not a new chip
 
 - **Goal**: Choose the next atlas filters in the same family as film and music, islands for sale, and unusual wildlife.
@@ -3169,3 +3176,24 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Dark shell, amber mark, full-bleed daylight map, paper island profiles (`atlas-redesign.css`, `editorial-profile.css`, `index.html`, `landing.css`, `about/index.html`, `app.js`, `styles.css`). Interest index, featured islands, and `islands.json` go with the same commit so production matches the local site. The Figma capture script is not in `index.html`.
 - **Outcome / counts**: No schema change. Continuous SEO loop was not running and was not started or stopped. Pages deploy follows the push to `main`.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Yale, Wellcome, and a Skye band
+
+- **Goal**: Publish the Wellcome and Yale artworks that name an island, and the one new Wikidata band.
+- **What changed**: Reviewed `data/interest/candidates/artwork-more.json`. Rejected 10 rows: two portraits of Sergeant MacLeod, Colonel MacLeod of St Kilda, the St Aubyn family, Charles I at Titchfield, two Isle of Man elk plates, Craignish Castle (mainland), a regional map of northern England, and a print of Boo-Sha-La near Staffa. Kept 78, including *The Cathedral at Iona*, *Arran Peaks*, Lindisfarne, and Fingal’s Cave engravings. The Wikidata music file had been left empty, so Là Luain (Q13194741, formed on Skye) was written back into `data/interest/candidates/music-wikidata.json` from the cached query. Rebuilt `data/interest_index.json`. MusicBrainz work titles and the wildlife file stayed out.
+- **Outcome / counts**: Artwork **386 → 464** on **51** islands. Music **167 → 168**. Film/art/music **95** islands, **692** rows. Stories **718**, **459** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: check the MusicBrainz work file before the next publish.
+
+## 2026-10-25 — MusicBrainz songs and albums
+
+- **Goal**: Publish MusicBrainz albums and tunes whose titles name an atlas island.
+- **What changed**: Reviewed `data/interest/candidates/music-musicbrainz.json` (180 accepted rows). Rejected 59: every Lundy surname and road, Cutty Sark and the Hungarian north pole, a Nova Scotia venue called Alderney Landing, Valentia the game and Spanish songs, the Cape Breton band The Barra MacNeils, The Bells of Lismore (the Irish town), six baroque movements spelled like the dance giga, two African titles containing Foula, a Melbourne St Kilda line, and twelve Lindisfarne compilations. Kept 121, including Skye Boat Song, The Lost Songs of St Kilda, Waulking Songs from Barra, The Unst Boat Song, and one Lindisfarne album plus the works about the island. Picture lookup no longer asks Wikipedia for a MusicBrainz id. Rebuilt `data/interest_index.json` with the wildlife rows still included.
+- **Outcome / counts**: Music **168 → 289** on **63** islands. Film/art/music **104** islands, **813** rows (artwork 464, film 60). Stories **868**, **491** with a picture. Unusual wildlife stays **30** species on **23** islands. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Tidal islands filter
+
+- **Goal**: Add an atlas filter for tidal islands, with a short account of how each one floods and what land it joins.
+- **What changed**: Counted Britain, Ireland, Guernsey, and Jersey from the English Wikipedia article [Tidal island](https://en.wikipedia.org/wiki/Tidal_island). `scripts/harvest_tidal_islands.py` keeps a row only when that island is already in the atlas and the article's definition says the link is exposed at low tide and covered at high tide. The atlas subtype `tidal` was not used. No crossing times. The chip, the list, and the profile show that note. `supabase/migrations/20261025190000_tidal_islands.sql` adds the tidal facet and is not applied remotely.
+- **Outcome / counts**: **66** islands in `data/interest_index.json`. Eleven names on the page were left out: Elizabeth Castle, Saint Aubin's Fort, La Corbière, Portelet Tower, Marsden Rock, Eilean Arnoil, Ynys Llanddwyn, and Mumbles Lighthouse are not in the atlas; Archirondel Tower is a permanent causeway; Eilean Donan is joined by a footbridge; St Martin's is the island White Island joins. Film/art/music stays 104, whisky 12, for sale 42, unusual wildlife 23. The same index ships the wildlife chip and the later film, art, and music rows that had been local. Supabase was not reloaded. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the tidal facet migration. Next chip is castle islets under 1 km².

@@ -226,7 +226,7 @@ Interest filters are **not** fields on the island record. `data/islands.json` is
 
 | File | Role |
 |---|---|
-| `data/interest_index.json` | What the atlas loads. `categories[]` (published only, with counts), `members[slug]` (island-id arrays), `highlights[slug][islandId]` (work, distillery, or listing names). |
+| `data/interest_index.json` | What the atlas loads. `categories[]` (published only, with counts), `members[slug]` (island-id arrays), `highlights[slug][islandId]` (work, distillery, listing, or connection names). `stories` (schemaVersion 2) adds, for film/art/music, whisky, unusual wildlife, and tidal islands, a short summary and, where one exists, an open-licence picture with attribution. Film, art, and music summaries may come from Wikipedia, Wikidata, or MusicBrainz. Wildlife summaries name the species and the island. The picture is of the species. Colony coordinates and nest counts are not stored. Tidal summaries name where the island joins, and that the link is exposed at low tide and covered at high tide. Crossing times are not stored. |
 | `data/interest/candidates/{slug}.json` | Populator output, including rejected rows and reasons. |
 | Supabase `interest_categories` / `interest_memberships` | Working store. See [`SUPABASE.md`](SUPABASE.md). |
 

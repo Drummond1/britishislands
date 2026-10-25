@@ -1,6 +1,6 @@
 {
   "slug": "for-sale",
-  "generatedAt": "2026-10-25T12:35:54+00:00",
+  "generatedAt": "2026-10-25T14:34:38+00:00",
   "source": "data/discovery/property_listings_registry.json",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -33,7 +33,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -49,7 +49,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -65,7 +65,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -81,7 +81,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -97,7 +97,23 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "scilly-st-marys",
+      "island_name": "St Mary's (Isles of Scilly)",
+      "facet": "listing",
+      "title": "St Mary's (Isles of Scilly) — Scilly Estate Agents",
+      "source_url": "https://scillyestateagents.com/properties/ganilly/",
+      "source_title": "St Mary's (Isles of Scilly) — Scilly Estate Agents",
+      "licence": "outbound-link",
+      "evidence": "£425,000 ONO",
+      "external_id": "tier3-scilly-estate-agents-illyestateagents-com-properties-ganil",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -113,7 +129,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -129,7 +145,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -145,7 +161,23 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-607165894",
+      "island_name": "Whittets Ait",
+      "facet": "listing",
+      "title": "Whittets Ait — Savills",
+      "source_url": "https://search.savills.com/property-detail/gbwyrswes250193",
+      "source_title": "Whittets Ait — Savills",
+      "licence": "outbound-link",
+      "evidence": "Guide price £560,000",
+      "external_id": "tier3-savills-ills-com-property-detail-gbwyrswes250193",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -161,7 +193,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -177,7 +209,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -193,7 +225,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -209,7 +241,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -225,7 +257,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -241,7 +273,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -257,7 +289,23 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-704795953",
+      "island_name": "Illauncreeveen",
+      "facet": "listing",
+      "title": "Illauncreeveen — Harrington Estates",
+      "source_url": "https://www.harringtonestates.ie/allproperties/006095%2Fdh",
+      "source_title": "Illauncreeveen — Harrington Estates",
+      "licence": "outbound-link",
+      "evidence": "€500,000",
+      "external_id": "tier3-harrington-estates-gtonestates-ie-allproperties-006095-2fd",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -273,7 +321,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -289,7 +337,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -305,7 +353,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -321,7 +369,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -337,7 +385,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -353,7 +401,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -369,7 +417,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -385,7 +433,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -401,7 +449,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -417,7 +465,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -433,7 +481,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -449,7 +497,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -465,7 +513,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -481,7 +529,23 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-relation-15708714",
+      "island_name": "Eriskay",
+      "facet": "listing",
+      "title": "Eriskay — Bell Ingram",
+      "source_url": "https://www.bellingram.co.uk/property/croft-7-balla-eriskay-isle-of-south-uist-eilean-siar-hs8-5jl/",
+      "source_title": "Eriskay — Bell Ingram",
+      "licence": "outbound-link",
+      "evidence": "£50,000",
+      "external_id": "tier3-bell-ingram-isle-of-south-uist-eilean-siar-hs8-5jl",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -497,7 +561,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -513,7 +577,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -529,7 +593,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -545,7 +609,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -561,7 +625,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -577,7 +641,23 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-4011476",
+      "island_name": "Wiay",
+      "facet": "listing",
+      "title": "Wiay — Bell Ingram",
+      "source_url": "https://www.bellingram.co.uk/property/isle-of-wiay-creagorry-benbecula-eilean-siar-hs7-5ps/",
+      "source_title": "Wiay — Bell Ingram",
+      "licence": "outbound-link",
+      "evidence": "£995,000",
+      "external_id": "tier3-bell-ingram-creagorry-benbecula-eilean-siar-hs7-5ps",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     },
     {
       "category_slug": "for-sale",
@@ -593,7 +673,7 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T12:35:54+00:00"
+      "fetched_at": "2026-10-25T14:34:38+00:00"
     }
   ]
 }

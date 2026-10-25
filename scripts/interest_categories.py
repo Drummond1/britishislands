@@ -54,7 +54,7 @@ PUBLISHED = (
     {
         "slug": "film-art-music",
         "label": "Film, art and music",
-        "blurb": "Islands tied to a specific film, artwork, or piece of music.",
+        "blurb": "Islands tied to a specific film, artwork, band, or piece of music.",
         "sortOrder": 10,
     },
     {
@@ -68,6 +68,18 @@ PUBLISHED = (
         "label": "For sale",
         "blurb": "Islands with a current broker listing.",
         "sortOrder": 30,
+    },
+    {
+        "slug": "unusual-wildlife",
+        "label": "Unusual wildlife",
+        "blurb": "Islands with a rare, endemic, or remarkable animal or plant.",
+        "sortOrder": 25,
+    },
+    {
+        "slug": "tidal-islands",
+        "label": "Tidal islands",
+        "blurb": "Islands joined to other land at low tide and cut off at high tide.",
+        "sortOrder": 35,
     },
 )
 
@@ -102,7 +114,13 @@ def fold(text: str) -> str:
     return text.lower()
 
 
-def http_json(url: str, data: bytes | None = None, headers: dict | None = None, timeout: int = 90):
+def http_json(
+    url: str,
+    data: bytes | None = None,
+    headers: dict | None = None,
+    timeout: int = 90,
+    user_agent: str | None = None,
+):
     """curl, not urllib: the system Python 3.9 SSL stack fails against some hosts."""
     cmd = [
         "curl",
@@ -110,7 +128,7 @@ def http_json(url: str, data: bytes | None = None, headers: dict | None = None, 
         "--max-time",
         str(timeout),
         "-A",
-        USER_AGENT,
+        user_agent or USER_AGENT,
         "-H",
         "Accept: application/json",
     ]
@@ -158,6 +176,19 @@ class Atlas:
             self.by_key.setdefault(name_key(island["name"]), []).append(island)
 
     def match_name(self, *names: str) -> dict | None:
+        exact_hits = []
+        seen_exact = set()
+        for name in names:
+            if not name:
+                continue
+            target = fold(name)
+            for island in self.islands:
+                if fold(island["name"]) == target and island["id"] not in seen_exact:
+                    seen_exact.add(island["id"])
+                    exact_hits.append(island)
+        chosen = self._prefer_largest(exact_hits)
+        if chosen or exact_hits:
+            return chosen
         hits = []
         seen = set()
         for name in names:
@@ -168,11 +199,10 @@ class Atlas:
                     continue
                 seen.add(island["id"])
                 hits.append(island)
-            exact = fold(name)
-            for island in self.islands:
-                if fold(island["name"]) == exact and island["id"] not in seen:
-                    seen.add(island["id"])
-                    hits.append(island)
+        return self._prefer_largest(hits)
+
+    @staticmethod
+    def _prefer_largest(hits: list[dict]) -> dict | None:
         if len(hits) == 1:
             return hits[0]
         if len(hits) > 1:
@@ -569,6 +599,8 @@ def populate_whisky(atlas: Atlas) -> list[dict]:
         ("Isle of Harris Distillery", "Isle_of_Harris_Distillery", ["Lewis and Harris", "Harris"]),
         ("Lagg distillery", "Lagg_distillery", ["Isle of Arran", "Arran"]),
         ("Isle of Barra distillery", "Isle_of_Barra_distillery", ["Barra"]),
+        ("Benbecula Distillery", "Benbecula_distillery", ["Benbecula"]),
+        ("Kimbland distillery", "Kimbland_distillery", ["Sanday"]),
     ]
     for title, wiki, names in gap_seeds:
         source = f"https://en.wikipedia.org/wiki/{wiki}"
@@ -857,6 +889,620 @@ def accepted_rows(rows: list[dict]) -> list[dict]:
     return deduped
 
 
+STORY_SLUGS = ("film-art-music", "whisky-distilleries", "unusual-wildlife", "tidal-islands")
+MAPISH_IMAGE = re.compile(
+    r"map|locator|range|distribution|diagram|chart|flag|coat[_ -]?of|\bcoa\b|icon|\.svg",
+    re.I,
+)
+COMMONS_API = "https://commons.wikimedia.org/w/api.php"
+MEDIA_CACHE = DATA / "cache_wikipedia_interest" / "_media_index.json"
+OPEN_IMAGE_LICENCE = re.compile(
+    r"^(cc[ -]?0|cc[ -]?by([ -]sa)?([ -][0-9.]+)?|public domain|pd|pdm)\b",
+    re.I,
+)
+CLOSED_IMAGE_LICENCE = re.compile(
+    r"non-?commercial|\bno derivatives\b|\bfair use\b|\ball rights\b|(^|[^a-z])(nc|nd)([^a-z]|$)",
+    re.I,
+)
+
+
+def _html_text(value: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", value or "")
+    text = (
+        text.replace("&nbsp;", " ")
+        .replace("&amp;", "&")
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+        .replace("&quot;", '"')
+        .replace("&#039;", "'")
+    )
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _sentences(text: str) -> list[str]:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    text = re.sub(
+        r"\b[A-Za-z]\.(?:\s*[A-Za-z]\.)+",
+        lambda match: match.group(0).replace(".", "§"),
+        text,
+    )
+    text = re.sub(r"\b([A-Z])\.(?=\s+[a-z])", r"\1§", text)
+    text = re.sub(r"\b(?:[A-Z]\.){2,}", lambda match: match.group(0).replace(".", "§"), text)
+    text = re.sub(
+        r"\b(Op|No|St|Dr|Mr|Mrs|Ms|Jr|Sr|vs|approx|var|sp|spp)\.",
+        lambda match: match.group(0).replace(".", "§"),
+        text,
+    )
+    parts = re.split(r"(?<=[.!?])\s+", text)
+    cleaned = [part.replace("§", ".").strip() for part in parts]
+    return [part for part in cleaned if len(part) > 40]
+
+
+def _island_phrase(evidence: str) -> str:
+    found = re.findall(r"'([^']+)'", evidence or "")
+    if found:
+        return found[-1]
+    match = re.search(r"\band\s+(.+?)\.?$", evidence or "")
+    return match.group(1).strip() if match else ""
+
+
+def _island_in_sentence(island: str) -> str:
+    name = (island or "").strip()
+    low = name.lower()
+    if low.startswith("the "):
+        return name
+    if low.startswith("isle ") or low.startswith("island "):
+        return f"the {name}"
+    return name
+
+
+def _relation_clause(props: str, island: str) -> str:
+    """A plain sentence for why a work belongs to the island."""
+    place = _island_in_sentence(island)
+    low = (props or "").lower()
+    if "depict" in low:
+        return f"It depicts {place}."
+    if "main subject" in low:
+        return f"The work takes {place} as its subject."
+    if "named after" in low:
+        return f"It is named after {place}."
+    if "filming" in low:
+        return f"It was filmed on {place}."
+    if "narrative" in low:
+        return f"It is set on {place}."
+    if "creation" in low:
+        return f"It was created on {place}."
+    if "formation" in low:
+        return f"It was formed on {place}."
+    if "birth" in low:
+        return f"The artist was born on {place}."
+    if "work location" in low:
+        return f"The artist worked on {place}."
+    return f"It is connected with {place}."
+
+
+def _readable_connection(text: str) -> str:
+    """Turn 'X is a painting linked to Y (depicts)' into a sentence."""
+    match = re.fullmatch(
+        r"(.+?) is (an? .+?) linked to '([^']+)' \(([^)]+)\)\.?",
+        (text or "").strip(),
+    )
+    if not match:
+        return (text or "").strip()
+    name, kind, island, props = match.groups()
+    clause = _relation_clause(props, island)
+    if clause.startswith("It "):
+        return f"{name} is {kind} that {clause[3:]}"
+    return f"{name} is {kind}. {clause}"
+
+
+def _summarize(lead: str, full: str, title: str, phrase: str) -> str:
+    """What the work is, then the sentence that ties it to the island."""
+    island = phrase if phrase and phrase.lower() not in {"the island", "this island", "the work"} else ""
+    sentences = _sentences(lead) or _sentences(full)
+    title_parts = [part.strip() for part in re.split(r"[,:]", title or "") if len(part.strip()) > 3]
+
+    def mentions_island(sentence: str) -> bool:
+        return bool(island) and island.lower() in sentence.lower()
+
+    def mentions_work(sentence: str) -> bool:
+        low = sentence.lower()
+        if title and title.lower() in low:
+            return True
+        return any(part.lower() in low for part in title_parts)
+
+    identity = next((sentence for sentence in sentences if mentions_work(sentence)), "")
+    connection = next(
+        (
+            sentence
+            for sentence in sentences
+            if mentions_island(sentence) and sentence != identity
+        ),
+        "",
+    )
+    chosen = [sentence for sentence in (identity, connection) if sentence]
+    if not chosen and island:
+        for sentence in _sentences(full):
+            if mentions_island(sentence):
+                chosen.append(sentence)
+                break
+    if not chosen:
+        chosen = sentences[:2]
+    text = " ".join(chosen[:2])
+    if len(text) > 520:
+        text = text[:500].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    return text
+
+
+def _load_media_cache() -> dict:
+    payload = load_json(MEDIA_CACHE, {})
+    payload.setdefault("pages", {})
+    payload.setdefault("files", {})
+    return payload
+
+
+def _wiki_query(endpoint: str, params: dict) -> dict:
+    url = endpoint + "?" + urllib.parse.urlencode(params)
+    try:
+        return http_json(url, timeout=45)
+    except subprocess.CalledProcessError:
+        print(f"picture lookup skipped after a rate limit: {endpoint}", flush=True)
+        return {}
+
+
+def _page_records(titles: list[str], cache: dict) -> None:
+    missing = []
+    seen = set()
+    for title in titles:
+        key = fold(title)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        record = cache["pages"].get(key) or {}
+        if record.get("extract") or record.get("absent"):
+            continue
+        missing.append(title.replace("_", " "))
+    for start in range(0, len(missing), 16):
+        batch = missing[start : start + 16]
+        try:
+            payload = _wiki_query(
+                WIKIPEDIA_API,
+                {
+                    "action": "query",
+                    "format": "json",
+                    "redirects": "1",
+                    "prop": "extracts|pageimages",
+                    "exintro": "1",
+                    "explaintext": "1",
+                    "exchars": "900",
+                    "piprop": "thumbnail|name",
+                    "pithumbsize": "960",
+                    "pilimit": "1",
+                    "titles": "|".join(batch),
+                },
+            )
+        except RuntimeError as exc:
+            print(f"leaving {len(batch)} articles for a later picture pass: {exc}", flush=True)
+            break
+        if not payload.get("query"):
+            print(f"leaving {len(batch)} articles for a later picture pass", flush=True)
+            break
+        query = payload.get("query") or {}
+        redirect_of = {}
+        for item in query.get("redirects") or []:
+            redirect_of.setdefault(item.get("to"), []).append(item.get("from"))
+        returned = list((query.get("pages") or {}).values())
+        for page in returned:
+            if page.get("missing") is not None:
+                continue
+            thumb = (page.get("thumbnail") or {}).get("source") or ""
+            record = {
+                "title": page.get("title") or "",
+                "extract": page.get("extract") or "",
+                "image": page.get("pageimage") or "",
+                "thumb": thumb,
+            }
+            names = [page.get("title") or "", *(redirect_of.get(page.get("title")) or [])]
+            if page.get("missing") is not None:
+                for name in names:
+                    if not name:
+                        continue
+                    key = fold(name)
+                    if (cache["pages"].get(key) or {}).get("extract"):
+                        continue
+                    cache["pages"][key] = {
+                        "title": name,
+                        "extract": "",
+                        "image": "",
+                        "thumb": "",
+                        "absent": True,
+                        "imageChecked": True,
+                    }
+                continue
+            for name in names:
+                if name:
+                    cache["pages"][fold(name)] = record
+        for title in batch:
+            key = fold(title)
+            if (cache["pages"].get(key) or {}).get("extract"):
+                continue
+            cache["pages"].setdefault(
+                key,
+                {"title": title, "extract": "", "image": "", "thumb": "", "absent": True, "imageChecked": True},
+            )
+        save_json(MEDIA_CACHE, cache)
+        time.sleep(1.1)
+
+
+def _fill_images(titles: list[str], cache: dict) -> None:
+    """Page images are a separate request. Combined with extracts, Wikipedia returns one picture."""
+    missing = []
+    seen = set()
+    for title in titles:
+        key = fold(title)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        record = cache["pages"].get(key) or {}
+        if record.get("image") or record.get("imageChecked"):
+            continue
+        missing.append(title.replace("_", " "))
+    for start in range(0, len(missing), 12):
+        batch = missing[start : start + 12]
+        try:
+            payload = _wiki_query(
+                WIKIPEDIA_API,
+                {
+                    "action": "query",
+                    "format": "json",
+                    "redirects": "1",
+                    "prop": "pageimages",
+                    "piprop": "thumbnail|name",
+                    "pithumbsize": "960",
+                    "titles": "|".join(batch),
+                },
+            )
+        except RuntimeError as exc:
+            print(f"leaving {len(batch)} pictures for a later pass: {exc}", flush=True)
+            break
+        if not payload.get("query"):
+            print(f"leaving {len(batch)} pictures for a later pass", flush=True)
+            break
+        query = payload.get("query") or {}
+        redirect_of = {}
+        for item in query.get("redirects") or []:
+            redirect_of.setdefault(item.get("to"), []).append(item.get("from"))
+        seen_titles = set()
+        for page in (query.get("pages") or {}).values():
+            names = [page.get("title") or "", *(redirect_of.get(page.get("title")) or [])]
+            thumb = (page.get("thumbnail") or {}).get("source") or ""
+            image = "" if page.get("missing") is not None else (page.get("pageimage") or "")
+            for name in names:
+                if not name:
+                    continue
+                seen_titles.add(fold(name))
+                record = cache["pages"].setdefault(fold(name), {"title": name, "extract": "", "image": "", "thumb": ""})
+                record["image"] = image
+                record["thumb"] = thumb
+                record["imageChecked"] = True
+        for title in batch:
+            record = cache["pages"].setdefault(fold(title), {"title": title, "extract": "", "image": "", "thumb": ""})
+            if fold(title) not in seen_titles:
+                record["imageChecked"] = True
+        save_json(MEDIA_CACHE, cache)
+        time.sleep(1.2)
+
+
+def _commons_records(filenames: list[str], cache: dict) -> None:
+    missing = []
+    for name in filenames:
+        if not name:
+            continue
+        file_title = name if name.startswith("File:") else f"File:{name}"
+        if file_title not in cache["files"]:
+            missing.append(file_title)
+    for start in range(0, len(missing), 16):
+        batch = missing[start : start + 16]
+        try:
+            payload = _wiki_query(
+                COMMONS_API,
+                {
+                    "action": "query",
+                    "format": "json",
+                    "prop": "imageinfo",
+                    "iiprop": "url|extmetadata",
+                    "iiurlwidth": "960",
+                    "titles": "|".join(batch),
+                },
+            )
+        except RuntimeError as exc:
+            print(f"leaving {len(batch)} Commons files for a later pass: {exc}", flush=True)
+            break
+        if not (payload.get("query") or {}).get("pages"):
+            print(f"leaving {len(batch)} Commons files for a later pass", flush=True)
+            break
+        for page in ((payload.get("query") or {}).get("pages") or {}).values():
+            title = page.get("title") or ""
+            info = (page.get("imageinfo") or [{}])[0]
+            meta = info.get("extmetadata") or {}
+            licence = _html_text((meta.get("LicenseShortName") or {}).get("value") or "")
+            artist = _html_text((meta.get("Artist") or {}).get("value") or "")
+            credit = _html_text((meta.get("Credit") or {}).get("value") or "")
+            licence_url = (meta.get("LicenseUrl") or {}).get("value") or ""
+            usable = bool(licence) and OPEN_IMAGE_LICENCE.search(licence) and not CLOSED_IMAGE_LICENCE.search(licence)
+            cache["files"][title] = {
+                "usable": usable,
+                "thumbUrl": info.get("thumburl") or "",
+                "pageUrl": info.get("descriptionurl") or "",
+                "attribution": artist or credit or "Wikimedia Commons",
+                "licence": licence,
+                "licenceUrl": licence_url,
+            }
+        for title in batch:
+            cache["files"].setdefault(
+                title,
+                {"usable": False, "thumbUrl": "", "pageUrl": "", "attribution": "", "licence": "", "licenceUrl": ""},
+            )
+        save_json(MEDIA_CACHE, cache)
+        time.sleep(1.1)
+
+
+def _distillery_story(lead: str, island: str) -> str:
+    """Where the distillery is, then one sentence about what makes it notable."""
+    sentences = _sentences(lead)
+    if not sentences:
+        return ""
+    hints = (
+        "oldest",
+        "founded",
+        "established",
+        "first ",
+        "peated",
+        "northernmost",
+        "classic malt",
+        "shore",
+        "coast",
+        "only ",
+        "legal",
+    )
+    named = []
+    hinted = []
+    for sentence in sentences[1:5]:
+        low = sentence.lower()
+        has_hint = any(hint in low for hint in hints)
+        has_island = bool(island and island.lower() in low)
+        if has_hint and has_island:
+            named.append(sentence)
+        elif has_hint:
+            hinted.append(sentence)
+    interesting = ""
+    if named:
+        interesting = named[0]
+    elif hinted:
+        interesting = hinted[0]
+    elif len(sentences) > 1:
+        interesting = sentences[1]
+    identity = re.sub(r"\s*\([^)]{0,140}\)", "", sentences[0])
+    identity = re.sub(r"\s{2,}", " ", identity).strip()
+    notable_names_island = bool(interesting and island and island.lower() in interesting.lower())
+    parts = [interesting, identity] if notable_names_island else [identity, interesting]
+    parts = [part for part in parts if part]
+    text = " ".join(part[:1].upper() + part[1:] if part else part for part in parts)
+    if len(text) > 520:
+        text = text[:500].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    return text
+
+
+def _image_from_file(filename: str, cache: dict) -> dict | None:
+    if not filename or MAPISH_IMAGE.search(filename):
+        return None
+    file_title = filename if filename.startswith("File:") else f"File:{filename}"
+    candidates = (
+        file_title,
+        file_title.replace("_", " "),
+        file_title.replace(" ", "_"),
+    )
+    usable = [cache["files"].get(key) or {} for key in candidates]
+    file_info = next((info for info in usable if info.get("usable")), None) or {}
+    if not (file_info.get("usable") and file_info.get("thumbUrl")):
+        return None
+    return {
+        "thumbUrl": file_info["thumbUrl"],
+        "pageUrl": file_info.get("pageUrl") or "",
+        "attribution": file_info.get("attribution") or "Wikimedia Commons",
+        "licence": file_info.get("licence") or "",
+        "licenceUrl": file_info.get("licenceUrl") or "",
+    }
+
+
+def _wildlife_story(item: dict, cache: dict) -> dict:
+    """The picture is the species. The paragraph is the one already checked against the source."""
+    summary = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    if len(summary) > 700:
+        summary = summary[:680].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    filename = ""
+    for label in (item.get("photo_title") or "", item.get("source_title") or "", item.get("title") or ""):
+        page = cache["pages"].get(fold(label)) or {}
+        candidate = page.get("image") or ""
+        if candidate and not MAPISH_IMAGE.search(candidate):
+            filename = candidate
+            break
+    if not filename:
+        filename = item.get("commons_file") or ""
+    source = item.get("source_title") or item.get("title") or ""
+    source_url = item.get("source_url") or ""
+    if "/wiki/" in source_url:
+        source = urllib.parse.unquote(source_url.split("/wiki/", 1)[1]).replace("_", " ")
+    return {
+        "title": item.get("title") or "",
+        "facet": "wildlife",
+        "summary": summary,
+        "sourceUrl": source_url,
+        "sourceTitle": source,
+        "image": _image_from_file(filename, cache),
+    }
+
+
+def _tidal_story(item: dict, cache: dict) -> dict:
+    """The paragraph already says where the island joins, and that the link floods."""
+    del cache
+    summary = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    if len(summary) > 700:
+        summary = summary[:680].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    return {
+        "title": item.get("title") or "",
+        "facet": "tidal",
+        "summary": summary,
+        "sourceUrl": item.get("source_url") or "",
+        "sourceTitle": item.get("source_title") or "Tidal island",
+        "image": None,
+    }
+
+
+def _story_for(item: dict, cache: dict) -> dict:
+    if item.get("facet") == "wildlife":
+        return _wildlife_story(item, cache)
+    if item.get("facet") == "tidal":
+        return _tidal_story(item, cache)
+    phrase = item.get("island_name") or _island_phrase(item.get("evidence") or "")
+    work = item.get("title") or ""
+    source_url = item.get("source_url") or ""
+    source = item.get("source_title") or work
+    if "/wiki/" in source_url:
+        source = urllib.parse.unquote(source_url.split("/wiki/", 1)[1]).replace("_", " ")
+    work_page = cache["pages"].get(fold(work)) or {}
+    source_page = cache["pages"].get(fold(source)) or {}
+    # The cited article is the story. A title-only lookup can land on a
+    # different page, such as a disambiguation or an unrelated work.
+    summary_page = source_page if source_page.get("extract") else (work_page or source_page)
+    if source_page.get("image"):
+        image_page = source_page
+    elif work_page.get("image"):
+        image_page = work_page
+    else:
+        image_page = {}
+    full = ""
+    external_id = item.get("external_id") or ""
+    # Wikidata ids and MusicBrainz uuids are not Wikipedia titles. Looking
+    # them up asks for a page that does not exist and trips the rate limit.
+    if external_id and not re.fullmatch(r"Q\d+", external_id) and not re.fullmatch(
+        r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+        external_id,
+    ):
+        try:
+            full = wikipedia_plain(external_id)
+        except RuntimeError:
+            full = ""
+    summary = _summarize(
+        (summary_page or {}).get("extract") or "",
+        full,
+        work,
+        phrase,
+    )
+    connection = _readable_connection((item.get("summary") or "").strip())
+    if connection and phrase and phrase.lower() not in summary.lower():
+        summary = f"{summary} {connection}".strip() if summary else connection
+    elif not summary:
+        summary = connection
+    summary = _readable_connection(summary)
+    if item.get("facet") == "distillery":
+        distilled = _distillery_story((summary_page or {}).get("extract") or "", phrase)
+        if distilled:
+            summary = distilled
+    if len(summary) > 520:
+        summary = summary[:500].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    image = None
+    filename = (image_page or {}).get("image") or item.get("commons_file") or ""
+    file_title = filename if filename.startswith("File:") else f"File:{filename}" if filename else ""
+    file_info = {}
+    if file_title:
+        candidates = (
+            file_title,
+            file_title.replace("_", " "),
+            file_title.replace(" ", "_"),
+        )
+        usable = [cache["files"].get(key) or {} for key in candidates]
+        file_info = next((info for info in usable if info.get("usable")), None) or (usable[0] if usable else {})
+    if file_info.get("usable") and file_info.get("thumbUrl"):
+        image = {
+            "thumbUrl": file_info["thumbUrl"],
+            "pageUrl": file_info.get("pageUrl") or "",
+            "attribution": file_info.get("attribution") or "Wikimedia Commons",
+            "licence": file_info.get("licence") or "",
+            "licenceUrl": file_info.get("licenceUrl") or "",
+        }
+    else:
+        supplied = item.get("open_image") or {}
+        supplied_licence = supplied.get("licence") or ""
+        supplied_url = supplied.get("thumbUrl") or ""
+        if (
+            supplied_url
+            and supplied_licence
+            and OPEN_IMAGE_LICENCE.search(supplied_licence)
+            and not CLOSED_IMAGE_LICENCE.search(supplied_licence)
+        ):
+            image = {
+                "thumbUrl": supplied_url,
+                "pageUrl": supplied.get("pageUrl") or item.get("source_url") or "",
+                "attribution": supplied.get("attribution") or "Open collection",
+                "licence": supplied_licence,
+                "licenceUrl": supplied.get("licenceUrl") or "",
+            }
+    source_title = (summary_page or {}).get("title") or source
+    return {
+        "title": work,
+        "facet": item.get("facet") or "",
+        "summary": summary,
+        "sourceUrl": item.get("source_url") or "",
+        "sourceTitle": source_title,
+        "image": image,
+    }
+
+
+def build_stories(accepted: list[dict]) -> dict:
+    """Picture and cited lead for film, art, music, and distilleries."""
+    wanted = [item for item in accepted if item.get("category_slug") in STORY_SLUGS]
+    cache = _load_media_cache()
+    titles = []
+    for item in wanted:
+        if item.get("facet") == "tidal":
+            continue
+        source_url = item.get("source_url") or ""
+        if "/wiki/" in source_url:
+            slug = urllib.parse.unquote(source_url.split("/wiki/", 1)[1])
+            titles.append(slug.replace("_", " "))
+        if item.get("source_title"):
+            titles.append(item["source_title"])
+        if item.get("title"):
+            titles.append(item["title"])
+        if item.get("photo_title"):
+            titles.append(item["photo_title"])
+    _page_records(titles, cache)
+    _fill_images(titles, cache)
+    filenames = [item.get("commons_file") or "" for item in wanted]
+    for item in wanted:
+        for name in (item.get("title"), item.get("source_title"), item.get("photo_title")):
+            page = cache["pages"].get(fold(name or "")) or {}
+            if page.get("image"):
+                filenames.append(page["image"])
+    _commons_records(filenames, cache)
+    stories = {slug: {} for slug in STORY_SLUGS}
+    for item in wanted:
+        slug = item["category_slug"]
+        island_id = item.get("island_id")
+        if not island_id:
+            continue
+        story = _story_for(item, cache)
+        bucket = stories[slug].setdefault(island_id, [])
+        if any(existing["title"] == story["title"] for existing in bucket):
+            continue
+        bucket.append(story)
+    with_image = sum(1 for slug in stories.values() for rows in slug.values() for row in rows if row.get("image"))
+    total = sum(len(rows) for slug in stories.values() for rows in slug.values())
+    print(f"stories: {total} cited, {with_image} with an open-licence picture")
+    return stories
+
+
 def publish(rows: list[dict] | None = None) -> dict:
     rows = rows if rows is not None else load_candidate_rows()
     accepted = accepted_rows(rows)
@@ -885,11 +1531,12 @@ def publish(rows: list[dict] | None = None) -> dict:
         highlights[spec["slug"]] = highlight
 
     index = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "generatedAt": utc_now(),
         "categories": categories,
         "members": members,
         "highlights": highlights,
+        "stories": build_stories(accepted),
     }
     save_json(INDEX_PATH, index)
     save_json(INTEREST / "accepted_memberships.json", {"generatedAt": utc_now(), "rows": accepted})
@@ -910,7 +1557,35 @@ def sql_literal(value) -> str:
 
 def membership_sql(rows: list[dict]) -> str:
     accepted = accepted_rows(rows)
-    chunks = ["delete from public.interest_memberships where category_slug in ('film-art-music','whisky-distilleries','for-sale');"]
+    chunks = [
+        "alter table public.interest_memberships drop constraint if exists interest_memberships_facet_check;",
+        "alter table public.interest_memberships add constraint interest_memberships_facet_check "
+        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal'));",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'unusual-wildlife', 'Unusual wildlife', "
+        "'Islands with a rare, endemic, or remarkable animal or plant.', "
+        "'published', 25, 'cited_research', "
+        "'A Wikipedia, Wikidata, or Open Government Licence page names the species and the island. "
+        "The species is endemic, named for the island, or a principal stronghold. "
+        "No colony coordinates, nest counts, or visit advice. The picture is of the species.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'tidal-islands', 'Tidal islands', "
+        "'Islands joined to other land at low tide and cut off at high tide.', "
+        "'published', 35, 'wikipedia_tidal_island', "
+        "'The English Wikipedia article Tidal island names the island for Britain, Ireland, "
+        "Guernsey, or Jersey, and the link is exposed at low tide and submerged at high tide. "
+        "A permanent causeway named on that page is out. No crossing times.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
+        "delete from public.interest_memberships where category_slug in "
+        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands');",
+    ]
     batch = []
     def flush():
         if not batch:
@@ -967,7 +1642,7 @@ def sync_supabase(rows: list[dict]) -> bool:
         "Prefer": "resolution=merge-duplicates,return=minimal",
     }
     # Replace the three published categories. Draft stays empty.
-    for slug in ("film-art-music", "whisky-distilleries", "for-sale"):
+    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands"):
         delete_url = (
             f"{url}/rest/v1/interest_memberships?category_slug=eq.{urllib.parse.quote(slug)}"
         )
@@ -1006,12 +1681,675 @@ def sync_supabase(rows: list[dict]) -> bool:
     return True
 
 
+MB_API = "https://musicbrainz.org/ws/2"
+MB_USER_AGENT = "IslesOfBritain/0.1 ( https://www.findmyisland.com )"
+MB_CACHE = DATA / "cache_musicbrainz_interest"
+WIKIDATA_CULTURE_CACHE = DATA / "cache_wikidata_culture_open.json"
+WIKIDATA_PLACE_CACHE = DATA / "cache_wikidata_place_classes.json"
+OPEN_CULTURE_VERSION = 1
+
+# Direct Wikidata links only. "Inspired by the region" is not a property we query.
+WORK_TYPES = {
+    "Q7366": ("music", "song"),
+    "Q482994": ("music", "album"),
+    "Q134556": ("music", "single"),
+    "Q34627": ("music", "EP"),
+    "Q215380": ("music", "musical group"),
+    "Q3305213": ("artwork", "painting"),
+    "Q860861": ("artwork", "sculpture"),
+    "Q93184": ("artwork", "drawing"),
+    "Q11060274": ("artwork", "print"),
+}
+HUMAN_OCCS = {
+    "Q639669": ("music", "musician"),
+    "Q177220": ("music", "singer"),
+    "Q36834": ("music", "composer"),
+    "Q488205": ("music", "singer-songwriter"),
+    "Q855091": ("music", "guitarist"),
+    "Q1028181": ("artwork", "painter"),
+    "Q1281618": ("artwork", "sculptor"),
+    "Q3391743": ("artwork", "visual artist"),
+}
+PLACE_PROPS = {
+    "P921": "main subject",
+    "P180": "depicts",
+    "P840": "narrative location",
+    "P915": "filming location",
+    "P138": "named after",
+    "P740": "location of formation",
+    "P1071": "location of creation",
+    "P19": "place of birth",
+    "P937": "work location",
+}
+MB_REGION_NAMES = {
+    "united kingdom",
+    "uk",
+    "ireland",
+    "republic of ireland",
+    "northern ireland",
+    "scotland",
+    "england",
+    "wales",
+    "isle of man",
+    "jersey",
+    "guernsey",
+    "orkney",
+    "shetland",
+    "outer hebrides",
+    "inner hebrides",
+    "hebrides",
+    "channel islands",
+    "na h-eileanan siar",
+}
+MB_CHILD_TYPES = {"City", "Town", "Village", "Municipality", "District", "Parish"}
+ISLAND_TYPE_WORDS = ("island", "islet", "skerry", "holm", "ait", "eyot", "stack", "rock")
+SETTLEMENT_TYPE_WORDS = (
+    "city",
+    "town",
+    "village",
+    "human settlement",
+    "big city",
+    "civil parish",
+    "suburb",
+    "borough",
+    "community",
+    "neighbourhood",
+)
+OK_COUNTRY_LABELS = {
+    "united kingdom",
+    "ireland",
+    "republic of ireland",
+    "scotland",
+    "england",
+    "wales",
+    "northern ireland",
+    "isle of man",
+    "jersey",
+    "guernsey",
+    "bailiwick of guernsey",
+    "bailiwick of jersey",
+}
+MB_SKIP_AREA_NAMES = {
+    "great britain",
+    "britain",
+    "ireland",
+    "united kingdom",
+    "england",
+    "scotland",
+    "wales",
+    "island",
+    "islands",
+}
+
+
+def _wikidata_sparql(query: str) -> dict:
+    body = urllib.parse.urlencode({"format": "json", "query": query}).encode("utf-8")
+    last_error = None
+    for attempt in range(4):
+        try:
+            return http_json(
+                WIKIDATA_ENDPOINT,
+                data=body,
+                headers={
+                    "Accept": "application/sparql-results+json",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                timeout=120,
+            )
+        except subprocess.CalledProcessError as exc:
+            last_error = exc
+            print(f"wikidata attempt {attempt + 1} failed: {exc.returncode}")
+            time.sleep(15 * (attempt + 1))
+    raise RuntimeError(f"Wikidata request failed: {last_error}")
+
+
+def _qid(value: str) -> str:
+    return (value or "").rstrip("/").rsplit("/", 1)[-1]
+
+
+def _commons_file(url: str) -> str:
+    if not url:
+        return ""
+    name = urllib.parse.unquote(url.rstrip("/").rsplit("/", 1)[-1]).replace("_", " ")
+    if not name or name.lower() in {"special:filepath", "wiki"}:
+        return ""
+    return name if name.startswith("File:") else f"File:{name}"
+
+
+def _atlas_qids(atlas: Atlas) -> dict[str, dict]:
+    islands = load_json(DATA / "islands.json", [])
+    mapping: dict[str, dict] = {}
+    for island in islands:
+        qid = island.get("wikidata") or ""
+        if not qid.startswith("Q"):
+            continue
+        area = island.get("areaKm2") or 0
+        if area > 8000:
+            continue
+        known = atlas.by_id.get(island.get("id"))
+        if not known:
+            continue
+        previous = mapping.get(qid)
+        if previous and (previous.get("area") or 0) >= (known.get("area") or 0):
+            continue
+        mapping[qid] = known
+    return mapping
+
+
+def _culture_query(qids: list[str]) -> str:
+    places = " ".join(f"wd:{qid}" for qid in qids)
+    work_types = " ".join(f"wd:{qid}" for qid in WORK_TYPES)
+    occupations = " ".join(f"wd:{qid}" for qid in HUMAN_OCCS)
+    return f"""
+SELECT DISTINCT ?work ?workLabel ?place ?type ?article ?mbArtist ?image ?direct WHERE {{
+  VALUES ?place {{ {places} }}
+  {{
+    VALUES ?direct {{ wdt:P921 wdt:P180 wdt:P840 wdt:P915 wdt:P138 wdt:P740 wdt:P1071 }}
+    ?work ?direct ?place .
+    ?work wdt:P31 ?type .
+    VALUES ?type {{ {work_types} }}
+  }} UNION {{
+    VALUES ?direct {{ wdt:P19 wdt:P937 }}
+    ?work ?direct ?place .
+    ?work wdt:P31 wd:Q5 .
+    ?work wdt:P106 ?type .
+    VALUES ?type {{ {occupations} }}
+  }}
+  OPTIONAL {{ ?article schema:about ?work ; schema:isPartOf <https://en.wikipedia.org/> . }}
+  OPTIONAL {{ ?work wdt:P434 ?mbArtist }}
+  OPTIONAL {{ ?work wdt:P18 ?image }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+}}
+"""
+
+
+def _binding_row(binding: dict) -> dict:
+    direct = binding.get("direct", {}).get("value") or ""
+    return {
+        "work": _qid(binding.get("work", {}).get("value") or ""),
+        "label": binding.get("workLabel", {}).get("value") or "",
+        "place": _qid(binding.get("place", {}).get("value") or ""),
+        "type": _qid(binding.get("type", {}).get("value") or ""),
+        "article": binding.get("article", {}).get("value") or "",
+        "mb": binding.get("mbArtist", {}).get("value") or "",
+        "image": binding.get("image", {}).get("value") or "",
+        "prop": direct.rsplit("/", 1)[-1],
+    }
+
+
+def fetch_wikidata_culture(qids: list[str]) -> list[dict]:
+    cache = load_json(WIKIDATA_CULTURE_CACHE, {})
+    if cache.get("version") != OPEN_CULTURE_VERSION:
+        cache = {"version": OPEN_CULTURE_VERSION, "batches": {}}
+    batches = cache.setdefault("batches", {})
+    ordered = sorted(set(qids))
+    pending = [ordered[start : start + 30] for start in range(0, len(ordered), 30)]
+    print(f"wikidata culture: {len(ordered)} islands, {len(pending)} batches")
+    for index, batch in enumerate(pending, start=1):
+        key = ",".join(batch)
+        if key in batches:
+            continue
+        rows: list[dict] | None = None
+        chunks = [batch]
+        while chunks:
+            chunk = chunks.pop(0)
+            try:
+                payload = _wikidata_sparql(_culture_query(chunk))
+            except RuntimeError:
+                if len(chunk) > 6:
+                    mid = len(chunk) // 2
+                    chunks.append(chunk[:mid])
+                    chunks.append(chunk[mid:])
+                    print(f"splitting a Wikidata batch of {len(chunk)}")
+                    continue
+                print(f"skipping Wikidata batch of {len(chunk)} after repeated failures")
+                payload = {"results": {"bindings": []}}
+            rows_chunk = [_binding_row(binding) for binding in payload.get("results", {}).get("bindings", [])]
+            if rows is None:
+                rows = []
+            rows.extend(rows_chunk)
+            time.sleep(1.2)
+        batches[key] = rows or []
+        save_json(WIKIDATA_CULTURE_CACHE, cache)
+        print(f"wikidata batch {index}/{len(pending)}: {len(batches[key])} links")
+    found = []
+    for rows in batches.values():
+        found.extend(rows)
+    return found
+
+
+def _facet_and_kinds(types: list[str]) -> tuple[str, str]:
+    music = []
+    art = []
+    for type_id in types:
+        if type_id in HUMAN_OCCS and HUMAN_OCCS[type_id][0] == "music":
+            music.append(HUMAN_OCCS[type_id][1])
+        elif type_id in WORK_TYPES and WORK_TYPES[type_id][0] == "music":
+            music.append(WORK_TYPES[type_id][1])
+        elif type_id in HUMAN_OCCS:
+            art.append(HUMAN_OCCS[type_id][1])
+        elif type_id in WORK_TYPES:
+            art.append(WORK_TYPES[type_id][1])
+    kinds = list(dict.fromkeys(music or art))
+    facet = "music" if music else "artwork"
+    return facet, ", ".join(kinds)
+
+
+def _label_has_word(label: str, words: tuple[str, ...]) -> bool:
+    low = fold(label)
+    return any(re.search(rf"\b{re.escape(word)}\b", low) for word in words)
+
+
+def fetch_island_place_qids(qids: list[str]) -> set[str]:
+    """Keep QIDs that are islands in Britain or Ireland.
+
+    Some river-island records reuse a town QID (Oxford the city, not an ait).
+    A town QID would pull in every painter born there.
+    """
+    cache = load_json(WIKIDATA_PLACE_CACHE, {})
+    if cache.get("version") != OPEN_CULTURE_VERSION:
+        cache = {"version": OPEN_CULTURE_VERSION, "places": {}}
+    places = cache.setdefault("places", {})
+    missing = [qid for qid in sorted(set(qids)) if qid not in places]
+    print(f"checking {len(missing)} Wikidata places")
+    for start in range(0, len(missing), 40):
+        batch = missing[start : start + 40]
+        values = " ".join(f"wd:{qid}" for qid in batch)
+        query = f"""
+SELECT ?place ?typeLabel ?countryLabel WHERE {{
+  VALUES ?place {{ {values} }}
+  OPTIONAL {{ ?place wdt:P31 ?type }}
+  OPTIONAL {{ ?place wdt:P17 ?country }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+}}
+"""
+        try:
+            payload = _wikidata_sparql(query)
+        except RuntimeError:
+            print("place check failed for a batch; those islands are left out this run")
+            continue
+        grouped: dict[str, dict] = {}
+        for binding in payload.get("results", {}).get("bindings", []):
+            qid = _qid(binding.get("place", {}).get("value") or "")
+            slot = grouped.setdefault(qid, {"types": [], "countries": []})
+            type_label = binding.get("typeLabel", {}).get("value") or ""
+            country = binding.get("countryLabel", {}).get("value") or ""
+            if type_label and type_label not in slot["types"]:
+                slot["types"].append(type_label)
+            if country and country not in slot["countries"]:
+                slot["countries"].append(country)
+        for qid in batch:
+            slot = grouped.get(qid) or {"types": [], "countries": []}
+            types = slot["types"]
+            countries = {fold(name) for name in slot["countries"]}
+            islandish = any(_label_has_word(label, ISLAND_TYPE_WORDS) for label in types)
+            settlement = any(_label_has_word(label, SETTLEMENT_TYPE_WORDS) for label in types)
+            country_ok = not countries or bool(countries & OK_COUNTRY_LABELS)
+            places[qid] = bool(islandish and country_ok and not (settlement and not islandish))
+        save_json(WIKIDATA_PLACE_CACHE, cache)
+        time.sleep(1.2)
+    return {qid for qid, ok in places.items() if ok}
+
+
+def _wikidata_rows(
+    raw: list[dict],
+    by_qid: dict[str, dict],
+    seen: set[tuple[str, str]],
+    island_qids: set[str],
+) -> list[dict]:
+    grouped: dict[tuple[str, str], dict] = {}
+    for item in raw:
+        if item["work"] == item["place"] or item["prop"] not in PLACE_PROPS:
+            continue
+        if item["place"] not in island_qids:
+            continue
+        island = by_qid.get(item["place"])
+        if not island:
+            continue
+        label = (item.get("label") or "").strip()
+        if not label or re.fullmatch(r"Q\d+", label):
+            continue
+        if re.search(r"\bpossibly\b", label, re.I):
+            continue
+        bucket = grouped.setdefault(
+            (item["work"], item["place"]),
+            {"item": item, "types": [], "props": [], "island": island},
+        )
+        if item["type"] and item["type"] not in bucket["types"]:
+            bucket["types"].append(item["type"])
+        if item["prop"] not in bucket["props"]:
+            bucket["props"].append(item["prop"])
+        if item.get("article"):
+            bucket["item"]["article"] = item["article"]
+        if item.get("mb"):
+            bucket["item"]["mb"] = item["mb"]
+        if item.get("image"):
+            bucket["item"]["image"] = item["image"]
+    rows = []
+    for bucket in grouped.values():
+        item = bucket["item"]
+        island = bucket["island"]
+        human = any(type_id in HUMAN_OCCS for type_id in bucket["types"])
+        if human and not item.get("article") and not item.get("mb"):
+            continue
+        if human and not any(prop in {"P19", "P937"} for prop in bucket["props"]):
+            continue
+        facet, kind = _facet_and_kinds(bucket["types"])
+        if not kind:
+            continue
+        key = (island["id"], fold(item["label"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        props = " and ".join(PLACE_PROPS[prop] for prop in bucket["props"] if prop in PLACE_PROPS)
+        island_name = island["name"]
+        article = item.get("article") or ""
+        mb = item.get("mb") or ""
+        if article:
+            source_url = article
+            licence = "CC BY-SA 4.0"
+        elif mb:
+            source_url = f"https://musicbrainz.org/artist/{mb}"
+            licence = "CC0"
+        else:
+            source_url = f"https://www.wikidata.org/wiki/{item['work']}"
+            licence = "CC0"
+        article_word = "an" if fold(kind)[:1] in "aeiou" else "a"
+        summary = f"{item['label']} is {article_word} {kind} linked to '{island_name}' ({props})."
+        evidence = f"Wikidata {item['work']}: {kind}; {props} '{island_name}'."
+        if mb:
+            evidence += f" MusicBrainz artist {mb}."
+        built = row(
+            category="film-art-music",
+            island_id=island["id"],
+            island_name=island_name,
+            facet=facet,
+            title=item["label"],
+            source_url=source_url,
+            source_title=urllib.parse.unquote(article.rsplit("/", 1)[-1]).replace("_", " ") if article else item["label"],
+            licence=licence,
+            evidence=evidence,
+            status="accepted",
+            confidence="high",
+        )
+        built["summary"] = summary
+        built["commons_file"] = _commons_file(item.get("image") or "")
+        rows.append(built)
+    return rows
+
+
+def _mb_get(path: str) -> dict:
+    MB_CACHE.mkdir(parents=True, exist_ok=True)
+    safe = re.sub(r"[^A-Za-z0-9._-]+", "_", path)[:180]
+    cache_path = MB_CACHE / f"{safe}.json"
+    if cache_path.exists():
+        return load_json(cache_path, {})
+    url = MB_API + path
+    payload = {}
+    ok = False
+    for attempt in range(4):
+        try:
+            payload = http_json(url, timeout=60, user_agent=MB_USER_AGENT)
+            ok = True
+            break
+        except subprocess.CalledProcessError as exc:
+            print(f"musicbrainz attempt {attempt + 1} failed: {exc.returncode} {path[:80]}")
+            time.sleep(5 * (attempt + 1))
+    if ok:
+        save_json(cache_path, payload)
+    time.sleep(1.1)
+    return payload
+
+
+def _mb_ancestors(area_id: str, depth: int = 0) -> list[str]:
+    if depth > 6 or not area_id:
+        return []
+    area = _mb_get(f"/area/{area_id}?inc=area-rels&fmt=json")
+    names = []
+    for rel in area.get("relations") or []:
+        if rel.get("type") != "part of" or rel.get("direction") != "backward":
+            continue
+        parent = rel.get("area") or {}
+        name = parent.get("name") or ""
+        if name:
+            names.append(name)
+        names.extend(_mb_ancestors(parent.get("id") or "", depth + 1))
+    return names
+
+
+def _mb_child_ids(area_id: str) -> list[str]:
+    area = _mb_get(f"/area/{area_id}?inc=area-rels&fmt=json")
+    children = []
+    for rel in area.get("relations") or []:
+        if rel.get("type") != "part of" or rel.get("direction") != "forward":
+            continue
+        child = rel.get("area") or {}
+        if child.get("type") in MB_CHILD_TYPES and child.get("id"):
+            children.append(child["id"])
+    return children[:25]
+
+
+def _mb_artists(area_id: str) -> list[dict]:
+    found = []
+    offset = 0
+    total = None
+    while total is None or offset < total:
+        payload = _mb_get(f"/artist?area={area_id}&fmt=json&limit=100&offset={offset}")
+        batch = payload.get("artists") or []
+        found.extend(batch)
+        total = int(payload.get("artist-count") or len(found))
+        offset += 100
+        if not batch or offset >= 100:
+            break
+    return found
+
+
+def _island_for_mb_area(atlas: Atlas, name: str, ancestors: list[str]) -> dict | None:
+    if fold(name) in MB_SKIP_AREA_NAMES:
+        return None
+    region_names = {fold(name), *(fold(part) for part in ancestors)}
+    if not region_names & MB_REGION_NAMES:
+        return None
+    options = []
+    if any("orkney" in fold(part) for part in ancestors):
+        options.append(f"{name} (Orkney)")
+    elif any("shetland" in fold(part) for part in ancestors):
+        options.append(f"{name} (Shetland)")
+    options.extend([name, f"Isle of {name}", f"Island of {name}", f"Ynys {name}"])
+    island = atlas.match_name(*options)
+    if not island or (island.get("area") or 0) > 8000:
+        return None
+    return island
+
+
+def _enrich_musicbrainz(artists: list[dict]) -> dict[str, dict]:
+    """Wikipedia article and Commons file for a MusicBrainz artist id, via Wikidata."""
+    cache_path = DATA / "cache_wikidata_mb_artists.json"
+    cache = load_json(cache_path, {})
+    if cache.get("version") != OPEN_CULTURE_VERSION:
+        cache = {"version": OPEN_CULTURE_VERSION, "artists": {}}
+    known = cache.setdefault("artists", {})
+    missing = []
+    seen = set()
+    for artist in artists:
+        mbid = artist.get("id") or ""
+        if mbid and mbid not in known and mbid not in seen:
+            seen.add(mbid)
+            missing.append(mbid)
+    print(f"wikidata lookup for {len(missing)} MusicBrainz artists")
+    for start in range(0, len(missing), 40):
+        batch = missing[start : start + 40]
+        values = " ".join(f'"{mbid}"' for mbid in batch)
+        query = f"""
+SELECT ?item ?article ?image ?mb WHERE {{
+  VALUES ?mb {{ {values} }}
+  ?item wdt:P434 ?mb .
+  OPTIONAL {{ ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> . }}
+  OPTIONAL {{ ?item wdt:P18 ?image }}
+}}
+"""
+        try:
+            payload = _wikidata_sparql(query)
+        except RuntimeError:
+            print("wikidata lookup failed for a MusicBrainz batch; it will be retried next run")
+            continue
+        found_ids = set()
+        for binding in payload.get("results", {}).get("bindings", []):
+            mbid = binding.get("mb", {}).get("value") or ""
+            if not mbid:
+                continue
+            found_ids.add(mbid)
+            current = known.get(mbid) or {}
+            article = binding.get("article", {}).get("value") or ""
+            image = binding.get("image", {}).get("value") or ""
+            if article and not current.get("article"):
+                current["article"] = article
+            if image and not current.get("image"):
+                current["image"] = image
+            current["qid"] = _qid(binding.get("item", {}).get("value") or "")
+            known[mbid] = current
+        for mbid in batch:
+            known.setdefault(mbid, {})
+            if mbid not in found_ids and mbid not in known:
+                known[mbid] = {}
+        save_json(cache_path, cache)
+        time.sleep(1.2)
+    return known
+
+
+def _musicbrainz_rows(atlas: Atlas, seen: set[tuple[str, str]]) -> list[dict]:
+    areas = []
+    offset = 0
+    total = None
+    while total is None or offset < total:
+        payload = _mb_get(f"/area?query=type:island&fmt=json&limit=100&offset={offset}")
+        batch = payload.get("areas") or []
+        areas.extend(batch)
+        total = int(payload.get("count") or len(areas))
+        offset += 100
+        if not batch:
+            break
+    print(f"musicbrainz island areas: {len(areas)}")
+    matched = []
+    for area in areas:
+        name = area.get("name") or ""
+        if fold(name) in MB_SKIP_AREA_NAMES:
+            continue
+        if name_key(name) not in atlas.by_key and fold(name) not in {fold(island["name"]) for island in atlas.islands}:
+            continue
+        ancestors = _mb_ancestors(area.get("id") or "")
+        island = _island_for_mb_area(atlas, name, ancestors)
+        if not island:
+            continue
+        matched.append((area, island, ancestors))
+    print(f"musicbrainz areas matched to atlas islands: {len(matched)}")
+    collected = []
+    for area, island, _ancestors in matched:
+        area_ids = [area.get("id")] + _mb_child_ids(area.get("id") or "")
+        artists = []
+        for area_id in area_ids:
+            artists.extend(_mb_artists(area_id))
+        if len(artists) > 80:
+            artists = [
+                artist
+                for artist in artists
+                if artist.get("type") == "Group"
+                or island["name"].lower() in (artist.get("disambiguation") or "").lower()
+                or (area.get("name") or "").lower() in (artist.get("disambiguation") or "").lower()
+            ]
+        for artist in artists:
+            artist["_island"] = island
+            artist["_area"] = area.get("name") or ""
+            collected.append(artist)
+    enrichment = _enrich_musicbrainz(collected)
+    rows = []
+    used_mb = set()
+    for artist in collected:
+        name = (artist.get("name") or "").strip()
+        mbid = artist.get("id") or ""
+        if not name or not mbid or mbid in used_mb:
+            continue
+        if re.search(r"\b(fictional|course at)\b", artist.get("disambiguation") or "", re.I):
+            continue
+        island = artist["_island"]
+        key = (island["id"], fold(name))
+        if key in seen:
+            continue
+        info = enrichment.get(mbid) or {}
+        article = info.get("article") or ""
+        kind = {
+            "Person": "musician",
+            "Group": "musical group",
+            "Choir": "choir",
+            "Orchestra": "orchestra",
+        }.get(artist.get("type") or "", "musician")
+        island_name = island["name"]
+        area_name = artist.get("_area") or island_name
+        article_word = "an" if fold(kind)[:1] in "aeiou" else "a"
+        summary = f"{name} is {article_word} {kind} from '{island_name}', in the MusicBrainz area {area_name}."
+        if article:
+            source_url = article
+            licence = "CC BY-SA 4.0"
+            source_title = urllib.parse.unquote(article.rsplit("/", 1)[-1]).replace("_", " ")
+        else:
+            source_url = f"https://musicbrainz.org/artist/{mbid}"
+            licence = "CC0"
+            source_title = name
+        evidence = (
+            f"MusicBrainz artist {mbid} is listed in the {area_name} area, matched to '{island_name}'."
+        )
+        built = row(
+            category="film-art-music",
+            island_id=island["id"],
+            island_name=island_name,
+            facet="music",
+            title=name,
+            source_url=source_url,
+            source_title=source_title,
+            licence=licence,
+            evidence=evidence,
+            status="accepted",
+            confidence="high",
+        )
+        built["summary"] = summary
+        built["commons_file"] = _commons_file(info.get("image") or "")
+        rows.append(built)
+        seen.add(key)
+        used_mb.add(mbid)
+    return rows
+
+
+def populate_open_culture(atlas: Atlas) -> list[dict]:
+    """Music, bands, and art from Wikidata statements and MusicBrainz areas.
+
+    Wikipedia seeds stay in film-art-music.json. This file adds rows those
+    pages did not already accept. A row still names one work or artist and
+    one island.
+    """
+    seen = set()
+    existing = load_json(CANDIDATES / "film-art-music.json", {})
+    for item in existing.get("rows") or []:
+        if item.get("status") == "accepted" and item.get("island_id") and item.get("title"):
+            seen.add((item["island_id"], fold(item["title"])))
+    by_qid = _atlas_qids(atlas)
+    wikidata_raw = fetch_wikidata_culture(list(by_qid))
+    island_qids = fetch_island_place_qids([item["place"] for item in wikidata_raw if item.get("place")])
+    rows = _wikidata_rows(wikidata_raw, by_qid, seen, island_qids)
+    rows.extend(_musicbrainz_rows(atlas, seen))
+    write_candidates(
+        "film-art-music-open",
+        rows,
+        {"sources": ["wikidata", "musicbrainz"], "version": OPEN_CULTURE_VERSION},
+    )
+    return rows
+
+
 def main(argv: list[str]) -> int:
     command = argv[1] if len(argv) > 1 else "all"
-    known = {"for-sale", "whisky", "culture", "publish", "sync", "all"}
+    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "publish", "sync", "all"}
     if command not in known:
         print(
-            "usage: interest_categories.py [for-sale|whisky|culture|publish|sync|all]",
+            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|publish|sync|all]",
             file=sys.stderr,
         )
         return 2
@@ -1029,6 +2367,18 @@ def main(argv: list[str]) -> int:
         rows.extend(populate_whisky(atlas))
     if command in ("culture", "all"):
         rows.extend(populate_culture(atlas))
+    if command in ("culture-open", "all"):
+        rows.extend(populate_open_culture(atlas))
+    if command == "wildlife":
+        from harvest_unusual_wildlife import populate_wildlife
+
+        populate_wildlife(atlas)
+        return 0
+    if command == "tidal":
+        from harvest_tidal_islands import populate_tidal
+
+        populate_tidal(atlas)
+        return 0
     if command == "all":
         publish(rows)
         sync_supabase(rows)

@@ -128,7 +128,7 @@ Migration `supabase/migrations/20261025122727_interest_categories.sql`.
 
 `interest_categories` is the filter spec: `slug`, `label`, `blurb`, `status` (`draft` | `published` | `retired`), `sort_order`, `populator`, `acceptance_rules`.
 
-`interest_memberships` is one cited hit: `category_slug`, `island_id` (an id that already exists in the atlas), `facet` (`film`, `artwork`, `music`, `distillery`, `listing`), `title`, `source_url`, `licence`, `evidence`, `external_id`, `confidence` (`high` | `medium`), `status` (`candidate` | `accepted` | `rejected`). Unique on category + island + facet + title.
+`interest_memberships` is one cited hit: `category_slug`, `island_id` (an id that already exists in the atlas), `facet` (`film`, `artwork`, `music`, `distillery`, `listing`, `wildlife`, `tidal`), `title`, `source_url`, `licence`, `evidence`, `external_id`, `confidence` (`high` | `medium`), `status` (`candidate` | `accepted` | `rejected`). Unique on category + island + facet + title.
 
 Anonymous and signed-in clients may `SELECT` published categories and accepted memberships of those categories. There are no insert or update policies. Agents write with the service role from `scripts/interest_categories.py`, never from the browser. The public map does not call these tables; `publish` writes `data/interest_index.json`.
 

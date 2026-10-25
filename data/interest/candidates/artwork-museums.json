@@ -1,0 +1,633 @@
+{
+  "slug": "artwork-museums",
+  "generatedAt": "2026-10-25T17:25:47+00:00",
+  "meta": {
+    "licences": {
+      "met": {
+        "confirmed": true,
+        "metadata": "CC0",
+        "images": "CC0 when isPublicDomain is true",
+        "docs": {
+          "url": "https://metmuseum.github.io/",
+          "confirmed": true,
+          "needles": {
+            "creative commons zero": true,
+            "public domain": true
+          },
+          "quote": "Art has waived all copyright and related or neighboring rights to this dataset using the Creative Commons Zero license. This work is published from the United States of America. These select datasets are now available for use in any media without permission or fee; they also include identifying data for artw",
+          "error": ""
+        },
+        "readme": {
+          "url": "https://raw.githubusercontent.com/metmuseum/openaccess/master/README.md",
+          "confirmed": true,
+          "needles": {
+            "creative commons zero": true,
+            "cc0": true
+          },
+          "quote": "of Art has waived all copyright and related or neighboring rights to this dataset using [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/). This work is published from: The United States Of America. You can also find the text of the CC Zero deed in the file [LICENSE](https://github.c",
+          "error": ""
+        },
+        "v1_search_status": "410",
+        "v1_search_body": "{\"message\":\"/public/collection/v1/search was retired on 2026-10-01. It was backed by Solr and returned every matching object ID in one response; use /public/collection/v1.1/search, which is Elastic-backed and paginated via offset and limit. To enumerate the whole collection, use /public/collection/v1/objects or the Open Access CSV dataset.\",\"replacement\":\"/public/collection/v1.1/search\",\"documenta",
+        "search": "https://collectionapi.metmuseum.org/public/collection/v1.1/search",
+        "note": "Metadata is CC0 on metmuseum.github.io and the Open Access README. README: companion images of works covered by the policy carry the CC0 icon; the API serves public-domain JPEGs when isPublicDomain is true. /public/collection/v1/search was retired on 2026-10-01; harvest uses /public/collection/v1.1/search with hasImages, q, and limit, then GET /public/collection/v1/objects/{id}."
+      },
+      "cleveland": {
+        "confirmed": true,
+        "metadata": "CC0",
+        "images": "CC0 for works with share_license_status CC0",
+        "terms": {
+          "url": "https://www.clevelandart.org/open-access",
+          "confirmed": true,
+          "needles": {
+            "creative commons zero": true,
+            "cc0": true
+          },
+          "quote": "igh-resolution images and data related to the CMA’s collection are made available under a Creative Commons Zero &nbsp;(opens in a new tab) (CC0) designation. What is open access? Open access content (images, data, software, and documentation) is content that the CMA publishes digitally, free of charge, and wi",
+          "error": ""
+        },
+        "note": "Cleveland open-access page: images of public-domain works and metadata are Creative Commons Zero (CC0). Rows require share_license_status CC0."
+      },
+      "aic": {
+        "confirmed": true,
+        "metadata": "CC0 (description field is CC BY 4.0)",
+        "images": "CC0 when is_public_domain is true",
+        "docs": {
+          "url": "https://api.artic.edu/docs/",
+          "confirmed": true,
+          "needles": {
+            "creative commons zero (cc0)": true
+          },
+          "quote": "ons of artic.edu (opens new window) . All other data in this response is licensed under a Creative Commons Zero (CC0) 1.0 designation and the Terms and Conditions of artic.edu (opens new window) . # GET /artworks A list of all artworks sorted by last updated date in descending order. For a description of all",
+          "error": ""
+        },
+        "images_page": {
+          "url": "https://www.artic.edu/open-access/open-access-images",
+          "confirmed": true,
+          "needles": {
+            "creative commons zero (cc0)": true
+          },
+          "quote": "museum otherwise waives any copyright it might have. Such images are made available under Creative Commons Zero (CC0) designation and the Terms and Conditions of this website . The museum requests that you include the following caption with reproductions of the images: Artist. Title, Date. The Art Institute o",
+          "error": ""
+        },
+        "note": "API docs: artwork data other than description is CC0; the description field is CC BY 4.0. Open-access images page: public-domain images are CC0. Only is_public_domain works are kept. Evidence prefers title, place, and medium."
+      }
+    },
+    "completed": true,
+    "queries": 140,
+    "accepted": {
+      "met": 9,
+      "cleveland": 6,
+      "aic": 6
+    },
+    "islands": {
+      "met": [
+        "Lindisfarne (Holy Island)",
+        "Isle of Wight",
+        "Guernsey",
+        "Isle of Arran",
+        "Isle of Skye",
+        "Lundy"
+      ],
+      "cleveland": [
+        "Isle of Wight",
+        "Isle of Skye",
+        "Lindisfarne (Holy Island)"
+      ],
+      "aic": [
+        "Isle of Wight",
+        "Lindisfarne (Holy Island)",
+        "Isle of Arran",
+        "Jersey"
+      ]
+    },
+    "topIslands": [
+      "Isle of Wight",
+      "Lindisfarne (Holy Island)",
+      "Isle of Arran",
+      "Isle of Skye",
+      "Guernsey",
+      "Jersey",
+      "Lundy"
+    ],
+    "skipped": {
+      "type": 1672,
+      "phrase": 3635,
+      "not_public_domain_or_not_cc0": 1558,
+      "per_island_cap": 0,
+      "duplicate": 4,
+      "http": 10
+    },
+    "caps": {
+      "perQuery": 30,
+      "perIslandPerMuseum": 40,
+      "overall": 600
+    }
+  },
+  "rows": [
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Lindisfarne Castle, Holy Island, Northumberland",
+      "source_url": "https://www.metmuseum.org/art/collection/search/341793",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Lindisfarne Castle, Holy Island, Northumberland”",
+      "external_id": "met:341793",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Lindisfarne Castle, Holy Island, Northumberland is a watercolour in the Metropolitan Museum of Art collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP821127.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/341793",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Bamborough Castle from the Northeast, with Holy Island in the Distance, Northumberland",
+      "source_url": "https://www.metmuseum.org/art/collection/search/359578",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Bamborough Castle from the Northeast, with Holy Island in the Distance, Northumberland”",
+      "external_id": "met:359578",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Bamborough Castle from the Northeast, with Holy Island in the Distance, Northumberland is a watercolour in the Metropolitan Museum of Art collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP805117.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/359578",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Holy Island Cathedral, part III, plate 11 from \"Liber Studiorum\"",
+      "source_url": "https://www.metmuseum.org/art/collection/search/382916",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Holy Island Cathedral, part III, plate 11 from \"Liber Studiorum\"”",
+      "external_id": "met:382916",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Holy Island Cathedral, part III, plate 11 from \"Liber Studiorum\" is a etching in the Metropolitan Museum of Art collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP821354.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/382916",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Liber Studiorum: Holy Island Cathedral",
+      "source_url": "https://clevelandart.org/art/1919.132",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “Liber Studiorum: Holy Island Cathedral”",
+      "external_id": "cleveland:99496",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Liber Studiorum: Holy Island Cathedral is a etching in the Cleveland Museum of Art collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1919.132/1919.132_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1919.132",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Holy Island Castle, Durham",
+      "source_url": "https://www.artic.edu/artworks/136123",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Holy Island Castle, Durham”",
+      "external_id": "aic:136123",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Holy Island Castle, Durham is a watercolour in the Art Institute of Chicago collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/574f6e1e-afbc-4f39-eea2-a2ff91463a4d/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/136123",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lindisfarne",
+      "island_name": "Lindisfarne (Holy Island)",
+      "facet": "artwork",
+      "title": "Holy Island Cathedral, plate 11 from Liber Studiorum",
+      "source_url": "https://www.artic.edu/artworks/71655",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Holy Island Cathedral, plate 11 from Liber Studiorum”",
+      "external_id": "aic:71655",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Holy Island Cathedral, plate 11 from Liber Studiorum is a etching in the Art Institute of Chicago collection, connected with Lindisfarne (Holy Island).",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/c4b34736-da4a-e8f4-21a3-71bb3dc0cee1/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/71655",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-skye",
+      "island_name": "Isle of Skye",
+      "facet": "artwork",
+      "title": "The Cuillin Hills, Isle of Skye",
+      "source_url": "https://www.metmuseum.org/art/collection/search/857566",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “The Cuillin Hills, Isle of Skye”",
+      "external_id": "met:857566",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "The Cuillin Hills, Isle of Skye is a watercolour in the Metropolitan Museum of Art collection, connected with Isle of Skye.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP-30274-001.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/857566",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-skye",
+      "island_name": "Isle of Skye",
+      "facet": "artwork",
+      "title": "Portrait of General Keith MacAlister",
+      "source_url": "https://clevelandart.org/art/1997.77",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “…n India. MacAlister was born at Skerrinish in the Isle of Skye and ascended through the ranks rapidly following his appointment as cadet in 17…”",
+      "external_id": "cleveland:160113",
+      "confidence": "low",
+      "status": "rejected",
+      "reject_reason": "Portrait of a person born on Skye, not a work of the island.",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Portrait of General Keith MacAlister is a watercolour in the Cleveland Museum of Art collection, connected with Isle of Skye.",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1997.77/1997.77_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1997.77",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "arran",
+      "island_name": "Isle of Arran",
+      "facet": "artwork",
+      "title": "Isle of Arran, early morn",
+      "source_url": "https://www.metmuseum.org/art/collection/search/351189",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Isle of Arran, early morn”",
+      "external_id": "met:351189",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Isle of Arran, early morn is a watercolour in the Metropolitan Museum of Art collection, connected with Isle of Arran.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP804888.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/351189",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "arran",
+      "island_name": "Isle of Arran",
+      "facet": "artwork",
+      "title": "Arran, plate fourteen from the Clyde Set",
+      "source_url": "https://www.artic.edu/artworks/42959",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Arran, plate fourteen from the Clyde Set”",
+      "external_id": "aic:42959",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Arran, plate fourteen from the Clyde Set is a etching in the Art Institute of Chicago collection, connected with Isle of Arran.",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/54081493-0ec6-41bb-5147-f71957276940/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/42959",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "lundy",
+      "island_name": "Lundy",
+      "facet": "artwork",
+      "title": "On the North Coast of Devon, Lundy Island in the Distance",
+      "source_url": "https://www.metmuseum.org/art/collection/search/355597",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “On the North Coast of Devon, Lundy Island in the Distance”",
+      "external_id": "met:355597",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "On the North Coast of Devon, Lundy Island in the Distance is a watercolour in the Metropolitan Museum of Art collection, connected with Lundy.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP108220.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/355597",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Culver Cliff, Isle of Wight",
+      "source_url": "https://www.metmuseum.org/art/collection/search/365455",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Culver Cliff, Isle of Wight”",
+      "external_id": "met:365455",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Culver Cliff, Isle of Wight is a watercolour in the Metropolitan Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP804202.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/365455",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Mistake and No Mistake, A Scene at Shanklin, Isle of Wight",
+      "source_url": "https://www.metmuseum.org/art/collection/search/736349",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Mistake and No Mistake, A Scene at Shanklin, Isle of Wight”",
+      "external_id": "met:736349",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Mistake and No Mistake, A Scene at Shanklin, Isle of Wight is a print in the Metropolitan Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/dp/web-large/DP868278.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/736349",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "A Storm Behind the Isle of Wight",
+      "source_url": "https://clevelandart.org/art/1948.461",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “A Storm Behind the Isle of Wight”",
+      "external_id": "cleveland:126243",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "A Storm Behind the Isle of Wight is a painting in the Cleveland Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1948.461/1948.461_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1948.461",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Portrait of Sukey, Lady Oglander, née Serle",
+      "source_url": "https://clevelandart.org/art/1941.567",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “…ers were a prominent and well-loved family on the Isle of Wight, their presence on the island first dating from the time of William the Conquer…”",
+      "external_id": "cleveland:120844",
+      "confidence": "low",
+      "status": "rejected",
+      "reject_reason": "Portrait of a sitter from an island family, not a work of the island.",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Portrait of Sukey, Lady Oglander, née Serle is a drawing in the Cleveland Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1941.567/1941.567_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1941.567",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "English Views: Isle of Wight from Portsmouth",
+      "source_url": "https://clevelandart.org/art/1932.372",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “English Views: Isle of Wight from Portsmouth”",
+      "external_id": "cleveland:113372",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "English Views: Isle of Wight from Portsmouth is a etching in the Cleveland Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1932.372/1932.372_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1932.372",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Rowlandson's Sketches from Nature: View near Newport, Isle of Wight",
+      "source_url": "https://clevelandart.org/art/1964.10",
+      "source_title": "Cleveland Museum of Art",
+      "licence": "CC0",
+      "evidence": "Cleveland Museum of Art: “…andson's Sketches from Nature: View near Newport, Isle of Wight”",
+      "external_id": "cleveland:140090",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Rowlandson's Sketches from Nature: View near Newport, Isle of Wight is a etching in the Cleveland Museum of Art collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://openaccess-cdn.clevelandart.org/1964.10/1964.10_web.jpg",
+        "pageUrl": "https://clevelandart.org/art/1964.10",
+        "attribution": "Cleveland Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Osborne House, Isle of Wight",
+      "source_url": "https://www.artic.edu/artworks/85424",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Osborne House, Isle of Wight”",
+      "external_id": "aic:85424",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Osborne House, Isle of Wight is a watercolour in the Art Institute of Chicago collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/34581aac-7754-52b9-0570-9990441abe39/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/85424",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-wight",
+      "island_name": "Isle of Wight",
+      "facet": "artwork",
+      "title": "Portsmouth and the Isle of Wight, from Prospectus aliquot locorum...",
+      "source_url": "https://www.artic.edu/artworks/278686",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Portsmouth and the Isle of Wight, from Prospectus aliquot locorum...”",
+      "external_id": "aic:278686",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Portsmouth and the Isle of Wight, from Prospectus aliquot locorum... is a etching in the Art Institute of Chicago collection, connected with Isle of Wight.",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/4d4f04ce-f6a8-585e-8e7d-ea55eda6286f/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/278686",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "jersey",
+      "island_name": "Jersey",
+      "facet": "artwork",
+      "title": "Henri de Bourbon Visits an Old Man on the Isle of Jersey, plate two from La Henriade",
+      "source_url": "https://www.artic.edu/artworks/127406",
+      "source_title": "Art Institute of Chicago",
+      "licence": "CC0",
+      "evidence": "Art Institute of Chicago: “Henri de Bourbon Visits an Old Man on the Isle of Jersey, plate two from La Henriade”",
+      "external_id": "aic:127406",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Henri de Bourbon Visits an Old Man on the Isle of Jersey, plate two from La Henriade is a print in the Art Institute of Chicago collection, connected with Jersey.",
+      "open_image": {
+        "thumbUrl": "https://www.artic.edu/iiif/2/f150b6a9-4ca8-07ca-ecdd-427493c7250b/full/843,/0/default.jpg",
+        "pageUrl": "https://www.artic.edu/artworks/127406",
+        "attribution": "Art Institute of Chicago",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "guernsey",
+      "island_name": "Guernsey",
+      "facet": "artwork",
+      "title": "Hills around the Bay of Moulin Huet, Guernsey",
+      "source_url": "https://www.metmuseum.org/art/collection/search/437431",
+      "source_title": "The Metropolitan Museum of Art",
+      "licence": "CC0",
+      "evidence": "The Metropolitan Museum of Art: “Hills around the Bay of Moulin Huet, Guernsey”",
+      "external_id": "met:437431",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:25:46+00:00",
+      "summary": "Hills around the Bay of Moulin Huet, Guernsey is a painting in the Metropolitan Museum of Art collection, connected with Guernsey.",
+      "open_image": {
+        "thumbUrl": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-20338-001.jpg",
+        "pageUrl": "https://www.metmuseum.org/art/collection/search/437431",
+        "attribution": "The Metropolitan Museum of Art",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  ]
+}

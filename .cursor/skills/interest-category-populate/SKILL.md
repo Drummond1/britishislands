@@ -16,7 +16,7 @@ reads `data/interest_index.json` and does not call the database.
 
 1. Read `docs/STATE.md` and `docs/ETHICS.md` first. Do not run a write-pipeline while another agent is writing `islands.json`.
 2. Never invent an island. `island_id` must already exist in `data/islands_index.json`.
-3. Every candidate row needs a `source_url`. Film, art, and music may use Wikipedia, Wikidata, or Wikimedia Commons only. No IMDb, lyric sites, or other terms-restricted scrapes.
+3. Every candidate row needs a `source_url`. Film, art, and music may use Wikipedia, Wikidata, Wikimedia Commons, and MusicBrainz (CC0). No IMDb, lyric sites, Spotify, Discogs, or other terms-restricted scrapes. A cited page still has to tie a specific work, band, or artist to that island.
 4. For sale copies `data/discovery/property_listings_registry.json`. Do not scrape Rightmove, Zoopla, or OnTheMarket.
 5. No private addresses, owner names, or street-level dwellings (`docs/ETHICS.md`).
 6. Do not commit `.env.local`, `config.local.js`, or a service-role key.
@@ -40,6 +40,9 @@ From the repo root:
 python3 scripts/interest_categories.py for-sale
 python3 scripts/interest_categories.py whisky
 python3 scripts/interest_categories.py culture
+python3 scripts/interest_categories.py culture-open
+python3 scripts/interest_categories.py wildlife
+python3 scripts/interest_categories.py tidal
 python3 scripts/interest_categories.py publish
 ```
 
@@ -61,7 +64,7 @@ python3 scripts/interest_categories.py publish
 }
 ```
 
-Facets in use: `film`, `artwork`, `music`, `distillery`, `listing`. Unique key is category + island + facet + title, so one island can carry several works or distilleries.
+Facets in use: `film`, `artwork`, `music`, `distillery`, `listing`, `wildlife`, `tidal`. Unique key is category + island + facet + title, so one island can carry several works or distilleries.
 
 ## Matching
 
@@ -69,6 +72,7 @@ Facets in use: `film`, `artwork`, `music`, `distillery`, `listing`. Unique key i
 - Reject a point that only falls on Great Britain or Ireland, or on a skerry whose centroid happens to be nearer than the real island.
 - For film, art, and music, fetch the source page and require both the work title and the island name. “Inspired by the region” is not enough.
 - For whisky, the distillery itself must be on the island. A caption that mentions whisky is not evidence.
+- For unusual wildlife, a Wikipedia, Wikidata, or Open Government Licence page must name the species and the island. The species is endemic, named for the island, or a principal stronghold. The picture is of the species. Do not store colony coordinates, nest counts, or advice on when to visit. Do not use the Seabird Monitoring Programme, RSPB reserve maps, iNaturalist, or GBIF occurrences.
 
 ## After a publish
 

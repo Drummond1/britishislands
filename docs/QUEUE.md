@@ -4,16 +4,50 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
-## P1 — next interest category: uninhabited, with a place to stay
+## P1 — ferries stay hidden
 
-The filter slot exists as Supabase category `uninhabited-stay` (`draft`, no
-memberships, absent from `data/interest_index.json`). Do not publish it until
-each island has a cited public place to stay and population is not known to be
-above zero. No street addresses. Follow
+Ferry guides, the ferry filter, the crossing planner, and ferry cards are off
+the atlas until the routes are reliable enough to show. Do not link `/ferries/`
+or render `renderFerries` route cards. A tidal causeway note can stay. The
+generator in `scripts/generate_seo_artifacts.py` no longer emits ferry links.
+
+## P1 — next interest category
+
+Tidal islands is published locally (2026-10-25): **66** islands from the
+Wikipedia [Tidal island](https://en.wikipedia.org/wiki/Tidal_island) article,
+each with a note on where it joins and that the link floods. Not the 256-row
+`tidal` subtype. No crossing times. Eleven names on that page were left out.
+Supabase still needs `data/interest/memberships_sync.sql` and the tidal facet
+migration `supabase/migrations/20261025190000_tidal_islands.sql` before the
+remote memberships match this index.
+
+Unusual wildlife is published locally (2026-10-25): **30** species on **23**
+islands, **22** with a species photo. Eight have a paragraph and no usable
+photo: Fair Isle wren, Guernsey vole, Skomer vole, Islay shrew, Lundy cabbage
+flea beetle, Catacol whitebeam, *Salvelinus gracillimus*, and the extinct
+Orkney charr. Do not add a picture that is not of the species. The wildlife
+facet migration is also still unapplied.
+
+The empty draft `uninhabited-stay` stays drafted and unstaffed until a cited
+public place to stay exists (population not known to be above zero, no street
+address, no owner name). It is not the next build.
+
+The next chip is castle islets under 1 km², then lighthouses that have their
+own Wikipedia article. See
+[`INTEREST-FILTER-IDEAS.md`](INTEREST-FILTER-IDEAS.md). Do not build the
+lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light rows,
+including 603 lights on Great Britain). Follow
 `.cursor/skills/interest-category-populate/SKILL.md`.
 
-Published 2026-10-25 and live in the local atlas: Film, art and music (13),
-Whisky distilleries (10), For sale (37).
+Published locally 2026-10-25: Film, art and music (104 islands, 813 cited
+rows: 464 artworks, 289 music, 60 film), including MusicBrainz albums and
+tunes that name the island (Skye Boat Song, The Lost Songs of St Kilda, The
+Unst Boat Song). Whisky distilleries (12), For sale (42), Unusual wildlife
+(23 islands, 30 species), Tidal islands (66). Artwork, whisky, and wildlife
+lead the list and the profile with one cited picture and a short connection.
+Tidal islands lead with where the link goes, and that it floods. This index
+is pushed to `main`. Supabase still has the earlier 171 memberships until
+`data/interest/memberships_sync.sql` is loaded.
 
 ## P1 — calm atlas UI deploy (2026-10-25)
 

@@ -1,0 +1,26 @@
+{
+  "slug": "music-wikidata",
+  "generatedAt": "2026-10-25T17:55:52+00:00",
+  "sources": [
+    "wikidata"
+  ],
+  "rows": [
+    {
+      "category_slug": "film-art-music",
+      "island_id": "isle-of-skye",
+      "island_name": "Isle of Skye",
+      "facet": "music",
+      "title": "Là Luain",
+      "source_url": "https://www.wikidata.org/wiki/Q13194741",
+      "source_title": "Là Luain",
+      "licence": "CC0",
+      "evidence": "Wikidata Q13194741: punk band; location of formation 'Isle of Skye'.",
+      "external_id": "Q13194741",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-25T17:55:52+00:00",
+      "summary": "Là Luain is a punk band. Wikidata records the Isle of Skye as the place the group formed."
+    }
+  ]
+}
