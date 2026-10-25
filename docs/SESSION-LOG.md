@@ -3020,3 +3020,23 @@ loop (`descriptions+photos-gap`, cycle 17).
   `trust_tier` `0`; setting `trust_tier` to `staff` raised `42501`. No test
   users left in `auth.users`.
 - **Open items kicked to QUEUE.md**: none.
+
+
+## 2026-10-25 — Editorial atlas redesign (local preview only)
+
+- **Goal**: Reinterpret the atlas with a more appealing, simpler discovery experience.
+- **Changed**: Replaced `atlas-redesign.css` with a light paper/evergreen design; added `editorial-profile.css` for profiles, filters and chat. Reworked `index.html` into an editorial discovery column and framed map. Search sits with four quick filters; three existing licensed photographs provide starting points. Mobile opens Explore with clear Map/Explore/Ask navigation.
+- **Behaviour**: Filtered browsing ranks fuller profiles first; property pins appear only when browsing listings and respect current results. Fixed Saved opened from a profile, search shortcut visibility, and duplicate quick-filter badge counts. Retained clustered/virtualised rendering, cultural names, galleries, credits and source information.
+- **Validation**: JavaScript syntax, unique HTML IDs, balanced stylesheets and scoped whitespace checks passed. Browser checks at desktop 1280×720 and mobile 390×844 covered fresh load, search, geography filtering, listing filter, save/remove/Saved, profiles, keyboard search, mobile navigation and local island-finder query. The fresh mobile load produced no console errors.
+- **Preview**: `http://127.0.0.1:8765/` via a loopback-only Python server. Screenshots saved in the calling Codex task's visualizations folder. No commit, push or deployment. Canonical data/schema and pre-existing `styles.css` changes were preserved.
+
+## 2026-10-25 — Interest category filters
+
+- **Goal**: Filter the atlas by film/art/music, whisky distilleries, and islands for sale, with a path to add the next category without a code change.
+- **What changed**:
+  - Supabase tables `interest_categories` and `interest_memberships` (migration `20261025122727_interest_categories.sql`). Anonymous read of published categories and accepted memberships only. Writes are service-role.
+  - `scripts/interest_categories.py` copies the property registry, matches Wikidata whisky distilleries onto atlas islands, and checks film/art/music seeds against Wikipedia.
+  - `data/interest_index.json` is what the map loads. Browse chips and the Interests group in the filter drawer are generated from it. `?interest=` selects one category. The card line names the work, distillery, or listing. For sale still uses the existing listing markers.
+  - Skill: `.cursor/skills/interest-category-populate/SKILL.md`.
+- **Outcome / counts**: film/art/music **13** islands, **20** rows; whisky **10** islands, **24** distilleries (Islay, Arran, Mull, Skye, Jura, Lewis and Harris, Mainland Orkney, Raasay, Barra, Tiree); for sale **37**. Anon API returns those three categories and **81** memberships. Draft `uninhabited-stay` is empty and hidden. Overpass did not answer, so the whisky set is Wikidata plus four Wikipedia gap pages, not OSM.
+- **Open items kicked to QUEUE.md**: populate `uninhabited-stay` when there is island-level public accommodation evidence. Pushed to `main` for the GitHub Pages deploy. The filters ship with the local editorial layout they were built on.

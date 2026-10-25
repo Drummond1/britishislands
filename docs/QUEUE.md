@@ -4,6 +4,17 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
+## P1 — next interest category: uninhabited, with a place to stay
+
+The filter slot exists as Supabase category `uninhabited-stay` (`draft`, no
+memberships, absent from `data/interest_index.json`). Do not publish it until
+each island has a cited public place to stay and population is not known to be
+above zero. No street addresses. Follow
+`.cursor/skills/interest-category-populate/SKILL.md`.
+
+Published 2026-10-25 and live in the local atlas: Film, art and music (13),
+Whisky distilleries (10), For sale (37).
+
 ## P1 — calm atlas UI deploy (2026-10-25)
 
 - ~~**Deploy**~~ ✅ pushed to `main` (`atlas-redesign.css?v=calm-4`,

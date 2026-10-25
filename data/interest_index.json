@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-25T12:55:37+00:00",
+  "categories": [
+    {
+      "slug": "film-art-music",
+      "label": "Film, art and music",
+      "blurb": "Islands tied to a specific film, artwork, or piece of music.",
+      "sortOrder": 10,
+      "count": 13
+    },
+    {
+      "slug": "whisky-distilleries",
+      "label": "Whisky distilleries",
+      "blurb": "Islands with a working whisky distillery.",
+      "sortOrder": 20,
+      "count": 10
+    },
+    {
+      "slug": "for-sale",
+      "label": "For sale",
+      "blurb": "Islands with a current broker listing.",
+      "sortOrder": 30,
+      "count": 37
+    }
+  ],
+  "members": {
+    "film-art-music": [
+      "osm-relation-6045552",
+      "osm-relation-6045364",
+      "osm-relation-380646",
+      "isle-of-man",
+      "osm-relation-8249591",
+      "mull",
+      "isle-of-skye",
+      "staffa",
+      "iona",
+      "osm-way-885235014",
+      "osm-relation-15708714",
+      "osm-relation-380684",
+      "osm-relation-380670"
+    ],
+    "whisky-distilleries": [
+      "arran",
+      "isle-of-skye",
+      "islay",
+      "osm-relation-6045455",
+      "osm-relation-4619204",
+      "mull",
+      "osm-relation-7220346",
+      "mainland-orkney",
+      "osm-relation-1663893",
+      "osm-relation-380646"
+    ],
+    "for-sale": [
+      "osm-relation-3217444",
+      "eel-pie-island",
+      "osm-way-157810927",
+      "osm-way-148442098",
+      "osm-relation-3198786",
+      "osm-relation-3210701",
+      "osm-way-49901778",
+      "osm-way-48076585",
+      "osm-way-157812309",
+      "osm-relation-8156739",
+      "osm-way-4554655",
+      "osm-relation-9126999",
+      "osm-relation-4029093",
+      "osm-way-190629034",
+      "osm-way-4562311",
+      "osm-way-4554537",
+      "osm-way-4562119",
+      "osm-relation-3395357",
+      "osm-way-4563603",
+      "osm-relation-6925696",
+      "osm-relation-5725196",
+      "osm-relation-3512150",
+      "osm-relation-3516496",
+      "osm-relation-3516509",
+      "osm-relation-3998378",
+      "osm-relation-3516655",
+      "osm-way-205056852",
+      "osm-way-3619206",
+      "osm-way-750275320",
+      "osm-way-200745352",
+      "osm-relation-14940681",
+      "osm-way-4002996",
+      "osm-way-200912404",
+      "osm-relation-4092586",
+      "osm-way-200773375",
+      "osm-relation-4230732",
+      "osm-way-4001735"
+    ]
+  },
+  "highlights": {
+    "film-art-music": {
+      "osm-relation-6045552": [
+        "The Banshees of Inisherin",
+        "Father Ted",
+        "Man of Aran"
+      ],
+      "osm-relation-6045364": [
+        "The Banshees of Inisherin"
+      ],
+      "osm-relation-380646": [
+        "Whisky Galore!"
+      ],
+      "isle-of-man": [
+        "Waking Ned Devine"
+      ],
+      "osm-relation-8249591": [
+        "The Edge of the World"
+      ],
+      "mull": [
+        "I Know Where I'm Going!",
+        "Balamory",
+        "Entrapment"
+      ],
+      "isle-of-skye": [
+        "Macbeth",
+        "Breaking the Waves",
+        "The Skye Boat Song"
+      ],
+      "staffa": [
+        "Staffa, Fingal's Cave",
+        "The Hebrides"
+      ],
+      "iona": [
+        "Iona seascape"
+      ],
+      "osm-way-885235014": [
+        "Mingulay Boat Song"
+      ],
+      "osm-relation-15708714": [
+        "Eriskay Love Lilt"
+      ],
+      "osm-relation-380684": [
+        "The Dark Island"
+      ],
+      "osm-relation-380670": [
+        "The Dark Island"
+      ]
+    },
+    "whisky-distilleries": {
+      "arran": [
+        "Arran distillery",
+        "Lagg distillery"
+      ],
+      "isle-of-skye": [
+        "Torabhaig",
+        "Talisker distillery"
+      ],
+      "islay": [
+        "Ardnahoe Distillery",
+        "Caol Ila Distillery",
+        "Port Charlotte distillery",
+        "Laphroaig distillery",
+        "Bowmore distillery",
+        "Bunnahabhain Distillery",
+        "Bruichladdich Distillery",
+        "Ardbeg",
+        "Kilchoman distillery",
+        "Lagavulin Distillery",
+        "Port Ellen Distillery"
+      ],
+      "osm-relation-6045455": [
+        "Isle of Tiree distillery"
+      ],
+      "osm-relation-4619204": [
+        "Jura distillery"
+      ],
+      "mull": [
+        "Tobermory distillery"
+      ],
+      "osm-relation-7220346": [
+        "Abhainn Dearg distillery",
+        "Isle of Harris Distillery"
+      ],
+      "mainland-orkney": [
+        "Scapa distillery",
+        "Highland Park distillery"
+      ],
+      "osm-relation-1663893": [
+        "Isle of Raasay distillery"
+      ],
+      "osm-relation-380646": [
+        "Isle of Barra distillery"
+      ]
+    },
+    "for-sale": {
+      "osm-relation-3217444": [
+        "Bryher — Sibleys Island Homes (Jenford & Annex)"
+      ],
+      "eel-pie-island": [
+        "Eel Pie Island — Chase Buchanan"
+      ],
+      "osm-way-157810927": [
+        "Garrick's Ait — Absolute Homes"
+      ],
+      "osm-way-148442098": [
+        "Pharaoh's Island — Shepperton bungalow (Absolute Homes)"
+      ],
+      "osm-relation-3198786": [
+        "St Agnes — Sibleys Island Homes"
+      ],
+      "osm-relation-3210701": [
+        "St Martin's — Sibleys Island Homes (Menawethan)"
+      ],
+      "osm-way-49901778": [
+        "Tagg's Island — Absolute Homes"
+      ],
+      "osm-way-48076585": [
+        "The Island — Thames Ditton home (Absolute Homes)"
+      ],
+      "osm-way-157812309": [
+        "Wheatley's Eyot (south) — N&N Richmond"
+      ],
+      "osm-relation-8156739": [
+        "Arranmore — Campbells Auctioneers (MyHome direct agent page)"
+      ],
+      "osm-way-4554655": [
+        "Calf Island Middle — West Cork (Vladi)"
+      ],
+      "osm-relation-9126999": [
+        "Cruit Island — Campbells Auctioneers"
+      ],
+      "osm-relation-4029093": [
+        "Creelogh, Gorumna Island — coastal holding (DNG)"
+      ],
+      "osm-way-190629034": [
+        "Heir Island — Pat Maguire Properties (MyHome direct agent page)"
+      ],
+      "osm-way-4562311": [
+        "High Island — Spencer Auctioneers"
+      ],
+      "osm-way-4554537": [
+        "Horse Island — Lisney"
+      ],
+      "osm-way-4562119": [
+        "Inishbarna Island — Killary Fjord (Vladi)"
+      ],
+      "osm-relation-3395357": [
+        "Inishmicatreer — Michelle Burke Auctioneer and Letting Agent (MyHome direct agent page)"
+      ],
+      "osm-way-4563603": [
+        "Shore Island — Shannon Estuary (Vladi)"
+      ],
+      "osm-relation-6925696": [
+        "Turbot Island — Sherry Fitzgerald Mangan (MyHome direct agent page)"
+      ],
+      "osm-relation-5725196": [
+        "Whiddy Island — Sherry FitzGerald Country Homes, Farms & Estates (MyHome direct agent page)"
+      ],
+      "osm-relation-3512150": [
+        "11 Waters Edge — Boa Island, Lough Erne (LSL)"
+      ],
+      "osm-relation-3516496": [
+        "Creaghawaddy Island — portion (McCaffrey Bros)"
+      ],
+      "osm-relation-3516509": [
+        "Inishturk Island — Upper Lough Erne (McCaffrey Bros)"
+      ],
+      "osm-relation-3998378": [
+        "Long Island — Lower Lough Erne residence"
+      ],
+      "osm-relation-3516655": [
+        "Trannish — Gordon Robinson / PropertyPal"
+      ],
+      "osm-way-205056852": [
+        "Eilean Loch Oscair — UK Land & Farms"
+      ],
+      "osm-way-3619206": [
+        "Eilean Mullagrach — Summer Isles cabin site"
+      ],
+      "osm-way-750275320": [
+        "Eilean Mor — Loch Sunart island (Bell Ingram)"
+      ],
+      "osm-way-200745352": [
+        "Eilean Righ — Private Islands Online"
+      ],
+      "osm-relation-14940681": [
+        "Gasker Island — uninhabited (Galbraith)"
+      ],
+      "osm-way-4002996": [
+        "Inchmarnock Island — private island estate (Strutt & Parker)"
+      ],
+      "osm-way-200912404": [
+        "Insh Island — Savills auction lot (90 acres)"
+      ],
+      "osm-relation-4092586": [
+        "Kerrera — Bell Ingram"
+      ],
+      "osm-way-200773375": [
+        "Shuna Island — 1,110-acre estate (Knight Frank)"
+      ],
+      "osm-relation-4230732": [
+        "Island of Soay — croft and house (Strutt & Parker)"
+      ],
+      "osm-way-4001735": [
+        "Thorne Island — Strutt & Parker"
+      ]
+    }
+  }
+}

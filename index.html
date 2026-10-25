@@ -67,9 +67,10 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=calm-4" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=interest-1" />
+    <link rel="stylesheet" href="editorial-profile.css?v=editorial-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
-    <link rel="modulepreload" href="app.js?v=calm-4" />
+    <link rel="modulepreload" href="app.js?v=interest-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -100,49 +101,20 @@
     <!-- End Google Tag Manager (noscript) -->
     <header class="topbar topbar--atlas">
       <button class="brand brand-link" id="home-link" type="button" aria-label="Find My Island home">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-mark" aria-hidden="true" data-lucide="compass"></span>
         <div>
           <h1>Find My Island</h1>
-          <p class="tagline">The British &amp; Irish Islands Atlas</p>
+          <p class="tagline">An atlas for the curious</p>
         </div>
       </button>
 
-      <div class="topbar-search">
-        <div class="search-field search-field--hero">
-          <span class="search-field__icon" aria-hidden="true" data-lucide="search"></span>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search by name or place"
-            aria-label="Search islands"
-            autocomplete="off"
-            title="Press / to focus search"
-          />
-          <button
-            type="button"
-            class="search-field__clear"
-            id="search-clear"
-            hidden
-            aria-label="Clear search"
-          >
-            <span aria-hidden="true" data-lucide="x"></span>
-          </button>
-        </div>
-      </div>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <button type="button" class="desktop-nav__link is-active" id="explore-home">Explore the islands</button>
+        <a class="desktop-nav__link" href="/ferries/">Ferry guides</a>
+        <a class="desktop-nav__link" href="/about/">About the atlas</a>
+      </nav>
 
       <div class="topbar-actions">
-        <button
-          class="topbar-filters-toggle"
-          id="filters-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="topbar-filters"
-          title="Open filters"
-        >
-          <span aria-hidden="true" data-lucide="sliders-horizontal"></span>
-          <span class="topbar-filters-toggle__label">Filters</span>
-          <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
-        </button>
         <button
           type="button"
           class="topbar-link topbar-link--btn"
@@ -180,7 +152,7 @@
           title="Collapse or enlarge the island list"
           aria-label="Collapse island list"
         >
-          <span aria-hidden="true" data-lucide="panel-left-close"></span>
+          <span aria-hidden="true" data-lucide="maximize-2"></span>
         </button>
       </div>
 
@@ -192,6 +164,10 @@
           </button>
         </div>
         <div class="filter-drawer__body">
+          <fieldset class="filter-group" id="interest-filter-group" hidden>
+            <legend>Interests</legend>
+            <div id="interest-filter-options"></div>
+          </fieldset>
           <fieldset class="filter-group">
             <legend>Geography</legend>
             <select id="nation-filter" aria-label="Nation or country">
@@ -246,7 +222,7 @@
               <span>With stories</span>
             </label>
           </fieldset>
-          <fieldset class="filter-group">
+          <fieldset class="filter-group" id="filter-for-sale-group">
             <legend>For sale</legend>
             <label class="toggle toggle--pending" id="filter-for-sale-wrap" title="Loading property listings…">
               <input type="checkbox" id="filter-for-sale" disabled />
@@ -301,28 +277,64 @@
     <main class="layout">
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
         <section class="island-list" id="island-list-section">
-          <header class="sidebar-section-header discovery-header">
-            <button type="button" class="discovery-sheet-handle" id="discovery-sheet-handle" aria-label="Expand or collapse island list"></button>
-            <div class="sidebar-section-header__text">
-              <h2 id="list-heading" class="discovery-title">Islands</h2>
-              <p class="sidebar-orient" id="sidebar-orient">A few places to start</p>
-            </div>
-            <span class="count" id="result-count" aria-live="polite">0</span>
-          </header>
+          <div class="discovery-intro">
+            <p class="discovery-eyebrow"><span class="editorial-rule"></span> A WORLD A LITTLE CLOSER TO HOME</p>
+            <h2>Find your<br><em>somewhere else.</em></h2>
+            <p class="discovery-lede">Discover the islands of Britain and Ireland, one story at a time.</p>
+          </div>
+          <div class="discovery-search-row">
+      <div class="discovery-search">
+        <div class="search-field search-field--hero">
+          <span class="search-field__icon" aria-hidden="true" data-lucide="search"></span>
+          <input
+            id="search"
+            type="search"
+            placeholder="An island, a place, a possibility…"
+            aria-label="Search islands"
+            autocomplete="off"
+            title="Press / to focus search"
+          />
+          <button
+            type="button"
+            class="search-field__clear"
+            id="search-clear"
+            hidden
+            aria-label="Clear search"
+          >
+            <span aria-hidden="true" data-lucide="x"></span>
+          </button>
+        </div>
+      </div>
+
+        <button
+          class="topbar-filters-toggle"
+          id="filters-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="topbar-filters"
+          title="Open filters"
+        >
+          <span aria-hidden="true" data-lucide="sliders-horizontal"></span>
+          <span class="topbar-filters-toggle__label">Filters</span>
+          <span class="filters-toggle__badge" id="filters-active-badge" hidden aria-hidden="true">0</span>
+        </button>
+          </div>
+
+
 
           <div class="sidebar-explore" id="sidebar-explore">
             <div class="browse-quick" id="browse-quick" aria-label="High-value filters">
-              <p class="browse-quick__label" id="browse-quick-label">Browse</p>
+              <p class="browse-quick__label" id="browse-quick-label">Find your kind of island</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
             <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
             <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
               <h3 id="featured-heading" class="featured-strip__title">Begin with</h3>
-              <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
+              <div class="featured-strip__scroll" id="featured-strip-scroll" role="group" aria-label="Featured islands"></div>
             </section>
             <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
               <details class="discover-panel__details">
-                <summary class="discover-panel__summary">More collections &amp; topics</summary>
+                <summary class="discover-panel__summary">Explore by collection</summary>
                 <div class="discover-chips" id="discover-chips" role="tablist"></div>
                 <p class="discover-panel__hint" id="discover-hint" hidden></p>
               </details>
@@ -331,6 +343,15 @@
               <div class="scotland-quick__chips" id="scotland-quick-chips"></div>
             </div>
           </div>
+
+          <header class="sidebar-section-header discovery-header">
+            <button type="button" class="discovery-sheet-handle" id="discovery-sheet-handle" aria-label="Expand or collapse island list"></button>
+            <div class="sidebar-section-header__text">
+              <h2 id="list-heading" class="discovery-title">Islands to inspire you</h2>
+              <p class="sidebar-orient" id="sidebar-orient">A few places to start</p>
+            </div>
+            <span class="count" id="result-count" aria-live="polite">0</span>
+          </header>
 
           <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
 
@@ -470,7 +491,9 @@
         </section>
       </aside>
 
-      <section class="map-wrap">
+      <section class="map-wrap" aria-label="Explore the island map">
+        <div class="map-editorial-label"><span data-lucide="map" aria-hidden="true"></span><div><span class="map-editorial-label__eyebrow">THE LIVING ATLAS</span><strong>A different perspective.</strong></div></div>
+        <div class="map-editorial-note"><span data-lucide="mouse-pointer-2" aria-hidden="true"></span> Pick a pin. See where it takes you.</div>
         <div id="crowd-modal" class="crowd-modal" hidden>
           <div class="crowd-modal__backdrop" id="crowd-modal-backdrop" tabindex="-1"></div>
           <div
@@ -592,7 +615,7 @@
             <span aria-hidden="true" data-lucide="x"></span>
           </button>
         </div>
-        <div id="map" role="application" aria-label="Map of British islands" tabindex="0"></div>
+        <div id="map" role="application" aria-label="Map of islands in Britain and Ireland" tabindex="0"></div>
         <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
         <details class="legend-wrap">
           <summary class="legend-wrap__toggle">Map key</summary>
@@ -723,7 +746,7 @@
           type="text"
           id="chat-input"
           name="q"
-          placeholder="e.g. Islands near Oban · Ferry Hebrides · Largest Welsh islands"
+          placeholder="What kind of island are you looking for?"
           aria-label="Describe what you're looking for"
           required
         />
@@ -733,15 +756,15 @@
 
     <nav class="mobile-nav" id="mobile-nav" aria-label="Primary navigation">
       <button type="button" class="mobile-nav__btn is-active" data-mobile-view="map" aria-current="page">
-        <span class="mobile-nav__icon" aria-hidden="true">◎</span>
+        <span class="mobile-nav__icon" aria-hidden="true" data-lucide="map"></span>
         <span class="mobile-nav__label">Map</span>
       </button>
       <button type="button" class="mobile-nav__btn" data-mobile-view="islands">
-        <span class="mobile-nav__icon" aria-hidden="true">≡</span>
-        <span class="mobile-nav__label">List</span>
+        <span class="mobile-nav__icon" aria-hidden="true" data-lucide="compass"></span>
+        <span class="mobile-nav__label">Explore</span>
       </button>
       <button type="button" class="mobile-nav__btn" data-mobile-view="ask">
-        <span class="mobile-nav__icon" aria-hidden="true">✦</span>
+        <span class="mobile-nav__icon" aria-hidden="true" data-lucide="message-circle"></span>
         <span class="mobile-nav__label">Ask</span>
       </button>
     </nav>
@@ -810,6 +833,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=calm-4" type="module"></script>
+    <script src="app.js?v=interest-1" type="module"></script>
   </body>
 </html>

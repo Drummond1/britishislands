@@ -220,6 +220,18 @@ Staged in `data/cache_property_listings.json`; applied via `apply_enrichments.py
 | `classification.confidence` | enum | `high`, `medium`, `low`, **`unconfirmed`**. The last marks a row shown on the map for exploration that **did not** pass the discovery pipeline’s automatic review gate (e.g. missing licence-safe hero image, medium/low verification). It is **not** a claim that the feature is a recognised island. |
 | `classification.reviewHint` | string / null | Optional short machine-oriented note (e.g. why `unconfirmed` was applied). Shown in the UI for transparency. |
 
+## Interest categories (overlay)
+
+Interest filters are **not** fields on the island record. `data/islands.json` is unchanged. A published category is a named set of atlas ids plus the short names shown on each card.
+
+| File | Role |
+|---|---|
+| `data/interest_index.json` | What the atlas loads. `categories[]` (published only, with counts), `members[slug]` (island-id arrays), `highlights[slug][islandId]` (work, distillery, or listing names). |
+| `data/interest/candidates/{slug}.json` | Populator output, including rejected rows and reasons. |
+| Supabase `interest_categories` / `interest_memberships` | Working store. See [`SUPABASE.md`](SUPABASE.md). |
+
+The map filters in the browser from `members`. A draft category is absent from the index until its status is `published`. Adding a category is a spec plus a populator (`.cursor/skills/interest-category-populate/SKILL.md`), not a new checkbox in `index.html`.
+
 ## Adding a new field
 
 1. Pick a name and type. Prefer extending an existing object (e.g.

@@ -21,7 +21,7 @@ Single map of every document in this repository. Always start at the top.
 | [`DEPLOYMENT.md`](DEPLOYMENT.md) | GitHub Pages, `_site/` artifact, findmyisland.com, push notes. |
 | [`FRONTEND-PERFORMANCE.md`](FRONTEND-PERFORMANCE.md) | Homepage load path, index v2, markers, deferred fetches. |
 | [`3D-TERRAIN.md`](3D-TERRAIN.md) | Showcase 3D islands, import map, mount lifecycle, build script. |
-| [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec with every field, type, and example. |
+| [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec. Interest filters are an overlay (`data/interest_index.json`), not new island fields. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
 | [`SEO-GEO.md`](SEO-GEO.md) | Island SEO + JSON-LD; **`/islands/{nation}/{slug}/` URLs**; sitemap / `llms.txt`; continuous SEO/GEO loop. |
 | [`SEO-GEO-STRATEGY.md`](SEO-GEO-STRATEGY.md) | Full SEO+GEO strategy brief (90-day roadmap). Continuous loop follows this with no-deindex override. |

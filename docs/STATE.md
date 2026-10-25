@@ -4,6 +4,20 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-25 (interest categories)** — Overlay filters, not a change to
+`islands.json`. Supabase `interest_categories` + `interest_memberships`
+(project `oqqfuddgclotoohekmop`). Static export `data/interest_index.json`.
+Published: film/art/music **13** islands (**20** cited rows), whisky
+distilleries **10** islands (**24** rows), for sale **37**. Draft and empty:
+`uninhabited-stay`. Anon can read published + accepted only (**81** memberships;
+draft category hidden). Atlas chips and the Interests drawer group are generated
+from the index. Skill: `.cursor/skills/interest-category-populate/SKILL.md`.
+
+**2026-10-25 (editorial UI preview — LOCAL ONLY)** — Warm paper/evergreen discovery
+column, framed map, simplified search/quick filters and updated profiles/mobile UI.
+Changed `index.html`, `app.js`, `atlas-redesign.css`; added `editorial-profile.css`.
+No commit, push or deploy. Data/schema/counts unchanged. See SESSION-LOG entry.
+
 **2026-10-25 (calm atlas UI)** — Map-first desktop layout: floating list, quieter
 header, photographic cards, shorter browse chips. Schema and counts unchanged.
 Shipped to `main` for the Pages deploy.

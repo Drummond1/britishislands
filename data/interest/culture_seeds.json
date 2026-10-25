@@ -1,0 +1,188 @@
+{
+  "about": "Cited film, artwork, and music seeds. The verifier keeps a row only when the Wikipedia page contains the work title and an island phrase.",
+  "seeds": [
+    {
+      "facet": "film",
+      "title": "The Banshees of Inisherin",
+      "titleAliases": ["Banshees of Inisherin"],
+      "wikipedia": "The_Banshees_of_Inisherin",
+      "islands": [
+        {"phrases": ["Inishmore", "Inis Mor"], "matchNames": ["Inishmore", "Inis Mor", "Inis Mór"]},
+        {"phrases": ["Achill"], "matchNames": ["Achill Island", "Achill"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Whisky Galore!",
+      "titleAliases": ["Whisky Galore"],
+      "wikipedia": "Whisky_Galore!_(1949_film)",
+      "islands": [
+        {"phrases": ["Barra"], "matchNames": ["Barra"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Father Ted",
+      "titleAliases": ["Father Ted"],
+      "wikipedia": "Father_Ted",
+      "islands": [
+        {"phrases": ["Inishmore", "Inis Mor"], "matchNames": ["Inishmore", "Inis Mor", "Inis Mór"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Man of Aran",
+      "titleAliases": ["Man of Aran"],
+      "wikipedia": "Man_of_Aran",
+      "islands": [
+        {"phrases": ["Inishmore", "Aran Islands", "Inis Mor"], "matchNames": ["Inishmore", "Inis Mor", "Inis Mór"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Waking Ned Devine",
+      "titleAliases": ["Waking Ned"],
+      "wikipedia": "Waking_Ned_Devine",
+      "islands": [
+        {"phrases": ["Isle of Man"], "matchNames": ["Isle of Man"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "The Edge of the World",
+      "titleAliases": ["Edge of the World"],
+      "wikipedia": "The_Edge_of_the_World",
+      "islands": [
+        {"phrases": ["Foula"], "matchNames": ["Foula"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "I Know Where I'm Going!",
+      "titleAliases": ["I Know Where I'm Going"],
+      "wikipedia": "I_Know_Where_I'm_Going!",
+      "islands": [
+        {"phrases": ["Mull"], "matchNames": ["Isle of Mull", "Mull"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Star Wars: The Force Awakens",
+      "titleAliases": ["The Force Awakens", "Star Wars"],
+      "wikipedia": "Skellig_Michael",
+      "islands": [
+        {"phrases": ["Skellig Michael"], "matchNames": ["Skellig Michael", "Great Skellig"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Star Wars: The Last Jedi",
+      "titleAliases": ["The Last Jedi"],
+      "wikipedia": "Star_Wars:_The_Last_Jedi",
+      "islands": [
+        {"phrases": ["Skellig Michael"], "matchNames": ["Skellig Michael", "Great Skellig"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Balamory",
+      "titleAliases": ["Balamory"],
+      "wikipedia": "Balamory",
+      "islands": [
+        {"phrases": ["Tobermory", "Mull"], "matchNames": ["Isle of Mull", "Mull"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Macbeth",
+      "titleAliases": ["Macbeth (2015 film)"],
+      "wikipedia": "Macbeth_(2015_film)",
+      "islands": [
+        {"phrases": ["Isle of Skye", "Skye"], "matchNames": ["Isle of Skye", "Skye"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Breaking the Waves",
+      "titleAliases": ["Breaking the Waves"],
+      "wikipedia": "Breaking_the_Waves",
+      "islands": [
+        {"phrases": ["Isle of Skye", "Skye"], "matchNames": ["Isle of Skye", "Skye"]}
+      ]
+    },
+    {
+      "facet": "film",
+      "title": "Entrapment",
+      "titleAliases": ["Entrapment"],
+      "wikipedia": "Entrapment_(film)",
+      "islands": [
+        {"phrases": ["Duart", "Mull"], "matchNames": ["Isle of Mull", "Mull"]}
+      ]
+    },
+    {
+      "facet": "artwork",
+      "title": "Staffa, Fingal's Cave",
+      "titleAliases": ["Fingal's Cave", "Staffa"],
+      "wikipedia": "Staffa,_Fingal's_Cave",
+      "islands": [
+        {"phrases": ["Staffa"], "matchNames": ["Staffa"]}
+      ]
+    },
+    {
+      "facet": "artwork",
+      "title": "Iona seascape",
+      "titleAliases": ["Iona seascape"],
+      "wikipedia": "Samuel_Peploe",
+      "islands": [
+        {"phrases": ["Iona"], "matchNames": ["Iona"]}
+      ]
+    },
+    {
+      "facet": "music",
+      "title": "The Skye Boat Song",
+      "titleAliases": ["Skye Boat Song"],
+      "wikipedia": "The_Skye_Boat_Song",
+      "islands": [
+        {"phrases": ["Skye"], "matchNames": ["Isle of Skye", "Skye"]}
+      ]
+    },
+    {
+      "facet": "music",
+      "title": "The Hebrides",
+      "titleAliases": ["Hebrides Overture", "Fingal's Cave"],
+      "wikipedia": "The_Hebrides_(overture)",
+      "islands": [
+        {"phrases": ["Staffa"], "matchNames": ["Staffa"]}
+      ]
+    },
+    {
+      "facet": "music",
+      "title": "Mingulay Boat Song",
+      "titleAliases": ["Mingulay Boat Song"],
+      "wikipedia": "Mingulay_Boat_Song",
+      "islands": [
+        {"phrases": ["Mingulay"], "matchNames": ["Mingulay"]}
+      ]
+    },
+    {
+      "facet": "music",
+      "title": "Eriskay Love Lilt",
+      "titleAliases": ["Eriskay Love Lilt"],
+      "wikipedia": "Eriskay_Love_Lilt",
+      "islands": [
+        {"phrases": ["Eriskay"], "matchNames": ["Eriskay"]}
+      ]
+    },
+    {
+      "facet": "music",
+      "title": "The Dark Island",
+      "titleAliases": ["Dark Island"],
+      "wikipedia": "The_Dark_Island",
+      "islands": [
+        {"phrases": ["Benbecula"], "matchNames": ["Benbecula"]},
+        {"phrases": ["South Uist"], "matchNames": ["South Uist"]},
+        {"phrases": ["Uist"], "matchNames": ["North Uist", "South Uist"]}
+      ]
+    }
+  ]
+}

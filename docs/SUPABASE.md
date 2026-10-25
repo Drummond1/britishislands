@@ -96,6 +96,8 @@ Moderation tooling (later) copies accepted files to public CDN URLs stored in `c
 | `community_*` | Read published | Read published | Service role writes on accept |
 | `saved_islands` | — | Full CRUD own rows | — |
 | `audit_log` | — | — | Service role only |
+| `interest_categories` | Read `published` | Read `published` | Service role writes |
+| `interest_memberships` | Read `accepted` whose category is `published` | Same as anonymous | Service role writes |
 
 Staff actions today require the **service role** key in a trusted worker (Edge Function,
 GitHub Action, or local script). Add explicit `is_staff()` policies when you ship a mod UI.
@@ -117,6 +119,22 @@ import { getSupabase } from "./supabase-client.js";
 const sb = getSupabase();
 await sb.auth.getSession();
 ```
+
+---
+
+## 8. Interest categories
+
+Migration `supabase/migrations/20261025122727_interest_categories.sql`.
+
+`interest_categories` is the filter spec: `slug`, `label`, `blurb`, `status` (`draft` | `published` | `retired`), `sort_order`, `populator`, `acceptance_rules`.
+
+`interest_memberships` is one cited hit: `category_slug`, `island_id` (an id that already exists in the atlas), `facet` (`film`, `artwork`, `music`, `distillery`, `listing`), `title`, `source_url`, `licence`, `evidence`, `external_id`, `confidence` (`high` | `medium`), `status` (`candidate` | `accepted` | `rejected`). Unique on category + island + facet + title.
+
+Anonymous and signed-in clients may `SELECT` published categories and accepted memberships of those categories. There are no insert or update policies. Agents write with the service role from `scripts/interest_categories.py`, never from the browser. The public map does not call these tables; `publish` writes `data/interest_index.json`.
+
+Published (2026-10-25): film, art and music **13** islands / **20** rows; whisky distilleries **10** / **24**; for sale **37** / **37**. Draft, empty, and hidden from the anon API: `uninhabited-stay`.
+
+How to add the next category: [`.cursor/skills/interest-category-populate/SKILL.md`](../.cursor/skills/interest-category-populate/SKILL.md).
 
 ---
 
