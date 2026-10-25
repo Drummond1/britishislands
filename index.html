@@ -61,26 +61,15 @@
         }
       }
     </script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-    />
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css" />
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=calm-4" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
-    <link rel="modulepreload" href="app.js" />
+    <link rel="modulepreload" href="app.js?v=calm-4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -124,7 +113,7 @@
           <input
             id="search"
             type="search"
-            placeholder="Search islands, places, or groups…"
+            placeholder="Search by name or place"
             aria-label="Search islands"
             autocomplete="off"
             title="Press / to focus search"
@@ -303,7 +292,7 @@
         <div class="filter-drawer__footer">
           <button type="button" class="filter-reset-btn" id="filter-reset-btn">Clear all</button>
           <button type="button" class="filter-apply-btn" id="filters-apply">
-            Show <span id="filters-apply-count">0</span> results
+            Done · <span id="filters-apply-count">0</span> showing
           </button>
         </div>
       </div>
@@ -313,21 +302,22 @@
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
         <section class="island-list" id="island-list-section">
           <header class="sidebar-section-header discovery-header">
+            <button type="button" class="discovery-sheet-handle" id="discovery-sheet-handle" aria-label="Expand or collapse island list"></button>
             <div class="sidebar-section-header__text">
-              <h2 id="list-heading" class="discovery-title">Discover British &amp; Irish islands</h2>
-              <p class="sidebar-orient" id="sidebar-orient">Search, filter, or start exploring below</p>
+              <h2 id="list-heading" class="discovery-title">Islands</h2>
+              <p class="sidebar-orient" id="sidebar-orient">A few places to start</p>
             </div>
             <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
 
           <div class="sidebar-explore" id="sidebar-explore">
             <div class="browse-quick" id="browse-quick" aria-label="High-value filters">
-              <p class="browse-quick__label" id="browse-quick-label">Quick looks</p>
+              <p class="browse-quick__label" id="browse-quick-label">Browse</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
             <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
             <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
-              <h3 id="featured-heading" class="featured-strip__title">Start exploring</h3>
+              <h3 id="featured-heading" class="featured-strip__title">Begin with</h3>
               <div class="featured-strip__scroll" id="featured-strip-scroll" role="list"></div>
             </section>
             <section class="discover-panel" id="discover-panel" hidden aria-label="Explore topics">
@@ -632,7 +622,7 @@
       data-mode="discover"
     >
       <span class="chat-launcher__icon" aria-hidden="true" data-lucide="message-circle"></span>
-      <span class="chat-launcher__label" id="chat-launcher-label">Help me find an island</span>
+      <span class="chat-launcher__label" id="chat-launcher-label">Ask</span>
     </button>
 
     <aside
@@ -811,19 +801,15 @@
         }
       }
     </script>
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="vendor/lucide/lucide.min.js"></script>
     <!-- proj4 + proj4leaflet load on demand when opening the detail map (app.js). -->
     <script>window.IOB_SITE_ORIGIN = "https://www.findmyisland.com";</script>
     <script src="seo-head.js"></script>
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=atlas-redesign-1" type="module"></script>
+    <script src="app.js?v=calm-4" type="module"></script>
   </body>
 </html>

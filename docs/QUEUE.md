@@ -4,6 +4,27 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
+## P1 — calm atlas UI deploy (2026-10-25)
+
+- ~~**Deploy**~~ ✅ pushed to `main` (`atlas-redesign.css?v=calm-4`,
+  `app.js?v=calm-4`, vendored Leaflet). Schema unchanged. Confirm the Pages
+  workflow goes green.
+
+## P0 — LLM counsel UX / reliability sprint (2026-08-16)
+
+Counsel canvas: open beside chat from session “LLM Counsel — Broken areas & UX”.
+
+- ~~**Day 1 — Trust**~~ ✅
+- ~~**Day 2 — Correctness**~~ ✅
+- ~~**Days 3–5 — Mobile + share**~~ ✅
+- ~~**Later — history Back**~~ ✅ `pushState` on island open + `popstate` /
+  toolbar Back uses `history.back()`.
+- ~~**Later — per-island detail**~~ ✅ `data/details/{id}.json` from
+  `build_islands_index.py` (11,351 files); `ensureIslandDetailLoaded` with
+  nation-shard fallback; Pages stages `data/details/` + `vendor/` + `404.html`.
+- ~~**UX polish**~~ ✅ default list cap 24 + Show all; verified-records orient
+  line; hide Ask FAB on mobile (Ask tab only); map view paints list for sheet.
+
 ## P0 — continuous SEO/GEO (armed)
 
 - **[in flight]** `bash scripts/arm_continuous_seo_geo.sh` →
@@ -20,15 +41,16 @@
 
 ## P0 — GSC indexing after `/islands/` deploy (2026-07-30)
 
-- **[in flight]** Next actions to get clicks (2026-08-13):
-  1. **Deploy** smaller sitemap (1,622 island URLs, not 11,380) + richer landings.
-  2. **Request indexing** in GSC on hubs + Scilly St Mary's, Bute, Staffa, Anglesey
-     (`docs/GSC-INDEXING-REQUESTS.md`).
-  3. Optional: import `data/legacy_redirects.csv` as Cloudflare 301s (Pages cannot 301).
-- Canonical `/islands/…` landings are **live HTTP 200**.
-  GSC MCP server currently unhealthy — finish indexing clicks in Search Console.
-- ~~`/profiles/` `noindex` stubs~~ ✅ 2026-08-13 — aliases are now full
-  `index,follow` landings (canonical still `/islands/…`). Needs deploy.
+- ~~**Deploy** smaller sitemap~~ ✅ live `2720d940` (2026-08-13): **1,622** island
+  URLs in sitemap; `/profiles/` `index,follow`; geology prose.
+- ~~GSC **Request indexing**~~ ✅ 2026-08-13: hubs (Scotland, England, Wales,
+  Ireland) + Scilly St Mary's, Bute, Staffa, Anglesey. Hubs + Anglesey were
+  **unknown to Google**; Scilly/Bute/Staffa were already indexed (requested
+  again). Optional next: collections + Lewis & Harris / Lundy / St Kilda /
+  Brownsea (`docs/GSC-INDEXING-REQUESTS.md`). Re-check Inspection in 3–7 days.
+- **[blocked]** Cloudflare 301s — `data/legacy_redirects.csv` ready, but
+  findmyisland.com is GitHub Pages (not proxied through Cloudflare). Needs CF
+  zone + Global API Key/email, or DNS cutover first.
 
 ## P0 — overnight SEO/GEO (superseded by continuous)
 
@@ -43,8 +65,8 @@
 
 ## P0 — GSC + deploy (2026-07-26)
 
-- ~~**blocked on deploy**~~ ✅ `/islands/…` live. Remaining: Request indexing
-  (see GSC indexing P0 above).
+- ~~**blocked on deploy**~~ ✅ `/islands/…` live. Request indexing ✅ 2026-08-13
+  (hubs + Scilly / Bute / Staffa / Anglesey; see GSC indexing P0 above).
 - ~~GSC snapshot + meta-refresh fix + SPA noindex + CalMac title cleanup~~ ✅
 
 ## P0 — nation + name-slug URLs (2026-07-26)

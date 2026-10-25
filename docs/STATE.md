@@ -4,6 +4,30 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-25 (calm atlas UI)** — Map-first desktop layout: floating list, quieter
+header, photographic cards, shorter browse chips. Schema and counts unchanged.
+Shipped to `main` for the Pages deploy.
+
+**2026-08-16 (counsel follow-through)** — Per-island `data/details/{id}.json`
+(**11,351**), history Back (`pushState`/`popstate`), browse list cap 24, mobile
+Ask FAB hidden. Nation shards remain as fallback. Deploy needed for production.
+
+**2026-08-16 (LLM counsel UX ship)** — Shipped counsel Day 1–5: honest access
+labels, Filters Done, boot/shard error UI, deferred seo_path hydrate, ferry
+token match, local Save, mobile bottom sheet, vendor Leaflet, Share/`map=1`
+landing handoff, `404.html`, shard prefetch. Schema unchanged. Deploy needed
+for production.
+
+**2026-08-13 (GSC Request indexing)** — Submitted indexing for nation hubs
+(`/islands/scotland|england|wales|ireland/`) plus Scilly St Mary's, Bute, Staffa,
+and Anglesey. Hubs and Anglesey: **URL is unknown to Google**. Scilly, Bute, Staffa:
+**Page is indexed** (requested recrawl). Cloudflare 301s still blocked: no CF zone
+in front of GitHub Pages; API needs Global API Key + account email.
+
+**2026-08-13 (SEO deploy live)** — Pushed `2720d940`; Pages deploy succeeded.
+Live sitemap is **1,622** island URLs (120 editorial + 1,502 named-with-description).
+`/profiles/anglesey.html` is `index,follow` with geology prose.
+
 **2026-08-13 (SEO next actions)** — Sitemap now asks Google for **1,622** island
 URLs (120 editorial + 1,502 named-with-description), omitting **9,758** unnamed/thin
 records. Landing geology is prose (not a Python dict dump). Cloudflare-ready

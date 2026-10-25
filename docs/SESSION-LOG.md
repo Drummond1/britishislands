@@ -2893,3 +2893,130 @@ loop (`descriptions+photos-gap`, cycle 17).
   - `data/legacy_redirects.csv` — Cloudflare Bulk Redirects for `/profiles/` and `/?island=` on eligible islands (**3,244** rows).
 - **Outcome / counts**: editorial **120**, bulk **1,502**, omitted **9,758**.
 - **Open items kicked to QUEUE.md**: Deploy; GSC Request indexing; optional Cloudflare import.
+
+## 2026-08-13 — Deployed smaller sitemap; GSC/CF blocked on auth
+
+- **Goal**: Run the three SEO actions in order: deploy, Request indexing, Cloudflare 301s.
+- **What changed**:
+  - Pushed `2720d940`; GitHub Pages deploy succeeded.
+  - Live: sitemap-islands **1,502** + editorial **120**; `/profiles/` `index,follow`; geology prose on Anglesey.
+  - Warm-crawled hubs + Scilly St Mary's, Bute, Staffa, Anglesey with Googlebot UA.
+  - GSC Request indexing blocked (Google sign-in). Cloudflare 301 import blocked (no CF proxy on the domain; API needs Global API Key + email).
+- **Outcome / counts**: production sitemap **1,622** island URLs.
+- **Open items kicked to QUEUE.md**: Sign in to GSC and Request indexing; Cloudflare zone + credentials for 301s.
+
+## 2026-08-13 — GSC Request indexing (hubs + priority islands)
+
+- **Goal**: After deploy, request Google recrawl of canonical `/islands/` URLs.
+- **What changed**:
+  - Signed into Search Console as `drummondgilbert@gmail.com` (`sc-domain:findmyisland.com`).
+  - URL Inspection → Request indexing for Scotland, England, Wales, Ireland hubs plus Scilly St Mary's, Bute, Staffa, Anglesey.
+  - Inspect findings: hubs + Anglesey **unknown to Google**; Scilly / Bute / Staffa **already indexed**. No referring sitemaps yet (new smaller sitemap not recrawled).
+- **Outcome / counts**: 8 URLs submitted. Quota remaining for collections / Lewis & Harris / Lundy / St Kilda / Brownsea if wanted.
+- **Open items kicked to QUEUE.md**: Cloudflare 301s (needs DNS proxy + API key); optional extra indexing requests; re-check Inspection in 3–7 days.
+
+## 2026-08-16 — LLM counsel: broken areas & UX review
+
+- **Goal**: Convene a three-counselor LLM review of the codebase focused on
+  fixing broken areas and improving atlas UX (not SEO enrichment).
+- **What changed**:
+  - Parallel counsel: A reliability, B UX product, C perf/deploy (explore agents).
+  - Consensus board + 5-day sprint captured in canvas
+    `llm-counsel-ux-fixes.canvas.tsx` (Cursor canvases dir).
+  - Top P0s: mobile Map/List/profile (dead `sheet-expanded`), ferry
+    `tarbert→islay` false positives, Scotland shard ~9.6 MB on profile open.
+  - QUEUE: new “LLM counsel UX / reliability sprint” block at top.
+- **Outcome / counts**: 10 consensus items (3 P0 / 5 P1 / 2 P2 in board);
+  no code fixes yet — review only.
+- **Open items kicked to QUEUE.md**: Day 1–5 counsel sprint bullets.
+
+## 2026-08-16 — Ship LLM counsel UX / reliability sprint
+
+- **Goal**: Implement counsel recommendations in priority order (trust →
+  correctness → mobile/share/perf).
+- **What changed**:
+  - `islandAccessMethod`: no invented “Private boat”; omit unknown access pills.
+  - Filters footer: **Done · N showing**; ferry ports use token match; removed
+    ambiguous `tarbert→islay`; added Port Askaig / Port Ellen → Islay.
+  - Boot: defer `seo_path_by_id` hydrate; fatal full-viewport banner + Retry;
+    shard load error banner with Retry; deep-link / Ask timeout toasts.
+  - Save works locally without email gate; Share uses `/?island=&map=1`; one
+    Share in hero + Save.
+  - Mobile map: bottom sheet peek/expanded (`sheet-expanded` CSS + handle).
+  - Vendor Leaflet/markercluster/lucide under `vendor/`; `404.html`; idle
+    prefetch scotland/england/ireland/wales shards; profile Sources closed;
+    dropped duplicate key-facts strip.
+  - Landing CTAs → “Open interactive map” + `map=1` (generator + bulk landings).
+- **Outcome / counts**: counsel Day 1–5 items shipped in code; per-island shard
+  API and history Back still deferred.
+- **Open items kicked to QUEUE.md**: later per-island detail API; pushState Back.
+
+## 2026-08-16 — Counsel follow-through (history + per-island details)
+
+- **Goal**: Finish remaining counsel items — browser Back and multi‑MB shard pain.
+- **What changed**:
+  - History: `pushState` when opening an island; `popstate` restores/closes;
+    profile Back prefers `history.back()`.
+  - `build_islands_index.py` writes `data/details/{id}.json` (**11,351**; 29
+    skipped unsafe ids). App loads detail first, nation shard as fallback.
+  - Stopped idle prefetch of full nation shards; prefetch featured details only.
+  - `prepare_pages_artifact.py` stages `data/details/`, `vendor/`, `404.html`.
+  - Default browse list capped at 24 with “Show all”; verified-records orient
+    link; mobile Ask FAB hidden; map view renders list for bottom sheet.
+  - Docs: FRONTEND-PERFORMANCE, QUEUE, STATE.
+- **Outcome / counts**: details **11,351** / ~20.3 MiB; shards still built as
+  fallback (**7** / 20.3 MiB).
+- **Open items kicked to QUEUE.md**: deploy to Pages so details/vendor go live.
+
+## 2026-10-25 — Calm atlas UI
+
+- **Goal**: Make the atlas simpler and more visual — map first, less chrome.
+- **What changed**:
+  - Desktop: full-bleed map, floating glass list, header over the map, zoom
+    controls moved to the top right so they clear the list.
+  - Cards show a photo, name, place, and a short line of description. Dropped
+    the pill row (access, quality, ferry, unverified badges).
+  - Home list leads with recognisable islands (featured, inhabited, photographed)
+    instead of A–Z skerries. Great Britain and Ireland are ranked down so they
+    do not lead the browse.
+  - Browse chips shortened (Ferry, Photos, Stories…). Default copy no longer
+    coaches the user. Ask button reads “Ask”.
+  - Warm paper type on the night-sea palette; gold used for actions instead of
+    the electric blue. Schema unchanged.
+- **Outcome / counts**: UI only. Dataset counts unchanged. Pushed to `main`
+  for the GitHub Pages deploy, including vendored Leaflet/markercluster/lucide
+  so the homepage no longer depends on the unpkg CDN.
+- **Open items kicked to QUEUE.md**: confirm the Pages workflow is green.
+
+## 2026-10-25 — Supabase contributions database restored
+
+- **Goal**: Bring up the Supabase database for accounts, saved islands, and
+  moderated contributions.
+- **What changed**:
+  - Restored the existing **Find My Island** project (`oqqfuddgclotoohekmop`,
+    `eu-west-1`). It was paused; the contributions schema was already applied.
+  - Revoked `EXECUTE` on `handle_new_user()` and `is_staff()` from `public`,
+    `anon`, and `authenticated`. Signup trigger still granted to
+    `supabase_auth_admin`. Same statements added to
+    `supabase/migrations/20260517000000_initial_contributions.sql`.
+  - Gitignored `.env.local` and `config.local.js` now point at the project
+    URL and anon key. Service role key was not written.
+- **Outcome / counts**: Project `ACTIVE_HEALTHY`. Tables: `profiles`,
+  `submissions`, `community_photos`, `community_text`, `reports`, `audit_log`,
+  `saved_islands` (all empty, RLS on). Bucket `community-photos` private,
+  10 MB. `scripts/check_supabase.py` → REST 200, `profiles` ready.
+  `audit_log` has RLS and no policies on purpose (service role only).
+- **Open items kicked to QUEUE.md**: Auth redirect URLs still need setting in
+  the dashboard (site `https://www.findmyisland.com`, local `http://127.0.0.1:8765/**`
+  and `http://localhost:8765/**`) if sign-in is turned on.
+
+## 2026-10-25 — Profile column guard
+
+- **Goal**: Stop a signed-in user promoting themselves to staff.
+- **What changed**: `private.protect_profile_columns` trigger on
+  `public.profiles`. Owners may change `display_name` only. Same SQL appended
+  to `supabase/migrations/20260517000000_initial_contributions.sql`.
+- **Outcome / counts**: Rolled-back checks — display-name update kept
+  `trust_tier` `0`; setting `trust_tier` to `staff` raised `42501`. No test
+  users left in `auth.users`.
+- **Open items kicked to QUEUE.md**: none.

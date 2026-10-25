@@ -224,17 +224,17 @@ function syncChatLauncherContext() {
     const name = islandDisplayName(island);
     launcher.dataset.mode = "island";
     launcher.title = `Ask about ${name}`;
-    if (label) label.textContent = "Ask about this island";
+    if (label) label.textContent = `Ask about ${name}`;
   } else {
     launcher.dataset.mode = "discover";
-    launcher.title = "Help me find an island";
-    if (label) label.textContent = "Help me find an island";
+    launcher.title = "Ask the atlas";
+    if (label) label.textContent = "Ask";
   }
   refreshLucideIcons(launcher);
 }
 
 function islandAccessMethod(island) {
-  if (!island) return "Private boat";
+  if (!island) return "";
   const cw = findCausewayForIsland(island);
   if (cw) {
     const t = cw.accessType || "";
@@ -245,24 +245,8 @@ function islandAccessMethod(island) {
   if (state.ferryIslandIds?.has(island.id)) return "Ferry";
   const transport = `${island.transport || ""} ${island.shortDescription || ""}`.toLowerCase();
   if (/\b(flight|airport|airstrip|air service|fly to)\b/.test(transport)) return "Flight";
-  if ((island.population || 0) > 0 && island.type === "sea") return "Private boat";
-  return "Private boat";
-}
-
-function islandDistinguishingQuality(island) {
-  if (!island) return "";
-  if (islandHasPropertyListing(island)) return "Listed for sale";
-  if ((island.shortDescription || "").trim()) {
-    const s = island.shortDescription.trim();
-    return s.length > 72 ? `${s.slice(0, 69)}…` : s;
-  }
-  if (island.archipelago) return island.archipelago;
-  if (islandHasWrittenStory(island)) return "Editorial story";
-  if (islandHasPhoto(island)) return "Photo available";
-  if (island.heritageDesignation) return island.heritageDesignation;
-  if (island.type === "lake") return "Loch / lake island";
-  if (island.type === "river") return "River island";
-  return capitalize(island.type || "Island");
+  // Do not invent "Private boat" — only return labels we can evidence.
+  return "";
 }
 
 function updateFiltersApplyCount() {
@@ -331,6 +315,8 @@ const state = {
   mobileDetailSuspended: false,
   loadedShards: new Set(),
   shardLoads: new Map(),
+  detailLoads: new Map(),
+  showAllList: false,
   fullRecordsReady: false,
   unnamedOverlayLoaded: false,
   unnamedOverlayLoading: null,
@@ -482,11 +468,11 @@ const NATION_SHARD = {
 };
 
 const BROWSE_QUICK_FILTERS = [
-  { id: "ferry", label: "Reachable by ferry", ferry: true },
+  { id: "ferry", label: "Ferry", ferry: true },
   { id: "inhabited", label: "Inhabited", inhabited: true },
-  { id: "remote", label: "Remote escapes", remote: true },
-  { id: "story", label: "With stories", story: true },
-  { id: "photo", label: "With photos", photo: true },
+  { id: "remote", label: "Remote", remote: true },
+  { id: "story", label: "Stories", story: true },
+  { id: "photo", label: "Photos", photo: true },
   { id: "for-sale", label: "For sale", forSale: true },
 ];
 
@@ -509,6 +495,8 @@ let activeScotlandQuick = null;
 // Ferry terminals often carry OSM ids or null islandId while the atlas
 // uses curated slugs (e.g. mull vs osm-way-…). The trip planner needs a
 // single canonical id per island before we can build the route graph.
+// Port tokens must match as whole words in terminal/route ids (not substrings).
+// Ambiguous names like "tarbert" (Harris / Loch Fyne / Islay) are omitted on purpose.
 const FERRY_PORT_TO_ISLAND = {
   craignure: "mull",
   fionnphort: "mull",
@@ -517,11 +505,22 @@ const FERRY_PORT_TO_ISLAND = {
   iona: "iona",
   armadale: "isle-of-skye",
   brodick: "arran",
-  tarbert: "islay",
+  portaskaig: "islay",
+  "port ellen": "islay",
+  portellen: "islay",
   portavadie: "bute",
   rathlin: "rathlin",
   lundy: "lundy",
 };
+
+function _portTokenMatch(haystack, port) {
+  if (!haystack || !port) return false;
+  const h = String(haystack).toLowerCase();
+  const p = String(port).toLowerCase();
+  if (p.includes(" ")) return h.includes(p);
+  const tokens = h.split(/[^a-z0-9]+/).filter(Boolean);
+  return tokens.includes(p);
+}
 
 function _ferryNorm(s) {
   return (s || "")
@@ -603,12 +602,12 @@ function _preferCuratedIslandId(id) {
 function resolveFerryIslandId(rawId, terminal, route) {
   const termKey = (terminal?.id || "").toLowerCase();
   for (const [port, islandId] of Object.entries(FERRY_PORT_TO_ISLAND)) {
-    if (termKey.includes(port) && state.byId.has(islandId)) return islandId;
+    if (_portTokenMatch(termKey, port) && state.byId.has(islandId)) return islandId;
   }
   if (route?.id) {
     const slug = route.id.toLowerCase();
     for (const [port, islandId] of Object.entries(FERRY_PORT_TO_ISLAND)) {
-      if (slug.includes(port) && state.byId.has(islandId)) return islandId;
+      if (_portTokenMatch(slug, port) && state.byId.has(islandId)) return islandId;
     }
   }
   const ref = state.ferryIslandRef;
@@ -1102,10 +1101,26 @@ function showIslandOnMap(id) {
   if (!island || !map) return;
   state.activeId = id;
   renderListWindow();
+  flyMapToIsland(island);
+  loadAndShowPolygon(island);
+}
+
+function flyMapToIsland(island, { fly = true } = {}) {
+  if (!island || !map) return false;
+  const lat = Number(island.lat);
+  const lng = Number(island.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    showToast("This island has no map coordinates yet");
+    return false;
+  }
   const targetZoom =
     island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
-  map.flyTo([island.lat, island.lng], targetZoom, { duration: 0.7 });
-  loadAndShowPolygon(island);
+  if (fly && !prefersReducedMotion()) {
+    map.flyTo([lat, lng], targetZoom, { duration: 0.7 });
+  } else {
+    map.setView([lat, lng], targetZoom);
+  }
+  return true;
 }
 
 // Lazy-fetch data/galleries.json on first island click. Extra images live
@@ -1231,7 +1246,7 @@ function updateSavedUiChrome() {
   const btn = document.getElementById("saved-islands-btn");
   const n = state.favoriteIds?.size || 0;
   if (!btn) return;
-  const text = hasFavoritesAccess() && n > 0 ? `Saved (${n})` : "Saved";
+  const text = n > 0 ? `Saved (${n})` : "Saved";
   const label = btn.querySelector(".topbar-link__label");
   if (label) label.textContent = text;
   else btn.textContent = text;
@@ -1239,15 +1254,12 @@ function updateSavedUiChrome() {
 }
 
 function showSavedIslandsList() {
-  const run = () => {
-    if (els.favoritesFilter) els.favoritesFilter.value = "favorites";
-    applyFilters();
-    if (els.listSection) els.listSection.hidden = false;
-    if (els.details) els.details.hidden = true;
-    if (typeof mobileNav !== "undefined" && mobileNav.isActive()) mobileNav.setView("islands");
-    els.sidebar?.scrollTo?.(0, 0);
-  };
-  ensureFavoritesAccess(run);
+  if (els.favoritesFilter) els.favoritesFilter.value = "favorites";
+  applyFilters();
+  if (els.listSection) els.listSection.hidden = false;
+  if (els.details) els.details.hidden = true;
+  if (typeof mobileNav !== "undefined" && mobileNav.isActive()) mobileNav.setView("islands");
+  els.sidebar?.scrollTo?.(0, 0);
 }
 
 function ensureFavoritesAccess(onGranted) {
@@ -1331,30 +1343,30 @@ function initFavoritesAccessUi() {
 
 function toggleFavoriteIsland(id) {
   if (!id || !state.favoriteIds) return;
-  const applyToggle = () => {
-    if (state.favoriteIds.has(id)) state.favoriteIds.delete(id);
-    else state.favoriteIds.add(id);
-    persistFavoriteIds();
-    updateSavedUiChrome();
-    scheduleRenderListWindow();
-    rebuildMarkerLayer();
-    syncDetailsFavoriteButton(id);
-  };
-  if (!hasFavoritesAccess()) {
-    ensureFavoritesAccess(applyToggle);
-    return;
-  }
-  applyToggle();
+  if (state.favoriteIds.has(id)) state.favoriteIds.delete(id);
+  else state.favoriteIds.add(id);
+  persistFavoriteIds();
+  updateSavedUiChrome();
+  scheduleRenderListWindow();
+  rebuildMarkerLayer();
+  syncDetailsFavoriteButton(id);
 }
 
 function syncDetailsFavoriteButton(islandId) {
-  const btn = document.getElementById("details-favorite-btn");
-  if (!btn || state.activeId !== islandId) return;
   const on = isFavoriteIsland(islandId);
-  btn.setAttribute("aria-pressed", on ? "true" : "false");
-  btn.setAttribute("aria-label", on ? "Remove from saved islands" : "Save island to list");
-  btn.textContent = on ? "♥" : "♡";
-  btn.classList.toggle("is-favorite", on);
+  for (const btnId of ["details-favorite-btn", "details-favorite-inline"]) {
+    const btn = document.getElementById(btnId);
+    if (!btn || state.activeId !== islandId) continue;
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    btn.setAttribute("aria-label", on ? "Remove from saved islands" : "Save island to list");
+    btn.classList.toggle("is-favorite", on);
+    if (btnId === "details-favorite-inline") {
+      btn.textContent = on ? "Saved" : "Save";
+    } else {
+      btn.innerHTML = `<span data-lucide="heart" aria-hidden="true"></span> ${on ? "Saved" : "Save"}`;
+      refreshLucideIcons(btn);
+    }
+  }
 }
 
 // ---------- Suggest a correction (GitHub issues; no accounts on-site) ----------
@@ -1444,6 +1456,14 @@ function renderCorrectionReport(island) {
 }
 
 // ---------- Map ----------
+if (typeof L === "undefined") {
+  document.body?.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="atlas-fatal-banner" role="alert"><p class="atlas-fatal-banner__title">Map library failed to load</p><p class="atlas-fatal-banner__msg">Refresh the page. If it keeps failing, check that vendor/leaflet is deployed.</p><button type="button" class="atlas-fatal-banner__btn" onclick="location.reload()">Retry</button></div>`,
+  );
+  throw new Error("Leaflet (L) is not defined");
+}
+
 const map = L.map("map", {
   center: [55.5, -4.0],
   zoom: 6,
@@ -1630,7 +1650,7 @@ function wireForSaleMarkerInteractions(marker, island) {
   const fillPopupFromShard = async () => {
     if (!Array.isArray(island.propertyListings) || !island.propertyListings.some((r) => r?.url)) {
       try {
-        await ensureNationShardLoaded(island.nation);
+        await ensureIslandDetailLoaded(island);
       } catch (_) {
         /* non-fatal — fallback copy below */
       }
@@ -1688,7 +1708,7 @@ function rebuildFavoritesMapLayer() {
     state.favoritesMapLayer.addTo(map);
   }
   state.favoritesMapLayer.clearLayers();
-  if (!hasFavoritesAccess() || !state.favoriteIds?.size) return;
+  if (!state.favoriteIds?.size) return;
   for (const id of state.favoriteIds) {
     const island = state.byId.get(id);
     if (!island) continue;
@@ -2221,27 +2241,31 @@ function initCrowdSuggestUi() {
 }
 
 
-function syncIslandUrl(id) {
+function syncIslandUrl(id, { mode = "replace" } = {}) {
   try {
     const url = new URL(window.location.href);
     url.searchParams.delete("island");
+    url.searchParams.delete("map");
+    let href;
+    let histState = { islandId: id || null };
     if (!id) {
       if (url.pathname.startsWith("/islands/")) url.pathname = "/";
-      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
-      return;
+      href = url.pathname + url.search + url.hash;
+    } else {
+      const island = state.byId.get(id);
+      registerIslandSeoPath(island);
+      const sp = normalizeSeoPath(island?.seoPath);
+      if (sp) {
+        url.pathname = sp;
+        href = url.pathname + url.search + url.hash;
+      } else {
+        url.pathname = "/";
+        url.searchParams.set("island", id);
+        href = url.pathname + url.search + url.hash;
+      }
     }
-    const island = state.byId.get(id);
-    registerIslandSeoPath(island);
-    const sp = normalizeSeoPath(island?.seoPath);
-    if (sp) {
-      url.pathname = sp;
-      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
-      return;
-    }
-    // Fallback until seoPath is stamped (should be rare after index rebuild).
-    url.pathname = "/";
-    url.searchParams.set("island", id);
-    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+    if (mode === "push") window.history.pushState(histState, "", href);
+    else window.history.replaceState(histState, "", href);
   } catch (_) {
     /* non-fatal */
   }
@@ -2250,15 +2274,18 @@ function syncIslandUrl(id) {
 function focusIslandFromRouteId(islandId) {
   if (!islandId) return false;
   if (state.byId?.has(islandId)) {
-    focusIsland(islandId, { fly: true });
+    focusIsland(islandId, { fly: true, fromHistory: true });
     return true;
   }
   if (islandId.startsWith("osm-")) {
     loadUnnamedIslandOverlay()
       .then(() => {
-        if (state.byId.has(islandId)) focusIsland(islandId, { fly: true });
+        if (state.byId.has(islandId)) focusIsland(islandId, { fly: true, fromHistory: true });
+        else showToast("Island not found in the atlas");
       })
-      .catch(() => {});
+      .catch(() => {
+        showToast("Could not load unnamed islands — try again");
+      });
     return true;
   }
   return false;
@@ -2267,22 +2294,35 @@ function focusIslandFromRouteId(islandId) {
 function applyRouteFromUrl() {
   try {
     const params = new URLSearchParams(window.location.search);
+    const wantMap = params.get("map") === "1";
     const seoFromPath = parseIslandsPathname(window.location.pathname);
     if (seoFromPath) {
       const pathId = state.bySeoPath.get(seoFromPath);
-      if (focusIslandFromRouteId(pathId)) return;
+      if (focusIslandFromRouteId(pathId)) {
+        if (wantMap && typeof mobileNav !== "undefined") mobileNav.setView?.("map");
+        return;
+      }
       // Path may be an unnamed island not yet in the overlay.
       loadUnnamedIslandOverlay()
         .then(() => {
           rebuildSeoPathIndex();
           const id = state.bySeoPath.get(seoFromPath);
           if (id) focusIsland(id, { fly: true });
+          else showToast("Island not found for this link");
         })
-        .catch(() => {});
+        .catch(() => {
+          showToast("Could not open this island link");
+        });
       return;
     }
     const islandId = params.get("island");
-    if (islandId && focusIslandFromRouteId(islandId)) return;
+    if (islandId && focusIslandFromRouteId(islandId)) {
+      if (wantMap && typeof mobileNav !== "undefined") mobileNav.setView?.("map");
+      return;
+    }
+    if (islandId && !state.byId?.has(islandId) && !islandId.startsWith("osm-")) {
+      showToast("Island not found for this link");
+    }
     const exploreId = params.get("explore");
     if (exploreId && state.discoveryTopics?.some((t) => t.id === exploreId)) {
       setExploreTopic(exploreId, { skipUrl: true });
@@ -2346,6 +2386,104 @@ async function loadNationShard(slug) {
 async function ensureNationShardLoaded(nation) {
   const slug = nationShardSlug(nation);
   await loadNationShard(slug);
+}
+
+async function ensureIslandDetailLoaded(island) {
+  if (!island?.id) return null;
+  if (island.__fullMerged) return island;
+  const id = island.id;
+  if (state.detailLoads.has(id)) {
+    await state.detailLoads.get(id);
+    return state.byId.get(id) || island;
+  }
+  const job = (async () => {
+    try {
+      const res = await fetch(`data/details/${encodeURIComponent(id)}.json`);
+      if (res.ok) {
+        const full = await res.json();
+        const stub = state.byId.get(id);
+        if (stub && full && typeof full === "object") {
+          mergeIslandDetailFromFull(stub, full);
+        }
+        return;
+      }
+    } catch (_) {
+      /* fall through to nation shard */
+    }
+    await ensureNationShardLoaded(island.nation);
+  })();
+  state.detailLoads.set(id, job);
+  try {
+    await job;
+  } finally {
+    state.detailLoads.delete(id);
+  }
+  return state.byId.get(id) || island;
+}
+
+function prefetchPopularDetails() {
+  const ids = [];
+  for (const row of state.featuredIslands || []) {
+    if (row?.id) ids.push(row.id);
+    if (ids.length >= 16) break;
+  }
+  for (const id of ids) {
+    const isl = state.byId.get(id);
+    if (isl && !isl.__fullMerged) ensureIslandDetailLoaded(isl).catch(() => {});
+  }
+}
+
+function showAtlasFatalError(message) {
+  setAppLoading(false);
+  document.body.classList.add("atlas-boot-failed");
+  let banner = document.getElementById("atlas-fatal-banner");
+  if (!banner) {
+    banner = document.createElement("div");
+    banner.id = "atlas-fatal-banner";
+    banner.className = "atlas-fatal-banner";
+    banner.setAttribute("role", "alert");
+    document.body.appendChild(banner);
+  }
+  banner.hidden = false;
+  banner.innerHTML = `
+    <p class="atlas-fatal-banner__title">Atlas failed to load</p>
+    <p class="atlas-fatal-banner__msg">${escapeHtml(message || "Unknown error")}</p>
+    <button type="button" class="atlas-fatal-banner__btn" id="atlas-fatal-retry">Retry</button>`;
+  document.getElementById("atlas-fatal-retry")?.addEventListener("click", () => {
+    window.location.reload();
+  });
+  if (els.list) {
+    els.list.innerHTML = `<li class="island-card" style="color:#ff8a8a">Failed to load island data. Use Retry above.</li>`;
+  }
+}
+
+function showShardLoadError(island, err) {
+  const host = els.detailsContent;
+  if (!host || state.activeId !== island?.id) {
+    showToast("Could not load full island profile");
+    return;
+  }
+  let bar = host.querySelector(".shard-load-error");
+  if (!bar) {
+    bar = document.createElement("div");
+    bar.className = "shard-load-error";
+    bar.setAttribute("role", "status");
+    host.prepend(bar);
+  }
+  bar.innerHTML = `
+    <p>Full profile did not load (${escapeHtml(err?.message || "network error")}).</p>
+    <button type="button" class="shard-load-error__btn" data-shard-retry>Retry</button>`;
+  bar.querySelector("[data-shard-retry]")?.addEventListener("click", () => {
+    bar.remove();
+    const id = island.id;
+    const stub = state.byId.get(id) || island;
+    if (stub) stub.__fullMerged = false;
+    ensureIslandDetailLoaded(stub)
+      .then(() => {
+        if (state.activeId === id) focusIsland(id, { fly: false, fromHistory: true });
+      })
+      .catch((e) => showShardLoadError(island, e));
+  });
 }
 
 async function loadMonolithicIslandFallback() {
@@ -2441,17 +2579,18 @@ async function loadIslands() {
         renderScotlandQuickChips();
         renderBrowseQuickChips();
         applyFilters({ skipMarkers: true, skipSort: true });
-        await hydrateSeoPathsFromLookup();
         applyRouteFromUrl();
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
         setAppLoading(false);
         state.booting = false;
         runWhenIdle(() => {
+          hydrateSeoPathsFromLookup().catch(() => {});
           rebuildMarkerLayer({ chunked: true });
           loadCrowdPinsAndRender();
           loadFerries().catch(() => {});
           loadFeaturedIslands().catch(() => {});
           if (!state.discoveryTopics) loadDiscoveryTopics().catch(() => {});
+          prefetchPopularDetails();
         });
         return;
       }
@@ -2478,8 +2617,8 @@ async function loadIslands() {
     }
   } catch (error) {
     console.error("Failed to load islands.json", error);
-    els.list.innerHTML = `<li class="island-card" style="color:#ff8a8a">Failed to load island data: ${error.message}. Are you serving the site over HTTP (not file://)?</li>`;
     settleIslandsIndex?.();
+    showAtlasFatalError(error?.message || String(error));
     return;
   } finally {
     setAppLoading(false);
@@ -2493,8 +2632,11 @@ async function loadIslands() {
   renderScotlandQuickChips();
   renderBrowseQuickChips();
   applyFilters();
-  await hydrateSeoPathsFromLookup();
   applyRouteFromUrl();
+  runWhenIdle(() => {
+    hydrateSeoPathsFromLookup().catch(() => {});
+    prefetchPopularDetails();
+  });
   loadCrowdPinsAndRender();
   loadFerries().catch(() => {});
   loadFeaturedIslands().catch(() => {});
@@ -2509,8 +2651,21 @@ async function loadFeaturedIslands() {
       const data = await res.json();
       const rows = Array.isArray(data?.islands) ? data.islands : [];
       state.featuredIslands = rows.filter((r) => r?.id && state.byId?.has(r.id));
-      renderExploreStrip(state.featuredIslands, "Start exploring");
+      for (const row of state.featuredIslands) {
+        const island = state.byId.get(row.id);
+        if (!island) continue;
+        island.featuredTier = row.tier || "featured";
+        if (row.thumbUrl && !island.thumbUrl) island.thumbUrl = row.thumbUrl;
+        if (row.shortDescription && !island.shortDescription) {
+          island.shortDescription = row.shortDescription;
+        }
+        if (row.hasPhoto) island.hasImage = true;
+      }
+      browseRankCache.source = null;
+      renderExploreStrip(state.featuredIslands, "Begin with");
       syncFeaturedStripVisibility();
+      if (!hasUserDiscoveryIntent()) renderList();
+      runWhenIdle(() => prefetchPopularDetails());
     }
   } catch (e) {
     console.warn("featured_islands.json unavailable", e);
@@ -2652,7 +2807,7 @@ function renderExploreStrip(rows, title) {
     btn.className = "featured-card";
     btn.setAttribute("role", "listitem");
     btn.setAttribute("aria-label", `${row.name}, ${row.nation || island.nation}`);
-    const thumb = row.thumbUrl || island.image;
+    const thumb = islandThumbUrl(island) || row.thumbUrl || island.image;
     const imgHtml = thumb
       ? `<img class="featured-card__img" src="${escapeAttr(thumb)}" alt="" loading="lazy" />`
       : `<span class="featured-card__placeholder" aria-hidden="true">◍</span>`;
@@ -3130,7 +3285,7 @@ function updateMapIslandPeek(islandId) {
   }
   nameEl.textContent = islandDisplayName(isl);
   if (metaEl) {
-    metaEl.textContent = [isl.nation, islandAccessMethod(isl)].filter(Boolean).join(" · ");
+    metaEl.textContent = [isl.nation, islandAccessMethod(isl) || null].filter(Boolean).join(" · ");
   }
   bar.hidden = false;
 }
@@ -3171,8 +3326,13 @@ function initAtlasChrome() {
       }
     }, 200);
   });
-  // Expand mobile results sheet when tapping the discovery header
+  // Expand / collapse mobile results sheet when tapping the discovery header
   document.getElementById("list-heading")?.addEventListener("click", () => {
+    if (mobileNav.isActive() && mobileNav.view === "map") {
+      document.body.classList.toggle("sheet-expanded");
+    }
+  });
+  document.getElementById("discovery-sheet-handle")?.addEventListener("click", () => {
     if (mobileNav.isActive() && mobileNav.view === "map") {
       document.body.classList.toggle("sheet-expanded");
     }
@@ -3231,6 +3391,28 @@ function listSortCompare(a, b, { photosFirst = false } = {}) {
     if (ap !== bp) return bp - ap;
   }
   return a.name.localeCompare(b.name);
+}
+
+/** Home browse only: lead with places a visitor would recognise. */
+function browseAppeal(island) {
+  if (!island) return 0;
+  let score = 0;
+  if (island.featuredTier === "curated" || island.source === "curated") score += 12;
+  else if (island.featuredTier) score += 6;
+  if (island.hasImage || islandHasPhoto(island)) score += 4;
+  const blurb = (island.shortDescription || "").trim();
+  if (blurb.length > 40) score += 3;
+  else if (blurb) score += 1;
+  if (island.population > 10000) score += 5;
+  else if (island.population > 1000) score += 3;
+  else if (island.population > 0) score += 1;
+  const area = island.areaKm2 || 0;
+  // Great Britain and Ireland are in the dataset, but they should not lead the browse.
+  if (area > 20000) score -= 30;
+  if (area >= 100) score += 4;
+  else if (area >= 20) score += 2;
+  else if (area >= 1) score += 1;
+  return score;
 }
 
 // ---------- Filtering ----------
@@ -3372,13 +3554,12 @@ function applyFilters(opts = {}) {
   const subtype = els.subtypeFilter?.value || "";
   const confidence = els.confidenceFilter?.value || "";
   const photosFirst = photoOnly || Boolean(topic?.filterPresets?.photosFirst);
-  const totalNamed = state.islands.filter((i) => !isUnnamedIsland(i)).length || state.islands.length;
   if (els.listHeading) {
     if (favOnly) els.listHeading.textContent = "Saved islands";
     else if (topic) els.listHeading.textContent = topic.title;
     else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed landmasses";
     else if (hasUserDiscoveryIntent()) els.listHeading.textContent = "Search results";
-    else els.listHeading.textContent = `Discover ${totalNamed.toLocaleString()} British and Irish islands`;
+    else els.listHeading.textContent = "Islands";
   }
 
   const passesScope = (i) => {
@@ -3457,8 +3638,19 @@ function applyFilters(opts = {}) {
   } else {
     state.filtered = state.islands.filter(passesScope);
     if (!skipSort) {
-      state.filtered.sort((a, b) => listSortCompare(a, b, { photosFirst }));
+      if (!hasUserDiscoveryIntent()) {
+        state.filtered.sort(
+          (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
+        );
+      } else {
+        state.filtered.sort((a, b) => listSortCompare(a, b, { photosFirst }));
+      }
     }
+  }
+  if (!hasUserDiscoveryIntent()) {
+    /* keep showAllList sticky only while browsing without filters */
+  } else {
+    state.showAllList = false;
   }
 
   renderList();
@@ -3509,17 +3701,6 @@ if (els.filterUnnamed) {
 
 if (els.favoritesFilter) {
   els.favoritesFilter.addEventListener("change", () => {
-    const wantSaved = els.favoritesFilter.value === "favorites";
-    if (wantSaved && !hasFavoritesAccess()) {
-      const revert = els.favoritesFilter.dataset.prevValue || "";
-      ensureFavoritesAccess(() => {
-        els.favoritesFilter.value = "favorites";
-        applyFilters();
-      });
-      els.favoritesFilter.value = revert;
-      return;
-    }
-    if (!wantSaved) els.favoritesFilter.dataset.prevValue = els.favoritesFilter.value;
     applyFilters();
   });
 }
@@ -3532,10 +3713,84 @@ let listRenderRaf = 0;
 
 function shouldRenderListWindow() {
   if (els.details && !els.details.hidden) return false;
-  if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view !== "islands") {
+  // Allow list paint on mobile Map (bottom sheet); skip only Ask.
+  if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view === "ask") {
     return false;
   }
   return true;
+}
+
+const LIST_BROWSE_CAP = 24;
+let browseRankCache = { source: null, rows: null };
+
+function rankedForBrowse(all) {
+  if (browseRankCache.source === all && browseRankCache.rows) return browseRankCache.rows;
+  const rows = all.slice().sort(
+    (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
+  );
+  browseRankCache = { source: all, rows };
+  return rows;
+}
+
+function getListDisplayRows() {
+  const all = state.filtered || [];
+  if (state.showAllList || hasUserDiscoveryIntent() || all.length <= LIST_BROWSE_CAP) {
+    return { rows: all, truncatedFrom: 0 };
+  }
+  const seen = new Set();
+  const unique = [];
+  for (const island of rankedForBrowse(all)) {
+    const key = (island.name || "").trim().toLowerCase();
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    unique.push(island);
+    if (unique.length >= LIST_BROWSE_CAP) break;
+  }
+  return { rows: unique, truncatedFrom: all.length };
+}
+
+function updateSidebarOrient() {
+  const el = document.getElementById("sidebar-orient");
+  if (!el) return;
+  const hasFilters = countActiveFilters() > 0;
+  const hasQuery = Boolean(els.search?.value?.trim());
+  const hidingUnverified = els.confidenceFilter?.value === "hide-unconfirmed";
+  if (hasQuery) {
+    el.textContent = "Matching your search";
+    return;
+  }
+  if (hasFilters) {
+    el.textContent = "Filtered";
+    return;
+  }
+  if (hidingUnverified) {
+    el.innerHTML =
+      'Verified places · <button type="button" class="sidebar-orient__link" id="include-unverified-btn">Show all records</button>';
+    document.getElementById("include-unverified-btn")?.addEventListener("click", () => {
+      if (els.confidenceFilter) els.confidenceFilter.value = "";
+      applyFilters();
+    });
+    return;
+  }
+  el.textContent = "A few places to start";
+}
+
+function renderList() {
+  ensureListScaffolding();
+  const filtered = state.filtered.length;
+  const total = state.islands.length;
+  const { rows, truncatedFrom } = getListDisplayRows();
+  if (truncatedFrom) {
+    els.count.textContent = `${rows.length.toLocaleString()} of ${filtered.toLocaleString()}`;
+    els.count.classList.add("count--filtered");
+  } else {
+    els.count.textContent = formatResultCount(filtered, total);
+    els.count.classList.toggle("count--filtered", total > 0 && filtered !== total);
+  }
+  updateSidebarOrient();
+  listSpacer.style.height = `${Math.max(rows.length, 1) * ROW_HEIGHT + (truncatedFrom ? 56 : 0)}px`;
+  if (listScroller) listScroller.scrollTop = 0;
+  scheduleRenderListWindow();
 }
 
 function scheduleRenderListWindow() {
@@ -3574,33 +3829,6 @@ function formatResultCount(filtered, total) {
   return `${f.toLocaleString()} of ${t.toLocaleString()}`;
 }
 
-function updateSidebarOrient() {
-  const el = document.getElementById("sidebar-orient");
-  if (!el) return;
-  const hasFilters = countActiveFilters() > 0;
-  const hasQuery = Boolean(els.search?.value?.trim());
-  if (hasQuery) {
-    el.textContent = "Matching your search";
-  } else if (hasFilters) {
-    el.textContent = "Filtered list — clear chips to reset";
-  } else {
-    el.textContent = "Search, filter, or start exploring below";
-  }
-}
-
-function renderList() {
-  ensureListScaffolding();
-  const filtered = state.filtered.length;
-  const total = state.islands.length;
-  els.count.textContent = formatResultCount(filtered, total);
-  els.count.classList.toggle("count--filtered", total > 0 && filtered !== total);
-  updateSidebarOrient();
-  listSpacer.style.height = `${Math.max(filtered, 1) * ROW_HEIGHT}px`;
-  // Reset scroll to top when filter changes
-  listScroller.scrollTop = 0;
-  scheduleRenderListWindow();
-}
-
 function getListScrollTopInRows() {
   if (!listScroller || !els.list) return 0;
   const listTopInScroller =
@@ -3634,8 +3862,8 @@ function renderListEmptyOrSkeleton(total) {
       <p class="list-empty__title">No islands match</p>
       <p class="list-empty__hint">${
         hasQuery
-          ? "Try a shorter name, or clear search and browse Start here."
-          : "Clear filters, or tap Stories / Photos above."
+          ? "Try a shorter name, or clear the search."
+          : "Clear filters, or try Photos or Stories above."
       }</p>
       <div class="list-empty__actions">
         <button type="button" class="list-empty__btn" data-action="clear-filters">Clear filters</button>
@@ -3655,10 +3883,11 @@ function renderListWindow() {
   if (!listInner || !shouldRenderListWindow()) return;
   const scrollTop = getListScrollTopInRows();
   const viewportH = listScroller.clientHeight;
-  const total = state.filtered.length;
+  const { rows, truncatedFrom } = getListDisplayRows();
+  const total = rows.length;
 
-  if (total === 0) {
-    renderListEmptyOrSkeleton(total);
+  if (state.filtered.length === 0) {
+    renderListEmptyOrSkeleton(0);
     return;
   }
 
@@ -3672,7 +3901,7 @@ function renderListWindow() {
   listInner.innerHTML = "";
 
   for (let i = first; i < last; i++) {
-    const island = state.filtered[i];
+    const island = rows[i];
     if (!island) continue;
     const wrap = document.createElement("div");
     const hasListing = islandHasPropertyListing(island);
@@ -3689,15 +3918,15 @@ function renderListWindow() {
     main.type = "button";
     main.className = "island-card__main";
     main.style.height = `${ROW_HEIGHT - 8}px`;
-    const hasFerry = state.ferryIslandIds && state.ferryIslandIds.has(island.id);
     const unconfirmed = island.classification?.confidence === "unconfirmed";
     const displayName = islandDisplayName(island);
     const access = islandAccessMethod(island);
-    const quality = islandDistinguishingQuality(island);
-    const placeBits = [island.nation, island.archipelago].filter(Boolean).join(" · ");
+    const placeBits = [island.nation, island.archipelago]
+      .filter((v) => v && v !== "—" && v !== "-")
+      .join(" · ");
     main.setAttribute(
       "aria-label",
-      `${displayName}, ${placeBits}, ${formatPopulation(island.population)}, ${access}`,
+      [displayName, placeBits, formatPopulation(island.population), access].filter(Boolean).join(", "),
     );
     if (island.id === state.activeId) {
       main.setAttribute("aria-current", "true");
@@ -3707,27 +3936,33 @@ function renderListWindow() {
     const fav = isFavoriteIsland(island.id);
     const thumb = islandThumbUrl(island);
     const thumbHtml = thumb
-      ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" width="72" height="72" loading="lazy" decoding="async" />`
+      ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="" width="104" height="116" loading="lazy" decoding="async" />`
       : renderEmptyThumb(island);
+    const metaBits = [];
+    if (placeBits) metaBits.push(escapeHtml(placeBits));
+    if (island.population != null) metaBits.push(escapeHtml(formatPopulation(island.population)));
+    if (access) metaBits.push(escapeHtml(access));
+    const blurbRaw = (island.shortDescription || "").trim();
+    let blurb = blurbRaw;
+    if (blurbRaw.length > 96) {
+      const cut = blurbRaw.slice(0, 95);
+      const sp = cut.lastIndexOf(" ");
+      blurb = `${(sp > 48 ? cut.slice(0, sp) : cut).trim()}…`;
+    }
     main.innerHTML = `
       ${thumbHtml}
       <div class="island-card__text">
         <div class="island-card__title">
-          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : `<span class="dot dot--${island.type}" aria-hidden="true"></span>`}
+          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : ""}
           ${escapeHtml(displayName)}
           ${unnamed ? '<span class="island-card__unnamed-pill">Needs name</span>' : ""}
           ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
         </div>
         <div class="island-card__meta">
-          <span>${escapeHtml(placeBits || "—")}</span>
-          <span>${formatPopulation(island.population)}</span>
+          <span>${metaBits.join(" · ") || "—"}</span>
+          ${unconfirmed ? '<span class="island-card__quiet">Unverified</span>' : ""}
         </div>
-        <div class="island-card__facts">
-          <span class="island-card__pill island-card__pill--access">${escapeHtml(access)}</span>
-          ${quality ? `<span class="island-card__pill island-card__pill--quality">${escapeHtml(quality)}</span>` : ""}
-          ${hasFerry && access !== "Ferry" ? '<span class="island-card__pill">Ferry nearby</span>' : ""}
-          ${unconfirmed ? '<span class="island-card__pill" title="Record not yet fully verified">Unverified</span>' : ""}
-        </div>
+        ${blurb ? `<p class="island-card__blurb">${escapeHtml(blurb)}</p>` : ""}
       </div>
     `;
     main.addEventListener("click", () => focusIsland(island.id, { fly: true }));
@@ -3769,6 +4004,16 @@ function renderListWindow() {
     }
     wrap.appendChild(favBtn);
     listInner.appendChild(wrap);
+  }
+  if (truncatedFrom && last >= total) {
+    const more = document.createElement("div");
+    more.className = "list-show-all";
+    more.innerHTML = `<button type="button" class="list-show-all__btn" data-action="show-all-list">Show all ${truncatedFrom.toLocaleString()} islands</button>`;
+    more.querySelector("[data-action='show-all-list']")?.addEventListener("click", () => {
+      state.showAllList = true;
+      renderList();
+    });
+    listInner.appendChild(more);
   }
   refreshLucideIcons(listInner);
 }
@@ -3829,7 +4074,7 @@ let markerBootGraceUntil = 0;
 const MARKER_CHUNK_SIZE = 350;
 
 function addMarkerToLayer(island, layer) {
-  if (hasFavoritesAccess() && isFavoriteIsland(island.id)) return null;
+  if (isFavoriteIsland(island.id)) return null;
   if (islandHasPropertyListing(island)) return null;
   const m = makeMarker(island);
   state.markers.set(island.id, m);
@@ -3891,13 +4136,18 @@ function scheduleMarkerViewportRefresh() {
 map.on("moveend zoomend", scheduleMarkerViewportRefresh);
 
 // ---------- Details panel ----------
-function focusIsland(id, { fly } = { fly: true }) {
+function focusIsland(id, { fly = true, fromHistory = false } = {}) {
   const stub = state.byId.get(id);
   if (!stub) return;
 
   dismissMapHint();
+  const prevId = state.activeId;
   state.activeId = id;
-  syncIslandUrl(id);
+  if (!fromHistory) {
+    syncIslandUrl(id, { mode: prevId === id ? "replace" : "push" });
+  } else {
+    syncIslandUrl(id, { mode: "replace" });
+  }
   scheduleRenderListWindow();
 
   const openIsland = (island) => {
@@ -3907,13 +4157,7 @@ function focusIsland(id, { fly } = { fly: true }) {
     if (mobileNav.isActive()) mobileNav.setView("islands");
 
     if (fly) {
-      const targetZoom =
-        island.type === "river" ? 14 : island.areaKm2 < 1 ? 12 : island.areaKm2 < 50 ? 11 : 10;
-      if (prefersReducedMotion()) {
-        map.setView([island.lat, island.lng], targetZoom);
-      } else {
-        map.flyTo([island.lat, island.lng], targetZoom, { duration: 0.7 });
-      }
+      flyMapToIsland(island, { fly: true });
     }
 
     loadAndShowPolygon(island);
@@ -3940,9 +4184,12 @@ function focusIsland(id, { fly } = { fly: true }) {
   }
 
   openIsland(stub);
-  ensureNationShardLoaded(stub.nation)
-    .then(() => openIsland(state.byId.get(id)))
-    .catch((err) => console.warn("Could not load full island record", err));
+  ensureIslandDetailLoaded(stub)
+    .then((full) => openIsland(full || state.byId.get(id)))
+    .catch((err) => {
+      console.warn("Could not load full island record", err);
+      showShardLoadError(stub, err);
+    });
 }
 
 // Drop-in replacement for the ferry block when ferries.json has finished
@@ -4406,7 +4653,6 @@ function renderDetails(island) {
 
   const altNames = renderAltNames(island);
   const sparseLede = renderSparseProfileLede(island);
-  const keyFacts = renderKeyFactsStrip(island);
   const provenanceBlock = renderProvenanceBlock(island);
 
   cancelTerrainMount();
@@ -4485,12 +4731,13 @@ function renderDetails(island) {
       <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Area</span><span class="profile-overview-stat__value">${formatAreaRow(island)}</span></div>
       <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Population</span><span class="profile-overview-stat__value">${formatPopulationCell(island)}</span></div>
       <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Status</span><span class="profile-overview-stat__value">${escapeHtml(inhabitedLabel)}</span></div>
-      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Access</span><span class="profile-overview-stat__value">${escapeHtml(accessMethod)}${hasFerryAccess ? " · Ferry available" : ""}</span></div>
+      <div class="profile-overview-stat" role="listitem"><span class="profile-overview-stat__label">Access</span><span class="profile-overview-stat__value">${escapeHtml(accessMethod || "Access unclear")}${hasFerryAccess && accessMethod !== "Ferry" ? " · Ferry available" : ""}</span></div>
     </div>
 
     <div class="profile-hero-actions">
       ${primaryCta}
       <button type="button" class="profile-secondary-btn" id="details-share-inline">Share</button>
+      <button type="button" class="profile-secondary-btn details-fav${favActive ? " is-favorite" : ""}" id="details-favorite-inline" aria-pressed="${favActive ? "true" : "false"}">${favActive ? "Saved" : "Save"}</button>
     </div>
 
     ${
@@ -4513,7 +4760,6 @@ function renderDetails(island) {
 
     <section class="section" id="profile-know">
       <h3>Things to know</h3>
-      ${keyFacts}
       <details class="profile-more-facts">
         <summary>All facts &amp; figures</summary>
         <div class="stat-grid" role="list" aria-label="Island facts">
@@ -4562,7 +4808,7 @@ function renderDetails(island) {
 
     <div class="poly-loading" id="poly-status"></div>
 
-    <details class="profile-secondary" id="profile-sources" open>
+    <details class="profile-secondary" id="profile-sources">
       <summary>Sources and data</summary>
       <div class="profile-secondary__body">
         ${tags ? `<div class="tags">${tags}</div>` : ""}
@@ -4616,7 +4862,6 @@ function renderDetails(island) {
   const toolbar = document.getElementById("details-toolbar-actions");
   if (toolbar) {
     toolbar.innerHTML = `
-      <button type="button" id="details-share-btn" class="details-action-btn" aria-label="Copy link to ${escapeAttr(island.name)}">Share</button>
       <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
@@ -4629,12 +4874,15 @@ function renderDetails(island) {
     e.preventDefault();
     toggleFavoriteIsland(island.id);
   });
+  document.getElementById("details-favorite-inline")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleFavoriteIsland(island.id);
+  });
 
   const shareHandler = (e) => {
     e.preventDefault();
     shareIslandLink(island);
   };
-  document.getElementById("details-share-btn")?.addEventListener("click", shareHandler);
   document.getElementById("details-share-inline")?.addEventListener("click", shareHandler);
 
   syncChatLauncherContext();
@@ -5660,9 +5908,26 @@ els.detailsContent.addEventListener("click", (e) => {
 });
 
 els.back.addEventListener("click", () => {
+  if (window.history.state && Object.prototype.hasOwnProperty.call(window.history.state, "islandId") && window.history.state.islandId) {
+    window.history.back();
+    return;
+  }
   releaseIslandDetailView({ clearUrl: true });
   if (mobileNav.isActive()) mobileNav.setView("islands");
   scheduleRenderListWindow();
+});
+
+window.addEventListener("popstate", (e) => {
+  const id = e.state?.islandId;
+  if (id && state.byId?.has(id)) {
+    focusIsland(id, { fly: true, fromHistory: true });
+    return;
+  }
+  if (state.activeId) {
+    releaseIslandDetailView({ clearUrl: false });
+    if (mobileNav.isActive()) mobileNav.setView("islands");
+    scheduleRenderListWindow();
+  }
 });
 
 function releaseIslandDetailView({ clearUrl = false } = {}) {
@@ -5682,7 +5947,7 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
     try { state.detailMap.remove(); } catch (_) { /* ignore */ }
     state.detailMap = null;
   }
-  if (clearUrl) syncIslandUrl(null);
+  if (clearUrl) syncIslandUrl(null, { mode: "replace" });
   syncChatLauncherContext();
   scheduleRenderListWindow();
 }
@@ -8460,6 +8725,10 @@ function chatAutoLoadFromUrl() {
           run();
         } else if (tries > 200) {
           clearInterval(t); // give up after ~10s
+          chatOpen();
+          chatRenderBot("The atlas is still loading (or failed to load). Try Ask again in a moment, or refresh the page.", {
+            suggestions: CHAT_SUGGESTIONS,
+          });
         }
       }, 50);
     }
@@ -8532,18 +8801,24 @@ const mobileNav = (() => {
       chatClose();
     }
     if (next === "map") {
+      document.body.classList.remove("sheet-expanded");
+      // Keep list available as a bottom sheet; only suspend full-screen profile.
       if (!els.details.hidden && state.activeId) {
         state.mobileDetailSuspended = true;
         els.details.hidden = true;
-        els.listSection.hidden = true;
+        els.listSection.hidden = false;
         document.body.dataset.islandDetail = "suspended";
         syncListVirtualPauseState();
+        scheduleRenderListWindow();
         updateMapIslandPeek(state.activeId);
       } else {
+        els.listSection.hidden = false;
         hideMapIslandPeek();
+        scheduleRenderListWindow();
       }
     } else {
       hideMapIslandPeek();
+      document.body.classList.remove("sheet-expanded");
     }
     if (next === "islands") {
       if (state.mobileDetailSuspended && state.activeId) {
@@ -8803,12 +9078,13 @@ function prefersReducedMotion() {
 }
 
 function islandShareUrl(island) {
-  registerIslandSeoPath(island);
-  const href = publicIslandHref(island);
   try {
-    return new URL(href, window.location.origin).toString();
+    const u = new URL("/", window.location.origin);
+    u.searchParams.set("island", island.id);
+    u.searchParams.set("map", "1");
+    return u.toString();
   } catch (_) {
-    return href;
+    return `/?island=${encodeURIComponent(island.id)}&map=1`;
   }
 }
 
