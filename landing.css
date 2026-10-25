@@ -357,6 +357,60 @@ a.lp-card:focus-visible {
   color: var(--text-muted);
 }
 
+/* Chart room — same chalk, ink, and vermilion as the atlas. */
+body.lp {
+  --bg: #f3ecdf;
+  --bg-elev: #faf6ee;
+  --bg-soft: #e7f1ef;
+  --bg-muted: #e6dccb;
+  --text: #1b2430;
+  --text-soft: #3d4a58;
+  --text-muted: #6e655c;
+  --accent: #0e4c5c;
+  --accent-hover: #083640;
+  --accent-soft: #e3eef0;
+  --accent-muted: #f0f6f6;
+  --accent-border: #8aadae;
+  --border: #e0d4c2;
+  --border-subtle: #eadfcf;
+  --border-strong: #c9bba6;
+  --font-display: "Fraunces", "DM Serif Display", Georgia, serif;
+  --font-body: "Outfit", "Source Sans 3", "Segoe UI", sans-serif;
+  background-color: #f3ecdf;
+  background-image: radial-gradient(880px 420px at 0% -10%, rgba(196, 73, 42, .08), transparent 55%);
+  color: #1b2430;
+}
+
+.lp-shell :is(p, li) a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.lp-hero h1 {
+  background: none;
+  -webkit-text-fill-color: var(--text);
+  color: var(--text);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.lp-cta {
+  border-radius: 3px;
+  background: var(--accent);
+  color: #faf6ee;
+  box-shadow: none;
+}
+
+.lp-cta:hover,
+.lp-cta:focus-visible {
+  background: var(--accent-hover);
+  box-shadow: none;
+}
+
+.lp-media { border-radius: 3px; }
+
+.lp-card__book { color: #faf6ee; }
+
 @media (max-width: 640px) {
   .lp-shell {
     width: min(100% - 24px, var(--lp-max));

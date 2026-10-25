@@ -3945,10 +3945,48 @@ body.filters-open .topbar-controls {
     pointer-events: auto;
   }
 
-  body[data-mobile-view="map"] .sidebar,
-  body[data-mobile-view="trip"] .sidebar,
+  /* Map view: list as bottom sheet (peek / expanded) instead of off-screen */
+  body[data-mobile-view="map"] .sidebar {
+    transform: none;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--sheet-peek-h, 38vh);
+    max-height: 42vh;
+    pointer-events: auto;
+    border-radius: 16px 16px 0 0;
+    border-top: 1px solid var(--border);
+    z-index: 5;
+    box-shadow: 0 -8px 28px color-mix(in srgb, #000 35%, transparent);
+  }
+
+  body[data-mobile-view="map"].sheet-expanded .sidebar {
+    height: min(82vh, calc(100dvh - var(--mobile-nav-h) - 64px));
+    max-height: 85vh;
+  }
+
+  body[data-mobile-view="map"] .discovery-sheet-handle {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin: 8px auto 4px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--text) 28%, transparent);
+    cursor: pointer;
+  }
+
+  body[data-mobile-view="map"][data-island-detail="suspended"] .sidebar {
+    /* Peek bar covers selection; keep a slim sheet for browsing */
+    height: var(--sheet-peek-h, 34vh);
+    max-height: 38vh;
+  }
+
   body[data-mobile-view="ask"] .sidebar {
     pointer-events: none;
+    transform: translateX(100%);
   }
 
   body[data-mobile-view="islands"][data-island-detail="open"] .island-list,
@@ -5582,6 +5620,91 @@ body.filters-open .topbar-controls {
 
 .app-loading[hidden] {
   display: none;
+}
+
+.sidebar-orient__link {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--accent, #4ea3ff);
+  font: inherit;
+  font-size: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.list-show-all {
+  padding: 10px 4px 16px;
+}
+
+.list-show-all__btn {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft, var(--bg-elev));
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.atlas-fatal-banner {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--bg, #0a0f14) 92%, transparent);
+  text-align: center;
+}
+
+.atlas-fatal-banner[hidden] {
+  display: none;
+}
+
+.atlas-fatal-banner__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.atlas-fatal-banner__msg {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  max-width: 28rem;
+}
+
+.atlas-fatal-banner__btn,
+.shard-load-error__btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--accent, #4ea3ff);
+  color: #061018;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.shard-load-error {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, #ff8a8a 45%, var(--border));
+  background: color-mix(in srgb, #ff8a8a 12%, var(--bg-elev));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shard-load-error p {
+  margin: 0;
+  font-size: 0.92rem;
 }
 
 .app-loading__inner {

@@ -1,41 +1,44 @@
-/* Find My Island — editorial atlas. Local design preview, October 2026. */
+/* Find My Island — night light. Dark passage, daylight map, one amber lamp. */
 :root {
-  color-scheme: light;
-  --bg: #f8f8f3;
-  --bg-elev: #ffffff;
-  --bg-soft: #edf0e9;
-  --bg-muted: #e2e8df;
-  --surface-card: #fff;
-  --surface-hover: #edf1e9;
-  --surface-inset: #f1f3ed;
-  --surface-overlay: rgba(248,248,243,.96);
-  --text: #233d33;
-  --text-soft: #56675b;
-  --text-muted: #718075;
-  --text-disabled: #93a095;
-  --accent: #2b5744;
-  --accent-hover: #173e2c;
-  --accent-soft: #e7ede2;
-  --accent-muted: #f0f3eb;
-  --accent-border: #93ab95;
+  color-scheme: dark;
+  --bg: #0e1412;
+  --bg-elev: #171f1c;
+  --bg-soft: #1e2924;
+  --bg-muted: #24302b;
+  --surface-card: #171f1c;
+  --surface-hover: #24302b;
+  --surface-inset: #0a100e;
+  --surface-overlay: rgba(14,20,18,.94);
+  --text: #f4f0e6;
+  --text-soft: #cfc6b6;
+  --text-muted: #8f978f;
+  --text-disabled: #5e675f;
+  --accent: #e4a322;
+  --accent-hover: #f0bc4a;
+  --accent-soft: rgba(228,163,34,.16);
+  --accent-muted: rgba(228,163,34,.1);
+  --accent-border: rgba(228,163,34,.5);
   --accent-glow: transparent;
-  --border: #dce2d8;
-  --border-subtle: #e5e8de;
-  --border-strong: #becabd;
-  --sea: #396f63;
-  --lake: #719e76;
-  --river: #ad9559;
-  --cluster: #426454;
-  --cluster-ring: #fff;
-  --gold: #b39a61;
-  --explore: #b39a61;
-  --pin-shadow: rgba(20,50,35,.18);
-  --shadow-xs: 0 1px 3px #233d3308;
-  --shadow-sm: 0 4px 16px #233d330a;
-  --shadow: 0 12px 36px #233d3312;
-  --shadow-lg: 0 24px 70px #233d331c;
+  --border: rgba(244,240,230,.14);
+  --border-subtle: rgba(244,240,230,.08);
+  --border-strong: rgba(244,240,230,.28);
+  --sea: #7ec8c3;
+  --lake: #8fbf8a;
+  --river: #e4a322;
+  --cluster: #14211c;
+  --cluster-ring: #e4a322;
+  --gold: #e4a322;
+  --explore: #e4a322;
+  --spark: #e4a322;
+  --pin-shadow: rgba(16,28,38,.2);
+  --shadow-xs: 0 1px 2px rgba(27,36,48,.06);
+  --shadow-sm: 0 8px 24px rgba(27,36,48,.08);
+  --shadow: 0 16px 40px rgba(27,36,48,.12);
+  --shadow-lg: 0 28px 70px rgba(27,36,48,.16);
   --shadow-card: none;
-  --shadow-card-hover: 0 8px 28px #233d3314;
+  --shadow-card-hover: 0 10px 28px rgba(27,36,48,.12);
+  --font-display: "Newsreader", Georgia, "Iowan Old Style", serif;
+  --font-body: "Familjen Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --sidebar-w: 52%;
   --text-base: 1rem;
   --mobile-nav-h: 64px;
@@ -140,6 +143,23 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline:2px solid
 .island-card__meta { display:block; color:var(--text-muted); font-size:11px; margin:3px 0 0; line-height:1.4; }
 .island-card__blurb { font-size:12px; color:var(--text-soft); line-height:1.4; margin:6px 0 0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .island-card__blurb--interest { color:var(--text); }
+.island-card--feature { height:312px; }
+.island-card--feature .island-card__main--feature {
+  display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
+  gap:0; height:312px; padding:8px 36px 10px 0;
+}
+.island-card__feature {
+  display:block; width:100%; height:132px; object-fit:cover; border-radius:8px; margin:8px 0 8px; background:var(--bg-soft);
+}
+.island-card__kicker {
+  margin:0; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:650;
+}
+.island-card__work {
+  margin:1px 0 4px; font-family:var(--font-display); font-size:17px; font-weight:500; line-height:1.25; color:var(--text);
+}
+.island-card--feature .island-card__blurb {
+  -webkit-line-clamp:3; font-size:13px; line-height:1.45; color:var(--text);
+}
 .island-card__facts { display:none; }
 .island-card__fav { position:absolute; top:12px; right:0; width:34px; height:34px; min-height:0; padding:8px; border:0; border-radius:50%; background:transparent; color:var(--text-muted); opacity:1; }
 .island-card__fav svg { width:17px; height:17px; stroke-width:1.5; }
@@ -299,5 +319,154 @@ body.filters-open .chat-launcher, body.filters-open .topbar-panel-toggle { visib
  body[data-mobile-view="map"][data-island-detail="suspended"] .map-editorial-note { display:none; }
  .map-wrap .leaflet-control-zoom a { width:42px; height:42px; line-height:42px; }
 }
-.topbar-panel-toggle { top:122px; bottom:auto; }
+.topbar-panel-toggle { top:88px; bottom:auto; }
 .discover-panel { background:transparent; padding:0; box-shadow:none; }
+
+/* —— Night light —— */
+:root { --topbar-h: 72px; }
+::selection { background: #e4a322; color: #1a1408; }
+html {
+  background-color: #0e1412;
+  background-image: radial-gradient(880px 420px at 0% -10%, rgba(228, 163, 34, .12), transparent 58%);
+}
+body { background: transparent; color: var(--text); }
+.topbar--atlas, .sidebar { background: transparent; }
+.topbar--atlas {
+  flex-basis: 72px;
+  min-height: 72px;
+  border-bottom-color: rgba(244, 240, 230, .12);
+}
+.brand h1 {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  font-variation-settings: normal;
+}
+.brand .tagline {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.brand .brand-mark { color: var(--spark); }
+.desktop-nav__link { font-weight: 500; letter-spacing: .01em; }
+.desktop-nav__link.is-active { font-weight: 600; }
+.desktop-nav__link.is-active::after { height: 2px; background: var(--spark); }
+.topbar-link--btn, .topbar-panel-toggle, .topbar-filters-toggle { border-radius: 3px; }
+#saved-islands-btn {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+#saved-islands-btn:hover { background: var(--bg-elev); border-color: var(--text); color: var(--text); }
+.sidebar { scrollbar-color: rgba(244,240,230,.28) transparent; }
+.discovery-eyebrow { letter-spacing: .18em; font-weight: 500; }
+.editorial-rule { width: 28px; background: var(--spark); }
+.discovery-intro h2 {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  font-variation-settings: normal;
+}
+.discovery-intro h2 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--spark);
+  font-variation-settings: normal;
+}
+.discovery-lede { font-size: 16px; line-height: 1.5; max-width: 38em; }
+.search-field input[type="search"] {
+  height: 48px;
+  min-height: 48px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(244, 240, 230, .28);
+  background: transparent;
+  box-shadow: none;
+  color: var(--text);
+  caret-color: var(--spark);
+}
+.search-field input[type="search"]::placeholder { color: var(--text-muted); }
+.search-field input[type="search"]:focus {
+  border-bottom-color: var(--spark);
+  box-shadow: none;
+  background: transparent;
+}
+.topbar-filters-toggle { height: 48px; min-height: 48px; border-radius: 3px; border-color: var(--border-strong); background: transparent; color: var(--text); }
+.browse-quick__chip { border-radius: 3px; background: transparent; color: var(--text-soft); border-color: var(--border); }
+.browse-quick__chip:hover { background: rgba(244, 240, 230, .06); border-color: var(--text); color: var(--text); }
+.browse-quick__chip.is-active { background: #f4f0e6; color: #0e1412; border-color: #f4f0e6; }
+.featured-card { border-radius: 3px; background: #1b2430; }
+.featured-card::after { background: linear-gradient(180deg, transparent 36%, rgba(8, 10, 10, .78)); }
+.featured-card__region { color: rgba(244, 240, 230, .82); letter-spacing: .14em; }
+.featured-card__name { font-variation-settings: normal; }
+.island-card { border-bottom-color: rgba(244, 240, 230, .08); }
+.island-card:hover, .island-card.is-hover-sync { background: rgba(244, 240, 230, .05); border-radius: 4px; }
+.island-card.is-active {
+  background: rgba(228, 163, 34, .1);
+  border-radius: 4px;
+  box-shadow: inset 3px 0 0 var(--spark);
+}
+.island-card__thumb, .island-card__thumb--empty, .island-card__feature { border-radius: 3px; }
+.island-card__title, .island-card__work { font-variation-settings: normal; color: var(--text); }
+.island-card__kicker { color: var(--spark); letter-spacing: .14em; }
+.island-card__fav.is-favorite, .island-card__fav.is-favorite svg { color: var(--spark); }
+.island-card__fav.is-favorite svg { fill: var(--spark); }
+.island-card__fav.is-favorite { background: rgba(228, 163, 34, .14); }
+.map-wrap {
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  border-left: 1px solid rgba(244, 240, 230, .12);
+  background: #6aa0ad;
+  box-shadow: none;
+}
+#map { background: #6aa0ad; }
+#map .leaflet-tile-pane { filter: saturate(1.08) contrast(1.05) brightness(.97); }
+.map-editorial-label {
+  background: rgba(14, 20, 18, .78);
+  color: #f4f0e6;
+  border: 0;
+  border-left: 2px solid var(--spark);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 8px 14px 8px 12px;
+}
+.map-editorial-label__eyebrow, .map-editorial-label strong { color: #f4f0e6; }
+.map-editorial-note {
+  border-radius: 2px;
+  background: rgba(14, 20, 18, .82);
+  color: #f4f0e6;
+  border-color: transparent;
+}
+.map-wrap .leaflet-control-attribution { background: rgba(14, 20, 18, .72); color: #cfc6b6; }
+.map-cluster {
+  background: #14211c;
+  border: 2px solid #e4a322;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .28);
+}
+.map-cluster--small { background: #1c2c28; }
+.map-cluster--large { background: #0c1412; }
+.legend-wrap__toggle, .map-wrap .leaflet-control-zoom { border-radius: 3px; }
+.legend-wrap__toggle { background: rgba(14, 20, 18, .82); color: #f4f0e6; border-color: transparent; }
+.chat-launcher {
+  background: var(--spark);
+  color: #1a1408;
+  border-radius: 999px;
+  letter-spacing: .02em;
+  font-weight: 600;
+}
+.chat-launcher:hover { background: #f0bc4a; }
+.mobile-nav { background: rgba(14, 20, 18, .96); border-top-color: rgba(244, 240, 230, .12); }
+.mobile-nav__btn.is-active { color: var(--text); }
+.mobile-nav__btn.is-active .mobile-nav__label { color: var(--spark); }
+@media (max-width: 900px) {
+  :root { --topbar-h: calc(64px + var(--safe-top)); }
+  .topbar--atlas { flex-basis: calc(64px + var(--safe-top)); min-height: calc(64px + var(--safe-top)); }
+  .brand h1 { font-size: 22px; }
+  .discovery-intro h2 { letter-spacing: -0.03em; }
+  .search-field input[type="search"], .topbar-filters-toggle { height: 46px; min-height: 46px; }
+  .map-wrap { margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+  #saved-islands-btn { background: transparent; color: var(--text); border-color: var(--border-strong); }
+}

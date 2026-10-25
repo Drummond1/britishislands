@@ -4,14 +4,34 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
-**2026-10-25 (interest categories)** — Overlay filters, not a change to
-`islands.json`. Supabase `interest_categories` + `interest_memberships`
-(project `oqqfuddgclotoohekmop`). Static export `data/interest_index.json`.
-Published: film/art/music **13** islands (**20** cited rows), whisky
-distilleries **10** islands (**24** rows), for sale **37**. Draft and empty:
-`uninhabited-stay`. Anon can read published + accepted only (**81** memberships;
-draft category hidden). Atlas chips and the Interests drawer group are generated
-from the index. Skill: `.cursor/skills/interest-category-populate/SKILL.md`.
+**2026-10-25 (Commons artworks)** — Wikimedia Commons categories added **172** paintings, prints, and named sculptures after **37** snapshot filenames, souvenir objects, and a fantasy stamp were rejected. Film/art/music is **95** islands and **613** cited rows (**386** artworks on **50** islands, **167** music, **60** film). Stories **639**, **446** with an open-licence picture. Whisky **12** / for sale **42**. Local index only. Supabase was not reloaded. Wikipedia story lookups were rate-limited; pictures for the new Commons works come from the file records.
+
+**2026-10-25 (museum art and Wikipedia bands)** — Met, Cleveland, and Art Institute of Chicago CC0 records added **19** artworks (two sitter portraits were rejected). English Wikipedia music categories added **16** bands and musicians, mostly from the Isle of Wight, including Wet Leg and Coach Party. Film/art/music was then **95** islands and **441** cited rows.
+
+**2026-10-25 (Wikidata artworks)** — Wikidata landmark and depicts statements added **79** artworks after four mismatches were rejected. Film/art/music was then **94** islands and **406** cited rows.
+
+**2026-10-25 (night-light atlas)** — Homepage shell is a dark passage with an amber mark; the map stays bright and full-bleed; island profiles stay paper. Figma frames in file `kgEdP0EphgKDLlpAwJLQn2`. Pushed to `main` for GitHub Pages.
+
+**2026-10-25 (chart-room aesthetic, local)** — Atlas and reading pages move from sage-on-cool-paper to chalk, Atlantic ink, and one vermilion mark. Fraunces + Outfit. Map tiles keep their colour. Files: `atlas-redesign.css`, `editorial-profile.css`, `landing.css`, `index.html`, `about/index.html`. Not pushed.
+
+**2026-10-25 (gallery artworks)** — National Gallery of Art (Washington) CC0 metadata and one National Gallery, London title added **12** artworks on islands already in the atlas (Wight, Man, Ailsa Craig, Bass Rock, Sheppey). Film/art/music is **85** islands and **327** cited rows (**116** artworks, **151** music, **60** film). Stories **353**, **178** with an open-licence picture. Whisky **12** / for sale **42**. Local index only. Supabase was not reloaded. V&A skipped (non-commercial API terms). Other artwork and music harvests are still running.
+
+**2026-10-25 (simpler atlas, ferries paused)** — Ferry guides, the ferry filter, the crossing planner, and ferry cards are hidden. Island profiles lead with the story, a few plain facts, and wildlife or lighthouses when we have them. Sources, bedrock, and mapping notes are no longer on the profile. Schema and counts unchanged. Local only.
+
+
+**2026-10-25 (interest categories, expanded)** — Overlay filters.
+Supabase `interest_categories` + `interest_memberships` (project
+`oqqfuddgclotoohekmop`). Static export `data/interest_index.json`.
+Published: film/art/music **85** islands (**315** cited rows), whisky
+distilleries **12** islands (**26** rows), for sale **42**. Draft and empty:
+`uninhabited-stay`. The static index is local. Supabase still has the
+previous **171** memberships until the new SQL is loaded. The first batch
+(13 / 10 / 37) is what production still serves until this index is pushed.
+Island profiles include a picture and a short summary for distilleries and
+for film, art, and music. The Artwork chip and the Whisky distilleries chip
+lead with that picture under the island name. Music and artwork now also come
+from Wikidata and MusicBrainz, not only Wikipedia. Skill:
+`.cursor/skills/interest-category-populate/SKILL.md`.
 
 **2026-10-25 (editorial UI preview — LOCAL ONLY)** — Warm paper/evergreen discovery
 column, framed map, simplified search/quick filters and updated profiles/mobile UI.

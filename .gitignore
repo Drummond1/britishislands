@@ -68,6 +68,8 @@ islands/
 
 # Nation shards for deferred frontend load (see scripts/build_islands_index.py)
 data/shards/
+# Per-island detail JSON (written by build_islands_index.py; staged in Pages CI)
+data/details/
 
 # --- Tooling --------------------------------------------------------------
 # Cursor-specific runtime artefacts (terminals, agent transcripts).

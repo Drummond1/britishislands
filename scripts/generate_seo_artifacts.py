@@ -363,7 +363,7 @@ def profile_page_html(
     )
     desc = html.escape(str(desc_raw).replace("\n", " ").strip()[:300], quote=True)
     profile_url = f"{origin}{profile_path}" if origin else profile_path
-    atlas_url = f"{atlas_href}?island={html.escape(iid, quote=True)}"
+    atlas_url = f"{atlas_href}?island={html.escape(iid, quote=True)}&amp;map=1"
     img = island_image_url(isl)
     og_img = ""
     if img:
@@ -432,10 +432,6 @@ def profile_page_html(
         facts.append(
             f"<li><strong>Population</strong>{html.escape(str(isl['population']))}</li>"
         )
-    if lat is not None and lng is not None:
-        facts.append(
-            f"<li><strong>Location</strong>{lat}, {lng}</li>"
-        )
     parent = isl.get("parentWaterBody")
     if isinstance(parent, dict) and parent.get("name"):
         ptype = str(parent.get("type") or "water").strip()
@@ -501,11 +497,9 @@ def profile_page_html(
 
     section_map = [
         ("Geography", "geography"),
-        ("Geology", "geology"),
         ("History", "history"),
-        ("Wildlife and conservation", "wildlife"),
-        ("How to reach it", "transport"),
-        ("Accommodation", "accommodation"),
+        ("Wildlife", "wildlife"),
+        ("Staying", "accommodation"),
     ]
     for label, key in section_map:
         value = section_plain_text(key, isl.get(key))
@@ -619,7 +613,7 @@ def profile_page_html(
       {nation_line}
       <h1>{name}</h1>
       <p class="lp-lede">{desc}</p>
-      <a class="lp-cta" href="{atlas_url}">Open on the map →</a>
+      <a class="lp-cta" href="{atlas_url}">Open interactive map →</a>
     </header>
 {img_block}{facts_block}{hub}
 {sections_block}
@@ -710,11 +704,6 @@ def nation_hub_html(
         f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
         for path, label in featured_links
     )
-    ferry_rows = NATION_FERRY_LINKS.get(segment) or [("/ferries/", "All ferry guides")]
-    ferry_items = "\n".join(
-        f'    <li><a href="{html.escape(path, quote=True)}">{html.escape(label)}</a></li>'
-        for path, label in ferry_rows
-    )
     other_nations = "\n".join(
         f'    <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
         for seg in (
@@ -768,10 +757,6 @@ def nation_hub_html(
     <h2 class="lp-section-title">Notable islands</h2>
     <ul class="lp-list">
 {items}
-    </ul>
-    <h2 class="lp-section-title">Ferry guides</h2>
-    <ul class="lp-list">
-{ferry_items}
     </ul>
     <h2 class="lp-section-title">Other countries</h2>
     <ul class="lp-list">
@@ -865,7 +850,7 @@ def collection_specs() -> list[dict[str, str]]:
             "slug": "inner-hebrides",
             "title": "Inner Hebrides islands",
             "match_archipelago": "Inner Hebrides",
-            "blurb": "Skye, Mull, Islay, Jura, and neighbouring Inner Hebridean islands — maps, ferry context, and island profiles.",
+            "blurb": "Skye, Mull, Islay, Jura, and the islands around them.",
         },
         {
             "slug": "outer-hebrides",
@@ -1010,10 +995,6 @@ def build_crawl_links_html(
     curated: set[str],
     paths: dict,
 ) -> str:
-    ferry_items = "\n".join(
-        f'        <li><a href="{p}">{html.escape(FERRY_LABELS.get(p, p))}</a></li>'
-        for p in FERRY_PATHS
-    )
     nation_items = "\n".join(
         f'        <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
         for seg in (
@@ -1038,20 +1019,10 @@ def build_crawl_links_html(
             f"{html.escape(label)}</a></li>"
         )
     island_block = "\n".join(island_items)
-    trust_items = "\n".join(
-        f'        <li><a href="{path}">{html.escape(label)}</a></li>'
-        for path, label in TRUST_PAGES.items()
-    )
     return f"""{CRAWL_LINKS_MARKER_START}
-        <footer class="crawl-links" aria-label="Guides and notable islands">
-          <p class="crawl-links__heading">Guides &amp; notable islands</p>
+        <footer class="crawl-links" aria-label="Notable islands">
+          <p class="crawl-links__heading">Notable islands</p>
           <div class="crawl-links__grid">
-            <section>
-              <h3 class="crawl-links__sub">Ferry guides</h3>
-              <ul class="crawl-links__list">
-{ferry_items}
-              </ul>
-            </section>
             <section>
               <h3 class="crawl-links__sub">Islands by country</h3>
               <ul class="crawl-links__list">
@@ -1065,9 +1036,10 @@ def build_crawl_links_html(
               </ul>
             </section>
             <section>
-              <h3 class="crawl-links__sub">About this atlas</h3>
+              <h3 class="crawl-links__sub">About</h3>
               <ul class="crawl-links__list">
-{trust_items}
+        <li><a href="/about/">About Find My Island</a></li>
+        <li><a href="/contact/">Contact</a></li>
               </ul>
             </section>
           </div>
@@ -1109,8 +1081,8 @@ def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
     landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
     fonts = (
-        "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1"
-        "&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600"
+        "&amp;family=Outfit:wght@400;500;600&amp;display=swap"
     )
     return (
         '  <link rel="preconnect" href="https://fonts.googleapis.com"/>\n'
@@ -1174,7 +1146,7 @@ def main() -> int:
     write_landings = bool(origin) and not args.skip_islands_dir
 
     llms = f"""# Find My Island (findmyisland.com)
-> The British & Irish Islands Atlas: visual, data-led island profiles with maps, photos, transport context, and provenance.
+> A map of the islands of Britain and Ireland, with photographs and stories.
 
 ## Entry points
 - Main app: /
@@ -1183,7 +1155,6 @@ def main() -> int:
 - Island profile: /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
 - Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
 - Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
-- Ferry guides: /ferries/
 - Collections: /collections/
 - Sitemap: /sitemap.xml
 
@@ -1438,7 +1409,7 @@ Sitemap: {origin}/sitemap.xml
                 items=flagship_links,
                 blurb=(
                     "Editorially prioritised British and Irish island profiles with photos, "
-                    "facts, ferry context, and map links — starting points for atlas exploration."
+                    "photos and stories — places to start."
                 ),
             ),
             encoding="utf-8",

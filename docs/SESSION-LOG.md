@@ -3040,3 +3040,132 @@ loop (`descriptions+photos-gap`, cycle 17).
   - Skill: `.cursor/skills/interest-category-populate/SKILL.md`.
 - **Outcome / counts**: film/art/music **13** islands, **20** rows; whisky **10** islands, **24** distilleries (Islay, Arran, Mull, Skye, Jura, Lewis and Harris, Mainland Orkney, Raasay, Barra, Tiree); for sale **37**. Anon API returns those three categories and **81** memberships. Draft `uninhabited-stay` is empty and hidden. Overpass did not answer, so the whisky set is Wikidata plus four Wikipedia gap pages, not OSM.
 - **Open items kicked to QUEUE.md**: populate `uninhabited-stay` when there is island-level public accommodation evidence. Pushed to `main` for the GitHub Pages deploy. The filters ship with the local editorial layout they were built on.
+
+## 2026-10-25 — Interest categories, second pass
+
+- **Goal**: Widen film/art/music, whisky, and for-sale memberships, in that order, under the same acceptance rules.
+- **What changed**:
+  - Film, art and music seeds expanded by archipelago (93 seeds). The verifier accepts a row only when the Wikipedia extract names the work and the island. `match_name` now prefers an exact atlas name, so Mainland (Orkney) is no longer swallowed by the larger Mainland (Shetland).
+  - Whisky gained Benbecula Distillery and Kimbland (Sanday) from cited Wikipedia pages. Overpass still had no cache, so the set remains Wikidata plus those gap pages.
+  - For sale ran the weekly obscure-broker pass. Five islands joined the registry: Whittets Ait, St Mary's (Isles of Scilly), Illauncreeveen, Wiay, and Eriskay. A Clew Bay Roeillaun listing had been matched to Mayo Inishturk; that link was removed because the acreage does not fit Inishturk.
+  - `data/interest_index.json` regenerated. Supabase memberships for the three published categories replaced. `uninhabited-stay` left empty.
+- **Outcome / counts**: film/art/music **51** islands, **103** rows; whisky **12** islands, **26** distilleries; for sale **42**. Not pushed. Production still shows 13 / 10 / 37.
+- **Open items kicked to QUEUE.md**: push when the local index should go live. `uninhabited-stay` still waiting on public stay evidence.
+
+## 2026-10-25 — Interest stories on the island profile
+
+- **Goal**: Show the distillery, the artwork, or the film, not only its name in the filter list.
+- **What changed**: `stories` in `data/interest_index.json` carries a short Wikipedia summary and, where the file has an open licence, a picture with photographer and licence. The island profile renders those cards. With a whisky or film filter on, the list thumbnail uses that picture.
+- **Outcome / counts**: 129 stories. 69 have an open-licence picture (22 of 26 distilleries). For-sale listings stay as names and broker links. Not pushed.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Music and artwork from Wikidata and MusicBrainz
+
+- **Goal**: Add bands, musicians, and artworks with a cited connection to an island, using sources other than the Wikipedia seed list.
+- **What changed**: `culture-open` in `scripts/interest_categories.py` reads Wikidata (a work depicts the island, a band formed there, an artist was born or worked there) and MusicBrainz (an artist’s area is that island). Rows land in `data/interest/candidates/film-art-music-open.json` and publish into the same Film, art and music filter. Town QIDs mistakenly stored on river islands, and places outside Britain and Ireland, are rejected. Lyric sites, Spotify, Discogs, and IMDb are not used.
+- **Outcome / counts**: film/art/music **85** islands, **315** rows (212 of them from this pass: 86 MusicBrainz, 126 Wikidata). Stories **341**, **175** with an open-licence picture. Whisky 12 and for sale 42 unchanged. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` when Supabase should match the local index.
+
+## 2026-10-25 — Artwork as the feature under the island
+
+- **Goal**: Filtering to artwork should show the picture under the island name, with a short story of why the work belongs there.
+- **What changed**: Film, art and music now has Film, Artwork, and Music chips. Artwork lists the painting under the island name and opens the profile on that picture and connection. Story text prefers the Wikipedia sentence that ties the work to the island, such as Turner’s view of Fingal’s Cave on Staffa.
+- **Outcome / counts**: Local only. Not pushed.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Whisky distillery as the feature under the island
+
+- **Goal**: Filtering to whisky distilleries should show one distillery photograph under the island name, with a short note on what makes it notable and that it is on that island.
+- **What changed**: The whisky list and profile use the same feature layout as artwork. Each island leads with the distillery that has an open-licence picture and the most specific cited fact (oldest on the island, first legal distillery, shore of a named bay). The other distilleries stay further down the profile. Summaries come from the Wikipedia lead.
+- **Outcome / counts**: 12 islands, 26 distilleries. Checked on Islay (Bowmore, established 1779, oldest running distillery on Islay, Mick Garatt, CC BY-SA 2.0) and in the list on Skye (Talisker, Carbost, Isle of Skye). Local only. Not pushed.
+
+## 2026-10-25 — Hide ferries and cut the technical copy
+
+- **Goal**: Take ferries off the atlas until the routes are good enough to trust, and let island pages read as stories rather than a data sheet.
+- **What changed**: Removed ferry navigation, the ferry filter, the crossing planner, and ferry cards. Old `/ferries/` pages now send people back to the map. Profiles keep the photograph, the story, a few facts (area, people, highest point), wildlife, lighthouses, and a tidal crossing when we know one. Sources, bedrock, confidence labels, and mapping notes are no longer on the profile. The next SEO rebuild will not put ferry links back into the sidebar.
+- **Outcome / counts**: No dataset change. Local only. Not pushed.
+- **Open items kicked to QUEUE.md**: bring ferries back only when the routes are reliable.
+
+## 2026-10-25 — Gallery open data for the artwork filter
+
+- **Goal**: Add cited artworks from gallery catalogues whose metadata is openly licensed, without using the V&A’s non-commercial API.
+- **What changed**: Gallery open-access harvest wrote `scripts/harvest_artwork_galleries.py` and `data/interest/candidates/artwork-galleries.json`. National Gallery of Art (Washington) CC0 records supplied 11 works. National Gallery, London structured data (CC0) supplied one title; its images are CC BY-NC-ND and were not copied. Island ids were checked against `data/islands_index.json` (Wight, Man, Ailsa Craig, Bass Rock in the Forth, Sheppey). `python3 scripts/interest_categories.py publish` rebuilt `data/interest_index.json` and `data/interest/memberships_sync.sql`.
+- **Outcome / counts**: Film/art/music **85** islands, **327** rows (artwork **104 → 116** on **36** islands). Stories **353**, **178** with a picture. Wikipedia returned 429s while refreshing a few story extracts. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: other artwork and music harvests still running; load the membership SQL when Supabase should match this index.
+
+## 2026-10-25 — Night-light atlas
+
+- **Goal**: Redesign the atlas page so it stands apart, without changing search, filters, the list, the map, save, or ask.
+- **What changed**: The shell is a night passage (Newsreader and Familjen Grotesk, amber used like a lighthouse). The map stays in daylight and runs to the edge. Opening an island switches on a paper profile. The same composition is in Figma as two frames. Local only.
+- **Outcome / counts**: No dataset change. Not pushed.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Chart-room visual system
+
+- **Goal**: Give the atlas a more specific visual character than the sage editorial wash.
+- **What changed**: Chalk paper, Atlantic ink, and a single vermilion mark (active underline, Ask, saved hearts, text selection). Display type is Fraunces; interface type is Outfit. The map is framed as a chart plate and the tiles stay in colour. Profiles, filters, and the Ask panel use the same materials. About, and the shared landing stylesheet, use the same palette. The next SEO rebuild will load Fraunces and Outfit on generated pages.
+- **Outcome / counts**: No dataset change. Local only. Not pushed.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — OGL wildlife research file
+
+- **Goal**: Collect unusual wildlife on named islands of Britain and Ireland from pages that state an open licence, without colony coordinates or counts.
+- **What changed**: Wrote `data/interest/research/wildlife-ogl.json` (22 rows). Sources are the JNCC UK National Site Network spreadsheet (OGL v3.0), the NatureScot Hermaness SSSI citation (Open Government Licence), and the Natural Resources Wales Bardsey plan (Open Government Licence).
+- **Outcome / counts**: 22 species-island rows. No grid references, pair counts, nest locations, or access dates in the prose. NPWS synopses were not used; their copyright page is not an open licence. Copinsay and Rathlin were left out because the accounts do not single out one species.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Welsh and English island wildlife research
+
+- **Goal**: Collect unusual taxa tied to named Welsh and English islands from Wikipedia, for a later interest category.
+- **What changed**: Wrote `data/interest/research/wildlife-wales-england.json` (25 rows). Sources are English Wikipedia (CC BY-SA 4.0). No pair or nest counts. Bass Rock and the Isle of May were left out because they are in Scotland.
+- **Outcome / counts**: 25 rows. Not merged into `islands.json` or the interest index.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Scottish island wildlife research
+
+- **Goal**: Collect unusual taxa tied to named Scottish islands from Wikipedia, for a later interest category.
+- **What changed**: Wrote `data/interest/research/wildlife-scotland.json` (25 rows). Sources are English Wikipedia (CC BY-SA 4.0). No pair counts, nest counts, grid references, or visit advice.
+- **Outcome / counts**: 25 rows. Foula, Noss, Eigg, and Lunga had only generic seabird accounts. The Shetland wren page names the archipelago, not one island. Not merged into `islands.json` or the interest index.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Island endemic wildlife research
+
+- **Goal**: Collect animals and plants that English Wikipedia or Wikidata restrict to one island or a small archipelago of Britain and Ireland.
+- **What changed**: Wrote `data/interest/research/wildlife-endemics.json` (27 rows). Sources are English Wikipedia (CC BY-SA 4.0) and one Wikidata item (CC0). Sheep, cattle, and pony breeds are excluded, as are taxa whose range is Great Britain, Ireland, or a wider region.
+- **Outcome / counts**: 27 taxa. No Rum mouse article was found. The Scilly shrew page rejects the old subspecies and treats the animal as a widespread species. Not merged into `islands.json` or the interest index.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-25 — Wikidata artworks of island landmarks
+
+- **Goal**: Publish paintings, prints, and sculpture that Wikidata ties to an atlas island or to a landmark on that island.
+- **What changed**: Reviewed `data/interest/candidates/artwork-wikidata.json` from the Wikidata artwork harvest. Rejected four rows: *Crickaeth Castle, Caernarvonshire* (filed under the Isle of Thanet), *Dunstaffnage* (filed under the wrong Eilean Mòr), *A North West Gale off the Longships Lighthouse* (filed under Tal-y-Maen), and *Ruins at Llanddwyn* (filed under Ynys y Clochydd). Kept 79, including Loch Leven Castle pictures on Castle Island, Holyhead prints on Holy Island, and *Our Lady of the Isles* on South Uist. Rebuilt `data/interest_index.json`. Wellcome and an early MusicBrainz file were held out of this publish because their matches still need checking.
+- **Outcome / counts**: Artwork **116 → 195** on **46** islands. Film/art/music **94** islands, **406** rows. Stories **432**, **247** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` when Supabase should match this index.
+
+## 2026-10-25 — Museum paintings and Wikipedia bands
+
+- **Goal**: Publish the Met, Cleveland, and Art Institute of Chicago artworks, and the Wikipedia music-category bands, after checking the island match.
+- **What changed**: Kept 19 museum works in `data/interest/candidates/artwork-museums.json`, including *Lindisfarne Castle*, *The Cuillin Hills, Isle of Skye*, *Hills around the Bay of Moulin Huet, Guernsey*, and a plate from *La Henriade* set on Jersey. Rejected two portraits whose only link was the sitter’s biography (General Keith MacAlister; Lady Oglander). Kept all 16 Wikipedia rows in `data/interest/candidates/music-wikipedia.json` (Wet Leg, Coach Party, The Bees, Haydn Wood, and others on the Isle of Wight and the Isle of Man). Rebuilt `data/interest_index.json`. Commons, Wellcome, and the unchecked MusicBrainz and Wikidata music files were left out of this publish.
+- **Outcome / counts**: Artwork **195 → 214** on **48** islands. Music **151 → 167**. Film/art/music **95** islands, **441** rows. Stories **467**, **274** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: check the remaining candidate files before the next publish.
+
+## 2026-10-25 — Commons paintings and sculptures
+
+- **Goal**: Publish Wikimedia Commons artworks that name an atlas island, and leave out photo dumps.
+- **What changed**: Reviewed `data/interest/candidates/artwork-commons.json`. Rejected 37 rows whose titles were camera dumps, Geograph filenames with no named work, souvenir sand bottles, a bogus Staffa stamp, or an uncertain Isle of Wight sketch. Kept 173, of which 172 were new, including Peploe and Cadell on Iona, Fingal’s Cave prints on Staffa, Wyllie on Arran, and the Coupée on Sark. Named public sculptures on Anglesey, the Isle of Man, the Isle of Wight, and Tresco stayed, with the Geograph id removed from the title. Wikipedia was rate-limiting story lookups, so a failed lookup now continues and the Commons pictures already on the row are used. Rebuilt `data/interest_index.json`.
+- **Outcome / counts**: Artwork **214 → 386** on **50** islands. Film/art/music **95** islands, **613** rows. Stories **639**, **446** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: check Wellcome, MusicBrainz works, and the wildlife file before the next publish.
+
+## 2026-10-25 — Interest filter ideas, not a new chip
+
+- **Goal**: Choose the next atlas filters in the same family as film and music, islands for sale, and unusual wildlife.
+- **What changed**: Five passes (editorial ideas, open-source feasibility, search intent, a red team, and a three-slot cut). Wrote `docs/INTEREST-FILTER-IDEAS.md` and pointed `docs/QUEUE.md` and `docs/INDEX.md` at it. No populator, no memberships, no change to `data/islands.json`.
+- **Outcome / counts**: Recommended order, after wildlife is published: tidal walks, then castle islets under 1 km², then lighthouses cited from their own Wikipedia article. The 16 May 2026 light join is not a source: 238 islands in the ingestion report, 297 islands carrying a `lighthouses` array, 19,425 rows, 19 islands with 603 lights each. Subtype `tidal` is 256 islands and is not the chip. `uninhabited-stay` stays an empty draft.
+- **Open items kicked to QUEUE.md**: hand-count tidal walks before any new populator.
+
+## 2026-10-25 — Night-light atlas to production
+
+- **Goal**: Ship the current atlas to findmyisland.com without interrupting a Pages build.
+- **What changed**: Dark shell, amber mark, full-bleed daylight map, paper island profiles (`atlas-redesign.css`, `editorial-profile.css`, `index.html`, `landing.css`, `about/index.html`, `app.js`, `styles.css`). Interest index, featured islands, and `islands.json` go with the same commit so production matches the local site. The Figma capture script is not in `index.html`.
+- **Outcome / counts**: No schema change. Continuous SEO loop was not running and was not started or stopped. Pages deploy follows the push to `main`.
+- **Open items kicked to QUEUE.md**: none.

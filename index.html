@@ -13,19 +13,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#0a0f14" />
+    <meta name="theme-color" content="#0e1412" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Find My Island" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
     <link
       rel="apple-touch-icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%230f1620'/%3E%3Ccircle cx='90' cy='90' r='52' fill='none' stroke='%234ea3ff' stroke-width='10'/%3E%3Ccircle cx='90' cy='90' r='18' fill='%234ea3ff'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%23f3ecdf'/%3E%3Ccircle cx='90' cy='90' r='52' fill='none' stroke='%230e4c5c' stroke-width='8'/%3E%3Ccircle cx='90' cy='90' r='10' fill='%23c4492a'/%3E%3C/svg%3E"
     />
     <title>Find My Island — The British & Irish Islands Atlas</title>
     <meta
       name="description"
-      content="Find My Island: explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland."
+      content="Find My Island: a map of the islands of Britain and Ireland, with photos, stories, and the odd fact you would not expect."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://www.findmyisland.com/" />
@@ -35,7 +35,7 @@
     <meta property="og:title" content="Find My Island — The British & Irish Islands Atlas" />
     <meta
       property="og:description"
-      content="Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides."
+      content="A map of the islands of Britain and Ireland — sea, loch, and river — with photos and stories."
     />
     <meta property="og:url" content="https://www.findmyisland.com/" />
     <meta property="og:locale" content="en_GB" />
@@ -43,7 +43,7 @@
     <meta name="twitter:title" content="Find My Island — The British & Irish Islands Atlas" />
     <meta
       name="twitter:description"
-      content="Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles."
+      content="Explore the islands of Britain and Ireland: a map, photos, and the stories attached to each place."
     />
     <script type="application/ld+json">
       {
@@ -67,23 +67,23 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=interest-1" />
-    <link rel="stylesheet" href="editorial-profile.css?v=editorial-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=night-1" />
+    <link rel="stylesheet" href="editorial-profile.css?v=night-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
-    <link rel="modulepreload" href="app.js?v=interest-1" />
+    <link rel="modulepreload" href="app.js?v=wildlife-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap"
       />
     </noscript>
   </head>
@@ -110,7 +110,6 @@
 
       <nav class="desktop-nav" aria-label="Main navigation">
         <button type="button" class="desktop-nav__link is-active" id="explore-home">Explore the islands</button>
-        <a class="desktop-nav__link" href="/ferries/">Ferry guides</a>
         <a class="desktop-nav__link" href="/about/">About the atlas</a>
       </nav>
 
@@ -139,7 +138,6 @@
           </button>
           <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
             <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Collections</a>
-            <a class="topbar-more__item topbar-more__item--link" href="/ferries/" role="menuitem">Ferry guides</a>
             <button type="button" class="topbar-more__item" id="crowd-suggest-btn" role="menuitem">Contribute</button>
             <a class="topbar-more__item topbar-more__item--link" href="/about/" role="menuitem">About</a>
           </div>
@@ -187,17 +185,6 @@
             </select>
           </fieldset>
           <fieldset class="filter-group">
-            <legend>Access</legend>
-            <label class="toggle toggle--pending" id="filter-ferry-wrap" title="Loading ferry routes…">
-              <input type="checkbox" id="filter-ferry" disabled />
-              <span>Reachable by ferry</span>
-            </label>
-            <label class="toggle" title="Islands with a mapped summit">
-              <input type="checkbox" id="filter-elevation" />
-              <span>Has a summit</span>
-            </label>
-          </fieldset>
-          <fieldset class="filter-group">
             <legend>Population</legend>
             <select id="population-filter" aria-label="Population">
               <option value="">Any population</option>
@@ -220,6 +207,10 @@
             <label class="toggle" title="Islands with editorial story text">
               <input type="checkbox" id="filter-story" />
               <span>With stories</span>
+            </label>
+            <label class="toggle" title="Islands with a recorded summit">
+              <input type="checkbox" id="filter-elevation" />
+              <span>Has a summit</span>
             </label>
           </fieldset>
           <fieldset class="filter-group" id="filter-for-sale-group">
@@ -244,24 +235,24 @@
               <span>Cluster markers</span>
             </label>
             <select id="basemap" aria-label="Base map style">
-              <option value="osm">Standard (OpenStreetMap)</option>
-              <option value="topo">Topographic (OpenTopoMap)</option>
-              <option value="satellite">Satellite (Esri)</option>
-              <option value="cartoLight">Light (CARTO)</option>
-              <option value="cartoDark">Dark (CARTO)</option>
-              <option value="osMaps" disabled>OS Maps (open an island to add a key)</option>
+              <option value="osm">Standard</option>
+              <option value="topo">Topographic</option>
+              <option value="satellite">Satellite</option>
+              <option value="cartoLight">Light</option>
+              <option value="cartoDark">Dark</option>
+              <option value="osMaps" disabled>OS Maps</option>
             </select>
           </fieldset>
           <fieldset class="filter-group filter-group--advanced">
-            <legend>Data quality</legend>
-            <select id="confidence-filter" aria-label="Verification level">
-              <option value="">All records</option>
-              <option value="curated">Curated only</option>
-              <option value="hide-unconfirmed" selected>Hide unverified records</option>
+            <legend>More</legend>
+            <select id="confidence-filter" aria-label="Which places to include">
+              <option value="">Everything mapped</option>
+              <option value="curated">Featured only</option>
+              <option value="hide-unconfirmed" selected>Skip uncertain places</option>
             </select>
             <label class="toggle" title="Show unnamed landmasses">
               <input type="checkbox" id="filter-unnamed" />
-              <span>Unnamed landmasses only</span>
+              <span>Unnamed places only</span>
             </label>
           </fieldset>
         </div>
@@ -356,62 +347,12 @@
           <ul id="island-list" class="island-list__items" role="list" aria-label="Island search results"></ul>
 
           <details class="sidebar-extras">
-            <summary class="sidebar-extras__summary">Tools &amp; guides</summary>
+            <summary class="sidebar-extras__summary">More places</summary>
             <div class="sidebar-extras__body">
-              <details class="trip-planner trip-planner--collapse">
-                <summary class="trip-planner__summary" id="trip-planner-title">Plan a ferry crossing</summary>
-                <div class="trip-planner__body">
-                  <form class="trip-planner__form" id="trip-form">
-                    <label class="trip-planner__field">
-                      <span>From island</span>
-                      <input
-                        id="trip-from"
-                        name="from"
-                        type="search"
-                        list="trip-islands"
-                        placeholder="e.g. Mull"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <label class="trip-planner__field">
-                      <span>To island</span>
-                      <input
-                        id="trip-to"
-                        name="to"
-                        type="search"
-                        list="trip-islands"
-                        placeholder="e.g. Iona"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <button class="trip-planner__submit" type="submit">Plan route</button>
-                  </form>
-                  <p class="trip-planner__status" id="trip-status" aria-live="polite"></p>
-                  <datalist id="trip-islands"></datalist>
-                </div>
-              </details>
               <!-- IOB_CRAWL_LINKS_START -->
-        <footer class="crawl-links" aria-label="Guides and notable islands">
-          <p class="crawl-links__heading">Guides &amp; notable islands</p>
+        <footer class="crawl-links" aria-label="Notable islands">
+          <p class="crawl-links__heading">Notable islands</p>
           <div class="crawl-links__grid">
-            <section>
-              <h3 class="crawl-links__sub">Ferry guides</h3>
-              <ul class="crawl-links__list">
-        <li><a href="/ferries/">All ferry guides</a></li>
-        <li><a href="/ferries/hebrides/">Hebrides</a></li>
-        <li><a href="/ferries/orkney/">Orkney</a></li>
-        <li><a href="/ferries/shetland/">Shetland</a></li>
-        <li><a href="/ferries/isle-of-wight/">Isle of Wight</a></li>
-        <li><a href="/ferries/isles-of-scilly/">Isles of Scilly</a></li>
-        <li><a href="/ferries/isle-of-man/">Isle of Man</a></li>
-        <li><a href="/ferries/channel-islands/">Channel Islands</a></li>
-        <li><a href="/ferries/scottish/">Scottish islands</a></li>
-        <li><a href="/ferries/welsh/">Wales</a></li>
-        <li><a href="/ferries/ireland/">Ireland</a></li>
-        <li><a href="/ferries/northern-ireland/">Northern Ireland</a></li>
-        <li><a href="/ferries/calmac/">CalMac</a></li>
-              </ul>
-            </section>
             <section>
               <h3 class="crawl-links__sub">Islands by country</h3>
               <ul class="crawl-links__list">
@@ -457,15 +398,10 @@
               </ul>
             </section>
             <section>
-              <h3 class="crawl-links__sub">About this atlas</h3>
+              <h3 class="crawl-links__sub">About</h3>
               <ul class="crawl-links__list">
         <li><a href="/about/">About Find My Island</a></li>
-        <li><a href="/methodology/">Methodology</a></li>
-        <li><a href="/editorial-policy/">Editorial policy</a></li>
-        <li><a href="/corrections/">Corrections</a></li>
-        <li><a href="/sources-licensing/">Sources and licensing</a></li>
         <li><a href="/contact/">Contact</a></li>
-        <li><a href="/dataset/">Dataset</a></li>
               </ul>
             </section>
           </div>
@@ -833,6 +769,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=interest-1" type="module"></script>
+    <script src="app.js?v=wildlife-1" type="module"></script>
   </body>
 </html>
