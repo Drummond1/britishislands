@@ -439,9 +439,69 @@
       "sourceListingId": "tier4-sibleys-st-martins-181",
       "priceDisplay": "£450,000",
       "notes": "Tier 4 desk research. Menawethan chalet on St Martin's, Isles of Scilly."
+    },
+    {
+      "islandId": "osm-way-607165894",
+      "title": "Whittets Ait — Savills",
+      "url": "https://search.savills.com/property-detail/gbwyrswes250193",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "tier3-savills-ills-com-property-detail-gbwyrswes250193",
+      "priceDisplay": "Guide price £560,000",
+      "notes": "Tier 4 desk research (exact, high). Two-bedroom duplex on Whittets Ait, Weybridge. The page names Whittets Ait as a small island reached by a vehicular bridge where the Thames and Wey meet.",
+      "tier3": true,
+      "matchConfidence": "high"
+    },
+    {
+      "islandId": "scilly-st-marys",
+      "title": "St Mary's (Isles of Scilly) — Scilly Estate Agents",
+      "url": "https://scillyestateagents.com/properties/ganilly/",
+      "listingType": "residential",
+      "source": "curated",
+      "sourceListingId": "tier3-scilly-estate-agents-illyestateagents-com-properties-ganil",
+      "priceDisplay": "£425,000 ONO",
+      "notes": "Tier 4 desk research (exact, medium). Ganilly, Jackson's Hill, St. Mary's, Isles of Scilly. Three-bedroom maisonette. Homepage marks it for sale.",
+      "tier3": true,
+      "matchConfidence": "medium"
+    },
+    {
+      "islandId": "osm-way-704795953",
+      "title": "Illauncreeveen — Harrington Estates",
+      "url": "https://www.harringtonestates.ie/allproperties/006095%2Fdh",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "tier3-harrington-estates-gtonestates-ie-allproperties-006095-2fd",
+      "priceDisplay": "€500,000",
+      "notes": "Tier 4 desk research (exact, high). C. 4.5 acre island with a restored dwelling at the mouth of Glengarriff Harbour. Page gives a price guide and viewing by appointment, with no sold or withdrawn status.",
+      "tier3": true,
+      "matchConfidence": "high"
+    },
+    {
+      "islandId": "osm-way-4011476",
+      "title": "Wiay — Bell Ingram",
+      "url": "https://www.bellingram.co.uk/property/isle-of-wiay-creagorry-benbecula-eilean-siar-hs7-5ps/",
+      "listingType": "whole_island",
+      "source": "curated",
+      "sourceListingId": "tier3-bell-ingram-creagorry-benbecula-eilean-siar-hs7-5ps",
+      "priceDisplay": "£995,000",
+      "notes": "Tier 4 desk research (exact, medium). Whole island of about 970 acres off the east coast of Benbecula. Bell Ingram ref CC607, page marked For Sale.",
+      "tier3": true,
+      "matchConfidence": "medium"
+    },
+    {
+      "islandId": "osm-relation-15708714",
+      "title": "Eriskay — Bell Ingram",
+      "url": "https://www.bellingram.co.uk/property/croft-7-balla-eriskay-isle-of-south-uist-eilean-siar-hs8-5jl/",
+      "listingType": "land",
+      "source": "curated",
+      "sourceListingId": "tier3-bell-ingram-isle-of-south-uist-eilean-siar-hs8-5jl",
+      "priceDisplay": "£50,000",
+      "notes": "Tier 4 desk research (exact, high). Croft 7 Balla, a crofting tenancy of about 3.67 ha on Eriskay, plus a share of the island common grazings. Bell Ingram ref MC413, page marked For Sale.",
+      "tier3": true,
+      "matchConfidence": "high"
     }
   ],
-  "tier3AppliedAt": "2026-05-19T13:25:10+00:00",
-  "tier3NewCount": 7,
+  "tier3AppliedAt": "2026-10-25T14:32:41+00:00",
+  "tier3NewCount": 6,
   "tier3SupplementCount": 2
 }

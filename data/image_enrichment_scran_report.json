@@ -1,0 +1,58 @@
+{
+  "started": "2026-06-04T07:37:42",
+  "script": "enrich_images_scran.py",
+  "source": "scran",
+  "args": {
+    "named_only": true,
+    "limit": 5,
+    "probe_only": false,
+    "dry_run": false
+  },
+  "dual_signal": "name_match AND geo_match required when harvest enabled",
+  "attempts": 5,
+  "would_attempt": 5,
+  "endpoint_probes": [
+    {
+      "url": "https://www.scran.ac.uk/",
+      "ok": false,
+      "status": 403,
+      "error": "Forbidden",
+      "id": "scran-www",
+      "expect": "HTML portal; no documented open search API"
+    },
+    {
+      "url": "https://www.scran.ac.uk/api/",
+      "ok": false,
+      "status": 403,
+      "error": "Forbidden",
+      "id": "scran-api-root",
+      "expect": "Often 403 without session"
+    },
+    {
+      "url": "https://canmore.org.uk/api/site/search/result?q=test",
+      "ok": false,
+      "status": 403,
+      "error": "Forbidden",
+      "id": "canmore-search",
+      "expect": "Retired / 403 post-2025 cyber incident"
+    },
+    {
+      "url": "https://trove.scot/",
+      "ok": false,
+      "status": 403,
+      "error": "Forbidden",
+      "id": "trove-scot",
+      "expect": "Per-image licence via account; not machine-harvestable OGL"
+    }
+  ],
+  "viability": "no_open_api — skip harvest (educational/NC on SCRAN; trove.scot account licence)",
+  "harvest_skipped": true,
+  "skip_reason": "No open SCRAN/Canmore JSON search API (403/HTML); trove.scot not machine-OGL.",
+  "staged_by_source": {
+    "scran": 0
+  },
+  "staged_count": 0,
+  "adopted": [],
+  "rejected": [],
+  "finished": "2026-06-04T07:37:42"
+}

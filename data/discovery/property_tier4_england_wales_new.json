@@ -1,0 +1,68 @@
+[
+  {
+    "islandName": "Dumsey Eyot",
+    "nation": "England",
+    "broker": "Absolute Homes",
+    "url": "https://www.absolute-homes.co.uk/property/detached-riverside-home-with-private-mooring/",
+    "listingType": "residential",
+    "priceDisplay": "Guide Price £1,399,000",
+    "status": "for_sale",
+    "notes": "Five-bedroom detached house on Dumsey Eyot, Chertsey. The page names Dumsey Eyot on the mainstream Thames.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Whittets Ait",
+    "nation": "England",
+    "broker": "Savills",
+    "url": "https://search.savills.com/property-detail/gbwyrswes250193",
+    "listingType": "residential",
+    "priceDisplay": "Guide price £560,000",
+    "status": "for_sale",
+    "notes": "Two-bedroom duplex on Whittets Ait, Weybridge. The page names Whittets Ait as a small island reached by a vehicular bridge where the Thames and Wey meet.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "St Mary's",
+    "nation": "England",
+    "broker": "Scilly Estate Agents",
+    "url": "https://scillyestateagents.com/properties/ganilly/",
+    "listingType": "residential",
+    "priceDisplay": "£425,000 ONO",
+    "status": "for_sale",
+    "notes": "Ganilly, Jackson's Hill, St. Mary's, Isles of Scilly. Three-bedroom maisonette. Homepage marks it for sale.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "St Mary's",
+    "nation": "England",
+    "broker": "Scilly Estate Agents",
+    "url": "https://scillyestateagents.com/properties/trevarrick/",
+    "listingType": "residential",
+    "priceDisplay": "Price Reduction £650,000",
+    "status": "for_sale",
+    "notes": "Trevarrick, Trewince, St. Mary's, Isles of Scilly. Three-bedroom bungalow. Homepage marks it for sale.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "St Mary's",
+    "nation": "England",
+    "broker": "Scilly Estate Agents",
+    "url": "https://scillyestateagents.com/properties/moorwell-house/",
+    "listingType": "residential",
+    "priceDisplay": "£895,000",
+    "status": "for_sale",
+    "notes": "Moorwell House, Jackson's Hill, St. Mary's, Isles of Scilly. Four-bedroom house. Homepage marks it for sale.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "St Mary's",
+    "nation": "England",
+    "broker": "Scilly Estate Agents",
+    "url": "https://scillyestateagents.com/properties/beachfield-house/",
+    "listingType": "residential",
+    "priceDisplay": "£950,000",
+    "status": "for_sale",
+    "notes": "Beachfield House, Porthloo, St. Mary's, Isles of Scilly. House with a flat and chalet. Homepage marks it for sale.",
+    "pageNamesIsland": true
+  }
+]

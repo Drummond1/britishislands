@@ -1,0 +1,81 @@
+{
+  "script": "enrich_images_wikidata_depicts.py",
+  "source": "wikidata-depicts",
+  "confidencePct": 95,
+  "generatedAt": "2026-06-04T06:42:26+00:00",
+  "args": {
+    "limit": 500,
+    "named_only": true,
+    "dry_run": false,
+    "apply": false,
+    "no_backup": false,
+    "test": "",
+    "refresh": false,
+    "no_stage": false,
+    "no_sparql": true,
+    "delay": 2.5
+  },
+  "targets": 500,
+  "sparql_blocked": false,
+  "counts": {
+    "staged": 5,
+    "no_candidates": 495,
+    "no_verified": 0,
+    "no_license_or_photo": 0,
+    "no_qid": 0,
+    "by_discovery": {
+      "search": 5,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    }
+  },
+  "adopted": [
+    {
+      "id": "osm-way-4554451",
+      "name": "Furze Island",
+      "wikidata": "Q26715755",
+      "file": "Dunmanus Castle and the adjoining farm.jpg",
+      "verifiedCount": 3,
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+      "license": "CC0"
+    },
+    {
+      "id": "osm-way-349642834",
+      "name": "Carbery Island",
+      "wikidata": "Q26716024",
+      "file": "Dunmanus Castle with Dunmanus Bay view.jpg",
+      "verifiedCount": 2,
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+      "license": "CC0"
+    },
+    {
+      "id": "osm-way-4554647",
+      "name": "Calf Island East",
+      "wikidata": "Q26716448",
+      "file": "Illaunkearagh islands.jpg",
+      "verifiedCount": 2,
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4554655",
+      "name": "Calf Island Middle",
+      "wikidata": "Q26716449",
+      "file": "Illaunkearagh islands.jpg",
+      "verifiedCount": 2,
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4554663",
+      "name": "Calf Island West",
+      "wikidata": "Q26716451",
+      "file": "Illaunkearagh islands.jpg",
+      "verifiedCount": 2,
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "dry_run": false,
+  "staging_path": "data/staging/adoptions/wikidata-depicts.json"
+}

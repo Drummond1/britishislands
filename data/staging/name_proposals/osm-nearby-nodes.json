@@ -1,0 +1,71 @@
+[
+  {
+    "id": "osm-way-71927349",
+    "islandId": "osm-way-71927349",
+    "proposedName": "Croaghan Island",
+    "nameConfidence": "high",
+    "confidenceTier": "A",
+    "source": "osm-nearby-node",
+    "sourceRef": "osm-node-10778002898",
+    "sourcePageUrl": "https://www.openstreetmap.org/node/10778002898",
+    "licence": "ODbL",
+    "retrievedAt": "2026-07-26T23:36:18+00:00",
+    "dualSource": false,
+    "nation": "Northern Ireland",
+    "lat": 54.49869,
+    "lng": -6.3976,
+    "distanceM": 8.3,
+    "inferenceMethod": "osm-orphan-named-node",
+    "nodeTags": {
+      "name": "Croaghan Island",
+      "place": "island"
+    }
+  },
+  {
+    "id": "osm-way-221487482",
+    "islandId": "osm-way-221487482",
+    "proposedName": "Pagoda Island",
+    "nameConfidence": "medium-high",
+    "confidenceTier": "A",
+    "source": "osm-nearby-node",
+    "sourceRef": "osm-node-6812249021",
+    "sourcePageUrl": "https://www.openstreetmap.org/node/6812249021",
+    "licence": "ODbL",
+    "retrievedAt": "2026-07-27T03:16:48+00:00",
+    "dualSource": false,
+    "nation": "England",
+    "lat": 51.53322,
+    "lng": -0.04499,
+    "distanceM": 96.8,
+    "inferenceMethod": "osm-orphan-named-node",
+    "nodeTags": {
+      "board_type": "history",
+      "check_date": "2025-04-04",
+      "information": "board",
+      "name": "Pagoda Island",
+      "tourism": "information"
+    }
+  },
+  {
+    "id": "osm-way-1302505469",
+    "islandId": "osm-way-1302505469",
+    "proposedName": "Cargin Island",
+    "nameConfidence": "medium-high",
+    "confidenceTier": "A",
+    "source": "osm-nearby-node",
+    "sourceRef": "osm-node-12063210049",
+    "sourcePageUrl": "https://www.openstreetmap.org/node/12063210049",
+    "licence": "ODbL",
+    "retrievedAt": "2026-07-27T04:22:41+00:00",
+    "dualSource": false,
+    "nation": "Northern Ireland",
+    "lat": 54.77949,
+    "lng": -6.46382,
+    "distanceM": 92.8,
+    "inferenceMethod": "osm-orphan-named-node",
+    "nodeTags": {
+      "name": "Cargin Island",
+      "place": "locality"
+    }
+  }
+]

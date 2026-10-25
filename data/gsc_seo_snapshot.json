@@ -166,11 +166,11 @@
     }
   ],
   "lastGscDrivenCycle": {
-    "at": "2026-07-29T12:01:06Z",
+    "at": "2026-08-03T04:59:24Z",
     "islandsDirDeployed": true,
-    "averageScore": 47.81,
-    "pctBoth": 18.8,
-    "withDescription": 1621,
+    "averageScore": 47.82,
+    "pctBoth": 18.9,
+    "withDescription": 1623,
     "withPhoto": 4356
   },
   "gscRefreshedAt": "2026-07-26T20:53:46Z",

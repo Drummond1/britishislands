@@ -1,0 +1,2008 @@
+{
+  "script": "name_unnamed_osm_tags.py",
+  "pending": 500,
+  "staged": 0,
+  "adopted": [],
+  "skipped": [
+    {
+      "id": "osm-way-8152890",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4927462",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-482243588",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-8155040",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-8155041",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-8155043",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-482243589",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-8155044",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-8155045",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-5113919",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4890602",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4890604",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4890605",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-23194384",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-164929295",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-112402408",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-287277835",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-514287849",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1457835018",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-300711672",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-300711666",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-300711668",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1457768181",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599074",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599084",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599066",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599082",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599088",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599085",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599080",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599070",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599079",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261599069",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264804150",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-5033595",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180131687",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180131686",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180131707",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180131705",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180151342",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164249",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164253",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164276",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164272",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164245",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164248",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164240",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164256",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164250",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164251",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164264",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164260",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164241",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164255",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164237",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164254",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164244",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180164247",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191939",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191983",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191968",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191946",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191960",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191986",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191958",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191935",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191966",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191959",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180191938",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201342",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201359",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201324",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201310",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201362",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201331",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201330",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201313",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180201312",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203473",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203463",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203477",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203478",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203481",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203447",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203461",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203474",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203445",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203482",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203464",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203499",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203516",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203514",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203442",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203460",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203483",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203500",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203436",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203462",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203438",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203435",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203504",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203517",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203491",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203484",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203485",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203510",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203454",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203441",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203443",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203455",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-180203448",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-112156368",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-112156373",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-112156374",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-112156379",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-109722659",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-984005253",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-984005252",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-371613766",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-371613752",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-336658660",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-40521683",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-40521684",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-40521685",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-335610129",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-335610130",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-371613747",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-371613749",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-552836010",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195587497",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-553243921",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-706315817",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-664878963",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561276",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561286",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561301",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561343",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561344",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4561451",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199171989",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199123767",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199209490",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199209489",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199477750",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199511028",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199511026",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199511027",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199529899",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199893001",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199892997",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199892994",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-25530871",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-4698837",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-25751219",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-26637442",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32253860",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32253862",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32254272",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32254276",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32837374",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-32837375",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-43185961",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-43185946",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-43185951",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-43187080",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-59969886",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-59993374",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-59991676",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-59993455",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1274451895",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-23679509",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-23679602",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-27638505",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28032919",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28204824",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1476153083",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28752705",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-23186720",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-29500791",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-23540983",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-221404816",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-221404818",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-157601029",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-221404817",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1077983890",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1077983892",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1077983893",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010759",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1077983889",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010760",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010766",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010767",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010768",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010769",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010770",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-28010772",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529571",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529118",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529572",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529119",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529927",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-116529928",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-123276083",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-157598115",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-157698803",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-157699835",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207480",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207443",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207459",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207444",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207452",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207454",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207433",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207439",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207485",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207448",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207427",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207456",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207450",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207455",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207446",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207434",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207473",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207470",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207488",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207453",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207435",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207451",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207472",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207494",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207458",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207442",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207463",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207440",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207441",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207432",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207457",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207465",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207491",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207489",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-195207475",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-19625192",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-195002683",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-29060173",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-26584993",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-23060130",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-61187624",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-28942762",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-31360613",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-31451733",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-642274872",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-642274877",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-642271808",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-97575995",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-32724162",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-32724397",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-29381784",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-34946584",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-561907081",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1124989315",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-560794044",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-350411214",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-66158460",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-461215808",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-355834404",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-66158457",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-66158459",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-461017968",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-48996179",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1125654193",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-312615865",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-48996175",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119922861",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119922854",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119922860",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119922850",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1097517661",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927893",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927932",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927952",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927907",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927891",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927960",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927923",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119927881",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-119928344",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1182129023",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1246332724",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-300060792",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-358714947",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1270434621",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1270434626",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-285318415",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-793567266",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1263887013",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-793567270",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-793567269",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1263886761",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1166101620",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1161525845",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1160568850",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158026234",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158026235",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158024669",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158024671",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158023440",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-793573978",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158021546",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158021239",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158021240",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1158020452",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157980375",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157980376",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157980377",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157980379",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157971625",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157970827",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157970868",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157952741",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157952742",
+      "reason": "All Overpass endpoints failed: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "osm-way-1157952744",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1157952745",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1157946816",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1157946817",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1157946819",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1157946821",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-1134356202",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-495069795",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-290266103",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-38553652",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-305334611",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-273814679",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-273819116",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-275736404",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-275736410",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258084391",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258084499",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995998",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48996000",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995989",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995987",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995985",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022898",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022899",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022896",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022895",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022905",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022900",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022902",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022917",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022906",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022894",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022910",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-290344362",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995775",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995769",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995798",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995778",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995779",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995789",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995784",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022909",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995782",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995794",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024196",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024198",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024199",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024200",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024184",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024189",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024172",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024178",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022908",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022936",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022926",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022930",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022925",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022959",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022962",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022957",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022950",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022923",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022947",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022973",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022968",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995094",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022976",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-275791381",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48994854",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995092",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022983",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022978",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022997",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022979",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022982",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49023003",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022985",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49022986",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024154",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024143",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024144",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024145",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-253226542",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-253228052",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-49024597",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-48995986",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-156807033",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-253230866",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-253230864",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258778547",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-235371492",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258762865",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-235371565",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258901435",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-258877531",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-259034215",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-259380859",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-259703738",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-259704191",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-259829356",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-260086417",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-260368824",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-260609219",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-260679976",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-260758121",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-198667248",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-198667249",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261135499",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-261165181",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262046638",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262053742",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199801163",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262527685",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262527686",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262539798",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262543672",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-198665571",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199701909",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-198667251",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-198666863",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262603004",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262603005",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262603012",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262603017",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262736559",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262736555",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-199801162",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262869377",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262869378",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262869379",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262869380",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262870154",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262870155",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262870157",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262870158",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262870160",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-197261508",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876108",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876109",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-197261500",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-197261505",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-197261512",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-197261503",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876114",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876115",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876116",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876117",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876118",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876120",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876121",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876123",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876124",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262876125",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262880762",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262882858",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262884720",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262884725",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-262884727",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-263140140",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-263140463",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-263140462",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-263140465",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264164660",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264164663",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264165092",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264165091",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264165088",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264165089",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-264165087",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-265274635",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-266684531",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-266685014",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-266685016",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-266685017",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318413",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318420",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318419",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318412",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318414",
+      "reason": "no name tags"
+    },
+    {
+      "id": "osm-way-285318416",
+      "reason": "no name tags"
+    }
+  ]
+}

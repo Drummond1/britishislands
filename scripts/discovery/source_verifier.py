@@ -2,12 +2,22 @@
 
 from __future__ import annotations
 
+import re
 import sys
 import time
 import urllib.parse
 from typing import Any
 
 from . import common as c
+
+_ATLAS_ISLANDS: list[dict] | None = None
+
+
+def _atlas_islands() -> list[dict]:
+    global _ATLAS_ISLANDS
+    if _ATLAS_ISLANDS is None:
+        _ATLAS_ISLANDS = c.load_islands()
+    return _ATLAS_ISLANDS
 
 
 def _wb_search(name: str, language: str = "en") -> list[dict]:
@@ -97,6 +107,75 @@ def _verify_one(candidate: dict) -> dict:
                 if label and label not in aliases and label != candidate["name"]:
                     aliases.append(label)
 
+    # Fast paths before Wikidata search (avoid API thrash on gazetteer gaps)
+    if candidate.get("osmType") and candidate.get("osmId") is not None:
+        verified = True
+        if confidence == "low":
+            confidence = "medium"
+        if not any(
+            (s.get("name") or "").lower().startswith("openstreetmap") or s.get("name") == "osm"
+            for s in sources
+        ):
+            osm_type = candidate["osmType"]
+            osm_id = candidate["osmId"]
+            sources.append(
+                {
+                    "name": "openstreetmap",
+                    "url": f"https://www.openstreetmap.org/{osm_type}/{osm_id}",
+                    "license": "ODbL",
+                }
+            )
+
+    if not verified:
+        for hint in candidate.get("sourceHints") or []:
+            hname = (hint.get("name") or "").lower()
+            license_ = (hint.get("license") or hint.get("licence") or "").lower()
+            open_ok = any(
+                tok in license_
+                for tok in ("cc-by", "cc0", "ogl", "odbl", "public domain", "crown")
+            )
+            if not open_ok:
+                continue
+            if "geonames" in hname or "seal haul" in hname or "ssi 2014" in hname:
+                nearest = candidate.get("nearestAtlasKm")
+                if nearest is None:
+                    islands = _atlas_islands()
+                    best = 9999.0
+                    for isl in islands:
+                        d = c.haversine_km(
+                            float(candidate["lat"]),
+                            float(candidate["lng"]),
+                            float(isl["lat"]),
+                            float(isl.get("lng") or isl.get("lon")),
+                        )
+                        if d < best:
+                            best = d
+                    nearest = best
+                    candidate["nearestAtlasKm"] = round(best, 3)
+                if float(nearest) < 2.0:
+                    notes.append(f"gazetteer_too_close_km={nearest}")
+                    continue
+                nm = (candidate.get("name") or "").lower()
+                if re.search(
+                    r"\b(hill|fell|mount|ben|peak|summit|tor|salt\s*marsh|mynydd|pond|"
+                    r"camas|creag|scar|leap)\b",
+                    nm,
+                ) and not re.search(r"\b(island|isle|holm|skerry|eilean|inis|ynys)\b", nm):
+                    notes.append("likely_non_island_mistag")
+                    continue
+                if nm in {"great britain", "the island", "the islands"} and float(nearest) > 50:
+                    notes.append("macro_place_name")
+                    continue
+                if "&" in (candidate.get("name") or "") or "," in (candidate.get("name") or ""):
+                    notes.append("compound_area_name")
+                    continue
+                verified = True
+                confidence = "medium"
+                if hint not in sources:
+                    sources.append(hint)
+                notes.append("accepted_open_gazetteer_gap")
+                break
+
     if not verified:
         hits = _wb_search(candidate["name"])
         time.sleep(c.DELAY_S)
@@ -134,11 +213,6 @@ def _verify_one(candidate: dict) -> dict:
         )
         if not verified:
             verified = True
-            confidence = "medium"
-
-    if candidate.get("osmType") and candidate.get("osmId") is not None:
-        verified = True
-        if confidence == "low":
             confidence = "medium"
 
     if not verified:

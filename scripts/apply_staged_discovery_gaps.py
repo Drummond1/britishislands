@@ -27,7 +27,12 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 GEONAMES = DATA / "discovery" / "candidates_geonames.json"
+GEONAMES_STRICT = DATA / "discovery" / "candidates_geonames_strict.json"
 WIKI = DATA / "discovery" / "candidates_wikipedia_coords.json"
+OSM_FREETEXT = DATA / "discovery" / "candidates_osm_freetext.json"
+SEAL = DATA / "discovery" / "candidates_seal_haulouts.json"
+OPENSEAMAP = DATA / "discovery" / "candidates_openseamap_rocks.json"
+WIKIDATA = DATA / "discovery" / "candidates_wikidata.json"
 REPORT = DATA / "discovery/staged_gaps_apply_report.json"
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -39,13 +44,31 @@ from discovery.site_update import _apply_unconfirmed_classification, _record_for
 
 def _load_gaps() -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
-    for path in (GEONAMES, WIKI):
+    # Prefer refined GeoNames strict file when present (fewer false duplicates)
+    geonames_path = GEONAMES_STRICT if GEONAMES_STRICT.is_file() else GEONAMES
+    for path in (OPENSEAMAP, WIKIDATA, geonames_path, WIKI, OSM_FREETEXT, SEAL):
         if not path.is_file():
             continue
         chunk = json.loads(path.read_text(encoding="utf-8"))
         if isinstance(chunk, list):
             out.extend(chunk)
-    return out
+    # Dedup by candidateId / osm / name+rounded coords
+    seen: set[str] = set()
+    deduped: list[dict[str, Any]] = []
+    for row in out:
+        key = (
+            row.get("candidateId")
+            or (
+                f"{row.get('osmType')}-{row.get('osmId')}"
+                if row.get("osmId") is not None
+                else f"{(row.get('name') or '').lower()}|{round(float(row.get('lat') or 0), 3)}|{round(float(row.get('lng') or 0), 3)}"
+            )
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(row)
+    return deduped
 
 
 def main() -> int:

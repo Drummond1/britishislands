@@ -1,0 +1,807 @@
+{
+  "pending": 200,
+  "staged": 0,
+  "adopted": [],
+  "skipped": [
+    {
+      "id": "osm-way-8152890",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-4927462",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-482243588",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-8155040",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-8155041",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-8155043",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-482243589",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-8155044",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-8155045",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-5113919",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-4890602",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-4890604",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-4890605",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-23194384",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-164929295",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-112402408",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-287277835",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-514287849",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1457835018",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-300711672",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-300711666",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-300711668",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1457768181",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599074",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599084",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599066",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599082",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599088",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599085",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599080",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599070",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599079",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-261599069",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-264804150",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-5033595",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180131687",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180131686",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180131707",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180131705",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180151342",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164249",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164253",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164276",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164272",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164245",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164248",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164240",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164256",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164250",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164251",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164264",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164260",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164241",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164255",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164237",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164254",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164244",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180164247",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191939",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191983",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191968",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191946",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191960",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191986",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191958",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191935",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191966",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191959",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180191938",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201342",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201359",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201324",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201310",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201362",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201331",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201330",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201313",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180201312",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203473",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203463",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203477",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203478",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203481",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203447",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203461",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203474",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203445",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203482",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203464",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203499",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203516",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203514",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203442",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203460",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203483",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203500",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203436",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203462",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203438",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203435",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203504",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203517",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203491",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203484",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203485",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203510",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203454",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203441",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203443",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203455",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-180203448",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-112156368",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-112156373",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-112156374",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-112156379",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-109722659",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-984005253",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-984005252",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-25530871",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-4698837",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-25751219",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-26637442",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32253860",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32253862",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32254272",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32254276",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32837374",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-32837375",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-43185961",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-43185946",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-43185951",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-43187080",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-59969886",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-59993374",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-59991676",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-59993455",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1274451895",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-23679509",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-23679602",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-27638505",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28204824",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1476153083",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28752705",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-23186720",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-29500791",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-23540983",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-221404816",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-221404818",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-157601029",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-221404817",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1077983890",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1077983892",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1077983893",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010759",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-1077983889",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010760",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010766",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010767",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010768",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010769",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010770",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-28010772",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529571",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529118",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529572",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529119",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529927",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-116529928",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-123276083",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-157598115",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-157698803",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-157699835",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207480",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207443",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207459",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207444",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207452",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207454",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207433",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207439",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207485",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207448",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207427",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207456",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207450",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207455",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207446",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207434",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207473",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207470",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207488",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207453",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207435",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207451",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207472",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207494",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207458",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207442",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207463",
+      "reason": "no island morpheme site"
+    },
+    {
+      "id": "osm-way-195207440",
+      "reason": "no island morpheme site"
+    }
+  ]
+}

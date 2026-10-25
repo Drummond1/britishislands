@@ -6,6 +6,7 @@ Outputs:
   data/islands_index.json       — v2 compact stubs (~1 MiB) for map + list
   data/islands_unnamed_index.json — lazy overlay for unnamed landmasses
   data/shards/*.json            — full records merged on demand per nation
+  data/details/{id}.json        — per-island full records (fast profile open)
 
 Run after any change to data/islands.json:
   python3 scripts/build_islands_index.py
@@ -14,6 +15,8 @@ Run after any change to data/islands.json:
 from __future__ import annotations
 
 import json
+import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -22,6 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from seo_paths import assign_seo_paths  # noqa: E402
 
 SHARD_DIR = ROOT / "data" / "shards"
+DETAILS_DIR = ROOT / "data" / "details"
 INDEX_VERSION = 2
 
 NATION_SHARD: dict[str, str] = {
@@ -168,6 +172,50 @@ def write_shards(data: list[dict]) -> None:
     )
 
 
+_DETAIL_ID_RE = re.compile(r"^[a-zA-Z0-9._-]+$")
+
+
+def detail_filename(island_id: str) -> str | None:
+    iid = str(island_id or "").strip()
+    if not iid or not _DETAIL_ID_RE.match(iid):
+        return None
+    return f"{iid}.json"
+
+
+def write_details(data: list[dict]) -> None:
+    """One JSON file per island so profile open avoids multi‑MB nation shards."""
+    if DETAILS_DIR.exists():
+        shutil.rmtree(DETAILS_DIR)
+    DETAILS_DIR.mkdir(parents=True, exist_ok=True)
+    written = 0
+    skipped = 0
+    total_bytes = 0
+    for island in data:
+        fname = detail_filename(island.get("id"))
+        if not fname:
+            skipped += 1
+            continue
+        path = DETAILS_DIR / fname
+        raw = json.dumps(island, separators=(",", ":"), ensure_ascii=False) + "\n"
+        path.write_text(raw, encoding="utf-8")
+        total_bytes += len(raw.encode("utf-8"))
+        written += 1
+    manifest = {
+        "version": 1,
+        "total": written,
+        "skipped": skipped,
+        "dir": "details",
+    }
+    (DETAILS_DIR / "manifest.json").write_text(
+        json.dumps(manifest, separators=(",", ":"), ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(
+        f"wrote {written} per-island details -> {DETAILS_DIR.name}/ "
+        f"({total_bytes / 1024 / 1024:.2f} MiB); skipped {skipped}",
+    )
+
+
 def main() -> None:
     src = ROOT / "data" / "islands.json"
     out = ROOT / "data" / "islands_index.json"
@@ -189,6 +237,7 @@ def main() -> None:
         encoding="utf-8",
     )
     write_shards(data)
+    write_details(data)
     print(
         f"wrote {len(main_rows)} compact rows -> {out.name} "
         f"({out.stat().st_size / 1024 / 1024:.2f} MiB); "

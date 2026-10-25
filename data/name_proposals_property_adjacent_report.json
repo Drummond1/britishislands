@@ -1,0 +1,14 @@
+{
+  "script": "name_unnamed_property_adjacent.py",
+  "extractedPoints": 27,
+  "listedIslands": 37,
+  "pending": 4144,
+  "staged": 1,
+  "adopted": [
+    {
+      "id": "osm-way-253228052",
+      "name": "Inishmacatreer",
+      "distanceM": 131.9
+    }
+  ]
+}

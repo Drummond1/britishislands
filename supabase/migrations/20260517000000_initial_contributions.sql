@@ -272,3 +272,61 @@ as $$
     where id = auth.uid() and trust_tier = 'staff'
   );
 $$;
+
+-- Triggers run as the function owner. Do not expose these RPCs on the Data API.
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+revoke execute on function public.is_staff() from public, anon, authenticated;
+grant execute on function public.handle_new_user() to supabase_auth_admin;
+
+-- Owners may change display_name only. trust_tier, status, and counts stay
+-- with staff / service role. Helper lives in private so it is not an RPC.
+create schema if not exists private;
+
+revoke all on schema private from public, anon;
+grant usage on schema private to authenticated, service_role;
+
+create or replace function private.protect_profile_columns()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  actor_is_staff boolean;
+begin
+  select exists (
+    select 1
+    from public.profiles
+    where id = auth.uid()
+      and trust_tier = 'staff'
+      and status = 'active'
+  )
+  into actor_is_staff;
+
+  if auth.uid() is not distinct from old.id and not coalesce(actor_is_staff, false) then
+    if new.id is distinct from old.id
+       or new.trust_tier is distinct from old.trust_tier
+       or new.status is distinct from old.status
+       or new.contribution_count is distinct from old.contribution_count
+       or new.accepted_count is distinct from old.accepted_count
+       or new.rejected_count is distinct from old.rejected_count
+       or new.created_at is distinct from old.created_at
+    then
+      raise exception 'You can only change your display name'
+        using errcode = '42501';
+    end if;
+  end if;
+
+  new.updated_at := now();
+  return new;
+end;
+$$;
+
+revoke all on function private.protect_profile_columns() from public, anon;
+grant execute on function private.protect_profile_columns() to authenticated, service_role;
+
+drop trigger if exists profiles_protect_columns on public.profiles;
+create trigger profiles_protect_columns
+  before update on public.profiles
+  for each row
+  execute function private.protect_profile_columns();

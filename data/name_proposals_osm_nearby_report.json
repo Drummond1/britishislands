@@ -1,0 +1,812 @@
+{
+  "script": "name_unnamed_nearby_osm.py",
+  "pending": 300,
+  "offset": 2100,
+  "staged": 1,
+  "adopted": [
+    {
+      "id": "osm-way-1302505469",
+      "name": "Cargin Island",
+      "distanceM": 92.8,
+      "osmId": 12063210049
+    }
+  ],
+  "skipped": [
+    {
+      "id": "osm-way-836181420",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-836181424",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-836181426",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-836181422",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-641400692",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1033585671",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-641049891",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-242169464",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-242806272",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-242416311",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-244297775",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-41594185",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-245516589",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-245516599",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-245516623",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-245516582",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-211164701",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247236402",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247236405",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247528751",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247506191",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247530693",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247530688",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247530689",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-247530687",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-264521390",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-264890606",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-264895540",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-264921445",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-264927554",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-265221198",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-265225301",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-265318866",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-614031013",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-23543039",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1174775803",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-136493311",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-33416153",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-280257471",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-280257475",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-280261054",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-718997660",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1112792854",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1136360165",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1160413706",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1174775797",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1158277945",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1205276038",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1087362166",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1474936179",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-293799149",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-293799165",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-293799169",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-293814934",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-294014486",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-294023458",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-294382842",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-68233275",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-55833289",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-893133497",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-893133496",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295106034",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-893126937",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-893126938",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-294494834",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295293625",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295359458",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295582516",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295700041",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295700007",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-295700048",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-54705138",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-172332229",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-469069537",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-297382542",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-15803583",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-120077467",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-120077464",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-120076949",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-120077465",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-140755520",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-111866998",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-298340105",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-16372825",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-298989643",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-300010595",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-25985157",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301327733",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301599697",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301599702",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301599705",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301599699",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-300651552",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-301805939",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-672304783",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302518740",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302518739",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302518742",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1239701222",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-687876039",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1366369455",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1366369450",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1369797399",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-118631165",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-98635260",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65234885",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65234886",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-115502741",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-166105849",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-166105848",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-129717324",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-61921952",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-61921949",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-61921955",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-99267121",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-188973424",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-188183626",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-40778147",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-34571008",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-24943536",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-4785277",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-4785276",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-70684305",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-144460133",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-171568788",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-171568789",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-66388183",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-5197116",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-4992158",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-4992157",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-69056631",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1105533165",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-502733925",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-229371735",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-198775121",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-198775114",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-129974885",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-129974887",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-495458538",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-8138020",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302892151",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302957462",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-302957463",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303002287",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303002289",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303264573",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303264574",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303322496",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303349446",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-303761622",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1112103521",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-305033250",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-305036390",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1109234528",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1109234504",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1109234501",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1109744619",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1109744620",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1112518081",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-194194635",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-24213783",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-305800704",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-306811647",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-307214471",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-309665413",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-309726662",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-310555365",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-310291388",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-310962064",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-76439412",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-311466847",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-311466848",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-311613828",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1302505473",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1302505471",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1314566745",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1302534120",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1302364340",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1302364343",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-312059367",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-312626781",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-313073586",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65777589",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65976764",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1249851034",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1249851032",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65772222",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-1249851035",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-354189531",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65976762",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-310796734",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65976765",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-65712521",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039428",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039427",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039440",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039437",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039429",
+      "reason": "no-node"
+    },
+    {
+      "id": "osm-way-315039430",
+      "reason": "no-node"
+    }
+  ]
+}

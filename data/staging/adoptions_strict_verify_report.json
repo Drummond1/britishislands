@@ -1,0 +1,744 @@
+{
+  "generatedAt": "2026-06-04T06:16:23+00:00",
+  "minScore": 90,
+  "removeOpenverseWithoutGeo": false,
+  "inputTotal": 44,
+  "passedTotal": 20,
+  "failedTotal": 24,
+  "files": [
+    {
+      "file": "archive-nls.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    },
+    {
+      "file": "commons-deep.json",
+      "minScore": 90,
+      "input": 2,
+      "passed": 2,
+      "removeOpenverseWithoutGeo": false,
+      "rows": [
+        {
+          "id": "osm-way-28206122",
+          "name": "Stac Levenish",
+          "score": 92,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "commons-island-category:Category:Stac Levenish"
+          ],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-553321740",
+          "name": "Piper's Island",
+          "score": 92,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "commons-island-category:Category:Pipers Island"
+          ],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": ""
+        }
+      ]
+    },
+    {
+      "file": "flickr-europeana.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    },
+    {
+      "file": "geograph-commons.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    },
+    {
+      "file": "inaturalist.json",
+      "minScore": 90,
+      "input": 18,
+      "passed": 18,
+      "removeOpenverseWithoutGeo": false,
+      "rows": [
+        {
+          "id": "osm-way-1195736233",
+          "name": "A' Sgeir Fhada",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:289m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "allens-rock",
+          "name": "Allen's Rock",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation"
+          ],
+          "signalBReasons": [
+            "within-5km:166m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-4010945",
+          "name": "An Crois-eilean",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:153m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-26526911",
+          "name": "Ash Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:242m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-393292258",
+          "name": "Atticlea Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:111m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-1172206096",
+          "name": "Ballyconry Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:109m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-88125442",
+          "name": "Bernard's Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:178m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "big-picket-rock",
+          "name": "Big Picket Rock",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation"
+          ],
+          "signalBReasons": [
+            "within-5km:244m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-88143446",
+          "name": "Black Tom's Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:259m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-370323641",
+          "name": "Bracken Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:200m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "cabbage-island-w1317014325",
+          "name": "Cabbage Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation"
+          ],
+          "signalBReasons": [
+            "within-5km:284m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-1225547241",
+          "name": "Cannon Rock",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:150m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-356916322",
+          "name": "Carraig Dhubh",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:212m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-223842666",
+          "name": "Carrickawart Island",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:282m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-1425666411",
+          "name": "Carrickbane",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:159m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-4562648",
+          "name": "Carrickleagh",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:205m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-305104903",
+          "name": "Carrigadda",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:184m"
+          ],
+          "rejectReason": ""
+        },
+        {
+          "id": "osm-way-834185457",
+          "name": "Carrigay",
+          "score": 96,
+          "pass": true,
+          "signalA": true,
+          "signalB": true,
+          "signalAReasons": [
+            "atlas-bound-observation",
+            "atlas-osm-id"
+          ],
+          "signalBReasons": [
+            "within-5km:6m"
+          ],
+          "rejectReason": ""
+        }
+      ]
+    },
+    {
+      "file": "multilang-wiki.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    },
+    {
+      "file": "ogl-tourism.json",
+      "minScore": 90,
+      "input": 21,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": [
+        {
+          "id": "wd-Q2100283",
+          "name": "The Wolves",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "wd-Q24658969",
+          "name": "The Field",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-way-74441740",
+          "name": "The Bill",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-431547277",
+          "name": "Muclaghmore",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "regional-category:Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-4563872",
+          "name": "Illauntannig",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-way-4554541",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-4561066",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-247914631",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-544154396",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-575553835",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-1109234536",
+          "name": "Goose Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Cork",
+            "regional-category:Cork",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "the-star",
+          "name": "The Star",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-way-1138138187",
+          "name": "The Club",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-relation-3335698",
+          "name": "Port Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "regional-category:Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-179021423",
+          "name": "Port Island",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-way-4556994",
+          "name": "Mid Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Northern Ireland",
+            "regional-category:Northern Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-4557101",
+          "name": "Mid Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Northern Ireland",
+            "regional-category:Northern Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-431547276",
+          "name": "Illaunabarnagh",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "regional-category:Kerry",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-4554535",
+          "name": "High Island",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "osm-relation-4294907",
+          "name": "Big Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        },
+        {
+          "id": "osm-way-4563025",
+          "name": "Big Island",
+          "score": 70,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "regional-anchor:Ireland",
+            "name-word-boundary"
+          ],
+          "rejectReason": "missing-entity-signal"
+        }
+      ]
+    },
+    {
+      "file": "openverse.json",
+      "minScore": 90,
+      "input": 3,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": [
+        {
+          "id": "osm-way-199171973",
+          "name": "Cliff Island",
+          "score": 0,
+          "pass": false,
+          "signalA": false,
+          "signalB": false,
+          "signalAReasons": [],
+          "signalBReasons": [],
+          "rejectReason": "no-signals"
+        },
+        {
+          "id": "osm-way-4562322",
+          "name": "Cruagh",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        },
+        {
+          "id": "deils-heid",
+          "name": "De'il's Heid",
+          "score": 55,
+          "pass": false,
+          "signalA": false,
+          "signalB": true,
+          "signalAReasons": [],
+          "signalBReasons": [
+            "name-word-boundary"
+          ],
+          "rejectReason": "single-signal-name-only"
+        }
+      ]
+    },
+    {
+      "file": "p373-commons.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    },
+    {
+      "file": "web-discovery.json",
+      "minScore": 90,
+      "input": 0,
+      "passed": 0,
+      "removeOpenverseWithoutGeo": false,
+      "rows": []
+    }
+  ]
+}

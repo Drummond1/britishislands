@@ -1,0 +1,16 @@
+{
+  "generated": "2026-06-04T06:19:06Z",
+  "pipeline": "enrich_images_duchas",
+  "attempted": 50,
+  "staged_count": 0,
+  "viable": false,
+  "viability": {
+    "api_exists": true,
+    "endpoint": "https://www.duchas.ie/api/v0.6/cbeg",
+    "default_licence": "CC BY-NC 4.0",
+    "staged_under_project_policy": false,
+    "reason": "ETHICS.md excludes non-commercial licences",
+    "blocked": "missing DUCHAS_API_KEY / GAOIS_API_KEY"
+  },
+  "adoptions": []
+}

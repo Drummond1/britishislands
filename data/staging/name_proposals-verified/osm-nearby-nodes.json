@@ -1,0 +1,25 @@
+[
+  {
+    "id": "osm-way-1302505469",
+    "islandId": "osm-way-1302505469",
+    "proposedName": "Cargin Island",
+    "nameConfidence": "medium-high",
+    "confidenceTier": "A",
+    "source": "osm-nearby-node",
+    "sourceRef": "osm-node-12063210049",
+    "sourcePageUrl": "https://www.openstreetmap.org/node/12063210049",
+    "licence": "ODbL",
+    "retrievedAt": "2026-07-27T04:22:41+00:00",
+    "dualSource": false,
+    "nation": "Northern Ireland",
+    "lat": 54.77949,
+    "lng": -6.46382,
+    "distanceM": 92.8,
+    "inferenceMethod": "osm-orphan-named-node",
+    "nodeTags": {
+      "name": "Cargin Island",
+      "place": "locality"
+    },
+    "verifyScore": 85
+  }
+]

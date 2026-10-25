@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found — Find My Island</title>
+    <base href="/" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .nf {
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 32px 20px;
+        text-align: center;
+        background: var(--bg, #0a0f14);
+        color: var(--text, #e8eef5);
+      }
+      .nf h1 {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 2rem;
+        margin: 0 0 12px;
+      }
+      .nf p {
+        margin: 0 0 20px;
+        color: var(--text-muted, #9aa8b8);
+        max-width: 28rem;
+      }
+      .nf a {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 10px;
+        background: var(--accent, #4ea3ff);
+        color: #061018;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="nf">
+      <div>
+        <h1>Island not found</h1>
+        <p>
+          That link does not match a page in the atlas. The island may have moved, or the URL may be mistyped.
+        </p>
+        <a href="/">Open Find My Island</a>
+      </div>
+    </main>
+  </body>
+</html>

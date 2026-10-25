@@ -1,154 +1,514 @@
 {
-  "started": "2026-06-12T11:44:11+00:00",
+  "started": "2026-07-27T05:31:19+00:00",
   "dryRun": false,
-  "input": 388,
-  "verified": 31,
-  "rejected": 357,
-  "skippedExistingMatch": 3,
+  "input": 216,
+  "verified": 197,
+  "rejected": 19,
+  "skippedExistingMatch": 10,
   "skippedDuplicate": 0,
-  "added": 28,
+  "added": 187,
   "addedIslands": [
     {
-      "id": "wd-Q24643587",
-      "name": "Gaa Sand",
+      "id": "osm-node-2959856464",
+      "name": "St Anthony's Bush",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q56667212",
-      "name": "Virda Field",
+      "id": "osm-node-2959857101",
+      "name": "Kirkbush Rock",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q25635110",
-      "name": "Mid Hill",
+      "id": "osm-node-2959857122",
+      "name": "Bush of the Ness",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q25634954",
-      "name": "Blotchnie Fiold",
+      "id": "osm-node-2959919275",
+      "name": "Frenchman's Rock",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q25634959",
-      "name": "Fitty Hill",
+      "id": "osm-node-2959932848",
+      "name": "Sugarloaf",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q25197396",
-      "name": "Porth Island",
+      "id": "osm-node-2959932849",
+      "name": "Gallant Buoys",
+      "nation": "Scotland"
+    },
+    {
+      "id": "osm-node-4111288471",
+      "name": "Crabwater Rock",
+      "nation": "Scotland"
+    },
+    {
+      "id": "great-britain",
+      "name": "Great Britain",
       "nation": "England"
     },
     {
-      "id": "wd-Q7592680",
-      "name": "St Boniface Down",
+      "id": "nicolsons-leap",
+      "name": "Nicolson's Leap",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-muigh-heisgeir",
+      "name": "Eilean a Muigh Heisgeir",
+      "nation": "Scotland"
+    },
+    {
+      "id": "colne-bar",
+      "name": "Colne Bar",
       "nation": "England"
     },
     {
-      "id": "wd-Q20618308",
-      "name": "Dun I",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q54191468",
-      "name": "Ward of Clett",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q814804",
-      "name": "Beinn Shleibhe",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q1867249",
-      "name": "Eilean Mhic Iain",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q56665184",
-      "name": "Dun Ghallain",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q126207511",
-      "name": "Glas-Eileanan",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q56665227",
-      "name": "Eilean na Carraidh",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q31097968",
-      "name": "Eilean Uillne",
-      "nation": "Scotland"
-    },
-    {
-      "id": "wd-Q7458607",
-      "name": "Sexton's Burrow",
+      "id": "loddon-island",
+      "name": "Loddon Island",
       "nation": "England"
     },
     {
-      "id": "wd-Q6084068",
-      "name": "Isle of Whithorn",
-      "nation": "Scotland"
+      "id": "warham-salt-marsh---west",
+      "name": "Warham Salt Marsh - West",
+      "nation": "England"
     },
     {
-      "id": "wd-Q103903432",
-      "name": "Eilean Thunga",
-      "nation": "Scotland"
+      "id": "morston-salt-marsh",
+      "name": "Morston Salt Marsh",
+      "nation": "England"
     },
     {
-      "id": "wd-Q110954880",
-      "name": "\u00c0rd Neackie",
-      "nation": "Scotland"
+      "id": "stiffkey-meals",
+      "name": "Stiffkey Meals",
+      "nation": "England"
     },
     {
-      "id": "wd-Q7999579",
-      "name": "Wigg Island",
+      "id": "horninglow-island",
+      "name": "Horninglow island",
+      "nation": "England"
+    },
+    {
+      "id": "mynydd-bodafon-yr-arwydd",
+      "name": "Mynydd Bodafon [Yr Arwydd]",
       "nation": "Wales"
     },
     {
-      "id": "wd-Q109568030",
-      "name": "Sillock Holm",
+      "id": "the-island",
+      "name": "The Island",
+      "nation": "England"
+    },
+    {
+      "id": "l\u00f2n-eilean",
+      "name": "L\u00f2n Eilean",
       "nation": "Scotland"
     },
     {
-      "id": "wd-Q107357393",
-      "name": "Y Glyn",
+      "id": "kirkland-scar",
+      "name": "Kirkland Scar",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-faoileann-a-chlachanaich",
+      "name": "Eilean Faoileann a' Chlachanaich",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-na-faoileig",
+      "name": "Eilean na Faoileig",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-caorach",
+      "name": "Eilean nan Caorach",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-gill-a-bhalgionn",
+      "name": "Eilean Gill a' Bhalgionn",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-faoileag",
+      "name": "Eilean nan Faoileag",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-na-cloinne",
+      "name": "Eilean na Cloinne",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-an-fheidh",
+      "name": "Eilean an Fheidh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-mhuirich",
+      "name": "Eilean a' Mhuirich",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-an-tuilaich",
+      "name": "Eilean an Tuilaich",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nam-meann",
+      "name": "Eilean nam Meann",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-na-g\u00e0ire",
+      "name": "Eilean na G\u00e0ire",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-each",
+      "name": "Eilean nan Each",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-an-eagaill",
+      "name": "Eilean an Eagaill",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-crodh",
+      "name": "Eilean nan Crodh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-mhorair",
+      "name": "Eilean a' Mhorair",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-greusaich",
+      "name": "Eilean nan Greusaich",
+      "nation": "Scotland"
+    },
+    {
+      "id": "isle-na-gower",
+      "name": "Isle-na-Gower",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-ghiuthais",
+      "name": "Eilean a' Ghiuthais",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-chip",
+      "name": "Eilean a' Chip",
+      "nation": "Scotland"
+    },
+    {
+      "id": "isles-of-trool",
+      "name": "Isles of Trool",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-math-ghamhna",
+      "name": "Eilean Math-ghamhna",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nan-loch",
+      "name": "Eilean nan Loch",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-an-sg\u00f9irr",
+      "name": "Eilean an Sg\u00f9irr",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-nam-breaban",
+      "name": "Eilean nam Breaban",
+      "nation": "Scotland"
+    },
+    {
+      "id": "briedach",
+      "name": "Briedach",
+      "nation": "Scotland"
+    },
+    {
+      "id": "glas-eilean",
+      "name": "Glas Eilean",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-na-h-uamhaidh",
+      "name": "Eilean na h-Uamhaidh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-aoghainn",
+      "name": "Eilean Aoghainn",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-fraoch",
+      "name": "Eilean Fraoch",
+      "nation": "Scotland"
+    },
+    {
+      "id": "camas-shalachain",
+      "name": "Camas Shalachain",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-na-h-adhuinnean",
+      "name": "Eilean na h-Adhuinnean",
+      "nation": "Scotland"
+    },
+    {
+      "id": "osprey-island",
+      "name": "Osprey Island",
+      "nation": "England"
+    },
+    {
+      "id": "garbh-eilean",
+      "name": "Garbh Eilean",
+      "nation": "Scotland"
+    },
+    {
+      "id": "otter-island",
+      "name": "Otter Island",
+      "nation": "England"
+    },
+    {
+      "id": "dutchmans-island",
+      "name": "Dutchman's Island",
+      "nation": "England"
+    },
+    {
+      "id": "fowley-island",
+      "name": "Fowley Island",
+      "nation": "England"
+    },
+    {
+      "id": "fishgarth-holm",
+      "name": "Fishgarth Holm",
+      "nation": "Scotland"
+    },
+    {
+      "id": "coathouse-island",
+      "name": "Coathouse Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "inverneil-island",
+      "name": "Inverneil Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-ach-d\u00f9graidh",
+      "name": "Eilean Ach' D\u00f9graidh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "goat-island",
+      "name": "Goat Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "cottage-island",
+      "name": "Cottage Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "dormont-island",
+      "name": "Dormont Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "holly-island",
+      "name": "Holly Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-bhr\u00e0idebig",
+      "name": "Eilean Bhr\u00e0idebig",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-a-mhadaidh",
+      "name": "Eilean a' Mhadaidh",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-b\u00e0n",
+      "name": "Eilean B\u00e0n",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-an-ruisg",
+      "name": "Eilean an Ruisg",
+      "nation": "Scotland"
+    },
+    {
+      "id": "dartington-island",
+      "name": "Dartington Island",
+      "nation": "England"
+    },
+    {
+      "id": "hood-island",
+      "name": "Hood Island",
+      "nation": "England"
+    },
+    {
+      "id": "otter-island",
+      "name": "Otter Island",
+      "nation": "England"
+    },
+    {
+      "id": "germany-isle",
+      "name": "Germany Isle",
+      "nation": "Scotland"
+    },
+    {
+      "id": "duck-island",
+      "name": "Duck Island",
+      "nation": "England"
+    },
+    {
+      "id": "park-island",
+      "name": "Park Island",
+      "nation": "England"
+    },
+    {
+      "id": "carrs-island",
+      "name": "Carr's Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "don-island",
+      "name": "Don Island",
+      "nation": "England"
+    },
+    {
+      "id": "eilean-fraoich",
+      "name": "Eilean Fraoich",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eilean-thomais",
+      "name": "Eilean Thomais",
+      "nation": "Scotland"
+    },
+    {
+      "id": "holly-island",
+      "name": "Holly Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "marions-isles",
+      "name": "Marion's Isles",
+      "nation": "Scotland"
+    },
+    {
+      "id": "eagle-island",
+      "name": "Eagle Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "dog-island",
+      "name": "Dog Island",
+      "nation": "England"
+    },
+    {
+      "id": "kids-isle",
+      "name": "Kids Isle",
+      "nation": "Scotland"
+    },
+    {
+      "id": "ynys-gwair",
+      "name": "Ynys Gwair",
       "nation": "Wales"
     },
     {
-      "id": "wd-Q2725983",
-      "name": "Greenham",
+      "id": "the-islands",
+      "name": "The Islands",
       "nation": "England"
     },
     {
-      "id": "wd-Q123470268",
-      "name": "Fobney Island",
+      "id": "logg-island",
+      "name": "Logg Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "willow-island",
+      "name": "Willow Island",
       "nation": "England"
     },
     {
-      "id": "wd-Q104303639",
-      "name": "Brick Island",
-      "nation": "Ireland"
+      "id": "castle-rock",
+      "name": "Castle Rock",
+      "nation": "Scotland"
     },
     {
-      "id": "wd-Q26718719",
-      "name": "Clera Island",
-      "nation": "Ireland"
+      "id": "monkmill-island",
+      "name": "Monkmill Island",
+      "nation": "Scotland"
     },
     {
-      "id": "wd-Q124362316",
-      "name": "Angus Rock",
-      "nation": "Northern Ireland"
+      "id": "crow-island",
+      "name": "Crow Island",
+      "nation": "Scotland"
     },
     {
-      "id": "wd-Q5535288",
-      "name": "Geokaun",
-      "nation": "Ireland"
+      "id": "maiden-isle",
+      "name": "Maiden Isle",
+      "nation": "Scotland"
+    },
+    {
+      "id": "lud-stream-islands",
+      "name": "Lud Stream Islands",
+      "nation": "England"
+    },
+    {
+      "id": "creag-an-eilein",
+      "name": "Creag an Eilein",
+      "nation": "Scotland"
+    },
+    {
+      "id": "island-pond",
+      "name": "Island Pond",
+      "nation": "England"
+    },
+    {
+      "id": "the-island",
+      "name": "The Island",
+      "nation": "Wales"
+    },
+    {
+      "id": "slogarie-island",
+      "name": "Slogarie Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "craigaherron-island",
+      "name": "Craigaherron Island",
+      "nation": "Scotland"
+    },
+    {
+      "id": "stanford-park-island",
+      "name": "Stanford Park Island",
+      "nation": "England"
+    },
+    {
+      "id": "ynys-isaf",
+      "name": "Ynys Isaf",
+      "nation": "Wales"
+    },
+    {
+      "id": "blaeberry-island",
+      "name": "Blaeberry Island",
+      "nation": "Scotland"
     }
   ],
-  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-gaps-20260612T114411Z",
-  "finalIslandCount": 11379
+  "backupPath": "/Users/drummondgilberta2aa9/Desktop/LLMs/Cursor/Scottish Islands/data/islands.json.before-discovery-gaps-20260727T053119Z",
+  "finalIslandCount": 11567
 }

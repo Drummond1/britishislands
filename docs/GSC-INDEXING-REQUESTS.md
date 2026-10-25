@@ -15,8 +15,12 @@ fastest way to shift crawl attention.
 - [x] Confirmed live HTTP 200 for nation hubs + priority island landings
 - [x] Warm-crawled all 36 priority URLs with bot UA
 - [x] Built `data/gsc_index_request_urls.json`
-- [ ] Search Console MCP unavailable this session (server discovery error) —
-      **manual Request indexing still required**
+- [x] **Deployed** `2720d940` — live sitemap **1,622** island URLs; profiles `index,follow`
+- [x] Search Console **Request indexing** submitted **2026-08-13** (signed in as
+      `drummondgilbert@gmail.com`, property `sc-domain:findmyisland.com`):
+  - Hubs (unknown to Google): `/islands/scotland/`, `/england/`, `/wales/`, `/ireland/`
+  - Islands: Scilly St Mary's (already indexed — requested again), Bute (indexed — requested again), Staffa (indexed — requested again), Anglesey (unknown — requested)
+- [ ] Remaining quota URLs if useful: collections hubs, Lewis & Harris, Lundy, St Kilda, Brownsea, sitemap.xml
 - [ ] Sitemap ping endpoints returned non-success (Google 404 / Bing 400);
       rely on GSC sitemap + URL Inspection instead
 

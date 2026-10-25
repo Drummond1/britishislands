@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-02T21:17:20+00:00",
+  "source": "ogl-tourism",
+  "adoptions": [
+    {
+      "id": "wd-Q2100283",
+      "name": "The Wolves",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Turbulence_around_The_Wolves_-_geograph.org.uk_-_6380958.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Flat Holm",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Turbulence_around_The_Wolves_-_geograph.org.uk_-_6380958.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Alan Hughes, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Turbulence around The Wolves - geograph.org.uk - 6380958",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:23+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Turbulence_around_The_Wolves_-_geograph.org.uk_-_6380958.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "wd-Q24658969",
+      "name": "The Field",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_across_the_field_towards_Capel_Newydd_-_geograph.org.uk_-_1402884.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Anglesey",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:View_across_the_field_towards_Capel_Newydd_-_geograph.org.uk_-_1402884.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Eric Jones, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "View across the field towards Capel Newydd - geograph.org.uk - 1402884",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:25+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:View_across_the_field_towards_Capel_Newydd_-_geograph.org.uk_-_1402884.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-74441740",
+      "name": "The Bill",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cape_Clear_Island_-_The_Bill_of_Cape_Clear_-_geograph.org.uk_-_6008798.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Cape Clear",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cape_Clear_Island_-_The_Bill_of_Cape_Clear_-_geograph.org.uk_-_6008798.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Colin Park, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Cape Clear Island - The Bill of Cape Clear - geograph.org.uk - 6008798",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:25+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cape_Clear_Island_-_The_Bill_of_Cape_Clear_-_geograph.org.uk_-_6008798.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-431547277",
+      "name": "Muclaghmore",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mucklaghmore-1709%2C_Tralee_Bay%2C_Co._Kerry%2C_Ireland.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Kerry",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mucklaghmore-1709,_Tralee_Bay,_Co._Kerry,_Ireland.jpg",
+        "license": "CC BY-SA 4.0",
+        "attribution": "Photo by Maoileann, via Wikimedia Commons (CC BY-SA 4.0)",
+        "caption": "Mucklaghmore-1709, Tralee Bay, Co. Kerry, Ireland",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:26+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mucklaghmore-1709,_Tralee_Bay,_Co._Kerry,_Ireland.jpg",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "osm-way-4563872",
+      "name": "Illauntannig",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illauntannig.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Magharee Islands",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illauntannig.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Illauntannig",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:28+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illauntannig.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4554541",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4561066",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-247914631",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-544154396",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-575553835",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-1109234536",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+        "license": "CC BY 4.0",
+        "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+        "caption": "Goose Island, aerial view",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "the-star",
+      "name": "The Star",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Now_Put_The_Star_Back_Like_A_Good_Boy_-_panoramio.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Barra, Scotland",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Now_Put_The_Star_Back_Like_A_Good_Boy_-_panoramio.jpg",
+        "license": "CC BY-SA 3.0",
+        "attribution": "Photo by Neil Aitkenhead, via Wikimedia Commons (CC BY-SA 3.0)",
+        "caption": "Now Put The Star Back Like A Good Boy - panoramio",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:31+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Now_Put_The_Star_Back_Like_A_Good_Boy_-_panoramio.jpg",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "id": "osm-way-1138138187",
+      "name": "The Club",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_club_house_of_Amlwch_Town_F.C._-_geograph.org.uk_-_1092113.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Anglesey",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_club_house_of_Amlwch_Town_F.C._-_geograph.org.uk_-_1092113.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Eric Jones, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "The club house of Amlwch Town F.C. - geograph.org.uk - 1092113",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:17:33+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_club_house_of_Amlwch_Town_F.C._-_geograph.org.uk_-_1092113.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-relation-3335698",
+      "name": "Port Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell_Fort%2C_Port_Island%2C_Inishbofin_-_geograph.org.uk_-_199476.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of Ireland",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Espresso Addict, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Cromwell Fort, Port Island, Inishbofin - geograph.org.uk - 199476",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:05+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-179021423",
+      "name": "Port Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell_Fort%2C_Port_Island%2C_Inishbofin_-_geograph.org.uk_-_199476.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of Ireland",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Espresso Addict, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Cromwell Fort, Port Island, Inishbofin - geograph.org.uk - 199476",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:05+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-4556994",
+      "name": "Mid Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mid_Island%2C_Strangford_Lough_-_geograph.org.uk_-_3589.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of Northern Ireland",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Michael Parry, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Mid Island, Strangford Lough - geograph.org.uk - 3589",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:05+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-4557101",
+      "name": "Mid Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mid_Island%2C_Strangford_Lough_-_geograph.org.uk_-_3589.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of Northern Ireland",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Michael Parry, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Mid Island, Strangford Lough - geograph.org.uk - 3589",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:05+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-431547276",
+      "name": "Illaunabarnagh",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Islands of County Kerry",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Nigel Cox, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Illaunnabarnagh - geograph.org.uk - 500553",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:06+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-4554535",
+      "name": "High Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/HIGH_ISLAND_ENCLOSURE.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Ardoileán",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:HIGH_ISLAND_ENCLOSURE.jpg",
+        "license": "CC BY-SA 4.0",
+        "attribution": "Photo by 32cnamart, via Wikimedia Commons (CC BY-SA 4.0)",
+        "caption": "HIGH ISLAND ENCLOSURE",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:06+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:HIGH_ISLAND_ENCLOSURE.jpg",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "osm-relation-4294907",
+      "name": "Big Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Great Island, County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by John M, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "The north east tip of Big Island - geograph.org.uk - 1385521",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:08+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "id": "osm-way-4563025",
+      "name": "Big Island",
+      "via": "commons-regional-category",
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg?width=800",
+        "source": "commons-regional-category",
+        "sourceRef": "Category:Great Island, County Cork",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by John M, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "The north east tip of Big Island - geograph.org.uk - 1385521",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-02T21:18:08+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-regional-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+      "license": "CC BY-SA 2.0"
+    }
+  ]
+}

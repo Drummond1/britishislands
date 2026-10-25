@@ -1,0 +1,6671 @@
+[
+  {
+    "candidateId": "geonames-2646715",
+    "name": "Holm Island",
+    "lat": 57.46667,
+    "lng": -6.15,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.341,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2646715",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-2648147",
+    "name": "Great Britain",
+    "lat": 54.0,
+    "lng": -2.0,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.078,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2648147",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12540921",
+    "name": "Eilean Pollsain",
+    "lat": 58.56511,
+    "lng": -4.14805,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.097,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12540921",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12540933",
+    "name": "Eilean Mor",
+    "lat": 56.26991,
+    "lng": -6.29475,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.367,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12540933",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12540956",
+    "name": "Easter Heog",
+    "lat": 60.08773,
+    "lng": -1.30413,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.273,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12540956",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12540976",
+    "name": "North Hill (Papa Westray)",
+    "lat": 59.37788,
+    "lng": -2.88442,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.577,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12540976",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12540978",
+    "name": "Burgh Hill",
+    "lat": 59.09392,
+    "lng": -2.54496,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.408,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12540978",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541026",
+    "name": "Nicolson's Leap",
+    "lat": 57.28086,
+    "lng": -7.20571,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.518,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541026",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541045",
+    "name": "Windy Hill",
+    "lat": 55.88203,
+    "lng": -5.1295,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.912,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541045",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541090",
+    "name": "Eilean a Muigh Heisgeir",
+    "lat": 58.34801,
+    "lng": -6.17508,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.278,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541090",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541114",
+    "name": "Colne Bar",
+    "lat": 51.77152,
+    "lng": 1.03955,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.562,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541114",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541132",
+    "name": "Loddon Island",
+    "lat": 51.46813,
+    "lng": -0.86962,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.002,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541132",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541133",
+    "name": "Warham Salt Marsh - West",
+    "lat": 52.96899,
+    "lng": 0.90047,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.713,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541133",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541140",
+    "name": "Morston Salt Marsh",
+    "lat": 52.96277,
+    "lng": 1.00555,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.784,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541140",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541141",
+    "name": "Stiffkey Meals",
+    "lat": 52.96337,
+    "lng": 0.91655,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.869,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541141",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541143",
+    "name": "Horninglow island",
+    "lat": 52.80868,
+    "lng": -1.62203,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.921,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541143",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12541145",
+    "name": "Mynydd Bodafon [Yr Arwydd]",
+    "lat": 53.34356,
+    "lng": -4.29603,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.671,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12541145",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284366",
+    "name": "The Island",
+    "lat": 52.56301,
+    "lng": 1.61402,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.87,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284366",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284375",
+    "name": "Lòn Eilean",
+    "lat": 55.87533,
+    "lng": -6.08446,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.592,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284375",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284419",
+    "name": "Kirkland Scar",
+    "lat": 54.94911,
+    "lng": -3.18305,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.748,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284419",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284437",
+    "name": "Eilean nam Paite",
+    "lat": 56.87837,
+    "lng": -5.56866,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.637,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284437",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284447",
+    "name": "Eilean Faoileann a' Chlachanaich",
+    "lat": 56.26912,
+    "lng": -6.25967,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.487,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284447",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284448",
+    "name": "Eilean an Fheòir",
+    "lat": 56.36044,
+    "lng": -6.06578,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.164,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284448",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284449",
+    "name": "Eilean nan Aighean",
+    "lat": 56.3431,
+    "lng": -6.30826,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.576,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284449",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284461",
+    "name": "Eilean na Faoileig",
+    "lat": 57.69932,
+    "lng": -4.46379,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 13.598,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284461",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284471",
+    "name": "Eilean a' Chomhraig",
+    "lat": 55.85505,
+    "lng": -5.37773,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.217,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284471",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284486",
+    "name": "Eilean nan Caorach",
+    "lat": 56.34594,
+    "lng": -6.10213,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.686,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284486",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284494",
+    "name": "Eilean a' Chrotha",
+    "lat": 56.27084,
+    "lng": -6.29805,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.141,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284494",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284495",
+    "name": "Eilean an Daraich",
+    "lat": 57.59448,
+    "lng": -4.61395,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.09,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284495",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284496",
+    "name": "Eilean Gill a' Bhalgionn",
+    "lat": 57.88072,
+    "lng": -4.57144,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.943,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284496",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284498",
+    "name": "Eilean nan Faoileag",
+    "lat": 57.38535,
+    "lng": -4.27595,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.444,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284498",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284501",
+    "name": "Eilean nan Sasunnach",
+    "lat": 57.06837,
+    "lng": -4.83344,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.377,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284501",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284502",
+    "name": "Eilean na Cloinne",
+    "lat": 57.06919,
+    "lng": -4.98799,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.493,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284502",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284505",
+    "name": "Eilean an Fheidh",
+    "lat": 57.05866,
+    "lng": -5.13715,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.205,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284505",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284506",
+    "name": "Eilean a' Mhuirich",
+    "lat": 56.68778,
+    "lng": -5.59372,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.17,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284506",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284512",
+    "name": "Eilean an Tuilaich",
+    "lat": 56.88559,
+    "lng": -4.7343,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.689,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284512",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284515",
+    "name": "Eilean nam Meann",
+    "lat": 58.2871,
+    "lng": -4.14788,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.253,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284515",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284535",
+    "name": "Eilean na Gàire",
+    "lat": 58.3802,
+    "lng": -4.34501,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.089,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284535",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284553",
+    "name": "Eilean nan Each",
+    "lat": 57.18974,
+    "lng": -4.76559,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.948,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284553",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284554",
+    "name": "Eilean an Eagaill",
+    "lat": 56.29353,
+    "lng": -5.00832,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.053,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284554",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284557",
+    "name": "Eileanan an Ruidh Mhaoil",
+    "lat": 57.81602,
+    "lng": -5.46553,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.288,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284557",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284558",
+    "name": "Eilean nan Crodh",
+    "lat": 58.38133,
+    "lng": -4.34596,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.19,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284558",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284561",
+    "name": "Eilean na Longairt",
+    "lat": 56.7965,
+    "lng": -4.59702,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.212,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284561",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284563",
+    "name": "Eilean a' Mhorair",
+    "lat": 57.06359,
+    "lng": -5.08554,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.331,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284563",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284564",
+    "name": "Eilean nan Greusaich",
+    "lat": 57.14412,
+    "lng": -4.98742,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.346,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284564",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284565",
+    "name": "Isle-na-Gower",
+    "lat": 54.97389,
+    "lng": -4.6024,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.512,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284565",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284567",
+    "name": "Eilean a' Ghiuthais",
+    "lat": 56.77344,
+    "lng": -4.80814,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.418,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284567",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284569",
+    "name": "Eilean nam Bò Buidhe",
+    "lat": 57.81987,
+    "lng": -5.46632,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.206,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284569",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284588",
+    "name": "Eilean a' Chip",
+    "lat": 57.76851,
+    "lng": -5.23937,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.152,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284588",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284598",
+    "name": "Isles of Trool",
+    "lat": 55.07787,
+    "lng": -4.5166,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.273,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284598",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284614",
+    "name": "Eilean an Inbhire",
+    "lat": 57.40458,
+    "lng": -6.08182,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.231,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284614",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284627",
+    "name": "Eilean Math-ghamhna",
+    "lat": 56.13977,
+    "lng": -5.16438,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.139,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284627",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284662",
+    "name": "Eilean nan Loch",
+    "lat": 58.1146,
+    "lng": -6.98599,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.289,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284662",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284864",
+    "name": "Eilean an Sgùirr",
+    "lat": 57.28926,
+    "lng": -7.20025,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.699,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284864",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284871",
+    "name": "Eilean nam Breaban",
+    "lat": 56.49822,
+    "lng": -4.20931,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.547,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284871",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284876",
+    "name": "Briedach",
+    "lat": 56.18238,
+    "lng": -4.45986,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.783,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284876",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284892",
+    "name": "Eileanan na h-Aornan",
+    "lat": 56.64551,
+    "lng": -6.47632,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.435,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284892",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284893",
+    "name": "Glas Eilean",
+    "lat": 56.68933,
+    "lng": -6.11114,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.095,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284893",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284899",
+    "name": "Eilean na h-Uamhaidh",
+    "lat": 55.92841,
+    "lng": -5.60294,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.025,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284899",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284912",
+    "name": "Eilean Aoghainn",
+    "lat": 56.10181,
+    "lng": -5.24067,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.25,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284912",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284913",
+    "name": "Eilean Fraoch",
+    "lat": 56.1002,
+    "lng": -5.24282,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.065,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284913",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284921",
+    "name": "Battisborough Island",
+    "lat": 50.30377,
+    "lng": -3.96245,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.344,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284921",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284922",
+    "name": "Eilean nan Caorann",
+    "lat": 56.28867,
+    "lng": -6.19388,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.575,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284922",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284946",
+    "name": "Camas Shalachain",
+    "lat": 56.54934,
+    "lng": -5.88195,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.926,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284946",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284947",
+    "name": "Eilean Chormaic",
+    "lat": 56.28829,
+    "lng": -6.21182,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.485,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284947",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284951",
+    "name": "Eilean nan Gibneach",
+    "lat": 56.28961,
+    "lng": -6.20544,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.329,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284951",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284952",
+    "name": "Eilean na h-Adhuinnean",
+    "lat": 56.27138,
+    "lng": -6.27345,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.605,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284952",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284965",
+    "name": "Eilean nan Damh",
+    "lat": 56.33583,
+    "lng": -6.21337,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.836,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284965",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284967",
+    "name": "Eilean Bàn",
+    "lat": 56.32513,
+    "lng": -6.2523,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.094,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284967",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284975",
+    "name": "Osprey Island",
+    "lat": 51.10568,
+    "lng": 0.33768,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.596,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284975",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13284984",
+    "name": "Smithymire Island",
+    "lat": 54.50705,
+    "lng": -3.12316,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.881,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13284984",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285015",
+    "name": "Eilean Linne Creagain",
+    "lat": 57.06781,
+    "lng": -4.80539,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.164,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285015",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285016",
+    "name": "Garbh Eilean",
+    "lat": 57.07696,
+    "lng": -4.86711,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.22,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285016",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285021",
+    "name": "Otter Island",
+    "lat": 50.72461,
+    "lng": -2.04517,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.241,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285021",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285051",
+    "name": "Dutchman's Island",
+    "lat": 51.36797,
+    "lng": 0.84847,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.773,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285051",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285052",
+    "name": "Fowley Island",
+    "lat": 51.35746,
+    "lng": 0.82668,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.421,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285052",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285056",
+    "name": "Fishgarth Holm",
+    "lat": 54.84336,
+    "lng": -2.7837,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.534,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285056",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285057",
+    "name": "Coathouse Island",
+    "lat": 54.8638,
+    "lng": -2.8137,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.898,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285057",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285059",
+    "name": "Inverneil Island",
+    "lat": 55.97415,
+    "lng": -5.44376,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.183,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285059",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285061",
+    "name": "Eilean Ach' Dùgraidh",
+    "lat": 57.18138,
+    "lng": -4.79605,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.677,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285061",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285062",
+    "name": "Sugar Loaf",
+    "lat": 57.45839,
+    "lng": -4.54405,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.11,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285062",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285088",
+    "name": "Goat Island",
+    "lat": 55.03546,
+    "lng": -2.80688,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.192,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285088",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285089",
+    "name": "Cottage Island",
+    "lat": 55.06821,
+    "lng": -3.37833,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.574,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285089",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285090",
+    "name": "Dormont Island",
+    "lat": 55.07025,
+    "lng": -3.39527,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.872,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285090",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285092",
+    "name": "Holly Island",
+    "lat": 57.72321,
+    "lng": -4.29623,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 18.538,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285092",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285102",
+    "name": "Eilean a' Bhorra",
+    "lat": 56.00963,
+    "lng": -5.79358,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.547,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285102",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285103",
+    "name": "Eilean Gaineamhach",
+    "lat": 57.5632,
+    "lng": -4.65188,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.411,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285103",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285104",
+    "name": "Eilean Bhràidebig",
+    "lat": 55.57995,
+    "lng": -6.27007,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.007,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285104",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285105",
+    "name": "Eilean a' Mhadaidh",
+    "lat": 56.42689,
+    "lng": -5.64738,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.064,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285105",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285119",
+    "name": "Eilean an Aba",
+    "lat": 56.28478,
+    "lng": -6.22023,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.965,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285119",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285120",
+    "name": "Eilean nan Eisirein",
+    "lat": 56.33017,
+    "lng": -6.24569,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.603,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285120",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285121",
+    "name": "Eilean Srianach",
+    "lat": 56.2701,
+    "lng": -6.28543,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.912,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285121",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285140",
+    "name": "Saint George's Island",
+    "lat": 53.4728,
+    "lng": -2.26317,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.67,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285140",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285152",
+    "name": "Eilean Bàn",
+    "lat": 56.56797,
+    "lng": -6.10809,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.343,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285152",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285176",
+    "name": "Eilean Mùrain",
+    "lat": 55.84333,
+    "lng": -6.45288,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.584,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285176",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285226",
+    "name": "Eilean an Ruisg",
+    "lat": 56.35526,
+    "lng": -5.48898,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.616,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285226",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285227",
+    "name": "Eilean nam Freumha",
+    "lat": 56.32395,
+    "lng": -5.59084,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.313,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285227",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285230",
+    "name": "Dartington Island",
+    "lat": 50.46084,
+    "lng": -3.706,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.61,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285230",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285231",
+    "name": "Hood Island",
+    "lat": 50.45996,
+    "lng": -3.72742,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.49,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285231",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285232",
+    "name": "Otter Island",
+    "lat": 50.34349,
+    "lng": -3.92666,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.538,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285232",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285236",
+    "name": "Germany Isle",
+    "lat": 54.92502,
+    "lng": -4.21404,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.324,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285236",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285239",
+    "name": "Duck Island",
+    "lat": 52.01786,
+    "lng": 0.21779,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 14.094,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285239",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285240",
+    "name": "Park Island",
+    "lat": 52.65542,
+    "lng": -0.26727,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.508,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285240",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285242",
+    "name": "The Snook",
+    "lat": 55.68347,
+    "lng": -1.84157,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.496,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285242",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285291",
+    "name": "Carr's Island",
+    "lat": 55.29064,
+    "lng": -1.76368,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 13.181,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285291",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285292",
+    "name": "Don Island",
+    "lat": 53.42594,
+    "lng": -1.36143,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.553,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285292",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285303",
+    "name": "Eilean Achluachrach",
+    "lat": 56.88755,
+    "lng": -4.79242,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.182,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285303",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285311",
+    "name": "Eilean Fraoich",
+    "lat": 58.38392,
+    "lng": -4.34278,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.153,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285311",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285313",
+    "name": "Eilean Thomais",
+    "lat": 57.99545,
+    "lng": -4.807,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.817,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285313",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285331",
+    "name": "Holly Island",
+    "lat": 55.03513,
+    "lng": -4.21995,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.972,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285331",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285332",
+    "name": "Marion's Isles",
+    "lat": 55.03554,
+    "lng": -4.22472,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.244,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285332",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285333",
+    "name": "Eagle Island",
+    "lat": 55.01506,
+    "lng": -4.27345,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.985,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285333",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285389",
+    "name": "Apple Island",
+    "lat": 52.14914,
+    "lng": -0.51607,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.791,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285389",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285405",
+    "name": "Dog Island",
+    "lat": 52.41008,
+    "lng": 0.82401,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.22,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285405",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285423",
+    "name": "Kids Isle",
+    "lat": 55.23454,
+    "lng": -4.30332,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.252,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285423",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285447",
+    "name": "Eilean Mòr",
+    "lat": 57.46633,
+    "lng": -5.34819,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.513,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285447",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285479",
+    "name": "Ynys Gwair",
+    "lat": 51.92801,
+    "lng": -5.2376,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.261,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285479",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285487",
+    "name": "Eilean Bad nam Bàn",
+    "lat": 58.13825,
+    "lng": -5.27638,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.102,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285487",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285489",
+    "name": "Talmine Island",
+    "lat": 58.52692,
+    "lng": -4.42049,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.018,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285489",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285498",
+    "name": "The Islands",
+    "lat": 52.56295,
+    "lng": -1.05779,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.455,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285498",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285505",
+    "name": "Logg Island",
+    "lat": 57.51394,
+    "lng": -2.60652,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.625,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285505",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285510",
+    "name": "Bradbury's Island",
+    "lat": 51.5772,
+    "lng": -0.51628,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.334,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285510",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285540",
+    "name": "Longholme Island",
+    "lat": 52.13204,
+    "lng": -0.44738,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.989,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285540",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285542",
+    "name": "Willow Island",
+    "lat": 53.71229,
+    "lng": -1.25246,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.224,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285542",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285543",
+    "name": "Calder Island",
+    "lat": 53.66382,
+    "lng": -1.50534,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.703,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285543",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285544",
+    "name": "Stennard Island",
+    "lat": 53.67556,
+    "lng": -1.48576,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.003,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285544",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285545",
+    "name": "Cow Holm",
+    "lat": 52.68657,
+    "lng": 1.52382,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.283,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285545",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285566",
+    "name": "Castle Rock",
+    "lat": 55.89731,
+    "lng": -2.12747,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 12.832,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285566",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285567",
+    "name": "Monkmill Island",
+    "lat": 55.96698,
+    "lng": -2.70485,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.397,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285567",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285568",
+    "name": "Crow Island",
+    "lat": 55.96798,
+    "lng": -2.72326,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.377,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285568",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285584",
+    "name": "Maiden Isle",
+    "lat": 55.08893,
+    "lng": -4.48488,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.725,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285584",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285588",
+    "name": "McDowalls Isle",
+    "lat": 55.24992,
+    "lng": -4.4119,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.888,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285588",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285595",
+    "name": "Lud Stream Islands",
+    "lat": 53.99592,
+    "lng": -1.88631,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.23,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285595",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285622",
+    "name": "Creag an Eilein",
+    "lat": 57.91852,
+    "lng": -5.56249,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.303,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285622",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285635",
+    "name": "Island Pond",
+    "lat": 52.87093,
+    "lng": 1.22281,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.682,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285635",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285724",
+    "name": "Eilean na Curra",
+    "lat": 58.25597,
+    "lng": -5.12393,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.8,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285724",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285729",
+    "name": "Eilean Clùimhrig",
+    "lat": 58.55319,
+    "lng": -4.6443,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.416,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285729",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285733",
+    "name": "Erth Island",
+    "lat": 50.38696,
+    "lng": -4.28576,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.574,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285733",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285742",
+    "name": "The Island",
+    "lat": 52.26328,
+    "lng": -2.71993,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.366,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285742",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285746",
+    "name": "Holland Isle",
+    "lat": 55.00355,
+    "lng": -4.09511,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.95,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285746",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285747",
+    "name": "Slogarie Island",
+    "lat": 54.99846,
+    "lng": -4.10674,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.619,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285747",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285748",
+    "name": "Craigaherron Island",
+    "lat": 54.98449,
+    "lng": -4.18236,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.366,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285748",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285805",
+    "name": "Stanford Park Island",
+    "lat": 51.63961,
+    "lng": -1.47761,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.039,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285805",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285806",
+    "name": "Ynys Isaf",
+    "lat": 51.80866,
+    "lng": -4.21315,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.175,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285806",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285807",
+    "name": "Blaeberry Island",
+    "lat": 54.98586,
+    "lng": -4.18505,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.38,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285807",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285808",
+    "name": "Birch Island",
+    "lat": 55.01213,
+    "lng": -4.1635,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.51,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285808",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285809",
+    "name": "Crannoch Island",
+    "lat": 55.03667,
+    "lng": -4.20342,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.928,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285809",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285810",
+    "name": "Otter Isle",
+    "lat": 55.08017,
+    "lng": -4.06585,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.928,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285810",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285811",
+    "name": "Lint Holm",
+    "lat": 55.19754,
+    "lng": -4.14631,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.676,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285811",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285845",
+    "name": "Eilean Falasgair",
+    "lat": 58.05493,
+    "lng": -6.43744,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.248,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285845",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285849",
+    "name": "Goose Island",
+    "lat": 53.57055,
+    "lng": -2.81295,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.777,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285849",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285886",
+    "name": "Mill Island",
+    "lat": 54.96506,
+    "lng": -4.48498,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.67,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285886",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285912",
+    "name": "Rounds Islands",
+    "lat": 51.39953,
+    "lng": -0.94098,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.258,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285912",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285927",
+    "name": "Cob Island",
+    "lat": 52.15334,
+    "lng": 1.57434,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.58,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285927",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285929",
+    "name": "The Islands",
+    "lat": 52.48029,
+    "lng": 1.4774,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.281,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285929",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285936",
+    "name": "Holm of Burghlee",
+    "lat": 59.02644,
+    "lng": -2.81004,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.608,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285936",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285938",
+    "name": "Holm of Califf",
+    "lat": 60.19442,
+    "lng": -1.18826,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.199,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285938",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285940",
+    "name": "The Island",
+    "lat": 51.69546,
+    "lng": -1.02884,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.746,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285940",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285941",
+    "name": "China Island",
+    "lat": 51.84003,
+    "lng": -1.01932,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.231,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285941",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285942",
+    "name": "Grotto Island",
+    "lat": 51.84344,
+    "lng": -1.01666,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.813,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285942",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285947",
+    "name": "Balnowlart Holm",
+    "lat": 55.10629,
+    "lng": -4.97329,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 18.413,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285947",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285992",
+    "name": "Holm of Tronafirth",
+    "lat": 60.20543,
+    "lng": -1.20606,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.435,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285992",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13285999",
+    "name": "Monkey Island",
+    "lat": 52.02789,
+    "lng": -1.01256,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.544,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13285999",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286001",
+    "name": "Birch Island",
+    "lat": 53.33008,
+    "lng": -2.3928,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.514,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286001",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286003",
+    "name": "Ynys Goediog",
+    "lat": 52.94442,
+    "lng": -3.72507,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 14.32,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286003",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286035",
+    "name": "Holm Wrangle",
+    "lat": 54.82887,
+    "lng": -2.75571,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.701,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286035",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286038",
+    "name": "Nab Island",
+    "lat": 54.42845,
+    "lng": -3.02649,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.488,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286038",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286040",
+    "name": "Eilean Gorm",
+    "lat": 56.18111,
+    "lng": -4.48738,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.499,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286040",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286047",
+    "name": "Middle Head",
+    "lat": 51.56745,
+    "lng": -3.97473,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.899,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286047",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286048",
+    "name": "Branston Island",
+    "lat": 53.22202,
+    "lng": -0.35449,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.855,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286048",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286057",
+    "name": "Rookery Island",
+    "lat": 50.94683,
+    "lng": -0.61626,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.317,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286057",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286089",
+    "name": "Stainton Island",
+    "lat": 54.64209,
+    "lng": -2.78354,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.302,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286089",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286091",
+    "name": "New Island",
+    "lat": 55.53551,
+    "lng": -3.97237,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 18.264,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286091",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286092",
+    "name": "Nether Tarrioch Holm",
+    "lat": 55.51774,
+    "lng": -4.16294,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.116,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286092",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286094",
+    "name": "Stag Island",
+    "lat": 51.41008,
+    "lng": -0.88681,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.795,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286094",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286095",
+    "name": "The Island",
+    "lat": 52.13619,
+    "lng": 0.43275,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.414,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286095",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286096",
+    "name": "Long Island",
+    "lat": 52.40942,
+    "lng": 0.82574,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.341,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286096",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286098",
+    "name": "Birdcage Island",
+    "lat": 52.53868,
+    "lng": 0.61972,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.656,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286098",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286099",
+    "name": "Dargill Island",
+    "lat": 56.35904,
+    "lng": -3.84337,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.903,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286099",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286106",
+    "name": "Cherry Islands",
+    "lat": 54.10628,
+    "lng": -0.83067,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.204,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286106",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286120",
+    "name": "Maen Gwenonwy",
+    "lat": 52.80105,
+    "lng": -4.67039,
+    "nation": "Wales",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.195,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286120",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286132",
+    "name": "Cleet of Brough",
+    "lat": 58.64944,
+    "lng": -3.34342,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.783,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286132",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286140",
+    "name": "Gold Island",
+    "lat": 55.09524,
+    "lng": -2.21817,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.055,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286140",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286145",
+    "name": "Eilean Dubh",
+    "lat": 56.34966,
+    "lng": -4.36783,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.635,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286145",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286148",
+    "name": "Eilean Eonain",
+    "lat": 56.58848,
+    "lng": -4.32395,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.851,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286148",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286162",
+    "name": "Eilean Gainimh",
+    "lat": 57.06662,
+    "lng": -4.81218,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.402,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286162",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286163",
+    "name": "Eilean Clach",
+    "lat": 57.18907,
+    "lng": -4.76839,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.049,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286163",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286169",
+    "name": "Grossa Stack",
+    "lat": 60.16349,
+    "lng": -1.49101,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.069,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286169",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286189",
+    "name": "Hawk Island",
+    "lat": 50.99042,
+    "lng": 0.02508,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.009,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286189",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286190",
+    "name": "Sixteen Acre Island",
+    "lat": 51.189,
+    "lng": 0.1217,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.015,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286190",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286201",
+    "name": "Eilean Tighe Bhàin",
+    "lat": 56.37615,
+    "lng": -5.17055,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.351,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286201",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286202",
+    "name": "Eilean Eas Chliabhan",
+    "lat": 56.70754,
+    "lng": -4.0707,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.215,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286202",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286204",
+    "name": "Eilean Longart",
+    "lat": 57.01945,
+    "lng": -4.46454,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.179,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286204",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286213",
+    "name": "Eilean Dubh",
+    "lat": 57.67933,
+    "lng": -4.4143,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.845,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286213",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286243",
+    "name": "Two Bridges Island",
+    "lat": 51.18859,
+    "lng": 0.11563,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.989,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286243",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286249",
+    "name": "Chapel Rock",
+    "lat": 50.8311,
+    "lng": -4.55624,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.923,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286249",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286253",
+    "name": "Eilean Dubh",
+    "lat": 57.01409,
+    "lng": -4.30825,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.819,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286253",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286257",
+    "name": "Match Island",
+    "lat": 54.9075,
+    "lng": -1.56127,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.148,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286257",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286266",
+    "name": "Souter's Island",
+    "lat": 57.75623,
+    "lng": -4.09734,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.632,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286266",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286267",
+    "name": "Paterson-Island",
+    "lat": 57.83098,
+    "lng": -3.90407,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.205,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286267",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286268",
+    "name": "Craig Carnaig",
+    "lat": 57.87884,
+    "lng": -4.01457,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.251,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286268",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286275",
+    "name": "Vire Island",
+    "lat": 50.42916,
+    "lng": -3.68224,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.237,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286275",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286284",
+    "name": "Blackpool Island",
+    "lat": 50.5017,
+    "lng": -3.79151,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.047,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286284",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286308",
+    "name": "Latton Island",
+    "lat": 51.78845,
+    "lng": 0.11015,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.701,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286308",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286325",
+    "name": "Eilean Achnacochine",
+    "lat": 56.88844,
+    "lng": -4.77815,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.054,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286325",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286328",
+    "name": "Eilean Criothuinn",
+    "lat": 57.65177,
+    "lng": -4.8828,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.575,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286328",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286329",
+    "name": "Eilean Ghiubhas",
+    "lat": 57.73041,
+    "lng": -5.08059,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.511,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286329",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286332",
+    "name": "Holm of Gruting",
+    "lat": 60.21456,
+    "lng": -1.50951,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.45,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286332",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286352",
+    "name": "Meall an Arbhair",
+    "lat": 56.03799,
+    "lng": -6.19243,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.576,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286352",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286356",
+    "name": "Portan Aluinn",
+    "lat": 55.30297,
+    "lng": -5.69506,
+    "nation": "Northern Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 7.617,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286356",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286360",
+    "name": "Leac an Traghaidh",
+    "lat": 57.82355,
+    "lng": -5.81286,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.62,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286360",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286362",
+    "name": "Rubha Breac",
+    "lat": 56.3381,
+    "lng": -6.25259,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.632,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286362",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286365",
+    "name": "Stack of Mustack",
+    "lat": 58.9523,
+    "lng": -2.70957,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.148,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286365",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286366",
+    "name": "Herrbre",
+    "lat": 59.37508,
+    "lng": -2.89181,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.253,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286366",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286373",
+    "name": "Snipe Island",
+    "lat": 50.43746,
+    "lng": -3.68395,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 9.563,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286373",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286376",
+    "name": "St John's Stone",
+    "lat": 57.67298,
+    "lng": -2.35319,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.323,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286376",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286377",
+    "name": "Stack of Sumra",
+    "lat": 60.53729,
+    "lng": -1.51964,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.155,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286377",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286408",
+    "name": "Broad Craig",
+    "lat": 55.40388,
+    "lng": -4.76682,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.363,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286408",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286414",
+    "name": "Malme",
+    "lat": 59.10508,
+    "lng": -2.54881,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.192,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286414",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286417",
+    "name": "Ryton Island",
+    "lat": 54.98153,
+    "lng": -1.76627,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.631,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286417",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286425",
+    "name": "Battcock's Island",
+    "lat": 52.32328,
+    "lng": -0.11647,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.415,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286425",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286429",
+    "name": "Treasure Island",
+    "lat": 51.75171,
+    "lng": 0.57215,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.857,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286429",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286430",
+    "name": "Duckbay Island",
+    "lat": 52.99849,
+    "lng": -2.61483,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.373,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286430",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286431",
+    "name": "Head Weir Island",
+    "lat": 50.3481,
+    "lng": -3.92546,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.056,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286431",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286432",
+    "name": "Trostan Isle",
+    "lat": 55.0846,
+    "lng": -4.44879,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 10.768,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286432",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286433",
+    "name": "Isle of Pins",
+    "lat": 54.94045,
+    "lng": -4.21609,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.853,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286433",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286438",
+    "name": "Eilean na Buinne Deirge",
+    "lat": 57.06471,
+    "lng": -4.82746,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.654,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286438",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286439",
+    "name": "Chantry Island",
+    "lat": 51.69825,
+    "lng": -0.33544,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.734,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286439",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286442",
+    "name": "Eilean Monessie",
+    "lat": 56.88757,
+    "lng": -4.79249,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.178,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286442",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286443",
+    "name": "Eilean Mhic Rath",
+    "lat": 57.00939,
+    "lng": -4.38214,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.07,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286443",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286445",
+    "name": "The Island",
+    "lat": 55.06848,
+    "lng": -2.18684,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 11.925,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286445",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286448",
+    "name": "Allen Island",
+    "lat": 50.82595,
+    "lng": -0.29254,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.161,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286448",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286450",
+    "name": "Riddy Island",
+    "lat": 52.15268,
+    "lng": 0.09375,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.038,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286450",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286453",
+    "name": "Wakeling Island",
+    "lat": 50.69096,
+    "lng": -2.35042,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.716,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286453",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-13286456",
+    "name": "Overton Island",
+    "lat": 50.6912,
+    "lng": -2.35285,
+    "nation": "England",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.565,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/13286456",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-2961782",
+    "name": "Roaninish",
+    "lat": 51.86667,
+    "lng": -8.55,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.306,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2961782",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-2963731",
+    "name": "Horse Island",
+    "lat": 54.32139,
+    "lng": -9.5625,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.923,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2963731",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-2966823",
+    "name": "Aughinish Island",
+    "lat": 52.62111,
+    "lng": -9.06611,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.212,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2966823",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-2966978",
+    "name": "Annagh Island",
+    "lat": 52.25,
+    "lng": -9.76667,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.856,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2966978",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-3286698",
+    "name": "Brown Island",
+    "lat": 51.88278,
+    "lng": -8.22389,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.193,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/3286698",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-3301589",
+    "name": "Sheep Island",
+    "lat": 52.12639,
+    "lng": -7.21167,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.274,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/3301589",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-3309220",
+    "name": "Island More",
+    "lat": 54.85583,
+    "lng": -7.45833,
+    "nation": "Northern Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.934,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/3309220",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12112155",
+    "name": "Cap Island",
+    "lat": 52.4241,
+    "lng": -9.55249,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.344,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12112155",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12112248",
+    "name": "Ladder Rock",
+    "lat": 52.57905,
+    "lng": -9.7112,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 6.905,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12112248",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12112271",
+    "name": "Black Island",
+    "lat": 52.65466,
+    "lng": -9.55424,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.318,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12112271",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12112272",
+    "name": "Illaunmore",
+    "lat": 52.65605,
+    "lng": -9.55556,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 5.491,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12112272",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  },
+  {
+    "candidateId": "geonames-12112295",
+    "name": "Illaunaclaggin",
+    "lat": 52.65096,
+    "lng": -9.54906,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.78,
+    "sourceHints": [
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/12112295",
+        "license": "CC-BY-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "geonames",
+      "isl",
+      "refined-gap"
+    ]
+  }
+]

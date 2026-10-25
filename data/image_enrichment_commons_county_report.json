@@ -1,0 +1,46 @@
+{
+  "staged": 8,
+  "categories_scanned": 17,
+  "adopted": [
+    {
+      "id": "osm-way-1047589773",
+      "cat": "Category:Islands of County Cork",
+      "file": "Goose Island, aerial view.jpg"
+    },
+    {
+      "id": "osm-way-5033602",
+      "cat": "Category:Islands of County Cork",
+      "file": "Harbour on Hare Island - Inishodriscol or Hare Island Townland - geograph.org.uk - 2439707.jpg"
+    },
+    {
+      "id": "osm-way-71927349",
+      "cat": "Category:Islands of County Donegal",
+      "file": "Croaghan Island - geograph.org.uk - 3594938.jpg"
+    },
+    {
+      "id": "osm-way-1047589796",
+      "cat": "Category:Islands of County Donegal",
+      "file": "Green Island and The Hassans - geograph.org.uk - 914749.jpg"
+    },
+    {
+      "id": "osm-way-708736328",
+      "cat": "Category:Islands of the Outer Hebrides",
+      "file": "Eilean Mor Phabail - geograph.org.uk - 18494.jpg"
+    },
+    {
+      "id": "osm-way-73070536",
+      "cat": "Category:Islands of the Outer Hebrides",
+      "file": "Ganstotal and Garbh Eilean - geograph.org.uk - 1099183.jpg"
+    },
+    {
+      "id": "osm-way-40674534",
+      "cat": "Category:Islands of Cornwall",
+      "file": "The Island, Newquay. - geograph.org.uk - 506350.jpg"
+    },
+    {
+      "id": "osm-way-248116655",
+      "cat": "Category:Islands of Cornwall",
+      "file": "The Island, Newquay. - geograph.org.uk - 506360.jpg"
+    }
+  ]
+}

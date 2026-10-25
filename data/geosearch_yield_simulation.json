@@ -1,0 +1,232 @@
+{
+  "generatedAt": "2026-06-02T18:48:13.614121+00:00",
+  "method": "read-only dry simulation on cache_commons_geo.json + cache_commons.json",
+  "dataset": {
+    "totalIslands": 11351,
+    "withImage": 3617,
+    "withoutImage": 7734,
+    "pendingNamedWithoutImage": 3424,
+    "target6000Gap": 2383
+  },
+  "cacheCommonsGeo": {
+    "totalKeys": 8928,
+    "keysByRadiusSuffix": {
+      "800": 5605,
+      "1500": 3207,
+      "1200": 111,
+      "1000": 5
+    },
+    "note": "No ;500 keys in cache at simulation time; v5@500m uses ;1500 hits filtered to dist<=500m when ;500 absent."
+  },
+  "rulesCompared": {
+    "v3_commons_geosearch": {
+      "searchRadiusM": "800 default; 1000 if area<0.2 km²; 1200 if area<0.05 km²",
+      "adoption": "name substring in filename (len>=3 variants) OR closest photo within 200m; license required",
+      "nameMatching": "substring (_mentions_island), variants >=3 chars"
+    },
+    "v5_geosearch_wide_500m": {
+      "searchRadiusM": 500,
+      "adoption": "word-boundary name match in filename OR caption AND haversine distance <= 525m (500×1.05); license required",
+      "nameMatching": "strict word-boundary (_mentions), variants >=5 chars"
+    }
+  },
+  "simulationOnPendingNamed": {
+    "pending_named": 3424,
+    "cache_key_500": 0,
+    "cache_key_1500": 3182,
+    "cache_key_any_radius": 3182,
+    "cache_key_v3_radius": 690,
+    "v3_would_adopt": 22,
+    "v5_500_would_adopt": 0,
+    "v5_1500_would_adopt": 0,
+    "v3_only": 22,
+    "v5_500_only": 0,
+    "both_v3_and_v5_500": 0,
+    "neither": 3402
+  },
+  "diagnostics": {
+    "pendingWith1500CacheNonEmpty": 2526,
+    "anyV5NameMatchIn1500Hits": 12,
+    "anyV3NameMatchIn1500Hits": 32
+  },
+  "incrementalYield": {
+    "v3GeosearchFromCache": 22,
+    "v5Geosearch500mFromCache": 0,
+    "v5Geosearch1500mStrictFromCache": 0,
+    "v3OnlyNotV5_500": 22,
+    "v5_500OnlyNotV3": 0
+  },
+  "v2WikidataPending": {
+    "pendingWithQid": 1013,
+    "qidNotInCacheWikidata": 26,
+    "inCacheNoP18": 987,
+    "inCacheWithP18StillNoImage": 0,
+    "sampleP18Untried": [],
+    "note": "v2 only helps islands with Wikidata P18; 0 pending had cached P18 at run time."
+  },
+  "examples": {
+    "v3OnlyNotV5_500": [
+      {
+        "id": "old-pier",
+        "name": "(old pier)",
+        "v3": {
+          "file": "West Bay from the harbour rocks - geograph.org.uk - 3545697.jpg",
+          "name_match": false,
+          "dist_m": 6.3,
+          "rule": "proximity_200m"
+        }
+      },
+      {
+        "id": "50-peaks-view",
+        "name": "50 Peaks View",
+        "v3": {
+          "file": "Felled Trees - geograph.org.uk - 3518425.jpg",
+          "name_match": false,
+          "dist_m": 37.6,
+          "rule": "proximity_200m"
+        }
+      },
+      {
+        "id": "allens-rock",
+        "name": "Allen's Rock",
+        "v3": {
+          "file": "Lower Yelland - geograph.org.uk - 790788.jpg",
+          "name_match": false,
+          "dist_m": 140.9,
+          "rule": "proximity_200m"
+        }
+      },
+      {
+        "id": "csv-geocoded-Q108407584",
+        "name": "Boreray Cottage, Isle of North Uist",
+        "v3": {
+          "file": "Crofter's cottage - geograph.org.uk - 3634628.jpg",
+          "name_match": false,
+          "dist_m": 29.5,
+          "rule": "proximity_200m"
+        }
+      },
+      {
+        "id": "osm-way-124660665",
+        "name": "Caher Island",
+        "v3": {
+          "file": "The R463 road near Caher looking east, Co. Clare - geograph.org.uk - 3064351.jpg",
+          "name_match": true,
+          "dist_m": 1379.2,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-6957984",
+        "name": "Church Island",
+        "v3": {
+          "file": "Drumreilly Church of Ireland - geograph.org.uk - 1310479.jpg",
+          "name_match": true,
+          "dist_m": 1345.3,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-220875593",
+        "name": "Eyeries Island",
+        "v3": {
+          "file": "Rocky point near Eyeries - geograph.org.uk - 7781480.jpg",
+          "name_match": true,
+          "dist_m": 844.9,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-702402137",
+        "name": "Green Island",
+        "v3": {
+          "file": "Greenhouse in Dereen Garden - geograph.org.uk - 5739741.jpg",
+          "name_match": true,
+          "dist_m": 993.1,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-189331171",
+        "name": "House Island",
+        "v3": {
+          "file": "House at Bridgecartron - geograph.org.uk - 799684.jpg",
+          "name_match": true,
+          "dist_m": 1230.1,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-237898556",
+        "name": "Lion",
+        "v3": {
+          "file": "Plumb Island, Pernagie Isle and Lion Rock - geograph.org.uk - 3446488.jpg",
+          "name_match": true,
+          "dist_m": 984,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-503778128",
+        "name": "Long Craig",
+        "v3": {
+          "file": "Long Craig - geograph.org.uk - 2701728.jpg",
+          "name_match": true,
+          "dist_m": 847.4,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "osm-way-4557148",
+        "name": "Long Island",
+        "v3": {
+          "file": "Disused farm buildings alongside Abbacy Road - geograph.org.uk - 5493814.jpg",
+          "name_match": true,
+          "dist_m": 1184.4,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "csv-geocoded-Q24639351",
+        "name": "Lunga Skerries",
+        "v3": {
+          "file": "Pebble storm beach, near North Taing, Auskerry - geograph.org.uk - 2854303.jpg",
+          "name_match": false,
+          "dist_m": 167.5,
+          "rule": "proximity_200m"
+        }
+      },
+      {
+        "id": "osm-way-209876017",
+        "name": "Meall nan Caorach",
+        "v3": {
+          "file": "Meall nan Caorach - geograph.org.uk - 5983118.jpg",
+          "name_match": true,
+          "dist_m": 980.9,
+          "rule": "name"
+        }
+      },
+      {
+        "id": "monach-islands-ceann-iar-ceann-ear-shivinish-stockay-shillay",
+        "name": "Monach Islands (Ceann Iar, Ceann Ear, Shivinish + Stockay, Shillay)",
+        "v3": {
+          "file": "Old School House on Ceann Ear - geograph.org.uk - 8214797.jpg",
+          "name_match": false,
+          "dist_m": 129.3,
+          "rule": "proximity_200m"
+        }
+      }
+    ],
+    "v5_500OnlyNotV3": []
+  },
+  "recommendation": {
+    "hit6000With90PctConfidence": false,
+    "summary": "Cached geosearch alone cannot reach 6,000 images (ceiling ~3,617 = current 3,617 + 0 simulated). Among 3,424 pending named islands, cached geo would adopt 0 under v5@500m rules (0.0%) vs 22 under v3 rules. v2 Wikidata P18 has no remaining yield on pending Q-IDs (987 cached without P18). Need +2,383 images for 6,000; plan text-search + OSM tags + fresh geosearch API (cache lacks ;500 keys) rather than geosearch-only.",
+    "suggestedOrder": [
+      "Run v5 with --geosearch-radius 500 after populating cache (or accept 1500 cache + 500m filter)",
+      "Continue commons-text-search (in flight)",
+      "v3 osm-image-tag + commons-category for Q-ID islands",
+      "Do not re-run v2 bulk SPARQL expecting P18 gains on current pending set"
+    ]
+  }
+}

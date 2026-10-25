@@ -1,0 +1,333 @@
+{
+  "pending": 80,
+  "staged": 5,
+  "adopted": [
+    {
+      "id": "osm-way-180191971",
+      "name": "Inishmeely",
+      "version": 5
+    },
+    {
+      "id": "osm-way-180191951",
+      "name": "Smiths Rock (visible at low water)",
+      "version": 2
+    },
+    {
+      "id": "osm-way-180191937",
+      "name": "Long Rock",
+      "version": 2
+    },
+    {
+      "id": "osm-way-180201328",
+      "name": "Teiges Rock",
+      "version": 4
+    },
+    {
+      "id": "osm-way-180201354",
+      "name": "Kinnanisy Island",
+      "version": 2
+    }
+  ],
+  "skipped": [
+    {
+      "id": "osm-way-8152890",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-4927462",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-482243588",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-8155040",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-8155041",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-8155043",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-482243589",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-8155044",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-8155045",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-5113919",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-4890602",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-4890604",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-4890605",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-23194384",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-164929295",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-112402408",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-287277835",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-514287849",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-1457835018",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-300711672",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-300711666",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-300711668",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-1457768181",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599074",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599084",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599066",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599082",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599088",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599085",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599080",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599070",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599079",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-261599069",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-264804150",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-5033595",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180131687",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180131686",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180131707",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180131705",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180151342",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164249",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164253",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164276",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164272",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164245",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164248",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164240",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164256",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164250",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164251",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164264",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164260",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164241",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164255",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164237",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164254",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164244",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180164247",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191939",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191983",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191968",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191946",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191960",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191986",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191958",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191935",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191966",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191959",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180191938",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201342",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201359",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201324",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201310",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201362",
+      "reason": "no historic name"
+    },
+    {
+      "id": "osm-way-180201331",
+      "reason": "no historic name"
+    }
+  ]
+}

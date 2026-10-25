@@ -1,0 +1,23 @@
+{
+  "started": "2026-06-02T22:13:58",
+  "args": {
+    "limit": 200,
+    "test": "osm-way-119928347",
+    "dry_run": false,
+    "refresh": true,
+    "delay": 1.2
+  },
+  "targets": 1,
+  "staged": [],
+  "skipped": [
+    {
+      "id": "osm-way-119928347",
+      "name": "Carberry Island",
+      "links_tried": 6
+    }
+  ],
+  "finished": "2026-06-02T22:14:03",
+  "staged_count": 0,
+  "top_sources": {},
+  "top_via": {}
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "id": "osm-way-1047589773",
+    "islandId": "osm-way-1047589773",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of County Cork",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Photo by Podstawko, via Wikimedia Commons (CC BY 4.0)",
+      "caption": "Goose Island, aerial view",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of County Cork",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-5033602",
+    "islandId": "osm-way-5033602",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Harbour_on_Hare_Island_-_Inishodriscol_or_Hare_Island_Townland_-_geograph.org.uk_-_2439707.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of County Cork",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Harbour_on_Hare_Island_-_Inishodriscol_or_Hare_Island_Townland_-_geograph.org.uk_-_2439707.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Mac McCarron, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Harbour on Hare Island - Inishodriscol or Hare Island Townland - geograph.org.uk - 2439707",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of County Cork",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-71927349",
+    "islandId": "osm-way-71927349",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Croaghan_Island_-_geograph.org.uk_-_3594938.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of County Donegal",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Croaghan_Island_-_geograph.org.uk_-_3594938.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Richard Webb, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Croaghan Island - geograph.org.uk - 3594938",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of County Donegal",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-1047589796",
+    "islandId": "osm-way-1047589796",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Green_Island_and_The_Hassans_-_geograph.org.uk_-_914749.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of County Donegal",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Green_Island_and_The_Hassans_-_geograph.org.uk_-_914749.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by louise price, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Green Island and The Hassans - geograph.org.uk - 914749",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of County Donegal",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-708736328",
+    "islandId": "osm-way-708736328",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eilean_Mor_Phabail_-_geograph.org.uk_-_18494.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of the Outer Hebrides",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Eilean_Mor_Phabail_-_geograph.org.uk_-_18494.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by John Aldersey-Williams, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Eilean Mor Phabail - geograph.org.uk - 18494",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of the Outer Hebrides",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-73070536",
+    "islandId": "osm-way-73070536",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ganstotal_and_Garbh_Eilean_-_geograph.org.uk_-_1099183.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of the Outer Hebrides",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ganstotal_and_Garbh_Eilean_-_geograph.org.uk_-_1099183.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Gus Macdonald, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Ganstotal and Garbh Eilean - geograph.org.uk - 1099183",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of the Outer Hebrides",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-40674534",
+    "islandId": "osm-way-40674534",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Island%2C_Newquay._-_geograph.org.uk_-_506350.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of Cornwall",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Island,_Newquay._-_geograph.org.uk_-_506350.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Steve Rowe, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "The Island, Newquay. - geograph.org.uk - 506350",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of Cornwall",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  },
+  {
+    "id": "osm-way-248116655",
+    "islandId": "osm-way-248116655",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Island%2C_Newquay._-_geograph.org.uk_-_506360.jpg?width=800",
+      "source": "commons-county-category",
+      "sourceRef": "Category:Islands of Cornwall",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Island,_Newquay._-_geograph.org.uk_-_506360.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Steve Rowe, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "The Island, Newquay. - geograph.org.uk - 506360",
+      "dualSignal": true
+    },
+    "category": "Category:Islands of Cornwall",
+    "dualSignal": true,
+    "imageConfidence": "high"
+  }
+]

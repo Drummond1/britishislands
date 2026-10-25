@@ -1,0 +1,13 @@
+{
+  "wikidataItems": 2644,
+  "alreadyInDatabase": 2644,
+  "gaps": 0,
+  "matchKm": 1.0,
+  "countries": [
+    "UK",
+    "Ireland",
+    "Isle of Man",
+    "Jersey",
+    "Bailiwick of Guernsey"
+  ]
+}

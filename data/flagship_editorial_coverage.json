@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "policy": "Tier C remains indexable (no deindex in this loop)",
+  "flagshipCount": 27,
+  "completeFourEditorial": 27,
+  "withDescription": 27,
+  "withPhoto": 27,
+  "rows": [
+    {
+      "id": "anglesey",
+      "name": "Anglesey (Ynys M\u00f4n)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "arran",
+      "name": "Isle of Arran",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "belle-isle-windermere",
+      "name": "Belle Isle (Windermere)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "brownsea",
+      "name": "Brownsea Island",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "burgh-island",
+      "name": "Burgh Island",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 4,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "bute",
+      "name": "Isle of Bute",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "eel-pie-island",
+      "name": "Eel Pie Island",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "fair-isle",
+      "name": "Fair Isle",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "guernsey",
+      "name": "Guernsey",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "inchcailloch",
+      "name": "Inchcailloch",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "iona",
+      "name": "Iona",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "islay",
+      "name": "Islay",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "isle-of-dogs",
+      "name": "Isle of Dogs",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "isle-of-man",
+      "name": "Isle of Man",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "isle-of-skye",
+      "name": "Isle of Skye",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "isle-of-wight",
+      "name": "Isle of Wight",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "jersey",
+      "name": "Jersey",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "lewis-and-harris",
+      "name": "Lewis and Harris",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "lindisfarne",
+      "name": "Lindisfarne (Holy Island)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "lundy",
+      "name": "Lundy",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "mainland-orkney",
+      "name": "Mainland (Orkney)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "mainland-shetland",
+      "name": "Mainland (Shetland)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "mull",
+      "name": "Isle of Mull",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "rathlin",
+      "name": "Rathlin Island",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "scilly-st-marys",
+      "name": "St Mary's (Isles of Scilly)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "st-kilda",
+      "name": "St Kilda (Hirta)",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 5,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation",
+        "geology"
+      ],
+      "completeFour": true
+    },
+    {
+      "id": "staffa",
+      "name": "Staffa",
+      "hasShortDescription": true,
+      "hasPhoto": true,
+      "sectionCount": 4,
+      "sections": [
+        "geography",
+        "history",
+        "transport",
+        "accommodation"
+      ],
+      "completeFour": true
+    }
+  ]
+}

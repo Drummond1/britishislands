@@ -1,0 +1,54 @@
+[
+  {
+    "id": "osm-way-28206122",
+    "name": "Stac Levenish",
+    "via": "commons-regional-category",
+    "category": "Category:Stac Levenish",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stac_Levenish_St_Kilda.jpg?width=800",
+      "source": "commons-regional-category",
+      "sourceRef": "Category:Stac Levenish",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stac_Levenish_St_Kilda.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Photo by Gajtalbot, via Wikimedia Commons (CC BY 2.0)",
+      "caption": "Stac Levenish St Kilda",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-06-02T21:01:17+00:00"
+    },
+    "imageConfidence": "high",
+    "source": "commons-regional-category",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stac_Levenish_St_Kilda.jpg",
+    "verifyConfidence": 92,
+    "verifyReasons": [
+      "staging base for commons-regional-category: 85",
+      "commons island-category + name match → 92"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "osm-way-553321740",
+    "name": "Piper's Island",
+    "via": "commons-regional-category",
+    "category": "Category:Pipers Island",
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pipers_Island.jpg?width=800",
+      "source": "commons-regional-category",
+      "sourceRef": "Category:Pipers Island",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Pipers_Island.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Photo by Jim Linwood, via Wikimedia Commons (CC BY 2.0)",
+      "caption": "Pipers Island",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-06-02T21:01:17+00:00"
+    },
+    "imageConfidence": "high",
+    "source": "commons-regional-category",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Pipers_Island.jpg",
+    "verifyConfidence": 92,
+    "verifyReasons": [
+      "staging base for commons-regional-category: 85",
+      "commons island-category + name match → 92"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  }
+]

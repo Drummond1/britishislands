@@ -1,0 +1,33 @@
+{
+  "generated": "2026-07-27T05:21:18Z",
+  "pipeline": "enrich_images_multilang_wiki",
+  "attempted": 200,
+  "staged_count": 1,
+  "by_source": {
+    "wikipedia-gd": 1
+  },
+  "by_wiki_site": {
+    "gdwiki": 1
+  },
+  "adoptions": [
+    {
+      "id": "wd-Q25634954",
+      "name": "Blotchnie Fiold",
+      "wikidata": "Q25634954",
+      "wikiSite": "gdwiki",
+      "source": "wikipedia-gd",
+      "sourceRef": "gdwiki:Blotchnie Fiold",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://gd.wikipedia.org/wiki/Blotchnie_Fiold",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg?width=800",
+        "source": "wikipedia-gd",
+        "sourceRef": "gdwiki:Blotchnie Fiold",
+        "sourcePageUrl": "https://gd.wikipedia.org/wiki/Blotchnie_Fiold",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Stephen McKay, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Blotchnie Fiold - geograph.org.uk - 1452046"
+      }
+    }
+  ]
+}

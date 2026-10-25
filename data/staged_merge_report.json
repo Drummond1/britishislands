@@ -1,5 +1,5 @@
 {
-  "started": "2026-07-27T06:22:01",
+  "started": "2026-08-03T19:50:59",
   "dry_run": false,
   "backup": null,
   "staging_source": "verified",
@@ -37,7 +37,7 @@
       "wikipedia-embedded.json",
       "wikipedia-gallery.json"
     ],
-    "rows_read": 18,
+    "rows_read": 16,
     "rows_by_file": {
       "archive-nls.json": {
         "raw": 0,
@@ -84,8 +84,8 @@
         "normalised": 0
       },
       "geograph-native.json": {
-        "raw": 2,
-        "normalised": 2
+        "raw": 0,
+        "normalised": 0
       },
       "heritage-ogl.json": {
         "raw": 0,
@@ -163,37 +163,14 @@
     "parse_skipped": 0,
     "staging_source": "verified"
   },
-  "candidates_deduped": 13,
-  "merged_total": 2,
-  "merged_by_source": {
-    "geograph-native": 2
-  },
-  "merged_by_staging_file": {
-    "geograph-native.json": 2
-  },
+  "candidates_deduped": 11,
+  "merged_total": 0,
+  "merged_by_source": {},
+  "merged_by_staging_file": {},
   "skipped_already_has_image": 11,
   "skipped_missing_island": 0,
-  "named_with_photo_before": 4354,
-  "merged": [
-    {
-      "id": "osm-way-1422328811",
-      "name": "Abbey Meadow",
-      "source": "geograph-native",
-      "staging_file": "geograph-native.json",
-      "imageConfidence": "high",
-      "verifiedAt": "2026-07-27T05:21:20+00:00",
-      "sourcePageUrl": "https://www.geograph.org.uk/photo/6272361"
-    },
-    {
-      "id": "osm-way-46936237",
-      "name": "Bevere Island",
-      "source": "geograph-native",
-      "staging_file": "geograph-native.json",
-      "imageConfidence": "high",
-      "verifiedAt": "2026-07-27T05:21:45+00:00",
-      "sourcePageUrl": "https://www.geograph.org.uk/photo/5577018"
-    }
-  ],
-  "finished": "2026-07-27T06:22:01",
+  "named_with_photo_before": 4356,
+  "merged": [],
+  "finished": "2026-08-03T19:50:59",
   "named_with_photo_after": 4356
 }

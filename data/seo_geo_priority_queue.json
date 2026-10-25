@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-07-27T21:01:39Z",
+  "generated": "2026-08-03T18:51:07Z",
   "source": "audit_seo_geo_coverage.py",
   "queue": [
     {
@@ -6516,16 +6516,6 @@
       "needPhoto": false
     },
     {
-      "id": "osm-way-188960567",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
       "id": "osm-way-205106771",
       "score": 60,
       "tier": 3,
@@ -6817,16 +6807,6 @@
     },
     {
       "id": "osm-way-414813206",
-      "score": 60,
-      "tier": 3,
-      "gaps": [
-        "description"
-      ],
-      "needDescription": true,
-      "needPhoto": false
-    },
-    {
-      "id": "osm-way-446495637",
       "score": 60,
       "tier": 3,
       "gaps": [
@@ -8074,6 +8054,26 @@
       ],
       "needDescription": true,
       "needPhoto": false
+    },
+    {
+      "id": "wd-Q24637790",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
+    },
+    {
+      "id": "wd-Q24637806",
+      "score": 60,
+      "tier": 3,
+      "gaps": [
+        "description"
+      ],
+      "needDescription": true,
+      "needPhoto": false
     }
   ],
   "ids": [
@@ -8721,7 +8721,6 @@
     "osm-way-3375216",
     "osm-way-504223051",
     "osm-way-183357742",
-    "osm-way-188960567",
     "osm-way-205106771",
     "osm-way-315544322",
     "osm-way-414813207",
@@ -8752,7 +8751,6 @@
     "osm-way-236692729",
     "osm-way-236692738",
     "osm-way-414813206",
-    "osm-way-446495637",
     "osm-way-541110905",
     "osm-way-883875276",
     "wd-Q56667708",
@@ -8876,6 +8874,8 @@
     "wd-Q24636698",
     "wd-Q24636749",
     "wd-Q24636761",
-    "wd-Q24637469"
+    "wd-Q24637469",
+    "wd-Q24637790",
+    "wd-Q24637806"
   ]
 }

@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-04T06:38:25+00:00",
+  "source": "commons-archipelago-category",
+  "adoptions": [
+    {
+      "id": "osm-relation-3581015",
+      "name": "Ardillaun",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Ardoileán",
+      "category": "Category:Ardoileán",
+      "categories": [
+        "Category:Ardoileán"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/HIGH_ISLAND_ENCLOSURE.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Ardoileán",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:HIGH_ISLAND_ENCLOSURE.jpg",
+        "license": "CC BY-SA 4.0",
+        "attribution": "Photo by 32cnamart, via Wikimedia Commons (CC BY-SA 4.0)",
+        "caption": "HIGH ISLAND ENCLOSURE",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:38:50+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:HIGH_ISLAND_ENCLOSURE.jpg"
+    },
+    {
+      "id": "osm-relation-3559046",
+      "name": "Duck Island",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Duck Island, Castleford",
+      "category": "Category:Duck Island, Castleford",
+      "categories": [
+        "Category:Duck Island, Castleford"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Renovated_barge_-_geograph.org.uk_-_6354082.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Duck Island, Castleford",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by derek dye, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Renovated barge - geograph.org.uk - 6354082",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:39:26+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg"
+    },
+    {
+      "id": "osm-way-355369673",
+      "name": "Duck Island",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Duck Island, Castleford",
+      "category": "Category:Duck Island, Castleford",
+      "categories": [
+        "Category:Duck Island, Castleford"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Renovated_barge_-_geograph.org.uk_-_6354082.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Duck Island, Castleford",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by derek dye, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Renovated barge - geograph.org.uk - 6354082",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:39:26+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg"
+    },
+    {
+      "id": "osm-way-264526527",
+      "name": "Duck Island",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Duck Island, Castleford",
+      "category": "Category:Duck Island, Castleford",
+      "categories": [
+        "Category:Duck Island, Castleford"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Renovated_barge_-_geograph.org.uk_-_6354082.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Duck Island, Castleford",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by derek dye, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Renovated barge - geograph.org.uk - 6354082",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:39:26+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg"
+    },
+    {
+      "id": "osm-way-431648346",
+      "name": "Duck Island",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Duck Island, Castleford",
+      "category": "Category:Duck Island, Castleford",
+      "categories": [
+        "Category:Duck Island, Castleford"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Renovated_barge_-_geograph.org.uk_-_6354082.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Duck Island, Castleford",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by derek dye, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Renovated barge - geograph.org.uk - 6354082",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:39:26+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Renovated_barge_-_geograph.org.uk_-_6354082.jpg"
+    },
+    {
+      "id": "osm-way-682115167",
+      "name": "La Vielle",
+      "via": "commons-archipelago-category",
+      "dualSignal": "filename+nation-anchor",
+      "category": "Category:Islands of Jersey",
+      "categories": [
+        "Category:Islands of Jersey"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stchulptuthe%2C_La_Vielle_C%C3%A2rri%C3%A9the%2C_La_Mouaie.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Islands of Jersey",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stchulptuthe,_La_Vielle_C%C3%A2rri%C3%A9the,_La_Mouaie.jpg",
+        "license": "Public domain",
+        "attribution": "Photo by Man vyi, via Wikimedia Commons (Public domain)",
+        "caption": "Stchulptuthe, La Vielle Cârriéthe, La Mouaie",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:39:30+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stchulptuthe,_La_Vielle_C%C3%A2rri%C3%A9the,_La_Mouaie.jpg"
+    },
+    {
+      "id": "sgeir-greadach",
+      "name": "Sgeir Greadach",
+      "via": "commons-archipelago-category",
+      "dualSignal": "filename+nation-anchor",
+      "category": "Category:Skerries of the Outer Hebrides",
+      "categories": [
+        "Category:Skerries of the Outer Hebrides"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Skerries of the Outer Hebrides",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Toby Speight, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Sgeir Greadach - geograph.org.uk - 1879860",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:40:04+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg"
+    },
+    {
+      "id": "the-pulpit",
+      "name": "The Pulpit",
+      "via": "commons-archipelago-category",
+      "dualSignal": "filename+nation-anchor",
+      "category": "Category:Bass Rock",
+      "categories": [
+        "Category:Bass Rock"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Pulpit%2C_Bass_Rock_-_geograph.org.uk_-_5517181.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Bass Rock",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Pulpit,_Bass_Rock_-_geograph.org.uk_-_5517181.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by Mike Pennington, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "The Pulpit, Bass Rock - geograph.org.uk - 5517181",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:40:08+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Pulpit,_Bass_Rock_-_geograph.org.uk_-_5517181.jpg"
+    },
+    {
+      "id": "osm-relation-6925696",
+      "name": "Turbot Island",
+      "via": "commons-archipelago-category",
+      "dualSignal": "island-category:Category:Turbot Island",
+      "category": "Category:Inishturk (Galway)",
+      "categories": [
+        "Category:Inishturk (Galway)",
+        "Category:Turbot Island"
+      ],
+      "image_record": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ardmore_-_An_Aird_Mh%C3%B3r_-_geograph.org.uk_-_971945.jpg?width=800",
+        "source": "commons-archipelago-category",
+        "sourceRef": "Category:Inishturk (Galway)",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ardmore_-_An_Aird_Mh%C3%B3r_-_geograph.org.uk_-_971945.jpg",
+        "license": "CC BY-SA 2.0",
+        "attribution": "Photo by James Yardley, via Wikimedia Commons (CC BY-SA 2.0)",
+        "caption": "Ardmore - An Aird Mhór - geograph.org.uk - 971945",
+        "imageConfidence": "high",
+        "verifiedAt": "2026-06-04T06:40:10+00:00"
+      },
+      "imageConfidence": "high",
+      "source": "commons-archipelago-category",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ardmore_-_An_Aird_Mh%C3%B3r_-_geograph.org.uk_-_971945.jpg"
+    }
+  ],
+  "report": {
+    "generatedAt": "2026-06-04T06:38:25+00:00",
+    "source": "commons-archipelago-category",
+    "indexBuiltAt": "2026-06-04T06:34:49+00:00",
+    "filesInIndex": 13309,
+    "matches": [
+      {
+        "id": "osm-relation-3581015",
+        "name": "Ardillaun",
+        "file": "HIGH ISLAND ENCLOSURE.jpg",
+        "signal": "island-category:Category:Ardoileán",
+        "category": "Category:Ardoileán"
+      },
+      {
+        "id": "osm-relation-3559046",
+        "name": "Duck Island",
+        "file": "Renovated barge - geograph.org.uk - 6354082.jpg",
+        "signal": "island-category:Category:Duck Island, Castleford",
+        "category": "Category:Duck Island, Castleford"
+      },
+      {
+        "id": "osm-way-355369673",
+        "name": "Duck Island",
+        "file": "Renovated barge - geograph.org.uk - 6354082.jpg",
+        "signal": "island-category:Category:Duck Island, Castleford",
+        "category": "Category:Duck Island, Castleford"
+      },
+      {
+        "id": "osm-way-264526527",
+        "name": "Duck Island",
+        "file": "Renovated barge - geograph.org.uk - 6354082.jpg",
+        "signal": "island-category:Category:Duck Island, Castleford",
+        "category": "Category:Duck Island, Castleford"
+      },
+      {
+        "id": "osm-way-431648346",
+        "name": "Duck Island",
+        "file": "Renovated barge - geograph.org.uk - 6354082.jpg",
+        "signal": "island-category:Category:Duck Island, Castleford",
+        "category": "Category:Duck Island, Castleford"
+      },
+      {
+        "id": "osm-way-682115167",
+        "name": "La Vielle",
+        "file": "Stchulptuthe, La Vielle Cârriéthe, La Mouaie.jpg",
+        "signal": "filename+nation-anchor",
+        "category": "Category:Islands of Jersey"
+      },
+      {
+        "id": "sgeir-greadach",
+        "name": "Sgeir Greadach",
+        "file": "Sgeir Greadach - geograph.org.uk - 1879860.jpg",
+        "signal": "filename+nation-anchor",
+        "category": "Category:Skerries of the Outer Hebrides"
+      },
+      {
+        "id": "the-pulpit",
+        "name": "The Pulpit",
+        "file": "The Pulpit, Bass Rock - geograph.org.uk - 5517181.jpg",
+        "signal": "filename+nation-anchor",
+        "category": "Category:Bass Rock"
+      },
+      {
+        "id": "osm-relation-6925696",
+        "name": "Turbot Island",
+        "file": "Ardmore - An Aird Mhór - geograph.org.uk - 971945.jpg",
+        "signal": "island-category:Category:Turbot Island",
+        "category": "Category:Inishturk (Galway)"
+      }
+    ],
+    "rejected": [
+      {
+        "id": "osm-way-236692704",
+        "name": "Brothers",
+        "file": "View from Morris Brothers Memorial - geograph.org.uk - 38812.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:Anglesey"
+        ]
+      },
+      {
+        "id": "cock-of-arran",
+        "name": "Cock of Arran",
+        "file": "Near The Cock Of Arran - geograph.org.uk - 2742701.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:Isle of Arran"
+        ]
+      },
+      {
+        "id": "osm-way-189331171",
+        "name": "House Island",
+        "file": "One of the springs on ' House Island' - geograph.org.uk - 3102215.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:Shiant Islands"
+        ]
+      },
+      {
+        "id": "pans-rocks",
+        "name": "Pans Rocks",
+        "file": "Diving board - Pans Rocks - geograph.org.uk - 1098499.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:Inchkeith"
+        ]
+      },
+      {
+        "id": "sgeirean-buidhe",
+        "name": "Sgeirean Buidhe",
+        "file": "Sgeirean Buidhe Bhorlum - geograph.org.uk - 2490247.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:North Rona"
+        ]
+      },
+      {
+        "id": "sgeirean-buidhe-bhorlum",
+        "name": "Sgeirean Buidhe Bhorlum",
+        "file": "Sgeirean Buidhe Bhorlum - geograph.org.uk - 2490247.jpg",
+        "reason": "no-dual-signal",
+        "categories": [
+          "Category:North Rona"
+        ]
+      }
+    ],
+    "counts": {
+      "candidates": 15,
+      "dual_signal_ok": 9,
+      "staged": 9,
+      "meta_fetched": 22
+    }
+  }
+}

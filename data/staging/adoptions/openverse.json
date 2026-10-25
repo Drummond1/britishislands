@@ -1,0 +1,44 @@
+[
+  {
+    "id": "osm-way-199171973",
+    "image_record": {
+      "url": "https://live.staticflickr.com/2285/2132196242_44baca99fe.jpg",
+      "source": "openverse",
+      "sourceRef": "1c299484-3f2c-41d0-88fb-f58210d84a08",
+      "sourcePageUrl": "https://www.flickr.com/photos/76669273@N00/2132196242",
+      "license": "CC-BY-2.0",
+      "attribution": "\"Cliffs of Moher, Co. Clare, Ireland\" by atomicpuppy68 is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "caption": "Cliffs of Moher, Co. Clare, Ireland"
+    },
+    "confidence": "medium",
+    "reason": "name match in title/description; no result geo (lat/lon absent)"
+  },
+  {
+    "id": "osm-way-4562322",
+    "image_record": {
+      "url": "https://live.staticflickr.com/5030/5607462612_d66812db9f_b.jpg",
+      "source": "openverse",
+      "sourceRef": "f5d64649-16c3-4e9f-a6f3-c56483623f89",
+      "sourcePageUrl": "https://www.flickr.com/photos/33756577@N08/5607462612",
+      "license": "CC-BY-2.0",
+      "attribution": "\"Cruagh, Co. Dublin - Ireland\" by Mic V. is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "caption": "Cruagh, Co. Dublin - Ireland"
+    },
+    "confidence": "medium",
+    "reason": "name match in title/description; no result geo (lat/lon absent)"
+  },
+  {
+    "id": "deils-heid",
+    "image_record": {
+      "url": "https://live.staticflickr.com/4024/4418611402_d515efb6dc_b.jpg",
+      "source": "openverse",
+      "sourceRef": "4dda7d82-6f89-4828-8418-6943b84d0d27",
+      "sourcePageUrl": "https://www.flickr.com/photos/40415490@N02/4418611402",
+      "license": "CC-BY-SA-2.0",
+      "attribution": "\"The De'il's Heid\" by pettifoggist is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/.",
+      "caption": "The De'il's Heid"
+    },
+    "confidence": "medium",
+    "reason": "name match in title/description; no result geo (lat/lon absent)"
+  }
+]

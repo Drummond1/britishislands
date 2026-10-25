@@ -1,0 +1,187 @@
+[
+  {
+    "id": "osm-way-4554451",
+    "name": "Furze Island",
+    "wikidata": "Q26715755",
+    "imageConfidence": "high",
+    "confidencePct": 95,
+    "depictsVerified": true,
+    "chosenFile": "Dunmanus Castle and the adjoining farm.jpg",
+    "candidateCount": 3,
+    "verifiedCount": 3,
+    "discovery": {
+      "search": 3,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    },
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_and_the_adjoining_farm.jpg?width=640",
+      "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_and_the_adjoining_farm.jpg?width=1600",
+      "caption": "Dunmanus Castle and the adjoining farm",
+      "source": "wikidata-depicts",
+      "sourceRef": "P180:Q26715755",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution": "Photo by Podstawko (CC0) via Wikimedia Commons (depicts)",
+      "primary": true,
+      "imageConfidence": "high"
+    },
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+    "license": "CC0",
+    "verifyConfidence": 95,
+    "verifyReasons": [
+      "staging base for wikidata-depicts: 92",
+      "wikidata depicts/subject verified"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "osm-way-349642834",
+    "name": "Carbery Island",
+    "wikidata": "Q26716024",
+    "imageConfidence": "high",
+    "confidencePct": 95,
+    "depictsVerified": true,
+    "chosenFile": "Dunmanus Castle with Dunmanus Bay view.jpg",
+    "candidateCount": 2,
+    "verifiedCount": 2,
+    "discovery": {
+      "search": 2,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    },
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_with_Dunmanus_Bay_view.jpg?width=640",
+      "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_with_Dunmanus_Bay_view.jpg?width=1600",
+      "caption": "Dunmanus Castle with Dunmanus Bay view",
+      "source": "wikidata-depicts",
+      "sourceRef": "P180:Q26716024",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution": "Photo by Podstawko (CC0) via Wikimedia Commons (depicts)",
+      "primary": true,
+      "imageConfidence": "high"
+    },
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+    "license": "CC0",
+    "verifyConfidence": 95,
+    "verifyReasons": [
+      "staging base for wikidata-depicts: 92",
+      "wikidata depicts/subject verified"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "osm-way-4554647",
+    "name": "Calf Island East",
+    "wikidata": "Q26716448",
+    "imageConfidence": "high",
+    "confidencePct": 95,
+    "depictsVerified": true,
+    "chosenFile": "Illaunkearagh islands.jpg",
+    "candidateCount": 2,
+    "verifiedCount": 2,
+    "discovery": {
+      "search": 2,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    },
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+      "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+      "caption": "Illaunkearagh islands",
+      "source": "wikidata-depicts",
+      "sourceRef": "P180:Q26716448",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts)",
+      "primary": true,
+      "imageConfidence": "high"
+    },
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+    "license": "CC BY 4.0",
+    "verifyConfidence": 95,
+    "verifyReasons": [
+      "staging base for wikidata-depicts: 92",
+      "wikidata depicts/subject verified"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "osm-way-4554655",
+    "name": "Calf Island Middle",
+    "wikidata": "Q26716449",
+    "imageConfidence": "high",
+    "confidencePct": 95,
+    "depictsVerified": true,
+    "chosenFile": "Illaunkearagh islands.jpg",
+    "candidateCount": 2,
+    "verifiedCount": 2,
+    "discovery": {
+      "search": 2,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    },
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+      "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+      "caption": "Illaunkearagh islands",
+      "source": "wikidata-depicts",
+      "sourceRef": "P180:Q26716449",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts)",
+      "primary": true,
+      "imageConfidence": "high"
+    },
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+    "license": "CC BY 4.0",
+    "verifyConfidence": 95,
+    "verifyReasons": [
+      "staging base for wikidata-depicts: 92",
+      "wikidata depicts/subject verified"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "osm-way-4554663",
+    "name": "Calf Island West",
+    "wikidata": "Q26716451",
+    "imageConfidence": "high",
+    "confidencePct": 95,
+    "depictsVerified": true,
+    "chosenFile": "Illaunkearagh islands.jpg",
+    "candidateCount": 2,
+    "verifiedCount": 2,
+    "discovery": {
+      "search": 2,
+      "wikidata_sparql": 0,
+      "commons_sparql": 0
+    },
+    "image": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+      "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+      "caption": "Illaunkearagh islands",
+      "source": "wikidata-depicts",
+      "sourceRef": "P180:Q26716451",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts)",
+      "primary": true,
+      "imageConfidence": "high"
+    },
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+    "license": "CC BY 4.0",
+    "verifyConfidence": 95,
+    "verifyReasons": [
+      "staging base for wikidata-depicts: 92",
+      "wikidata depicts/subject verified"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  }
+]

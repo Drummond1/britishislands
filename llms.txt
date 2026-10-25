@@ -1,5 +1,5 @@
 # Find My Island (findmyisland.com)
-> The British & Irish Islands Atlas: visual, data-led island profiles with maps, photos, transport context, and provenance.
+> A map of the islands of Britain and Ireland, with photographs and stories.
 
 ## Entry points
 - Main app: /
@@ -8,7 +8,6 @@
 - Island profile: /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
 - Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
 - Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
-- Ferry guides: /ferries/
 - Collections: /collections/
 - Sitemap: /sitemap.xml
 

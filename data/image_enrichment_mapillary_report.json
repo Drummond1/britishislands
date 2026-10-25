@@ -1,0 +1,34 @@
+{
+  "started": "2026-06-02T21:41:42",
+  "script": "enrich_images_mapillary.py",
+  "args": {
+    "all_islands": false,
+    "limit": 50,
+    "adopt_limit": 0,
+    "max_distance_m": 300.0,
+    "max_area_km2": 0.5,
+    "dry_run": true,
+    "no_backup": false,
+    "refresh": false,
+    "test": "",
+    "delay": 0.35
+  },
+  "api_probe": {
+    "graph_endpoint": "https://graph.mapillary.com/images",
+    "token_present": false,
+    "works_without_token": false,
+    "without_token_http": 500,
+    "without_token_error": "HTTP 500: Invalid OAuth 2.0 Access Token",
+    "works_with_token": null,
+    "with_token_error": "no token in environment"
+  },
+  "max_distance_m": 300.0,
+  "max_area_km2": 0.5,
+  "pending_considered": 50,
+  "adopted": [],
+  "rejected": [],
+  "skipped": [],
+  "dry_run": true,
+  "finished": "2026-06-02T21:41:42",
+  "adopted_total": 0
+}

@@ -206,13 +206,20 @@ def canonical_island_id(record: dict) -> str:
 def name_key(name: str) -> str:
     s = (name or "").lower()
     s = re.sub(r"\(.*?\)", "", s)
+    # Strip generic island/isle prefixes (including "island of" / "isle of")
     s = re.sub(
-        r"\bisle of\b|\bisland\b|\bynys\b|\binch\b|\binis\b|\boil[eé]?an\b|\beilean\b",
+        r"\bisland of\b|\bisle of\b|\bislands?\b|\bisles?\b|\bislets?\b|"
+        r"\bynys\b|\binch\b|\binis(?:h)?\b|\boil[eé]?[aá]?n\b|\beilean(?:an)?\b|"
+        r"\bholms?\b|\bskerries\b|\bskerry\b",
         " ",
         s,
     )
     s = re.sub(r"[^\w\s]", " ", s, flags=re.UNICODE)
-    return re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s+", " ", s).strip()
+    # Drop stray conjunctions left after stripping
+    s = re.sub(r"^(?:of|and|with|the)\s+", "", s)
+    s = re.sub(r"\s+(?:of|and|with|the)$", "", s)
+    return s.strip()
 
 
 def element_center(el: dict) -> tuple[float, float] | None:

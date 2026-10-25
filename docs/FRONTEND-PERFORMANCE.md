@@ -49,7 +49,8 @@ setAppLoading(true)
 
 ### Do not regress
 
-- **No eager shard preload** — `ensureNationShardLoaded(nation)` on profile open only.
+- **No eager nation-shard preload** — prefer `data/details/{id}.json` on
+  profile open (`ensureIslandDetailLoaded`); nation shards are fallback only.
 - **No full-table sort on boot** — sort runs when user searches/filters.
 - **No sync proj4** in `index.html`.
 - **No static import** of `island-3d.js` in `app.js` (dynamic `import()` only).
@@ -72,16 +73,17 @@ setAppLoading(true)
 | `data/discovery_topics.json` | idle |
 | `data/featured_islands.json` | idle |
 | `data/crowd_pins.json` | idle |
-| `data/shards/{nation}.json` | Profile open |
+| `data/details/{id}.json` | Profile open (preferred) |
+| `data/shards/{nation}.json` | Fallback if detail missing |
 | `data/islands_unnamed_index.json` | Unnamed filter |
 | `data/galleries.json` | Island click |
 
 ## Profile open (double render)
 
-`focusIsland()` calls `renderDetails()` twice when shard not merged:
+`focusIsland()` calls `renderDetails()` twice when detail not merged:
 
 1. Stub from index (immediate)
-2. Full record after `ensureNationShardLoaded`
+2. Full record after `ensureIslandDetailLoaded`
 
 3D terrain uses **`scheduleIsland3DMount()`** with a generation token so only the final mount wins. See [`3D-TERRAIN.md`](3D-TERRAIN.md).
 

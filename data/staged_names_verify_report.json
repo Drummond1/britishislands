@@ -1,0 +1,44 @@
+{
+  "stagingDir": "/Users/drummondgilberta2aa9/Desktop/LLMs/Cursor/Scottish Islands/data/staging/name_proposals",
+  "verifiedDir": "/Users/drummondgilberta2aa9/Desktop/LLMs/Cursor/Scottish Islands/data/staging/name_proposals-verified",
+  "totalIn": 9,
+  "totalAccepted": 1,
+  "byFile": {
+    "fusion-triangulation.json": {
+      "raw": 0,
+      "accepted": 0
+    },
+    "geonames-spatial.json": {
+      "raw": 0,
+      "accepted": 0
+    },
+    "heritage-canmore-nhle.json": {
+      "raw": 0,
+      "accepted": 0
+    },
+    "ohsome-restored.json": {
+      "raw": 5,
+      "accepted": 0
+    },
+    "osm-nearby-nodes.json": {
+      "raw": 3,
+      "accepted": 1
+    },
+    "osm-tags.json": {
+      "raw": 0,
+      "accepted": 0
+    },
+    "photo-title-consensus.json": {
+      "raw": 0,
+      "accepted": 0
+    },
+    "property-adjacent.json": {
+      "raw": 1,
+      "accepted": 0
+    },
+    "seal-haulout.json": {
+      "raw": 0,
+      "accepted": 0
+    }
+  }
+}

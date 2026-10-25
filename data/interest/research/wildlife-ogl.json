@@ -1,0 +1,289 @@
+[
+  {
+    "taxon": "roseate tern",
+    "scientific": "Sterna dougallii",
+    "island_names": [
+      "Coquet Island"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Coquet Island SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Coquet Island account describes a small island off the Northumberland coast that is classified for breeding roseate terns. It lists the roseate tern first among the terns and records the colony as a substantial share of the British breeding population.",
+    "photo_page": "https://en.wikipedia.org/wiki/Roseate_tern"
+  },
+  {
+    "taxon": "northern gannet",
+    "scientific": "Morus bassanus",
+    "island_names": [
+      "Ailsa Craig"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Ailsa Craig SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Ailsa Craig account describes the granitic island in the outer Firth of Clyde and says its cliffs hold one of the largest northern gannet colonies in the world. The gannet is named as a notable breeding species for which the island is classified.",
+    "photo_page": "https://en.wikipedia.org/wiki/Northern_gannet"
+  },
+  {
+    "taxon": "European storm-petrel",
+    "scientific": "Hydrobates pelagicus",
+    "island_names": [
+      "Auskerry"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Auskerry SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Auskerry account describes a small uninhabited island south of Stronsay, in Orkney, that is classified for breeding European storm-petrels. The storm-petrel is named as a breeding interest of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/European_storm_petrel"
+  },
+  {
+    "taxon": "corncrake",
+    "scientific": "Crex crex",
+    "island_names": [
+      "Coll"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Coll (corncrake) SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Coll account says the island is of European importance for breeding corncrakes. The site qualification names the corncrake as the species for which this part of Coll is classified.",
+    "photo_page": "https://en.wikipedia.org/wiki/Corn_crake"
+  },
+  {
+    "taxon": "Fair Isle wren",
+    "scientific": "Troglodytes troglodytes fridariensis",
+    "island_names": [
+      "Fair Isle"
+    ],
+    "why_unusual": "endemic",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Fair Isle SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Fair Isle account says the island is notable for its endemic race of wren, the Fair Isle wren. The site qualification lists that endemic bird as a breeding feature of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/Fair_Isle_wren"
+  },
+  {
+    "taxon": "red-necked phalarope",
+    "scientific": "Phalaropus lobatus",
+    "island_names": [
+      "Fetlar"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Fetlar SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Fetlar account classifies this northern Shetland island for breeding red-necked phalaropes and lists that species first among its qualifying birds. The phalarope is named as a breeding feature of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/Red-necked_phalarope"
+  },
+  {
+    "taxon": "Leach's storm-petrel",
+    "scientific": "Oceanodroma leucorhoa",
+    "island_names": [
+      "Flannan Isles"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Flannan Isles SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Flannan Isles account describes these rocky islands west of Lewis as a nesting place for Leach's storm-petrel and says they are one of the few known nesting localities for it in the European Union. The storm-petrel is named as a breeding feature of the islands.",
+    "photo_page": "https://en.wikipedia.org/wiki/Leach%27s_storm_petrel"
+  },
+  {
+    "taxon": "European storm-petrel",
+    "scientific": "Hydrobates pelagicus",
+    "island_names": [
+      "Mousa"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Mousa SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Mousa account describes a small grassy island off the east side of southern Shetland and says it holds the largest European storm-petrel colony in Shetland. The storm-petrel is named as a breeding feature of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/European_storm_petrel"
+  },
+  {
+    "taxon": "European storm-petrel",
+    "scientific": "Hydrobates pelagicus",
+    "island_names": [
+      "Priest Island"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Priest Island (Summer Isles) SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Priest Island account describes the outermost of the Summer Isles and says it supports one of the largest European storm-petrel colonies in the United Kingdom. The site qualification names that storm-petrel as the breeding feature of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/European_storm_petrel"
+  },
+  {
+    "taxon": "Manx shearwater",
+    "scientific": "Puffinus puffinus",
+    "island_names": [
+      "Rum"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Rum SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Rum account says the island is particularly noted for its Manx shearwater colony and describes that colony as the largest of this species in the world. The shearwater is named as a reason the island qualifies for protection.",
+    "photo_page": "https://en.wikipedia.org/wiki/Manx_shearwater"
+  },
+  {
+    "taxon": "northern gannet",
+    "scientific": "Morus bassanus",
+    "island_names": [
+      "St Kilda"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: St Kilda SPA",
+    "licence": "OGL v3.0",
+    "connection": "The St Kilda account describes the remote island group west of the Outer Hebrides and classifies it for breeding northern gannets at a world-population level. The gannet is named among the species for which the islands are internationally important.",
+    "photo_page": "https://en.wikipedia.org/wiki/Northern_gannet"
+  },
+  {
+    "taxon": "corncrake",
+    "scientific": "Crex crex",
+    "island_names": [
+      "Tiree"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Tiree (corncrake) SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Tiree account says the island supports a breeding population of corncrakes of European importance. The site qualification names the corncrake as the species for which the site is classified.",
+    "photo_page": "https://en.wikipedia.org/wiki/Corn_crake"
+  },
+  {
+    "taxon": "European storm-petrel",
+    "scientific": "Hydrobates pelagicus",
+    "island_names": [
+      "Lunga"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Treshnish Isles SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Treshnish Isles account says the islands are important for breeding European storm-petrels and that the most important of those colonies are on Lunga. Lunga is the island the account names for that storm-petrel interest.",
+    "photo_page": "https://en.wikipedia.org/wiki/European_storm_petrel"
+  },
+  {
+    "taxon": "northern gannet",
+    "scientific": "Morus bassanus",
+    "island_names": [
+      "Noss"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Noss SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Noss account describes the island in Shetland and says its sandstone cliffs support breeding northern gannets together with other seabirds. The site qualification names the gannet as a breeding species of European importance.",
+    "photo_page": "https://en.wikipedia.org/wiki/Northern_gannet"
+  },
+  {
+    "taxon": "great cormorant",
+    "scientific": "Phalacrocorax carbo",
+    "island_names": [
+      "Puffin Island"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Ynys Seiriol / Puffin Island SPA",
+    "licence": "OGL v3.0",
+    "connection": "The account of Ynys Seiriol, Puffin Island, describes the limestone island just off the eastern tip of Anglesey in Wales. It classifies that Welsh island for breeding great cormorants, which are the named qualifying species.",
+    "photo_page": "https://en.wikipedia.org/wiki/Great_cormorant"
+  },
+  {
+    "taxon": "northern gannet",
+    "scientific": "Morus bassanus",
+    "island_names": [
+      "Grassholm"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Grassholm SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Grassholm account describes a small island off the Pembrokeshire coast and says it is of major importance as a breeding site for the northern gannet. The gannet is the migratory species for which the island is classified.",
+    "photo_page": "https://en.wikipedia.org/wiki/Northern_gannet"
+  },
+  {
+    "taxon": "Manx shearwater",
+    "scientific": "Puffinus puffinus",
+    "island_names": [
+      "Skomer",
+      "Skokholm"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Skomer, Skokholm and the Seas off Pembrokeshire SPA",
+    "licence": "OGL v3.0",
+    "connection": "The account for Skomer and Skokholm classifies those Pembrokeshire islands for breeding Manx shearwaters and treats that population as important at a global scale. The shearwater is named as a reason for the site, rather than left only inside a general seabird list.",
+    "photo_page": "https://en.wikipedia.org/wiki/Manx_shearwater"
+  },
+  {
+    "taxon": "great skua",
+    "scientific": "Stercorarius skua",
+    "island_names": [
+      "Unst"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://www.nature.scot/sites/default/files/site-special-scientific-interest/776/sssi-citation.pdf",
+    "source_title": "Hermaness Site of Special Scientific Interest citation",
+    "licence": "Open Government Licence",
+    "connection": "The Hermaness citation places the site in the north-west of Unst, which it calls the most northerly of the Shetland Islands. It describes a great skua colony there as one of the largest in the world.",
+    "photo_page": "https://en.wikipedia.org/wiki/Great_skua"
+  },
+  {
+    "taxon": "Manx shearwater",
+    "scientific": "Puffinus puffinus",
+    "island_names": [
+      "Bardsey"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://naturalresources.wales/media/672092/glannau-aberdaron-plan-english.pdf",
+    "source_title": "Core management plan for Glannau Aberdaron and Ynys Enlli / Aberdaron Coast and Bardsey Island SPA",
+    "licence": "Open Government Licence",
+    "connection": "The Natural Resources Wales plan says Bardsey itself holds one of the largest breeding populations of Manx shearwater in the United Kingdom. It treats the shearwater as the species for which the island is internationally important.",
+    "photo_page": "https://en.wikipedia.org/wiki/Manx_shearwater"
+  },
+  {
+    "taxon": "grey seal",
+    "scientific": "Halichoerus grypus",
+    "island_names": [
+      "Isle of May"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Isle of May SAC",
+    "licence": "OGL v3.0",
+    "connection": "The Isle of May account says the island, at the entrance to the Firth of Forth, supports a breeding colony of grey seals. It describes that colony as the largest east-coast breeding colony of grey seals in Scotland.",
+    "photo_page": "https://en.wikipedia.org/wiki/Grey_seal"
+  },
+  {
+    "taxon": "Arctic tern",
+    "scientific": "Sterna paradisaea",
+    "island_names": [
+      "Papa Westray"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Papa Westray (North Hill and Holm) SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Papa Westray account describes the Orkney island as an important breeding site for Arctic terns. The site qualification names the Arctic tern as a breeding feature of the island.",
+    "photo_page": "https://en.wikipedia.org/wiki/Arctic_tern"
+  },
+  {
+    "taxon": "Manx shearwater",
+    "scientific": "Puffinus puffinus",
+    "island_names": [
+      "Copeland Islands"
+    ],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://jncc.gov.uk/resources/a3d9da1e-dedc-4539-a574-84287636c898",
+    "source_title": "UK National Site Network (SAC and SPA) site summary details 2026: Copeland Islands SPA",
+    "licence": "OGL v3.0",
+    "connection": "The Copeland Islands account, for this Northern Ireland site, names breeding Manx shearwater as a qualifying species and records it against the world population. The shearwater is treated as a named interest of the islands.",
+    "photo_page": "https://en.wikipedia.org/wiki/Manx_shearwater"
+  }
+]

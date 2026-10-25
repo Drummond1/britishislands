@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T12:00:03+00:00",
-  "totalIslandsWithListings": 37,
+  "updatedAt": "2026-10-25T14:34:21+00:00",
+  "totalIslandsWithListings": 42,
   "verifiedManifest": "data/discovery/property_listings_verified.json",
   "humanDoc": "docs/FOR-SALE-ISLANDS.md",
   "islands": [
@@ -24,7 +24,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "eel-pie-island",
@@ -45,7 +45,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-157810927",
@@ -66,7 +66,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-148442098",
@@ -87,7 +87,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3198786",
@@ -108,7 +108,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3210701",
@@ -129,7 +129,28 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
+    },
+    {
+      "islandId": "scilly-st-marys",
+      "name": "St Mary's (Isles of Scilly)",
+      "nation": "England",
+      "areaKm2": 6.4204,
+      "lat": 49.917,
+      "lng": -6.299,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "St Mary's (Isles of Scilly) — Scilly Estate Agents",
+          "url": "https://scillyestateagents.com/properties/ganilly/",
+          "listingType": "residential",
+          "priceDisplay": "£425,000 ONO",
+          "source": "curated",
+          "sourceListingId": "tier3-scilly-estate-agents-illyestateagents-com-properties-ganil"
+        }
+      ],
+      "firstSeenAt": "2026-10-25T14:33:13+00:00",
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-49901778",
@@ -150,7 +171,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-48076585",
@@ -171,7 +192,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-157812309",
@@ -192,7 +213,28 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
+    },
+    {
+      "islandId": "osm-way-607165894",
+      "name": "Whittets Ait",
+      "nation": "England",
+      "areaKm2": 0.0385,
+      "lat": 51.37917,
+      "lng": -0.45861,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Whittets Ait — Savills",
+          "url": "https://search.savills.com/property-detail/gbwyrswes250193",
+          "listingType": "residential",
+          "priceDisplay": "Guide price £560,000",
+          "source": "curated",
+          "sourceListingId": "tier3-savills-ills-com-property-detail-gbwyrswes250193"
+        }
+      ],
+      "firstSeenAt": "2026-10-25T14:33:13+00:00",
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-8156739",
@@ -213,7 +255,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4554655",
@@ -234,7 +276,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-9126999",
@@ -255,7 +297,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-4029093",
@@ -276,7 +318,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-190629034",
@@ -297,7 +339,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4562311",
@@ -318,7 +360,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4554537",
@@ -339,7 +381,28 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
+    },
+    {
+      "islandId": "osm-way-704795953",
+      "name": "Illauncreeveen",
+      "nation": "Ireland",
+      "areaKm2": 0.0209,
+      "lat": 51.72803,
+      "lng": -9.5262,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Illauncreeveen — Harrington Estates",
+          "url": "https://www.harringtonestates.ie/allproperties/006095%2Fdh",
+          "listingType": "whole_island",
+          "priceDisplay": "€500,000",
+          "source": "curated",
+          "sourceListingId": "tier3-harrington-estates-gtonestates-ie-allproperties-006095-2fd"
+        }
+      ],
+      "firstSeenAt": "2026-10-25T14:33:13+00:00",
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4562119",
@@ -360,7 +423,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3395357",
@@ -381,7 +444,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4563603",
@@ -402,7 +465,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-6925696",
@@ -423,7 +486,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-5725196",
@@ -444,7 +507,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3512150",
@@ -465,7 +528,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3516496",
@@ -486,7 +549,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3516509",
@@ -507,7 +570,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3998378",
@@ -528,7 +591,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-3516655",
@@ -549,7 +612,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-205056852",
@@ -570,7 +633,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-3619206",
@@ -591,7 +654,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-750275320",
@@ -612,7 +675,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-200745352",
@@ -633,7 +696,28 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
+    },
+    {
+      "islandId": "osm-relation-15708714",
+      "name": "Eriskay",
+      "nation": "Scotland",
+      "areaKm2": 7.397,
+      "lat": 57.07555,
+      "lng": -7.2931,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Eriskay — Bell Ingram",
+          "url": "https://www.bellingram.co.uk/property/croft-7-balla-eriskay-isle-of-south-uist-eilean-siar-hs8-5jl/",
+          "listingType": "land",
+          "priceDisplay": "£50,000",
+          "source": "curated",
+          "sourceListingId": "tier3-bell-ingram-isle-of-south-uist-eilean-siar-hs8-5jl"
+        }
+      ],
+      "firstSeenAt": "2026-10-25T14:33:13+00:00",
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-14940681",
@@ -654,7 +738,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4002996",
@@ -675,7 +759,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-200912404",
@@ -696,7 +780,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-4092586",
@@ -717,7 +801,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-200773375",
@@ -738,7 +822,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-relation-4230732",
@@ -759,7 +843,28 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
+    },
+    {
+      "islandId": "osm-way-4011476",
+      "name": "Wiay",
+      "nation": "Scotland",
+      "areaKm2": 4.0596,
+      "lat": 57.3984,
+      "lng": -7.21048,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Wiay — Bell Ingram",
+          "url": "https://www.bellingram.co.uk/property/isle-of-wiay-creagorry-benbecula-eilean-siar-hs7-5ps/",
+          "listingType": "whole_island",
+          "priceDisplay": "£995,000",
+          "source": "curated",
+          "sourceListingId": "tier3-bell-ingram-creagorry-benbecula-eilean-siar-hs7-5ps"
+        }
+      ],
+      "firstSeenAt": "2026-10-25T14:33:13+00:00",
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     },
     {
       "islandId": "osm-way-4001735",
@@ -780,7 +885,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-19T12:00:03+00:00"
+      "lastSeenAt": "2026-10-25T14:34:21+00:00"
     }
   ],
   "runs": [
@@ -1048,6 +1153,40 @@
       "removedIslandIds": [],
       "source": "registry_only",
       "verifiedCount": 37
+    },
+    {
+      "runAt": "2026-10-25T14:33:13+00:00",
+      "source": "registry_sync",
+      "addedCount": 6,
+      "removedCount": 0,
+      "addedIslandIds": [
+        "osm-relation-15708714",
+        "osm-relation-5763894",
+        "osm-way-4011476",
+        "osm-way-607165894",
+        "osm-way-704795953",
+        "scilly-st-marys"
+      ],
+      "removedIslandIds": []
+    },
+    {
+      "runAt": "2026-10-25T14:33:13+00:00",
+      "addedCount": 0,
+      "removedCount": 0,
+      "addedIslandIds": [],
+      "removedIslandIds": [],
+      "source": "tier4_apply",
+      "verifiedCount": 43
+    },
+    {
+      "runAt": "2026-10-25T14:34:21+00:00",
+      "source": "registry_sync",
+      "addedCount": 0,
+      "removedCount": 1,
+      "addedIslandIds": [],
+      "removedIslandIds": [
+        "osm-relation-5763894"
+      ]
     }
   ]
 }

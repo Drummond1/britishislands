@@ -1,0 +1,63 @@
+{
+  "probedAt": "2026-08-03T18:46:01+00:00",
+  "origin": "https://www.findmyisland.com",
+  "results": [
+    {
+      "url": "https://www.findmyisland.com/",
+      "ok": true,
+      "status": 200,
+      "bytes": 41576,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/sitemap.xml",
+      "ok": false,
+      "status": 200,
+      "bytes": 757,
+      "error": "missing urlset"
+    },
+    {
+      "url": "https://www.findmyisland.com/robots.txt",
+      "ok": true,
+      "status": 200,
+      "bytes": 212,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/llms.txt",
+      "ok": true,
+      "status": 200,
+      "bytes": 1044,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/islands/",
+      "ok": true,
+      "status": 200,
+      "bytes": 2097,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/islands/scotland/",
+      "ok": true,
+      "status": 200,
+      "bytes": 6452,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/islands/scotland/isle-of-skye/",
+      "ok": true,
+      "status": 200,
+      "bytes": 7515,
+      "error": null
+    },
+    {
+      "url": "https://www.findmyisland.com/profiles/isle-of-skye.html",
+      "ok": true,
+      "status": 200,
+      "bytes": 616,
+      "error": null
+    }
+  ],
+  "allOk": false
+}

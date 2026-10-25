@@ -1,0 +1,7 @@
+{
+  "script": "discover_osm_freetext.py",
+  "elementsScanned": 5982,
+  "lexiconHits": 5907,
+  "mistaggedFlagged": 0,
+  "candidates": 0
+}

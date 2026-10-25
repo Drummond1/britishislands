@@ -63,17 +63,16 @@ fi
 # Check caches.
 echo
 echo "  staged caches:"
-declare -A names=(
-    [hills]="data/cache_dobih.json"
-    [lighthouses]="data/cache_lighthouses.json"
-    [wildlife]="data/cache_wildlife.json"
-    [geology]="data/cache_bgs.json"
-    [census]="data/cache_census2022.json"
-    [property]="data/cache_property_listings.json"
-)
 missing=0
-for k in hills lighthouses wildlife geology census property; do
-    f="${names[$k]}"
+for entry in \
+    "hills:data/cache_dobih.json" \
+    "lighthouses:data/cache_lighthouses.json" \
+    "wildlife:data/cache_wildlife.json" \
+    "geology:data/cache_bgs.json" \
+    "census:data/cache_census2022.json" \
+    "property:data/cache_property_listings.json"; do
+    k="${entry%%:*}"
+    f="${entry#*:}"
     if [[ -s "${f}" ]]; then
         size=$(wc -c < "${f}" | tr -d ' ')
         echo "    [present] ${k}: ${f} (${size} bytes)"

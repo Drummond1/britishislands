@@ -1,0 +1,14 @@
+{
+  "dryRun": false,
+  "candidates": 1,
+  "uniqueIslands": 1,
+  "merged": 1,
+  "skippedNamed": 0,
+  "skippedCurated": 0,
+  "skippedMissing": 0,
+  "unnamedBefore": 4144,
+  "unnamedAfter": 4143,
+  "bySource": {
+    "osm-nearby-node": 1
+  }
+}

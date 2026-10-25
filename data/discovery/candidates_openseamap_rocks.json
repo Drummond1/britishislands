@@ -1,0 +1,314 @@
+[
+  {
+    "candidateId": "osm-node-2959856464",
+    "name": "St Anthony's Bush",
+    "lat": 55.98214,
+    "lng": -3.14554,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959856464,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959856464",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959857101",
+    "name": "Kirkbush Rock",
+    "lat": 56.05412,
+    "lng": -3.22719,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959857101,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959857101",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959857122",
+    "name": "Bush of the Ness",
+    "lat": 56.06065,
+    "lng": -3.17522,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959857122,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959857122",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959919275",
+    "name": "Frenchman's Rock",
+    "lat": 54.79363,
+    "lng": -4.08597,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959919275,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959919275",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959919279",
+    "name": "Frenchman's Rock",
+    "lat": 54.79377,
+    "lng": -4.08592,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959919279,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959919279",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959919281",
+    "name": "Frenchman's Rock",
+    "lat": 54.79389,
+    "lng": -4.08558,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959919281,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959919281",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959919285",
+    "name": "Frenchman's Rock",
+    "lat": 54.79428,
+    "lng": -4.08496,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959919285,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959919285",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959919288",
+    "name": "Frenchman's Rock",
+    "lat": 54.79441,
+    "lng": -4.0854,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959919288,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959919288",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959932848",
+    "name": "Sugarloaf",
+    "lat": 54.77253,
+    "lng": -4.08722,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959932848,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959932848",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959932849",
+    "name": "Gallant Buoys",
+    "lat": 54.78052,
+    "lng": -4.08978,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959932849,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959932849",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-2959932850",
+    "name": "Gallant Buoys",
+    "lat": 54.78066,
+    "lng": -4.08965,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 2959932850,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/2959932850",
+        "license": "ODbL"
+      }
+    ]
+  },
+  {
+    "candidateId": "osm-node-4111288471",
+    "name": "Crabwater Rock",
+    "lat": 55.76569,
+    "lng": -1.99194,
+    "nation": "Scotland",
+    "featureKind": "rock",
+    "osmType": "node",
+    "osmId": 4111288471,
+    "osmPlace": "rock",
+    "wikidata": "",
+    "wikipedia": "",
+    "aliases": [],
+    "tags": [
+      "rock",
+      "seamark:name"
+    ],
+    "scanConfidence": "low",
+    "sourceHints": [
+      {
+        "name": "openstreetmap-openseamap",
+        "url": "https://www.openstreetmap.org/node/4111288471",
+        "license": "ODbL"
+      }
+    ]
+  }
+]

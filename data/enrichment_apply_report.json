@@ -1,13 +1,11 @@
 {
-  "startedAt": "2026-05-19T13:26:03+00:00",
+  "startedAt": "2026-10-25T14:33:08+00:00",
   "dryRun": false,
   "applied": {
-    "property": 37
+    "property": 43
   },
-  "removed": {
-    "property": 1
-  },
-  "backup": "islands.json.before-enrichments-20260519T132602Z",
+  "removed": {},
+  "backup": "islands.json.before-enrichments-20261025T143308Z",
   "skippedNewer": [],
   "smokeChecksPassed": [
     "isle-of-skye",

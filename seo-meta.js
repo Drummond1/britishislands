@@ -9,17 +9,17 @@
 const HOME_SEO = {
   title: "Find My Island — The British & Irish Islands Atlas",
   description:
-    "Find My Island: explore 7,000+ islands of the UK and Ireland on an interactive map — photos, ferry routes, Gaelic names, and island profiles for Scotland, Wales, England, and Ireland.",
+    "Find My Island: a map of the islands of Britain and Ireland, with photos, stories, and the odd fact you would not expect.",
   canonical: "https://www.findmyisland.com/",
   ogType: "website",
   ogTitle: "Find My Island — The British & Irish Islands Atlas",
   ogDescription:
-    "Interactive map of 7,000+ British and Irish islands — sea, loch, and river — with photos, ferries, and island guides.",
+    "A map of the islands of Britain and Ireland — sea, loch, and river — with photos and stories.",
   ogUrl: "https://www.findmyisland.com/",
   twitterCard: "summary_large_image",
   twitterTitle: "Find My Island — The British & Irish Islands Atlas",
   twitterDescription:
-    "Explore 7,000+ islands of the UK and Ireland on an interactive map with ferry guides and island profiles.",
+    "Explore the islands of Britain and Ireland: a map, photos, and the stories attached to each place.",
 };
 
 let _baselineTitle = "";
@@ -128,7 +128,7 @@ function buildDescription(island) {
   } else if (island.archipelago) {
     parts.push(`Part of ${island.archipelago}.`);
   }
-  parts.push("Explore on the Find My Island atlas — map, photos, transport and ferry context.");
+  parts.push("Explore it on the Find My Island map.");
   return parts.join(" ").slice(0, 320);
 }
 

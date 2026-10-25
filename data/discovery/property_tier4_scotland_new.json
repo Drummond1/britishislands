@@ -1,0 +1,24 @@
+[
+  {
+    "islandName": "Wiay",
+    "nation": "Scotland",
+    "broker": "Bell Ingram",
+    "url": "https://www.bellingram.co.uk/property/isle-of-wiay-creagorry-benbecula-eilean-siar-hs7-5ps/",
+    "listingType": "whole_island",
+    "priceDisplay": "£995,000",
+    "status": "for_sale",
+    "notes": "Whole island of about 970 acres off the east coast of Benbecula. Bell Ingram ref CC607, page marked For Sale.",
+    "pageNamesIsland": true
+  },
+  {
+    "islandName": "Eriskay",
+    "nation": "Scotland",
+    "broker": "Bell Ingram",
+    "url": "https://www.bellingram.co.uk/property/croft-7-balla-eriskay-isle-of-south-uist-eilean-siar-hs8-5jl/",
+    "listingType": "land",
+    "priceDisplay": "£50,000",
+    "status": "for_sale",
+    "notes": "Croft 7 Balla, a crofting tenancy of about 3.67 ha on Eriskay, plus a share of the island common grazings. Bell Ingram ref MC413, page marked For Sale.",
+    "pageNamesIsland": true
+  }
+]

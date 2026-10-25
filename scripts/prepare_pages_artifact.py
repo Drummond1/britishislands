@@ -136,6 +136,7 @@ def main() -> None:
     # Force-include CI outputs that .gitignore hides from git (may not be in copy_tree if absent)
     for forced in (
         ROOT / "data" / "shards",
+        ROOT / "data" / "details",
         ROOT / "data" / "terrain",
         ROOT / "data" / "seo_path_by_id.json",
         ROOT / "profiles",
@@ -156,6 +157,8 @@ def main() -> None:
         ROOT / "sitemap-collections.xml",
         ROOT / "robots.txt",
         ROOT / "llms.txt",
+        ROOT / "404.html",
+        ROOT / "vendor",
     ):
         if not forced.exists():
             continue

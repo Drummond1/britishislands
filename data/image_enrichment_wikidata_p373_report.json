@@ -1,0 +1,38 @@
+{
+  "script": "enrich_images_wikidata_p373.py",
+  "source": "commons-category-p373",
+  "generatedAt": "2026-06-02T20:47:58+00:00",
+  "args": {
+    "limit": 0,
+    "named_only": true,
+    "dry_run": false,
+    "apply": false,
+    "no_backup": false,
+    "test": "",
+    "refresh": false,
+    "no_stage": false
+  },
+  "coverage_p373_vs_sitelink": {
+    "qids_checked": 876,
+    "resolvable_p373_or_sitelink": 9,
+    "both_p373_and_sitelink": 9,
+    "p373_only": 0,
+    "sitelink_only": 0,
+    "neither": 867,
+    "note": "v3 commons-category used commonswiki sitelink only (no P373); most photoless Q-ID islands lack both sitelink and P373, which explains commons-category: 0 in image_enrichment_v3_report.json."
+  },
+  "targets": 876,
+  "counts": {
+    "staged": 0,
+    "no_category": 867,
+    "no_photo": 9,
+    "no_qid": 0,
+    "by_category_source": {
+      "p373": 0,
+      "sitelink": 0
+    }
+  },
+  "adopted": [],
+  "dry_run": false,
+  "staging_path": "data/staging/adoptions/p373-commons.json"
+}

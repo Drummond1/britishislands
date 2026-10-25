@@ -5,7 +5,7 @@
   "needsManualReview": 545,
   "records": [
     {
-      "id": "old-man-of-stoer",
+      "id": "osm-node-411745197",
       "name": "Old Man of Stoer",
       "nation": "Scotland",
       "type": "sea",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "devils-chimney",
+      "id": "osm-node-1089669845",
       "name": "Devil's Chimney",
       "nation": "England",
       "type": "sea",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "id": "grannie-stane",
+      "id": "osm-node-3260661239",
       "name": "Grannie Stane",
       "nation": "Scotland",
       "type": "sea",
@@ -231,7 +231,7 @@
       }
     },
     {
-      "id": "grey-stone",
+      "id": "osm-node-12534423914",
       "name": "Grey Stone",
       "nation": "England",
       "type": "sea",
@@ -307,7 +307,7 @@
       }
     },
     {
-      "id": "tarbert-county-kerry",
+      "id": "wd-Q969955",
       "name": "Tarbert, County Kerry",
       "nation": "Ireland",
       "type": "sea",
@@ -390,7 +390,7 @@
       }
     },
     {
-      "id": "gladstone-rock",
+      "id": "osm-node-255601877",
       "name": "Gladstone Rock",
       "nation": "Wales",
       "type": "sea",
@@ -441,7 +441,7 @@
       }
     },
     {
-      "id": "sharks-fin",
+      "id": "osm-node-279406549",
       "name": "Shark's Fin",
       "nation": "England",
       "type": "sea",
@@ -503,7 +503,7 @@
       }
     },
     {
-      "id": "agassiz-rock",
+      "id": "osm-node-292057320",
       "name": "Agassiz Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -554,7 +554,7 @@
       }
     },
     {
-      "id": "eagle-stone",
+      "id": "osm-node-303570911",
       "name": "Eagle Stone",
       "nation": "England",
       "type": "sea",
@@ -605,7 +605,7 @@
       }
     },
     {
-      "id": "maidens-rock",
+      "id": "osm-node-310153308",
       "name": "Maiden's Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -656,7 +656,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-317256035",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -707,7 +707,7 @@
       }
     },
     {
-      "id": "gaerstone",
+      "id": "osm-node-321808773",
       "name": "Gaerstone",
       "nation": "Wales",
       "type": "sea",
@@ -758,7 +758,7 @@
       }
     },
     {
-      "id": "three-fingers-rock",
+      "id": "osm-node-322067259",
       "name": "Three Fingers Rock",
       "nation": "Wales",
       "type": "sea",
@@ -809,7 +809,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-369941036",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -860,7 +860,7 @@
       }
     },
     {
-      "id": "rock-of-ages",
+      "id": "osm-node-384964562",
       "name": "Rock of Ages",
       "nation": "Wales",
       "type": "sea",
@@ -911,7 +911,7 @@
       }
     },
     {
-      "id": "druids-chair",
+      "id": "osm-node-411733763",
       "name": "Druid's Chair",
       "nation": "England",
       "type": "sea",
@@ -962,7 +962,7 @@
       }
     },
     {
-      "id": "three-ships",
+      "id": "osm-node-473879437",
       "name": "Three Ships",
       "nation": "England",
       "type": "sea",
@@ -1013,7 +1013,7 @@
       }
     },
     {
-      "id": "clach-nan-con-fionn",
+      "id": "osm-node-478873986",
       "name": "Clach nan Con-fionn",
       "nation": "Scotland",
       "type": "sea",
@@ -1064,7 +1064,7 @@
       }
     },
     {
-      "id": "hern-point-rock",
+      "id": "osm-node-529895076",
       "name": "Hern Point Rock",
       "nation": "England",
       "type": "sea",
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "big-picket-rock",
+      "id": "osm-node-529895086",
       "name": "Big Picket Rock",
       "nation": "England",
       "type": "sea",
@@ -1166,7 +1166,7 @@
       }
     },
     {
-      "id": "thiefs-rock",
+      "id": "osm-node-529968993",
       "name": "Thief's Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -1217,7 +1217,7 @@
       }
     },
     {
-      "id": "horse-rock",
+      "id": "osm-node-529968995",
       "name": "Horse Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -1268,7 +1268,7 @@
       }
     },
     {
-      "id": "greencliff-rock",
+      "id": "osm-node-531657735",
       "name": "Greencliff Rock",
       "nation": "England",
       "type": "sea",
@@ -1319,7 +1319,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-559694010",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -1370,7 +1370,7 @@
       }
     },
     {
-      "id": "mcmillans-rock",
+      "id": "osm-node-563295370",
       "name": "McMillan's Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -1421,7 +1421,7 @@
       }
     },
     {
-      "id": "sgeir-nan-garbanach",
+      "id": "osm-node-569891201",
       "name": "Sgeir nan Garbanach",
       "nation": "Scotland",
       "type": "sea",
@@ -1474,7 +1474,7 @@
       }
     },
     {
-      "id": "pound-rock",
+      "id": "osm-node-624519581",
       "name": "Pound Rock",
       "nation": "England",
       "type": "sea",
@@ -1532,7 +1532,7 @@
       }
     },
     {
-      "id": "table-rock",
+      "id": "osm-node-653761090",
       "name": "Table Rock",
       "nation": "England",
       "type": "sea",
@@ -1583,7 +1583,7 @@
       }
     },
     {
-      "id": "clogher-head",
+      "id": "osm-node-662461654",
       "name": "Clogher Head",
       "nation": "Ireland",
       "type": "sea",
@@ -1645,7 +1645,7 @@
       }
     },
     {
-      "id": "sgeirean-ghlasa",
+      "id": "osm-node-663979365",
       "name": "Sgeirean Ghlasa",
       "nation": "Scotland",
       "type": "sea",
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "armchair-rock",
+      "id": "osm-node-693172712",
       "name": "Armchair Rock",
       "nation": "England",
       "type": "sea",
@@ -1748,7 +1748,7 @@
       }
     },
     {
-      "id": "clogher-head",
+      "id": "osm-node-699612119",
       "name": "Clogher Head",
       "nation": "Ireland",
       "type": "sea",
@@ -1812,7 +1812,7 @@
       }
     },
     {
-      "id": "idol-stone",
+      "id": "osm-node-747747867",
       "name": "Idol Stone",
       "nation": "England",
       "type": "sea",
@@ -1863,7 +1863,7 @@
       }
     },
     {
-      "id": "darlings-rock",
+      "id": "osm-node-817804489",
       "name": "Darling's Rock",
       "nation": "England",
       "type": "sea",
@@ -1914,7 +1914,7 @@
       }
     },
     {
-      "id": "allens-rock",
+      "id": "osm-node-825129568",
       "name": "Allen's Rock",
       "nation": "England",
       "type": "sea",
@@ -1965,7 +1965,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-944869681",
       "name": "Black Rock",
       "nation": "England",
       "type": "sea",
@@ -2016,7 +2016,7 @@
       }
     },
     {
-      "id": "the-head-stone",
+      "id": "osm-node-1059379179",
       "name": "The Head Stone",
       "nation": "England",
       "type": "sea",
@@ -2067,7 +2067,7 @@
       }
     },
     {
-      "id": "pancake-stone",
+      "id": "osm-node-1103305292",
       "name": "Pancake Stone",
       "nation": "England",
       "type": "sea",
@@ -2118,7 +2118,7 @@
       }
     },
     {
-      "id": "kings-chair",
+      "id": "osm-node-1175119639",
       "name": "King's Chair",
       "nation": "Scotland",
       "type": "sea",
@@ -2169,7 +2169,7 @@
       }
     },
     {
-      "id": "mother-cap",
+      "id": "osm-node-1219966095",
       "name": "Mother Cap",
       "nation": "England",
       "type": "sea",
@@ -2220,7 +2220,7 @@
       }
     },
     {
-      "id": "hurle-stone",
+      "id": "osm-node-1263938940",
       "name": "Hurle Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -2271,7 +2271,7 @@
       }
     },
     {
-      "id": "butter-rock",
+      "id": "osm-node-1325592002",
       "name": "Butter Rock",
       "nation": "England",
       "type": "sea",
@@ -2322,7 +2322,7 @@
       }
     },
     {
-      "id": "hurkling-stone",
+      "id": "osm-node-1481166531",
       "name": "Hurkling Stone",
       "nation": "England",
       "type": "sea",
@@ -2373,7 +2373,7 @@
       }
     },
     {
-      "id": "carraig-mhòr-nam-frith-aoineadhean",
+      "id": "osm-node-1507714675",
       "name": "Carraig Mhòr nam Frith-aoineadhean",
       "nation": "Scotland",
       "type": "sea",
@@ -2424,7 +2424,7 @@
       }
     },
     {
-      "id": "creag-an-t-seabhaig",
+      "id": "osm-node-1507830571",
       "name": "Creag an t-Seabhaig",
       "nation": "Scotland",
       "type": "sea",
@@ -2475,7 +2475,7 @@
       }
     },
     {
-      "id": "pulpit-rock",
+      "id": "osm-node-1604868801",
       "name": "Pulpit Rock",
       "nation": "England",
       "type": "sea",
@@ -2537,7 +2537,7 @@
       }
     },
     {
-      "id": "lovers-leap",
+      "id": "osm-node-1657523032",
       "name": "Lover's Leap",
       "nation": "Ireland",
       "type": "sea",
@@ -2588,7 +2588,7 @@
       }
     },
     {
-      "id": "jobbles-rock",
+      "id": "osm-node-1744153431",
       "name": "Jobbles Rock",
       "nation": "England",
       "type": "sea",
@@ -2640,7 +2640,7 @@
       }
     },
     {
-      "id": "wheel-stones",
+      "id": "osm-node-1778380426",
       "name": "Wheel Stones",
       "nation": "England",
       "type": "sea",
@@ -2691,7 +2691,7 @@
       }
     },
     {
-      "id": "the-ten-commandments-carved-stone",
+      "id": "osm-node-1885962325",
       "name": "The Ten Commandments (Carved stone)",
       "nation": "England",
       "type": "sea",
@@ -2742,7 +2742,7 @@
       }
     },
     {
-      "id": "saint-patricks-chair",
+      "id": "osm-node-1929713200",
       "name": "Saint Patrick's Chair",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -2793,7 +2793,7 @@
       }
     },
     {
-      "id": "bradys-crag",
+      "id": "osm-node-2167142718",
       "name": "Brady's Crag",
       "nation": "Scotland",
       "type": "sea",
@@ -2844,7 +2844,7 @@
       }
     },
     {
-      "id": "castle-rock",
+      "id": "osm-node-2252406344",
       "name": "Castle Rock",
       "nation": "England",
       "type": "sea",
@@ -2895,7 +2895,7 @@
       }
     },
     {
-      "id": "willy-potts-rock",
+      "id": "osm-node-2271607034",
       "name": "Willy Pott's Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -2946,7 +2946,7 @@
       }
     },
     {
-      "id": "riding-stone",
+      "id": "osm-node-2271607035",
       "name": "Riding Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -2998,7 +2998,7 @@
       }
     },
     {
-      "id": "toothill-rock",
+      "id": "osm-node-2282979214",
       "name": "Toothill Rock",
       "nation": "England",
       "type": "sea",
@@ -3049,7 +3049,7 @@
       }
     },
     {
-      "id": "the-winking-man",
+      "id": "osm-node-2292262858",
       "name": "The Winking Man",
       "nation": "England",
       "type": "sea",
@@ -3100,7 +3100,7 @@
       }
     },
     {
-      "id": "tristis-rock",
+      "id": "osm-node-2322537743",
       "name": "Tristis Rock",
       "nation": "England",
       "type": "sea",
@@ -3157,7 +3157,7 @@
       }
     },
     {
-      "id": "ship-rock",
+      "id": "osm-node-2342057132",
       "name": "Ship Rock",
       "nation": "England",
       "type": "sea",
@@ -3208,7 +3208,7 @@
       }
     },
     {
-      "id": "quarry-rock",
+      "id": "osm-node-2342057136",
       "name": "Quarry Rock",
       "nation": "England",
       "type": "sea",
@@ -3259,7 +3259,7 @@
       }
     },
     {
-      "id": "needle-rock",
+      "id": "osm-node-2342057140",
       "name": "Needle Rock",
       "nation": "England",
       "type": "sea",
@@ -3310,7 +3310,7 @@
       }
     },
     {
-      "id": "hern-stones",
+      "id": "osm-node-2352835010",
       "name": "Hern Stones",
       "nation": "England",
       "type": "sea",
@@ -3361,7 +3361,7 @@
       }
     },
     {
-      "id": "wain-stones",
+      "id": "osm-node-2352835011",
       "name": "Wain Stones",
       "nation": "England",
       "type": "sea",
@@ -3412,7 +3412,7 @@
       }
     },
     {
-      "id": "cave-like-boulders",
+      "id": "osm-node-2364573980",
       "name": "Cave-like boulders",
       "nation": "England",
       "type": "sea",
@@ -3463,7 +3463,7 @@
       }
     },
     {
-      "id": "the-bridestone-bottleneck",
+      "id": "osm-node-2445789973",
       "name": "The Bridestone (Bottleneck)",
       "nation": "England",
       "type": "sea",
@@ -3514,7 +3514,7 @@
       }
     },
     {
-      "id": "rive-rocks",
+      "id": "osm-node-2448192221",
       "name": "Rive Rocks",
       "nation": "England",
       "type": "sea",
@@ -3565,7 +3565,7 @@
       }
     },
     {
-      "id": "whirlaw-rocks",
+      "id": "osm-node-2449344470",
       "name": "Whirlaw Rocks",
       "nation": "England",
       "type": "sea",
@@ -3616,7 +3616,7 @@
       }
     },
     {
-      "id": "wolf-stones",
+      "id": "osm-node-2450607779",
       "name": "Wolf Stones",
       "nation": "England",
       "type": "sea",
@@ -3667,7 +3667,7 @@
       }
     },
     {
-      "id": "noels-nipple",
+      "id": "osm-node-2452456453",
       "name": "Noel's Nipple",
       "nation": "Ireland",
       "type": "sea",
@@ -3718,7 +3718,7 @@
       }
     },
     {
-      "id": "white-rock",
+      "id": "osm-node-2463721157",
       "name": "White Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -3769,7 +3769,7 @@
       }
     },
     {
-      "id": "matterhorn-arete",
+      "id": "osm-node-2464464836",
       "name": "Matterhorn Arete",
       "nation": "England",
       "type": "sea",
@@ -3820,7 +3820,7 @@
       }
     },
     {
-      "id": "lowcock-stoop",
+      "id": "osm-node-2504734490",
       "name": "Lowcock Stoop",
       "nation": "England",
       "type": "sea",
@@ -3871,7 +3871,7 @@
       }
     },
     {
-      "id": "the-whales-back",
+      "id": "osm-node-2592358345",
       "name": "The Whale's Back",
       "nation": "Scotland",
       "type": "sea",
@@ -3922,7 +3922,7 @@
       }
     },
     {
-      "id": "adel-crags",
+      "id": "osm-node-2593945452",
       "name": "Adel Crags",
       "nation": "England",
       "type": "sea",
@@ -3973,7 +3973,7 @@
       }
     },
     {
-      "id": "rivelin-needle",
+      "id": "osm-node-2609729134",
       "name": "Rivelin Needle",
       "nation": "England",
       "type": "sea",
@@ -4024,7 +4024,7 @@
       }
     },
     {
-      "id": "the-turf-stack-rock",
+      "id": "osm-node-2711028692",
       "name": "The Turf Stack Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4075,7 +4075,7 @@
       }
     },
     {
-      "id": "basteirs-tooth",
+      "id": "osm-node-2727655515",
       "name": "Basteir's Tooth",
       "nation": "Scotland",
       "type": "sea",
@@ -4129,7 +4129,7 @@
       }
     },
     {
-      "id": "aiguille-de-belval",
+      "id": "osm-node-2760326760",
       "name": "Aiguille de Belval",
       "nation": "England",
       "type": "sea",
@@ -4180,7 +4180,7 @@
       }
     },
     {
-      "id": "market-stone",
+      "id": "osm-node-2891349480",
       "name": "Market Stone",
       "nation": "England",
       "type": "sea",
@@ -4231,7 +4231,7 @@
       }
     },
     {
-      "id": "doig-rock",
+      "id": "osm-node-2946563428",
       "name": "Doig rock",
       "nation": "Scotland",
       "type": "sea",
@@ -4282,7 +4282,7 @@
       }
     },
     {
-      "id": "doig-rock",
+      "id": "osm-node-2946563429",
       "name": "Doig rock",
       "nation": "Scotland",
       "type": "sea",
@@ -4333,7 +4333,7 @@
       }
     },
     {
-      "id": "rankling-stone",
+      "id": "osm-node-2955107448",
       "name": "Rankling Stone",
       "nation": "England",
       "type": "sea",
@@ -4384,7 +4384,7 @@
       }
     },
     {
-      "id": "the-white-lady",
+      "id": "osm-node-3022252959",
       "name": "The White Lady",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -4435,7 +4435,7 @@
       }
     },
     {
-      "id": "bonnet-stone",
+      "id": "osm-node-3024239663",
       "name": "Bonnet Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -4499,7 +4499,7 @@
       }
     },
     {
-      "id": "giants-bed",
+      "id": "osm-node-3107561116",
       "name": "Giants Bed",
       "nation": "Ireland",
       "type": "sea",
@@ -4550,7 +4550,7 @@
       }
     },
     {
-      "id": "craggaun-rock",
+      "id": "osm-node-3205835047",
       "name": "Craggaun Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4601,7 +4601,7 @@
       }
     },
     {
-      "id": "downes-rocks",
+      "id": "osm-node-3216011467",
       "name": "Downe's Rocks",
       "nation": "Ireland",
       "type": "sea",
@@ -4652,7 +4652,7 @@
       }
     },
     {
-      "id": "drumdeirg-rock",
+      "id": "osm-node-3220396804",
       "name": "Drumdeirg Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4703,7 +4703,7 @@
       }
     },
     {
-      "id": "split-rock",
+      "id": "osm-node-3244375880",
       "name": "Split Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4754,7 +4754,7 @@
       }
     },
     {
-      "id": "devils-rock",
+      "id": "osm-node-3395207337",
       "name": "Devil's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4818,7 +4818,7 @@
       }
     },
     {
-      "id": "dinham-rock",
+      "id": "osm-node-3438891570",
       "name": "Dinham Rock",
       "nation": "England",
       "type": "sea",
@@ -4869,7 +4869,7 @@
       }
     },
     {
-      "id": "carricknagore-rock",
+      "id": "osm-node-3454967826",
       "name": "Carricknagore Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -4920,7 +4920,7 @@
       }
     },
     {
-      "id": "the-salt-cellar",
+      "id": "osm-node-3526037532",
       "name": "The Salt Cellar",
       "nation": "England",
       "type": "sea",
@@ -4971,7 +4971,7 @@
       }
     },
     {
-      "id": "bolands-rock",
+      "id": "osm-node-3548126186",
       "name": "Boland's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5035,7 +5035,7 @@
       }
     },
     {
-      "id": "le-pinacle",
+      "id": "osm-node-3584359584",
       "name": "Le Pinacle",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -5099,7 +5099,7 @@
       }
     },
     {
-      "id": "brackinish-rock",
+      "id": "osm-node-3586366194",
       "name": "Brackinish Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5161,7 +5161,7 @@
       }
     },
     {
-      "id": "horse-rock",
+      "id": "osm-node-3586366197",
       "name": "Horse Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5212,7 +5212,7 @@
       }
     },
     {
-      "id": "cork-rock",
+      "id": "osm-node-3592759210",
       "name": "Cork Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5274,7 +5274,7 @@
       }
     },
     {
-      "id": "herring-rock",
+      "id": "osm-node-3592759211",
       "name": "Herring Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5336,7 +5336,7 @@
       }
     },
     {
-      "id": "the-grouse-stone",
+      "id": "osm-node-3599397409",
       "name": "The Grouse Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -5387,7 +5387,7 @@
       }
     },
     {
-      "id": "druids-stone",
+      "id": "osm-node-3639801953",
       "name": "Druid's Stone",
       "nation": "England",
       "type": "sea",
@@ -5438,7 +5438,7 @@
       }
     },
     {
-      "id": "garston-rocks",
+      "id": "osm-node-3667805235",
       "name": "Garston Rocks",
       "nation": "Wales",
       "type": "sea",
@@ -5489,7 +5489,7 @@
       }
     },
     {
-      "id": "hurkling-stones",
+      "id": "osm-node-3693235786",
       "name": "Hurkling Stones",
       "nation": "England",
       "type": "sea",
@@ -5540,7 +5540,7 @@
       }
     },
     {
-      "id": "pots-and-pans-stone",
+      "id": "osm-node-3709726717",
       "name": "Pots and Pans Stone",
       "nation": "England",
       "type": "sea",
@@ -5591,7 +5591,7 @@
       }
     },
     {
-      "id": "carraig-na-sasanac",
+      "id": "osm-node-3721529431",
       "name": "Carraig-na-Sasanac",
       "nation": "Ireland",
       "type": "sea",
@@ -5642,7 +5642,7 @@
       }
     },
     {
-      "id": "kilroosk-rock",
+      "id": "osm-node-3787617904",
       "name": "Kilroosk Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -5693,7 +5693,7 @@
       }
     },
     {
-      "id": "carlin-maggie",
+      "id": "osm-node-3861470683",
       "name": "Carlin Maggie",
       "nation": "Scotland",
       "type": "sea",
@@ -5744,7 +5744,7 @@
       }
     },
     {
-      "id": "gull-rock",
+      "id": "osm-node-3865213555",
       "name": "Gull Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5795,7 +5795,7 @@
       }
     },
     {
-      "id": "haystack-rock",
+      "id": "osm-node-3940962606",
       "name": "Haystack Rock",
       "nation": "England",
       "type": "sea",
@@ -5846,7 +5846,7 @@
       }
     },
     {
-      "id": "tobys-rock",
+      "id": "osm-node-3965082159",
       "name": "Toby's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -5897,7 +5897,7 @@
       }
     },
     {
-      "id": "napes-needle",
+      "id": "osm-node-3989935681",
       "name": "Napes Needle",
       "nation": "England",
       "type": "sea",
@@ -5948,7 +5948,7 @@
       }
     },
     {
-      "id": "queens-chair",
+      "id": "osm-node-4172701668",
       "name": "Queen's Chair",
       "nation": "England",
       "type": "sea",
@@ -5999,7 +5999,7 @@
       }
     },
     {
-      "id": "carreg-cannan",
+      "id": "osm-node-4296202678",
       "name": "Carreg Cannan",
       "nation": "Wales",
       "type": "sea",
@@ -6050,7 +6050,7 @@
       }
     },
     {
-      "id": "standing-stone",
+      "id": "osm-node-4306336937",
       "name": "Standing stone",
       "nation": "England",
       "type": "sea",
@@ -6101,7 +6101,7 @@
       }
     },
     {
-      "id": "warehorna",
+      "id": "osm-node-4360406906",
       "name": "Warehorna",
       "nation": "Ireland",
       "type": "sea",
@@ -6152,7 +6152,7 @@
       }
     },
     {
-      "id": "kit-rocks",
+      "id": "osm-node-4398885020",
       "name": "Kit Rocks",
       "nation": "England",
       "type": "sea",
@@ -6209,7 +6209,7 @@
       }
     },
     {
-      "id": "devils-pulpit",
+      "id": "osm-node-4437036006",
       "name": "Devil's Pulpit",
       "nation": "Scotland",
       "type": "sea",
@@ -6260,7 +6260,7 @@
       }
     },
     {
-      "id": "nicodemus-knob",
+      "id": "osm-node-4512299295",
       "name": "Nicodemus Knob",
       "nation": "England",
       "type": "sea",
@@ -6322,7 +6322,7 @@
       }
     },
     {
-      "id": "the-millennium-stone",
+      "id": "osm-node-4596744460",
       "name": "The Millennium Stone",
       "nation": "England",
       "type": "sea",
@@ -6373,7 +6373,7 @@
       }
     },
     {
-      "id": "crawlaw-stone",
+      "id": "osm-node-4598501448",
       "name": "Crawlaw Stone",
       "nation": "England",
       "type": "sea",
@@ -6424,7 +6424,7 @@
       }
     },
     {
-      "id": "buddo-rock",
+      "id": "osm-node-4619552468",
       "name": "Buddo Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -6475,7 +6475,7 @@
       }
     },
     {
-      "id": "the-old-man-of-mow",
+      "id": "osm-node-4687787944",
       "name": "The Old Man of Mow",
       "nation": "England",
       "type": "sea",
@@ -6526,7 +6526,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-4857881238",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -6577,7 +6577,7 @@
       }
     },
     {
-      "id": "clach-mhic-shomairle",
+      "id": "osm-node-4948837376",
       "name": "Clach Mhic Shomairle",
       "nation": "Scotland",
       "type": "sea",
@@ -6628,7 +6628,7 @@
       }
     },
     {
-      "id": "natural-arch",
+      "id": "osm-node-5144713038",
       "name": "Natural Arch",
       "nation": "Scotland",
       "type": "sea",
@@ -6679,7 +6679,7 @@
       }
     },
     {
-      "id": "castle-wilson",
+      "id": "osm-node-5186744234",
       "name": "Castle Wilson",
       "nation": "Scotland",
       "type": "sea",
@@ -6730,7 +6730,7 @@
       }
     },
     {
-      "id": "eaglais-bhreagach-natural-arch",
+      "id": "osm-node-5230035275",
       "name": "Eaglais Bhreagach Natural Arch",
       "nation": "Scotland",
       "type": "sea",
@@ -6781,7 +6781,7 @@
       }
     },
     {
-      "id": "saint-patricks-rock",
+      "id": "osm-node-5295933502",
       "name": "Saint Patrick's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -6832,7 +6832,7 @@
       }
     },
     {
-      "id": "deils-heid",
+      "id": "osm-node-5357237892",
       "name": "De'il's Heid",
       "nation": "Scotland",
       "type": "sea",
@@ -6883,7 +6883,7 @@
       }
     },
     {
-      "id": "blackchurch-rock",
+      "id": "osm-node-5520629722",
       "name": "Blackchurch Rock",
       "nation": "England",
       "type": "sea",
@@ -6940,7 +6940,7 @@
       }
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-5530467043",
       "name": "Rocking Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -6991,7 +6991,7 @@
       }
     },
     {
-      "id": "horse-rocks",
+      "id": "osm-node-5672463090",
       "name": "Horse Rocks",
       "nation": "England",
       "type": "sea",
@@ -7042,7 +7042,7 @@
       }
     },
     {
-      "id": "burren-rock",
+      "id": "osm-node-5773293953",
       "name": "Burren Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -7104,7 +7104,7 @@
       }
     },
     {
-      "id": "kilminning-castle",
+      "id": "osm-node-5774148227",
       "name": "Kilminning Castle",
       "nation": "Scotland",
       "type": "sea",
@@ -7157,7 +7157,7 @@
       }
     },
     {
-      "id": "carreg-draenog",
+      "id": "osm-node-5793823419",
       "name": "Carreg Draenog",
       "nation": "Wales",
       "type": "sea",
@@ -7208,7 +7208,7 @@
       }
     },
     {
-      "id": "nichol-chair",
+      "id": "osm-node-5997651920",
       "name": "Nichol Chair",
       "nation": "Scotland",
       "type": "sea",
@@ -7259,7 +7259,7 @@
       }
     },
     {
-      "id": "roan-heads",
+      "id": "osm-node-6037147154",
       "name": "Roan Heads",
       "nation": "Scotland",
       "type": "sea",
@@ -7321,7 +7321,7 @@
       }
     },
     {
-      "id": "lion-rock",
+      "id": "osm-node-6083451966",
       "name": "Lion Rock",
       "nation": "England",
       "type": "sea",
@@ -7372,7 +7372,7 @@
       }
     },
     {
-      "id": "worm-stones",
+      "id": "osm-node-6227299823",
       "name": "Worm Stones",
       "nation": "England",
       "type": "sea",
@@ -7423,7 +7423,7 @@
       }
     },
     {
-      "id": "the-devils-mill-stone",
+      "id": "osm-node-6395589186",
       "name": "The Devil’s Mill Stone",
       "nation": "England",
       "type": "sea",
@@ -7487,7 +7487,7 @@
       }
     },
     {
-      "id": "cock-of-arran",
+      "id": "osm-node-6568744286",
       "name": "Cock of Arran",
       "nation": "Scotland",
       "type": "sea",
@@ -7549,7 +7549,7 @@
       }
     },
     {
-      "id": "tun-stone",
+      "id": "osm-node-6594356733",
       "name": "Tun Stone",
       "nation": "England",
       "type": "sea",
@@ -7600,7 +7600,7 @@
       }
     },
     {
-      "id": "pembroke-stone",
+      "id": "osm-node-6612546742",
       "name": "Pembroke Stone",
       "nation": "England",
       "type": "sea",
@@ -7651,7 +7651,7 @@
       }
     },
     {
-      "id": "the-sharstone",
+      "id": "osm-node-6657316661",
       "name": "The Sharstone",
       "nation": "England",
       "type": "sea",
@@ -7702,7 +7702,7 @@
       }
     },
     {
-      "id": "goblin-ledge",
+      "id": "osm-node-6721240536",
       "name": "Goblin Ledge",
       "nation": "Wales",
       "type": "sea",
@@ -7753,7 +7753,7 @@
       }
     },
     {
-      "id": "red-ledge",
+      "id": "osm-node-6721240537",
       "name": "Red Ledge",
       "nation": "Wales",
       "type": "sea",
@@ -7804,7 +7804,7 @@
       }
     },
     {
-      "id": "the-bull",
+      "id": "osm-node-6721240538",
       "name": "The Bull",
       "nation": "Wales",
       "type": "sea",
@@ -7855,7 +7855,7 @@
       }
     },
     {
-      "id": "old-mans-head",
+      "id": "osm-node-6721240541",
       "name": "Old Man's Head",
       "nation": "Wales",
       "type": "sea",
@@ -7906,7 +7906,7 @@
       }
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-6761554595",
       "name": "Rocking Stone",
       "nation": "England",
       "type": "sea",
@@ -7957,7 +7957,7 @@
       }
     },
     {
-      "id": "50-peaks-view",
+      "id": "osm-node-6802850501",
       "name": "50 Peaks View",
       "nation": "Wales",
       "type": "sea",
@@ -8008,7 +8008,7 @@
       }
     },
     {
-      "id": "hurkling-stones",
+      "id": "osm-node-6813160683",
       "name": "Hurkling Stones",
       "nation": "England",
       "type": "sea",
@@ -8059,7 +8059,7 @@
       }
     },
     {
-      "id": "smallfield-roof",
+      "id": "osm-node-6813160684",
       "name": "Smallfield Roof",
       "nation": "England",
       "type": "sea",
@@ -8110,7 +8110,7 @@
       }
     },
     {
-      "id": "rockery",
+      "id": "osm-node-6840867805",
       "name": "Rockery",
       "nation": "England",
       "type": "sea",
@@ -8161,7 +8161,7 @@
       }
     },
     {
-      "id": "ardmhor-rock",
+      "id": "osm-node-7050072749",
       "name": "Ardmhor Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -8214,7 +8214,7 @@
       }
     },
     {
-      "id": "slopey-blocks",
+      "id": "osm-node-7084221556",
       "name": "Slopey Blocks",
       "nation": "England",
       "type": "sea",
@@ -8265,7 +8265,7 @@
       }
     },
     {
-      "id": "springfield",
+      "id": "osm-node-7089594721",
       "name": "Springfield",
       "nation": "Ireland",
       "type": "sea",
@@ -8316,7 +8316,7 @@
       }
     },
     {
-      "id": "paddys-crossing",
+      "id": "osm-node-7094153791",
       "name": "Paddy's Crossing",
       "nation": "England",
       "type": "sea",
@@ -8367,7 +8367,7 @@
       }
     },
     {
-      "id": "robin-hoods-stone",
+      "id": "osm-node-7392285857",
       "name": "Robin Hood's Stone",
       "nation": "England",
       "type": "sea",
@@ -8418,7 +8418,7 @@
       }
     },
     {
-      "id": "john-knoxs-pulpit",
+      "id": "osm-node-7429860064",
       "name": "John Knox's Pulpit",
       "nation": "Scotland",
       "type": "sea",
@@ -8469,7 +8469,7 @@
       }
     },
     {
-      "id": "rolling-rock",
+      "id": "osm-node-7434602420",
       "name": "Rolling Rock",
       "nation": "England",
       "type": "sea",
@@ -8520,7 +8520,7 @@
       }
     },
     {
-      "id": "cloven-stane",
+      "id": "osm-node-7461297074",
       "name": "Cloven Stane",
       "nation": "Scotland",
       "type": "sea",
@@ -8571,7 +8571,7 @@
       }
     },
     {
-      "id": "white-hagmark",
+      "id": "osm-node-7461346995",
       "name": "White Hagmark",
       "nation": "Scotland",
       "type": "sea",
@@ -8622,7 +8622,7 @@
       }
     },
     {
-      "id": "old-hartley-standing-stone",
+      "id": "osm-node-7508448185",
       "name": "Old Hartley Standing Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -8673,7 +8673,7 @@
       }
     },
     {
-      "id": "giants-rock",
+      "id": "osm-node-7560040349",
       "name": "Giants Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -8724,7 +8724,7 @@
       }
     },
     {
-      "id": "whaleback-boulder",
+      "id": "osm-node-7563924430",
       "name": "Whaleback Boulder",
       "nation": "England",
       "type": "sea",
@@ -8775,7 +8775,7 @@
       }
     },
     {
-      "id": "sepulchre-stone",
+      "id": "osm-node-7565135460",
       "name": "Sepulchre Stone",
       "nation": "England",
       "type": "sea",
@@ -8826,7 +8826,7 @@
       }
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-7608859349",
       "name": "Rocking Stone",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -8888,7 +8888,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-7633022311",
       "name": "Black Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -8939,7 +8939,7 @@
       }
     },
     {
-      "id": "sheepstone",
+      "id": "osm-node-7646177262",
       "name": "Sheepstone",
       "nation": "England",
       "type": "sea",
@@ -8990,7 +8990,7 @@
       }
     },
     {
-      "id": "the-pillar",
+      "id": "osm-node-7689144705",
       "name": "The pillar",
       "nation": "England",
       "type": "sea",
@@ -9041,7 +9041,7 @@
       }
     },
     {
-      "id": "cat-craig",
+      "id": "osm-node-7710153201",
       "name": "Cat Craig",
       "nation": "Scotland",
       "type": "sea",
@@ -9092,7 +9092,7 @@
       }
     },
     {
-      "id": "the-garden-shed",
+      "id": "osm-node-7737629428",
       "name": "The Garden Shed",
       "nation": "England",
       "type": "sea",
@@ -9143,7 +9143,7 @@
       }
     },
     {
-      "id": "walnut-whip",
+      "id": "osm-node-7737629433",
       "name": "Walnut Whip",
       "nation": "England",
       "type": "sea",
@@ -9194,7 +9194,7 @@
       }
     },
     {
-      "id": "stepped-roof",
+      "id": "osm-node-7737629437",
       "name": "Stepped Roof",
       "nation": "England",
       "type": "sea",
@@ -9245,7 +9245,7 @@
       }
     },
     {
-      "id": "fairy-stones",
+      "id": "osm-node-7810523524",
       "name": "Fairy Stones",
       "nation": "England",
       "type": "sea",
@@ -9296,7 +9296,7 @@
       }
     },
     {
-      "id": "carrigaloe-rock",
+      "id": "osm-node-7818054851",
       "name": "Carrigaloe Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -9347,7 +9347,7 @@
       }
     },
     {
-      "id": "the-gellet-rock",
+      "id": "osm-node-7826184916",
       "name": "The Gellet Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -9398,7 +9398,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-7843636371",
       "name": "Black Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -9449,7 +9449,7 @@
       }
     },
     {
-      "id": "victory",
+      "id": "osm-node-7886672497",
       "name": "Victory",
       "nation": "England",
       "type": "sea",
@@ -9500,7 +9500,7 @@
       }
     },
     {
-      "id": "defiance",
+      "id": "osm-node-7886672498",
       "name": "Defiance",
       "nation": "England",
       "type": "sea",
@@ -9551,7 +9551,7 @@
       }
     },
     {
-      "id": "royal-soverin",
+      "id": "osm-node-7886672499",
       "name": "Royal Soverin",
       "nation": "England",
       "type": "sea",
@@ -9602,7 +9602,7 @@
       }
     },
     {
-      "id": "druids-idol",
+      "id": "osm-node-8026129524",
       "name": "Druid's Idol",
       "nation": "England",
       "type": "sea",
@@ -9653,7 +9653,7 @@
       }
     },
     {
-      "id": "sheep-rock",
+      "id": "osm-node-8148500794",
       "name": "Sheep Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -9704,7 +9704,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-8148500795",
       "name": "Black Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -9755,7 +9755,7 @@
       }
     },
     {
-      "id": "burglar-buttress",
+      "id": "osm-node-8154393695",
       "name": "Burglar Buttress",
       "nation": "England",
       "type": "sea",
@@ -9806,7 +9806,7 @@
       }
     },
     {
-      "id": "east-long-skelly",
+      "id": "osm-node-8185752237",
       "name": "East Long Skelly",
       "nation": "Scotland",
       "type": "sea",
@@ -9857,7 +9857,7 @@
       }
     },
     {
-      "id": "navnis-rock",
+      "id": "osm-node-8200695133",
       "name": "Navni's Rock",
       "nation": "Wales",
       "type": "sea",
@@ -9908,7 +9908,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-8261614627",
       "name": "Mass Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -9959,7 +9959,7 @@
       }
     },
     {
-      "id": "shuttleworth-rocks",
+      "id": "osm-node-8269906528",
       "name": "Shuttleworth Rocks",
       "nation": "England",
       "type": "sea",
@@ -10010,7 +10010,7 @@
       }
     },
     {
-      "id": "the-fairy-stonerock",
+      "id": "osm-node-8367761447",
       "name": "The Fairy Stone/Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -10061,7 +10061,7 @@
       }
     },
     {
-      "id": "les-rocquettes",
+      "id": "osm-node-8371392392",
       "name": "Les Rocquettes",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10112,7 +10112,7 @@
       }
     },
     {
-      "id": "the-pulpit",
+      "id": "osm-node-8394424920",
       "name": "The Pulpit",
       "nation": "Ireland",
       "type": "sea",
@@ -10163,7 +10163,7 @@
       }
     },
     {
-      "id": "creg-harlot",
+      "id": "osm-node-8398345471",
       "name": "Creg Harlot",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10214,7 +10214,7 @@
       }
     },
     {
-      "id": "the-love-stone",
+      "id": "osm-node-8402693744",
       "name": "The Love Stone",
       "nation": "England",
       "type": "sea",
@@ -10265,7 +10265,7 @@
       }
     },
     {
-      "id": "cerrig-duon",
+      "id": "osm-node-8441912936",
       "name": "Cerrig Duon",
       "nation": "Wales",
       "type": "sea",
@@ -10316,7 +10316,7 @@
       }
     },
     {
-      "id": "the-accessible-pinnacle",
+      "id": "osm-node-8517868195",
       "name": "The Accessible Pinnacle",
       "nation": "Scotland",
       "type": "sea",
@@ -10367,7 +10367,7 @@
       }
     },
     {
-      "id": "the-castle",
+      "id": "osm-node-8518513082",
       "name": "The Castle",
       "nation": "Ireland",
       "type": "sea",
@@ -10418,7 +10418,7 @@
       }
     },
     {
-      "id": "an-caipín",
+      "id": "osm-node-8518513083",
       "name": "An Caipín",
       "nation": "Ireland",
       "type": "sea",
@@ -10472,7 +10472,7 @@
       }
     },
     {
-      "id": "carreg-bica",
+      "id": "osm-node-8572280710",
       "name": "Carreg Bica",
       "nation": "Wales",
       "type": "sea",
@@ -10525,7 +10525,7 @@
       }
     },
     {
-      "id": "rocks",
+      "id": "osm-node-8598765438",
       "name": "Rocks",
       "nation": "Scotland",
       "type": "sea",
@@ -10576,7 +10576,7 @@
       }
     },
     {
-      "id": "witchs-cave",
+      "id": "osm-node-8599790010",
       "name": "Witch's Cave",
       "nation": "Scotland",
       "type": "sea",
@@ -10627,7 +10627,7 @@
       }
     },
     {
-      "id": "le-mouotré",
+      "id": "osm-node-8632672819",
       "name": "Le Mouotré",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10678,7 +10678,7 @@
       }
     },
     {
-      "id": "cambrette",
+      "id": "osm-node-8632672820",
       "name": "Cambrette",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10729,7 +10729,7 @@
       }
     },
     {
-      "id": "le-rocher-des-proscrits",
+      "id": "osm-node-8633649024",
       "name": "Le Rocher des Proscrits",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10780,7 +10780,7 @@
       }
     },
     {
-      "id": "léquiervière",
+      "id": "osm-node-8635411003",
       "name": "L'Équiervière",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -10831,7 +10831,7 @@
       }
     },
     {
-      "id": "whetstone",
+      "id": "osm-node-8658452812",
       "name": "Whetstone",
       "nation": "Wales",
       "type": "sea",
@@ -10882,7 +10882,7 @@
       }
     },
     {
-      "id": "sharpstones",
+      "id": "osm-node-8693270797",
       "name": "Sharpstones",
       "nation": "Wales",
       "type": "sea",
@@ -10933,7 +10933,7 @@
       }
     },
     {
-      "id": "ballykeeffe-mass-rock",
+      "id": "osm-node-8722586372",
       "name": "Ballykeeffe Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -10984,7 +10984,7 @@
       }
     },
     {
-      "id": "wagon-rock",
+      "id": "osm-node-8726333362",
       "name": "Wagon Rock",
       "nation": "England",
       "type": "sea",
@@ -11035,7 +11035,7 @@
       }
     },
     {
-      "id": "split-rock",
+      "id": "osm-node-8726333515",
       "name": "Split Rock",
       "nation": "England",
       "type": "sea",
@@ -11086,7 +11086,7 @@
       }
     },
     {
-      "id": "gortnahoughtee-mass-rock",
+      "id": "osm-node-8752401012",
       "name": "Gortnahoughtee Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -11137,7 +11137,7 @@
       }
     },
     {
-      "id": "ravens-craig",
+      "id": "osm-node-8766177095",
       "name": "Raven's Craig",
       "nation": "Scotland",
       "type": "sea",
@@ -11188,7 +11188,7 @@
       }
     },
     {
-      "id": "lickeen",
+      "id": "osm-node-8804004954",
       "name": "Lickeen",
       "nation": "Ireland",
       "type": "sea",
@@ -11239,7 +11239,7 @@
       }
     },
     {
-      "id": "jubilee-rock",
+      "id": "osm-node-8822397694",
       "name": "Jubilee Rock",
       "nation": "England",
       "type": "sea",
@@ -11290,7 +11290,7 @@
       }
     },
     {
-      "id": "cradle-rock",
+      "id": "osm-node-8887465940",
       "name": "Cradle Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -11341,7 +11341,7 @@
       }
     },
     {
-      "id": "roofert-rock",
+      "id": "osm-node-8887465941",
       "name": "Roofert Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -11392,7 +11392,7 @@
       }
     },
     {
-      "id": "ararat",
+      "id": "osm-node-8905023526",
       "name": "Ararat",
       "nation": "Scotland",
       "type": "sea",
@@ -11443,7 +11443,7 @@
       }
     },
     {
-      "id": "girdle-rock",
+      "id": "osm-node-8905023527",
       "name": "Girdle Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -11494,7 +11494,7 @@
       }
     },
     {
-      "id": "long-skelly",
+      "id": "osm-node-8905023528",
       "name": "Long Skelly",
       "nation": "Scotland",
       "type": "sea",
@@ -11545,7 +11545,7 @@
       }
     },
     {
-      "id": "sully-rock",
+      "id": "osm-node-8905023529",
       "name": "Sully Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -11596,7 +11596,7 @@
       }
     },
     {
-      "id": "wee-craig",
+      "id": "osm-node-8963873467",
       "name": "Wee Craig",
       "nation": "Scotland",
       "type": "sea",
@@ -11647,7 +11647,7 @@
       }
     },
     {
-      "id": "fossil-worm-track",
+      "id": "osm-node-9044919955",
       "name": "Fossil Worm Track",
       "nation": "Ireland",
       "type": "sea",
@@ -11698,7 +11698,7 @@
       }
     },
     {
-      "id": "browns-towers",
+      "id": "osm-node-9148506760",
       "name": "Brown's Towers",
       "nation": "Scotland",
       "type": "sea",
@@ -11749,7 +11749,7 @@
       }
     },
     {
-      "id": "st-anthony-rock",
+      "id": "osm-node-9154493153",
       "name": "St. Anthony Rock",
       "nation": "England",
       "type": "sea",
@@ -11800,7 +11800,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-9154783745",
       "name": "Black Rock",
       "nation": "England",
       "type": "sea",
@@ -11851,7 +11851,7 @@
       }
     },
     {
-      "id": "craby-rock",
+      "id": "osm-node-9158205299",
       "name": "Craby Rock",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -11902,7 +11902,7 @@
       }
     },
     {
-      "id": "outer-fourquie",
+      "id": "osm-node-9158212621",
       "name": "Outer Fourquie",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -11953,7 +11953,7 @@
       }
     },
     {
-      "id": "fourquie",
+      "id": "osm-node-9158212622",
       "name": "Fourquie",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -12015,7 +12015,7 @@
       }
     },
     {
-      "id": "north-rock",
+      "id": "osm-node-9158227383",
       "name": "North Rock",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -12066,7 +12066,7 @@
       }
     },
     {
-      "id": "clach-a-chath",
+      "id": "osm-node-9167607047",
       "name": "Clach a' Chath",
       "nation": "Scotland",
       "type": "sea",
@@ -12117,7 +12117,7 @@
       }
     },
     {
-      "id": "courtmacsherry-formation-dip-fossils",
+      "id": "osm-node-9202491323",
       "name": "Courtmacsherry formation dip + fossils",
       "nation": "Ireland",
       "type": "sea",
@@ -12168,7 +12168,7 @@
       }
     },
     {
-      "id": "clach-an-locha",
+      "id": "osm-node-9212990463",
       "name": "Clach an Locha",
       "nation": "Scotland",
       "type": "sea",
@@ -12219,7 +12219,7 @@
       }
     },
     {
-      "id": "carrigeen",
+      "id": "osm-node-9249087611",
       "name": "Carrigeen",
       "nation": "Ireland",
       "type": "sea",
@@ -12270,7 +12270,7 @@
       }
     },
     {
-      "id": "lots-wife",
+      "id": "osm-node-9286421233",
       "name": "Lot's Wife",
       "nation": "Scotland",
       "type": "sea",
@@ -12325,7 +12325,7 @@
       }
     },
     {
-      "id": "dinas-rock",
+      "id": "osm-node-9363954111",
       "name": "Dinas Rock",
       "nation": "Wales",
       "type": "sea",
@@ -12389,7 +12389,7 @@
       }
     },
     {
-      "id": "bwa-maen",
+      "id": "osm-node-9363954112",
       "name": "Bwa Maen",
       "nation": "Wales",
       "type": "sea",
@@ -12440,7 +12440,7 @@
       }
     },
     {
-      "id": "carrick-philip",
+      "id": "osm-node-9382196534",
       "name": "Carrick Philip",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -12491,7 +12491,7 @@
       }
     },
     {
-      "id": "the-caamstone",
+      "id": "osm-node-9385704362",
       "name": "The Caamstone",
       "nation": "Ireland",
       "type": "sea",
@@ -12542,7 +12542,7 @@
       }
     },
     {
-      "id": "the-philosophers-stone",
+      "id": "osm-node-9456610148",
       "name": "The Philosopher's Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -12593,7 +12593,7 @@
       }
     },
     {
-      "id": "possible-sand-from-1755-lisbon-tsunami",
+      "id": "osm-node-9482271374",
       "name": "Possible Sand from 1755 Lisbon Tsunami",
       "nation": "Ireland",
       "type": "sea",
@@ -12644,7 +12644,7 @@
       }
     },
     {
-      "id": "hackstown-raised-beach-geology",
+      "id": "osm-node-9482293994",
       "name": "Hackstown Raised Beach Geology",
       "nation": "Ireland",
       "type": "sea",
@@ -12695,7 +12695,7 @@
       }
     },
     {
-      "id": "an-ghamhnach",
+      "id": "osm-node-9497429310",
       "name": "An Ghamhnach",
       "nation": "Ireland",
       "type": "sea",
@@ -12746,7 +12746,7 @@
       }
     },
     {
-      "id": "an-mheadar",
+      "id": "osm-node-9497557974",
       "name": "An Mheadar",
       "nation": "Ireland",
       "type": "sea",
@@ -12797,7 +12797,7 @@
       }
     },
     {
-      "id": "oileán-choill",
+      "id": "osm-node-9497620173",
       "name": "Oileán Choill",
       "nation": "Ireland",
       "type": "sea",
@@ -12848,7 +12848,7 @@
       }
     },
     {
-      "id": "braighde",
+      "id": "osm-node-9497642561",
       "name": "Braighde",
       "nation": "Ireland",
       "type": "sea",
@@ -12899,7 +12899,7 @@
       }
     },
     {
-      "id": "leac-a-chinn-flat-slab-of-the-headland",
+      "id": "osm-node-9497669683",
       "name": "Leac a' Chinn/ Flat Slab of the Headland.",
       "nation": "Ireland",
       "type": "sea",
@@ -12950,7 +12950,7 @@
       }
     },
     {
-      "id": "boilg-a-phriosúin",
+      "id": "osm-node-9497718132",
       "name": "Boilg  a' Phriosúin",
       "nation": "Ireland",
       "type": "sea",
@@ -13001,7 +13001,7 @@
       }
     },
     {
-      "id": "an-scéalaíthe-storyteller",
+      "id": "osm-node-9497797898",
       "name": "An Scéalaí/The Storyteller.",
       "nation": "Ireland",
       "type": "sea",
@@ -13052,7 +13052,7 @@
       }
     },
     {
-      "id": "ceann-an-aonaigh",
+      "id": "osm-node-9497956129",
       "name": "Ceann an Aonaigh",
       "nation": "Ireland",
       "type": "sea",
@@ -13103,7 +13103,7 @@
       }
     },
     {
-      "id": "carraigh-bháitéir",
+      "id": "osm-node-9498054305",
       "name": "Carraigh Bháitéir",
       "nation": "Ireland",
       "type": "sea",
@@ -13154,7 +13154,7 @@
       }
     },
     {
-      "id": "leac-a-chalaidh",
+      "id": "osm-node-9498146299",
       "name": "Leac a ' Chalaidh",
       "nation": "Ireland",
       "type": "sea",
@@ -13205,7 +13205,7 @@
       }
     },
     {
-      "id": "carraig-bhun-na-h--abhann",
+      "id": "osm-node-9498146300",
       "name": "Carraig Bhun na h- Abhann",
       "nation": "Ireland",
       "type": "sea",
@@ -13256,7 +13256,7 @@
       }
     },
     {
-      "id": "ceanna-an-aonaigh",
+      "id": "osm-node-9498154336",
       "name": "Ceanna an Aonaigh",
       "nation": "Ireland",
       "type": "sea",
@@ -13307,7 +13307,7 @@
       }
     },
     {
-      "id": "leac-a-chinn",
+      "id": "osm-node-9498154338",
       "name": "Leac a' Chinn",
       "nation": "Ireland",
       "type": "sea",
@@ -13358,7 +13358,7 @@
       }
     },
     {
-      "id": "the-caravan-rock",
+      "id": "osm-node-9549667571",
       "name": "The Caravan Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -13409,7 +13409,7 @@
       }
     },
     {
-      "id": "lion-rock",
+      "id": "osm-node-9652341127",
       "name": "Lion Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -13460,7 +13460,7 @@
       }
     },
     {
-      "id": "devils-thumb",
+      "id": "osm-node-9681307070",
       "name": "Devil's Thumb",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -13511,7 +13511,7 @@
       }
     },
     {
-      "id": "cloghleagh-rock",
+      "id": "osm-node-9690677782",
       "name": "Cloghleagh Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -13562,7 +13562,7 @@
       }
     },
     {
-      "id": "cloghleagh-rock",
+      "id": "osm-node-9690677783",
       "name": "Cloghleagh Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -13613,7 +13613,7 @@
       }
     },
     {
-      "id": "carsons-stone",
+      "id": "osm-node-9706618879",
       "name": "Carsons Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -13664,7 +13664,7 @@
       }
     },
     {
-      "id": "the-grey-man-of-merrick",
+      "id": "osm-node-9706625452",
       "name": "The Grey Man of Merrick",
       "nation": "Scotland",
       "type": "sea",
@@ -13715,7 +13715,7 @@
       }
     },
     {
-      "id": "golden-rock",
+      "id": "osm-node-9718308281",
       "name": "Golden Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -13777,7 +13777,7 @@
       }
     },
     {
-      "id": "hobb-stones",
+      "id": "osm-node-9812797404",
       "name": "Hobb Stones",
       "nation": "England",
       "type": "sea",
@@ -13828,7 +13828,7 @@
       }
     },
     {
-      "id": "ingleberry-rock",
+      "id": "osm-node-9812853781",
       "name": "Ingleberry Rock",
       "nation": "England",
       "type": "sea",
@@ -13879,7 +13879,7 @@
       }
     },
     {
-      "id": "boulder",
+      "id": "osm-node-9813490342",
       "name": "Boulder",
       "nation": "England",
       "type": "sea",
@@ -13930,7 +13930,7 @@
       }
     },
     {
-      "id": "neils-stone",
+      "id": "osm-node-9839885920",
       "name": "Neils Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -13981,7 +13981,7 @@
       }
     },
     {
-      "id": "sliddery-stone",
+      "id": "osm-node-9870258533",
       "name": "Sliddery Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -14034,7 +14034,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-9925347702",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -14085,7 +14085,7 @@
       }
     },
     {
-      "id": "clach-nan-ràmh",
+      "id": "osm-node-9936601985",
       "name": "Clach nan Ràmh",
       "nation": "Scotland",
       "type": "sea",
@@ -14136,7 +14136,7 @@
       }
     },
     {
-      "id": "sgeir-nan-eathar-bàna",
+      "id": "osm-node-9936641220",
       "name": "Sgeir nan Eathar Bàna",
       "nation": "Scotland",
       "type": "sea",
@@ -14187,7 +14187,7 @@
       }
     },
     {
-      "id": "yellow-rock",
+      "id": "osm-node-9936641221",
       "name": "Yellow rock",
       "nation": "Scotland",
       "type": "sea",
@@ -14238,7 +14238,7 @@
       }
     },
     {
-      "id": "eilean-tioram",
+      "id": "osm-node-9937994598",
       "name": "Eilean Tioram",
       "nation": "Scotland",
       "type": "sea",
@@ -14289,7 +14289,7 @@
       }
     },
     {
-      "id": "clach-dubh",
+      "id": "osm-node-9938018830",
       "name": "Clach Dubh",
       "nation": "Scotland",
       "type": "sea",
@@ -14340,7 +14340,7 @@
       }
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-node-9938307605",
       "name": "Sgeir Dhubh",
       "nation": "Scotland",
       "type": "sea",
@@ -14391,7 +14391,7 @@
       }
     },
     {
-      "id": "sgeir-bheag",
+      "id": "osm-node-9948371232",
       "name": "Sgeir Bheag",
       "nation": "Scotland",
       "type": "sea",
@@ -14442,7 +14442,7 @@
       }
     },
     {
-      "id": "old-man-of-tarsuinn",
+      "id": "osm-node-9952528665",
       "name": "Old Man of Tarsuinn",
       "nation": "Scotland",
       "type": "sea",
@@ -14493,7 +14493,7 @@
       }
     },
     {
-      "id": "carrickvara",
+      "id": "osm-node-9956997756",
       "name": "Carrickvara",
       "nation": "Ireland",
       "type": "sea",
@@ -14544,7 +14544,7 @@
       }
     },
     {
-      "id": "cakes-of-bread",
+      "id": "osm-node-9995569537",
       "name": "Cakes of Bread",
       "nation": "England",
       "type": "sea",
@@ -14595,7 +14595,7 @@
       }
     },
     {
-      "id": "the-brothers",
+      "id": "osm-node-9999362374",
       "name": "The Brothers",
       "nation": "Scotland",
       "type": "sea",
@@ -14646,7 +14646,7 @@
       }
     },
     {
-      "id": "stane-o-th-deil",
+      "id": "osm-node-10000688879",
       "name": "Stane o' th' Deil",
       "nation": "Scotland",
       "type": "sea",
@@ -14697,7 +14697,7 @@
       }
     },
     {
-      "id": "long-rock",
+      "id": "osm-node-10013447999",
       "name": "Long Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -14748,7 +14748,7 @@
       }
     },
     {
-      "id": "mrunglody",
+      "id": "osm-node-10066702820",
       "name": "Mrunglody",
       "nation": "Ireland",
       "type": "sea",
@@ -14799,7 +14799,7 @@
       }
     },
     {
-      "id": "adam-and-eve",
+      "id": "osm-node-10068557018",
       "name": "Adam and Eve",
       "nation": "Wales",
       "type": "sea",
@@ -14852,7 +14852,7 @@
       }
     },
     {
-      "id": "scroggy-mass-rock",
+      "id": "osm-node-10119237789",
       "name": "Scroggy Mass Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -14903,7 +14903,7 @@
       }
     },
     {
-      "id": "creggan-dhoo",
+      "id": "osm-node-10135859517",
       "name": "Creggan Dhoo",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -14956,7 +14956,7 @@
       }
     },
     {
-      "id": "creg-cruinn",
+      "id": "osm-node-10135859518",
       "name": "Creg Cruinn",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -15009,7 +15009,7 @@
       }
     },
     {
-      "id": "the-clett",
+      "id": "osm-node-10141404659",
       "name": "The Clett",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -15060,7 +15060,7 @@
       }
     },
     {
-      "id": "loaf-and-cheese-rock",
+      "id": "osm-node-10222682370",
       "name": "Loaf and Cheese Rock",
       "nation": "England",
       "type": "sea",
@@ -15111,7 +15111,7 @@
       }
     },
     {
-      "id": "creag-an-aonaich",
+      "id": "osm-node-10315181936",
       "name": "Creag an Aonaich",
       "nation": "Scotland",
       "type": "sea",
@@ -15162,7 +15162,7 @@
       }
     },
     {
-      "id": "creag-an-dronnaig",
+      "id": "osm-node-10315182013",
       "name": "Creag an Dronnaig",
       "nation": "Scotland",
       "type": "sea",
@@ -15213,7 +15213,7 @@
       }
     },
     {
-      "id": "corhidlin-rock",
+      "id": "osm-node-10546549958",
       "name": "Corhidlin Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -15264,7 +15264,7 @@
       }
     },
     {
-      "id": "the-stripped-flags",
+      "id": "osm-node-10589639477",
       "name": "The Stripped Flags",
       "nation": "Ireland",
       "type": "sea",
@@ -15315,7 +15315,7 @@
       }
     },
     {
-      "id": "the-black-stairs",
+      "id": "osm-node-10589672889",
       "name": "The Black Stairs",
       "nation": "Ireland",
       "type": "sea",
@@ -15366,7 +15366,7 @@
       }
     },
     {
-      "id": "the-back-motte",
+      "id": "osm-node-10594134057",
       "name": "The Back Motte",
       "nation": "Ireland",
       "type": "sea",
@@ -15417,7 +15417,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-10762001566",
       "name": "Black Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -15468,7 +15468,7 @@
       }
     },
     {
-      "id": "farbrega-rock",
+      "id": "osm-node-10944178904",
       "name": "Farbrega Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -15519,7 +15519,7 @@
       }
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-11071216443",
       "name": "Mass Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -15570,7 +15570,7 @@
       }
     },
     {
-      "id": "turnabout-rock",
+      "id": "osm-node-11376145649",
       "name": "Turnabout Rock",
       "nation": "Crown Dependency",
       "type": "sea",
@@ -15623,7 +15623,7 @@
       }
     },
     {
-      "id": "da-rønnie-stane",
+      "id": "osm-node-11413620939",
       "name": "Da Rønnie Stane",
       "nation": "Scotland",
       "type": "sea",
@@ -15674,7 +15674,7 @@
       }
     },
     {
-      "id": "the-witchs-tooth",
+      "id": "osm-node-11491709936",
       "name": "The Witch's Tooth",
       "nation": "England",
       "type": "sea",
@@ -15725,7 +15725,7 @@
       }
     },
     {
-      "id": "mccomies-chair",
+      "id": "osm-node-11552796499",
       "name": "McComie's Chair",
       "nation": "Scotland",
       "type": "sea",
@@ -15777,7 +15777,7 @@
       }
     },
     {
-      "id": "root-stacks",
+      "id": "osm-node-11590940838",
       "name": "Root Stacks",
       "nation": "Scotland",
       "type": "sea",
@@ -15828,7 +15828,7 @@
       }
     },
     {
-      "id": "silla-stack",
+      "id": "osm-node-11593700406",
       "name": "Silla Stack",
       "nation": "Scotland",
       "type": "sea",
@@ -15879,7 +15879,7 @@
       }
     },
     {
-      "id": "the-nev",
+      "id": "osm-node-11593700413",
       "name": "The Nev",
       "nation": "Scotland",
       "type": "sea",
@@ -15941,7 +15941,7 @@
       }
     },
     {
-      "id": "yawning-stone",
+      "id": "osm-node-11697543630",
       "name": "Yawning Stone",
       "nation": "England",
       "type": "sea",
@@ -15992,7 +15992,7 @@
       }
     },
     {
-      "id": "gunnoch-rock",
+      "id": "osm-node-11755636676",
       "name": "Gunnoch Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -16043,7 +16043,7 @@
       }
     },
     {
-      "id": "crow-rock",
+      "id": "osm-node-11779110098",
       "name": "Crow Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -16107,7 +16107,7 @@
       }
     },
     {
-      "id": "the-bulmer-stone",
+      "id": "osm-node-11817106227",
       "name": "The Bulmer Stone",
       "nation": "England",
       "type": "sea",
@@ -16158,7 +16158,7 @@
       }
     },
     {
-      "id": "palatines-rock",
+      "id": "osm-node-11842446824",
       "name": "Palatine's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -16222,7 +16222,7 @@
       }
     },
     {
-      "id": "the-pinnacle",
+      "id": "osm-node-11860724492",
       "name": "The Pinnacle",
       "nation": "Scotland",
       "type": "sea",
@@ -16273,7 +16273,7 @@
       }
     },
     {
-      "id": "the-hopestone",
+      "id": "osm-node-11887630077",
       "name": "The Hopestone",
       "nation": "England",
       "type": "sea",
@@ -16324,7 +16324,7 @@
       }
     },
     {
-      "id": "carraig-na-muice",
+      "id": "osm-node-11904083825",
       "name": "Carraig na  Muice",
       "nation": "Ireland",
       "type": "sea",
@@ -16375,7 +16375,7 @@
       }
     },
     {
-      "id": "steancán",
+      "id": "osm-node-11904083826",
       "name": "Steancán",
       "nation": "Ireland",
       "type": "sea",
@@ -16426,7 +16426,7 @@
       }
     },
     {
-      "id": "carraig-na-pluaise",
+      "id": "osm-node-11904099456",
       "name": "Carraig na Pluaise",
       "nation": "Ireland",
       "type": "sea",
@@ -16477,7 +16477,7 @@
       }
     },
     {
-      "id": "an-charraig-dhubh-commorants-rock",
+      "id": "osm-node-11904146856",
       "name": "An Charraig Dhubh (Commorants Rock)",
       "nation": "Ireland",
       "type": "sea",
@@ -16528,7 +16528,7 @@
       }
     },
     {
-      "id": "na-mná",
+      "id": "osm-node-11904184742",
       "name": "Na Mná",
       "nation": "Ireland",
       "type": "sea",
@@ -16579,7 +16579,7 @@
       }
     },
     {
-      "id": "teampaillín-cathedral-rocks",
+      "id": "osm-node-11904201772",
       "name": "Teampaillín (Cathedral Rocks)",
       "nation": "Ireland",
       "type": "sea",
@@ -16630,7 +16630,7 @@
       }
     },
     {
-      "id": "an-licín-goats-island",
+      "id": "osm-node-11904346266",
       "name": "An Licín (Goats  Island)",
       "nation": "Ireland",
       "type": "sea",
@@ -16681,7 +16681,7 @@
       }
     },
     {
-      "id": "carraig-comhartha",
+      "id": "osm-node-11904351638",
       "name": "Carraig Comhartha",
       "nation": "Ireland",
       "type": "sea",
@@ -16732,7 +16732,7 @@
       }
     },
     {
-      "id": "an-licín-rua",
+      "id": "osm-node-11904588105",
       "name": "An Licín Rua",
       "nation": "Ireland",
       "type": "sea",
@@ -16783,7 +16783,7 @@
       }
     },
     {
-      "id": "moss-pinnacle",
+      "id": "osm-node-11917700969",
       "name": "Moss Pinnacle",
       "nation": "Scotland",
       "type": "sea",
@@ -16834,7 +16834,7 @@
       }
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-11997818505",
       "name": "Black Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -16885,7 +16885,7 @@
       }
     },
     {
-      "id": "piper-stones",
+      "id": "osm-node-12012838911",
       "name": "Piper stones",
       "nation": "England",
       "type": "sea",
@@ -16936,7 +16936,7 @@
       }
     },
     {
-      "id": "giants-rock---rock-of-aglaish",
+      "id": "osm-node-12035305847",
       "name": "Giant's Rock - Rock of Aglaish",
       "nation": "Ireland",
       "type": "sea",
@@ -16987,7 +16987,7 @@
       }
     },
     {
-      "id": "the-drongs",
+      "id": "osm-node-12049389416",
       "name": "The Drongs",
       "nation": "Scotland",
       "type": "sea",
@@ -17049,7 +17049,7 @@
       }
     },
     {
-      "id": "druids-altar",
+      "id": "osm-node-12056088601",
       "name": "Druid's Altar",
       "nation": "Ireland",
       "type": "sea",
@@ -17100,7 +17100,7 @@
       }
     },
     {
-      "id": "scalpeen-rock",
+      "id": "osm-node-12070510762",
       "name": "Scalpeen Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -17162,7 +17162,7 @@
       }
     },
     {
-      "id": "carraig-na-mban",
+      "id": "osm-node-12123008585",
       "name": "Carraig na mBan",
       "nation": "Ireland",
       "type": "sea",
@@ -17213,7 +17213,7 @@
       }
     },
     {
-      "id": "na-clocha-dubha",
+      "id": "osm-node-12123010302",
       "name": "Na Clocha Dubha",
       "nation": "Ireland",
       "type": "sea",
@@ -17264,7 +17264,7 @@
       }
     },
     {
-      "id": "carraig-na-ngearb",
+      "id": "osm-node-12123041297",
       "name": "Carraig na nGearb",
       "nation": "Ireland",
       "type": "sea",
@@ -17315,7 +17315,7 @@
       }
     },
     {
-      "id": "leic-sheoirse",
+      "id": "osm-node-12125023518",
       "name": "Leic Sheoirse",
       "nation": "Ireland",
       "type": "sea",
@@ -17366,7 +17366,7 @@
       }
     },
     {
-      "id": "an-leac-ard",
+      "id": "osm-node-12125051481",
       "name": "An Leac Ard",
       "nation": "Ireland",
       "type": "sea",
@@ -17417,7 +17417,7 @@
       }
     },
     {
-      "id": "carraig-na-bpréachán",
+      "id": "osm-node-12125057342",
       "name": "Carraig na bPréachán",
       "nation": "Ireland",
       "type": "sea",
@@ -17468,7 +17468,7 @@
       }
     },
     {
-      "id": "carraig-dhónaill",
+      "id": "osm-node-12125063165",
       "name": "Carraig Dhónaill",
       "nation": "Ireland",
       "type": "sea",
@@ -17519,7 +17519,7 @@
       }
     },
     {
-      "id": "faobharcharraig",
+      "id": "osm-node-12125066119",
       "name": "Faobharcharraig",
       "nation": "Ireland",
       "type": "sea",
@@ -17570,7 +17570,7 @@
       }
     },
     {
-      "id": "carraig-na-téide",
+      "id": "osm-node-12125068052",
       "name": "Carraig na Téide",
       "nation": "Ireland",
       "type": "sea",
@@ -17621,7 +17621,7 @@
       }
     },
     {
-      "id": "an-grean",
+      "id": "osm-node-12125075931",
       "name": "An Grean",
       "nation": "Ireland",
       "type": "sea",
@@ -17672,7 +17672,7 @@
       }
     },
     {
-      "id": "carraig-an-hata",
+      "id": "osm-node-12125089404",
       "name": "Carraig an Hata",
       "nation": "Ireland",
       "type": "sea",
@@ -17723,7 +17723,7 @@
       }
     },
     {
-      "id": "na-fochaisí",
+      "id": "osm-node-12135657247",
       "name": "Na Fochaisí",
       "nation": "Ireland",
       "type": "sea",
@@ -17774,7 +17774,7 @@
       }
     },
     {
-      "id": "fochais-mhicíl-cinnidí",
+      "id": "osm-node-12135661949",
       "name": "Fochais Mhicíl Cinnidí",
       "nation": "Ireland",
       "type": "sea",
@@ -17825,7 +17825,7 @@
       }
     },
     {
-      "id": "head-rock",
+      "id": "osm-node-12135689931",
       "name": "Head Rock",
       "nation": "Wales",
       "type": "sea",
@@ -17876,7 +17876,7 @@
       }
     },
     {
-      "id": "half-tide-rock",
+      "id": "osm-node-12135689932",
       "name": "Half Tide Rock",
       "nation": "Wales",
       "type": "sea",
@@ -17927,7 +17927,7 @@
       }
     },
     {
-      "id": "iron-rock",
+      "id": "osm-node-12135689966",
       "name": "Iron Rock",
       "nation": "Wales",
       "type": "sea",
@@ -17978,7 +17978,7 @@
       }
     },
     {
-      "id": "sugar-loaf",
+      "id": "osm-node-12135689968",
       "name": "Sugar Loaf",
       "nation": "Wales",
       "type": "sea",
@@ -18029,7 +18029,7 @@
       }
     },
     {
-      "id": "crab-bay-rocks",
+      "id": "osm-node-12135689974",
       "name": "Crab Bay Rocks",
       "nation": "Wales",
       "type": "sea",
@@ -18080,7 +18080,7 @@
       }
     },
     {
-      "id": "valtos-rocks",
+      "id": "osm-node-12135935104",
       "name": "Valtos Rocks",
       "nation": "Scotland",
       "type": "sea",
@@ -18144,7 +18144,7 @@
       }
     },
     {
-      "id": "carraig-na-ndún",
+      "id": "osm-node-12165011320",
       "name": "Carraig na nDún",
       "nation": "Ireland",
       "type": "sea",
@@ -18195,7 +18195,7 @@
       }
     },
     {
-      "id": "raphaels-rock",
+      "id": "osm-node-12184349452",
       "name": "Raphael's Rock",
       "nation": "England",
       "type": "sea",
@@ -18246,7 +18246,7 @@
       }
     },
     {
-      "id": "the-thumb-boulder",
+      "id": "osm-node-12186707628",
       "name": "The Thumb Boulder",
       "nation": "Wales",
       "type": "sea",
@@ -18297,7 +18297,7 @@
       }
     },
     {
-      "id": "parc-meurig",
+      "id": "osm-node-12190172640",
       "name": "Parc Meurig",
       "nation": "Wales",
       "type": "sea",
@@ -18348,7 +18348,7 @@
       }
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-12190218376",
       "name": "Rocking Stone",
       "nation": "Wales",
       "type": "sea",
@@ -18399,7 +18399,7 @@
       }
     },
     {
-      "id": "maes-newyddion-woods",
+      "id": "osm-node-12191662137",
       "name": "Maes Newyddion Woods",
       "nation": "Wales",
       "type": "sea",
@@ -18450,7 +18450,7 @@
       }
     },
     {
-      "id": "carreg-ddiddos",
+      "id": "osm-node-12248073500",
       "name": "Carreg Ddiddos",
       "nation": "Wales",
       "type": "sea",
@@ -18501,7 +18501,7 @@
       }
     },
     {
-      "id": "white-rock",
+      "id": "osm-node-12381320453",
       "name": "White Rock",
       "nation": "England",
       "type": "sea",
@@ -18552,7 +18552,7 @@
       }
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403718",
       "name": "Edwin Richards Quarry Boulders",
       "nation": "England",
       "type": "sea",
@@ -18603,7 +18603,7 @@
       }
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403719",
       "name": "Edwin Richards Quarry Boulders",
       "nation": "England",
       "type": "sea",
@@ -18654,7 +18654,7 @@
       }
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403720",
       "name": "Edwin Richards Quarry Boulders",
       "nation": "England",
       "type": "sea",
@@ -18705,7 +18705,7 @@
       }
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403721",
       "name": "Edwin Richards Quarry Boulders",
       "nation": "England",
       "type": "sea",
@@ -18756,7 +18756,7 @@
       }
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403722",
       "name": "Edwin Richards Quarry Boulders",
       "nation": "England",
       "type": "sea",
@@ -18807,7 +18807,7 @@
       }
     },
     {
-      "id": "glacial-boulders",
+      "id": "osm-node-12542839469",
       "name": "Glacial Boulders",
       "nation": "England",
       "type": "sea",
@@ -18858,7 +18858,7 @@
       }
     },
     {
-      "id": "glacial-boulders",
+      "id": "osm-node-12542839473",
       "name": "Glacial Boulders",
       "nation": "England",
       "type": "sea",
@@ -18909,7 +18909,7 @@
       }
     },
     {
-      "id": "hanging-stone",
+      "id": "osm-node-12543273095",
       "name": "Hanging Stone",
       "nation": "England",
       "type": "sea",
@@ -18968,7 +18968,7 @@
       }
     },
     {
-      "id": "johnnie-dows-pulpit",
+      "id": "osm-node-12707861356",
       "name": "Johnnie Dow's Pulpit",
       "nation": "Scotland",
       "type": "sea",
@@ -19019,7 +19019,7 @@
       }
     },
     {
-      "id": "saint-brigits-mass-stone",
+      "id": "osm-node-12772807164",
       "name": "Saint Brigit's Mass Stone",
       "nation": "Ireland",
       "type": "sea",
@@ -19070,7 +19070,7 @@
       }
     },
     {
-      "id": "saint-brigits-chair",
+      "id": "osm-node-12772845469",
       "name": "Saint Brigit's Chair",
       "nation": "Ireland",
       "type": "sea",
@@ -19121,7 +19121,7 @@
       }
     },
     {
-      "id": "clach-alasdair",
+      "id": "osm-node-13001806424",
       "name": "Clach Alasdair",
       "nation": "Scotland",
       "type": "sea",
@@ -19173,7 +19173,7 @@
       }
     },
     {
-      "id": "gibsons-rock",
+      "id": "osm-node-13052188227",
       "name": "Gibson's Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -19224,7 +19224,7 @@
       }
     },
     {
-      "id": "hunters-rock",
+      "id": "osm-node-13052188231",
       "name": "Hunter's Rock",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -19275,7 +19275,7 @@
       }
     },
     {
-      "id": "man-o-war",
+      "id": "osm-node-13052188235",
       "name": "Man-o-War",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -19326,7 +19326,7 @@
       }
     },
     {
-      "id": "the-trinnacle",
+      "id": "osm-node-13064651112",
       "name": "The Trinnacle",
       "nation": "England",
       "type": "sea",
@@ -19377,7 +19377,7 @@
       }
     },
     {
-      "id": "all-mhad-barn",
+      "id": "osm-node-13071436308",
       "name": "All-mhad Barn",
       "nation": "Scotland",
       "type": "sea",
@@ -19428,7 +19428,7 @@
       }
     },
     {
-      "id": "clach-mhòr-nan-aonaigean",
+      "id": "osm-node-13115077728",
       "name": "Clach Mhòr nan Aonaigean",
       "nation": "Scotland",
       "type": "sea",
@@ -19479,7 +19479,7 @@
       }
     },
     {
-      "id": "sàs-a-bhuic",
+      "id": "osm-node-13115077729",
       "name": "Sàs a' Bhuic",
       "nation": "Scotland",
       "type": "sea",
@@ -19530,7 +19530,7 @@
       }
     },
     {
-      "id": "laimhrig-an-teine",
+      "id": "osm-node-13115077846",
       "name": "Laimhrig an Teine",
       "nation": "Scotland",
       "type": "sea",
@@ -19581,7 +19581,7 @@
       }
     },
     {
-      "id": "sgeir-na-liodhagan",
+      "id": "osm-node-13115077855",
       "name": "Sgeir na Liodhagan",
       "nation": "Scotland",
       "type": "sea",
@@ -19632,7 +19632,7 @@
       }
     },
     {
-      "id": "carr-stones",
+      "id": "osm-node-13184459665",
       "name": "Carr Stones",
       "nation": "Scotland",
       "type": "sea",
@@ -19683,7 +19683,7 @@
       }
     },
     {
-      "id": "leac-an-t-suiridhiche",
+      "id": "osm-node-13203483846",
       "name": "Leac an t-Suiridhiche",
       "nation": "Scotland",
       "type": "sea",
@@ -19734,7 +19734,7 @@
       }
     },
     {
-      "id": "clach-shomhairl",
+      "id": "osm-node-13203484355",
       "name": "Clach Shomhairl",
       "nation": "Scotland",
       "type": "sea",
@@ -19785,7 +19785,7 @@
       }
     },
     {
-      "id": "grey-stone",
+      "id": "osm-node-13239792199",
       "name": "Grey Stone",
       "nation": "England",
       "type": "sea",
@@ -19836,7 +19836,7 @@
       }
     },
     {
-      "id": "dolly-roggin",
+      "id": "osm-node-13244700762",
       "name": "Dolly Roggin",
       "nation": "England",
       "type": "sea",
@@ -19887,7 +19887,7 @@
       }
     },
     {
-      "id": "tyermans-stone",
+      "id": "osm-node-13275544575",
       "name": "Tyerman's Stone",
       "nation": "England",
       "type": "sea",
@@ -19938,7 +19938,7 @@
       }
     },
     {
-      "id": "jonaman",
+      "id": "osm-node-13310580320",
       "name": "Jonaman",
       "nation": "England",
       "type": "sea",
@@ -19989,7 +19989,7 @@
       }
     },
     {
-      "id": "rochers-arnaud",
+      "id": "osm-node-13351094362",
       "name": "Rochers Arnaud",
       "nation": "England",
       "type": "sea",
@@ -20040,7 +20040,7 @@
       }
     },
     {
-      "id": "rochers-la-pie",
+      "id": "osm-node-13351094363",
       "name": "Rochers La Pie",
       "nation": "England",
       "type": "sea",
@@ -20091,7 +20091,7 @@
       }
     },
     {
-      "id": "sgeir-an-iasgaich",
+      "id": "osm-node-13375316612",
       "name": "Sgeir an Iasgaich",
       "nation": "Scotland",
       "type": "sea",
@@ -20142,7 +20142,7 @@
       }
     },
     {
-      "id": "creag-an-leabhair",
+      "id": "osm-node-13375316616",
       "name": "Creag an Leabhair",
       "nation": "Scotland",
       "type": "sea",
@@ -20193,7 +20193,7 @@
       }
     },
     {
-      "id": "the-beehive",
+      "id": "osm-node-13439580104",
       "name": "The Beehive",
       "nation": "England",
       "type": "sea",
@@ -20244,7 +20244,7 @@
       }
     },
     {
-      "id": "salmon-rock",
+      "id": "osm-node-13442808745",
       "name": "Salmon Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -20295,7 +20295,7 @@
       }
     },
     {
-      "id": "the-anvil",
+      "id": "osm-node-13452510539",
       "name": "The Anvil",
       "nation": "England",
       "type": "sea",
@@ -20346,7 +20346,7 @@
       }
     },
     {
-      "id": "four-wise-monkeys-rock",
+      "id": "osm-node-13452607106",
       "name": "Four Wise Monkeys rock",
       "nation": "England",
       "type": "sea",
@@ -20397,7 +20397,7 @@
       }
     },
     {
-      "id": "boxing-glove-stones",
+      "id": "osm-node-13460132935",
       "name": "Boxing Glove stones",
       "nation": "England",
       "type": "sea",
@@ -20448,7 +20448,7 @@
       }
     },
     {
-      "id": "dinosaur-rock",
+      "id": "osm-node-13460132936",
       "name": "Dinosaur rock",
       "nation": "England",
       "type": "sea",
@@ -20499,7 +20499,7 @@
       }
     },
     {
-      "id": "cup-rock",
+      "id": "osm-node-13460132937",
       "name": "Cup rock",
       "nation": "England",
       "type": "sea",
@@ -20550,7 +20550,7 @@
       }
     },
     {
-      "id": "mushroom-rock",
+      "id": "osm-node-13460229020",
       "name": "Mushroom rock",
       "nation": "England",
       "type": "sea",
@@ -20601,7 +20601,7 @@
       }
     },
     {
-      "id": "conjuring-stone",
+      "id": "osm-node-13469068045",
       "name": "Conjuring Stone",
       "nation": "England",
       "type": "sea",
@@ -20652,7 +20652,7 @@
       }
     },
     {
-      "id": "old-wifes-stone",
+      "id": "osm-node-13473089807",
       "name": "Old Wife's Stone",
       "nation": "England",
       "type": "sea",
@@ -20703,7 +20703,7 @@
       }
     },
     {
-      "id": "long-stoop",
+      "id": "osm-node-13473370213",
       "name": "Long Stoop",
       "nation": "England",
       "type": "sea",
@@ -20754,7 +20754,7 @@
       }
     },
     {
-      "id": "stone-chari",
+      "id": "osm-node-13502358144",
       "name": "Stone chari",
       "nation": "England",
       "type": "sea",
@@ -20805,7 +20805,7 @@
       }
     },
     {
-      "id": "grey-horse-stone",
+      "id": "osm-node-13528866337",
       "name": "Grey Horse Stone",
       "nation": "England",
       "type": "sea",
@@ -20856,7 +20856,7 @@
       }
     },
     {
-      "id": "na-muilt",
+      "id": "osm-node-13589496938",
       "name": "Na Muilt",
       "nation": "Scotland",
       "type": "sea",
@@ -20908,7 +20908,7 @@
       }
     },
     {
-      "id": "sgeir-an-tràlaigidh",
+      "id": "osm-node-13589496939",
       "name": "Sgeir an Tràlaigidh",
       "nation": "Scotland",
       "type": "sea",
@@ -20960,7 +20960,7 @@
       }
     },
     {
-      "id": "sgeir-an-leum",
+      "id": "osm-node-13589496940",
       "name": "Sgeir an Leum",
       "nation": "Scotland",
       "type": "sea",
@@ -21012,7 +21012,7 @@
       }
     },
     {
-      "id": "an-sgannan",
+      "id": "osm-node-13589496941",
       "name": "An Sgannan",
       "nation": "Scotland",
       "type": "sea",
@@ -21064,7 +21064,7 @@
       }
     },
     {
-      "id": "blakey-tor",
+      "id": "osm-node-13604070725",
       "name": "Blakey Tor",
       "nation": "England",
       "type": "sea",
@@ -21121,7 +21121,7 @@
       }
     },
     {
-      "id": "blackalder-tor",
+      "id": "osm-node-13604070726",
       "name": "Blackalder Tor",
       "nation": "England",
       "type": "sea",
@@ -21178,7 +21178,7 @@
       }
     },
     {
-      "id": "ivy-tor",
+      "id": "osm-node-13606105331",
       "name": "Ivy Tor",
       "nation": "England",
       "type": "sea",
@@ -21235,7 +21235,7 @@
       }
     },
     {
-      "id": "sharpitor",
+      "id": "osm-node-13606105332",
       "name": "Sharpitor",
       "nation": "England",
       "type": "sea",
@@ -21297,7 +21297,7 @@
       }
     },
     {
-      "id": "dish-stone",
+      "id": "osm-node-13688134451",
       "name": "Dish Stone",
       "nation": "England",
       "type": "sea",
@@ -21348,7 +21348,7 @@
       }
     },
     {
-      "id": "carnane-rock",
+      "id": "osm-node-13703838304",
       "name": "Carnane Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -21399,7 +21399,7 @@
       }
     },
     {
-      "id": "carraig-an-chait",
+      "id": "osm-node-13727740639",
       "name": "Carraig an Chait",
       "nation": "Ireland",
       "type": "sea",
@@ -21452,7 +21452,7 @@
       }
     },
     {
-      "id": "strut-stear",
+      "id": "osm-node-13727980621",
       "name": "Strut Stear",
       "nation": "England",
       "type": "sea",
@@ -21503,7 +21503,7 @@
       }
     },
     {
-      "id": "freshbrook-henge",
+      "id": "osm-node-13749897365",
       "name": "Freshbrook Henge",
       "nation": "England",
       "type": "sea",
@@ -21554,7 +21554,7 @@
       }
     },
     {
-      "id": "robin-hoods-stone",
+      "id": "osm-node-13800943517",
       "name": "Robin Hood's stone",
       "nation": "England",
       "type": "sea",
@@ -21605,7 +21605,7 @@
       }
     },
     {
-      "id": "pans-rocks",
+      "id": "osm-way-28503803",
       "name": "Pans Rocks",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -21656,7 +21656,7 @@
       }
     },
     {
-      "id": "bobs-rock",
+      "id": "osm-way-51369953",
       "name": "Bob's Rock",
       "nation": "England",
       "type": "sea",
@@ -21707,7 +21707,7 @@
       }
     },
     {
-      "id": "hemlock-stone",
+      "id": "osm-way-51370184",
       "name": "Hemlock Stone",
       "nation": "England",
       "type": "sea",
@@ -21769,7 +21769,7 @@
       }
     },
     {
-      "id": "nicholas-rock",
+      "id": "osm-way-52027971",
       "name": "Nicholas Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -21820,7 +21820,7 @@
       }
     },
     {
-      "id": "sgeir-na-caillich",
+      "id": "osm-way-52103876",
       "name": "Sgeir na Caillich",
       "nation": "Scotland",
       "type": "sea",
@@ -21871,7 +21871,7 @@
       }
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-52718335",
       "name": "Sgeir Dhubh",
       "nation": "Scotland",
       "type": "sea",
@@ -21922,7 +21922,7 @@
       }
     },
     {
-      "id": "sgeir-ghoblach",
+      "id": "osm-way-52727775",
       "name": "Sgeir Ghoblach",
       "nation": "Scotland",
       "type": "sea",
@@ -21973,7 +21973,7 @@
       }
     },
     {
-      "id": "sgeir-an-oba",
+      "id": "osm-way-52874528",
       "name": "Sgeir an Oba",
       "nation": "Scotland",
       "type": "sea",
@@ -22024,7 +22024,7 @@
       }
     },
     {
-      "id": "murchadh-breac",
+      "id": "osm-way-52875304",
       "name": "Murchadh Breac",
       "nation": "Scotland",
       "type": "sea",
@@ -22075,7 +22075,7 @@
       }
     },
     {
-      "id": "an-ruadh-eilean",
+      "id": "osm-way-52879029",
       "name": "An Ruadh-eilean",
       "nation": "Scotland",
       "type": "sea",
@@ -22126,7 +22126,7 @@
       }
     },
     {
-      "id": "damhag",
+      "id": "osm-way-57771116",
       "name": "Damhag",
       "nation": "Scotland",
       "type": "sea",
@@ -22178,7 +22178,7 @@
       }
     },
     {
-      "id": "sgeir-an-daimh",
+      "id": "osm-way-59167595",
       "name": "Sgeir an Daimh",
       "nation": "Scotland",
       "type": "sea",
@@ -22229,7 +22229,7 @@
       }
     },
     {
-      "id": "baboon-rock",
+      "id": "osm-way-59993027",
       "name": "Baboon Rock",
       "nation": "England",
       "type": "sea",
@@ -22280,7 +22280,7 @@
       }
     },
     {
-      "id": "sgeir-greadach",
+      "id": "osm-way-60314717",
       "name": "Sgeir Greadach",
       "nation": "Scotland",
       "type": "sea",
@@ -22331,7 +22331,7 @@
       }
     },
     {
-      "id": "sgeir-nam-maol",
+      "id": "osm-way-60317808",
       "name": "Sgeir nam Maol",
       "nation": "Scotland",
       "type": "sea",
@@ -22393,7 +22393,7 @@
       }
     },
     {
-      "id": "sgeir-nam-maol",
+      "id": "osm-way-60319764",
       "name": "Sgeir nam Maol",
       "nation": "Scotland",
       "type": "sea",
@@ -22455,7 +22455,7 @@
       }
     },
     {
-      "id": "priests-rock",
+      "id": "osm-way-85206238",
       "name": "Priest's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -22517,7 +22517,7 @@
       }
     },
     {
-      "id": "carn-enoch",
+      "id": "osm-way-105597256",
       "name": "Carn Enoch",
       "nation": "Wales",
       "type": "sea",
@@ -22568,7 +22568,7 @@
       }
     },
     {
-      "id": "mother-cap",
+      "id": "osm-way-123861271",
       "name": "Mother Cap",
       "nation": "England",
       "type": "sea",
@@ -22619,7 +22619,7 @@
       }
     },
     {
-      "id": "monnington-falls",
+      "id": "osm-way-126776547",
       "name": "Monnington Falls",
       "nation": "Wales",
       "type": "sea",
@@ -22670,7 +22670,7 @@
       }
     },
     {
-      "id": "gib-torr-rocks",
+      "id": "osm-way-145315838",
       "name": "Gib Torr Rocks",
       "nation": "England",
       "type": "sea",
@@ -22721,7 +22721,7 @@
       }
     },
     {
-      "id": "hangershell-rock",
+      "id": "osm-way-156952540",
       "name": "Hangershell Rock",
       "nation": "England",
       "type": "sea",
@@ -22778,7 +22778,7 @@
       }
     },
     {
-      "id": "anchor-stone",
+      "id": "osm-way-222510791",
       "name": "Anchor Stone",
       "nation": "England",
       "type": "sea",
@@ -22834,7 +22834,7 @@
       }
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-223606728",
       "name": "Sgeir Dhubh",
       "nation": "Scotland",
       "type": "sea",
@@ -22885,7 +22885,7 @@
       }
     },
     {
-      "id": "sgeirean-buidhe",
+      "id": "osm-way-223606730",
       "name": "Sgeirean Buidhe",
       "nation": "Scotland",
       "type": "sea",
@@ -22936,7 +22936,7 @@
       }
     },
     {
-      "id": "eagle-rock",
+      "id": "osm-way-232333915",
       "name": "Eagle Rock",
       "nation": "England",
       "type": "sea",
@@ -22987,7 +22987,7 @@
       }
     },
     {
-      "id": "tinnock-rock",
+      "id": "osm-way-244233062",
       "name": "Tinnock Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -23038,7 +23038,7 @@
       }
     },
     {
-      "id": "carreg-ti-pw",
+      "id": "osm-way-312107554",
       "name": "Carreg Ti-pw",
       "nation": "Wales",
       "type": "sea",
@@ -23091,7 +23091,7 @@
       }
     },
     {
-      "id": "morgans-rock",
+      "id": "osm-way-314421265",
       "name": "Morgan's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -23142,7 +23142,7 @@
       }
     },
     {
-      "id": "pulleen-rock",
+      "id": "osm-way-314421267",
       "name": "Pulleen Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -23193,7 +23193,7 @@
       }
     },
     {
-      "id": "horse-carrick",
+      "id": "osm-way-345639350",
       "name": "Horse Carrick",
       "nation": "Northern Ireland",
       "type": "sea",
@@ -23244,7 +23244,7 @@
       }
     },
     {
-      "id": "carriglea",
+      "id": "osm-way-361055830",
       "name": "Carriglea",
       "nation": "Ireland",
       "type": "sea",
@@ -23295,7 +23295,7 @@
       }
     },
     {
-      "id": "tanskeys-rocks",
+      "id": "osm-way-362310693",
       "name": "Tanskeys Rocks",
       "nation": "Wales",
       "type": "sea",
@@ -23347,7 +23347,7 @@
       }
     },
     {
-      "id": "maen-piscar",
+      "id": "osm-way-367509451",
       "name": "Maen Piscar",
       "nation": "Wales",
       "type": "sea",
@@ -23410,7 +23410,7 @@
       }
     },
     {
-      "id": "manstone-rock",
+      "id": "osm-way-369553945",
       "name": "Manstone Rock",
       "nation": "Wales",
       "type": "sea",
@@ -23461,7 +23461,7 @@
       }
     },
     {
-      "id": "shepherds-rock",
+      "id": "osm-way-369553946",
       "name": "Shepherd's Rock",
       "nation": "Wales",
       "type": "sea",
@@ -23512,7 +23512,7 @@
       }
     },
     {
-      "id": "devils-chair",
+      "id": "osm-way-369553950",
       "name": "Devil's Chair",
       "nation": "Wales",
       "type": "sea",
@@ -23563,7 +23563,7 @@
       }
     },
     {
-      "id": "little-alms-cliff",
+      "id": "osm-way-390869752",
       "name": "Little Alms Cliff",
       "nation": "England",
       "type": "sea",
@@ -23614,7 +23614,7 @@
       }
     },
     {
-      "id": "carrigavaddra",
+      "id": "osm-way-400474350",
       "name": "Carrigavaddra",
       "nation": "Ireland",
       "type": "sea",
@@ -23665,7 +23665,7 @@
       }
     },
     {
-      "id": "carrigavaddra",
+      "id": "osm-way-400474352",
       "name": "Carrigavaddra",
       "nation": "Ireland",
       "type": "sea",
@@ -23716,7 +23716,7 @@
       }
     },
     {
-      "id": "carrigavaddra",
+      "id": "osm-way-400474354",
       "name": "Carrigavaddra",
       "nation": "Ireland",
       "type": "sea",
@@ -23767,7 +23767,7 @@
       }
     },
     {
-      "id": "carrigavaddra",
+      "id": "osm-way-400474355",
       "name": "Carrigavaddra",
       "nation": "Ireland",
       "type": "sea",
@@ -23818,7 +23818,7 @@
       }
     },
     {
-      "id": "harston-rock",
+      "id": "osm-way-450659816",
       "name": "Harston Rock",
       "nation": "England",
       "type": "sea",
@@ -23869,7 +23869,7 @@
       }
     },
     {
-      "id": "sheeps-tor",
+      "id": "osm-way-475848746",
       "name": "Sheeps Tor",
       "nation": "England",
       "type": "sea",
@@ -23926,7 +23926,7 @@
       }
     },
     {
-      "id": "cow-crag",
+      "id": "osm-way-534761597",
       "name": "Cow Crag",
       "nation": "Scotland",
       "type": "sea",
@@ -23977,7 +23977,7 @@
       }
     },
     {
-      "id": "sill",
+      "id": "osm-way-541530375",
       "name": "Sill",
       "nation": "Ireland",
       "type": "sea",
@@ -24028,7 +24028,7 @@
       }
     },
     {
-      "id": "c18",
+      "id": "osm-way-541530376",
       "name": "C18",
       "nation": "Ireland",
       "type": "sea",
@@ -24079,7 +24079,7 @@
       }
     },
     {
-      "id": "c14",
+      "id": "osm-way-541530380",
       "name": "C14",
       "nation": "Ireland",
       "type": "sea",
@@ -24130,7 +24130,7 @@
       }
     },
     {
-      "id": "r2",
+      "id": "osm-way-541530382",
       "name": "R2",
       "nation": "Ireland",
       "type": "sea",
@@ -24181,7 +24181,7 @@
       }
     },
     {
-      "id": "c11",
+      "id": "osm-way-541530384",
       "name": "C11",
       "nation": "Ireland",
       "type": "sea",
@@ -24232,7 +24232,7 @@
       }
     },
     {
-      "id": "c5",
+      "id": "osm-way-541530388",
       "name": "C5",
       "nation": "Ireland",
       "type": "sea",
@@ -24283,7 +24283,7 @@
       }
     },
     {
-      "id": "l2",
+      "id": "osm-way-541530393",
       "name": "L2",
       "nation": "Ireland",
       "type": "sea",
@@ -24334,7 +24334,7 @@
       }
     },
     {
-      "id": "the-star",
+      "id": "osm-way-541773699",
       "name": "The Star",
       "nation": "Ireland",
       "type": "sea",
@@ -24385,7 +24385,7 @@
       }
     },
     {
-      "id": "the-lion-and-the-lamb",
+      "id": "osm-way-621458785",
       "name": "The Lion and the Lamb",
       "nation": "England",
       "type": "sea",
@@ -24441,7 +24441,7 @@
       }
     },
     {
-      "id": "the-woman-and-the-organ",
+      "id": "osm-way-621461523",
       "name": "The Woman and the Organ",
       "nation": "England",
       "type": "sea",
@@ -24497,7 +24497,7 @@
       }
     },
     {
-      "id": "criss-cross-rock",
+      "id": "osm-way-678087673",
       "name": "Criss-Cross Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -24548,7 +24548,7 @@
       }
     },
     {
-      "id": "summer-lodge-stone",
+      "id": "osm-way-689288192",
       "name": "Summer Lodge Stone",
       "nation": "England",
       "type": "sea",
@@ -24599,7 +24599,7 @@
       }
     },
     {
-      "id": "cow",
+      "id": "osm-way-718116061",
       "name": "Cow",
       "nation": "England",
       "type": "sea",
@@ -24650,7 +24650,7 @@
       }
     },
     {
-      "id": "the-sisters",
+      "id": "osm-way-723100993",
       "name": "The Sisters",
       "nation": "Scotland",
       "type": "sea",
@@ -24701,7 +24701,7 @@
       }
     },
     {
-      "id": "old-pier",
+      "id": "osm-way-723108696",
       "name": "(old pier)",
       "nation": "Scotland",
       "type": "sea",
@@ -24752,7 +24752,7 @@
       }
     },
     {
-      "id": "kielder-stone",
+      "id": "osm-way-765542593",
       "name": "Kielder Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -24804,7 +24804,7 @@
       }
     },
     {
-      "id": "carribeg",
+      "id": "osm-way-802262504",
       "name": "Carribeg",
       "nation": "Ireland",
       "type": "sea",
@@ -24856,7 +24856,7 @@
       }
     },
     {
-      "id": "agglestone-rock",
+      "id": "osm-way-825211141",
       "name": "Agglestone Rock",
       "nation": "England",
       "type": "sea",
@@ -24918,7 +24918,7 @@
       }
     },
     {
-      "id": "sgòr-a-bhalgaire",
+      "id": "osm-way-832147867",
       "name": "Sgòr a' Bhalgaire",
       "nation": "Scotland",
       "type": "sea",
@@ -24969,7 +24969,7 @@
       }
     },
     {
-      "id": "digue-de-mer",
+      "id": "osm-way-834801276",
       "name": "Digue de Mer",
       "nation": "England",
       "type": "sea",
@@ -25020,7 +25020,7 @@
       }
     },
     {
-      "id": "pulhamesque-rockery",
+      "id": "osm-way-899308603",
       "name": "Pulhamesque Rockery",
       "nation": "England",
       "type": "sea",
@@ -25071,7 +25071,7 @@
       }
     },
     {
-      "id": "ebrux-standing-stone",
+      "id": "osm-way-925538695",
       "name": "Ebrux Standing Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -25122,7 +25122,7 @@
       }
     },
     {
-      "id": "esquina",
+      "id": "osm-way-965009428",
       "name": "Esquina",
       "nation": "England",
       "type": "sea",
@@ -25173,7 +25173,7 @@
       }
     },
     {
-      "id": "far-crags",
+      "id": "osm-way-979660245",
       "name": "Far Crags",
       "nation": "England",
       "type": "sea",
@@ -25224,7 +25224,7 @@
       }
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661161",
       "name": "Round Stones",
       "nation": "England",
       "type": "sea",
@@ -25275,7 +25275,7 @@
       }
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661164",
       "name": "Round Stones",
       "nation": "England",
       "type": "sea",
@@ -25326,7 +25326,7 @@
       }
     },
     {
-      "id": "flat-crags",
+      "id": "osm-way-979661165",
       "name": "Flat Crags",
       "nation": "England",
       "type": "sea",
@@ -25377,7 +25377,7 @@
       }
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661166",
       "name": "Round Stones",
       "nation": "England",
       "type": "sea",
@@ -25428,7 +25428,7 @@
       }
     },
     {
-      "id": "rowantree-crags",
+      "id": "osm-way-979661167",
       "name": "Rowantree Crags",
       "nation": "England",
       "type": "sea",
@@ -25479,7 +25479,7 @@
       }
     },
     {
-      "id": "old-moss-crags",
+      "id": "osm-way-979661168",
       "name": "Old Moss Crags",
       "nation": "England",
       "type": "sea",
@@ -25530,7 +25530,7 @@
       }
     },
     {
-      "id": "cerrig-lladron",
+      "id": "osm-way-1013746283",
       "name": "Cerrig Lladron",
       "nation": "Wales",
       "type": "sea",
@@ -25592,7 +25592,7 @@
       }
     },
     {
-      "id": "rock-of-roosca",
+      "id": "osm-way-1036677439",
       "name": "Rock of Roosca",
       "nation": "Ireland",
       "type": "sea",
@@ -25643,7 +25643,7 @@
       }
     },
     {
-      "id": "minane-rock",
+      "id": "osm-way-1041817779",
       "name": "Minane Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -25694,7 +25694,7 @@
       }
     },
     {
-      "id": "devils-stone",
+      "id": "osm-way-1046075730",
       "name": "Devil's Stone",
       "nation": "England",
       "type": "sea",
@@ -25756,7 +25756,7 @@
       }
     },
     {
-      "id": "bearstone-rock",
+      "id": "osm-way-1071985247",
       "name": "Bearstone Rock",
       "nation": "England",
       "type": "sea",
@@ -25807,7 +25807,7 @@
       }
     },
     {
-      "id": "nevi-skerry",
+      "id": "osm-way-1072268133",
       "name": "Nevi Skerry",
       "nation": "Scotland",
       "type": "sea",
@@ -25869,7 +25869,7 @@
       }
     },
     {
-      "id": "hanging-stone",
+      "id": "osm-way-1078746357",
       "name": "Hanging Stone",
       "nation": "England",
       "type": "sea",
@@ -25920,7 +25920,7 @@
       }
     },
     {
-      "id": "stac-lachlainn",
+      "id": "osm-way-1084960781",
       "name": "Stac Lachlainn",
       "nation": "Scotland",
       "type": "sea",
@@ -25971,7 +25971,7 @@
       }
     },
     {
-      "id": "sgeir-gormul",
+      "id": "osm-way-1085075609",
       "name": "Sgeir Gormul",
       "nation": "Scotland",
       "type": "sea",
@@ -26022,7 +26022,7 @@
       }
     },
     {
-      "id": "stac-suinish",
+      "id": "osm-way-1085075653",
       "name": "Stac Suinish",
       "nation": "Scotland",
       "type": "sea",
@@ -26073,7 +26073,7 @@
       }
     },
     {
-      "id": "gentle-slab-boulder",
+      "id": "osm-way-1085637644",
       "name": "Gentle Slab Boulder",
       "nation": "England",
       "type": "sea",
@@ -26124,7 +26124,7 @@
       }
     },
     {
-      "id": "bog-boulder",
+      "id": "osm-way-1085637645",
       "name": "Bog Boulder",
       "nation": "England",
       "type": "sea",
@@ -26175,7 +26175,7 @@
       }
     },
     {
-      "id": "little-summit-boulder",
+      "id": "osm-way-1085637648",
       "name": "Little Summit Boulder",
       "nation": "England",
       "type": "sea",
@@ -26226,7 +26226,7 @@
       }
     },
     {
-      "id": "the-slab",
+      "id": "osm-way-1099500009",
       "name": "The Slab",
       "nation": "England",
       "type": "sea",
@@ -26277,7 +26277,7 @@
       }
     },
     {
-      "id": "truttle-stones",
+      "id": "osm-way-1136736504",
       "name": "Truttle Stones",
       "nation": "Scotland",
       "type": "sea",
@@ -26328,7 +26328,7 @@
       }
     },
     {
-      "id": "truttle-stones",
+      "id": "osm-way-1136736505",
       "name": "Truttle Stones",
       "nation": "Scotland",
       "type": "sea",
@@ -26379,7 +26379,7 @@
       }
     },
     {
-      "id": "carrickmary-more",
+      "id": "osm-way-1163486611",
       "name": "Carrickmary more",
       "nation": "Ireland",
       "type": "sea",
@@ -26430,7 +26430,7 @@
       }
     },
     {
-      "id": "carrickmary-beg",
+      "id": "osm-way-1163486612",
       "name": "Carrickmary beg",
       "nation": "Ireland",
       "type": "sea",
@@ -26481,7 +26481,7 @@
       }
     },
     {
-      "id": "sgeir-dhubh",
+      "id": "osm-way-1180735560",
       "name": "Sgeir Dhubh",
       "nation": "Scotland",
       "type": "sea",
@@ -26532,7 +26532,7 @@
       }
     },
     {
-      "id": "ravens-rock",
+      "id": "osm-way-1186545311",
       "name": "Raven's Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -26583,7 +26583,7 @@
       }
     },
     {
-      "id": "cannon-rock",
+      "id": "osm-way-1225547241",
       "name": "Cannon Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -26634,7 +26634,7 @@
       }
     },
     {
-      "id": "big-stane-o-carn-beag",
+      "id": "osm-way-1226295229",
       "name": "Big Stane o Carn Beag",
       "nation": "Scotland",
       "type": "sea",
@@ -26685,7 +26685,7 @@
       }
     },
     {
-      "id": "bowermans-nose",
+      "id": "osm-way-1228686612",
       "name": "Bowerman's Nose",
       "nation": "England",
       "type": "sea",
@@ -26747,7 +26747,7 @@
       }
     },
     {
-      "id": "rocks-of-clashnair",
+      "id": "osm-way-1234485288",
       "name": "Rocks of Clashnair",
       "nation": "Scotland",
       "type": "sea",
@@ -26798,7 +26798,7 @@
       }
     },
     {
-      "id": "castle-rock",
+      "id": "osm-way-1254212981",
       "name": "Castle Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -26849,7 +26849,7 @@
       }
     },
     {
-      "id": "battle-stones",
+      "id": "osm-way-1256703422",
       "name": "Battle Stones",
       "nation": "Wales",
       "type": "sea",
@@ -26900,7 +26900,7 @@
       }
     },
     {
-      "id": "black-rocks",
+      "id": "osm-way-1263257764",
       "name": "Black Rocks",
       "nation": "Ireland",
       "type": "sea",
@@ -26951,7 +26951,7 @@
       }
     },
     {
-      "id": "doon-rock",
+      "id": "osm-way-1304621210",
       "name": "Doon Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -27002,7 +27002,7 @@
       }
     },
     {
-      "id": "carricknamarnagh",
+      "id": "osm-way-1313866591",
       "name": "Carricknamarnagh",
       "nation": "Ireland",
       "type": "sea",
@@ -27053,7 +27053,7 @@
       }
     },
     {
-      "id": "greevagh-head",
+      "id": "osm-way-1313867702",
       "name": "Greevagh Head",
       "nation": "Ireland",
       "type": "sea",
@@ -27104,7 +27104,7 @@
       }
     },
     {
-      "id": "mill-rock",
+      "id": "osm-way-1320452374",
       "name": "Mill Rock",
       "nation": "England",
       "type": "sea",
@@ -27155,7 +27155,7 @@
       }
     },
     {
-      "id": "little-ailsa",
+      "id": "osm-way-1340485002",
       "name": "Little Ailsa",
       "nation": "Scotland",
       "type": "sea",
@@ -27206,7 +27206,7 @@
       }
     },
     {
-      "id": "clochmaloo",
+      "id": "osm-way-1340663886",
       "name": "Clochmaloo",
       "nation": "Scotland",
       "type": "sea",
@@ -27257,7 +27257,7 @@
       }
     },
     {
-      "id": "giants-stone",
+      "id": "osm-way-1340663887",
       "name": "Giant's Stone",
       "nation": "Scotland",
       "type": "sea",
@@ -27308,7 +27308,7 @@
       }
     },
     {
-      "id": "the-earth-pillars",
+      "id": "osm-way-1423698067",
       "name": "The Earth Pillars",
       "nation": "Scotland",
       "type": "sea",
@@ -27359,7 +27359,7 @@
       }
     },
     {
-      "id": "cannon-rock",
+      "id": "osm-way-1434461262",
       "name": "Cannon Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -27410,7 +27410,7 @@
       }
     },
     {
-      "id": "carrigtuler",
+      "id": "osm-way-1434825552",
       "name": "Carrigtuler",
       "nation": "Ireland",
       "type": "sea",
@@ -27461,7 +27461,7 @@
       }
     },
     {
-      "id": "carrignawaddra",
+      "id": "osm-way-1450099279",
       "name": "Carrignawaddra",
       "nation": "Ireland",
       "type": "sea",
@@ -27512,7 +27512,7 @@
       }
     },
     {
-      "id": "carrigavinnaun",
+      "id": "osm-way-1450979835",
       "name": "Carrigavinnaun",
       "nation": "Ireland",
       "type": "sea",
@@ -27563,7 +27563,7 @@
       }
     },
     {
-      "id": "cloghnacrousta",
+      "id": "osm-way-1456003154",
       "name": "Cloghnacrousta",
       "nation": "Ireland",
       "type": "sea",
@@ -27614,7 +27614,7 @@
       }
     },
     {
-      "id": "old-maid-rock",
+      "id": "osm-way-1467863885",
       "name": "Old Maid Rock",
       "nation": "England",
       "type": "sea",
@@ -27665,7 +27665,7 @@
       }
     },
     {
-      "id": "cloghadoolarty-rock",
+      "id": "osm-way-1495931595",
       "name": "Cloghadoolarty Rock",
       "nation": "Ireland",
       "type": "sea",
@@ -27716,7 +27716,7 @@
       }
     },
     {
-      "id": "black-island",
+      "id": "osm-relation-396416",
       "name": "Black Island",
       "nation": "Scotland",
       "type": "sea",
@@ -27767,7 +27767,7 @@
       }
     },
     {
-      "id": "sgeir-sholach",
+      "id": "osm-relation-454574",
       "name": "Sgeir Sholach",
       "nation": "Scotland",
       "type": "sea",
@@ -27818,7 +27818,7 @@
       }
     },
     {
-      "id": "griana-sgeir",
+      "id": "osm-relation-455527",
       "name": "Griana-sgeir",
       "nation": "Scotland",
       "type": "sea",
@@ -27869,7 +27869,7 @@
       }
     },
     {
-      "id": "eilean-chuaig",
+      "id": "osm-relation-456738",
       "name": "Eilean Chuaig",
       "nation": "Scotland",
       "type": "sea",
@@ -27920,7 +27920,7 @@
       }
     },
     {
-      "id": "cow-rock",
+      "id": "osm-relation-1299093",
       "name": "Cow Rock",
       "nation": "Scotland",
       "type": "sea",
@@ -27971,7 +27971,7 @@
       }
     },
     {
-      "id": "sgeirean-buidhe-bhorlum",
+      "id": "osm-relation-1300237",
       "name": "Sgeirean Buidhe Bhorlum",
       "nation": "Scotland",
       "type": "sea",
@@ -28022,7 +28022,7 @@
       }
     },
     {
-      "id": "carreg-bwch-du",
+      "id": "osm-relation-9594694",
       "name": "Carreg Bwch Du",
       "nation": "Wales",
       "type": "sea",
@@ -28073,7 +28073,7 @@
       }
     },
     {
-      "id": "hellurók",
+      "id": "osm-relation-11752196",
       "name": "Hellurók",
       "nation": "Scotland",
       "type": "sea",
@@ -28124,7 +28124,7 @@
       }
     },
     {
-      "id": "the-cow-calf",
+      "id": "osm-relation-13147963",
       "name": "The Cow & Calf",
       "nation": "England",
       "type": "sea",
@@ -28175,7 +28175,7 @@
       }
     },
     {
-      "id": "sumbiarsteinur",
+      "id": "osm-relation-18386945",
       "name": "Sumbiarsteinur",
       "nation": "Scotland",
       "type": "sea",
@@ -28239,7 +28239,7 @@
       }
     },
     {
-      "id": "blackwater-bank",
+      "id": "wd-Q27055535",
       "name": "blackwater bank",
       "nation": "Ireland",
       "type": "sea",
@@ -28302,7 +28302,7 @@
       }
     },
     {
-      "id": "careg-goch",
+      "id": "wd-Q24659657",
       "name": "Careg Goch",
       "nation": "Wales",
       "type": "sea",
@@ -28370,7 +28370,7 @@
       }
     },
     {
-      "id": "the-inch",
+      "id": "wd-Q116885105",
       "name": "The Inch",
       "nation": "Scotland",
       "type": "sea",
@@ -28433,7 +28433,7 @@
       }
     },
     {
-      "id": "eilean-glas-scalpay",
+      "id": "wd-Q3776044",
       "name": "Eilean Glas, Scalpay",
       "nation": "Scotland",
       "type": "sea",
@@ -28503,7 +28503,7 @@
       }
     },
     {
-      "id": "morrich-more",
+      "id": "wd-Q6913506",
       "name": "Morrich More",
       "nation": "Scotland",
       "type": "sea",
@@ -28571,7 +28571,7 @@
       }
     },
     {
-      "id": "islands-of-furness",
+      "id": "wd-Q6083754",
       "name": "Islands of Furness",
       "nation": "England",
       "type": "sea",
@@ -28639,7 +28639,7 @@
       }
     },
     {
-      "id": "spike-island-bristol",
+      "id": "wd-Q7577196",
       "name": "Spike Island, Bristol",
       "nation": "England",
       "type": "sea",
@@ -28709,7 +28709,7 @@
       }
     },
     {
-      "id": "sunk-island",
+      "id": "wd-Q4379038",
       "name": "Sunk Island",
       "nation": "England",
       "type": "sea",
@@ -28777,7 +28777,7 @@
       }
     },
     {
-      "id": "mochras",
+      "id": "wd-Q7493669",
       "name": "Mochras",
       "nation": "Wales",
       "type": "sea",
@@ -28847,7 +28847,7 @@
       }
     },
     {
-      "id": "wolf-rock-lighthouse",
+      "id": "wd-Q15543901",
       "name": "Wolf Rock Lighthouse",
       "nation": "England",
       "type": "sea",

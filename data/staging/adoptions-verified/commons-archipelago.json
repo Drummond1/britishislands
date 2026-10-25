@@ -1,0 +1,92 @@
+[
+  {
+    "id": "osm-way-682115167",
+    "name": "La Vielle",
+    "via": "commons-archipelago-category",
+    "dualSignal": "filename+nation-anchor",
+    "category": "Category:Islands of Jersey",
+    "categories": [
+      "Category:Islands of Jersey"
+    ],
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stchulptuthe%2C_La_Vielle_C%C3%A2rri%C3%A9the%2C_La_Mouaie.jpg?width=800",
+      "source": "commons-archipelago-category",
+      "sourceRef": "Category:Islands of Jersey",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stchulptuthe,_La_Vielle_C%C3%A2rri%C3%A9the,_La_Mouaie.jpg",
+      "license": "Public domain",
+      "attribution": "Photo by Man vyi, via Wikimedia Commons (Public domain)",
+      "caption": "Stchulptuthe, La Vielle Cârriéthe, La Mouaie",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-06-04T06:39:30+00:00"
+    },
+    "imageConfidence": "high",
+    "source": "commons-archipelago-category",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Stchulptuthe,_La_Vielle_C%C3%A2rri%C3%A9the,_La_Mouaie.jpg",
+    "verifyConfidence": 92,
+    "verifyReasons": [
+      "staging base for commons-archipelago-category: 88",
+      "commons island-category + name match → 92"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "sgeir-greadach",
+    "name": "Sgeir Greadach",
+    "via": "commons-archipelago-category",
+    "dualSignal": "filename+nation-anchor",
+    "category": "Category:Skerries of the Outer Hebrides",
+    "categories": [
+      "Category:Skerries of the Outer Hebrides"
+    ],
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg?width=800",
+      "source": "commons-archipelago-category",
+      "sourceRef": "Category:Skerries of the Outer Hebrides",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Toby Speight, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "Sgeir Greadach - geograph.org.uk - 1879860",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-06-04T06:40:04+00:00"
+    },
+    "imageConfidence": "high",
+    "source": "commons-archipelago-category",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sgeir_Greadach_-_geograph.org.uk_-_1879860.jpg",
+    "verifyConfidence": 92,
+    "verifyReasons": [
+      "staging base for commons-archipelago-category: 88",
+      "commons island-category + name match → 92"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  },
+  {
+    "id": "the-pulpit",
+    "name": "The Pulpit",
+    "via": "commons-archipelago-category",
+    "dualSignal": "filename+nation-anchor",
+    "category": "Category:Bass Rock",
+    "categories": [
+      "Category:Bass Rock"
+    ],
+    "image_record": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Pulpit%2C_Bass_Rock_-_geograph.org.uk_-_5517181.jpg?width=800",
+      "source": "commons-archipelago-category",
+      "sourceRef": "Category:Bass Rock",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Pulpit,_Bass_Rock_-_geograph.org.uk_-_5517181.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Photo by Mike Pennington, via Wikimedia Commons (CC BY-SA 2.0)",
+      "caption": "The Pulpit, Bass Rock - geograph.org.uk - 5517181",
+      "imageConfidence": "high",
+      "verifiedAt": "2026-06-04T06:40:08+00:00"
+    },
+    "imageConfidence": "high",
+    "source": "commons-archipelago-category",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Pulpit,_Bass_Rock_-_geograph.org.uk_-_5517181.jpg",
+    "verifyConfidence": 92,
+    "verifyReasons": [
+      "staging base for commons-archipelago-category: 88",
+      "commons island-category + name match → 92"
+    ],
+    "verifiedAt": "2026-08-03T18:50:59+00:00"
+  }
+]

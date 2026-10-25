@@ -1,0 +1,339 @@
+{
+  "script": "enrich_images_ogl_tourism.py",
+  "generatedAt": "2026-06-02T21:17:20+00:00",
+  "args": {
+    "limit": 400,
+    "named_only": true,
+    "dry_run": false,
+    "cache_only": false,
+    "test": "",
+    "skip_datagov": false,
+    "no_subcats": false,
+    "refresh_commons": false
+  },
+  "sources_working": [
+    "commons-regional-category",
+    "datagovuk-ogl-resource"
+  ],
+  "sources_blocked": [
+    {
+      "id": "naturescot-media",
+      "reason": "NatureScot open hub is GIS/WFS only; no OGL photo API (editorial site separate)."
+    },
+    {
+      "id": "natural-england-media",
+      "reason": "No machine-readable OGL image feed; designation data is OGL but not photos."
+    },
+    {
+      "id": "nrw-media",
+      "reason": "NRW open data is spatial; marketing gallery not OGL-redistributable."
+    },
+    {
+      "id": "failte-ireland-press",
+      "reason": "Tourism press library — editorial use only unless asset page states CC/OGL."
+    },
+    {
+      "id": "tourism-ireland-press",
+      "reason": "Editorial/press use only — skipped."
+    },
+    {
+      "id": "visitscotland-press",
+      "reason": "Editorial/press use only — skipped."
+    },
+    {
+      "id": "hes-canmore-thumbnails",
+      "reason": "Canmore API retired Jun 2025; trove.scot requires per-image licence via account."
+    }
+  ],
+  "datagovuk_status": "empty",
+  "commons_regional_files_indexed": 8543,
+  "commons_categories": 261,
+  "datagovuk_resources_indexed": 0,
+  "targets_considered": 400,
+  "targets_with_filename_candidates": 21,
+  "counts": {
+    "staged": 21,
+    "no_match": 379,
+    "by_source": {
+      "commons-regional-category": 21,
+      "datagovuk-ogl-resource": 0
+    }
+  },
+  "licence_rejected": [],
+  "adopted_sample": [
+    {
+      "id": "wd-Q2100283",
+      "name": "The Wolves",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Turbulence_around_The_Wolves_-_geograph.org.uk_-_6380958.jpg"
+    },
+    {
+      "id": "wd-Q24658969",
+      "name": "The Field",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:View_across_the_field_towards_Capel_Newydd_-_geograph.org.uk_-_1402884.jpg"
+    },
+    {
+      "id": "osm-way-74441740",
+      "name": "The Bill",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cape_Clear_Island_-_The_Bill_of_Cape_Clear_-_geograph.org.uk_-_6008798.jpg"
+    },
+    {
+      "id": "osm-way-431547277",
+      "name": "Muclaghmore",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mucklaghmore-1709,_Tralee_Bay,_Co._Kerry,_Ireland.jpg"
+    },
+    {
+      "id": "osm-way-4563872",
+      "name": "Illauntannig",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illauntannig.jpg"
+    },
+    {
+      "id": "osm-way-4554541",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "osm-way-4561066",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "osm-way-247914631",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "osm-way-544154396",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "osm-way-575553835",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "osm-way-1109234536",
+      "name": "Goose Island",
+      "via": "commons-regional-category",
+      "license": "CC BY 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Goose_Island,_aerial_view.jpg"
+    },
+    {
+      "id": "the-star",
+      "name": "The Star",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Now_Put_The_Star_Back_Like_A_Good_Boy_-_panoramio.jpg"
+    },
+    {
+      "id": "osm-way-1138138187",
+      "name": "The Club",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_club_house_of_Amlwch_Town_F.C._-_geograph.org.uk_-_1092113.jpg"
+    },
+    {
+      "id": "osm-relation-3335698",
+      "name": "Port Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg"
+    },
+    {
+      "id": "osm-way-179021423",
+      "name": "Port Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg"
+    },
+    {
+      "id": "osm-way-4556994",
+      "name": "Mid Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg"
+    },
+    {
+      "id": "osm-way-4557101",
+      "name": "Mid Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg"
+    },
+    {
+      "id": "osm-way-431547276",
+      "name": "Illaunabarnagh",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg"
+    },
+    {
+      "id": "osm-way-4554535",
+      "name": "High Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:HIGH_ISLAND_ENCLOSURE.jpg"
+    },
+    {
+      "id": "osm-relation-4294907",
+      "name": "Big Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg"
+    },
+    {
+      "id": "osm-way-4563025",
+      "name": "Big Island",
+      "via": "commons-regional-category",
+      "license": "CC BY-SA 2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg"
+    }
+  ],
+  "no_match_sample": [
+    {
+      "id": "osm-way-467586333",
+      "name": "Ò' Donnell's Island",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-1006518435",
+      "name": "Île des Maki Cattas",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-1006518433",
+      "name": "Île des Gibbons",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-1336806945",
+      "name": "Àird nam Feadag",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-48226383",
+      "name": "Àird Drobhanais",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-1225406606",
+      "name": "righe nam Ban",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-180871081",
+      "name": "illanatrim island",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-687461569",
+      "name": "eilean nan Stearnag",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56663119",
+      "name": "crannogs 750m NE & 200m N of Rockhill Farm",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56663104",
+      "name": "crannog 800m W of Achlian",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56663890",
+      "name": "crannog 510m NNE of Fincharn",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56663344",
+      "name": "crannog 450m ESE of Rough Loch",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56665210",
+      "name": "crannog 170m SSW of Gruline House",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56663130",
+      "name": "crannog 1100m SW of Innis Errich",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q56665261",
+      "name": "crannog 1030m SW of Coul Point",
+      "filename_candidates": 0
+    },
+    {
+      "id": "blackwater-bank",
+      "name": "blackwater bank",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-40473099",
+      "name": "Young's Island",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-relation-17577211",
+      "name": "Ynys-las",
+      "filename_candidates": 0
+    },
+    {
+      "id": "wd-Q13132554",
+      "name": "Ynys Meibion",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-973258488",
+      "name": "Ynys Groes",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-336658038",
+      "name": "Yew Islands",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-245046786",
+      "name": "Yew Island",
+      "filename_candidates": 0
+    },
+    {
+      "id": "yellow-rock",
+      "name": "Yellow rock",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-1314816800",
+      "name": "Yellow Rock",
+      "filename_candidates": 0
+    },
+    {
+      "id": "osm-way-493521166",
+      "name": "Yellow Island",
+      "filename_candidates": 0
+    }
+  ]
+}

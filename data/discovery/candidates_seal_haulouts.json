@@ -1,0 +1,377 @@
+[
+  {
+    "candidateId": "seal-haulout-sanda-and-sheep-island",
+    "name": "Sanda and Sheep Island",
+    "lat": 55.284,
+    "lng": -5.57628,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-yellow-rock",
+    "name": "Yellow Rock",
+    "lat": 55.44948,
+    "lng": -5.54538,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-eilean-an-fheoir",
+    "name": "Eilean an Fheoir",
+    "lat": 56.36067,
+    "lng": -6.06549,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-inch-kenneth-amp-geasgills",
+    "name": "Inch Kenneth &amp; Geasgills",
+    "lat": 56.44756,
+    "lng": -6.15808,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-kishorn-island-amp-strome-islands",
+    "name": "Kishorn Island &amp; Strome Islands",
+    "lat": 57.35636,
+    "lng": -5.61961,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-sgeir-a-phuirt",
+    "name": "Sgeir a’ Phuirt",
+    "lat": 57.05291,
+    "lng": -6.47873,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-sgeir-nam-maol",
+    "name": "Sgeir nam Maol",
+    "lat": 57.74889,
+    "lng": -6.38198,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-sgeir-leathann-broad-bay",
+    "name": "Sgeir Leathann (Broad Bay)",
+    "lat": 58.28581,
+    "lng": -6.26181,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-aird-ghrein-amp-sgeir-liath",
+    "name": "Aird Ghrein &amp; Sgeir Liath",
+    "lat": 57.00374,
+    "lng": -7.51407,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-holm-of-papa-westray-amp-north-wick",
+    "name": "Holm of Papa Westray &amp; North Wick",
+    "lat": 59.35576,
+    "lng": -2.87375,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-helliar-holm-north-amp-elwick",
+    "name": "Helliar Holm North &amp; Elwick",
+    "lat": 59.03038,
+    "lng": -2.90185,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-egilsay-heodale-amp-isle-of-gunnister",
+    "name": "Egilsay, Heodale &amp; Isle of Gunnister",
+    "lat": 60.42559,
+    "lng": -1.44473,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-eswick-holm",
+    "name": "Eswick Holm",
+    "lat": 60.257,
+    "lng": -1.12839,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-kinghorn-rocks",
+    "name": "Kinghorn Rocks",
+    "lat": 56.08723,
+    "lng": -3.15617,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  },
+  {
+    "candidateId": "seal-haulout-sound-of-harris-islands",
+    "name": "Sound of Harris Islands",
+    "lat": 57.70647,
+    "lng": -7.0217,
+    "nation": "Scotland",
+    "featureKind": "island",
+    "osmType": null,
+    "osmId": null,
+    "wikidata": "",
+    "wikipedia": "",
+    "scanConfidence": "medium",
+    "sourceHints": [
+      {
+        "name": "SSI 2014/185 seal haul-out schedule",
+        "url": "https://www.legislation.gov.uk/ssi/2014/185/schedule/made",
+        "license": "OGL / Crown legislation"
+      }
+    ],
+    "tags": [
+      "island",
+      "seal-haulout",
+      "scotland"
+    ]
+  }
+]

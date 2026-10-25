@@ -1,6 +1,6 @@
 {
   "agent": "site_update",
-  "generatedAt": "2026-06-12T11:29:31.187969+00:00",
+  "generatedAt": "2026-07-27T04:27:08.337174+00:00",
   "dryRun": false,
   "includeUncertain": false,
   "inputRecords": 550,
@@ -1383,1382 +1383,1382 @@
   "skippedExistingReview": [],
   "skippedTerrestrialRock": [
     {
-      "id": "devils-chimney",
+      "id": "osm-node-1089669845",
       "name": "Devil's Chimney",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "grey-stone",
+      "id": "osm-node-12534423914",
       "name": "Grey Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gladstone-rock",
+      "id": "osm-node-255601877",
       "name": "Gladstone Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "agassiz-rock",
+      "id": "osm-node-292057320",
       "name": "Agassiz Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "eagle-stone",
+      "id": "osm-node-303570911",
       "name": "Eagle Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-317256035",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gaerstone",
+      "id": "osm-node-321808773",
       "name": "Gaerstone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "three-fingers-rock",
+      "id": "osm-node-322067259",
       "name": "Three Fingers Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-369941036",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rock-of-ages",
+      "id": "osm-node-384964562",
       "name": "Rock of Ages",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "druids-chair",
+      "id": "osm-node-411733763",
       "name": "Druid's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "three-ships",
+      "id": "osm-node-473879437",
       "name": "Three Ships",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "clach-nan-con-fionn",
+      "id": "osm-node-478873986",
       "name": "Clach nan Con-fionn",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "thiefs-rock",
+      "id": "osm-node-529968993",
       "name": "Thief's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "horse-rock",
+      "id": "osm-node-529968995",
       "name": "Horse Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-559694010",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "table-rock",
+      "id": "osm-node-653761090",
       "name": "Table Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "idol-stone",
+      "id": "osm-node-747747867",
       "name": "Idol Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-944869681",
       "name": "Black Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-head-stone",
+      "id": "osm-node-1059379179",
       "name": "The Head Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "pancake-stone",
+      "id": "osm-node-1103305292",
       "name": "Pancake Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "kings-chair",
+      "id": "osm-node-1175119639",
       "name": "King's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mother-cap",
+      "id": "osm-node-1219966095",
       "name": "Mother Cap",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hurle-stone",
+      "id": "osm-node-1263938940",
       "name": "Hurle Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hurkling-stone",
+      "id": "osm-node-1481166531",
       "name": "Hurkling Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "lovers-leap",
+      "id": "osm-node-1657523032",
       "name": "Lover's Leap",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "wheel-stones",
+      "id": "osm-node-1778380426",
       "name": "Wheel Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-ten-commandments-carved-stone",
+      "id": "osm-node-1885962325",
       "name": "The Ten Commandments (Carved stone)",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "saint-patricks-chair",
+      "id": "osm-node-1929713200",
       "name": "Saint Patrick's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bradys-crag",
+      "id": "osm-node-2167142718",
       "name": "Brady's Crag",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "toothill-rock",
+      "id": "osm-node-2282979214",
       "name": "Toothill Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-winking-man",
+      "id": "osm-node-2292262858",
       "name": "The Winking Man",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "tristis-rock",
+      "id": "osm-node-2322537743",
       "name": "Tristis Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ship-rock",
+      "id": "osm-node-2342057132",
       "name": "Ship Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "quarry-rock",
+      "id": "osm-node-2342057136",
       "name": "Quarry Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "needle-rock",
+      "id": "osm-node-2342057140",
       "name": "Needle Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hern-stones",
+      "id": "osm-node-2352835010",
       "name": "Hern Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "wain-stones",
+      "id": "osm-node-2352835011",
       "name": "Wain Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cave-like-boulders",
+      "id": "osm-node-2364573980",
       "name": "Cave-like boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-bridestone-bottleneck",
+      "id": "osm-node-2445789973",
       "name": "The Bridestone (Bottleneck)",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rive-rocks",
+      "id": "osm-node-2448192221",
       "name": "Rive Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "whirlaw-rocks",
+      "id": "osm-node-2449344470",
       "name": "Whirlaw Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "wolf-stones",
+      "id": "osm-node-2450607779",
       "name": "Wolf Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "noels-nipple",
+      "id": "osm-node-2452456453",
       "name": "Noel's Nipple",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "white-rock",
+      "id": "osm-node-2463721157",
       "name": "White Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "matterhorn-arete",
+      "id": "osm-node-2464464836",
       "name": "Matterhorn Arete",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "lowcock-stoop",
+      "id": "osm-node-2504734490",
       "name": "Lowcock Stoop",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-whales-back",
+      "id": "osm-node-2592358345",
       "name": "The Whale's Back",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "adel-crags",
+      "id": "osm-node-2593945452",
       "name": "Adel Crags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rivelin-needle",
+      "id": "osm-node-2609729134",
       "name": "Rivelin Needle",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-turf-stack-rock",
+      "id": "osm-node-2711028692",
       "name": "The Turf Stack Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "market-stone",
+      "id": "osm-node-2891349480",
       "name": "Market Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rankling-stone",
+      "id": "osm-node-2955107448",
       "name": "Rankling Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bonnet-stone",
+      "id": "osm-node-3024239663",
       "name": "Bonnet Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "giants-bed",
+      "id": "osm-node-3107561116",
       "name": "Giants Bed",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carricknagore-rock",
+      "id": "osm-node-3454967826",
       "name": "Carricknagore Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-salt-cellar",
+      "id": "osm-node-3526037532",
       "name": "The Salt Cellar",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-grouse-stone",
+      "id": "osm-node-3599397409",
       "name": "The Grouse Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "druids-stone",
+      "id": "osm-node-3639801953",
       "name": "Druid's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hurkling-stones",
+      "id": "osm-node-3693235786",
       "name": "Hurkling Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "pots-and-pans-stone",
+      "id": "osm-node-3709726717",
       "name": "Pots and Pans Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carraig-na-sasanac",
+      "id": "osm-node-3721529431",
       "name": "Carraig-na-Sasanac",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "kilroosk-rock",
+      "id": "osm-node-3787617904",
       "name": "Kilroosk Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carlin-maggie",
+      "id": "osm-node-3861470683",
       "name": "Carlin Maggie",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "haystack-rock",
+      "id": "osm-node-3940962606",
       "name": "Haystack Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "napes-needle",
+      "id": "osm-node-3989935681",
       "name": "Napes Needle",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "queens-chair",
+      "id": "osm-node-4172701668",
       "name": "Queen's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carreg-cannan",
+      "id": "osm-node-4296202678",
       "name": "Carreg Cannan",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "standing-stone",
+      "id": "osm-node-4306336937",
       "name": "Standing stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "kit-rocks",
+      "id": "osm-node-4398885020",
       "name": "Kit Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "devils-pulpit",
+      "id": "osm-node-4437036006",
       "name": "Devil's Pulpit",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-millennium-stone",
+      "id": "osm-node-4596744460",
       "name": "The Millennium Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "crawlaw-stone",
+      "id": "osm-node-4598501448",
       "name": "Crawlaw Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-old-man-of-mow",
+      "id": "osm-node-4687787944",
       "name": "The Old Man of Mow",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-4857881238",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "castle-wilson",
+      "id": "osm-node-5186744234",
       "name": "Castle Wilson",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "saint-patricks-rock",
+      "id": "osm-node-5295933502",
       "name": "Saint Patrick's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-5530467043",
       "name": "Rocking Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "nichol-chair",
+      "id": "osm-node-5997651920",
       "name": "Nichol Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "lion-rock",
+      "id": "osm-node-6083451966",
       "name": "Lion Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "worm-stones",
+      "id": "osm-node-6227299823",
       "name": "Worm Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-devils-mill-stone",
+      "id": "osm-node-6395589186",
       "name": "The Devil’s Mill Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "tun-stone",
+      "id": "osm-node-6594356733",
       "name": "Tun Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "pembroke-stone",
+      "id": "osm-node-6612546742",
       "name": "Pembroke Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-sharstone",
+      "id": "osm-node-6657316661",
       "name": "The Sharstone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-6761554595",
       "name": "Rocking Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hurkling-stones",
+      "id": "osm-node-6813160683",
       "name": "Hurkling Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "smallfield-roof",
+      "id": "osm-node-6813160684",
       "name": "Smallfield Roof",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rockery",
+      "id": "osm-node-6840867805",
       "name": "Rockery",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "slopey-blocks",
+      "id": "osm-node-7084221556",
       "name": "Slopey Blocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "springfield",
+      "id": "osm-node-7089594721",
       "name": "Springfield",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "paddys-crossing",
+      "id": "osm-node-7094153791",
       "name": "Paddy's Crossing",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "robin-hoods-stone",
+      "id": "osm-node-7392285857",
       "name": "Robin Hood's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "john-knoxs-pulpit",
+      "id": "osm-node-7429860064",
       "name": "John Knox's Pulpit",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rolling-rock",
+      "id": "osm-node-7434602420",
       "name": "Rolling Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cloven-stane",
+      "id": "osm-node-7461297074",
       "name": "Cloven Stane",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "white-hagmark",
+      "id": "osm-node-7461346995",
       "name": "White Hagmark",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "giants-rock",
+      "id": "osm-node-7560040349",
       "name": "Giants Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "whaleback-boulder",
+      "id": "osm-node-7563924430",
       "name": "Whaleback Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sepulchre-stone",
+      "id": "osm-node-7565135460",
       "name": "Sepulchre Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-7608859349",
       "name": "Rocking Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sheepstone",
+      "id": "osm-node-7646177262",
       "name": "Sheepstone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-pillar",
+      "id": "osm-node-7689144705",
       "name": "The pillar",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cat-craig",
+      "id": "osm-node-7710153201",
       "name": "Cat Craig",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-garden-shed",
+      "id": "osm-node-7737629428",
       "name": "The Garden Shed",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "walnut-whip",
+      "id": "osm-node-7737629433",
       "name": "Walnut Whip",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "stepped-roof",
+      "id": "osm-node-7737629437",
       "name": "Stepped Roof",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "fairy-stones",
+      "id": "osm-node-7810523524",
       "name": "Fairy Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carrigaloe-rock",
+      "id": "osm-node-7818054851",
       "name": "Carrigaloe Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "victory",
+      "id": "osm-node-7886672497",
       "name": "Victory",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "defiance",
+      "id": "osm-node-7886672498",
       "name": "Defiance",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "royal-soverin",
+      "id": "osm-node-7886672499",
       "name": "Royal Soverin",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "druids-idol",
+      "id": "osm-node-8026129524",
       "name": "Druid's Idol",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "burglar-buttress",
+      "id": "osm-node-8154393695",
       "name": "Burglar Buttress",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "navnis-rock",
+      "id": "osm-node-8200695133",
       "name": "Navni's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "shuttleworth-rocks",
+      "id": "osm-node-8269906528",
       "name": "Shuttleworth Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-love-stone",
+      "id": "osm-node-8402693744",
       "name": "The Love Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-accessible-pinnacle",
+      "id": "osm-node-8517868195",
       "name": "The Accessible Pinnacle",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocks",
+      "id": "osm-node-8598765438",
       "name": "Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "witchs-cave",
+      "id": "osm-node-8599790010",
       "name": "Witch's Cave",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "whetstone",
+      "id": "osm-node-8658452812",
       "name": "Whetstone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sharpstones",
+      "id": "osm-node-8693270797",
       "name": "Sharpstones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ballykeeffe-mass-rock",
+      "id": "osm-node-8722586372",
       "name": "Ballykeeffe Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gortnahoughtee-mass-rock",
+      "id": "osm-node-8752401012",
       "name": "Gortnahoughtee Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ravens-craig",
+      "id": "osm-node-8766177095",
       "name": "Raven's Craig",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "jubilee-rock",
+      "id": "osm-node-8822397694",
       "name": "Jubilee Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "wee-craig",
+      "id": "osm-node-8963873467",
       "name": "Wee Craig",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "browns-towers",
+      "id": "osm-node-9148506760",
       "name": "Brown's Towers",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "clach-an-locha",
+      "id": "osm-node-9212990463",
       "name": "Clach an Locha",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "dinas-rock",
+      "id": "osm-node-9363954111",
       "name": "Dinas Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bwa-maen",
+      "id": "osm-node-9363954112",
       "name": "Bwa Maen",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-philosophers-stone",
+      "id": "osm-node-9456610148",
       "name": "The Philosopher's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "lion-rock",
+      "id": "osm-node-9652341127",
       "name": "Lion Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "devils-thumb",
+      "id": "osm-node-9681307070",
       "name": "Devil's Thumb",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cloghleagh-rock",
+      "id": "osm-node-9690677782",
       "name": "Cloghleagh Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cloghleagh-rock",
+      "id": "osm-node-9690677783",
       "name": "Cloghleagh Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carsons-stone",
+      "id": "osm-node-9706618879",
       "name": "Carsons Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-grey-man-of-merrick",
+      "id": "osm-node-9706625452",
       "name": "The Grey Man of Merrick",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hobb-stones",
+      "id": "osm-node-9812797404",
       "name": "Hobb Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ingleberry-rock",
+      "id": "osm-node-9812853781",
       "name": "Ingleberry Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "boulder",
+      "id": "osm-node-9813490342",
       "name": "Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "neils-stone",
+      "id": "osm-node-9839885920",
       "name": "Neils Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-9925347702",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "old-man-of-tarsuinn",
+      "id": "osm-node-9952528665",
       "name": "Old Man of Tarsuinn",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cakes-of-bread",
+      "id": "osm-node-9995569537",
       "name": "Cakes of Bread",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "adam-and-eve",
+      "id": "osm-node-10068557018",
       "name": "Adam and Eve",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "scroggy-mass-rock",
+      "id": "osm-node-10119237789",
       "name": "Scroggy Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "loaf-and-cheese-rock",
+      "id": "osm-node-10222682370",
       "name": "Loaf and Cheese Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "creag-an-aonaich",
+      "id": "osm-node-10315181936",
       "name": "Creag an Aonaich",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "creag-an-dronnaig",
+      "id": "osm-node-10315182013",
       "name": "Creag an Dronnaig",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "corhidlin-rock",
+      "id": "osm-node-10546549958",
       "name": "Corhidlin Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-stripped-flags",
+      "id": "osm-node-10589639477",
       "name": "The Stripped Flags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-black-stairs",
+      "id": "osm-node-10589672889",
       "name": "The Black Stairs",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-back-motte",
+      "id": "osm-node-10594134057",
       "name": "The Back Motte",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-10762001566",
       "name": "Black Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "farbrega-rock",
+      "id": "osm-node-10944178904",
       "name": "Farbrega Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mass-rock",
+      "id": "osm-node-11071216443",
       "name": "Mass Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-witchs-tooth",
+      "id": "osm-node-11491709936",
       "name": "The Witch's Tooth",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "yawning-stone",
+      "id": "osm-node-11697543630",
       "name": "Yawning Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gunnoch-rock",
+      "id": "osm-node-11755636676",
       "name": "Gunnoch Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-bulmer-stone",
+      "id": "osm-node-11817106227",
       "name": "The Bulmer Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "palatines-rock",
+      "id": "osm-node-11842446824",
       "name": "Palatine's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-hopestone",
+      "id": "osm-node-11887630077",
       "name": "The Hopestone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "moss-pinnacle",
+      "id": "osm-node-11917700969",
       "name": "Moss Pinnacle",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "black-rock",
+      "id": "osm-node-11997818505",
       "name": "Black Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "piper-stones",
+      "id": "osm-node-12012838911",
       "name": "Piper stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "giants-rock---rock-of-aglaish",
+      "id": "osm-node-12035305847",
       "name": "Giant's Rock - Rock of Aglaish",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "druids-altar",
+      "id": "osm-node-12056088601",
       "name": "Druid's Altar",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "scalpeen-rock",
+      "id": "osm-node-12070510762",
       "name": "Scalpeen Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-thumb-boulder",
+      "id": "osm-node-12186707628",
       "name": "The Thumb Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "parc-meurig",
+      "id": "osm-node-12190172640",
       "name": "Parc Meurig",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocking-stone",
+      "id": "osm-node-12190218376",
       "name": "Rocking Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "maes-newyddion-woods",
+      "id": "osm-node-12191662137",
       "name": "Maes Newyddion Woods",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carreg-ddiddos",
+      "id": "osm-node-12248073500",
       "name": "Carreg Ddiddos",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "white-rock",
+      "id": "osm-node-12381320453",
       "name": "White Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403718",
       "name": "Edwin Richards Quarry Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403719",
       "name": "Edwin Richards Quarry Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403720",
       "name": "Edwin Richards Quarry Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403721",
       "name": "Edwin Richards Quarry Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "edwin-richards-quarry-boulders",
+      "id": "osm-node-12499403722",
       "name": "Edwin Richards Quarry Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "glacial-boulders",
+      "id": "osm-node-12542839469",
       "name": "Glacial Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "glacial-boulders",
+      "id": "osm-node-12542839473",
       "name": "Glacial Boulders",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hanging-stone",
+      "id": "osm-node-12543273095",
       "name": "Hanging Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "saint-brigits-mass-stone",
+      "id": "osm-node-12772807164",
       "name": "Saint Brigit's Mass Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "saint-brigits-chair",
+      "id": "osm-node-12772845469",
       "name": "Saint Brigit's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-trinnacle",
+      "id": "osm-node-13064651112",
       "name": "The Trinnacle",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "all-mhad-barn",
+      "id": "osm-node-13071436308",
       "name": "All-mhad Barn",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carr-stones",
+      "id": "osm-node-13184459665",
       "name": "Carr Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "grey-stone",
+      "id": "osm-node-13239792199",
       "name": "Grey Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "dolly-roggin",
+      "id": "osm-node-13244700762",
       "name": "Dolly Roggin",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "tyermans-stone",
+      "id": "osm-node-13275544575",
       "name": "Tyerman's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "jonaman",
+      "id": "osm-node-13310580320",
       "name": "Jonaman",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-beehive",
+      "id": "osm-node-13439580104",
       "name": "The Beehive",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-anvil",
+      "id": "osm-node-13452510539",
       "name": "The Anvil",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "four-wise-monkeys-rock",
+      "id": "osm-node-13452607106",
       "name": "Four Wise Monkeys rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "boxing-glove-stones",
+      "id": "osm-node-13460132935",
       "name": "Boxing Glove stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "dinosaur-rock",
+      "id": "osm-node-13460132936",
       "name": "Dinosaur rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cup-rock",
+      "id": "osm-node-13460132937",
       "name": "Cup rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mushroom-rock",
+      "id": "osm-node-13460229020",
       "name": "Mushroom rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "conjuring-stone",
+      "id": "osm-node-13469068045",
       "name": "Conjuring Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "old-wifes-stone",
+      "id": "osm-node-13473089807",
       "name": "Old Wife's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "long-stoop",
+      "id": "osm-node-13473370213",
       "name": "Long Stoop",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "stone-chari",
+      "id": "osm-node-13502358144",
       "name": "Stone chari",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "grey-horse-stone",
+      "id": "osm-node-13528866337",
       "name": "Grey Horse Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "blakey-tor",
+      "id": "osm-node-13604070725",
       "name": "Blakey Tor",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "blackalder-tor",
+      "id": "osm-node-13604070726",
       "name": "Blackalder Tor",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ivy-tor",
+      "id": "osm-node-13606105331",
       "name": "Ivy Tor",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sharpitor",
+      "id": "osm-node-13606105332",
       "name": "Sharpitor",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "dish-stone",
+      "id": "osm-node-13688134451",
       "name": "Dish Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carnane-rock",
+      "id": "osm-node-13703838304",
       "name": "Carnane Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "strut-stear",
+      "id": "osm-node-13727980621",
       "name": "Strut Stear",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "freshbrook-henge",
+      "id": "osm-node-13749897365",
       "name": "Freshbrook Henge",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "robin-hoods-stone",
+      "id": "osm-node-13800943517",
       "name": "Robin Hood's stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bobs-rock",
+      "id": "osm-way-51369953",
       "name": "Bob's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hemlock-stone",
+      "id": "osm-way-51370184",
       "name": "Hemlock Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "baboon-rock",
+      "id": "osm-way-59993027",
       "name": "Baboon Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carn-enoch",
+      "id": "osm-way-105597256",
       "name": "Carn Enoch",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "mother-cap",
+      "id": "osm-way-123861271",
       "name": "Mother Cap",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "monnington-falls",
+      "id": "osm-way-126776547",
       "name": "Monnington Falls",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gib-torr-rocks",
+      "id": "osm-way-145315838",
       "name": "Gib Torr Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hangershell-rock",
+      "id": "osm-way-156952540",
       "name": "Hangershell Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "anchor-stone",
+      "id": "osm-way-222510791",
       "name": "Anchor Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "eagle-rock",
+      "id": "osm-way-232333915",
       "name": "Eagle Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "tinnock-rock",
+      "id": "osm-way-244233062",
       "name": "Tinnock Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "manstone-rock",
+      "id": "osm-way-369553945",
       "name": "Manstone Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "shepherds-rock",
+      "id": "osm-way-369553946",
       "name": "Shepherd's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "devils-chair",
+      "id": "osm-way-369553950",
       "name": "Devil's Chair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "little-alms-cliff",
+      "id": "osm-way-390869752",
       "name": "Little Alms Cliff",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "harston-rock",
+      "id": "osm-way-450659816",
       "name": "Harston Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sheeps-tor",
+      "id": "osm-way-475848746",
       "name": "Sheeps Tor",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cow-crag",
+      "id": "osm-way-534761597",
       "name": "Cow Crag",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sill",
+      "id": "osm-way-541530375",
       "name": "Sill",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "c18",
+      "id": "osm-way-541530376",
       "name": "C18",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "c14",
+      "id": "osm-way-541530380",
       "name": "C14",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "r2",
+      "id": "osm-way-541530382",
       "name": "R2",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "c11",
+      "id": "osm-way-541530384",
       "name": "C11",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "c5",
+      "id": "osm-way-541530388",
       "name": "C5",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "l2",
+      "id": "osm-way-541530393",
       "name": "L2",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-lion-and-the-lamb",
+      "id": "osm-way-621458785",
       "name": "The Lion and the Lamb",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-woman-and-the-organ",
+      "id": "osm-way-621461523",
       "name": "The Woman and the Organ",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "criss-cross-rock",
+      "id": "osm-way-678087673",
       "name": "Criss-Cross Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "summer-lodge-stone",
+      "id": "osm-way-689288192",
       "name": "Summer Lodge Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cow",
+      "id": "osm-way-718116061",
       "name": "Cow",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "sgòr-a-bhalgaire",
+      "id": "osm-way-832147867",
       "name": "Sgòr a' Bhalgaire",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "far-crags",
+      "id": "osm-way-979660245",
       "name": "Far Crags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661161",
       "name": "Round Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661164",
       "name": "Round Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "flat-crags",
+      "id": "osm-way-979661165",
       "name": "Flat Crags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "round-stones",
+      "id": "osm-way-979661166",
       "name": "Round Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rowantree-crags",
+      "id": "osm-way-979661167",
       "name": "Rowantree Crags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "old-moss-crags",
+      "id": "osm-way-979661168",
       "name": "Old Moss Crags",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cerrig-lladron",
+      "id": "osm-way-1013746283",
       "name": "Cerrig Lladron",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rock-of-roosca",
+      "id": "osm-way-1036677439",
       "name": "Rock of Roosca",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "devils-stone",
+      "id": "osm-way-1046075730",
       "name": "Devil's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bearstone-rock",
+      "id": "osm-way-1071985247",
       "name": "Bearstone Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "hanging-stone",
+      "id": "osm-way-1078746357",
       "name": "Hanging Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "gentle-slab-boulder",
+      "id": "osm-way-1085637644",
       "name": "Gentle Slab Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bog-boulder",
+      "id": "osm-way-1085637645",
       "name": "Bog Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "little-summit-boulder",
+      "id": "osm-way-1085637648",
       "name": "Little Summit Boulder",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-slab",
+      "id": "osm-way-1099500009",
       "name": "The Slab",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "truttle-stones",
+      "id": "osm-way-1136736504",
       "name": "Truttle Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "truttle-stones",
+      "id": "osm-way-1136736505",
       "name": "Truttle Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "ravens-rock",
+      "id": "osm-way-1186545311",
       "name": "Raven's Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "big-stane-o-carn-beag",
+      "id": "osm-way-1226295229",
       "name": "Big Stane o Carn Beag",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "bowermans-nose",
+      "id": "osm-way-1228686612",
       "name": "Bowerman's Nose",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "rocks-of-clashnair",
+      "id": "osm-way-1234485288",
       "name": "Rocks of Clashnair",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "castle-rock",
+      "id": "osm-way-1254212981",
       "name": "Castle Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "battle-stones",
+      "id": "osm-way-1256703422",
       "name": "Battle Stones",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "black-rocks",
+      "id": "osm-way-1263257764",
       "name": "Black Rocks",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "doon-rock",
+      "id": "osm-way-1304621210",
       "name": "Doon Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "clochmaloo",
+      "id": "osm-way-1340663886",
       "name": "Clochmaloo",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "giants-stone",
+      "id": "osm-way-1340663887",
       "name": "Giant's Stone",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-earth-pillars",
+      "id": "osm-way-1423698067",
       "name": "The Earth Pillars",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "carrignawaddra",
+      "id": "osm-way-1450099279",
       "name": "Carrignawaddra",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "cloghadoolarty-rock",
+      "id": "osm-way-1495931595",
       "name": "Cloghadoolarty Rock",
       "reason": "terrestrial_inland_rock"
     },
     {
-      "id": "the-cow-calf",
+      "id": "osm-relation-13147963",
       "name": "The Cow & Calf",
       "reason": "terrestrial_inland_rock"
     }
@@ -2772,6 +2772,6 @@
     "skippedExistingReview": 0,
     "skippedTerrestrialRock": 276
   },
-  "backupPath": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/islands.json.before-discovery-20260612T112931Z",
-  "finalIslandCount": 11351
+  "backupPath": "/Users/drummondgilberta2aa9/Desktop/LLMs/Cursor/Scottish Islands/data/islands.json.before-discovery-20260727T042708Z",
+  "finalIslandCount": 11380
 }

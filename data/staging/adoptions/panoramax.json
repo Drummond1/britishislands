@@ -1,0 +1,23 @@
+[
+  {
+    "id": "osm-way-1002798076",
+    "name": "An Bioránach",
+    "source": "panoramax",
+    "image_record": {
+      "url": "https://panoramax.openstreetmap.fr/derivates/ca/e4/5c/9c/f46c-4f00-ab3b-d97a94983926/sd.jpg",
+      "source": "panoramax",
+      "sourceRef": "cae45c9c-f46c-4f00-ab3b-d97a94983926",
+      "sourcePageUrl": "https://api.panoramax.xyz/api/collections/7b3f2cfd-576c-4f0d-8723-df64c6e37f11/items/cae45c9c-f46c-4f00-ab3b-d97a94983926",
+      "license": "CC-BY-SA-4.0",
+      "attribution": "© Panoramax contributors, CC BY-SA 4.0",
+      "caption": "Panoramax street-level photo; captured 2023-05-13T11:00:00+00:00; 75 m from island centroid",
+      "primary": true,
+      "imageConfidence": "medium",
+      "verifiedAt": "2026-06-04T06:37:36+00:00",
+      "panoramaxDistanceM": 75.0,
+      "islandId": "osm-way-1002798076"
+    },
+    "confidence": "medium",
+    "reason": "Panoramax CC-BY-SA-4.0; 75 m from centroid; areaKm2=0.0003"
+  }
+]

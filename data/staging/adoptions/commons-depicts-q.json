@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-04T06:46:02+00:00",
+  "source": "commons-depicts-q",
+  "adoptions": [
+    {
+      "id": "osm-way-4554451",
+      "name": "Furze Island",
+      "wikidata": "Q26715755",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "Dunmanus Castle and the adjoining farm.jpg",
+      "candidateCount": 3,
+      "verifiedCount": 3,
+      "discovery": {
+        "search_p180": 3,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_and_the_adjoining_farm.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_and_the_adjoining_farm.jpg?width=1600",
+        "caption": "Dunmanus Castle and the adjoining farm",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q26715755",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "attribution": "Photo by Podstawko (CC0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+      "license": "CC0"
+    },
+    {
+      "id": "osm-way-349642834",
+      "name": "Carbery Island",
+      "wikidata": "Q26716024",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "Dunmanus Castle with Dunmanus Bay view.jpg",
+      "candidateCount": 2,
+      "verifiedCount": 2,
+      "discovery": {
+        "search_p180": 2,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_with_Dunmanus_Bay_view.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dunmanus_Castle_with_Dunmanus_Bay_view.jpg?width=1600",
+        "caption": "Dunmanus Castle with Dunmanus Bay view",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q26716024",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "attribution": "Photo by Podstawko (CC0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+      "license": "CC0"
+    },
+    {
+      "id": "osm-way-4554647",
+      "name": "Calf Island East",
+      "wikidata": "Q26716448",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "Illaunkearagh islands.jpg",
+      "candidateCount": 2,
+      "verifiedCount": 2,
+      "discovery": {
+        "search_p180": 2,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+        "caption": "Illaunkearagh islands",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q26716448",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4554655",
+      "name": "Calf Island Middle",
+      "wikidata": "Q26716449",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "Illaunkearagh islands.jpg",
+      "candidateCount": 2,
+      "verifiedCount": 2,
+      "discovery": {
+        "search_p180": 2,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+        "caption": "Illaunkearagh islands",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q26716449",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "osm-way-4554663",
+      "name": "Calf Island West",
+      "wikidata": "Q26716451",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "Illaunkearagh islands.jpg",
+      "candidateCount": 2,
+      "verifiedCount": 2,
+      "discovery": {
+        "search_p180": 2,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_islands.jpg?width=1600",
+        "caption": "Illaunkearagh islands",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q26716451",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "attribution": "Photo by Podstawko (CC BY 4.0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "wd-Q27118650",
+      "name": "La Boue",
+      "wikidata": "Q27118650",
+      "imageConfidence": "high",
+      "confidencePct": 95,
+      "wikidataLink": "P180",
+      "depictsVerified": true,
+      "subjectVerified": false,
+      "chosenFile": "La résèrve naturel de Palmarin DSC00778.jpg",
+      "candidateCount": 1,
+      "verifiedCount": 1,
+      "discovery": {
+        "search_p180": 1,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      },
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_r%C3%A9s%C3%A8rve_naturel_de_Palmarin_DSC00778.jpg?width=640",
+        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/La_r%C3%A9s%C3%A8rve_naturel_de_Palmarin_DSC00778.jpg?width=1600",
+        "caption": "La résèrve naturel de Palmarin DSC00778",
+        "source": "commons-depicts-q",
+        "sourceRef": "P180:Q27118650",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:La_r%C3%A9s%C3%A8rve_naturel_de_Palmarin_DSC00778.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Photo by Kalamuh 045 (CC BY-SA 4.0) via Wikimedia Commons (depicts/subject)",
+        "primary": true,
+        "imageConfidence": "high",
+        "confidencePct": 95
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:La_r%C3%A9s%C3%A8rve_naturel_de_Palmarin_DSC00778.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "report": {
+    "script": "enrich_images_commons_depicts_q.py",
+    "source": "commons-depicts-q",
+    "generatedAt": "2026-06-04T06:46:02+00:00",
+    "args": {
+      "limit": 600,
+      "named_only": true,
+      "dry_run": false,
+      "apply": false,
+      "no_backup": false,
+      "test": "",
+      "refresh": false,
+      "no_stage": false,
+      "no_sparql": false,
+      "delay": 1.0,
+      "cache": "/Users/drummondgilberta2aa9/Desktop/Cursor/Scottish Islands/data/cache_commons_depicts_q.json"
+    },
+    "targets": 600,
+    "sparql_blocked": true,
+    "counts": {
+      "staged": 6,
+      "no_candidates": 594,
+      "no_verified": 0,
+      "no_license_or_photo": 0,
+      "no_qid": 0,
+      "by_link": {
+        "P180": 6,
+        "P921": 0
+      },
+      "by_discovery": {
+        "search_p180": 6,
+        "search_p921": 0,
+        "wikidata_sparql": 0,
+        "commons_sparql": 0
+      }
+    },
+    "adopted": [
+      {
+        "id": "osm-way-4554451",
+        "name": "Furze Island",
+        "wikidata": "Q26715755",
+        "file": "Dunmanus Castle and the adjoining farm.jpg",
+        "link": "P180",
+        "verifiedCount": 3,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_and_the_adjoining_farm.jpg",
+        "license": "CC0"
+      },
+      {
+        "id": "osm-way-349642834",
+        "name": "Carbery Island",
+        "wikidata": "Q26716024",
+        "file": "Dunmanus Castle with Dunmanus Bay view.jpg",
+        "link": "P180",
+        "verifiedCount": 2,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Dunmanus_Castle_with_Dunmanus_Bay_view.jpg",
+        "license": "CC0"
+      },
+      {
+        "id": "osm-way-4554647",
+        "name": "Calf Island East",
+        "wikidata": "Q26716448",
+        "file": "Illaunkearagh islands.jpg",
+        "link": "P180",
+        "verifiedCount": 2,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "osm-way-4554655",
+        "name": "Calf Island Middle",
+        "wikidata": "Q26716449",
+        "file": "Illaunkearagh islands.jpg",
+        "link": "P180",
+        "verifiedCount": 2,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "osm-way-4554663",
+        "name": "Calf Island West",
+        "wikidata": "Q26716451",
+        "file": "Illaunkearagh islands.jpg",
+        "link": "P180",
+        "verifiedCount": 2,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illaunkearagh_islands.jpg",
+        "license": "CC BY 4.0"
+      },
+      {
+        "id": "wd-Q27118650",
+        "name": "La Boue",
+        "wikidata": "Q27118650",
+        "file": "La résèrve naturel de Palmarin DSC00778.jpg",
+        "link": "P180",
+        "verifiedCount": 1,
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:La_r%C3%A9s%C3%A8rve_naturel_de_Palmarin_DSC00778.jpg",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "dry_run": false,
+    "staging_path": "data/staging/adoptions/commons-depicts-q.json",
+    "cache_path": "data/cache_commons_depicts_q.json"
+  }
+}

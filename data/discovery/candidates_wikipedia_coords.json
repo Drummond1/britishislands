@@ -1,0 +1,222 @@
+[
+  {
+    "candidateId": "wiki-coord-angus-rock-54.331",
+    "name": "Angus Rock",
+    "lat": 54.33083,
+    "lng": -5.52611,
+    "nation": "Northern Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 3.394,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-electoral-division-ireland-51.867",
+    "name": "electoral division (Ireland)",
+    "lat": 51.86667,
+    "lng": -8.28333,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 1.115,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-geokaun-51.9",
+    "name": "Geokaun",
+    "lat": 51.9,
+    "lng": -10.35,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 1.056,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-shannon-estuary-52.622",
+    "name": "Shannon Estuary",
+    "lat": 52.62155,
+    "lng": -9.07104,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 2.16,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-canon-island-52.667",
+    "name": "Canon Island",
+    "lat": 52.66667,
+    "lng": -9.38333,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 8.812,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-lettermullen-53.244",
+    "name": "Lettermullen",
+    "lat": 53.24389,
+    "lng": -9.72611,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 1.071,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-cleggan-53.617",
+    "name": "Cleggan",
+    "lat": 53.61667,
+    "lng": -10.2,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 1.234,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-achillbeg-53.85",
+    "name": "Achillbeg",
+    "lat": 53.85,
+    "lng": -9.95,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 1.754,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-cruit-island-55.051",
+    "name": "Cruit Island",
+    "lat": 55.05083,
+    "lng": -8.23556,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.679,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  },
+  {
+    "candidateId": "wiki-coord-gola-island-55.051",
+    "name": "Gola Island",
+    "lat": 55.05083,
+    "lng": -8.23556,
+    "nation": "Ireland",
+    "featureKind": "island",
+    "scanConfidence": "medium",
+    "nearestAtlasKm": 4.679,
+    "listPage": "List of islands of Ireland",
+    "sourceHints": [
+      {
+        "name": "Wikipedia list coordinates",
+        "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Ireland",
+        "license": "CC-BY-SA-4.0"
+      }
+    ],
+    "tags": [
+      "island",
+      "wikipedia-coord-list"
+    ]
+  }
+]

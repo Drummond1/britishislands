@@ -1,0 +1,20 @@
+[
+  {
+    "id": "osm-way-253228052",
+    "islandId": "osm-way-253228052",
+    "proposedName": "Inishmacatreer",
+    "nameConfidence": "medium",
+    "confidenceTier": "C",
+    "source": "property-adjacent",
+    "sourceRef": "property:osm-relation-3395357",
+    "sourcePageUrl": "https://www.myhome.ie/residential/brochure/inishmacatreer-cross-headford-county-galway/4939197",
+    "licence": "reference-fair-use",
+    "retrievedAt": "2026-07-27T04:13:19+00:00",
+    "dualSource": false,
+    "nation": "Ireland",
+    "lat": 53.49789,
+    "lng": -9.25127,
+    "distanceM": 131.9,
+    "inferenceMethod": "property-listing-adjacent-name"
+  }
+]

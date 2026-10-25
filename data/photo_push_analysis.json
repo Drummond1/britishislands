@@ -1,0 +1,27 @@
+{
+  "generated": "2026-06-02",
+  "baseline": {
+    "islands_json_total": 11351,
+    "named_atlas_total": 7041,
+    "named_with_photo": 3597,
+    "named_without_photo": 3444,
+    "named_photo_pct": 51.09,
+    "target_named_with_photo": 6000,
+    "gap_to_target": 2403
+  },
+  "recommended_source_order_90pct": ["p18", "osm-tags", "text-search", "geosearch-wide-500m-name-match"],
+  "skip_for_high_confidence_only": [],
+  "run_plan": {
+    "phases": [
+      {"id": "A", "source": "p18", "flags": ["--named-only", "--min-confidence", "high"]},
+      {"id": "B", "source": "osm-tags", "flags": ["--named-only", "--min-confidence", "high"]},
+      {"id": "C", "source": "text-search", "limit": 500, "repeat": 8, "flags": ["--named-only", "--min-confidence", "high", "--queue-file", "data/image_priority_queue.json"]},
+      {"id": "D", "source": "geosearch-wide", "limit": 800, "repeat": 3, "flags": ["--named-only", "--geosearch-radius", "500", "--queue-file", "data/image_priority_queue.json"]}
+    ]
+  },
+  "verification": {
+    "script": "scripts/verify_island_images.py",
+    "min_confidence_target": 90,
+    "note": "geosearch-wide at 500m with name match scores ~85; combined with high-mode sources portfolio should exceed 90% on new adoptions"
+  }
+}

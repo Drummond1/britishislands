@@ -1,0 +1,417 @@
+{
+  "script": "enrich_images_heritage_ogl.py",
+  "generatedAt": "2026-06-04T06:40:30+00:00",
+  "args": {
+    "limit": 300,
+    "named_only": true,
+    "dry_run": false,
+    "cache_only": false,
+    "test": ""
+  },
+  "api_probe": {
+    "historic-england-nhle-arcgis": {
+      "status": "ok",
+      "count": 379670,
+      "attachments": false
+    },
+    "heritage-gateway-national": {
+      "status": "reachable",
+      "note": "no stable national image API"
+    },
+    "hes-canmore-legacy-api": {
+      "status": "blocked:waf"
+    },
+    "hes-canmore-points": {
+      "status": "ok",
+      "ogl_records": 312873,
+      "attachments": false
+    },
+    "hes-trove-scot": {
+      "status": "blocked:http-403",
+      "note": "contractual per-image licence; no harvest API"
+    },
+    "cadw-listed-wfs": {
+      "status": "ok",
+      "sample_features": 1
+    }
+  },
+  "sources_working": [
+    "historic-england-nhle-arcgis",
+    "hes-canmore-points",
+    "cadw-listed-wfs"
+  ],
+  "sources_blocked": [
+    {
+      "id": "hes-canmore-legacy-api",
+      "reason": "canmore.org.uk JSON API behind Azure WAF (Jun 2025); use inspire.hes.scot MapServer instead."
+    },
+    {
+      "id": "hes-trove-scot-thumbnails",
+      "reason": "No public image API; trove.scot HTML returns 403 to automated clients; per-image contractual licence."
+    },
+    {
+      "id": "coflein-rcahmw-images",
+      "reason": "Coflein/iBase images are view-only or paid licence; site GIS is OGL but not photo redistribution."
+    },
+    {
+      "id": "cadw-cof-cymru-portal",
+      "reason": "Cof Cymru web portal intermittent; listed-building reports lack OGL photo attachments."
+    },
+    {
+      "id": "historic-england-archive-ioe",
+      "reason": "Historic England Archive photos require reproduction permission unless asset page states OGL/CC."
+    },
+    {
+      "id": "heritage-gateway-national",
+      "reason": "No national JSON/SOAP image API with OGL attachments; NHLE ArcGIS used instead."
+    },
+    {
+      "id": "hes-trove-scot",
+      "reason": "trove.scot blocks automated thumbnail fetch; contractual licence per image."
+    }
+  ],
+  "targets_considered": 300,
+  "counts": {
+    "staged": 0,
+    "no_match": 300,
+    "page_fetch_blocked": 0,
+    "by_source": {
+      "historic-england-nhle-arcgis": 0,
+      "hes-canmore-points": 0,
+      "cadw-listed-wfs": 0
+    }
+  },
+  "adopted_sample": [],
+  "no_match_sample": [
+    {
+      "id": "old-pier",
+      "name": "(old pier)",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 1000,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "50-peaks-view",
+      "name": "50 Peaks View",
+      "nation": "Wales",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "cadw-listed-wfs"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-986275285",
+      "name": "A Leacach",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 14,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-486825718",
+      "name": "A' Chairidhe",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 33,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-50753937",
+      "name": "A' Ghlas-leac",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 173,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-280809467",
+      "name": "A' Ghèireag",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 63,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q130372994",
+      "name": "Aberdyfi Bar",
+      "nation": "Wales",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "cadw-listed-wfs"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q116505278",
+      "name": "Abernethy Bank",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 1000,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-1411678839",
+      "name": "Abi Island",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 52,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24659636",
+      "name": "Adamant Shoal",
+      "nation": "England",
+      "notes": {
+        "candidates": 0,
+        "sources_tried": [
+          "historic-england-nhle-arcgis"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-262271337",
+      "name": "Aiplin",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 45,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-292853241",
+      "name": "Aird Chaol",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 91,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-4012953",
+      "name": "Aird Orasay",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 1000,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-1299944671",
+      "name": "Aird an Laoigh",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 8,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-231528169",
+      "name": "Aird-nan-Laogh",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 320,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24659098",
+      "name": "Aith Baa",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 362,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24659107",
+      "name": "Aldeburgh Napes",
+      "nation": "England",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "historic-england-nhle-arcgis"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24659667",
+      "name": "Aldeburgh Ridge",
+      "nation": "England",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "historic-england-nhle-arcgis"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-4009726",
+      "name": "Am Baisteir",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 18,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-985212914",
+      "name": "Am Ploth",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 23,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-550725474",
+      "name": "An Gairbh-sgeir",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 56,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-4010118",
+      "name": "An Glas eilean",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 11,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "an-sgannan",
+      "name": "An Sgannan",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 242,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-1115460226",
+      "name": "An Sgòrr",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 64,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-201157037",
+      "name": "An Tudan",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 15,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-1448617049",
+      "name": "An Turdha Beag",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 44,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "osm-way-4011665",
+      "name": "An t-Eilean Leathann",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 507,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24659160",
+      "name": "Andrews Spit",
+      "nation": "England",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "historic-england-nhle-arcgis"
+        ]
+      }
+    },
+    {
+      "id": "wd-Q24656990",
+      "name": "Archdeacon Rock",
+      "nation": "Wales",
+      "notes": {
+        "candidates": 25,
+        "sources_tried": [
+          "cadw-listed-wfs"
+        ]
+      }
+    },
+    {
+      "id": "ardmhor-rock",
+      "name": "Ardmhor Rock",
+      "nation": "Scotland",
+      "notes": {
+        "candidates": 744,
+        "sources_tried": [
+          "hes-canmore-points"
+        ]
+      }
+    }
+  ]
+}

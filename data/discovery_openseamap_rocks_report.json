@@ -1,0 +1,17 @@
+{
+  "agent": "openseamap_rocks",
+  "bbox": [
+    49.0,
+    -10.5,
+    61.5,
+    2.5
+  ],
+  "islandsInDatabase": 11380,
+  "elementsScanned": 14,
+  "alreadyInDatabase": 0,
+  "outOfRemit": 0,
+  "skippedTerrestrialRocks": 0,
+  "unnamedOrUnlocated": 2,
+  "missingCandidates": 12,
+  "candidateCount": 12
+}

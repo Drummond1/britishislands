@@ -1,0 +1,766 @@
+{
+  "generatedAt": "2026-08-03T18:50:59.016727+00:00",
+  "minConfidence": 90,
+  "inputDir": "data/staging/adoptions",
+  "outputDir": "data/staging/adoptions-verified",
+  "files": {
+    "archive-nls.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "bl-flickr-deep.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "commons-archipelago.json": {
+      "read": 9,
+      "accepted": 3,
+      "rejected": 6
+    },
+    "commons-county.json": {
+      "read": 8,
+      "accepted": 0,
+      "rejected": 8
+    },
+    "commons-deep.json": {
+      "read": 2,
+      "accepted": 2,
+      "rejected": 0
+    },
+    "commons-depicts-q.json": {
+      "read": 6,
+      "accepted": 6,
+      "rejected": 0
+    },
+    "duchas.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "europeana-geo.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "flickr-europeana.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "gbif.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "geograph-commons.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "geograph-native.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "heritage-ogl.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "inaturalist.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "kartaview.json": {
+      "read": 1,
+      "accepted": 0,
+      "rejected": 1
+    },
+    "multilang-wiki.json": {
+      "read": 1,
+      "accepted": 0,
+      "rejected": 1
+    },
+    "ogl-tourism.json": {
+      "read": 21,
+      "accepted": 0,
+      "rejected": 21
+    },
+    "openaerialmap.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "openverse.json": {
+      "read": 3,
+      "accepted": 0,
+      "rejected": 3
+    },
+    "osm-bulk.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "p373-commons.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "panoramax.json": {
+      "read": 1,
+      "accepted": 0,
+      "rejected": 1
+    },
+    "pcw.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "scran.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "wd-nearby-p18.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "web-discovery.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "wikidata-depicts.json": {
+      "read": 5,
+      "accepted": 5,
+      "rejected": 0
+    },
+    "wikipedia-alllangs.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "wikipedia-embedded.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    "wikipedia-gallery.json": {
+      "read": 0,
+      "accepted": 0,
+      "rejected": 0
+    }
+  },
+  "acceptedTotal": 16,
+  "rejectedTotal": 41,
+  "rejected": [
+    {
+      "id": "osm-relation-3581015",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Ardillaun",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "HIGH_ISLAND_ENCLOSURE.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-relation-3559046",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Duck Island",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-way-355369673",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Duck Island",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-way-264526527",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Duck Island",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-way-431648346",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Duck Island",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "Renovated_barge_-_geograph.org.uk_-_6354082.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-relation-6925696",
+      "staging_file": "commons-archipelago.json",
+      "accepted": false,
+      "name": "Turbot Island",
+      "source": "commons-archipelago-category",
+      "confidence": 70,
+      "reasons": [
+        "staging base for commons-archipelago-category: 88",
+        "no island name match → 70"
+      ],
+      "suspect": true,
+      "filename": "Ardmore_-_An_Aird_Mhór_-_geograph.org.uk_-_971945.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-way-1047589773",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-5033602",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Hare Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Harbour_on_Hare_Island_-_Inishodriscol_or_Hare_Island_Townland_-_geograph.org.uk_-_2439707.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-71927349",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Croaghan Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Croaghan_Island_-_geograph.org.uk_-_3594938.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-1047589796",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Green Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Green_Island_and_The_Hassans_-_geograph.org.uk_-_914749.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-708736328",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Eilean Mòr",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Eilean_Mor_Phabail_-_geograph.org.uk_-_18494.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-73070536",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "Garbh Eilean",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "Ganstotal_and_Garbh_Eilean_-_geograph.org.uk_-_1099183.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-40674534",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "The Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "The_Island,_Newquay._-_geograph.org.uk_-_506350.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-248116655",
+      "staging_file": "commons-county.json",
+      "accepted": false,
+      "name": "The Island",
+      "source": "commons-county-category",
+      "confidence": 88,
+      "reasons": [
+        "staging base for commons-county-category: 88"
+      ],
+      "suspect": false,
+      "filename": "The_Island,_Newquay._-_geograph.org.uk_-_506360.jpg",
+      "reject_reason": "confidence-88-lt-90"
+    },
+    {
+      "id": "osm-way-1303347105",
+      "staging_file": "kartaview.json",
+      "accepted": false,
+      "name": "Blake's Island",
+      "source": "kartaview",
+      "confidence": 80,
+      "reasons": [
+        "staging base for kartaview: 80"
+      ],
+      "suspect": false,
+      "filename": "",
+      "reject_reason": "confidence-80-lt-90"
+    },
+    {
+      "id": "wd-Q25634954",
+      "staging_file": "multilang-wiki.json",
+      "accepted": false,
+      "name": "Blotchnie Fiold",
+      "source": "wikipedia-gd",
+      "confidence": 45,
+      "reasons": [
+        "unrecognised source type: wikipedia-gd"
+      ],
+      "suspect": true,
+      "filename": "Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "wd-Q2100283",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "The Wolves",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Turbulence_around_The_Wolves_-_geograph.org.uk_-_6380958.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "wd-Q24658969",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "The Field",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "View_across_the_field_towards_Capel_Newydd_-_geograph.org.uk_-_1402884.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-74441740",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "The Bill",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Cape_Clear_Island_-_The_Bill_of_Cape_Clear_-_geograph.org.uk_-_6008798.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-431547277",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Muclaghmore",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Mucklaghmore-1709,_Tralee_Bay,_Co._Kerry,_Ireland.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4563872",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Illauntannig",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Illauntannig.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4554541",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4561066",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-247914631",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-544154396",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-575553835",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-1109234536",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Goose Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Goose_Island,_aerial_view.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "the-star",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "The Star",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Now_Put_The_Star_Back_Like_A_Good_Boy_-_panoramio.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-1138138187",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "The Club",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "The_club_house_of_Amlwch_Town_F.C._-_geograph.org.uk_-_1092113.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-relation-3335698",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Port Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-179021423",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Port Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Cromwell_Fort,_Port_Island,_Inishbofin_-_geograph.org.uk_-_199476.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4556994",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Mid Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4557101",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Mid Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Mid_Island,_Strangford_Lough_-_geograph.org.uk_-_3589.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-431547276",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Illaunabarnagh",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4554535",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "High Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "HIGH_ISLAND_ENCLOSURE.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-relation-4294907",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Big Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-4563025",
+      "staging_file": "ogl-tourism.json",
+      "accepted": false,
+      "name": "Big Island",
+      "source": "commons-regional-category",
+      "confidence": 85,
+      "reasons": [
+        "staging base for commons-regional-category: 85",
+        "island name match in filename/caption"
+      ],
+      "suspect": false,
+      "filename": "The_north_east_tip_of_Big_Island_-_geograph.org.uk_-_1385521.jpg",
+      "reject_reason": "confidence-85-lt-90"
+    },
+    {
+      "id": "osm-way-199171973",
+      "staging_file": "openverse.json",
+      "accepted": false,
+      "name": "Cliff Island",
+      "source": "openverse",
+      "confidence": 55,
+      "reasons": [
+        "staging base for openverse: 80",
+        "no island name match → 55"
+      ],
+      "suspect": true,
+      "filename": "",
+      "reject_reason": "suspect-below-threshold"
+    },
+    {
+      "id": "osm-way-4562322",
+      "staging_file": "openverse.json",
+      "accepted": false,
+      "name": "Cruagh",
+      "source": "openverse",
+      "confidence": 80,
+      "reasons": [
+        "staging base for openverse: 80",
+        "island name match in title/caption"
+      ],
+      "suspect": false,
+      "filename": "",
+      "reject_reason": "confidence-80-lt-90"
+    },
+    {
+      "id": "deils-heid",
+      "staging_file": "openverse.json",
+      "accepted": false,
+      "name": "De'il's Heid",
+      "source": "openverse",
+      "confidence": 80,
+      "reasons": [
+        "staging base for openverse: 80",
+        "island name match in title/caption"
+      ],
+      "suspect": false,
+      "filename": "",
+      "reject_reason": "confidence-80-lt-90"
+    },
+    {
+      "id": "osm-way-1002798076",
+      "staging_file": "panoramax.json",
+      "accepted": false,
+      "name": "An Bioránach",
+      "source": "panoramax",
+      "confidence": 80,
+      "reasons": [
+        "staging base for panoramax: 80"
+      ],
+      "suspect": false,
+      "filename": "",
+      "reject_reason": "confidence-80-lt-90"
+    }
+  ]
+}

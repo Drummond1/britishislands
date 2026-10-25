@@ -1,0 +1,751 @@
+{
+  "script": "enrich_images_geograph_native.py",
+  "started": "2026-08-03T19:46:01",
+  "pending": 150,
+  "staged": 0,
+  "adopted": [],
+  "skipped": [
+    {
+      "id": "osm-way-814326891",
+      "grid": "SA046820",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "old-pier",
+      "grid": "NT553856",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "50-peaks-view",
+      "grid": "SH642408",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-986275285",
+      "grid": "NM630732",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-486825718",
+      "grid": "NM115541",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-50753937",
+      "grid": "NG781333",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-280809467",
+      "grid": "NF796074",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "abbots-rock-w266684542",
+      "grid": "L016053",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q130372994",
+      "grid": "SN588944",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q116505278",
+      "grid": "NO214190",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1411678839",
+      "grid": "NC099216",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-469685910",
+      "grid": "W071016",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4554459",
+      "grid": "B023032",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24659636",
+      "grid": "SY788722",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-361033803",
+      "grid": "NF870709",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-5208398",
+      "grid": "A003028",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-405701042",
+      "grid": "L014066",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q27118715",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "osm-way-262271337",
+      "grid": "HU479512",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1299944671",
+      "grid": "NF877907",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-292853241",
+      "grid": "NB030295",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4012953",
+      "grid": "NB130313",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-231528169",
+      "grid": "NF823440",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24659098",
+      "grid": "HU448295",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24659107",
+      "grid": "TM543567",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24659667",
+      "grid": "TM499527",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4559337",
+      "grid": "W076025",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-858243714",
+      "grid": "L065085",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4009726",
+      "grid": "NM302184",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1002798076",
+      "grid": "B021031",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-caipín",
+      "grid": "F059019",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-charraig-dhubh-commorants-rock",
+      "grid": "A036068",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1006966501",
+      "grid": "B022031",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-node-12105802561",
+      "grid": "F030005",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-550725474",
+      "grid": "NF939685",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-ghamhnach",
+      "grid": "A042063",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4010118",
+      "grid": "NM646912",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-grean",
+      "grid": "A031099",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-leac-ard",
+      "grid": "A031096",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-licín-goats-island",
+      "grid": "A037068",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-licín-rua",
+      "grid": "A038063",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-mheadar",
+      "grid": "A042063",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-scéalaíthe-storyteller",
+      "grid": "A040062",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "an-sgannan",
+      "grid": "NG757744",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1115460226",
+      "grid": "NG654058",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-615860513",
+      "grid": "NH321010",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4011665",
+      "grid": "NF786072",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-375708564",
+      "grid": "W070017",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4559340",
+      "grid": "W078025",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-470058025",
+      "grid": "W071017",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4562821",
+      "grid": "L087032",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4563017",
+      "grid": "L091026",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-201157037",
+      "grid": "NM694087",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1448617049",
+      "grid": "NL923456",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24659160",
+      "grid": "TM281294",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1135425736",
+      "grid": "H043073",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-93211713",
+      "grid": "Q077005",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-88125439",
+      "grid": "R072034",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-6836978",
+      "grid": "L094083",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-178144112",
+      "grid": "R077013",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q104322906",
+      "grid": "L010046",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q26718468",
+      "grid": "Q019012",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4562868",
+      "grid": "L090030",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "apple-island-w344100095",
+      "grid": "G046097",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-26526929",
+      "grid": "A090082",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656990",
+      "grid": "SH340958",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4560457",
+      "grid": "R055044",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-239731267",
+      "grid": "M087028",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-193645881",
+      "grid": "R024027",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-3581015",
+      "grid": "L012052",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4554487",
+      "grid": "A001032",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "ardmhor-rock",
+      "grid": "NF700046",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4562359",
+      "grid": "L059052",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24657122",
+      "grid": "HT953415",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-112156370",
+      "grid": "NV217397",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1112518083",
+      "grid": "N038047",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1303347115",
+      "grid": "M061014",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q26718728",
+      "grid": "M002019",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-186507789",
+      "grid": "R084006",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-306303592",
+      "grid": "NV214399",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-5309173",
+      "grid": "G039060",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1443032875",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "osm-way-251595955",
+      "grid": "M035012",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24644002",
+      "grid": "HY713392",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24641428",
+      "grid": "HU550903",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24638982",
+      "grid": "HU217586",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24636700",
+      "grid": "HU547664",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24641373",
+      "grid": "HP648106",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24640627",
+      "grid": "HY561183",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24638069",
+      "grid": "HY686495",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-202176591",
+      "grid": "NN110255",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1443027185",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "wd-Q27118686",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "osm-way-163596695",
+      "grid": "N061086",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-163596697",
+      "grid": "N061086",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-345094290",
+      "grid": "B070048",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q26718287",
+      "grid": "F076032",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-6810815",
+      "grid": "M099068",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-11587635",
+      "grid": "M090010",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-3998532",
+      "grid": "NV132275",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1443027186",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "osm-way-1448617053",
+      "grid": "NL925456",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q27118660",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "wd-Q27118667",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "wd-Q26717951",
+      "grid": "G030060",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656394",
+      "grid": "SW332548",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q104256098",
+      "grid": "M097024",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656408",
+      "grid": "NW739265",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-867191687",
+      "grid": "HU380968",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656421",
+      "grid": "NU253266",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-191450489",
+      "grid": "SA275863",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24657075",
+      "grid": "D069054",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "basteirs-tooth",
+      "grid": "NG465252",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656441",
+      "grid": "SH132168",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-43981374",
+      "grid": "G046058",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-193645875",
+      "grid": "R025028",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-193645876",
+      "grid": "R025028",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656446",
+      "grid": "TM470433",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656447",
+      "grid": "TM448413",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1112111235",
+      "grid": "M071096",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "beagh-island-w344100100",
+      "grid": "G047099",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4562822",
+      "grid": "L089031",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-249298038",
+      "grid": "L089032",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-119929398",
+      "grid": "M002046",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-851549873",
+      "grid": "NM636758",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-13603299",
+      "grid": "A056057",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4561972",
+      "grid": "L093086",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4561710",
+      "grid": "L089095",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4561732",
+      "grid": "L088094",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q26717456",
+      "grid": "H008024",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-163596698",
+      "grid": "N061084",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656498",
+      "grid": "NZ376715",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4562502",
+      "grid": "L061041",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-4563629",
+      "grid": "G031058",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-3625566",
+      "grid": "NV250221",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-56697680",
+      "grid": "SW572417",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24656721",
+      "grid": "TQ749066",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "wd-Q24657172",
+      "grid": "NT304772",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-118955241",
+      "grid": "HY284157",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-119929330",
+      "grid": "M002045",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-682115156",
+      "reason": "grid ref failed"
+    },
+    {
+      "id": "osm-relation-3516493",
+      "grid": "SA384975",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-3474542",
+      "grid": "L014046",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-179021410",
+      "grid": "NV121064",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-179073598",
+      "grid": "NV039205",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-1161136345",
+      "grid": "L003050",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-199701910",
+      "grid": "L003050",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-relation-8500152",
+      "grid": "L054093",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-47702827",
+      "grid": "NB176416",
+      "reason": "no dual-signal match in feed"
+    },
+    {
+      "id": "osm-way-186507800",
+      "grid": "R082004",
+      "reason": "no dual-signal match in feed"
+    }
+  ]
+}

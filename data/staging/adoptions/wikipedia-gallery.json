@@ -1,0 +1,9 @@
+{
+  "generated": "2026-06-04T06:42:18Z",
+  "pipeline": "enrich_images_wikipedia_gallery",
+  "attempted": 30,
+  "staged_count": 0,
+  "by_wiki_site": {},
+  "by_via": {},
+  "adoptions": []
+}

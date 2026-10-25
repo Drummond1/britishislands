@@ -1,7 +1,7 @@
 # Islands for sale — full list
 
-**Last updated:** 2026-10-19  
-**Total islands with listings:** **37**  
+**Last updated:** 2026-10-25  
+**Total islands with listings:** **42**  
 
 > **Where to look**
 > - This page (human-readable table)
@@ -13,16 +13,16 @@
 
 | Metric | Value |
 |--------|------:|
-| Islands on map | 37 |
-| England | 9 |
-| Ireland | 12 |
+| Islands on map | 42 |
+| England | 11 |
+| Ireland | 13 |
 | Northern Ireland | 5 |
-| Scotland | 10 |
+| Scotland | 12 |
 | Wales | 1 |
 
-**Last discovery run:** 2026-10-19T12:00:03  
+**Last discovery run:** 2026-10-25T14:34:21  
 **Added that run:** 0  
-**Removed that run:** 0  
+**Removed that run:** 1  
 
 ## All islands (A–Z by nation)
 
@@ -34,9 +34,11 @@
 | Pharaoh's Island | England | residential | Guide £675,000 | [Pharaoh's Island — Shepperton bungalow (Absolute](https://www.absolute-homes.co.uk/property/detached-riverside-bungalow-on-private-island-shepperton/) |
 | St Agnes | England | residential | £295,000 | [St Agnes — Sibleys Island Homes](https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=235) |
 | St Martin's | England | residential | £450,000 | [St Martin's — Sibleys Island Homes (Menawethan)](https://www.sibleysonscilly.co.uk/Properties/SalesDetail?UnitTypeID=181) |
+| St Mary's (Isles of Scilly) | England | residential | £425,000 ONO | [St Mary's (Isles of Scilly) — Scilly Estate Agen](https://scillyestateagents.com/properties/ganilly/) |
 | Tagg's Island | England | residential | Guide Price £725,000 | [Tagg's Island — Absolute Homes](https://www.absolute-homes.co.uk/property/4-bedroom-2-storey-houseboat-in-hampton/) |
 | Thames Ditton Island | England | residential | Offers over £1,000,000 | [The Island — Thames Ditton home (Absolute Homes)](https://www.absolute-homes.co.uk/property/the-island-thames-ditton/) |
 | Wheatley's Eyot (south) | England | residential | Asking Price £550,000 | [Wheatley's Eyot (south) — N&N Richmond](https://www.nnrichmond.co.uk/wheatleyseyotsunburyonthames) |
+| Whittets Ait | England | residential | Guide price £560,000 | [Whittets Ait — Savills](https://search.savills.com/property-detail/gbwyrswes250193) |
 | Arranmore | Ireland | residential | €114,950 | [Arranmore — Campbells Auctioneers (MyHome direct](https://www.myhome.ie/residential/brochure/illion-arranmore-island-burtonport-donegal/4832226) |
 | Calf Island Middle | Ireland | whole_island | €1,100,000 | [Calf Island Middle — West Cork (Vladi)](https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/middle-calf-island) |
 | Cruit Island | Ireland | land | Guide Price €65,000 | [Cruit Island — Campbells Auctioneers](https://www.propertynews.com/cruit-island-kincasslagh/678489) |
@@ -44,6 +46,7 @@
 | Heir Island | Ireland | residential | €650,000 | [Heir Island — Pat Maguire Properties (MyHome dir](https://www.myhome.ie/residential/brochure/heir-island-south-islands-west-cork/4638757) |
 | High Island | Ireland | land | €1,250,000 | [High Island — Spencer Auctioneers](https://www.myhome.ie/residential/brochure/high-island-claddaghduff-galway/4310632) |
 | Horse Island | Ireland | whole_island | €9,750,000 | [Horse Island — Lisney](https://www.myhome.ie/residential/brochure/dunmore-bay-horse-island-loop-head-kilbaha-co-clare/4692569) |
+| Illauncreeveen | Ireland | whole_island | €500,000 | [Illauncreeveen — Harrington Estates](https://www.harringtonestates.ie/allproperties/006095%2Fdh) |
 | Inis Barna | Ireland | whole_island | Open to offers | [Inishbarna Island — Killary Fjord (Vladi)](https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/inishbarna-island) |
 | Inishmicatreer | Ireland | residential | €457,500 | [Inishmicatreer — Michelle Burke Auctioneer and L](https://www.myhome.ie/residential/brochure/inishmacatreer-cross-headford-county-galway/4939197) |
 | Shore Island | Ireland | whole_island | €900,000 | [Shore Island — Shannon Estuary (Vladi)](https://www.vladi-private-islands.de/de/inseln-kaufen/kaufen/europa-atlantik/irland/shore-island) |
@@ -58,12 +61,14 @@
 | Eilean Mullagrach | Scotland | land | £500,000 | [Eilean Mullagrach — Summer Isles cabin site](https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/26241_inv240138/) |
 | Eilean Mòr | Scotland | whole_island | Offers over £275,000 | [Eilean Mor — Loch Sunart island (Bell Ingram)](https://www.bellingram.co.uk/property/eilean-mor-strontian-acharacle-highland-ph36-4hx/) |
 | Eilean Righ | Scotland | whole_island | Price Upon Request | [Eilean Righ — Private Islands Online](https://www.privateislandsonline.com/europe/scotland/argyll-island) |
+| Eriskay | Scotland | land | £50,000 | [Eriskay — Bell Ingram](https://www.bellingram.co.uk/property/croft-7-balla-eriskay-isle-of-south-uist-eilean-siar-hs8-5jl/) |
 | Gasker | Scotland | land | Offers over £120,000 | [Gasker Island — uninhabited (Galbraith)](https://www.galbraithgroup.com/property/inv250127-gasker-island-isle-of-harris-outer-hebrides-hs3-3hl/) |
 | Inchmarnock | Scotland | whole_island | Offers over £2,000,000 | [Inchmarnock Island — private island estate (Stru](https://struttandparker.com/properties/straad) |
 | Insh Island | Scotland | land | Auction 22 Apr 2026 | [Insh Island — Savills auction lot (90 acres)](https://auctions.savills.co.uk/auctions/21--22-april-2026-221/insh-island-clachan-seil-oban-argyll-and-bute-pa34-4tn-22377) |
 | Kerrera | Scotland | residential | Guide Price £180,000 | [Kerrera — Bell Ingram](https://www.bellingram.co.uk/property/ferry-house-kerrera-oban-argyll-and-bute-pa34-4sx/) |
 | Shuna | Scotland | whole_island | Offers in excess of £5,500,000 | [Shuna Island — 1,110-acre estate (Knight Frank)](https://www.uklandandfarms.co.uk/rural-property-for-sale/scotland/highlands-and-islands/oban-41048_ebr012505187/) |
 | Soay | Scotland | residential | Offers over £975,000 | [Island of Soay — croft and house (Strutt & Parke](https://struttandparker.com/properties/island-of-soay) |
+| Wiay | Scotland | whole_island | £995,000 | [Wiay — Bell Ingram](https://www.bellingram.co.uk/property/isle-of-wiay-creagorry-benbecula-eilean-siar-hs7-5ps/) |
 | Thorne Island | Wales | whole_island | Offers in excess of £3,000,000 | [Thorne Island — Strutt & Parker](https://struttandparker.com/properties/angle) |
 
 ---

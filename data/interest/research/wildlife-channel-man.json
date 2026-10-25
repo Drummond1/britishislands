@@ -1,0 +1,90 @@
+[
+  {
+    "taxon": "blonde hedgehog",
+    "scientific": "Erinaceus europaeus",
+    "island_names": ["Alderney"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/European_hedgehog",
+    "source_title": "European hedgehog",
+    "licence": "CC BY-SA 4.0",
+    "connection": "Leucistic or 'blonde' hedgehogs occasionally occur. They are extremely rare, except on North Ronaldsay and the Channel Island of Alderney, where around 25% of the population is thought to be blonde.",
+    "photo_page": "https://en.wikipedia.org/wiki/European_hedgehog"
+  },
+  {
+    "taxon": "Jersey orchid",
+    "scientific": "Anacamptis laxiflora",
+    "island_names": ["Jersey", "Guernsey"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/Anacamptis_laxiflora",
+    "source_title": "Anacamptis laxiflora",
+    "licence": "CC BY-SA 4.0",
+    "connection": "Anacamptis laxiflora (lax-flowered orchid, loose-flowered orchid, or green-winged meadow orchid) is a species of orchid. A. laxiflora is common in Normandy and Brittany (France), but in the United Kingdom it is represented only on the Channel Islands, where in Jersey it is called Jersey orchid and in Guernsey it is called Loose Flowered orchid.",
+    "photo_page": "https://en.wikipedia.org/wiki/Anacamptis_laxiflora"
+  },
+  {
+    "taxon": "western green lizard",
+    "scientific": "Lacerta bilineata",
+    "island_names": ["Jersey"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/Jersey",
+    "source_title": "Jersey",
+    "licence": "CC BY-SA 4.0",
+    "connection": "Four species of reptiles occur on Jersey: the western green lizard, wall lizard, slow worm, and barred grass snake. All are protected species, with Jersey being the only native habitat in the British Isles for the green lizard, wall lizard, spiny toad and agile frog.",
+    "photo_page": "https://en.wikipedia.org/wiki/Western_green_lizard"
+  },
+  {
+    "taxon": "Guernsey vole",
+    "scientific": "Microtus arvalis sarnius",
+    "island_names": ["Guernsey"],
+    "why_unusual": "endemic",
+    "source_url": "https://en.wikipedia.org/wiki/Guernsey_vole",
+    "source_title": "Guernsey vole",
+    "licence": "CC BY-SA 4.0",
+    "connection": "The Guernsey vole (Microtus arvalis sarnius), known in Guernésiais as the mulot, is a subspecies of the common vole endemic to the island of Guernsey in the Channel Islands. It exhibits island syndrome, mainly island gigantism, meaning it is significantly larger than continental voles.",
+    "photo_page": ""
+  },
+  {
+    "taxon": "lesser white-toothed shrew",
+    "scientific": "Crocidura suaveolens",
+    "island_names": ["Sark"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/Lesser_white-toothed_shrew",
+    "source_title": "Lesser white-toothed shrew",
+    "licence": "CC BY-SA 4.0",
+    "connection": "The lesser white-toothed shrew (Crocidura suaveolens) is a small species of shrew with a widespread distribution in Africa, Asia and Europe. The populations in the Isles of Scilly and in the Channel Islands of Jersey and Sark off the French coast are isolated.",
+    "photo_page": "https://en.wikipedia.org/wiki/Lesser_white-toothed_shrew"
+  },
+  {
+    "taxon": "Manx shearwater",
+    "scientific": "Puffinus puffinus",
+    "island_names": ["Calf of Man"],
+    "why_unusual": "named-for-island",
+    "source_url": "https://en.wikipedia.org/wiki/Manx_shearwater",
+    "source_title": "Manx shearwater",
+    "licence": "CC BY-SA 4.0",
+    "connection": "The Manx shearwater (Puffinus puffinus) is a medium-sized shearwater in the seabird family Procellariidae. The current English name was first recorded in 1835 and refers to the nesting of this species on the Calf of Man.",
+    "photo_page": "https://en.wikipedia.org/wiki/Manx_shearwater"
+  },
+  {
+    "taxon": "red-billed chough",
+    "scientific": "Pyrrhocorax pyrrhocorax",
+    "island_names": ["Isle of Man"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/Red-billed_chough",
+    "source_title": "Red-billed chough",
+    "licence": "CC BY-SA 4.0",
+    "connection": "P. p. pyrrhocorax, the nominate subspecies and smallest form, is endemic to the British Isles, where it is restricted to Ireland, the Isle of Man, and the west of Wales, southwest Scotland, and Cornwall, which it recolonised in 2001 after an absence of 50 years. The red-billed chough breeds in Ireland, western Great Britain, the Isle of Man, Brittany, the Alps, La Palma in the Canary Islands, across southern Europe and the Mediterranean basin, northern Arabia, northern Iraq, Iran, Afghanistan, and in mountainous country across Central Asia, India and China, with two separate populations in the Ethiopian Highlands.",
+    "photo_page": "https://en.wikipedia.org/wiki/Red-billed_chough"
+  },
+  {
+    "taxon": "hen harrier",
+    "scientific": "Circus cyaneus",
+    "island_names": ["Isle of Man"],
+    "why_unusual": "rare-stronghold",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_birds_of_the_Isle_of_Man",
+    "source_title": "List of birds of the Isle of Man",
+    "licence": "CC BY-SA 4.0",
+    "connection": "As of 2021, some 350 species of bird have been recorded in the wild on the Isle of Man, a self-governing island in the Irish Sea between Great Britain and Ireland. Over 100 species breed there, including significant populations of red-billed chough, peregrine falcon and hen harrier.",
+    "photo_page": "https://en.wikipedia.org/wiki/Hen_harrier"
+  }
+]
