@@ -149,7 +149,7 @@ body.sidebar-collapsed .topbar-panel-toggle__label { display:inline; font-size:1
 .island-card--feature { height:312px; }
 .island-card--feature .island-card__main--feature {
   display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
-  gap:0; height:312px; padding:8px 36px 10px 0;
+  gap:0; height:312px; padding:8px 36px 10px 12px;
 }
 .island-card__feature {
   display:block; width:100%; height:132px; object-fit:cover; border-radius:8px; margin:8px 0 8px; background:var(--bg-soft);
