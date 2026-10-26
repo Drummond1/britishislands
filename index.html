@@ -25,7 +25,7 @@
     <title>Find My Island — The British & Irish Islands Atlas</title>
     <meta
       name="description"
-      content="Find My Island: a map of the islands of Britain and Ireland, with photos, stories, and the odd fact you would not expect."
+      content="A map of the islands of Britain and Ireland, with photos and sources. Guides to whisky isles, islands with castles, tidal islands, and islands for sale."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://www.findmyisland.com/" />
@@ -35,7 +35,7 @@
     <meta property="og:title" content="Find My Island — The British & Irish Islands Atlas" />
     <meta
       property="og:description"
-      content="A map of the islands of Britain and Ireland — sea, loch, and river — with photos and stories."
+      content="Map the islands of Britain and Ireland, then open a guide: whisky, castles, tidal islands, wildlife, and books."
     />
     <meta property="og:url" content="https://www.findmyisland.com/" />
     <meta property="og:locale" content="en_GB" />
@@ -43,7 +43,7 @@
     <meta name="twitter:title" content="Find My Island — The British & Irish Islands Atlas" />
     <meta
       name="twitter:description"
-      content="Explore the islands of Britain and Ireland: a map, photos, and the stories attached to each place."
+      content="A map of the islands of Britain and Ireland, with photos, stories, and guides you can cite."
     />
     <script type="application/ld+json">
       {
@@ -52,7 +52,7 @@
         "name": "Find My Island",
         "alternateName": ["Isles of Britain", "findmyisland.com"],
         "url": "https://www.findmyisland.com/",
-        "description": "Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies.",
+        "description": "Visual atlas of islands in and around the United Kingdom, Ireland, and Crown Dependencies, with guides to castles, whisky, tidal islands, and islands for sale.",
         "inLanguage": "en-GB",
         "publisher": {
           "@type": "Organization",
@@ -67,11 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=os-whole-4" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=passage-2" />
     <link rel="stylesheet" href="editorial-profile.css?v=traditions-2" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
     <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
-    <link rel="modulepreload" href="app.js?v=os-whole-4" />
+    <link rel="modulepreload" href="app.js?v=passage-2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -111,6 +111,7 @@
 
       <nav class="desktop-nav" aria-label="Main navigation">
         <button type="button" class="desktop-nav__link is-active" id="explore-home">Explore the islands</button>
+        <a class="desktop-nav__link" href="/collections/">Guides</a>
         <a class="desktop-nav__link" href="/about/">About the atlas</a>
       </nav>
 
@@ -139,7 +140,7 @@
           </button>
           <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
             <button type="button" class="topbar-more__item" id="atlas-home-menu" role="menuitem">Home</button>
-            <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Collections</a>
+            <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Guides</a>
             <button type="button" class="topbar-more__item" id="crowd-suggest-btn" role="menuitem">Contribute</button>
             <a class="topbar-more__item topbar-more__item--link" href="/about/" role="menuitem">About</a>
           </div>
@@ -270,10 +271,39 @@
 
     <main class="layout">
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
+        <div class="passage-lamp" aria-hidden="true"></div>
         <section class="island-list" id="island-list-section">
-          <div class="discovery-intro">
+          <div class="discovery-intro" id="discovery-intro">
+            <div class="chart-rose" aria-hidden="true">
+              <div class="chart-rose__disc">
+              <svg class="chart-rose__ring" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="96" />
+                <circle cx="100" cy="100" r="74" />
+                <circle cx="100" cy="100" r="50" />
+                <circle cx="100" cy="100" r="24" />
+                <path d="M100 4v22M100 174v22M4 100h22M174 100h22" />
+                <path d="M32 32l16 16M168 32l-16 16M32 168l16-16M168 168l-16-16" />
+                <path d="M100 38v10M100 152v10M38 100h10M152 100h10" />
+                <circle class="chart-rose__hub" cx="100" cy="100" r="2.4" />
+              </svg>
+              </div>
+              <span class="chart-rose__needle"></span>
+            </div>
             <p class="discovery-eyebrow"><span class="editorial-rule"></span><span class="discovery-eyebrow__text">A WORLD A LITTLE CLOSER TO HOME</span></p>
-            <h2>Find your<br><em>somewhere else.</em></h2>
+            <h2>
+              <span class="discovery-line">Find your</span>
+              <span class="discovery-display"><em>somewhere</em> <em>else.</em></span>
+            </h2>
+            <p class="discovery-bearing" aria-hidden="true">
+              <span class="discovery-bearing__pip"></span>
+              <span class="discovery-bearing__names">
+                <span>St Kilda</span>
+                <span>Iona</span>
+                <span>Staffa</span>
+                <span>Lindisfarne</span>
+                <span>Skellig Michael</span>
+              </span>
+            </p>
             <p class="discovery-lede">Sea, loch, and river. One story at a time.</p>
           </div>
           <div class="discovery-search-row">
@@ -297,6 +327,7 @@
           >
             <span aria-hidden="true" data-lucide="x"></span>
           </button>
+          <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
       </div>
 
@@ -398,6 +429,19 @@
         <li><a href="/islands/scotland/st-kilda/">St Kilda (Hirta)</a></li>
         <li><a href="/islands/england/scilly-st-marys/">St Mary&#x27;s (Isles of Scilly)</a></li>
         <li><a href="/islands/scotland/staffa/">Staffa</a></li>
+              </ul>
+            </section>
+            <section>
+              <h3 class="crawl-links__sub">Guides</h3>
+              <ul class="crawl-links__list">
+        <li><a href="/collections/island-castles/">Islands with castles</a></li>
+        <li><a href="/collections/whisky-distilleries/">Whisky islands</a></li>
+        <li><a href="/collections/tidal-islands/">Tidal islands</a></li>
+        <li><a href="/collections/for-sale/">Islands for sale</a></li>
+        <li><a href="/collections/unusual-wildlife/">Unusual wildlife</a></li>
+        <li><a href="/collections/island-books/">Books set on islands</a></li>
+        <li><a href="/collections/local-traditions/">Island traditions</a></li>
+        <li><a href="/collections/film-art-music/">Film, art and music</a></li>
               </ul>
             </section>
             <section>
@@ -795,6 +839,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=os-whole-4" type="module"></script>
+    <script src="app.js?v=passage-2" type="module"></script>
   </body>
 </html>

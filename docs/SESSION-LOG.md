@@ -3329,6 +3329,13 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: No count change. Checked in the browser: All islands lists an OS control on each card; Skye and Staffa open the Ordnance Survey paper map with the whole island in frame. Close returns to the atlas.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-26 — Homepage passage
+
+- **Goal**: Make the first screen feel like a designed object, with more motion in the half above the fold.
+- **What changed**: A chart rose sits behind the headline and turns very slowly; its needle swings home, then follows the pointer. A warm lamp follows the cursor through the dark column. The headline arrives as two words, and a bearing names St Kilda, Iona, Staffa, Lindisfarne, and Skellig Michael in turn. Focusing search lights an amber line and hides the `/` key. The interest chips share one gold rule that slides to the chip under the pointer. A filament crosses the top bar once, and a spark drops the map’s left edge. Reduced motion keeps the rose still and shows St Kilda only. No data change.
+- **Outcome / counts**: Checked in the browser at a wide desktop, a short laptop, and a phone-width column. The rose, the lamp, the search glow, and the chip rule all move. Searching “Staffa” hides the passage and lists Staffa first. Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
 ## 2026-10-26 — Ordnance Survey key on the live site
 
 - **Goal**: The paper map on findmyisland.com should open from the OS Data Hub key already saved for the project, without each visitor pasting it.

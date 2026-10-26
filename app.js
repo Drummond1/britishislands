@@ -12,7 +12,9 @@
  *    Get a free key at https://osdatahub.os.uk/ (250k tiles / month).
  */
 
-import { applyIslandSeo, resetIslandSeo } from "./seo-meta.js";
+import { applyHomeQuerySeo, applyIslandSeo, resetIslandSeo } from "./seo-meta.js?v=guides-1";
+
+applyHomeQuerySeo();
 import {
   fetchCrowdPins,
   buildContributionIssueUrl,
@@ -3526,6 +3528,7 @@ function renderPhotoPlaceholderHero(island) {
 }
 
 let chipGreetingAt = 0;
+let placeChipRule = () => {};
 
 function renderBrowseQuickChips() {
   const host = document.getElementById("browse-quick-chips");
@@ -3604,6 +3607,7 @@ function renderBrowseQuickChips() {
     }
   }
   refreshLucideIcons(host);
+  placeChipRule(host.querySelector(".browse-quick__chip.is-active"));
 }
 
 function applyBrowseQuickFilter(preset) {
@@ -10705,6 +10709,77 @@ function isTypingTarget(el) {
   return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || el.isContentEditable;
 }
 
+function initFoldMotion() {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = window.matchMedia("(pointer: fine)").matches;
+  const sidebar = document.getElementById("sidebar");
+  const intro = document.getElementById("discovery-intro");
+  const rose = intro?.querySelector(".chart-rose");
+  const host = document.getElementById("browse-quick-chips");
+
+  if (sidebar && fine && !reduce) {
+    let frame = 0;
+    let point = null;
+    sidebar.addEventListener("pointermove", (event) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
+      point = event;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (!point) return;
+        const rect = sidebar.getBoundingClientRect();
+        sidebar.style.setProperty("--lamp-x", `${point.clientX - rect.left}px`);
+        sidebar.style.setProperty("--lamp-y", `${point.clientY - rect.top}px`);
+        document.body.classList.add("has-lamp");
+      });
+    });
+    sidebar.addEventListener("pointerleave", () => {
+      point = null;
+      document.body.classList.remove("has-lamp");
+    });
+  }
+
+  if (intro && rose && fine && !reduce) {
+    intro.addEventListener("pointermove", (event) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
+      const rect = intro.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const dx = (event.clientX - rect.left) / rect.width - 0.62;
+      const dy = (event.clientY - rect.top) / rect.height - 0.4;
+      const deg = Math.max(-32, Math.min(32, dx * 42 + dy * 10));
+      rose.style.setProperty("--needle", `${deg.toFixed(2)}deg`);
+    });
+    intro.addEventListener("pointerleave", () => {
+      rose.style.removeProperty("--needle");
+    });
+  }
+
+  if (!host || reduce) return;
+  placeChipRule = (chip) => {
+    let rule = host.querySelector(".browse-quick__rule");
+    if (!chip || !host.contains(chip)) {
+      host.classList.remove("is-ruled");
+      return;
+    }
+    if (!rule) {
+      rule = document.createElement("span");
+      rule.className = "browse-quick__rule";
+      rule.setAttribute("aria-hidden", "true");
+      host.appendChild(rule);
+    }
+    rule.style.width = `${chip.offsetWidth}px`;
+    rule.style.transform = `translateX(${chip.offsetLeft}px)`;
+    host.classList.add("is-ruled");
+  };
+  host.addEventListener("pointerover", (event) => {
+    const chip = event.target.closest?.(".browse-quick__chip");
+    if (chip) placeChipRule(chip);
+  });
+  host.addEventListener("pointerleave", () => {
+    placeChipRule(host.querySelector(".browse-quick__chip.is-active"));
+  });
+}
+
 function initGlobalKeyboardShortcuts() {
   document.addEventListener("keydown", (e) => {
     const lb = document.getElementById("image-lightbox");
@@ -10775,6 +10850,7 @@ initListKeyboardNav();
 initFilterFocusTrap();
 initSearchClear();
 initMapHint();
+initFoldMotion();
 initGlobalKeyboardShortcuts();
 initTopbarMoreMenu();
 initAtlasChrome();
