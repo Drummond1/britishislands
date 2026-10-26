@@ -762,6 +762,98 @@ SEEDS = [
         ),
         "evidence": "The Jersey Evening Post, 19 November 2017, places the blonde mole on Alderney's grass runway.",
     },
+    {
+        "island_id": "osm-relation-10323151",
+        "title": "A stencil over the mural",
+        "source_url": "https://www.heraldscotland.com/default_content/12428338.campbeltowns-famous-cave-painting-vandalised/",
+        "source_title": "The Herald",
+        "commons_file": "File:Davaar Lighthouse - geograph.org.uk - 1434658.jpg",
+        "image_note": "Davaar",
+        "summary": (
+            "In August 2006 someone sprayed a Che Guevara stencil over the Crucifixion on a cave wall on Davaar. "
+            "The Herald reported that the town treated the damage as an attack on a picture it regarded as its own. "
+            "The mural had been on that wall since 1887."
+        ),
+        "evidence": "The Herald places the 2006 stencil on the cave painting on Davaar.",
+    },
+    {
+        "island_id": "osm-way-4006880",
+        "title": "Six weeks on fire",
+        "source_url": "https://www.heraldscotland.com/news/12297948.cara/",
+        "source_title": "The Herald",
+        "commons_file": "File:Beach on the east coast of Cara Island - geograph.org.uk - 4238091.jpg",
+        "image_note": "The east shore of Cara",
+        "summary": (
+            "The Herald records a newly built ship, loaded with copra, that took a wartime bomb down the funnel off Cara. "
+            "She drifted for two days and then burned on the island for six weeks."
+        ),
+        "evidence": "The Herald places the burning ship on the shore of Cara.",
+    },
+    {
+        "island_id": "osm-way-3469279",
+        "title": "The child the ash spared",
+        "source_url": "https://www.scotsman.com/heritage-and-retro/heritage/the-island-lighthouse-baby-an-incredible-story-of-survival-2502336",
+        "source_title": "The Scotsman",
+        "commons_file": "File:Isle of May Stevenson Lighthouse.jpg",
+        "image_note": "The lighthouse on the Isle of May",
+        "summary": (
+            "In a January 1791 gale the coal fire that lit the Isle of May went out, and the wind drove the ash into the keepers' rooms. "
+            "The Scotsman records that the household was found dead except the youngest child, alive at her mother's breast."
+        ),
+        "evidence": "The Scotsman, 18 March 2020, places the January 1791 ash deaths in the lighthouse rooms on the Isle of May.",
+    },
+    {
+        "island_id": "osm-way-3469292",
+        "title": "Taken while the coal was landed",
+        "source_url": "https://jiss.aberdeenunipress.org/article/id/432/",
+        "source_title": "Journal of Irish and Scottish Studies",
+        "commons_file": "File:Bass Rock - eastern side - geograph.org.uk - 90148.jpg",
+        "image_note": "The Bass Rock",
+        "summary": (
+            "On 15 June 1691, while the guard was outside the walls unloading coal, four Jacobite prisoners took the Bass Rock, its boats and its stores. "
+            "A published study of the Privy Council record says they held the rock until 1694, then left under an indemnity."
+        ),
+        "evidence": "Journal of Irish and Scottish Studies places the 15 June 1691 seizure on the Bass Rock in the Forth.",
+    },
+    {
+        "island_id": "osm-way-495525351",
+        "title": "Rats from the coal boat",
+        "source_url": "https://www.ayrshire-birding.org.uk/2001/01/ailsa_craig_before_and_after_the_eradication_of_rats_in_1991/",
+        "source_title": "Ayrshire Birding",
+        "commons_file": "File:Ailsa Craig Scotland 2022.jpg",
+        "image_note": "Ailsa Craig",
+        "summary": (
+            "In 1889, while coal was being landed for the new light, a keeper's dog killed a brown rat at the jetty, the first recorded on Ailsa Craig. "
+            "A 2001 account says the last live rat was seen near the summit on 15 April 1991, after bait was dropped on the island that winter."
+        ),
+        "evidence": "Ayrshire Birding, 2001, places the first recorded rat, in 1889, at the jetty on Ailsa Craig.",
+    },
+    {
+        "island_id": "osm-way-4821984",
+        "title": "Wallabies in the oak wood",
+        "source_url": "https://www.heraldscotland.com/news/homenews/19901883.inchconnachan-island-concern-wallaby-numbers/",
+        "source_title": "The Herald",
+        "commons_file": "File:Woodland and wallaby, Inchconnachan - geograph.org.uk - 6693667.jpg",
+        "image_note": "A wallaby in the wood on Inchconnachan",
+        "summary": (
+            "Red-necked wallabies were brought to Inchconnachan, in Loch Lomond, in the 1940s and bred in the woods. "
+            "The Herald reported that after the island changed hands, campaigners feared the animals would be removed, and the owners said they had no such plan."
+        ),
+        "evidence": "The Herald places the wallaby colony on Inchconnachan.",
+    },
+    {
+        "island_id": "osm-way-4821985",
+        "title": "The haggis record",
+        "source_url": "https://www.heraldscotland.com/opinion/13056415.tom-scott/",
+        "source_title": "The Herald",
+        "commons_file": "File:Approaching Inchmurrin - geograph.org.uk - 5504830.jpg",
+        "image_note": "Inchmurrin",
+        "summary": (
+            "In 1984 the world haggis-hurling record was set on Inchmurrin, the largest island in Loch Lomond, at 180 feet 10 inches. "
+            "The Herald also records that wooden cabins on the island were let to a naturist club."
+        ),
+        "evidence": "The Herald's obituary of Tom Scott places the 1984 haggis-hurling record on Inchmurrin.",
+    },
 ]
 
 

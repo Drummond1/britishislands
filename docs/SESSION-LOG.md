@@ -3539,3 +3539,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Film, art and music **139**. Whisky **21**. For sale **48**. Rare wildlife **36** (was 33). Tidal islands **104**. Islands with castles **96**. Books **32** (Dean Maitland as well as the two Lewis titles). Local traditions **35**. Unusual news **50**. Stories **1,507**, **923** with an open-licence picture.
 - **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
 
+## 2026-10-26 — Obscure Forth, Clyde, and loch news
+
+- **Goal**: Add strange events from smaller islands, found outside the national pieces already on the chip.
+- **What changed**: Seven reports. The Herald on the 2006 stencil over the Davaar mural, and on a ship that burned on Cara for six weeks. The Scotsman on the 1791 coal-ash deaths on the Isle of May. A published study of the prisoners who took the Bass Rock while coal was being landed. Ayrshire Birding on the rats that arrived at the Ailsa Craig jetty. The Herald on the Inchconnachan wallabies, and on the haggis-hurling record on Inchmurrin. The Davaar dream-painting stays in local traditions. Handa's queen, the Holy Island runes, and the Craigleith tree-mallow project were left out. `islands.json` was not edited.
+- **Outcome / counts**: **56** islands, **61** stories, **61** with a picture. Stories overall **1,514**, **930** with a picture. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. The other regional searches are still out.
+
