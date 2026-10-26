@@ -40,7 +40,7 @@ Single map of every document in this repository. Always start at the top.
 | [`METHODOLOGY-INLAND.md`](METHODOLOGY-INLAND.md) | Tier A + Tier B inland classifier deep-dive. |
 | [`MEASUREMENTS.md`](MEASUREMENTS.md) | Area (`areaKm2`) + elevation (`highestPointM`) sources, methods, licensing, and confidence. |
 | [`PRD-USER-CONTRIBUTIONS.md`](PRD-USER-CONTRIBUTIONS.md) | Draft PRD for accounts, photo uploads, moderation. **Shipped v1:** source-linked corrections via GitHub issues (detail panel + `.github/ISSUE_TEMPLATE/island-data-correction.md`). **Crowd pins:** suggest missing islands / unnamed pins → `docs/CROWD-PINS.md` + `data/crowd_pins.json`. |
-| [`CROWD-PINS.md`](CROWD-PINS.md) | Community pin workflow: GitHub triage, `crowd_pins.json` fields, ethics. |
+| [`CROWD-PINS.md`](CROWD-PINS.md) | Community pins, and the four-field form that names an unnamed island. Email stays in `island_name_log`. |
 | [`DISCOVERY-SOURCES.md`](DISCOVERY-SOURCES.md) | Catalogue of ~85 evaluated discovery sources. |
 | [`DISCOVERY-PIPELINE.md`](DISCOVERY-PIPELINE.md) | Five-agent review-first discovery workflow and artifact paths. |
 | [`NEXT-SESSION-PLAN.md`](NEXT-SESSION-PLAN.md) | Rolling, executable plan for the next ingestion phase. |

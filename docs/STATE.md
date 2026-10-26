@@ -4,6 +4,10 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (shipped to main)** — Photo frames, naming an unnamed island, and the collection guides are on `main` for GitHub Pages. Counts unchanged. Supabase migrations in the repo stay unapplied from this push.
+
+**2026-10-26 (photo frames)** — Collection cards and the opening photographs use a 3:2 frame. A tall or square picture is shown whole. Counts unchanged.
+
 **2026-10-26 (name an island)** — An unnamed island opens one form: what it is called, your name, your email, and an optional source. Saving writes the private log `island_name_log` and shows the name on the map, the list, and the profile. The email is not readable from the browser. `islands.json` is unchanged.
 
 **2026-10-26 (interest expansion)** — Eight researchers are adding cited rows for the published interest filters. Each writes only its own candidate file under `data/interest/candidates/zz-expansion-*.json`, or, for sale, the broker registry. They are not publishing the index and they are not editing `islands.json`. Counts unchanged until that publish.

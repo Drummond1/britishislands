@@ -2180,6 +2180,15 @@ body.lightbox-open {
   border: 1px solid var(--unnamed-ring);
 }
 
+.island-card__unnamed-pill--suggested {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border-color: var(--border);
+}
+
 .unnamed-banner {
   margin: 0 0 var(--space-4);
   padding: var(--space-3) var(--space-4);

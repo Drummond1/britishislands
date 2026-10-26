@@ -5,6 +5,27 @@ map pin and open a pre-filled GitHub issue. Maintainers triage proposals and
 append approved rows to `data/crowd_pins.json`. Nothing is merged into
 `data/islands.json` without normal **provenance** rules (`docs/ETHICS.md`).
 
+## Name an island that is already on the map
+
+This is separate from dropping a new gold pin. The island is already there.
+
+1. Open **Filters** and turn on **Unnamed places only**. The list heading
+   becomes **Click one to name it**.
+2. Click an island. The page is the form: the island’s name, your name, your
+   email, and an optional note of how you know.
+3. **Save the name.** The map, the list, and the profile show that name, with
+   “Suggested by …”. The canonical `islands.json` row is left unnamed until a
+   published source is added.
+
+The email is written only to `public.island_name_log` (Supabase). Anonymous
+clients can insert a row and cannot read the table. The map reads
+`island_names_public()`, which returns the name, the person’s name, and the
+optional source, and does not return the email. If Supabase is not configured,
+the same form is sent through the existing suggestion inbox
+(`data/crowd_suggest_config.json`) and the name is kept in this browser.
+The live site shares names once the Pages secrets `IOB_SUPABASE_URL` and
+`IOB_SUPABASE_ANON_KEY` are set; the deploy writes them into `config.local.js`.
+
 ## User flow (frontend)
 
 1. **Suggest island** (top bar) → click the map once → optional fields → **Submit

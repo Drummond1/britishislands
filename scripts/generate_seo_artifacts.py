@@ -38,6 +38,15 @@ from xml.sax.saxutils import escape as xml_escape
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from seo_interest_guides import (  # noqa: E402
+    INTEREST_INDEX,
+    assemble_guides,
+    guides_for_island,
+    load_interest_index,
+    render_collections_index_html,
+    render_guide_html,
+    render_llms_txt,
+)
 from seo_paths import (  # noqa: E402
     NATION_HUB_BLURB,
     NATION_HUB_TITLE,
@@ -351,6 +360,7 @@ def profile_page_html(
     profile_path: str,
     title: str,
     related_links: list[tuple[str, str]] | None = None,
+    guide_links: list[dict[str, Any]] | None = None,
     depth: int = 3,
 ) -> str:
     iid = isl["id"]
@@ -553,6 +563,27 @@ def profile_page_html(
             )
         hub += ".</p>\n"
 
+    guide_block = ""
+    if guide_links:
+        guide_items: list[str] = []
+        for link in guide_links[:6]:
+            href = str(link.get("href") or "")
+            label = str(link.get("label") or "Guide")
+            titles = [str(t) for t in (link.get("titles") or []) if str(t).strip()]
+            extra = ""
+            if titles:
+                extra = " — " + html.escape(", ".join(titles[:4]))
+            guide_items.append(
+                f'<li><a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>{extra}</li>'
+            )
+        if guide_items:
+            guide_block = (
+                '  <section class="lp-section"><h2 class="lp-section-title">Guides</h2>'
+                '<ul class="lp-list">\n    '
+                + "\n    ".join(guide_items)
+                + "\n  </ul></section>\n"
+            )
+
     img_block = ""
     if img:
         img_block = (
@@ -616,7 +647,7 @@ def profile_page_html(
       <a class="lp-cta" href="{atlas_url}">Open interactive map →</a>
     </header>
 {img_block}{facts_block}{hub}
-{sections_block}
+{guide_block}{sections_block}
 {related_block}
 {sources_block}    <p class="lp-note">Last reviewed: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.</p>
   </div>
@@ -994,6 +1025,7 @@ def build_crawl_links_html(
     islands_by_id: dict[str, dict],
     curated: set[str],
     paths: dict,
+    guides: list[tuple[str, str]] | None = None,
 ) -> str:
     nation_items = "\n".join(
         f'        <li><a href="/islands/{seg}/">{html.escape(NATION_HUB_TITLE.get(seg, seg))}</a></li>'
@@ -1019,6 +1051,19 @@ def build_crawl_links_html(
             f"{html.escape(label)}</a></li>"
         )
     island_block = "\n".join(island_items)
+    guide_block = ""
+    if guides:
+        guide_items = "\n".join(
+            f'        <li><a href="{html.escape(href, quote=True)}">{html.escape(label)}</a></li>'
+            for href, label in guides
+        )
+        guide_block = f"""            <section>
+              <h3 class="crawl-links__sub">Guides</h3>
+              <ul class="crawl-links__list">
+{guide_items}
+              </ul>
+            </section>
+"""
     return f"""{CRAWL_LINKS_MARKER_START}
         <footer class="crawl-links" aria-label="Notable islands">
           <p class="crawl-links__heading">Notable islands</p>
@@ -1035,7 +1080,7 @@ def build_crawl_links_html(
 {island_block}
               </ul>
             </section>
-            <section>
+{guide_block}            <section>
               <h3 class="crawl-links__sub">About</h3>
               <ul class="crawl-links__list">
         <li><a href="/about/">About Find My Island</a></li>
@@ -1144,30 +1189,17 @@ def main() -> int:
     by_seg = islands_by_nation_segment(paths, islands_by_id, curated, featured)
     origin = (args.site_origin or "").rstrip("/")
     write_landings = bool(origin) and not args.skip_islands_dir
+    interest = load_interest_index()
+    guide_pages = assemble_guides(interest, islands_by_id, paths) if interest else []
+    guide_by_island = guides_for_island(guide_pages)
+    if guide_pages:
+        print(
+            "Interest guides: "
+            + ", ".join(f"{page.slug}={len(page.islands)}" for page in guide_pages),
+            flush=True,
+        )
 
-    llms = f"""# Find My Island (findmyisland.com)
-> A map of the islands of Britain and Ireland, with photographs and stories.
-
-## Entry points
-- Main app: /
-- Islands by country: /islands/
-- Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
-- Island profile: /islands/{{nation}}/{{slug}}/   (example: /islands/scotland/isle-of-skye/)
-- Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
-- Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
-- Collections: /collections/
-- Sitemap: /sitemap.xml
-
-## For machines
-- Prefer /islands/{{nation}}/{{slug}}/ in citations and indexing.
-- Internal ids remain stable in `data/islands.json` and legacy `?island=` query params.
-- Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
-
-## Generated
-- sitemap.xml (when site origin configured)
-- This file (llms.txt)
-"""
-    (ROOT / "llms.txt").write_text(llms, encoding="utf-8")
+    (ROOT / "llms.txt").write_text(render_llms_txt(guide_pages), encoding="utf-8")
     print(f"Wrote {ROOT / 'llms.txt'}")
 
     if not origin:
@@ -1214,6 +1246,9 @@ def main() -> int:
         ]
 
         collection_entries: list[tuple[str, float, str]] = []
+        guide_lastmod = _mtime_ymd(INTEREST_INDEX) if INTEREST_INDEX.is_file() else today
+        for page in guide_pages:
+            collection_entries.append((f"{origin}{page.path}", page.priority, guide_lastmod))
         for spec in collection_specs():
             collection_entries.append((f"{origin}/collections/{spec['slug']}/", 0.68, today))
         collection_entries.append((f"{origin}/collections/flagship-islands/", 0.82, today))
@@ -1251,11 +1286,24 @@ def main() -> int:
         robots = f"""User-agent: *
 Allow: /
 
-# Nation hubs and name-slug island profiles
-Allow: /islands/
+# Canonical pages are /islands/{{nation}}/{{slug}}/ and /collections/.
+# Query-string atlas views (?island=, ?interest=) are noindex after JavaScript.
 
-# Legacy /profiles/ aliases (indexable; canonical is /islands/…)
-Allow: /profiles/
+# Answer engines may cite the guides and island pages.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: {origin}/sitemap.xml
 """
@@ -1263,11 +1311,23 @@ Sitemap: {origin}/sitemap.xml
         print("Wrote robots.txt")
 
     if write_landings:
-        # Clear previous generated tree under islands/ (keep safe)
+        # Clear previous generated tree under islands/ (keep safe).
+        # macOS can return ENOTEMPTY once while a directory is still settling.
         if ISLANDS_DIR.exists():
             import shutil
+            import time
 
-            shutil.rmtree(ISLANDS_DIR)
+            last_error: Exception | None = None
+            for _attempt in range(4):
+                try:
+                    shutil.rmtree(ISLANDS_DIR)
+                    last_error = None
+                    break
+                except OSError as exc:
+                    last_error = exc
+                    time.sleep(0.4)
+            if last_error is not None:
+                raise last_error
         ISLANDS_DIR.mkdir(parents=True, exist_ok=True)
 
         (ISLANDS_DIR / "index.html").write_text(
@@ -1368,16 +1428,41 @@ Sitemap: {origin}/sitemap.xml
 
         collections_root = ROOT / "collections"
         collections_root.mkdir(parents=True, exist_ok=True)
+        other_hubs = [
+            (f"/collections/{spec['slug']}/", spec["title"], spec.get("blurb") or "")
+            for spec in collection_specs()
+        ]
+        other_hubs.append(
+            (
+                "/collections/flagship-islands/",
+                "Flagship island profiles",
+                "Editorially prioritised profiles with photos and stories.",
+            )
+        )
         (collections_root / "index.html").write_text(
-            trust_page_html(
-                title="Island collections",
-                lede="Curated collection pages for major archipelagos and water-body groups.",
-                body=["Browse collection hubs such as the Hebrides, Orkney, Shetland, Aran Islands, and Thames islands."],
-                canonical=f"{origin}/collections/",
-                depth=1,
+            render_collections_index_html(
+                origin=origin,
+                assets=landing_head_assets(1),
+                guides=guide_pages,
+                other_hubs=other_hubs,
             ),
             encoding="utf-8",
         )
+        reviewed = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        for page in guide_pages:
+            out_dir = collections_root / page.slug
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / "index.html").write_text(
+                render_guide_html(
+                    page=page,
+                    origin=origin,
+                    assets=landing_head_assets(2),
+                    reviewed=reviewed,
+                ),
+                encoding="utf-8",
+            )
+        if guide_pages:
+            print(f"Wrote {len(guide_pages)} interest guides under collections/", flush=True)
         for spec in collection_specs():
             members = _collection_members(islands, spec, paths)
             out_dir = collections_root / spec["slug"]
@@ -1433,6 +1518,7 @@ Sitemap: {origin}/sitemap.xml
                 profile_path=sp.path,
                 title=page_title(isl),
                 related_links=related_links_for(str(iid), sp, by_seg),
+                guide_links=guide_by_island.get(str(iid)),
                 depth=3,
             )
             out.write_text(page, encoding="utf-8")
@@ -1460,6 +1546,7 @@ Sitemap: {origin}/sitemap.xml
                 profile_path=profile_path,
                 title=page_title(isl),
                 related_links=related_links_for(str(iid), sp, by_seg),
+                guide_links=guide_by_island.get(str(iid)),
                 depth=depth,
             )
             (landing / f"{iid}.html").write_text(page, encoding="utf-8")
@@ -1468,7 +1555,12 @@ Sitemap: {origin}/sitemap.xml
 
     if origin and not args.skip_index_patch:
         patch_index_crawl_links(
-            build_crawl_links_html(islands_by_id, curated, paths)
+            build_crawl_links_html(
+                islands_by_id,
+                curated,
+                paths,
+                guides=[(page.path, page.nav_label) for page in guide_pages],
+            )
         )
 
     return 0

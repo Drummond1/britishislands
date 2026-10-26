@@ -3405,3 +3405,24 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: `unusual-news` is a published overlay. Eighteen reports on sixteen islands. The wording is original. Pictures are open-licence photographs of the cliff, the fort, the lighthouse, the cattle, the airfield, and the islands themselves. News photographs were not copied. No private address, no portrait, and no grave coordinates. The chip, the profile card, and Ask read the same index. `islands.json` was not edited.
 - **Outcome / counts**: **16** islands, **18** stories, **18** with a picture. Stories overall **1,235**, **698** with a picture. The books harvest stays unpublished. Supabase was not reloaded. Migration `supabase/migrations/20261026140000_unusual_news.sql` is written and not applied.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. Load the membership SQL when Supabase is next updated.
+
+## 2026-10-26 — Name an unnamed island
+
+- **Goal**: Let a visitor name an island that has no name, in one screen, and keep the submission in a private log.
+- **What changed**: Opening an unnamed island shows one form: what it is called, your name, your email, and an optional source. Saving writes `public.island_name_log` (anon may insert; the public read omits the email) and shows the name on the profile, the list, the search, and the map pin, credited as “Suggested by …”. A later suggestion replaces the displayed name; the log stays append-only. If the log is unreachable, the same fields go to the existing crowd inbox. `islands.json` is not rewritten. The unnamed filter heading reads “Click one to name it”. The Pages deploy writes `IOB_SUPABASE_URL` and `IOB_SUPABASE_ANON_KEY` into `config.local.js` when those secrets are set, beside the map key.
+- **Outcome / counts**: Dataset counts unchanged. In the browser, an empty save asked for the name; a complete save showed the new name and the credit; search found that name; the unnamed list included it; a fresh unnamed island opened the form with the name field focused. The test row was deleted afterwards. The private log is empty.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Photographs fit the frame
+
+- **Goal**: Stop collection photographs being sliced into a thin strip, on desktop and on a phone.
+- **What changed**: A collection card and the opening plates now hold the picture in a 3:2 frame, the shape of the photograph, instead of a fixed 132px band. The list measures that card so the rows still stack cleanly. A picture that is square or tall is shown whole on the dark ground, so a statue or a book cover is not cut through the middle. Profile photographs keep their 16:10 frame and use the same rule. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. On a wide desktop, Ailsa Craig Castle shows the tower rather than a band of wall; Beaumaris shows the whole courtyard; a portrait sculpture on the Isle of Man is shown full length. The Isle of Skye plate shows the Old Man of Storr. On a phone-width column the same castle picture stays 3:2, and the profile picture still shows the tower. Rows meet with the usual gap and do not overlap.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Current site pushed to production
+
+- **Goal**: Put the site as it stands on findmyisland.com.
+- **What changed**: Pushed the 3:2 photograph frames, the form for naming an unnamed island, and the collection guides under `/collections/`. Caches, backup copies, and unpublished interest-candidate files stayed local. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. GitHub Pages builds from this push to `main`.
+- **Open items kicked to QUEUE.md**: none.

@@ -221,6 +221,105 @@ body.lp {
   outline: none;
 }
 
+.lp-hubs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.lp-hubs li {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card, var(--bg-elev));
+}
+
+.lp-hubs a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lp-hubs a:hover,
+.lp-hubs a:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.lp-hubs span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.lp-guide {
+  padding: 16px 0 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.lp-guide__name {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.lp-guide__name a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.lp-guide__name a:hover,
+.lp-guide__name a:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.lp-guide__meta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.lp-guide__cites {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.lp-guide__cites li {
+  margin: 0 0 8px;
+}
+
+.lp-guide__cites a {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lp-faq {
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card, var(--bg-elev));
+}
+
+.lp-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lp-faq p {
+  margin: 8px 0 0;
+}
+
 .lp-cards {
   display: grid;
   gap: 12px;

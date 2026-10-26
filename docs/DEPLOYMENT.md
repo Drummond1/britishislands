@@ -66,6 +66,7 @@ Use HTTP, not `file://`. After index edits, run `build_islands_index.py` first.
 |-----------------|--------|
 | `CROWD_FORM_EMAIL` (GitHub secret) | FormSubmit inbox for native crowd suggest |
 | `OS_MAPS_API_KEY` (GitHub secret) | Written into `config.local.js` during deploy so the live site loads the Ordnance Survey paper map. The key is readable in the browser, because the visitor's browser requests the tiles. |
+| `IOB_SUPABASE_URL`, `IOB_SUPABASE_ANON_KEY` (GitHub secrets) | Written into the same file so a saved island name is shared. The anon key is public. The email stays in `island_name_log` and is not readable from the site. |
 | `window.OS_MAPS_API_KEY` / `localStorage.osMapsApiKey` | Same key for local preview, or a visitor's own key in one browser |
 | `.env.local` (gitignored) | Local OS key for dev — never commit |
 

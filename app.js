@@ -26,6 +26,7 @@ import {
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
 } from "./crowd-pins.js";
+import { suggestedName, refreshSuggestedNames, saveIslandName } from "./name-island.js";
 import {
   searchIslands as agentSearchIslands,
   countIslands as agentCountIslands,
@@ -124,7 +125,7 @@ const MAP_PIN_SVG = `<svg class="map-pin__svg" viewBox="0 0 20 28" xmlns="http:/
 </svg>`;
 
 function getIslandPinCategory(island) {
-  if (isUnnamedIsland(island)) return "unnamed";
+  if (isUnnamedIsland(island) && !suggestedName(island?.id)) return "unnamed";
   if (state.exploreIslandIds?.has(island.id)) return "explore";
   const t = island.type;
   if (t === "lake" || t === "river" || t === "unknown") return t;
@@ -183,6 +184,8 @@ function isUnnamedIsland(island) {
 }
 
 function islandDisplayName(island) {
+  const suggested = suggestedName(island?.id);
+  if (suggested?.islandName) return suggested.islandName;
   if (isUnnamedIsland(island)) {
     const parent = island.parentWaterBody?.name;
     return parent ? `Unnamed · ${parent}` : "Unnamed island";
@@ -191,7 +194,8 @@ function islandDisplayName(island) {
 }
 
 const ROW_HEIGHT = 124; // px — richer discovery cards (see atlas-redesign.css)
-const FEATURE_ROW_HEIGHT = 320; // artwork, film, music, distillery, or wildlife shown under the island name
+const FEATURE_ROW_HEIGHT = 560; // fallback until a 3:2 feature card is measured
+let featureRowMeasure = { width: 0, height: 0 };
 
 function refreshLucideIcons(root = document) {
   try {
@@ -2678,6 +2682,7 @@ async function loadIslands() {
         runWhenIdle(() => {
           hydrateSeoPathsFromLookup().catch(() => {});
           rebuildMarkerLayer({ chunked: true });
+          settleSuggestedNames();
           loadCrowdPinsAndRender();
           if (!state.discoveryTopics) loadDiscoveryTopics().catch(() => {});
           if (!state.interestIndex) loadInterestIndex().catch(() => {});
@@ -2727,6 +2732,7 @@ async function loadIslands() {
   if (!state.interestIndex) loadInterestIndex().catch(() => {});
   runWhenIdle(() => {
     hydrateSeoPathsFromLookup().catch(() => {});
+    settleSuggestedNames();
     prefetchPopularDetails();
   });
   loadCrowdPinsAndRender();
@@ -2946,7 +2952,60 @@ function interestFeatureMode() {
 }
 
 function listRowHeight() {
-  return interestFeatureMode() ? FEATURE_ROW_HEIGHT : ROW_HEIGHT;
+  if (!interestFeatureMode()) return ROW_HEIGHT;
+  const width = els.list?.clientWidth || 0;
+  if (width && featureRowMeasure.width === width && featureRowMeasure.height) return featureRowMeasure.height;
+  return estimateFeatureRow(width);
+}
+
+function estimateFeatureRow(listWidth) {
+  const cardWidth = Math.max(280, (listWidth || 620) - 16);
+  const imageWidth = Math.max(200, cardWidth - 48);
+  return Math.round((imageWidth * 2) / 3 + 196);
+}
+
+function settleFeatureRowHeight() {
+  if (!interestFeatureMode() || !listInner) return;
+  const card = listInner.querySelector(".island-card--feature");
+  if (!card) return;
+  const width = els.list?.clientWidth || 0;
+  const margin = parseFloat(getComputedStyle(card).marginBottom) || 0;
+  const height = Math.round(card.offsetHeight + margin);
+  if (height < 160) return;
+  if (featureRowMeasure.width === width && Math.abs(featureRowMeasure.height - height) <= 2) return;
+  featureRowMeasure = { width, height };
+  const { rows, truncatedFrom } = getListDisplayRows();
+  if (listSpacer) {
+    listSpacer.style.height = `${Math.max(rows.length, 1) * height + (truncatedFrom ? 56 : 0)}px`;
+  }
+  scheduleRenderListWindow();
+}
+
+function photoFrameRatio(img) {
+  if (img.classList.contains("hero-img") || img.closest(".interest-story__figure, .interest-feature__figure")) return 1.6;
+  return 1.5;
+}
+
+function settlePhotoFrame(img) {
+  const ratio = img.naturalWidth / img.naturalHeight;
+  if (!ratio) return;
+  const frame = photoFrameRatio(img);
+  const letterbox = ratio < frame * 0.92 && ratio / frame < 0.82;
+  img.classList.toggle("is-letterboxed", letterbox);
+}
+
+function bindPhotoFrames(root) {
+  if (!root?.querySelectorAll) return;
+  root.querySelectorAll(".island-card__feature, .featured-card__img, .hero-img, .interest-story__figure img, .interest-feature__figure img").forEach((img) => {
+    const run = () => {
+      if (img.naturalWidth) settlePhotoFrame(img);
+    };
+    if (!img.dataset.frameBound) {
+      img.dataset.frameBound = "1";
+      img.addEventListener("load", run);
+    }
+    if (img.complete) run();
+  });
 }
 
 function interestStoriesFor(islandId, facet = state.interestFacet) {
@@ -3449,6 +3508,7 @@ function renderExploreStrip(rows, title) {
     scroll.appendChild(btn);
   });
   refreshLucideIcons(scroll);
+  bindPhotoFrames(scroll);
   scheduleRenderListWindow();
 }
 
@@ -4146,7 +4206,7 @@ function _searchNorm(s) {
 
 function _ensureSearchIndex(island) {
   if (island.__searchName != null) return;
-  island.__searchName = _searchNorm(island.name);
+  island.__searchName = _searchNorm(suggestedName(island.id)?.islandName || island.name);
   // Lower-priority fields searched as a fallback only.
   island.__searchHay = _searchNorm(
     [
@@ -4283,7 +4343,7 @@ function applyFilters(opts = {}) {
       const interest = interestCategories().find((c) => c.slug === state.activeInterestSlug);
       els.listHeading.textContent = interest?.label || "Islands";
     }
-    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed landmasses";
+    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Click one to name it";
     else if (hasUserDiscoveryIntent()) els.listHeading.textContent = "Search results";
     else els.listHeading.textContent = "Islands to inspire you";
   }
@@ -4331,7 +4391,7 @@ function applyFilters(opts = {}) {
     }
     if (els.filterUnnamed?.checked) {
       if (!isUnnamedIsland(i)) return false;
-    } else if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i)) {
+    } else if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i) && !suggestedName(i.id)) {
       return false;
     }
     if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
@@ -4492,9 +4552,44 @@ function updateSidebarOrient() {
   const heading = document.getElementById("list-heading");
   const hasFilters = countActiveFilters() > 0 || Boolean(state.activeInterestSlug);
   const hasQuery = Boolean(els.search?.value?.trim());
+  if (els.filterUnnamed?.checked && !hasQuery && !state.activeInterestSlug) {
+    if (el) el.textContent = "Click one, then type its name.";
+    if (heading) heading.textContent = "Click one to name it";
+    return;
+  }
   const text = hasQuery ? "Matching your search" : hasFilters ? "Filtered" : "A few places to start";
   if (el) el.textContent = text;
   if (heading) heading.textContent = text;
+}
+
+function settleSuggestedNames() {
+  refreshSuggestedNames()
+    .then(async (changed) => {
+      let named = false;
+      try {
+        const raw = JSON.parse(localStorage.getItem("iobSuggestedNames") || "[]");
+        named = Array.isArray(raw) && raw.length > 0;
+      } catch (_) {
+        named = false;
+      }
+      if (named && !state.unnamedOverlayLoaded) {
+        try {
+          await loadUnnamedIslandOverlay();
+          changed = true;
+        } catch (_) {
+          /* overlay stays lazy */
+        }
+      }
+      if (!changed) return;
+      for (const island of state.islands) {
+        delete island.__searchName;
+        delete island.__searchHay;
+      }
+      applyFilters({ skipMarkers: false });
+      const open = state.activeId ? state.byId.get(state.activeId) : null;
+      if (open && els.details && !els.details.hidden) renderDetails(open);
+    })
+    .catch(() => {});
 }
 
 let paintedResultCount = "";
@@ -4555,7 +4650,10 @@ function ensureListScaffolding() {
   els.list.appendChild(listSpacer);
   els.list.appendChild(listInner);
   listScroller.addEventListener("scroll", scheduleRenderListWindow, { passive: true });
-  window.addEventListener("resize", scheduleRenderListWindow);
+  window.addEventListener("resize", () => {
+    featureRowMeasure = { width: 0, height: 0 };
+    scheduleRenderListWindow();
+  });
 }
 
 function formatResultCount(filtered, total) {
@@ -4644,6 +4742,7 @@ function renderListWindow() {
     const hasListing = islandHasPropertyListing(island);
     const listingLead = hasListing ? primaryPropertyListing(island) : null;
     const unnamed = isUnnamedIsland(island);
+    const suggested = suggestedName(island.id);
     const feature = interestLeadStory(island.id);
     wrap.className =
       "island-card" +
@@ -4656,7 +4755,7 @@ function renderListWindow() {
     const main = document.createElement("button");
     main.type = "button";
     main.className = "island-card__main" + (feature ? " island-card__main--feature" : "");
-    main.style.height = `${rowHeight - 8}px`;
+    main.style.height = feature ? "auto" : `${rowHeight - 8}px`;
     const displayName = islandDisplayName(island);
     const access = islandAccessMethod(island);
     const placeBits = [island.nation, island.archipelago]
@@ -4676,10 +4775,13 @@ function renderListWindow() {
     const thumb = storyThumb?.image?.thumbUrl || islandThumbUrl(island);
     const thumbAlt = storyThumb?.image?.alt || storyThumb?.title || "";
     const featureShot = feature?.image?.thumbUrl || (feature ? islandThumbUrl(island) : "");
+    const featureAlt = feature?.image?.alt || (feature?.image?.thumbUrl ? feature.title || "" : displayName);
     const thumbHtml = feature
-      ? featureShot
-        ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(feature.image?.alt || (feature.image?.thumbUrl ? feature.title || "" : displayName))}" loading="lazy" decoding="async" />`
-        : ""
+      ? `<span class="island-card__frame">${
+          featureShot
+            ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(featureAlt)}" loading="lazy" decoding="async" />`
+            : ""
+        }</span>`
       : thumb
         ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" loading="lazy" decoding="async" />`
         : renderEmptyThumb(island);
@@ -4701,15 +4803,16 @@ function renderListWindow() {
       : "";
     const titleBlock = `
         <div class="island-card__title">
-          ${unnamed ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : ""}
+          ${unnamed && !suggested ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : ""}
           ${escapeHtml(displayName)}
-          ${unnamed ? '<span class="island-card__unnamed-pill">Needs name</span>' : ""}
+          ${unnamed && !suggested ? '<span class="island-card__unnamed-pill">Name it</span>' : ""}
+          ${unnamed && suggested ? '<span class="island-card__unnamed-pill island-card__unnamed-pill--suggested">Suggested</span>' : ""}
           ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
         </div>
         <div class="island-card__meta">
           <span>${metaBits.join(" · ") || ""}</span>
         </div>`;
-    const blurbHtml = blurb
+    const blurbHtml = feature || blurb
       ? `<p class="island-card__blurb${highlight ? " island-card__blurb--interest" : ""}">${escapeHtml(blurb)}</p>`
       : "";
     const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions" || state.activeInterestSlug === "unusual-news");
@@ -4792,6 +4895,8 @@ function renderListWindow() {
     listInner.appendChild(more);
   }
   refreshLucideIcons(listInner);
+  bindPhotoFrames(listInner);
+  if (interestFeatureMode()) requestAnimationFrame(settleFeatureRowHeight);
 }
 
 // ---------- Markers ----------
@@ -4823,9 +4928,12 @@ function makeMarker(island) {
   });
 
   const label = islandDisplayName(island);
+  const suggested = suggestedName(island.id);
   const tip = unnamed
-    ? `${label} — name not yet recorded · ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`
-    : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
+    ? "Name this island"
+    : suggested
+      ? `${label} — suggested by ${suggested.contributorName}`
+      : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
   const lazyTooltip = map.getZoom() <= LOW_ZOOM_MARKER_MAX;
   const tipOffset = [0, -Math.round(size * 0.35)];
   if (lazyTooltip) {
@@ -4857,6 +4965,16 @@ function addMarkerToLayer(island, layer) {
   if (layer === clusterLayer) clusterLayer.addLayer(m);
   else flatLayer.addLayer(m);
   return m;
+}
+
+function refreshIslandMarker(island) {
+  const existing = state.markers.get(island.id);
+  if (existing) {
+    try { clusterLayer.removeLayer(existing); } catch (_) { /* not on this layer */ }
+    try { flatLayer.removeLayer(existing); } catch (_) { /* not on this layer */ }
+    state.markers.delete(island.id);
+  }
+  addMarkerToLayer(island, activeMarkerLayer);
 }
 
 function rebuildMarkerLayer(opts = {}) {
@@ -5397,6 +5515,49 @@ function renderHeritageLine(island) {
   return `<p class="profile-story">${escapeHtml(text)}</p>`;
 }
 
+let renamingIslandId = null;
+
+function attributionHtml(text) {
+  const value = String(text || "").trim();
+  if (!value) return "";
+  if (/^https?:\/\/\S+$/i.test(value)) {
+    return `<a href="${escapeAttr(value)}" target="_blank" rel="noopener">${escapeHtml(value)}</a>`;
+  }
+  return escapeHtml(value);
+}
+
+function renderNameIslandForm(island, previous) {
+  const place = [island.nation, island.archipelago, island.parentWaterBody?.name]
+    .filter(Boolean)
+    .join(" · ");
+  return `
+    <form class="name-island" id="name-island-form" novalidate>
+      <h2 class="name-island__title">Name this island</h2>
+      <p class="name-island__lead">${place ? `${escapeHtml(place)}. ` : ""}Type the name. It shows on the map as soon as you save.</p>
+      <label for="name-island-called">What is it called?</label>
+      <input id="name-island-called" name="islandName" type="text" required maxlength="80" autocomplete="off" value="${escapeAttr(previous?.islandName || "")}" />
+      <label for="name-island-person">Your name</label>
+      <input id="name-island-person" name="personName" type="text" required maxlength="60" autocomplete="name" value="${escapeAttr(previous?.contributorName || "")}" />
+      <label for="name-island-email">Email</label>
+      <input id="name-island-email" name="email" type="email" required maxlength="200" autocomplete="email" inputmode="email" />
+      <p class="name-island__note">Your email stays in the private log.</p>
+      <label for="name-island-source">How do you know? <em>Optional</em></label>
+      <input id="name-island-source" name="attribution" type="text" maxlength="300" autocomplete="off" placeholder="A link, a book, or a sentence" value="${escapeAttr(previous?.attribution || "")}" />
+      <p class="name-island__error" id="name-island-error" hidden role="alert"></p>
+      <button type="submit" class="profile-primary-btn name-island__submit">Save the name</button>
+    </form>`;
+}
+
+function renderSuggestedCredit(row) {
+  const source = row.attribution
+    ? `<p class="name-island__credit">Source: ${attributionHtml(row.attribution)}</p>`
+    : "";
+  return `
+    <p class="name-island__credit">Suggested by ${escapeHtml(row.contributorName)}.</p>
+    ${source}
+    <button type="button" class="name-island__change" id="name-island-change">Change this name</button>`;
+}
+
 function renderDetails(island) {
   els.listSection.hidden = true;
   els.details.hidden = false;
@@ -5424,15 +5585,14 @@ function renderDetails(island) {
 
   const featureHtml = renderInterestFeature(island);
   const featureHasImage = Boolean(interestLeadStory(island?.id)?.image?.thumbUrl);
-  const gallery = featureHtml && featureHasImage ? "" : renderGallery(island) || renderPhotoPlaceholderHero(island);
   const favActive = isFavoriteIsland(island.id);
   const unnamed = isUnnamedIsland(island);
+  const suggested = suggestedName(island.id);
+  const showNameForm = unnamed && (!suggested || renamingIslandId === island.id);
+  const photo = renderGallery(island);
+  const gallery = showNameForm ? "" : featureHtml && featureHasImage ? "" : photo || renderPhotoPlaceholderHero(island);
+  const photoAfter = showNameForm ? photo : "";
   const title = islandDisplayName(island);
-  const unnamedBanner = unnamed
-    ? `<p class="unnamed-banner" role="note">No published name yet.
-        <button type="button" class="unnamed-banner__link" data-contribute-island="${escapeAttr(island.id)}">Suggest one</button>
-      </p>`
-    : "";
   const locationLine = [island.nation, island.archipelago, island.parentWaterBody?.name]
     .filter(Boolean)
     .join(" · ");
@@ -5451,15 +5611,20 @@ function renderDetails(island) {
   els.details.classList.remove("is-arriving");
   requestAnimationFrame(() => els.details.classList.add("is-arriving"));
 
+  const heading = showNameForm
+    ? renderNameIslandForm(island, suggested)
+    : `<div class="details-title-row">
+        <div class="details-title-block">
+          <h2 class="details-title">${escapeHtml(title)}</h2>
+          ${locationLine ? `<p class="details-location">${escapeHtml(locationLine)}</p>` : ""}
+        </div>
+      </div>
+      ${unnamed && suggested ? renderSuggestedCredit(suggested) : ""}`;
+
   els.detailsContent.innerHTML = `
     ${gallery}
-    ${unnamedBanner}
-    <div class="details-title-row">
-      <div class="details-title-block">
-        <h2 class="details-title">${escapeHtml(title)}</h2>
-        ${locationLine ? `<p class="details-location">${escapeHtml(locationLine)}</p>` : ""}
-      </div>
-    </div>
+    ${heading}
+    ${photoAfter}
     ${featureHtml}
     ${subtypeChips}
     ${namesBlock}
@@ -5545,9 +5710,55 @@ function renderDetails(island) {
   };
   document.getElementById("details-share-inline")?.addEventListener("click", shareHandler);
 
-  syncChatLauncherContext();
-  requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
+  document.getElementById("name-island-form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector("[type=submit]");
+    const err = document.getElementById("name-island-error");
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Saving…";
+    }
+    if (err) err.hidden = true;
+    const result = await saveIslandName({
+      island,
+      islandName: form.islandName.value,
+      personName: form.personName.value,
+      email: form.email.value,
+      attribution: form.attribution.value,
+    });
+    if (!result.ok) {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = "Save the name";
+      }
+      if (err) {
+        err.hidden = false;
+        err.textContent = result.message;
+      }
+      return;
+    }
+    renamingIslandId = null;
+    delete island.__searchName;
+    delete island.__searchHay;
+    renderDetails(island);
+    scheduleRenderListWindow();
+    refreshIslandMarker(island);
+  });
+  document.getElementById("name-island-change")?.addEventListener("click", () => {
+    renamingIslandId = island.id;
+    renderDetails(island);
+  });
 
+  syncChatLauncherContext();
+  const nameInput = document.getElementById("name-island-called");
+  if (nameInput && !window.matchMedia("(pointer: coarse)").matches) {
+    requestAnimationFrame(() => nameInput.focus({ preventScroll: true }));
+  } else {
+    requestAnimationFrame(() => els.back?.focus({ preventScroll: true }));
+  }
+
+  bindPhotoFrames(els.detailsContent);
   renderDetailMap(island);
 }
 

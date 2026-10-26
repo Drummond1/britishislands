@@ -82,7 +82,8 @@ Worth a later chip. Not in this round.
 | Island airfields | Barra and Papa Westray are real. It is a way of arriving, and ferry routes are still hidden for that reason. |
 | Martello towers | Cork's fortification table and the Dalkey article can clear eight islands. Some towers are private houses. A weaker tap than a castle islet. |
 | Monastic islands | Iona Abbey is a real citation. Graves, postcodes, and new access notes for Skellig Michael, Station Island and Inishmurray are too easy to copy in by mistake. |
-| Books set here | Wikidata narrative location (P840), or the work's own article. "Inspired by" fails. A filmed novel stays on Film, art and music. The island count was not run. |
+
+Books is published (2026-10-26): 22 islands, 39 works. A filmed novel stays on Film, art and music.
 
 `uninhabited-stay` stays in the queue as an empty draft. It is not cancelled.
 Nobody works it until a cited public stay exists.

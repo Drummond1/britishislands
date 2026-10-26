@@ -1,6 +1,8 @@
 # Build GitHub Pages artifact with optional crowd-submit email and OS Maps key.
 # Settings → Secrets → CROWD_FORM_EMAIL (FormSubmit inbox you verify once).
 # Settings → Secrets → OS_MAPS_API_KEY (OS Data Hub project API key).
+# Settings → Secrets → IOB_SUPABASE_URL and IOB_SUPABASE_ANON_KEY
+# (so a saved island name is shared; the anon key is public, the email is not).
 
 name: Deploy Pages
 
@@ -48,23 +50,33 @@ jobs:
           python3 scripts/build_islands_index.py
           python3 scripts/build_chat_corpus.py
 
-      - name: Inject OS Maps API key
+      - name: Inject map key and name log
         env:
           OS_MAPS_API_KEY: ${{ secrets.OS_MAPS_API_KEY }}
+          IOB_SUPABASE_URL: ${{ secrets.IOB_SUPABASE_URL }}
+          IOB_SUPABASE_ANON_KEY: ${{ secrets.IOB_SUPABASE_ANON_KEY }}
         run: |
           python3 - << 'PY'
           import json
           import os
           from pathlib import Path
+          lines = []
           key = os.environ.get("OS_MAPS_API_KEY", "").strip()
-          if not key:
+          url = os.environ.get("IOB_SUPABASE_URL", "").strip().rstrip("/")
+          anon = os.environ.get("IOB_SUPABASE_ANON_KEY", "").strip()
+          if key:
+              lines.append("window.OS_MAPS_API_KEY = " + json.dumps(key) + ";")
+          else:
               print("OS_MAPS_API_KEY secret not set — paper map stays on the standard map.")
+          if url and anon:
+              lines.append("window.IOB_SUPABASE_URL = " + json.dumps(url) + ";")
+              lines.append("window.IOB_SUPABASE_ANON_KEY = " + json.dumps(anon) + ";")
+          else:
+              print("Supabase secrets not set — a saved name stays in that browser and the suggestion inbox.")
+          if not lines:
               raise SystemExit(0)
-          Path("config.local.js").write_text(
-              "window.OS_MAPS_API_KEY = " + json.dumps(key) + ";\n",
-              encoding="utf-8",
-          )
-          print("Wrote config.local.js for the Ordnance Survey paper map.")
+          Path("config.local.js").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print("Wrote config.local.js.")
           PY
 
       - name: Stage Pages artifact (shards, profiles; omit monolithic JSON)

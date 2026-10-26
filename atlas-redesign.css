@@ -146,15 +146,25 @@ body.sidebar-collapsed .topbar-panel-toggle__label { display:inline; font-size:1
 .island-card__meta { display:block; color:var(--text-muted); font-size:11px; margin:3px 0 0; line-height:1.4; }
 .island-card__blurb { font-size:12px; color:var(--text-soft); line-height:1.4; margin:6px 0 0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .island-card__blurb--interest { color:var(--text); }
-.island-card--feature { height:312px; }
+.island-card--feature { height:auto; }
 .island-card--feature .island-card__main--feature {
   display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
-  gap:0; height:312px; padding:8px 36px 10px 12px;
+  gap:0; height:auto; padding:8px 36px 10px 12px;
+}
+.island-card__frame {
+  display:block; width:100%; aspect-ratio:3 / 2; overflow:hidden; border-radius:8px;
+  margin:0 0 12px; background:#161c19;
 }
 .island-card__feature {
-  display:block; width:100%; height:132px; object-fit:cover; border-radius:8px; margin:8px 0 8px; background:var(--bg-soft);
-  transform-origin: left center;
+  display:block; width:100%; height:100%; object-fit:cover; object-position:center 40%;
+  border-radius:0; margin:0; background:#161c19;
 }
+.island-card--feature .island-card__title,
+.island-card--feature .island-card__work,
+.island-card--feature .island-card__meta {
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.island-card--feature .island-card__blurb { min-height:calc(1.45em * 3); }
 .island-card__kicker {
   margin:0; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:650;
 }
@@ -434,7 +444,7 @@ body { background: transparent; color: var(--text); }
   border-radius: 4px;
   box-shadow: inset 3px 0 0 var(--spark);
 }
-.island-card__thumb, .island-card__thumb--empty, .island-card__feature { border-radius: 3px; }
+.island-card__thumb, .island-card__thumb--empty, .island-card__frame { border-radius: 3px; }
 .island-card__title, .island-card__work { font-variation-settings: normal; color: var(--text); }
 .island-card__kicker { color: var(--spark); letter-spacing: .14em; }
 .island-card__fav.is-favorite, .island-card__fav.is-favorite svg { color: var(--spark); }
@@ -893,12 +903,14 @@ body.is-atlas-ready .legend-wrap {
 .featured-card__placeholder {
   display: block;
   width: 100%;
-  height: 108px;
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  object-position: center 40%;
   background: #1b2430;
 }
 .featured-card--lead .featured-card__img,
-.featured-card--lead .featured-card__placeholder { height: 210px; }
+.featured-card--lead .featured-card__placeholder { height: auto; aspect-ratio: 3 / 2; }
 .featured-card__body {
   position: static;
   display: flex;
@@ -1539,14 +1551,14 @@ body.is-atlas-ready .discovery-coast path {
 .island-card.is-hover-sync .island-card__title,
 .island-card.is-active .island-card__title { background-size: 100% 1px; }
 .island-card__thumb,
-.island-card__feature {
+.island-card__frame {
   box-shadow: inset 0 0 0 1px transparent;
-  transition: transform .5s cubic-bezier(.16, 1, .3, 1), box-shadow .3s ease;
+  transition: box-shadow .3s ease;
 }
 .island-card:hover .island-card__thumb,
 .island-card.is-hover-sync .island-card__thumb,
-.island-card:hover .island-card__feature,
-.island-card.is-hover-sync .island-card__feature {
+.island-card:hover .island-card__frame,
+.island-card.is-hover-sync .island-card__frame {
   box-shadow: inset 0 0 0 1px rgba(228, 163, 34, .8);
 }
 
@@ -1622,7 +1634,8 @@ body.is-atlas-ready .discovery-coast path {
 }
 .featured-card--lead .featured-card__img,
 .featured-card--lead .featured-card__placeholder {
-  height: 268px;
+  height: auto;
+  aspect-ratio: 3 / 2;
   width: 100%;
 }
 .featured-card--lead .featured-card__body {
@@ -1662,7 +1675,7 @@ body.is-atlas-ready .discovery-coast path {
 .featured-card:hover .featured-card__img,
 .featured-card:focus-visible .featured-card__img { object-position: center 40%; }
 .featured-card:not(.featured-card--lead) .featured-card__img,
-.featured-card:not(.featured-card--lead) .featured-card__placeholder { height: 124px; }
+.featured-card:not(.featured-card--lead) .featured-card__placeholder { height: auto; aspect-ratio: 3 / 2; }
 .featured-card:not(.featured-card--lead) .featured-card__name {
   background-image: linear-gradient(#e4a322, #e4a322);
   background-repeat: no-repeat;
@@ -1724,7 +1737,7 @@ body.is-atlas-ready .discovery-header::after {
   .discovery-intro h2 { font-size: 52px; }
   .discovery-line { letter-spacing: .12em; }
   .featured-card--lead .featured-card__img,
-  .featured-card--lead .featured-card__placeholder { height: 220px; }
+  .featured-card--lead .featured-card__placeholder { height: auto; aspect-ratio: 3 / 2; }
   .featured-card--lead .featured-card__name { font-size: 32px; }
   .featured-card--lead .featured-card__body { padding: 48px 14px 14px; }
 }
@@ -1733,4 +1746,16 @@ body.is-atlas-ready .discovery-header::after {
   .discovery-header::after { animation: none !important; }
   .discovery-header::after { transform: none; }
   .featured-card--lead .featured-card__name { transition: none; }
+}
+
+/* Photographs sit in a 3:2 frame. A tall or square picture is shown whole. */
+.featured-card,
+.featured-card--lead { height: auto; }
+.island-card__feature.is-letterboxed,
+.featured-card__img.is-letterboxed,
+.featured-card:hover .featured-card__img.is-letterboxed,
+.featured-card:focus-visible .featured-card__img.is-letterboxed {
+  object-fit: contain;
+  object-position: center;
+  background: #161c19;
 }

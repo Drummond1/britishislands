@@ -66,12 +66,12 @@
     <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css" />
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=cover-1" />
-    <link rel="stylesheet" href="editorial-profile.css?v=traditions-2" />
+    <link rel="stylesheet" href="styles.css?v=name-island-2" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=photo-frame-1" />
+    <link rel="stylesheet" href="editorial-profile.css?v=photo-frame-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=unusual-news-1" />
-    <link rel="modulepreload" href="app.js?v=unusual-news-1" />
+    <link rel="modulepreload" href="app.js?v=photo-frame-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -111,8 +111,6 @@
 
       <nav class="desktop-nav" aria-label="Main navigation">
         <button type="button" class="desktop-nav__link is-active" id="explore-home">Explore the islands</button>
-        <a class="desktop-nav__link" href="/collections/">Guides</a>
-        <a class="desktop-nav__link" href="/about/">About the atlas</a>
       </nav>
 
       <div class="topbar-actions">
@@ -140,9 +138,7 @@
           </button>
           <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
             <button type="button" class="topbar-more__item" id="atlas-home-menu" role="menuitem">Home</button>
-            <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Guides</a>
             <button type="button" class="topbar-more__item" id="crowd-suggest-btn" role="menuitem">Contribute</button>
-            <a class="topbar-more__item topbar-more__item--link" href="/about/" role="menuitem">About</a>
           </div>
         </div>
         <button
@@ -254,7 +250,7 @@
               <option value="curated">Featured only</option>
               <option value="hide-unconfirmed" selected>Skip uncertain places</option>
             </select>
-            <label class="toggle" title="Show unnamed landmasses">
+            <label class="toggle" title="Show islands with no name. Click one, then type its name.">
               <input type="checkbox" id="filter-unnamed" />
               <span>Unnamed places only</span>
             </label>
@@ -846,6 +842,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=unusual-news-1" type="module"></script>
+    <script src="app.js?v=photo-frame-1" type="module"></script>
   </body>
 </html>

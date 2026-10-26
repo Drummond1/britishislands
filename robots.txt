@@ -1,10 +1,23 @@
 User-agent: *
 Allow: /
 
-# Nation hubs and name-slug island profiles
-Allow: /islands/
+# Canonical pages are /islands/{nation}/{slug}/ and /collections/.
+# Query-string atlas views (?island=, ?interest=) are noindex after JavaScript.
 
-# Legacy /profiles/ aliases (indexable; canonical is /islands/…)
-Allow: /profiles/
+# Answer engines may cite the guides and island pages.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://www.findmyisland.com/sitemap.xml

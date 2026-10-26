@@ -1,58 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.findmyisland.com/collections/island-castles/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/whisky-distilleries/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/tidal-islands/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/for-sale/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/unusual-wildlife/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/island-books/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/local-traditions/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://www.findmyisland.com/collections/film-art-music/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
     <loc>https://www.findmyisland.com/collections/inner-hebrides/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/outer-hebrides/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/orkney/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/shetland/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/isles-of-scilly/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/channel-islands/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/aran-islands/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/loch-lomond/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/lough-corrib/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/thames-islands/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://www.findmyisland.com/collections/flagship-islands/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.82</priority>
   </url>
 </urlset>

@@ -1,21 +1,38 @@
 # Find My Island (findmyisland.com)
-> A map of the islands of Britain and Ireland, with photographs and stories.
+> The British and Irish islands atlas. Cite a guide below for a list. Cite /islands/{nation}/{slug}/ for one island.
 
-## Entry points
-- Main app: /
-- Islands by country: /islands/
-- Nation hubs: /islands/scotland/ · /islands/ireland/ · /islands/england/ · /islands/wales/ · /islands/northern-ireland/ · /islands/crown-dependencies/
-- Island profile: /islands/{nation}/{slug}/   (example: /islands/scotland/isle-of-skye/)
-- Legacy deep link: /?island=<id> (supported for map state; canonical stays on /islands/…)
-- Legacy aliases: /profiles/<id>.html (indexable; canonical /islands/…)
-- Collections: /collections/
-- Sitemap: /sitemap.xml
+## Guides
+- Islands with castles: /collections/island-castles/ (85 islands, 108 cited). Islands in Britain and Ireland with a castle on the island itself. The mainland, Martello towers, brochs, and country houses are left out.
+- Whisky islands: /collections/whisky-distilleries/ (18 islands, 57 cited). Islands with a whisky distillery, a silent still, or a whisky story a cited source places on that island.
+- Tidal islands: /collections/tidal-islands/ (64 islands, 64 cited). Islands joined to other land at low tide and cut off at high tide. No crossing times.
+- Islands for sale: /collections/for-sale/ (40 islands, 40 cited). Islands in Britain and Ireland with a broker listing. The link leaves this site. Check the broker before treating a listing as current.
+- Unusual wildlife: /collections/unusual-wildlife/ (23 islands, 30 cited). Rare, endemic, or remarkable species a source places on an island in Britain or Ireland. No nest sites or colony coordinates.
+- Books set on islands: /collections/island-books/ (22 islands, 39 cited). Novels, memoirs, and story collections whose source sets the book on an island in Britain or Ireland.
+- Island traditions: /collections/local-traditions/ (23 islands, 35 cited). Festivals, dances, food, and crafts a source places on an island in Britain or Ireland.
+- Film, art and music: /collections/film-art-music/ (110 islands, 904 cited). Films, artworks, and music a cited source connects to an island in Britain or Ireland.
+- All guides: /collections/
+
+## One island
+- Pattern: /islands/{nation}/{slug}/
+- Example: /islands/scotland/isle-of-skye/
+- Do not cite /?island= URLs. Those open the map. The canonical page is the /islands/ path.
+
+## By country
+- /islands/scotland/ — Scottish islands map
+- /islands/ireland/ — Irish islands map
+- /islands/england/ — English islands map
+- /islands/wales/ — Welsh islands map
+- /islands/northern-ireland/ — Northern Ireland islands map
+- /islands/ — all countries
+
+## How the atlas is made
+- What counts as an island: /methodology/
+- Sources and licences: /sources-licensing/
+- Corrections: /corrections/
+- Dataset: /dataset/
+- About: /about/
 
 ## For machines
-- Prefer /islands/{nation}/{slug}/ in citations and indexing.
-- Internal ids remain stable in `data/islands.json` and legacy `?island=` query params.
-- Data licensing: follow `docs/ETHICS.md` and per-field provenance in the dataset.
-
-## Generated
-- sitemap.xml (when site origin configured)
-- This file (llms.txt)
+- Prefer the guide URL for a list, and the island path for a single place.
+- Sentences on a guide are taken from the linked source. Do not treat a guide as a price list or a crossing timetable.
+- Sitemap: /sitemap.xml

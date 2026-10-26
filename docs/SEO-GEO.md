@@ -66,7 +66,7 @@ alternate CDN hostname).
 | `sitemap.xml` sitemap index + segmented sitemap files | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
 | `robots.txt` | When `--site-origin` or env `IOB_SITE_ORIGIN` is set |
 | `islands/` | Nation hubs + `/islands/{nation}/{slug}/index.html` |
-| `collections/` | Archipelago and water-body hubs (Inner/Outer Hebrides, Orkney, Shetland, etc.) |
+| `collections/` | Interest guides (castles, whisky, tidal, for sale, wildlife, books, traditions, film/art/music) plus archipelago and water-body hubs |
 | Trust pages (`/about/`, `/methodology/`, `/editorial-policy/`, `/corrections/`, `/sources-licensing/`, `/contact/`, `/dataset/`) | Generated as crawlable static pages |
 | `profiles/<id>.html` | With `--landing-dir profiles` — indexable aliases (canonical `/islands/…`) |
 | `data/seo_path_by_id.json` | id → public path map |
@@ -85,7 +85,9 @@ python3 scripts/build_islands_index.py   # stamps seoPath onto shards
 - `sitemap-islands-editorial.xml` (curated + featured)
 - `sitemap-islands.xml` (**named islands with a description only** — unnamed / thin atlas records stay shareable on `/islands/…` but are omitted so Google does not spend crawl budget on them)
 - `sitemap-ferries-verified.xml`
-- `sitemap-collections.xml`
+- `sitemap-collections.xml` (interest guides first, then archipelago hubs)
+
+Interest guides are written by `scripts/seo_interest_guides.py` from `data/interest_index.json`. Each page leads with what the list counts and what it leaves out, then the cited rows. Rows a 26 October 2026 fact-check found false are omitted from these pages until the atlas itself is corrected. `llms.txt` points answer engines at the guides. Homepage `?interest=` and `?island=` views are `noindex`; a known interest filter uses the guide URL as its canonical.
 
 Legacy `/profiles/` URLs are **not** listed in the sitemap (canonical is `/islands/…`). They are still **indexable** landings so crawlers and GEO systems that already know the old URL get full content instead of a `noindex` stub.
 
