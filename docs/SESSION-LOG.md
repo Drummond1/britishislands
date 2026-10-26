@@ -3525,3 +3525,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Counts unchanged. Live filters stay film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **30**, unusual news **50**.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-26 — Leftover traditions and two Lewis novels
+
+- **Goal**: Publish cited rows that already had a cached English Wikipedia sentence placing the subject on one atlas island.
+- **What changed**: Fourteen accepted rows in `data/interest/candidates/zz-expansion-3-traditions.json` and `zz-expansion-3-books.json`. Traditions: the Isle of Wight Garlic Festival, Isle of Wight Festival, and Isle of Wight Walking Festival; witches' stones on Jersey and on Guernsey; the Anglesey Show and the Beaumaris Food Festival; the King of Dalkey on Dalkey Island; Alderney Week and the Alderney Performing Arts Festival; the Mull Highland Games; Dooagh Day on Achill. Books: The Lewis Man and The Chessmen, on the same Lewis and Harris record as The Blackhouse, from the Lewis and Harris article. Each picture is CC0, CC BY, CC BY-SA, or public domain. Cowes Week stayed out (a sailing regatta). Ryde Carnival stayed out (the cached Ryde page does not describe it). Scoil Acla stayed out (a summer school). Jersey Folklore Festival stayed out (held in 2012). The Well-Beloved stayed out (the extract names the Isle of Slingers, not Portland). Marmotinto, the Westray Wife, and reestit mutton stayed out. No new tidal, castle, whisky, wildlife, film, for-sale, or unusual-news rows. `islands.json` was not edited. Supabase was not called.
+- **Outcome / counts**: Film, art and music **139**. Whisky **21**. For sale **48**. Rare wildlife **33**. Tidal islands **104**. Islands with castles **96**. Books **32** (two more titles on Lewis and Harris). Local traditions **35** (Anglesey, the Isle of Wight, Mull, Alderney, and Dalkey Island). Unusual news **50**. Stories **1,502**, **915** with an open-licence picture.
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
+

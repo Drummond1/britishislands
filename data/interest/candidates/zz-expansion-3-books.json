@@ -1,0 +1,57 @@
+{
+  "slug": "zz-expansion-3-books",
+  "generatedAt": "2026-10-26T20:20:00+00:00",
+  "category_slug": "island-books",
+  "rows": [
+    {
+      "category_slug": "island-books",
+      "island_id": "lewis-and-harris",
+      "island_name": "Lewis and Harris",
+      "facet": "book",
+      "title": "The Lewis Man",
+      "source_url": "https://en.wikipedia.org/wiki/Lewis_and_Harris",
+      "source_title": "Lewis and Harris",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Lewis Trilogy of novels (The Blackhouse, The Lewis Man and The Chessmen) by Peter May is set on Lewis and Harris.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T20:20:00+00:00",
+      "summary": "The Lewis Trilogy of novels (The Blackhouse, The Lewis Man and The Chessmen) by Peter May is set on Lewis and Harris.",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tarbert_-_Tarbert%2C_Harris%2C_Scotland%2C_UK_-_May_22%2C_1989.jpg/960px-Tarbert_-_Tarbert%2C_Harris%2C_Scotland%2C_UK_-_May_22%2C_1989.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tarbert_-_Tarbert,_Harris,_Scotland,_UK_-_May_22,_1989.jpg",
+        "attribution": "Giorgio Galeotti",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "lewis-and-harris",
+      "island_name": "Lewis and Harris",
+      "facet": "book",
+      "title": "The Chessmen",
+      "source_url": "https://en.wikipedia.org/wiki/Lewis_and_Harris",
+      "source_title": "Lewis and Harris",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Lewis Trilogy of novels (The Blackhouse, The Lewis Man and The Chessmen) by Peter May is set on Lewis and Harris.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T20:20:00+00:00",
+      "summary": "The Lewis Trilogy of novels (The Blackhouse, The Lewis Man and The Chessmen) by Peter May is set on Lewis and Harris.",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tarbert_-_Tarbert%2C_Harris%2C_Scotland%2C_UK_-_May_22%2C_1989.jpg/960px-Tarbert_-_Tarbert%2C_Harris%2C_Scotland%2C_UK_-_May_22%2C_1989.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tarbert_-_Tarbert,_Harris,_Scotland,_UK_-_May_22,_1989.jpg",
+        "attribution": "Giorgio Galeotti",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "image_note": "Photograph of the island"
+    }
+  ]
+}
