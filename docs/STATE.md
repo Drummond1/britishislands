@@ -947,6 +947,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| Local traditions — `scripts/harvest_local_traditions.py` | 2026-10-26 07:10 UTC | this session | cursor agent | Writes `data/interest/candidates/local-traditions.json` only. Does not edit `islands.json`. English Wikipedia. Cache `data/cache_local_traditions/` and `data/cache_wikipedia_interest/`. |
 | Books set on the island — `scripts/harvest_island_books.py` | 2026-10-26 06:20 UTC | this session | cursor agent | Writes `data/interest/candidates/island-books.json` only. Does not edit `islands.json`. Wikipedia + Wikidata. Cache `data/cache_island_books/`. |
 | ~~Island castles interest harvest~~ ✅ published 2026-10-26 | 2026-10-26 04:40 UTC | — | cursor agent | **89** islands, **113** castles in `data/interest_index.json`. Cache `data/cache_island_castles/`. Did not edit `islands.json`. |
 | Film, music, artwork, and photo harvests for the film/art/music filter | 2026-10-25 19:23 UTC | this session | cursor agent | Four passes write only `data/interest/candidates/film-open.json`, `music-further.json`, `artwork-further.json`, and `data/interest/culture_photo_backfill.json`. They do not edit `islands.json` or publish the index. |

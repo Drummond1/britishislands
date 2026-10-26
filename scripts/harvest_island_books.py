@@ -65,6 +65,7 @@ BLOCK_BARE = {
     "island",
     "islands",
     "isle",
+    "the",
     "great",
     "little",
     "north",
@@ -85,11 +86,64 @@ BLOCK_BARE = {
     "head",
     "ness",
     "bay",
+    "easter",
+    "church",
+    "cottage",
+    "english",
+    "taylor",
+    "edward",
+    "puffin",
+    "sisters",
+    "green",
+    "white",
+    "long",
+    "round",
+    "flat",
+    "high",
+    "low",
+    "black",
+    "red",
+    "big",
+    "small",
+    "middle",
+    "horse",
+    "saint",
+    "holy",
+    "barry",
+    "castle",
+    "house",
+    "farm",
+    "hill",
+    "loch",
+    "lake",
+    "river",
+    "sound",
+    "channel",
+    "firth",
+}
+# A parenthetical archipelago name is not an alias for every islet in it.
+# Mainland keeps the group name, so "set in Orkney" lands on Mainland (Orkney).
+ARCHIPELAGO_PAREN = {
+    "orkney",
+    "shetland",
+    "hebrides",
+    "outer hebrides",
+    "inner hebrides",
+    "scilly",
+    "isles of scilly",
+    "aran",
+    "aran islands",
+    "channel islands",
 }
 # Stevenson spells Erraid as Earraid. Papay is Papa Westray.
+# Lewis and Harris is one island; novels name the Isle of Lewis.
 EXTRA_ALIASES = {
     "osm-relation-9620215": ["Earraid"],
     "osm-way-4569530": ["Papay"],
+    "mainland-orkney": ["Orkney", "Orkney Islands"],
+    "mainland-shetland": ["Shetland", "Shetland Islands"],
+    "lewis-and-harris": ["Isle of Lewis", "Lewis"],
+    "scilly-st-marys": ["Isles of Scilly", "Scilly Isles", "Scilly"],
 }
 EXTRA_CONTEXT = {
     "osm-relation-6045346": ["anglesey", "holyhead", "ynys gybi"],
@@ -183,7 +237,7 @@ def _clean_alias(value: str) -> str:
     value = re.sub(r"\s+", " ", value or "").strip(" ,;/")
     if not value or len(fold(value)) < 3:
         return ""
-    if fold(value) in BLOCK_BARE or fold(value) in MAINLANDS:
+    if fold(value) in BLOCK_BARE or fold(value) in MAINLANDS or fold(value) in {"the", "the island", "the isle", "an island"}:
         return ""
     return value
 
@@ -200,13 +254,17 @@ def build_alias_index(islands: list[dict]) -> list[tuple[str, dict]]:
             match = re.match(r"^(.+?)\s*\((.+)\)\s*$", name.strip())
             if match:
                 aliases.append(match.group(1))
-                aliases.append(match.group(2))
+                if fold(match.group(2)) not in ARCHIPELAGO_PAREN:
+                    aliases.append(match.group(2))
             low = name.lower().strip()
             for prefix in ("isle of ", "island of ", "the "):
                 if low.startswith(prefix):
                     aliases.append(name.strip()[len(prefix) :])
             if low.endswith(" island"):
-                aliases.append(name.strip()[: -len(" island")])
+                stem = name.strip()[: -len(" island")]
+                # "Scilly" belongs to St Mary's, not the 0.02 km² rock named Scilly Island.
+                if fold(stem) not in {"scilly"}:
+                    aliases.append(stem)
             if "flannan" in low:
                 aliases.extend(["Flannan Isles", "Flannan Islands"])
             if "shiant" in low:
@@ -256,9 +314,13 @@ def wiki_get(params: dict) -> dict:
     url = WIKIPEDIA_API + "?" + urllib.parse.urlencode(params)
     for attempt in range(4):
         try:
-            return http_json(url, timeout=60)
+            return http_json(
+                url,
+                timeout=60,
+                user_agent="IslesOfBritain/0.1 (https://www.findmyisland.com)",
+            )
         except Exception:
-            time.sleep(8 * (attempt + 1))
+            time.sleep(4 * (attempt + 1))
     return {}
 
 
@@ -348,11 +410,13 @@ def category_cap(title: str) -> int:
 
 
 def fetch_extracts(titles: list[str]) -> dict[str, dict]:
+    """One page at a time. Anonymous Wikipedia returns a single extract per request,
+    and exchars cannot exceed 1,200, so a batched request stored blank leads."""
+    import json
+
     cache_path = CACHE / "extracts.json"
     cache = {}
     if cache_path.exists():
-        import json
-
         cache = json.loads(cache_path.read_text(encoding="utf-8"))
     missing = []
     seen = set()
@@ -362,9 +426,115 @@ def fetch_extracts(titles: list[str]) -> dict[str, dict]:
             continue
         seen.add(key)
         existing = cache.get(key) or {}
-        if existing.get("extract"):
+        if existing.get("extract") or existing.get("absent"):
             continue
         missing.append(title.replace("_", " "))
+    for index, title in enumerate(missing, start=1):
+        payload = wiki_get(
+            {
+                "action": "query",
+                "format": "json",
+                "redirects": "1",
+                "prop": "extracts",
+                "exchars": "1200",
+                "explaintext": "1",
+                "titles": title,
+            }
+        )
+        query = payload.get("query") or {}
+        if not query:
+            print(f"extract failed {title}", flush=True)
+            time.sleep(8)
+            continue
+        redirect_of = {}
+        for item in query.get("redirects") or []:
+            redirect_of.setdefault(item.get("to"), []).append(item.get("from"))
+        stored = False
+        for page in (query.get("pages") or {}).values():
+            page_title = page.get("title") or title
+            if page.get("missing") is not None:
+                cache[fold(page_title)] = {"title": page_title, "extract": "", "absent": True}
+                cache[fold(title)] = cache[fold(page_title)]
+                stored = True
+                continue
+            extract = page.get("extract") or ""
+            if not extract.strip():
+                continue
+            previous = cache.get(fold(page_title)) or {}
+            record = {
+                "title": page_title,
+                "extract": extract,
+                "image": previous.get("image") or "",
+                "images": previous.get("images") or [],
+                "plot": previous.get("plot") or "",
+                "plot_fetched": previous.get("plot_fetched") or False,
+            }
+            for name in (page_title, title, *(redirect_of.get(page_title) or [])):
+                if name:
+                    cache[fold(name)] = record
+            stored = True
+        if stored and index % 25 == 0:
+            cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+        if index % 25 == 0 or index == len(missing):
+            print(f"extracts {index}/{len(missing)}", flush=True)
+        time.sleep(1.1)
+    cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    return cache
+
+
+def plain_wikitext(text: str) -> str:
+    text = re.sub(r"<ref[^>]*>.*?</ref>", " ", text or "", flags=re.S | re.I)
+    text = re.sub(r"<ref[^>]*/>", " ", text, flags=re.I)
+    for _ in range(3):
+        text = re.sub(r"\{\{[^{}]*\}\}", " ", text)
+    text = re.sub(r"\[\[(?:[^|\]]+\|)?([^\]]+)\]\]", r"\1", text)
+    text = re.sub(r"'{2,}", "", text)
+    text = re.sub(r"==+[^=]+==+", " ", text)
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def fetch_plot(title: str, cache: dict) -> str:
+    """The lead is capped at 1,200 characters. The plot is the next section."""
+    import json
+
+    key = fold(title)
+    record = dict(cache.get(key) or {})
+    if record.get("plot_fetched"):
+        return record.get("plot") or ""
+    payload = wiki_get(
+        {
+            "action": "parse",
+            "format": "json",
+            "redirects": "1",
+            "page": title,
+            "prop": "wikitext",
+            "section": "1",
+        }
+    )
+    wikitext = ((payload.get("parse") or {}).get("wikitext") or {}).get("*") or ""
+    plot = plain_wikitext(wikitext)[:4500]
+    record["plot"] = plot
+    record["plot_fetched"] = True
+    record.setdefault("title", title)
+    for name in {title, record.get("title") or title}:
+        if name:
+            cache[fold(name)] = record
+    path = CACHE / "extracts.json"
+    path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    time.sleep(0.15)
+    return plot
+
+
+def attach_images(titles: list[str], cache: dict) -> None:
+    import json
+
+    missing = []
+    for title in titles:
+        record = cache.get(fold(title)) or {}
+        if record.get("images") or record.get("image"):
+            continue
+        missing.append(record.get("title") or title)
     for start in range(0, len(missing), 16):
         batch = missing[start : start + 16]
         payload = wiki_get(
@@ -372,45 +542,21 @@ def fetch_extracts(titles: list[str]) -> dict[str, dict]:
                 "action": "query",
                 "format": "json",
                 "redirects": "1",
-                "prop": "extracts|pageimages|images",
-                "exchars": "2800",
-                "explaintext": "1",
+                "prop": "pageimages|images",
                 "piprop": "name",
-                "imlimit": "12",
+                "imlimit": "8",
                 "titles": "|".join(batch),
             }
         )
-        if not payload.get("query"):
-            print(f"extract batch failed, will retry those {len(batch)} titles next run", flush=True)
-            time.sleep(12)
-            continue
-        query = payload.get("query") or {}
-        redirect_of = {}
-        for item in query.get("redirects") or []:
-            redirect_of.setdefault(item.get("to"), []).append(item.get("from"))
-        for page in (query.get("pages") or {}).values():
-            if page.get("missing") is not None:
-                continue
-            images = [img.get("title") or "" for img in page.get("images") or [] if img.get("title")]
-            record = {
-                "title": page.get("title") or "",
-                "extract": page.get("extract") or "",
-                "image": page.get("pageimage") or "",
-                "images": images,
-            }
-            names = [page.get("title") or "", *(redirect_of.get(page.get("title")) or [])]
-            for name in names:
-                if name:
-                    cache[fold(name)] = record
-        for title in batch:
-            cache.setdefault(fold(title), {"title": title, "extract": "", "image": "", "images": [], "absent": True})
-        cache_path.write_text(
-            __import__("json").dumps(cache, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        time.sleep(1.0)
-        print(f"extracts {min(start + 16, len(missing))}/{len(missing)}", flush=True)
-    return cache
+        for page in ((payload.get("query") or {}).get("pages") or {}).values():
+            page_title = page.get("title") or ""
+            record = dict(cache.get(fold(page_title)) or {"title": page_title, "extract": ""})
+            record["image"] = page.get("pageimage") or record.get("image") or ""
+            record["images"] = [img.get("title") or "" for img in page.get("images") or [] if img.get("title")]
+            if page_title:
+                cache[fold(page_title)] = record
+        time.sleep(0.4)
+    (CACHE / "extracts.json").write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
 
 def wikidata_books() -> list[dict]:
@@ -419,7 +565,7 @@ def wikidata_books() -> list[dict]:
         import json
 
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
-        if cached.get("version") == 2 and cached.get("rows") is not None:
+        if cached.get("version") == 3 and cached.get("rows") is not None:
             print(f"wikidata cache {len(cached['rows'])}", flush=True)
             return cached["rows"]
     query = """
@@ -437,7 +583,7 @@ SELECT DISTINCT ?work ?workLabel ?place ?placeLabel ?article ?image WHERE {
   ] .
   # Great Britain, Ireland, and the countries are islands in Wikidata.
   # A novel set in the country is not a novel set on a smaller island.
-  FILTER(?place NOT IN (wd:Q145, wd:Q236, wd:Q21, wd:Q22, wd:Q25, wd:Q26, wd:Q27, wd:Q38272))
+  FILTER(?place NOT IN (wd:Q145, wd:Q236, wd:Q23666, wd:Q21, wd:Q22, wd:Q25, wd:Q26, wd:Q27, wd:Q22890, wd:Q38272))
   FILTER(?lat > 49.6 && ?lat < 61.2 && ?lon > -11.2 && ?lon < 2.2)
   ?article schema:about ?work ; schema:isPartOf <https://en.wikipedia.org/> .
   OPTIONAL { ?work wdt:P18 ?image }
@@ -456,18 +602,21 @@ LIMIT 800
         title = urllib.parse.unquote(article.rsplit("/", 1)[-1]).replace("_", " ") if article else ""
         image = binding.get("image", {}).get("value") or ""
         file_name = urllib.parse.unquote(image.rsplit("/", 1)[-1]).replace("_", " ") if image else ""
+        place_label = binding.get("placeLabel", {}).get("value") or ""
+        if fold(place_label) in MAINLANDS:
+            continue
         rows.append(
             {
                 "title": title,
                 "place": binding.get("place", {}).get("value", "").rsplit("/", 1)[-1],
-                "place_label": binding.get("placeLabel", {}).get("value") or "",
+                "place_label": place_label,
                 "qid": binding.get("work", {}).get("value", "").rsplit("/", 1)[-1],
                 "image": f"File:{file_name}" if file_name else "",
             }
         )
     import json
 
-    cache_path.write_text(json.dumps({"version": 2, "rows": rows}, ensure_ascii=False), encoding="utf-8")
+    cache_path.write_text(json.dumps({"version": 3, "rows": rows}, ensure_ascii=False), encoding="utf-8")
     print(f"wikidata {len(rows)}", flush=True)
     return rows
 
@@ -512,11 +661,12 @@ def alias_in_setting(sentence: str, alias: str) -> bool:
         return False
     if not re.search(rf"(?<!\w){re.escape(needle)}(?!\w)", folded):
         return False
-    if re.search(rf"fictional\W{{0,40}}{re.escape(needle)}", folded):
+    needle_at = folded.find(needle)
+    if needle_at >= 0 and re.search(r"fictional", folded[max(0, needle_at - 55) : needle_at]):
         return False
     direct = [
-        rf"\bset (?:mainly |largely |mostly |partly |primarily )?(?:on|in|at|upon) (?:the )?(?:isle of |island of |islands of )?{re.escape(needle)}\b",
-        rf"\btakes place (?:mainly |largely |mostly )?(?:on|in|at) (?:the )?(?:isle of |island of |islands of )?{re.escape(needle)}\b",
+        rf"\bset (?:mainly |largely |mostly |partly |primarily |briefly )?(?:on|in|at|upon) (?:the )?(?:[\w'-]+ ){{0,3}}(?:isle of |island of |islands of )?{re.escape(needle)}\b",
+        rf"\btakes place (?:mainly |largely |mostly |partly )?(?:on|in|at) (?:the )?(?:[\w'-]+ ){{0,3}}(?:isle of |island of |islands of )?{re.escape(needle)}\b",
         rf"\b(?:shipwrecked|marooned|stranded) on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
         rf"\b(?:life|childhood|youth|years|time|stay) (?:living |spent )?(?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
         rf"\bgrew up (?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
@@ -526,6 +676,21 @@ def alias_in_setting(sentence: str, alias: str) -> bool:
         rf"\bdescribes (?:his|her|their) (?:time|stay|life|years|visit) (?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
         rf"\brecounts (?:his|her|their) (?:time|stay|life|years) (?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
     ]
+    direct.append(rf"\b(?:live|lives) on (?:the )?(?:isle of |island of |islands of )?{re.escape(needle)}\b")
+    direct.append(rf"\bheld on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b")
+    direct.append(rf"\bon the (?:isle|island) of {re.escape(needle)}\b")
+    if not re.search(r"\bdedicated to\b", folded):
+        direct.append(rf"\bto the (?:[\w'-]+ ){{0,2}}(?:isle|island) of {re.escape(needle)}\b")
+    direct.append(
+        rf"\b(?:returns|sails|goes|comes|travels|travelled|journeys) to the (?:isle|island) of {re.escape(needle)}\b"
+    )
+    # "visit to the Isle of Lewis ... as the setting for the book"
+    direct.append(rf"(?<!\w){re.escape(needle)}(?!\w).{{0,90}}\bsetting\b")
+    direct.append(rf"\bsetting\b.{{0,70}}(?<!\w){re.escape(needle)}(?!\w)")
+    if needle in {"jersey", "guernsey", "sark", "alderney", "herm"} and re.search(
+        r"\bset in the channel islands\b", folded
+    ):
+        direct.append(rf"(?<!\w){re.escape(needle)}(?!\w)")
     inspired = bool(INSPIRED.search(folded))
     if any(re.search(pattern, folded) for pattern in direct):
         return not inspired or bool(
@@ -534,18 +699,7 @@ def alias_in_setting(sentence: str, alias: str) -> bool:
                 folded,
             )
         )
-    if inspired:
-        return False
-    tail = re.search(
-        r"\bset (?:mainly |largely |mostly |partly |primarily )?(?:on|in|at|upon) (?:the )?(.{0,140})",
-        folded,
-    )
-    if not tail:
-        return False
-    chunk = tail.group(1)
-    if re.search(r"\bfictional\b", chunk[: max(0, chunk.find(needle))]):
-        return False
-    return bool(re.search(rf"(?<!\w){re.escape(needle)}(?!\w)", chunk))
+    return False
 
 
 def match_islands(sentence: str, alias_index: list[tuple[str, dict]], hinted: dict | None) -> list[tuple[dict, str]]:
@@ -575,6 +729,12 @@ def match_islands(sentence: str, alias_index: list[tuple[str, dict]], hinted: di
     ranked.sort(key=lambda item: (item[0], item[1]["area"]), reverse=True)
     if ranked[0][0] >= ranked[1][0] + 3:
         return [(ranked[0][1], ranked[0][2])]
+    ranked.sort(key=lambda item: (item[0], item[1]["area"]), reverse=True)
+    if ranked[0][1]["area"] > max(ranked[1][1]["area"], 0.01) * 8 and ranked[0][1]["area"] > 20:
+        return [(ranked[0][1], ranked[0][2])]
+    with_area = [item for item in ranked if item[1]["area"] > 0]
+    if len(with_area) == 1:
+        return [(with_area[0][1], with_area[0][2])]
     qids = {item[1]["wikidata"] for item in ranked if item[1].get("wikidata")}
     if len(qids) == 1:
         curated = [item for item in ranked if not re.match(r"^(osm-|wd-|csv-)", item[1]["id"])]
@@ -585,6 +745,28 @@ def match_islands(sentence: str, alias_index: list[tuple[str, dict]], hinted: di
 
 def display_title(article_title: str) -> str:
     return PAREN_TITLE.sub("", article_title or "").strip()
+
+
+WORK_TITLE = re.compile(
+    r"\b(?:book|novel|novella|memoir|autobiography)\s+"
+    r"([A-Z][A-Za-z0-9'’:\-]+(?:\s+[A-Z][A-Za-z0-9'’:\-]+){0,8})"
+)
+
+
+def row_title(article_title: str, extract: str, sentence: str) -> str:
+    """Use the book name when the page is the author or the island."""
+    shown = display_title(article_title)
+    head = re.sub(r"\s+", " ", (extract or "")[:320])
+    if re.search(
+        rf"\b{re.escape(shown)} is an? (?:[\w'-]+ ){{0,4}}(?:novel|novella|memoir|autobiography|children's book|picture book)\b",
+        head,
+        re.I,
+    ):
+        return shown
+    match = WORK_TITLE.search(sentence or "") or WORK_TITLE.search(head)
+    if match and fold(match.group(1)) != fold(shown):
+        return match.group(1).strip(" ,;:")
+    return shown
 
 
 def build_summary(extract: str, setting: str) -> str:
@@ -826,16 +1008,27 @@ def populate_books(atlas=None, max_pages: int = 700) -> list[dict]:
         article_title = record.get("title") or title
         if not extract or "may refer to" in extract[:180].lower():
             continue
-        if not lead_is_book(extract):
+        bookish = lead_is_book(extract)
+        names_setting = bool(re.search(r"\b(setting for|is set|set on|set in|takes place)\b", extract, re.I))
+        if not bookish and not names_setting:
             continue
         hint_row = hinted.get(fold(title)) or hinted.get(fold(article_title)) or {}
         hinted_island = by_qid.get(hint_row.get("place") or "")
-        matched: dict[str, tuple[dict, str]] = {}
-        for sentence in original_sentences(extract):
-            for island, alias in match_islands(sentence, alias_index, hinted_island):
-                previous = matched.get(island["id"])
-                if previous is None or len(alias) > len(previous[1]):
-                    matched[island["id"]] = (sentence, alias)
+
+        def sentences_for(text: str) -> dict[str, tuple[str, str]]:
+            found: dict[str, tuple[str, str]] = {}
+            for sentence in original_sentences(text):
+                for island, alias in match_islands(sentence, alias_index, hinted_island):
+                    previous = found.get(island["id"])
+                    if previous is None or len(alias) > len(previous[1]):
+                        found[island["id"]] = (sentence, alias)
+            return found
+
+        matched = sentences_for(extract)
+        if bookish and not matched:
+            plot = fetch_plot(article_title, extracts)
+            if plot:
+                matched = sentences_for(extract + "\n" + plot)
         if not matched:
             # Keep a short audit when the article names an island and still fails.
             folded = fold(extract)
@@ -865,18 +1058,21 @@ def populate_books(atlas=None, max_pages: int = 700) -> list[dict]:
             continue
         for island_id, (sentence, alias) in matched.items():
             island = next(item for item in islands if item["id"] == island_id)
-            key = (island_id, fold(display_title(article_title)))
+            key = (island_id, fold(row_title(article_title, extract, sentence)))
             if key in accepted:
                 continue
             summary = build_summary(extract, sentence)
             if fold(island["name"]) not in fold(summary) and fold(alias) not in fold(summary):
                 summary = f"{summary} The article sets it on {island['name']}."
+            shown = row_title(article_title, extract, sentence)
+            if not shown or len(shown) < 2:
+                continue
             item = row(
                 category=SLUG,
                 island_id=island_id,
                 island_name=island["name"],
                 facet="book",
-                title=display_title(article_title),
+                title=shown,
                 source_url="https://en.wikipedia.org/wiki/" + urllib.parse.quote(article_title.replace(" ", "_")),
                 source_title=article_title,
                 licence="CC BY-SA 4.0",
@@ -889,6 +1085,7 @@ def populate_books(atlas=None, max_pages: int = 700) -> list[dict]:
             item["_extract_key"] = fold(article_title)
             accepted[key] = item
     media = _load_media_cache()
+    attach_images([item.get("source_title") or item["title"] for item in accepted.values()], extracts)
     filenames = []
     for item in accepted.values():
         record = extracts.get(item.get("_extract_key") or "") or {}

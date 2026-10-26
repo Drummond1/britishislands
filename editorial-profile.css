@@ -550,6 +550,8 @@ body.filters-open .topbar--atlas .filter-drawer.topbar-controls { display:flex; 
   margin: 0 0 8px; font-family: Fraunces, Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.15;
 }
 .interest-feature__story { margin: 0 0 10px; font-size: 16px; line-height: 1.55; }
+.interest-feature__tie,
+.interest-story__tie { margin: 0 0 10px; font-size: 15px; line-height: 1.5; }
 .interest-stories { margin: 28px 0 8px; }
 .interest-stories h3 {
   margin: 0 0 6px;
@@ -674,3 +676,61 @@ body.filters-open .filter-drawer,
 .crowd-modal:not(.is-from),
 .favorites-modal:not(.is-from),
 .lightbox:not(.is-from) { transform: none; }
+
+/* A language name is a line of type, not a chip. The story sits above the measurements. */
+.island-details .alt-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0 0 18px;
+}
+.island-details .alt-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--profile-ink);
+}
+.island-details .alt-name__lang {
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--profile-muted);
+}
+.island-details .alt-name__val {
+  font-family: var(--font-display, Newsreader, Georgia, serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--profile-ink);
+}
+
+.chat-panel .chat-msg--user {
+  align-self: stretch;
+  max-width: none;
+  margin: 0;
+  padding: 2px 0 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--profile-ink);
+  font-family: var(--font-display, Newsreader, Georgia, serif);
+  font-style: italic;
+  font-weight: 450;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.chat-panel .chat-msg--bot {
+  align-self: stretch;
+  max-width: none;
+  margin: 0;
+  padding: 12px 0 4px;
+  border: 0;
+  border-top: 1px solid var(--profile-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--profile-ink);
+}

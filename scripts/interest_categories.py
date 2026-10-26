@@ -137,6 +137,12 @@ PUBLISHED = (
         "blurb": "Novels, memoirs, and stories set on the island.",
         "sortOrder": 22,
     },
+    {
+        "slug": "local-traditions",
+        "label": "Local traditions",
+        "blurb": "A custom, festival, dance, or craft the source places on the island.",
+        "sortOrder": 24,
+    },
 )
 
 # Equivalent-circle radius times this factor. Large enough for a long
@@ -1686,6 +1692,7 @@ STORY_SLUGS = (
     "tidal-islands",
     "island-castles",
     "island-books",
+    "local-traditions",
 )
 MAPISH_IMAGE = re.compile(
     r"map|locator|range|distribution|diagram|chart|flag|coat[_ -]?of|\bcoa\b|icon|\.svg",
@@ -2236,7 +2243,21 @@ def _book_story(item: dict, cache: dict) -> dict:
     }
 
 
+def _tradition_story(item: dict, cache: dict) -> dict:
+    """The picture is the custom, or a photograph of the island. The paragraph places it there."""
+    story = _book_story(item, cache)
+    story["facet"] = "tradition"
+    tie = re.sub(r"\s+", " ", (item.get("tie") or "")).strip()
+    if len(tie) > 420:
+        tie = tie[:400].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    if tie:
+        story["tie"] = tie
+    return story
+
+
 def _story_for(item: dict, cache: dict) -> dict:
+    if item.get("facet") == "tradition":
+        return _tradition_story(item, cache)
     if item.get("facet") == "book":
         return _book_story(item, cache)
     if item.get("facet") == "wildlife":
@@ -2451,7 +2472,7 @@ def membership_sql(rows: list[dict]) -> str:
     chunks = [
         "alter table public.interest_memberships drop constraint if exists interest_memberships_facet_check;",
         "alter table public.interest_memberships add constraint interest_memberships_facet_check "
-        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal', 'silent', 'story', 'planned', 'castle', 'book'));",
+        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal', 'silent', 'story', 'planned', 'castle', 'book', 'tradition'));",
         "insert into public.interest_categories "
         "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
         "'whisky-distilleries', 'Whisky', "
@@ -2509,8 +2530,20 @@ def membership_sql(rows: list[dict]) -> str:
         ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
         "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
         "acceptance_rules = excluded.acceptance_rules;",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'local-traditions', 'Local traditions', "
+        "'A custom, festival, dance, or craft the source places on the island.', "
+        "'published', 24, 'cited_tradition', "
+        "'The English Wikipedia article describes the custom and places it on the atlas island. "
+        "The summary is the article''s own sentences. A legend with no practice, a breed, a book, "
+        "a film, and a monastic pilgrimage do not count. Great Britain and Ireland do not count. "
+        "The picture is an open-licence photograph of the custom, or of the island when the article has none.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
         "delete from public.interest_memberships where category_slug in "
-        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands','island-castles','island-books');",
+        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands','island-castles','island-books','local-traditions');",
     ]
     batch = []
     def flush():
@@ -2568,7 +2601,7 @@ def sync_supabase(rows: list[dict]) -> bool:
         "Prefer": "resolution=merge-duplicates,return=minimal",
     }
     # Replace the three published categories. Draft stays empty.
-    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands", "island-castles", "island-books"):
+    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands", "island-castles", "island-books", "local-traditions"):
         delete_url = (
             f"{url}/rest/v1/interest_memberships?category_slug=eq.{urllib.parse.quote(slug)}"
         )
@@ -3272,10 +3305,10 @@ def populate_open_culture(atlas: Atlas) -> list[dict]:
 
 def main(argv: list[str]) -> int:
     command = argv[1] if len(argv) > 1 else "all"
-    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "castles", "books", "publish", "sync", "all"}
+    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "castles", "books", "traditions", "publish", "sync", "all"}
     if command not in known:
         print(
-            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|castles|books|publish|sync|all]",
+            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|castles|books|traditions|publish|sync|all]",
             file=sys.stderr,
         )
         return 2
@@ -3314,6 +3347,11 @@ def main(argv: list[str]) -> int:
         from harvest_island_books import populate_books
 
         populate_books()
+        return 0
+    if command == "traditions":
+        from harvest_local_traditions import populate_traditions
+
+        populate_traditions(atlas)
         return 0
     if command == "all":
         publish(rows)

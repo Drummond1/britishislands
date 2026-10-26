@@ -1,0 +1,90 @@
+{
+  "region": "england-wales",
+  "books": [
+    {
+      "title": "England, England",
+      "wikipedia": "https://en.wikipedia.org/wiki/England,_England",
+      "island": "Isle of Wight",
+      "sentence": "Sir Jack aims to turn the Isle of Wight into a gigantic theme park which contains everything that people, especially tourists, consider to be quintessentially English, selected according to what Sir Jack himself approves of."
+    },
+    {
+      "title": "The Silence of Dean Maitland",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Silence_of_Dean_Maitland",
+      "island": "Isle of Wight",
+      "sentence": "Set in a fictionalized Isle of Wight, particularly around Calbourne, it concerns an ambitious clergyman who accidentally kills the father of a young woman he has made pregnant, then allows his best friend to be wrongly convicted for the crime."
+    },
+    {
+      "title": "The Trespasser",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Trespasser_(Lawrence_novel)",
+      "island": "Isle of Wight",
+      "sentence": "Set mostly on the Isle of Wight, it tells the story of Siegmund, a married man with children, and his adulterous affair with Helena."
+    },
+    {
+      "title": "The Night of the Triffids",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Night_of_the_Triffids",
+      "island": "Isle of Wight",
+      "sentence": "The story begins on the Isle of Wight, 25 years after the events from The Day of the Triffids."
+    },
+    {
+      "title": "The Day of the Triffids",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Day_of_the_Triffids",
+      "island": "Isle of Wight",
+      "sentence": "The novel ends with Bill's group on the Isle of Wight, determined one day to destroy the triffids and reclaim their world."
+    },
+    {
+      "title": "Wish You Were Here",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wish_You_Were_Here_(Swift_novel)",
+      "island": "Isle of Wight",
+      "sentence": "It is narrated by the last of a long line of West Country farmers who now (in 2004) runs a caravan park on the Isle of Wight with his childhood sweetheart, the daughter of a neighbouring farmer."
+    },
+    {
+      "title": "Wide Open",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wide_Open_(novel)",
+      "island": "Isle of Sheppey",
+      "sentence": "Set mostly on the Isle of Sheppey on the north coast of Kent on the Thames Estuary."
+    },
+    {
+      "title": "Why the Whales Came",
+      "wikipedia": "https://en.wikipedia.org/wiki/Why_the_Whales_Came",
+      "island": "Bryher",
+      "sentence": "It is set on the island of Bryher, one of the Isles of Scilly, off the coast of Cornwall, in the year 1914."
+    },
+    {
+      "title": "The Wreck of the Zanzibar",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Wreck_of_the_Zanzibar",
+      "island": "Bryher",
+      "sentence": "She tells of her life on Bryher, one of Britain's Scilly Isles, where her family's survival depends on the mercy of the elements and the sea."
+    },
+    {
+      "title": "Listen to the Moon",
+      "wikipedia": "https://en.wikipedia.org/wiki/Listen_to_the_Moon",
+      "island": "Bryher",
+      "sentence": "Young Alfie Wheatcroft, his parents Jim and Mary and Uncle Billy live on the island of Bryher, and make a living by fishing and farming."
+    },
+    {
+      "title": "Listen to the Moon",
+      "wikipedia": "https://en.wikipedia.org/wiki/Listen_to_the_Moon",
+      "island": "St Helen's",
+      "sentence": "The actual ruined pest house on St Helen's, where the fictional character Lucy is found in the book."
+    },
+    {
+      "title": "The Sleeping Sword",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Sleeping_Sword",
+      "island": "Bryher",
+      "sentence": "Bun and Anna return to Bryher on the ghost ship, hardly believing what has happened."
+    },
+    {
+      "title": "On Chesil Beach",
+      "wikipedia": "https://en.wikipedia.org/wiki/On_Chesil_Beach",
+      "island": "Chesil Beach",
+      "sentence": "In July 1962, Edward Mayhew, a graduate student of history, and Florence Ponting, a violinist in a string quartet, are spending their honeymoon in a small hotel at Chesil Beach in Dorset."
+    },
+    {
+      "title": "The Lighthouse Keeper's Daughter",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Lighthouse_Keeper%27s_Daughter_(novel)",
+      "island": "Longstone",
+      "sentence": "It is set in two main locations: Longstone Lighthouse on the Northumberland Coast in England in the late 1830s and early 1840s, for which Gaynor uses historical fiction to describe the experiences of Grace Darling; and Newport, Rhode Island, particularly the Rose Island Light, in which the main protagonist is a fictional character in the late 1930s, Matilda Emmerson."
+    }
+  ],
+  "missing_islands": []
+}

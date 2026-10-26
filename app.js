@@ -492,6 +492,7 @@ const INTEREST_SUBFILTERS_ENABLED = false;
 const INTEREST_CHIP_ORDER = [
   "island-castles",
   "unusual-wildlife",
+  "local-traditions",
   "whisky-distilleries",
   "island-books",
 ];
@@ -505,6 +506,7 @@ const INTEREST_CHIP_ICONS = {
   "tidal-islands": "footprints",
   "island-castles": "castle",
   "island-books": "book-open",
+  "local-traditions": "scroll",
   "for-sale": "key-round",
 };
 
@@ -2789,6 +2791,7 @@ const INTEREST_STORY_FACETS = {
   tidal: "Tidal island",
   castle: "Castle",
   book: "Book",
+  tradition: "Local tradition",
 };
 
 function whiskyCategory() {
@@ -2818,7 +2821,9 @@ function interestKicker(item) {
 }
 
 function castlePhotoRank(islandId) {
-  const slug = state.activeInterestSlug === "island-books" ? "island-books" : "island-castles";
+  const slug = ["island-books", "island-castles", "local-traditions"].includes(state.activeInterestSlug)
+    ? state.activeInterestSlug
+    : "island-castles";
   const items = state.interestIndex?.stories?.[slug]?.[islandId] || [];
   return items.some((item) => item?.image?.thumbUrl) ? 0 : 1;
 }
@@ -2842,7 +2847,7 @@ function whiskyIslandRank(islandId) {
 
 function interestStoryGroups(islandId) {
   const stories = state.interestIndex?.stories || {};
-  const slugs = ["island-castles", "island-books", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
+  const slugs = ["local-traditions", "island-castles", "island-books", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
   const active = state.activeInterestSlug;
   const order =
     active && slugs.includes(active) ? [active, ...slugs.filter((slug) => slug !== active)] : slugs;
@@ -2852,7 +2857,7 @@ function interestStoryGroups(islandId) {
       let items = Array.isArray(stories[slug]?.[islandId]) ? stories[slug][islandId] : [];
       if (
         lead &&
-        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books") &&
+        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions") &&
         state.activeInterestSlug === slug
       ) {
         items = items.filter((item) => item?.title !== lead?.title);
@@ -2885,8 +2890,15 @@ function interestStoryGroups(islandId) {
                   ? "Castle"
                   : slug === "island-books"
                     ? "Books"
-                    : "Film, art and music",
-          intro: slug === "island-books" ? "Set on this island." : "",
+                    : slug === "local-traditions"
+                      ? "Local traditions"
+                      : "Film, art and music",
+          intro:
+            slug === "island-books"
+              ? "Set on this island."
+              : slug === "local-traditions"
+                ? "A custom the source places on this island."
+                : "",
           items,
         },
       ];
@@ -2903,6 +2915,7 @@ function interestFeatureMode() {
     state.activeInterestSlug === "tidal-islands" ||
     state.activeInterestSlug === "island-castles" ||
     state.activeInterestSlug === "island-books" ||
+    state.activeInterestSlug === "local-traditions" ||
     state.activeInterestSlug === "film-art-music"
   );
 }
@@ -2917,7 +2930,7 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items)) return [];
   if (slug === "whisky-distilleries") return items.filter((item) => whiskyStoryMatches(item, facet));
-  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || !facet) return items;
+  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions" || !facet) return items;
   return items.filter((item) => item?.facet === facet);
 }
 
@@ -2982,6 +2995,13 @@ function isBoilerplateStory(summary) {
   return /MusicBrainz|Wikidata Q\d+|in the MusicBrainz area/i.test(text);
 }
 
+function interestTieParagraph(item, className) {
+  const tie = String(item?.tie || "").replace(/\s+/g, " ").trim();
+  const summary = String(item?.summary || "").replace(/\s+/g, " ").trim();
+  if (!tie || summary.includes(tie)) return "";
+  return `<p class="${className}">${escapeHtml(tie)}</p>`;
+}
+
 function renderInterestStories(island) {
   const groups = interestStoryGroups(island?.id);
   if (!groups.length) return "";
@@ -3013,6 +3033,7 @@ function renderInterestStories(island) {
             <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
             <h4>${escapeHtml(item.title || "")}</h4>
             ${item.summary && !isBoilerplateStory(item.summary) ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+            ${interestTieParagraph(item, "interest-story__tie")}
             ${more}
           </article>`;
         })
@@ -3055,6 +3076,7 @@ function renderInterestFeature(island) {
     <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
     <h3>${escapeHtml(item.title || "")}</h3>
     ${item.summary && !isBoilerplateStory(item.summary) ? `<p class="interest-feature__story">${escapeHtml(item.summary)}</p>` : ""}
+    ${interestTieParagraph(item, "interest-feature__tie")}
     ${more}
   </section>`;
 }
@@ -3313,6 +3335,35 @@ function setExploreTopic(topicId, { skipUrl = false } = {}) {
   }
 }
 
+function placeToken(value) {
+  const v = String(value || "").trim();
+  if (!v || v === "—" || v === "-") return "";
+  return v;
+}
+
+function firstSentence(text, max) {
+  const t = String(text || "").replace(/\s+/g, " ").trim();
+  if (!t) return "";
+  const end = t.search(/[.!?;](\s|$)/);
+  const sentence = (end === -1 ? t : t.slice(0, end + 1)).trim().replace(/;$/, "");
+  if (sentence.length <= max) return sentence;
+  const soft = sentence.search(/[,;]/);
+  if (soft > 24 && soft <= max) return sentence.slice(0, soft).trim();
+  const cut = sentence.slice(0, max - 1);
+  const sp = cut.lastIndexOf(" ");
+  return `${(sp > 40 ? cut.slice(0, sp) : cut).trim()}…`;
+}
+
+function cardLine(text, max) {
+  return firstSentence(text, max);
+}
+
+function featuredCredit(island) {
+  const img = (island.images || []).find((item) => item && (item.attribution || item.license));
+  if (!img) return "";
+  return [img.attribution, img.license].filter(Boolean).join(" · ");
+}
+
 function renderExploreStrip(rows, title) {
   const strip = document.getElementById("featured-strip");
   const scroll = document.getElementById("featured-strip-scroll");
@@ -3327,35 +3378,49 @@ function renderExploreStrip(rows, title) {
   const seenNames = new Set();
   const highlights = ["isle-of-skye", "iona", "staffa"];
   const displayRows = !state.activeExploreTopic
-    ? highlights.map(id => rows.find(row => row.id === id)).filter(Boolean)
-    : rows.slice(0, 6);
+    ? highlights.map((id) => rows.find((row) => row.id === id)).filter(Boolean)
+    : rows.slice(0, 3);
+  const cards = [];
   for (const row of displayRows) {
     const island = state.byId.get(row.id);
     if (!island) continue;
     const nameKey = (row.name || island.name || "").trim().toLowerCase();
     if (nameKey && seenNames.has(nameKey)) continue;
     if (nameKey) seenNames.add(nameKey);
+    cards.push({ row, island });
+  }
+  const archCounts = new Map();
+  for (const card of cards) {
+    const arch = placeToken(card.island.archipelago);
+    if (arch) archCounts.set(arch, (archCounts.get(arch) || 0) + 1);
+  }
+  cards.forEach((card, index) => {
+    const { row, island } = card;
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "featured-card";
+    btn.className = "featured-card" + (index === 0 ? " featured-card--lead" : "");
+    const place = placeToken(row.nation || island.nation);
     btn.title = `Explore ${row.name}`;
-    btn.setAttribute("aria-label", `${row.name}, ${row.nation || island.nation}`);
+    btn.setAttribute("aria-label", [row.name, place].filter(Boolean).join(", "));
     const thumb = islandThumbUrl(island) || row.thumbUrl || island.image;
     const imgHtml = thumb
       ? `<img class="featured-card__img" src="${escapeAttr(thumb)}" alt="" loading="lazy" />`
-      : `<span class="featured-card__placeholder" aria-hidden="true">◍</span>`;
-    const blurb = row.shortDescription || island.shortDescription || "";
+      : `<span class="featured-card__placeholder" aria-hidden="true"></span>`;
+    const arch = placeToken(island.archipelago);
+    const kicker = arch && archCounts.get(arch) === 1 ? arch : "";
+    const blurb = cardLine(row.shortDescription || island.shortDescription || "", index === 0 ? 160 : 88);
+    const credit = featuredCredit(island);
     btn.innerHTML = `
       ${imgHtml}
       <span class="featured-card__body">
-        <span class="featured-card__region">${escapeHtml(island.archipelago || row.nation || island.nation)}</span>
+        ${kicker ? `<span class="featured-card__region">${escapeHtml(kicker)}</span>` : ""}
         <span class="featured-card__name">${escapeHtml(row.name)}</span>
-        <span class="featured-card__arrow" data-lucide="arrow-up-right" aria-hidden="true"></span>
         ${blurb ? `<span class="featured-card__blurb">${escapeHtml(blurb)}</span>` : ""}
+        ${credit ? `<span class="featured-card__credit">${escapeHtml(credit)}</span>` : ""}
       </span>`;
     btn.addEventListener("click", () => focusIsland(row.id, { fly: true }));
     scroll.appendChild(btn);
-  }
+  });
   refreshLucideIcons(scroll);
   scheduleRenderListWindow();
 }
@@ -3454,9 +3519,16 @@ function renderPhotoPlaceholderHero(island) {
   </div>`;
 }
 
+let chipGreetingAt = 0;
+
 function renderBrowseQuickChips() {
   const host = document.getElementById("browse-quick-chips");
   if (!host) return;
+  const greet =
+    document.body.classList.contains("is-atlas-ready") &&
+    interestCategories().length > 0 &&
+    (chipGreetingAt === 0 || performance.now() - chipGreetingAt < 700);
+  if (greet && chipGreetingAt === 0) chipGreetingAt = performance.now();
   host.replaceChildren();
   const interestSlugs = new Set(interestCategories().map((c) => c.slug));
   const icons = { all: "compass", ferry: "ship", remote: "waves", "for-sale": "key-round" };
@@ -3466,6 +3538,7 @@ function renderBrowseQuickChips() {
     b.className = "browse-quick__chip" + (selected ? " is-active" : "");
     b.innerHTML = `<span data-lucide="${icon || "tag"}" aria-hidden="true"></span>${escapeHtml(label)}`;
     b.setAttribute("aria-pressed", selected ? "true" : "false");
+    if (greet) b.classList.add("is-greeting");
     b.addEventListener("click", onClick);
     host.appendChild(b);
   };
@@ -3519,6 +3592,7 @@ function renderBrowseQuickChips() {
         (state.interestFacet === spec.id ? " is-active" : "");
       button.innerHTML = `<span data-lucide="${icons[spec.id] || "tag"}" aria-hidden="true"></span>${escapeHtml(spec.label)}`;
       button.setAttribute("aria-pressed", state.interestFacet === spec.id ? "true" : "false");
+      if (greet) button.classList.add("is-greeting");
       button.addEventListener("click", () => setInterestFacet(spec.id));
       host.appendChild(button);
     }
@@ -4269,7 +4343,7 @@ function applyFilters(opts = {}) {
         state.filtered.sort(
           (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || a.name.localeCompare(b.name),
         );
-      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books") {
+      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions") {
         state.filtered.sort(
           (a, b) => castlePhotoRank(a.id) - castlePhotoRank(b.id) || a.name.localeCompare(b.name),
         );
@@ -4386,18 +4460,12 @@ function getListDisplayRows() {
 
 function updateSidebarOrient() {
   const el = document.getElementById("sidebar-orient");
-  if (!el) return;
-  const hasFilters = countActiveFilters() > 0;
+  const heading = document.getElementById("list-heading");
+  const hasFilters = countActiveFilters() > 0 || Boolean(state.activeInterestSlug);
   const hasQuery = Boolean(els.search?.value?.trim());
-  if (hasQuery) {
-    el.textContent = "Matching your search";
-    return;
-  }
-  if (hasFilters) {
-    el.textContent = "Filtered";
-    return;
-  }
-  el.textContent = "A few places to start";
+  const text = hasQuery ? "Matching your search" : hasFilters ? "Filtered" : "A few places to start";
+  if (el) el.textContent = text;
+  if (heading) heading.textContent = text;
 }
 
 let paintedResultCount = "";
@@ -4589,8 +4657,9 @@ function renderListWindow() {
     const metaBits = [];
     if (placeBits) metaBits.push(escapeHtml(placeBits));
     if (access) metaBits.push(escapeHtml(access));
-    const highlight = feature?.summary || interestHighlight(island.id);
-    const blurbRaw = highlight || (island.shortDescription || "").trim();
+    const highlight = feature?.tie || feature?.summary || interestHighlight(island.id);
+    const searching = Boolean(els.search?.value?.trim());
+    const blurbRaw = highlight || (searching ? (island.shortDescription || "").trim() : "");
     let blurb = blurbRaw;
     const blurbLimit = feature ? 360 : 96;
     if (blurbRaw.length > blurbLimit) {
@@ -4614,7 +4683,7 @@ function renderListWindow() {
     const blurbHtml = blurb
       ? `<p class="island-card__blurb${highlight ? " island-card__blurb--interest" : ""}">${escapeHtml(blurb)}</p>`
       : "";
-    const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books");
+    const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions");
     main.innerHTML = feature
       ? `${castleFirst ? thumbHtml : ""}<div class="island-card__text">${titleBlock}</div>
       ${castleFirst ? "" : thumbHtml}
@@ -5246,7 +5315,7 @@ function renderIslandStory(island, { skipLead = false } = {}) {
   const chunks = [];
   for (const text of fields) {
     const t = String(text || "").replace(/\s+/g, " ").trim();
-    if (!t || seen.has(t)) continue;
+    if (!t || seen.has(t) || /^none\b/i.test(t)) continue;
     seen.add(t);
     chunks.push(t);
   }
@@ -5341,10 +5410,10 @@ function renderDetails(island) {
     ${featureHtml}
     ${subtypeChips}
     ${namesBlock}
-    ${renderVisitorFacts(island)}
     ${renderIslandStory(island, { skipLead: Boolean(featureHtml) })}
     ${renderSummitLine(island)}
     ${renderHeritageLine(island)}
+    ${renderVisitorFacts(island)}
     ${moreLink}
     <div class="profile-hero-actions">
       <button type="button" class="profile-secondary-btn" id="details-share-inline">Share</button>
@@ -8365,7 +8434,8 @@ function chatJoinNames(islands) {
 const CHAT_GUIDE_COLLECTIONS = [
   { slug: "whisky-distilleries", test: /\b(whisk(?:y|ey)|distiller(?:y|ies)|single malt|malts)\b/ },
   { slug: "island-castles", test: /\b(castles?|fortress|tower house)\b/ },
-  { slug: "island-books", test: /\b(books?|novels?|memoirs?|stories)\b/ },
+  { slug: "island-books", test: /\b(books?|novels?|memoirs?|literature)\b/ },
+  { slug: "local-traditions", test: /\b(local traditions?|folk customs?|customs?|traditions?)\b/ },
   { slug: "unusual-wildlife", test: /\b(wildlife|puffins?|seabirds?|rare species)\b/ },
   { slug: "tidal-islands", test: /\btidal islands?\b|\bwalk(?:able)? to\b/ },
   { slug: "for-sale", test: /\b(for sale|on the market|buy an island|islands? to buy)\b/ },
@@ -8428,6 +8498,10 @@ function chatGuideProse(slug, shown, total) {
     const book = title ? ` ${title} is one of them.` : "";
     return `The atlas has a book set on ${named}.${book} Open a card for the picture and the passage that places it.`;
   }
+  if (slug === "local-traditions") {
+    const custom = title ? ` ${title} is one of them.` : "";
+    return `These islands have a local custom the atlas can cite: ${named}.${custom} Open a card for the picture and how it belongs there.`;
+  }
   if (slug === "unusual-wildlife") {
     return `These islands have a species the atlas can cite: ${named}. Ask about one of them if you want the animal and the source.`;
   }
@@ -8441,6 +8515,144 @@ function chatGuideProse(slug, shown, total) {
 }
 
 let chatGuideTopic = null;
+let chatGuideShown = [];
+
+function chatStorySentence(summary, max = 280) {
+  const text = String(summary || "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  const parts = text.split(/(?<=[.!?])\s+/);
+  let out = parts[0] || text;
+  if (out.length < 90 && parts[1]) out = `${out} ${parts[1]}`;
+  if (out.length <= max) return out;
+  return `${out.slice(0, max - 1).replace(/\s+\S*$/, "")}…`;
+}
+
+function chatCitedRows(islandId, slug) {
+  const stories = state.interestIndex?.stories || {};
+  if (slug && Array.isArray(stories[slug]?.[islandId]) && stories[slug][islandId].length) {
+    return stories[slug][islandId];
+  }
+  const all = [];
+  for (const rows of Object.values(stories)) {
+    if (Array.isArray(rows?.[islandId])) all.push(...rows[islandId]);
+  }
+  return all;
+}
+
+function chatOtherName(island) {
+  const names = island?.names || {};
+  const pick =
+    island.nation === "Scotland" ? ["Gaelic", names.gd]
+    : island.nation === "Ireland" || island.nation === "Northern Ireland" ? ["Irish", names.ga]
+    : island.nation === "Wales" ? ["Welsh", names.cy]
+    : island.name === "Isle of Man" ? ["Manx", names.gv]
+    : null;
+  if (!pick || !pick[1] || pick[1] === island.name) return "";
+  return ` In ${pick[0]} it is ${pick[1]}.`;
+}
+
+function chatAboutSuggestions(island) {
+  const next = chatGuideShown
+    .map((id) => state.byId.get(id))
+    .find((row) => row && row.id !== island.id);
+  const out = [`How big is ${island.name}?`];
+  if (next) out.push(`What's the story of ${next.name}?`);
+  out.push(chatGuideTopic === "whisky-distilleries"
+    ? "What about the silent stills?"
+    : "Where are the best islands for whisky?");
+  return out.slice(0, 3);
+}
+
+function chatAboutPortrait(island) {
+  const blurb = chatStorySentence(island.shortDescription);
+  const history = chatStorySentence(island.history);
+  const where = [island.nation, island.archipelago].filter((part, index, all) => part && all.indexOf(part) === index);
+  let answer = `**${island.name}**`;
+  if (where.length) answer += ` is in ${where.join(", ")}`;
+  answer += ".";
+  if (blurb) answer += ` ${blurb}`;
+  if (history && history !== blurb) answer += ` ${history}`;
+  answer += chatOtherName(island);
+  const cited = chatCitedRows(island.id, chatGuideTopic).find((row) => row?.title);
+  if (cited?.title && !answer.includes(cited.title)) {
+    answer += ` The atlas also cites ${cited.title}.`;
+  }
+  return {
+    answer,
+    results: [{ island }],
+    suggestions: chatAboutSuggestions(island),
+  };
+}
+
+function chatAboutCited(island, slug) {
+  const rows = chatCitedRows(island.id, slug);
+  const lead = chatGuideStory(slug, island.id);
+  const sentence = chatStorySentence(lead?.summary);
+  if (!sentence) return chatAboutPortrait(island);
+  const others = rows
+    .filter((row) => row && row !== lead && row.title && row.title !== lead.title)
+    .slice(0, 3)
+    .map((row) => row.title);
+  let answer = `**${island.name}** — ${sentence}`;
+  if (others.length) answer += ` Also cited: ${chatJoinBits(others)}.`;
+  return {
+    answer,
+    results: [{ island }],
+    suggestions: chatAboutSuggestions(island),
+  };
+}
+
+function chatShownIslands() {
+  return chatGuideShown.map((id) => state.byId.get(id)).filter(Boolean);
+}
+
+function chatResolveAskedIsland(text) {
+  if (/^(tell me more|more please|go on|the first one|that one|this one)$/.test(text)) {
+    return { island: chatShownIslands()[0] || null, missed: !chatShownIslands()[0], portrait: false };
+  }
+  const more = text.match(
+    /\b(?:tell me more about|more about|what about|what(?:'s| is) the story of|story of)\s+(.+)$/,
+  );
+  if (!more) return null;
+  const raw = more[1].replace(/[?.!]+$/g, "").trim();
+  if (/\b(silent stills?|working stills?)\b/.test(raw)) return null;
+  if (/^(the )?(first|this|that) one$/.test(raw) || raw === "it") {
+    const island = chatShownIslands()[0] || null;
+    return { island, missed: !island, portrait: /\bstory of\b/.test(text) && !chatGuideTopic };
+  }
+  const inTopic = chatGuideTopic ? chatGuideFindNamed(chatGuideIslands(chatGuideTopic), raw) : null;
+  const island = inTopic || chatGuideFindNamed(chatShownIslands(), raw) || _findIslandByName(raw);
+  if (!island && /\bstory of\b/.test(text)) return { island: null, missed: true, raw, portrait: true };
+  if (!island) return null;
+  return { island, missed: false, portrait: /\bstory of\b/.test(text) && !chatGuideTopic };
+}
+
+function chatNationFollowUp(text) {
+  if (!/\b(which|any|these|them)\b/.test(text)) return null;
+  const nationMatch = text.match(/\b(northern ireland|scotland|england|wales|ireland)\b/);
+  if (!nationMatch || !chatGuideShown.length) return null;
+  const want = nationMatch[1];
+  const label = want.replace(/\b\w/g, (ch) => ch.toUpperCase());
+  const pool = chatShownIslands();
+  const shown = pool.filter((island) => (island.nation || "").toLowerCase() === want);
+  if (!shown.length) {
+    return {
+      answer: `None of the islands I just named are in ${label}.`,
+      results: [],
+      suggestions: ["Help me with this", "Where are the best islands for whisky?"],
+    };
+  }
+  return {
+    answer: shown.length === 1
+      ? `Of those, ${chatJoinNames(shown)} is in ${label}.`
+      : `Of those, ${chatJoinNames(shown)} are in ${label}.`,
+    results: shown.map((island) => ({ island })),
+    suggestions: [
+      shown[0] ? `What's the story of ${shown[0].name}?` : "Help me with this",
+      "Help me with this",
+    ],
+  };
+}
 
 function chatGuideFindNamed(islands, rawName) {
   const name = String(rawName || "").toLowerCase().replace(/[?.!]+$/g, "").trim();
@@ -8474,7 +8686,7 @@ function chatWhiskyFollowUp(text) {
       suggestions: ["Where are the working stills?", "Tell me more about Islay"],
     };
   }
-  if (/\borkney\b/.test(text)) {
+  if (/\b(?:which|any)\b.*\borkney\b|\bon orkney\b/.test(text)) {
     const orkney = islands.filter(
       (island) => /orkney/i.test(island.archipelago || "") || /orkney/i.test(island.name || ""),
     );
@@ -8501,27 +8713,39 @@ function chatWhiskyFollowUp(text) {
       suggestions: ["What about the silent stills?", "Which of these is on Orkney?"],
     };
   }
-  const more = text.match(/\b(?:tell me more about|more about|what about)\s+(.+)$/);
-  if (!more) return null;
-  const island = chatGuideFindNamed(islands, more[1]);
-  if (!island) return null;
-  const titles = (stories[island.id] || []).map((item) => item?.title).filter(Boolean).slice(0, 4);
-  return {
-    answer: titles.length
-      ? `On **${island.name}**, the atlas cites ${chatJoinBits(titles)}. Open the profile for the source on each one.`
-      : `**${island.name}** is on the whisky list. Open the profile for the cited rows.`,
-    results: [{ island }],
-    suggestions: ["What about the silent stills?", "Which of these is on Orkney?"],
-  };
+  return null;
+}
+
+function chatGuideRemember(reply) {
+  if (!reply?.results?.length) return reply;
+  chatGuideShown = reply.results.map((row) => row.island?.id).filter(Boolean);
+  return reply;
 }
 
 function chatGuideReply(rawText) {
   const text = String(rawText || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const asked = chatResolveAskedIsland(text);
+  if (asked?.island) {
+    return {
+      pendingDetail: asked.island.id,
+      slug: asked.portrait ? null : chatGuideTopic,
+      mode: asked.portrait ? "portrait" : (chatGuideTopic ? "cited" : "portrait"),
+    };
+  }
+  if (asked?.missed && asked.raw) {
+    return {
+      answer: `I don't have an island called “${asked.raw}”. Try the name as it appears on the map.`,
+      results: [],
+      suggestions: ["Help me with this", "Where are the best islands for whisky?"],
+    };
+  }
   const follow = chatWhiskyFollowUp(text);
   if (follow) {
     chatGuideTopic = "whisky-distilleries";
-    return follow;
+    return chatGuideRemember(follow);
   }
+  const nation = chatNationFollowUp(text);
+  if (nation) return chatGuideRemember(nation);
   if (
     /^(hi|hello|hey|help|help me|help me with this|what can you do|can you help)\b/.test(text) &&
     text.length < 42 &&
@@ -8545,7 +8769,7 @@ function chatGuideReply(rawText) {
   if (!islands.length) return null;
   const shown = islands.slice(0, 6);
   chatGuideTopic = hit.slug;
-  return {
+  return chatGuideRemember({
     answer: chatGuideProse(hit.slug, shown, islands.length),
     results: shown.map((island) => ({ island })),
     suggestions:
@@ -8556,7 +8780,7 @@ function chatGuideReply(rawText) {
             "Where are the best islands for whisky?",
             "Help me with this",
           ],
-  };
+  });
 }
 
 function composeChatResponse({ query, results, total }) {
@@ -9591,6 +9815,7 @@ function chatSubmit(text) {
         loadCauseways(),
         ensureChatTagVocabulary(),
         state.interestIndex ? Promise.resolve() : loadInterestIndex(),
+        ensureChatCorpus(),
       ]);
 
   // Wrap the whole pipeline in try/catch so a single thrown error can never
@@ -9631,9 +9856,21 @@ function chatSubmit(text) {
       }
 
       const r = searchChatIslands(t, LLM_CANDIDATE_LIMIT);
-      thinking.remove();
 
-      const guide = chatGuideReply(t);
+      let guide = chatGuideReply(t);
+      if (guide?.pendingDetail) {
+        const stub = state.byId.get(guide.pendingDetail);
+        if (stub) await ensureIslandDetailLoaded(stub).catch(() => {});
+        const fresh = state.byId.get(guide.pendingDetail) || stub;
+        guide = fresh
+          ? chatGuideRemember(
+              guide.mode === "cited" && guide.slug
+                ? chatAboutCited(fresh, guide.slug)
+                : chatAboutPortrait(fresh),
+            )
+          : null;
+      }
+      thinking.remove();
       if (guide) {
         chatRenderBot(guide.answer, {
           results: guide.results,
@@ -9988,14 +10225,37 @@ function initFilterFocusTrap() {
 }
 
 // ---------- UX polish (loading, empty states, hints) ----------
+let appLoadingHideTimer = 0;
+
 function setAppLoading(on) {
   const el = document.getElementById("app-loading");
   document.body.classList.toggle("app-is-loading", on);
-  if (!on) document.body.classList.add("is-atlas-ready");
-  if (el) {
-    el.hidden = !on;
-    el.setAttribute("aria-busy", on ? "true" : "false");
+  if (on) {
+    clearTimeout(appLoadingHideTimer);
+    if (el) {
+      el.classList.remove("is-leaving");
+      el.hidden = false;
+      el.removeAttribute("aria-hidden");
+      el.setAttribute("aria-busy", "true");
+    }
+    return;
   }
+  document.body.classList.add("is-atlas-ready");
+  if (!el || el.hidden || el.classList.contains("is-leaving")) {
+    if (el) el.setAttribute("aria-busy", "false");
+    return;
+  }
+  el.setAttribute("aria-busy", "false");
+  el.setAttribute("aria-hidden", "true");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.hidden = true;
+    return;
+  }
+  el.classList.add("is-leaving");
+  appLoadingHideTimer = window.setTimeout(() => {
+    el.hidden = true;
+    el.classList.remove("is-leaving");
+  }, 540);
 }
 
 function countActiveFilters() {

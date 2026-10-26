@@ -67,11 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=motion-11" />
-    <link rel="stylesheet" href="editorial-profile.css?v=motion-10" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=elevation-2" />
+    <link rel="stylesheet" href="editorial-profile.css?v=elevation-3" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
     <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
-    <link rel="modulepreload" href="app.js?v=motion-11" />
+    <link rel="modulepreload" href="app.js?v=elevation-4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -272,9 +272,9 @@
       <aside class="sidebar" id="sidebar" aria-label="Island list and details">
         <section class="island-list" id="island-list-section">
           <div class="discovery-intro">
-            <p class="discovery-eyebrow"><span class="editorial-rule"></span> A WORLD A LITTLE CLOSER TO HOME</p>
+            <p class="discovery-eyebrow"><span class="editorial-rule"></span><span class="discovery-eyebrow__text">A WORLD A LITTLE CLOSER TO HOME</span></p>
             <h2>Find your<br><em>somewhere else.</em></h2>
-            <p class="discovery-lede">Discover the islands of Britain and Ireland, one story at a time.</p>
+            <p class="discovery-lede">Sea, loch, and river. One story at a time.</p>
           </div>
           <div class="discovery-search-row">
       <div class="discovery-search">
@@ -341,7 +341,7 @@
           <header class="sidebar-section-header discovery-header">
             <button type="button" class="discovery-sheet-handle" id="discovery-sheet-handle" aria-label="Expand or collapse island list"></button>
             <div class="sidebar-section-header__text">
-              <h2 id="list-heading" class="discovery-title">Islands to inspire you</h2>
+              <h2 id="list-heading" class="discovery-title">A few places to start</h2>
               <p class="sidebar-orient" id="sidebar-orient">A few places to start</p>
             </div>
             <span class="count" id="result-count" aria-live="polite">0</span>
@@ -435,8 +435,6 @@
           <span aria-hidden="true" data-lucide="arrow-left"></span>
           <span class="map-back__label">Back</span>
         </button>
-        <div class="map-editorial-label"><span data-lucide="map" aria-hidden="true"></span><div><span class="map-editorial-label__eyebrow">THE LIVING ATLAS</span><strong>A different perspective.</strong></div></div>
-        <div class="map-editorial-note"><span data-lucide="mouse-pointer-2" aria-hidden="true"></span> Pick a pin. See where it takes you.</div>
         <div id="crowd-modal" class="crowd-modal" hidden>
           <div class="crowd-modal__backdrop" id="crowd-modal-backdrop" tabindex="-1"></div>
           <div
@@ -778,6 +776,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=motion-11" type="module"></script>
+    <script src="app.js?v=elevation-4" type="module"></script>
   </body>
 </html>
