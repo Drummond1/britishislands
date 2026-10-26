@@ -2641,9 +2641,14 @@ async function loadIslands() {
   try {
     let indexPayload = null;
     try {
-      indexPayload = await _indexPayloadPromise;
+      indexPayload = await Promise.race([
+        _indexPayloadPromise,
+        new Promise((_, reject) => {
+          setTimeout(() => reject(new Error("index timeout")), 3500);
+        }),
+      ]);
     } catch (_) {
-      /* prefetch failed — retry below */
+      /* prefetch failed or stalled — retry below */
     }
     if (!indexPayload) {
       const idxRes = await fetch("data/islands_index.json");
@@ -2665,7 +2670,6 @@ async function loadIslands() {
         renderBrowseQuickChips();
         applyFilters({ skipMarkers: true, skipSort: true });
         applyRouteFromUrl();
-        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
         setAppLoading(false);
         state.booting = false;
         loadFeaturedIslands().catch(() => {});
