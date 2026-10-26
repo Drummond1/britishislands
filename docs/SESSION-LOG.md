@@ -3356,3 +3356,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The live page never left “Loading the atlas…” because `app.js` imported `applyHomeQuerySeo` and the published `seo-meta.js` did not export it. That export is now published. The icon library loads without blocking the atlas script, and the opening-card file starts downloading with the island index instead of waiting for an idle gap. Markers, crowd pins, and the interest index still wait until the shell is up. No data change.
 - **Outcome / counts**: Counts unchanged. On a cold local load the veil was gone well inside five seconds, with Skye, Iona, and Staffa on the opening cards, the map drawn, search lighting the amber line, and the compass and search icons drawn. Production had been stuck on the veil past fifteen seconds.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — The veil no longer waits on a stalled index
+
+- **Goal**: A cold visit to findmyisland.com should be usable within five seconds.
+- **What changed**: The first fetch of the island index could stay pending even after the file had arrived, so the veil never lifted. The preload now uses the same credentials as that fetch. If the fetch has not finished after 3.5 seconds, the page fetches the index again. The veil hides as soon as the index is in memory, without waiting for two animation frames. The chip rule, the search glow, the bearing, and the one-off arrivals still run; they do not sit on the way to the first paint.
+- **Outcome / counts**: Counts unchanged. A cold production load, with the cache off, reached the load event in 1.3 seconds. The veil was hidden, the atlas was ready, and Skye, Iona, and Staffa were on the opening cards, with the map drawn. The rose stays still, the needle has no shadow, and the lamp stays a fixed pool.
+- **Open items kicked to QUEUE.md**: none.

@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (veil timeout)** — A stalled first fetch of the island index no longer holds the loading veil. The preload uses the same credentials as the fetch, a fetch that has not finished after 3.5 seconds is retried, and the veil hides without waiting for animation frames. Opening cards, the rose, lamp, needle, chip rule, search glow, bearing, and one-off arrivals are unchanged. Counts unchanged. Shipped to main. A cold load of findmyisland.com hid the veil inside two seconds.
+
 **2026-10-26 (five-second boot)** — The atlas was stuck on “Loading the atlas…” because the page script imported an export the live metadata file did not have. That export is published, the icon library no longer blocks the first script, and the opening cards start downloading with the island index. The rose, lamp, needle, chip rule, search glow, bearing, and one-off arrivals are unchanged. Counts unchanged. Shipped to main.
 
 **2026-10-26 (still passage)** — The chart rose stays behind the headline and no longer turns. The lamp is a fixed warm pool there and no longer follows the cursor. The needle rests, without the soft shadow. The chip rule, the search glow, the bearing, and the one-off arrivals remain. Counts unchanged. Shipped to main.

@@ -4,7 +4,7 @@ How the homepage loads ~7,000 islands without blocking the main thread for tens 
 
 ## Design goal
 
-**Usable within 5 s.** The loading veil must hide once the island index is in memory. Markers, crowd pins, and the interest index fill in after that. The icon library (`vendor/lucide/lucide.min.js`) is `async` and must not sit in front of `app.js`. Opening cards (`featured_islands.json`) start downloading with the index. A missing export in `seo-meta.js` leaves the veil up forever, because the atlas script never runs.
+**Usable within 5 s.** The loading veil must hide once the island index is in memory. Markers, crowd pins, and the interest index fill in after that. The icon library (`vendor/lucide/lucide.min.js`) is `async` and must not sit in front of `app.js`. Opening cards (`featured_islands.json`) start downloading with the index. A missing export in `seo-meta.js` leaves the veil up forever, because the atlas script never runs. If the first index fetch never settles, the page fetches it again after 3.5 seconds. The veil does not wait for animation frames. The index preload uses `crossorigin="use-credentials"` so it can be reused by the page fetch.
 
 ## Critical path (~400 KB gzip)
 
@@ -40,11 +40,11 @@ setAppLoading(true)
   → state.islands / state.byId
   → applyFilters({ skipMarkers: true, skipSort: true })
   → applyRouteFromUrl()
-  → rAF × 2
   → setAppLoading(false)          ← loader hides here
+  → loadFeaturedIslands()
   → runWhenIdle:
        rebuildMarkerLayer({ chunked: true })
-       loadCrowdPins, loadFerries, featured, discovery
+       loadCrowdPins, loadFerries, discovery
 ```
 
 ### Do not regress
@@ -71,7 +71,7 @@ setAppLoading(true)
 |-------|---------|
 | `data/ferries.json` + terminals + operators | `requestIdleCallback` after boot |
 | `data/discovery_topics.json` | idle |
-| `data/featured_islands.json` | idle |
+| `data/featured_islands.json` | starts with the index; applied when the veil hides |
 | `data/crowd_pins.json` | idle |
 | `data/details/{id}.json` | Profile open (preferred) |
 | `data/shards/{nation}.json` | Fallback if detail missing |
@@ -91,7 +91,7 @@ setAppLoading(true)
 ## HTML optimisations
 
 ```html
-<link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
+<link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
 <link rel="modulepreload" href="app.js" />
 ```
 
