@@ -3532,3 +3532,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Film, art and music **139**. Whisky **21**. For sale **48**. Rare wildlife **33**. Tidal islands **104**. Islands with castles **96**. Books **32** (two more titles on Lewis and Harris). Local traditions **35** (Anglesey, the Isle of Wight, Mull, Alderney, and Dalkey Island). Unusual news **50**. Stories **1,502**, **915** with an open-licence picture.
 - **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
 
+## 2026-10-26 — Wildlife and traditions follow-up
+
+- **Goal**: Publish the cited rows the wildlife and traditions research finished after the first ship, and leave out anything the sources do not support.
+- **What changed**: Rare wildlife gains the Manx shearwater, named for the Calf of Man; the red-necked phalarope at the Loch of Funzie on Fetlar; and, on the Isle of May, one of the largest puffin colonies in the UK and the island's own race of house mice. Skomer, Skokholm, and Rum stay, on the sentence that names those three islands. Mousa stays out: the sentence that would make it the stronghold includes a pair count. Local traditions also gain Ryde Carnival, from the Ryde article. The Beaumaris Food Festival is not filed: its own article says it was last held in 2019. Books also gain The Silence of Dean Maitland, a novel set on a fictionalized Isle of Wight. The Aran Islands stays out: the article calls it a journal. Cowes Week stays out: the article calls it a regatta. Scoil Acla stays out: it is a summer school. Nothing new for film, for sale, tidal islands, castles, whisky, or unusual news. `islands.json` was not edited. Supabase was not called.
+- **Outcome / counts**: Film, art and music **139**. Whisky **21**. For sale **48**. Rare wildlife **36** (was 33). Tidal islands **104**. Islands with castles **96**. Books **32** (Dean Maitland as well as the two Lewis titles). Local traditions **35**. Unusual news **50**. Stories **1,507**, **923** with an open-licence picture.
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
+
