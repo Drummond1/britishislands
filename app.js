@@ -12,7 +12,7 @@
  *    Get a free key at https://osdatahub.os.uk/ (250k tiles / month).
  */
 
-import { applyHomeQuerySeo, applyIslandSeo, resetIslandSeo } from "./seo-meta.js?v=guides-1";
+import { applyHomeQuerySeo, applyIslandSeo, resetIslandSeo } from "./seo-meta.js?v=boot-5s";
 
 applyHomeQuerySeo();
 import {
@@ -113,6 +113,11 @@ const _indexPayloadPromise = fetch("data/islands_index.json").then((res) =>
   res.ok ? res.json() : Promise.reject(new Error(`index HTTP ${res.status}`)),
 );
 
+/** Opening cards. Started now so they are not waiting on an idle callback. */
+const _featuredPayloadPromise = fetch("data/featured_islands.json")
+  .then((res) => (res.ok ? res.json() : null))
+  .catch(() => null);
+
 const MAP_PIN_SVG = `<svg class="map-pin__svg" viewBox="0 0 20 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path class="map-pin__body" d="M10 1C5.86 1 2.5 4.86 2.5 9.5c0 5.4 6.2 14.2 7.5 16.5 1.3-2.3 7.5-11.1 7.5-16.5C17.5 4.86 14.14 1 10 1z"/>
   <circle class="map-pin__gleam" cx="10" cy="8.5" r="2.8"/>
@@ -194,9 +199,10 @@ function refreshLucideIcons(root = document) {
       lucide.createIcons({ attrs: { "stroke-width": 2 }, nameAttr: "data-lucide", root });
     }
   } catch (_) {
-    /* optional CDN */
+    /* optional */
   }
 }
+window.refreshLucideIcons = refreshLucideIcons;
 
 function hasUserDiscoveryIntent() {
   if (els?.search?.value?.trim()) return true;
@@ -2662,11 +2668,11 @@ async function loadIslands() {
         await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
         setAppLoading(false);
         state.booting = false;
+        loadFeaturedIslands().catch(() => {});
         runWhenIdle(() => {
           hydrateSeoPathsFromLookup().catch(() => {});
           rebuildMarkerLayer({ chunked: true });
           loadCrowdPinsAndRender();
-          loadFeaturedIslands().catch(() => {});
           if (!state.discoveryTopics) loadDiscoveryTopics().catch(() => {});
           if (!state.interestIndex) loadInterestIndex().catch(() => {});
           prefetchPopularDetails();
@@ -2724,10 +2730,9 @@ async function loadIslands() {
 
 async function loadFeaturedIslands() {
   try {
-    const res = await fetch("data/featured_islands.json");
+    const data = await _featuredPayloadPromise;
     if (!state.activeExploreTopic) {
-      if (!res.ok) return;
-      const data = await res.json();
+      if (!data) return;
       const rows = Array.isArray(data?.islands) ? data.islands : [];
       state.featuredIslands = rows.filter((r) => r?.id && state.byId?.has(r.id));
       for (const row of state.featuredIslands) {

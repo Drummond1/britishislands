@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (five-second boot)** — The atlas was stuck on “Loading the atlas…” because the page script imported an export the live metadata file did not have. That export is published, the icon library no longer blocks the first script, and the opening cards start downloading with the island index. The rose, lamp, needle, chip rule, search glow, bearing, and one-off arrivals are unchanged. Counts unchanged. Shipped to main.
+
 **2026-10-26 (still passage)** — The chart rose stays behind the headline and no longer turns. The lamp is a fixed warm pool there and no longer follows the cursor. The needle rests, without the soft shadow. The chip rule, the search glow, the bearing, and the one-off arrivals remain. Counts unchanged. Shipped to main.
 
 **2026-10-26 (homepage passage)** — The atlas first screen is a chart-room instrument: a drifting rose whose needle follows the pointer, a lamp that tracks the cursor, a bearing that names St Kilda, Iona, Staffa, Lindisfarne, and Skellig Michael, and a gold rule that travels the interest chips. Counts unchanged. Shipped to main.

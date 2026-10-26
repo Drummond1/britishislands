@@ -4,7 +4,7 @@ How the homepage loads ~7,000 islands without blocking the main thread for tens 
 
 ## Design goal
 
-**Interactive within ~7 s** on typical 4G; list + map shell often **1–3 s**. Markers and ferries fill in after first paint.
+**Usable within 5 s.** The loading veil must hide once the island index is in memory. Markers, crowd pins, and the interest index fill in after that. The icon library (`vendor/lucide/lucide.min.js`) is `async` and must not sit in front of `app.js`. Opening cards (`featured_islands.json`) start downloading with the index. A missing export in `seo-meta.js` leaves the veil up forever, because the atlas script never runs.
 
 ## Critical path (~400 KB gzip)
 

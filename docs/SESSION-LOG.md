@@ -3349,3 +3349,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The rose stays and no longer turns. The lamp is a fixed warm pool behind the headline; it no longer follows the cursor, and it leaves when a search hides the headline. The needle rests at its home angle, and its soft shadow is gone. The chip rule, the search glow, the bearing, and the one-off arrivals are unchanged. No data change.
 - **Outcome / counts**: Counts unchanged. Checked in the browser: the rose is still, the needle stays at its home angle, the lamp does not follow the pointer, search still lights the amber line, and the gold rule still moves to a chip.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Atlas loads instead of staying on the veil
+
+- **Goal**: The homepage should be usable within five seconds, with the existing motions left in place.
+- **What changed**: The live page never left “Loading the atlas…” because `app.js` imported `applyHomeQuerySeo` and the published `seo-meta.js` did not export it. That export is now published. The icon library loads without blocking the atlas script, and the opening-card file starts downloading with the island index instead of waiting for an idle gap. Markers, crowd pins, and the interest index still wait until the shell is up. No data change.
+- **Outcome / counts**: Counts unchanged. On a cold local load the veil was gone well inside five seconds, with Skye, Iona, and Staffa on the opening cards, the map drawn, search lighting the amber line, and the compass and search icons drawn. Production had been stuck on the veil past fifteen seconds.
+- **Open items kicked to QUEUE.md**: none.

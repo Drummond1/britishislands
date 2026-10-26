@@ -9,17 +9,29 @@
 const HOME_SEO = {
   title: "Find My Island — The British & Irish Islands Atlas",
   description:
-    "Find My Island: a map of the islands of Britain and Ireland, with photos, stories, and the odd fact you would not expect.",
+    "A map of the islands of Britain and Ireland, with photos and sources. Guides to whisky isles, islands with castles, tidal islands, and islands for sale.",
   canonical: "https://www.findmyisland.com/",
   ogType: "website",
   ogTitle: "Find My Island — The British & Irish Islands Atlas",
   ogDescription:
-    "A map of the islands of Britain and Ireland — sea, loch, and river — with photos and stories.",
+    "Map the islands of Britain and Ireland, then open a guide: whisky, castles, tidal islands, wildlife, and books.",
   ogUrl: "https://www.findmyisland.com/",
   twitterCard: "summary_large_image",
   twitterTitle: "Find My Island — The British & Irish Islands Atlas",
   twitterDescription:
-    "Explore the islands of Britain and Ireland: a map, photos, and the stories attached to each place.",
+    "A map of the islands of Britain and Ireland, with photos, stories, and guides you can cite.",
+};
+
+/** Query-string atlas views must not compete with the guide or island URL. */
+const GUIDE_CANONICAL = {
+  "island-castles": "/collections/island-castles/",
+  "whisky-distilleries": "/collections/whisky-distilleries/",
+  "tidal-islands": "/collections/tidal-islands/",
+  "for-sale": "/collections/for-sale/",
+  "unusual-wildlife": "/collections/unusual-wildlife/",
+  "island-books": "/collections/island-books/",
+  "local-traditions": "/collections/local-traditions/",
+  "film-art-music": "/collections/film-art-music/",
 };
 
 let _baselineTitle = "";
@@ -249,6 +261,25 @@ export function applyIslandSeo(island) {
   injectJsonLd(schema);
 }
 
+/**
+ * Homepage URLs with a query string (?interest=, ?ask=, ?island=) stay out of
+ * the index. A known interest filter points its canonical at the guide.
+ */
+export function applyHomeQuerySeo() {
+  if (typeof window === "undefined") return;
+  const path = window.location.pathname || "/";
+  const onHome = path === "/" || path === "/index.html";
+  if (!onHome) return;
+  const params = new URLSearchParams(window.location.search);
+  if (![...params.keys()].length) return;
+  upsertMetaByName("robots", "noindex,follow,max-image-preview:large");
+  const guide = GUIDE_CANONICAL[params.get("interest") || ""];
+  if (guide && !params.get("island")) {
+    const origin = siteOrigin() || window.location.origin;
+    upsertLink("canonical", `${origin}${guide}`);
+  }
+}
+
 export function resetIslandSeo() {
   const home = HOME_SEO;
   document.title = _baselineTitle || home.title;
@@ -256,6 +287,7 @@ export function resetIslandSeo() {
   upsertLink("canonical", home.canonical);
   // Restore default indexing when leaving an island deep-link
   upsertMetaByName("robots", "index,follow,max-image-preview:large");
+  applyHomeQuerySeo();
   upsertMetaProperty("og:type", home.ogType);
   upsertMetaProperty("og:title", home.ogTitle);
   upsertMetaProperty("og:description", home.ogDescription);
