@@ -3426,3 +3426,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Pushed the 3:2 photograph frames, the form for naming an unnamed island, and the collection guides under `/collections/`. Caches, backup copies, and unpublished interest-candidate files stayed local. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. GitHub Pages builds from this push to `main`.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — More unusual news
+
+- **Goal**: Add further strange events, each with a summary, a link, and a photograph, to the unusual-news chip.
+- **What changed**: Ten reports on ten more islands. The wording is original. Pictures are open-licence photographs of the island, the beach runway, the figurine, the airstrip, the whirlpool, and the cable car. `islands.json` was not edited.
+- **Outcome / counts**: **26** islands, **28** stories, **28** with a picture. Stories overall **1,245**, **708** with a picture. Other chips unchanged. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.

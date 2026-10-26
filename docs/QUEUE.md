@@ -77,7 +77,7 @@ the island. Monastic pilgrimages, island breeds, and a bare legend stayed out.
 Supabase still needs `data/interest/memberships_sync.sql` and
 `supabase/migrations/20261026071000_local_traditions.sql`.
 
-Unusual news is published locally (2026-10-26): **16** islands, **18** cited
+Unusual news is published locally (2026-10-26): **26** islands, **28** cited
 stories, each with an original summary, a link to the report, and an
 open-licence picture of the subject. Supabase still needs
 `data/interest/memberships_sync.sql` and
@@ -94,7 +94,7 @@ rows: 546 artworks, 297 music, 73 film). Whisky (**18** islands, **57** rows: 30
 Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. For sale
 (42), Unusual wildlife (23 islands, 30 species), Tidal islands (66),
 Islands with Castles (89 islands, 113 castles),
-Local traditions (23 islands, 35 customs), Unusual news (16 islands, 18 stories).
+Local traditions (23 islands, 35 customs), Unusual news (26 islands, 28 stories).
 Artwork, whisky, and wildlife lead the list and the profile with one cited
 picture and a short connection. Whisky also groups the rest of the profile
 under those subdivisions. The chip row is one filter at a time (2026-10-26):

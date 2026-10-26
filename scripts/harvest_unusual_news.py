@@ -276,6 +276,153 @@ SEEDS = [
         ),
         "evidence": "The Guardian, 13 December 2008, reported the election aftermath on Sark.",
     },
+    {
+        "island_id": "osm-relation-15708714",
+        "title": "Whisky from the wreck",
+        "source_url": "https://www.bbc.co.uk/news/uk-scotland-12363591",
+        "source_title": "BBC News",
+        "commons_file": "File:Eriskay - geograph.org.uk - 200811.jpg",
+        "image_note": "Eriskay, where the SS Politician went aground",
+        "summary": (
+            "On 5 February 1941 the cargo ship SS Politician ran aground off Eriskay "
+            "with about 250,000 bottles of whisky in the hold. "
+            "The BBC's account says islanders rowed out and took cases ashore, "
+            "and that Customs and Excise pursued them because no duty had been paid on the spirits."
+        ),
+        "evidence": "BBC News, 4 February 2011, places the 1941 wreck of the SS Politician off Eriskay.",
+    },
+    {
+        "island_id": "osm-relation-380646",
+        "title": "The beach is the runway",
+        "source_url": "https://www.bbc.com/news/uk-scotland-highlands-islands-65960707",
+        "source_title": "BBC News",
+        "commons_file": "File:Cockleshell beach, Isle of Barra - geograph.org.uk - 7036092.jpg",
+        "image_note": "The cockle strand on Barra, used as the runway",
+        "summary": (
+            "Scheduled flights to Barra land on Tràigh Mhòr, a cockle beach at the north of the island, "
+            "and the timetable follows the tide. "
+            "The BBC describes it as the only beach runway in the world used for scheduled airline services. "
+            "When the windsocks are down, the sand is a public beach again."
+        ),
+        "evidence": "BBC News, 20 June 2023, describes scheduled landings on the beach at Barra.",
+    },
+    {
+        "island_id": "st-kilda",
+        "title": "The last boats",
+        "source_url": "https://www.nts.org.uk/stories/st-kilda-the-evacuation-of-a-community",
+        "source_title": "National Trust for Scotland",
+        "commons_file": "File:Saint Kilda 20090611 Hirta - Village Bay overview.jpg",
+        "image_note": "Village Bay on Hirta, St Kilda",
+        "summary": (
+            "On the morning of 29 August 1930 the last 36 people living on St Kilda left Hirta aboard HMS Harebell. "
+            "The National Trust for Scotland records that they had asked the government that May to help them leave, "
+            "because too few remained to keep the island through another winter."
+        ),
+        "evidence": "The National Trust for Scotland places the 29 August 1930 evacuation on Hirta, St Kilda.",
+    },
+    {
+        "island_id": "osm-relation-3148465",
+        "title": "Scotland's earliest face",
+        "source_url": "http://news.bbc.co.uk/2/hi/uk_news/scotland/north_east/8212074.stm",
+        "source_title": "BBC News",
+        "commons_file": "File:Westray_Wife_20110529.jpg",
+        "image_note": "The sandstone figurine found on Westray",
+        "summary": (
+            "In 2009 archaeologists at the Links of Noltland on Westray lifted a sandstone figurine "
+            "a few centimetres tall from the mud of a Neolithic house. "
+            "The BBC reported it as the earliest human face known from Scotland. "
+            "It has come to be called the Westray Wife."
+        ),
+        "evidence": "BBC News reported the 2009 find of the figurine at the Links of Noltland on Westray.",
+    },
+    {
+        "island_id": "osm-way-4569530",
+        "title": "Two minutes in the air",
+        "source_url": "https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-22668150",
+        "source_title": "BBC News",
+        "commons_file": "File:Papa Westray airport - geograph.org.uk - 8291554.jpg",
+        "image_note": "The airstrip on Papa Westray",
+        "summary": (
+            "The scheduled flight between Westray and Papa Westray covers 1.7 miles. "
+            "The BBC reported that the hop takes about two minutes, including taxiing, "
+            "and that the fastest recorded time was 53 seconds."
+        ),
+        "evidence": "BBC News places the two-minute scheduled flight between Westray and Papa Westray.",
+    },
+    {
+        "island_id": "osm-relation-12597195",
+        "title": "The beast on the rocks",
+        "source_url": "http://news.bbc.co.uk/2/hi/uk_news/scotland/highlands_and_islands/7074696.stm",
+        "source_title": "BBC News",
+        "commons_file": "File:PicVat.jpg",
+        "image_note": "Stronsay",
+        "summary": (
+            "In September 1808 a carcass the islanders did not recognise washed onto the rocks "
+            "at Rothiesholm Head on Stronsay. Witnesses put it at about 55 feet. "
+            "The BBC, reporting later research, said some experts took it for a dead basking shark, "
+            "while the drawings were compared with descriptions of the Loch Ness monster."
+        ),
+        "evidence": "BBC News, 3 November 2007, places the 1808 Stronsay Beast at Rothiesholm Head.",
+    },
+    {
+        "island_id": "osm-relation-2797155",
+        "title": "The raiders",
+        "source_url": "http://news.bbc.co.uk/2/hi/uk_news/scotland/highlands_and_islands/6653709.stm",
+        "source_title": "BBC News",
+        "commons_file": "File:Vatersay_Fae057.jpg",
+        "image_note": "Vatersay",
+        "summary": (
+            "In July 1906 landless men from Barra, who the BBC says were not allowed to build a proper house there, "
+            "took land on Vatersay. "
+            "By 1909 the Congested Districts Board had bought the island and divided it into 58 crofts."
+        ),
+        "evidence": "BBC News places the 1906 land raid, and the 1909 crofting division, on Vatersay.",
+    },
+    {
+        "island_id": "osm-way-495525351",
+        "title": "Stones for the Olympics",
+        "source_url": "https://www.bbc.com/news/uk-scotland-68713338",
+        "source_title": "BBC News",
+        "commons_file": "File:Ailsa_Craig_2017-05-17.jpg",
+        "image_note": "Ailsa Craig",
+        "summary": (
+            "The granite for the curling stones used at the Olympics is taken from Ailsa Craig, "
+            "an uninhabited island in the Firth of Clyde. "
+            "The BBC reported that one Ayrshire workshop has made them for more than 170 years, "
+            "and that the rock is cut from the island about once a decade."
+        ),
+        "evidence": "BBC News places the granite for Olympic curling stones on Ailsa Craig.",
+    },
+    {
+        "island_id": "osm-relation-4619204",
+        "title": "Caught in the whirlpool",
+        "source_url": "https://www.bbc.co.uk/news/uk-scotland-43821334",
+        "source_title": "BBC News",
+        "commons_file": "File:The Corryvreckan from Eilean Beag - geograph.org.uk - 39359.jpg",
+        "image_note": "The Corryvreckan, off the north of Jura",
+        "summary": (
+            "In 1947, while he was on Jura writing his last novel, George Orwell's boat was caught "
+            "in the Corryvreckan whirlpool between Jura and Scarba. "
+            "The BBC records that the outboard motor was torn off, the boat capsized, "
+            "and Orwell got his young son onto the rocks of Eilean Mòr before a passing fisherman took them off."
+        ),
+        "evidence": "BBC News, 29 April 2018, places Orwell's 1947 capsize in the Corryvreckan off Jura.",
+    },
+    {
+        "island_id": "osm-relation-8609288",
+        "title": "The car over the sound",
+        "source_url": "https://www.rte.ie/news/2023/0609/1388240-cable-car-dursey-island/",
+        "source_title": "RTÉ News",
+        "commons_file": "File:Oileán Baoi (Dursey Island), Cable car - geograph.org.uk - 262128.jpg",
+        "image_note": "The cable car to Dursey Island",
+        "summary": (
+            "Ireland's only cable car runs from the Beara peninsula across open water to Dursey Island. "
+            "RTÉ reported that it first opened on 5 December 1969, "
+            "and that it reopened in June 2023 after the towers and ropes were replaced. "
+            "The car carries six people."
+        ),
+        "evidence": "RTÉ News, 9 June 2023, places Ireland's only cable car on the crossing to Dursey Island.",
+    },
 ]
 
 

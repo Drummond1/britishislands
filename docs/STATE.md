@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (unusual news, continued)** — Ten more reports. **26** islands, **28** cited stories, every one with an open-licence picture. Added the whisky wreck off Eriskay, the beach runway on Barra, the St Kilda evacuation, the Westray Wife, the two-minute flight to Papa Westray, the Stronsay beast, the Vatersay raiders, the Ailsa Craig curling stones, Orwell in the Corryvreckan, and the Dursey cable car. Stories **1,245**, **708** with a picture. Other chips unchanged. Did not edit `islands.json`. Supabase was not reloaded.
+
 **2026-10-26 (shipped to main)** — Photo frames, naming an unnamed island, and the collection guides are on `main` for GitHub Pages. Counts unchanged. Supabase migrations in the repo stay unapplied from this push.
 
 **2026-10-26 (photo frames)** — Collection cards and the opening photographs use a 3:2 frame. A tall or square picture is shown whole. Counts unchanged.
