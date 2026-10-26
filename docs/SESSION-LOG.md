@@ -3546,3 +3546,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: **56** islands, **61** stories, **61** with a picture. Stories overall **1,514**, **930** with a picture. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. The other regional searches are still out.
 
+## 2026-10-26 — Obscure islands from five more searches
+
+- **Goal**: Add strange events from smaller islands, found in local papers, island sites, museums, and odd published reports.
+- **What changed**: Twenty-five reports. Among them the SaxaVord fire on Unst, golf clubs in an Out Skerries wreck, a Heinkel arrest on Fair Isle, a film crew marooned on Foula, a Bronze Age mound moved on Bressay and used to brew, a walrus on a cage at Vementry, a still sent to Inishmurray, Sherkin burned over a wine cargo, a warm-water wreck at Inishbofin, a bog exposed on Omey, the pirate taken on Eday, the church people lived in on Eynhallow, a Persian note on the Dwarfie Stane, a gasworks disguised on Shapinsay, the purchase of Papa Stronsay, the Scarp rocket post, the Soay shark works, hummingbirds on Rum, planting rooms blown in a wood on Gigha, convicts kept on Lundy, the dry colony on Osea, a wreck-timber house on Skokholm, figureheads that must stay on Tresco, the Burgh Island sea tractor, and a brandy store on Jethou. Forvik was already filed. Skellig Michael and the Great Blasket are not in the atlas. North Ronaldsay's sheep dyke stays in local traditions. `islands.json` was not edited.
+- **Outcome / counts**: **78** islands, **86** stories, **86** with a picture. Stories overall **1,539**, **955** with a picture. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.
+

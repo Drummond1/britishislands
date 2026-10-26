@@ -854,6 +854,331 @@ SEEDS = [
         ),
         "evidence": "The Herald's obituary of Tom Scott places the 1984 haggis-hurling record on Inchmurrin.",
     },
+    {
+        "island_id": "osm-relation-6045406",
+        "title": "The launch stool burned",
+        "source_url": "https://www.shetnews.co.uk/2024/08/20/safety-protocols-worked-exactly-planned/",
+        "source_title": "Shetland News",
+        "commons_file": "File:Lee of Saxavord and Muckle Flugga - geograph.org.uk - 5279517.jpg",
+        "image_note": "Unst, below Saxa Vord",
+        "summary": (
+            "During a test at SaxaVord on Unst, aviation fuel caught fire and engulfed a rocket and the launch stool. "
+            "Shetland News reported that the fire service was called, nobody was hurt, and the attempt at a first orbital launch from British soil was put off."
+        ),
+        "evidence": "Shetland News, 20 August 2024, places the rocket-test fire at SaxaVord on Unst.",
+    },
+    {
+        "island_id": "out-skerries-housay-bruray",
+        "title": "Golf clubs bound for Java",
+        "source_url": "https://portal.historicenvironment.scot/apex/f?p=1505:300:::::VIEWTYPE,VIEWREF:designation,HMPA5",
+        "source_title": "Historic Environment Scotland",
+        "commons_file": "File:Outskerriesroad.jpg",
+        "image_note": "The Out Skerries",
+        "summary": (
+            "The Dutch East Indiaman Kennemerland, bound for Java, broke up at the Out Skerries in December 1664. "
+            "Historic Environment Scotland records pewter golf-club heads from the wreck, with others from a second ship, as the earliest evidence of golf leaving northern Europe."
+        ),
+        "evidence": "The Out Skerries Historic Marine Protected Area designation places the Kennemerland golf clubs at the Out Skerries.",
+    },
+    {
+        "island_id": "fair-isle",
+        "title": "Both rescue boats grounded",
+        "source_url": "https://blogs.glowscotland.org.uk/sh/public/fairisleprimaryschool/uploads/sites/2249/2024/11/25101303/22nd-November-2024.pdf",
+        "source_title": "Fair Isle community newsletter",
+        "commons_file": "File:Fair Isle - West cliffs.jpg",
+        "image_note": "Fair Isle",
+        "summary": (
+            "In January 1941 a Heinkel on a weather flight crash-landed on Fair Isle, and an islander arrested the crew who got out. "
+            "The community newsletter records that the next day both boats sent to collect them ran aground, and the Lerwick lifeboat took them off."
+        ),
+        "evidence": "The Fair Isle newsletter, 22 November 2024, places the January 1941 Heinkel landing and the two grounded boats on Fair Isle.",
+    },
+    {
+        "island_id": "osm-relation-8249591",
+        "title": "The film crew could not leave",
+        "source_url": "https://collections-search.bfi.org.uk/web/Details/ChoiceFilmWorks/150034787",
+        "source_title": "British Film Institute",
+        "commons_file": "File:Ham Foula.jpg",
+        "image_note": "Foula",
+        "summary": (
+            "Michael Powell was refused leave to film The Edge of the World on St Kilda, so the unit shot it on Foula. "
+            "The British Film Institute records that in mid-October the company was marooned there for eleven days, with no radio, until the weather let them off."
+        ),
+        "evidence": "The British Film Institute places the 1930s marooning of the Edge of the World unit on Foula.",
+    },
+    {
+        "island_id": "osm-relation-2291884",
+        "title": "Rebuilt, then used to brew",
+        "source_url": "https://scapetrust.org/bronze-age-bressay/",
+        "source_title": "The SCAPE Trust",
+        "commons_file": "File:Bressay Heritage Centre with relocated burnt mound from Cruester - geograph.org.uk - 1526882.jpg",
+        "image_note": "The Cruester burnt mound, rebuilt at Bressay Heritage Centre",
+        "summary": (
+            "A Bronze Age burnt mound at Cruester, on Bressay, was falling into the sea. "
+            "The SCAPE Trust records that in 2008 it was taken apart and rebuilt, stone by stone, at the island heritage centre, and that a replica beside it has been used to brew beer."
+        ),
+        "evidence": "The SCAPE Trust places the 2008 move of the Cruester burnt mound on Bressay.",
+    },
+    {
+        "island_id": "osm-relation-13370324",
+        "title": "A walrus on the fish cage",
+        "source_url": "https://www.bbc.com/news/uk-scotland-north-east-orkney-shetland-59636151",
+        "source_title": "BBC News",
+        "commons_file": "File:Vementry.jpg",
+        "image_note": "Vementry",
+        "summary": (
+            "In December 2021 a young walrus already seen off Denmark, Germany, the Netherlands and Northumberland hauled out on a salmon cage at Vementry. "
+            "The BBC reported that she was feeding on lobsters, scallops and crabs, about 400 miles from the Arctic."
+        ),
+        "evidence": "BBC News, 13 December 2021, places the walrus on a salmon cage at Vementry.",
+    },
+    {
+        "island_id": "osm-relation-3012429",
+        "title": "A still sent from the distillery",
+        "source_url": "https://www.irishtimes.com/opinion/an-irishman-s-diary-1.213697",
+        "source_title": "The Irish Times",
+        "commons_file": "File:Inishmurray Teampall Molaise N 2007 08 22.jpg",
+        "image_note": "Inishmurray",
+        "summary": (
+            "The Irish Times records that Inishmurray's cash trade was poteen, and that John Power of Powers visited around 1900 and sent the island a copper still. "
+            "Wartime sugar rationing ended the trade. On 12 November 1948 the last 46 people left for houses the county council had provided."
+        ),
+        "evidence": "The Irish Times, 12 November 1998, places the poteen trade and the 12 November 1948 evacuation on Inishmurray.",
+    },
+    {
+        "island_id": "osm-relation-5208439",
+        "title": "Burned over a cargo of wine",
+        "source_url": "https://sherkinisland.ie/history/",
+        "source_title": "Sherkin Island history",
+        "commons_file": "File:County Cork - Sherkin Abbey - 20150806104724.jpg",
+        "image_note": "The friary on Sherkin",
+        "summary": (
+            "In 1537 the O'Driscolls seized a Lisbon ship sheltering in Baltimore Harbour and shared out her wine. "
+            "Sherkin's own history says Waterford men then spent five days on the island, burned the castle and the friary, and left with the fishing boats."
+        ),
+        "evidence": "The Sherkin Island history page places the March 1537 burning on Sherkin.",
+    },
+    {
+        "island_id": "osm-relation-8158207",
+        "title": "A hull eaten by a warm-water worm",
+        "source_url": "https://www.irishtimes.com/news/cannons-shipwreck-found-at-inishbofin-1.987816",
+        "source_title": "The Irish Times",
+        "commons_file": "File:Inishbofin-fort.jpg",
+        "image_note": "Inishbofin, County Galway",
+        "summary": (
+            "Harbour works on Inishbofin, County Galway, turned up an uncharted hull whose timbers were riddled with a shipworm of warm seas, and whose oak was not Irish. "
+            "The Irish Times reported that the reading was a ship that had traded in warm water, and that two cannons found later by the old pier did not belong to that hull."
+        ),
+        "evidence": "The Irish Times, 3 December 2007, places the warm-water wreck at the harbour works on Inishbofin, County Galway.",
+    },
+    {
+        "island_id": "osm-relation-3414078",
+        "title": "A bog at the foot of the cliff",
+        "source_url": "https://www.irishtimes.com/news/ireland/irish-news/storms-expose-archaeology-on-omey-island-off-connemara-1.1652758",
+        "source_title": "The Irish Times",
+        "commons_file": "File:Omey Island shore - geograph.org.uk - 5959574.jpg",
+        "image_note": "The shore of Omey",
+        "summary": (
+            "Winter seas in 2013 cut sand cliffs on Omey, the tidal island off Connemara, and exposed a bog at least 6,000 years old. "
+            "The Irish Times reported that the bog stained the sea brown, and that sunken houses of the eighteenth and nineteenth centuries showed in the same face."
+        ),
+        "evidence": "The Irish Times, 13 January 2014, places the exposed bog on the shore of Omey Island.",
+    },
+    {
+        "island_id": "osm-relation-12597197",
+        "title": "Every boat on the island was sunk",
+        "source_url": "https://www.uhi.ac.uk/en/t4-media/one-web/university/research/institute-for-northern-studies/research/Gow-Heritage-Trail-text-side-compressed.pdf",
+        "source_title": "University of the Highlands and Islands",
+        "commons_file": "File:Lighthouse on Calf Sound, Eday - geograph.org.uk - 33187.jpg",
+        "image_note": "Calf Sound, Eday",
+        "summary": (
+            "In February 1725 the pirate John Gow's ship was carried onto the Calf of Eday. "
+            "A University of the Highlands and Islands trail records that James Fea had every small boat on Eday sunk, kept up a correspondence offering help, and then had Gow locked in Carrick House."
+        ),
+        "evidence": "The John Gow heritage trail places the February 1725 capture at Carrick House on Eday.",
+    },
+    {
+        "island_id": "osm-way-4569233",
+        "title": "The houses were a church",
+        "source_url": "https://www.historicenvironment.scot/visit/all/eynhallow-church/",
+        "source_title": "Historic Environment Scotland",
+        "commons_file": "File:Eynhallow monastery from the air - geograph.org.uk - 862315.jpg",
+        "image_note": "The Norse church on Eynhallow",
+        "summary": (
+            "After a fever in 1851, the landlord pulled down four thatched cottages on Eynhallow and the people who survived were sent away. "
+            "Historic Environment Scotland records that the cottages had been built into an older church, recognised as Norse only once the thatch was gone. Nobody has lived there since."
+        ),
+        "evidence": "Historic Environment Scotland places the 1851 discovery of the Norse church inside the cottages on Eynhallow.",
+    },
+    {
+        "island_id": "osm-relation-12597159",
+        "title": "Two nights, noted in Persian",
+        "source_url": "https://www.historicenvironment.scot/visit/all/dwarfie-stane/history-and-stories/",
+        "source_title": "Historic Environment Scotland",
+        "commons_file": "File:Hoy Orkney Landesinnere.JPG",
+        "image_note": "Hoy",
+        "summary": (
+            "The Dwarfie Stane on Hoy is a single block hollowed into a chamber, called the only wholly rock-cut prehistoric tomb in Britain. "
+            "Historic Environment Scotland records that in 1850 a former spy cut a Persian line into the stone, saying he had sat two nights and learned patience, and carved his name backwards in Latin."
+        ),
+        "evidence": "Historic Environment Scotland places the 1850 Persian inscription on the Dwarfie Stane on Hoy.",
+    },
+    {
+        "island_id": "osm-relation-12597289",
+        "title": "A gasworks dressed as a turret",
+        "source_url": "https://archaeologyorkney.com/industrial-heritage/shapinsay/balfour-village-gasometer/",
+        "source_title": "Archaeology Orkney",
+        "commons_file": "File:Geo of Ork by C Michael Hogan.jpg",
+        "image_note": "Shapinsay",
+        "summary": (
+            "Between 1856 and 1861 a coal-gas works was built on Shapinsay to light the castle, the village and the pier. "
+            "Archaeology Orkney records that the storage tower was faced with stone from a castle on Westray and given false loopholes, so it would read as a turret. It was the most northerly private gasworks in Britain."
+        ),
+        "evidence": "Archaeology Orkney places the castle-disguised gasometer in Balfour Village on Shapinsay.",
+    },
+    {
+        "island_id": "osm-way-4569291",
+        "title": "The phone call on the ninth day",
+        "source_url": "https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-51725946",
+        "source_title": "BBC News",
+        "commons_file": "File:Monastery, Papa Stronsay - geograph.org.uk - 253375.jpg",
+        "image_note": "The monastery on Papa Stronsay",
+        "summary": (
+            "An order of monks based on the Isle of Sheppey stepped ashore on Papa Stronsay and decided they had to have it, though they could not meet the price. "
+            "The BBC reported that nine days of prayer and fundraising still left them short, until a phone call offered the rest."
+        ),
+        "evidence": "BBC News, 9 March 2020, places the purchase of Papa Stronsay by the Sons of the Most Holy Redeemer.",
+    },
+    {
+        "island_id": "osm-relation-8311963",
+        "title": "The rocket post exploded",
+        "source_url": "https://www.postalmuseum.org/blog/experimenting-with-rockets/",
+        "source_title": "The Postal Museum",
+        "commons_file": "File:North Coast of Scarp - geograph.org.uk - 190108.jpg",
+        "image_note": "The north coast of Scarp",
+        "summary": (
+            "On 28 July 1934 Gerhard Zucker tried to fire a mail rocket from Scarp to Harris, having first sold special stamps. "
+            "The Postal Museum, using Post Office files, says that shot ended in an explosion. A second firing burst and scattered the letters, scorched and blackened."
+        ),
+        "evidence": "The Postal Museum places the 28 July 1934 rocket-post explosion on Scarp.",
+    },
+    {
+        "island_id": "osm-relation-4230732",
+        "title": "A piper on the evacuation boat",
+        "source_url": "https://www.heraldscotland.com/news/12302874.soay/",
+        "source_title": "The Herald",
+        "commons_file": "File:Soaybaskingsharkfisheries.jpg",
+        "image_note": "The old shark fishery on Soay",
+        "summary": (
+            "In 1946 Gavin Maxwell bought Soay, off Skye, and turned a curing house into a basking-shark works. "
+            "The Herald records that the oil trade collapsed, the islanders petitioned to leave, and on 20 June 1953 a steamer took them off while a piper played. One family refused to go."
+        ),
+        "evidence": "The Herald places Maxwell's shark factory, and the 20 June 1953 evacuation, on Soay off Skye.",
+    },
+    {
+        "island_id": "osm-relation-929839",
+        "title": "Hummingbirds in the shooting lodge",
+        "source_url": "https://www.bbc.com/news/uk-scotland-highlands-islands-23530141",
+        "source_title": "BBC News",
+        "commons_file": "File:Harris, Isle of Rum.jpg",
+        "image_note": "Rum",
+        "summary": (
+            "Kinloch Castle on Rum was built in the 1890s for Sir George Bullough. "
+            "The BBC recorded its party pieces as hothouses of exotic plants and hummingbirds, showers that threw water from several directions, and a mechanical barrel organ."
+        ),
+        "evidence": "BBC News, 1 August 2013, places the hummingbirds and the orchestrion in Kinloch Castle on Rum.",
+    },
+    {
+        "island_id": "osm-relation-6949620",
+        "title": "Rooms blown in the wood",
+        "source_url": "https://www.visitgigha.co.uk/Achamore-Gardens",
+        "source_title": "Achamore Gardens",
+        "commons_file": "File:Isle of Gigha. - geograph.org.uk - 179510.jpg",
+        "image_note": "Gigha",
+        "summary": (
+            "In 1944 Colonel Sir James Horlick, of the malted-milk family, took Gigha in order to grow rare plants. "
+            "The garden's own account says the ground had been a pheasant wood, and that unwanted trees were cleared with explosives to open the planting rooms still there."
+        ),
+        "evidence": "The Achamore Gardens page places Horlick's 1944 planting, and the clearing of the wood, on Gigha.",
+    },
+    {
+        "island_id": "lundy",
+        "title": "Convicts kept on the island",
+        "source_url": "https://devonperspectives.co.uk/thomasbenson.html",
+        "source_title": "Devon Perspectives",
+        "commons_file": "File:The Jetty, Lundy.jpg",
+        "image_note": "Lundy",
+        "summary": (
+            "Thomas Benson, MP for Barnstaple, leased Lundy and kept there convicts he was paid to ship to America. "
+            "A Devon local-history account says they were locked in the fort at night and set to building a wall, and that he also planned to unload an insured ship on the island and sink her."
+        ),
+        "evidence": "Devon Perspectives places Benson's convict depot of 1748–1752 on Lundy.",
+    },
+    {
+        "island_id": "osm-way-109926387",
+        "title": "A brewer's dry island",
+        "source_url": "https://maldon.nub.news/news/local-news/historic-maldon-district-aeur-drying-out-on-osea-island",
+        "source_title": "Maldon Nub News",
+        "commons_file": "File:Osea Island Tidal Causeway - geograph.org.uk - 3414488.jpg",
+        "image_note": "The causeway to Osea",
+        "summary": (
+            "Frederick Charrington, heir to a Mile End brewery, bought Osea in 1903 and made it a dry retreat after seeing a drunk man strike his wife under the family name. "
+            "Maldon Nub News records that men from the East End lived in huts and were not supposed to drink, and that some walked the causeway to Maldon and drank anyway."
+        ),
+        "evidence": "Maldon Nub News, 18 July 2021, places Charrington's dry retreat, begun in 1903, on Osea Island.",
+    },
+    {
+        "island_id": "osm-way-1493746497",
+        "title": "A house built from a wreck",
+        "source_url": "https://www.westerntelegraph.co.uk/news/6653529.death-duties-force-sale-of-bird-island/",
+        "source_title": "Western Telegraph",
+        "commons_file": "File:Skokholm Island, Lighthouse - geograph.org.uk - 555852.jpg",
+        "image_note": "Skokholm",
+        "summary": (
+            "Ronald Lockley leased Skokholm in 1927 and rebuilt the ruined farmhouse with timber from the 1928 wreck of the Alice Williams. "
+            "The Western Telegraph records that her wheel and a figurehead stayed on the island, and that by 1933 he had made it Britain's first bird observatory."
+        ),
+        "evidence": "The Western Telegraph places Lockley's wreck-timber house and the first British bird observatory on Skokholm.",
+    },
+    {
+        "island_id": "osm-relation-3214114",
+        "title": "Figureheads that cannot leave",
+        "source_url": "https://www.rmg.co.uk/stories/maritime-history/safeguarding-trescos-guardians-valhalla-collection",
+        "source_title": "Royal Museums Greenwich",
+        "commons_file": "File:Tresco - aerial photo6.jpg",
+        "image_note": "Tresco",
+        "summary": (
+            "About thirty figureheads from ships wrecked on Scilly have stood in Tresco Abbey Garden since 1840. "
+            "Royal Museums Greenwich records that they were left to the National Maritime Museum on condition they stay on Tresco, so conservators still cross the sea to treat them where they stand."
+        ),
+        "evidence": "Royal Museums Greenwich places the Valhalla figureheads in Tresco Abbey Garden, and the condition that they stay there.",
+    },
+    {
+        "island_id": "burgh-island",
+        "title": "Paid for in champagne",
+        "source_url": "https://www.devonlive.com/whats-on/whats-on-news/devons-famous-sea-tractor-been-10207144",
+        "source_title": "Devon Live",
+        "commons_file": "File:Burgh Island.jpg",
+        "image_note": "Burgh Island",
+        "summary": (
+            "Since 1969 a sea tractor has carried people to Burgh Island at high tide, wheels on the sand and passengers on a platform above the water. "
+            "Devon Live reported that a nuclear engineer designed it, that it cost £9,000, and that the hotel paid him with a case of champagne."
+        ),
+        "evidence": "Devon Live, 27 May 2025, places the 1969 sea tractor on the crossing to Burgh Island.",
+    },
+    {
+        "island_id": "osm-way-2956901",
+        "title": "A warehouse for brandy",
+        "source_url": "https://www.bbc.co.uk/guernsey/content/articles/2004/07/20/jethou_history_feature.shtml",
+        "source_title": "BBC Guernsey",
+        "commons_file": "File:Jethou, island in Channel islands.jpg",
+        "image_note": "Jethou",
+        "summary": (
+            "A Victorian tenant of Jethou and Herm was found to be using Jethou as a store for smuggled brandy. "
+            "BBC Guernsey also records that in 1954 police raided the island cafe for serving drinks out of hours."
+        ),
+        "evidence": "BBC Guernsey places the brandy store, and the 1954 cafe raid, on Jethou.",
+    },
 ]
 
 

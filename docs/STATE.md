@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (unusual news, five regions)** — Twenty-five more reports from smaller islands. **78** islands, **86** cited stories, every one with an open-licence picture. Shetland News, Historic Environment Scotland, a Fair Isle newsletter, the British Film Institute, the SCAPE Trust, BBC News, the Irish Times, the Postal Museum, the Herald, Achamore Gardens, Devon Perspectives, Maldon Nub News, the Western Telegraph, Royal Museums Greenwich, Devon Live, and BBC Guernsey. Stories **1,539**, **955** with a picture. Did not edit `islands.json`. Supabase was not reloaded.
+
 **2026-10-26 (unusual news, obscure islands)** — Seven reports from the Forth, the Clyde, and the lochs. **56** islands, **61** cited stories, every one with an open-licence picture. A stencil over the Davaar cave mural, a ship that burned on Cara, the 1791 ash deaths on the Isle of May, the prisoners who took the Bass Rock, rats that arrived with the coal on Ailsa Craig, wallabies on Inchconnachan, and the haggis record on Inchmurrin. Stories **1,514**, **930** with a picture. Did not edit `islands.json`. Supabase was not reloaded.
 
 **2026-10-26 (shipped to main)** — Leftover cited traditions and two Lewis novels. Film, art and music **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal islands **104**, castles **96**, books **32**, local traditions **35**, unusual news **50**. Stories **1,502**, **915** with an open-licence picture. Supabase was not reloaded. `islands.json` was not edited.
