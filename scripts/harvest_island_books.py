@@ -361,8 +361,10 @@ def fetch_extracts(titles: list[str]) -> dict[str, dict]:
         if not key or key in seen:
             continue
         seen.add(key)
-        if key not in cache:
-            missing.append(title.replace("_", " "))
+        existing = cache.get(key) or {}
+        if existing.get("extract"):
+            continue
+        missing.append(title.replace("_", " "))
     for start in range(0, len(missing), 16):
         batch = missing[start : start + 16]
         payload = wiki_get(
@@ -378,6 +380,10 @@ def fetch_extracts(titles: list[str]) -> dict[str, dict]:
                 "titles": "|".join(batch),
             }
         )
+        if not payload.get("query"):
+            print(f"extract batch failed, will retry those {len(batch)} titles next run", flush=True)
+            time.sleep(12)
+            continue
         query = payload.get("query") or {}
         redirect_of = {}
         for item in query.get("redirects") or []:
@@ -413,7 +419,7 @@ def wikidata_books() -> list[dict]:
         import json
 
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
-        if cached.get("rows"):
+        if cached.get("version") == 2 and cached.get("rows") is not None:
             print(f"wikidata cache {len(cached['rows'])}", flush=True)
             return cached["rows"]
     query = """
@@ -429,6 +435,9 @@ SELECT DISTINCT ?work ?workLabel ?place ?placeLabel ?article ?image WHERE {
     wikibase:geoLatitude ?lat ;
     wikibase:geoLongitude ?lon
   ] .
+  # Great Britain, Ireland, and the countries are islands in Wikidata.
+  # A novel set in the country is not a novel set on a smaller island.
+  FILTER(?place NOT IN (wd:Q145, wd:Q236, wd:Q21, wd:Q22, wd:Q25, wd:Q26, wd:Q27, wd:Q38272))
   FILTER(?lat > 49.6 && ?lat < 61.2 && ?lon > -11.2 && ?lon < 2.2)
   ?article schema:about ?work ; schema:isPartOf <https://en.wikipedia.org/> .
   OPTIONAL { ?work wdt:P18 ?image }
@@ -458,7 +467,7 @@ LIMIT 800
         )
     import json
 
-    cache_path.write_text(json.dumps({"rows": rows}, ensure_ascii=False), encoding="utf-8")
+    cache_path.write_text(json.dumps({"version": 2, "rows": rows}, ensure_ascii=False), encoding="utf-8")
     print(f"wikidata {len(rows)}", flush=True)
     return rows
 
@@ -638,6 +647,142 @@ def choose_commons_file(record: dict, cache: dict) -> str:
     return ranked[0][1]
 
 
+TARGET_CATEGORIES = (
+    "Novels set in the Hebrides",
+    "Novels set in the Outer Hebrides",
+    "Novels set in the Inner Hebrides",
+    "Novels set in Orkney",
+    "Novels set in Shetland",
+    "Novels set on the Isle of Skye",
+    "Novels set in the Isle of Skye",
+    "Novels set on Skye",
+    "Novels set on the Isle of Mull",
+    "Novels set in Islay",
+    "Novels set in the Isle of Man",
+    "Novels set on the Isle of Man",
+    "Novels set on the Isle of Wight",
+    "Novels set in the Isle of Wight",
+    "Novels set in Guernsey",
+    "Novels set in Jersey",
+    "Novels set in the Channel Islands",
+    "Novels set in the Isles of Scilly",
+    "Novels set in Anglesey",
+    "Novels set in Scotland",
+    "Novels set in Ireland",
+    "Novels set in Wales",
+    "Novels set in Northern Ireland",
+    "Children's books set in Scotland",
+    "Children's books set in Ireland",
+    "Children's books set in Wales",
+    "Children's books set in Guernsey",
+    "Children's books set on the Isle of Wight",
+    "Children's books set on islands",
+    "Short stories set in Scotland",
+    "Short stories set in Ireland",
+    "Short stories set in Orkney",
+    "Short stories set in Shetland",
+)
+SEARCH_PLACES = (
+    "Isle of Skye",
+    "Isle of Mull",
+    "Iona",
+    "Islay",
+    "Jura",
+    "Isle of Arran",
+    "Orkney",
+    "Shetland",
+    "Isle of Lewis",
+    "Harris",
+    "Barra",
+    "St Kilda",
+    "Staffa",
+    "Isle of Rum",
+    "Eigg",
+    "Coll",
+    "Tiree",
+    "Erraid",
+    "Earraid",
+    "Guernsey",
+    "Jersey",
+    "Sark",
+    "Alderney",
+    "Isle of Man",
+    "Isle of Wight",
+    "Lundy",
+    "Isles of Scilly",
+    "Lindisfarne",
+    "Anglesey",
+    "Bardsey",
+    "Burgh Island",
+    "Brownsea",
+    "Inishmore",
+    "Aran Islands",
+    "Achill",
+    "Rathlin",
+    "Tory Island",
+    "Cape Clear",
+    "Valentia Island",
+    "Clare Island",
+    "Papa Westray",
+    "Fair Isle",
+    "Flannan",
+    "Shiant",
+    "Benbecula",
+    "South Uist",
+    "North Uist",
+    "Bute",
+    "Raasay",
+    "Hoy",
+    "Foula",
+    "Skomer",
+    "Caldey",
+    "St Michael's Mount",
+    "Belle Isle",
+)
+
+
+def search_pages(phrase: str) -> list[str]:
+    payload = wiki_get(
+        {
+            "action": "query",
+            "format": "json",
+            "list": "search",
+            "srsearch": f'"{phrase}" ("set on" OR "set in" OR "takes place" OR memoir) (novel OR memoir OR book)',
+            "srnamespace": "0",
+            "srlimit": "8",
+        }
+    )
+    return [
+        item.get("title")
+        for item in ((payload.get("query") or {}).get("search") or [])
+        if item.get("title")
+    ]
+
+
+def island_page_titles() -> list[str]:
+    import json
+
+    cache_path = CACHE / "page_titles_v2.json"
+    if cache_path.exists():
+        cached = json.loads(cache_path.read_text(encoding="utf-8"))
+        if cached:
+            print(f"page title cache {len(cached)}", flush=True)
+            return cached
+    found = []
+    for category in TARGET_CATEGORIES:
+        members = category_members(category, 80)
+        print(f"category {category}: {len(members)}", flush=True)
+        found.extend(members)
+        time.sleep(1.1)
+    for phrase in SEARCH_PLACES:
+        pages = search_pages(phrase)
+        print(f"search {phrase}: {len(pages)}", flush=True)
+        found.extend(pages)
+        time.sleep(1.1)
+    cache_path.write_text(json.dumps(found, ensure_ascii=False), encoding="utf-8")
+    return found
+
+
 def collect_titles(max_pages: int) -> tuple[list[str], dict[str, dict], list[dict]]:
     import json
 
@@ -651,25 +796,7 @@ def collect_titles(max_pages: int) -> tuple[list[str], dict[str, dict], list[dic
     seeds = load_seeds()
     for item in seeds:
         titles.append(item["title"])
-    cached_titles = CACHE / "category_titles.json"
-    category_budget = 500
-    if cached_titles.exists():
-        titles.extend(json.loads(cached_titles.read_text(encoding="utf-8")))
-        print(f"category cache {cached_titles.name}", flush=True)
-    elif max_pages:
-        gathered = []
-        for category in discover_categories():
-            if len(gathered) >= category_budget:
-                break
-            cap = min(category_cap(category), category_budget - len(gathered))
-            if cap <= 0:
-                break
-            members = category_members(category, cap)
-            print(f"category {category}: {len(members)}", flush=True)
-            gathered.extend(members)
-            time.sleep(1.2)
-        titles.extend(gathered)
-        cached_titles.write_text(json.dumps(gathered, ensure_ascii=False), encoding="utf-8")
+    titles.extend(island_page_titles())
     ordered = []
     seen = set()
     for title in titles:

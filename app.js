@@ -1299,6 +1299,21 @@ function ensureFavoritesAccess(onGranted) {
   openFavoritesAccessModal();
 }
 
+function playReveal(el) {
+  if (!el) return;
+  const token = (el._revealToken = (el._revealToken || 0) + 1);
+  el.hidden = false;
+  el.classList.remove("is-in");
+  el.classList.add("is-from");
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (el.hidden || el._revealToken !== token) return;
+      el.classList.add("is-in");
+      el.classList.remove("is-from");
+    });
+  });
+}
+
 function openFavoritesAccessModal() {
   const modal = document.getElementById("favorites-access-modal");
   const input = document.getElementById("favorites-email-input");
@@ -1310,10 +1325,10 @@ function openFavoritesAccessModal() {
   }
   if (input) {
     input.value = getFavoritesEmail() || "";
-    modal.hidden = false;
+    playReveal(modal);
     input.focus();
   } else {
-    modal.hidden = false;
+    playReveal(modal);
   }
 }
 
@@ -2103,13 +2118,13 @@ function initCrowdSuggestUi() {
   }
 
   function openContributeHub() {
-    modal.hidden = false;
+    playReveal(modal);
     showStep("hub");
     hideFormError();
   }
 
   function openCrowdModal(opts = {}) {
-    modal.hidden = false;
+    playReveal(modal);
     if (opts.kind === "fix_atlas" && opts.atlasIslandId) {
       const isl = state.byId.get(opts.atlasIslandId);
       if (isl) {
@@ -3659,6 +3674,8 @@ function resetAllFilters() {
   else applyFilters();
 }
 
+let shownFilterChipLabels = new Set();
+
 function renderActiveFilterChips() {
   const host = document.getElementById("active-filter-chips");
   if (!host) return;
@@ -3855,7 +3872,7 @@ function renderActiveFilterChips() {
   host.replaceChildren();
   for (const chip of chips) {
     const el = document.createElement("span");
-    el.className = "filter-chip";
+    el.className = "filter-chip" + (shownFilterChipLabels.has(chip.label) ? "" : " is-arriving");
     const label = document.createElement("span");
     label.textContent = chip.label;
     const btn = document.createElement("button");
@@ -3870,6 +3887,7 @@ function renderActiveFilterChips() {
     el.append(label, btn);
     host.appendChild(el);
   }
+  shownFilterChipLabels = new Set(chips.map((chip) => chip.label));
 }
 
 function updateMapIslandPeek(islandId) {
@@ -6507,7 +6525,8 @@ function syncAtlasBackControl() {
     !mobileNav.isActive() &&
     atlasCameraClose(cur, ATLAS_HOME_CAMERA);
   const showBack = departed && !listOnly;
-  btn.hidden = !showBack;
+  if (showBack && btn.hidden) playReveal(btn);
+  else if (!showBack) btn.hidden = true;
   document.body.classList.toggle("atlas-departed", showBack);
   btn.setAttribute("aria-label", "Back to the previous view");
 }
@@ -9931,7 +9950,7 @@ function initImageLightbox() {
     img.src = full;
     img.alt = heroImg.alt || "";
     if (caption) caption.textContent = heroImg.alt || "";
-    lb.hidden = false;
+    playReveal(lb);
     document.body.classList.add("lightbox-open");
     closeBtn.focus();
   });
@@ -10000,13 +10019,20 @@ function countActiveFilters() {
   return n;
 }
 
+let filterBadgePopTimer = 0;
 function updateFiltersToggleBadge() {
   const badge = document.getElementById("filters-active-badge");
   if (!badge) return;
   const n = countActiveFilters();
-  badge.textContent = String(n);
+  const label = String(n);
+  const changed = badge.textContent !== label;
+  badge.textContent = label;
   badge.hidden = n === 0;
   badge.setAttribute("aria-hidden", n === 0 ? "true" : "false");
+  if (!changed || n === 0) return;
+  badge.classList.add("is-pop");
+  clearTimeout(filterBadgePopTimer);
+  filterBadgePopTimer = window.setTimeout(() => badge.classList.remove("is-pop"), 160);
 }
 
 function syncSearchClearButton() {
@@ -10074,7 +10100,7 @@ function showToast(message, ms = 2400) {
   const el = document.getElementById("app-toast");
   if (!el) return;
   el.textContent = message;
-  el.hidden = false;
+  playReveal(el);
   clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => {
     el.hidden = true;

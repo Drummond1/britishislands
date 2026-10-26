@@ -646,3 +646,31 @@ body.filters-open .filter-drawer,
 }
 .filter-drawer .filter-apply-btn:active,
 .island-details :is(.profile-primary-btn, .profile-secondary-btn, .details-fav):active { transform: scale(.98); }
+.island-details .detail-map__switcher button {
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .14s cubic-bezier(.16, 1, .3, 1);
+}
+.island-details .detail-map__switcher button:active { transform: scale(.98); }
+.interest-story__figure img { transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.interest-story__figure:hover img { transform: scale(1.03); }
+.filter-drawer__close,
+.chat-panel__close,
+.lightbox__close,
+:is(.crowd-modal__btn, .favorites-modal__btn) {
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .16s cubic-bezier(.16, 1, .3, 1);
+}
+.filter-drawer__close:hover,
+.chat-panel__close:hover,
+.lightbox__close:hover { transform: scale(1.06); }
+.filter-drawer__close:active,
+.chat-panel__close:active,
+.lightbox__close:active,
+:is(.crowd-modal__btn, .favorites-modal__btn):active { transform: scale(.97); }
+.crowd-modal.is-from,
+.favorites-modal.is-from,
+.lightbox.is-from { opacity: 0; transform: translateY(8px); }
+.crowd-modal.is-in,
+.favorites-modal.is-in,
+.lightbox.is-in { transition: opacity .28s cubic-bezier(.16, 1, .3, 1), transform .28s cubic-bezier(.16, 1, .3, 1); }
+.crowd-modal:not(.is-from),
+.favorites-modal:not(.is-from),
+.lightbox:not(.is-from) { transform: none; }

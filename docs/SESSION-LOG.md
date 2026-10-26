@@ -3286,3 +3286,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: A Back control appears on the map once you have left the overview. It returns to the previous place and opens the island list. Hiding the list shows a Show islands button at the top of the map. The more menu has Home, which resets to the atlas overview. Escape does the same step back after it closes a menu. Opening a pin while the list is hidden brings the list back, so the profile is on screen.
 - **Outcome / counts**: No dataset change. Checked in the browser: opening Skye shows Back and returns to the overview and the list; hiding the list shows Show islands; the more menu’s Home resets the atlas. Published with the atlas motions.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — More micro-interactions
+
+- **Goal**: Keep the same quiet motion on the things a visitor opens after the first page.
+- **What changed**: Map Back slides in and its arrow nudges left. A copied link rises as a toast. New filter chips fade in and the filter count swells. An empty search fades in. Contribute, the save prompt, and the photo lightbox rise in. Story photos enlarge slightly, and close buttons and map-style choices press. The reading-page wordmark underlines on hover. No data change.
+- **Outcome / counts**: Checked in the browser. Opening Skye shows Back and it settles in view. Contribute opens and stays visible. A nonsense search shows “No islands match” and a Search chip. The About wordmark has an underline ready for hover. Published with the books-harvest tightening.
+- **Open items kicked to QUEUE.md**: none.
