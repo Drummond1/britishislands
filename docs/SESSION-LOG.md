@@ -3433,3 +3433,17 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Ten reports on ten more islands. The wording is original. Pictures are open-licence photographs of the island, the beach runway, the figurine, the airstrip, the whirlpool, and the cable car. `islands.json` was not edited.
 - **Outcome / counts**: **26** islands, **28** stories, **28** with a picture. Stories overall **1,245**, **708** with a picture. Other chips unchanged. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.
+
+## 2026-10-26 — Homepage heading
+
+- **Goal**: Change the opening headline to “Go on an adventure”.
+- **What changed**: The sidebar headline no longer reads “Find your somewhere else.” It reads “Go on an adventure”, with *adventure* in gold, on one line beside the compass. No data change.
+- **Outcome / counts**: Counts unchanged. On a wide screen the full line is visible, and search, the chips, and the opening cards still sit under it.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Local papers on unusual news
+
+- **Goal**: Add strange events reported by local and regional papers, each on an atlas island, with an original summary, a link, and an open-licence photograph.
+- **What changed**: Twenty-six reports. Shetland Times, the Orcadian, Stornoway Gazette, the Press and Journal, the Mayo News, Newstalk, the Irish Examiner, the Irish Times, the Irish News, Essex Live, Wales Online, Cornwall Live, North Wales Live, the Bournemouth Echo, and the Jersey Evening Post. Customs already in local traditions were left out. Skellig Michael, the Great Blasket, and Chapelle Dom Hue are not in the atlas, so those reports were not added. No grave coordinates, no portrait, and no news photograph. `islands.json` was not edited.
+- **Outcome / counts**: **50** islands, **54** stories, **54** with a picture. Stories overall **1,271**, **734** with a picture. Other chips unchanged. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.

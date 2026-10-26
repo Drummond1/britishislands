@@ -423,6 +423,345 @@ SEEDS = [
         ),
         "evidence": "RTÉ News, 9 June 2023, places Ireland's only cable car on the crossing to Dursey Island.",
     },
+    {
+        "island_id": "osm-relation-6045406",
+        "title": "The furnished bus shelter",
+        "source_url": "https://www.shetlandtimes.co.uk/news/website-for-unst-bus-shelter-is-essential-reading-for-future-generations-407981/",
+        "source_title": "The Shetland Times",
+        "commons_file": "File:Burra Stack, Unst - geograph.org.uk - 116634.jpg",
+        "image_note": "Unst",
+        "summary": (
+            "After the bus shelter past Baltasound was taken away, a child wrote to the paper in 1996 asking for it back. "
+            "The Shetland Times later described a sofa, a television, a heater and a carpet inside the replacement, "
+            "and a website the British Library chose to archive. The shelter stands on Unst."
+        ),
+        "evidence": "The Shetland Times, 3 April 2013, places the furnished bus shelter at Baltasound on Unst.",
+    },
+    {
+        "island_id": "osm-relation-12597195",
+        "title": "A walrus under the ramp",
+        "source_url": "https://orcadian.co.uk/walrus-spotted-at-stronsay-pier/",
+        "source_title": "The Orcadian",
+        "commons_file": "File:PicVat.jpg",
+        "image_note": "Stronsay",
+        "summary": (
+            "In April 2026 the pier master on Stronsay saw a walrus as the ferry came in, and it settled under the linkspan. "
+            "The Orcadian called it the third walrus to turn up in Orkney in recent years."
+        ),
+        "evidence": "The Orcadian, 16 April 2026, places a walrus under the linkspan at Stronsay pier.",
+    },
+    {
+        "island_id": "osm-relation-3148464",
+        "title": "Two huts became a chapel",
+        "source_url": "https://orcadian.co.uk/appeal-for-italian-chapel-prisoner-of-war-stories-letters-and-artefacts/",
+        "source_title": "The Orcadian",
+        "commons_file": "File:Italian Chapel on Lamb Holm - geograph.org.uk - 931903.jpg",
+        "image_note": "The Italian Chapel on Lamb Holm",
+        "summary": (
+            "Italian prisoners of war, held while they built the Churchill Barriers, made a chapel on Lamb Holm out of two Nissen huts. "
+            "The Orcadian records Camp 60 on Lamb Holm as the place that chapel was built."
+        ),
+        "evidence": "The Orcadian places the Italian Chapel, built from two huts, on Lamb Holm.",
+    },
+    {
+        "island_id": "osm-relation-6045499",
+        "title": "A Viking hilt from the hill",
+        "source_url": "https://www.shetlandtimes.co.uk/news/viking-sword-pommel-from-fetlar-finds-a-home-in-shetland-museum-394056/",
+        "source_title": "The Shetland Times",
+        "commons_file": "File:The Clett and Busta Pund, Fetlar - geograph.org.uk - 4970744.jpg",
+        "image_note": "Fetlar",
+        "summary": (
+            "Shetland Museum took in a five-lobed sword pommel dated to about 900 to 1100, found on Fetlar. "
+            "The Shetland Times reported the curator calling that kind of Viking find rare, and likely a status piece rather than a weapon that had been used."
+        ),
+        "evidence": "The Shetland Times, 28 January 2025, places the Viking sword pommel find on Fetlar.",
+    },
+    {
+        "island_id": "osm-relation-380684",
+        "title": "A funeral for a mermaid",
+        "source_url": "https://www.stornowaygazette.co.uk/news/myth-of-the-mermaid-remains-an-enduring-fishy-tale-2129315",
+        "source_title": "Stornoway Gazette",
+        "commons_file": "File:Benbecula Beach.jpg",
+        "image_note": "A beach on Benbecula",
+        "summary": (
+            "The Stornoway Gazette retells an 1830 account from the west of Benbecula: a small body, described as human above and fish below, "
+            "washed ashore near Nunton and was buried as a mermaid. The paper says no grave has been found."
+        ),
+        "evidence": "The Stornoway Gazette, 3 October 2016, places the reported mermaid burial on Benbecula.",
+    },
+    {
+        "island_id": "osm-relation-6045516",
+        "title": "Three bears on the beach",
+        "source_url": "https://www.pressandjournal.co.uk/fp/news/highlands-islands/1084514/islanders-left-baffled-mysterious-polar-bears-washed-scots-beach/",
+        "source_title": "The Press and Journal",
+        "commons_file": "File:Kiloran Bay from Carnan Eoin - geograph.org.uk - 24801.jpg",
+        "image_note": "The west side of Colonsay",
+        "summary": (
+            "In 2016 three hairy carcasses washed up at different points on the west coast of Colonsay, and people on the island took them for polar bears. "
+            "The Press and Journal reported that the Royal Zoological Society of Scotland called a polar bear highly unlikely."
+        ),
+        "evidence": "The Press and Journal, 15 November 2016, places the three carcasses on the west coast of Colonsay.",
+    },
+    {
+        "island_id": "osm-relation-1663893",
+        "title": "A road built by one man",
+        "source_url": "https://www.pressandjournal.co.uk/fp/news/highlands-islands/6596318/story-of-calums-road-raasay-skye-lochalsh-portree-high/",
+        "source_title": "The Press and Journal",
+        "commons_file": "File:RaasayIsland2.JPG",
+        "image_note": "Raasay",
+        "summary": (
+            "In 1964, after the council would not build a road in the north of Raasay, Calum MacLeod started the stretch from Brochel to Arnish himself. "
+            "The Press and Journal says he worked into the mid-1970s with a shovel, a pick and a wheelbarrow."
+        ),
+        "evidence": "The Press and Journal, 14 December 2024, places Calum's Road in the north of Raasay.",
+    },
+    {
+        "island_id": "osm-relation-1663615",
+        "title": "A jog over a stegosaur",
+        "source_url": "https://www.pressandjournal.co.uk/fp/entertainment/whats-on/2438533/dinosaur-fossil-dating-back-166-million-years-discovered-on-isle-of-eigg/",
+        "source_title": "The Press and Journal",
+        "commons_file": "File:View of Galmisdale and An Sgurr - geograph.org.uk - 823602.jpg",
+        "image_note": "Eigg",
+        "summary": (
+            "A researcher jogging the foreshore of Eigg ran over a bone set in a boulder, the first dinosaur fossil found on the island. "
+            "The Press and Journal reported a piece about a foot long, about 166 million years old, from the hind limb of a stegosaur."
+        ),
+        "evidence": "The Press and Journal, 26 August 2020, places the stegosaur bone on the foreshore of Eigg.",
+    },
+    {
+        "island_id": "lewis-and-harris",
+        "title": "Chessmen in a sand dune",
+        "source_url": "https://www.stornowaygazette.co.uk/news/chessmen-among-top-historical-items-2078482",
+        "source_title": "Stornoway Gazette",
+        "commons_file": "File:Lewis chessmen.jpg",
+        "image_note": "The Lewis chessmen",
+        "summary": (
+            "The Stornoway Gazette records that the Lewis chessmen were found in 1831 in a small stone cist in a sand dune at Uig. "
+            "Most of the pieces are carved from walrus tusk."
+        ),
+        "evidence": "The Stornoway Gazette, 28 February 2019, places the 1831 find of the chessmen at Uig on Lewis.",
+    },
+    {
+        "island_id": "isle-of-skye",
+        "title": "Plaster in the footprints",
+        "source_url": "https://www.pressandjournal.co.uk/fp/news/highlands-islands/1127355/vandal-damages-skye-tourism-gems/",
+        "source_title": "The Press and Journal",
+        "commons_file": "File:An Corran beach and Staffin Island - geograph.org.uk - 6533675.jpg",
+        "image_note": "An Corran beach at Staffin, Skye",
+        "summary": (
+            "Police on Skye investigated damage to dinosaur footprints at Staffin that are about 165 million years old. "
+            "The Press and Journal reported that plaster had been poured into two of the prints."
+        ),
+        "evidence": "The Press and Journal, 30 December 2016, places the damaged dinosaur prints at Staffin on Skye.",
+    },
+    {
+        "island_id": "osm-relation-1240445",
+        "title": "The last post on Tanera",
+        "source_url": "https://www.pressandjournal.co.uk/fp/news/highlands-islands/406577/undefined-headline-580/",
+        "source_title": "The Press and Journal",
+        "commons_file": "File:Approaching Tanera More - geograph.org.uk - 3994876.jpg",
+        "image_note": "Tanera Mòr",
+        "summary": (
+            "The Press and Journal reported that the last permanent residents had left Tanera Mòr, the last inhabited of the Summer Isles. "
+            "The sale included a private postal service and a licence to design the island's own stamps, and 2014 was the first year in more than fifteen with no new issue."
+        ),
+        "evidence": "The Press and Journal, 20 November 2014, places the end of the private post on Tanera Mòr.",
+    },
+    {
+        "island_id": "osm-relation-6045364",
+        "title": "A henge built over a weekend",
+        "source_url": "https://www.mayonews.ie/news/achill-henge-still-standing-two-years-on-7525579",
+        "source_title": "The Mayo News",
+        "commons_file": "File:Beautiful Achill Islands in County Mayo of Ireland.jpg",
+        "image_note": "Achill",
+        "summary": (
+            "On 25 November 2011 more than thirty lorries arrived on Achill with concrete, and by Sunday a circle about 30 metres across stood on a hillside above Pollagh. "
+            "The Mayo News reported that two years later the circle was still there, after the courts had ordered it taken down."
+        ),
+        "evidence": "The Mayo News, 26 November 2013, places the concrete circle above Pollagh on Achill.",
+    },
+    {
+        "island_id": "osm-way-329053691",
+        "title": "Wallabies that were meant to fade",
+        "source_url": "https://www.newstalk.com/news/from-tasmania-to-malahide-meet-the-500-wallabies-off-the-coast-of-dublin-1747424",
+        "source_title": "Newstalk",
+        "commons_file": "File:Lambay Island Wallaby.jpg",
+        "image_note": "A wallaby on Lambay",
+        "summary": (
+            "Red-necked wallabies have lived on Lambay, off Dublin, for more than fifty years, starting with a small group brought in the 1950s. "
+            "Newstalk reported that the hope had been they would die out quietly, and that the estimate was now more than 500."
+        ),
+        "evidence": "Newstalk, 21 July 2024, places the wallaby colony on Lambay Island.",
+    },
+    {
+        "island_id": "osm-way-128067375",
+        "title": "Tunnels under the fort",
+        "source_url": "https://www.irishexaminer.com/news/arid-30789225.html",
+        "source_title": "Irish Examiner",
+        "commons_file": "File:Entrance to Fort Mitchel on Spike Island - geograph.org.uk - 7686095.jpg",
+        "image_note": "The entrance to Fort Mitchel on Spike Island",
+        "summary": (
+            "The Irish Examiner reported hundreds of metres of tunnels under the old punishment block on Spike Island, with storerooms the managers had not expected. "
+            "A 16th-century smugglers' tunnel on the island is known as well, and its entrance has been covered until it can be surveyed."
+        ),
+        "evidence": "The Irish Examiner, 11 May 2017, places the newly found tunnels on Spike Island in Cork Harbour.",
+    },
+    {
+        "island_id": "osm-relation-3235264",
+        "title": "The crew came ashore in a buoy",
+        "source_url": "https://www.irishtimes.com/life-and-style/travel/ireland/there-s-nothing-like-sleeping-in-your-car-to-experience-the-atlantic-coast-s-soothing-charms-1.4685789",
+        "source_title": "The Irish Times",
+        "commons_file": "File:Inisheer Ruins.jpg",
+        "image_note": "Inis Oírr",
+        "summary": (
+            "On Inis Oírr, the wreck of the Plassey sits on the shore as a landmark. "
+            "The Irish Times records that in 1960 a breeches buoy brought the whole crew off the ship and onto the island."
+        ),
+        "evidence": "The Irish Times, 1 October 2021, places the 1960 rescue of the Plassey's crew on Inis Oírr.",
+    },
+    {
+        "island_id": "osm-relation-7230308",
+        "title": "A wire under the Atlantic",
+        "source_url": "https://www.irishexaminer.com/news/arid-30995445.html",
+        "source_title": "Irish Examiner",
+        "commons_file": "File:Valentia Island Cable Station and residences - geograph.org.uk - 386249.jpg",
+        "image_note": "The cable station on Valentia",
+        "summary": (
+            "The first telegraph cable under the Atlantic ran from Valentia Island to Newfoundland. "
+            "The Irish Examiner records that a cable laid in 1858 failed within a month, and that a new one was laid in July 1866, with a station on the island."
+        ),
+        "evidence": "The Irish Examiner, 22 April 2020, places the transatlantic cable station on Valentia Island.",
+    },
+    {
+        "island_id": "rathlin",
+        "title": "The lamp at the bottom",
+        "source_url": "https://www.irishnews.com/news/northernirelandnews/2019/03/11/news/rathlin-lighthouse-celebrates-100-years-since-it-was-first-illuminated-1569314/",
+        "source_title": "The Irish News",
+        "commons_file": "File:Cliff scenery south of West Lighthouse, Rathlin Island - geograph.org.uk - 646842.jpg",
+        "image_note": "The cliff by Rathlin West Light",
+        "summary": (
+            "Rathlin West Light was built into the cliff and first lit on 10 March 1919. "
+            "The Irish News calls it Ireland's only upside-down lighthouse, because the lamp sits at the bottom so the beam can shine under the low fog."
+        ),
+        "evidence": "The Irish News, 11 March 2019, places the upside-down light on the cliff of Rathlin.",
+    },
+    {
+        "island_id": "osm-way-1493515027",
+        "title": "Carcasses with legs",
+        "source_url": "https://www.essexlive.news/news/history/essex-island-terrifying-sea-monsters-6341779",
+        "source_title": "Essex Live",
+        "commons_file": "File:Canvey 060309 1.jpg",
+        "image_note": "Canvey Island",
+        "summary": (
+            "In November 1953 a carcass more than two feet long, with leg-like fins, washed up on Canvey Island. "
+            "Essex Live records a second, larger one on the same shore in August 1954, and says the likely identification now is an angler fish."
+        ),
+        "evidence": "Essex Live, 28 December 2022, places the 1953 and 1954 carcasses on the shore of Canvey Island.",
+    },
+    {
+        "island_id": "osm-way-1493746453",
+        "title": "The monkeys came down to the beach",
+        "source_url": "https://www.walesonline.co.uk/news/wales-news/escaped-island-dwelling-monkeys-tenby-18618507",
+        "source_title": "Wales Online",
+        "commons_file": "File:Castle Beach and St Catherine's Fort, Tenby - geograph.org.uk - 6593683.jpg",
+        "image_note": "St Catherine's Island and its fort, Tenby",
+        "summary": (
+            "In 1968 a zoo was opened in the fort on St Catherine's Island, the tidal rock off Tenby. "
+            "Wales Online reported that the monkeys later got out, climbed down to the beach, and made off with hats and bags."
+        ),
+        "evidence": "Wales Online, 19 July 2020, places the zoo and the escaped monkeys on St Catherine's Island.",
+    },
+    {
+        "island_id": "scilly-st-marys",
+        "title": "The containers came ashore",
+        "source_url": "https://www.cornwalllive.com/news/history/wrecked-cargo-ship-gave-scilly-6850592",
+        "source_title": "Cornwall Live",
+        "commons_file": "File:Hugh Town Rooftops - geograph.org.uk - 2308903.jpg",
+        "image_note": "St Mary's, Isles of Scilly",
+        "summary": (
+            "At 3am on 26 March 1997 the container ship Cita ran aground off St Mary's and the containers broke open along the south shore. "
+            "Cornwall Live reported that people on the island carried off tyres, trainers, toys and blank gravestones."
+        ),
+        "evidence": "Cornwall Live, 29 March 2022, places the 1997 wreck of the Cita on the south shore of St Mary's.",
+    },
+    {
+        "island_id": "osm-way-462551174",
+        "title": "Two tropical birds on one rock",
+        "source_url": "https://www.cornwalllive.com/news/cornwall-news/twitchers-flock-isles-scilly-extraordinary-8711118",
+        "source_title": "Cornwall Live",
+        "commons_file": "File:Bishop Rock Lighthouse - Isles of Scilly.jpg",
+        "image_note": "Bishop Rock lighthouse",
+        "summary": (
+            "In August 2023 a red-footed booby, only the second recorded in Britain, was seen on Bishop Rock lighthouse. "
+            "Cornwall Live reported that a brown booby was then found at the foot of the same light, and that having both tropical species there together was called extraordinary."
+        ),
+        "evidence": "Cornwall Live, 2 September 2023, places both boobies on Bishop Rock.",
+    },
+    {
+        "island_id": "osm-way-1493651984",
+        "title": "The wreck that left its rats",
+        "source_url": "https://www.walesonline.co.uk/news/local-news/storm-1934-changed-cardigan-island-1882751",
+        "source_title": "Wales Online",
+        "commons_file": "File:Cardigan Island - geograph.org.uk - 27332.jpg",
+        "image_note": "Cardigan Island",
+        "summary": (
+            "On 15 March 1934 the steamship Herefordshire, under tow to a breaker's yard, broke her ropes and came ashore on Cardigan Island. "
+            "Wales Online reported that rats from the wreck then wiped out the island's puffins, and that the rats were not cleared for more than forty-five years."
+        ),
+        "evidence": "Wales Online, 22 March 2013, places the 1934 wreck and the rats on Cardigan Island.",
+    },
+    {
+        "island_id": "osm-relation-6046655",
+        "title": "A king crowned on a chair",
+        "source_url": "https://www.dailypost.co.uk/news/north-wales-news/mysterious-kings-bardsey-island-what-23321330",
+        "source_title": "North Wales Live",
+        "commons_file": "File:Bardsey Island - geograph.org.uk - 6234351.jpg",
+        "image_note": "Bardsey",
+        "summary": (
+            "Bardsey had its own kings from about 1796 until the last died in 1926. "
+            "North Wales Live describes a crowning held outdoors on the island, the new king stood on a chair, with boats lying offshore."
+        ),
+        "evidence": "North Wales Live, 13 March 2022, places the kingship on Bardsey.",
+    },
+    {
+        "island_id": "osm-way-126546636",
+        "title": "A cholera ward in the channel",
+        "source_url": "https://www.walesonline.co.uk/news/wales-news/flat-holm-island-cardiff-hospital-20011858",
+        "source_title": "Wales Online",
+        "commons_file": "File:Disused buildings on Flat Holm - geograph.org.uk - 3078781.jpg",
+        "image_note": "Disused buildings on Flat Holm",
+        "summary": (
+            "From 1883 Flat Holm was used as an isolation hospital for cholera brought in by ships. "
+            "Wales Online records a permanent hospital built there in 1896, and that the Ministry of Health condemned the building in 1935."
+        ),
+        "evidence": "Wales Online, 9 March 2021, places the cholera isolation hospital on Flat Holm.",
+    },
+    {
+        "island_id": "brownsea",
+        "title": "Leprosy in the squirrels",
+        "source_url": "https://www.bournemouthecho.co.uk/news/14479448.update-brownsea-island-squirrels-suffering-from-leprosy/",
+        "source_title": "Bournemouth Echo",
+        "commons_file": "File:Brownsea Island, southern shore - geograph.org.uk - 1446017.jpg",
+        "image_note": "Brownsea Island",
+        "summary": (
+            "Post-mortem examinations found leprosy in red squirrels on Brownsea Island, and a study was set up there to learn how it spreads. "
+            "The Bournemouth Echo reported that only a few of the island's squirrels were ill, and that the risk to people was described as very small."
+        ),
+        "evidence": "The Bournemouth Echo places the leprosy findings in the red squirrels on Brownsea Island.",
+    },
+    {
+        "island_id": "osm-relation-12913146",
+        "title": "A blonde mole on the runway",
+        "source_url": "https://jerseyeveningpost.com/uncategorised/2017/11/19/rare-blonde-mole-surfaces/",
+        "source_title": "Jersey Evening Post",
+        "commons_file": "File:Le Braye Alderney.jpg",
+        "image_note": "Alderney",
+        "summary": (
+            "A blonde mole, about one in ten thousand, turned up while moles were being cleared from Alderney's grass runway. "
+            "The Jersey Evening Post reported that the animal was leucistic, with brown eyes, rather than an albino."
+        ),
+        "evidence": "The Jersey Evening Post, 19 November 2017, places the blonde mole on Alderney's grass runway.",
+    },
 ]
 
 

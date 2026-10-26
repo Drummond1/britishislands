@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (unusual news, local papers)** — Twenty-six more reports from local and regional papers. **50** islands, **54** cited stories, every one with an open-licence picture. Shetland Times, the Orcadian, Stornoway Gazette, the Press and Journal, the Mayo News, the Irish Examiner, the Irish News, Essex Live, Wales Online, Cornwall Live, North Wales Live, the Bournemouth Echo, and the Jersey Evening Post. Stories **1,271**, **734** with a picture. Other chips unchanged. Did not edit `islands.json`. Supabase was not reloaded.
+
 **2026-10-26 (unusual news, continued)** — Ten more reports. **26** islands, **28** cited stories, every one with an open-licence picture. Added the whisky wreck off Eriskay, the beach runway on Barra, the St Kilda evacuation, the Westray Wife, the two-minute flight to Papa Westray, the Stronsay beast, the Vatersay raiders, the Ailsa Craig curling stones, Orwell in the Corryvreckan, and the Dursey cable car. Stories **1,245**, **708** with a picture. Other chips unchanged. Did not edit `islands.json`. Supabase was not reloaded.
 
 **2026-10-26 (shipped to main)** — Photo frames, naming an unnamed island, and the collection guides are on `main` for GitHub Pages. Counts unchanged. Supabase migrations in the repo stay unapplied from this push.
@@ -976,7 +978,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
 | Interest expansion, eight categories | 2026-10-26 14:00 UTC | this session | cursor agents | Candidate files only: `data/interest/candidates/zz-expansion-{whisky,wildlife,books,traditions,tidal,castles,film-art-music,for-sale}.json`. Do not publish. Do not edit `islands.json`. |
-| ~~Unusual news harvest~~ ✅ published 2026-10-26 | 2026-10-26 14:07 UTC | — | cursor agent | **16** islands, **18** stories in `data/interest_index.json`. Did not edit `islands.json`. |
+| ~~Unusual news harvest~~ ✅ published 2026-10-26 | 2026-10-26 14:07 UTC | — | cursor agent | **50** islands, **54** stories in `data/interest_index.json`. Did not edit `islands.json`. |
 | ~~Local traditions harvest~~ ✅ published 2026-10-26 | 2026-10-26 07:10 UTC | — | cursor agent | **23** islands, **35** customs in `data/interest_index.json`. Cache `data/cache_local_traditions/`. Did not edit `islands.json`. |
 | ~~Books set on the island~~ ✅ published 2026-10-26 | 2026-10-26 06:20 UTC | — | cursor agent | **22** islands, **39** books in `data/interest_index.json`. Cache `data/cache_island_books/`. Did not edit `islands.json`. Supabase not reloaded. |
 | ~~Island castles interest harvest~~ ✅ published 2026-10-26 | 2026-10-26 04:40 UTC | — | cursor agent | **89** islands, **113** castles in `data/interest_index.json`. Cache `data/cache_island_castles/`. Did not edit `islands.json`. |
