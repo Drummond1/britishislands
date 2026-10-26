@@ -3321,3 +3321,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: New interest category `local-traditions`. The harvester keeps an English Wikipedia sentence only when it describes the practice and names the island. The picture is of the custom, or a labelled photograph of the island when the article has no open photo. The chip, list blurb, and profile story show that sentence. Monastic pilgrimages, breeds, film festivals, and a bare legend were left out.
 - **Outcome / counts**: **23** islands, **35** customs, all **35** with a picture (**13** of the custom, **22** of the island). Stories **1,217**, **680** with a picture. Other chips unchanged. The unfinished books file was not published. Published to main. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. Migration `supabase/migrations/20261026071000_local_traditions.sql` is written and not applied.
+
+## 2026-10-26 — Whole-island Ordnance Survey map
+
+- **Goal**: From All islands, each island can open an Ordnance Survey view that shows the whole island on the map.
+- **What changed**: Every island card has an OS control, and an open profile has Ordnance Survey in the top bar. That opens the paper map (Leisure) across the main map when the island is in Great Britain and a key is set, Outdoor for Northern Ireland, and the standard map elsewhere. The frame follows the coastline, with an area estimate until the outline arrives. The small profile map uses the same frame. No dataset change.
+- **Outcome / counts**: No count change. Checked in the browser: All islands lists an OS control on each card; Skye and Staffa open the Ordnance Survey paper map with the whole island in frame. Close returns to the atlas.
+- **Open items kicked to QUEUE.md**: none.

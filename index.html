@@ -67,11 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=elevation-2-line" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=os-whole-4" />
     <link rel="stylesheet" href="editorial-profile.css?v=traditions-2" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
     <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
-    <link rel="modulepreload" href="app.js?v=traditions-2" />
+    <link rel="modulepreload" href="app.js?v=os-whole-4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -557,6 +557,25 @@
           </button>
         </div>
         <div id="map" role="application" aria-label="Map of islands in Britain and Ireland" tabindex="0"></div>
+        <div id="os-island-view" class="os-island-view" hidden>
+          <div class="os-island-view__bar">
+            <button type="button" class="os-island-view__back" id="os-island-view-close">Close</button>
+            <div class="os-island-view__titles">
+              <p id="os-island-view-name" class="os-island-view__name"></p>
+              <p id="os-island-view-note" class="os-island-view__note"></p>
+            </div>
+            <form id="os-island-key" class="os-island-view__key" hidden>
+              <label class="os-island-view__key-label">
+                OS Maps API key
+                <input id="os-island-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="Paste key" />
+              </label>
+              <button type="submit">Save</button>
+              <span id="os-island-key-status" class="os-island-view__key-status" role="status"></span>
+            </form>
+          </div>
+          <div id="os-island-map" class="os-island-view__map"></div>
+          <p id="os-island-view-hint" class="os-island-view__hint" hidden></p>
+        </div>
         <div id="map-status" class="map-status" aria-live="polite" aria-atomic="true"></div>
         <details class="legend-wrap">
           <summary class="legend-wrap__toggle">Map key</summary>
@@ -776,6 +795,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=traditions-2" type="module"></script>
+    <script src="app.js?v=os-whole-4" type="module"></script>
   </body>
 </html>

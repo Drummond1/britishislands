@@ -296,6 +296,12 @@ const state = {
   bySeoPath: new Map(),     // "/islands/{nation}/{slug}/" -> island id
   markers: new Map(),       // id -> L.Marker (category pin)
   polygonCache: new Map(),  // id -> GeoJSON layer
+  polygonGeo: new Map(),    // id -> GeoJSON | null
+  osIslandMap: null,        // full-pane Ordnance Survey map of one island
+  osIslandId: null,
+  osIslandBasemap: null,
+  detailMapIslandId: null,
+  detailMapBasemap: null,
   activeId: null,
   booting: false,
   activePolygon: null,
@@ -4722,6 +4728,21 @@ function renderListWindow() {
     });
 
     wrap.appendChild(main);
+    if (Number.isFinite(island.lat) && Number.isFinite(island.lng)) {
+      const osBtn = document.createElement("button");
+      osBtn.type = "button";
+      osBtn.className = "island-card__os";
+      osBtn.textContent = "OS";
+      osBtn.title = "Ordnance Survey map of the whole island";
+      osBtn.setAttribute("aria-label", `Ordnance Survey map of ${displayName}`);
+      osBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        focusIsland(island.id, { fly: false });
+        openOsIslandView(island);
+      });
+      wrap.appendChild(osBtn);
+    }
     if (listingLead?.url) {
       const listBtn = document.createElement("a");
       listBtn.className = "island-card__listing-link";
@@ -4895,13 +4916,22 @@ function focusIsland(id, { fly = true, fromHistory = false } = {}) {
     if (!island || state.activeId !== id) return;
     renderDetails(island);
     scheduleIsland3DMount(island);
-    if (mobileNav.isActive()) mobileNav.setView("islands");
+    if (mobileNav.isActive() && document.getElementById("os-island-view")?.hidden !== false) {
+      mobileNav.setView("islands");
+    }
 
     if (fly) {
       flyMapToIsland(island, { fly: true });
     }
 
     loadAndShowPolygon(island);
+    if (
+      state.osIslandId &&
+      state.osIslandId !== island.id &&
+      document.getElementById("os-island-view")?.hidden === false
+    ) {
+      openOsIslandView(island);
+    }
 
     loadGalleries().then(() => {
       if (state.activeId !== id) return;
@@ -5459,7 +5489,12 @@ function renderDetails(island) {
 
   const toolbar = document.getElementById("details-toolbar-actions");
   if (toolbar) {
+    const osBtn =
+      Number.isFinite(island.lat) && Number.isFinite(island.lng)
+        ? `<button type="button" id="details-os-btn" class="details-action-btn details-os-btn" aria-label="Open the Ordnance Survey map of the whole island">Ordnance Survey</button>`
+        : "";
     toolbar.innerHTML = `
+      ${osBtn}
       <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
@@ -5467,6 +5502,10 @@ function renderDetails(island) {
       }" title="${favActive ? "Saved" : "Save"}"><span data-lucide="heart" aria-hidden="true"></span> ${favActive ? "Saved" : "Save"}</button>`;
     refreshLucideIcons(toolbar);
   }
+  document.getElementById("details-os-btn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openOsIslandView(island);
+  });
 
   document.getElementById("details-favorite-btn")?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -5671,6 +5710,7 @@ function attachOsTileErrorHandler(layer, layerName, hintEl, key) {
             : status === "404"
               ? "Layer <code>" + layerName + "</code> not found. Make sure your project has access to the OS Maps API."
               : "Tile request failed (status <code>" + status + "</code>). Switching to OSM may help.";
+    hintEl.hidden = false;
     hintEl.innerHTML =
       "<strong>OS tile error.</strong> " +
       reason +
@@ -5893,7 +5933,7 @@ function renderDetailMapSwitcher(switcher, available, current, island) {
 
 // Build the Leaflet map for the chosen basemap. Separated from
 // renderDetailMap so we can fully rebuild on basemap switch.
-function buildDetailMap(container, island, basemap, hintEl, key) {
+function buildDetailMap(container, island, basemap, hintEl, key, role = "detail") {
   const baseZoom = (() => {
     const a = island.areaKm2 || 0;
     if (island.type === "river") return 15;
@@ -5910,12 +5950,17 @@ function buildDetailMap(container, island, basemap, hintEl, key) {
     attributionControl: true,
   };
 
+  if (role === "os") {
+    mapOpts.zoomSnap = 0.25;
+    mapOpts.zoomDelta = 0.5;
+  }
+
   if (basemap === "leisure") {
     const crs = getBngCrs();
     mapOpts.crs = crs;
     // Leisure tile pyramid is z=0..9; cap accordingly so Leaflet doesn't
     // try to fetch beyond what OS publishes.
-    mapOpts.minZoom = 5;
+    mapOpts.minZoom = 0;
     mapOpts.maxZoom = 9;
     // Leisure's "natural" zoom for an individual island sits at 7–9;
     // remap the size-based heuristic to that band.
@@ -5930,7 +5975,15 @@ function buildDetailMap(container, island, basemap, hintEl, key) {
   }
 
   const m = L.map(container, mapOpts);
-  state.detailMap = m;
+  if (role === "os") {
+    state.osIslandMap = m;
+    state.osIslandBasemap = basemap;
+    state.osIslandId = island.id;
+  } else {
+    state.detailMap = m;
+    state.detailMapBasemap = basemap;
+    state.detailMapIslandId = island.id;
+  }
 
   if (basemap === "leisure") {
     const layer = L.tileLayer(
@@ -5981,10 +6034,248 @@ function buildDetailMap(container, island, basemap, hintEl, key) {
   // anything here - loadFerries already returns synchronously once cached.
   // Ferry lines stay off the map until the route layer is reliable.
 
-  // Leaflet mis-sizes when the container was hidden during initialisation.
-  setTimeout(() => {
-    try { m.invalidateSize(); } catch (_) { /* ignore */ }
-  }, 60);
+  const knownOutline = state.polygonGeo.get(island.id) || null;
+  if (knownOutline) drawIslandOutline(m, knownOutline);
+  frameWholeIsland(m, island, basemap, knownOutline);
+  if (!state.polygonGeo.has(island.id)) {
+    islandOutline(island)
+      .then((gj) => {
+        const current = role === "os" ? state.osIslandMap : state.detailMap;
+        if (current !== m || m._userFramed) {
+          if (current === m && gj) drawIslandOutline(m, gj);
+          return;
+        }
+        if (gj) drawIslandOutline(m, gj);
+        frameWholeIsland(m, island, basemap, gj);
+      })
+      .catch(() => {});
+  }
+}
+
+// Frames a detail map on the island's coastline, or on a padded area
+// estimate until that coastline arrives. Leisure can zoom out to z0 so a
+// long island still fits the paper map.
+let osIslandSeq = 0;
+const polygonGeoInflight = new Map();
+
+function islandOutline(island) {
+  if (!island?.id) return Promise.resolve(null);
+  if (state.polygonGeo.has(island.id)) return Promise.resolve(state.polygonGeo.get(island.id));
+  const layer = state.polygonCache.get(island.id);
+  if (layer?.toGeoJSON) {
+    const gj = layer.toGeoJSON();
+    state.polygonGeo.set(island.id, gj);
+    return Promise.resolve(gj);
+  }
+  if (!island.osmType || !island.osmId || island.osmType === "node") {
+    state.polygonGeo.set(island.id, null);
+    return Promise.resolve(null);
+  }
+  if (polygonGeoInflight.has(island.id)) return polygonGeoInflight.get(island.id);
+  const pending = fetchOsmPolygon(island.osmType, island.osmId)
+    .then((gj) => {
+      const value = gj || null;
+      state.polygonGeo.set(island.id, value);
+      return value;
+    })
+    .finally(() => {
+      polygonGeoInflight.delete(island.id);
+    });
+  polygonGeoInflight.set(island.id, pending);
+  return pending;
+}
+
+function boundsForIsland(island, geojson) {
+  if (geojson) {
+    try {
+      const layer = L.geoJSON(geojson);
+      const outlined = layer.getBounds();
+      if (outlined?.isValid?.()) return outlined.pad(0.12);
+    } catch (_) {
+      /* fall through to the area estimate */
+    }
+  }
+  const lat = Number(island.lat);
+  const lng = Number(island.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  const area = Number(island.areaKm2);
+  const km2 = Number.isFinite(area) && area > 0 ? area : 0.05;
+  const radiusKm = Math.sqrt(km2 / Math.PI) * 2.4;
+  const dLat = radiusKm / 110.574;
+  const cos = Math.cos((lat * Math.PI) / 180);
+  const dLng = radiusKm / (111.32 * Math.max(0.2, Math.abs(cos)));
+  const estimated = L.latLngBounds([lat - dLat, lng - dLng], [lat + dLat, lng + dLng]);
+  return estimated.isValid() ? estimated : null;
+}
+
+function drawIslandOutline(m, geojson) {
+  if (!m) return;
+  if (m._islandOutline) {
+    try { m.removeLayer(m._islandOutline); } catch (_) { /* ignore */ }
+    m._islandOutline = null;
+  }
+  if (!geojson) return;
+  m._islandOutline = L.geoJSON(geojson, {
+    interactive: false,
+    style: {
+      color: "#14342c",
+      weight: 1.5,
+      opacity: 0.75,
+      fillColor: "#14342c",
+      fillOpacity: 0.04,
+    },
+  }).addTo(m);
+}
+
+function frameWholeIsland(m, island, basemap, geojson) {
+  if (!m) return;
+  const bounds = boundsForIsland(island, geojson);
+  if (!bounds?.isValid?.()) return;
+  if (!m._frameWatch) {
+    m._frameWatch = true;
+    m.on("dragstart", () => { m._userFramed = true; });
+    m.getContainer().addEventListener("wheel", () => { m._userFramed = true; }, { passive: true });
+    m.getContainer().addEventListener("click", (event) => {
+      if (event.target.closest?.(".leaflet-control-zoom")) m._userFramed = true;
+    });
+  }
+  const maxZoom = basemap === "leisure" ? 9 : 16;
+  const apply = () => {
+    if (m._userFramed) return;
+    try {
+      const size = m.getSize();
+      if (!size || size.x < 20 || size.y < 20) return;
+      const pad = Math.max(12, Math.min(40, Math.round(Math.min(size.x, size.y) * 0.06)));
+      m._fitting = true;
+      m.invalidateSize();
+      m.fitBounds(bounds, { padding: [pad, pad], maxZoom, animate: false });
+      m._fitting = false;
+    } catch (_) {
+      m._fitting = false;
+    }
+  };
+  apply();
+  requestAnimationFrame(apply);
+  window.setTimeout(apply, 120);
+  window.setTimeout(apply, 420);
+}
+
+function frameMountedIslandMaps(island, geojson) {
+  if (!island) return;
+  if (state.detailMap && state.detailMapIslandId === island.id && !state.detailMap._userFramed) {
+    if (geojson) drawIslandOutline(state.detailMap, geojson);
+    frameWholeIsland(state.detailMap, island, state.detailMapBasemap || "osm", geojson);
+  }
+  if (state.osIslandMap && state.osIslandId === island.id && !state.osIslandMap._userFramed) {
+    if (geojson) drawIslandOutline(state.osIslandMap, geojson);
+    frameWholeIsland(state.osIslandMap, island, state.osIslandBasemap || "osm", geojson);
+  }
+}
+
+function osViewNote(basemap, key, inGB) {
+  if (basemap === "leisure") return "Ordnance Survey paper map, the whole island.";
+  if (basemap === "outdoor") return "Ordnance Survey, the whole island.";
+  if (!key) return "The whole island. Add an OS Maps API key for the Ordnance Survey paper map.";
+  if (!inGB) return "The whole island. The Ordnance Survey paper map covers Great Britain.";
+  return "The whole island.";
+}
+
+function bindOsIslandViewChrome() {
+  const closeBtn = document.getElementById("os-island-view-close");
+  if (!closeBtn || closeBtn.dataset.bound === "1") return;
+  closeBtn.dataset.bound = "1";
+  closeBtn.addEventListener("click", () => closeOsIslandView({ returnToProfile: true }));
+  document.getElementById("os-island-key")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("os-island-key-input");
+    const value = (input?.value || "").trim();
+    const status = document.getElementById("os-island-key-status");
+    if (!value) {
+      if (status) status.textContent = "Paste a key first.";
+      return;
+    }
+    try {
+      localStorage.setItem("osMapsApiKey", value);
+    } catch (_) {
+      if (status) status.textContent = "Couldn't save the key in this browser.";
+      return;
+    }
+    setupMainOsMapsLayer();
+    const island = state.byId.get(state.osIslandId);
+    if (island) openOsIslandView(island);
+  });
+}
+
+function closeOsIslandView({ returnToProfile = false } = {}) {
+  osIslandSeq += 1;
+  const host = document.getElementById("os-island-view");
+  if (host) host.hidden = true;
+  if (state.osIslandMap) {
+    try { state.osIslandMap.remove(); } catch (_) { /* ignore */ }
+    state.osIslandMap = null;
+  }
+  state.osIslandId = null;
+  state.osIslandBasemap = null;
+  const returnMobile = returnToProfile && state.osOpenedOnMobile && mobileNav.isActive();
+  state.osOpenedOnMobile = false;
+  if (returnMobile) mobileNav.setView("islands");
+  try { map?.invalidateSize(); } catch (_) { /* ignore */ }
+}
+
+async function openOsIslandView(island) {
+  if (!island || !Number.isFinite(Number(island.lat)) || !Number.isFinite(Number(island.lng))) {
+    showToast("This island has no map coordinates yet");
+    return;
+  }
+  bindOsIslandViewChrome();
+  const seq = ++osIslandSeq;
+  const host = document.getElementById("os-island-view");
+  const mapEl = document.getElementById("os-island-map");
+  const nameEl = document.getElementById("os-island-view-name");
+  const noteEl = document.getElementById("os-island-view-note");
+  const hintEl = document.getElementById("os-island-view-hint");
+  const keyForm = document.getElementById("os-island-key");
+  if (!host || !mapEl) return;
+
+  if (state.osIslandMap) {
+    try { state.osIslandMap.remove(); } catch (_) { /* ignore */ }
+    state.osIslandMap = null;
+  }
+
+  state.osIslandId = island.id;
+  host.hidden = false;
+  if (nameEl) nameEl.textContent = islandDisplayName(island);
+  mapEl.setAttribute("aria-label", `Ordnance Survey map of ${islandDisplayName(island)}`);
+  if (hintEl) {
+    hintEl.hidden = true;
+    hintEl.textContent = "";
+  }
+
+  if (mobileNav.isActive() && mobileNav.view !== "map") {
+    state.osOpenedOnMobile = true;
+    mobileNav.setView("map");
+  }
+
+  await ensureProj4().catch(() => {});
+  if (seq !== osIslandSeq) return;
+
+  const key = getOsMapsKey();
+  const inGB = isInGreatBritainForLeisure(island);
+  const haveProj = !!getBngCrs();
+  let basemap = "osm";
+  if (key && inGB && haveProj) basemap = "leisure";
+  else if (key && (inGB || island.nation === "Northern Ireland")) basemap = "outdoor";
+  state.osIslandBasemap = basemap;
+  if (noteEl) noteEl.textContent = osViewNote(basemap, key, inGB);
+  if (keyForm) keyForm.hidden = Boolean(key);
+
+  const m = buildDetailMap(mapEl, island, basemap, hintEl, key, "os");
+  if (seq !== osIslandSeq) {
+    try { m.remove(); } catch (_) { /* ignore */ }
+    if (state.osIslandMap === m) state.osIslandMap = null;
+    return;
+  }
+  document.getElementById("os-island-view-close")?.focus({ preventScroll: true });
 }
 
 // Draw dashed polylines from this island to each connected mainland
@@ -6494,6 +6785,7 @@ window.addEventListener("popstate", (e) => {
 });
 
 function releaseIslandDetailView({ clearUrl = false, keepMap = false } = {}) {
+  closeOsIslandView();
   const restore = !keepMap && atlasViewLock === 0 ? viewBeforeIsland : null;
   viewBeforeIsland = null;
   const closingId = state.activeId;
@@ -6808,33 +7100,39 @@ async function loadAndShowPolygon(island) {
     return;
   }
 
+  const paint = (geojson) => {
+    if (!geojson || state.activeId !== island.id) return;
+    let layer = state.polygonCache.get(island.id);
+    if (!layer) {
+      layer = L.geoJSON(geojson, {
+        style: {
+          color: "#4ea3ff",
+          weight: 2,
+          fillColor: "#4ea3ff",
+          fillOpacity: 0.18,
+        },
+      });
+      state.polygonCache.set(island.id, layer);
+    }
+    state.activePolygon = layer.addTo(map);
+    fitToPolygon(layer);
+    frameMountedIslandMaps(island, geojson);
+  };
+
   const cached = state.polygonCache.get(island.id);
   if (cached) {
-    state.activePolygon = cached.addTo(map);
-    fitToPolygon(cached);
+    const gj = cached.toGeoJSON();
+    state.polygonGeo.set(island.id, gj);
+    paint(gj);
     setPolyStatus("");
     return;
   }
 
-    setPolyStatus("");
+  setPolyStatus("");
 
   try {
-    const geojson = await fetchOsmPolygon(island.osmType, island.osmId);
-    if (!geojson) {
-      setPolyStatus("");
-      return;
-    }
-    const layer = L.geoJSON(geojson, {
-      style: {
-        color: "#4ea3ff",
-        weight: 2,
-        fillColor: "#4ea3ff",
-        fillOpacity: 0.18,
-      },
-    });
-    state.polygonCache.set(island.id, layer);
-    state.activePolygon = layer.addTo(map);
-    fitToPolygon(layer);
+    const geojson = await islandOutline(island);
+    paint(geojson);
     setPolyStatus("");
   } catch (err) {
     console.warn("polygon fetch failed", err);
@@ -10421,6 +10719,7 @@ function initGlobalKeyboardShortcuts() {
       if (isTypingTarget(document.activeElement)) return;
       if (lightboxOpen || chatOpen || favModalOpen || crowdOpen) return;
       e.preventDefault();
+      closeOsIslandView();
       releaseIslandDetailView({ clearUrl: true, keepMap: true });
       document.body.classList.remove("sidebar-collapsed", "filters-open");
       document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
@@ -10435,6 +10734,11 @@ function initGlobalKeyboardShortcuts() {
 
     if (e.key !== "Escape") return;
     if (lightboxOpen || chatOpen || favModalOpen || crowdOpen) return;
+    if (document.getElementById("os-island-view")?.hidden === false) {
+      e.preventDefault();
+      closeOsIslandView({ returnToProfile: true });
+      return;
+    }
 
     if (document.body.classList.contains("filters-open")) {
       document.body.classList.remove("filters-open");

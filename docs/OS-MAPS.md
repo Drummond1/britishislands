@@ -42,10 +42,15 @@ Disabled buttons show users what would unlock with a key / inside GB.
   2. `localStorage.osMapsApiKey` — settable interactively from the browser
      devtools (useful for QA without redeploys).
   3. No key → only OSM is enabled, with a hint explaining how to unlock.
-- Auto-zoom: each basemap has its own zoom band because they have very
-  different scale resolutions.
-  - Leisure (z=0..9): river → z9, <0.5 km² → z9, <5 km² → z8, <50 km² → z7, else z6.
-  - Outdoor / OSM: river → z15, <0.5 km² → z14, <5 km² → z13, <50 km² → z12, else z11.
+- The map frames the **whole island**. It fits the OpenStreetMap outline
+  when that coastline is available, with a padded area estimate until then.
+  Leisure can sit anywhere from z0 to z9 so a long island such as Skye
+  still fits; Outdoor and OSM stop at z16 so a skerry stays readable.
+- From All islands, each card has an **OS** control, and an open island has
+  **Ordnance Survey** in the profile bar. Either one opens that framing
+  across the main map. Great Britain uses the Leisure paper map when an
+  OS Maps API key and proj4 are available. Northern Ireland uses Outdoor.
+  Everywhere else stays on the standard map, still framed on the whole island.
 - A circle marker pins the island on every basemap.
 - The Leaflet instance is torn down on island switch, basemap switch and
   "back to list" so we don't leak tile requests / event listeners.
@@ -152,4 +157,4 @@ plenty for an interactive atlas.
 | OS toggle missing in layers control            | No key found. Check `getOsMapsKey()` in console.                   |
 | OS tiles 401/403                               | Key wrong, project doesn't have OS Maps API enabled, or quota hit. |
 | Map is grey                                    | Container hidden when initialised — `invalidateSize()` runs at 60 ms; if the panel is still hidden, the issue is upstream. |
-| Wrong zoom for tiny islands                    | Adjust the size-band thresholds in `renderDetailMap()`.            |
+| Island cropped in the paper map                | The view fits the coastline (`frameWholeIsland`). A late outline replaces the area estimate unless you have already panned. |
