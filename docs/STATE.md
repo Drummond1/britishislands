@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (shipped to main)** — More cited islands in the thinner interest filters. Film, art and music **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal islands **104**, castles **96**, books **32**, local traditions **30**, unusual news **50**. Stories **1,488**, **901** with an open-licence picture. Supabase was not reloaded. `islands.json` was not edited.
+
 **2026-10-26 (shipped to main)** — Island profiles open with the island. Each collection is a closed row with a count; the first two cited pieces are inside it. The island’s own-language name sits under the title, and a repeated name in another language is not listed again. Counts unchanged. Supabase was not reloaded. `islands.json` was not edited.
 
 **2026-10-26 (shipped to main)** — The expanded interest index is on `main` for GitHub Pages. Film, art and music **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal islands **104**, castles **94**, books **32**, local traditions **30**, unusual news **50**. Stories **1,475**, **891** with an open-licence picture. Supabase was not reloaded. `islands.json` was not edited.
@@ -985,6 +987,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| ~~Interest expansion, second pass~~ ✅ 2026-10-26 19:54 UTC | 2026-10-26 19:27 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **30**, unusual news **50**. Stories **1,488** / **901** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Interest index publish~~ ✅ 2026-10-26 15:59 UTC | 2026-10-26 15:50 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal **104**, castles **94**, books **32**, traditions **30**, unusual news **50**. Stories **1,475** / **891** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Unusual news harvest~~ ✅ published 2026-10-26 | 2026-10-26 14:07 UTC | — | cursor agent | **50** islands, **54** stories in `data/interest_index.json`. Did not edit `islands.json`. |
 | ~~Local traditions harvest~~ ✅ published 2026-10-26 | 2026-10-26 07:10 UTC | — | cursor agent | **23** islands, **35** customs in `data/interest_index.json`. Cache `data/cache_local_traditions/`. Did not edit `islands.json`. |

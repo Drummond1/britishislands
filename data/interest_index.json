@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-26T15:53:04+00:00",
+  "generatedAt": "2026-10-26T19:52:24+00:00",
   "categories": [
     {
       "slug": "film-art-music",
@@ -58,7 +58,7 @@
           "blurb": "Named on the island, and not yet making whisky."
         }
       ],
-      "count": 20
+      "count": 21
     },
     {
       "slug": "for-sale",
@@ -72,7 +72,7 @@
       "label": "Rare wildlife",
       "blurb": "Islands with a rare, endemic, or remarkable animal or plant.",
       "sortOrder": 25,
-      "count": 30
+      "count": 33
     },
     {
       "slug": "tidal-islands",
@@ -86,7 +86,7 @@
       "label": "Islands with Castles",
       "blurb": "Islands with a castle standing on them.",
       "sortOrder": 40,
-      "count": 94
+      "count": 96
     },
     {
       "slug": "island-books",
@@ -271,6 +271,7 @@
       "osm-way-4001735",
       "wd-Q59728286",
       "anglesey",
+      "osm-way-4596121",
       "isle-of-wight",
       "scilly-st-marys"
     ],
@@ -348,12 +349,15 @@
       "osm-way-126546636",
       "brownsea",
       "osm-way-236730548",
+      "osm-way-3469292",
+      "osm-way-1493746497",
+      "osm-relation-929839",
+      "isle-of-wight",
       "osm-way-4569485",
       "osm-relation-380685",
       "isle-of-skye",
       "osm-relation-7230308",
       "osm-way-1043462669",
-      "isle-of-wight",
       "osm-relation-6045346"
     ],
     "tidal-islands": [
@@ -552,6 +556,8 @@
       "osm-way-1112518086",
       "osm-relation-12597289",
       "osm-relation-3214114",
+      "osm-way-4821985",
+      "osm-way-200890709",
       "osm-relation-3235264",
       "osm-way-355520866",
       "osm-relation-6045364",
@@ -2017,6 +2023,9 @@
       "anglesey": [
         "Anglesey Môn distillery"
       ],
+      "osm-way-4596121": [
+        "Illicit whisky"
+      ],
       "isle-of-wight": [
         "Isle of Wight Distillery",
         "Wight Distillery"
@@ -2194,7 +2203,8 @@
       "st-kilda": [
         "St Kilda dandelion",
         "St Kilda wren",
-        "St Kilda field mouse"
+        "St Kilda field mouse",
+        "St Kilda house mouse"
       ],
       "fair-isle": [
         "Fair Isle wren"
@@ -2208,6 +2218,7 @@
       ],
       "osm-relation-2856487": [
         "Skomer vole",
+        "Manx shearwater",
         "Atlantic puffin"
       ],
       "islay": [
@@ -2256,6 +2267,19 @@
         "European storm petrel",
         "Roccella fuciformis"
       ],
+      "osm-way-3469292": [
+        "Northern gannet"
+      ],
+      "osm-way-1493746497": [
+        "Manx shearwater"
+      ],
+      "osm-relation-929839": [
+        "Manx shearwater"
+      ],
+      "isle-of-wight": [
+        "Glanville fritillary",
+        "Red squirrel"
+      ],
       "osm-way-4569485": [
         "blonde hedgehog"
       ],
@@ -2270,9 +2294,6 @@
       ],
       "osm-way-1043462669": [
         "Pied avocet"
-      ],
-      "isle-of-wight": [
-        "Red squirrel"
       ],
       "osm-relation-6045346": [
         "South Stack fleawort"
@@ -2891,6 +2912,12 @@
         "Cromwell's Castle",
         "King Charles's Castle"
       ],
+      "osm-way-4821985": [
+        "Inchmurrin Castle"
+      ],
+      "osm-way-200890709": [
+        "Caisteal nan Con"
+      ],
       "osm-relation-3235264": [
         "O'Brien's Castle"
       ],
@@ -2918,7 +2945,8 @@
         "The Manxman",
         "Peveril of the Peak",
         "She's All the World to Me",
-        "The Woman of Knockaloe"
+        "The Woman of Knockaloe",
+        "The Master of Man"
       ],
       "osm-way-3469292": [
         "Catriona"
@@ -2926,7 +2954,10 @@
       "guernsey": [
         "The Guernsey Literary and Potato Peel Pie Society",
         "Just War",
-        "Toilers of the Sea"
+        "Toilers of the Sea",
+        "The Book of Ebenezer Le Page",
+        "The Blue Aura",
+        "A Wrinkle in the Skin"
       ],
       "osm-relation-9603390": [
         "John of John"
@@ -15373,6 +15404,23 @@
           "subdivision": "other"
         }
       ],
+      "osm-way-4596121": [
+        {
+          "title": "Illicit whisky",
+          "facet": "story",
+          "summary": "Pabbay (Scottish Gaelic: Pabaigh) is an uninhabited island in the Outer Hebrides of Scotland which lies in the Sound of Harris between Harris and North Uist. The island was once very fertile, supporting a three-figure population and exporting corn, barley and illicit whisky.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Pabbay,_Harris",
+          "sourceTitle": "Pabbay, Harris",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Pabbay_and_boat.jpg/960px-Pabbay_and_boat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Pabbay_and_boat.jpg",
+            "attribution": "Jkirriemuir at English Wikipedia",
+            "licence": "Public domain",
+            "licenceUrl": ""
+          },
+          "subdivision": "story"
+        }
+      ],
       "isle-of-wight": [
         {
           "title": "Isle of Wight Distillery",
@@ -15622,6 +15670,20 @@
             "licence": "CC BY-SA 3.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
           }
+        },
+        {
+          "title": "St Kilda house mouse",
+          "facet": "wildlife",
+          "summary": "The St Kilda house mouse (Mus musculus muralis) is an extinct subspecies of the house mouse found only on the islands of the St Kilda archipelago of northwest Scotland. When the last St Kildans were evacuated in 1930, the endemic house mouse became extinct very quickly, as it was associated strictly with human habitation.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/St_Kilda_house_mouse",
+          "sourceTitle": "St Kilda house mouse",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/MusMuralisSmit.jpg/960px-MusMuralisSmit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:MusMuralisSmit.jpg",
+            "attribution": "Joseph Smit",
+            "licence": "Public domain",
+            "licenceUrl": ""
+          }
         }
       ],
       "fair-isle": [
@@ -15682,6 +15744,20 @@
           "sourceUrl": "https://en.wikipedia.org/wiki/Skomer_vole",
           "sourceTitle": "Skomer vole",
           "image": null
+        },
+        {
+          "title": "Manx shearwater",
+          "facet": "wildlife",
+          "summary": "The Manx shearwater (Puffinus puffinus) is a medium-sized shearwater in the seabird family Procellariidae. Three-quarters of the British and Irish birds breed on just three islands; Skomer, Skokholm, and Rùm.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Manx_shearwater",
+          "sourceTitle": "Manx shearwater",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Manx_Shearwater.JPG/960px-Manx_Shearwater.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Manx_Shearwater.JPG",
+            "attribution": "Martin Reith",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
         },
         {
           "title": "Atlantic puffin",
@@ -15954,6 +16030,84 @@
           }
         }
       ],
+      "osm-way-3469292": [
+        {
+          "title": "Northern gannet",
+          "facet": "wildlife",
+          "summary": "The northern gannet (Morus bassanus) is a seabird, the largest species of the gannet family, Sulidae. The specific name bassanus is from the Bass Rock in the Firth of Forth.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Northern_gannet",
+          "sourceTitle": "Northern gannet",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Morus_bassanus_adu.jpg/960px-Morus_bassanus_adu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Morus_bassanus_adu.jpg",
+            "attribution": "Andreas Trepte",
+            "licence": "CC BY-SA 2.5",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+          }
+        }
+      ],
+      "osm-way-1493746497": [
+        {
+          "title": "Manx shearwater",
+          "facet": "wildlife",
+          "summary": "The Manx shearwater (Puffinus puffinus) is a medium-sized shearwater in the seabird family Procellariidae. Three-quarters of the British and Irish birds breed on just three islands; Skomer, Skokholm, and Rùm.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Manx_shearwater",
+          "sourceTitle": "Manx shearwater",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Manx_Shearwater.JPG/960px-Manx_Shearwater.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Manx_Shearwater.JPG",
+            "attribution": "Martin Reith",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
+        }
+      ],
+      "osm-relation-929839": [
+        {
+          "title": "Manx shearwater",
+          "facet": "wildlife",
+          "summary": "The Manx shearwater (Puffinus puffinus) is a medium-sized shearwater in the seabird family Procellariidae. Three-quarters of the British and Irish birds breed on just three islands; Skomer, Skokholm, and Rùm.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Manx_shearwater",
+          "sourceTitle": "Manx shearwater",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Manx_Shearwater.JPG/960px-Manx_Shearwater.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Manx_Shearwater.JPG",
+            "attribution": "Martin Reith",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
+        }
+      ],
+      "isle-of-wight": [
+        {
+          "title": "Glanville fritillary",
+          "facet": "wildlife",
+          "summary": "The Glanville fritillary (Melitaea cinxia) is a butterfly of the family Nymphalidae. The Glanville fritillary is a highly restricted species within the UK, being confined to the Isle of Wight and even there being largely limited to the southern coast.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Glanville_fritillary",
+          "sourceTitle": "Glanville fritillary",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Melitaea_cinxia_%283722394380%29.jpg/960px-Melitaea_cinxia_%283722394380%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Melitaea_cinxia_(3722394380).jpg",
+            "attribution": "Gilles San Martin from Namur, Belgium",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+          }
+        },
+        {
+          "title": "Red squirrel",
+          "facet": "wildlife",
+          "summary": "Although not thought to be under any threat worldwide, the red squirrel has nevertheless drastically reduced in number in the United Kingdom; especially after the eastern grey squirrel was introduced from North America in the 1870s. Fewer than 140,000 individuals are thought to be left in 2013; approximately 85% of which are in Scotland, with the Isle of Wight being the largest haven in England.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Red_squirrel",
+          "sourceTitle": "Red squirrel",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Squirrel_posing.jpg/960px-Squirrel_posing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Squirrel_posing.jpg",
+            "attribution": "Peter Trimming",
+            "licence": "CC BY 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+          }
+        }
+      ],
       "osm-way-4569485": [
         {
           "title": "blonde hedgehog",
@@ -16031,22 +16185,6 @@
             "attribution": "Adrian Beaumont",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
-          }
-        }
-      ],
-      "isle-of-wight": [
-        {
-          "title": "Red squirrel",
-          "facet": "wildlife",
-          "summary": "Although not thought to be under any threat worldwide, the red squirrel has nevertheless drastically reduced in number in the United Kingdom; especially after the eastern grey squirrel was introduced from North America in the 1870s. Fewer than 140,000 individuals are thought to be left in 2013; approximately 85% of which are in Scotland, with the Isle of Wight being the largest haven in England.",
-          "sourceUrl": "https://en.wikipedia.org/wiki/Red_squirrel",
-          "sourceTitle": "Red squirrel",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Squirrel_posing.jpg/960px-Squirrel_posing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Squirrel_posing.jpg",
-            "attribution": "Peter Trimming",
-            "licence": "CC BY 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
           }
         }
       ],
@@ -18770,6 +18908,38 @@
           }
         }
       ],
+      "osm-way-4821985": [
+        {
+          "title": "Inchmurrin Castle",
+          "facet": "castle",
+          "summary": "Inchmurrin (Scottish Gaelic: Innis Mhearain) is an island in Loch Lomond in Scotland. There are ruins of a castle, probably built for Duncan, 8th Earl of Lennox whose seat was Balloch Castle at the south end of Loch Lomond. The castle was probably a hunting lodge for the deer park established on the island by King Robert I of Scotland in the early 14th century. After her husband Murdoch Stewart, Duke of Albany, father Donnchadh, Earl of Lennox, and two sons were executed by James I in 1425, Isabella Countess of Lennox retired to the castle on Inchmurrin with her grandchildren.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Inchmurrin",
+          "sourceTitle": "Inchmurrin",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Satellite_image_of_Inchmurrin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Satellite_image_of_Inchmurrin.jpg",
+            "attribution": "Elianfoo",
+            "licence": "CC BY-SA 4.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          }
+        }
+      ],
+      "osm-way-200890709": [
+        {
+          "title": "Caisteal nan Con",
+          "facet": "castle",
+          "summary": "Torsa (occasionally Torsay) is one of the Slate Islands in Argyll and Bute, Scotland. Lying east of Luing and south of Seil, this tidal island was inhabited until the 1960s. The island's name is of Norse origin but the most prominent historical structure on the island is the ruined Caisteal nan Con on the northeast shore, once held by Clan Campbell.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Torsa",
+          "sourceTitle": "Torsa",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Torsa_Island_from_Luing_2.JPG/960px-Torsa_Island_from_Luing_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Torsa_Island_from_Luing_2.JPG",
+            "attribution": "Remi Mathis",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
+        }
+      ],
       "osm-relation-3235264": [
         {
           "title": "O'Brien's Castle",
@@ -18968,6 +19138,20 @@
             "licence": "CC BY-SA 3.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
           }
+        },
+        {
+          "title": "The Master of Man",
+          "facet": "book",
+          "summary": "The Master of Man: The Story of a Sin was a best-selling 1921 novel by Hall Caine. The fictional story is set on the Isle of Man and is concerned with Victor Stowell, the Deemster's son, who commits a romantic indiscretion and then gives up on all of his principles in order to keep it a secret.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/The_Master_of_Man",
+          "sourceTitle": "The Master of Man",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/The_Master_of_Man_-_Title_page.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:The_Master_of_Man_-_Title_page.jpg",
+            "attribution": "Jamesfranklingresham",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
         }
       ],
       "osm-way-3469292": [
@@ -19030,6 +19214,30 @@
             "licence": "Public domain",
             "licenceUrl": ""
           }
+        },
+        {
+          "title": "The Book of Ebenezer Le Page",
+          "facet": "book",
+          "summary": "The Book of Ebenezer Le Page is a novel by Guernsey born writer Gerald Basil Edwards first published in the United Kingdom by Hamish Hamilton in 1981, and in the United States by Alfred A. Knopf in the same year. It is the fictionalised autobiography of an archetypal Guernseyman, Ebenezer Le Page, who lives through the dramatic changes in the island of the Guernsey, Channel Islands from the late nineteenth century, through to the 1960s.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/The_Book_of_Ebenezer_Le_Page",
+          "sourceTitle": "The Book of Ebenezer Le Page",
+          "image": null
+        },
+        {
+          "title": "The Blue Aura",
+          "facet": "book",
+          "summary": "The Blue Aura is a juvenile science fiction novel, the nineteenth in Hugh Walters' Chris Godfrey of U.N.E.X.A. series. A recent increase in UFO sightings on the island of Guernsey prompts the arrival of the Chris Godfrey and his friends.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/The_Blue_Aura",
+          "sourceTitle": "The Blue Aura",
+          "image": null
+        },
+        {
+          "title": "A Wrinkle in the Skin",
+          "facet": "book",
+          "summary": "A Wrinkle In The Skin (also known as The Ragged Edge) is a 1965 post-apocalyptic science fiction novel written by the English author John Christopher. The protagonist is Matthew Cotter, a Guernsey horticulturalist who finds himself one of only a handful of survivors on the former island.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/A_Wrinkle_in_the_Skin",
+          "sourceTitle": "A Wrinkle in the Skin",
+          "image": null
         }
       ],
       "osm-relation-9603390": [

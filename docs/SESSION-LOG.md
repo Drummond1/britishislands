@@ -3490,3 +3490,31 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Counts unchanged. Skye’s profile is about 3,300 pixels instead of 32,000. The seven collections are closed rows. Film, art and music opens to 2 works, and Show 62 more brings the full 64. Other names still lists Cymraeg, Français, Gaelg, and Scots.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-26 — The name sits in the photograph
+
+- **Goal**: Open an island and see its name, its own language, and its facts on the first screen.
+- **What changed**: On a profile with a photograph, the title, the place, and the cultural-authority name are set into the bottom of the picture. The picture credit stays on a dark chip at the top. Area, people, and summit sit in one row on the paper immediately under the photograph. Share and Save live in the top bar, so the second pair of buttons is gone. A selected island in the list keeps the dark plate, with a gold edge. Leaving an island rebuilds the list, which had been left blank. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — A simpler opening
+
+- **Goal**: Make the homepage one clear invitation.
+- **What changed**: The eyebrow, the rotating place names, the second sentence, and the coastline mark are gone from the opening. The compass sits smaller behind the headline. The interest row is one line. Skye is a full-width photograph with its name set into the picture and the credit on a dark chip. Iona and Staffa sit under it as a name and a small photograph. The collection menu that repeated the chips is not shown. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Ask understands the question and shows it on the map
+
+- **Goal**: Make the local Ask finder follow ordinary questions, and put the answer on the map and in the list.
+- **What changed**: Northern Ireland no longer matches inside the word Ireland, and Highland Park no longer forces Scotland. A loch, lough, lake, or llyn is matched from the chat corpus instead of being treated as a sea or lake type. A mistyped island name (`Skie`) and a mistyped place (`obn`) are corrected, and an unknown place is named back with a suggestion. Collection questions keep the nation, water, or place in the question (`castles in Wales`). “Show these on the map”, and “which of these…”, follow the islands just named. The list and the markers then narrow to that set (up to 80), with a clearable “From your question” chip, and the map frames them. Smart answers can call the same `show_on_map` tool. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. In the browser: `Skie` opens Isle of Skye; `islands near obn` offers Oban, and Show these on the map lists Mull, Kerrera, Lismore, and the rest under “Near Oban”; `castles in Wales` stays in Wales; uninhabited islands in Northern Ireland stay in Northern Ireland and the sentence says “in Northern Ireland”. Clearing the chip returns All islands. `scripts/test_chat_agent.mjs` passed.
+- **Open items kicked to QUEUE.md**: none. The two stale chatbot bullets (unresolved place, gazetteer) are marked shipped.
+
+## 2026-10-26 — More cited islands in the thinner filters
+
+- **Goal**: Add cited islands to the published interest filters, especially whisky, rare wildlife, books, and local traditions, then ship the local index to production.
+- **What changed**: The previous pass had saved the existing keys and then stopped. New accepted rows are in `data/interest/candidates/zz-expansion-2-*.json`. Whisky: illicit whisky exported from Pabbay in the Sound of Harris. Rare wildlife: the northern gannet, named for the Bass Rock; the Manx shearwater on Skomer, Skokholm, and Rum; the Glanville fritillary on the Isle of Wight; the extinct St Kilda house mouse. Castles: the ruin on Inchmurrin, and Caisteal nan Con on Torsa. Books: The Master of Man on the Isle of Man, and The Book of Ebenezer Le Page, The Blue Aura, and A Wrinkle in the Skin on Guernsey. Saxa Vord stays out because its own page calls it a gin distillery. Lews Castle and Amhuinnsuidhe stay out because the pages call them country houses. Tidal pages that were checked do not say the island is both joined at low tide and cut off at high tide. No new broker listing. Unusual news was not expanded. Collection guides and `llms.txt` now use the index, and still omit the rows the 26 October fact-check found false. `islands.json` was not edited. Supabase was not called.
+- **Outcome / counts**: Film, art and music **139**. Whisky **21** (was 20). For sale **48**. Rare wildlife **33** (was 30). Tidal islands **104**. Islands with castles **96** (was 94). Books **32** (four more titles, no new island). Local traditions **30**. Unusual news **50**. Stories **1,488**, **901** with an open-licence picture. Nothing new for film and art, for sale, tidal islands, or local traditions.
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
+

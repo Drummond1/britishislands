@@ -1,0 +1,41 @@
+{
+  "slug": "zz-expansion-2-castles",
+  "generatedAt": "2026-10-26T19:50:00+00:00",
+  "category_slug": "island-castles",
+  "rows": [
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-4821985",
+      "island_name": "Inchmurrin",
+      "facet": "castle",
+      "title": "Inchmurrin Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Inchmurrin",
+      "source_title": "Inchmurrin",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Inchmurrin article says there are ruins of a castle on the island, and that Isabella, Countess of Lennox, retired to the castle on Inchmurrin.",
+      "external_id": "Inchmurrin",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T19:45:00+00:00",
+      "summary": "Inchmurrin (Scottish Gaelic: Innis Mhearain) is an island in Loch Lomond in Scotland. There are ruins of a castle, probably built for Duncan, 8th Earl of Lennox whose seat was Balloch Castle at the south end of Loch Lomond. The castle was probably a hunting lodge for the deer park established on the island by King Robert I of Scotland in the early 14th century. After her husband Murdoch Stewart, Duke of Albany, father Donnchadh, Earl of Lennox, and two sons were executed by James I in 1425, Isabella Countess of Lennox retired to the castle on Inchmurrin with her grandchildren."
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-200890709",
+      "island_name": "Torsa",
+      "facet": "castle",
+      "title": "Caisteal nan Con",
+      "source_url": "https://en.wikipedia.org/wiki/Torsa",
+      "source_title": "Torsa",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Torsa article says the ruined Caisteal nan Con stands on the northeast shore of the island and was once held by Clan Campbell.",
+      "external_id": "Torsa",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T19:42:00+00:00",
+      "summary": "Torsa (occasionally Torsay) is one of the Slate Islands in Argyll and Bute, Scotland. Lying east of Luing and south of Seil, this tidal island was inhabited until the 1960s. The island's name is of Norse origin but the most prominent historical structure on the island is the ruined Caisteal nan Con on the northeast shore, once held by Clan Campbell."
+    }
+  ]
+}

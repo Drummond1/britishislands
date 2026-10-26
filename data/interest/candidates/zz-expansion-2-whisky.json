@@ -1,0 +1,26 @@
+{
+  "slug": "zz-expansion-2-whisky",
+  "generatedAt": "2026-10-26T19:45:00+00:00",
+  "category_slug": "whisky-distilleries",
+  "rows": [
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-way-4596121",
+      "island_name": "Pabbay",
+      "facet": "story",
+      "title": "Illicit whisky",
+      "source_url": "https://en.wikipedia.org/wiki/Pabbay,_Harris",
+      "source_title": "Pabbay, Harris",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Pabbay, Harris article says this Pabbay lies in the Sound of Harris between Harris and North Uist and exported illicit whisky, which matches atlas island osm-way-4596121 (57.77, -7.23) and not the Pabbay south of Barra.",
+      "external_id": "Pabbay,_Harris",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T19:45:00+00:00",
+      "summary": "Pabbay (Scottish Gaelic: Pabaigh) is an uninhabited island in the Outer Hebrides of Scotland which lies in the Sound of Harris between Harris and North Uist. The island was once very fertile, supporting a three-figure population and exporting corn, barley and illicit whisky.",
+      "subdivision": "story",
+      "commons_file": "File:Pabbay and boat.jpg"
+    }
+  ]
+}
