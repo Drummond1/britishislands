@@ -504,6 +504,7 @@ const BROWSE_QUICK_FILTERS = [
 const INTEREST_SUBFILTERS_ENABLED = false;
 
 const INTEREST_CHIP_ORDER = [
+  "unusual-news",
   "island-castles",
   "unusual-wildlife",
   "local-traditions",
@@ -521,6 +522,7 @@ const INTEREST_CHIP_ICONS = {
   "island-castles": "castle",
   "island-books": "book-open",
   "local-traditions": "scroll",
+  "unusual-news": "newspaper",
   "for-sale": "key-round",
 };
 
@@ -2809,6 +2811,7 @@ const INTEREST_STORY_FACETS = {
   castle: "Castle",
   book: "Book",
   tradition: "Local tradition",
+  news: "News",
 };
 
 function whiskyCategory() {
@@ -2838,7 +2841,7 @@ function interestKicker(item) {
 }
 
 function castlePhotoRank(islandId) {
-  const slug = ["island-books", "island-castles", "local-traditions"].includes(state.activeInterestSlug)
+  const slug = ["island-books", "island-castles", "local-traditions", "unusual-news"].includes(state.activeInterestSlug)
     ? state.activeInterestSlug
     : "island-castles";
   const items = state.interestIndex?.stories?.[slug]?.[islandId] || [];
@@ -2864,7 +2867,7 @@ function whiskyIslandRank(islandId) {
 
 function interestStoryGroups(islandId) {
   const stories = state.interestIndex?.stories || {};
-  const slugs = ["local-traditions", "island-castles", "island-books", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
+  const slugs = ["unusual-news", "local-traditions", "island-castles", "island-books", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
   const active = state.activeInterestSlug;
   const order =
     active && slugs.includes(active) ? [active, ...slugs.filter((slug) => slug !== active)] : slugs;
@@ -2874,7 +2877,7 @@ function interestStoryGroups(islandId) {
       let items = Array.isArray(stories[slug]?.[islandId]) ? stories[slug][islandId] : [];
       if (
         lead &&
-        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions") &&
+        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions" || slug === "unusual-news") &&
         state.activeInterestSlug === slug
       ) {
         items = items.filter((item) => item?.title !== lead?.title);
@@ -2899,7 +2902,9 @@ function interestStoryGroups(islandId) {
         {
           slug,
           label:
-            slug === "unusual-wildlife"
+            slug === "unusual-news"
+              ? "Unusual news"
+              : slug === "unusual-wildlife"
               ? "Unusual wildlife"
               : slug === "tidal-islands"
                 ? "Tidal island"
@@ -2911,7 +2916,9 @@ function interestStoryGroups(islandId) {
                       ? "Local traditions"
                       : "Film, art and music",
           intro:
-            slug === "island-books"
+            slug === "unusual-news"
+              ? "A strange event a report places on this island."
+              : slug === "island-books"
               ? "Set on this island."
               : slug === "local-traditions"
                 ? "A custom the source places on this island."
@@ -2933,6 +2940,7 @@ function interestFeatureMode() {
     state.activeInterestSlug === "island-castles" ||
     state.activeInterestSlug === "island-books" ||
     state.activeInterestSlug === "local-traditions" ||
+    state.activeInterestSlug === "unusual-news" ||
     state.activeInterestSlug === "film-art-music"
   );
 }
@@ -2947,7 +2955,7 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items)) return [];
   if (slug === "whisky-distilleries") return items.filter((item) => whiskyStoryMatches(item, facet));
-  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions" || !facet) return items;
+  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || slug === "local-traditions" || slug === "unusual-news" || !facet) return items;
   return items.filter((item) => item?.facet === facet);
 }
 
@@ -2987,6 +2995,12 @@ function interestLeadStory(islandId) {
     return [...pool].sort((a, b) => wildlifeStoryScore(b) - wildlifeStoryScore(a))[0];
   }
   return pool.find((item) => item?.image?.thumbUrl) || pool[0];
+}
+
+function interestMoreLink(item) {
+  if (!item?.sourceUrl) return "";
+  const label = item.facet === "news" && item.sourceTitle ? item.sourceTitle : "Read more";
+  return `<a class="interest-story__more" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
 }
 
 function interestSourceLabel(url) {
@@ -3042,9 +3056,7 @@ function renderInterestStories(island) {
               </figure>`
             : "";
           const kicker = interestKicker(item);
-          const more = item.sourceUrl
-            ? `<a class="interest-story__more" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read more</a>`
-            : "";
+          const more = interestMoreLink(item);
           return `<article class="interest-story">
             ${figure}
             <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
@@ -3085,9 +3097,7 @@ function renderInterestFeature(island) {
       </figure>`
     : "";
   const kicker = interestKicker(item);
-  const more = item.sourceUrl
-    ? `<a class="interest-story__more" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read more</a>`
-    : "";
+  const more = interestMoreLink(item);
   return `<section class="interest-feature" id="profile-interest">
     ${figure}
     <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
@@ -4362,7 +4372,7 @@ function applyFilters(opts = {}) {
         state.filtered.sort(
           (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || a.name.localeCompare(b.name),
         );
-      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions") {
+      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions" || state.activeInterestSlug === "unusual-news") {
         state.filtered.sort(
           (a, b) => castlePhotoRank(a.id) - castlePhotoRank(b.id) || a.name.localeCompare(b.name),
         );
@@ -4702,7 +4712,7 @@ function renderListWindow() {
     const blurbHtml = blurb
       ? `<p class="island-card__blurb${highlight ? " island-card__blurb--interest" : ""}">${escapeHtml(blurb)}</p>`
       : "";
-    const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions");
+    const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions" || state.activeInterestSlug === "unusual-news");
     main.innerHTML = feature
       ? `${castleFirst ? thumbHtml : ""}<div class="island-card__text">${titleBlock}</div>
       ${castleFirst ? "" : thumbHtml}
@@ -8747,6 +8757,7 @@ const CHAT_GUIDE_COLLECTIONS = [
   { slug: "island-castles", test: /\b(castles?|fortress|tower house)\b/ },
   { slug: "island-books", test: /\b(books?|novels?|memoirs?|literature)\b/ },
   { slug: "local-traditions", test: /\b(local traditions?|folk customs?|customs?|traditions?)\b/ },
+  { slug: "unusual-news", test: /\b(unusual news|strange news|island news|micronations?|declared independence)\b/ },
   { slug: "unusual-wildlife", test: /\b(wildlife|puffins?|seabirds?|rare species)\b/ },
   { slug: "tidal-islands", test: /\btidal islands?\b|\bwalk(?:able)? to\b/ },
   { slug: "for-sale", test: /\b(for sale|on the market|buy an island|islands? to buy)\b/ },
@@ -8812,6 +8823,10 @@ function chatGuideProse(slug, shown, total) {
   if (slug === "local-traditions") {
     const custom = title ? ` ${title} is one of them.` : "";
     return `These islands have a local custom the atlas can cite: ${named}.${custom} Open a card for the picture and how it belongs there.`;
+  }
+  if (slug === "unusual-news") {
+    const piece = title ? ` ${title} is one of them.` : "";
+    return `These islands have a strange event a report places there: ${named}.${piece} Open a card for the picture and the article.`;
   }
   if (slug === "unusual-wildlife") {
     return `These islands have a species the atlas can cite: ${named}. Ask about one of them if you want the animal and the source.`;

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-26T08:03:28+00:00",
+  "generatedAt": "2026-10-26T14:07:24+00:00",
   "categories": [
     {
       "slug": "film-art-music",
@@ -94,6 +94,13 @@
       "blurb": "A custom, festival, dance, or craft the source places on the island.",
       "sortOrder": 24,
       "count": 23
+    },
+    {
+      "slug": "unusual-news",
+      "label": "Unusual news",
+      "blurb": "Strange events a news report places on the island.",
+      "sortOrder": 18,
+      "count": 16
     }
   ],
   "members": {
@@ -482,6 +489,24 @@
       "osm-relation-3414078",
       "osm-relation-10323151",
       "osm-relation-3833751"
+    ],
+    "unusual-news": [
+      "osm-way-4004501",
+      "osm-way-172479890",
+      "wd-Q13706",
+      "lundy",
+      "osm-relation-2324897",
+      "flannan-isles-eilean-mor-6-others",
+      "osm-way-4569195",
+      "osm-way-128077107",
+      "osm-relation-1663615",
+      "mull",
+      "osm-relation-14940656",
+      "rockall",
+      "fair-isle",
+      "osm-way-3099422",
+      "wd-Q38252228",
+      "osm-way-2956937"
     ]
   },
   "highlights": {
@@ -2500,6 +2525,58 @@
       ],
       "osm-relation-3833751": [
         "Tigh an Truish"
+      ]
+    },
+    "unusual-news": {
+      "osm-way-4004501": [
+        "Boat names on the cliff"
+      ],
+      "osm-way-172479890": [
+        "Forvik declared independent"
+      ],
+      "wd-Q13706": [
+        "Principality of Sealand"
+      ],
+      "lundy": [
+        "The puffin coins"
+      ],
+      "osm-relation-2324897": [
+        "Declared free of anthrax",
+        "Fire on the anthrax island"
+      ],
+      "flannan-isles-eilean-mor-6-others": [
+        "The keepers vanished"
+      ],
+      "osm-way-4569195": [
+        "A new breed of cattle",
+        "Trainers in the post"
+      ],
+      "osm-way-128077107": [
+        "Prince of the Saltees"
+      ],
+      "osm-relation-1663615": [
+        "The People's Republic of Eigg"
+      ],
+      "mull": [
+        "The night flight"
+      ],
+      "osm-relation-14940656": [
+        "Castaway"
+      ],
+      "rockall": [
+        "Forty days on the rock"
+      ],
+      "fair-isle": [
+        "The observatory burned"
+      ],
+      "osm-way-3099422": [
+        "Crowned with beer"
+      ],
+      "wd-Q38252228": [
+        "Graves in the mud"
+      ],
+      "osm-way-2956937": [
+        "The last feudal election"
       ]
     }
   },
@@ -17125,6 +17202,328 @@
             "alt": "Seil"
           },
           "tie": "The well-known pub Tigh an Truish (Gaelic for 'house of the trousers') at Clachan Seil is said to have obtained its name in the wake of the 1745 Jacobite Rebellion. Supposedly, shore-going islanders swapped their kilts for trousers here after Highland dress was banned."
+        }
+      ]
+    },
+    "unusual-news": {
+      "osm-way-4004501": [
+        {
+          "title": "Boat names on the cliff",
+          "facet": "news",
+          "summary": "As boats come into Canna harbour, names appear painted up the cliff behind the pier: fishing boats, their numbers, and home ports, refreshed by crews who call often. A published account of the cliff says the names are a visitors' book the boats keep themselves. One family has repainted their launch, Patrice, on visits since the 1950s.",
+          "sourceUrl": "https://coast.scot/stories/the-canna-grafitti/",
+          "sourceTitle": "Coast that Shaped the World",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Graffiti%2C_Canna_Harbour_-_geograph.org.uk_-_6177257.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Graffiti,_Canna_Harbour_-_geograph.org.uk_-_6177257.jpg",
+            "attribution": "Ian Taylor",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Names painted on the cliff at Canna harbour",
+            "alt": "Names painted on the cliff at Canna harbour"
+          }
+        }
+      ],
+      "osm-way-172479890": [
+        {
+          "title": "Forvik declared independent",
+          "facet": "news",
+          "summary": "In June 2008 Stuart Hill declared the Shetland islet of Forvik a crown dependency and said it owed no allegiance to any United Kingdom government. Reuters reported the declaration the day it was made. Britain does not recognise the claim.",
+          "sourceUrl": "https://www.reuters.com/article/lifestyle/tiny-shetland-island-declares-independence-idUSL21226656/",
+          "sourceTitle": "Reuters",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Forewick_Holm_%28aka_Forvik_Island%29_-_geograph.org.uk_-_1780521.jpg/960px-Forewick_Holm_%28aka_Forvik_Island%29_-_geograph.org.uk_-_1780521.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Forewick_Holm_(aka_Forvik_Island)_-_geograph.org.uk_-_1780521.jpg",
+            "attribution": "Robbie",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Forvik, the Shetland islet in the declaration",
+            "alt": "Forvik, the Shetland islet in the declaration"
+          }
+        }
+      ],
+      "wd-Q13706": [
+        {
+          "title": "Principality of Sealand",
+          "facet": "news",
+          "summary": "In 1967 Roy Bates declared the abandoned wartime fort HM Fort Roughs, about seven miles off Suffolk, the Principality of Sealand. Marking fifty years of the claim, the BBC described a flag, a constitution, and passports. Britain does not recognise the principality.",
+          "sourceUrl": "https://www.bbc.co.uk/news/uk-england-suffolk-41135081",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/HM_Fort_Roughs_a.k.a._Principality_Of_Sealand_-_geograph.org.uk_-_1325728.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:HM_Fort_Roughs_a.k.a._Principality_Of_Sealand_-_geograph.org.uk_-_1325728.jpg",
+            "attribution": "Tim Marchant",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "HM Fort Roughs, the fort called Sealand",
+            "alt": "HM Fort Roughs, the fort called Sealand"
+          }
+        }
+      ],
+      "lundy": [
+        {
+          "title": "The puffin coins",
+          "facet": "news",
+          "summary": "Martin Coles Harman, who bought Lundy in 1925, told the High Court in 1931 that he was sovereign of the island and entitled to issue puffin coins with his own head on them. Time reported that the court kept a fine under the Coinage Act and treated Lundy as part of the United Kingdom.",
+          "sourceUrl": "https://time.com/archive/6766900/foreign-news-puffin-into-nuffin/",
+          "sourceTitle": "Time",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/The_Jetty%2C_Lundy.jpg/960px-The_Jetty%2C_Lundy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:The_Jetty,_Lundy.jpg",
+            "attribution": "MichaelMaggs",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Photograph of Lundy",
+            "alt": "Photograph of Lundy"
+          }
+        }
+      ],
+      "osm-relation-2324897": [
+        {
+          "title": "Declared free of anthrax",
+          "facet": "news",
+          "summary": "Wartime anthrax tests left Gruinard Island closed for 48 years. On 24 April 1990 a defence minister crossed from the mainland, took down the red warning sign, and declared the island safe. The Herald reported the day.",
+          "sourceUrl": "https://www.heraldscotland.com/news/11938940.outcast-island-finally-returns-to-real-world/",
+          "sourceTitle": "The Herald",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Gruinard_Island.jpg/960px-Gruinard_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Gruinard_Island.jpg",
+            "attribution": "Kevin Walsh from Oxford, England",
+            "licence": "CC BY 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+            "note": "Photograph of Gruinard Island",
+            "alt": "Photograph of Gruinard Island"
+          }
+        },
+        {
+          "title": "Fire on the anthrax island",
+          "facet": "news",
+          "summary": "In March 2022 a fire burned from one end of Gruinard Island to the other. The BBC reported the blaze on the uninhabited island, used for anthrax tests in the Second World War and declared clear in April 1990. The fire service said the empty island was outside its remit.",
+          "sourceUrl": "https://www.bbc.co.uk/news/uk-scotland-highlands-islands-60892350",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Gruinard_Island.jpg/960px-Gruinard_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Gruinard_Island.jpg",
+            "attribution": "Kevin Walsh from Oxford, England",
+            "licence": "CC BY 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+            "note": "Photograph of Gruinard Island",
+            "alt": "Photograph of Gruinard Island"
+          }
+        }
+      ],
+      "flannan-isles-eilean-mor-6-others": [
+        {
+          "title": "The keepers vanished",
+          "facet": "news",
+          "summary": "On 15 December 1900 the three keepers of the Flannan Isles lighthouse vanished from Eilean Mòr. A relief crew landed on 26 December and found the light ready, the beds empty, and the last notes from that morning. In June 2026 the BBC reported that the letter the first keeper ashore wrote would go on public display.",
+          "sourceUrl": "https://www.bbc.co.uk/news/articles/c7942e4gdnpo",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Flannan_Isles%2C_the_lighthouse_-_geograph.org.uk_-_3201947.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Flannan_Isles,_the_lighthouse_-_geograph.org.uk_-_3201947.jpg",
+            "attribution": "Chris Downer",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "The Flannan Isles lighthouse",
+            "alt": "The Flannan Isles lighthouse"
+          }
+        }
+      ],
+      "osm-way-4569195": [
+        {
+          "title": "A new breed of cattle",
+          "facet": "news",
+          "summary": "The last residents left Swona in 1974 and the cattle stayed. In 1999 the BBC reported that the herd had bred without people for long enough to be entered as its own breed, the first new British cattle breed recognised in more than a century.",
+          "sourceUrl": "http://news.bbc.co.uk/2/hi/uk_news/scotland/480237.stm",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Swona_cattle_-_geograph.org.uk_-_2221842.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Swona_cattle_-_geograph.org.uk_-_2221842.jpg",
+            "attribution": "malcolm simpson",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "The cattle on Swona",
+            "alt": "The cattle on Swona"
+          }
+        },
+        {
+          "title": "Trainers in the post",
+          "facet": "news",
+          "summary": "In September 2025 a parcel addressed to Swona arrived in the post: a pair of trainers, for an island whose only inhabitants are feral cattle. The BBC reported that the people who look after Swona from South Ronaldsay did not know the name on the label, and that the island has no internet from which anyone there could have ordered them.",
+          "sourceUrl": "https://www.bbc.co.uk/news/articles/c864pgw4d27o",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Swona_cattle_-_geograph.org.uk_-_2221842.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Swona_cattle_-_geograph.org.uk_-_2221842.jpg",
+            "attribution": "malcolm simpson",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "The cattle that live on Swona",
+            "alt": "The cattle that live on Swona"
+          }
+        }
+      ],
+      "osm-way-128077107": [
+        {
+          "title": "Prince of the Saltees",
+          "facet": "news",
+          "summary": "Michael Neale bought Great Saltee in 1943 and styled himself Prince of the Saltees. The Irish Times records that he set a throne and an obelisk on the island, and that his coronation was held there in 1953. As a boy he had told his mother he would one day own the island and be its prince.",
+          "sourceUrl": "https://www.irishtimes.com/opinion/an-irishman-s-diary-1.1068914",
+          "sourceTitle": "The Irish Times",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Great_Saltee.JPG/960px-The_Great_Saltee.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Saltee.JPG",
+            "attribution": "ArcticEmmet",
+            "licence": "Public domain",
+            "licenceUrl": "",
+            "note": "Photograph of Great Saltee",
+            "alt": "Photograph of Great Saltee"
+          }
+        }
+      ],
+      "osm-relation-1663615": [
+        {
+          "title": "The People's Republic of Eigg",
+          "facet": "news",
+          "summary": "In 1997 the residents of Eigg bought their island after years of dispute with absentee landlords. A BBC account of that purchase calls it the moment a People's Republic of Eigg declared independence.",
+          "sourceUrl": "http://news.bbc.co.uk/2/hi/uk_news/scotland/highlands_and_islands/8298816.stm",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg",
+            "attribution": "Mick Garratt",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Galmisdale and An Sgùrr on Eigg",
+            "alt": "Galmisdale and An Sgùrr on Eigg"
+          }
+        }
+      ],
+      "mull": [
+        {
+          "title": "The night flight",
+          "facet": "news",
+          "summary": "On Christmas Eve 1975 Peter Gibbs took off alone, at night, from Glenforsa airfield on Mull and did not return. The BBC records that his body was found four months later on a hillside about a mile from the hotel, with no seawater on his clothes, and that the light aircraft was not with him.",
+          "sourceUrl": "https://www.bbc.com/news/articles/cgqz4pj1x9po",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Glenforsa_Airfield_-_Mull_-_geograph.org.uk_-_2423728.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Glenforsa_Airfield_-_Mull_-_geograph.org.uk_-_2423728.jpg",
+            "attribution": "John Harden",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Glenforsa airfield on Mull",
+            "alt": "Glenforsa airfield on Mull"
+          }
+        }
+      ],
+      "osm-relation-14940656": [
+        {
+          "title": "Castaway",
+          "facet": "news",
+          "summary": "In 2000 the BBC put 36 strangers on Taransay for a year and filmed them trying to build a community from scratch. By New Year seven had left, after gales that wrecked shelters they had built, a meningitis scare, and rows in public.",
+          "sourceUrl": "http://news.bbc.co.uk/2/hi/entertainment/1079949.stm",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Taransay_Beach_-_geograph.org.uk_-_883059.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Taransay_Beach_-_geograph.org.uk_-_883059.jpg",
+            "attribution": "Peter Standing",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "A beach on Taransay",
+            "alt": "A beach on Taransay"
+          }
+        }
+      ],
+      "rockall": [
+        {
+          "title": "Forty days on the rock",
+          "facet": "news",
+          "summary": "In 1985 Tom McClean spent 40 days and nights on Rockall, living in a wooden box bolted to the rock. He told the BBC he raised a Union flag when he landed and that he was the first person to reside there. Britain had annexed the rock in 1955.",
+          "sourceUrl": "https://www.bbc.co.uk/news/uk-scotland-48582267",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Rockall_-_geograph.org.uk_-_1048822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Rockall_-_geograph.org.uk_-_1048822.jpg",
+            "attribution": "Andy Strangeway",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Rockall",
+            "alt": "Rockall"
+          }
+        }
+      ],
+      "fair-isle": [
+        {
+          "title": "The observatory burned",
+          "facet": "news",
+          "summary": "On 10 March 2019 a fire destroyed the Fair Isle Bird Observatory. The BBC reported that extra crews had to be flown from Sumburgh and brought by boat, and that the smoke could be seen from the Shetland mainland. A family in the adjoining flat got out unhurt.",
+          "sourceUrl": "https://www.bbc.com/news/uk-scotland-north-east-orkney-shetland-47515175",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Fair_Isle_Bird_Observatory_reopened_June_2010_-_geograph.org.uk_-_1999001.jpg/960px-Fair_Isle_Bird_Observatory_reopened_June_2010_-_geograph.org.uk_-_1999001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Fair_Isle_Bird_Observatory_reopened_June_2010_-_geograph.org.uk_-_1999001.jpg",
+            "attribution": "Julian Paren",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "The Fair Isle observatory before the 2019 fire",
+            "alt": "The Fair Isle observatory before the 2019 fire"
+          }
+        }
+      ],
+      "osm-way-3099422": [
+        {
+          "title": "Crowned with beer",
+          "facet": "news",
+          "summary": "Whoever takes the Ship Inn on Piel Island is crowned king or queen, and the ceremony pours a jug of beer over their head. In 2025 the BBC met the landlord, Aaron Sanderson, who said he was crowned at 33 when he took the pub. He is recorded as the island's 24th king.",
+          "sourceUrl": "https://www.bbc.com/news/articles/c9vde23x3mgo",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Piel_Island_and_Castle%2C_Barrow-in-Furness.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Piel_Island_and_Castle,_Barrow-in-Furness.jpg",
+            "attribution": "Simon Ledingham",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Piel Island and its castle",
+            "alt": "Piel Island and its castle"
+          }
+        }
+      ],
+      "wd-Q38252228": [
+        {
+          "title": "Graves in the mud",
+          "facet": "news",
+          "summary": "Deadman's Island, a closed mudbank in the Swale opposite Queenborough, holds unmarked graves of people who died on prison hulks more than 200 years ago. In 2017 the BBC reported that erosion was washing those coffins out of the mud. The public are not allowed on the island.",
+          "sourceUrl": "https://www.bbc.co.uk/news/uk-england-kent-38797543",
+          "sourceTitle": "BBC News",
+          "image": {
+            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Dead_Man%27s_Island_and_Channel_Marker_-_geograph.org.uk_-_997245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Dead_Man%27s_Island_and_Channel_Marker_-_geograph.org.uk_-_997245.jpg",
+            "attribution": "David Anstiss",
+            "licence": "CC BY-SA 2.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Deadman's Island in the Swale. Not a photograph of the graves.",
+            "alt": "Deadman's Island in the Swale. Not a photograph of the graves."
+          }
+        }
+      ],
+      "osm-way-2956937": [
+        {
+          "title": "The last feudal election",
+          "facet": "news",
+          "summary": "On 10 December 2008 Sark held its first fully democratic election in nearly 450 years and ended a feudal parliament. After candidates backed by the Barclay brothers lost, the Guardian reported that the brothers closed the shops, hotels, and building work they ran on the island, and that about 140 people lost their jobs.",
+          "sourceUrl": "https://www.theguardian.com/uk/2008/dec/13/sark-channelislands",
+          "sourceTitle": "The Guardian",
+          "image": {
+            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Sark_La_Coupee_20160907.jpg/960px-Sark_La_Coupee_20160907.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "pageUrl": "https://commons.wikimedia.org/wiki/File:Sark_La_Coupee_20160907.jpg",
+            "attribution": "Daniel Kraft",
+            "licence": "CC BY-SA 3.0",
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "La Coupée on Sark",
+            "alt": "La Coupée on Sark"
+          }
         }
       ]
     }

@@ -783,7 +783,7 @@ export const CHAT_AGENT_TOOLS = [
   {
     name: "list_collections",
     description:
-      "List published interest collections (whisky, film and art, wildlife, tidal islands, castles, for sale) with their facet ids.",
+      "List published interest collections (unusual news, whisky, film and art, wildlife, tidal islands, castles, books, traditions, for sale) with their facet ids.",
     parameters: { type: "object", properties: {} },
   },
   {

@@ -46,6 +46,7 @@ python3 scripts/interest_categories.py tidal
 python3 scripts/interest_categories.py castles
 python3 scripts/interest_categories.py books
 python3 scripts/interest_categories.py traditions
+python3 scripts/interest_categories.py news
 python3 scripts/interest_categories.py publish
 ```
 
@@ -67,7 +68,7 @@ python3 scripts/interest_categories.py publish
 }
 ```
 
-Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `planned`, `listing`, `wildlife`, `tidal`, `castle`, `book`, `tradition`. Whisky stories also carry `subdivision` (`islay`, `hebrides`, `orkney`, `other`, `silent`, `story`, `planned`). Unique key is category + island + facet + title, so one island can carry several works or distilleries.
+Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `planned`, `listing`, `wildlife`, `tidal`, `castle`, `book`, `tradition`, `news`. Whisky stories also carry `subdivision` (`islay`, `hebrides`, `orkney`, `other`, `silent`, `story`, `planned`). Unique key is category + island + facet + title, so one island can carry several works or distilleries.
 
 ## Matching
 
@@ -78,6 +79,7 @@ Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `pla
 - For unusual wildlife, a Wikipedia, Wikidata, or Open Government Licence page must name the species and the island. The species is endemic, named for the island, or a principal stronghold. The picture is of the species. Do not store colony coordinates, nest counts, or advice on when to visit. Do not use the Seabird Monitoring Programme, RSPB reserve maps, iNaturalist, or GBIF occurrences.
 - For books, the English Wikipedia article must set the book on that atlas island (a novel, memoir, autobiography, or story collection). "Inspired by", "based on", and "filmed on" do not count. The picture is an open-licence cover, title page, or illustration. A fair-use cover is left out. When the article has no open picture, use the island's own open-licence photograph and say it is a photograph of the island. The summary is the article's own sentences.
 - For local traditions, the English Wikipedia article must describe a custom, festival, dance, or craft and place it on that atlas island. A legend with no practice, a breed, a book, a film, and a monastic pilgrimage do not count. Great Britain and Ireland do not count. The summary is the article's own sentences, including the sentence that places the custom on the island. The picture is an open-licence photograph of the custom, or the island's own photograph when the article has none.
+- For unusual news, a news report or published account must place the event on that atlas island. The summary is original, not a copy of the article. The picture is an open-licence photograph of the subject. A news photograph is not copied. Great Britain and Ireland do not count. No private address, no photograph of a person, and no grave coordinates.
 
 ## After a publish
 

@@ -143,6 +143,12 @@ PUBLISHED = (
         "blurb": "A custom, festival, dance, or craft the source places on the island.",
         "sortOrder": 24,
     },
+    {
+        "slug": "unusual-news",
+        "label": "Unusual news",
+        "blurb": "Strange events a news report places on the island.",
+        "sortOrder": 18,
+    },
 )
 
 # Equivalent-circle radius times this factor. Large enough for a long
@@ -1693,6 +1699,7 @@ STORY_SLUGS = (
     "island-castles",
     "island-books",
     "local-traditions",
+    "unusual-news",
 )
 MAPISH_IMAGE = re.compile(
     r"map|locator|range|distribution|diagram|chart|flag|coat[_ -]?of|\bcoa\b|icon|\.svg",
@@ -2293,7 +2300,30 @@ def _tradition_story(item: dict, cache: dict) -> dict:
     return story
 
 
+def _news_story(item: dict, cache: dict) -> dict:
+    """The paragraph is original. The picture is the subject of the report."""
+    summary = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    if len(summary) > 700:
+        summary = summary[:680].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    image = _image_from_file(item.get("commons_file") or "", cache)
+    if image is not None:
+        image = dict(image)
+        if item.get("image_note"):
+            image["note"] = item["image_note"]
+        image["alt"] = item.get("image_alt") or item.get("title") or ""
+    return {
+        "title": item.get("title") or "",
+        "facet": "news",
+        "summary": summary,
+        "sourceUrl": item.get("source_url") or "",
+        "sourceTitle": item.get("source_title") or "News",
+        "image": image,
+    }
+
+
 def _story_for(item: dict, cache: dict) -> dict:
+    if item.get("facet") == "news":
+        return _news_story(item, cache)
     if item.get("facet") == "tradition":
         return _tradition_story(item, cache)
     if item.get("facet") == "book":
@@ -2510,7 +2540,7 @@ def membership_sql(rows: list[dict]) -> str:
     chunks = [
         "alter table public.interest_memberships drop constraint if exists interest_memberships_facet_check;",
         "alter table public.interest_memberships add constraint interest_memberships_facet_check "
-        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal', 'silent', 'story', 'planned', 'castle', 'book', 'tradition'));",
+        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal', 'silent', 'story', 'planned', 'castle', 'book', 'tradition', 'news'));",
         "insert into public.interest_categories "
         "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
         "'whisky-distilleries', 'Whisky', "
@@ -2580,8 +2610,20 @@ def membership_sql(rows: list[dict]) -> str:
         ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
         "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
         "acceptance_rules = excluded.acceptance_rules;",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'unusual-news', 'Unusual news', "
+        "'Strange events a news report places on the island.', "
+        "'published', 18, 'cited_news', "
+        "'A news report or published account places the event on that atlas island. "
+        "The summary is original. The picture is an open-licence photograph of the subject. "
+        "Great Britain and Ireland do not count. No private address, no photograph of a person, "
+        "and no grave coordinates.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
         "delete from public.interest_memberships where category_slug in "
-        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands','island-castles','island-books','local-traditions');",
+        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands','island-castles','island-books','local-traditions','unusual-news');",
     ]
     batch = []
     def flush():
@@ -2639,7 +2681,7 @@ def sync_supabase(rows: list[dict]) -> bool:
         "Prefer": "resolution=merge-duplicates,return=minimal",
     }
     # Replace the three published categories. Draft stays empty.
-    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands", "island-castles", "island-books", "local-traditions"):
+    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands", "island-castles", "island-books", "local-traditions", "unusual-news"):
         delete_url = (
             f"{url}/rest/v1/interest_memberships?category_slug=eq.{urllib.parse.quote(slug)}"
         )
@@ -3343,10 +3385,10 @@ def populate_open_culture(atlas: Atlas) -> list[dict]:
 
 def main(argv: list[str]) -> int:
     command = argv[1] if len(argv) > 1 else "all"
-    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "castles", "books", "traditions", "publish", "sync", "all"}
+    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "castles", "books", "traditions", "news", "publish", "sync", "all"}
     if command not in known:
         print(
-            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|castles|books|traditions|publish|sync|all]",
+            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|castles|books|traditions|news|publish|sync|all]",
             file=sys.stderr,
         )
         return 2
@@ -3390,6 +3432,11 @@ def main(argv: list[str]) -> int:
         from harvest_local_traditions import populate_traditions
 
         populate_traditions(atlas)
+        return 0
+    if command == "news":
+        from harvest_unusual_news import populate_news
+
+        populate_news(atlas)
         return 0
     if command == "all":
         publish(rows)

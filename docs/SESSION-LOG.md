@@ -3398,3 +3398,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: *somewhere* is chalk and *else.* is the gold word. The opening island is a plate: the name, the sentence, and the picture credit sit on the photograph, and the picture settles once, then enlarges under the type when the pointer arrives. Iona and Staffa keep captions, and a name there grows a gold underline. A hairline runs from “A few places to start” to the count. The map’s left edge is a gold seam, and a cluster turns gold only when it is under the pointer. Phone width keeps the plate and a scrolling chip row. No new file is requested. Reduced motion shows the finished plate without the settle.
 - **Outcome / counts**: Counts unchanged. A local load event finished in a fraction of a second. In the browser the cover read Isle of Skye on the rock, the headline split chalk and gold, the picture enlarged and the name lifted on hover, and the clusters rested in ink. On a narrow column the name stayed inside the plate.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Unusual news
+
+- **Goal**: A new interest chip for strange events reported on an atlas island, with a summary, a link to the article, and a photograph of the subject.
+- **What changed**: `unusual-news` is a published overlay. Eighteen reports on sixteen islands. The wording is original. Pictures are open-licence photographs of the cliff, the fort, the lighthouse, the cattle, the airfield, and the islands themselves. News photographs were not copied. No private address, no portrait, and no grave coordinates. The chip, the profile card, and Ask read the same index. `islands.json` was not edited.
+- **Outcome / counts**: **16** islands, **18** stories, **18** with a picture. Stories overall **1,235**, **698** with a picture. The books harvest stays unpublished. Supabase was not reloaded. Migration `supabase/migrations/20261026140000_unusual_news.sql` is written and not applied.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. Load the membership SQL when Supabase is next updated.

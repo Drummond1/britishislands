@@ -4,7 +4,13 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (name an island)** — An unnamed island opens one form: what it is called, your name, your email, and an optional source. Saving writes the private log `island_name_log` and shows the name on the map, the list, and the profile. The email is not readable from the browser. `islands.json` is unchanged.
+
+**2026-10-26 (interest expansion)** — Eight researchers are adding cited rows for the published interest filters. Each writes only its own candidate file under `data/interest/candidates/zz-expansion-*.json`, or, for sale, the broker registry. They are not publishing the index and they are not editing `islands.json`. Counts unchanged until that publish.
+
 **2026-10-26 (homepage cover)** — The opening photograph carries its name, *somewhere* is chalk and *else.* is the only gold in the headline, and the map clusters stay ink until a pointer reaches them. A gold seam joins the column to the map. No new request. Counts unchanged. Shipped to main.
+
+**2026-10-26 (unusual news)** — New interest chip. **16** islands, **18** cited stories, every one with an open-licence picture of the subject. Each note is an original summary, and the link goes to the report. Forvik's declaration, Sealand, Lundy's puffin coins, the names painted at Canna harbour, the Flannan keepers, Gruinard's anthrax closure and the 2022 fire, Swona's cattle and the trainers in the post, the Prince of the Saltees, Eigg's community purchase, the Mull night flight, Castaway on Taransay, forty days on Rockall, the Fair Isle observatory fire, the king of Piel, the graves on Deadman's Island, and Sark's last feudal election. Stories **1,235**, **698** with a picture. Film/art/music stays **111**, whisky **18**, for sale **42**, unusual wildlife **23**, tidal islands **66**, castles **89**, local traditions **23**. The books harvest stays unpublished. Did not edit `islands.json`. Supabase was not reloaded. Migration `supabase/migrations/20261026140000_unusual_news.sql` is written and not applied.
 
 **2026-10-26 (homepage plate)** — The first screen is a printed chart: a gold north on the rose, a coastline drawn once under the headline, interest chips on two whole lines, a gold rule on a photograph and on a name, and registration marks with a gold ring on the map clusters. Nothing new is fetched. The rose stays still and the lamp stays a fixed pool. Counts unchanged. Shipped to main.
 
@@ -964,6 +970,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
 | Interest expansion, eight categories | 2026-10-26 14:00 UTC | this session | cursor agents | Candidate files only: `data/interest/candidates/zz-expansion-{whisky,wildlife,books,traditions,tidal,castles,film-art-music,for-sale}.json`. Do not publish. Do not edit `islands.json`. |
+| ~~Unusual news harvest~~ ✅ published 2026-10-26 | 2026-10-26 14:07 UTC | — | cursor agent | **16** islands, **18** stories in `data/interest_index.json`. Did not edit `islands.json`. |
 | ~~Local traditions harvest~~ ✅ published 2026-10-26 | 2026-10-26 07:10 UTC | — | cursor agent | **23** islands, **35** customs in `data/interest_index.json`. Cache `data/cache_local_traditions/`. Did not edit `islands.json`. |
 | ~~Books set on the island~~ ✅ published 2026-10-26 | 2026-10-26 06:20 UTC | — | cursor agent | **22** islands, **39** books in `data/interest_index.json`. Cache `data/cache_island_books/`. Did not edit `islands.json`. Supabase not reloaded. |
 | ~~Island castles interest harvest~~ ✅ published 2026-10-26 | 2026-10-26 04:40 UTC | — | cursor agent | **89** islands, **113** castles in `data/interest_index.json`. Cache `data/cache_island_castles/`. Did not edit `islands.json`. |
@@ -1091,6 +1098,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 - **Crowd pins**: optional gold markers from `data/crowd_pins.json`; **Suggest
   island** opens a map pick + GitHub issue (no on-site accounts). Toggle
   **Crowd pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
+- **Name an unnamed island**: Filters → Unnamed places only → click one. The
+  profile is a four-field form. The suggested name shows at once. The email
+  stays in Supabase `island_name_log`. See `name-island.js`.
 - **Chatbot ("Island finder")**: floating "Ask" button bottom-right opens a
   chat panel. **Local mode** (default) parses nation, type, subtype,
   archipelago, feature, size, sort, and proximity, and nothing leaves the

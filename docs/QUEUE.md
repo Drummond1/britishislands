@@ -77,6 +77,12 @@ the island. Monastic pilgrimages, island breeds, and a bare legend stayed out.
 Supabase still needs `data/interest/memberships_sync.sql` and
 `supabase/migrations/20261026071000_local_traditions.sql`.
 
+Unusual news is published locally (2026-10-26): **16** islands, **18** cited
+stories, each with an original summary, a link to the report, and an
+open-licence picture of the subject. Supabase still needs
+`data/interest/memberships_sync.sql` and
+`supabase/migrations/20261026140000_unusual_news.sql`.
+
 The next chip is lighthouses that have their own Wikipedia article. Do not build
 the lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light
 rows, including 603 lights on Great Britain). Follow
@@ -87,7 +93,8 @@ rows: 546 artworks, 297 music, 73 film). Whisky (**18** islands, **57** rows: 30
 13 silent stills, 12 stories, 2 planned), including Anglesey Môn distillery, Nun's Island in Galway, and the Loch Shiel wreck on Thorne Island. Subdivisions: Islay,
 Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. For sale
 (42), Unusual wildlife (23 islands, 30 species), Tidal islands (66),
-Islands with Castles (89 islands, 113 castles).
+Islands with Castles (89 islands, 113 castles),
+Local traditions (23 islands, 35 customs), Unusual news (16 islands, 18 stories).
 Artwork, whisky, and wildlife lead the list and the profile with one cited
 picture and a short connection. Whisky also groups the rest of the profile
 under those subdivisions. The chip row is one filter at a time (2026-10-26):
@@ -509,5 +516,6 @@ for source / licence / refresh-cadence detail.
 
 - ~~Batch 2: expand flagship editorial sections and improve CWV (LCP/CLS) on homepage + canonical island landings.~~ ✅ See SESSION-LOG 2026-07-28 batch 2.
 - ~~Wire weekly GEO prompt benchmark run into reporting snapshots.~~ ✅ `scripts/run_geo_prompt_benchmark.py` + 50-prompt set.
+- **[pending]** Deploy the eight `/collections/` interest guides (local, 2026-10-26) and request indexing for `/collections/` plus those guides. Search Console refresh token is expired (`mcp-google-search-console auth`). Do not put the fact-check’s false rows back onto the guides.
 - **[pending]** Batch 3: request GSC indexing on hubs + top flagship `/islands/` URLs; fill first scored GEO benchmark run; deepen ferry hub last-verified dates.
 - **[pending]** Homepage LCP follow-up: measure field CWV after font change; consider self-hosting DM Serif / Source Sans if third-party fonts remain a bottleneck.
