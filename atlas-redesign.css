@@ -1127,10 +1127,11 @@ body.is-atlas-ready .brand .brand-mark {
 .desktop-nav__link { transition: color .2s ease; }
 
 .passage-lamp {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
-  flex: 0 0 auto;
   height: 0;
   margin: 0;
   pointer-events: none;
@@ -1138,16 +1139,15 @@ body.is-atlas-ready .brand .brand-mark {
 .passage-lamp::before {
   content: "";
   position: absolute;
-  left: var(--lamp-x, 30%);
-  top: var(--lamp-y, 18%);
+  left: 0;
+  top: 18px;
   width: 560px;
-  height: 380px;
-  transform: translate(-28%, -36%);
-  background: radial-gradient(closest-side, rgba(228, 163, 34, .16), rgba(228, 163, 34, .04) 46%, transparent 72%);
-  opacity: 0;
-  transition: opacity .45s ease;
+  height: 340px;
+  background: radial-gradient(closest-side at 34% 46%, rgba(228, 163, 34, .16), rgba(228, 163, 34, .04) 46%, transparent 72%);
+  opacity: 1;
+  pointer-events: none;
 }
-body.has-lamp .passage-lamp::before { opacity: 1; }
+body.has-discovery-intent .passage-lamp { display: none; }
 
 .discovery-intro { position: relative; }
 .chart-rose {
@@ -1172,8 +1172,6 @@ body.has-lamp .passage-lamp::before { opacity: 1; }
   display: block;
   width: 100%;
   height: 100%;
-  transform-origin: 50% 50%;
-  animation: rose-drift 150s linear infinite;
 }
 .chart-rose__ring circle,
 .chart-rose__ring path {
@@ -1182,7 +1180,6 @@ body.has-lamp .passage-lamp::before { opacity: 1; }
   stroke-width: .7;
 }
 .chart-rose__hub { fill: currentColor; stroke: none; }
-@keyframes rose-drift { to { transform: rotate(360deg); } }
 .chart-rose__needle {
   position: absolute;
   left: calc(50% - .75px);
@@ -1191,13 +1188,11 @@ body.has-lamp .passage-lamp::before { opacity: 1; }
   height: 34%;
   border-radius: 1px;
   background: linear-gradient(to top, rgba(228, 163, 34, 0), var(--spark) 38%, #ffe7a8);
-  box-shadow: 0 0 12px rgba(228, 163, 34, .45);
   transform-origin: 50% 100%;
   transform: rotate(var(--needle));
   transition: transform 1.05s cubic-bezier(.16, 1, .3, 1);
 }
 body.is-atlas-ready .chart-rose { --needle: -7deg; }
-.discovery-intro:hover .chart-rose__needle { transition-duration: .28s; }
 
 .discovery-intro h2 {
   display: flex;

@@ -3342,3 +3342,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The Pages workflow writes `OS_MAPS_API_KEY` into `config.local.js` at deploy time. The key stays out of git. No dataset change.
 - **Outcome / counts**: No count change.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Still the passage
+
+- **Goal**: Keep the chart-room look and stop the motion that kept repainting beside the map.
+- **What changed**: The rose stays and no longer turns. The lamp is a fixed warm pool behind the headline; it no longer follows the cursor, and it leaves when a search hides the headline. The needle rests at its home angle, and its soft shadow is gone. The chip rule, the search glow, the bearing, and the one-off arrivals are unchanged. No data change.
+- **Outcome / counts**: Counts unchanged. Checked in the browser: the rose is still, the needle stays at its home angle, the lamp does not follow the pointer, search still lights the amber line, and the gold rule still moves to a chip.
+- **Open items kicked to QUEUE.md**: none.

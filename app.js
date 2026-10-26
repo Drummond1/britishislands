@@ -10711,48 +10711,7 @@ function isTypingTarget(el) {
 
 function initFoldMotion() {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const fine = window.matchMedia("(pointer: fine)").matches;
-  const sidebar = document.getElementById("sidebar");
-  const intro = document.getElementById("discovery-intro");
-  const rose = intro?.querySelector(".chart-rose");
   const host = document.getElementById("browse-quick-chips");
-
-  if (sidebar && fine && !reduce) {
-    let frame = 0;
-    let point = null;
-    sidebar.addEventListener("pointermove", (event) => {
-      if (event.pointerType && event.pointerType !== "mouse") return;
-      point = event;
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        frame = 0;
-        if (!point) return;
-        const rect = sidebar.getBoundingClientRect();
-        sidebar.style.setProperty("--lamp-x", `${point.clientX - rect.left}px`);
-        sidebar.style.setProperty("--lamp-y", `${point.clientY - rect.top}px`);
-        document.body.classList.add("has-lamp");
-      });
-    });
-    sidebar.addEventListener("pointerleave", () => {
-      point = null;
-      document.body.classList.remove("has-lamp");
-    });
-  }
-
-  if (intro && rose && fine && !reduce) {
-    intro.addEventListener("pointermove", (event) => {
-      if (event.pointerType && event.pointerType !== "mouse") return;
-      const rect = intro.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      const dx = (event.clientX - rect.left) / rect.width - 0.62;
-      const dy = (event.clientY - rect.top) / rect.height - 0.4;
-      const deg = Math.max(-32, Math.min(32, dx * 42 + dy * 10));
-      rose.style.setProperty("--needle", `${deg.toFixed(2)}deg`);
-    });
-    intro.addEventListener("pointerleave", () => {
-      rose.style.removeProperty("--needle");
-    });
-  }
 
   if (!host || reduce) return;
   placeChipRule = (chip) => {
