@@ -1,6 +1,6 @@
 # Islands for sale — full list
 
-**Last updated:** 2026-10-25  
+**Last updated:** 2026-10-26  
 **Total islands with listings:** **42**  
 
 > **Where to look**
@@ -20,9 +20,9 @@
 | Scotland | 12 |
 | Wales | 1 |
 
-**Last discovery run:** 2026-10-25T14:34:21  
+**Last discovery run:** 2026-10-26T12:11:10  
 **Added that run:** 0  
-**Removed that run:** 1  
+**Removed that run:** 0  
 
 ## All islands (A–Z by nation)
 
