@@ -58,7 +58,20 @@ BLOCK = re.compile(
 )
 SKIP_FILE = re.compile(
     r"portrait|signature|logo|icon|stamp|coin|flag|coat[_ -]?of|\bcoa\b|"
-    r"locator|diagram|map|svg|disambig|wikidata",
+    r"locator|diagram|map|svg|disambig|wikidata|painting_by|triskelion|emblem",
+    re.I,
+)
+WEAK = re.compile(
+    r"\b(old norse|etymolog|modern name|fomorian|balor|evil eye|"
+    r"inaccurate|loosely|very generally|leap year|pyramid roof|cast a spell|"
+    r"best known for|population of|breeding pairs|lord's prayer)\b",
+    re.I,
+)
+STRONG = re.compile(
+    r"\b(festival|custom|tradition|celebrat\w*|held|christmas|hunt|carnival|"
+    r"dance|woven|knit\w*|championship|parliament|mailboat|mail boat|dyke|"
+    r"sword|jumper|sweater|gansey|tweed|skimming|races|racing|crucifix|paint\w*|plough\w*|horse\w*|"
+    r"assembly|procession|law|enforceable|speciality|doughnut)\b",
     re.I,
 )
 
@@ -104,7 +117,7 @@ SEEDS = [
         "titles": ["Tynwald Day"],
         "name": "Tynwald Day",
         "need": ["tynwald"],
-        "places": [("isle-of-man", ["Isle of Man", "Tynwald"])],
+        "places": [("isle-of-man", ["Isle of Man"])],
     },
     {
         "titles": ["Yn Chruinnaght"],
@@ -131,13 +144,13 @@ SEEDS = [
         "places": [("fair-isle", ["Fair Isle"])],
     },
     {
-        "titles": ["Festival of the Horse", "Boys' Ploughing Match"],
+        "titles": ["South Ronaldsay", "Festival of the Horse", "Boys' Ploughing Match"],
         "name": "Festival of the Horse",
-        "need": ["horse", "plough"],
+        "need": ["horse", "horses", "plough", "ploughing"],
         "places": [("osm-relation-3601567", ["South Ronaldsay", "St Margaret's Hope"])],
     },
     {
-        "titles": ["North Ronaldsay sheep", "North Ronaldsay"],
+        "titles": ["North Ronaldsay"],
         "name": "North Ronaldsay sheep dyke",
         "need": ["dyke"],
         "places": [("osm-way-4569485", ["North Ronaldsay"])],
@@ -167,9 +180,9 @@ SEEDS = [
         "places": [("jersey", ["Jersey"])],
     },
     {
-        "titles": ["Jersey wonders"],
+        "titles": ["Jersey"],
         "name": "Jersey wonders",
-        "need": ["wonders", "mervelles"],
+        "need": ["jersey wonders"],
         "places": [("jersey", ["Jersey"])],
     },
     {
@@ -233,7 +246,7 @@ SEEDS = [
         "name": "Harris Tweed",
         "need": ["tweed", "woven", "weave"],
         "places": [
-            ("lewis-and-harris", ["Lewis and Harris", "Isle of Lewis", "Lewis", "Harris"]),
+            ("lewis-and-harris", ["Lewis and Harris", "Isle of Lewis", "Lewis", "Harris", "Outer Hebrides"]),
             ("osm-relation-380685", ["North Uist"]),
             ("osm-relation-380670", ["South Uist"]),
             ("osm-relation-380684", ["Benbecula"]),
@@ -243,7 +256,7 @@ SEEDS = [
     {
         "titles": ["Sula Sgeir", "Sùla Sgeir"],
         "name": "The guga hunt",
-        "need": ["guga", "gannet"],
+        "need": ["guga", "gannet", "gannets"],
         "places": [
             ("osm-way-20594001", ["Sula Sgeir", "Sùla Sgeir"]),
             ("lewis-and-harris", ["Lewis", "Isle of Lewis"]),
@@ -262,9 +275,9 @@ SEEDS = [
         "places": [("st-kilda", ["St Kilda", "Hirta"])],
     },
     {
-        "titles": ["Fèis Ìle"],
+        "titles": ["Islay single malts"],
         "name": "Fèis Ìle",
-        "need": ["feis", "fèis", "festival"],
+        "need": ["feis", "fèis", "festival of malt"],
         "places": [("islay", ["Islay"])],
     },
     {
@@ -296,12 +309,6 @@ SEEDS = [
         "name": "Davaar cave painting",
         "need": ["painting", "painted", "crucifix"],
         "places": [("osm-relation-10323151", ["Davaar"])],
-    },
-    {
-        "titles": ["Cara Island", "Cara, Argyll"],
-        "name": "The brownie of Cara",
-        "need": ["brownie"],
-        "places": [("osm-way-4006880", ["Cara"])],
     },
     {
         "titles": ["Seil, Scotland", "Seil"],
@@ -343,10 +350,11 @@ def locates(sentence: str, alias: str) -> bool:
         return False
     return bool(
         re.search(
-            rf"(?:on|in|at|from|of|off|across|around|throughout|held|played|celebrated|"
+            rf"(?:on|in|at|from|of|off|to|after|across|around|throughout|held|played|celebrated|"
             rf"observed|originated)\s+(?:the\s+)?(?:isle\s+of\s+|island\s+of\s+)?{re.escape(needle)}(?![a-z0-9])"
+            rf"|\b(?:and|or|,)\s+{re.escape(needle)}(?![a-z0-9])"
             rf"|(?<![a-z0-9]){re.escape(needle)}\s+(?:island|isle|islanders)(?![a-z0-9])"
-            rf"|(?:the)\s+{re.escape(needle)}(?![a-z0-9])",
+            rf"|^{re.escape(needle)}\s+is\b",
             hay,
         )
     )
@@ -354,7 +362,10 @@ def locates(sentence: str, alias: str) -> bool:
 
 def article_is_island(title: str, aliases: list[str]) -> bool:
     hay = squash(title)
-    if re.search(r"\b(knitting|sheep|game|clothing|culture|breed|technique|jumper|sweater|festival)\b", hay):
+    if re.search(
+        r"\b(knitting|sheep|game|clothing|culture|breed|technique|jumper|sweater|festival|tweed|malt|whisky|chair|butter)\b",
+        hay,
+    ):
         return False
     for alias in aliases:
         needle = squash(alias)
@@ -373,6 +384,8 @@ def clean_body(body: str) -> str:
         flags=re.I,
     )[0]
     body = re.sub(r"==+[^=\n]+==+", " ", body)
+    # A closing quote is a sentence boundary: us." The next point.
+    body = re.sub(r'([.!?])["\u201d](\s+)', r"\1\2", body)
     return body
 
 
@@ -395,7 +408,10 @@ def fetch_article(titles: list[str], need: list[str]) -> tuple[str, str]:
             continue
         if re.search(r"\b(may refer to|can mean any of the following)\b", body[:400], re.I):
             continue
-        if re.search(r"\b(breed of|sheep originating)\b", body[:400], re.I):
+        first = re.split(r"(?<=[.!?])\s+", body.strip(), maxsplit=1)[0]
+        if re.search(r"\bis a breed\b", first, re.I):
+            continue
+        if re.search(r"\bsheep\b", page_title, re.I) and re.search(r"\b(breed|originating)\b", body[:400], re.I):
             continue
         if re.search(r"\bfilm festival\b", body[:800], re.I):
             continue
@@ -409,45 +425,92 @@ def _follows(sentence: str) -> bool:
     return bool(re.match(r"^(This|It|They|The custom|The holiday|The game|Play)\b", sentence or ""))
 
 
+def _placed(sentence: str, aliases: list[str], page_title: str) -> bool:
+    if any(locates(sentence, alias) for alias in aliases):
+        return True
+    if article_is_island(page_title, aliases):
+        return True
+    return bool(
+        re.search(r"\b(originated|of the same name|channel island)\b", sentence, re.I)
+        and any(squash(alias) in squash(page_title) for alias in aliases)
+    )
+
+
+def _candidate_score(sentence: str, need: list[str], aliases: list[str], page_title: str) -> int | None:
+    if not has_need(sentence, need) or BLOCK.search(sentence) or WEAK.search(sentence):
+        return None
+    if re.search(r"\bfilm festival\b", sentence, re.I):
+        return None
+    if re.search(r"\b(died|his death|her death)\b", sentence, re.I) and not re.search(
+        r"\b(held the post|king of|elected)\b", sentence, re.I
+    ):
+        return None
+    if not _placed(sentence, aliases, page_title):
+        return None
+    score = 4
+    if any(locates(sentence, alias) for alias in aliases):
+        score += 10
+    elif re.search(r"\b(originated|of the same name|channel island)\b", sentence, re.I):
+        score += 10
+    if STRONG.search(sentence):
+        score += 6
+    # A definition opens with the practice ("Tynwald Day is the National Day"), not "the goal is the sea".
+    if re.search(r"\bis (?:a|an|the)\b", sentence[:180]) and has_need(sentence[:90], need):
+        score += 8
+    if sentence.count(",") >= 5:
+        score -= 8
+    if re.search(r"\bnamed after\b", sentence, re.I):
+        score += 2
+    if re.search(r"\b(died|his death|her death)\b", sentence, re.I):
+        score -= 12
+    return score
+
+
 def build_copy(body: str, page_title: str, need: list[str], aliases: list[str]) -> tuple[str, str] | None:
     sentences = _sentences(clean_body(body))
     if not sentences:
         return None
-    on_page = article_is_island(page_title, aliases)
-    chosen = ""
+    best: tuple[int, int, str] | None = None
     for index, sentence in enumerate(sentences):
-        if not has_need(sentence, need) or BLOCK.search(sentence):
-            continue
-        if re.search(r"\b(film festival|died|his death|her death)\b", sentence, re.I):
-            continue
-        if re.search(r"\bnamed after\b", sentence, re.I) and not re.search(
-            r"\b(from|knitters|islanders|held|celebrat|woven)\b", sentence, re.I
-        ):
-            continue
-        located = any(locates(sentence, alias) for alias in aliases)
-        same_name = bool(
-            re.search(r"\b(originated|of the same name|channel island)\b", sentence, re.I)
-            and any(squash(alias) in squash(page_title) for alias in aliases)
-        )
-        if not (located or same_name or on_page):
-            continue
         nxt = sentences[index + 1] if index + 1 < len(sentences) else ""
-        if (
+        prev = sentences[index - 1] if index else ""
+        options = [sentence]
+        continuation = bool(
             nxt
+            and has_need(sentence, need)
             and not BLOCK.search(nxt)
-            and not re.search(r"\b(died|film festival)\b", nxt, re.I)
-            and (has_need(nxt, need) or _follows(nxt))
-            and len(sentence) + len(nxt) < 560
-        ):
-            sentence = f"{sentence} {nxt}"
-        chosen = sentence
-        break
-    if not chosen:
+            and not WEAK.search(nxt)
+            and not re.search(r"\b(film festival|died)\b", nxt, re.I)
+            and (
+                has_need(nxt, need)
+                or (_follows(nxt) and STRONG.search(nxt))
+                or (index < 4 and STRONG.search(nxt))
+                or re.search(r"\bnamed after\b", nxt, re.I)
+            )
+            and len(sentence) + len(nxt) < 520
+        )
+        if continuation:
+            current_locates = any(locates(sentence, alias) for alias in aliases)
+            next_locates = any(locates(nxt, alias) for alias in aliases)
+            # Don't glue an unrelated sentence in front of the one that names the island.
+            if current_locates or not next_locates or _follows(nxt) or re.search(r"\bnamed after\b", nxt, re.I):
+                options.append(f"{sentence} {nxt}")
+        if prev and re.search(r"\bnamed after\b", sentence, re.I) and has_need(prev, need) and PRACTICE.search(prev):
+            options.append(f"{prev} {sentence}")
+        for text in options:
+            score = _candidate_score(text, need, aliases, page_title)
+            if score is None:
+                continue
+            longer = best is not None and score == best[0] and index == best[1] and len(text) > len(best[2])
+            if best is None or score > best[0] or (score == best[0] and index < best[1]) or longer:
+                best = (score, index, text)
+    if not best:
         return None
-    summary = re.sub(r"\s+", " ", chosen).strip()
+    summary = re.sub(r"\s+", " ", best[2]).strip()
     if len(summary) > 650:
         summary = summary[:630].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
     tie = summary if len(summary) <= 420 else summary[:400].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    on_page = article_is_island(page_title, aliases)
     if not any(squash(alias) in squash(summary) for alias in aliases) and not on_page:
         return None
     return summary, tie
@@ -507,29 +570,37 @@ def attach_pictures(items: list[dict], islands_raw: dict) -> None:
 
     for item in items:
         record = cache.get(fold(item.get("source_title") or "")) or {}
+        island_article = article_is_island(item.get("source_title") or "", [item.get("island_name") or ""])
+        custom_tokens = [
+            token
+            for token in re.findall(r"[a-z0-9]{4,}", squash(item.get("title") or ""))
+            if token not in set(re.findall(r"[a-z0-9]{4,}", squash(item.get("island_name") or "")))
+            and token not in {"isle", "island", "local", "tradition"}
+        ]
         chosen = ""
-        best = -1
+        best = 0
         for name in record.get("images") or []:
             if not name or MAPISH_IMAGE.search(name) or SKIP_FILE.search(name):
                 continue
-            image = _image_from_file(name, media)
-            if not image:
+            if not _image_from_file(name, media):
                 continue
-            score = 2
+            file_hay = squash(name)
+            score = 0
+            if any(len(token) >= 5 and token in file_hay for token in custom_tokens):
+                score += 6
             if re.search(
-                r"festival|dance|knit|galley|fire|procession|tweed|boat|gig|flower|"
-                r"wren|chair|plough|horse|skimm|butter|parade|torch|lace|dyke|guga|"
-                r"gannet|mail|sword|tynwald|ba\b|race",
+                r"festival|dance|knit|galley|guiser|fire|procession|tweed|gig|flower|"
+                r"wren|plough|skimm|butter|parade|torch|dyke|guga|gannet|mail|sword|"
+                r"tynwald|\bba\b|race|turnip|cardigan|gansey|bean|clameur|helly",
                 name,
                 re.I,
             ):
                 score += 4
-            if name == (record.get("images") or [""])[0]:
-                score += 1
             if score > best:
                 best = score
                 chosen = name if name.startswith("File:") else f"File:{name}"
-        if chosen:
+        # A picture of the island's article is not a picture of the custom.
+        if chosen and not (island_article and best < 4):
             item["commons_file"] = chosen
             continue
         photo = island_photo({"images": islands_raw.get(item["island_id"]) or []})

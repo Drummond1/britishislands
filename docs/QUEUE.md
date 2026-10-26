@@ -71,6 +71,12 @@ and country houses stay out. Supabase still needs
 `data/interest/memberships_sync.sql` and
 `supabase/migrations/20261026044000_island_castles.sql`.
 
+Local traditions is published locally (2026-10-26): **23** islands, **35** cited
+customs, each with a picture and a Wikipedia sentence that places the custom on
+the island. Monastic pilgrimages, island breeds, and a bare legend stayed out.
+Supabase still needs `data/interest/memberships_sync.sql` and
+`supabase/migrations/20261026071000_local_traditions.sql`.
+
 The next chip is lighthouses that have their own Wikipedia article. Do not build
 the lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light
 rows, including 603 lights on Great Britain). Follow

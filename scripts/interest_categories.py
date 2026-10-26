@@ -2244,12 +2244,50 @@ def _book_story(item: dict, cache: dict) -> dict:
 
 
 def _tradition_story(item: dict, cache: dict) -> dict:
-    """The picture is the custom, or a photograph of the island. The paragraph places it there."""
-    story = _book_story(item, cache)
-    story["facet"] = "tradition"
+    """The picture is the custom the harvester chose, or its island photograph.
+
+    The article's lead image is not used. That lookup was putting a triskelion,
+    a portrait, and an unrelated stone-skimming photo on rows that had already
+    fallen back to a photograph of the island.
+    """
+    summary = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    if len(summary) > 700:
+        summary = summary[:680].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    image = _image_from_file(item.get("commons_file") or "", cache)
+    if image is None:
+        supplied = item.get("open_image") or {}
+        supplied_licence = supplied.get("licence") or ""
+        supplied_url = supplied.get("thumbUrl") or ""
+        if (
+            supplied_url
+            and supplied_licence
+            and OPEN_IMAGE_LICENCE.search(supplied_licence)
+            and not CLOSED_IMAGE_LICENCE.search(supplied_licence)
+        ):
+            image = {
+                "thumbUrl": supplied_url,
+                "pageUrl": supplied.get("pageUrl") or "",
+                "attribution": supplied.get("attribution") or "Wikimedia Commons",
+                "licence": supplied_licence,
+                "licenceUrl": supplied.get("licenceUrl") or "",
+                "note": item.get("image_note") or "Photograph of the island",
+                "alt": item.get("island_name") or item.get("title") or "",
+            }
     tie = re.sub(r"\s+", " ", (item.get("tie") or "")).strip()
     if len(tie) > 420:
         tie = tie[:400].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    source = item.get("source_title") or item.get("title") or ""
+    source_url = item.get("source_url") or ""
+    if "/wiki/" in source_url:
+        source = urllib.parse.unquote(source_url.split("/wiki/", 1)[1]).replace("_", " ")
+    story = {
+        "title": item.get("title") or "",
+        "facet": "tradition",
+        "summary": summary,
+        "sourceUrl": source_url,
+        "sourceTitle": source,
+        "image": image,
+    }
     if tie:
         story["tie"] = tie
     return story

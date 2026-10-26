@@ -3298,19 +3298,26 @@ loop (`descriptions+photos-gap`, cycle 17).
 
 - **Goal**: A second question still felt like a new search. "What's the story of Skye?" should answer from the record, and "tell me more about Islay" should stay on the whisky thread.
 - **What changed**: Local Ask reads the island record for a story question (place, the short description, one history sentence, and the Gaelic, Irish, Welsh, or Manx name when the atlas has it). After a list, "tell me more" uses one cited sentence from that list, then names a few other cited titles. "Which of these is in Scotland?" filters the islands just named. A bare "story" no longer opens the books list.
-- **Outcome / counts**: No dataset change. Checked in the browser: Skye answers with the Cuillin line, the Mesolithic sentence, and An t-Eilean Sgitheanach; Islay after the whisky list answers with the Ardnahoe sentence and also cites Caol Ila, Port Charlotte, and Laphroaig. Not pushed.
+- **Outcome / counts**: No dataset change. Checked in the browser: Skye answers with the Cuillin line, the Mesolithic sentence, and An t-Eilean Sgitheanach; Islay after the whisky list answers with the Ardnahoe sentence and also cites Caol Ila, Port Charlotte, and Laphroaig. Published.
 - **Open items kicked to QUEUE.md**: none.
 
 ## 2026-10-26 — Homepage arrival
 
 - **Goal**: More of the same quiet motion, this time on the first screen a visitor sees.
 - **What changed**: The loading veil fades instead of cutting away. The tagline, the eyebrow, the lede, and the list heading ease in. The gold rule and the Explore underline draw. The search line appears and the icon nudges once. Filter chips rise in a short row, then lift on hover. The map’s left edge warms and settles, and the map key fades in. The headline stays put. No data change.
-- **Outcome / counts**: Checked in the browser on the local atlas. Not pushed.
+- **Outcome / counts**: Checked in the browser on the local atlas. Published.
 - **Open items kicked to QUEUE.md**: none.
 
 ## 2026-10-26 — Elevation on the live atlas
 
 - **Goal**: Bring the useful parts of the home, card, profile, and Ask elevation onto the site.
 - **What changed**: Opening cards are a full-width lead plus two companions, each with a photograph, a finished sentence, and a credit when the record has one. The shared Inner Hebrides label is left off those three. The default list is name and place; a search or an interest chip still shows the sentence, and the list heading becomes “Matching your search” or “Filtered”. A profile leads with the story, then area, people, and summit. Other-language names are a line of type. Map slogans are gone. Cluster discs use a chalk hairline. Ask is a paper button; the question is italic serif and the answer sits under a rule. A story line that only said “None” is left out. No dataset change.
-- **Outcome / counts**: Checked in the browser on the local atlas. Skye, Iona, and Staffa cards read as complete sentences. Staffa’s profile puts the Fingal’s Cave story above the facts, with Gaeilge, Gàidhlig, and Cymraeg as type. Asking “What’s the story of Skye?” shows the question in italic and the Cuillin answer under a rule. Whisky switches the list heading to “Filtered”; All islands returns it to “A few places to start”. Not pushed.
+- **Outcome / counts**: Checked in the browser on the local atlas. Skye, Iona, and Staffa cards read as complete sentences. Staffa’s profile puts the Fingal’s Cave story above the facts, with Gaeilge, Gàidhlig, and Cymraeg as type. Asking “What’s the story of Skye?” shows the question in italic and the Cuillin answer under a rule. Whisky switches the list heading to “Filtered”; All islands returns it to “A few places to start”. Published.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Local traditions filter
+
+- **Goal**: A filter for islands with a custom the sources place on that island, with a photo, a summary, and the sentence that ties the custom to the island.
+- **What changed**: New interest category `local-traditions`. The harvester keeps an English Wikipedia sentence only when it describes the practice and names the island. The picture is of the custom, or a labelled photograph of the island when the article has no open photo. The chip, list blurb, and profile story show that sentence. Monastic pilgrimages, breeds, film festivals, and a bare legend were left out.
+- **Outcome / counts**: **23** islands, **35** customs, all **35** with a picture (**13** of the custom, **22** of the island). Stories **1,217**, **680** with a picture. Other chips unchanged. The unfinished books file was not published. Published to main. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. Migration `supabase/migrations/20261026071000_local_traditions.sql` is written and not applied.
