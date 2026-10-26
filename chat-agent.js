@@ -662,6 +662,139 @@ export function serialiseIslandRecord(island, storyPack) {
   return record;
 }
 
+const NATION_SYNONYMS = {
+  "Northern Ireland": ["northern ireland"],
+  "Crown Dependency": [
+    "crown dependency",
+    "isle of man",
+    "manx",
+    "jersey",
+    "guernsey",
+    "channel islands",
+    "channel isle",
+  ],
+  Scotland: ["scotland", "scottish", "scots", "alba", "caledonia"],
+  England: ["england", "english", "cornwall"],
+  Wales: ["wales", "welsh", "cymru", "cymraeg"],
+  Ireland: ["republic of ireland", "ireland", "irish", "eire"],
+};
+
+function phrasePresent(hay, phrase) {
+  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?=$|[^a-z0-9])`, "i").test(hay);
+}
+
+/** Longer nation names win, so "Northern Ireland" is not also the Republic. */
+export function nationsInQuestion(text) {
+  let hay = ` ${fold(text)} `;
+  const found = [];
+  const order = [
+    "Northern Ireland",
+    "Crown Dependency",
+    "Scotland",
+    "England",
+    "Wales",
+    "Ireland",
+  ];
+  for (const nation of order) {
+    const syns = [...NATION_SYNONYMS[nation]].sort((a, b) => b.length - a.length);
+    for (const syn of syns) {
+      if (!phrasePresent(hay, syn)) continue;
+      found.push(nation);
+      hay = hay.replace(new RegExp(syn.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), " ");
+      break;
+    }
+  }
+  const folded = fold(text);
+  if (/\bhighlands?\b/.test(folded) && !/\bhighland park\b/.test(folded) && !found.includes("Scotland")) {
+    found.push("Scotland");
+  }
+  return found;
+}
+
+/** "in Loch Lomond" / "on Lough Corrib". A bare "river island" is not a water body. */
+export function waterInQuestion(text) {
+  const folded = fold(text);
+  const match = folded.match(
+    /\b(?:in|on|around|of|from)\s+((?:loch|lough|lake|llyn|river)\s+[a-z][a-z'-]{1,24}(?:\s+[a-z][a-z'-]{1,24}){0,2})/,
+  );
+  if (!match) return null;
+  let phrase = match[1].replace(/\b(and|with|that|which|near|islands?|the)\b.*$/, "").trim();
+  if (/^(loch|lough|lake|llyn|river)\s+(island|islands|isle|isles)$/.test(phrase)) return null;
+  return phrase || null;
+}
+
+export function editDistance(a, b) {
+  if (a === b) return 0;
+  const left = String(a || "");
+  const right = String(b || "");
+  if (!left.length || !right.length) return Math.max(left.length, right.length);
+  if (Math.abs(left.length - right.length) > 2) return 3;
+  const prev = new Array(right.length + 1);
+  const cur = new Array(right.length + 1);
+  for (let j = 0; j <= right.length; j++) prev[j] = j;
+  for (let i = 1; i <= left.length; i++) {
+    cur[0] = i;
+    let rowMin = cur[0];
+    for (let j = 1; j <= right.length; j++) {
+      const cost = left[i - 1] === right[j - 1] ? 0 : 1;
+      cur[j] = Math.min(cur[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+      if (cur[j] < rowMin) rowMin = cur[j];
+    }
+    if (rowMin > 2) return 3;
+    for (let j = 0; j <= right.length; j++) prev[j] = cur[j];
+  }
+  return prev[right.length];
+}
+
+/** A near miss on an island name: "Skie" → Isle of Skye. Exact names win first. */
+export function fuzzyIslandByName(raw, islands) {
+  const exact = findIslandByName(raw, islands);
+  if (exact) return exact;
+  const target = fold(raw)
+    .replace(/\b(the|isle of|island of)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (target.length < 4 || target.length > 40) return null;
+  const maxDist = target.length >= 8 ? 2 : 1;
+  let best = null;
+  let bestDist = maxDist + 1;
+  for (const island of islands || []) {
+    if (!namedIsland(island)) continue;
+    const name = fold(island.name)
+      .replace(/\b(the|isle of|island of)\b/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!name || Math.abs(name.length - target.length) > maxDist) continue;
+    const dist = editDistance(target, name);
+    if (dist < bestDist || (dist === bestDist && (island.areaKm2 || 0) > (best?.areaKm2 || 0))) {
+      bestDist = dist;
+      best = island;
+    }
+  }
+  return bestDist <= maxDist ? best : null;
+}
+
+/** Closest gazetteer towns when "near Obn" does not resolve. */
+export function suggestPlaceNames(raw, places) {
+  const target = fold(raw);
+  if (!target || target.length < 3) return [];
+  const scored = [];
+  for (const key of Object.keys(places || {})) {
+    const folded = fold(key);
+    let dist = editDistance(target, folded);
+    if (folded.startsWith(target) || target.startsWith(folded)) dist = Math.min(dist, 1);
+    if (dist <= 2) scored.push({ key, dist });
+  }
+  scored.sort((a, b) => a.dist - b.dist || a.key.localeCompare(b.key));
+  const out = [];
+  for (const row of scored) {
+    if (!out.includes(row.key)) out.push(row.key);
+    if (out.length >= 3) break;
+  }
+  return out;
+}
+
 export const CHAT_AGENT_TOOLS = [
   {
     name: "search_islands",
@@ -787,9 +920,29 @@ export const CHAT_AGENT_TOOLS = [
     parameters: { type: "object", properties: {} },
   },
   {
+    name: "show_on_map",
+    description:
+      "Frame the atlas map and the island list on these ids. Call it when the visitor asks to see places on the map, or to browse a short list you just found. Skip it for a question about one island's story.",
+    parameters: {
+      type: "object",
+      properties: {
+        ids: {
+          type: "array",
+          items: { type: "string" },
+          description: "Atlas ids from search_islands or read_islands. At most 80.",
+        },
+        label: {
+          type: "string",
+          description: "Short list heading, e.g. Castles in Wales.",
+        },
+      },
+      required: ["ids"],
+    },
+  },
+  {
     name: "reply",
     description:
-      "Finish the turn once you have looked the answer up. Call this alone, not in the same step as a search or a read.",
+      "Finish the turn once you have looked the answer up. Call this alone, not in the same step as a search, a read, or show_on_map.",
     parameters: {
       type: "object",
       properties: {

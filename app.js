@@ -34,8 +34,12 @@ import {
   storiesForIsland as agentStoriesForIsland,
   serialiseIslandRecord as agentSerialiseIsland,
   findIslandByName as agentFindIslandByName,
+  nationsInQuestion,
+  waterInQuestion,
+  fuzzyIslandByName,
+  suggestPlaceNames,
   CHAT_AGENT_TOOLS,
-} from "./chat-agent.js?v=chat-agent-1";
+} from "./chat-agent.js?v=ask-nl-3";
 /** Showcase islands with pre-generated 3D terrain (see island-3d.js). */
 const SHOWCASE_3D_IDS = new Set([
   "staffa",
@@ -223,6 +227,7 @@ function hasUserDiscoveryIntent() {
   if (parseFloat(els?.areaMinFilter?.value) > 0) return true;
   if (els?.subtypeFilter?.value) return true;
   if (state?.mapAreaFilter) return true;
+  if (state?.askFocusIds) return true;
   return false;
 }
 
@@ -340,6 +345,8 @@ const state = {
   discoveryTopics: null,
   activeExploreTopic: null,
   exploreIslandIds: null,
+  askFocusIds: null,
+  askFocusLabel: "",
   interestIndex: null,
   activeInterestSlug: null,
   interestFacet: null,
@@ -3214,7 +3221,13 @@ function setInterestFacet(facet) {
   }
 }
 
+function clearAskFocus() {
+  state.askFocusIds = null;
+  state.askFocusLabel = "";
+}
+
 function setActiveInterest(slug, { skipUrl = false } = {}) {
+  clearAskFocus();
   const next = state.activeInterestSlug === slug ? null : slug;
   state.activeInterestSlug = next;
   state.interestFacet = null;
@@ -3387,6 +3400,7 @@ function clearExploreTopic() {
 }
 
 function setExploreTopic(topicId, { skipUrl = false } = {}) {
+  clearAskFocus();
   const topic = state.discoveryTopics?.find((t) => t.id === topicId);
   if (!topic || isPausedFerryTopic(topic)) return;
   activeBrowseQuick = null;
@@ -3703,6 +3717,7 @@ function renderBrowseQuickChips() {
 }
 
 function applyBrowseQuickFilter(preset) {
+  clearAskFocus();
   if (activeBrowseQuick === preset.id) {
     activeBrowseQuick = null;
     if (els.filterPhoto) els.filterPhoto.checked = false;
@@ -3779,6 +3794,7 @@ function renderScotlandQuickChips() {
 }
 
 function applyScotlandQuickFilter(preset) {
+  clearAskFocus();
   if (activeScotlandQuick === preset.id) {
     activeScotlandQuick = null;
     if (els.nationFilter) els.nationFilter.value = "";
@@ -3818,6 +3834,7 @@ function applyScotlandQuickFilter(preset) {
 }
 
 function resetAllFilters() {
+  clearAskFocus();
   activeScotlandQuick = null;
   activeBrowseQuick = null;
   state.activeInterestSlug = null;
@@ -3955,6 +3972,12 @@ function renderActiveFilterChips() {
           renderBrowseQuickChips();
         }
       },
+    });
+  }
+  if (state.askFocusIds) {
+    chips.push({
+      label: state.askFocusLabel || "From your question",
+      clear: () => clearAskFocus(),
     });
   }
   if (state.mapAreaFilter) {
@@ -4322,6 +4345,7 @@ function initTopbarMoreMenu() {
 
 function applyFilters(opts = {}) {
   const { skipMarkers = false, skipSort = false } = opts;
+  if (state.askFocusIds && (els.search?.value || "").trim()) clearAskFocus();
   const q = _searchNorm(els.search.value);
   const type = els.typeFilter.value;
   const nation = els.nationFilter.value;
@@ -4362,6 +4386,7 @@ function applyFilters(opts = {}) {
   }
 
   const passesScope = (i) => {
+    if (state.askFocusIds && !state.askFocusIds.has(i.id)) return false;
     if (state.exploreIslandIds && !state.exploreIslandIds.has(i.id)) return false;
     if (type && i.type !== type) return false;
     if (nation && i.nation !== nation) return false;
@@ -4570,6 +4595,12 @@ function updateSidebarOrient() {
   if (els.filterUnnamed?.checked && !hasQuery && !state.activeInterestSlug) {
     if (el) el.textContent = "Click one, then type its name.";
     if (heading) heading.textContent = "Click one to name it";
+    return;
+  }
+  if (state.askFocusIds) {
+    const asked = state.askFocusLabel || "From your question";
+    if (el) el.textContent = asked;
+    if (heading) heading.textContent = asked;
     return;
   }
   const text = hasQuery ? "Matching your search" : hasFilters ? "Filtered" : "A few places to start";
@@ -5525,7 +5556,10 @@ function setListVirtualLayerPaused(paused) {
   if (!listInner) return;
   listInner.style.visibility = paused ? "hidden" : "";
   listInner.style.pointerEvents = paused ? "none" : "";
-  if (paused) listInner.innerHTML = "";
+  if (paused) {
+    listInner.innerHTML = "";
+    listWindowKey = "";
+  }
 }
 
 function shouldPauseListVirtualLayer() {
@@ -7974,11 +8008,11 @@ function escapeAttr(value) {
 // the full records it cites. The API key stays in localStorage.
 
 const CHAT_NATIONS = {
-  Scotland: ["scotland", "scottish", "scots", "alba", "caledonia", "highlands", "highland"],
-  England: ["england", "english", "cornish", "cornwall", "yorkshire", "essex"],
+  Scotland: ["scotland", "scottish", "scots", "alba", "caledonia"],
+  England: ["england", "english", "cornwall"],
   Wales: ["wales", "welsh", "cymru", "cymraeg"],
-  "Northern Ireland": ["northern ireland", "ulster", "nornia", "ni "],
-  Ireland: ["ireland", "irish", "eire", "éire", "republic of ireland", "roi "],
+  "Northern Ireland": ["northern ireland"],
+  Ireland: ["ireland", "irish", "eire", "éire", "republic of ireland"],
   "Crown Dependency": [
     "crown dependency", "crown dep", "isle of man", "manx",
     "jersey", "guernsey", "channel islands", "channel isle",
@@ -8096,6 +8130,19 @@ const CHAT_PLACES = {
   Campbeltown: [55.424, -5.604],
   Uig: [57.586, -6.376],
   Armadale: [57.064, -5.896],
+  "Kyle of Lochalsh": [57.282, -5.713],
+  Scrabster: [58.611, -3.546],
+  Doolin: [53.016, -9.378],
+  Caernarfon: [53.139, -4.273],
+  Stranraer: [54.904, -5.027],
+  Ardrossan: [55.643, -4.82],
+  Kennacraig: [55.806, -5.488],
+  Craignure: [56.47, -5.697],
+  Fionnphort: [56.325, -6.369],
+  Leverburgh: [57.766, -7.026],
+  Sconser: [57.315, -6.11],
+  "Port Askaig": [55.848, -6.107],
+  "Port Ellen": [55.628, -6.19],
 };
 const CHAT_PLACE_KEYS = Object.keys(CHAT_PLACES);
 
@@ -8189,6 +8236,50 @@ function chatWholeWord(hay, token) {
   return re.test(" " + hay + " ");
 }
 
+function chatResolveNearPlace(placeName, radiusKm) {
+  const want = String(placeName || "")
+    .toLowerCase()
+    .replace(/^the\s+/, "")
+    .replace(/[?.!]+$/g, "")
+    .trim();
+  if (!want || want.length < 3) return {};
+  const nationWords = [
+    "scotland", "england", "wales", "ireland", "northern ireland",
+    "republic of ireland", "crown dependency",
+  ];
+  if (nationWords.includes(want)) return {};
+  if (/^(inner |outer )?(hebrides|orkney|shetland|scilly|channel islands)$/.test(want)) return {};
+  const exact = CHAT_PLACE_KEYS.find((key) => key.toLowerCase() === want);
+  if (exact) {
+    const [lat, lng] = CHAT_PLACES[exact];
+    return { near: { name: exact, lat, lng, radiusKm } };
+  }
+  if (want.length >= 4) {
+    const prefix = CHAT_PLACE_KEYS.filter((key) => key.toLowerCase().startsWith(want));
+    if (prefix.length === 1) {
+      const [lat, lng] = CHAT_PLACES[prefix[0]];
+      return { near: { name: prefix[0], lat, lng, radiusKm } };
+    }
+    if (prefix.length > 1) {
+      return { unresolved: placeName, suggestions: prefix.slice(0, 3) };
+    }
+  }
+  const island = agentFindIslandByName(placeName, state.islands);
+  if (island && Number.isFinite(island.lat) && Number.isFinite(island.lng)) {
+    return {
+      near: {
+        name: island.name,
+        lat: island.lat,
+        lng: island.lng,
+        radiusKm,
+        excludeId: island.id,
+      },
+    };
+  }
+  const suggestions = suggestPlaceNames(placeName, CHAT_PLACES);
+  return { unresolved: placeName, suggestions };
+}
+
 function parseChatQuery(rawText) {
   const text = chatTokens(rawText);
   const q = {
@@ -8220,13 +8311,19 @@ function parseChatQuery(rawText) {
     hideUnconfirmed: false,
     semanticTags: new Set(),
     nearUnresolved: null,
+    placeSuggestions: [],
+    water: null,
+    correctedTo: null,
   };
 
-  for (const [nation, syn] of Object.entries(CHAT_NATIONS)) {
-    if (syn.some((w) => text.includes(w))) q.nations.add(nation);
-  }
+  for (const nation of nationsInQuestion(text)) q.nations.add(nation);
   for (const [type, syn] of Object.entries(CHAT_TYPES)) {
     if (syn.some((w) => text.includes(w))) q.types.add(type);
+  }
+  q.water = waterInQuestion(text);
+  if (q.water) {
+    q.types.delete("lake");
+    q.types.delete("river");
   }
   for (const [sub, syn] of Object.entries(CHAT_SUBTYPES)) {
     if (syn.some((w) => text.includes(w))) q.subtypes.add(sub);
@@ -8355,7 +8452,7 @@ function parseChatQuery(rawText) {
   if (!q.recommendationIntent && q.recommendN && (q.archipelagos.size || q.nations.size)) {
     q.recommendationIntent = true;
   }
-  if (q.recommendationIntent && !q.types.size && !q.features.size) {
+  if (q.recommendationIntent && !q.types.size && !q.features.size && !q.water) {
     q.types.add("sea");
   }
 
@@ -8399,22 +8496,18 @@ function parseChatQuery(rawText) {
     if (nearMatch) placeName = nearMatch[1].trim();
   }
   if (placeName) {
-    // Case-insensitive match against known place names; allow partial prefix.
-    const hit = CHAT_PLACE_KEYS.find(
-      (k) => k.toLowerCase() === placeName ||
-             k.toLowerCase().startsWith(placeName) ||
-             placeName.startsWith(k.toLowerCase()),
-    );
-    if (hit) {
-      const [lat, lng] = CHAT_PLACES[hit];
-      q.near = { name: hit, lat, lng, radiusKm };
-    } else {
-      q.nearUnresolved = placeName;
+    const resolved = chatResolveNearPlace(placeName, radiusKm);
+    if (resolved.near) q.near = resolved.near;
+    else if (resolved.unresolved) {
+      q.nearUnresolved = resolved.unresolved;
+      q.placeSuggestions = resolved.suggestions || [];
     }
   }
 
   // Strip out words we already matched to find residual keywords.
   let residual = " " + text + " ";
+  if (q.water) residual = residual.split(q.water).join(" ");
+  if (q.nations.has("Northern Ireland")) residual = residual.split("northern ireland").join(" ");
   const stripList = [
     ...Object.values(CHAT_NATIONS).flat(),
     ...Object.values(CHAT_TYPES).flat(),
@@ -8430,6 +8523,7 @@ function parseChatQuery(rawText) {
     "worth", "visiting", "visit", "worthwhile", "recommend", "recommendation",
     "recommendations", "suggestion", "suggestions", "beautiful", "famous",
     "interesting", "picks", "seeing", "hebrides", "hebridean",
+    "highland", "highlands",
   ];
   for (const w of stripList) {
     residual = residual.split(" " + w + " ").join(" ");
@@ -8481,6 +8575,10 @@ function chatIslandHasFeature(island, feat, hay) {
   return false;
 }
 
+function chatCorpusRow(island) {
+  return chatCorpusDoc?.rows?.[island?.id] || null;
+}
+
 function chatHaystack(island) {
   // Defensive: tags is normally an array but a malformed record could ship
   // it as a string / object / null.  Coerce safely to a flat string.
@@ -8503,6 +8601,10 @@ function chatHaystack(island) {
       ? island.wildlifeColonies.map((w) => [w.species, w.category].filter(Boolean).join(" ")).join(" ")
       : "",
     (island.parentWaterBody && island.parentWaterBody.name) || "",
+    chatCorpusRow(island)?.w,
+    chatCorpusRow(island)?.d,
+    chatCorpusRow(island)?.p,
+    chatCorpusRow(island)?.n,
   ]
     .filter(Boolean)
     .join(" ")
@@ -8513,6 +8615,8 @@ function scoreChatIsland(island, q) {
   let score = 0;
   if (q.nations.size && q.nations.has(island.nation)) score += 6;
   else if (q.nations.size) return -Infinity; // hard filter
+
+  if (q.near?.excludeId && island.id === q.near.excludeId) return -Infinity;
 
   if (q.types.size && q.types.has(island.type)) score += 6;
   else if (q.types.size) return -Infinity;
@@ -8546,6 +8650,13 @@ function scoreChatIsland(island, q) {
       island.source === "curated" ||
       (hasImg && area >= 0.8);
     if (!substantial) return -Infinity;
+  }
+
+  if (q.water) {
+    const row = chatCorpusRow(island);
+    const water = String(row?.w || island.parentWaterBody?.name || "").toLowerCase();
+    if (!water.includes(String(q.water).toLowerCase())) return -Infinity;
+    score += 8;
   }
 
   // Proximity hard filter and scoring.
@@ -8705,6 +8816,7 @@ function chatQueryTooBroad(q) {
     q.recommendationIntent ||
     q.sort ||
     q.near ||
+    q.water ||
     q.ferryIntent ||
     q.features.size ||
     q.semanticTags.size ||
@@ -8754,6 +8866,7 @@ function searchChatIslands(rawText, limit = 4) {
     }
     if (s > -Infinity && s > 0) scored.push({ island: i, score: s });
   }
+  let trimmed;
   if (q.sort) {
     // Drop entries without a value for the sort key — null doesn't
     // belong at either end of a "largest" / "smallest" list.
@@ -8766,17 +8879,51 @@ function searchChatIslands(rawText, limit = 4) {
       const bv = b.island[q.sort.sortBy];
       return q.sort.dir === "desc" ? bv - av : av - bv;
     });
-    const trimmed = chatApplyRelevanceCutoff(sortable, q, outLimit);
-    return { query: q, results: trimmed.results, total: trimmed.total };
+    trimmed = chatApplyRelevanceCutoff(sortable, q, outLimit);
+  } else {
+    const photosFirst = q.photoOnly;
+    scored.sort(
+      (a, b) =>
+        b.score - a.score
+          || listSortCompare(a.island, b.island, { photosFirst }),
+    );
+    trimmed = chatApplyRelevanceCutoff(scored, q, outLimit);
   }
-  const photosFirst = q.photoOnly;
-  scored.sort(
-    (a, b) =>
-      b.score - a.score
-        || listSortCompare(a.island, b.island, { photosFirst }),
-  );
-  const trimmed = chatApplyRelevanceCutoff(scored, q, outLimit);
-  return { query: q, results: trimmed.results, total: trimmed.total };
+  if (!trimmed.results.length && chatLooksLikeName(q)) {
+    const hit = fuzzyIslandByName(q.rawText, state.islands);
+    if (hit) {
+      q.correctedTo = hit.name;
+      return { query: q, results: [{ island: hit, score: 1 }], total: 1, matchIds: [hit.id] };
+    }
+  }
+  const pool = trimmed.results.length && (q.water || q.near) ? scored : [];
+  const matchIds = pool.slice(0, 80).map((row) => row.island.id);
+  return { query: q, results: trimmed.results, total: pool.length || trimmed.total, matchIds };
+}
+
+function chatDisplayWater(phrase) {
+  return String(phrase || "").replace(/(^|\s)([a-z])/g, (_, space, ch) => space + ch.toUpperCase());
+}
+
+function chatLooksLikeName(q) {
+  if (
+    q.features.size ||
+    q.near ||
+    q.nearUnresolved ||
+    q.nations.size ||
+    q.water ||
+    q.archipelagos.size ||
+    q.recommendationIntent ||
+    q.ferryIntent ||
+    q.types.size ||
+    q.subtypes.size ||
+    q.sort
+  ) {
+    return false;
+  }
+  const raw = String(q.rawText || "").trim();
+  if (raw.length < 4 || raw.length > 48) return false;
+  return q.keywords.length > 0 && q.keywords.length <= 4;
 }
 
 // ----- Direct-answer engine -----
@@ -9309,7 +9456,8 @@ function chatResolveAskedIsland(text) {
     return { island, missed: !island, portrait: /\bstory of\b/.test(text) && !chatGuideTopic };
   }
   const inTopic = chatGuideTopic ? chatGuideFindNamed(chatGuideIslands(chatGuideTopic), raw) : null;
-  const island = inTopic || chatGuideFindNamed(chatShownIslands(), raw) || _findIslandByName(raw);
+  let island = inTopic || chatGuideFindNamed(chatShownIslands(), raw) || _findIslandByName(raw);
+  if (!island && /\bstory of\b/.test(text)) island = fuzzyIslandByName(raw, state.islands);
   if (!island && /\bstory of\b/.test(text)) return { island: null, missed: true, raw, portrait: true };
   if (!island) return null;
   return { island, missed: false, portrait: /\bstory of\b/.test(text) && !chatGuideTopic };
@@ -9340,6 +9488,148 @@ function chatNationFollowUp(text) {
       "Help me with this",
     ],
   };
+}
+
+function chatIslandNamedInText(islands, text) {
+  const hay = ` ${String(text || "").toLowerCase()} `;
+  const hits = [];
+  for (const island of islands || []) {
+    const bare = String(island?.name || "")
+      .toLowerCase()
+      .replace(/\b(isle|island|of|the|ynys|eilean)\b/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (bare.length < 4) continue;
+    if (chatWholeWord(hay, bare)) hits.push(island);
+  }
+  return hits;
+}
+
+function chatConstrainGuide(islands, q) {
+  let rows = islands.slice();
+  if (q.nations.size) rows = rows.filter((island) => q.nations.has(island.nation));
+  if (q.archipelagos.size) {
+    rows = rows.filter((island) => island.archipelago && q.archipelagos.has(island.archipelago));
+  }
+  if (q.water) {
+    const want = String(q.water).toLowerCase();
+    rows = rows.filter((island) => {
+      const water = String(chatCorpusRow(island)?.w || island.parentWaterBody?.name || "").toLowerCase();
+      return water.includes(want);
+    });
+  }
+  if (q.near) {
+    rows = rows.filter((island) => {
+      if (q.near.excludeId && island.id === q.near.excludeId) return false;
+      if (!Number.isFinite(island.lat) || !Number.isFinite(island.lng)) return false;
+      return chatHaversineKm(q.near.lat, q.near.lng, island.lat, island.lng) <= q.near.radiusKm;
+    });
+    rows.sort(
+      (a, b) =>
+        chatHaversineKm(q.near.lat, q.near.lng, a.lat, a.lng) -
+        chatHaversineKm(q.near.lat, q.near.lng, b.lat, b.lng),
+    );
+  }
+  return rows;
+}
+
+function chatAtlasLabel(slug, q) {
+  const cat = (state.interestIndex?.categories || []).find((row) => row.slug === slug);
+  const name = cat?.label || "Islands";
+  if (q?.nations?.size === 1) return `${name} in ${[...q.nations][0]}`;
+  if (q?.near?.name) return `${name} near ${q.near.name}`;
+  if (q?.water) return `${name} in ${chatDisplayWater(q.water)}`;
+  if (q?.archipelagos?.size === 1) return `${name} in ${[...q.archipelagos][0]}`;
+  return name;
+}
+
+function chatWantsMap(text) {
+  const folded = String(text || "").toLowerCase();
+  return /\b(map|atlas)\b/.test(folded) && /\b(show|see|put|open|frame)\b/.test(folded);
+}
+
+function chatRefinePrevious(text) {
+  if (!chatGuideShown.length) return null;
+  if (!/\b(these|those|them|of these|of those|the ones)\b/.test(text)) return null;
+  if (chatWantsMap(text)) return null;
+  const q = parseChatQuery(text);
+  const wantsSize = /\b(largest|biggest|smallest|tiniest|highest|tallest)\b/.test(text);
+  const wantsPhoto = q.photoOnly || q.features.has("photo");
+  if (!q.nations.size && !q.archipelagos.size && !q.near && !q.nearUnresolved && !q.water && !wantsPhoto && !wantsSize) {
+    return null;
+  }
+  if (q.nearUnresolved) {
+    const suggestions = (q.placeSuggestions || []).map((name) => `Islands near ${name}`);
+    return {
+      answer: composeChatResponse({ query: q, results: [], total: 0 }),
+      results: [],
+      suggestions: suggestions.length ? suggestions : ["Islands near Oban", "Help me with this"],
+    };
+  }
+  let pool = chatShownIslands();
+  const start = pool.length;
+  if (q.nations.size) pool = pool.filter((island) => q.nations.has(island.nation));
+  if (q.archipelagos.size) {
+    pool = pool.filter((island) => island.archipelago && q.archipelagos.has(island.archipelago));
+  }
+  if (q.water) {
+    const want = String(q.water).toLowerCase();
+    pool = pool.filter((island) =>
+      String(chatCorpusRow(island)?.w || island.parentWaterBody?.name || "").toLowerCase().includes(want),
+    );
+  }
+  if (q.near) {
+    pool = pool.filter((island) => {
+      if (!Number.isFinite(island.lat) || !Number.isFinite(island.lng)) return false;
+      return chatHaversineKm(q.near.lat, q.near.lng, island.lat, island.lng) <= q.near.radiusKm;
+    });
+    pool.sort(
+      (a, b) =>
+        chatHaversineKm(q.near.lat, q.near.lng, a.lat, a.lng) -
+        chatHaversineKm(q.near.lat, q.near.lng, b.lat, b.lng),
+    );
+  }
+  if (wantsPhoto) pool = pool.filter((island) => islandHasPhoto(island));
+  if (/\b(largest|biggest)\b/.test(text)) {
+    pool = pool.slice().sort((a, b) => (b.areaKm2 || 0) - (a.areaKm2 || 0)).slice(0, 1);
+  } else if (/\b(smallest|tiniest)\b/.test(text)) {
+    pool = pool.filter((island) => island.areaKm2 > 0).sort((a, b) => a.areaKm2 - b.areaKm2).slice(0, 1);
+  } else if (/\b(highest|tallest)\b/.test(text)) {
+    pool = pool
+      .filter((island) => island.highestPointM > 0)
+      .sort((a, b) => b.highestPointM - a.highestPointM)
+      .slice(0, 1);
+  }
+  if (!pool.length) {
+    return {
+      answer: "None of the islands I just named fit that.",
+      results: [],
+      suggestions: ["Help me with this", "Show these on the map"],
+    };
+  }
+  const shown = pool.slice(0, 6);
+  let answer;
+  if (/\b(largest|biggest)\b/.test(text) && shown[0]?.areaKm2) {
+    answer = `Of those, **${shown[0].name}** is the largest, at ${_fmtKm2(shown[0].areaKm2)}.`;
+  } else if (/\b(smallest|tiniest)\b/.test(text) && shown[0]?.areaKm2) {
+    answer = `Of those, **${shown[0].name}** is the smallest, at ${_fmtKm2(shown[0].areaKm2)}.`;
+  } else if (/\b(highest|tallest)\b/.test(text) && shown[0]?.highestPointM) {
+    answer = `Of those, **${shown[0].name}** is the highest, at ${_fmtM(shown[0].highestPointM)}.`;
+  } else if (q.nations.size === 1 && shown.length === start) {
+    answer = `All of those are in ${[...q.nations][0]}.`;
+  } else {
+    answer = `Of those, ${chatJoinNames(shown)}.`;
+  }
+  return chatGuideRemember({
+    answer,
+    results: shown.map((island) => ({ island })),
+    suggestions: [
+      shown[0] ? `What's the story of ${shown[0].name}?` : "Help me with this",
+      "Show these on the map",
+    ],
+    atlasIds: pool.map((island) => island.id),
+    atlasLabel: "From your question",
+  });
 }
 
 function chatGuideFindNamed(islands, rawName) {
@@ -9405,8 +9695,10 @@ function chatWhiskyFollowUp(text) {
 }
 
 function chatGuideRemember(reply) {
-  if (!reply?.results?.length) return reply;
-  chatGuideShown = reply.results.map((row) => row.island?.id).filter(Boolean);
+  const fromAtlas = reply?.atlasIds?.filter(Boolean) || [];
+  const fromCards = (reply?.results || []).map((row) => row.island?.id).filter(Boolean);
+  const ids = fromAtlas.length ? fromAtlas : fromCards;
+  if (ids.length) chatGuideShown = ids;
   return reply;
 }
 
@@ -9427,11 +9719,26 @@ function chatGuideReply(rawText) {
       suggestions: ["Help me with this", "Where are the best islands for whisky?"],
     };
   }
+  if (chatWantsMap(text) && chatGuideShown.length) {
+    const shown = chatShownIslands().slice(0, 6);
+    return {
+      answer: "They're on the map, and the list is just those islands.",
+      results: shown.map((island) => ({ island })),
+      suggestions: [
+        shown[0] ? `What's the story of ${shown[0].name}?` : "Help me with this",
+      ],
+      showOnAtlas: true,
+      atlasIds: chatGuideShown.slice(),
+      atlasLabel: "From your question",
+    };
+  }
   const follow = chatWhiskyFollowUp(text);
   if (follow) {
     chatGuideTopic = "whisky-distilleries";
     return chatGuideRemember(follow);
   }
+  const refined = chatRefinePrevious(text);
+  if (refined) return refined;
   const nation = chatNationFollowUp(text);
   if (nation) return chatGuideRemember(nation);
   if (
@@ -9453,43 +9760,81 @@ function chatGuideReply(rawText) {
   }
   const hit = CHAT_GUIDE_COLLECTIONS.find((row) => row.test.test(text));
   if (!hit) return null;
-  const islands = chatGuideIslands(hit.slug);
-  if (!islands.length) return null;
+  const q = parseChatQuery(rawText);
+  let islands = chatConstrainGuide(chatGuideIslands(hit.slug), q);
+  const named = chatIslandNamedInText(islands, text);
+  if (named.length === 1) {
+    chatGuideTopic = hit.slug;
+    return {
+      pendingDetail: named[0].id,
+      slug: hit.slug,
+      mode: "cited",
+    };
+  }
+  if (named.length > 1) islands = named;
+  if (!islands.length) {
+    const where = q.nations.size
+      ? ` in ${[...q.nations].join(" or ")}`
+      : q.near
+        ? ` near ${q.near.name}`
+        : q.water
+          ? ` in ${q.water}`
+          : "";
+    return {
+      answer: `I don't have a match for that${where}.`,
+      results: [],
+      suggestions: ["Help me with this", "Where are the best islands for whisky?"],
+    };
+  }
   const shown = islands.slice(0, 6);
   chatGuideTopic = hit.slug;
+  let answer = chatGuideProse(hit.slug, shown, islands.length);
+  if (q.nations.size === 1) answer = `In ${[...q.nations][0]}: ${answer}`;
+  else if (q.near?.name) answer = `Near ${q.near.name}: ${answer}`;
+  else if (q.water) answer = `In ${chatDisplayWater(q.water)}: ${answer}`;
   return chatGuideRemember({
-    answer: chatGuideProse(hit.slug, shown, islands.length),
+    answer,
     results: shown.map((island) => ({ island })),
     suggestions:
       hit.slug === "whisky-distilleries"
-        ? ["Tell me more about Islay", "What about the silent stills?", "Which of these is on Orkney?"]
+        ? ["Tell me more about Islay", "What about the silent stills?", "Show these on the map"]
         : [
             shown[0] ? `What's the story of ${shown[0].name}?` : "Help me with this",
-            "Where are the best islands for whisky?",
-            "Help me with this",
+            "Show these on the map",
+            "Which of these is in Scotland?",
           ],
+    atlasIds: islands.map((island) => island.id).slice(0, 80),
+    atlasLabel: chatAtlasLabel(hit.slug, q),
   });
 }
 
 function composeChatResponse({ query, results, total }) {
   if (!results.length) {
     if (query.nearUnresolved) {
+      const suggestions = query.placeSuggestions || [];
+      const hint = suggestions.length
+        ? `Did you mean ${suggestions.join(", ")}?`
+        : "Try Oban, Mallaig, Portree, or Tobermory, or name the island.";
       return (
-        `I don't know “${query.nearUnresolved}” as a place in the atlas. ` +
-        "Try Oban, Mallaig, Portree, or Tobermory, or just name the island."
+        `I don't know “${query.nearUnresolved}” as a place in the atlas. ${hint}`
       );
     }
+    if (query.water) return `I don't have a named island in ${chatDisplayWater(query.water)}.`;
     return "I don't have a match for that. Try whisky, a castle, a loch, or the name of an island.";
   }
   const named = results.map((row) => row.island).filter((island) => island && island.name).slice(0, 4);
   if (!named.length) {
     return "I found a few islands, but none I can name. Try a more specific question.";
   }
+  if (query.correctedTo && named.length === 1) {
+    return `I read that as **${named[0].name}**. Open the card if you want the story.`;
+  }
   if (named.length === 1) {
     return `**${named[0].name}** is the one that fits. Open the card if you want the story.`;
   }
   const where = [];
-  if (query.nations?.size) where.push([...query.nations].join(" and "));
+  if (query.nations?.size) where.push(`in ${[...query.nations].join(" and ")}`);
+  if (query.water) where.push(`in ${chatDisplayWater(query.water)}`);
   if (query.near?.name) where.push(`near ${query.near.name}`);
   const place = where.length ? ` ${where.join(", ")}` : "";
   const extra = total > named.length ? ` I have more than these if you want to narrow it.` : "";
@@ -9625,7 +9970,52 @@ function chatFormatBotText(raw) {
   return out.join("");
 }
 
-function chatRenderBot(text, { suggestions, results, query, badge } = {}) {
+function showAskOnAtlas(ids, label) {
+  const set = new Set();
+  for (const id of (ids || []).slice(0, 80)) {
+    if (state.byId.has(id)) set.add(id);
+  }
+  if (!set.size) return;
+  state.askFocusIds = set;
+  state.askFocusLabel = label || "From your question";
+  if (state.activeInterestSlug || state.interestFacet) {
+    state.activeInterestSlug = null;
+    state.interestFacet = null;
+    renderInterestFilters();
+    renderBrowseQuickChips();
+    syncInterestUrl(null);
+  }
+  if (state.activeExploreTopic) {
+    state.activeExploreTopic = null;
+    state.exploreIslandIds = null;
+    const hint = document.getElementById("discover-hint");
+    if (hint) {
+      hint.hidden = true;
+      hint.textContent = "";
+    }
+    renderDiscoverChips();
+    syncExploreUrl(null);
+  }
+  if (els.search) {
+    els.search.value = "";
+    syncSearchClearButton();
+  }
+  applyFilters();
+  const pts = [...set]
+    .map((id) => state.byId.get(id))
+    .filter((island) => Number.isFinite(island?.lat) && Number.isFinite(island?.lng));
+  if (pts.length && map && typeof L !== "undefined") {
+    const bounds = L.latLngBounds(pts.map((island) => [island.lat, island.lng]));
+    map.fitBounds(bounds.pad(0.15), {
+      maxZoom: pts.length === 1 ? 11 : 9,
+      animate: !prefersReducedMotion(),
+      duration: 0.6,
+    });
+  }
+  if (window.innerWidth <= 900) chatClose();
+}
+
+function chatRenderBot(text, { suggestions, results, query, badge, atlasIds, atlasLabel } = {}) {
   const div = document.createElement("div");
   div.className = "chat-msg chat-msg--bot";
   div.innerHTML = chatFormatBotText(text);
@@ -9639,14 +10029,29 @@ function chatRenderBot(text, { suggestions, results, query, badge } = {}) {
     div.appendChild(b);
   }
 
-  if (suggestions && suggestions.length) {
+  const mapIds = (Array.isArray(atlasIds) && atlasIds.length
+    ? atlasIds
+    : (results || []).map((row) => row?.island?.id).filter(Boolean)
+  ).slice(0, 80);
+  if (mapIds.length) chatGuideShown = mapIds;
+  const suggestionItems = (suggestions || []).slice();
+  if (mapIds.length >= 2 && !suggestionItems.some((item) => chatWantsMap(item))) {
+    suggestionItems.unshift("Show these on the map");
+  }
+  if (suggestionItems.length) {
     const sug = document.createElement("div");
     sug.className = "chat-suggestions";
-    for (const s of suggestions) {
+    for (const s of suggestionItems) {
       const b = document.createElement("button");
       b.type = "button";
       b.textContent = s;
-      b.addEventListener("click", () => chatSubmit(s));
+      if (chatWantsMap(s)) {
+        b.addEventListener("click", () => {
+          showAskOnAtlas(mapIds.length ? mapIds : chatGuideShown, atlasLabel || "From your question");
+        });
+      } else {
+        b.addEventListener("click", () => chatSubmit(s));
+      }
       sug.appendChild(b);
     }
     div.appendChild(sug);
@@ -9921,7 +10326,10 @@ const LLM_SYSTEM_PROMPT =
   "9. islandIds are atlas ids you actually mention, in card order, at most 6, and only ids returned this turn. " +
   "Use an empty list when you are asking a clarifying question.\n" +
   "10. followups is three short next questions.\n" +
-  "11. Never mention tools, JSON, scores, prompts, or that you are a model.";
+  "11. Never mention tools, JSON, scores, prompts, or that you are a model.\n" +
+  "12. These, them, and the first one mean the islands shown on the previous turn.\n" +
+  "13. Call show_on_map when the visitor wants those islands on the map. Skip it when they ask about one island's story.\n" +
+  "14. If a place name does not resolve, say so. Do not invent coordinates.";
 
 function chatAgentToolsFor(provider) {
   if (provider === "anthropic") {
@@ -10149,6 +10557,23 @@ async function chatAgentDispatch(name, args, retrieved, lastNearBox, onStatus) {
   }
   if (name === "list_collections") {
     return { collections: agentListCollections(state.interestIndex) };
+  }
+  if (name === "show_on_map") {
+    onStatus?.("Opening the map…");
+    const ids = [];
+    for (const raw of (Array.isArray(args?.ids) ? args.ids : []).slice(0, 80)) {
+      let island = state.byId.get(String(raw));
+      if (!island) island = agentFindIslandByName(String(raw), state.islands);
+      if (!island) continue;
+      retrieved.set(island.id, island);
+      if (!ids.includes(island.id)) ids.push(island.id);
+    }
+    if (!ids.length) return { error: "Pass ids from search_islands." };
+    const label = typeof args?.label === "string" && args.label.trim()
+      ? args.label.trim().slice(0, 80)
+      : "From your question";
+    showAskOnAtlas(ids, label);
+    return { shown: ids.length, label };
   }
   if (name === "read_islands") {
     onStatus?.("Reading the full records…");
@@ -10529,7 +10954,12 @@ function chatSubmit(text) {
             query: llm.near ? { near: llm.near } : undefined,
             suggestions: llm.followups && llm.followups.length ? llm.followups : undefined,
             badge: "AI",
+            atlasIds: llm.islandIds,
+            atlasLabel: "From your question",
           });
+          if (chatWantsMap(t) && llm.islandIds?.length) {
+            showAskOnAtlas(llm.islandIds, "From your question");
+          }
           return;
         } catch (llmErr) {
           console.warn("[chat] LLM call failed; falling back to local engine", llmErr);
@@ -10563,7 +10993,12 @@ function chatSubmit(text) {
         chatRenderBot(guide.answer, {
           results: guide.results,
           suggestions: guide.suggestions,
+          atlasIds: guide.atlasIds,
+          atlasLabel: guide.atlasLabel,
         });
+        if ((guide.showOnAtlas || chatWantsMap(t)) && (guide.atlasIds?.length || chatGuideShown.length)) {
+          showAskOnAtlas(guide.atlasIds?.length ? guide.atlasIds : chatGuideShown, guide.atlasLabel || "From your question");
+        }
         return;
       }
 
@@ -10599,9 +11034,26 @@ function chatSubmit(text) {
       }
 
       if (!r.results.length) {
-        chatRenderBot(composeChatResponse(r), { suggestions: CHAT_SUGGESTIONS });
+        const nearSuggestions = (r.query.placeSuggestions || []).map((name) => `Islands near ${name}`);
+        chatRenderBot(composeChatResponse(r), {
+          suggestions: nearSuggestions.length ? nearSuggestions : CHAT_SUGGESTIONS,
+        });
       } else {
-        chatRenderBot(composeChatResponse(r), { results: r.results, query: r.query });
+        const atlasIds = r.matchIds?.length
+          ? r.matchIds
+          : r.results.map((row) => row.island?.id).filter(Boolean);
+        const atlasLabel = r.query.water
+          ? `In ${chatDisplayWater(r.query.water)}`
+          : r.query.near
+            ? `Near ${r.query.near.name}`
+            : "From your question";
+        chatRenderBot(composeChatResponse(r), {
+          results: r.results,
+          query: r.query,
+          atlasIds,
+          atlasLabel,
+        });
+        if (chatWantsMap(t) && atlasIds.length) showAskOnAtlas(atlasIds, atlasLabel);
       }
     } catch (err) {
       thinking.remove();
@@ -10964,6 +11416,7 @@ function countActiveFilters() {
   if (els.filterUnnamed?.checked) n += 1;
   if (state.mapAreaFilter) n += 1;
   if (state.activeExploreTopic) n += 1;
+  if (state.askFocusIds) n += 1;
   return n;
 }
 

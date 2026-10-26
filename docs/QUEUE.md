@@ -445,12 +445,12 @@ for source / licence / refresh-cadence detail.
     Shipped 2026-05-11 — 30-city UK/IE/Crown gazetteer + `within N km of …`
     explicit radii. See SESSION-LOG.
   - ~~Surface chatbot under a permalink (`?ask=…`).~~ Shipped 2026-05-11.
-  - **Suggest didn't-resolve fallback**: when `near nowhereville` is typed,
-    the bot currently just ignores the proximity intent silently. Better:
-    surface a "Couldn't find that place — try Oban / Mallaig / …" hint.
-  - **Extend the gazetteer**: 30 entries today; add Tobermory, Portree,
-    Stromness, Rothesay, Tarbert, Fishguard, Pembroke Dock, Tralee,
-    Larne, etc. for finer-grained proximity.
+  - ~~Suggest didn't-resolve fallback.~~ Shipped 2026-10-26. An unknown
+    place is named back, with a gazetteer suggestion (`obn` → Oban).
+  - ~~Extend the gazetteer.~~ Shipped 2026-10-26. Tobermory, Portree,
+    Stromness, Rothesay, Tarbert, Fishguard, Pembroke, Tralee, Larne,
+    and the west-coast ferry piers (Kyle of Lochalsh, Scrabster, Doolin,
+    Caernarfon, and the Islay, Mull, and Skye piers) are in `CHAT_PLACES`.
 - ~~**Cultural-names workstream** (Gaelic / Welsh / Irish / Manx / Cornish /
   Scots)~~. Shipped 2026-05-11 via `scripts/enrich_names.py` (Wikidata
   `wbgetentities labels`, 8 target languages, 184 islands enriched on

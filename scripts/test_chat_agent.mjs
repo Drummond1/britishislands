@@ -10,6 +10,11 @@ import {
   searchIslands,
   countIslands,
   findIslandByName,
+  nationsInQuestion,
+  waterInQuestion,
+  fuzzyIslandByName,
+  suggestPlaceNames,
+  CHAT_AGENT_TOOLS,
   serialiseIslandRecord,
 } from "../chat-agent.js";
 
@@ -110,6 +115,17 @@ assert.equal(record.otherNames.gd, "Ì Chaluim Chille");
 assert.equal(record.listings[0].url, undefined);
 assert.equal(record.cited[0].title, "A song");
 assert.equal(record.ferryRoutes, undefined);
+
+assert.deepEqual(nationsInQuestion("islands in northern ireland"), ["Northern Ireland"]);
+assert.ok(nationsInQuestion("irish islands and northern ireland").includes("Ireland"));
+assert.ok(nationsInQuestion("irish islands and northern ireland").includes("Northern Ireland"));
+assert.deepEqual(nationsInQuestion("where is highland park"), []);
+assert.deepEqual(nationsInQuestion("islands in the highlands"), ["Scotland"]);
+assert.equal(waterInQuestion("islands in Loch Lomond"), "loch lomond");
+assert.equal(waterInQuestion("river islands"), null);
+assert.equal(fuzzyIslandByName("Skie", islands)?.id, "isle-of-skye");
+assert.deepEqual(suggestPlaceNames("obn", { Oban: [1, 2], Mallaig: [3, 4] }), ["Oban"]);
+assert.ok(CHAT_AGENT_TOOLS.some((tool) => tool.name === "show_on_map"));
 
 console.log("chat-agent checks passed");
 console.log(

@@ -3518,3 +3518,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Film, art and music **139**. Whisky **21** (was 20). For sale **48**. Rare wildlife **33** (was 30). Tidal islands **104**. Islands with castles **96** (was 94). Books **32** (four more titles, no new island). Local traditions **30**. Unusual news **50**. Stories **1,488**, **901** with an open-licence picture. Nothing new for film and art, for sale, tidal islands, or local traditions.
 - **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
 
+## 2026-10-26 — Ask and the simpler opening shipped
+
+- **Goal**: Put the current atlas on findmyisland.com.
+- **What changed**: Pushed the Ask changes (nation and water matching, mistyped names, “show these on the map”) and the simpler opening (one-line headline, Skye across the photograph, interest chips on one line). Candidate files for books and rare wildlife gained later cited rows (The Aran Islands; the Manx shearwater on the Calf of Man) that are not in `data/interest_index.json`, so the live filters stay at the counts already published. `islands.json` was not edited. Supabase was not called.
+- **Outcome / counts**: Counts unchanged. Live filters stay film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **30**, unusual news **50**.
+- **Open items kicked to QUEUE.md**: none.
+
