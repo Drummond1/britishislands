@@ -3322,12 +3322,33 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: **23** islands, **35** customs, all **35** with a picture (**13** of the custom, **22** of the island). Stories **1,217**, **680** with a picture. Other chips unchanged. The unfinished books file was not published. Published to main. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip. Migration `supabase/migrations/20261026071000_local_traditions.sql` is written and not applied.
 
+## 2026-10-26 — Amber list rule on picture cards
+
+- **Goal**: The hover rule on whisky (and other picture) cards was sitting on the first letter in Safari.
+- **What changed**: Those cards now keep 12px to the left of the type and the photograph. The photograph zooms from its left edge, so a wider card no longer grows back over the rule. No data change.
+- **Outcome / counts**: In WebKit the first letter sat on the rule (0px gap) at 390, 980, 1100, 1512, and 1680. After the inset the gap is 10px and the photograph stays 12px clear, including the widest list. Local only.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Books set on the island
+
+- **Goal**: A field on each island for novels, memoirs, and stories set there, with a picture and a short account of how the book belongs to the island.
+- **What changed**: New interest category `island-books`. The harvester keeps an English Wikipedia sentence only when it sets the book on that atlas island. "Inspired by", "based on", "filmed on", and a film of the novel do not count. The picture is an open-licence file from the article, or a labelled photograph of the island. The Books chip sits after Whisky. The profile leads with the picture, the summary, and the Wikipedia link.
+- **Outcome / counts**: **22** islands, **39** books, **38** with a picture. Kidnapped is on Erraid, The Blackhouse and Great Northern? on Lewis and Harris, The Outrun on Mainland (Orkney), Toilers of the Sea on Guernsey, An Aran Keening on Inishmore. Rockall's *The Master* has no open-licence picture. Checked in the browser: the Books chip lists 22 islands; Erraid shows the Kidnapped cover, the shipwreck sentence, and the Wikipedia link; Mainland (Orkney) labels its picture as a photograph of the island; Iona has no Books section. Did not edit `islands.json`. Supabase was not reloaded. Migration `supabase/migrations/20261026061000_island_books.sql` is written and not applied.
+- **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.
+
 ## 2026-10-26 — Whole-island Ordnance Survey map
 
 - **Goal**: From All islands, each island can open an Ordnance Survey view that shows the whole island on the map.
 - **What changed**: Every island card has an OS control, and an open profile has Ordnance Survey in the top bar. That opens the paper map (Leisure) across the main map when the island is in Great Britain and a key is set, Outdoor for Northern Ireland, and the standard map elsewhere. The frame follows the coastline, with an area estimate until the outline arrives. The small profile map uses the same frame. No dataset change.
 - **Outcome / counts**: No count change. Checked in the browser: All islands lists an OS control on each card; Skye and Staffa open the Ordnance Survey paper map with the whole island in frame. Close returns to the atlas.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — SEO and GEO guides
+
+- **Goal**: Give search and answer engines pages they can cite for the lists people actually ask about, without repeating rows a fact-check had already found false.
+- **What changed**: `scripts/seo_interest_guides.py` builds eight guides under `/collections/` from `data/interest_index.json` (castles, whisky, tidal islands, for sale, wildlife, books, traditions, film/art/music). Each page has an answer-first lede, the inclusion rule, visible questions, and a source link on every row. `llms.txt`, `sitemap-collections.xml`, and the atlas footer point at them. The header links to Guides. Homepage query strings (`?interest=`, `?island=`, `?ask=`) are `noindex`; a known interest filter canonicalises to its guide. Five misplaced castles, Baleshare, Mahee, the sold Insh and Gasker listings, and twelve mismatched film/art/music rows are left off the guides. The blonde-hedgehog sentence is replaced with the colour-form fact. The atlas index itself is unchanged.
+- **Outcome / counts**: Guides list castles 85 islands / 108 castles, whisky 18 / 57, tidal 64, for sale 40, wildlife 23 / 30, books 22 / 39, traditions 23 / 35, film/art/music 110 / 904. Search Console could not be read: the refresh token is expired.
+- **Open items kicked to QUEUE.md**: Deploy these pages. Re-authenticate Search Console and request indexing for `/collections/` and the eight guides. The fact-check corrections are still not applied to `interest_index.json`.
 
 ## 2026-10-26 — Homepage passage
 
@@ -3362,4 +3383,11 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Goal**: A cold visit to findmyisland.com should be usable within five seconds.
 - **What changed**: The first fetch of the island index could stay pending even after the file had arrived, so the veil never lifted. The preload now uses the same credentials as that fetch. If the fetch has not finished after 3.5 seconds, the page fetches the index again. The veil hides as soon as the index is in memory, without waiting for two animation frames. The chip rule, the search glow, the bearing, and the one-off arrivals still run; they do not sit on the way to the first paint.
 - **Outcome / counts**: Counts unchanged. A cold production load, with the cache off, reached the load event in 1.3 seconds. The veil was hidden, the atlas was ready, and Skye, Iona, and Staffa were on the opening cards, with the map drawn. The rose stays still, the needle has no shadow, and the lamp stays a fixed pool.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Homepage plate
+
+- **Goal**: Make the first screen feel printed and responsive to the hand, and keep a cold load inside five seconds.
+- **What changed**: The rose keeps its rest and gains a gold N; its rings draw once when the veil lifts. A short coastline draws once under the headline. Interest chips wrap onto whole lines on a wide screen, and the gold rule follows a chip onto a second line. A photograph grows a gold edge, a name grows a gold underline, and the search line still lights on focus. The map has a narrow ink margin, four registration marks that step in, and gold rings on the clusters. Phone-width chips stay on one scrolling line. No new file is requested. Reduced motion shows the finished marks without the draw.
+- **Outcome / counts**: Counts unchanged. A local load event finished in well under a second. In the browser the rose, the coastline, and the N were in place; focusing search hid the `/` key and lit the amber line; the gold rule sat under Whisky and under Books on the next line; a hovered opening card drew its gold edge; a list name drew its underline. Choosing Whisky listed Islay first, with Bowmore. The veil was already hidden.
 - **Open items kicked to QUEUE.md**: none.

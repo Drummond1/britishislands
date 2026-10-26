@@ -10736,7 +10736,8 @@ function initFoldMotion() {
       host.appendChild(rule);
     }
     rule.style.width = `${chip.offsetWidth}px`;
-    rule.style.transform = `translateX(${chip.offsetLeft}px)`;
+    const y = chip.offsetTop + chip.offsetHeight - 7;
+    rule.style.transform = `translate(${chip.offsetLeft}px, ${y}px)`;
     host.classList.add("is-ruled");
   };
   host.addEventListener("pointerover", (event) => {

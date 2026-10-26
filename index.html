@@ -67,7 +67,7 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=passage-2" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=plate-2" />
     <link rel="stylesheet" href="editorial-profile.css?v=traditions-2" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
@@ -284,6 +284,9 @@
                 <path d="M100 4v22M100 174v22M4 100h22M174 100h22" />
                 <path d="M32 32l16 16M168 32l-16 16M32 168l16-16M168 168l-16-16" />
                 <path d="M100 38v10M100 152v10M38 100h10M152 100h10" />
+                <g class="chart-rose__points" fill="currentColor" font-size="11" text-anchor="middle" font-family="Newsreader, Georgia, serif">
+                  <text class="chart-rose__n" x="100" y="16">N</text>
+                </g>
                 <circle class="chart-rose__hub" cx="100" cy="100" r="2.4" />
               </svg>
               </div>
@@ -293,6 +296,9 @@
             <h2>
               <span class="discovery-line">Find your</span>
               <span class="discovery-display"><em>somewhere</em> <em>else.</em></span>
+              <svg class="discovery-coast" viewBox="0 0 280 16" aria-hidden="true">
+                <path d="M1 9C18 9 26 3 44 4C62 5 70 12 90 10C110 8 118 3 138 5C158 7 170 13 192 9C214 5 228 3 248 6C262 9 270 12 279 8" />
+              </svg>
             </h2>
             <p class="discovery-bearing" aria-hidden="true">
               <span class="discovery-bearing__pip"></span>
@@ -475,6 +481,7 @@
       </aside>
 
       <section class="map-wrap" aria-label="Explore the island map">
+        <div class="chart-margin" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <button type="button" class="map-back" id="map-back" hidden>
           <span aria-hidden="true" data-lucide="arrow-left"></span>
           <span class="map-back__label">Back</span>
