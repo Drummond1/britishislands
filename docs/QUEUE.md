@@ -4,6 +4,37 @@
 > `SESSION-LOG.md` once complete.
 > Order is **priority top to bottom**. Reorder freely as priorities shift.
 
+## P1 — fact-check fixes (2026-10-26)
+
+Read-only pass: [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md).
+Nothing in `islands.json` or `interest_index.json` was corrected.
+
+- **Nation labels.** 156 islands carry the wrong nation because
+  `nation_for()` in `scripts/fetch_islands.py` uses overlapping boxes.
+  England’s Farnes and Northumberland coast are Scotland; Donegal and
+  several Irish loughs are Northern Ireland; Davaar and the Sanda group
+  are Ireland or Northern Ireland; Knightstone, Birnbeck, Steep Holm, and
+  Langford Grounds are Wales. Do **not** bulk-apply
+  `recompute_nation_admin1.py` until the boundary order is fixed. Then
+  correct these 156 from the location report.
+- **Not islands.** Greenisland (County Antrim town, filed as sea / England)
+  and Island Magee (peninsula, filed as sea). Oxford is a city-centre pin
+  filed as a river island, with Oxford Castle attached.
+- **Photos.** Remove the confirmed wrong leads in the photo report,
+  starting with La Boue (Palmarin, Senegal) and the Dunmanus / Illaunkearagh
+  / Tanera mismatches. Drop film-art images that are flags, maps, museum
+  logos, or a different subject.
+- **Claims.** Unhook Airds Castle from Arran, Torksey Castle from Torksey
+  Island, Calvay Castle from Calbhaigh, Cloughoughter from Stony Island,
+  and Oxford Castle. Rewrite the Highland Park and Scapa “northernmost”
+  lines. Fix the Alderney hedgehog sentence. Stop calling Baleshare and
+  Mahee drying crossings. Remove sold listings for Insh Island and Gasker.
+- **Measurements.** Hayling area 16.2 km² (about 27–30). Orkney Mainland
+  581 km² includes the Churchill Barrier isles; curated still has 523.
+  Summit corrections: Arranmore, Cape Clear, Bere, Inishmore, Tresco,
+  Sùla Sgeir, Lundy. Census year on Skye, Lewis and Harris, Islay, and
+  Arran says 2022 and stores the 2011 total.
+
 ## P1 — ferries stay hidden
 
 Ferry guides, the ferry filter, the crossing planner, and ferry cards are off
@@ -32,22 +63,31 @@ The empty draft `uninhabited-stay` stays drafted and unstaffed until a cited
 public place to stay exists (population not known to be above zero, no street
 address, no owner name). It is not the next build.
 
-The next chip is castle islets under 1 km², then lighthouses that have their
-own Wikipedia article. See
-[`INTEREST-FILTER-IDEAS.md`](INTEREST-FILTER-IDEAS.md). Do not build the
-lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light rows,
-including 603 lights on Great Britain). Follow
+Islands with Castles is published locally (2026-10-26): **89** islands, **113**
+cited castles, **80** with a castle photo. Any atlas island with a castle on it,
+including Mull, Skye, Anglesey, and Wight. Not the under-1 km² rule in
+[`INTEREST-FILTER-IDEAS.md`](INTEREST-FILTER-IDEAS.md). Martello towers, brochs,
+and country houses stay out. Supabase still needs
+`data/interest/memberships_sync.sql` and
+`supabase/migrations/20261026044000_island_castles.sql`.
+
+The next chip is lighthouses that have their own Wikipedia article. Do not build
+the lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light
+rows, including 603 lights on Great Britain). Follow
 `.cursor/skills/interest-category-populate/SKILL.md`.
 
-Published locally 2026-10-26: Film, art and music (106 islands, 817 cited
-rows: 465 artworks, 292 music, 60 film), including Arran Maid and the
-Song of Death from Wikisource. Whisky (**18** islands, **57** rows: 30 working stills,
+Published locally 2026-10-26: Film, art and music (111 islands, 916 cited
+rows: 546 artworks, 297 music, 73 film). Whisky (**18** islands, **57** rows: 30 working stills,
 13 silent stills, 12 stories, 2 planned), including Anglesey Môn distillery, Nun's Island in Galway, and the Loch Shiel wreck on Thorne Island. Subdivisions: Islay,
 Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. For sale
-(42), Unusual wildlife (23 islands, 30 species), Tidal islands (66).
+(42), Unusual wildlife (23 islands, 30 species), Tidal islands (66),
+Islands with Castles (89 islands, 113 castles).
 Artwork, whisky, and wildlife lead the list and the profile with one cited
 picture and a short connection. Whisky also groups the rest of the profile
-under those subdivisions. Tidal islands lead with where the link goes, and
+under those subdivisions. The chip row is one filter at a time (2026-10-26):
+All islands, Islands with Castles, Unusual wildlife, Whisky, then the rest.
+Whisky regions and Film / Artwork / Music are not on the chip until more of
+those islands have a picture. The profile still groups whisky by subdivision. Tidal islands lead with where the link goes, and
 that it floods. This index is local. Supabase still has the earlier
 memberships until `data/interest/memberships_sync.sql` is loaded, and the
 whisky facet migration `supabase/migrations/20261025200000_whisky_subdivisions.sql`

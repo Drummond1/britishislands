@@ -486,6 +486,16 @@ const BROWSE_QUICK_FILTERS = [
   { id: "for-sale", label: "For sale", forSale: true },
 ];
 
+/** One chip at a time. Region and medium chips stay off until more of those islands have a picture. */
+const INTEREST_SUBFILTERS_ENABLED = false;
+
+const INTEREST_CHIP_ORDER = [
+  "island-castles",
+  "unusual-wildlife",
+  "whisky-distilleries",
+  "island-books",
+];
+
 let activeBrowseQuick = null;
 
 const INTEREST_CHIP_ICONS = {
@@ -494,6 +504,7 @@ const INTEREST_CHIP_ICONS = {
   "unusual-wildlife": "bird",
   "tidal-islands": "footprints",
   "island-castles": "castle",
+  "island-books": "book-open",
   "for-sale": "key-round",
 };
 
@@ -1358,10 +1369,27 @@ function initFavoritesAccessUi() {
   updateSavedUiChrome();
 }
 
+let justSavedId = "";
+let justSavedTimer = 0;
+
+function markJustSaved(id) {
+  justSavedId = id;
+  clearTimeout(justSavedTimer);
+  justSavedTimer = setTimeout(() => {
+    justSavedId = "";
+  }, 700);
+  const saved = document.getElementById("saved-islands-btn");
+  if (!saved) return;
+  saved.classList.remove("is-pulse");
+  requestAnimationFrame(() => saved.classList.add("is-pulse"));
+}
+
 function toggleFavoriteIsland(id) {
   if (!id || !state.favoriteIds) return;
-  if (state.favoriteIds.has(id)) state.favoriteIds.delete(id);
-  else state.favoriteIds.add(id);
+  const adding = !state.favoriteIds.has(id);
+  if (adding) state.favoriteIds.add(id);
+  else state.favoriteIds.delete(id);
+  if (adding) markJustSaved(id);
   persistFavoriteIds();
   updateSavedUiChrome();
   scheduleRenderListWindow();
@@ -1377,6 +1405,10 @@ function syncDetailsFavoriteButton(islandId) {
     btn.setAttribute("aria-pressed", on ? "true" : "false");
     btn.setAttribute("aria-label", on ? "Remove from saved islands" : "Save island to list");
     btn.classList.toggle("is-favorite", on);
+    btn.classList.remove("is-just-saved");
+    if (on && islandId === justSavedId) {
+      requestAnimationFrame(() => btn.classList.add("is-just-saved"));
+    }
     if (btnId === "details-favorite-inline") {
       btn.textContent = on ? "Saved" : "Save";
     } else {
@@ -2698,6 +2730,20 @@ function interestCategories() {
   return state.interestIndex?.categories || [];
 }
 
+function orderedInterestCategories() {
+  const categories = interestCategories();
+  const rank = new Map(INTEREST_CHIP_ORDER.map((slug, index) => [slug, index]));
+  return categories
+    .map((category, index) => ({ category, index }))
+    .sort((a, b) => {
+      const ar = rank.has(a.category.slug) ? rank.get(a.category.slug) : INTEREST_CHIP_ORDER.length;
+      const br = rank.has(b.category.slug) ? rank.get(b.category.slug) : INTEREST_CHIP_ORDER.length;
+      if (ar !== br) return ar - br;
+      return a.index - b.index;
+    })
+    .map((row) => row.category);
+}
+
 function interestMemberSet(slug) {
   if (!slug || !state.interestIndex?.members) return null;
   const ids = state.interestIndex.members[slug];
@@ -2727,6 +2773,7 @@ const INTEREST_STORY_FACETS = {
   wildlife: "Wildlife",
   tidal: "Tidal island",
   castle: "Castle",
+  book: "Book",
 };
 
 function whiskyCategory() {
@@ -2756,7 +2803,8 @@ function interestKicker(item) {
 }
 
 function castlePhotoRank(islandId) {
-  const items = state.interestIndex?.stories?.["island-castles"]?.[islandId] || [];
+  const slug = state.activeInterestSlug === "island-books" ? "island-books" : "island-castles";
+  const items = state.interestIndex?.stories?.[slug]?.[islandId] || [];
   return items.some((item) => item?.image?.thumbUrl) ? 0 : 1;
 }
 
@@ -2779,7 +2827,7 @@ function whiskyIslandRank(islandId) {
 
 function interestStoryGroups(islandId) {
   const stories = state.interestIndex?.stories || {};
-  const slugs = ["island-castles", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
+  const slugs = ["island-castles", "island-books", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
   const active = state.activeInterestSlug;
   const order =
     active && slugs.includes(active) ? [active, ...slugs.filter((slug) => slug !== active)] : slugs;
@@ -2789,7 +2837,7 @@ function interestStoryGroups(islandId) {
       let items = Array.isArray(stories[slug]?.[islandId]) ? stories[slug][islandId] : [];
       if (
         lead &&
-        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles") &&
+        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books") &&
         state.activeInterestSlug === slug
       ) {
         items = items.filter((item) => item?.title !== lead?.title);
@@ -2820,8 +2868,10 @@ function interestStoryGroups(islandId) {
                 ? "Tidal island"
                 : slug === "island-castles"
                   ? "Castle"
-                  : "Film, art and music",
-          intro: "",
+                  : slug === "island-books"
+                    ? "Books"
+                    : "Film, art and music",
+          intro: slug === "island-books" ? "Set on this island." : "",
           items,
         },
       ];
@@ -2832,11 +2882,13 @@ function interestStoryGroups(islandId) {
 
 function interestFeatureMode() {
   return (
-    Boolean(state.interestFacet) ||
+    (INTEREST_SUBFILTERS_ENABLED && Boolean(state.interestFacet)) ||
     state.activeInterestSlug === "whisky-distilleries" ||
     state.activeInterestSlug === "unusual-wildlife" ||
     state.activeInterestSlug === "tidal-islands" ||
-    state.activeInterestSlug === "island-castles"
+    state.activeInterestSlug === "island-castles" ||
+    state.activeInterestSlug === "island-books" ||
+    state.activeInterestSlug === "film-art-music"
   );
 }
 
@@ -2850,7 +2902,7 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items)) return [];
   if (slug === "whisky-distilleries") return items.filter((item) => whiskyStoryMatches(item, facet));
-  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || !facet) return items;
+  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || slug === "island-books" || !facet) return items;
   return items.filter((item) => item?.facet === facet);
 }
 
@@ -2925,9 +2977,9 @@ function renderInterestStories(island) {
           const image = item.image;
           const figure = image?.thumbUrl
             ? `<figure class="interest-story__figure">
-                <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(item.title || "Cited work")}" loading="lazy" decoding="async" />
+                <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(image.alt || item.title || "Cited work")}" loading="lazy" decoding="async" />
                 <figcaption>
-                  ${escapeHtml(image.attribution || "Wikimedia Commons")}
+                  ${image.note ? `${escapeHtml(image.note)}. ` : ""}${escapeHtml(image.attribution || "Wikimedia Commons")}
                   ${image.licence ? ` · ${escapeHtml(image.licence)}` : ""}
                   ${
                     image.pageUrl
@@ -2967,9 +3019,9 @@ function renderInterestFeature(island) {
   const image = item.image;
   const figure = image?.thumbUrl
     ? `<figure class="interest-feature__figure">
-        <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(item.title || "Artwork")}" />
+        <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(image.alt || item.title || "Artwork")}" />
         <figcaption>
-          ${escapeHtml(image.attribution || "Wikimedia Commons")}
+          ${image.note ? `${escapeHtml(image.note)}. ` : ""}${escapeHtml(image.attribution || "Wikimedia Commons")}
           ${image.licence ? ` · ${escapeHtml(image.licence)}` : ""}
           ${
             image.pageUrl
@@ -2997,14 +3049,16 @@ function syncInterestUrl(slug) {
     const url = new URL(window.location.href);
     if (slug) url.searchParams.set("interest", slug);
     else url.searchParams.delete("interest");
-    if (slug === "film-art-music" && ["film", "artwork", "music"].includes(state.interestFacet)) {
-      url.searchParams.set("facet", state.interestFacet);
-    } else if (
+    const filmFacet =
+      INTEREST_SUBFILTERS_ENABLED &&
+      slug === "film-art-music" &&
+      ["film", "artwork", "music"].includes(state.interestFacet);
+    const whiskyFacet =
+      INTEREST_SUBFILTERS_ENABLED &&
       slug === "whisky-distilleries" &&
-      whiskySubdivisions().some((row) => row.id === state.interestFacet)
-    ) {
-      url.searchParams.set("facet", state.interestFacet);
-    } else url.searchParams.delete("facet");
+      whiskySubdivisions().some((row) => row.id === state.interestFacet);
+    if (filmFacet || whiskyFacet) url.searchParams.set("facet", state.interestFacet);
+    else url.searchParams.delete("facet");
     window.history.replaceState(null, "", url.toString());
   } catch (_) {
     /* non-fatal */
@@ -3028,11 +3082,24 @@ function setActiveInterest(slug, { skipUrl = false } = {}) {
   const next = state.activeInterestSlug === slug ? null : slug;
   state.activeInterestSlug = next;
   state.interestFacet = null;
-  if (els.filterForSale) els.filterForSale.checked = next === "for-sale";
-  if (next && activeBrowseQuick === "for-sale" && next !== "for-sale") {
+  if (next) {
     activeBrowseQuick = null;
+    activeScotlandQuick = null;
+    if (state.activeExploreTopic) {
+      state.activeExploreTopic = null;
+      state.exploreIslandIds = null;
+      const hint = document.getElementById("discover-hint");
+      if (hint) {
+        hint.hidden = true;
+        hint.textContent = "";
+      }
+      renderDiscoverChips();
+      syncExploreUrl(null);
+      loadFeaturedIslands().catch(() => {});
+    }
   }
-  if (next === "for-sale") activeBrowseQuick = null;
+  if (els.filterForSale) els.filterForSale.checked = next === "for-sale";
+  renderScotlandQuickChips();
   renderInterestFilters();
   renderBrowseQuickChips();
   if (!skipUrl) syncInterestUrl(next);
@@ -3052,25 +3119,15 @@ function renderInterestFilters() {
   group.hidden = false;
   const saleGroup = document.getElementById("filter-for-sale-group");
   if (saleGroup) saleGroup.hidden = categories.some((c) => c.slug === "for-sale");
-  for (const category of categories) {
+  for (const category of orderedInterestCategories()) {
     const label = document.createElement("label");
     label.className = "toggle";
     const input = document.createElement("input");
-    input.type = "checkbox";
+    input.type = "radio";
+    input.name = "interest-filter";
     input.checked = state.activeInterestSlug === category.slug;
     input.addEventListener("change", () => {
-      if (state.activeInterestSlug === category.slug) {
-        state.activeInterestSlug = null;
-        state.interestFacet = null;
-        if (category.slug === "for-sale" && els.filterForSale) els.filterForSale.checked = false;
-      } else {
-        state.activeInterestSlug = category.slug;
-        if (els.filterForSale) els.filterForSale.checked = category.slug === "for-sale";
-      }
-      renderInterestFilters();
-      renderBrowseQuickChips();
-      syncInterestUrl(state.activeInterestSlug);
-      applyFilters();
+      if (input.checked) setActiveInterest(category.slug);
     });
     const text = document.createElement("span");
     text.textContent = category.count
@@ -3093,13 +3150,18 @@ async function loadInterestIndex() {
     if (slug && interestCategories().some((c) => c.slug === slug)) {
       state.activeInterestSlug = slug;
       const facet = new URLSearchParams(window.location.search).get("facet");
-      const filmFacet = slug === "film-art-music" && ["film", "artwork", "music"].includes(facet);
+      const filmFacet =
+        INTEREST_SUBFILTERS_ENABLED &&
+        slug === "film-art-music" &&
+        ["film", "artwork", "music"].includes(facet);
       const whiskyFacet =
+        INTEREST_SUBFILTERS_ENABLED &&
         slug === "whisky-distilleries" &&
         (data.categories || [])
           .find((category) => category.slug === "whisky-distilleries")
           ?.subdivisions?.some((row) => row.id === facet);
       state.interestFacet = filmFacet || whiskyFacet ? facet : null;
+      if (!state.interestFacet) syncInterestUrl(slug);
       if (slug === "for-sale" && els.filterForSale) els.filterForSale.checked = true;
       renderInterestFilters();
       renderBrowseQuickChips();
@@ -3192,6 +3254,11 @@ function setExploreTopic(topicId, { skipUrl = false } = {}) {
   const topic = state.discoveryTopics?.find((t) => t.id === topicId);
   if (!topic || isPausedFerryTopic(topic)) return;
   activeBrowseQuick = null;
+  state.activeInterestSlug = null;
+  state.interestFacet = null;
+  if (els.filterForSale) els.filterForSale.checked = false;
+  renderInterestFilters();
+  syncInterestUrl(null);
   state.activeExploreTopic = topicId;
   state.exploreIslandIds = new Set(
     (topic.islandIds || []).filter((id) => state.byId?.has(id)),
@@ -3377,9 +3444,6 @@ function renderBrowseQuickChips() {
   if (!host) return;
   host.replaceChildren();
   const interestSlugs = new Set(interestCategories().map((c) => c.slug));
-  const presets = BROWSE_QUICK_FILTERS.filter(
-    (preset) => !(preset.forSale && interestSlugs.has("for-sale")),
-  );
   const icons = { all: "compass", ferry: "ship", remote: "waves", "for-sale": "key-round" };
   const addChip = (id, label, selected, icon, onClick) => {
     const b = document.createElement("button");
@@ -3390,14 +3454,11 @@ function renderBrowseQuickChips() {
     b.addEventListener("click", onClick);
     host.appendChild(b);
   };
-  for (const preset of presets) {
-    const selected = activeBrowseQuick === preset.id || (preset.id === "all" && !hasUserDiscoveryIntent());
-    addChip(preset.id, preset.label, selected, icons[preset.id], () => {
-      if (preset.id === "all") resetAllFilters();
-      else applyBrowseQuickFilter(preset);
-    });
+  const all = BROWSE_QUICK_FILTERS.find((preset) => preset.id === "all");
+  if (all) {
+    addChip(all.id, all.label, !hasUserDiscoveryIntent(), icons.all, () => resetAllFilters());
   }
-  for (const category of interestCategories()) {
+  for (const category of orderedInterestCategories()) {
     const selected = state.activeInterestSlug === category.slug;
     addChip(
       category.slug,
@@ -3407,7 +3468,14 @@ function renderBrowseQuickChips() {
       () => setActiveInterest(category.slug),
     );
   }
-  if (state.activeInterestSlug === "film-art-music") {
+  for (const preset of BROWSE_QUICK_FILTERS) {
+    if (preset.id === "all") continue;
+    if (preset.forSale && interestSlugs.has("for-sale")) continue;
+    addChip(preset.id, preset.label, activeBrowseQuick === preset.id, icons[preset.id], () =>
+      applyBrowseQuickFilter(preset),
+    );
+  }
+  if (INTEREST_SUBFILTERS_ENABLED && state.activeInterestSlug === "film-art-music") {
     for (const facet of [
       ["film", "Film", "clapperboard"],
       ["artwork", "Artwork", "palette"],
@@ -3418,7 +3486,7 @@ function renderBrowseQuickChips() {
       );
     }
   }
-  if (state.activeInterestSlug === "whisky-distilleries") {
+  if (INTEREST_SUBFILTERS_ENABLED && state.activeInterestSlug === "whisky-distilleries") {
     const icons = {
       islay: "flame",
       hebrides: "waves",
@@ -3457,6 +3525,13 @@ function applyBrowseQuickFilter(preset) {
   }
   const activate = async () => {
     activeBrowseQuick = preset.id;
+    state.activeInterestSlug = null;
+    state.interestFacet = null;
+    if (els.filterForSale) {
+      els.filterForSale.checked = Boolean(preset.forSale && !els.filterForSale.disabled);
+    }
+    renderInterestFilters();
+    syncInterestUrl(null);
     if (state.activeExploreTopic) {
       state.activeExploreTopic = null;
       state.exploreIslandIds = null;
@@ -3834,21 +3909,15 @@ function initAtlasChrome() {
   });
   collapseBtn?.addEventListener("click", () => {
     const collapsed = document.body.classList.toggle("sidebar-collapsed");
-    collapseBtn.setAttribute("aria-pressed", collapsed ? "true" : "false");
-    collapseBtn.setAttribute(
-      "aria-label",
-      collapsed ? "Enlarge island list" : "Collapse island list",
-    );
-    const icon = collapseBtn.querySelector("[data-lucide]");
-    if (icon) icon.setAttribute("data-lucide", collapsed ? "panel-left-open" : "panel-left-close");
-    refreshLucideIcons(collapseBtn);
+    syncSidebarCollapseButton(collapsed);
     window.setTimeout(() => {
       try {
         map.invalidateSize();
       } catch (_) {
         /* ignore */
       }
-    }, 200);
+      rememberAtlasView();
+    }, 320);
   });
   // Expand / collapse mobile results sheet when tapping the discovery header
   document.getElementById("list-heading")?.addEventListener("click", () => {
@@ -4052,6 +4121,9 @@ function initTopbarMoreMenu() {
       toggle.focus();
     }
   });
+  document.getElementById("atlas-home-menu")?.addEventListener("click", () => {
+    resetAtlasHome();
+  });
 }
 
 function applyFilters(opts = {}) {
@@ -4081,7 +4153,7 @@ function applyFilters(opts = {}) {
   if (els.listHeading) {
     if (favOnly) els.listHeading.textContent = "Saved islands";
     else if (topic) els.listHeading.textContent = topic.title;
-    else if (state.interestFacet) {
+    else if (INTEREST_SUBFILTERS_ENABLED && state.interestFacet) {
       const whiskyLabel = whiskySubdivisions().find((row) => row.id === state.interestFacet)?.label;
       const facetLabel = whiskyLabel || { film: "Film", artwork: "Artwork", music: "Music" }[state.interestFacet];
       els.listHeading.textContent = facetLabel || "Islands";
@@ -4114,7 +4186,7 @@ function applyFilters(opts = {}) {
     if (state.activeInterestSlug) {
       const ids = interestMemberSet(state.activeInterestSlug);
       if (!ids || !ids.has(i.id)) return false;
-      if (state.interestFacet && !interestStoriesFor(i.id).length) return false;
+      if (INTEREST_SUBFILTERS_ENABLED && state.interestFacet && !interestStoriesFor(i.id).length) return false;
     } else if (forSaleOnly && !islandHasPropertyListing(i)) return false;
     if (elevationOnly && !islandHasElevation(i)) return false;
     if (inhabitedOnly && !(i.population > 0)) return false;
@@ -4179,7 +4251,7 @@ function applyFilters(opts = {}) {
         state.filtered.sort(
           (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || a.name.localeCompare(b.name),
         );
-      } else if (state.activeInterestSlug === "island-castles") {
+      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books") {
         state.filtered.sort(
           (a, b) => castlePhotoRank(a.id) - castlePhotoRank(b.id) || a.name.localeCompare(b.name),
         );
@@ -4310,18 +4382,30 @@ function updateSidebarOrient() {
   el.textContent = "A few places to start";
 }
 
+let paintedResultCount = "";
+
+function paintResultCount(label, filteredOn) {
+  if (!els.count) return;
+  const changed = label !== paintedResultCount;
+  paintedResultCount = label;
+  els.count.textContent = label;
+  els.count.classList.toggle("count--filtered", filteredOn);
+  if (!changed || !label || label === "0") return;
+  els.count.classList.remove("is-tick");
+  requestAnimationFrame(() => {
+    if (els.count.textContent === label) els.count.classList.add("is-tick");
+  });
+}
+
 function renderList() {
   ensureListScaffolding();
   const filtered = state.filtered.length;
   const total = state.islands.length;
   const { rows, truncatedFrom } = getListDisplayRows();
-  if (truncatedFrom) {
-    els.count.textContent = `${rows.length.toLocaleString()} of ${filtered.toLocaleString()}`;
-    els.count.classList.add("count--filtered");
-  } else {
-    els.count.textContent = formatResultCount(filtered, total);
-    els.count.classList.toggle("count--filtered", total > 0 && filtered !== total);
-  }
+  const label = truncatedFrom
+    ? `${rows.length.toLocaleString()} of ${filtered.toLocaleString()}`
+    : formatResultCount(filtered, total);
+  paintResultCount(label, Boolean(truncatedFrom) || (total > 0 && filtered !== total));
   updateSidebarOrient();
   document.body.classList.toggle("has-discovery-intent", hasUserDiscoveryIntent());
   renderBrowseQuickChips();
@@ -4475,11 +4559,11 @@ function renderListWindow() {
     const fav = isFavoriteIsland(island.id);
     const storyThumb = feature || interestStoryThumb(island.id);
     const thumb = storyThumb?.image?.thumbUrl || islandThumbUrl(island);
-    const thumbAlt = storyThumb?.title || "";
+    const thumbAlt = storyThumb?.image?.alt || storyThumb?.title || "";
     const featureShot = feature?.image?.thumbUrl || (feature ? islandThumbUrl(island) : "");
     const thumbHtml = feature
       ? featureShot
-        ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(feature.image?.thumbUrl ? feature.title || "" : displayName)}" loading="lazy" decoding="async" />`
+        ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(feature.image?.alt || (feature.image?.thumbUrl ? feature.title || "" : displayName))}" loading="lazy" decoding="async" />`
         : ""
       : thumb
         ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" loading="lazy" decoding="async" />`
@@ -4512,7 +4596,7 @@ function renderListWindow() {
     const blurbHtml = blurb
       ? `<p class="island-card__blurb${highlight ? " island-card__blurb--interest" : ""}">${escapeHtml(blurb)}</p>`
       : "";
-    const castleFirst = feature && state.activeInterestSlug === "island-castles";
+    const castleFirst = feature && (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books");
     main.innerHTML = feature
       ? `${castleFirst ? thumbHtml : ""}<div class="island-card__text">${titleBlock}</div>
       ${castleFirst ? "" : thumbHtml}
@@ -4531,7 +4615,10 @@ function renderListWindow() {
 
     const favBtn = document.createElement("button");
     favBtn.type = "button";
-    favBtn.className = "island-card__fav" + (fav ? " is-favorite" : "");
+    favBtn.className =
+      "island-card__fav" +
+      (fav ? " is-favorite" : "") +
+      (fav && island.id === justSavedId ? " is-just-saved" : "");
     favBtn.dataset.favId = island.id;
     favBtn.setAttribute("aria-pressed", fav ? "true" : "false");
     favBtn.setAttribute(
@@ -4700,6 +4787,15 @@ function focusIsland(id, { fly = true, fromHistory = false } = {}) {
 
   dismissMapHint();
   const prevId = state.activeId;
+  if (!fromHistory && !prevId && map) {
+    const c = map.getCenter();
+    viewBeforeIsland = { lat: c.lat, lng: c.lng, zoom: map.getZoom() };
+  }
+  if (!mobileNav.isActive() && document.body.classList.contains("sidebar-collapsed")) {
+    document.body.classList.remove("sidebar-collapsed");
+    syncSidebarCollapseButton(false);
+    try { map.invalidateSize(); } catch (_) { /* ignore */ }
+  }
   state.activeId = id;
   if (!fromHistory) {
     syncIslandUrl(id, { mode: prevId === id ? "replace" : "push" });
@@ -5211,6 +5307,9 @@ function renderDetails(island) {
         <p class="island-3d__hint">Drag to look around.</p>
       </div>`
     : "";
+
+  els.details.classList.remove("is-arriving");
+  requestAnimationFrame(() => els.details.classList.add("is-arriving"));
 
   els.detailsContent.innerHTML = `
     ${gallery}
@@ -6291,13 +6390,7 @@ els.detailsContent.addEventListener("click", (e) => {
 });
 
 els.back.addEventListener("click", () => {
-  if (window.history.state && Object.prototype.hasOwnProperty.call(window.history.state, "islandId") && window.history.state.islandId) {
-    window.history.back();
-    return;
-  }
-  releaseIslandDetailView({ clearUrl: true });
-  if (mobileNav.isActive()) mobileNav.setView("islands");
-  scheduleRenderListWindow();
+  leaveCurrentAtlasView();
 });
 
 window.addEventListener("popstate", (e) => {
@@ -6313,7 +6406,10 @@ window.addEventListener("popstate", (e) => {
   }
 });
 
-function releaseIslandDetailView({ clearUrl = false } = {}) {
+function releaseIslandDetailView({ clearUrl = false, keepMap = false } = {}) {
+  const restore = !keepMap && atlasViewLock === 0 ? viewBeforeIsland : null;
+  viewBeforeIsland = null;
+  const closingId = state.activeId;
   resetIslandSeo();
   state.mobileDetailSuspended = false;
   hideMapIslandPeek();
@@ -6333,10 +6429,226 @@ function releaseIslandDetailView({ clearUrl = false } = {}) {
   if (clearUrl) syncIslandUrl(null, { mode: "replace" });
   syncChatLauncherContext();
   scheduleRenderListWindow();
+  if (closingId) {
+    while (atlasViews.length && atlasViews[atlasViews.length - 1]?.activeId === closingId) {
+      atlasViews.pop();
+    }
+  }
+  if (restore) {
+    applyAtlasView({ ...restore, activeId: null, sidebarCollapsed: false });
+  } else {
+    syncAtlasBackControl();
+  }
+}
+
+const ATLAS_HOME_CAMERA = { lat: 55.6, lng: -4.2, zoom: 5.25 };
+const atlasViews = [];
+let atlasViewLock = 0;
+let viewBeforeIsland = null;
+let lastAtlasRememberAt = 0;
+
+function readAtlasView() {
+  const c = map.getCenter();
+  return {
+    lat: c.lat,
+    lng: c.lng,
+    zoom: map.getZoom(),
+    sidebarCollapsed: document.body.classList.contains("sidebar-collapsed"),
+    activeId: state.activeId || null,
+  };
+}
+
+function atlasCameraClose(a, b) {
+  if (!a || !b) return false;
+  return (
+    Math.abs(a.zoom - b.zoom) < 0.35 &&
+    Math.abs(a.lat - b.lat) < 0.08 &&
+    Math.abs(a.lng - b.lng) < 0.15
+  );
+}
+
+function atlasViewsClose(a, b) {
+  if (!a || !b) return false;
+  return (
+    atlasCameraClose(a, b) &&
+    !!a.sidebarCollapsed === !!b.sidebarCollapsed &&
+    (a.activeId || null) === (b.activeId || null)
+  );
+}
+
+function syncSidebarCollapseButton(collapsed) {
+  const collapseBtn = document.getElementById("sidebar-collapse-btn");
+  if (!collapseBtn) return;
+  collapseBtn.setAttribute("aria-pressed", collapsed ? "true" : "false");
+  collapseBtn.setAttribute("aria-label", collapsed ? "Show the island list" : "Hide the island list");
+  collapseBtn.title = collapsed ? "Show the island list" : "Hide the island list";
+  const text = collapseBtn.querySelector(".topbar-panel-toggle__label");
+  if (text) text.textContent = collapsed ? "Show islands" : "";
+  const icon = collapseBtn.querySelector("[data-lucide]");
+  if (icon) icon.setAttribute("data-lucide", collapsed ? "panel-left-open" : "panel-left-close");
+  refreshLucideIcons(collapseBtn);
+}
+
+function syncAtlasBackControl() {
+  const btn = document.getElementById("map-back");
+  if (!btn || !map) return;
+  let cur;
+  try {
+    cur = readAtlasView();
+  } catch (_) {
+    return;
+  }
+  const home = { ...ATLAS_HOME_CAMERA, sidebarCollapsed: false, activeId: null };
+  const departed = !atlasViewsClose(cur, home);
+  const listOnly =
+    departed &&
+    cur.sidebarCollapsed &&
+    !cur.activeId &&
+    !mobileNav.isActive() &&
+    atlasCameraClose(cur, ATLAS_HOME_CAMERA);
+  const showBack = departed && !listOnly;
+  btn.hidden = !showBack;
+  document.body.classList.toggle("atlas-departed", showBack);
+  btn.setAttribute("aria-label", "Back to the previous view");
+}
+
+function rememberAtlasView() {
+  if (atlasViewLock || !map) return;
+  const snap = readAtlasView();
+  const top = atlasViews[atlasViews.length - 1];
+  if (atlasViewsClose(top, snap)) {
+    syncAtlasBackControl();
+    return;
+  }
+  const now = Date.now();
+  // A scroll or a few zoom clicks is one place, not a stack of steps.
+  const burst = now - lastAtlasRememberAt < 1600;
+  if (burst && atlasViews.length > 1 && top && !top.activeId && !snap.activeId) {
+    atlasViews[atlasViews.length - 1] = snap;
+  } else {
+    atlasViews.push(snap);
+    if (atlasViews.length > 30) atlasViews.shift();
+  }
+  lastAtlasRememberAt = now;
+  syncAtlasBackControl();
+}
+
+function noteAppliedView(snap) {
+  const applied = {
+    lat: snap.lat,
+    lng: snap.lng,
+    zoom: snap.zoom,
+    sidebarCollapsed: Boolean(snap.sidebarCollapsed) && !mobileNav.isActive(),
+    activeId: snap.activeId || null,
+  };
+  const cur = readAtlasView();
+  while (atlasViews.length) {
+    const top = atlasViews[atlasViews.length - 1];
+    const sameDestination =
+      atlasCameraClose(top, applied) && (top.activeId || null) === applied.activeId;
+    const sameAsNow =
+      atlasCameraClose(top, cur) && (top.activeId || null) === (cur.activeId || null);
+    if (sameDestination || sameAsNow) {
+      atlasViews.pop();
+      continue;
+    }
+    break;
+  }
+  atlasViews.push(applied);
+  if (atlasViews.length > 30) atlasViews.shift();
+}
+
+function applyAtlasView(snap) {
+  atlasViewLock += 1;
+  const collapsed = Boolean(snap.sidebarCollapsed) && !mobileNav.isActive();
+  document.body.classList.toggle("sidebar-collapsed", collapsed);
+  syncSidebarCollapseButton(collapsed);
+
+  if (snap.activeId && state.byId?.has(snap.activeId)) {
+    if (state.activeId !== snap.activeId) {
+      focusIsland(snap.activeId, { fly: false, fromHistory: true });
+    }
+  } else if (state.activeId) {
+    releaseIslandDetailView({ clearUrl: true, keepMap: true });
+  }
+  noteAppliedView({ ...snap, sidebarCollapsed: collapsed });
+
+  const animate = !prefersReducedMotion();
+  const sizeBefore = map.getSize();
+  map.setView([snap.lat, snap.lng], snap.zoom, { animate, duration: 0.45 });
+  window.setTimeout(() => {
+    try {
+      const sizeNow = map.getSize();
+      if (sizeNow.x !== sizeBefore.x || sizeNow.y !== sizeBefore.y) {
+        map.invalidateSize();
+      }
+    } catch (_) { /* ignore */ }
+  }, animate ? 480 : 0);
+  window.setTimeout(() => {
+    atlasViewLock = Math.max(0, atlasViewLock - 1);
+    const actual = readAtlasView();
+    const top = atlasViews[atlasViews.length - 1];
+    if (
+      top &&
+      atlasCameraClose(top, actual) &&
+      (top.activeId || null) === (actual.activeId || null)
+    ) {
+      top.lat = actual.lat;
+      top.lng = actual.lng;
+      top.zoom = actual.zoom;
+    }
+    syncAtlasBackControl();
+  }, animate ? 1100 : 40);
+}
+
+function goToPreviousAtlasView() {
+  const cur = readAtlasView();
+  while (
+    atlasViews.length &&
+    atlasCameraClose(atlasViews[atlasViews.length - 1], cur) &&
+    (atlasViews[atlasViews.length - 1].activeId || null) === (cur.activeId || null)
+  ) {
+    atlasViews.pop();
+  }
+  const prev = atlasViews[atlasViews.length - 1] || {
+    ...ATLAS_HOME_CAMERA,
+    sidebarCollapsed: false,
+    activeId: null,
+  };
+  applyAtlasView({ ...prev, sidebarCollapsed: false });
+}
+
+function leaveCurrentAtlasView() {
+  const hist = window.history.state;
+  if (
+    state.activeId &&
+    hist &&
+    Object.prototype.hasOwnProperty.call(hist, "islandId") &&
+    hist.islandId
+  ) {
+    window.history.back();
+    return;
+  }
+  goToPreviousAtlasView();
+}
+
+function initAtlasViewHistory() {
+  document.getElementById("map-back")?.addEventListener("click", () => {
+    leaveCurrentAtlasView();
+  });
+  map.on("moveend", rememberAtlasView);
+  map.whenReady(() => {
+    if (!atlasViews.length) {
+      atlasViews.push({ ...ATLAS_HOME_CAMERA, sidebarCollapsed: false, activeId: null });
+    }
+    syncAtlasBackControl();
+  });
 }
 
 function resetAtlasHome() {
-  releaseIslandDetailView({ clearUrl: true });
+  viewBeforeIsland = null;
+  atlasViewLock += 1;
+  releaseIslandDetailView({ clearUrl: true, keepMap: true });
   els.search.value = "";
   els.typeFilter.value = "";
   els.nationFilter.value = "";
@@ -6383,6 +6695,17 @@ function resetAtlasHome() {
     mobileNav.setView("islands", { skipChatSync: true });
   }
   map.setView([55.6, -4.2], 5.25, { animate: false });
+  syncSidebarCollapseButton(false);
+  atlasViews.length = 0;
+  atlasViews.push({
+    ...ATLAS_HOME_CAMERA,
+    sidebarCollapsed: false,
+    activeId: null,
+  });
+  window.setTimeout(() => {
+    atlasViewLock = Math.max(0, atlasViewLock - 1);
+    syncAtlasBackControl();
+  }, 0);
 }
 
 // ---------- Polygon overlay (lazy) ----------
@@ -7261,7 +7584,7 @@ function parseChatQuery(rawText) {
   if (!q.recommendationIntent && q.recommendN && (q.archipelagos.size || q.nations.size)) {
     q.recommendationIntent = true;
   }
-  if (q.recommendationIntent && !q.types.size) {
+  if (q.recommendationIntent && !q.types.size && !q.features.size) {
     q.types.add("sea");
   }
 
@@ -8009,65 +8332,237 @@ function answerIntent(intent, query) {
   return null;
 }
 
+function chatJoinBits(bits) {
+  const names = (bits || []).filter(Boolean);
+  if (names.length <= 1) return names[0] || "";
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}`;
+}
+
+function chatJoinNames(islands) {
+  return chatJoinBits((islands || []).map((island) => (island?.name ? `**${island.name}**` : "")));
+}
+
+const CHAT_GUIDE_COLLECTIONS = [
+  { slug: "whisky-distilleries", test: /\b(whisk(?:y|ey)|distiller(?:y|ies)|single malt|malts)\b/ },
+  { slug: "island-castles", test: /\b(castles?|fortress|tower house)\b/ },
+  { slug: "island-books", test: /\b(books?|novels?|memoirs?|stories)\b/ },
+  { slug: "unusual-wildlife", test: /\b(wildlife|puffins?|seabirds?|rare species)\b/ },
+  { slug: "tidal-islands", test: /\btidal islands?\b|\bwalk(?:able)? to\b/ },
+  { slug: "for-sale", test: /\b(for sale|on the market|buy an island|islands? to buy)\b/ },
+  { slug: "film-art-music", test: /\b(films?|movies?|paintings?|artworks?|songs?|bands?|music)\b/ },
+];
+
+function chatGuideIslands(slug) {
+  const ids = state.interestIndex?.members?.[slug];
+  if (!Array.isArray(ids) || !ids.length) return [];
+  const islands = ids.map((id) => state.byId.get(id)).filter(Boolean);
+  if (slug === "whisky-distilleries") {
+    islands.sort(
+      (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || (b.areaKm2 || 0) - (a.areaKm2 || 0),
+    );
+  } else {
+    islands.sort((a, b) => (b.areaKm2 || 0) - (a.areaKm2 || 0) || a.name.localeCompare(b.name));
+  }
+  return islands;
+}
+
+function chatGuideStory(slug, islandId) {
+  const items = state.interestIndex?.stories?.[slug]?.[islandId];
+  if (!Array.isArray(items) || !items.length) return null;
+  if (slug === "whisky-distilleries") {
+    return items.find((item) => item?.facet === "distillery") || items[0];
+  }
+  return items[0];
+}
+
+function chatGuideProse(slug, shown, total) {
+  const lead = shown[0];
+  const story = chatGuideStory(slug, lead.id);
+  const title = story?.title ? String(story.title).replace(/\s+/g, " ").trim() : "";
+  const rest = shown.slice(1);
+  if (slug === "whisky-distilleries") {
+    let answer = `If you want island whisky, start with **${lead.name}**`;
+    if (title) answer += `. The atlas names ${title} there`;
+    answer += ".";
+    if (rest.length) {
+      const bits = rest.map((island) => {
+        const named = chatGuideStory(slug, island.id)?.title;
+        return named ? `**${island.name}** (${named})` : `**${island.name}**`;
+      });
+      const working = rest.every((island) => chatGuideStory(slug, island.id)?.facet === "distillery");
+      answer += working
+        ? ` There are working stills on ${chatJoinBits(bits)} as well.`
+        : ` The list also includes ${chatJoinBits(bits)}.`;
+    }
+    if (total > shown.length) {
+      answer += ` That's ${total} islands in the whisky list, including silent stills and stories.`;
+    }
+    answer += " Tell me which island you want, or ask about the silent stills.";
+    return answer.replace("  ", " ");
+  }
+  const named = chatJoinNames(shown);
+  if (slug === "island-castles") {
+    return `The atlas cites a castle on ${named}. Say which one and I'll tell you what the source says about it.`;
+  }
+  if (slug === "island-books") {
+    const book = title ? ` ${title} is one of them.` : "";
+    return `The atlas has a book set on ${named}.${book} Open a card for the picture and the passage that places it.`;
+  }
+  if (slug === "unusual-wildlife") {
+    return `These islands have a species the atlas can cite: ${named}. Ask about one of them if you want the animal and the source.`;
+  }
+  if (slug === "tidal-islands") {
+    return `These are islands you can reach on foot when the tide is out: ${named}. The link floods again at high tide. I don't have crossing times.`;
+  }
+  if (slug === "for-sale") {
+    return `The atlas has a public listing for ${named}. Open a card for the broker link. I don't have owner names.`;
+  }
+  return `The atlas ties a film, a picture, or a piece of music to ${named}. Ask about one and I'll use the cited row.`;
+}
+
+let chatGuideTopic = null;
+
+function chatGuideFindNamed(islands, rawName) {
+  const name = String(rawName || "").toLowerCase().replace(/[?.!]+$/g, "").trim();
+  if (name.length < 3) return null;
+  return (
+    islands.find((row) => row.name.toLowerCase() === name) ||
+    islands.find((row) => row.name.toLowerCase().includes(name)) ||
+    null
+  );
+}
+
+function chatWhiskyFollowUp(text) {
+  if (chatGuideTopic !== "whisky-distilleries") return null;
+  const islands = chatGuideIslands("whisky-distilleries");
+  if (!islands.length) return null;
+  const stories = state.interestIndex?.stories?.["whisky-distilleries"] || {};
+  if (/\bsilent stills?\b/.test(text)) {
+    const silent = islands.filter((island) =>
+      (stories[island.id] || []).some((item) => item?.facet === "silent"),
+    );
+    const shown = silent.slice(0, 6);
+    if (!shown.length) return null;
+    const bits = shown.map((island) => {
+      const title = (stories[island.id] || []).find((item) => item?.facet === "silent")?.title;
+      return title ? `**${island.name}** (${title})` : `**${island.name}**`;
+    });
+    const extra = silent.length > shown.length ? ` That's ${silent.length} islands with a closed still.` : "";
+    return {
+      answer: `The silent stills the atlas cites are on ${chatJoinBits(bits)}.${extra} Open a card for the source.`,
+      results: shown.map((island) => ({ island })),
+      suggestions: ["Where are the working stills?", "Tell me more about Islay"],
+    };
+  }
+  if (/\borkney\b/.test(text)) {
+    const orkney = islands.filter(
+      (island) => /orkney/i.test(island.archipelago || "") || /orkney/i.test(island.name || ""),
+    );
+    const shown = orkney.slice(0, 6);
+    if (!shown.length) return null;
+    return {
+      answer: `On Orkney, the atlas names whisky on ${chatJoinNames(shown)}.`,
+      results: shown.map((island) => ({ island })),
+      suggestions: [
+        shown[0] ? `Tell me more about ${shown[0].name}` : "What about the silent stills?",
+        "What about the silent stills?",
+      ],
+    };
+  }
+  if (/\bworking stills?\b/.test(text)) {
+    const working = islands.filter((island) =>
+      (stories[island.id] || []).some((item) => item?.facet === "distillery"),
+    );
+    const shown = working.slice(0, 6);
+    if (!shown.length) return null;
+    return {
+      answer: chatGuideProse("whisky-distilleries", shown, working.length),
+      results: shown.map((island) => ({ island })),
+      suggestions: ["What about the silent stills?", "Which of these is on Orkney?"],
+    };
+  }
+  const more = text.match(/\b(?:tell me more about|more about|what about)\s+(.+)$/);
+  if (!more) return null;
+  const island = chatGuideFindNamed(islands, more[1]);
+  if (!island) return null;
+  const titles = (stories[island.id] || []).map((item) => item?.title).filter(Boolean).slice(0, 4);
+  return {
+    answer: titles.length
+      ? `On **${island.name}**, the atlas cites ${chatJoinBits(titles)}. Open the profile for the source on each one.`
+      : `**${island.name}** is on the whisky list. Open the profile for the cited rows.`,
+    results: [{ island }],
+    suggestions: ["What about the silent stills?", "Which of these is on Orkney?"],
+  };
+}
+
+function chatGuideReply(rawText) {
+  const text = String(rawText || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const follow = chatWhiskyFollowUp(text);
+  if (follow) {
+    chatGuideTopic = "whisky-distilleries";
+    return follow;
+  }
+  if (
+    /^(hi|hello|hey|help|help me|help me with this|what can you do|can you help)\b/.test(text) &&
+    text.length < 42 &&
+    !CHAT_GUIDE_COLLECTIONS.some((row) => row.test.test(text))
+  ) {
+    chatGuideTopic = null;
+    return {
+      answer:
+        "How can I help? You can ask for whisky islands, a castle, somewhere near a town, or the story of an island you already have in mind.",
+      results: [],
+      suggestions: [
+        "Where are the best islands for whisky?",
+        "Help me find a castle island",
+        "What's the story of Skye?",
+      ],
+    };
+  }
+  const hit = CHAT_GUIDE_COLLECTIONS.find((row) => row.test.test(text));
+  if (!hit) return null;
+  const islands = chatGuideIslands(hit.slug);
+  if (!islands.length) return null;
+  const shown = islands.slice(0, 6);
+  chatGuideTopic = hit.slug;
+  return {
+    answer: chatGuideProse(hit.slug, shown, islands.length),
+    results: shown.map((island) => ({ island })),
+    suggestions:
+      hit.slug === "whisky-distilleries"
+        ? ["Tell me more about Islay", "What about the silent stills?", "Which of these is on Orkney?"]
+        : [
+            shown[0] ? `What's the story of ${shown[0].name}?` : "Help me with this",
+            "Where are the best islands for whisky?",
+            "Help me with this",
+          ],
+  };
+}
+
 function composeChatResponse({ query, results, total }) {
   if (!results.length) {
-    const hints = [];
     if (query.nearUnresolved) {
       return (
-        `I couldn't find “${query.nearUnresolved}” in the atlas gazetteer. ` +
-        "Try a major ferry town — Oban, Mallaig, Portree, Tobermory, Stromness, Ullapool, Penzance, Holyhead — " +
-        "or ask without a place filter."
+        `I don't know “${query.nearUnresolved}” as a place in the atlas. ` +
+        "Try Oban, Mallaig, Portree, or Tobermory, or just name the island."
       );
     }
-    if (!query.nations.size) hints.push("a nation (Scotland, Wales, …)");
-    if (!query.types.size) hints.push("a type (sea, lake, river)");
-    if (!query.features.size && !query.semanticTags.size) {
-      hints.push("a feature (mountains, castle, ferry, puffins)");
-    }
-    return (
-      "I couldn't find any matches. Try mentioning " +
-      hints.join(", ") +
-      "."
-    );
+    return "I don't have a match for that. Try whisky, a castle, a loch, or the name of an island.";
   }
-  const parts = [];
-  if (query.recommendationIntent) {
-    const whereBits = [];
-    if (query.archipelagos.size) {
-      whereBits.push([...query.archipelagos].join(" · "));
-    }
-    if (query.nations.size) {
-      whereBits.push([...query.nations].join("/"));
-    }
-    const whereStr = whereBits.length ? ` in **${whereBits.join(" · ")}**` : "";
-    parts.push(
-      `Here are **${results.length}** sea-island picks${whereStr} — larger or inhabited places with solid atlas coverage (photos, descriptions, or ferries).`,
-    );
+  const named = results.map((row) => row.island).filter((island) => island && island.name).slice(0, 4);
+  if (!named.length) {
+    return "I found a few islands, but none I can name. Try a more specific question.";
   }
-  const totalLabel = total === 1 ? "1 match" : `${total.toLocaleString()} matches`;
-  const facets = [];
-  if (query.nations.size) facets.push([...query.nations].join("/"));
-  if (query.types.size) facets.push([...query.types].map((t) => t + " islands").join("/"));
-  else facets.push("islands");
-  if (query.archipelagos.size) facets.push("in " + [...query.archipelagos].join("/"));
-  if (query.semanticTags.size) facets.push("tagged " + [...query.semanticTags].join(" + "));
-  if (query.features.size) facets.push("with " + [...query.features].join(" + "));
-  if (query.near) {
-    const km = Math.round(query.near.radiusKm);
-    facets.push(`within ${km} km of ${query.near.name}`);
+  if (named.length === 1) {
+    return `**${named[0].name}** is the one that fits. Open the card if you want the story.`;
   }
-  if (query.sort) facets.push("(sorted by " + query.sort.sortBy + ")");
-  if (!query.recommendationIntent) {
-    parts.push(`Found ${totalLabel} for ${facets.join(" ")}.`);
-    if (results.length < total) {
-      parts.push(`Showing the top ${results.length}.`);
-    }
-  } else if (total > results.length) {
-    parts.push(
-      `${total.toLocaleString()} islands passed the filters; these ${results.length} rank highest for visitor appeal in the atlas data.`,
-    );
-  }
-  return parts.join(" ");
+  const where = [];
+  if (query.nations?.size) where.push([...query.nations].join(" and "));
+  if (query.near?.name) where.push(`near ${query.near.name}`);
+  const place = where.length ? ` ${where.join(", ")}` : "";
+  const extra = total > named.length ? ` I have more than these if you want to narrow it.` : "";
+  return `I'd look at ${chatJoinNames(named)}${place}.${extra}`;
 }
 
 const chatEls = {
@@ -8094,9 +8589,9 @@ function renderChatStarters() {
         `What should I know about ${islandDisplayName(island)}?`,
       ]
     : [
-        "Islands near Oban with photos",
-        "Islands with a castle",
-        "Islands for sale right now",
+        "Where are the best islands for whisky?",
+        "Help me find a castle island",
+        "What's the story of Skye?",
       ];
   for (const q of starters) {
     const b = document.createElement("button");
@@ -8119,7 +8614,7 @@ function chatOpen() {
   setTimeout(() => chatEls.input.focus(), 50);
   if (!chatEls.messages.dataset.bootstrapped) {
     chatRenderBot(
-      "Tell me what you're after — a wild coastline, a loch, a story, or somewhere close to home.",
+      "How can I help? Ask for whisky, a castle, somewhere near a town, or the story of an island.",
     );
     ensureChatCorpus();
     chatEls.messages.dataset.bootstrapped = "1";
@@ -8137,6 +8632,8 @@ function chatClose() {
 }
 
 function chatAppend(node) {
+  node.classList.add("is-arriving");
+  node.addEventListener("animationend", () => node.classList.remove("is-arriving"), { once: true });
   chatEls.messages.appendChild(node);
   chatEls.messages.scrollTop = chatEls.messages.scrollHeight;
 }
@@ -8919,12 +9416,12 @@ function chatLLMRefreshUI() {
   if (modeSub) {
     if (s.enabled && s.apiKey) {
       modeSub.textContent =
-        `AI mode · ${LLM_PROVIDERS[s.provider]?.label || s.provider} searches the atlas, then reads the records it cites.`;
+        "I'll look it up in the atlas.";
     } else if (s.enabled && !s.apiKey) {
       modeSub.textContent =
         "AI mode is on but no key is set. Open settings to add one.";
     } else {
-      modeSub.textContent = "Local mode · nothing leaves your browser.";
+      modeSub.textContent = "How can I help?";
     }
   }
 }
@@ -9058,9 +9555,10 @@ function chatSubmit(text) {
     /* non-fatal */
   }
 
+  document.getElementById("chat-starters")?.setAttribute("hidden", "");
   const thinking = document.createElement("div");
   thinking.className = "chat-msg chat-msg--system";
-  thinking.textContent = "Searching the atlas…";
+  thinking.textContent = "One moment…";
   chatAppend(thinking);
 
   const aiSettings = chatLLMGetSettings();
@@ -9070,7 +9568,11 @@ function chatSubmit(text) {
         state.interestIndex ? Promise.resolve() : loadInterestIndex(),
         ensureChatCorpus(),
       ])
-    : Promise.all([loadCauseways(), ensureChatTagVocabulary()]);
+    : Promise.all([
+        loadCauseways(),
+        ensureChatTagVocabulary(),
+        state.interestIndex ? Promise.resolve() : loadInterestIndex(),
+      ]);
 
   // Wrap the whole pipeline in try/catch so a single thrown error can never
   // leave the user staring at a perpetual "Searching the atlas…" dot.
@@ -9111,6 +9613,15 @@ function chatSubmit(text) {
 
       const r = searchChatIslands(t, LLM_CANDIDATE_LIMIT);
       thinking.remove();
+
+      const guide = chatGuideReply(t);
+      if (guide) {
+        chatRenderBot(guide.answer, {
+          results: guide.results,
+          suggestions: guide.suggestions,
+        });
+        return;
+      }
 
       // Structured factual questions (count, lookup, compare, superlative)
       // get a direct answer from the local engine when AI is off.
@@ -9461,6 +9972,7 @@ function initFilterFocusTrap() {
 function setAppLoading(on) {
   const el = document.getElementById("app-loading");
   document.body.classList.toggle("app-is-loading", on);
+  if (!on) document.body.classList.add("is-atlas-ready");
   if (el) {
     el.hidden = !on;
     el.setAttribute("aria-busy", on ? "true" : "false");
@@ -9623,7 +10135,7 @@ function initGlobalKeyboardShortcuts() {
       if (isTypingTarget(document.activeElement)) return;
       if (lightboxOpen || chatOpen || favModalOpen || crowdOpen) return;
       e.preventDefault();
-      releaseIslandDetailView({ clearUrl: true });
+      releaseIslandDetailView({ clearUrl: true, keepMap: true });
       document.body.classList.remove("sidebar-collapsed", "filters-open");
       document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
       document.getElementById("sidebar-collapse-btn")?.setAttribute("aria-pressed", "false");
@@ -9651,12 +10163,14 @@ function initGlobalKeyboardShortcuts() {
       return;
     }
 
-    if (!els.details.hidden) {
+    if (isTypingTarget(document.activeElement)) return;
+    if (
+      !els.details.hidden ||
+      document.body.classList.contains("atlas-departed") ||
+      document.body.classList.contains("sidebar-collapsed")
+    ) {
       e.preventDefault();
-      releaseIslandDetailView({ clearUrl: true });
-      if (mobileNav.isActive()) mobileNav.setView("islands");
-      scheduleRenderListWindow();
-      els.search?.focus();
+      leaveCurrentAtlasView();
     }
   });
 }
@@ -9674,6 +10188,7 @@ initMapHint();
 initGlobalKeyboardShortcuts();
 initTopbarMoreMenu();
 initAtlasChrome();
+initAtlasViewHistory();
 initMapSearchArea();
 chatAutoLoadFromUrl();
 refreshLucideIcons();

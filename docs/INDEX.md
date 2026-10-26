@@ -46,6 +46,7 @@ Single map of every document in this repository. Always start at the top.
 | [`NEXT-SESSION-PLAN.md`](NEXT-SESSION-PLAN.md) | Rolling, executable plan for the next ingestion phase. |
 | [`PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md`](PROMPT-COMPREHENSIVE-LANDMASS-SURVEY.md) | **Multi-agent briefing:** full remit landmass sweep, naming certainty, ledger + closure report (copy/paste prompt). Executable ledger: `scripts/survey_landmass_ledger.py` → `data/survey/`. |
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
+| [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md) | Read-only fact-check of locations, photos, claims, and measurements. Data not corrected. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
 | [`PHOTO-DISCOVERY-IDEAS.md`](PHOTO-DISCOVERY-IDEAS.md) | 35 high-confidence photo discovery ideas (beyond geosearch/Openverse); top-10 ranking. |
 | [`NAMING-SOURCES.md`](NAMING-SOURCES.md) | 100 high-confidence naming approaches for ~4,310 unnamed islands; implementation registry + runbook. |

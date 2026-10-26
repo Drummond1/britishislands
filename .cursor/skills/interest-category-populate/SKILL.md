@@ -43,6 +43,8 @@ python3 scripts/interest_categories.py culture
 python3 scripts/interest_categories.py culture-open
 python3 scripts/interest_categories.py wildlife
 python3 scripts/interest_categories.py tidal
+python3 scripts/interest_categories.py castles
+python3 scripts/interest_categories.py books
 python3 scripts/interest_categories.py publish
 ```
 
@@ -64,7 +66,7 @@ python3 scripts/interest_categories.py publish
 }
 ```
 
-Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `planned`, `listing`, `wildlife`, `tidal`. Whisky stories also carry `subdivision` (`islay`, `hebrides`, `orkney`, `other`, `silent`, `story`, `planned`). Unique key is category + island + facet + title, so one island can carry several works or distilleries.
+Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `planned`, `listing`, `wildlife`, `tidal`, `castle`, `book`. Whisky stories also carry `subdivision` (`islay`, `hebrides`, `orkney`, `other`, `silent`, `story`, `planned`). Unique key is category + island + facet + title, so one island can carry several works or distilleries.
 
 ## Matching
 
@@ -73,6 +75,7 @@ Facets in use: `film`, `artwork`, `music`, `distillery`, `silent`, `story`, `pla
 - For film, art, and music, fetch the source page and require both the work title and the island name. “Inspired by the region” is not enough.
 - For whisky, the still has to be on the island. A working distillery, a silent still the source page places on the island, a still the page says is not yet producing, or a whisky story (a named wreck, film, novel, festival, or illicit stills the page places on the island) whose page names the island. Gin, a stalled plan, a brand whose still is somewhere else, and a closed site the page cannot locate are out. A non-English Wikipedia article is fine when it names the island and the still. A caption that merely mentions whisky is not evidence. Subdivisions are `islay`, `hebrides`, `orkney`, `other` for working stills, and the facets `silent`, `story`, and `planned`.
 - For unusual wildlife, a Wikipedia, Wikidata, or Open Government Licence page must name the species and the island. The species is endemic, named for the island, or a principal stronghold. The picture is of the species. Do not store colony coordinates, nest counts, or advice on when to visit. Do not use the Seabird Monitoring Programme, RSPB reserve maps, iNaturalist, or GBIF occurrences.
+- For books, the English Wikipedia article must set the book on that atlas island (a novel, memoir, autobiography, or story collection). "Inspired by", "based on", and "filmed on" do not count. The picture is an open-licence cover, title page, or illustration. A fair-use cover is left out. When the article has no open picture, use the island's own open-licence photograph and say it is a photograph of the island. The summary is the article's own sentences.
 
 ## After a publish
 

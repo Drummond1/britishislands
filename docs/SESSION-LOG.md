@@ -3244,3 +3244,45 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: `chat-agent.js` searches the loaded atlas (name, nation, loch, collection, distance, size) and counts. The model then calls `read_islands`, which loads `data/details/{id}.json` plus cited interest rows, and answers in prose. Cards are only islands that search or read actually returned. Local Ask is unchanged and is the fallback. `scripts/build_chat_corpus.py` writes `data/chat_corpus.json` (3,073 rows: parent water, a short description, summit name, other-language names). It is fetched when Ask opens, not on first paint. Pages rebuilds it on deploy.
 - **Outcome / counts**: Island totals unchanged. Corpus checks: Isle of Skye, 28 Loch Lomond islands, Islay whisky, puffin stories, islands within 25 km of Oban, and Ireland kept separate from Northern Ireland. Not pushed.
 - **Open items kicked to QUEUE.md**: none. The local "couldn't find that place" hint and a wider gazetteer are still open, because they belong to the keyword finder.
+
+## 2026-10-26 — Islands with Castles
+
+- **Goal**: Add a filter for any atlas island with a castle on it, and lead the list and the profile with a photo of the castle.
+- **What changed**: `scripts/harvest_island_castles.py` reads Wikidata, English Wikipedia, OpenStreetMap `historic=castle`, Canmore, the National Heritage List for England, Cadw, and the Archaeological Survey of Ireland. A row is kept when one of those sources places a castle on an island already in the atlas. Great Britain and Ireland are left out. Martello towers, brochs, forts that are not castles, and country houses are left out. The chip is "Islands with Castles". The list card and the profile put the castle photo first. This is wider than the under-1 km² note in `docs/INTEREST-FILTER-IDEAS.md`: Duart, Dunvegan, Beaumaris, and Carisbrooke are in. Lochnaw Castle is not filed on Duck Island. Ardtornish Castle is not filed on Mull. Ardvourlie Castle is left out because its article calls it a country house. Coroghon Castle on Canna has no usable article lead in this pass. Oxford Castle is on the Thames island at Oxford. `supabase/migrations/20261026044000_island_castles.sql` adds the castle facet and is not applied.
+- **Outcome / counts**: **89** islands, **113** cited castles, **80** with an open-licence picture, **58** islands with at least one. Stories **1,182**, **645** with a picture. Publishing the index also picked up candidate rows already on disk, so film/art/music is now **111** islands and **916** rows (546 artworks, 297 music, 73 film). Whisky stays 18/57, for sale 42, unusual wildlife 23, tidal islands 66. Local only. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the castle facet migration. Next chip is lighthouses that have their own Wikipedia article.
+
+## 2026-10-26 — One filter at a time
+
+- **Goal**: Stop stacking filters on the chip row, and lead with the categories that have a picture.
+- **What changed**: The chips are single-select. Order is All islands, Islands with Castles, Unusual wildlife, Whisky, then Film, art and music, For sale, Tidal islands, and Remote. Choosing one clears the others, including a collection. Whisky regions and Film / Artwork / Music stay off (`INTEREST_SUBFILTERS_ENABLED` in `app.js`) until more of those islands have a picture. The profile still groups a whisky’s stories by subdivision. Film, art and music still leads the list with one picture. The Filters drawer uses the same order and a single interest choice.
+- **Outcome / counts**: No dataset change. Not pushed.
+- **Open items kicked to QUEUE.md**: bring the subdivision chips back when the pictures are there.
+
+## 2026-10-26 — Ask answers like a conversation
+
+- **Goal**: Local Ask was still a search template. "Where are the best islands to find whisky" returned one sea-island card for Islay and a line about photos and ferries.
+- **What changed**: With Smart answers off, a question about whisky, castles, wildlife, tidal islands, islands for sale, or film, art and music is answered in prose from the interest lists, with up to six cards. "Help me with this" asks what they want. A whisky follow-up can ask about silent stills, Orkney, or one named island, using the cited titles. "Best" no longer forces a sea island when the question already names a feature. The drawer opens with "How can I help?".
+- **Outcome / counts**: No dataset change. Checked in the browser: the whisky question names Islay (Ardnahoe), Lewis and Harris, Skye, Mull, Arran, and Jura; silent stills names Islay, Arran, and Nun's Island; "Help me with this" asks a clarifying question. Not pushed.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Fact-check of locations, photos, and claims
+
+- **Goal**: Check the facts a visitor sees (place, photo, interest sentences, area, height, population) and record what is wrong.
+- **What changed**: Four read-only passes. Reports in `docs/fact-check/`. No edit to `islands.json`, `interest_index.json`, or candidate files. `docs/INDEX.md` and `docs/QUEUE.md` point at the fixes.
+- **Outcome / counts**: Pins are mostly on the right feature (2,549 of 2,559 cached Wikidata pairs within 5 km). **156** nation labels are wrong, from overlapping boxes in `nation_for()`. **25** visitor sentences are false, including castles filed on the wrong island, two whisky “northernmost” lines, two tidal islands with permanent causeways, and two sold islands still on the for-sale list. **18** measurement fields are off, including Hayling’s area and four census figures labelled 2022 that are 2011 totals. Confirmed wrong photos include La Boue (a Senegal reserve), several Irish islets showing a neighbour, and a sample of film-art images that are flags, maps, or another subject. Curated locations and 53 of 57 whisky sentences held. Laggan Bay’s April 2026 opening, Anglesey Môn, Nun’s Island, and Barra’s planned whisky still match their sources.
+- **Open items kicked to QUEUE.md**: P1 fact-check fixes. Do not bulk-apply the nation script until the boundary order is fixed.
+
+## 2026-10-26 — Micro-interactions
+
+- **Goal**: Add small motions that reward looking and clicking, starting on the atlas and then on the reading pages.
+- **What changed**: The compass settles when the atlas appears, then turns on hover. The gold rule draws in, the search line grows, chips and buttons press, cards and pins lift, a saved heart pops, and the result count flashes when the list changes. Filters, Ask, and an island profile ease in. About, collections, and the other reading pages share a short rule, a link underline that draws, and a slight lift on cards. `prefers-reduced-motion` still cuts the motion short. No data change.
+- **Outcome / counts**: Checked in the browser: compass, search line, Whisky chip (count ticks to 18), Iona profile, Ask, and the filters drawer. About shows the vermilion rule. Published with the map-back control.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Way back from the map
+
+- **Goal**: From a zoomed map, or with the island list hidden, there was no obvious way back to the overview or the previous place.
+- **What changed**: A Back control appears on the map once you have left the overview. It returns to the previous place and opens the island list. Hiding the list shows a Show islands button at the top of the map. The more menu has Home, which resets to the atlas overview. Escape does the same step back after it closes a menu. Opening a pin while the list is hidden brings the list back, so the profile is on screen.
+- **Outcome / counts**: No dataset change. Checked in the browser: opening Skye shows Back and returns to the overview and the list; hiding the list shows Show islands; the more menu’s Home resets the atlas. Published with the atlas motions.
+- **Open items kicked to QUEUE.md**: none.

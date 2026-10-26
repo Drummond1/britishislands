@@ -422,3 +422,70 @@ body.lp {
     margin-top: 10px;
   }
 }
+
+/* Quiet motion shared by About, collections, and island reading pages. */
+.lp-hero { position: relative; }
+.lp-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 28px;
+  height: 2px;
+  background: #c4492a;
+}
+.lp-back { transition: color .15s ease, transform .2s cubic-bezier(.16, 1, .3, 1); }
+.lp-shell :is(p, li) a:not(.lp-card) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  text-decoration: none;
+  transition: background-size .25s cubic-bezier(.16, 1, .3, 1), color .15s ease;
+}
+.lp-shell .lp-list a,
+.lp-shell .lp-list a:hover,
+.lp-shell .lp-list a:focus-visible { background-image: none; background-size: 0; }
+.lp-shell :is(p, li) a:not(.lp-card):hover,
+.lp-shell :is(p, li) a:not(.lp-card):focus-visible { background-size: 100% 1px; }
+a.lp-card,
+.lp-list a,
+.lp-facts li,
+.lp-cta,
+.lp-media img {
+  transition: transform .22s cubic-bezier(.16, 1, .3, 1), border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+a.lp-card:hover,
+a.lp-card:focus-visible,
+.lp-list a:hover,
+.lp-list a:focus-visible,
+.lp-facts li:hover { transform: translateY(-2px); }
+.lp-media:hover img { transform: scale(1.03); }
+.lp-cta:active { transform: scale(.98); }
+@media (prefers-reduced-motion: no-preference) {
+  .lp-hero::after {
+    transform-origin: left center;
+    animation: lp-rule .55s cubic-bezier(.16, 1, .3, 1) both;
+  }
+  .lp-back:hover,
+  .lp-back:focus-visible { transform: translateX(-3px); }
+}
+@keyframes lp-rule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-hero::after,
+  .lp-media img,
+  a.lp-card,
+  .lp-list a,
+  .lp-facts li,
+  .lp-cta,
+  .lp-back { animation: none; transition: none; }
+  a.lp-card:hover,
+  .lp-list a:hover,
+  .lp-facts li:hover,
+  .lp-media:hover img,
+  .lp-cta:active,
+  .lp-back:hover { transform: none; }
+}

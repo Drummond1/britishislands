@@ -83,6 +83,7 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
 
 .island-details .details-hero__media {
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .island-details .details-hero__media::after {
@@ -96,7 +97,9 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   border-radius: 12px;
   background: #e6ddd0;
   object-position: center;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
 }
+.island-details .details-hero:hover .hero-img { transform: scale(1.035); }
 
 .island-details .details-hero .hero-attrib {
   padding: 9px 0 0;
@@ -600,3 +603,46 @@ body.filters-open .topbar--atlas .filter-drawer.topbar-controls { display:flex; 
 :is(.crowd-modal__title, .favorites-modal__title) {
   font-variation-settings: "SOFT" 30, "opsz" 48, "WONK" 1;
 }
+
+/* Motion on the surfaces that open after the first page. */
+.island-details .back-button { transition: color .15s ease, transform .2s cubic-bezier(.16, 1, .3, 1); }
+.island-details .back-button:hover { transform: translateX(-3px); }
+.island-details.is-arriving .profile-body { animation: profile-in .42s cubic-bezier(.16, 1, .3, 1); }
+@keyframes profile-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.island-details .thumb-strip .thumb { transition: transform .2s cubic-bezier(.16, 1, .3, 1); }
+.island-details .thumb-strip .thumb:hover { transform: translateY(-2px); }
+.island-details .related-island { transition: transform .22s cubic-bezier(.16, 1, .3, 1), border-color .22s ease; }
+.island-details .related-island:hover { transform: translateY(-3px); }
+.details-fav.is-just-saved { animation: heart-pop .45s cubic-bezier(.16, 1, .3, 1); }
+.filter-drawer,
+.chat-panel {
+  transition: opacity .28s cubic-bezier(.16, 1, .3, 1), transform .28s cubic-bezier(.16, 1, .3, 1);
+}
+body.filters-open .filter-drawer,
+.chat-panel.is-open {
+  @starting-style {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.chat-msg.is-arriving { animation: msg-in .32s cubic-bezier(.16, 1, .3, 1); }
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.chat-panel :is(.chat-starter, .chat-suggestions button, .chat-result) {
+  transition: transform .16s cubic-bezier(.16, 1, .3, 1), background .16s ease, border-color .16s ease;
+}
+.chat-panel :is(.chat-starter, .chat-suggestions button, .chat-result):hover { transform: translateY(-1px); }
+.chat-panel :is(.chat-starter, .chat-suggestions button):active { transform: scale(.98); }
+.contribute-hub__card { transition: transform .2s cubic-bezier(.16, 1, .3, 1), border-color .2s ease; }
+.contribute-hub__card:hover { transform: translateY(-2px); }
+.filter-drawer .filter-apply-btn,
+.island-details :is(.profile-primary-btn, .profile-secondary-btn, .details-fav) {
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .14s cubic-bezier(.16, 1, .3, 1);
+}
+.filter-drawer .filter-apply-btn:active,
+.island-details :is(.profile-primary-btn, .profile-secondary-btn, .details-fav):active { transform: scale(.98); }

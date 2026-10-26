@@ -67,11 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=whisky-2" />
-    <link rel="stylesheet" href="editorial-profile.css?v=night-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=motion-3" />
+    <link rel="stylesheet" href="editorial-profile.css?v=motion-3" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
     <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
-    <link rel="modulepreload" href="app.js?v=castles-1" />
+    <link rel="modulepreload" href="app.js?v=books-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -138,6 +138,7 @@
             <span class="topbar-link__label">More</span>
           </button>
           <div class="topbar-more__menu" id="topbar-more-menu" hidden role="menu">
+            <button type="button" class="topbar-more__item" id="atlas-home-menu" role="menuitem">Home</button>
             <a class="topbar-more__item topbar-more__item--link" href="/collections/" role="menuitem">Collections</a>
             <button type="button" class="topbar-more__item" id="crowd-suggest-btn" role="menuitem">Contribute</button>
             <a class="topbar-more__item topbar-more__item--link" href="/about/" role="menuitem">About</a>
@@ -148,10 +149,11 @@
           class="topbar-panel-toggle"
           id="sidebar-collapse-btn"
           aria-pressed="false"
-          title="Collapse or enlarge the island list"
-          aria-label="Collapse island list"
+          title="Hide the island list"
+          aria-label="Hide the island list"
         >
-          <span aria-hidden="true" data-lucide="maximize-2"></span>
+          <span aria-hidden="true" data-lucide="panel-left-close"></span>
+          <span class="topbar-panel-toggle__label"></span>
         </button>
       </div>
 
@@ -429,6 +431,10 @@
       </aside>
 
       <section class="map-wrap" aria-label="Explore the island map">
+        <button type="button" class="map-back" id="map-back" hidden>
+          <span aria-hidden="true" data-lucide="arrow-left"></span>
+          <span class="map-back__label">Back</span>
+        </button>
         <div class="map-editorial-label"><span data-lucide="map" aria-hidden="true"></span><div><span class="map-editorial-label__eyebrow">THE LIVING ATLAS</span><strong>A different perspective.</strong></div></div>
         <div class="map-editorial-note"><span data-lucide="mouse-pointer-2" aria-hidden="true"></span> Pick a pin. See where it takes you.</div>
         <div id="crowd-modal" class="crowd-modal" hidden>
@@ -595,7 +601,7 @@
       <header class="chat-panel__header">
         <h2 id="chat-title">Ask the atlas</h2>
         <p class="chat-panel__sub" id="chat-mode-sub">
-          Local mode · nothing leaves your browser.
+          How can I help?
         </p>
         <button
           class="chat-panel__ai-btn"
@@ -685,8 +691,8 @@
           type="text"
           id="chat-input"
           name="q"
-          placeholder="What kind of island are you looking for?"
-          aria-label="Describe what you're looking for"
+          placeholder="Help me find an island…"
+          aria-label="Ask for help finding an island"
           required
         />
         <button type="submit" aria-label="Send">↑</button>
@@ -772,6 +778,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=castles-1" type="module"></script>
+    <script src="app.js?v=books-1" type="module"></script>
   </body>
 </html>
