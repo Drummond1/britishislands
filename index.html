@@ -67,10 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=night-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=whisky-2" />
     <link rel="stylesheet" href="editorial-profile.css?v=night-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="anonymous" />
-    <link rel="modulepreload" href="app.js?v=tidal-1" />
+    <link rel="modulepreload" href="chat-agent.js?v=chat-agent-1" />
+    <link rel="modulepreload" href="app.js?v=castles-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -630,8 +631,10 @@
           </label>
         </div>
         <p class="chat-settings__note" id="chat-settings-note">
-          When AI mode is on, your question plus the ~12 best-matching island records
-          are sent to your chosen LLM provider. The API key never leaves this browser.
+          With Smart answers on, the model searches the atlas and then reads the full
+          records it needs. Your question, the conversation, and those records go to
+          the provider you choose. The API key stays in this browser. A question can
+          take a few seconds and more than one request.
         </p>
         <div class="chat-settings__row">
           <label for="chat-ai-provider">Provider</label>
@@ -769,6 +772,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=tidal-1" type="module"></script>
+    <script src="app.js?v=castles-1" type="module"></script>
   </body>
 </html>

@@ -3197,3 +3197,50 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Counted Britain, Ireland, Guernsey, and Jersey from the English Wikipedia article [Tidal island](https://en.wikipedia.org/wiki/Tidal_island). `scripts/harvest_tidal_islands.py` keeps a row only when that island is already in the atlas and the article's definition says the link is exposed at low tide and covered at high tide. The atlas subtype `tidal` was not used. No crossing times. The chip, the list, and the profile show that note. `supabase/migrations/20261025190000_tidal_islands.sql` adds the tidal facet and is not applied remotely.
 - **Outcome / counts**: **66** islands in `data/interest_index.json`. Eleven names on the page were left out: Elizabeth Castle, Saint Aubin's Fort, La Corbière, Portelet Tower, Marsden Rock, Eilean Arnoil, Ynys Llanddwyn, and Mumbles Lighthouse are not in the atlas; Archirondel Tower is a permanent causeway; Eilean Donan is joined by a footbridge; St Martin's is the island White Island joins. Film/art/music stays 104, whisky 12, for sale 42, unusual wildlife 23. The same index ships the wildlife chip and the later film, art, and music rows that had been local. Supabase was not reloaded. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the tidal facet migration. Next chip is castle islets under 1 km².
+
+## 2026-10-26 — Anglesey and Nun's Island whisky
+
+- **Goal**: Add the two stills a source page places on an atlas island outside the Hebrides.
+- **What changed**: Welsh whisky lists Anglesey Môn distillery near Pentraeth on Anglesey, established in 2018. Nun's Island Distillery's own article places an Irish whiskey still on Nun's Island in Galway until about 1908. That row uses the Galway river island, not the lake islands of the same name. Achill, Lambay, Wight, Scilly, Stromness, and Saxa Vord stay out.
+- **Outcome / counts**: Whisky **55 → 57** rows and **16 → 18** islands (**30** working, **13** silent, **12** stories, **2** planned). Stories **1,180**, **640** with a picture. Local only. Supabase was not reloaded.
+
+## 2026-10-26 — Loch Shiel on Thorne Island
+
+- **Goal**: Add the one new whisky story the page search placed on an atlas island.
+- **What changed**: The English Wikipedia article for Thorne Island says the Loch Shiel ran onto rocks there in 1894 with a cargo of Scotch whisky, and calls the rescue Wales' Whisky Galore. The row is a story on `osm-way-4001735`. The 2016 film stays out because the page says it was shot at Portsoy.
+- **Outcome / counts**: Whisky **54 → 55** rows and **15 → 16** islands. Stories **988**, **507** with a picture. Local only. Supabase was not reloaded.
+
+## 2026-10-26 — More whisky, off the obvious list
+
+- **Goal**: Find more cited whisky rows without inventing a still or an island.
+- **What changed**: `scripts/interest_categories.py` now keeps a row when a Wikipedia page, including Ukrainian Wikipedia, places it. Added Laggan Bay distillery on Islay (opened 2 April 2026, between Bowmore and Port Ellen; no English article yet). Added the 1837 Lagg still and Arran's illicit stills from the Lochranza article, illicit distillation on Islay, the village built for Bunnahabhain's workers, Ledaig as the former name of the Mull still, illegal distillation on the Highland Park site in 1798, and Compton Mackenzie's novel on Eriskay and on Barra. No owner names. Achill still has no sentence that places the still on the island. The 2016 film page names no island.
+- **Outcome / counts**: Whisky **45 → 54** rows on **15** islands (**29** working, **12** silent, **11** stories, **2** planned). Stories **966**, **492** with a picture. Film/art/music stays 106, for sale 42, unusual wildlife 23, tidal islands 66. Local only. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the whisky facet migration.
+
+## 2026-10-25 — Whisky subdivisions
+
+- **Goal**: Make the whisky filter a guide, with subdivisions, instead of a flat list of working distilleries.
+- **What changed**: `scripts/interest_categories.py` now files each cited row as Islay, Hebrides, Orkney, or Other isles, and adds silent stills, whisky stories, and stills that are not yet producing. The chip, the list, and the profile read those subdivisions from `data/interest_index.json`. Barra's present site stays under Planned because its Wikipedia page says the whisky still is being built and the current site makes gin. Achill was left out: no Wikipedia sentence places that still on the island. Freeport (location unknown) and Scarabus (no evidence of production) were left out of the Islay closed list. `supabase/migrations/20261025200000_whisky_subdivisions.sql` adds the silent, story, and planned facets and is not applied remotely.
+- **Outcome / counts**: Whisky **12 → 15** islands and **26 → 45** rows (**28** working, **11** silent, **4** stories, **2** planned). New islands: Eriskay (SS Politician), Shetland (Lerwick Distillery), Isle of Man (Manx Whiskey Company, as of 2019). Film/art/music stays 104, for sale 42, unusual wildlife 23, tidal islands 66. Stories **953**, **491** with a picture. Local only. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: load `data/interest/memberships_sync.sql` after applying the whisky facet migration.
+
+## 2026-10-25 — Shetland engraving and a Raasay reel
+
+- **Goal**: Replace an Openverse harvest that stopped before it saved a file.
+- **What changed**: Ran a bounded Openverse search for engravings and paintings whose titles name an island. Rejected 11 hits that only shared a word (Le Jura the steamship, Rebel Yell, van Hoy, Coll. as a collection, photographs of places). Kept William Miller’s engraving of Shetland, CC BY 3.0, from the University of Edinburgh. Kept one Internet Archive recording, Mrs McLeod of Raasay, under CC0. Rebuilt `data/interest_index.json`.
+- **Outcome / counts**: Artwork **464 → 465**. Music **289 → 290**. Film/art/music **106** islands, **815** rows. Stories **955**, **492** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Two songs from a public-domain songbook
+
+- **Goal**: Salvage the Wikisource search that stopped when its connection failed.
+- **What changed**: The cached page list for *The Book of Scottish Song* names two songs that are not already in the filter. Arran Maid is the song of that title. The Song of Death is the page that calls Oran an Aoig an Isle of Skye tune. Both use the Wikisource page as the source, CC BY-SA 4.0. Rebuilt `data/interest_index.json`.
+- **Outcome / counts**: Music **290 → 292**. Film/art/music stays **106** islands and is now **817** rows. Stories **957**, **492** with a picture. Not pushed. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Ask can search the atlas, then read the record
+
+- **Goal**: Make Smart answers a language model that looks islands up, instead of a rewrite of the keyword finder's top few stubs.
+- **What changed**: `chat-agent.js` searches the loaded atlas (name, nation, loch, collection, distance, size) and counts. The model then calls `read_islands`, which loads `data/details/{id}.json` plus cited interest rows, and answers in prose. Cards are only islands that search or read actually returned. Local Ask is unchanged and is the fallback. `scripts/build_chat_corpus.py` writes `data/chat_corpus.json` (3,073 rows: parent water, a short description, summit name, other-language names). It is fetched when Ask opens, not on first paint. Pages rebuilds it on deploy.
+- **Outcome / counts**: Island totals unchanged. Corpus checks: Isle of Skye, 28 Loch Lomond islands, Islay whisky, puffin stories, islands within 25 km of Oban, and Ireland kept separate from Northern Ireland. Not pushed.
+- **Open items kicked to QUEUE.md**: none. The local "couldn't find that place" hint and a wider gazetteer are still open, because they belong to the keyword finder.

@@ -24,6 +24,15 @@ import {
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
 } from "./crowd-pins.js";
+import {
+  searchIslands as agentSearchIslands,
+  countIslands as agentCountIslands,
+  listCollections as agentListCollections,
+  storiesForIsland as agentStoriesForIsland,
+  serialiseIslandRecord as agentSerialiseIsland,
+  findIslandByName as agentFindIslandByName,
+  CHAT_AGENT_TOOLS,
+} from "./chat-agent.js?v=chat-agent-1";
 /** Showcase islands with pre-generated 3D terrain (see island-3d.js). */
 const SHOWCASE_3D_IDS = new Set([
   "staffa",
@@ -484,6 +493,7 @@ const INTEREST_CHIP_ICONS = {
   "whisky-distilleries": "wine",
   "unusual-wildlife": "bird",
   "tidal-islands": "footprints",
+  "island-castles": "castle",
   "for-sale": "key-round",
 };
 
@@ -2711,13 +2721,65 @@ const INTEREST_STORY_FACETS = {
   artwork: "Artwork",
   music: "Music",
   distillery: "Distillery",
+  silent: "Silent still",
+  story: "Whisky story",
+  planned: "Planned",
   wildlife: "Wildlife",
   tidal: "Tidal island",
+  castle: "Castle",
 };
+
+function whiskyCategory() {
+  return interestCategories().find((category) => category.slug === "whisky-distilleries") || null;
+}
+
+function whiskySubdivisions() {
+  const rows = whiskyCategory()?.subdivisions;
+  return Array.isArray(rows) ? rows : [];
+}
+
+function whiskyStoryMatches(item, facet) {
+  if (!facet) return true;
+  const spec = whiskySubdivisions().find((row) => row.id === facet);
+  if (!spec) return item?.facet === facet;
+  if (spec.match === "facet") return item?.facet === facet;
+  return item?.subdivision === facet && item?.facet === "distillery";
+}
+
+function interestKicker(item) {
+  if (!item) return "Cited";
+  if (item.facet === "distillery" && item.subdivision) {
+    const spec = whiskySubdivisions().find((row) => row.id === item.subdivision);
+    if (spec?.label) return spec.label;
+  }
+  return INTEREST_STORY_FACETS[item.facet] || "Cited";
+}
+
+function castlePhotoRank(islandId) {
+  const items = state.interestIndex?.stories?.["island-castles"]?.[islandId] || [];
+  return items.some((item) => item?.image?.thumbUrl) ? 0 : 1;
+}
+
+function whiskyIslandRank(islandId) {
+  const items = state.interestIndex?.stories?.["whisky-distilleries"]?.[islandId] || [];
+  const order = whiskySubdivisions().map((row) => row.id);
+  const still = items.find((item) => item?.facet === "distillery");
+  if (still) {
+    const rank = order.indexOf(still.subdivision);
+    if (rank >= 0) return rank;
+  }
+  for (const facet of ["story", "silent", "planned"]) {
+    if (items.some((item) => item?.facet === facet)) {
+      const rank = order.indexOf(facet);
+      if (rank >= 0) return rank;
+    }
+  }
+  return order.length + 1;
+}
 
 function interestStoryGroups(islandId) {
   const stories = state.interestIndex?.stories || {};
-  const slugs = ["tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
+  const slugs = ["island-castles", "tidal-islands", "unusual-wildlife", "whisky-distilleries", "film-art-music"];
   const active = state.activeInterestSlug;
   const order =
     active && slugs.includes(active) ? [active, ...slugs.filter((slug) => slug !== active)] : slugs;
@@ -2727,7 +2789,7 @@ function interestStoryGroups(islandId) {
       let items = Array.isArray(stories[slug]?.[islandId]) ? stories[slug][islandId] : [];
       if (
         lead &&
-        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands") &&
+        (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles") &&
         state.activeInterestSlug === slug
       ) {
         items = items.filter((item) => item?.title !== lead?.title);
@@ -2735,20 +2797,36 @@ function interestStoryGroups(islandId) {
       if (state.interestFacet && slug === "film-art-music") {
         items = items.filter((item) => item?.facet === state.interestFacet && item?.title !== lead?.title);
       }
-      return {
-        slug,
-        label:
-          slug === "whisky-distilleries"
-            ? "Distilleries on this island"
-            : slug === "unusual-wildlife"
+      if (slug === "whisky-distilleries") {
+        return whiskySubdivisions()
+          .map((spec) => {
+            let groupItems = items.filter((item) => whiskyStoryMatches(item, spec.id));
+            if (lead && state.activeInterestSlug === slug) {
+              groupItems = groupItems.filter((item) => item?.title !== lead.title);
+            }
+            if (state.interestFacet && state.interestFacet !== spec.id) return null;
+            if (!groupItems.length) return null;
+            return { slug, label: spec.label, intro: spec.blurb || "", items: groupItems };
+          })
+          .filter(Boolean);
+      }
+      return [
+        {
+          slug,
+          label:
+            slug === "unusual-wildlife"
               ? "Unusual wildlife"
               : slug === "tidal-islands"
                 ? "Tidal island"
-                : "Film, art and music",
-        intro: "",
-        items,
-      };
+                : slug === "island-castles"
+                  ? "Castle"
+                  : "Film, art and music",
+          intro: "",
+          items,
+        },
+      ];
     })
+    .flat()
     .filter((group) => group.items.length);
 }
 
@@ -2757,7 +2835,8 @@ function interestFeatureMode() {
     Boolean(state.interestFacet) ||
     state.activeInterestSlug === "whisky-distilleries" ||
     state.activeInterestSlug === "unusual-wildlife" ||
-    state.activeInterestSlug === "tidal-islands"
+    state.activeInterestSlug === "tidal-islands" ||
+    state.activeInterestSlug === "island-castles"
   );
 }
 
@@ -2770,7 +2849,8 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   if (!slug || slug === "for-sale" || !islandId) return [];
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items)) return [];
-  if (slug === "whisky-distilleries" || slug === "unusual-wildlife" || slug === "tidal-islands" || !facet) return items;
+  if (slug === "whisky-distilleries") return items.filter((item) => whiskyStoryMatches(item, facet));
+  if (slug === "unusual-wildlife" || slug === "tidal-islands" || slug === "island-castles" || !facet) return items;
   return items.filter((item) => item?.facet === facet);
 }
 
@@ -2802,7 +2882,9 @@ function interestLeadStory(islandId) {
   const works = items.filter((item) => (item.title || "").trim().toLowerCase() !== islandName);
   const pool = works.length ? works : items;
   if (state.activeInterestSlug === "whisky-distilleries") {
-    return [...pool].sort((a, b) => distilleryStoryScore(b) - distilleryStoryScore(a))[0];
+    const stills = pool.filter((item) => item?.facet === "distillery");
+    const ranked = stills.length && !state.interestFacet ? stills : pool;
+    return [...ranked].sort((a, b) => distilleryStoryScore(b) - distilleryStoryScore(a))[0];
   }
   if (state.activeInterestSlug === "unusual-wildlife") {
     return [...pool].sort((a, b) => wildlifeStoryScore(b) - wildlifeStoryScore(a))[0];
@@ -2855,7 +2937,7 @@ function renderInterestStories(island) {
                 </figcaption>
               </figure>`
             : "";
-          const kicker = INTEREST_STORY_FACETS[item.facet] || "Cited";
+          const kicker = interestKicker(item);
           const more = item.sourceUrl
             ? `<a class="interest-story__more" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read more</a>`
             : "";
@@ -2897,7 +2979,7 @@ function renderInterestFeature(island) {
         </figcaption>
       </figure>`
     : "";
-  const kicker = INTEREST_STORY_FACETS[item.facet] || "Cited";
+  const kicker = interestKicker(item);
   const more = item.sourceUrl
     ? `<a class="interest-story__more" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read more</a>`
     : "";
@@ -2915,8 +2997,14 @@ function syncInterestUrl(slug) {
     const url = new URL(window.location.href);
     if (slug) url.searchParams.set("interest", slug);
     else url.searchParams.delete("interest");
-    if (slug === "film-art-music" && state.interestFacet) url.searchParams.set("facet", state.interestFacet);
-    else url.searchParams.delete("facet");
+    if (slug === "film-art-music" && ["film", "artwork", "music"].includes(state.interestFacet)) {
+      url.searchParams.set("facet", state.interestFacet);
+    } else if (
+      slug === "whisky-distilleries" &&
+      whiskySubdivisions().some((row) => row.id === state.interestFacet)
+    ) {
+      url.searchParams.set("facet", state.interestFacet);
+    } else url.searchParams.delete("facet");
     window.history.replaceState(null, "", url.toString());
   } catch (_) {
     /* non-fatal */
@@ -2939,7 +3027,7 @@ function setInterestFacet(facet) {
 function setActiveInterest(slug, { skipUrl = false } = {}) {
   const next = state.activeInterestSlug === slug ? null : slug;
   state.activeInterestSlug = next;
-  if (next !== "film-art-music") state.interestFacet = null;
+  state.interestFacet = null;
   if (els.filterForSale) els.filterForSale.checked = next === "for-sale";
   if (next && activeBrowseQuick === "for-sale" && next !== "for-sale") {
     activeBrowseQuick = null;
@@ -3005,8 +3093,13 @@ async function loadInterestIndex() {
     if (slug && interestCategories().some((c) => c.slug === slug)) {
       state.activeInterestSlug = slug;
       const facet = new URLSearchParams(window.location.search).get("facet");
-      state.interestFacet =
-        slug === "film-art-music" && ["film", "artwork", "music"].includes(facet) ? facet : null;
+      const filmFacet = slug === "film-art-music" && ["film", "artwork", "music"].includes(facet);
+      const whiskyFacet =
+        slug === "whisky-distilleries" &&
+        (data.categories || [])
+          .find((category) => category.slug === "whisky-distilleries")
+          ?.subdivisions?.some((row) => row.id === facet);
+      state.interestFacet = filmFacet || whiskyFacet ? facet : null;
       if (slug === "for-sale" && els.filterForSale) els.filterForSale.checked = true;
       renderInterestFilters();
       renderBrowseQuickChips();
@@ -3323,6 +3416,28 @@ function renderBrowseQuickChips() {
       addChip(`facet-${facet[0]}`, facet[1], state.interestFacet === facet[0], facet[2], () =>
         setInterestFacet(facet[0]),
       );
+    }
+  }
+  if (state.activeInterestSlug === "whisky-distilleries") {
+    const icons = {
+      islay: "flame",
+      hebrides: "waves",
+      orkney: "anchor",
+      other: "compass",
+      silent: "landmark",
+      story: "book-open",
+      planned: "clock",
+    };
+    for (const spec of whiskySubdivisions()) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className =
+        "browse-quick__chip browse-quick__chip--sub" +
+        (state.interestFacet === spec.id ? " is-active" : "");
+      button.innerHTML = `<span data-lucide="${icons[spec.id] || "tag"}" aria-hidden="true"></span>${escapeHtml(spec.label)}`;
+      button.setAttribute("aria-pressed", state.interestFacet === spec.id ? "true" : "false");
+      button.addEventListener("click", () => setInterestFacet(spec.id));
+      host.appendChild(button);
     }
   }
   refreshLucideIcons(host);
@@ -3967,7 +4082,8 @@ function applyFilters(opts = {}) {
     if (favOnly) els.listHeading.textContent = "Saved islands";
     else if (topic) els.listHeading.textContent = topic.title;
     else if (state.interestFacet) {
-      const facetLabel = { film: "Film", artwork: "Artwork", music: "Music" }[state.interestFacet];
+      const whiskyLabel = whiskySubdivisions().find((row) => row.id === state.interestFacet)?.label;
+      const facetLabel = whiskyLabel || { film: "Film", artwork: "Artwork", music: "Music" }[state.interestFacet];
       els.listHeading.textContent = facetLabel || "Islands";
     }
     else if (state.activeInterestSlug) {
@@ -4059,7 +4175,15 @@ function applyFilters(opts = {}) {
   } else {
     state.filtered = state.islands.filter(passesScope);
     if (!skipSort) {
-      if (!hasUserDiscoveryIntent()) {
+      if (state.activeInterestSlug === "whisky-distilleries") {
+        state.filtered.sort(
+          (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || a.name.localeCompare(b.name),
+        );
+      } else if (state.activeInterestSlug === "island-castles") {
+        state.filtered.sort(
+          (a, b) => castlePhotoRank(a.id) - castlePhotoRank(b.id) || a.name.localeCompare(b.name),
+        );
+      } else if (!hasUserDiscoveryIntent()) {
         state.filtered.sort(
           (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
         );
@@ -4373,7 +4497,7 @@ function renderListWindow() {
       blurb = `${(sp > 48 ? cut.slice(0, sp) : cut).trim()}…`;
     }
     const workTitle = feature
-      ? `<p class="island-card__kicker">${escapeHtml(INTEREST_STORY_FACETS[feature.facet] || "Cited")}</p><h3 class="island-card__work">${escapeHtml(feature.title || "")}</h3>`
+      ? `<p class="island-card__kicker">${escapeHtml(interestKicker(feature))}</p><h3 class="island-card__work">${escapeHtml(feature.title || "")}</h3>`
       : "";
     const titleBlock = `
         <div class="island-card__title">
@@ -4388,9 +4512,10 @@ function renderListWindow() {
     const blurbHtml = blurb
       ? `<p class="island-card__blurb${highlight ? " island-card__blurb--interest" : ""}">${escapeHtml(blurb)}</p>`
       : "";
+    const castleFirst = feature && state.activeInterestSlug === "island-castles";
     main.innerHTML = feature
-      ? `<div class="island-card__text">${titleBlock}</div>
-      ${thumbHtml}
+      ? `${castleFirst ? thumbHtml : ""}<div class="island-card__text">${titleBlock}</div>
+      ${castleFirst ? "" : thumbHtml}
       ${workTitle}
       ${blurbHtml}`
       : `${thumbHtml}
@@ -6750,9 +6875,9 @@ function escapeAttr(value) {
 
 // ---------- Chatbot ----------
 //
-// A local, privacy-preserving "AI chatbot style" island finder. It parses a
-// natural-language request and ranks islands in the dataset by relevance.
-// No external API calls, no data leaves the browser.
+// Island finder. With AI off, a local parser ranks islands and nothing leaves
+// the browser. With Smart answers on, the model searches this atlas and reads
+// the full records it cites. The API key stays in localStorage.
 
 const CHAT_NATIONS = {
   Scotland: ["scotland", "scottish", "scots", "alba", "caledonia", "highlands", "highland"],
@@ -7516,52 +7641,6 @@ function chatBroadQueryHint(q) {
   );
 }
 
-function chatIslandsMentionedInAnswer(answer, candidates) {
-  if (!answer || !candidates?.length) return [];
-  const lower = String(answer).toLowerCase();
-  const hits = [];
-  for (const c of candidates) {
-    const name = c.island?.name;
-    if (!name || name.length < 3) continue;
-    const n = name.toLowerCase();
-    if (lower.includes(n)) {
-      hits.push(c);
-      continue;
-    }
-    const words = n.split(/\s+/).filter((w) => w.length > 3);
-    if (words.some((w) => chatWholeWord(lower, w))) hits.push(c);
-  }
-  return hits;
-}
-
-/** Keep only LLM citations that re-pass scoring and match the answer text. */
-function chatFilterLLMResults(llm, candidates, query) {
-  if (!candidates.length) return [];
-  const byId = new Map(candidates.map((c) => [c.island.id, c]));
-  const topScore = candidates[0].score;
-  const minScore = Math.max(7, topScore * 0.68);
-
-  let ids = (llm.islandIds || []).filter((id) => byId.has(id));
-  ids = ids.filter((id) => {
-    try {
-      return scoreChatIsland(byId.get(id).island, query) >= minScore;
-    } catch (_) {
-      return false;
-    }
-  });
-
-  const mentioned = chatIslandsMentionedInAnswer(llm.answer, candidates);
-  if (mentioned.length) {
-    const mentionIds = new Set(mentioned.map((m) => m.island.id));
-    const fromMention = ids.filter((id) => mentionIds.has(id));
-    if (fromMention.length) ids = fromMention;
-    else ids = [...mentionIds].filter((id) => byId.has(id));
-  }
-
-  const cap = query.recommendN && query.recommendN >= 1 ? query.recommendN : 5;
-  return ids.slice(0, cap).map((id) => byId.get(id)?.island).filter(Boolean);
-}
-
 function searchChatIslands(rawText, limit = 4) {
   const q = parseChatQuery(rawText);
   const outLimit = q.recommendationIntent
@@ -8040,8 +8119,9 @@ function chatOpen() {
   setTimeout(() => chatEls.input.focus(), 50);
   if (!chatEls.messages.dataset.bootstrapped) {
     chatRenderBot(
-      "Tell me what draws you to an island — a ferry journey, a wild coastline, or somewhere close to home.",
+      "Tell me what you're after — a wild coastline, a loch, a story, or somewhere close to home.",
     );
+    ensureChatCorpus();
     chatEls.messages.dataset.bootstrapped = "1";
   }
 }
@@ -8281,13 +8361,10 @@ function chatRenderBot(text, { suggestions, results, query, badge } = {}) {
 
 // ---------- Optional LLM layer ----------
 //
-// Hybrid RAG: the local engine is always the source of truth.  When
-// "smart answers" is enabled, we additionally pass the question + the top
-// ~12 candidate islands + recent chat history to the user's chosen LLM
-// (OpenAI or Anthropic, BYOK).  The LLM is *only* allowed to use the
-// candidates we hand it; it returns JSON with an answer, the island IDs
-// it cited, and three short follow-up suggestions.  Everything stays
-// opt-in and the API key never leaves localStorage.
+// Smart answers let the model search the loaded atlas (search, count,
+// list collections) and then read full island records before it writes.
+// The keyword finder stays in charge when AI is off, and it is the
+// fallback if the provider call fails. The API key stays in localStorage.
 
 const LLM_PROVIDERS = {
   openai: {
@@ -8311,7 +8388,7 @@ const LLM_PROVIDERS = {
   },
 };
 
-const LLM_HISTORY_TURNS = 6;
+const LLM_HISTORY_TURNS = 8;
 const LLM_CANDIDATE_LIMIT = 8;
 
 function chatLLMGetSettings() {
@@ -8341,70 +8418,34 @@ function chatLLMSaveSettings(patch) {
   return next;
 }
 
-// Build a richer LLM-friendly representation of each candidate island.
-// We give the model enough narrative context to write naturally without
-// blowing the prompt budget — descriptions trimmed at ~480 chars,
-// history/transport at ~340.  Empty fields are dropped so the model isn't
-// tempted to comment on missing data.
-function chatLLMSerialiseIsland(isl, relevanceScore) {
-  if (!isl || typeof isl !== "object") return null;
-  const trim = (s, n) =>
-    typeof s === "string" && s.trim()
-      ? s.length > n
-        ? s.slice(0, n - 1).trim() + "…"
-        : s.trim()
-      : null;
-  const dropEmpty = (obj) => {
-    const out = {};
-    for (const k of Object.keys(obj)) {
-      const v = obj[k];
-      if (v == null) continue;
-      if (typeof v === "string" && v === "") continue;
-      if (Array.isArray(v) && v.length === 0) continue;
-      out[k] = v;
-    }
-    return out;
-  };
-  return dropEmpty({
-    id: isl.id,
-    name: isl.name,
-    nation: isl.nation,
-    type: isl.type,
-    subtype: isl.subtype || null,
-    archipelago: isl.archipelago || null,
-    parentWaterBody:
-      isl.parentWaterBody && isl.parentWaterBody.name
-        ? isl.parentWaterBody.name
-        : null,
-    lat: typeof isl.lat === "number" ? +isl.lat.toFixed(3) : null,
-    lng: typeof isl.lng === "number" ? +isl.lng.toFixed(3) : null,
-    areaKm2: typeof isl.areaKm2 === "number" ? +isl.areaKm2.toFixed(3) : null,
-    areaConfidence: isl.areaConfidence || null,
-    highestPointM:
-      typeof isl.highestPointM === "number" ? Math.round(isl.highestPointM) : null,
-    highestPointName: isl.highestPointName || null,
-    population: typeof isl.population === "number" ? isl.population : null,
-    inhabited:
-      typeof isl.population === "number" ? isl.population > 0 : null,
-    tidal: isl.tidal || null,
-    shortDescription: trim(isl.shortDescription, 480),
-    geography: trim(isl.geography, 340),
-    history: trim(isl.history, 340),
-    accommodation: trim(isl.accommodation, 240),
-    tags: Array.isArray(isl.tags) ? isl.tags.slice(0, 16) : [],
-    descriptionSource: isl.descriptionSource || null,
-    descriptionConfidence: isl.descriptionConfidence || null,
-    hasPhoto: !!(isl.image || (Array.isArray(isl.images) && isl.images[0])),
-    wikipedia: isl.wikipedia || null,
-    relevanceScore:
-      typeof relevanceScore === "number" ? +relevanceScore.toFixed(1) : null,
-    ...chatAccessForIsland(isl),
-  });
+let chatCorpusDoc = null;
+let chatCorpusPromise = null;
+
+function ensureChatCorpus() {
+  if (chatCorpusDoc) return Promise.resolve(chatCorpusDoc);
+  if (!chatCorpusPromise) {
+    chatCorpusPromise = fetch("data/chat_corpus.json")
+      .then((res) => (res.ok ? res.json() : { rows: {} }))
+      .catch(() => ({ rows: {} }))
+      .then((doc) => {
+        chatCorpusDoc = doc && typeof doc === "object" ? doc : { rows: {} };
+        return chatCorpusDoc;
+      });
+  }
+  return chatCorpusPromise;
 }
 
-// Atlas-level summary so the LLM understands what data set it's drawing
-// from.  Computed once per page-load and reused; recounting 6,776
-// records every turn would be wasteful.
+function chatAgentContext() {
+  return {
+    islands: state.islands,
+    interestIndex: state.interestIndex,
+    corpus: chatCorpusDoc || { rows: {} },
+    places: CHAT_PLACES,
+  };
+}
+
+// Atlas-level summary so the model knows the size of the catalogue.
+// Computed once per page load.
 let _atlasSummaryCache = null;
 function chatLLMAtlasSummary() {
   if (_atlasSummaryCache) return _atlasSummaryCache;
@@ -8414,159 +8455,82 @@ function chatLLMAtlasSummary() {
   let inhabitedCount = 0;
   let withAreaCount = 0;
   let withPeakCount = 0;
-  let largestArea = 0;
-  let highestPeak = 0;
   for (const i of islands) {
-    if (!i) continue;
+    if (!i || i.nameStatus === "unknown" || i.name === "Unnamed island") continue;
     if (i.nation) byNation[i.nation] = (byNation[i.nation] || 0) + 1;
     if (i.type) byType[i.type] = (byType[i.type] || 0) + 1;
     if (typeof i.population === "number" && i.population > 0) inhabitedCount++;
-    if (typeof i.areaKm2 === "number" && i.areaKm2 > 0) {
-      withAreaCount++;
-      if (i.areaKm2 > largestArea) largestArea = i.areaKm2;
-    }
-    if (typeof i.highestPointM === "number") {
-      withPeakCount++;
-      if (i.highestPointM > highestPeak) highestPeak = i.highestPointM;
-    }
+    if (typeof i.areaKm2 === "number" && i.areaKm2 > 0) withAreaCount++;
+    if (typeof i.highestPointM === "number") withPeakCount++;
   }
   _atlasSummaryCache = {
-    totalIslands: islands.length,
-    inhabitedCount,
-    withVerifiedArea: withAreaCount,
-    withVerifiedPeak: withPeakCount,
-    largestAreaKm2: +largestArea.toFixed(0),
-    highestPeakM: Math.round(highestPeak),
+    namedIslands: islands.filter((i) => i && i.name && i.name !== "Unnamed island" && i.nameStatus !== "unknown").length,
+    withRecordedPopulation: inhabitedCount,
+    withArea: withAreaCount,
+    withSummitHeight: withPeakCount,
     byNation,
     byType,
+    populationNote:
+      "A missing population is an empty field, not proof that nobody lives there.",
   };
   return _atlasSummaryCache;
 }
 
 const LLM_SYSTEM_PROMPT =
-  "You are a warm, knowledgeable guide to an open atlas of the islands of " +
-  "Britain, Ireland, the Crown Dependencies, and their inland river and lake " +
-  "islands. Think of yourself as a well-travelled local who's read everything " +
-  "ever written about these islands and is helping a curious visitor find what " +
-  "they'll love. " +
-  "You will be given (sometimes) an ATLAS_SUMMARY of the whole dataset, the " +
-  "user's recent conversation, and a JSON array of CANDIDATE islands the atlas " +
-  "search engine pulled for this turn. " +
-  "RULES:\n" +
-  "1) Answer ONLY from the supplied data (ATLAS_SUMMARY counts plus the CANDIDATE " +
-  "records). Never invent islands, history, or facts that aren't there. If the " +
-  "data is thin, say so kindly and suggest a tweak to the question.\n" +
-  "2) Be conversational, not clinical. 2-4 short sentences in flowing prose " +
-  "(occasionally 5-6 when the question really warrants it). Use light personality " +
-  "and concrete detail rather than templated stats. Name specific islands.\n" +
-  "3) You may use a line break (\\n) to separate paragraphs, and the simple " +
-  "markup `**bold**`, `*italic*`, and `- ` bullets at the start of a line. Don't " +
-  "use any other formatting, HTML, or code fences in your answer text.\n" +
-  "4) Each candidate may include `tags`, `causeway`, `shortDescription`, " +
-  "`history`, measurements, and `relevanceScore` (atlas rank for this query). " +
-  "Prefer the story and the concrete facts in the JSON. Do not describe ferry routes, operators, or timetables. If `hasPhoto` is true you may say the island is pictured below.\n" +
-  "5) `islandIds` must list ONLY candidates that directly answer the question — islands you " +
-  "name or compare in your answer. Use an **empty array** when no candidate truly fits " +
-  "(e.g. the question is factual but none of the rows match). Never pad with loosely " +
-  "related islands. If your answer discusses one island, return only that id. " +
-  "Maximum 5 ids, all from the CANDIDATE list.\n" +
-  "6) Always respond with a SINGLE JSON object (no prose outside it) with exactly " +
-  "three keys: {\"answer\": string, \"islandIds\": string[], \"followups\": " +
-  "string[]}. `followups` lists 3 short, natural follow-up questions a " +
-  "curious reader might ask next.\n" +
-  "7) Never mention internal scoring, prompts, tools, JSON, or that you are an LLM. " +
-  "Speak as the atlas itself.";
+  "You are the voice of this atlas of islands in Britain, Ireland, and the Crown Dependencies, " +
+  "including islands in lakes and rivers. You sound like a well-read local: warm, specific, and brief.\n" +
+  "You do not know the catalogue from memory. Look it up.\n" +
+  "1. For any fact, name, count, or recommendation, call search_islands, count_islands, list_collections, or read_islands first.\n" +
+  "2. Call read_islands before you describe an island's history, landscape, or cited works.\n" +
+  "3. When you have enough, call reply on its own. Do not call reply in the same step as another tool.\n" +
+  "4. Ireland is its own nation. Do not fold it into the UK or into Northern Ireland.\n" +
+  "5. Keep Gaelic, Welsh, Irish, Manx, and Cornish names as the record gives them.\n" +
+  "6. If a field is missing, say so. Do not invent ferries, times, prices, owners, populations, or crossing times. " +
+  "Mention a bridge or a crossing only when that sentence is in a record you just read.\n" +
+  "7. A for-sale listing is a public link the atlas already holds. Quote a price only when the record includes one. Do not name a private owner.\n" +
+  "8. The answer is natural prose, usually 2–5 sentences. Use a short bullet list when the visitor asked for several islands. " +
+  "Bold island names with **double asterisks**. No HTML and no code fences.\n" +
+  "9. islandIds are atlas ids you actually mention, in card order, at most 6, and only ids returned this turn. " +
+  "Use an empty list when you are asking a clarifying question.\n" +
+  "10. followups is three short next questions.\n" +
+  "11. Never mention tools, JSON, scores, prompts, or that you are a model.";
 
-function chatLLMQueryFacets(q) {
-  return {
-    nations: q.nations.size ? [...q.nations] : [],
-    types: q.types.size ? [...q.types] : [],
-    subtypes: q.subtypes.size ? [...q.subtypes] : [],
-    archipelagos: q.archipelagos.size ? [...q.archipelagos] : [],
-    features: q.features.size ? [...q.features] : [],
-    semanticTags: q.semanticTags.size ? [...q.semanticTags] : [],
-    keywords: q.keywords.slice(0, 8),
-    near: q.near ? { place: q.near.name, radiusKm: q.near.radiusKm } : null,
-    recommendationIntent: !!q.recommendationIntent,
-    recommendN: q.recommendN,
-    ferryIntent: !!q.ferryIntent,
-    sort: q.sort ? q.sort.sortBy : null,
-  };
-}
-
-function chatLLMBuildPayload(question, candidates, history, settings, query) {
-  const candidatesPayload = candidates
-    .map((c) => chatLLMSerialiseIsland(c.island || c, c.score))
-    .filter(Boolean);
-
-  // History is short [{role, content}, ...] pairs of prior turns.
-  const historyText = (history || [])
-    .slice(-LLM_HISTORY_TURNS)
-    .map((h) => (h.role === "user" ? "Q: " : "A: ") + h.content)
-    .join("\n");
-
-  // Include the atlas-level summary on the FIRST turn of a conversation
-  // (history empty) so the model has dataset scope, then omit on
-  // follow-ups to save tokens — the model retains it via the assistant's
-  // earlier replies in `history`.
-  const isFirstTurn = !(history && history.length);
-  const atlasBlock = isFirstTurn
-    ? "ATLAS_SUMMARY (the whole dataset, for context only — only the CANDIDATES " +
-      "below contain narrative detail):\n" +
-      JSON.stringify(chatLLMAtlasSummary()) +
-      "\n\n"
-    : "";
-
-  const userContent =
-    atlasBlock +
-    (historyText ? "Recent conversation:\n" + historyText + "\n\n" : "") +
-    "Parsed query facets (filters already applied to CANDIDATES):\n" +
-    JSON.stringify(chatLLMQueryFacets(query || {})) +
-    "\n\nCurrent question: " + question + "\n\n" +
-    "CANDIDATE islands (JSON — only cite ids from this list; omit ids not relevant):\n" +
-    JSON.stringify(candidatesPayload);
-
-  if (settings.provider === "anthropic") {
-    return {
-      model: settings.model,
-      temperature: 0.45,
-      max_tokens: 900,
-      system: LLM_SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userContent }],
-    };
+function chatAgentToolsFor(provider) {
+  if (provider === "anthropic") {
+    return CHAT_AGENT_TOOLS.map((tool) => ({
+      name: tool.name,
+      description: tool.description,
+      input_schema: tool.parameters,
+    }));
   }
-  // OpenAI default
-  return {
-    model: settings.model,
-    temperature: 0.45,
-    max_tokens: 900,
-    response_format: { type: "json_object" },
-    messages: [
-      { role: "system", content: LLM_SYSTEM_PROMPT },
-      { role: "user", content: userContent },
-    ],
-  };
+  return CHAT_AGENT_TOOLS.map((tool) => ({
+    type: "function",
+    function: {
+      name: tool.name,
+      description: tool.description,
+      parameters: tool.parameters,
+    },
+  }));
 }
 
-async function chatLLMCall(question, candidates, history, settings, query) {
-  const provider = LLM_PROVIDERS[settings.provider];
-  if (!provider) throw new Error("Unknown provider: " + settings.provider);
-  if (!settings.apiKey) throw new Error("No API key configured");
-
-  const body = chatLLMBuildPayload(question, candidates, history, settings, query);
+function chatLLMHeaders(settings) {
   const headers = { "Content-Type": "application/json" };
   if (settings.provider === "openai") {
-    headers["Authorization"] = "Bearer " + settings.apiKey;
+    headers.Authorization = "Bearer " + settings.apiKey;
   } else if (settings.provider === "anthropic") {
     headers["x-api-key"] = settings.apiKey;
     headers["anthropic-version"] = "2023-06-01";
-    // Anthropic requires this header for direct browser requests.
     headers["anthropic-dangerous-direct-browser-access"] = "true";
   }
+  return headers;
+}
 
+async function chatLLMPost(settings, body) {
+  const provider = LLM_PROVIDERS[settings.provider];
+  if (!provider) throw new Error("Unknown provider: " + settings.provider);
   const resp = await fetch(provider.endpoint, {
     method: "POST",
-    headers,
+    headers: chatLLMHeaders(settings),
     body: JSON.stringify(body),
   });
   if (!resp.ok) {
@@ -8579,57 +8543,340 @@ async function chatLLMCall(question, candidates, history, settings, query) {
     }
     throw new Error(`HTTP ${resp.status} from ${provider.label}: ${detail}`);
   }
-  const data = await resp.json();
+  return resp.json();
+}
 
-  // Extract the text payload, handling both API shapes.
-  let raw = "";
-  if (settings.provider === "openai") {
-    raw = data.choices?.[0]?.message?.content || "";
-  } else {
-    raw = (data.content || [])
-      .map((b) => (b && b.type === "text" ? b.text : ""))
-      .join("");
-  }
-
-  // Parse the JSON response.  Be forgiving: strip code fences if the model
-  // wrapped its reply in ```json … ``` despite instructions.
-  let parsed;
+function chatAgentParseArgs(raw) {
+  if (raw && typeof raw === "object") return raw;
   try {
-    const cleaned = raw
-      .replace(/^```(?:json)?\s*/i, "")
-      .replace(/```\s*$/i, "")
-      .trim();
-    parsed = JSON.parse(cleaned);
-  } catch (e) {
-    throw new Error("LLM returned non-JSON: " + raw.slice(0, 200));
+    return JSON.parse(raw || "{}");
+  } catch (_) {
+    return {};
   }
-  if (!parsed || typeof parsed.answer !== "string") {
-    throw new Error("LLM JSON missing `answer` field");
+}
+
+function chatAgentHistory(history) {
+  const out = [];
+  for (const turn of (history || []).slice(-LLM_HISTORY_TURNS * 2)) {
+    if (!turn || (turn.role !== "user" && turn.role !== "assistant")) continue;
+    let content = String(turn.content || "");
+    if (turn.role === "assistant" && Array.isArray(turn.islandIds) && turn.islandIds.length) {
+      content += "\n\n(islands shown: " + turn.islandIds.join(", ") + ")";
+    }
+    if (content) out.push({ role: turn.role, content });
+  }
+  return out;
+}
+
+function chatAgentBody(settings, system, messages, forceReply) {
+  if (settings.provider === "anthropic") {
+    return {
+      model: settings.model,
+      max_tokens: 1400,
+      temperature: 0.3,
+      system,
+      tools: chatAgentToolsFor("anthropic"),
+      tool_choice: forceReply ? { type: "tool", name: "reply" } : { type: "auto" },
+      messages,
+    };
   }
   return {
-    answer: parsed.answer.trim(),
-    islandIds: Array.isArray(parsed.islandIds) ? parsed.islandIds.slice(0, 6) : [],
-    followups: Array.isArray(parsed.followups) ? parsed.followups.slice(0, 3) : [],
+    model: settings.model,
+    max_tokens: 1400,
+    temperature: 0.3,
+    tools: chatAgentToolsFor("openai"),
+    tool_choice: forceReply
+      ? { type: "function", function: { name: "reply" } }
+      : "auto",
+    messages: [{ role: "system", content: system }, ...messages],
   };
 }
 
-async function chatLLMTest(settings) {
-  // A tiny call with the cheapest possible payload, just to verify the key.
-  const probe = {
-    answer: "ok",
-    islandIds: [],
-    followups: [],
+function chatAgentParseStep(provider, data) {
+  if (provider === "anthropic") {
+    const blocks = Array.isArray(data.content) ? data.content : [];
+    const calls = blocks
+      .filter((block) => block && block.type === "tool_use")
+      .map((block) => ({
+        id: block.id,
+        name: block.name,
+        args: chatAgentParseArgs(block.input),
+      }));
+    const text = blocks
+      .filter((block) => block && block.type === "text")
+      .map((block) => block.text || "")
+      .join("");
+    return { text, calls, rawContent: blocks };
+  }
+  const message = data.choices?.[0]?.message || {};
+  const calls = (message.tool_calls || []).map((call) => ({
+    id: call.id,
+    name: call.function?.name,
+    args: chatAgentParseArgs(call.function?.arguments),
+  }));
+  return { text: message.content || "", calls, rawMessage: message };
+}
+
+function chatAgentTakeReply(args, retrieved) {
+  const answer = typeof args?.answer === "string" ? args.answer.trim() : "";
+  if (!answer) return { error: "reply.answer must be a non-empty string." };
+  const ids = [];
+  const rawIds = Array.isArray(args.islandIds) ? args.islandIds : [];
+  for (const raw of rawIds) {
+    const key = String(raw || "").trim();
+    if (!key) continue;
+    if (retrieved.has(key)) {
+      if (!ids.includes(key)) ids.push(key);
+    } else {
+      for (const [id, island] of retrieved) {
+        if (island?.name && island.name.toLowerCase() === key.toLowerCase() && !ids.includes(id)) {
+          ids.push(id);
+        }
+      }
+    }
+    if (ids.length >= 6) break;
+  }
+  if (!ids.length) {
+    const lower = answer.toLowerCase();
+    const ranked = [...retrieved.entries()].sort(
+      (a, b) => (b[1]?.name || "").length - (a[1]?.name || "").length,
+    );
+    for (const [id, island] of ranked) {
+      const name = (island?.name || "").toLowerCase();
+      if (name.length >= 3 && lower.includes(name) && !ids.includes(id)) ids.push(id);
+      if (ids.length >= 6) break;
+    }
+  }
+  const followups = Array.isArray(args.followups)
+    ? args.followups.map((item) => String(item || "").trim()).filter(Boolean).slice(0, 3)
+    : [];
+  return { answer, islandIds: ids, followups };
+}
+
+function chatAgentFromText(text, retrieved) {
+  const cleaned = String(text || "")
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/```\s*$/i, "")
+    .trim();
+  if (!cleaned) return null;
+  try {
+    const parsed = JSON.parse(cleaned);
+    if (parsed && typeof parsed.answer === "string") return chatAgentTakeReply(parsed, retrieved);
+  } catch (_) {
+    /* prose answer */
+  }
+  if (cleaned.length < 12) return null;
+  return chatAgentTakeReply({ answer: cleaned, islandIds: [], followups: [] }, retrieved);
+}
+
+async function chatAgentRead(args, retrieved) {
+  const ids = Array.isArray(args?.ids) ? args.ids : [];
+  if (!ids.length) return { error: "Pass ids from search_islands." };
+  const islands = [];
+  for (const raw of ids.slice(0, 6)) {
+    let island = state.byId.get(String(raw));
+    if (!island) island = agentFindIslandByName(String(raw), state.islands);
+    if (!island) {
+      islands.push({ id: String(raw), error: "Not in the atlas." });
+      continue;
+    }
+    try {
+      await ensureIslandDetailLoaded(island);
+    } catch (_) {
+      /* the stub is still usable */
+    }
+    island = state.byId.get(island.id) || island;
+    retrieved.set(island.id, island);
+    const pack = agentStoriesForIsland(state.interestIndex, island.id, args || {});
+    const record = agentSerialiseIsland(island, pack);
+    const extra = (chatCorpusDoc?.rows || {})[island.id];
+    if (extra?.w && !record.water) record.water = extra.w;
+    if (extra?.p && !record.highestPointName) record.highestPointName = extra.p;
+    islands.push(record);
+  }
+  return { islands };
+}
+
+async function chatAgentDispatch(name, args, retrieved, lastNearBox, onStatus) {
+  const ctx = chatAgentContext();
+  if (name === "search_islands") {
+    onStatus?.("Searching the atlas…");
+    const result = agentSearchIslands(ctx, args || {});
+    if (result?.near) {
+      lastNearBox.near = {
+        lat: result.near.lat,
+        lng: result.near.lng,
+        name: result.near.label,
+      };
+    }
+    for (const row of result?.islands || []) {
+      const island = state.byId.get(row.id);
+      if (island) retrieved.set(row.id, island);
+    }
+    return result;
+  }
+  if (name === "count_islands") {
+    onStatus?.("Counting islands…");
+    return agentCountIslands(ctx, args || {});
+  }
+  if (name === "list_collections") {
+    return { collections: agentListCollections(state.interestIndex) };
+  }
+  if (name === "read_islands") {
+    onStatus?.("Reading the full records…");
+    return chatAgentRead(args || {}, retrieved);
+  }
+  return { error: "Unknown tool." };
+}
+
+function chatAgentAppendExchange(provider, messages, step, handled) {
+  const pack = (value) => {
+    const text = JSON.stringify(value);
+    return text.length > 14000 ? text.slice(0, 14000) + "…}" : text;
   };
-  const fakeIsland = state.islands?.[0];
-  const fakeCands = fakeIsland ? [{ island: fakeIsland, score: 12 }] : [];
-  const res = await chatLLMCall(
-    "Reply with the JSON object: " + JSON.stringify(probe),
-    fakeCands.filter(Boolean),
-    [],
-    settings,
-    parseChatQuery("test"),
-  );
-  return res;
+  if (provider === "anthropic") {
+    messages.push({ role: "assistant", content: step.rawContent });
+    messages.push({
+      role: "user",
+      content: handled.map((call) => ({
+        type: "tool_result",
+        tool_use_id: call.id,
+        content: pack(call.result),
+      })),
+    });
+    return;
+  }
+  messages.push(step.rawMessage);
+  for (const call of handled) {
+    messages.push({
+      role: "tool",
+      tool_call_id: call.id,
+      content: pack(call.result),
+    });
+  }
+}
+
+async function chatAgentFinish(taken, retrieved, near) {
+  const islands = [];
+  for (const id of taken.islandIds) {
+    let island = retrieved.get(id) || state.byId.get(id);
+    if (!island) continue;
+    try {
+      await ensureIslandDetailLoaded(island);
+    } catch (_) {
+      /* card can use the stub */
+    }
+    island = state.byId.get(island.id) || island;
+    islands.push(island);
+  }
+  return {
+    answer: taken.answer,
+    islandIds: islands.map((island) => island.id),
+    followups: taken.followups || [],
+    islands,
+    near: near || null,
+  };
+}
+
+function chatAgentNeedsLookup(taken, retrieved) {
+  if (retrieved.size > 0) return false;
+  return !String(taken?.answer || "").includes("?");
+}
+
+async function chatAgentRun(question, history, settings, onStatus) {
+  if (!LLM_PROVIDERS[settings.provider]) throw new Error("Unknown provider: " + settings.provider);
+  if (!settings.apiKey) throw new Error("No API key configured");
+  const retrieved = new Map();
+  const lastNearBox = { near: null };
+  const system =
+    LLM_SYSTEM_PROMPT +
+    "\n\nATLAS\n" +
+    JSON.stringify(chatLLMAtlasSummary()) +
+    "\n\nCOLLECTIONS\n" +
+    JSON.stringify(agentListCollections(state.interestIndex));
+  const messages = chatAgentHistory(history);
+  messages.push({ role: "user", content: question });
+
+  for (let round = 0; round < 5; round++) {
+    const forceReply = round === 4;
+    onStatus?.(forceReply ? "Writing an answer…" : "Searching the atlas…");
+    const data = await chatLLMPost(
+      settings,
+      chatAgentBody(settings, system, messages, forceReply),
+    );
+    const step = chatAgentParseStep(settings.provider, data);
+    const replies = step.calls.filter((call) => call.name === "reply");
+    const work = step.calls.filter((call) => call.name !== "reply");
+
+    if ((replies.length && !work.length) || (forceReply && replies.length)) {
+      const taken = chatAgentTakeReply(replies[0].args, retrieved);
+      if (!taken.error && !forceReply && chatAgentNeedsLookup(taken, retrieved)) {
+        replies[0].result = {
+          error:
+            "Look this up with search_islands, count_islands, or read_islands before reply. Do not answer from memory.",
+        };
+        chatAgentAppendExchange(settings.provider, messages, step, replies);
+        continue;
+      }
+      if (!taken.error) return chatAgentFinish(taken, retrieved, lastNearBox.near);
+      if (!work.length) {
+        replies[0].result = taken;
+        chatAgentAppendExchange(settings.provider, messages, step, replies);
+        continue;
+      }
+    }
+
+    if (!step.calls.length) {
+      const taken = chatAgentFromText(step.text, retrieved);
+      if (taken && !taken.error && !forceReply && chatAgentNeedsLookup(taken, retrieved)) {
+        if (settings.provider === "anthropic") {
+          const content = step.rawContent?.length
+            ? step.rawContent
+            : [{ type: "text", text: step.text || "" }];
+          messages.push({ role: "assistant", content });
+        } else {
+          messages.push({ role: "assistant", content: step.text || "" });
+        }
+        messages.push({
+          role: "user",
+          content:
+            "Look this up with search_islands, count_islands, or read_islands before you answer. Do not answer from memory.",
+        });
+        continue;
+      }
+      if (taken && !taken.error) return chatAgentFinish(taken, retrieved, lastNearBox.near);
+      throw new Error("The model stopped without an answer.");
+    }
+
+    for (const call of work) {
+      call.result = await chatAgentDispatch(
+        call.name,
+        call.args,
+        retrieved,
+        lastNearBox,
+        onStatus,
+      );
+    }
+    for (const call of replies) {
+      call.result = {
+        error: "Use the tool results above, then call reply on its own.",
+      };
+    }
+    const handled = work.concat(replies);
+    if (!handled.length) throw new Error("The model stopped without an answer.");
+    chatAgentAppendExchange(settings.provider, messages, step, handled);
+  }
+  throw new Error("The model did not finish an answer.");
+}
+
+async function chatLLMTest(settings) {
+  const message = { role: "user", content: "Reply with the single word ok." };
+  const body =
+    settings.provider === "anthropic"
+      ? { model: settings.model, max_tokens: 16, messages: [message] }
+      : { model: settings.model, max_tokens: 16, messages: [message] };
+  await chatLLMPost(settings, body);
+  return true;
 }
 
 // ---------- Chat settings UI wiring ----------
@@ -8672,7 +8919,7 @@ function chatLLMRefreshUI() {
   if (modeSub) {
     if (s.enabled && s.apiKey) {
       modeSub.textContent =
-        `AI mode · sending questions to ${LLM_PROVIDERS[s.provider]?.label || s.provider}.`;
+        `AI mode · ${LLM_PROVIDERS[s.provider]?.label || s.provider} searches the atlas, then reads the records it cites.`;
     } else if (s.enabled && !s.apiKey) {
       modeSub.textContent =
         "AI mode is on but no key is set. Open settings to add one.";
@@ -8816,24 +9063,57 @@ function chatSubmit(text) {
   thinking.textContent = "Searching the atlas…";
   chatAppend(thinking);
 
-  // If the query mentions ferries, wait for the ferry index to load so
-  // proper structured filtering kicks in. Falls back to the text-based
-  // ferry feature heuristic when the index can't be loaded.
-  const probe = parseChatQuery(t);
-  const prep = Promise.all([
-    loadCauseways(),
-    ensureChatTagVocabulary(),
-  ]);
+  const aiSettings = chatLLMGetSettings();
+  const aiActive = !!(aiSettings.enabled && aiSettings.apiKey);
+  const prep = aiActive
+    ? Promise.all([
+        state.interestIndex ? Promise.resolve() : loadInterestIndex(),
+        ensureChatCorpus(),
+      ])
+    : Promise.all([loadCauseways(), ensureChatTagVocabulary()]);
 
   // Wrap the whole pipeline in try/catch so a single thrown error can never
   // leave the user staring at a perpetual "Searching the atlas…" dot.
   prep.then(async () => {
     try {
+      if (aiActive) {
+        thinking.textContent = "Searching the atlas…";
+        try {
+          const llm = await chatAgentRun(t, chatHistory, aiSettings, (msg) => {
+            thinking.textContent = msg;
+          });
+          thinking.remove();
+          chatHistory.push({ role: "user", content: t });
+          chatHistory.push({
+            role: "assistant",
+            content: llm.answer,
+            islandIds: llm.islandIds,
+          });
+          while (chatHistory.length > LLM_HISTORY_TURNS * 2) chatHistory.shift();
+          chatRenderBot(llm.answer, {
+            results: (llm.islands || []).map((island) => ({ island })),
+            query: llm.near ? { near: llm.near } : undefined,
+            suggestions: llm.followups && llm.followups.length ? llm.followups : undefined,
+            badge: "AI",
+          });
+          return;
+        } catch (llmErr) {
+          console.warn("[chat] LLM call failed; falling back to local engine", llmErr);
+          const note = document.createElement("div");
+          note.className = "chat-msg chat-msg--system";
+          note.textContent =
+            "AI is unreachable (" + (llmErr.message || "error") +
+            ") — showing local results instead.";
+          chatAppend(note);
+          await Promise.all([loadCauseways(), ensureChatTagVocabulary()]).catch(() => {});
+        }
+      }
+
       const r = searchChatIslands(t, LLM_CANDIDATE_LIMIT);
       thinking.remove();
 
       // Structured factual questions (count, lookup, compare, superlative)
-      // get a direct answer first — no LLM padding with loosely related cards.
+      // get a direct answer from the local engine when AI is off.
       let intent = null;
       let direct = null;
       try {
@@ -8857,46 +9137,6 @@ function chatSubmit(text) {
         return;
       }
 
-      const aiSettings = chatLLMGetSettings();
-      const aiActive = aiSettings.enabled && aiSettings.apiKey && r.results.length > 0;
-
-      if (aiActive) {
-        // Show a different spinner while the LLM is thinking.
-        const aiThinking = document.createElement("div");
-        aiThinking.className = "chat-msg chat-msg--system";
-        aiThinking.textContent = `Thinking with ${LLM_PROVIDERS[aiSettings.provider]?.label || "AI"}…`;
-        chatAppend(aiThinking);
-        try {
-          const llm = await chatLLMCall(t, r.results, chatHistory, aiSettings, r.query);
-          aiThinking.remove();
-
-          const cited = chatFilterLLMResults(llm, r.results, r.query);
-          const wrapped = cited.map((isl) => ({ island: isl }));
-
-          chatHistory.push({ role: "user", content: t });
-          chatHistory.push({ role: "assistant", content: llm.answer });
-          while (chatHistory.length > LLM_HISTORY_TURNS * 2) chatHistory.shift();
-
-          chatRenderBot(llm.answer, {
-            results: wrapped,
-            query: r.query,
-            suggestions: llm.followups.length ? llm.followups : undefined,
-            badge: "AI",
-          });
-          return;
-        } catch (llmErr) {
-          aiThinking.remove();
-          console.warn("[chat] LLM call failed; falling back to local engine", llmErr);
-          const note = document.createElement("div");
-          note.className = "chat-msg chat-msg--system";
-          note.textContent =
-            "AI is unreachable (" + (llmErr.message || "error") +
-            ") — showing local results instead.";
-          chatAppend(note);
-        }
-      }
-
-      // Local engine (also the fallback path when AI is off or failed).
       if (direct) {
         const wrappedDirect = (direct.results || []).map((x) => ({ island: x }));
         chatRenderBot(direct.answer, { results: wrappedDirect, query: r.query });
@@ -8920,7 +9160,7 @@ function chatSubmit(text) {
     thinking.remove();
     console.error("[chat] prep promise rejected", err);
     chatRenderBot(
-      "Sorry — couldn't load the ferry data needed for that question. Try a different question.",
+      "Sorry — the atlas data for that question didn't load. Try again in a moment.",
       { suggestions: CHAT_SUGGESTIONS },
     );
   });

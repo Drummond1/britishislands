@@ -39,15 +39,19 @@ lighthouse chip from the 16 May 2026 OSM join (297 islands, 19,425 light rows,
 including 603 lights on Great Britain). Follow
 `.cursor/skills/interest-category-populate/SKILL.md`.
 
-Published locally 2026-10-25: Film, art and music (104 islands, 813 cited
-rows: 464 artworks, 289 music, 60 film), including MusicBrainz albums and
-tunes that name the island (Skye Boat Song, The Lost Songs of St Kilda, The
-Unst Boat Song). Whisky distilleries (12), For sale (42), Unusual wildlife
-(23 islands, 30 species), Tidal islands (66). Artwork, whisky, and wildlife
-lead the list and the profile with one cited picture and a short connection.
-Tidal islands lead with where the link goes, and that it floods. This index
-is pushed to `main`. Supabase still has the earlier 171 memberships until
-`data/interest/memberships_sync.sql` is loaded.
+Published locally 2026-10-26: Film, art and music (106 islands, 817 cited
+rows: 465 artworks, 292 music, 60 film), including Arran Maid and the
+Song of Death from Wikisource. Whisky (**18** islands, **57** rows: 30 working stills,
+13 silent stills, 12 stories, 2 planned), including Anglesey Môn distillery, Nun's Island in Galway, and the Loch Shiel wreck on Thorne Island. Subdivisions: Islay,
+Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. For sale
+(42), Unusual wildlife (23 islands, 30 species), Tidal islands (66).
+Artwork, whisky, and wildlife lead the list and the profile with one cited
+picture and a short connection. Whisky also groups the rest of the profile
+under those subdivisions. Tidal islands lead with where the link goes, and
+that it floods. This index is local. Supabase still has the earlier
+memberships until `data/interest/memberships_sync.sql` is loaded, and the
+whisky facet migration `supabase/migrations/20261025200000_whisky_subdivisions.sql`
+is not applied.
 
 ## P1 — calm atlas UI deploy (2026-10-25)
 
@@ -381,8 +385,9 @@ for source / licence / refresh-cadence detail.
     accommodation, recommend stays near the **mainland terminal**.
     Requires the future `data/accommodation.json`.
 - **Chatbot improvements**:
-  - LLM-augmented mode (opt-in): use a local API key to refine parsing and
-    compose richer responses for free-form queries. Keep local fallback.
+  - ~~LLM-augmented mode (opt-in).~~ Shipped 2026-10-26. Smart answers
+    searches the atlas and reads full records (`chat-agent.js`). Local
+    finder remains the default and the fallback.
   - ~~Add `near "London"` / `near "Glasgow"` proximity parsing.~~
     Shipped 2026-05-11 — 30-city UK/IE/Crown gazetteer + `within N km of …`
     explicit radii. See SESSION-LOG.

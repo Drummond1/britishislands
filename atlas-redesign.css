@@ -397,6 +397,7 @@ body { background: transparent; color: var(--text); }
 .browse-quick__chip { border-radius: 3px; background: transparent; color: var(--text-soft); border-color: var(--border); }
 .browse-quick__chip:hover { background: rgba(244, 240, 230, .06); border-color: var(--text); color: var(--text); }
 .browse-quick__chip.is-active { background: #f4f0e6; color: #0e1412; border-color: #f4f0e6; }
+.browse-quick__chip--sub { min-height: 32px; padding: 0 9px; font-size: 11px; }
 .featured-card { border-radius: 3px; background: #1b2430; }
 .featured-card::after { background: linear-gradient(180deg, transparent 36%, rgba(8, 10, 10, .78)); }
 .featured-card__region { color: rgba(244, 240, 230, .82); letter-spacing: .14em; }

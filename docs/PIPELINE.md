@@ -134,7 +134,11 @@ and nation shards:
 
 ```bash
 python3 scripts/build_islands_index.py
+python3 scripts/build_chat_corpus.py
 ```
+
+`build_chat_corpus.py` writes `data/chat_corpus.json` for Ask. It does not
+rewrite the index, the shards, or `islands.json`.
 
 The browser loads `data/islands_index.json` first (long prose and image
 galleries omitted; `thumbUrl` + `hasImage` stubs kept for list thumbnails),

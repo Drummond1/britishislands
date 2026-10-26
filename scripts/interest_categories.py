@@ -59,9 +59,53 @@ PUBLISHED = (
     },
     {
         "slug": "whisky-distilleries",
-        "label": "Whisky distilleries",
-        "blurb": "Islands with a working whisky distillery.",
+        "label": "Whisky",
+        "blurb": "Working distilleries, silent stills, and the whisky stories that name the island.",
         "sortOrder": 20,
+        "subdivisions": [
+            {
+                "id": "islay",
+                "label": "Islay",
+                "match": "subdivision",
+                "blurb": "A protected Scotch whisky region. These stills stand on Islay.",
+            },
+            {
+                "id": "hebrides",
+                "label": "Hebrides",
+                "match": "subdivision",
+                "blurb": "Island malts off the west of Scotland, outside the Islay region.",
+            },
+            {
+                "id": "orkney",
+                "label": "Orkney",
+                "match": "subdivision",
+                "blurb": "Whisky made on Orkney, including Sanday.",
+            },
+            {
+                "id": "other",
+                "label": "Other isles",
+                "match": "subdivision",
+                "blurb": "A still the source places on Shetland, and whiskey recorded on the Isle of Man.",
+            },
+            {
+                "id": "silent",
+                "label": "Silent stills",
+                "match": "facet",
+                "blurb": "Closed distilleries the source places on this island.",
+            },
+            {
+                "id": "story",
+                "label": "Stories",
+                "match": "facet",
+                "blurb": "A wreck, a film, or a festival that the source ties to this island.",
+            },
+            {
+                "id": "planned",
+                "label": "Planned",
+                "match": "facet",
+                "blurb": "Named on the island, and not yet making whisky.",
+            },
+        ],
     },
     {
         "slug": "for-sale",
@@ -80,6 +124,12 @@ PUBLISHED = (
         "label": "Tidal islands",
         "blurb": "Islands joined to other land at low tide and cut off at high tide.",
         "sortOrder": 35,
+    },
+    {
+        "slug": "island-castles",
+        "label": "Islands with Castles",
+        "blurb": "Islands with a castle standing on them.",
+        "sortOrder": 40,
     },
 )
 
@@ -279,8 +329,11 @@ def row(
     source_title: str = "",
     reject_reason: str = "",
     island_name: str = "",
+    summary: str = "",
+    subdivision: str = "",
+    skip_image: bool = False,
 ) -> dict:
-    return {
+    item = {
         "category_slug": category,
         "island_id": island_id,
         "island_name": island_name,
@@ -296,6 +349,13 @@ def row(
         "reject_reason": reject_reason,
         "fetched_at": utc_now(),
     }
+    if summary:
+        item["summary"] = summary
+    if subdivision:
+        item["subdivision"] = subdivision
+    if skip_image:
+        item["skip_image"] = True
+    return item
 
 
 def write_candidates(slug: str, rows: list[dict], meta: dict) -> Path:
@@ -453,6 +513,724 @@ def _element_point(element: dict) -> tuple[float, float] | None:
     if "lat" in center and "lon" in center:
         return float(center["lat"]), float(center["lon"])
     return None
+
+
+def _whisky_region(island_id: str, island_name: str) -> str:
+    """Working-distillery subdivision. Silent stills, stories, and planned stills set their own."""
+    name = fold(island_name)
+    if island_id == "islay" or name == "islay":
+        return "islay"
+    # The large Sanday is the Orkney one. The small Sanday beside Canna is not.
+    if island_id in {"mainland-orkney", "osm-relation-3075243"} or "orkney" in name:
+        return "orkney"
+    if island_id in {"osm-relation-376677", "mainland-shetland", "isle-of-man"} or name in {
+        "shetland",
+        "mainland",
+        "isle of man",
+        "achill island",
+    }:
+        if "shetland" in name or island_id in {"osm-relation-376677", "mainland-shetland"}:
+            return "other"
+        if name == "isle of man" or island_id == "isle-of-man" or name == "achill island":
+            return "other"
+    if island_id == "anglesey" or "anglesey" in name:
+        return "other"
+    return "hebrides"
+
+
+def _stamp_whisky_subdivisions(rows: list[dict]) -> None:
+    for item in rows:
+        if item.get("status") != "accepted" or item.get("category_slug") != "whisky-distilleries":
+            continue
+        if item.get("subdivision"):
+            continue
+        if item.get("facet") != "distillery":
+            continue
+        item["subdivision"] = _whisky_region(item.get("island_id") or "", item.get("island_name") or "")
+
+
+def _page_has(text: str, *needles: str) -> bool:
+    folded = fold(text)
+    return all(fold(needle) in folded for needle in needles if needle)
+
+
+def _whisky_sentence(text: str, *needles: str) -> str:
+    for sentence in re.split(r"(?<=[.!?])\s+|\n+", text or ""):
+        if _page_has(sentence, *needles):
+            return sentence.strip()
+    return ""
+
+
+def _expand_whisky(atlas: Atlas, rows: list[dict], add) -> None:
+    """Silent stills, stories, and stills the source says are not yet whisky.
+
+    A gin brand, a stalled plan, and a distillery whose site the page does not
+    place on the island are left out. Barra's own article says the whisky
+    still is under construction, so that row is not filed as a working distillery.
+    """
+    for item in rows:
+        if item.get("status") != "accepted" or item.get("external_id") != "Isle_of_Barra_distillery":
+            continue
+        try:
+            barra_text = wikipedia_plain("Isle of Barra distillery")
+        except RuntimeError as exc:
+            print(f"whisky barra reclassify skip: {exc}")
+            break
+        if _page_has(barra_text, "gin distillery", "planned", "whisky", "first whisky", "Barra"):
+            item["facet"] = "planned"
+            item["subdivision"] = "planned"
+            item["confidence"] = "high"
+            item["summary"] = (
+                "The Isle of Barra distillery in Castlebay makes gin. "
+                "A second distillery is being built on Barra so the island can start single malt whisky, "
+                "which would be its first."
+            )
+            item["evidence"] = (
+                "Wikipedia says the Castlebay site is a gin distillery and that a whisky distillery "
+                "is still being built on Barra."
+            )
+        break
+
+    def cited(island: dict | None, **kwargs) -> None:
+        if island is None:
+            return
+        title = kwargs["title"]
+        if any(
+            r.get("status") == "accepted"
+            and r.get("island_id") == island["id"]
+            and name_key(r.get("title") or "") == name_key(title)
+            for r in rows
+        ):
+            return
+        add(
+            row(
+                category="whisky-distilleries",
+                island_id=island["id"],
+                island_name=island["name"],
+                licence="CC BY-SA 4.0",
+                status="accepted",
+                **kwargs,
+            )
+        )
+
+    try:
+        islay_text = wikipedia_plain("Islay single malts")
+    except RuntimeError as exc:
+        print(f"whisky Islay page skip: {exc}")
+        islay_text = ""
+    islay = atlas.match_name("Islay")
+    if islay_text and islay is not None and island_mentioned(islay, islay_text):
+        silent = [
+            (
+                "Ardenistle distillery",
+                ("Ardenistle", "Laphroaig"),
+                "Ardenistle was a distillery on Islay from 1837. It was later called Kildalton, then Islay, and was taken into Laphroaig in 1853.",
+            ),
+            (
+                "Ardmore (Islay)",
+                ("Ardmore (1817", "Lagavulin"),
+                "Ardmore was a distillery on Islay from 1817 to 1835. Lagavulin took it over in 1837.",
+            ),
+            (
+                "Daill distillery",
+                ("Daill", "Port Askaig", "Bridgend"),
+                "Daill was a legal distillery on Islay from 1814 to 1830. The ruins are on the road between Port Askaig and Bridgend.",
+            ),
+            (
+                "Kildalton distillery",
+                ("Kildalton (1817", "Lagavulin"),
+                "Kildalton was a distillery on Islay from 1817 to 1837, then merged with Lagavulin.",
+            ),
+            (
+                "Killarow distillery",
+                ("Killarow", "Bridgend"),
+                "Killarow was a distillery on Islay from about 1760. From 1818 it was called Bridgend, and it closed in 1822. The ruins are in the village.",
+            ),
+            (
+                "Lossit distillery",
+                ("Lossit", "Ballygrant"),
+                "Lossit, later called Ballygrant, was a distillery on Islay. It closed in 1860. The ruins are south of the village, beside the A846.",
+            ),
+            (
+                "Malt Mill",
+                ("Malt Mill", "Lagavulin"),
+                "Malt Mill was a distillery on Islay from 1908 to 1962. The site is now part of Lagavulin.",
+            ),
+            (
+                "Mulindry distillery",
+                ("Mulindry", "Laggan"),
+                "Mulindry was a distillery on Islay in 1826 and 1827, where the Neriby Burn meets the River Laggan. It is now in ruins.",
+            ),
+            (
+                "Newton distillery (Islay)",
+                ("Newton (1819", "Port Askaig", "Bridgend"),
+                "Newton was a distillery on Islay from 1819 to 1837. The ruins are beside the road between Port Askaig and Bridgend.",
+            ),
+            (
+                "Octomore distillery",
+                ("Octomore (1816", "Port Charlotte"),
+                "Octomore was a distillery on Islay from 1816 to 1852. The ruins are near Port Charlotte.",
+            ),
+            (
+                "Tallant distillery",
+                ("Tallant", "Bowmore"),
+                "Tallant was a distillery on Islay from 1821 to 1852, at Tallant farm south of Bowmore.",
+            ),
+        ]
+        for title, needles, summary in silent:
+            if not _page_has(islay_text, *needles):
+                print(f"whisky silent skip {title}: source page no longer has the place-names")
+                continue
+            cited(
+                islay,
+                facet="silent",
+                subdivision="silent",
+                title=title,
+                source_url="https://en.wikipedia.org/wiki/Islay_single_malts",
+                source_title="Islay single malts",
+                external_id="Islay_single_malts",
+                confidence="high",
+                summary=summary,
+                skip_image=True,
+                evidence=(
+                    "The Wikipedia article Islay single malts lists this closed distillery on Islay. "
+                    + " ".join(needles)
+                    + "."
+                ),
+            )
+        if _page_has(islay_text, "protected by law", "23 distilleries", "Bowmore", "1779"):
+            cited(
+                islay,
+                facet="story",
+                subdivision="story",
+                title="Islay single malts",
+                source_url="https://en.wikipedia.org/wiki/Islay_single_malts",
+                source_title="Islay single malts",
+                external_id="Islay_single_malts",
+                confidence="high",
+                skip_image=True,
+                summary=(
+                    "Islay is one of five Scotch whisky regions whose name is protected by law. "
+                    "The same article says as many as 23 distilleries once worked on the island, "
+                    "and that Bowmore in 1779 is the oldest legal distillery on record there."
+                ),
+                evidence="Wikipedia article Islay single malts names the protected region, the closed count, and Bowmore.",
+            )
+        if _page_has(islay_text, "Fèis Ìle", "Islay"):
+            cited(
+                islay,
+                facet="story",
+                subdivision="story",
+                title="Fèis Ìle",
+                source_url="https://en.wikipedia.org/wiki/Islay_single_malts",
+                source_title="Islay single malts",
+                external_id="Islay_single_malts",
+                confidence="high",
+                skip_image=True,
+                summary=(
+                    "Islay hosts Fèis Ìle, a festival of malt and music, in the last week of May. "
+                    "The tastings are part of the island's whisky year."
+                ),
+                evidence="Wikipedia article Islay single malts names Fèis Ìle on Islay.",
+            )
+        if _page_has(islay_text, "Portintruan", "Port Ellen", "Laphroaig"):
+            cited(
+                islay,
+                facet="planned",
+                subdivision="planned",
+                title="Portintruan distillery",
+                source_url="https://en.wikipedia.org/wiki/Islay_single_malts",
+                source_title="Islay single malts",
+                external_id="Islay_single_malts",
+                confidence="medium",
+                skip_image=True,
+                summary=(
+                    "Portintruan is a distillery being built on Islay, on the road between Port Ellen and Laphroaig. "
+                    "The article records that work started in 2020. It is not a working distillery yet."
+                ),
+                evidence="Wikipedia article Islay single malts places Portintruan between Port Ellen and Laphroaig.",
+            )
+        if _page_has(islay_text, "Irish monks", "distill", "illegal whisky", "Islay"):
+            cited(
+                islay,
+                facet="story",
+                subdivision="story",
+                title="Illicit stills on Islay",
+                source_url="https://en.wikipedia.org/wiki/Islay_single_malts",
+                source_title="Islay single malts",
+                external_id="Islay_single_malts",
+                confidence="high",
+                skip_image=True,
+                summary=(
+                    "The Islay single malts article says Irish monks may have distilled on Islay in the early 1300s, "
+                    "and that the island's early distilleries hid in glens and caves when the excise man came. "
+                    "It also records home distilling, smuggling, and illegal whisky production, "
+                    "and says the eight older legal distilleries began as illicit stills."
+                ),
+                evidence=(
+                    "Wikipedia article Islay single malts places monastic distillation, smuggling, "
+                    "and illegal whisky production on Islay."
+                ),
+            )
+
+    try:
+        kimbland_text = wikipedia_plain("Kimbland distillery")
+    except RuntimeError as exc:
+        print(f"whisky Kimbland page skip: {exc}")
+        kimbland_text = ""
+    if kimbland_text and _whisky_sentence(kimbland_text, "Lerwick Distillery", "Shetland", "whisky"):
+        shetland = atlas.match_name("Shetland")
+        if shetland is not None and island_mentioned(shetland, kimbland_text):
+            cited(
+                shetland,
+                facet="distillery",
+                subdivision="other",
+                title="Lerwick Distillery",
+                source_url="https://en.wikipedia.org/wiki/Kimbland_distillery",
+                source_title="Kimbland distillery",
+                external_id="Kimbland_distillery",
+                confidence="medium",
+                skip_image=True,
+                summary=(
+                    "The Kimbland article says the Lerwick Distillery was established in Shetland in 2022, "
+                    "and that it took over the claim of most northerly Scotch whisky distillery."
+                ),
+                evidence=(
+                    "Wikipedia's Kimbland distillery article says the Lerwick Distillery was established "
+                    "in Shetland in 2022. Lerwick is the port on the island recorded here as Shetland."
+                ),
+            )
+    deerness_sentence = _whisky_sentence(kimbland_text, "Deerness distillery", "Mainland", "Orkney")
+    if deerness_sentence:
+        orkney = atlas.match_name("Mainland (Orkney)")
+        if orkney is not None and island_mentioned(orkney, deerness_sentence):
+            cited(
+                orkney,
+                facet="distillery",
+                subdivision="orkney",
+                title="Deerness distillery",
+                source_url="https://en.wikipedia.org/wiki/Kimbland_distillery",
+                source_title="Kimbland distillery",
+                external_id="Kimbland_distillery",
+                confidence="medium",
+                skip_image=True,
+                summary=(
+                    "Deerness distillery is in Deerness on Mainland, Orkney. "
+                    "The Kimbland article describes it as a new Scotch whisky distillery, "
+                    "announced as the first on Orkney since Scapa opened in 1885, a claim Kimbland disputed."
+                ),
+                evidence="Wikipedia's Kimbland distillery article places Deerness distillery in Deerness, Mainland, Orkney.",
+            )
+
+    try:
+        manx_text = wikipedia_plain("Culture of the Isle of Man")
+    except RuntimeError as exc:
+        print(f"whisky Manx page skip: {exc}")
+        manx_text = ""
+    if _whisky_sentence(manx_text, "Isle of Man", "whiskey distillery", "Manx Whiskey Company"):
+        man = atlas.match_name("Isle of Man")
+        if man is not None:
+            cited(
+                man,
+                facet="distillery",
+                subdivision="other",
+                title="Manx Whiskey Company",
+                source_url="https://en.wikipedia.org/wiki/Culture_of_the_Isle_of_Man",
+                source_title="Culture of the Isle of Man",
+                external_id="Culture_of_the_Isle_of_Man",
+                confidence="medium",
+                skip_image=True,
+                summary=(
+                    "Wikipedia's article on the culture of the Isle of Man says that, as of 2019, "
+                    "the island had a whiskey distillery run by the Manx Whiskey Company."
+                ),
+                evidence=(
+                    "The culture article states that as of 2019 the Isle of Man had a whiskey distillery "
+                    "run by the Manx Whiskey Company."
+                ),
+            )
+
+    try:
+        wreck_text = wikipedia_plain("SS Politician")
+    except RuntimeError as exc:
+        print(f"whisky Politician skip: {exc}")
+        wreck_text = ""
+    eriskay = atlas.match_name("Eriskay")
+    if wreck_text and eriskay is not None and island_mentioned(eriskay, wreck_text) and _page_has(
+        wreck_text, "whisky", "Eriskay"
+    ):
+        cited(
+            eriskay,
+            facet="story",
+            subdivision="story",
+            title="SS Politician",
+            source_url="https://en.wikipedia.org/wiki/SS_Politician",
+            source_title="SS Politician",
+            external_id="SS_Politician",
+            confidence="high",
+            summary=(
+                "SS Politician ran aground off Eriskay in 1941. Her cargo included 22,000 cases of Scotch whisky. "
+                "Islanders salvaged whisky from the wreck, and Customs prosecuted them because the duty had not been paid."
+            ),
+            evidence="Wikipedia's SS Politician article places the wreck, and its whisky cargo, off Eriskay.",
+        )
+
+    try:
+        film_text = wikipedia_plain("Whisky Galore! (1949 film)")
+    except RuntimeError as exc:
+        print(f"whisky Galore skip: {exc}")
+        film_text = ""
+    barra = atlas.match_name("Barra")
+    if film_text and barra is not None and island_mentioned(barra, film_text) and _page_has(
+        film_text, "Barra", "whisky", "filmed"
+    ):
+        cited(
+            barra,
+            facet="story",
+            subdivision="story",
+            title="Whisky Galore!",
+            source_url="https://en.wikipedia.org/wiki/Whisky_Galore!_(1949_film)",
+            source_title="Whisky Galore! (1949 film)",
+            external_id="Whisky_Galore!_(1949_film)",
+            confidence="high",
+            summary=(
+                "Whisky Galore! is the 1949 Ealing comedy about a shipwrecked cargo of whisky. "
+                "It was filmed on Barra, and the story is drawn from the grounding of the SS Politician."
+            ),
+            evidence="Wikipedia's article on the 1949 film says it was filmed on Barra and that the cargo was whisky.",
+        )
+
+    try:
+        lochranza_text = wikipedia_plain("Lochranza distillery")
+    except RuntimeError as exc:
+        print(f"whisky Lochranza skip: {exc}")
+        lochranza_text = ""
+    arran = atlas.match_name("Arran")
+    if lochranza_text and arran is not None and island_mentioned(arran, lochranza_text):
+        if _page_has(lochranza_text, "fifty", "illegal", "Arran"):
+            cited(
+                arran,
+                facet="story",
+                subdivision="story",
+                title="Arran's illicit stills",
+                source_url="https://en.wikipedia.org/wiki/Lochranza_distillery",
+                source_title="Lochranza distillery",
+                external_id="Lochranza_distillery",
+                confidence="high",
+                skip_image=True,
+                summary=(
+                    "The Lochranza distillery article says about fifty distilleries once stood on Arran, "
+                    "and that most of them were moonlight or illegal stills."
+                ),
+                evidence="Wikipedia's Lochranza distillery article places those illegal stills on Arran.",
+            )
+        if _page_has(lochranza_text, "Lagg", "1837", "Arran", "2019"):
+            cited(
+                arran,
+                facet="silent",
+                subdivision="silent",
+                title="Old Lagg distillery",
+                source_url="https://en.wikipedia.org/wiki/Lochranza_distillery",
+                source_title="Lochranza distillery",
+                external_id="Lochranza_distillery",
+                confidence="high",
+                skip_image=True,
+                summary=(
+                    "The Lochranza distillery article says a legal distillery called Lagg on Arran closed in 1837. "
+                    "The same article says a later distillery at Lagg, at the south end of the island, "
+                    "began production in 2019. This row is the closed 1837 still."
+                ),
+                evidence=(
+                    "Wikipedia's Lochranza distillery article says the legal distillery called Lagg on Arran closed in 1837."
+                ),
+            )
+
+    try:
+        bunna_text = wikipedia_plain("Bunnahabhain distillery")
+    except RuntimeError as exc:
+        print(f"whisky Bunnahabhain village skip: {exc}")
+        bunna_text = ""
+    if islay is not None and _page_has(bunna_text, "village of Bunnahabhain", "workers", "Islay", "1881"):
+        cited(
+            islay,
+            facet="story",
+            subdivision="story",
+            title="Bunnahabhain village",
+            source_url="https://en.wikipedia.org/wiki/Bunnahabhain_distillery",
+            source_title="Bunnahabhain distillery",
+            external_id="Bunnahabhain_distillery",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Bunnahabhain distillery was founded in 1881 near Port Askaig on Islay. "
+                "The village of Bunnahabhain was founded to house its workers."
+            ),
+            evidence="Wikipedia's Bunnahabhain distillery article places the village, built for the workers, on Islay.",
+        )
+
+    try:
+        tobermory_text = wikipedia_plain("Tobermory distillery")
+    except RuntimeError as exc:
+        print(f"whisky Ledaig skip: {exc}")
+        tobermory_text = ""
+    mull = atlas.match_name("Mull")
+    if mull is not None and island_mentioned(mull, tobermory_text) and _page_has(
+        tobermory_text, "formerly known as Ledaig", "Mull", "peated"
+    ):
+        cited(
+            mull,
+            facet="story",
+            subdivision="story",
+            title="Ledaig",
+            source_url="https://en.wikipedia.org/wiki/Tobermory_distillery",
+            source_title="Tobermory distillery",
+            external_id="Tobermory_distillery",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Tobermory distillery on Mull opened in 1798 under the name Ledaig and later closed more than once. "
+                "The peated whisky from the same still is still bottled as Ledaig."
+            ),
+            evidence=(
+                "Wikipedia's Tobermory distillery article says the Mull distillery was formerly Ledaig "
+                "and still uses that name for its peated whisky."
+            ),
+        )
+
+    try:
+        park_text = wikipedia_plain("Highland Park distillery")
+    except RuntimeError as exc:
+        print(f"whisky Highland Park story skip: {exc}")
+        park_text = ""
+    orkney_main = atlas.match_name("Mainland (Orkney)")
+    # "on the Orkney Islands" does not match the bare "on Orkney" test.
+    if orkney_main is not None and _page_has(
+        park_text, "illegally distilling", "1798", "Kirkwall on the Orkney Islands"
+    ):
+        cited(
+            orkney_main,
+            facet="story",
+            subdivision="story",
+            title="Illicit still at Highland Park",
+            source_url="https://en.wikipedia.org/wiki/Highland_Park_distillery",
+            source_title="Highland Park distillery",
+            external_id="Highland_Park_distillery",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Highland Park stands in Kirkwall on Mainland, Orkney. "
+                "The article says whisky was being distilled illegally on that site in 1798, "
+                "and that the distillery received a licence in 1826."
+            ),
+            evidence=(
+                "Wikipedia's Highland Park article places illegal distillation in 1798 "
+                "on the Kirkwall site in Orkney."
+            ),
+        )
+
+    try:
+        novel_text = wikipedia_plain("Whisky Galore (novel)")
+    except RuntimeError as exc:
+        print(f"whisky novel skip: {exc}")
+        novel_text = ""
+    if novel_text and eriskay is not None and island_mentioned(eriskay, novel_text) and _page_has(
+        novel_text, "Eriskay", "SS Politician", "malt whisky"
+    ):
+        cited(
+            eriskay,
+            facet="story",
+            subdivision="story",
+            title="Whisky Galore novel",
+            source_url="https://en.wikipedia.org/wiki/Whisky_Galore_(novel)",
+            source_title="Whisky Galore (novel)",
+            external_id="Whisky_Galore_(novel)",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Compton Mackenzie's novel Whisky Galore is based on the SS Politician running aground off Eriskay in 1941. "
+                "The article says the cargo included 28,000 cases of malt whisky, and that Little Todday takes its geography from Eriskay."
+            ),
+            evidence="Wikipedia's article on the novel places the wreck it is based on off Eriskay, and Little Todday's geography on Eriskay.",
+        )
+    if novel_text and barra is not None and island_mentioned(barra, novel_text) and _page_has(
+        novel_text, "Barra", "wrote the novel", "Isle of Barra"
+    ):
+        cited(
+            barra,
+            facet="story",
+            subdivision="story",
+            title="Whisky Galore novel",
+            source_url="https://en.wikipedia.org/wiki/Whisky_Galore_(novel)",
+            source_title="Whisky Galore (novel)",
+            external_id="Whisky_Galore_(novel)",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Compton Mackenzie wrote the novel Whisky Galore while living on Barra. "
+                "The article says Great Todday takes its geography from Barra."
+            ),
+            evidence="Wikipedia's article on the novel says Mackenzie wrote it while living on Barra, and that Great Todday follows Barra.",
+        )
+
+    try:
+        thorn_text = wikipedia_plain("Thorne Island")
+    except RuntimeError as exc:
+        print(f"whisky Loch Shiel skip: {exc}")
+        thorn_text = ""
+    thorn = atlas.match_name("Thorne Island")
+    if (
+        thorn is not None
+        and thorn.get("id") == "osm-way-4001735"
+        and island_mentioned(thorn, thorn_text)
+        and _page_has(thorn_text, "Loch Shiel", "1894", "Scotch whisky", "Thorne Island")
+    ):
+        cited(
+            thorn,
+            facet="story",
+            subdivision="story",
+            title="Loch Shiel",
+            source_url="https://en.wikipedia.org/wiki/Thorne_Island",
+            source_title="Thorne Island",
+            external_id="Thorne_Island",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "In 1894 the sailing ship Loch Shiel ran onto rocks off Thorne Island, at the mouth of Milford Haven. "
+                "The island's Wikipedia article says she was carrying Scotch whisky from Scotland to Adelaide, "
+                "including cases of Glasgow whisky, and that the rescue is remembered as Wales' Whisky Galore."
+            ),
+            evidence=(
+                "Wikipedia's Thorne Island article says the 1894 Loch Shiel wreck off the island "
+                "was carrying a cargo of Scotch whisky."
+            ),
+        )
+
+    try:
+        laggan_text = wikipedia_plain("Laggan Bay (винокурня)", lang="uk")
+    except RuntimeError as exc:
+        print(f"whisky Laggan Bay skip: {exc}")
+        laggan_text = ""
+    if islay is not None and _page_has(
+        laggan_text, "Laggan Bay", "Айла", "віскі", "Bowmore", "Port Ellen", "2026"
+    ):
+        cited(
+            islay,
+            facet="distillery",
+            subdivision="islay",
+            title="Laggan Bay distillery",
+            source_url="https://uk.wikipedia.org/wiki/Laggan_Bay_(%D0%B2%D0%B8%D0%BD%D0%BE%D0%BA%D1%83%D1%80%D0%BD%D1%8F)",
+            source_title="Laggan Bay (винокурня)",
+            external_id="Q141284142",
+            confidence="medium",
+            skip_image=True,
+            summary=(
+                "Laggan Bay is a malt whisky distillery on Islay, on the shore of Laggan Bay between Bowmore and Port Ellen, near the airport. "
+                "The Ukrainian Wikipedia article says Ian Macleod Distillers opened it on 2 April 2026, "
+                "and that it is the eleventh working distillery in the Islay region. "
+                "Wikidata Q141284142 records the same still, on Islay, with no English Wikipedia article yet."
+            ),
+            evidence=(
+                "Ukrainian Wikipedia places Laggan Bay distillery on Islay between Bowmore and Port Ellen. "
+                "Wikidata Q141284142 is a whisky distillery at 55.6838,-6.2456."
+            ),
+        )
+
+    try:
+        nuns_text = wikipedia_plain("Nun's Island Distillery")
+    except RuntimeError as exc:
+        print(f"whisky Nun's Island skip: {exc}")
+        nuns_text = ""
+    # Galway's river island, not the lake islands that share the name.
+    nuns = atlas.by_id.get("wd-Q59728286")
+    if nuns is not None and _page_has(nuns_text, "Nun's Island", "Galway", "whiskey", "1908"):
+        cited(
+            nuns,
+            facet="silent",
+            subdivision="silent",
+            title="Nun's Island Distillery",
+            source_url="https://en.wikipedia.org/wiki/Nun%27s_Island_Distillery",
+            source_title="Nun's Island Distillery",
+            external_id="Nun's_Island_Distillery",
+            confidence="high",
+            skip_image=True,
+            summary=(
+                "Nun's Island Distillery made Irish whiskey on Nun's Island in Galway. "
+                "The article says it was working from at least 1815, and possibly the late 1700s, until about 1908."
+            ),
+            evidence=(
+                "Wikipedia's Nun's Island Distillery article places the Irish whiskey still "
+                "on Nun's Island, Galway, and says production ceased about 1908."
+            ),
+        )
+
+    try:
+        welsh_text = wikipedia_plain("Welsh whisky")
+    except RuntimeError as exc:
+        print(f"whisky Anglesey skip: {exc}")
+        welsh_text = ""
+    anglesey = atlas.by_id.get("anglesey")
+    if anglesey is not None and _page_has(
+        welsh_text, "Anglesey Môn distillery", "Pentraeth", "on Anglesey", "2018"
+    ):
+        cited(
+            anglesey,
+            facet="distillery",
+            subdivision="other",
+            title="Anglesey Môn distillery",
+            source_url="https://en.wikipedia.org/wiki/Welsh_whisky",
+            source_title="Welsh whisky",
+            external_id="Welsh_whisky",
+            confidence="medium",
+            skip_image=True,
+            summary=(
+                "The Welsh whisky article lists Anglesey Môn distillery near Pentraeth on Anglesey, "
+                "established in 2018, among the working whisky distilleries in Wales as of December 2022. "
+                "It has no article of its own."
+            ),
+            evidence=(
+                "Wikipedia's Welsh whisky article places Anglesey Môn distillery near Pentraeth on Anglesey."
+            ),
+        )
+
+    achill_placed = False
+    for achill_title in ("List of whiskey distilleries in Ireland", "Irish whiskey", "Achill Island"):
+        try:
+            achill_text = wikipedia_plain(achill_title)
+        except RuntimeError as exc:
+            print(f"whisky Achill skip {achill_title}: {exc}")
+            continue
+        for sentence in re.split(r"(?<=[.!?])\s+|\n+", achill_text or ""):
+            low = fold(sentence)
+            if "achill" not in low or "distill" not in low:
+                continue
+            if not re.search(r"\b(on|at) (the )?(island of )?achill\b", low):
+                continue
+            if "whisky" not in low and "whiskey" not in low:
+                continue
+            achill = atlas.match_name("Achill Island")
+            if achill is None or not island_mentioned(achill, sentence):
+                continue
+            achill_placed = True
+            cited(
+                achill,
+                facet="distillery",
+                subdivision="other",
+                title="Achill Island Distillery",
+                source_url="https://en.wikipedia.org/wiki/" + urllib.parse.quote(achill_title.replace(" ", "_")),
+                source_title=achill_title,
+                external_id=achill_title.replace(" ", "_"),
+                confidence="medium",
+                summary=(
+                    "Wikipedia places Achill Island Distillery on Achill Island. "
+                    "It makes Irish whiskey."
+                ),
+                evidence=f"Wikipedia page {achill_title} places the distillery on Achill.",
+            )
+            break
+        if achill_placed:
+            break
+    if not achill_placed:
+        print("whisky Achill left out: no Wikipedia sentence places the still on the island")
 
 
 def populate_whisky(atlas: Atlas) -> list[dict]:
@@ -636,6 +1414,9 @@ def populate_whisky(atlas: Atlas) -> list[dict]:
             )
         )
 
+    _expand_whisky(atlas, rows, add)
+    _stamp_whisky_subdivisions(rows)
+
     write_candidates(
         "whisky-distilleries",
         rows,
@@ -647,10 +1428,12 @@ def populate_whisky(atlas: Atlas) -> list[dict]:
     return rows
 
 
-def wikipedia_plain(title: str) -> str:
+def wikipedia_plain(title: str, lang: str = "en") -> str:
     cache_dir = DATA / "cache_wikipedia_interest"
     cache_dir.mkdir(parents=True, exist_ok=True)
     safe = re.sub(r"[^A-Za-z0-9_.-]+", "_", title)[:120]
+    if lang != "en":
+        safe = f"{lang}_{safe}"
     cache = cache_dir / f"{safe}.json"
     if cache.exists():
         payload = load_json(cache, {})
@@ -663,7 +1446,8 @@ def wikipedia_plain(title: str) -> str:
             "format": "json",
             "titles": title.replace("_", " "),
         }
-        url = WIKIPEDIA_API + "?" + urllib.parse.urlencode(params)
+        api = WIKIPEDIA_API if lang == "en" else f"https://{lang}.wikipedia.org/w/api.php"
+        url = api + "?" + urllib.parse.urlencode(params)
         payload = None
         last_error = None
         for attempt in range(2):
@@ -889,7 +1673,7 @@ def accepted_rows(rows: list[dict]) -> list[dict]:
     return deduped
 
 
-STORY_SLUGS = ("film-art-music", "whisky-distilleries", "unusual-wildlife", "tidal-islands")
+STORY_SLUGS = ("film-art-music", "whisky-distilleries", "unusual-wildlife", "tidal-islands", "island-castles")
 MAPISH_IMAGE = re.compile(
     r"map|locator|range|distribution|diagram|chart|flag|coat[_ -]?of|\bcoa\b|icon|\.svg",
     re.I,
@@ -1043,11 +1827,15 @@ def _load_media_cache() -> dict:
 
 def _wiki_query(endpoint: str, params: dict) -> dict:
     url = endpoint + "?" + urllib.parse.urlencode(params)
-    try:
-        return http_json(url, timeout=45)
-    except subprocess.CalledProcessError:
-        print(f"picture lookup skipped after a rate limit: {endpoint}", flush=True)
-        return {}
+    for attempt in range(5):
+        try:
+            return http_json(url, timeout=45)
+        except subprocess.CalledProcessError:
+            wait = 12 * (attempt + 1)
+            print(f"picture lookup waiting {wait}s after a rate limit", flush=True)
+            time.sleep(wait)
+    print(f"picture lookup skipped after a rate limit: {endpoint}", flush=True)
+    return {}
 
 
 def _page_records(titles: list[str], cache: dict) -> None:
@@ -1359,11 +2147,41 @@ def _tidal_story(item: dict, cache: dict) -> dict:
     }
 
 
+def _castle_story(item: dict, cache: dict) -> dict:
+    """The picture is the castle. The paragraph already places it on the island."""
+    summary = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    if len(summary) > 700:
+        summary = summary[:680].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    filename = item.get("commons_file") or ""
+    if not filename or MAPISH_IMAGE.search(filename):
+        filename = ""
+        for label in (item.get("photo_title") or "", item.get("source_title") or "", item.get("title") or ""):
+            page = cache["pages"].get(fold(label)) or {}
+            candidate = page.get("image") or ""
+            if candidate and not MAPISH_IMAGE.search(candidate):
+                filename = candidate
+                break
+    source = item.get("source_title") or item.get("title") or ""
+    source_url = item.get("source_url") or ""
+    if "/wiki/" in source_url:
+        source = urllib.parse.unquote(source_url.split("/wiki/", 1)[1]).replace("_", " ")
+    return {
+        "title": item.get("title") or "",
+        "facet": "castle",
+        "summary": summary,
+        "sourceUrl": source_url,
+        "sourceTitle": source,
+        "image": _image_from_file(filename, cache),
+    }
+
+
 def _story_for(item: dict, cache: dict) -> dict:
     if item.get("facet") == "wildlife":
         return _wildlife_story(item, cache)
     if item.get("facet") == "tidal":
         return _tidal_story(item, cache)
+    if item.get("facet") == "castle":
+        return _castle_story(item, cache)
     phrase = item.get("island_name") or _island_phrase(item.get("evidence") or "")
     work = item.get("title") or ""
     source_url = item.get("source_url") or ""
@@ -1409,6 +2227,11 @@ def _story_for(item: dict, cache: dict) -> dict:
         distilled = _distillery_story((summary_page or {}).get("extract") or "", phrase)
         if distilled:
             summary = distilled
+    preset = re.sub(r"\s+", " ", (item.get("summary") or "")).strip()
+    # Silent stills, stories, and stills cited from another article carry their own paragraph.
+    # A Wikidata distillery has no preset, so its Wikipedia lead is still used.
+    if preset and item.get("facet") in {"silent", "story", "planned", "distillery"}:
+        summary = preset
     if len(summary) > 520:
         summary = summary[:500].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
     image = None
@@ -1448,8 +2271,10 @@ def _story_for(item: dict, cache: dict) -> dict:
                 "licence": supplied_licence,
                 "licenceUrl": supplied.get("licenceUrl") or "",
             }
+    if item.get("facet") == "silent" or item.get("skip_image"):
+        image = None
     source_title = (summary_page or {}).get("title") or source
-    return {
+    story = {
         "title": work,
         "facet": item.get("facet") or "",
         "summary": summary,
@@ -1457,6 +2282,9 @@ def _story_for(item: dict, cache: dict) -> dict:
         "sourceTitle": source_title,
         "image": image,
     }
+    if item.get("subdivision"):
+        story["subdivision"] = item["subdivision"]
+    return story
 
 
 def build_stories(accepted: list[dict]) -> dict:
@@ -1560,7 +2388,18 @@ def membership_sql(rows: list[dict]) -> str:
     chunks = [
         "alter table public.interest_memberships drop constraint if exists interest_memberships_facet_check;",
         "alter table public.interest_memberships add constraint interest_memberships_facet_check "
-        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal'));",
+        "check (facet is null or facet in ('film', 'artwork', 'music', 'distillery', 'listing', 'wildlife', 'tidal', 'silent', 'story', 'planned', 'castle'));",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'whisky-distilleries', 'Whisky', "
+        "'Working distilleries, silent stills, and the whisky stories that name the island.', "
+        "'published', 20, 'wikidata_and_wikipedia', "
+        "'The still is on the island. A working distillery, a silent still the source places on the island, "
+        "a still the source says is not yet producing, or a whisky story (wreck, film, or festival) whose page names the island. "
+        "Gin, a stalled plan, a brand whose still is elsewhere, and a closed site the page cannot locate are out.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
         "insert into public.interest_categories "
         "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
         "'unusual-wildlife', 'Unusual wildlife', "
@@ -1583,8 +2422,20 @@ def membership_sql(rows: list[dict]) -> str:
         ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
         "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
         "acceptance_rules = excluded.acceptance_rules;",
+        "insert into public.interest_categories "
+        "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
+        "'island-castles', 'Islands with Castles', "
+        "'Islands with a castle standing on them.', "
+        "'published', 40, 'cited_castle', "
+        "'A castle stands on the atlas island. The citation is English Wikipedia, Wikidata, "
+        "OpenStreetMap, Canmore, the National Heritage List for England, Cadw, or the "
+        "Archaeological Survey of Ireland. A martello tower, a broch, and a fort do not count. "
+        "Great Britain and Ireland do not count. No living owner, private address, or way in.'"
+        ") on conflict (slug) do update set label = excluded.label, blurb = excluded.blurb, "
+        "status = 'published', sort_order = excluded.sort_order, populator = excluded.populator, "
+        "acceptance_rules = excluded.acceptance_rules;",
         "delete from public.interest_memberships where category_slug in "
-        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands');",
+        "('film-art-music','whisky-distilleries','for-sale','unusual-wildlife','tidal-islands','island-castles');",
     ]
     batch = []
     def flush():
@@ -1642,7 +2493,7 @@ def sync_supabase(rows: list[dict]) -> bool:
         "Prefer": "resolution=merge-duplicates,return=minimal",
     }
     # Replace the three published categories. Draft stays empty.
-    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands"):
+    for slug in ("film-art-music", "whisky-distilleries", "for-sale", "unusual-wildlife", "tidal-islands", "island-castles"):
         delete_url = (
             f"{url}/rest/v1/interest_memberships?category_slug=eq.{urllib.parse.quote(slug)}"
         )
@@ -2346,10 +3197,10 @@ def populate_open_culture(atlas: Atlas) -> list[dict]:
 
 def main(argv: list[str]) -> int:
     command = argv[1] if len(argv) > 1 else "all"
-    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "publish", "sync", "all"}
+    known = {"for-sale", "whisky", "culture", "culture-open", "wildlife", "tidal", "castles", "publish", "sync", "all"}
     if command not in known:
         print(
-            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|publish|sync|all]",
+            "usage: interest_categories.py [for-sale|whisky|culture|culture-open|wildlife|tidal|castles|publish|sync|all]",
             file=sys.stderr,
         )
         return 2
@@ -2378,6 +3229,11 @@ def main(argv: list[str]) -> int:
         from harvest_tidal_islands import populate_tidal
 
         populate_tidal(atlas)
+        return 0
+    if command == "castles":
+        from harvest_island_castles import populate_castles
+
+        populate_castles(atlas)
         return 0
     if command == "all":
         publish(rows)

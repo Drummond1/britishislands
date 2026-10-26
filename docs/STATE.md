@@ -4,6 +4,20 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (shipped to main)** — This push publishes the current interest index (film/art/music, whisky with subdivisions, for sale, unusual wildlife, tidal islands, island castles), the atlas UI, and Ask. Smart answers can search the atlas and read full records. `data/chat_corpus.json` is 3,073 rows. Island counts unchanged. Supabase migrations are in the repo and not applied remotely.
+
+**2026-10-26 (Anglesey and Nun's Island)** — Two stills the source places on the island. Anglesey Môn distillery, near Pentraeth, is listed as a working Welsh whisky distillery in 2018. Nun's Island Distillery made Irish whiskey on the Galway river island until about 1908. Whisky is **18** islands and **57** rows: **30** working, **13** silent, **12** stories, **2** planned. Achill, Lambay, the Isle of Wight, Scilly, and Saxa Vord stay out. Stories **1,180**, **640** with a picture. Local index only. Supabase was not reloaded.
+
+**2026-10-26 (Loch Shiel)** — The Thorne Island article places the 1894 wreck of the Loch Shiel, carrying Scotch whisky, on that Pembrokeshire islet. Whisky is now **16** islands and **55** rows: **29** working, **12** silent, **12** stories, **2** planned. The novel rows were already in. The 2016 film stays out: it was shot at Portsoy. Stories **988**, **507** with a picture. Local index only. Supabase was not reloaded.
+
+**2026-10-26 (more whisky)** — Nine further cited rows, still **15** islands and now **54** rows: **29** working stills, **12** silent, **11** stories, **2** planned. New: Laggan Bay on Islay (Ukrainian Wikipedia, opened 2 April 2026, between Bowmore and Port Ellen), the closed 1837 Lagg still and Arran's illicit stills, Islay's illicit stills, the village of Bunnahabhain, Ledaig as the old name of the Mull still, illegal distillation at the Highland Park site in 1798, and the novel Whisky Galore on Eriskay and on Barra. Achill still left out. Stories **966**, **492** with a picture. Local index only. Supabase was not reloaded.
+
+**2026-10-26 (two songbook pages)** — Wikisource’s *Book of Scottish Song* added Arran Maid and the Song of Death, an Isle of Skye tune also called Oran an Aoig. Film/art/music is **106** islands and **817** cited rows (**465** artworks, **292** music, **60** film). Stories **957**, **492** with a picture. The other harvests lost their connection before they wrote a file. Local index only. Supabase was not reloaded.
+
+**2026-10-25 (Shetland engraving and a Raasay reel)** — Openverse returned mostly false name matches (a steamship called Jura, Rebel Yell, an engraver named van Hoy). One CC BY engraving of Shetland was kept. The Internet Archive added the public-domain reel Mrs McLeod of Raasay. Film/art/music is **106** islands and **815** cited rows (**465** artworks, **290** music, **60** film). Stories **955**, **492** with a picture. Whisky stays **15** islands / **45** rows. Local index only. Supabase was not reloaded.
+
+**2026-10-25 (whisky subdivisions)** — The Whisky chip is no longer only working distilleries. **15** islands and **45** cited rows: **28** working stills, **11** silent Islay stills, **4** stories (Islay's protected region, Fèis Ìle, Whisky Galore! on Barra, SS Politician off Eriskay), and **2** planned stills (Portintruan on Islay, the Barra whisky still that is not in production yet). Subdivisions on the chip: Islay, Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. Achill was left out: no Wikipedia sentence places that still on the island. Barra's gin distillery is filed under Planned, not as a working whisky still. Shetland's Lerwick Distillery and the Isle of Man's Manx Whiskey Company are in Other isles, each from a sentence that names the island. Film/art/music stays **104**, for sale **42**, unusual wildlife **23**, tidal islands **66**. Stories **953**, **491** with a picture. Local index only. Supabase was not reloaded. Migration `supabase/migrations/20261025200000_whisky_subdivisions.sql` is written and not applied.
+
 **2026-10-25 (tidal islands)** — New interest chip, Tidal islands. **66** islands from the English Wikipedia article Tidal island, each with a short note on where the link goes and that it is exposed at low tide and covered at high tide. Eleven names on that page were left out (not in the atlas, a permanent causeway, Eilean Donan's footbridge, or St Martin's as the land White Island joins). The atlas subtype `tidal` (256 islands) was not used. No crossing times. Film/art/music stays **104**, whisky **12**, for sale **42**, unusual wildlife **23**. Stories **934**, **491** with a picture. Shipped to `main` for GitHub Pages. Supabase was not reloaded. Migration `supabase/migrations/20261025190000_tidal_islands.sql` is written and not applied.
 
 **2026-10-25 (MusicBrainz songs and albums)** — MusicBrainz release groups and works added **121** cited rows after **59** mismatches were rejected (Lundy surnames, Cutty Sark, the Melbourne St Kilda joke, Valentia the game, baroque giga movements, and Lindisfarne compilation piles). Film/art/music is **104** islands and **813** cited rows (**464** artworks on **51** islands, **289** music on **63** islands, **60** film). Stories **868**, **491** with an open-licence picture. Whisky **12**, for sale **42**, unusual wildlife **23** islands / **30** species. Local index only. Supabase was not reloaded.
@@ -929,6 +943,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| Island castles interest harvest | 2026-10-26 04:40 UTC | this session | cursor agent | Writes `data/interest/candidates/island-castles.json` and cache under `data/cache_island_castles/`. Does not edit `islands.json`. Publishes `data/interest_index.json` only after the harvest, and does not touch the film/art candidate files another agent is writing. |
+| Film, music, artwork, and photo harvests for the film/art/music filter | 2026-10-25 19:23 UTC | this session | cursor agent | Four passes write only `data/interest/candidates/film-open.json`, `music-further.json`, `artwork-further.json`, and `data/interest/culture_photo_backfill.json`. They do not edit `islands.json` or publish the index. |
 | `run_continuous_seo_geo.sh --loop` (PID **848**, screen `iob-seo-geo`) | 2026-07-28 18:10 BST | ongoing | autonomous bash | Strategy-aligned continuous SEO/GEO. Lock `data/.continuous_seo_geo.lock`. Stop: `touch data/.continuous_seo_geo.stop` or `screen -S iob-seo-geo -X quit`. Policy: **no deindex**. Log: `logs/continuous-seo-geo-20260728T171002Z.log` / `logs/continuous-seo-geo.out`. Re-arm: `bash scripts/arm_continuous_seo_geo.sh`. |
 | ~~`run_overnight_seo_geo.sh --loop`~~ ✅ finished 2026-07-28 05:05 UTC | 2026-07-27 | — | autonomous bash | **11** cycles; avg **47.78→47.81**, desc **1,617→1,621**, photos flat **4,356**. Superseded by continuous loop. |
 | ~~`AGENT_LOOP_TICK_seo_geo` (hourly)~~ stopped | — | — | — | Replaced by autonomous overnight bash, then continuous. |
@@ -1053,14 +1069,14 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   island** opens a map pick + GitHub issue (no on-site accounts). Toggle
   **Crowd pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
 - **Chatbot ("Island finder")**: floating "Ask" button bottom-right opens a
-  chat panel. Local-only NLU. Recognises nation, type, subtype, archipelago,
-  feature, size, sort, **proximity (`near <city>` / `within N km of …`,
-  resolved against a 30-city UK + IE + Crown gazetteer)**, **ferry intent
-  (`ferries to …`, `summer car ferries to the Hebrides`, `ferry from Oban`)**,
-  and reflects each query into the URL as `?ask=…` for shareable permalinks.
-  Result cards show the image source as a clickable cross-reference. See
-  `app.js → CHAT_*`, `renderDetailMap`, and styles `.chat-*` /
-  `.detail-map-*` for implementation.
+  chat panel. **Local mode** (default) parses nation, type, subtype,
+  archipelago, feature, size, sort, and proximity, and nothing leaves the
+  browser. **Smart answers** (visitor's own OpenAI or Anthropic key, stored
+  only in this browser) lets the model call `search_islands`, `count_islands`,
+  `list_collections`, and `read_islands` against the loaded atlas, then write
+  from those records. Loch names and short snippets live in
+  `data/chat_corpus.json`, fetched when Ask opens. Each query is reflected
+  as `?ask=…`. See `chat-agent.js`, `app.js → CHAT_*`, and `.chat-*` styles.
 - **Ferry layer**: lazy-loaded on first island click via `loadFerries()` +
   `loadCauseways()`. The details panel ships a "How to get there" block
   with operator-branded ferry cards (route label, duration, frequency /

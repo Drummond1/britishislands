@@ -77,6 +77,7 @@ setAppLoading(true)
 | `data/shards/{nation}.json` | Fallback if detail missing |
 | `data/islands_unnamed_index.json` | Unnamed filter |
 | `data/galleries.json` | Island click |
+| `data/chat_corpus.json` | Ask opens (loch names and snippets; not on first paint) |
 
 ## Profile open (double render)
 

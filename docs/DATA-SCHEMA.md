@@ -226,11 +226,15 @@ Interest filters are **not** fields on the island record. `data/islands.json` is
 
 | File | Role |
 |---|---|
-| `data/interest_index.json` | What the atlas loads. `categories[]` (published only, with counts), `members[slug]` (island-id arrays), `highlights[slug][islandId]` (work, distillery, listing, or connection names). `stories` (schemaVersion 2) adds, for film/art/music, whisky, unusual wildlife, and tidal islands, a short summary and, where one exists, an open-licence picture with attribution. Film, art, and music summaries may come from Wikipedia, Wikidata, or MusicBrainz. Wildlife summaries name the species and the island. The picture is of the species. Colony coordinates and nest counts are not stored. Tidal summaries name where the island joins, and that the link is exposed at low tide and covered at high tide. Crossing times are not stored. |
+| `data/interest_index.json` | What the atlas loads. `categories[]` (published only, with counts), `members[slug]` (island-id arrays), `highlights[slug][islandId]` (work, distillery, listing, or connection names). `stories` (schemaVersion 2) adds, for film/art/music, whisky, unusual wildlife, and tidal islands, a short summary and, where one exists, an open-licence picture with attribution. Film, art, and music summaries may come from Wikipedia, Wikidata, or MusicBrainz. Whisky stories also carry `facet` (`distillery`, `silent`, `story`, `planned`) and `subdivision` (`islay`, `hebrides`, `orkney`, `other`, or the same facet id). The whisky chip reads `categories[].subdivisions`. Wildlife summaries name the species and the island. The picture is of the species. Colony coordinates and nest counts are not stored. Tidal summaries name where the island joins, and that the link is exposed at low tide and covered at high tide. Crossing times are not stored. |
 | `data/interest/candidates/{slug}.json` | Populator output, including rejected rows and reasons. |
 | Supabase `interest_categories` / `interest_memberships` | Working store. See [`SUPABASE.md`](SUPABASE.md). |
 
 The map filters in the browser from `members`. A draft category is absent from the index until its status is `published`. Adding a category is a spec plus a populator (`.cursor/skills/interest-category-populate/SKILL.md`), not a new checkbox in `index.html`.
+
+## Ask search sidecar
+
+`data/chat_corpus.json` is not an island field. Ask loads it when the chat opens, so the map index can stay small. Each row is keyed by island id and may include `w` (parent water name), `d` (description snippet), `p` (summit name), and `n` (other-language names). Unnamed islands are omitted. Water names that are only an OSM relation id are omitted. Rebuild with `python3 scripts/build_chat_corpus.py` after `data/islands.json` changes. Full prose still comes from `data/details/{id}.json` when the model asks to read an island.
 
 ## Adding a new field
 

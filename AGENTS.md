@@ -67,6 +67,7 @@ needed.
 ├── index.html               ← entry HTML (import map, preload index, chat launcher)
 ├── styles.css               ← all styling
 ├── app.js                   ← Leaflet + UI logic + chatbot (ES module)
+├── chat-agent.js            ← Ask tools: search, count, read records
 ├── island-3d.js             ← Three.js terrain (dynamic import; see docs/3D-TERRAIN.md)
 ├── showcase-3d.html         ← gallery of 10 showcase 3D models
 ├── crowd-pins.js            ← community pins: fetch + GitHub issue URLs + popups
@@ -74,6 +75,7 @@ needed.
 ├── data/
 │   ├── islands.json         ← canonical dataset (DO NOT hand-edit)
 │   ├── islands_index.json   ← v2 compact first paint (~0.9 MB); run build_islands_index.py
+│   ├── chat_corpus.json     ← lazy Ask search sidecar (loch, snippet, other names)
 │   ├── islands_unnamed_index.json ← lazy unnamed overlay (4,310)
 │   ├── shards/              ← nation JSON shards (gitignored locally; CI + force-add)
 │   ├── terrain/             ← 3D heightmaps for 10 showcase islands
@@ -116,16 +118,17 @@ needed.
 
 ### Chatbot ("Island finder")
 
-A local-only natural-language island finder lives at the bottom-right of the
-page (floating "Ask" button → drawer). Implementation: `app.js` after the
-`// ---------- Chatbot` comment. Parser recognises nation, type, subtype,
-archipelago, feature keywords, area constraints, sort directives, and
-**proximity** ("near Oban", "within 30 km of Mallaig") via the
-`CHAT_PLACES` gazetteer. Each query is reflected into the URL as
-`?ask=…` so they're shareable; `chatAutoLoadFromUrl()` replays the
-permalink on page load. No external API calls — everything runs in the
-browser. To extend it, add synonyms to the `CHAT_*` dictionaries or
-extra cities to `CHAT_PLACES`.
+Ask sits at the bottom-right of the page (floating "Ask" button → drawer).
+With **Smart answers** off, a local parser in `app.js` (after the
+`// ---------- Chatbot` comment) ranks islands and nothing leaves the browser.
+With Smart answers on, the model calls tools in `chat-agent.js`: it searches
+the loaded atlas, counts, lists interest collections, then reads full records
+from `data/details/{id}.json` before it writes. Loch names, description
+snippets, summit names, and other-language names come from
+`data/chat_corpus.json`, loaded only when Ask opens. The visitor's own API key
+stays in `localStorage`. Each query is still reflected as `?ask=…`.
+To extend the local parser, add synonyms to the `CHAT_*` dictionaries or
+cities to `CHAT_PLACES`.
 
 ### Islands for sale (property listings)
 

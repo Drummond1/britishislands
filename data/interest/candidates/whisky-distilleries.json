@@ -1,6 +1,6 @@
 {
   "slug": "whisky-distilleries",
-  "generatedAt": "2026-10-25T14:24:56+00:00",
+  "generatedAt": "2026-10-26T05:13:03+00:00",
   "wikidata": 245,
   "overpass": 0,
   "rows": [
@@ -18,7 +18,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -34,7 +34,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -50,7 +50,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -66,7 +66,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -82,7 +82,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -98,7 +98,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -114,7 +114,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -130,7 +130,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -146,7 +146,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -162,7 +162,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -178,7 +178,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -194,7 +194,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -210,7 +211,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -226,7 +227,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -242,7 +243,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -258,7 +259,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -274,7 +275,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -290,7 +291,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -306,7 +307,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -322,7 +323,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -338,7 +339,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -354,7 +355,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -370,7 +371,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -386,7 +387,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -402,7 +403,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -418,7 +419,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -434,7 +435,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -450,7 +451,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -466,7 +467,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -482,7 +483,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -498,7 +499,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -514,7 +515,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -530,7 +531,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -546,7 +547,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -562,7 +563,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -578,7 +579,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -594,7 +595,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -610,7 +611,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -626,7 +627,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -642,7 +643,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -658,7 +659,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -674,7 +675,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -690,7 +691,8 @@
       "confidence": "medium",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -706,7 +708,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -722,7 +725,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -738,7 +741,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -754,7 +757,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -770,7 +773,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -786,7 +789,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -802,7 +805,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -818,7 +821,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -834,7 +837,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -850,7 +853,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -866,7 +869,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -882,7 +885,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -898,7 +901,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -914,7 +917,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -930,7 +933,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -946,7 +949,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -962,7 +965,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -978,7 +981,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -994,7 +997,8 @@
       "confidence": "medium",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1010,7 +1014,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1026,7 +1030,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1042,7 +1047,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1058,7 +1064,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1074,7 +1080,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1090,7 +1096,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1106,7 +1112,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1122,7 +1128,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1138,7 +1144,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1154,7 +1160,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1170,7 +1176,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1186,7 +1192,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1202,7 +1208,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1218,7 +1224,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1234,7 +1240,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1250,7 +1256,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1266,7 +1272,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1282,7 +1288,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1298,7 +1304,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1314,7 +1320,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1330,7 +1336,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1346,7 +1352,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1362,7 +1368,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1378,7 +1384,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1394,7 +1400,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1410,7 +1416,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1426,7 +1432,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1442,7 +1448,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1458,7 +1464,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1474,7 +1480,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1490,7 +1496,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1506,7 +1512,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1522,7 +1528,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1538,7 +1544,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1554,7 +1560,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1570,7 +1576,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1586,7 +1592,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1602,7 +1608,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1618,7 +1624,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1634,7 +1640,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1650,7 +1656,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1666,7 +1672,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1682,7 +1688,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1698,7 +1704,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1714,7 +1720,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1730,7 +1736,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1746,7 +1752,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1762,7 +1768,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1778,7 +1784,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1794,7 +1800,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1810,7 +1816,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1826,7 +1832,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1842,7 +1848,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1858,7 +1864,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1874,7 +1880,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1890,7 +1896,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1906,7 +1912,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1922,7 +1928,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1938,7 +1944,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1954,7 +1960,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1970,7 +1976,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -1986,7 +1992,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2002,7 +2008,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2018,7 +2024,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2034,7 +2040,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2050,7 +2056,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2066,7 +2072,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2082,7 +2088,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2098,7 +2104,8 @@
       "confidence": "medium",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2114,7 +2121,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2130,7 +2138,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2146,7 +2155,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2162,7 +2172,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2178,7 +2189,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2194,7 +2206,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2210,7 +2223,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2226,7 +2240,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2242,7 +2257,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2258,7 +2273,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2274,7 +2289,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2290,7 +2305,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2306,7 +2321,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2322,7 +2337,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2338,7 +2353,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2354,7 +2369,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2370,7 +2385,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "islay"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2386,7 +2402,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2402,7 +2418,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2418,7 +2434,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2434,7 +2450,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2450,7 +2466,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2466,7 +2482,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2482,7 +2498,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2498,7 +2514,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2514,7 +2530,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2530,7 +2546,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2546,7 +2562,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2562,7 +2578,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2578,7 +2594,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2594,7 +2610,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2610,7 +2626,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2626,7 +2642,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2642,7 +2658,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2658,7 +2674,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2674,7 +2690,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2690,7 +2706,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2706,7 +2722,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2722,7 +2738,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2738,7 +2754,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2754,7 +2770,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2770,7 +2786,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2786,7 +2802,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2802,7 +2818,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2818,7 +2834,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2834,7 +2850,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2850,7 +2866,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2866,7 +2882,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2882,7 +2898,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2898,7 +2914,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2914,7 +2930,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2930,7 +2946,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2946,7 +2962,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2962,7 +2978,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2978,7 +2995,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -2994,7 +3011,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3010,7 +3027,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3026,7 +3043,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3042,7 +3059,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3058,7 +3075,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3074,7 +3091,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3090,7 +3107,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3106,7 +3123,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3122,7 +3139,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3138,7 +3155,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3154,7 +3172,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3170,7 +3188,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3186,7 +3204,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3202,7 +3220,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3218,7 +3236,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3234,7 +3252,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "orkney"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3250,7 +3269,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3266,7 +3285,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3282,7 +3301,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3298,7 +3317,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3314,7 +3333,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3330,7 +3349,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "orkney"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3346,7 +3366,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3362,7 +3382,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3378,7 +3398,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3394,7 +3414,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3410,7 +3430,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3426,7 +3446,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3442,7 +3462,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3458,7 +3478,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3474,7 +3494,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3490,7 +3510,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3506,7 +3526,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3522,7 +3542,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3538,7 +3558,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3554,7 +3574,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3570,7 +3590,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3586,7 +3606,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3602,7 +3622,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3618,7 +3638,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3634,7 +3654,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3650,7 +3670,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3666,7 +3686,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3682,7 +3702,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3698,7 +3718,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3714,7 +3734,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3730,7 +3750,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3746,7 +3766,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3762,7 +3782,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3778,7 +3798,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3794,7 +3814,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3810,7 +3830,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3826,7 +3846,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3842,7 +3862,7 @@
       "confidence": "medium",
       "status": "rejected",
       "reject_reason": "coordinates are not on a named atlas island",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3858,7 +3878,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3874,7 +3895,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3890,23 +3912,26 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
       "island_id": "osm-relation-380646",
       "island_name": "Barra",
-      "facet": "distillery",
+      "facet": "planned",
       "title": "Isle of Barra distillery",
       "source_url": "https://en.wikipedia.org/wiki/Isle_of_Barra_distillery",
       "source_title": "Isle of Barra distillery",
       "licence": "CC BY-SA 4.0",
-      "evidence": "Wikipedia page names the distillery and Barra.",
+      "evidence": "Wikipedia says the Castlebay site is a gin distillery and that a whisky distillery is still being built on Barra.",
       "external_id": "Isle_of_Barra_distillery",
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:54+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "planned",
+      "summary": "The Isle of Barra distillery in Castlebay makes gin. A second distillery is being built on Barra so the island can start single malt whisky, which would be its first."
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3922,7 +3947,8 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:55+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "hebrides"
     },
     {
       "category_slug": "whisky-distilleries",
@@ -3938,7 +3964,595 @@
       "confidence": "high",
       "status": "accepted",
       "reject_reason": "",
-      "fetched_at": "2026-10-25T14:24:56+00:00"
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "subdivision": "orkney"
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Ardenistle distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Ardenistle Laphroaig.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Ardenistle was a distillery on Islay from 1837. It was later called Kildalton, then Islay, and was taken into Laphroaig in 1853.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Ardmore (Islay)",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Ardmore (1817 Lagavulin.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Ardmore was a distillery on Islay from 1817 to 1835. Lagavulin took it over in 1837.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Daill distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Daill Port Askaig Bridgend.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Daill was a legal distillery on Islay from 1814 to 1830. The ruins are on the road between Port Askaig and Bridgend.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Kildalton distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Kildalton (1817 Lagavulin.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Kildalton was a distillery on Islay from 1817 to 1837, then merged with Lagavulin.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Killarow distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Killarow Bridgend.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Killarow was a distillery on Islay from about 1760. From 1818 it was called Bridgend, and it closed in 1822. The ruins are in the village.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Lossit distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Lossit Ballygrant.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Lossit, later called Ballygrant, was a distillery on Islay. It closed in 1860. The ruins are south of the village, beside the A846.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Malt Mill",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Malt Mill Lagavulin.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Malt Mill was a distillery on Islay from 1908 to 1962. The site is now part of Lagavulin.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Mulindry distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Mulindry Laggan.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Mulindry was a distillery on Islay in 1826 and 1827, where the Neriby Burn meets the River Laggan. It is now in ruins.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Newton distillery (Islay)",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Newton (1819 Port Askaig Bridgend.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Newton was a distillery on Islay from 1819 to 1837. The ruins are beside the road between Port Askaig and Bridgend.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Octomore distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Octomore (1816 Port Charlotte.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Octomore was a distillery on Islay from 1816 to 1852. The ruins are near Port Charlotte.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "silent",
+      "title": "Tallant distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Wikipedia article Islay single malts lists this closed distillery on Islay. Tallant Bowmore.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Tallant was a distillery on Islay from 1821 to 1852, at Tallant farm south of Bowmore.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "story",
+      "title": "Islay single malts",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia article Islay single malts names the protected region, the closed count, and Bowmore.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Islay is one of five Scotch whisky regions whose name is protected by law. The same article says as many as 23 distilleries once worked on the island, and that Bowmore in 1779 is the oldest legal distillery on record there.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "story",
+      "title": "Fèis Ìle",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia article Islay single malts names Fèis Ìle on Islay.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Islay hosts Fèis Ìle, a festival of malt and music, in the last week of May. The tastings are part of the island's whisky year.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "planned",
+      "title": "Portintruan distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia article Islay single malts places Portintruan between Port Ellen and Laphroaig.",
+      "external_id": "Islay_single_malts",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Portintruan is a distillery being built on Islay, on the road between Port Ellen and Laphroaig. The article records that work started in 2020. It is not a working distillery yet.",
+      "subdivision": "planned",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "story",
+      "title": "Illicit stills on Islay",
+      "source_url": "https://en.wikipedia.org/wiki/Islay_single_malts",
+      "source_title": "Islay single malts",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia article Islay single malts places monastic distillation, smuggling, and illegal whisky production on Islay.",
+      "external_id": "Islay_single_malts",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "The Islay single malts article says Irish monks may have distilled on Islay in the early 1300s, and that the island's early distilleries hid in glens and caves when the excise man came. It also records home distilling, smuggling, and illegal whisky production, and says the eight older legal distilleries began as illicit stills.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-376677",
+      "island_name": "Shetland",
+      "facet": "distillery",
+      "title": "Lerwick Distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Kimbland_distillery",
+      "source_title": "Kimbland distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Kimbland distillery article says the Lerwick Distillery was established in Shetland in 2022. Lerwick is the port on the island recorded here as Shetland.",
+      "external_id": "Kimbland_distillery",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "The Kimbland article says the Lerwick Distillery was established in Shetland in 2022, and that it took over the claim of most northerly Scotch whisky distillery.",
+      "subdivision": "other",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "distillery",
+      "title": "Deerness distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Kimbland_distillery",
+      "source_title": "Kimbland distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Kimbland distillery article places Deerness distillery in Deerness, Mainland, Orkney.",
+      "external_id": "Kimbland_distillery",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Deerness distillery is in Deerness on Mainland, Orkney. The Kimbland article describes it as a new Scotch whisky distillery, announced as the first on Orkney since Scapa opened in 1885, a claim Kimbland disputed.",
+      "subdivision": "orkney",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "isle-of-man",
+      "island_name": "Isle of Man",
+      "facet": "distillery",
+      "title": "Manx Whiskey Company",
+      "source_url": "https://en.wikipedia.org/wiki/Culture_of_the_Isle_of_Man",
+      "source_title": "Culture of the Isle of Man",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The culture article states that as of 2019 the Isle of Man had a whiskey distillery run by the Manx Whiskey Company.",
+      "external_id": "Culture_of_the_Isle_of_Man",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Wikipedia's article on the culture of the Isle of Man says that, as of 2019, the island had a whiskey distillery run by the Manx Whiskey Company.",
+      "subdivision": "other",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-15708714",
+      "island_name": "Eriskay",
+      "facet": "story",
+      "title": "SS Politician",
+      "source_url": "https://en.wikipedia.org/wiki/SS_Politician",
+      "source_title": "SS Politician",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's SS Politician article places the wreck, and its whisky cargo, off Eriskay.",
+      "external_id": "SS_Politician",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "SS Politician ran aground off Eriskay in 1941. Her cargo included 22,000 cases of Scotch whisky. Islanders salvaged whisky from the wreck, and Customs prosecuted them because the duty had not been paid.",
+      "subdivision": "story"
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-380646",
+      "island_name": "Barra",
+      "facet": "story",
+      "title": "Whisky Galore!",
+      "source_url": "https://en.wikipedia.org/wiki/Whisky_Galore!_(1949_film)",
+      "source_title": "Whisky Galore! (1949 film)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's article on the 1949 film says it was filmed on Barra and that the cargo was whisky.",
+      "external_id": "Whisky_Galore!_(1949_film)",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:02+00:00",
+      "summary": "Whisky Galore! is the 1949 Ealing comedy about a shipwrecked cargo of whisky. It was filmed on Barra, and the story is drawn from the grounding of the SS Politician.",
+      "subdivision": "story"
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "arran",
+      "island_name": "Isle of Arran",
+      "facet": "story",
+      "title": "Arran's illicit stills",
+      "source_url": "https://en.wikipedia.org/wiki/Lochranza_distillery",
+      "source_title": "Lochranza distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Lochranza distillery article places those illegal stills on Arran.",
+      "external_id": "Lochranza_distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "The Lochranza distillery article says about fifty distilleries once stood on Arran, and that most of them were moonlight or illegal stills.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "arran",
+      "island_name": "Isle of Arran",
+      "facet": "silent",
+      "title": "Old Lagg distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Lochranza_distillery",
+      "source_title": "Lochranza distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Lochranza distillery article says the legal distillery called Lagg on Arran closed in 1837.",
+      "external_id": "Lochranza_distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "The Lochranza distillery article says a legal distillery called Lagg on Arran closed in 1837. The same article says a later distillery at Lagg, at the south end of the island, began production in 2019. This row is the closed 1837 still.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "story",
+      "title": "Bunnahabhain village",
+      "source_url": "https://en.wikipedia.org/wiki/Bunnahabhain_distillery",
+      "source_title": "Bunnahabhain distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Bunnahabhain distillery article places the village, built for the workers, on Islay.",
+      "external_id": "Bunnahabhain_distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Bunnahabhain distillery was founded in 1881 near Port Askaig on Islay. The village of Bunnahabhain was founded to house its workers.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "mull",
+      "island_name": "Isle of Mull",
+      "facet": "story",
+      "title": "Ledaig",
+      "source_url": "https://en.wikipedia.org/wiki/Tobermory_distillery",
+      "source_title": "Tobermory distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Tobermory distillery article says the Mull distillery was formerly Ledaig and still uses that name for its peated whisky.",
+      "external_id": "Tobermory_distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Tobermory distillery on Mull opened in 1798 under the name Ledaig and later closed more than once. The peated whisky from the same still is still bottled as Ledaig.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "story",
+      "title": "Illicit still at Highland Park",
+      "source_url": "https://en.wikipedia.org/wiki/Highland_Park_distillery",
+      "source_title": "Highland Park distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Highland Park article places illegal distillation in 1798 on the Kirkwall site in Orkney.",
+      "external_id": "Highland_Park_distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Highland Park stands in Kirkwall on Mainland, Orkney. The article says whisky was being distilled illegally on that site in 1798, and that the distillery received a licence in 1826.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-15708714",
+      "island_name": "Eriskay",
+      "facet": "story",
+      "title": "Whisky Galore novel",
+      "source_url": "https://en.wikipedia.org/wiki/Whisky_Galore_(novel)",
+      "source_title": "Whisky Galore (novel)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's article on the novel places the wreck it is based on off Eriskay, and Little Todday's geography on Eriskay.",
+      "external_id": "Whisky_Galore_(novel)",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Compton Mackenzie's novel Whisky Galore is based on the SS Politician running aground off Eriskay in 1941. The article says the cargo included 28,000 cases of malt whisky, and that Little Todday takes its geography from Eriskay.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-380646",
+      "island_name": "Barra",
+      "facet": "story",
+      "title": "Whisky Galore novel",
+      "source_url": "https://en.wikipedia.org/wiki/Whisky_Galore_(novel)",
+      "source_title": "Whisky Galore (novel)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's article on the novel says Mackenzie wrote it while living on Barra, and that Great Todday follows Barra.",
+      "external_id": "Whisky_Galore_(novel)",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Compton Mackenzie wrote the novel Whisky Galore while living on Barra. The article says Great Todday takes its geography from Barra.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-way-4001735",
+      "island_name": "Thorne Island",
+      "facet": "story",
+      "title": "Loch Shiel",
+      "source_url": "https://en.wikipedia.org/wiki/Thorne_Island",
+      "source_title": "Thorne Island",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Thorne Island article says the 1894 Loch Shiel wreck off the island was carrying a cargo of Scotch whisky.",
+      "external_id": "Thorne_Island",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "In 1894 the sailing ship Loch Shiel ran onto rocks off Thorne Island, at the mouth of Milford Haven. The island's Wikipedia article says she was carrying Scotch whisky from Scotland to Adelaide, including cases of Glasgow whisky, and that the rescue is remembered as Wales' Whisky Galore.",
+      "subdivision": "story",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "islay",
+      "island_name": "Islay",
+      "facet": "distillery",
+      "title": "Laggan Bay distillery",
+      "source_url": "https://uk.wikipedia.org/wiki/Laggan_Bay_(%D0%B2%D0%B8%D0%BD%D0%BE%D0%BA%D1%83%D1%80%D0%BD%D1%8F)",
+      "source_title": "Laggan Bay (винокурня)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Ukrainian Wikipedia places Laggan Bay distillery on Islay between Bowmore and Port Ellen. Wikidata Q141284142 is a whisky distillery at 55.6838,-6.2456.",
+      "external_id": "Q141284142",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Laggan Bay is a malt whisky distillery on Islay, on the shore of Laggan Bay between Bowmore and Port Ellen, near the airport. The Ukrainian Wikipedia article says Ian Macleod Distillers opened it on 2 April 2026, and that it is the eleventh working distillery in the Islay region. Wikidata Q141284142 records the same still, on Islay, with no English Wikipedia article yet.",
+      "subdivision": "islay",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "wd-Q59728286",
+      "island_name": "Nun's Island",
+      "facet": "silent",
+      "title": "Nun's Island Distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Nun%27s_Island_Distillery",
+      "source_title": "Nun's Island Distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Nun's Island Distillery article places the Irish whiskey still on Nun's Island, Galway, and says production ceased about 1908.",
+      "external_id": "Nun's_Island_Distillery",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "Nun's Island Distillery made Irish whiskey on Nun's Island in Galway. The article says it was working from at least 1815, and possibly the late 1700s, until about 1908.",
+      "subdivision": "silent",
+      "skip_image": true
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "anglesey",
+      "island_name": "Anglesey (Ynys Môn)",
+      "facet": "distillery",
+      "title": "Anglesey Môn distillery",
+      "source_url": "https://en.wikipedia.org/wiki/Welsh_whisky",
+      "source_title": "Welsh whisky",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Wikipedia's Welsh whisky article places Anglesey Môn distillery near Pentraeth on Anglesey.",
+      "external_id": "Welsh_whisky",
+      "confidence": "medium",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-26T05:13:03+00:00",
+      "summary": "The Welsh whisky article lists Anglesey Môn distillery near Pentraeth on Anglesey, established in 2018, among the working whisky distilleries in Wales as of December 2022. It has no article of its own.",
+      "subdivision": "other",
+      "skip_image": true
     }
   ]
 }
