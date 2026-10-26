@@ -6,7 +6,7 @@
 - Whisky islands: /collections/whisky-distilleries/ (18 islands, 57 cited). Islands with a whisky distillery, a silent still, or a whisky story a cited source places on that island.
 - Tidal islands: /collections/tidal-islands/ (64 islands, 64 cited). Islands joined to other land at low tide and cut off at high tide. No crossing times.
 - Islands for sale: /collections/for-sale/ (40 islands, 40 cited). Islands in Britain and Ireland with a broker listing. The link leaves this site. Check the broker before treating a listing as current.
-- Unusual wildlife: /collections/unusual-wildlife/ (23 islands, 30 cited). Rare, endemic, or remarkable species a source places on an island in Britain or Ireland. No nest sites or colony coordinates.
+- Rare wildlife: /collections/unusual-wildlife/ (23 islands, 30 cited). Rare, endemic, or remarkable species a source places on an island in Britain or Ireland. No nest sites or colony coordinates.
 - Books set on islands: /collections/island-books/ (22 islands, 39 cited). Novels, memoirs, and story collections whose source sets the book on an island in Britain or Ireland.
 - Island traditions: /collections/local-traditions/ (23 islands, 35 cited). Festivals, dances, food, and crafts a source places on an island in Britain or Ireland.
 - Film, art and music: /collections/film-art-music/ (110 islands, 904 cited). Films, artworks, and music a cited source connects to an island in Britain or Ireland.

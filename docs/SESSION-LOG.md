@@ -3436,9 +3436,9 @@ loop (`descriptions+photos-gap`, cycle 17).
 
 ## 2026-10-26 — Homepage heading
 
-- **Goal**: Change the opening headline to “Go on an adventure”.
-- **What changed**: The sidebar headline no longer reads “Find your somewhere else.” It reads “Go on an adventure”, with *adventure* in gold, on one line beside the compass. No data change.
-- **Outcome / counts**: Counts unchanged. On a wide screen the full line is visible, and search, the chips, and the opening cards still sit under it.
+- **Goal**: Try a new opening headline, then restore the original.
+- **What changed**: The sidebar headline was briefly “I’m going on an adventure!” and then “Go on an adventure”. It is back to “Find your somewhere else.”, with *somewhere* in chalk and *else.* in gold, at the original size. No data change.
+- **Outcome / counts**: Counts unchanged.
 - **Open items kicked to QUEUE.md**: none.
 
 ## 2026-10-26 — Local papers on unusual news
@@ -3447,3 +3447,32 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Twenty-six reports. Shetland Times, the Orcadian, Stornoway Gazette, the Press and Journal, the Mayo News, Newstalk, the Irish Examiner, the Irish Times, the Irish News, Essex Live, Wales Online, Cornwall Live, North Wales Live, the Bournemouth Echo, and the Jersey Evening Post. Customs already in local traditions were left out. Skellig Michael, the Great Blasket, and Chapelle Dom Hue are not in the atlas, so those reports were not added. No grave coordinates, no portrait, and no news photograph. `islands.json` was not edited.
 - **Outcome / counts**: **50** islands, **54** stories, **54** with a picture. Stories overall **1,271**, **734** with a picture. Other chips unchanged. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.
+
+## 2026-10-26 — Rare wildlife
+
+- **Goal**: Rename the Unusual wildlife filter to Rare wildlife.
+- **What changed**: The chip, the profile heading, the collection guide, the footer link, and `llms.txt` now say Rare wildlife. The slug stays `unusual-wildlife`, so existing links still open the same guide. Counts and memberships are unchanged. `islands.json` was not edited. Supabase was not reloaded. The unapplied wildlife migration uses the new label.
+- **Outcome / counts**: Still **23** islands and **30** species. The chip, the filter, and the guide heading read Rare wildlife. Selecting the chip lists those islands, and the Isle of Man profile still shows the red-billed chough.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Explore list thumbnails
+
+- **Goal**: Stop iPhone Safari painting a broken-image icon on Explore list thumbnails.
+- **What changed**: List cards in `renderListWindow` no longer use `loading="lazy"`. A scroll that leaves the same islands on screen no longer rebuilds those cards. When the window moves, a card that is still visible keeps its image element. Featured strip, profile, ferry, and related-island images are unchanged. `body { overflow: hidden }` is unchanged. `islands.json` was not edited. A stray comma after the Rare wildlife label, which stopped `app.js` from loading, was removed.
+- **Outcome / counts**: Counts unchanged. In Chrome, list thumbs have no `loading` attribute. A 3px sidebar scroll kept all 13 image nodes. A longer scroll reused 10 of them, created 8 new ones, and all 18 decoded. iPhone Safari was not available in this session.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — More islands in every interest filter
+
+- **Goal**: Add cited islands to each published interest filter, with a source sentence and an open-licence picture where one exists.
+- **What changed**: New rows in `data/interest/candidates/zz-expansion-*.json`, plus six broker listings in the for-sale registry. Each row names an atlas island and a page that places the still, species, book, custom, tide, castle, work, or listing there. Three tidal rows were rejected after the fact: Ynys Llanddwyn had been filed under Ynys y Clochydd, the Cheynies sentence did not name one island, and the Soay Beag crossing is to Soay Mòr. The band Skerryvore is filed on Tiree, where it was formed. *Arcam* is a book on Steep Holm, not a film. *Maid of Sark* was rejected because the article does not set the novel on Sark. The index was rebuilt locally. Supabase was not called.
+- **Outcome / counts**: Film, art and music **139** (was 111). Whisky **20** (was 18). For sale **48** (was 42). Rare wildlife **30** (was 23). Tidal islands **104** (was 66). Islands with castles **94** (was 89). Books **32** (was 22). Local traditions **30** (was 23). Unusual news stays **50**. Stories **1,475**, **891** with an open-licence picture. `islands.json` was not edited. Not pushed.
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index. Lighthouses remain the next chip.
+
+## 2026-10-26 — Expanded interest filters pushed to production
+
+- **Goal**: Put the latest atlas on findmyisland.com.
+- **What changed**: Pushed the expanded interest index, the Rare wildlife label, the Explore list thumbnail reuse, and the first-screen list (three opening cards, a sticky search, and Show all). A local debug logger that posted from the list on every scroll was removed before the push. Caches, lock files, and the island reel stayed local. `islands.json` was not edited. Supabase was not reloaded.
+- **Outcome / counts**: Film, art and music **139**. Whisky **20**. For sale **48**. Rare wildlife **30**. Tidal islands **104**. Islands with castles **94**. Books **32**. Local traditions **30**. Unusual news **50**. Stories **1,475**, **891** with an open-licence picture. GitHub Pages builds from this push to `main`.
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
+

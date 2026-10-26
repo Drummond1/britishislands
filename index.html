@@ -67,11 +67,11 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css?v=name-island-2" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=photo-frame-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=ux-pass-1" />
     <link rel="stylesheet" href="editorial-profile.css?v=photo-frame-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=unusual-news-1" />
-    <link rel="modulepreload" href="app.js?v=photo-frame-1" />
+    <link rel="modulepreload" href="app.js?v=ux-pass-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -377,6 +377,7 @@
               <h2 id="list-heading" class="discovery-title">A few places to start</h2>
               <p class="sidebar-orient" id="sidebar-orient">A few places to start</p>
             </div>
+            <button type="button" class="list-show-all-header" id="list-show-all-header" hidden>Show all</button>
             <span class="count" id="result-count" aria-live="polite">0</span>
           </header>
 
@@ -440,7 +441,7 @@
         <li><a href="/collections/whisky-distilleries/">Whisky islands</a></li>
         <li><a href="/collections/tidal-islands/">Tidal islands</a></li>
         <li><a href="/collections/for-sale/">Islands for sale</a></li>
-        <li><a href="/collections/unusual-wildlife/">Unusual wildlife</a></li>
+        <li><a href="/collections/unusual-wildlife/">Rare wildlife</a></li>
         <li><a href="/collections/island-books/">Books set on islands</a></li>
         <li><a href="/collections/local-traditions/">Island traditions</a></li>
         <li><a href="/collections/film-art-music/">Film, art and music</a></li>
@@ -842,6 +843,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=photo-frame-1" type="module"></script>
+    <script src="app.js?v=ux-pass-1" type="module"></script>
   </body>
 </html>

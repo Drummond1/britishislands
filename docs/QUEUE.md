@@ -52,7 +52,7 @@ Supabase still needs `data/interest/memberships_sync.sql` and the tidal facet
 migration `supabase/migrations/20261025190000_tidal_islands.sql` before the
 remote memberships match this index.
 
-Unusual wildlife is published locally (2026-10-25): **30** species on **23**
+Rare wildlife is published locally (2026-10-25, renamed 2026-10-26): **30** species on **23**
 islands, **22** with a species photo. Eight have a paragraph and no usable
 photo: Fair Isle wren, Guernsey vole, Skomer vole, Islay shrew, Lundy cabbage
 flea beetle, Catacol whitebeam, *Salvelinus gracillimus*, and the extinct
@@ -92,13 +92,13 @@ Published locally 2026-10-26: Film, art and music (111 islands, 916 cited
 rows: 546 artworks, 297 music, 73 film). Whisky (**18** islands, **57** rows: 30 working stills,
 13 silent stills, 12 stories, 2 planned), including Anglesey Môn distillery, Nun's Island in Galway, and the Loch Shiel wreck on Thorne Island. Subdivisions: Islay,
 Hebrides, Orkney, Other isles, Silent stills, Stories, Planned. For sale
-(42), Unusual wildlife (23 islands, 30 species), Tidal islands (66),
+(42), Rare wildlife (23 islands, 30 species), Tidal islands (66),
 Islands with Castles (89 islands, 113 castles),
 Local traditions (23 islands, 35 customs), Unusual news (50 islands, 54 stories).
 Artwork, whisky, and wildlife lead the list and the profile with one cited
 picture and a short connection. Whisky also groups the rest of the profile
 under those subdivisions. The chip row is one filter at a time (2026-10-26):
-All islands, Islands with Castles, Unusual wildlife, Whisky, then the rest.
+All islands, Islands with Castles, Rare wildlife, Whisky, then the rest.
 Whisky regions and Film / Artwork / Music are not on the chip until more of
 those islands have a picture. The profile still groups whisky by subdivision. Tidal islands lead with where the link goes, and
 that it floods. This index is local. Supabase still has the earlier

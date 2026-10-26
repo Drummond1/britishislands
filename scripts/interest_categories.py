@@ -115,7 +115,7 @@ PUBLISHED = (
     },
     {
         "slug": "unusual-wildlife",
-        "label": "Unusual wildlife",
+        "label": "Rare wildlife",
         "blurb": "Islands with a rare, endemic, or remarkable animal or plant.",
         "sortOrder": 25,
     },
@@ -2554,7 +2554,7 @@ def membership_sql(rows: list[dict]) -> str:
         "acceptance_rules = excluded.acceptance_rules;",
         "insert into public.interest_categories "
         "(slug, label, blurb, status, sort_order, populator, acceptance_rules) values ("
-        "'unusual-wildlife', 'Unusual wildlife', "
+        "'unusual-wildlife', 'Rare wildlife', "
         "'Islands with a rare, endemic, or remarkable animal or plant.', "
         "'published', 25, 'cited_research', "
         "'A Wikipedia, Wikidata, or Open Government Licence page names the species and the island. "

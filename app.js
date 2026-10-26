@@ -2911,7 +2911,7 @@ function interestStoryGroups(islandId) {
             slug === "unusual-news"
               ? "Unusual news"
               : slug === "unusual-wildlife"
-              ? "Unusual wildlife"
+              ? "Rare wildlife"
               : slug === "tidal-islands"
                 ? "Tidal island"
                 : slug === "island-castles"
@@ -3502,7 +3502,7 @@ function renderExploreStrip(rows, title) {
         ${kicker ? `<span class="featured-card__region">${escapeHtml(kicker)}</span>` : ""}
         <span class="featured-card__name">${escapeHtml(row.name)}</span>
         ${blurb ? `<span class="featured-card__blurb">${escapeHtml(blurb)}</span>` : ""}
-        ${credit ? `<span class="featured-card__credit">${escapeHtml(credit)}</span>` : ""}
+        ${credit ? `<span class="featured-card__credit" title="${escapeAttr(credit)}">${escapeHtml(credit)}</span>` : ""}
       </span>`;
     btn.addEventListener("click", () => focusIsland(row.id, { fly: true }));
     scroll.appendChild(btn);
@@ -4508,6 +4508,8 @@ let listScroller = null;
 let listSpacer = null;
 let listInner = null;
 let listRenderRaf = 0;
+let listWindowKey = "";
+let listWindowForce = false;
 
 function shouldRenderListWindow() {
   if (els.details && !els.details.hidden) return false;
@@ -4616,10 +4618,19 @@ function renderList() {
     ? `${rows.length.toLocaleString()} of ${filtered.toLocaleString()}`
     : formatResultCount(filtered, total);
   paintResultCount(label, Boolean(truncatedFrom) || (total > 0 && filtered !== total));
+  const showAllBtn = document.getElementById("list-show-all-header");
+  if (showAllBtn) {
+    showAllBtn.hidden = !truncatedFrom;
+    if (truncatedFrom) {
+      showAllBtn.textContent = "Show all";
+      showAllBtn.setAttribute("aria-label", `Show all ${truncatedFrom.toLocaleString()} islands`);
+    }
+  }
   updateSidebarOrient();
   document.body.classList.toggle("has-discovery-intent", hasUserDiscoveryIntent());
   renderBrowseQuickChips();
   listSpacer.style.height = `${Math.max(rows.length, 1) * listRowHeight() + (truncatedFrom ? 56 : 0)}px`;
+  listWindowForce = true;
   if (listScroller) listScroller.scrollTop = 0;
   scheduleRenderListWindow();
 }
@@ -4676,7 +4687,26 @@ function getListContentOffset() {
   return listScroller.scrollTop - getListScrollTopInRows();
 }
 
+function syncListIslandCard(wrap, island) {
+  const active = island.id === state.activeId;
+  wrap.classList.toggle("is-active", active);
+  const main = wrap.querySelector(".island-card__main");
+  if (main) {
+    if (active) main.setAttribute("aria-current", "true");
+    else main.removeAttribute("aria-current");
+  }
+  const favBtn = wrap.querySelector(".island-card__fav");
+  if (!favBtn) return;
+  const fav = isFavoriteIsland(island.id);
+  favBtn.classList.toggle("is-favorite", fav);
+  favBtn.classList.toggle("is-just-saved", Boolean(fav && island.id === justSavedId));
+  favBtn.setAttribute("aria-pressed", fav ? "true" : "false");
+  favBtn.setAttribute("aria-label", fav ? "Remove from saved islands" : "Save island to list");
+  favBtn.title = fav ? "Remove from saved" : "Save to list";
+}
+
 function renderListEmptyOrSkeleton(total) {
+  listWindowKey = "";
   listInner.style.transform = "translateY(0)";
   listSpacer.style.height = "200px";
   if (document.body.classList.contains("app-is-loading")) {
@@ -4733,11 +4763,50 @@ function renderListWindow() {
   );
 
   listInner.style.transform = `translateY(${first * rowHeight}px)`;
-  listInner.innerHTML = "";
+  const showMore = Boolean(truncatedFrom && last >= total);
+  const windowIds = [];
+  for (let i = first; i < last; i++) {
+    if (rows[i]) windowIds.push(rows[i].id);
+  }
+  const windowKey = `${first}:${last}:${showMore ? 1 : 0}:${windowIds.join("\n")}`;
+  if (!listWindowForce && windowKey === listWindowKey) {
+    for (let i = first; i < last; i++) {
+      const island = rows[i];
+      if (!island) continue;
+      const card = listInner.querySelector(`:scope > .island-card[data-id="${CSS.escape(island.id)}"]`);
+      if (card) syncListIslandCard(card, island);
+    }
+    return;
+  }
 
+  const force = listWindowForce;
+  listWindowForce = false;
+  const existing = new Map();
+  if (force) {
+    listInner.innerHTML = "";
+  } else {
+    for (const card of [...listInner.querySelectorAll(":scope > .island-card")]) {
+      const id = card.dataset.id;
+      if (existing.has(id)) card.remove();
+      else existing.set(id, card);
+    }
+    const keep = new Set(windowIds);
+    for (const [id, card] of existing) {
+      if (!keep.has(id)) {
+        card.remove();
+        existing.delete(id);
+      }
+    }
+  }
   for (let i = first; i < last; i++) {
     const island = rows[i];
     if (!island) continue;
+    const reusedCard = existing.get(island.id);
+    if (reusedCard && reusedCard.isConnected) {
+      syncListIslandCard(reusedCard, island);
+      listInner.appendChild(reusedCard);
+      continue;
+    }
     const wrap = document.createElement("div");
     const hasListing = islandHasPropertyListing(island);
     const listingLead = hasListing ? primaryPropertyListing(island) : null;
@@ -4779,11 +4848,11 @@ function renderListWindow() {
     const thumbHtml = feature
       ? `<span class="island-card__frame">${
           featureShot
-            ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(featureAlt)}" loading="lazy" decoding="async" />`
+            ? `<img class="island-card__feature" src="${escapeAttr(featureShot)}" alt="${escapeAttr(featureAlt)}" decoding="async" />`
             : ""
         }</span>`
       : thumb
-        ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" loading="lazy" decoding="async" />`
+        ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" decoding="async" />`
         : renderEmptyThumb(island);
     const metaBits = [];
     if (placeBits) metaBits.push(escapeHtml(placeBits));
@@ -4884,16 +4953,22 @@ function renderListWindow() {
     wrap.appendChild(favBtn);
     listInner.appendChild(wrap);
   }
-  if (truncatedFrom && last >= total) {
-    const more = document.createElement("div");
-    more.className = "list-show-all";
-    more.innerHTML = `<button type="button" class="list-show-all__btn" data-action="show-all-list">Show all ${truncatedFrom.toLocaleString()} islands</button>`;
-    more.querySelector("[data-action='show-all-list']")?.addEventListener("click", () => {
-      state.showAllList = true;
-      renderList();
-    });
+  let more = listInner.querySelector(":scope > .list-show-all");
+  if (showMore) {
+    if (!more) {
+      more = document.createElement("div");
+      more.className = "list-show-all";
+      more.innerHTML = `<button type="button" class="list-show-all__btn" data-action="show-all-list">Show all ${truncatedFrom.toLocaleString()} islands</button>`;
+      more.querySelector("[data-action='show-all-list']")?.addEventListener("click", () => {
+        state.showAllList = true;
+        renderList();
+      });
+    }
     listInner.appendChild(more);
+  } else if (more) {
+    more.remove();
   }
+  listWindowKey = windowKey;
   refreshLucideIcons(listInner);
   bindPhotoFrames(listInner);
   if (interestFeatureMode()) requestAnimationFrame(settleFeatureRowHeight);
@@ -8969,7 +9044,7 @@ const CHAT_GUIDE_COLLECTIONS = [
   { slug: "island-books", test: /\b(books?|novels?|memoirs?|literature)\b/ },
   { slug: "local-traditions", test: /\b(local traditions?|folk customs?|customs?|traditions?)\b/ },
   { slug: "unusual-news", test: /\b(unusual news|strange news|island news|micronations?|declared independence)\b/ },
-  { slug: "unusual-wildlife", test: /\b(wildlife|puffins?|seabirds?|rare species)\b/ },
+  { slug: "unusual-wildlife", test: /\b(rare wildlife|wildlife|puffins?|seabirds?|rare species)\b/ },
   { slug: "tidal-islands", test: /\btidal islands?\b|\bwalk(?:able)? to\b/ },
   { slug: "for-sale", test: /\b(for sale|on the market|buy an island|islands? to buy)\b/ },
   { slug: "film-art-music", test: /\b(films?|movies?|paintings?|artworks?|songs?|bands?|music)\b/ },
@@ -11034,6 +11109,23 @@ function initGlobalKeyboardShortcuts() {
     }
   });
 }
+
+function syncMapKey() {
+  const wrap = document.querySelector(".legend-wrap");
+  if (!wrap) return;
+  const desktop = window.matchMedia("(min-width: 901px)").matches;
+  if (syncMapKey.desktop === desktop) return;
+  syncMapKey.desktop = desktop;
+  wrap.open = desktop;
+}
+syncMapKey();
+window.addEventListener("resize", syncMapKey);
+
+document.getElementById("list-show-all-header")?.addEventListener("click", () => {
+  state.showAllList = true;
+  renderList();
+  document.getElementById("list-heading")?.scrollIntoView({ block: "start" });
+});
 
 renderChatStarters();
 loadIslands();

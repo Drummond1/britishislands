@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26T12:11:10+00:00",
-  "totalIslandsWithListings": 42,
+  "updatedAt": "2026-10-26T14:30:00+00:00",
+  "totalIslandsWithListings": 48,
   "verifiedManifest": "data/discovery/property_listings_verified.json",
   "humanDoc": "docs/FOR-SALE-ISLANDS.md",
   "islands": [
@@ -886,6 +886,132 @@
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
       "lastSeenAt": "2026-10-26T12:11:10+00:00"
+    },
+    {
+      "islandId": "osm-way-4561837",
+      "name": "Roeillaun",
+      "nation": "Ireland",
+      "areaKm2": 0.078,
+      "lat": 53.8745,
+      "lng": -9.7071,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Roeillaun — Sherry FitzGerald Crowley",
+          "url": "https://www.sherryfitz.ie/buy/commercial/land/mayo/westport/roeillaun-island-clew-bay",
+          "listingType": "whole_island",
+          "priceDisplay": "Asking Price €115,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-sherryfitz-roeillaun-clew"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-4554380",
+      "name": "Mannion's Island (Large)",
+      "nation": "Ireland",
+      "areaKm2": 0.017,
+      "lat": 51.6088,
+      "lng": -9.5561,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Mannion's Island — Dominic J Daly",
+          "url": "https://dominicjdaly.com/mannions-island-dunmanus-bay-west-cork/",
+          "listingType": "whole_island",
+          "priceDisplay": "Guide Price £230,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-dominicjdaly-mannions-island"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-4561775",
+      "name": "Inishcoragh",
+      "nation": "Ireland",
+      "areaKm2": 0.034,
+      "lat": 53.881,
+      "lng": -9.6478,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inishcoragh — Patrick Chambers",
+          "url": "https://patrickchambersestateagents.ie/property/innischoragh-island-clew-bay-co-mayo/",
+          "listingType": "whole_island",
+          "priceDisplay": "€550,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-patrickchambers-inishcoragh"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-4560078",
+      "name": "Inish Samer",
+      "nation": "Ireland",
+      "areaKm2": 0.005,
+      "lat": 54.501,
+      "lng": -8.2008,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inis Saimer — O'Boyle Auctioneers",
+          "url": "https://oboyleproperty.ie/listing/inis-saimer-island-mall-quay-ballyshannon-co-donegal-f94-nw18/",
+          "listingType": "whole_island",
+          "priceDisplay": "€299,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-oboyle-inis-saimer"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-4821984",
+      "name": "Inchconnachan",
+      "nation": "Scotland",
+      "areaKm2": 0.425,
+      "lat": 56.09,
+      "lng": -4.6143,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inchconnachan — UK Sotheby's International Realty",
+          "url": "https://sothebysrealty.co.uk/properties/buy/land-for-sale-stirlingshire-loch-lomond-inchconnachan-island-49068/",
+          "listingType": "whole_island",
+          "priceDisplay": "£2,500,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-sothebys-inchconnachan"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-41105627",
+      "name": "Hildasay",
+      "nation": "Scotland",
+      "areaKm2": 0.996,
+      "lat": 60.1459,
+      "lng": -1.3599,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Hildasay — Kelvin Anderson",
+          "url": "https://kelvinanderson.exp.uk.com/property/hildasay-island/1559203/",
+          "listingType": "whole_island",
+          "priceDisplay": "Offers over £350,000",
+          "source": "tier4",
+          "sourceListingId": "tier4-kelvinanderson-hildasay"
+        }
+      ],
+      "firstSeenAt": "2026-10-26T14:30:00+00:00",
+      "lastSeenAt": "2026-10-26T14:30:00+00:00"
     }
   ],
   "runs": [
@@ -1196,6 +1322,22 @@
       "removedIslandIds": [],
       "source": "registry_only",
       "verifiedCount": 42
+    },
+    {
+      "runAt": "2026-10-26T14:30:00+00:00",
+      "addedCount": 6,
+      "removedCount": 0,
+      "addedIslandIds": [
+        "osm-way-4561837",
+        "osm-way-4554380",
+        "osm-way-4561775",
+        "osm-way-4560078",
+        "osm-way-4821984",
+        "osm-way-41105627"
+      ],
+      "removedIslandIds": [],
+      "source": "desk_research",
+      "verifiedCount": 48
     }
   ]
 }

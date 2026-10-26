@@ -271,9 +271,9 @@ GUIDE_SPECS: list[dict[str, Any]] = [
     },
     {
         "slug": "unusual-wildlife",
-        "title": "Unusual wildlife on British and Irish islands",
-        "h1": "Unusual wildlife",
-        "nav_label": "Unusual wildlife",
+        "title": "Rare wildlife on British and Irish islands",
+        "h1": "Rare wildlife",
+        "nav_label": "Rare wildlife",
         "priority": 0.8,
         "description": (
             "Rare, endemic, or remarkable species a source places on an island "
@@ -290,7 +290,7 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "faqs": [
             (
-                "Which British and Irish islands have unusual wildlife?",
+                "Which British and Irish islands have rare wildlife?",
                 "The {islands} islands on this page, covering {rows} cited species.",
             ),
             (

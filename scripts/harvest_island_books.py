@@ -120,6 +120,25 @@ BLOCK_BARE = {
     "sound",
     "channel",
     "firth",
+    "bush",
+    "station",
+    "quarry",
+    "shore",
+    "lighthouse",
+    "oxford",
+    "france",
+    "london",
+    "dublin",
+    "edinburgh",
+    "glasgow",
+    "belfast",
+    "cambridge",
+    "paris",
+    "wales",
+    "cardigan",
+    "australia",
+    "africa",
+    "america",
 }
 # A parenthetical archipelago name is not an alias for every islet in it.
 # Mainland keeps the group name, so "set in Orkney" lands on Mainland (Orkney).
@@ -144,6 +163,7 @@ EXTRA_ALIASES = {
     "mainland-shetland": ["Shetland", "Shetland Islands"],
     "lewis-and-harris": ["Isle of Lewis", "Lewis"],
     "scilly-st-marys": ["Isles of Scilly", "Scilly Isles", "Scilly"],
+    "osm-relation-6045552": ["Aran Islands"],
 }
 EXTRA_CONTEXT = {
     "osm-relation-6045346": ["anglesey", "holyhead", "ynys gybi"],
@@ -163,7 +183,7 @@ BROAD_CAPS = {
     "northern ireland": 80,
 }
 BOOK_LEAD = re.compile(
-    r"\b(novel|novella|memoir|autobiograph|short stor|children's book|picture book|"
+    r"\b(novel|novella|memoir|autobiograph|short stor|children's books?|picture books?|"
     r"poetry collection|collection of poems|non-?fiction book|book by|account of|"
     r"story collection|collection of (?:short )?stor)\b",
     re.I,
@@ -175,7 +195,7 @@ NOT_A_BOOK = re.compile(
     re.I,
 )
 INSPIRED = re.compile(
-    r"\b(inspired by|based on|loosely based|modell?ed on|thought to be based|filmed on|shot on)\b",
+    r"\b(inspired by|based on|loosely based|modell?ed on|thought to be based|filmed on|shot on|patterned after|draws on)\b",
     re.I,
 )
 PAREN_TITLE = re.compile(
@@ -237,7 +257,14 @@ def _clean_alias(value: str) -> str:
     value = re.sub(r"\s+", " ", value or "").strip(" ,;/")
     if not value or len(fold(value)) < 3:
         return ""
-    if fold(value) in BLOCK_BARE or fold(value) in MAINLANDS or fold(value) in {"the", "the island", "the isle", "an island"}:
+    if fold(value) in BLOCK_BARE or fold(value) in MAINLANDS or fold(value) in {
+        "the",
+        "the island",
+        "the isle",
+        "an island",
+        "the bush",
+        "bush",
+    }:
         return ""
     return value
 
@@ -639,8 +666,20 @@ def load_seeds() -> list[dict]:
     return seeds
 
 
-def lead_is_book(extract: str) -> bool:
-    head = (extract or "")[:500]
+def lead_is_book(extract: str, title: str = "") -> bool:
+    """The page itself has to be the book, not a village, a film, or a person who was born there."""
+    if re.search(r"\((?:film|play|video game|album|tv series|television)\)\s*$", title or "", re.I):
+        return False
+    first = original_sentences(extract)
+    head = first[0] if first else (extract or "")[:400]
+    if re.search(
+        r"\b(?:is|was) an? (?:[\w'-]+ ){0,6}(?:film|play|video game|television series|tv series|poem|village|settlement|town|festival|theatre|theater|event|competition)\b",
+        head,
+        re.I,
+    ):
+        return False
+    if re.search(r"\b(?:writer|poet|novelist|author|actor|politician) born\b|\bborn\b.{0,40}\bis an?\b", head, re.I):
+        return False
     if NOT_A_BOOK.search(head) and not BOOK_LEAD.search(head):
         return False
     return bool(BOOK_LEAD.search(head))
@@ -661,12 +700,19 @@ def alias_in_setting(sentence: str, alias: str) -> bool:
         return False
     if not re.search(rf"(?<!\w){re.escape(needle)}(?!\w)", folded):
         return False
+    # "Aran Islands" is the Galway group, not Arranmore in Donegal.
+    if needle == "aran" and re.search(r"\baran islands\b", folded):
+        return False
+    if re.search(r"\b(comparisons?|compared to|in popular culture)\b", folded):
+        return False
+    if re.search(rf"\bused to live\b.{{0,30}}(?<!\w){re.escape(needle)}(?!\w)", folded):
+        return False
     needle_at = folded.find(needle)
     if needle_at >= 0 and re.search(r"fictional", folded[max(0, needle_at - 55) : needle_at]):
         return False
     direct = [
-        rf"\bset (?:mainly |largely |mostly |partly |primarily |briefly )?(?:on|in|at|upon) (?:the )?(?:[\w'-]+ ){{0,3}}(?:isle of |island of |islands of )?{re.escape(needle)}\b",
-        rf"\btakes place (?:mainly |largely |mostly |partly )?(?:on|in|at) (?:the )?(?:[\w'-]+ ){{0,3}}(?:isle of |island of |islands of )?{re.escape(needle)}\b",
+        rf"\bset (?:mainly |largely |mostly |partly |primarily |briefly )?(?:on|in|at|upon) (?:the )?(?:(?:remote|small|tiny|little|rocky|distant|northern|southern|western|eastern|outer|inner|main|largest|wild|lonely|uninhabited|nearby|neighbouring|neighboring|scottish|irish|welsh|occupied) )?(?:isle of |island of |islands of )?{re.escape(needle)}\b",
+        rf"\btakes place (?:mainly |largely |mostly |partly )?(?:on|in|at) (?:the )?(?:(?:remote|small|tiny|little|rocky|distant|northern|southern|western|eastern|outer|inner|main|largest|wild|lonely|uninhabited|weather-beaten)(?: and (?:remote|small|tiny|little|rocky|weather-beaten))? )?(?:isle of |island of |islands of )?{re.escape(needle)}\b",
         rf"\b(?:shipwrecked|marooned|stranded) on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
         rf"\b(?:life|childhood|youth|years|time|stay) (?:living |spent )?(?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
         rf"\bgrew up (?:on|in) (?:the )?(?:isle of |island of )?{re.escape(needle)}\b",
@@ -678,9 +724,18 @@ def alias_in_setting(sentence: str, alias: str) -> bool:
     ]
     direct.append(rf"\b(?:live|lives) on (?:the )?(?:isle of |island of |islands of )?{re.escape(needle)}\b")
     direct.append(rf"\bheld on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b")
-    direct.append(rf"\bon the (?:isle|island) of {re.escape(needle)}\b")
+    direct.append(rf"\bwash(?:ed)? ashore on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b")
+    direct.append(rf"\barrives? in (?:the )?(?:isle of |island of )?{re.escape(needle)}\b")
+    direct.append(rf"\bturn the (?:isle|island) of {re.escape(needle)} into\b")
+    direct.append(
+        rf"\b(?:story|novel|book|memoir) begins on (?:the )?(?:isle of |island of )?{re.escape(needle)}\b"
+    )
     if not re.search(r"\bdedicated to\b", folded):
         direct.append(rf"\bto the (?:[\w'-]+ ){{0,2}}(?:isle|island) of {re.escape(needle)}\b")
+    # A long island name in the same sentence as "set on/in" is the setting,
+    # even when a few words sit between them. Short names stay on the strict patterns.
+    if len(needle) >= 8 and re.search(r"\b(?:set|takes place|setting) (?:on|in|at|upon)\b", folded):
+        direct.append(rf"(?<!\w){re.escape(needle)}(?!\w)")
     direct.append(
         rf"\b(?:returns|sails|goes|comes|travels|travelled|journeys) to the (?:isle|island) of {re.escape(needle)}\b"
     )
@@ -713,6 +768,25 @@ def match_islands(sentence: str, alias_index: list[tuple[str, dict]], hinted: di
             hits[island["id"]] = (score, island, alias)
     if not hits:
         return []
+    # "Set on Inishmaan in the Aran Islands" names the island, not the whole group.
+    group_aliases = {
+        "aran islands",
+        "isles of scilly",
+        "scilly isles",
+        "scilly",
+        "orkney",
+        "orkney islands",
+        "shetland",
+        "shetland islands",
+        "channel islands",
+    }
+    specific = {
+        island_id: item
+        for island_id, item in hits.items()
+        if fold(item[2]) not in group_aliases
+    }
+    if specific and len(specific) < len(hits):
+        hits = specific
     best_score = max(item[0] for item in hits.values())
     # Drop a shorter shared name when a longer name in the same sentence won.
     contenders = [item for item in hits.values() if item[0] >= best_score - 2]
@@ -730,7 +804,7 @@ def match_islands(sentence: str, alias_index: list[tuple[str, dict]], hinted: di
     if ranked[0][0] >= ranked[1][0] + 3:
         return [(ranked[0][1], ranked[0][2])]
     ranked.sort(key=lambda item: (item[0], item[1]["area"]), reverse=True)
-    if ranked[0][1]["area"] > max(ranked[1][1]["area"], 0.01) * 8 and ranked[0][1]["area"] > 20:
+    if ranked[0][1]["area"] > max(ranked[1][1]["area"], 0.01) * 5 and ranked[0][1]["area"] >= ranked[1][1]["area"] + 1:
         return [(ranked[0][1], ranked[0][2])]
     with_area = [item for item in ranked if item[1]["area"] > 0]
     if len(with_area) == 1:
@@ -758,7 +832,7 @@ def row_title(article_title: str, extract: str, sentence: str) -> str:
     shown = display_title(article_title)
     head = re.sub(r"\s+", " ", (extract or "")[:320])
     if re.search(
-        rf"\b{re.escape(shown)} is an? (?:[\w'-]+ ){{0,4}}(?:novel|novella|memoir|autobiography|children's book|picture book)\b",
+        rf"\b{re.escape(shown)}\b.{{0,80}}\bis an?\b.{{0,40}}\b(?:novel|novella|memoir|autobiography|children's book|picture book)\b",
         head,
         re.I,
     ):
@@ -772,7 +846,10 @@ def row_title(article_title: str, extract: str, sentence: str) -> str:
 def build_summary(extract: str, setting: str) -> str:
     sentences = original_sentences(extract)
     identity = sentences[0] if sentences else ""
+    if identity.endswith("?") and len(sentences) > 1:
+        identity = f"{identity} {sentences[1]}"
     identity = re.sub(r"\s+", " ", identity).strip()
+    setting = re.sub(r"==+[^=]+==+", " ", setting or "")
     setting = re.sub(r"\s+", " ", setting).strip()
     if setting and setting not in identity:
         text = f"{identity} {setting}".strip()
@@ -1008,20 +1085,25 @@ def populate_books(atlas=None, max_pages: int = 700) -> list[dict]:
         article_title = record.get("title") or title
         if not extract or "may refer to" in extract[:180].lower():
             continue
-        bookish = lead_is_book(extract)
+        bookish = lead_is_book(extract, article_title)
         names_setting = bool(re.search(r"\b(setting for|is set|set on|set in|takes place)\b", extract, re.I))
-        if not bookish and not names_setting:
+        if not bookish and not WORK_TITLE.search(extract or ""):
             continue
         hint_row = hinted.get(fold(title)) or hinted.get(fold(article_title)) or {}
         hinted_island = by_qid.get(hint_row.get("place") or "")
 
-        def sentences_for(text: str) -> dict[str, tuple[str, str]]:
+        def sentences_for(text: str) -> dict[str, tuple[int, str, str]]:
             found: dict[str, tuple[str, str]] = {}
             for sentence in original_sentences(text):
+                folded = fold(sentence)
+                if "category:" in folded or folded.strip().startswith("=="):
+                    continue
+                explicit = 1 if re.search(r"\b(set|takes place|setting) (?:on|in|at|upon)\b", folded) else 0
                 for island, alias in match_islands(sentence, alias_index, hinted_island):
                     previous = found.get(island["id"])
-                    if previous is None or len(alias) > len(previous[1]):
-                        found[island["id"]] = (sentence, alias)
+                    rank = explicit * 100 + len(alias)
+                    if previous is None or rank > previous[0]:
+                        found[island["id"]] = (rank, sentence, alias)
             return found
 
         matched = sentences_for(extract)
@@ -1056,7 +1138,7 @@ def populate_books(atlas=None, max_pages: int = 700) -> list[dict]:
                     )
                 )
             continue
-        for island_id, (sentence, alias) in matched.items():
+        for island_id, (_rank, sentence, alias) in matched.items():
             island = next(item for item in islands if item["id"] == island_id)
             key = (island_id, fold(row_title(article_title, extract, sentence)))
             if key in accepted:

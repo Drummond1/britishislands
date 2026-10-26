@@ -77,3 +77,7 @@ data/details/
 
 # CI-staged GitHub Pages output (see scripts/prepare_pages_artifact.py)
 _site/
+
+# island reel build cache
+.reel-build/
+scripts/reel/node_modules/

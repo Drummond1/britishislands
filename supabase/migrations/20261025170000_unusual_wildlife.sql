@@ -1,4 +1,4 @@
--- Unusual wildlife filter. Island-level species only.
+-- Rare wildlife filter. Island-level species only.
 -- The public map reads data/interest_index.json. This keeps the database
 -- in step: a wildlife facet, and the published category row.
 
@@ -17,7 +17,7 @@ insert into public.interest_categories
 values
   (
     'unusual-wildlife',
-    'Unusual wildlife',
+    'Rare wildlife',
     'Islands with a rare, endemic, or remarkable animal or plant.',
     'published',
     25,

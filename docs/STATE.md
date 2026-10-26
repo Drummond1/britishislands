@@ -4,6 +4,12 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (shipped to main)** — The expanded interest index is on `main` for GitHub Pages. Film, art and music **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal islands **104**, castles **94**, books **32**, local traditions **30**, unusual news **50**. Stories **1,475**, **891** with an open-licence picture. Supabase was not reloaded. `islands.json` was not edited.
+
+**2026-10-26 (interest expansion published)** — Eight filters gained cited islands. Film, art and music **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal islands **104**, castles **94**, books **32**, local traditions **30**. Unusual news stays **50**. Stories **1,475**, **891** with an open-licence picture. Local index only. Supabase was not reloaded. `islands.json` was not edited.
+
+**2026-10-26 (rare wildlife)** — The interest chip, profile heading, and collection guide now read Rare wildlife. The slug stays `unusual-wildlife`. Counts unchanged. Supabase was not reloaded. The unapplied migration `supabase/migrations/20261025170000_unusual_wildlife.sql` uses the new label.
+
 **2026-10-26 (unusual news, local papers)** — Twenty-six more reports from local and regional papers. **50** islands, **54** cited stories, every one with an open-licence picture. Shetland Times, the Orcadian, Stornoway Gazette, the Press and Journal, the Mayo News, the Irish Examiner, the Irish News, Essex Live, Wales Online, Cornwall Live, North Wales Live, the Bournemouth Echo, and the Jersey Evening Post. Stories **1,271**, **734** with a picture. Other chips unchanged. Did not edit `islands.json`. Supabase was not reloaded.
 
 **2026-10-26 (unusual news, continued)** — Ten more reports. **26** islands, **28** cited stories, every one with an open-licence picture. Added the whisky wreck off Eriskay, the beach runway on Barra, the St Kilda evacuation, the Westray Wife, the two-minute flight to Papa Westray, the Stronsay beast, the Vatersay raiders, the Ailsa Craig curling stones, Orwell in the Corryvreckan, and the Dursey cable car. Stories **1,245**, **708** with a picture. Other chips unchanged. Did not edit `islands.json`. Supabase was not reloaded.
@@ -977,7 +983,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| Interest expansion, eight categories | 2026-10-26 14:00 UTC | this session | cursor agents | Candidate files only: `data/interest/candidates/zz-expansion-{whisky,wildlife,books,traditions,tidal,castles,film-art-music,for-sale}.json`. Do not publish. Do not edit `islands.json`. |
+| ~~Interest index publish~~ ✅ 2026-10-26 15:59 UTC | 2026-10-26 15:50 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal **104**, castles **94**, books **32**, traditions **30**, unusual news **50**. Stories **1,475** / **891** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Unusual news harvest~~ ✅ published 2026-10-26 | 2026-10-26 14:07 UTC | — | cursor agent | **50** islands, **54** stories in `data/interest_index.json`. Did not edit `islands.json`. |
 | ~~Local traditions harvest~~ ✅ published 2026-10-26 | 2026-10-26 07:10 UTC | — | cursor agent | **23** islands, **35** customs in `data/interest_index.json`. Cache `data/cache_local_traditions/`. Did not edit `islands.json`. |
 | ~~Books set on the island~~ ✅ published 2026-10-26 | 2026-10-26 06:20 UTC | — | cursor agent | **22** islands, **39** books in `data/interest_index.json`. Cache `data/cache_island_books/`. Did not edit `islands.json`. Supabase not reloaded. |

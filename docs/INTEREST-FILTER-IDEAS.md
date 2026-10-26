@@ -8,7 +8,7 @@ that chip. Castle islets and lighthouses are still not populators.
 Nothing else here is a populator, and nothing else here is published.
 
 Live chips: Film, art and music; Whisky distilleries; For sale.
-Already in harvest: unusual wildlife. Do not redesign it.
+Already in harvest: rare wildlife (slug `unusual-wildlife`). Do not redesign it.
 Already drafted and empty: `uninhabited-stay`. Leave it drafted. Do not
 staff it in this round. A public place to stay, with no street address and
 no owner name, is still missing.
