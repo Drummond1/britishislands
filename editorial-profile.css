@@ -714,6 +714,70 @@ body.filters-open .filter-drawer,
   font-size: 18px;
   color: var(--profile-ink);
 }
+.island-details .profile-name-line {
+  margin: 2px 0 12px;
+  font-family: var(--font-display, Newsreader, Georgia, serif);
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--profile-ink);
+}
+.island-details .profile-name-line__lang {
+  margin-right: 10px;
+  font-family: var(--font-body, "Familjen Grotesk", sans-serif);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--profile-muted);
+}
+.island-details .profile-name-line__val { font-style: italic; }
+.island-details .alt-names-more { margin: 0 0 16px; }
+.island-details .alt-names-more > summary {
+  cursor: pointer;
+  color: var(--profile-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+.island-details .alt-names-more[open] > summary { margin-bottom: 8px; }
+.island-details .interest-stories > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--profile-line, rgba(27, 36, 48, .12));
+  cursor: pointer;
+  list-style: none;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 22px;
+  font-weight: 460;
+  letter-spacing: -0.02em;
+  color: var(--profile-ink);
+}
+.island-details .interest-stories > summary::-webkit-details-marker { display: none; }
+.island-details .interest-stories__count {
+  font-family: var(--font-body, "Familjen Grotesk", sans-serif);
+  font-size: 13px;
+  font-weight: 560;
+  letter-spacing: .04em;
+  color: var(--profile-muted);
+}
+.island-details .interest-stories[open] > summary { margin-bottom: 12px; }
+.island-details .interest-stories__more {
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #1c3d36;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 .chat-panel .chat-msg--user {
   align-self: stretch;

@@ -3476,3 +3476,17 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Film, art and music **139**. Whisky **20**. For sale **48**. Rare wildlife **30**. Tidal islands **104**. Islands with castles **94**. Books **32**. Local traditions **30**. Unusual news **50**. Stories **1,475**, **891** with an open-licence picture. GitHub Pages builds from this push to `main`.
 - **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
 
+## 2026-10-26 — First-screen atlas QA
+
+- **Goal**: Fix the experience problems a visitor hits before they ever open an island.
+- **What changed**: The opening photographs are one row of three, so the island list starts on the first screen. Search stays put while the list scrolls. Show all sits beside “24 of 7,207” instead of after the 24th card. Zoom uses ink on chalk, at 44px. The map key is a dark two-column panel on a wide screen, and it closes on a phone. Photo credits stay on the cards, one line, with the full credit on hover. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. On a 1920×1080 window the first island card is visible, Show all lists 7,207 islands, search for Staffa returns Staffa, and Back returns from Anglesey. Zoom contrast is ink on chalk. On a narrow window the photographs scroll sideways and the first list card sits above Map / Explore / Ask.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Island profile you can finish
+
+- **Goal**: Stop a profile from burying the island under every cited work.
+- **What changed**: Each collection on a profile is a closed row with a count. The first two cited pieces are inside it, and the rest appear when you ask. Skye’s own name is the Gàidhlig line under the title. The same name in another language is not repeated. Welsh, Scots, Manx, and French stay under Other names. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. Skye’s profile is about 3,300 pixels instead of 32,000. The seven collections are closed rows. Film, art and music opens to 2 works, and Show 62 more brings the full 64. Other names still lists Cymraeg, Français, Gaelg, and Scots.
+- **Open items kicked to QUEUE.md**: none.
+

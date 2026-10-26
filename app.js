@@ -3092,45 +3092,58 @@ function interestTieParagraph(item, className) {
   return `<p class="${className}">${escapeHtml(tie)}</p>`;
 }
 
+const INTEREST_STORY_PREVIEW = 2;
+let interestStoryRest = [];
+
+function renderInterestArticle(item) {
+  const image = item.image;
+  const figure = image?.thumbUrl
+    ? `<figure class="interest-story__figure">
+        <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(image.alt || item.title || "Cited work")}" loading="lazy" decoding="async" />
+        <figcaption>
+          ${image.note ? `${escapeHtml(image.note)}. ` : ""}${escapeHtml(image.attribution || "Wikimedia Commons")}
+          ${image.licence ? ` · ${escapeHtml(image.licence)}` : ""}
+          ${
+            image.pageUrl
+              ? ` · <a href="${escapeAttr(image.pageUrl)}" target="_blank" rel="noopener noreferrer">Image source</a>`
+              : ""
+          }
+        </figcaption>
+      </figure>`
+    : "";
+  const kicker = interestKicker(item);
+  const more = interestMoreLink(item);
+  return `<article class="interest-story">
+    ${figure}
+    <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
+    <h4>${escapeHtml(item.title || "")}</h4>
+    ${item.summary && !isBoilerplateStory(item.summary) ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+    ${interestTieParagraph(item, "interest-story__tie")}
+    ${more}
+  </article>`;
+}
+
 function renderInterestStories(island) {
   const groups = interestStoryGroups(island?.id);
+  interestStoryRest = [];
   if (!groups.length) return "";
   const cards = groups
-    .map((group) => {
-      const articles = group.items
-        .map((item) => {
-          const image = item.image;
-          const figure = image?.thumbUrl
-            ? `<figure class="interest-story__figure">
-                <img src="${escapeAttr(image.thumbUrl)}" alt="${escapeAttr(image.alt || item.title || "Cited work")}" loading="lazy" decoding="async" />
-                <figcaption>
-                  ${image.note ? `${escapeHtml(image.note)}. ` : ""}${escapeHtml(image.attribution || "Wikimedia Commons")}
-                  ${image.licence ? ` · ${escapeHtml(image.licence)}` : ""}
-                  ${
-                    image.pageUrl
-                      ? ` · <a href="${escapeAttr(image.pageUrl)}" target="_blank" rel="noopener noreferrer">Image source</a>`
-                      : ""
-                  }
-                </figcaption>
-              </figure>`
-            : "";
-          const kicker = interestKicker(item);
-          const more = interestMoreLink(item);
-          return `<article class="interest-story">
-            ${figure}
-            <p class="interest-story__kicker">${escapeHtml(kicker)}</p>
-            <h4>${escapeHtml(item.title || "")}</h4>
-            ${item.summary && !isBoilerplateStory(item.summary) ? `<p>${escapeHtml(item.summary)}</p>` : ""}
-            ${interestTieParagraph(item, "interest-story__tie")}
-            ${more}
-          </article>`;
-        })
-        .join("");
-      return `<section class="interest-stories" id="profile-interest-${escapeAttr(group.slug)}">
-        <h3>${escapeHtml(group.label)}</h3>
+    .map((group, index) => {
+      const preview = group.items.slice(0, INTEREST_STORY_PREVIEW);
+      const rest = group.items.slice(INTEREST_STORY_PREVIEW);
+      interestStoryRest[index] = rest;
+      const more = rest.length
+        ? `<button type="button" class="interest-stories__more" data-interest-more="${index}">Show ${rest.length.toLocaleString()} more</button>`
+        : "";
+      return `<details class="interest-stories" id="profile-interest-${escapeAttr(group.slug)}-${index}">
+        <summary>
+          <span class="interest-stories__label">${escapeHtml(group.label)}</span>
+          <span class="interest-stories__count">${group.items.length.toLocaleString()}</span>
+        </summary>
         ${group.intro ? `<p class="interest-stories__intro">${escapeHtml(group.intro)}</p>` : ""}
-        ${articles}
-      </section>`;
+        <div class="interest-stories__list">${preview.map(renderInterestArticle).join("")}</div>
+        ${more}
+      </details>`;
     })
     .join("");
   const id = interestLeadStory(island?.id) ? "profile-interest-more" : "profile-interest";
@@ -5499,10 +5512,13 @@ function _renderAffiliateLinks(mainlandTerm, op) {
 function refreshGalleryInPlace(island) {
   const hero = document.getElementById("details-hero");
   if (!hero) return;
+  const mast = hero.querySelector(".profile-mast");
   const wrapper = document.createElement("div");
   wrapper.innerHTML = renderGallery(island);
   const fresh = wrapper.firstElementChild;
-  if (fresh) hero.replaceWith(fresh);
+  if (!fresh) return;
+  if (mast) fresh.querySelector(".details-hero__media")?.appendChild(mast);
+  hero.replaceWith(fresh);
 }
 
 function setListVirtualLayerPaused(paused) {
@@ -5648,8 +5664,6 @@ function renderDetails(island) {
       </div>`
     : "";
 
-  const altNames = renderAltNames(island);
-
   cancelTerrainMount();
   const prev3dView = document.getElementById("island-3d-view");
   if (prev3dView) {
@@ -5664,14 +5678,26 @@ function renderDetails(island) {
   const unnamed = isUnnamedIsland(island);
   const suggested = suggestedName(island.id);
   const showNameForm = unnamed && (!suggested || renamingIslandId === island.id);
-  const photo = renderGallery(island);
-  const gallery = showNameForm ? "" : featureHtml && featureHasImage ? "" : photo || renderPhotoPlaceholderHero(island);
-  const photoAfter = showNameForm ? photo : "";
   const title = islandDisplayName(island);
   const locationLine = [island.nation, island.archipelago, island.parentWaterBody?.name]
     .filter(Boolean)
     .join(" · ");
-  const namesBlock = altNames ? `<div class="profile-names">${altNames}</div>` : "";
+  const culturalName = renderCulturalName(island);
+  const otherNames = renderOtherNames(island);
+  const heading = showNameForm
+    ? renderNameIslandForm(island, suggested)
+    : `<div class="details-title-row">
+        <div class="details-title-block">
+          <h2 class="details-title">${escapeHtml(title)}</h2>
+          ${locationLine ? `<p class="details-location">${escapeHtml(locationLine)}</p>` : ""}
+        </div>
+      </div>
+      ${unnamed && suggested ? renderSuggestedCredit(suggested) : ""}`;
+  const plate = !showNameForm && !(featureHtml && featureHasImage);
+  const photo = renderGallery(island, plate ? `${heading}${culturalName}` : "");
+  const gallery = showNameForm ? "" : featureHtml && featureHasImage ? "" : photo || renderPhotoPlaceholderHero(island);
+  const photoAfter = showNameForm ? photo : "";
+  const flowHeading = plate && photo ? "" : `${heading}${culturalName}`;
   const moreLink = island.wikipedia
     ? `<p class="profile-story"><a href="${escapeAttr(island.wikipedia)}" target="_blank" rel="noopener">Read more</a></p>`
     : "";
@@ -5686,32 +5712,18 @@ function renderDetails(island) {
   els.details.classList.remove("is-arriving");
   requestAnimationFrame(() => els.details.classList.add("is-arriving"));
 
-  const heading = showNameForm
-    ? renderNameIslandForm(island, suggested)
-    : `<div class="details-title-row">
-        <div class="details-title-block">
-          <h2 class="details-title">${escapeHtml(title)}</h2>
-          ${locationLine ? `<p class="details-location">${escapeHtml(locationLine)}</p>` : ""}
-        </div>
-      </div>
-      ${unnamed && suggested ? renderSuggestedCredit(suggested) : ""}`;
-
   els.detailsContent.innerHTML = `
     ${gallery}
-    ${heading}
+    ${flowHeading}
     ${photoAfter}
+    ${renderVisitorFacts(island)}
+    ${otherNames}
     ${featureHtml}
     ${subtypeChips}
-    ${namesBlock}
     ${renderIslandStory(island, { skipLead: Boolean(featureHtml) })}
     ${renderSummitLine(island)}
     ${renderHeritageLine(island)}
-    ${renderVisitorFacts(island)}
     ${moreLink}
-    <div class="profile-hero-actions">
-      <button type="button" class="profile-secondary-btn" id="details-share-inline">Share</button>
-      <button type="button" class="profile-secondary-btn details-fav${favActive ? " is-favorite" : ""}" id="details-favorite-inline" aria-pressed="${favActive ? "true" : "false"}">${favActive ? "Saved" : "Save"}</button>
-    </div>
     ${renderInterestStories(island)}
     ${renderPropertyListings(island)}
     ${renderFerries(island)}
@@ -5750,6 +5762,19 @@ function renderDetails(island) {
     });
   });
 
+  els.detailsContent.querySelectorAll("[data-interest-more]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const rest = interestStoryRest[Number(btn.dataset.interestMore)];
+      const list = btn.parentElement?.querySelector(".interest-stories__list");
+      if (!rest?.length || !list) return;
+      const wrap = document.createElement("div");
+      wrap.innerHTML = rest.map(renderInterestArticle).join("");
+      while (wrap.firstChild) list.appendChild(wrap.firstChild);
+      bindPhotoFrames(list);
+      btn.remove();
+    });
+  });
+
   const toolbar = document.getElementById("details-toolbar-actions");
   if (toolbar) {
     const osBtn =
@@ -5758,6 +5783,7 @@ function renderDetails(island) {
         : "";
     toolbar.innerHTML = `
       ${osBtn}
+      <button type="button" id="details-share-btn" class="details-action-btn">Share</button>
       <button type="button" id="details-favorite-btn" class="details-fav${
         favActive ? " is-favorite" : ""
       }" aria-pressed="${favActive ? "true" : "false"}" aria-label="${
@@ -5783,6 +5809,7 @@ function renderDetails(island) {
     e.preventDefault();
     shareIslandLink(island);
   };
+  document.getElementById("details-share-btn")?.addEventListener("click", shareHandler);
   document.getElementById("details-share-inline")?.addEventListener("click", shareHandler);
 
   document.getElementById("name-island-form")?.addEventListener("submit", async (e) => {
@@ -6812,18 +6839,67 @@ function renderProvenanceBlock(island) {
   </details>`;
 }
 
+function culturalNameLang(island) {
+  const nation = island?.nation || "";
+  if (nation === "Scotland") return "gd";
+  if (nation === "Ireland" || nation === "Northern Ireland") return "ga";
+  if (nation === "Wales") return "cy";
+  if (nation === "Isle of Man") return "gv";
+  const place = `${nation} ${island?.archipelago || ""} ${island?.name || ""}`.toLowerCase();
+  if (place.includes("isle of man")) return "gv";
+  if (place.includes("jersey") || place.includes("guernsey") || place.includes("sark")) return "nrf";
+  if (nation === "England" && island?.names?.kw) return "kw";
+  return "";
+}
+
+function distinctAltNames(island) {
+  const names = island?.names || {};
+  const primary = String(island?.name || "").trim().toLowerCase();
+  const preferred = culturalNameLang(island);
+  const byValue = new Map();
+  for (const [lang, raw] of Object.entries(names)) {
+    if (lang === "en" || lang === "alt") continue;
+    const value = String(raw || "").trim();
+    if (!value || value.toLowerCase() === primary) continue;
+    const key = value.toLowerCase();
+    const current = byValue.get(key);
+    if (!current || lang === preferred) {
+      byValue.set(key, { lang, value, label: LANG_LABELS[lang] || lang });
+    }
+  }
+  return [...byValue.values()].sort((a, b) => {
+    if (a.lang === preferred) return -1;
+    if (b.lang === preferred) return 1;
+    return a.label.localeCompare(b.label);
+  });
+}
+
+function renderAltNameSpan(row) {
+  return `<span class="alt-name"><span class="alt-name__lang">${escapeHtml(row.label)}</span> <span class="alt-name__val">${escapeHtml(row.value)}</span></span>`;
+}
+
+function splitAltNames(island) {
+  const rows = distinctAltNames(island);
+  const preferred = culturalNameLang(island);
+  const lead = rows.find((row) => row.lang === preferred) || null;
+  const rest = lead ? rows.filter((row) => row !== lead) : rows;
+  return { lead, rest };
+}
+
+function renderCulturalName(island) {
+  const { lead } = splitAltNames(island);
+  if (!lead) return "";
+  return `<p class="profile-name-line"><span class="profile-name-line__lang">${escapeHtml(lead.label)}</span> <span class="profile-name-line__val">${escapeHtml(lead.value)}</span></p>`;
+}
+
+function renderOtherNames(island) {
+  const { rest } = splitAltNames(island);
+  if (!rest.length) return "";
+  return `<details class="alt-names-more"><summary>Other names</summary><div class="alt-names">${rest.map(renderAltNameSpan).join("")}</div></details>`;
+}
+
 function renderAltNames(island) {
-  const names = island.names || {};
-  const entries = Object.entries(names)
-    .filter(([lang, val]) => val && val.trim() && val.trim() !== island.name && lang !== "en")
-    .map(
-      ([lang, val]) =>
-        `<span class="alt-name"><span class="alt-name__lang">${escapeHtml(
-          LANG_LABELS[lang] || lang,
-        )}:</span> <span class="alt-name__val">${escapeHtml(val)}</span></span>`,
-    );
-  if (!entries.length) return "";
-  return `<div class="alt-names">${entries.join("")}</div>`;
+  return `${renderCulturalName(island)}${renderOtherNames(island)}`;
 }
 
 function renderSourcesBlock(island, { innerOnly = false } = {}) {
@@ -6931,7 +7007,7 @@ function ensureGalleryMerged(island) {
   island.__galleryMerged = true;
 }
 
-function renderGallery(island) {
+function renderGallery(island, mastHtml = "") {
   ensureGalleryMerged(island);
   // Resolve the canonical image list. `images[]` is the new schema; fall
   // back to the legacy `image` field for any entry that hasn't been
@@ -6970,7 +7046,7 @@ function renderGallery(island) {
     <div class="details-hero" id="details-hero" data-island-id="${escapeAttr(
       island.id,
     )}" data-active-idx="${primaryIdx}">
-      <div class="details-hero__media">${heroHtml}</div>
+      <div class="details-hero__media">${heroHtml}${mastHtml ? `<div class="profile-mast">${mastHtml}</div>` : ""}</div>
       ${attribution}
       ${thumbStrip}
     </div>

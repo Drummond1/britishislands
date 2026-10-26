@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (shipped to main)** — Island profiles open with the island. Each collection is a closed row with a count; the first two cited pieces are inside it. The island’s own-language name sits under the title, and a repeated name in another language is not listed again. Counts unchanged. Supabase was not reloaded. `islands.json` was not edited.
+
 **2026-10-26 (shipped to main)** — The expanded interest index is on `main` for GitHub Pages. Film, art and music **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal islands **104**, castles **94**, books **32**, local traditions **30**, unusual news **50**. Stories **1,475**, **891** with an open-licence picture. Supabase was not reloaded. `islands.json` was not edited.
 
 **2026-10-26 (interest expansion published)** — Eight filters gained cited islands. Film, art and music **139**, whisky **20**, for sale **48**, rare wildlife **30**, tidal islands **104**, castles **94**, books **32**, local traditions **30**. Unusual news stays **50**. Stories **1,475**, **891** with an open-licence picture. Local index only. Supabase was not reloaded. `islands.json` was not edited.
