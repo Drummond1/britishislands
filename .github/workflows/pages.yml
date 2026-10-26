@@ -1,5 +1,6 @@
-# Build GitHub Pages artifact with optional crowd-submit email from repo secret.
+# Build GitHub Pages artifact with optional crowd-submit email and OS Maps key.
 # Settings → Secrets → CROWD_FORM_EMAIL (FormSubmit inbox you verify once).
+# Settings → Secrets → OS_MAPS_API_KEY (OS Data Hub project API key).
 
 name: Deploy Pages
 
@@ -46,6 +47,25 @@ jobs:
         run: |
           python3 scripts/build_islands_index.py
           python3 scripts/build_chat_corpus.py
+
+      - name: Inject OS Maps API key
+        env:
+          OS_MAPS_API_KEY: ${{ secrets.OS_MAPS_API_KEY }}
+        run: |
+          python3 - << 'PY'
+          import json
+          import os
+          from pathlib import Path
+          key = os.environ.get("OS_MAPS_API_KEY", "").strip()
+          if not key:
+              print("OS_MAPS_API_KEY secret not set — paper map stays on the standard map.")
+              raise SystemExit(0)
+          Path("config.local.js").write_text(
+              "window.OS_MAPS_API_KEY = " + json.dumps(key) + ";\n",
+              encoding="utf-8",
+          )
+          print("Wrote config.local.js for the Ordnance Survey paper map.")
+          PY
 
       - name: Stage Pages artifact (shards, profiles; omit monolithic JSON)
         run: python3 scripts/prepare_pages_artifact.py

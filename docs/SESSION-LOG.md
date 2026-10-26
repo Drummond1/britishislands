@@ -3328,3 +3328,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Every island card has an OS control, and an open profile has Ordnance Survey in the top bar. That opens the paper map (Leisure) across the main map when the island is in Great Britain and a key is set, Outdoor for Northern Ireland, and the standard map elsewhere. The frame follows the coastline, with an area estimate until the outline arrives. The small profile map uses the same frame. No dataset change.
 - **Outcome / counts**: No count change. Checked in the browser: All islands lists an OS control on each card; Skye and Staffa open the Ordnance Survey paper map with the whole island in frame. Close returns to the atlas.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-26 — Ordnance Survey key on the live site
+
+- **Goal**: The paper map on findmyisland.com should open from the OS Data Hub key already saved for the project, without each visitor pasting it.
+- **What changed**: The Pages workflow writes `OS_MAPS_API_KEY` into `config.local.js` at deploy time. The key stays out of git. No dataset change.
+- **Outcome / counts**: No count change.
+- **Open items kicked to QUEUE.md**: none.
