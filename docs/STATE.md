@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-26 (homepage cover)** — The opening photograph carries its name, *somewhere* is chalk and *else.* is the only gold in the headline, and the map clusters stay ink until a pointer reaches them. A gold seam joins the column to the map. No new request. Counts unchanged. Shipped to main.
+
 **2026-10-26 (homepage plate)** — The first screen is a printed chart: a gold north on the rose, a coastline drawn once under the headline, interest chips on two whole lines, a gold rule on a photograph and on a name, and registration marks with a gold ring on the map clusters. Nothing new is fetched. The rose stays still and the lamp stays a fixed pool. Counts unchanged. Shipped to main.
 
 **2026-10-26 (veil timeout)** — A stalled first fetch of the island index no longer holds the loading veil. The preload uses the same credentials as the fetch, a fetch that has not finished after 3.5 seconds is retried, and the veil hides without waiting for animation frames. Opening cards, the rose, lamp, needle, chip rule, search glow, bearing, and one-off arrivals are unchanged. Counts unchanged. Shipped to main. A cold load of findmyisland.com hid the veil inside two seconds.
@@ -961,6 +963,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| Interest expansion, eight categories | 2026-10-26 14:00 UTC | this session | cursor agents | Candidate files only: `data/interest/candidates/zz-expansion-{whisky,wildlife,books,traditions,tidal,castles,film-art-music,for-sale}.json`. Do not publish. Do not edit `islands.json`. |
 | ~~Local traditions harvest~~ ✅ published 2026-10-26 | 2026-10-26 07:10 UTC | — | cursor agent | **23** islands, **35** customs in `data/interest_index.json`. Cache `data/cache_local_traditions/`. Did not edit `islands.json`. |
 | ~~Books set on the island~~ ✅ published 2026-10-26 | 2026-10-26 06:20 UTC | — | cursor agent | **22** islands, **39** books in `data/interest_index.json`. Cache `data/cache_island_books/`. Did not edit `islands.json`. Supabase not reloaded. |
 | ~~Island castles interest harvest~~ ✅ published 2026-10-26 | 2026-10-26 04:40 UTC | — | cursor agent | **89** islands, **113** castles in `data/interest_index.json`. Cache `data/cache_island_castles/`. Did not edit `islands.json`. |
