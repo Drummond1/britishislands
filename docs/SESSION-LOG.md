@@ -3721,3 +3721,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The home strip no longer pins Skye, Iona, and Staffa. It takes the first three from `scoreAtlasIsland`. A card uses the island photograph when one is already on the record, otherwise the picture from the cited story. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. The cards are Erraid, Lindisfarne, and Lewis and Harris, matching the list. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Safari photographs
+
+- **Goal**: Stop tall pictures, and some list thumbnails, from drawing as a thin strip in Safari.
+- **What changed**: A list photograph sits in a fixed frame, so Safari cannot size it from the file. Opening cards and profile pictures that are tall or square are shown whole again; a later cover rule had been cropping them after they were marked. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. In WebKit the Kidnapped cover on Erraid is the whole book, Lewis and Harris is the whole satellite view, and list thumbnails stay 111×94. The same sizes held in Chrome. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.

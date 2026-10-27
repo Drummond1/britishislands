@@ -5056,7 +5056,7 @@ function renderListWindow() {
             : ""
         }</span>`
       : thumb
-        ? `<img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" width="104" height="116" decoding="async" />`
+        ? `<span class="island-card__shot"><img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" decoding="async" /></span>`
         : renderEmptyThumb(island);
     const metaBits = [];
     if (placeBits) metaBits.push(escapeHtml(placeBits));

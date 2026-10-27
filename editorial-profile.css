@@ -1078,3 +1078,11 @@ body.filters-open .filter-drawer,
   .island-details .details-hero:has(.profile-mast) .hero-img { max-height: 300px; }
   .island-details .profile-mast .details-title { font-size: clamp(32px, 8vw, 42px); }
 }
+
+.island-details .details-hero .hero-img.is-letterboxed,
+.island-details .details-hero:has(.profile-mast) .hero-img.is-letterboxed,
+.interest-story__figure img.is-letterboxed,
+.interest-feature__figure img.is-letterboxed {
+  object-fit: contain;
+  object-position: center;
+}
