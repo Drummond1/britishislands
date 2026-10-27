@@ -10086,6 +10086,7 @@ function chatOpen() {
   if (mobileNav.isActive()) mobileNav.setView("ask", { skipChatSync: true });
   ensureChatTagVocabulary();
   renderChatStarters();
+  chatProbeShared();
   setTimeout(() => chatEls.input.focus(), 50);
   if (!chatEls.messages.dataset.bootstrapped) {
     chatRenderBot(
@@ -10423,18 +10424,66 @@ const LLM_PROVIDERS = {
 const LLM_HISTORY_TURNS = 8;
 const LLM_CANDIDATE_LIMIT = 8;
 
+// null = not checked yet. True only when the Ask function reports a server key.
+let chatSharedReady = null;
+let chatSharedProbe = null;
+
+function chatSharedEndpoint() {
+  const url = String(window.IOB_SUPABASE_URL || "").replace(/\/$/, "");
+  const anon = String(window.IOB_SUPABASE_ANON_KEY || "");
+  if (!url || !anon) return null;
+  return { url: url + "/functions/v1/ask", anon };
+}
+
+function chatProbeShared() {
+  if (chatSharedReady !== null) return Promise.resolve(chatSharedReady);
+  if (chatSharedProbe) return chatSharedProbe;
+  const cfg = chatSharedEndpoint();
+  if (!cfg) {
+    chatSharedReady = false;
+    return Promise.resolve(false);
+  }
+  chatSharedProbe = fetch(cfg.url, {
+    headers: { apikey: cfg.anon, Authorization: "Bearer " + cfg.anon },
+  })
+    .then((resp) => (resp.ok ? resp.json() : null))
+    .then((data) => {
+      chatSharedReady = !!(data && data.ready);
+      return chatSharedReady;
+    })
+    .catch(() => {
+      chatSharedReady = false;
+      return false;
+    })
+    .finally(() => {
+      chatSharedProbe = null;
+      chatLLMRefreshUI();
+    });
+  return chatSharedProbe;
+}
+
 function chatLLMGetSettings() {
   try {
     const raw = localStorage.getItem("chatAI");
     const obj = raw ? JSON.parse(raw) : {};
+    const hasChoice = !!(raw && Object.prototype.hasOwnProperty.call(obj, "enabled"));
+    const apiKey = obj.apiKey || "";
+    const shared = !apiKey && !!chatSharedReady;
     return {
-      enabled: !!obj.enabled,
+      enabled: hasChoice ? !!obj.enabled : shared,
       provider: obj.provider || "openai",
       model: obj.model || LLM_PROVIDERS.openai.defaultModel,
-      apiKey: obj.apiKey || "",
+      apiKey,
+      shared,
     };
   } catch (_) {
-    return { enabled: false, provider: "openai", model: "gpt-4o-mini", apiKey: "" };
+    return {
+      enabled: !!chatSharedReady,
+      provider: "openai",
+      model: "gpt-4o-mini",
+      apiKey: "",
+      shared: !!chatSharedReady,
+    };
   }
 }
 
@@ -10561,12 +10610,26 @@ function chatLLMHeaders(settings) {
 }
 
 async function chatLLMPost(settings, body) {
-  const provider = LLM_PROVIDERS[settings.provider];
-  if (!provider) throw new Error("Unknown provider: " + settings.provider);
+  const shared = !settings.apiKey && settings.shared;
+  const cfg = shared ? chatSharedEndpoint() : null;
+  const provider = shared
+    ? { label: "Ask", endpoint: cfg && cfg.url }
+    : LLM_PROVIDERS[settings.provider];
+  if (!provider || !provider.endpoint) {
+    throw new Error(shared ? "Shared Ask is not configured." : "Unknown provider: " + settings.provider);
+  }
+  const headers = shared
+    ? {
+        "Content-Type": "application/json",
+        apikey: cfg.anon,
+        Authorization: "Bearer " + cfg.anon,
+      }
+    : chatLLMHeaders(settings);
+  const payload = shared ? Object.assign({}, body, { model: "gpt-4o-mini" }) : body;
   const resp = await fetch(provider.endpoint, {
     method: "POST",
-    headers: chatLLMHeaders(settings),
-    body: JSON.stringify(body),
+    headers,
+    body: JSON.stringify(payload),
   });
   if (!resp.ok) {
     let detail = "";
@@ -10836,8 +10899,16 @@ function chatAgentNeedsLookup(taken, retrieved) {
 }
 
 async function chatAgentRun(question, history, settings, onStatus) {
+  if (!settings.apiKey) {
+    if (!settings.shared && !chatSharedReady) throw new Error("No API key configured");
+    settings = Object.assign({}, settings, {
+      provider: "openai",
+      model: "gpt-4o-mini",
+      shared: true,
+    });
+  }
   if (!LLM_PROVIDERS[settings.provider]) throw new Error("Unknown provider: " + settings.provider);
-  if (!settings.apiKey) throw new Error("No API key configured");
+  if (!settings.apiKey && !settings.shared) throw new Error("No API key configured");
   const retrieved = new Map();
   const lastNearBox = { near: null };
   const system =
@@ -10952,15 +11023,33 @@ function chatLLMRefreshUI() {
   const modeSub = chatSettingsEls.modeSub();
   const btnLabel = document.getElementById("chat-ai-btn-label");
   const keyLink = document.getElementById("chat-ai-key-link");
-  if (toggleBtn) toggleBtn.classList.toggle("is-on", !!s.enabled && !!s.apiKey);
+  const aiToggle = chatSettingsEls.aiToggle();
+  if (aiToggle) aiToggle.checked = !!s.enabled;
+  const usingShared = !!(s.enabled && s.shared && !s.apiKey);
+  const aiOn = !!(s.enabled && (s.apiKey || s.shared));
+  if (toggleBtn) toggleBtn.classList.toggle("is-on", aiOn);
   if (btnLabel) {
     if (s.enabled && s.apiKey) {
       btnLabel.textContent = `AI: ${LLM_PROVIDERS[s.provider]?.label || s.provider}`;
-    } else if (s.apiKey) {
+    } else if (usingShared) {
+      btnLabel.textContent = "AI on";
+    } else if (s.apiKey || s.shared) {
       btnLabel.textContent = "AI off";
     } else {
       btnLabel.textContent = "Set up AI";
     }
+  }
+  const keyLabel = document.getElementById("chat-ai-key-label");
+  if (keyLabel) {
+    keyLabel.textContent = s.shared || usingShared
+      ? "Your own key (optional)"
+      : "Paste your API key here ↓";
+  }
+  const note = document.getElementById("chat-settings-note");
+  if (note) {
+    note.textContent = usingShared
+      ? "Smart answers are on for everyone. A question and the island records it needs go to OpenAI on the atlas connection. A personal key is optional and stays in this browser."
+      : "With Smart answers on, the model searches the atlas and then reads the full records it needs. Your question, the conversation, and those records go to OpenAI. A personal key stays in this browser. A question can take a few seconds and more than one request.";
   }
   if (keyLink) {
     keyLink.href =
@@ -10969,9 +11058,8 @@ function chatLLMRefreshUI() {
         : "https://platform.openai.com/api-keys";
   }
   if (modeSub) {
-    if (s.enabled && s.apiKey) {
-      modeSub.textContent =
-        "I'll look it up in the atlas.";
+    if (s.enabled && (s.apiKey || s.shared)) {
+      modeSub.textContent = "I'll look it up in the atlas.";
     } else if (s.enabled && !s.apiKey) {
       modeSub.textContent =
         "AI mode is on but no key is set. Open settings to add one.";
@@ -11039,8 +11127,9 @@ function chatLLMInitSettingsUI() {
   test.addEventListener("click", async () => {
     const status = chatSettingsEls.status();
     if (!status) return;
+    if (chatSharedReady === null) await chatProbeShared();
     const live = chatLLMGetSettings();
-    if (!live.apiKey) {
+    if (!live.apiKey && !live.shared) {
       status.className = "chat-settings__status is-err";
       status.textContent = "Add an API key first.";
       return;
@@ -11079,6 +11168,7 @@ function chatLLMInitSettingsUI() {
     });
   }
   chatLLMRefreshUI();
+  chatProbeShared();
 }
 
 // Initialise once the DOM is parsed.
@@ -11116,24 +11206,21 @@ function chatSubmit(text) {
   thinking.textContent = "One moment…";
   chatAppend(thinking);
 
-  const aiSettings = chatLLMGetSettings();
-  const aiActive = !!(aiSettings.enabled && aiSettings.apiKey);
-  const prep = aiActive
-    ? Promise.all([
-        state.interestIndex ? Promise.resolve() : loadInterestIndex(),
-        ensureChatCorpus(),
-      ])
-    : Promise.all([
-        loadCauseways(),
-        ensureChatTagVocabulary(),
-        state.interestIndex ? Promise.resolve() : loadInterestIndex(),
-        ensureChatCorpus(),
-      ]);
+  const prep = Promise.all([
+    state.interestIndex ? Promise.resolve() : loadInterestIndex(),
+    ensureChatCorpus(),
+    chatProbeShared(),
+  ]);
 
   // Wrap the whole pipeline in try/catch so a single thrown error can never
   // leave the user staring at a perpetual "Searching the atlas…" dot.
   prep.then(async () => {
     try {
+      const aiSettings = chatLLMGetSettings();
+      const aiActive = !!(aiSettings.enabled && (aiSettings.apiKey || aiSettings.shared));
+      if (!aiActive) {
+        await Promise.all([loadCauseways(), ensureChatTagVocabulary()]).catch(() => {});
+      }
       if (aiActive) {
         thinking.textContent = "Searching the atlas…";
         try {

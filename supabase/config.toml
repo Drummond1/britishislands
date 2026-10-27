@@ -27,3 +27,7 @@ enable_signup = true
 [auth.email]
 enable_signup = true
 enable_confirmations = true
+
+# Ask proxy. The OpenAI key is a secret on the project, not a value in this file.
+[functions.ask]
+verify_jwt = true

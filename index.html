@@ -71,7 +71,7 @@
     <link rel="stylesheet" href="editorial-profile.css?v=visitor-note-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
-    <link rel="modulepreload" href="app.js?v=interest-rank-2" />
+    <link rel="modulepreload" href="app.js?v=ask-shared-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -707,8 +707,7 @@
         <p class="chat-settings__note" id="chat-settings-note">
           With Smart answers on, the model searches the atlas and then reads the full
           records it needs. Your question, the conversation, and those records go to
-          the provider you choose. The API key stays in this browser. A question can
-          take a few seconds and more than one request.
+          OpenAI. A question can take a few seconds and more than one request.
         </p>
         <div class="chat-settings__row">
           <label for="chat-ai-provider">Provider</label>
@@ -725,7 +724,7 @@
         </div>
         <div class="chat-settings__keyrow">
           <label for="chat-ai-key">
-            <strong>Paste your API key here ↓</strong>
+            <strong id="chat-ai-key-label">Paste your API key here ↓</strong>
             <a
               id="chat-ai-key-link"
               href="https://platform.openai.com/api-keys"
@@ -846,6 +845,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=interest-rank-2" type="module"></script>
+    <script src="app.js?v=ask-shared-1" type="module"></script>
   </body>
 </html>

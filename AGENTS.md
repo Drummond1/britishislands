@@ -126,8 +126,10 @@ With Smart answers on, the model calls tools in `chat-agent.js`: it searches
 the loaded atlas, counts, lists interest collections, then reads full records
 from `data/details/{id}.json` before it writes. Loch names, description
 snippets, summit names, and other-language names come from
-`data/chat_corpus.json`, loaded only when Ask opens. The visitor's own API key
-stays in `localStorage`. Each query is still reflected as `?ask=…`.
+`data/chat_corpus.json`, loaded only when Ask opens. A shared OpenAI key can
+live as a Supabase secret on `functions/ask` (`docs/SUPABASE.md`). A visitor's
+own key, if they paste one, stays in `localStorage` and is not the site key.
+Each query is still reflected as `?ask=…`.
 To extend the local parser, add synonyms to the `CHAT_*` dictionaries or
 cities to `CHAT_PLACES`.
 

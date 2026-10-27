@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (shared Ask)** — Smart answers for visitors go through `supabase/functions/ask`. The OpenAI key is a Supabase secret. A test reply came back from `gpt-4o-mini`. The key is not in the site. Counts unchanged. `islands.json` was not edited.
+
 **2026-10-27 (photo adoption)** — Adopted the photos both checks support. **24** new leads, each with a Commons file page that names the island and a second signal (its own category or a GPS fix inside the limit). **1,559** leads the checker called the wrong subject were removed where there was no approved replacement. **30** conflicts, where the picker would keep a photo the checker rejected, stay. Curated island records are all still present. `galleries.json` no longer promotes the removed file. A wider-source pass is next and is not on the atlas yet.
 
 **2026-10-27 (all-islands order)** — The unfiltered list leads with interesting islands, subject photographs, and standout whole-island listings (`scoreAtlasIsland` in `interest-rank.js`). Counts unchanged. `islands.json` was not edited. Supabase was not reloaded.
@@ -1021,7 +1023,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 |---|---|---|---|---|
 | Interest daywave: 9 category researchers + 3 quality reviewers, hourly wake `AGENT_LOOP_TICK_interest_daywave` | 2026-10-27 08:30 UTC | through the day, pause after 21:00 Europe/London | cursor agents | Each researcher writes only `data/interest/candidates/zz-daywave-2026-10-27-<slug>.json` (status `proposed` until a quality agent sets `accepted` or `rejected`). No `islands.json` edits, no index publish, no commit. Photo audit stays in `data/photo_audit/2026-10-27/`. |
 | ~~Local interest index publish, round 4~~ ✅ 2026-10-27 06:37 UTC | 2026-10-27 06:35 UTC | — | cursor agent | Published `data/interest_index.json`. Film **143**, whisky **22**, for sale **49**, rare wildlife **40**, tidal **116**, castles **100**, books **41**, traditions **39**, unusual news **89**. Stories **1,638** / **996** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. Local only, not pushed. |
-| Photo source-to-source audit, 13 slices × picker + verifier | 2026-10-27 06:30 UTC | adopted 2026-10-27 | cursor agents | Finished. 24 new leads adopted. 1,559 wrong leads removed. 30 conflicts left in place. Files under `data/photo_audit/2026-10-27/`. |
+| Wider-source photo pass, 11 slices × picker + verifier | 2026-10-27 08:40 UTC | this session | cursor agents | Islands with no lead after the Commons adoption (4,435). Openverse only. They write `data/photo_audit/2026-10-27-wider/`. They do not edit `islands.json`. |
+| Photo source-to-source audit, 13 slices × picker + verifier | 2026-10-27 06:30 UTC | adopted 2026-10-27 | cursor agents | Finished. 24 new leads adopted. 1,559 wrong leads removed. 30 conflicts left in place. Shipped to main as `db18736c`. |
 | ~~Interest expansion, leftover cited rows~~ ✅ 2026-10-26 20:25 UTC | 2026-10-26 20:15 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **50**. Stories **1,502** / **915** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Interest expansion, wildlife and traditions follow-up~~ ✅ 2026-10-26 20:25 UTC | 2026-10-26 20:00 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **36**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **50**. Stories **1,507** / **923** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Interest expansion, second pass~~ ✅ 2026-10-26 19:54 UTC | 2026-10-26 19:27 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **30**, unusual news **50**. Stories **1,488** / **901** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
@@ -1164,14 +1167,16 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   checked.” No email. See `island-notes.js`. The shared table is not applied
   yet (`supabase/migrations/20261027120000_island_visitor_notes.sql`).
 - **Chatbot ("Island finder")**: floating "Ask" button bottom-right opens a
-  chat panel. **Local mode** (default) parses nation, type, subtype,
-  archipelago, feature, size, sort, and proximity, and nothing leaves the
-  browser. **Smart answers** (visitor's own OpenAI or Anthropic key, stored
-  only in this browser) lets the model call `search_islands`, `count_islands`,
+  chat panel. **Local mode** parses nation, type, subtype, archipelago,
+  feature, size, sort, and proximity, and nothing leaves the browser.
+  **Smart answers** lets the model call `search_islands`, `count_islands`,
   `list_collections`, and `read_islands` against the loaded atlas, then write
-  from those records. Loch names and short snippets live in
-  `data/chat_corpus.json`, fetched when Ask opens. Each query is reflected
-  as `?ask=…`. See `chat-agent.js`, `app.js → CHAT_*`, and `.chat-*` styles.
+  from those records. The shared path is `supabase/functions/ask`: the OpenAI
+  key is a Supabase secret, and the browser only sends the public anon key.
+  A visitor can still paste their own key; that copy stays in this browser.
+  Loch names and short snippets live in `data/chat_corpus.json`, fetched when
+  Ask opens. Each query is reflected as `?ask=…`. See `chat-agent.js`,
+  `app.js → CHAT_*`, and `.chat-*` styles. The function is deployed. A visitor with no key of their own gets Smart answers when the page can reach it.
 - **Ferry layer**: lazy-loaded on first island click via `loadFerries()` +
   `loadCauseways()`. The details panel ships a "How to get there" block
   with operator-branded ferry cards (route label, duration, frequency /

@@ -143,3 +143,32 @@ How to add the next category: [`.cursor/skills/interest-category-populate/SKILL.
 - [`PRD-USER-CONTRIBUTIONS.md`](PRD-USER-CONTRIBUTIONS.md) — product scope
 - [`ETHICS.md`](ETHICS.md) — licensing and moderation rules
 - [`../supabase-client.js`](../supabase-client.js) — browser helper (saved islands first)
+
+---
+
+## 9. Shared Ask (OpenAI)
+
+Smart answers for every visitor go through `supabase/functions/ask`. The
+browser calls that function with the public anon key. The OpenAI key stays
+in the Supabase secret `OPENAI_API_KEY` and is not written into the site.
+
+Set a monthly budget on the OpenAI account first
+([platform.openai.com/settings/organization/limits](https://platform.openai.com/settings/organization/limits)).
+The function allows `gpt-4o-mini` only, and 30 requests per 10 minutes per
+address. A public chat can still spend that budget.
+
+From the repo, in Terminal (the key is typed there, not into chat):
+
+```bash
+cd "/Users/drummondgilberta2aa9/Desktop/LLMs/Cursor/Scottish Islands"
+npx supabase login
+read -rs OPENAI_API_KEY
+npx supabase secrets set "OPENAI_API_KEY=$OPENAI_API_KEY" --project-ref oqqfuddgclotoohekmop
+unset OPENAI_API_KEY
+npx supabase functions deploy ask --project-ref oqqfuddgclotoohekmop
+```
+
+`read -rs` takes the key without showing it. Do not paste the key into chat, into
+`config.local.js`, or into git. After deploy, Ask on findmyisland.com uses
+Smart answers without a visitor key. A visitor can still paste their own key
+in Ask settings; that copy stays in their browser and is not the site key.

@@ -3651,3 +3651,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: `scoreAtlasIsland` in `interest-rank.js` replaces the old size-and-population browse order for All islands and for other browses that are not a search, a collection, or Remote. A strong cited story, up to eight subject photographs, and a private-island or acre-estate listing with a photograph each lift an island. Great Britain and Ireland stay at the bottom. A house on a river ait does not rise. `islands.json` was not edited. Supabase was not called.
 - **Outcome / counts**: Counts unchanged. The first screen runs Lindisfarne, Sark, Mull, Islay, Skye, Arran, Staffa, and Iona, then Orkney, Shetland, St Kilda, Lundy, and Lewis. Calf Island Middle, Eilean Righ, Inchmarnock, Inis Barna, and Shuna sit in that opening because the listing is the island.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Shared Ask, key stays off the site
+
+- **Goal**: Let every visitor use Smart answers without pasting a key, without publishing the OpenAI key.
+- **What changed**: `supabase/functions/ask` calls OpenAI with a Supabase secret. The page uses it when that function says it is ready, and still accepts a personal key in the browser. The secret is set. The function is deployed. A short test returned a reply from `gpt-4o-mini`.
+- **Outcome / counts**: Counts unchanged. The live site uses it once this page change is on `main`.
+- **Open items kicked to QUEUE.md**: none.
