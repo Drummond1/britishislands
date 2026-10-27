@@ -3728,3 +3728,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: A list photograph sits in a fixed frame, so Safari cannot size it from the file. Opening cards and profile pictures that are tall or square are shown whole again; a later cover rule had been cropping them after they were marked. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. In WebKit the Kidnapped cover on Erraid is the whole book, Lewis and Harris is the whole satellite view, and list thumbnails stay 111×94. The same sizes held in Chrome. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — iPhone list photographs
+
+- **Goal**: Homepage list photographs were still missing on iPhone Safari.
+- **What changed**: A list photo keeps a fixed size in the flow of the card, instead of being taken out of the layout. Opening photographs load immediately. Commons picture addresses that bounced through a redirect now point straight at the thumbnail. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. On a phone-sized WebKit window the opening photographs and the list thumbnails loaded, at 95×94 in the list. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.

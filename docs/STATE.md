@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (iPhone list photos)** — Homepage list photographs stay a fixed size and load from a direct thumbnail address, so iPhone Safari can show them. Counts unchanged. `islands.json` was not edited.
+
 **2026-10-27 (Safari photos)** — Tall opening pictures are shown whole, and list thumbnails keep a fixed frame so Safari cannot squash them. Counts unchanged. `islands.json` was not edited.
 
 **2026-10-27 (featured cards)** — The three cards above the list are the first three of the All islands story order. Counts unchanged. `islands.json` was not edited.

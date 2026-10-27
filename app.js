@@ -3688,7 +3688,7 @@ function renderExploreStrip(rows, title) {
     btn.setAttribute("aria-label", [row.name, place].filter(Boolean).join(", "));
     const thumb = islandThumbUrl(island) || row.thumbUrl || island.image;
     const imgHtml = thumb
-      ? `<img class="featured-card__img" src="${escapeAttr(thumb)}" alt="" loading="lazy" />`
+      ? `<img class="featured-card__img" src="${escapeAttr(phoneSafeImageUrl(thumb, 960))}" alt="" loading="eager" decoding="async" />`
       : `<span class="featured-card__placeholder" aria-hidden="true"></span>`;
     const arch = placeToken(island.archipelago);
     const kicker = arch && archCounts.get(arch) === 1 ? arch : "";
@@ -3770,6 +3770,91 @@ function islandHasElevation(island) {
   }
   const conf = island.highestPointConfidence;
   return Boolean(conf && conf !== "n/a");
+}
+
+function md5hex(input) {
+  const bytes = new TextEncoder().encode(input);
+  const len = bytes.length;
+  const bitLen = len * 8;
+  const pad = (64 - ((len + 9) % 64)) % 64;
+  const buf = new Uint8Array(len + 1 + pad + 8);
+  buf.set(bytes);
+  buf[len] = 0x80;
+  const view = new DataView(buf.buffer);
+  view.setUint32(buf.length - 8, bitLen >>> 0, true);
+  view.setUint32(buf.length - 4, Math.floor(bitLen / 0x100000000), true);
+  let a0 = 0x67452301;
+  let b0 = 0xefcdab89;
+  let c0 = 0x98badcfe;
+  let d0 = 0x10325476;
+  const shifts = [7, 12, 17, 22, 5, 9, 14, 20, 4, 11, 16, 23, 6, 10, 15, 21];
+  const sine = new Uint32Array(64);
+  for (let i = 0; i < 64; i += 1) sine[i] = Math.floor(Math.abs(Math.sin(i + 1)) * 0x100000000) >>> 0;
+  for (let off = 0; off < buf.length; off += 64) {
+    const block = new Uint32Array(16);
+    for (let i = 0; i < 16; i += 1) block[i] = view.getUint32(off + i * 4, true);
+    let A = a0;
+    let B = b0;
+    let C = c0;
+    let D = d0;
+    for (let i = 0; i < 64; i += 1) {
+      let mixed;
+      let index;
+      if (i < 16) {
+        mixed = (B & C) | (~B & D);
+        index = i;
+      } else if (i < 32) {
+        mixed = (D & B) | (~D & C);
+        index = (5 * i + 1) % 16;
+      } else if (i < 48) {
+        mixed = B ^ C ^ D;
+        index = (3 * i + 5) % 16;
+      } else {
+        mixed = C ^ (B | ~D);
+        index = (7 * i) % 16;
+      }
+      const rot = shifts[(i >> 4) * 4 + (i & 3)];
+      mixed = (mixed + A + sine[i] + block[index]) >>> 0;
+      A = D;
+      D = C;
+      C = B;
+      B = (B + ((mixed << rot) | (mixed >>> (32 - rot)))) >>> 0;
+    }
+    a0 = (a0 + A) >>> 0;
+    b0 = (b0 + B) >>> 0;
+    c0 = (c0 + C) >>> 0;
+    d0 = (d0 + D) >>> 0;
+  }
+  const out = new DataView(new ArrayBuffer(16));
+  out.setUint32(0, a0, true);
+  out.setUint32(4, b0, true);
+  out.setUint32(8, c0, true);
+  out.setUint32(12, d0, true);
+  return [...new Uint8Array(out.buffer)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+/** iPhone Safari drops Commons pictures that bounce through a cookie redirect. */
+function phoneSafeImageUrl(url, pixels) {
+  const raw = String(url || "");
+  if (!raw || raw.includes("upload.wikimedia.org/wikipedia/commons/thumb/")) return raw;
+  let parsed;
+  try {
+    parsed = new URL(raw, "https://www.findmyisland.com");
+  } catch (_) {
+    return raw;
+  }
+  if (!/(^|\.)wikimedia\.org$/i.test(parsed.hostname)) return raw;
+  const path = decodeURIComponent(parsed.pathname);
+  const named = path.match(/\/(?:Special:FilePath|Special:Redirect\/file|wiki\/File:)\/(.+)$/i);
+  if (!named) return raw;
+  const file = named[1].replace(/ /g, "_");
+  if (!/\.(?:jpe?g|png|gif|webp|svg)$/i.test(file)) return raw;
+  const steps = [120, 250, 330, 500, 960, 1280];
+  const width = steps.find((step) => step >= pixels) || steps[steps.length - 1];
+  const hash = md5hex(file);
+  const encoded = encodeURIComponent(file);
+  const thumb = `${width}px-${encoded}${/\.svg$/i.test(file) ? ".png" : ""}`;
+  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${hash[0]}/${hash.slice(0, 2)}/${encoded}/${thumb}`;
 }
 
 function islandThumbUrl(island) {
@@ -5056,7 +5141,7 @@ function renderListWindow() {
             : ""
         }</span>`
       : thumb
-        ? `<span class="island-card__shot"><img class="island-card__thumb" src="${escapeAttr(thumb)}" alt="${escapeAttr(thumbAlt)}" decoding="async" /></span>`
+        ? `<span class="island-card__shot"><img class="island-card__thumb" src="${escapeAttr(phoneSafeImageUrl(thumb, 330))}" alt="${escapeAttr(thumbAlt)}" loading="eager" decoding="async" /></span>`
         : renderEmptyThumb(island);
     const metaBits = [];
     if (placeBits) metaBits.push(escapeHtml(placeBits));

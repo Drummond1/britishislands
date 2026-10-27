@@ -2245,10 +2245,9 @@ body.is-atlas-ready .map-wrap { animation: none; }
   .featured-card:focus-visible .featured-card__img { transform: none; }
 }
 
-/* Safari sizes a bare img from its file, so a tall photo collapses to a strip.
-   The frame is a normal box with a fixed height. The picture fills that box. */
+/* iPhone Safari paints a blank box when the photo is position:absolute inside the
+   scrolling list. Give the photo itself a fixed size instead. */
 .island-card__shot {
-  position: relative;
   display: block;
   width: 111px;
   height: 94px;
@@ -2259,18 +2258,42 @@ body.is-atlas-ready .map-wrap { animation: none; }
   background: var(--bg-soft);
 }
 img.island-card__thumb {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
+  position: static;
+  display: block;
+  width: 111px;
+  height: 94px;
+  min-width: 111px;
+  min-height: 94px;
+  max-width: none;
   max-height: none;
   aspect-ratio: auto;
   object-fit: cover;
   object-position: center;
 }
 @media (max-width: 900px) {
-  .island-card__shot { width: 95px; min-width: 95px; }
+  .island-card__shot,
+  img.island-card__thumb {
+    width: 95px;
+    min-width: 95px;
+    height: 94px;
+    min-height: 94px;
+  }
+  .featured-card .featured-card__img,
+  .featured-card .featured-card__placeholder {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+  .featured-card .featured-card__img.is-letterboxed {
+    object-fit: contain;
+    object-position: center;
+  }
 }
 
 /* A later cover rule was slicing tall pictures after they had been marked whole. */
