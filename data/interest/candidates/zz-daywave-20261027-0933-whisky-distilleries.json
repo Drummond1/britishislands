@@ -1,0 +1,36 @@
+{
+  "slug": "zz-daywave-20261027-0933-whisky-distilleries",
+  "generatedAt": "2026-10-27T10:12:30+00:00",
+  "category_slug": "whisky-distilleries",
+  "source": "daywave 2026-10-27 whisky wave 2",
+  "review_ready": true,
+  "rows": [
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "osm-relation-7220346",
+      "island_name": "Lewis and Harris",
+      "facet": "story",
+      "title": "Illicit stills at Uig",
+      "source_url": "https://en.wikipedia.org/wiki/Abhainn_Dearg_distillery",
+      "source_title": "Abhainn Dearg distillery",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Abhainn Dearg distillery article places this Scotch whisky distillery in Uig, on the west coast of the Isle of Lewis, and says the still house is a new building whose still heads are modelled on former illicit stills in the area. The photograph is of Uig, the place the article names.",
+      "confidence": "medium",
+      "status": "rejected",
+      "reject_reason": "The Abhainn Dearg article places the working distillery in Uig on Lewis, and that distillery is already filed. It says the new still heads are modelled on former illicit stills in the area, and it does not place those stills at Uig. The photograph is the community shop at Uig, not the distillery.",
+      "fetched_at": "2026-10-27T10:12:30+00:00",
+      "summary": "Abhainn Dearg is a Scotch whisky distillery in Uig, on the Isle of Lewis. The still house is a new building, and its still heads are modelled on former illicit stills in that area of the island.",
+      "subdivision": "story",
+      "commons_file": "File:Uig Community Centre - geograph.org.uk - 1525245.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Uig_Community_Centre_-_geograph.org.uk_-_1525245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Uig_Community_Centre_-_geograph.org.uk_-_1525245.jpg",
+        "attribution": "John Tustin",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "quality_checked_at": "2026-10-27T10:13:42Z"
+    }
+  ],
+  "quality_checked_at": "2026-10-27T10:13:42Z"
+}

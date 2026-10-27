@@ -3665,3 +3665,38 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The public Supabase address is a GitHub secret and is written into the live page on deploy. Smart answers stay on unless the visitor uses the switch. A previously saved key does not turn them off.
 - **Outcome / counts**: Counts unchanged.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — False interest sentences removed
+
+- **Goal**: Take the confirmed false profile sentences off the atlas without republishing the interest index from the candidate files.
+- **What changed**: Dropped the wrong castles, the name-collision film and music rows, Insh and Gasker from for sale, and Baleshare and Mahee from tidal islands. Rewrote the Highland Park, Scapa, Alderney hedgehog, and North Ronaldsay hedgehog sentences. `data/interest/rejected_claims.json` is applied in `accepted_rows()` so a later publish cannot restore them. `publish()` was not called. `islands.json` was not edited.
+- **Outcome / counts**: For sale **47**. Castles **96**. Tidal islands **114**. Film, art and music **142**. The Great Silkie stays on Sule Skerry. King Orfeo stays on Unst as the singers’ record. Mahee Castle stays. Guide pages already omitted the dropped rows.
+- **Open items kicked to QUEUE.md**: Nation labels, the three non-islands, and the measurement corrections are still in flight with the place-label agent.
+
+## 2026-10-27 — Old island links keep their island
+
+- **Goal**: A nation correction changes `/islands/{nation}/{slug}/`. An old link should still open the island, then show the corrected path.
+- **What changed**: `applyRouteFromUrl` in `app.js` keeps an exact path match. If the nation segment is stale and exactly one loaded island uses that slug, the profile opens and the address bar is replaced with the canonical path. Two islands that share a slug are left alone. `hydrateSeoPathsFromLookup` no longer overwrites a path that already came from the index. `index.html` loads `app.js?v=island-route-1`.
+- **Outcome / counts**: Checked in the running atlas. `/islands/england/isle-of-skye/` opened Skye and returned to `/islands/scotland/isle-of-skye/`. `/islands/scotland/` did not open an island. A nonsense slug still says the link was not found. Search still lists Skye first. `/islands/atlantis/holy-island/` did not pick either Holy Island.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Place labels and measurements
+
+- **Goal**: Apply the confirmed nation, non-island, measurement, and Belle Isle corrections without relabelling islands the fact-check did not confirm.
+- **What changed**: 151 `nation` values. Greenisland, Island Magee, and the Oxford city-centre pin removed. Inchcailloch, Eel Pie Island, and the Isle of Dogs gained a parent water copied from an existing record. Hayling’s area is now unpublished. Mainland Orkney is 523.25 km². Seven summits and six populations were corrected. Belle Isle’s round house is Grade I. `nation_for()` checks tighter boxes first. The general boxes were not shrunk, and the function was not run across the atlas. The index was rebuilt. Follow-up: seventeen draft sentences that still named the old country now name the corrected one, and Inch’s parent water is Lough Swilly.
+- **Outcome / counts**: Atlas **11,377** islands. Curated **27** still present. Inner Farne is England at `/islands/england/inner-farne/`. Skye, the Isle of Wight, Achill, and Devenish still match the validation set. Sùla Sgeir’s height was not changed. Report: `data/corrections/2026-10-27-atlas.json`.
+- **Open items kicked to QUEUE.md**: Neighbours that were not in the confirmed tables still carry the old nation label.
+
+## 2026-10-27 — Film quality review, 09:43 wave
+
+- **Goal**: Review the second film, art and music candidate file once `review_ready` was true.
+- **What changed**: Judged the proposed rows in `data/interest/candidates/zz-daywave-20261027-0943-film-art-music.json` and updated `data/interest/quality/2026-10-27-0943-film-books.md`. The books file was not reopened. No rows were added. `islands.json` and `interest_index.json` were not edited.
+- **Outcome / counts**: 18 accepted, 17 rejected, of 35 rows. Baptism Church was the new rejection. `quality_checked_at` is 2026-10-27T11:39:17Z. `review_ready` stays true.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Interest daywave published
+
+- **Goal**: Add cited interest rows, with an open-licence photograph and a summary of why each one belongs, then publish the ones a separate reviewer accepted.
+- **What changed**: Researchers wrote `data/interest/candidates/zz-daywave-*.json`. Reviewers set each row to accepted or rejected. `python3 scripts/interest_categories.py publish` rebuilt `data/interest_index.json` and `data/interest/memberships_sync.sql`. Commons rate-limited some picture lookups. Supabase was not called. `islands.json` was not edited. Not pushed.
+- **Outcome / counts**: Film, art and music **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal islands **126**, castles **98**, books **49**, local traditions **46**, unusual news **118**. Stories **1,733**, **1,088** with an open-licence picture. The daywave files contributed **116** accepted rows before deduplication.
+- **Open items kicked to QUEUE.md**: The membership SQL is written and not loaded. The hourly research wake is still armed until 21:00 Europe/London.

@@ -4,6 +4,10 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (interest daywave published)** — Local index only. Film, art and music **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal islands **126**, castles **98**, books **49**, local traditions **46**, unusual news **118**. Stories **1,733**, **1,088** with an open-licence picture. Wrote `data/interest/memberships_sync.sql`. Supabase was not called. Not pushed. `islands.json` was not edited.
+
+**2026-10-27 (place labels)** — 151 nation labels corrected, three non-islands removed, confirmed measurements and Belle Isle’s grade applied. Index rebuilt. Seventeen draft sentences that still named the old country were rewritten. Inch’s parent water is Lough Swilly. `interest_index.json` was not republished.
+
 **2026-10-27 (shared Ask on)** — The live page now receives the Supabase address, so Ask can use the shared function. A key left in the browser with the switch off no longer keeps Smart answers off. Counts unchanged. `islands.json` was not edited.
 
 **2026-10-27 (shared Ask)** — Smart answers for visitors go through `supabase/functions/ask`. The OpenAI key is a Supabase secret. A test reply came back from `gpt-4o-mini`. The key is not in the site. Counts unchanged. `islands.json` was not edited.
@@ -1023,7 +1027,8 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
-| Interest daywave, hourly wake `AGENT_LOOP_TICK_interest_daywave` | 2026-10-27 08:30 UTC | through the day, pause after 21:00 Europe/London | cursor agents | Wave 1 files are `zz-daywave-2026-10-27-*`. At 09:33 UTC wave 2 started for the judged categories only: for sale, castles, traditions, tidal islands, whisky. New files are `zz-daywave-20261027-0933-*`. Film, books, and unusual news still have proposed rows. Wildlife has no file yet. No `islands.json` edits, no index publish, no commit. |
+| ~~Fact-check corrections, atlas records~~ ✅ 2026-10-27 11:10 UTC | 2026-10-27 10:40 UTC | — | cursor agent | 151 nations, 3 removals, measurements, Belle Isle Grade I, index rebuilt. Seventeen stale country sentences and Inch’s Lough Swilly parent filled afterwards. Claims and old links already done. No commit. |
+| ~~Interest daywave publish~~ ✅ 2026-10-27 11:44 UTC | 2026-10-27 11:40 UTC | — | cursor agent | Published `data/interest_index.json`. Film **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal **126**, castles **98**, books **49**, traditions **46**, unusual news **118**. Stories **1,733** / **1,088** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. Local only, not pushed. The hourly wake `AGENT_LOOP_TICK_interest_daywave` is still armed until 21:00 Europe/London. |
 | ~~Local interest index publish, round 4~~ ✅ 2026-10-27 06:37 UTC | 2026-10-27 06:35 UTC | — | cursor agent | Published `data/interest_index.json`. Film **143**, whisky **22**, for sale **49**, rare wildlife **40**, tidal **116**, castles **100**, books **41**, traditions **39**, unusual news **89**. Stories **1,638** / **996** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. Local only, not pushed. |
 | Wider-source photo pass, 11 slices × picker + verifier | 2026-10-27 08:40 UTC | this session | cursor agents | Islands with no lead after the Commons adoption (4,435). Openverse only. They write `data/photo_audit/2026-10-27-wider/`. They do not edit `islands.json`. |
 | Photo source-to-source audit, 13 slices × picker + verifier | 2026-10-27 06:30 UTC | adopted 2026-10-27 | cursor agents | Finished. 24 new leads adopted. 1,559 wrong leads removed. 30 conflicts left in place. Shipped to main as `db18736c`. |

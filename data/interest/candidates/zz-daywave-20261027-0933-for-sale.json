@@ -1,0 +1,35 @@
+{
+  "slug": "for-sale",
+  "generatedAt": "2026-10-27T09:48:58Z",
+  "category_slug": "for-sale",
+  "source": "Daywave broker research 2026-10-27 wave 2. Outbound broker pages only. Cached under data/cache_daywave_2026-10-27/wave2-for-sale/.",
+  "review_ready": true,
+  "rows": [
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-4563536",
+      "island_name": "Mutton Island",
+      "facet": "listing",
+      "title": "Mutton Island — Streets Ahead Properties",
+      "source_url": "https://www.myhome.ie/commercial/brochure/mutton-island-quilty-clare/5017573",
+      "source_title": "Mutton Island, Quilty — Streets Ahead Properties",
+      "licence": "outbound-link",
+      "evidence": "Asking price €1,800,000. Streets Ahead Properties is the sole agent. The MyHome brochure was created on 28 July 2026, last modified on 17 August 2026, and on 27 October 2026 still shows that asking price with no sale-agreed mark. The particulars name the whole of Mutton Island, Quilty, County Clare, about 186 acres.",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T09:48:58Z",
+      "summary": "Mutton Island lies in Caherush Bay, off Quilty in County Clare, and the atlas keeps its Irish name, Oileán Caorach. Streets Ahead Properties is asking €1,800,000 for the whole island, about 186 acres, still uninhabited and reached by boat from Seafield. Someone looking for an island that is actually on the market would want this listing because the particulars offer the island itself, with its grazing, cliffs and old signal tower.",
+      "commons_file": "File:Mutton Island - geograph.org.uk - 14048.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Mutton_Island_-_geograph.org.uk_-_14048.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mutton_Island_-_geograph.org.uk_-_14048.jpg",
+        "attribution": "Charles W Glynn / Geograph Britain and Ireland",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "quality_checked_at": "2026-10-27T09:53:00Z"
+    }
+  ],
+  "quality_checked_at": "2026-10-27T09:53:00Z"
+}

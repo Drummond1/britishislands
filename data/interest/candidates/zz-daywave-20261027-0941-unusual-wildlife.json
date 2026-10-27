@@ -1,0 +1,36 @@
+{
+  "slug": "zz-daywave-20261027-0941-unusual-wildlife",
+  "generatedAt": "2026-10-27T10:19:09+00:00",
+  "category_slug": "unusual-wildlife",
+  "source": "Wikipedia and Wikimedia Commons, cached under data/cache_daywave_2026-10-27/wave2-wildlife/",
+  "review_ready": true,
+  "quality_checked_at": "2026-10-27T10:23:18+00:00",
+  "rows": [
+    {
+      "category_slug": "unusual-wildlife",
+      "facet": "wildlife",
+      "island_id": "osm-way-126546636",
+      "island_name": "Flat Holm",
+      "title": "Wild peony",
+      "source_url": "https://en.wikipedia.org/wiki/Paeonia_mascula",
+      "source_title": "Paeonia mascula",
+      "photo_title": "Paeonia mascula",
+      "licence": "CC BY-SA 3.0",
+      "evidence": "The species article says Steep Holm and Flat Holm are the only known places in the UK where the wild peony has naturalised. Steep Holm is already listed. This row is the Flat Holm site named in that sentence. A later sentence on the Flat Holm article gives a count of plants and is not stored. The photograph is Paeonia mascula, described on Commons as the plant in the botanical garden at Dresden.",
+      "external_id": "Paeonia_mascula",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T10:19:09+00:00",
+      "summary": "Steep Holm and Flat Holm are the only known places in the UK where the wild peony has naturalised. The likely reason for this is that the islands provide a habitat similar to the Mediterranean islands where the plants originate from and the relative isolation allows them some protection.",
+      "commons_file": "File:Paeonia mascula 01.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Paeonia_mascula_01.jpg/960px-Paeonia_mascula_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Paeonia_mascula_01.jpg",
+        "attribution": "Michael Wolf",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    }
+  ]
+}

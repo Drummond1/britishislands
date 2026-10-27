@@ -1,0 +1,290 @@
+{
+  "slug": "zz-daywave-20261027-0943-island-books",
+  "generatedAt": "2026-10-27",
+  "category_slug": "island-books",
+  "review_ready": true,
+  "rule": "The English Wikipedia article sets the book on the atlas island. Inspired by, based on, and filmed on do not count. Summary sentences are the article's own.",
+  "rows": [
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-10221718",
+      "island_name": "Muckle Flugga",
+      "facet": "book",
+      "title": "Muckle Flugga",
+      "source_url": "https://en.wikipedia.org/wiki/Muckle_Flugga",
+      "source_title": "Muckle Flugga",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "A novel by Michael Pedersen (writer) titled Muckle Flugga and set on the island was first published in 2025 by Faber & Faber.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "A novel by Michael Pedersen (writer) titled Muckle Flugga and set on the island was first published in 2025 by Faber & Faber.",
+      "commons_file": "File:Muckle Fulga Sunny.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Muckle_Fulga_Sunny.jpg/960px-Muckle_Fulga_Sunny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Muckle_Fulga_Sunny.jpg",
+        "attribution": "Smith609 at English Wikipedia",
+        "licence": "CC BY 2.5",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-9603390",
+      "island_name": "Harris",
+      "facet": "book",
+      "title": "Crowdie and Cream",
+      "source_url": "https://en.wikipedia.org/wiki/Finlay_J._MacDonald",
+      "source_title": "Finlay J. MacDonald",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "commons_file": "File:Golden Road Harris.JPG",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Golden_Road_Harris.JPG/960px-Golden_Road_Harris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Golden_Road_Harris.JPG",
+        "attribution": "Zenit",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-9603390",
+      "island_name": "Harris",
+      "facet": "book",
+      "title": "Crotal and White",
+      "source_url": "https://en.wikipedia.org/wiki/Finlay_J._MacDonald",
+      "source_title": "Finlay J. MacDonald",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "commons_file": "File:Golden Road Harris.JPG",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Golden_Road_Harris.JPG/960px-Golden_Road_Harris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Golden_Road_Harris.JPG",
+        "attribution": "Zenit",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-9603390",
+      "island_name": "Harris",
+      "facet": "book",
+      "title": "The Corncrake and the Lysander",
+      "source_url": "https://en.wikipedia.org/wiki/Finlay_J._MacDonald",
+      "source_title": "Finlay J. MacDonald",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "He wrote three books of memoirs that recall his childhood on Harris: Crowdie and Cream (1982), Crotal and White (1983), The Corncrake and the Lysander (1985).",
+      "commons_file": "File:Golden Road Harris.JPG",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Golden_Road_Harris.JPG/960px-Golden_Road_Harris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Golden_Road_Harris.JPG",
+        "attribution": "Zenit",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-380684",
+      "island_name": "Benbecula",
+      "facet": "book",
+      "title": "Benbecula",
+      "source_url": "https://en.wikipedia.org/wiki/Graeme_Macrae_Burnet",
+      "source_title": "Graeme Macrae Burnet",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Set on the island of Benbecula, the novella fictionalises an 1857 triple murder and is narrated by the killer's brother.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "In 2026, his novel Benbecula was shortlisted for the Walter Scott Prize. Set on the island of Benbecula, the novella fictionalises an 1857 triple murder and is narrated by the killer's brother.",
+      "commons_file": "File:Aird, Benbecula - geograph.org.uk - 3163152.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Aird%2C_Benbecula_-_geograph.org.uk_-_3163152.jpg/960px-Aird%2C_Benbecula_-_geograph.org.uk_-_3163152.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Aird,_Benbecula_-_geograph.org.uk_-_3163152.jpg",
+        "attribution": "Hugh Venables",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-way-4821985",
+      "island_name": "Inchmurrin",
+      "facet": "book",
+      "title": "Home was an Island",
+      "source_url": "https://en.wikipedia.org/wiki/Inchfad",
+      "source_title": "Inchfad",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "His widow Ann Davison later wrote an autobiography called Home was an Island about their life on Inchmurrin and Inchfad.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "His widow Ann Davison later wrote an autobiography called Home was an Island about their life on Inchmurrin and Inchfad.",
+      "commons_file": "File:Loch Lomond Isle Inchmurrin.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Loch_Lomond_Isle_Inchmurrin.jpg/960px-Loch_Lomond_Isle_Inchmurrin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Loch_Lomond_Isle_Inchmurrin.jpg",
+        "attribution": "Christian Bickel",
+        "licence": "CC BY-SA 2.0 de",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-way-4821991",
+      "island_name": "Inchfad",
+      "facet": "book",
+      "title": "Home was an Island",
+      "source_url": "https://en.wikipedia.org/wiki/Inchfad",
+      "source_title": "Inchfad",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "His widow Ann Davison later wrote an autobiography called Home was an Island about their life on Inchmurrin and Inchfad.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "His widow Ann Davison later wrote an autobiography called Home was an Island about their life on Inchmurrin and Inchfad.",
+      "commons_file": "File:Woodland on Inchfad - geograph.org.uk - 1333153.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Woodland_on_Inchfad_-_geograph.org.uk_-_1333153.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Woodland_on_Inchfad_-_geograph.org.uk_-_1333153.jpg",
+        "attribution": "Gordon Brown",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-way-1493514803",
+      "island_name": "Ray Island",
+      "facet": "book",
+      "title": "Mehalah: A Story of the Salt Marshes",
+      "source_url": "https://en.wikipedia.org/wiki/Ray_Island",
+      "source_title": "Ray Island",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Ray Island was the setting for the novel Mehalah: A Story of the Salt Marshes by Sabine Baring-Gould, who was the rector of East Mersea for 10 years from 1871.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Ray Island was the setting for the novel Mehalah: A Story of the Salt Marshes by Sabine Baring-Gould, who was the rector of East Mersea for 10 years from 1871.",
+      "commons_file": "File:Mehalah (1920 edition) - title page illustration.png",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Mehalah_%281920_edition%29_-_title_page_illustration.png/960px-Mehalah_%281920_edition%29_-_title_page_illustration.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mehalah_(1920_edition)_-_title_page_illustration.png",
+        "attribution": "Unknown artist; Sabine Baring-Gould (author); John Murray (publisher)",
+        "licence": "Public domain",
+        "licenceUrl": "https://en.wikipedia.org/wiki/Public_domain"
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "title": "The Crofter and the Laird",
+      "reason": "The John McPhee article puts the words 'A memoir of the author's stay with his family on the island of Colonsay' in a bibliography table, not in a sentence. The Colonsay article says he spent a summer on Colonsay, out of which the book was published, and does not call it a memoir set on Colonsay."
+    },
+    {
+      "title": "Sea Room",
+      "reason": "The Shiant Islands article calls Sea Room the definitive book on the islands. It does not call it a novel, memoir, autobiography, or story collection."
+    },
+    {
+      "title": "The Turnglass",
+      "reason": "The Ray Island article says Ray and Mersea are the setting for The Turnglass. It does not call the book a novel, memoir, autobiography, or story collection."
+    },
+    {
+      "title": "The Essex Serpent",
+      "reason": "The Ray Island article says the marshy landscape formed part of the inspiration for The Essex Serpent. Inspired by does not count."
+    },
+    {
+      "title": "Armorel of Lyonesse",
+      "reason": "The Samson article says the island featured in Armorel of Lyonesse and that a cottage supposedly features as Armorel's house. It does not say the novel is set on Samson."
+    },
+    {
+      "title": "An Autobiography",
+      "reason": "Edwin Muir's autobiography, as described on Wyre and on his own article, quotes him calling himself an Orkneyman and says childhood years were spent on Wyre. It does not set the autobiography on Wyre. The Wyre sentence also says he was born on Mainland and does not set the book there."
+    },
+    {
+      "title": "The Day of the Triffids",
+      "reason": "The Culture of the Isle of Wight article says the isle features in the novel. Featured in does not set the novel on the Isle of Wight."
+    },
+    {
+      "title": "The Fallen",
+      "reason": "The same article says the isle has been the setting for several novels, including England, England, and detective thrillers such as The Fallen. It does not call The Fallen a novel."
+    },
+    {
+      "title": "The Summer Isles",
+      "reason": "The Tanera Mòr article says the island and the Summer Isles feature lightly in Philip Marsden's novel The Summer Isles, and that the book is his voyage from Cornwall round Ireland to the north of Scotland. Featured lightly is not set on Tanera Mòr."
+    },
+    {
+      "title": "The Summer Isles (Ian R. MacLeod)",
+      "reason": "The Tanera Mòr article says the Summer Isles feature in a novella of that name by Ian R. MacLeod. It does not set the novella on Tanera Mòr, and it calls the book a novella."
+    },
+    {
+      "title": "Island Years",
+      "reason": "Frank Fraser Darling's bibliography lists Island Years. The article says he lived and farmed on Tanera Mòr. It does not call Island Years a memoir or set the book on Tanera Mòr."
+    },
+    {
+      "title": "Island Farm",
+      "reason": "Listed in the same bibliography. The article does not call it a memoir or set it on Tanera Mòr."
+    },
+    {
+      "title": "A Naturalist on Rona",
+      "reason": "The North Rona article cites it as essays of a biologist in isolation. Essays are not a novel, memoir, autobiography, or story collection."
+    },
+    {
+      "title": "Dùn Aluinn",
+      "reason": "The Ulva literature article says John MacCormick, author of the novel Dùn Aluinn, was an occasional visitor to Ulva. It does not set the novel on Ulva."
+    },
+    {
+      "title": "Island at the edge of the world",
+      "reason": "The North Rona article says Kathleen Jamie describes a visit to the island in that book, and also in an essay in Sightlines. A visit account and an essay are not a novel, memoir, autobiography, or story collection set on North Rona."
+    },
+    {
+      "title": "Katie Morag",
+      "reason": "The books are set on the fictional Isle of Struay, a counterpart of Coll. Inspired by Coll does not count."
+    }
+  ],
+  "quality_checked_at": "2026-10-27T10:20:30Z"
+}

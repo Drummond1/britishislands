@@ -62,6 +62,11 @@ SUMMARY_REPLACEMENTS: dict[tuple[str, str, str], str] = {
         "osm-relation-12913146",
         "blonde hedgehog",
     ): "A blonde colour form of the European hedgehog lives on Alderney. The species itself is widespread.",
+    (
+        "unusual-wildlife",
+        "osm-way-4569485",
+        "blonde hedgehog",
+    ): "A blonde colour form of the European hedgehog lives on North Ronaldsay. The species itself is widespread.",
 }
 
 

@@ -39,6 +39,7 @@ DATA = ROOT / "data"
 INTEREST = DATA / "interest"
 CANDIDATES = INTEREST / "candidates"
 INDEX_PATH = DATA / "interest_index.json"
+REJECTED_CLAIMS_PATH = INTEREST / "rejected_claims.json"
 ATLAS_PATH = DATA / "islands_index.json"
 REGISTRY_PATH = DATA / "discovery" / "property_listings_registry.json"
 SEEDS_PATH = INTEREST / "culture_seeds.json"
@@ -1672,15 +1673,70 @@ def load_candidate_rows() -> list[dict]:
     return rows
 
 
+def _rejected_claim_rules() -> tuple[set[tuple[str, str, str]], dict[tuple[str, str, str], str], set[str]]:
+    """Facts withdrawn after checking. Missing file means nothing is withdrawn."""
+    payload = load_json(REJECTED_CLAIMS_PATH, {})
+    if not isinstance(payload, dict):
+        return set(), {}, set()
+    drops: set[tuple[str, str, str]] = set()
+    for item in payload.get("drop") or []:
+        if not isinstance(item, dict):
+            continue
+        drops.add(
+            (
+                item.get("category_slug") or "",
+                item.get("island_id") or "",
+                item.get("title") or "",
+            )
+        )
+    replacements: dict[tuple[str, str, str], str] = {}
+    for item in payload.get("replace_summary") or []:
+        if not isinstance(item, dict):
+            continue
+        summary = item.get("summary")
+        if not isinstance(summary, str) or not summary.strip():
+            continue
+        replacements[
+            (
+                item.get("category_slug") or "",
+                item.get("island_id") or "",
+                item.get("title") or "",
+            )
+        ] = summary
+    drop_islands = {
+        island_id
+        for island_id in (payload.get("drop_islands") or [])
+        if isinstance(island_id, str) and island_id
+    }
+    return drops, replacements, drop_islands
+
+
 def accepted_rows(rows: list[dict]) -> list[dict]:
+    """Accepted rows, with fact-checked claims removed or rewritten.
+
+    ``rejected_claims.json`` is applied before dedupe. A listed drop is left
+    out. A listed summary replaces the candidate ``summary`` field, which is
+    what the story builders read. ``drop_islands`` removes every row for an
+    id that is not an island. Other rows are returned unchanged.
+    """
+    drops, replacements, drop_islands = _rejected_claim_rules()
     deduped = []
     seen = set()
     for item in rows:
         if item.get("status") != "accepted" or not item.get("island_id"):
             continue
+        island_id = item.get("island_id")
+        if island_id in drop_islands:
+            continue
+        claim = (item.get("category_slug"), island_id, item.get("title"))
+        if claim in drops:
+            continue
+        if claim in replacements:
+            item = dict(item)
+            item["summary"] = replacements[claim]
         key = (
             item.get("category_slug"),
-            item.get("island_id"),
+            island_id,
             item.get("facet") or "",
             item.get("title"),
         )

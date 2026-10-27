@@ -1,0 +1,121 @@
+{
+  "slug": "zz-daywave-2026-10-27-island-castles",
+  "generatedAt": "2026-10-27T09:30:00+00:00",
+  "category_slug": "island-castles",
+  "sources": [
+    "wikipedia",
+    "wikimedia-commons"
+  ],
+  "rows": [
+    {
+      "category_slug": "island-castles",
+      "island_id": "wd-Q3378796",
+      "island_name": "Fenit Island",
+      "facet": "castle",
+      "title": "Fenit Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Fenit_Island",
+      "source_title": "Fenit Island",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia places a castle on Fenit Island and says it is the only ruin there that is still visible.",
+      "external_id": "Q3378796",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T09:30:00+00:00",
+      "summary": "Located in Tralee Bay, Fenit Island encloses Barrow Harbour. Many old ruins exist on the island, including a castle, two churches and a graveyard. The castle is the only one of these ruins that remain visible today. It was built by the FitzMaurices in the 17th century.",
+      "commons_file": "File:Castle on Fenit Within - geograph.org.uk - 333217.jpg",
+      "photo_title": "Fenit Castle",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle%20on%20Fenit%20Within%20-%20geograph.org.uk%20-%20333217.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_on_Fenit_Within_-_geograph.org.uk_-_333217.jpg",
+        "attribution": "Colin Park",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "priority": 4
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-329053691",
+      "island_name": "Lambay Island",
+      "facet": "castle",
+      "title": "Lambay Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Lambay_Island",
+      "source_title": "Lambay Island",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia says Lambay Castle, a small blockhouse or fort, was built on the western side of Lambay Island.",
+      "external_id": "Q1520062",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The Lambay Island article calls it a late-16th-century fort, or a small blockhouse, which Lutyens rebuilt as a private family residence. Forts and country houses do not count.",
+      "fetched_at": "2026-10-27T09:30:00+00:00",
+      "summary": "Lambay Island is an island in the Irish Sea off the coast of north County Dublin, Ireland. Lambay Castle, a small blockhouse or fort, was built on the western side of the island. A small late 16th-century fort with battlemented gables, possibly incorporating a 15th-century blockhouse, was transformed into a romantic castle. The old fort was made habitable, with a quadrangle adjoining it and a circular curtain wall surrounding the castle and its garden.",
+      "commons_file": "File:Lambay Castle, Approach.jpg",
+      "photo_title": "Lambay Castle",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lambay%20Castle%2C%20Approach.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Lambay_Castle,_Approach.jpg",
+        "attribution": "Mbaring",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "priority": 4
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-4563292",
+      "island_name": "Island Eddy",
+      "facet": "castle",
+      "title": "Island Eddy Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Island_Eddy",
+      "source_title": "Island Eddy",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia places the castle mentioned in 1552 and 1574 at the eastern end of the village on Island Eddy.",
+      "external_id": "Q6083108",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T09:30:00+00:00",
+      "summary": "Island Eddy is a small, depopulated island at the inner, eastern end of Galway Bay, Ireland. The site of the castle mentioned in 1552 and 1574 has been located at the eastern end of the village. All that survives is a large stump of masonry in a boundary wall. It appears to have been reduced to a stump by the time the Ordnance surveyors arrived on the island in the late 1830s.",
+      "commons_file": "File:Castle Site, Island Eddy, Galway Bay.jpg",
+      "photo_title": "Island Eddy Castle",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle%20Site%2C%20Island%20Eddy%2C%20Galway%20Bay.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_Site,_Island_Eddy,_Galway_Bay.jpg",
+        "attribution": "Pjgoslyng",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "priority": 4
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-367411125",
+      "island_name": "Island of Clunie",
+      "facet": "castle",
+      "title": "Clunie Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Loch_of_Clunie",
+      "source_title": "Loch of Clunie",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia says the single island in Loch of Clunie has the remains of Clunie Castle, an L-plan tower house.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T09:30:00+00:00",
+      "summary": "Loch of Clunie is a small freshwater loch two miles west of Blairgowrie, Perth and Kinross, Scotland. The loch has a single island, said to be artificial, with the remains of Clunie Castle. The house was designed as a simple L-plan tower house and built by George Brown, Bishop of Dunkeld, between 1485 and 1514 as a spiritual retreat. It is now a ruin, as the roof collapsed in 1989.",
+      "commons_file": "File:Clunie Castle - geograph.org.uk - 78558.jpg",
+      "photo_title": "Clunie Castle",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clunie%20Castle%20-%20geograph.org.uk%20-%2078558.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clunie_Castle_-_geograph.org.uk_-_78558.jpg",
+        "attribution": "Rob Burke",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "priority": 4
+    }
+  ],
+  "review_ready": true,
+  "quality_checked_at": "2026-10-27T09:31:16+00:00"
+}

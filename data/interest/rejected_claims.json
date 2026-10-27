@@ -1,0 +1,141 @@
+{
+  "note": "Read by accepted_rows() before publish() builds stories. Confirmed false claims from docs/fact-check/2026-10-26-claims.md. Likely rows are not listed. drop matches category_slug, island_id, and title. replace_summary overwrites the candidate summary field the story builder reads. drop_islands removes every row for an id that is not an island.",
+  "drop": [
+    {
+      "category_slug": "film-art-music",
+      "island_id": "arran",
+      "title": "Ailsa Craig"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "islay",
+      "title": "Alexander Mackay"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Absinthe"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Julian Beale"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Lee Taylor"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Peter Pratt"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "mainland-shetland",
+      "title": "King Orfeo"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "osm-relation-15671047",
+      "title": "The Great Silkie of Sule Skerry"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "osm-relation-3148462",
+      "title": "Douglas Montgomery"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "Donald Morrison"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "John MacAulay"
+    },
+    {
+      "category_slug": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "Neil Ferguson"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-relation-14940681",
+      "title": "Gasker Island — uninhabited (Galbraith)"
+    },
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-200912404",
+      "title": "Insh Island — Savills auction lot (90 acres)"
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "arran",
+      "title": "Airds Castle"
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-205500003",
+      "title": "Calvay Castle"
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-56059556",
+      "title": "Torksey Castle"
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "osm-way-767535808",
+      "title": "Cloughoughter Castle"
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "thames-oxford",
+      "title": "Oxford Castle"
+    },
+    {
+      "category_slug": "tidal-islands",
+      "island_id": "osm-relation-13146202",
+      "title": "Joined to North Uist"
+    },
+    {
+      "category_slug": "tidal-islands",
+      "island_id": "osm-way-4557019",
+      "title": "Strangford Lough"
+    }
+  ],
+  "replace_summary": [
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "title": "Highland Park distillery",
+      "summary": "Highland Park is a single malt distillery in Kirkwall on Mainland Orkney. The claim that it is the northernmost single malt is no longer true, because Lerwick Distillery in Shetland has been described as further north and Kimbland on Sanday is also north of Kirkwall."
+    },
+    {
+      "category_slug": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "title": "Scapa distillery",
+      "summary": "Scapa is a distillery on Mainland Orkney beside Scapa Flow, near Kirkwall."
+    },
+    {
+      "category_slug": "unusual-wildlife",
+      "island_id": "osm-relation-12913146",
+      "title": "blonde hedgehog",
+      "summary": "A blonde colour form of the European hedgehog lives on Alderney. The species itself is widespread."
+    },
+    {
+      "category_slug": "unusual-wildlife",
+      "island_id": "osm-way-4569485",
+      "title": "blonde hedgehog",
+      "summary": "A blonde colour form of the European hedgehog lives on North Ronaldsay. The species itself is widespread."
+    }
+  ],
+  "drop_islands": [
+    "csv-geocoded-Q1375188",
+    "wd-Q24639396",
+    "thames-oxford"
+  ]
+}

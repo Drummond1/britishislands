@@ -1,0 +1,85 @@
+{
+  "slug": "zz-daywave-20261027-0933-tidal-islands",
+  "generatedAt": "2026-10-27T10:14:25+00:00",
+  "category_slug": "tidal-islands",
+  "source": "English Wikipedia article Lunga, Firth of Lorn, with Wikimedia Commons photographs confirmed on 27 October 2026",
+  "review_ready": true,
+  "rows": [
+    {
+      "category_slug": "tidal-islands",
+      "island_id": "osm-way-201165794",
+      "island_name": "Rubha Fiola",
+      "facet": "tidal",
+      "title": "Joined to Fiola Meadhonach",
+      "source_url": "https://en.wikipedia.org/wiki/Lunga,_Firth_of_Lorn",
+      "source_title": "Lunga, Firth of Lorn",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Lunga article says the island is several separate parts connected at low tides that come apart at higher states of the tide. At high tide the northern tip becomes separate islets, with Rubha Fiola to the north and Fiola Meadhonach next to the south. The Commons photograph is of Rubha Fiola.",
+      "external_id": "Lunga,_Firth_of_Lorn",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Rubha Fiola is the northern islet of Lunga, in the Firth of Lorn. At low tide it is connected to Fiola Meadhonach, the next part of that chain to the south. At high tide the link is covered and Rubha Fiola stands as its own islet.",
+      "commons_file": "File:Rubha Fiola - geograph.org.uk - 4527557.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Rubha_Fiola_-_geograph.org.uk_-_4527557.jpg/960px-Rubha_Fiola_-_geograph.org.uk_-_4527557.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Rubha_Fiola_-_geograph.org.uk_-_4527557.jpg",
+        "attribution": "Rude Health",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    },
+    {
+      "category_slug": "tidal-islands",
+      "island_id": "osm-way-201166411",
+      "island_name": "Fiola Meadhonach",
+      "facet": "tidal",
+      "title": "Between Rubha Fiola and Eilean Iosal",
+      "source_url": "https://en.wikipedia.org/wiki/Lunga,_Firth_of_Lorn",
+      "source_title": "Lunga, Firth of Lorn",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Lunga article says the separate parts are connected at low tides and come apart at higher states of the tide. At high tide it names Fiola Meadhonach between Rubha Fiola to the north and Eilean Ioasal to the south. The Commons photograph is of Fiola Meadhonach.",
+      "external_id": "Lunga,_Firth_of_Lorn",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Fiola Meadhonach is the middle islet on the north side of Lunga, in the Firth of Lorn. At low tide it is connected to Rubha Fiola to the north and to Eilean Iosal to the south. At high tide those links are covered and Fiola Meadhonach is a separate islet.",
+      "commons_file": "File:Fiola Meadhonach - geograph.org.uk - 4527567.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Fiola_Meadhonach_-_geograph.org.uk_-_4527567.jpg/960px-Fiola_Meadhonach_-_geograph.org.uk_-_4527567.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Fiola_Meadhonach_-_geograph.org.uk_-_4527567.jpg",
+        "attribution": "Rude Health",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    },
+    {
+      "category_slug": "tidal-islands",
+      "island_id": "osm-way-201165793",
+      "island_name": "Eilean Iosal",
+      "facet": "tidal",
+      "title": "Channel to Fiola an Droma",
+      "source_url": "https://en.wikipedia.org/wiki/Lunga,_Firth_of_Lorn",
+      "source_title": "Lunga, Firth of Lorn",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Lunga article says the northern parts are connected at low tides and separate at high tide, and places Eilean Ioasal (also spelled Eilean Iosal) between Fiola Meadhonach and Fiola an Droma, the islet closest to Lunga. This is the Eilean Iosal beside that chain in the Firth of Lorn. The Commons photograph is the tidal channel between Eilean Iosa and Fiola an Droma.",
+      "external_id": "Lunga,_Firth_of_Lorn",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Eilean Iosal lies on the north side of Lunga, in the Firth of Lorn, between Fiola Meadhonach and Fiola an Droma. At low tide it is connected to those neighbouring parts. At high tide the channel between Eilean Iosal and Fiola an Droma is covered, and the islets are separate. Fiola an Droma is the part closest to Lunga itself.",
+      "commons_file": "File:Tidal channel between Eilean Iosa and Fiola an Droma - geograph.org.uk - 541081.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Tidal_channel_between_Eilean_Iosa_and_Fiola_an_Droma_-_geograph.org.uk_-_541081.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tidal_channel_between_Eilean_Iosa_and_Fiola_an_Droma_-_geograph.org.uk_-_541081.jpg",
+        "attribution": "Tony Page",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      }
+    }
+  ],
+  "quality_checked_at": "2026-10-27T10:23:59Z"
+}

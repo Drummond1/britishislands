@@ -1,0 +1,67 @@
+{
+  "slug": "zz-daywave-20261027-0933-island-castles",
+  "generatedAt": "2026-10-27T10:30:00+00:00",
+  "category_slug": "island-castles",
+  "sources": [
+    "wikipedia",
+    "wikimedia-commons"
+  ],
+  "rows": [
+    {
+      "category_slug": "island-castles",
+      "island_id": "bute",
+      "island_name": "Isle of Bute",
+      "facet": "castle",
+      "title": "Kelspoke Castle",
+      "source_url": "https://en.wikipedia.org/wiki/Kelspoke_Castle",
+      "source_title": "Kelspoke Castle",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia says Kelspoke Castle is a ruined castle overlooking Kilchattan Bay on the Isle of Bute.",
+      "external_id": "Q6386557",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T10:30:00+00:00",
+      "summary": "Kelspoke Castle is a ruined castle overlooking Kilchattan Bay, Isle of Bute, Scotland. Only a small amount of the ruins are above ground.",
+      "commons_file": "File:Kelspoke Castle - geograph.org.uk - 2155755.jpg",
+      "photo_title": "Kelspoke Castle",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kelspoke%20Castle%20-%20geograph.org.uk%20-%202155755.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Kelspoke_Castle_-_geograph.org.uk_-_2155755.jpg",
+        "attribution": "Leslie Barrie",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "priority": 4
+    },
+    {
+      "category_slug": "island-castles",
+      "island_id": "mull",
+      "island_name": "Isle of Mull",
+      "facet": "castle",
+      "title": "Dùn Ara",
+      "source_url": "https://en.wikipedia.org/wiki/D%C3%B9n_Ara",
+      "source_title": "Dùn Ara",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "English Wikipedia says Dùn Ara is a ruined medieval castle on the Isle of Mull, on the northern coast.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The article calls Dùn Ara an ancient dùn and, tautologically, Dùn Ara Fort, as well as a castle. A dùn or fort does not count.",
+      "fetched_at": "2026-10-27T10:30:00+00:00",
+      "summary": "Dùn Ara, also known as Dùn Ara Castle or tautologically Dùn Ara Fort, is a ruined medieval castle and ancient dùn on the Isle of Mull, Argyll and Bute, Scotland. The castle overlooks the ocean towards Coll and Ardnamurchan, being situated on the northern coast of Mull.",
+      "commons_file": "File:Dun Ara Castle - geograph.org.uk - 634701.jpg",
+      "photo_title": "Dùn Ara",
+      "open_image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dun%20Ara%20Castle%20-%20geograph.org.uk%20-%20634701.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Dun_Ara_Castle_-_geograph.org.uk_-_634701.jpg",
+        "attribution": "Ben Dallimore",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "priority": 4
+    }
+  ],
+  "review_ready": true,
+  "quality_checked_at": "2026-10-27T10:23:59Z"
+}

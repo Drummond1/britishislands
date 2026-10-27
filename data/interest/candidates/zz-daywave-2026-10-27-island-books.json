@@ -1,0 +1,468 @@
+{
+  "slug": "zz-daywave-2026-10-27-island-books",
+  "generatedAt": "2026-10-27",
+  "category_slug": "island-books",
+  "review_ready": true,
+  "rule": "The English Wikipedia article sets the book on the atlas island. Inspired by, based on, and filmed on do not count. Summary sentences are the article's own.",
+  "rows": [
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-9603390",
+      "island_name": "Harris",
+      "facet": "book",
+      "title": "Coffin Road",
+      "source_url": "https://en.wikipedia.org/wiki/Peter_May_(writer)",
+      "source_title": "Peter May (writer)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Published in the UK in 2016, Coffin Road is a standalone thriller set on the Isle of Harris.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Published in the UK in 2016, Coffin Road is a standalone thriller set on the Isle of Harris. The story has an ecological theme involving links between big pharmaceutical companies and colony collapse disorder in bees.",
+      "commons_file": "File:Golden_Road_Harris.JPG",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Golden_Road_Harris.JPG/960px-Golden_Road_Harris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Golden_Road_Harris.JPG",
+        "attribution": "Zenit",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "book",
+      "title": "The Killing Stones",
+      "source_url": "https://en.wikipedia.org/wiki/Ann_Cleeves",
+      "source_title": "Ann Cleeves",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The Killing Stones (2025); Set in the Orkney Islands after the previous books.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The Ann Cleeves article only has a bibliography line saying The Killing Stones is set in the Orkney Islands. It does not set the novel on Mainland, and the summary is that catalogue fragment rather than sentences placing the book on Mainland.",
+      "fetched_at": "2026-10-27",
+      "summary": "The Killing Stones (2025); Set in the Orkney Islands after the previous books.",
+      "commons_file": "File:Mainland1.JPG",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mainland1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mainland1.JPG",
+        "attribution": "Makemake at German Wikipedia",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-6046465",
+      "island_name": "Ulva",
+      "facet": "book",
+      "title": "As It Was/Sin Mar a Bha: An Ulva Boyhood",
+      "source_url": "https://en.wikipedia.org/wiki/Ulva",
+      "source_title": "Ulva",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "In 2000, D. W. R. MacKenzie wrote As It Was/Sin Mar a Bha: An Ulva Boyhood, which is a combination of autobiography and a potted history of the island.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "In 2000, D. W. R. MacKenzie wrote As It Was/Sin Mar a Bha: An Ulva Boyhood, which is a combination of autobiography and a potted history of the island. MacKenzie describes his early impressions, as a child, of the island in the 1920s, and how the minister's children slowly began to recognise the landscape of eviction:",
+      "commons_file": "File:Basaltcliffsulva.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Basaltcliffsulva.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Basaltcliffsulva.jpg",
+        "attribution": "Gordon Mellor",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-way-2956897",
+      "island_name": "Herm",
+      "facet": "book",
+      "title": "Herm, Our Island Home",
+      "source_url": "https://en.wikipedia.org/wiki/Herm",
+      "source_title": "Herm",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Jenny Wood, the wife of tenant Major Peter Wood, published her memoirs in 1986. Wood, Jenny, Herm, Our Island Home (Linton, 1986).",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The summary's sentences are about Fairy Gold, which the same paragraph calls a fictional portrayal, and about Jenny Wood publishing memoirs in 1986. They never name Herm, Our Island Home. The summary also names the island tenant, Major Peter Wood.",
+      "fetched_at": "2026-10-27",
+      "summary": "The island and its history has been depicted in a number of works of literature: the author Compton Mackenzie, who was the island tenant 1920–23, represented it in Fairy Gold, albeit in a fictional portrayal. Jenny Wood, the wife of tenant Major Peter Wood, published her memoirs in 1986.",
+      "commons_file": "File:Herm_from_the_air_-_geograph.ci_-_372.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Herm_from_the_air_-_geograph.ci_-_372.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Herm_from_the_air_-_geograph.ci_-_372.jpg",
+        "attribution": "Bob Embleton",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-15708717",
+      "island_name": "Hellisay",
+      "facet": "book",
+      "title": "Peter Calvay, Hermit: A Personal Rediscovery of Prayer",
+      "source_url": "https://en.wikipedia.org/wiki/Barra",
+      "source_title": "Barra",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The specialist in mystical theology and author Rayner Torkington wrote a novel concerning Christian Mysticism featuring a character based on his late brother Peter Torkington called Peter Calvay, whom in the novel had lived on the island of Hellisay for a number of years in the first half of the twentieth century.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "The specialist in mystical theology and author Rayner Torkington wrote a novel concerning Christian Mysticism featuring a character based on his late brother Peter Torkington called Peter Calvay, whom in the novel had lived on the island of Hellisay for a number of years in the first half of the twentieth century. The book, titled Peter Calvay, Hermit: A Personal Rediscovery of Prayer, was first published in 1977 and has had at least eleven reprintings.",
+      "commons_file": "File:Hellisay.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Hellisay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Hellisay.jpg",
+        "attribution": "John Hughes",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "osm-relation-380646",
+      "island_name": "Barra",
+      "facet": "book",
+      "title": "Wisdom from the Western Isles: The Making of a Mystic",
+      "source_url": "https://en.wikipedia.org/wiki/Barra",
+      "source_title": "Barra",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Torkington's novel Wisdom from the Western Isles: The Making of a Mystic, published in 2008, also describes the author's meetings with Peter Calvay whilst he was staying on Barra.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27",
+      "summary": "Torkington's novel Wisdom from the Western Isles: The Making of a Mystic, published in 2008, also describes the author's meetings with Peter Calvay whilst he was staying on Barra.",
+      "commons_file": "File:Bagh_Halaman_Barra.JPG",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Bagh_Halaman_Barra.JPG/960px-Bagh_Halaman_Barra.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Bagh_Halaman_Barra.JPG",
+        "attribution": "Nessy-Pic",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "book",
+      "title": "Magnus",
+      "source_url": "https://en.wikipedia.org/wiki/Magnus_(novel)",
+      "source_title": "Magnus (novel)",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The story returns to 12th-century Orkney, and concludes with the tinkers, Jock and Mary (present since the outset of the tale).",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The article's sentences in the summary place Magnus in Orkney and call him Earl of Orkney. They do not set the novel on Mainland.",
+      "fetched_at": "2026-10-27",
+      "summary": "Magnus is a novel by the Orcadian author George Mackay Brown. His second novel, it was published in 1973. it is a fictional account of the life and execution of the 12th-century saint, Magnus Erlendsson, Earl of Orkney. The story returns to 12th-century Orkney, and concludes with the tinkers, Jock and Mary (present since the outset of the tale).",
+      "commons_file": "File:Mainland1.JPG",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mainland1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mainland1.JPG",
+        "attribution": "Makemake at German Wikipedia",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "book",
+      "title": "The Golden Bird",
+      "source_url": "https://en.wikipedia.org/wiki/George_Mackay_Brown",
+      "source_title": "George Mackay Brown",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Brown later formed an intense, platonic attachment to Kenna Crawford, to whom he dedicated The Golden Bird: Two Orkney Stories and some poems in the volume The wreck of the Archangel.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The article's sentence says Brown dedicated The Golden Bird: Two Orkney Stories to Kenna Crawford. It does not set those stories on Mainland.",
+      "fetched_at": "2026-10-27",
+      "summary": "Brown later formed an intense, platonic attachment to Kenna Crawford, to whom he dedicated The Golden Bird: Two Orkney Stories and some poems in the volume The wreck of the Archangel.",
+      "commons_file": "File:Mainland1.JPG",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mainland1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mainland1.JPG",
+        "attribution": "Makemake at German Wikipedia",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "st-kilda",
+      "island_name": "St Kilda (Hirta)",
+      "facet": "book",
+      "title": "The Lost Lights of St Kilda",
+      "source_url": "https://en.wikipedia.org/wiki/St_Kilda,_Scotland",
+      "source_title": "St Kilda, Scotland",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "The story of St Kilda has attracted artistic interpretations, including Michael Powell's 1937 film The Edge of the World, the novel The Lost Lights of St Kilda by Elisabeth Gifford, and an opera.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The St Kilda article lists the novel among artistic interpretations of the story of St Kilda, in the same sentence as a film and an opera. It does not say the novel is set on the island.",
+      "fetched_at": "2026-10-27",
+      "summary": "The story of St Kilda has attracted artistic interpretations, including Michael Powell's 1937 film The Edge of the World, the novel The Lost Lights of St Kilda by Elisabeth Gifford, and an opera.",
+      "commons_file": "File:Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg",
+      "open_image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Saint_Kilda_20090611_Hirta_-_Village_Bay_overview.jpg",
+        "attribution": "Otter",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Photograph of the island"
+      },
+      "image_note": "Photograph of the island"
+    },
+    {
+      "category_slug": "island-books",
+      "island_id": "mainland-orkney",
+      "island_name": "Mainland (Orkney)",
+      "facet": "book",
+      "title": "Frankenstein",
+      "source_url": "https://en.wikipedia.org/wiki/Frankenstein",
+      "source_title": "Frankenstein",
+      "licence": "CC BY-SA 4.0",
+      "evidence": "Victor and his friend Henry Clerval leave the European mainland for Britain, where Victor establishes a laboratory in Orkney.",
+      "external_id": "",
+      "confidence": "high",
+      "status": "rejected",
+      "reject_reason": "The article says Victor establishes a laboratory in Orkney. It does not name Mainland.",
+      "fetched_at": "2026-10-27",
+      "summary": "Frankenstein; or, The Modern Prometheus is an 1818 Gothic novel written by English author Mary Shelley. Victor and his friend Henry Clerval leave the European mainland for Britain, where Victor establishes a laboratory in Orkney.",
+      "commons_file": "File:Frontispiece to Frankenstein 1831.jpg",
+      "open_image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Frontispiece_to_Frankenstein_1831.jpg/960px-Frontispiece_to_Frankenstein_1831.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Frontispiece_to_Frankenstein_1831.jpg",
+        "attribution": "Theodor von Holst",
+        "licence": "Public domain",
+        "licenceUrl": "https://en.wikipedia.org/wiki/Public_domain"
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "title": "The Well-Beloved",
+      "reason": "The novel is set on the fictional Isle of Slingers, which the article says is based on the Isle of Portland."
+    },
+    {
+      "title": "Entry Island",
+      "reason": "The article says the book is partly set on the Isle of Lewis and partly on an island in Canada."
+    },
+    {
+      "title": "I'll Keep You Safe",
+      "reason": "The action transfers to the Western Isles, which is not one atlas island."
+    },
+    {
+      "title": "The Black Loch",
+      "reason": "The article says the book is set ten years later than The Chessmen, which is a date, not a place."
+    },
+    {
+      "title": "The Monster's Wife",
+      "reason": "Set on one of the Orkney Islands, without naming which island."
+    },
+    {
+      "title": "Peig",
+      "reason": "Autobiography of life linked to the Great Blasket Island, which is not in the atlas index."
+    },
+    {
+      "title": "The Islandman",
+      "reason": "Blasket autobiography. Great Blasket Island is not in the atlas index."
+    },
+    {
+      "title": "Twenty Years a-Growing",
+      "reason": "Memoir of growing up on the Great Blasket Island, which is not in the atlas index."
+    },
+    {
+      "title": "The Winter Vault",
+      "reason": "Jura is a setting for only some of the narrative and action."
+    },
+    {
+      "title": "A Question of Blood",
+      "reason": "Jura is featured in the plot. The article does not set the novel on Jura."
+    },
+    {
+      "title": "The Careful Use of Compliments",
+      "reason": "Jura is featured in the plot. The article does not set the novel on Jura."
+    },
+    {
+      "title": "Nineteen Eighty-Four",
+      "reason": "Orwell completed the novel while living on Jura. The article does not set the story there."
+    },
+    {
+      "title": "Whisky Galore",
+      "reason": "The Eriskay article says the wreck inspired the novel. The novel is set on fictional Todday."
+    },
+    {
+      "title": "Rockets Galore",
+      "reason": "Set on the fictional island of Todday. South Uist says local opposition inspired the novel."
+    },
+    {
+      "title": "Keep the Home Guard Turning",
+      "reason": "A remote Scottish island is unnamed. The article does not name an atlas island."
+    },
+    {
+      "title": "The Merry Men",
+      "reason": "Set on the fictional island Eilean Aros, based on Erraid."
+    },
+    {
+      "title": "Lillian Beckwith's Bruach books",
+      "reason": "Set on the fictional island of Bruach. Her life on Soay provided the basis for them."
+    },
+    {
+      "title": "Night of the Big Heat",
+      "reason": "The island is unnamed. The article says details only imply the Isle of Wight."
+    },
+    {
+      "title": "The Wasp Factory",
+      "reason": "A remote Scottish island, not named."
+    },
+    {
+      "title": "All the Birds, Singing",
+      "reason": "A remote Scottish island, not named."
+    },
+    {
+      "title": "The Ice Twins",
+      "reason": "A small island off Skye, not named."
+    },
+    {
+      "title": "Pig Island",
+      "reason": "The so-called Isle of Pigs is not an atlas island."
+    },
+    {
+      "title": "The Lighthouse",
+      "reason": "Fictional Combe Island off Cornwall."
+    },
+    {
+      "title": "Eye of the Needle",
+      "reason": "Fictitious Storm Island."
+    },
+    {
+      "title": "Miss Peregrine's Home for Peculiar Children",
+      "reason": "Fictional Welsh island of Cairnholm."
+    },
+    {
+      "title": "The Island of Adventure",
+      "reason": "Fictional Isle of Gloom."
+    },
+    {
+      "title": "We Couldn't Leave Dinah",
+      "reason": "Fictional Channel Island."
+    },
+    {
+      "title": "The Divine and the Decay",
+      "reason": "An unnamed Channel Island."
+    },
+    {
+      "title": "Wrath of the Lion",
+      "reason": "A hideout in the Channel Islands, with no island named."
+    },
+    {
+      "title": "Summer of the Red Wolf",
+      "reason": "Set in the Outer Hebrides, not on one atlas island."
+    },
+    {
+      "title": "Atlantic Fury",
+      "reason": "A military disaster in the Outer Hebrides, with no island named."
+    },
+    {
+      "title": "Swallows and Amazons",
+      "reason": "The children camp on fictional Wild Cat Island in the Lake District."
+    },
+    {
+      "title": "The Island of Sheep",
+      "reason": "The Island of Sheep is in the Faroes, outside this atlas."
+    },
+    {
+      "title": "Extraordinary Women",
+      "reason": "Set on fictional Sirene, a version of Capri."
+    },
+    {
+      "title": "Consider the Lilies",
+      "reason": "Set in the Highland Clearances, with no island named."
+    },
+    {
+      "title": "Greenvoe",
+      "reason": "An imaginary Orkney community."
+    },
+    {
+      "title": "Fairy Gold",
+      "reason": "The Herm article says Compton Mackenzie represented the island in a fictional portrayal."
+    },
+    {
+      "title": "The Carved Stone",
+      "reason": "The boy lands on Iona in the year 800 during a time-travel story. The article does not set the novel on Iona."
+    },
+    {
+      "title": "Mr Standfast",
+      "reason": "Hannay makes his way onto Skye. The article does not set the novel on Skye."
+    },
+    {
+      "title": "To the Far Blue Mountains",
+      "reason": "The hero hides in a cave at the Bill of Portland. That is a scene, not the setting of the novel."
+    },
+    {
+      "title": "Calum's Road",
+      "reason": "A book about the road, and a radio drama based on it. The article does not call it a novel, memoir, autobiography, or story collection."
+    },
+    {
+      "title": "Harpoon at a Venture",
+      "reason": "Maxwell acknowledges the failed Soay fishery in the book. The article does not set the book on Soay."
+    },
+    {
+      "title": "Dream Island",
+      "reason": "Lockley describes research in the book. The article does not call it a memoir set on Skokholm."
+    },
+    {
+      "title": "If Found...",
+      "reason": "A visual novel, which is a game, set on Achill."
+    },
+    {
+      "title": "Suathadh ri Iomadh Rubha",
+      "reason": "Named as a memoir by a Lewis writer. The article does not set the memoir on Lewis."
+    },
+    {
+      "title": "St Kilda (Heathcote)",
+      "reason": "Norman Heathcote wrote a book about his experiences. The article does not call it a memoir."
+    },
+    {
+      "title": "Foula, Island West of the Sun",
+      "reason": "Named as Sheila Gear's book about crofter life. The article does not call it a novel or memoir set on Foula."
+    }
+  ],
+  "quality_checked_at": "2026-10-27T09:34:14Z"
+}
