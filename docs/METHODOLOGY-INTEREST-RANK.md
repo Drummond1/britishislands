@@ -58,4 +58,4 @@ The unfiltered list, and any browse that is not a search or one of the filters a
 
 Area and population are not the order. A large island leads only when its story is the stronger one. A photograph of the subject adds a small amount, so a story you can see sits just above the same story with no picture. More photographs do not move an island further up. Great Britain and Ireland stay at the bottom.
 
-The first screen runs Erraid, Lindisfarne, Lewis and Harris, Islay, Guernsey, Papa Westray, Eilean Donan, Mull, Bass Rock, Burgh Island, Davaar, and Omey.
+The first screen runs Erraid, Lindisfarne, Lewis and Harris, Islay, Guernsey, Papa Westray, Eilean Donan, Mull, Bass Rock, Burgh Island, Davaar, and Omey. The three cards above the list are the first three of that same order.

@@ -3714,3 +3714,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: `scoreAtlasIsland` ranks All islands, and any browse that is not a search or a single filter, by the strongest cited story. Area, population, photograph count, and a curated flag are not the order. A picture of the subject adds a little. Great Britain and Ireland stay at the bottom. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. The opening is Erraid, Lindisfarne, Lewis and Harris, Islay, Guernsey, Papa Westray, Eilean Donan, Mull, Bass Rock, Burgh Island, Davaar, and Omey. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Featured cards follow the story order
+
+- **Goal**: The three cards above the list should be the most interesting islands, the same ones that lead All islands.
+- **What changed**: The home strip no longer pins Skye, Iona, and Staffa. It takes the first three from `scoreAtlasIsland`. A card uses the island photograph when one is already on the record, otherwise the picture from the cited story. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. The cards are Erraid, Lindisfarne, and Lewis and Harris, matching the list. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.

@@ -3446,6 +3446,7 @@ async function loadInterestIndex() {
       renderBrowseQuickChips();
     }
     applyFilters();
+    if (!state.activeExploreTopic) renderExploreStrip(state.featuredIslands, "Somewhere to begin");
     const open = state.activeId && state.byId?.get(state.activeId);
     if (open && !els.details?.hidden) renderDetails(open);
   } catch (e) {
@@ -3607,11 +3608,55 @@ function featuredCredit(island) {
   return [img.attribution, img.license].filter(Boolean).join(" · ");
 }
 
+function citedPicture(island) {
+  let best = null;
+  let bestScore = -1;
+  for (const slug of interestSlugsFor(island?.id)) {
+    if (slug === "for-sale") continue;
+    for (const item of citedItems(slug, island.id)) {
+      if (!item?.image?.thumbUrl) continue;
+      const score = scoreCitedItem(slug, item, island);
+      if (score > bestScore) {
+        bestScore = score;
+        best = item;
+      }
+    }
+  }
+  return best;
+}
+
+/** Home strip: the same three that lead All islands. */
+function homeFeaturedPicks(limit = 3) {
+  if (!state.interestIndex || !state.islands?.length) return [];
+  const featuredById = new Map((state.featuredIslands || []).map((row) => [row.id, row]));
+  const seen = new Set();
+  const picks = [];
+  for (const island of state.islands.slice().sort(compareAtlas)) {
+    const nameKey = (island.name || "").trim().toLowerCase();
+    if (!nameKey || seen.has(nameKey)) continue;
+    const featured = featuredById.get(island.id);
+    const story = citedPicture(island);
+    const thumb = featured?.thumbUrl || islandThumbUrl(island) || story?.image?.thumbUrl;
+    if (!thumb) continue;
+    seen.add(nameKey);
+    picks.push({
+      id: island.id,
+      name: featured?.name || island.name,
+      nation: featured?.nation || island.nation,
+      shortDescription: featured?.shortDescription || story?.summary || island.shortDescription || "",
+      thumbUrl: thumb,
+    });
+    if (picks.length >= limit) break;
+  }
+  return picks;
+}
+
 function renderExploreStrip(rows, title) {
   const strip = document.getElementById("featured-strip");
   const scroll = document.getElementById("featured-strip-scroll");
   const heading = document.getElementById("featured-heading");
-  if (!strip || !scroll || !rows?.length) {
+  const displayRows = state.activeExploreTopic ? (rows || []).slice(0, 3) : homeFeaturedPicks(3);
+  if (!strip || !scroll || !displayRows.length) {
     if (strip) strip.hidden = true;
     return;
   }
@@ -3619,10 +3664,6 @@ function renderExploreStrip(rows, title) {
   strip.hidden = false;
   scroll.replaceChildren();
   const seenNames = new Set();
-  const highlights = ["isle-of-skye", "iona", "staffa"];
-  const displayRows = !state.activeExploreTopic
-    ? highlights.map((id) => rows.find((row) => row.id === id)).filter(Boolean)
-    : rows.slice(0, 3);
   const cards = [];
   for (const row of displayRows) {
     const island = state.byId.get(row.id);
