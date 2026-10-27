@@ -3658,3 +3658,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: `supabase/functions/ask` calls OpenAI with a Supabase secret. The page uses it when that function says it is ready, and still accepts a personal key in the browser. The secret is set. The function is deployed. A short test returned a reply from `gpt-4o-mini`.
 - **Outcome / counts**: Counts unchanged. The live site uses it once this page change is on `main`.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Ask stays on for visitors
+
+- **Goal**: A new window still showed AI off, because the live page had no Supabase address and a saved key counted as the switch being off.
+- **What changed**: The public Supabase address is a GitHub secret and is written into the live page on deploy. Smart answers stay on unless the visitor uses the switch. A previously saved key does not turn them off.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.

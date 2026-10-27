@@ -10463,40 +10463,44 @@ function chatProbeShared() {
 }
 
 function chatLLMGetSettings() {
+  let obj = {};
   try {
-    const raw = localStorage.getItem("chatAI");
-    const obj = raw ? JSON.parse(raw) : {};
-    const hasChoice = !!(raw && Object.prototype.hasOwnProperty.call(obj, "enabled"));
-    const apiKey = obj.apiKey || "";
-    const shared = !apiKey && !!chatSharedReady;
-    return {
-      enabled: hasChoice ? !!obj.enabled : shared,
-      provider: obj.provider || "openai",
-      model: obj.model || LLM_PROVIDERS.openai.defaultModel,
-      apiKey,
-      shared,
-    };
-  } catch (_) {
-    return {
-      enabled: !!chatSharedReady,
-      provider: "openai",
-      model: "gpt-4o-mini",
-      apiKey: "",
-      shared: !!chatSharedReady,
-    };
-  }
+    obj = JSON.parse(localStorage.getItem("chatAI") || "{}") || {};
+  } catch (_) {}
+  const storedKey = typeof obj.apiKey === "string" ? obj.apiKey : "";
+  const explicit = obj.explicit === true;
+  const sharedReady = !!chatSharedReady;
+  // A key saved while the switch was off is not an opt-out. Only the switch is.
+  const enabled = explicit ? !!obj.enabled : (sharedReady || !!storedKey);
+  const shared = sharedReady && enabled;
+  return {
+    enabled,
+    provider: obj.provider || "openai",
+    model: obj.model || LLM_PROVIDERS.openai.defaultModel,
+    apiKey: shared ? "" : storedKey,
+    shared,
+  };
 }
 
 function chatLLMSaveSettings(patch) {
-  const current = chatLLMGetSettings();
-  const next = Object.assign({}, current, patch);
+  let stored = {};
   try {
-    localStorage.setItem("chatAI", JSON.stringify(next));
+    stored = JSON.parse(localStorage.getItem("chatAI") || "{}") || {};
+  } catch (_) {}
+  const next = Object.assign({}, stored, patch);
+  try {
+    localStorage.setItem("chatAI", JSON.stringify({
+      enabled: !!next.enabled,
+      explicit: next.explicit === true,
+      provider: next.provider || "openai",
+      model: next.model || LLM_PROVIDERS.openai.defaultModel,
+      apiKey: typeof next.apiKey === "string" ? next.apiKey : "",
+    }));
   } catch (_) {
     /* non-fatal */
   }
   chatLLMRefreshUI();
-  return next;
+  return chatLLMGetSettings();
 }
 
 let chatCorpusDoc = null;
@@ -11101,7 +11105,7 @@ function chatLLMInitSettingsUI() {
   if (s.apiKey) key.placeholder = "•••••• (saved in this browser)";
 
   aiToggle.addEventListener("change", () => {
-    chatLLMSaveSettings({ enabled: aiToggle.checked });
+    chatLLMSaveSettings({ enabled: aiToggle.checked, explicit: true });
   });
   provider.addEventListener("change", () => {
     const def = LLM_PROVIDERS[provider.value]?.defaultModel;
