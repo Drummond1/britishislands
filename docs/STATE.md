@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (cover headline)** — The opening headline is “An Atlas for local adventures.” The last word is gold. The top bar is still the compass and Find My Island. Counts unchanged. Shipped to main.
+
 **2026-10-27 (shipped to main)** — The quieter atlas is on `main` for GitHub Pages: the compass and the name, interest order, visitor notes, the quiet cover, and placing a pin before naming it. Counts unchanged. The for-sale filter stays **48**. Supabase was not reloaded. `islands.json` was not edited.
 
 **2026-10-27 (simpler wordmark)** — The top bar is the compass and the name. The slogan and the single “Explore the islands” control are gone. Home is still the name. Counts unchanged.

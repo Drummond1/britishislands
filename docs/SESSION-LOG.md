@@ -3602,6 +3602,13 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Counts unchanged.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-27 — Cover headline
+
+- **Goal**: Use “An Atlas for local adventures” as the opening headline.
+- **What changed**: The sidebar headline is two lines: An Atlas for / local adventures. The last word stays gold. The compass and Find My Island stay in the top bar. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. Shipped to main for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.
+
 ## 2026-10-27 — Quieter atlas shipped
 
 - **Goal**: Put the current atlas on findmyisland.com.
