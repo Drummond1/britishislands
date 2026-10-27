@@ -3735,3 +3735,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: A list photo keeps a fixed size in the flow of the card, instead of being taken out of the layout. Opening photographs load immediately. Commons picture addresses that bounced through a redirect now point straight at the thumbnail. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. On a phone-sized WebKit window the opening photographs and the list thumbnails loaded, at 95×94 in the list. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Erraid’s own photograph
+
+- **Goal**: Erraid opened on the Kidnapped cover and showed a pin in the list, even though the record has a photograph of the island.
+- **What changed**: The opening cards use a photograph of the island when the record has one, and do not substitute a cited book or painting. The first screen loads those photograph addresses, which the compact index does not carry. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. Erraid’s opening card and list thumbnail are David Balfour’s Bay. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.

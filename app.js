@@ -2659,6 +2659,23 @@ async function ensureIslandDetailLoaded(island) {
   return state.byId.get(id) || island;
 }
 
+/** The compact index flags a photograph without its address. Load those for the first screen. */
+function prefetchBrowsePhotos() {
+  const { rows } = getListDisplayRows();
+  const needs = [];
+  for (const island of rows) {
+    if (!island?.hasImage || islandThumbUrl(island)) continue;
+    needs.push(island);
+    if (needs.length >= 24) break;
+  }
+  if (!needs.length) return;
+  Promise.all(needs.map((island) => ensureIslandDetailLoaded(island).catch(() => null))).then(() => {
+    if (!state.activeExploreTopic) renderExploreStrip(state.featuredIslands, "Somewhere to begin");
+    listWindowForce = true;
+    scheduleRenderListWindow();
+  });
+}
+
 function prefetchPopularDetails() {
   const ids = [];
   for (const row of state.featuredIslands || []) {
@@ -3447,6 +3464,7 @@ async function loadInterestIndex() {
     }
     applyFilters();
     if (!state.activeExploreTopic) renderExploreStrip(state.featuredIslands, "Somewhere to begin");
+    prefetchBrowsePhotos();
     const open = state.activeId && state.byId?.get(state.activeId);
     if (open && !els.details?.hidden) renderDetails(open);
   } catch (e) {
@@ -3636,7 +3654,9 @@ function homeFeaturedPicks(limit = 3) {
     if (!nameKey || seen.has(nameKey)) continue;
     const featured = featuredById.get(island.id);
     const story = citedPicture(island);
-    const thumb = featured?.thumbUrl || islandThumbUrl(island) || story?.image?.thumbUrl;
+    const ownPhoto = featured?.thumbUrl || islandThumbUrl(island);
+    // A cited book or painting is not a picture of the island.
+    const thumb = ownPhoto || (island.hasImage ? "" : story?.image?.thumbUrl);
     if (!thumb) continue;
     seen.add(nameKey);
     picks.push({
