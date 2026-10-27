@@ -28,7 +28,7 @@ import {
 } from "./crowd-pins.js?v=visitor-note-1";
 import { suggestedName, refreshSuggestedNames, saveIslandName } from "./name-island.js";
 import { notesForIsland, refreshIslandNotes, saveIslandNote, visitorName } from "./island-notes.js?v=visitor-note-2";
-import { rankIslands, rankRemoteIslands, scoreCitedItem } from "./interest-rank.js";
+import { rankIslands, rankRemoteIslands, scoreAtlasIsland, scoreCitedItem } from "./interest-rank.js";
 import {
   searchIslands as agentSearchIslands,
   countIslands as agentCountIslands,
@@ -2904,7 +2904,8 @@ async function loadFeaturedIslands() {
         }
         if (row.hasPhoto) island.hasImage = true;
       }
-      browseRankCache.source = null;
+      atlasScoreById = null;
+      browseRankCache = { source: null, rows: null };
       renderExploreStrip(state.featuredIslands, "Somewhere to begin");
       syncFeaturedStripVisibility();
       if (!hasUserDiscoveryIntent()) renderList();
@@ -3420,6 +3421,8 @@ async function loadInterestIndex() {
     const data = await res.json();
     state.interestIndex = data;
     interestSlugByIsland = null;
+    atlasScoreById = null;
+    browseRankCache = { source: null, rows: null };
     renderInterestFilters();
     renderBrowseQuickChips();
     const slug = new URLSearchParams(window.location.search).get("interest");
@@ -3441,10 +3444,8 @@ async function loadInterestIndex() {
       if (slug === "for-sale" && els.filterForSale) els.filterForSale.checked = true;
       renderInterestFilters();
       renderBrowseQuickChips();
-      applyFilters();
-    } else if (activeBrowseQuick === "remote") {
-      applyFilters();
     }
+    applyFilters();
     const open = state.activeId && state.byId?.get(state.activeId);
     if (open && !els.details?.hidden) renderDetails(open);
   } catch (e) {
@@ -4332,28 +4333,6 @@ function listSortCompare(a, b, { photosFirst = false } = {}) {
   return a.name.localeCompare(b.name);
 }
 
-/** Home browse only: lead with places a visitor would recognise. */
-function browseAppeal(island) {
-  if (!island) return 0;
-  let score = 0;
-  if (island.featuredTier === "curated" || island.source === "curated") score += 12;
-  else if (island.featuredTier) score += 6;
-  if (island.hasImage || islandHasPhoto(island)) score += 4;
-  const blurb = (island.shortDescription || "").trim();
-  if (blurb.length > 40) score += 3;
-  else if (blurb) score += 1;
-  if (island.population > 10000) score += 5;
-  else if (island.population > 1000) score += 3;
-  else if (island.population > 0) score += 1;
-  const area = island.areaKm2 || 0;
-  // Great Britain and Ireland are in the dataset, but they should not lead the browse.
-  if (area > 20000) score -= 30;
-  if (area >= 100) score += 4;
-  else if (area >= 20) score += 2;
-  else if (area >= 1) score += 1;
-  return score;
-}
-
 // ---------- Filtering ----------
 // Normalise a string for searching: NFKD-decompose, strip diacritics and
 // non-alphanumerics, lowercase. Cached on the island object so we don't
@@ -4599,12 +4578,8 @@ function applyFilters(opts = {}) {
         state.filtered = rankIslands(state.activeInterestSlug, state.filtered, citedItems, interestSlugsFor);
       } else if (activeBrowseQuick === "remote") {
         state.filtered = rankRemoteIslands(state.filtered, interestSlugsFor);
-      } else if (!hasUserDiscoveryIntent()) {
-        state.filtered.sort(
-          (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
-        );
       } else {
-        state.filtered.sort((a, b) => browseAppeal(b) - browseAppeal(a) || listSortCompare(a, b, { photosFirst }));
+        state.filtered.sort(compareAtlas);
       }
     }
   }
@@ -4685,12 +4660,24 @@ function shouldRenderListWindow() {
 
 const LIST_BROWSE_CAP = 24;
 let browseRankCache = { source: null, rows: null };
+let atlasScoreById = null;
+
+function atlasScore(island) {
+  if (!island) return 0;
+  if (!atlasScoreById) atlasScoreById = new Map();
+  if (!atlasScoreById.has(island.id)) {
+    atlasScoreById.set(island.id, scoreAtlasIsland(island, interestSlugsFor(island.id), citedItems));
+  }
+  return atlasScoreById.get(island.id);
+}
+
+function compareAtlas(a, b) {
+  return atlasScore(b) - atlasScore(a) || (a.name || "").localeCompare(b.name || "");
+}
 
 function rankedForBrowse(all) {
   if (browseRankCache.source === all && browseRankCache.rows) return browseRankCache.rows;
-  const rows = all.slice().sort(
-    (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
-  );
+  const rows = all.slice().sort(compareAtlas);
   browseRankCache = { source: all, rows };
   return rows;
 }

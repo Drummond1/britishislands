@@ -51,3 +51,11 @@ The list does not carry a whole-island flag on the card, so the order uses the l
 ## Remote
 
 Remote is the uninhabited sea islands with no ferry. An island that already has a cited story, and a photograph, leads. St Kilda, Rockall, North Rona, Staffa, and Sùla Sgeir get a further lift because they are the outposts the word remote refers to, and Rockall has no area stored to lift it any other way. Great Britain and Ireland are ranked down.
+
+## All islands
+
+The unfiltered list, and any browse that is not a search or one of the filters above, follows the strongest cited story. A news report, a castle, a film, a book, a still, a custom, a species, and a tidal crossing are put on one scale, using the same judgement as that filter. A second story adds a little. It does not add a point per category.
+
+Area and population are not the order. A large island leads only when its story is the stronger one. A photograph of the subject adds a small amount, so a story you can see sits just above the same story with no picture. More photographs do not move an island further up. Great Britain and Ireland stay at the bottom.
+
+The first screen runs Erraid, Lindisfarne, Lewis and Harris, Islay, Guernsey, Papa Westray, Eilean Donan, Mull, Bass Rock, Burgh Island, Davaar, and Omey.

@@ -3707,3 +3707,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Pushed `7d6bd4ad` to `main` (`git@github.com:Drummond1/britishislands.git`). That commit has the index, the membership SQL, the daywave and expansion candidate files, the quality notes, and `rejected_claims.json`. `SUPABASE_SERVICE_ROLE_KEY` is not in `.env.local` or the environment, so `interest_categories.py` could not call Supabase. The membership SQL was applied with the logged-in Supabase CLI. `islands.json` was not edited. Place-label atlas files, the old-link route change, and the all-islands sort were left unstaged.
 - **Outcome / counts**: Remote island counts match the index: film, art and music **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal islands **126**, castles **98**, books **49**, local traditions **46**, unusual news **118**. The draft category stays hidden. An anonymous client can read the published categories and the accepted rows, and cannot insert. The index push started Deploy Pages run `40503442655`.
 - **Open items kicked to QUEUE.md**: none for this load. The hourly research wake is still armed until 21:00 Europe/London.
+
+## 2026-10-27 — All islands ordered by the story
+
+- **Goal**: The main list should lead with the most interesting island, not the largest one, and that order should be on the live site.
+- **What changed**: `scoreAtlasIsland` ranks All islands, and any browse that is not a search or a single filter, by the strongest cited story. Area, population, photograph count, and a curated flag are not the order. A picture of the subject adds a little. Great Britain and Ireland stay at the bottom. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. The opening is Erraid, Lindisfarne, Lewis and Harris, Islay, Guernsey, Papa Westray, Eilean Donan, Mull, Bass Rock, Burgh Island, Davaar, and Omey. Pushed to `main` for GitHub Pages.
+- **Open items kicked to QUEUE.md**: none.

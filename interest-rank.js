@@ -323,3 +323,65 @@ export function rankRemoteIslands(islands, getSlugs) {
   }));
   return byScore(rows);
 }
+
+/** Typical top score in each filter, so one category cannot drown the others. */
+const INTEREST_CEILING = {
+  "unusual-news": 48,
+  "island-castles": 36,
+  "unusual-wildlife": 36,
+  "whisky-distilleries": 36,
+  "island-books": 24,
+  "local-traditions": 26,
+  "tidal-islands": 30,
+  "film-art-music": 32,
+};
+
+function interestShare(slug, raw) {
+  const ceiling = INTEREST_CEILING[slug] || 28;
+  return (Math.min(Math.max(raw, 0), ceiling) / ceiling) * 18;
+}
+
+/**
+ * All-islands list. The order is the strongest cited story.
+ * Area, population, and how many photographs an island has are not the order.
+ */
+export function scoreAtlasIsland(island, slugs, getItems) {
+  if (!island) return 0;
+  const area = island.areaKm2 || 0;
+  let score = area > 8000 ? -50 : 0;
+
+  const cited = (slugs || []).filter((slug) => slug !== "for-sale");
+  const shares = [];
+  let subjectPhoto = false;
+  for (const slug of cited) {
+    const items = getItems(slug, island.id) || [];
+    if (!subjectPhoto && items.some((item) => hasSubjectPicture(item) && !isThinCitation(item))) {
+      subjectPhoto = true;
+    }
+    shares.push(
+      interestShare(
+        slug,
+        scoreInterestIsland(
+          slug,
+          island,
+          items,
+          cited.filter((item) => item !== slug),
+        ),
+      ),
+    );
+  }
+  shares.sort((a, b) => b - a);
+  score += shares[0] || 0;
+  score += (shares[1] || 0) * 0.08;
+  if (subjectPhoto) score += 3;
+  else if (!(island.hasImage || island.thumbUrl)) score -= 3;
+  return score;
+}
+
+export function rankAtlasIslands(islands, getItems, getSlugs) {
+  const rows = (islands || []).map((island) => ({
+    island,
+    score: scoreAtlasIsland(island, getSlugs(island?.id) || [], getItems),
+  }));
+  return byScore(rows);
+}

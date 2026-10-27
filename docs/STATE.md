@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (all-islands order)** — The unfiltered list follows the strongest cited story. Area and population are not the order. On `main` for GitHub Pages. Counts unchanged. `islands.json` was not edited.
+
 **2026-10-27 (interest index pushed)** — On `main` as `7d6bd4ad` for GitHub Pages. Film, art and music **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal islands **126**, castles **98**, books **49**, local traditions **46**, unusual news **118**. Stories **1,733**, **1,088** with an open-licence picture. Supabase memberships are loaded and match those island counts. Anonymous clients can read the published categories and accepted rows only. `islands.json` was not edited and was not in the push.
 
 **2026-10-27 (place labels)** — 151 nation labels corrected, three non-islands removed, confirmed measurements and Belle Isle’s grade applied. Index rebuilt. Seventeen draft sentences that still named the old country were rewritten. Inch’s parent water is Lough Swilly. `interest_index.json` was not republished. Still local: not in the interest push.
