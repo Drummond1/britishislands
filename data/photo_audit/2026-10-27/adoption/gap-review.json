@@ -1,0 +1,4158 @@
+[
+  {
+    "id": "osm-way-550354790",
+    "name": "Bréhon Rock",
+    "slice": "crown-01",
+    "verdict": "no-photo",
+    "lat": 49.47116,
+    "lng": -2.48834,
+    "names": {
+      "en": "Bréhon Rock"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Brehon_Tower.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Category:Bréhon",
+    "license": "CC-BY-SA-3.0",
+    "attribution": "Photo by Unukorno (CC-BY-SA-3.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Brehon_Tower.jpg",
+    "width": 640,
+    "height": 427,
+    "reason": "The description says Brehon Tower between Herm and Guernsey, and the file is in Category:Bréhon. GPS is 1.4 km away.",
+    "sourcesChecked": [
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Brehon_Tower.jpg",
+        "note": "Brehon Tower, between the islands Herm and Guernsey"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Brehon_Tower.jpg",
+        "note": "Category:Bréhon"
+      }
+    ],
+    "fileTitle": "File:Brehon_Tower.jpg",
+    "commonsTitle": "File:Brehon Tower.jpg",
+    "description": "Brehon Tower, between the islands Herm and Guernsey",
+    "categories": [],
+    "licenseShort": "CC BY-SA 3.0",
+    "artist": "Unukorno",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Brehon_Tower.jpg/960px-Brehon_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/08/Brehon_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.41,
+    "signals": [
+      "geo-1.41km"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "guernsey",
+    "name": "Guernsey",
+    "slice": "crown-01",
+    "verdict": "unsure",
+    "lat": 49.4657,
+    "lng": -2.5853,
+    "names": {
+      "en": "Guernsey",
+      "cy": "Ynys y Garn",
+      "ga": "Geansaí",
+      "kw": "Gernsi",
+      "fr": "Guernesey"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_012.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Category:Guernsey",
+    "license": "Public domain",
+    "attribution": "Photo by Man vyi (Public domain) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Guernsey_2011_012.jpg",
+    "width": 640,
+    "height": 181,
+    "reason": "The aerial P18 is outside the 5 km limit for this eight-letter name, and the Wikipedia lead is a map. This panorama is in Category:Guernsey, the title names Guernsey, and it has no conflicting GPS. It is public domain. The Wikivoyage banner cut from it is not used.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "mismatch",
+        "page": "https://www.wikidata.org/wiki/Q3311985",
+        "note": "P18 aerial camera is 9 km from the centroid, outside the 5 km limit, and the file is not in Category:Guernsey."
+      },
+      {
+        "source": "wikipedia-pageimage",
+        "result": "mismatch",
+        "page": "https://en.wikipedia.org/wiki/Guernsey",
+        "note": "Lead image is a locator map."
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_012.jpg",
+        "note": "Guernsey, June-July 2011"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_012.jpg",
+        "note": "Category:Guernsey"
+      }
+    ],
+    "fileTitle": "File:Guernsey_2011_012.jpg",
+    "commonsTitle": "File:Guernsey 2011 012.jpg",
+    "description": "Guernsey, June-July 2011",
+    "categories": [],
+    "licenseShort": "Public domain",
+    "artist": "Man vyi",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Guernsey_2011_012.jpg/960px-Guernsey_2011_012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Guernsey_2011_012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-way-25186555",
+    "name": "Fort Grey",
+    "slice": "crown-01",
+    "verdict": "unsure",
+    "lat": 49.43921,
+    "lng": -2.65503,
+    "names": {
+      "en": "Fort Grey"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_152,_Fort_Grey.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Category:Fort Grey (Guernsey)",
+    "license": "Public domain",
+    "attribution": "Photo by Man vyi (Public domain) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Guernsey_2011_152%2C_Fort_Grey.jpg",
+    "width": 640,
+    "height": 515,
+    "reason": "The current panoramio file does not name Fort Grey. This photograph is titled Fort Grey and is in Category:Fort Grey (Guernsey). It is public domain. The fort on the tidal rock is the subject.",
+    "sourcesChecked": [
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_152,_Fort_Grey.jpg",
+        "note": "Guernsey, June-July 2011"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Guernsey_2011_152,_Fort_Grey.jpg",
+        "note": "Category:Fort Grey (Guernsey)"
+      }
+    ],
+    "fileTitle": "File:Guernsey_2011_152,_Fort_Grey.jpg",
+    "commonsTitle": "File:Guernsey 2011 152, Fort Grey.jpg",
+    "description": "Guernsey, June-July 2011",
+    "categories": [],
+    "licenseShort": "Public domain",
+    "artist": "Man vyi",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Guernsey_2011_152%2C_Fort_Grey.jpg/960px-Guernsey_2011_152%2C_Fort_Grey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/53/Guernsey_2011_152%2C_Fort_Grey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "le-rocher-des-proscrits",
+    "name": "Le Rocher des Proscrits",
+    "slice": "crown-01",
+    "verdict": "no-photo",
+    "lat": 49.17618,
+    "lng": -2.09676,
+    "names": {
+      "en": "Le Rocher des Proscrits"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Category:Rocher des Proscrits",
+    "license": "Public domain",
+    "attribution": "Photo by Man vyi (Public domain) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg",
+    "width": 640,
+    "height": 655,
+    "reason": "The description names Rocher des Proscrits at Le Dicq, and Category:Rocher des Proscrits is this rock. A separate frame is a portrait of Victor Hugo and was rejected.",
+    "sourcesChecked": [
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg",
+        "note": "Rocher des Proscrits, Le Dicq, Jersey . Victor Hugo used to sit on this rock near his house in exile. The wording on the plaque reads: \"Rocher des Proscrits / Victor Hugo / en exil"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg",
+        "note": "Category:Rocher des Proscrits"
+      }
+    ],
+    "fileTitle": "File:Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg",
+    "commonsTitle": "File:Victor Hugo Rocher des Proscrits Jersey.jpg",
+    "description": " Rocher des Proscrits, Le Dicq,  Jersey .  Victor Hugo  used to sit on this rock near his house in exile. The wording on the plaque reads: \"Rocher des Proscrits / Victor Hugo / en exil / 1852-1855\" \n \n Image:Victor Hugo-Exile.jpg  shows Hugo among this rock formation.",
+    "categories": [
+      "Category:Monuments and memorials in Jersey",
+      "Category:PD-self",
+      "Category:Plaques in Saint Saviour",
+      "Category:Plaques to Victor Hugo",
+      "Category:Rocher des Proscrits",
+      "Category:Self-published work",
+      "Category:Taken with Canon PowerShot A40"
+    ],
+    "licenseShort": "Public domain",
+    "artist": "Man vyi",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg/960px-Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Victor_Hugo_Rocher_des_Proscrits_Jersey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-2957548",
+    "name": "Icho",
+    "slice": "crown-01",
+    "verdict": "no-photo",
+    "lat": 49.14826,
+    "lng": -2.04818,
+    "names": {
+      "en": "Icho"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Icho_tower_-_geograph.ci_-_370.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Category:Icho Tower, Jersey",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Bob Embleton (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Icho_tower_-_geograph.ci_-_370.jpg",
+    "width": 640,
+    "height": 426,
+    "reason": "The description is of Icho Tower and the file is in Category:Icho Tower, Jersey. GPS is 2.0 km away, inside the 5 km limit for this short name. A larger frame names the tower but is not in that category.",
+    "sourcesChecked": [
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Icho_tower_-_geograph.ci_-_370.jpg",
+        "note": "Icho tower. Icho Tower is a Martello Tower which was built in 1810 has walls about 2 metres thick. It is accessible by foot on the lowest tides and then only for a couple of hours "
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Icho_tower_-_geograph.ci_-_370.jpg",
+        "note": "Category:Icho Tower, Jersey"
+      }
+    ],
+    "fileTitle": "File:Icho_tower_-_geograph.ci_-_370.jpg",
+    "commonsTitle": "File:Icho tower - geograph.ci - 370.jpg",
+    "description": " Icho tower. Icho Tower is a Martello Tower which was built in 1810 has walls about 2 metres thick. \n \nIt is accessible by foot on the lowest tides and then only for a couple of hours around low water.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Files with coordinates missing SDC location of creation",
+      "Category:Icho Tower, Jersey",
+      "Category:Images by Bob Embleton",
+      "Category:Images from Geograph Channel Islands",
+      "Category:Taken with Canon EOS 450D"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Bob Embleton",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Icho_tower_-_geograph.ci_-_370.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Icho_tower_-_geograph.ci_-_370.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.99,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.99km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-1430010007",
+    "name": "Wood Howe",
+    "slice": "england-01",
+    "verdict": "no-photo",
+    "lat": 54.499,
+    "lng": -2.81064,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "exact:Wood Howe",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by David Crocker (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A confirmed photograph is Wood Howe in Haweswater - geograph.org.uk - 65691.jpg, supported by file-page-names-island, own-category, geo-0.388km. GPS is 0.388 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=%22Wood%20Howe%22%20Haweswater%20Reservoir",
+        "note": "One file-namespace search. A search hit is not itself a second source."
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 0.388 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg",
+    "commonsTitle": "File:Wood Howe in Haweswater - geograph.org.uk - 65691.jpg",
+    "description": "Wood Howe in Haweswater. When this photo was taken in the autumn of 2003 the water levels in Haweswater were very low as can be seen in this photo which was taken at 14:46 on 17th October.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:October 2003 in Cumbria",
+      "Category:Reservoirs with low levels of water",
+      "Category:Taken with Canon PowerShot S45",
+      "Category:United Kingdom photographs taken on 2003-10-17",
+      "Category:Wood Howe"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "David Crocker",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.39,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.39km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-61603377",
+    "name": "Peel Island",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 54.31759,
+    "lng": -3.08511,
+    "names": {
+      "en": "Peel Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Peel_Island,_Coniston.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Peel_Island,_Cumbria",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by jirikruta (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Peel_Island%2C_Coniston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 447,
+    "reason": "A confirmed photograph is Peel Island, Coniston.jpg, supported by wikipedia-lead, file-page-names-island, own-category, geo-0.14km. GPS is 0.14 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q7160233",
+        "note": "No P18 on this Q-id"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Peel_Island,_Cumbria",
+        "note": "Lead File:Peel Island, Coniston.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Peel_Island,_Coniston.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 0.14 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Peel_Island,_Coniston.jpg",
+    "commonsTitle": "File:Peel Island, Coniston.jpg",
+    "description": " Peel Island  (\"Wild Cat Island\" from   Swallows and Amazons  ), Coniston, Cumbria",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Peel Island, Cumbria",
+      "Category:United Kingdom photographs taken on 1996-06-21"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "jirikruta",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Peel_Island%2C_Coniston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Peel_Island%2C_Coniston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.14,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.14km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "barton-locks-w230531722",
+    "name": "Barton Locks",
+    "slice": "england-01",
+    "verdict": "unsure",
+    "lat": 53.47468,
+    "lng": -2.35283,
+    "names": {
+      "en": "Barton Locks"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Barton_Locks,_northern_side,_upstream_end_-_geograph.org.uk_-_3417075.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "exact:Barton Locks",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Christine Johnstone (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Barton_Locks%2C_northern_side%2C_upstream_end_-_geograph.org.uk_-_3417075.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A confirmed photograph is Barton Locks, northern side, upstream end - geograph.org.uk - 3417075.jpg, supported by file-page-names-island, own-category, geo-1.958km. GPS is 1.958 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=%22Barton%20Locks%22",
+        "note": "One file-namespace search. A search hit is not itself a second source."
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Barton_Locks,_northern_side,_upstream_end_-_geograph.org.uk_-_3417075.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 1.958 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Barton_Locks,_northern_side,_upstream_end_-_geograph.org.uk_-_3417075.jpg",
+    "commonsTitle": "File:Barton Locks, northern side, upstream end - geograph.org.uk - 3417075.jpg",
+    "description": "Barton Locks, northern side, upstream end      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Christine Johnstone",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Barton_Locks%2C_northern_side%2C_upstream_end_-_geograph.org.uk_-_3417075.jpg/960px-Barton_Locks%2C_northern_side%2C_upstream_end_-_geograph.org.uk_-_3417075.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Barton_Locks%2C_northern_side%2C_upstream_end_-_geograph.org.uk_-_3417075.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-953228",
+    "name": "Pewit Island",
+    "slice": "england-01",
+    "verdict": "unsure",
+    "lat": 51.89228,
+    "lng": 1.23867,
+    "names": {
+      "en": "Pewit Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Pewit_Island",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Zorba the Geek (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 403,
+    "reason": "A confirmed photograph is South shore of Pewit Island - geograph.org.uk - 836928.jpg, supported by wikipedia-lead, file-page-names-island, own-category, geo-0.581km. GPS is 0.581 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q7179555",
+        "note": "No P18 on this Q-id"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Pewit_Island",
+        "note": "Lead File:South shore of Pewit Island - geograph.org.uk - 836928.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 0.581 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg",
+    "commonsTitle": "File:South shore of Pewit Island - geograph.org.uk - 836928.jpg",
+    "description": "South shore of Pewit Island. Safe enough on a falling tide but rather isolated at high tide.  Across Hamford Water can be seen the Thames lighters beached to protect the north-east shore of Horsey Island.  807668 ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Zorba the Geek",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d0/South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d0/South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.58,
+    "signals": [
+      "file-page",
+      "geo-0.58km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "thames-kemble-gloucestershire",
+    "name": "Kemble, Gloucestershire",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.68333,
+    "lng": -2.01667,
+    "names": {
+      "en": "Kemble, Gloucestershire"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Kemble_-_geograph.org.uk_-_2144156.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Kemble%2C_Gloucestershire",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Peter Randall-Cook (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Kemble_-_geograph.org.uk_-_2144156.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 428,
+    "reason": "A confirmed photograph is Kemble - geograph.org.uk - 2144156.jpg, supported by wikipedia-lead, own-category, geo-2.592km. GPS is 2.592 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q257034",
+        "note": "P18 File:Cotswold airport at kemble from helicopter arp.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Kemble%2C_Gloucestershire",
+        "note": "Lead File:Kemble - geograph.org.uk - 2144156.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Kemble_-_geograph.org.uk_-_2144156.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 2.592 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Kemble_-_geograph.org.uk_-_2144156.jpg",
+    "commonsTitle": "File:Kemble - geograph.org.uk - 2144156.jpg",
+    "description": "Kemble      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Peter Randall-Cook",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Kemble_-_geograph.org.uk_-_2144156.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Kemble_-_geograph.org.uk_-_2144156.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "thames-henley-on-thames",
+    "name": "Henley-on-Thames",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.5357,
+    "lng": -0.903,
+    "names": {
+      "en": "Henley-on-Thames"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Henley-on-Thames",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Matthew Bristow (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 428,
+    "reason": "A confirmed photograph is The west bank of the River Thames at Henley-on-Thames - geograph.org.uk - 2067029.jpg, supported by wikipedia-lead, file-page-names-island, own-category, geo-0.336km. GPS is 0.336 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q990253",
+        "note": "P18 File:Town Hall, Henley - geograph.org.uk - 36320.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Henley-on-Thames",
+        "note": "Lead File:The west bank of the River Thames at Henley-on-Thames - geograph.org.uk - 2067029.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 0.336 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg",
+    "commonsTitle": "File:The west bank of the River Thames at Henley-on-Thames - geograph.org.uk - 2067029.jpg",
+    "description": "The west bank of the River Thames at Henley-on-Thames      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Matthew Bristow",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1d/The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1d/The_west_bank_of_the_River_Thames_at_Henley-on-Thames_-_geograph.org.uk_-_2067029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.34,
+    "signals": [
+      "file-page",
+      "geo-0.34km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "thames-maidenhead",
+    "name": "Maidenhead",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.523,
+    "lng": -0.722,
+    "names": {
+      "en": "Maidenhead"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q238803",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Nigel Cox (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A confirmed photograph is Maidenhead Bridge and River Thames - geograph.org.uk - 205285.jpg, supported by wikidata-p18, file-page-names-island, geo-1.384km. GPS is 1.384 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q238803",
+        "note": "P18 File:Queen St - geograph.org.uk - 7169578.jpg; File:Maidenhead Bridge and River Thames - geograph.org.uk - 205285.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Maidenhead",
+        "note": "Lead File:Maidenhead Town Hall.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 1.384 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg",
+    "commonsTitle": "File:Maidenhead Bridge and River Thames - geograph.org.uk - 205285.jpg",
+    "description": "Maidenhead Bridge &amp; River Thames. Viewed looking upstream, see  205279  for details of the bridge.",
+    "categories": [
+      "Category:2006 in Maidenhead",
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Images with extracted images",
+      "Category:Information field template with formatting",
+      "Category:July 2006 in Berkshire",
+      "Category:Maidenhead Bridge",
+      "Category:Photographs by Nigel Cox",
+      "Category:Taken with Canon Digital IXUS 40",
+      "Category:United Kingdom photographs taken on 2006-07-19"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Nigel Cox",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/25/Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/25/Maidenhead_Bridge_and_River_Thames_-_geograph.org.uk_-_205285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.38,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.38km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "thames-windsor-berkshire",
+    "name": "Windsor, Berkshire",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.4791,
+    "lng": -0.6095,
+    "names": {
+      "en": "Windsor, Berkshire"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Windsor_-_geograph.org.uk_-_1098215.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q464955",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Iain Crump (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Windsor_-_geograph.org.uk_-_1098215.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A confirmed photograph is Windsor - geograph.org.uk - 1098215.jpg, supported by wikidata-p18, own-category, geo-0.584km. GPS is 0.584 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q464955",
+        "note": "P18 File:Windsor (England)-center.jpg; File:Windsor - geograph.org.uk - 1098215.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Windsor%2C_Berkshire",
+        "note": "Lead File:Windsor Bridge and Town.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Windsor_-_geograph.org.uk_-_1098215.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 0.584 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Windsor_-_geograph.org.uk_-_1098215.jpg",
+    "commonsTitle": "File:Windsor - geograph.org.uk - 1098215.jpg",
+    "description": "Windsor The Castle in early morning sunshine, from the Dublin flight",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Iain Crump",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Windsor_-_geograph.org.uk_-_1098215.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Windsor_-_geograph.org.uk_-_1098215.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.58,
+    "signals": [
+      "geo-0.58km"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "thames-isleworth",
+    "name": "Isleworth",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.466,
+    "lng": -0.336,
+    "names": {
+      "en": "Isleworth"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Isleworth_-_geograph.org.uk_-_582736.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Isleworth",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Mark Percy (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Isleworth_-_geograph.org.uk_-_582736.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A confirmed photograph is Isleworth - geograph.org.uk - 582736.jpg, supported by wikipedia-lead, file-page-names-island, own-category, geo-1.379km. GPS is 1.379 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q2432955",
+        "note": "P18 File:Church Street Isleworth - panoramio.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Isleworth",
+        "note": "Lead File:Isleworth - geograph.org.uk - 582736.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Isleworth_-_geograph.org.uk_-_582736.jpg",
+        "note": "Licence on the file page: CC BY-SA 2.0. GPS is 1.379 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Isleworth_-_geograph.org.uk_-_582736.jpg",
+    "commonsTitle": "File:Isleworth - geograph.org.uk - 582736.jpg",
+    "description": "Church Street in Isleworth, seen from across the River Thames",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by Mark Percy",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Images from Geograph Britain and Ireland missing SDC coordinates of the point of view",
+      "Category:Information field template with formatting",
+      "Category:Isleworth"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mark Percy",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/61/Isleworth_-_geograph.org.uk_-_582736.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/61/Isleworth_-_geograph.org.uk_-_582736.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page",
+      "own-category"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-49901778",
+    "name": "Tagg's Island",
+    "slice": "england-01",
+    "verdict": "wrong",
+    "lat": 51.40909,
+    "lng": -0.35264,
+    "names": {
+      "en": "Tagg's Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_Tagg%27s_Island_1926.png",
+    "pickerSource": "commons",
+    "pickerRef": "p373:Tagg's Island",
+    "license": "Public domain",
+    "attribution": "Photo by Unknown author Unknown author (Public domain) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Palm_Beach_Tagg%27s_Island_1926.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 399,
+    "reason": "A confirmed photograph is Palm Beach Tagg's Island 1926.png, supported by file-page-names-island, own-category, geo-0.146km. GPS is 0.146 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q7675209",
+        "note": "P18 File:TaggsIsland01.JPG"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Tagg%27s_Island",
+        "note": "Lead File:TaggsIsland01.JPG"
+      },
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=%22Tagg%27s%20Island%22",
+        "note": "One file-namespace search. A search hit is not itself a second source."
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_Tagg%27s_Island_1926.png",
+        "note": "Licence on the file page: Public domain. GPS is 0.146 km from the centroid."
+      }
+    ],
+    "fileTitle": "File:Palm_Beach_Tagg's_Island_1926.png",
+    "commonsTitle": "File:Palm Beach Tagg's Island 1926.png",
+    "description": "Palm Beach Tagg's Island 1926",
+    "categories": [],
+    "licenseShort": "Public domain",
+    "artist": "Unknown author Unknown author",
+    "mime": "image/png",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Palm_Beach_Tagg%27s_Island_1926.png/960px-Palm_Beach_Tagg%27s_Island_1926.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/05/Palm_Beach_Tagg%27s_Island_1926.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "wd-Q590422",
+    "name": "Isle of Thanet",
+    "slice": "england-02",
+    "verdict": "wrong",
+    "lat": 51.35,
+    "lng": 1.38333,
+    "names": {
+      "en": "Isle of Thanet",
+      "ga": "Oileán Thanet",
+      "cy": "Ynys Thanet",
+      "fr": "île de Thanet"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Thanet_-_Thanet_Scenery_(geograph_5434042).jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Isle of Thanet",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Lewis Clarke (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Thanet_-_Thanet_Scenery_%28geograph_5434042%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 427,
+    "reason": "The Wikipedia lead is this file. The file sits in this island's own Commons category. The file page records CC-BY-SA-2.0. GPS is 14.47 km from the centroid. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q590422",
+        "note": "P18 File:OldMapKent.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Isle_of_Thanet",
+        "note": "Lead File:Thanet_-_Thanet_Scenery_(geograph_5434042).jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Thanet_-_Thanet_Scenery_(geograph_5434042).jpg",
+        "note": "Licence CC-BY-SA-2.0; GPS 14.47 km; sources wp,category"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Thanet_-_Thanet_Scenery_(geograph_5434042).jpg",
+        "note": "Own category on the file."
+      }
+    ],
+    "fileTitle": "File:Thanet_-_Thanet_Scenery_(geograph_5434042).jpg",
+    "commonsTitle": "File:Thanet - Thanet Scenery (geograph 5434042).jpg",
+    "description": "Thanet : Thanet Scenery",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Lewis Clarke",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Thanet_-_Thanet_Scenery_%28geograph_5434042%29.jpg/960px-Thanet_-_Thanet_Scenery_%28geograph_5434042%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Thanet_-_Thanet_Scenery_%28geograph_5434042%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 14.47,
+    "signals": [
+      "geo-14.47km"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "wd-Q4575689",
+    "name": "Thorney Island",
+    "slice": "england-02",
+    "verdict": "wrong",
+    "lat": 50.8172,
+    "lng": -0.92028,
+    "names": {
+      "en": "Thorney Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Thorney_Island.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Thorney Island (West Sussex)",
+    "license": "CC-BY-2.0",
+    "attribution": "Photo by Tim Sheerman-Chase (CC-BY-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Thorney_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 310,
+    "reason": "The Wikipedia lead is this file. The file page names Thorney Island. The file sits in this island's own Commons category. The file page records CC-BY-2.0. GPS is 2.36 km from the centroid. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q4575689",
+        "note": "P18 File:Chichester 1835 map.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Thorney_Island_(West_Sussex)",
+        "note": "Lead File:Thorney_Island.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Thorney_Island.jpg",
+        "note": "Licence CC-BY-2.0; GPS 2.36 km; sources wp,named,category"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Thorney_Island.jpg",
+        "note": "Own category on the file."
+      }
+    ],
+    "fileTitle": "File:Thorney_Island.jpg",
+    "commonsTitle": "File:Thorney Island.jpg",
+    "description": "12 Regiment Royal Artillery, Baker Barracks",
+    "categories": [],
+    "licenseShort": "CC BY 2.0",
+    "artist": "Tim Sheerman-Chase",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Thorney_Island.jpg/960px-Thorney_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Thorney_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "wd-Q7592680",
+    "name": "St Boniface Down",
+    "slice": "england-02",
+    "verdict": "unsure",
+    "lat": 50.60357,
+    "lng": -1.19759,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:St_Boniface_Down,_Ventnor,_Isle_of_Wight,_UK.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "St Boniface Down",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Mypix (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/St_Boniface_Down%2C_Ventnor%2C_Isle_of_Wight%2C_UK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 477,
+    "reason": "The Wikipedia lead is this file. The file page names St Boniface Down. The file page records CC-BY-SA-4.0. The file page has no GPS. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q7592680",
+        "note": "P18 File:Ventnor Radar.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/St_Boniface_Down",
+        "note": "Lead File:St_Boniface_Down,_Ventnor,_Isle_of_Wight,_UK.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Boniface_Down,_Ventnor,_Isle_of_Wight,_UK.jpg",
+        "note": "Licence CC-BY-SA-4.0; no GPS; sources wp,named"
+      },
+      {
+        "source": "commons-category",
+        "result": "miss",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Boniface_Down,_Ventnor,_Isle_of_Wight,_UK.jpg",
+        "note": "No own-category match on the chosen file."
+      }
+    ],
+    "fileTitle": "File:St_Boniface_Down,_Ventnor,_Isle_of_Wight,_UK.jpg",
+    "commonsTitle": "File:St Boniface Down, Ventnor, Isle of Wight, UK.jpg",
+    "description": "St Boniface Down, Ventnor, Isle of Wight, UK",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Mypix",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/St_Boniface_Down%2C_Ventnor%2C_Isle_of_Wight%2C_UK.jpg/960px-St_Boniface_Down%2C_Ventnor%2C_Isle_of_Wight%2C_UK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/be/St_Boniface_Down%2C_Ventnor%2C_Isle_of_Wight%2C_UK.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-3834460",
+    "name": "Isle of Portland",
+    "slice": "england-02",
+    "verdict": "wrong",
+    "lat": 50.54786,
+    "lng": -2.44381,
+    "names": {
+      "en": "Isle of Portland",
+      "ga": "Oileán Portland",
+      "cy": "Ynys Portland",
+      "fr": "île de Portland"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Portland_from_north.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Isle of Portland",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by BennH (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Isle_of_Portland_from_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 360,
+    "reason": "The Wikipedia lead is this file. The file page names Isle of Portland. The file sits in this island's own Commons category. The file page records CC-BY-SA-4.0. The file page has no GPS. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q774215",
+        "note": "P18 File:Newgrounds viewpoint chesil beach and fortuneswell dorset.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Isle_of_Portland",
+        "note": "Lead File:Isle_of_Portland_from_north.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Portland_from_north.jpg",
+        "note": "Licence CC-BY-SA-4.0; no GPS; sources wp,named,category"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Portland_from_north.jpg",
+        "note": "Own category on the file."
+      }
+    ],
+    "fileTitle": "File:Isle_of_Portland_from_north.jpg",
+    "commonsTitle": "File:Isle of Portland from north.jpg",
+    "description": "Isle of Portland from north",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "BennH",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Isle_of_Portland_from_north.jpg/960px-Isle_of_Portland_from_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Isle_of_Portland_from_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-node-12177869998",
+    "name": "Bawden Rocks (Calf)",
+    "slice": "england-02",
+    "verdict": "unsure",
+    "lat": 50.33355,
+    "lng": -5.23138,
+    "names": {
+      "en": "Bawden Rocks",
+      "cy": "Meyn Bodyn",
+      "kw": "Meyn Bodyn"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Bawden Rocks",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Tony Atkin (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bawden_Rocks_-_geograph.org.uk_-_469385.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 427,
+    "reason": "The Wikipedia lead is this file. The file page names Bawden Rocks (Calf). The file sits in this island's own Commons category. The file page records CC-BY-SA-2.0. GPS is 1.69 km from the centroid. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q4873768",
+        "note": "P18 File:Paragliding off the North Cornish coast (1393896790).jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Bawden_Rocks",
+        "note": "Lead File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg",
+        "note": "Licence CC-BY-SA-2.0; GPS 1.69 km; sources wp,named,category"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg",
+        "note": "Own category on the file."
+      }
+    ],
+    "fileTitle": "File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg",
+    "commonsTitle": "File:Bawden Rocks - geograph.org.uk - 469385.jpg",
+    "description": "Bawden Rocks Seen from the clifftop between St Agnes Head and Newdowns Head.",
+    "categories": [
+      "Category:Bawden Rocks",
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by Tony Atkin",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:June 2007 in Cornwall",
+      "Category:Taken with Canon EOS 350D",
+      "Category:United Kingdom photographs taken on 2007-06-16"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Tony Atkin",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bawden_Rocks_-_geograph.org.uk_-_469385.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bawden_Rocks_-_geograph.org.uk_-_469385.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.69,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.69km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "scilly-st-marys",
+    "name": "St Mary's (Isles of Scilly)",
+    "slice": "england-02",
+    "verdict": "unsure",
+    "lat": 49.917,
+    "lng": -6.299,
+    "names": {
+      "en": "St Mary's",
+      "gd": "Ennor",
+      "cy": "Ynys Ennor, Ynysoedd Syllan",
+      "kw": "Ennor"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "St Mary's, Isles of Scilly",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Neil Adams (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "The Wikipedia lead is this file. The file page names St Mary's (Isles of Scilly). The file page records CC-BY-SA-4.0. The file page has no GPS. The current lead is a different, weaker file.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q1329355",
+        "note": "P18 File:Hugh Town Rooftops - geograph.org.uk - 2308903.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/St_Mary%27s,_Isles_of_Scilly",
+        "note": "Lead File:Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg",
+        "note": "Licence CC-BY-SA-4.0; no GPS; sources wp,named"
+      },
+      {
+        "source": "commons-category",
+        "result": "miss",
+        "page": "https://commons.wikimedia.org/wiki/File:Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg",
+        "note": "No own-category match on the chosen file."
+      }
+    ],
+    "fileTitle": "File:Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg",
+    "commonsTitle": "File:Portcressa Beach St Marys Isles of Scilly.jpg",
+    "description": "The beach at Porthcressa photographed from the West.",
+    "categories": [
+      "Category:CC-BY-SA-4.0,3.0,2.5,2.0,1.0",
+      "Category:GFDL",
+      "Category:License migration redundant",
+      "Category:Porthcressa Beach",
+      "Category:Self-published work",
+      "Category:Taken with Fujifilm FinePix S1000fd"
+    ],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Neil Adams",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg/960px-Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Portcressa_Beach_St_Marys_Isles_of_Scilly.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "description places the island in the background"
+  },
+  {
+    "id": "osm-relation-8156739",
+    "name": "Arranmore",
+    "slice": "ireland-01",
+    "verdict": "wrong",
+    "lat": 54.9959,
+    "lng": -8.52751,
+    "names": {
+      "en": "Arranmore",
+      "ga": "Árainn Mhór",
+      "gv": "Aran Vooar",
+      "alt": "Aran Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Arranmore",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Mike Knell (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg",
+    "width": 640,
+    "height": 485,
+    "reason": "Selected File:Arranmore, Co. Donegal (Aerial 2007).jpg. wikipedia-lead, file-page-names-island, commons-category agree this is the island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q2271120",
+        "note": "P18 File:Aranmore, looking NW - geograph.org.uk - 243259.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Arranmore",
+        "note": "Lead File:Arranmore,_Co._Donegal_(Aerial_2007).jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "skipped",
+        "page": null,
+        "note": "Skipped; a two-source photo was already in hand"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
+        "note": "Aranmore, looking NW - geograph.org.uk - 243259.jpg rejected:gps-220.8km>15.0; Arranmore, Co. Donegal (Aerial 2007).jpg [wikipedia-lead,file-page-names-island,commons-category]; Aranmore Island - Beach near Leabgarrow - geograph.org.uk - 1166069.jpg rejected:one-source; Aranmore Island - Building - geograph.org.uk - 1166094.jpg rejected:one-source; Aranmore Island - Building - geograph.org.uk - 1166095.jpg rejected:one-source; Aranmore Island - Cottages along road to Aphort - geograph.org.uk - 1"
+      }
+    ],
+    "fileTitle": "File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
+    "commonsTitle": "File:Arranmore, Co. Donegal (Aerial 2007).jpg",
+    "description": "Crossing the Irish coast - a nice view of Arranmore (or Árainn Mhór if you prefer) and a few other islands off Country Donegal.\nFrom Virgin Atlantic flight VS20 inbound to London from SFO, aboard 747-400 G-VBIG. On the upper deck, woo.",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mike Knell",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg/960px-Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-472294380",
+    "name": "Broken Fort",
+    "slice": "ireland-01",
+    "verdict": "unsure",
+    "lat": 54.32781,
+    "lng": -9.34831,
+    "names": {
+      "en": "Broken Fort"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Dun_Briste,_Downpatrick_Head.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:Dun_Briste,_Downpatrick_Head.jpg",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Mikołaj Pisula (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Dun_Briste%2C_Downpatrick_Head.jpg",
+    "width": 640,
+    "height": 815,
+    "reason": "Selected File:Dun Briste, Downpatrick Head.jpg. wikipedia-lead, file-page-names-island agree this is the island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q117263484",
+        "note": "P18 File:Dun Briste in the sea.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/D%C3%BAn_Briste",
+        "note": "Lead File:Dun_Briste,_Downpatrick_Head.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "skipped",
+        "page": null,
+        "note": "Skipped; a two-source photo was already in hand"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Dun_Briste,_Downpatrick_Head.jpg",
+        "note": "Dun Briste in the sea.jpg [wikidata-p18,file-page-names-island]; Dun Briste, Downpatrick Head.jpg [wikipedia-lead,file-page-names-island]"
+      }
+    ],
+    "fileTitle": "File:Dun_Briste,_Downpatrick_Head.jpg",
+    "commonsTitle": "File:Dun Briste, Downpatrick Head.jpg",
+    "description": "",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Mikołaj Pisula",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Dun_Briste%2C_Downpatrick_Head.jpg/960px-Dun_Briste%2C_Downpatrick_Head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/42/Dun_Briste%2C_Downpatrick_Head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-4562065",
+    "name": "Caher Island",
+    "slice": "ireland-01",
+    "verdict": "wrong",
+    "lat": 53.71711,
+    "lng": -10.03007,
+    "names": {
+      "en": "Caher Island",
+      "ga": "Oileán na Cathrach",
+      "fr": "île de Caher"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Caher_island.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:Caher_island.jpg",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Towel401 (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Caher_island.jpg",
+    "width": 640,
+    "height": 427,
+    "reason": "Selected File:Caher island.jpg. file-page-names-island, commons-category agree this is the island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q997317",
+        "note": "P18 File:MayoIslands.PNG"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Caher_Island",
+        "note": "Lead File:Archaeology_on_Caher_Island,_County_Mayo,_Ireland_02.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "skipped",
+        "page": null,
+        "note": "Skipped; a two-source photo was already in hand"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Caher_island.jpg",
+        "note": "MayoIslands.PNG rejected:one-source; Archaeology on Caher Island, County Mayo, Ireland 02.jpg [wikipedia-lead,file-page-names-island,commons-category,geo-0.3km]; Archaeology on Caher Island, County Mayo, Ireland 01.jpg [file-page-names-island,commons-category,geo-0.3km]; Archaeology on Caher Island, County Mayo, Ireland 03.jpg [file-page-names-island,commons-category,geo-0.3km]; Archaeology on Caher Island, County Mayo, Ireland 04.jpg [file-page-names-island,commons-category,geo-0.3km]; Archaeol"
+      }
+    ],
+    "fileTitle": "File:Caher_island.jpg",
+    "commonsTitle": "File:Caher island.jpg",
+    "description": "Caher Island as seen from Inishturk",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Towel401",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Caher_island.jpg/960px-Caher_island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Caher_island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-way-917227026",
+    "name": "Saint Patrick's Island",
+    "slice": "ireland-02",
+    "verdict": "no-photo",
+    "lat": 53.5853,
+    "lng": -6.07364,
+    "names": {
+      "en": "Saint Patricks Island",
+      "ga": "Inis Pádraig"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Skerries_Islands_Dublin.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "St Patrick's Island",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Kent Wang (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Skerries_Islands_Dublin.jpg",
+    "width": 640,
+    "height": 426,
+    "reason": "Wikipedia's lead is a view of Saint Patrick's Island and Colt Island off Skerries. The file is in Category:St Patrick's Island, the description names this island, and GPS is 1.4 km from the centroid. The Commons file page licences it CC BY-SA 2.0.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q26715278",
+        "note": "Entity has no P18."
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/St_Patrick%27s_Island",
+        "note": "Lead image File:Skerries Islands Dublin.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "note": "Search not required: already-two-sources"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Skerries_Islands_Dublin.jpg",
+        "note": "Skerries Islands Dublin.jpg"
+      }
+    ],
+    "fileTitle": "File:Skerries_Islands_Dublin.jpg",
+    "commonsTitle": "File:Skerries Islands Dublin.jpg",
+    "description": "A view of Colt Island and Saint Patrick's Island in off the cost of Skerries, Dublin",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Kent Wang",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Skerries_Islands_Dublin.jpg/960px-Skerries_Islands_Dublin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Skerries_Islands_Dublin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.4,
+    "signals": [
+      "file-page",
+      "geo-1.4km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-relation-8158177",
+    "name": "Inishmaan",
+    "slice": "ireland-02",
+    "verdict": "wrong",
+    "lat": 53.08371,
+    "lng": -9.5911,
+    "names": {
+      "en": "Inis Meáin",
+      "ga": "Inis Meáin",
+      "gv": "Inis Meáin"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Inishmaan",
+    "license": "CC-BY-SA-3.0",
+    "attribution": "Photo by Paucabot (CC-BY-SA-3.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Panorama_Inis_Me%C3%A1in.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "Best available photograph. the Wikipedia lead image and the file title or description and the island's own Commons category agree this is Inishmaan. GPS is 0.7 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "mismatch",
+        "page": "https://www.wikidata.org/wiki/Q1424587",
+        "note": "P18 File:Inisheer landscape.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Inishmaan",
+        "note": "Lead image File:Panorama Inis Meáin.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "note": "Search not required: cache-file-already-two-sources"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg",
+        "note": "Panorama Inis Meáin.jpg"
+      }
+    ],
+    "fileTitle": "File:Panorama_Inis_Meáin.jpg",
+    "commonsTitle": "File:Panorama Inis Meáin.jpg",
+    "description": "Panorama Inis Meáin",
+    "categories": [],
+    "licenseShort": "CC BY-SA 3.0",
+    "artist": "Paucabot",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Panorama_Inis_Me%C3%A1in.jpg/960px-Panorama_Inis_Me%C3%A1in.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Panorama_Inis_Me%C3%A1in.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.7,
+    "signals": [
+      "file-page",
+      "geo-0.7km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 3.0"
+  },
+  {
+    "id": "csv-geocoded-Q282210",
+    "name": "Uyea",
+    "slice": "scotland-01",
+    "verdict": "wrong",
+    "lat": 60.6667,
+    "lng": -0.9,
+    "names": {
+      "en": "Uyea"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Uyea_Isle.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:Uyea_Isle.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Mike Pennington (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Uyea_Isle.jpg",
+    "width": 640,
+    "height": 392,
+    "reason": "file-page-names-island, own-category agree that Uyea Isle.jpg shows Uyea. File-page licence is CC-BY-SA-2.0. File GPS is 0.7 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q282210",
+        "note": "P18 Uyea Hall.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "miss",
+        "page": "https://en.wikipedia.org/wiki/Uyea,_Unst",
+        "note": "No lead image"
+      },
+      {
+        "source": "commons-search",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/w/index.php?search=\"Uyea\"",
+        "note": "8 file hits for \"Uyea\"; search is a lead, not a second source"
+      }
+    ],
+    "fileTitle": "File:Uyea_Isle.jpg",
+    "commonsTitle": "File:Uyea Isle.jpg",
+    "description": "  Uyea Isle  \n \nLooking from Uyea Isle towards Uyeasound.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Uyea, Unst"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mike Pennington",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Uyea_Isle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Uyea_Isle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.74,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.74km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-8603753",
+    "name": "Urie Lingey",
+    "slice": "scotland-01",
+    "verdict": "wrong",
+    "lat": 60.6393,
+    "lng": -0.91112,
+    "names": {
+      "en": "Urie Lingey",
+      "gd": "Urie Lingey"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by john bateson (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg",
+    "width": 640,
+    "height": 427,
+    "reason": "file-page-names-island, own-category agree that South West corner of Urie Lingey - geograph.org.uk - 2172426.jpg shows Urie Lingey. File-page licence is CC-BY-SA-2.0. File GPS is 0.5 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q2310000",
+        "note": "P18 Urielingey.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Urie_Lingey",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/w/index.php?search=\"Urie Lingey\"",
+        "note": "8 file hits for \"Urie Lingey\"; search is a lead, not a second source"
+      }
+    ],
+    "fileTitle": "File:South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg",
+    "commonsTitle": "File:South West corner of Urie Lingey - geograph.org.uk - 2172426.jpg",
+    "description": "South  West corner of Urie Lingey      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "john bateson",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg/960px-South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/79/South_West_corner_of_Urie_Lingey_-_geograph.org.uk_-_2172426.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-node-3874096453",
+    "name": "Gluss Isle",
+    "slice": "scotland-01",
+    "verdict": "unsure",
+    "lat": 60.48814,
+    "lng": -1.32287,
+    "names": {
+      "en": "Gluss Isle"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Derek Mayes (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "file-page-names-island, own-category agree that Gluss Isle Shoreline - geograph.org.uk - 2428704.jpg shows Gluss Isle. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q24643827",
+        "note": "P18 Gluss Ayre - geograph.org.uk - 1528825.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/w/index.php?search=\"Gluss Isle\"",
+        "note": "8 file hits for \"Gluss Isle\"; search is a lead, not a second source"
+      }
+    ],
+    "fileTitle": "File:Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg",
+    "commonsTitle": "File:Gluss Isle Shoreline - geograph.org.uk - 2428704.jpg",
+    "description": "Gluss Isle Shoreline      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Derek Mayes",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg/960px-Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Gluss_Isle_Shoreline_-_geograph.org.uk_-_2428704.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "mainland-shetland",
+    "name": "Mainland (Shetland)",
+    "slice": "scotland-01",
+    "verdict": "unsure",
+    "lat": 60.3,
+    "lng": -1.3,
+    "names": {
+      "en": "Mainland (Shetland)",
+      "gd": "Mòr-thìr, Sealtainn"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Klippen_bei_Eshaness3_5845.JPG",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q738734",
+    "license": "Public domain",
+    "attribution": "Photo by ThoWi (Public domain) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Klippen_bei_Eshaness3_5845.JPG",
+    "width": 640,
+    "height": 480,
+    "reason": "wikidata-p18, wikipedia-lead agree that Klippen bei Eshaness3 5845.JPG shows Mainland (Shetland). File-page licence is Public domain. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q738734",
+        "note": "P18 Klippen bei Eshaness3 5845.JPG"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Mainland,_Shetland",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Klippen_bei_Eshaness3_5845.JPG",
+    "commonsTitle": "File:Klippen bei Eshaness3 5845.JPG",
+    "description": "Klippenküste bei Eshaness, Mainland, Shetland",
+    "categories": [
+      "Category:Cliffs of Shetland Mainland",
+      "Category:Esha Ness",
+      "Category:PD-self",
+      "Category:Self-published work"
+    ],
+    "licenseShort": "Public domain",
+    "artist": "ThoWi",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Klippen_bei_Eshaness3_5845.JPG/960px-Klippen_bei_Eshaness3_5845.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Klippen_bei_Eshaness3_5845.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-890119757",
+    "name": "Hoo Stack",
+    "slice": "scotland-01",
+    "verdict": "wrong",
+    "lat": 60.24929,
+    "lng": -1.08971,
+    "names": {
+      "en": "Hoo Stack"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Mike Pennington (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg",
+    "width": 640,
+    "height": 427,
+    "reason": "file-page-names-island, own-category agree that Hoo Stack from the south - geograph.org.uk - 6573235.jpg shows Hoo Stack. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q5897374",
+        "note": "P18 Gletness.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Hoo_Stack",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/w/index.php?search=\"Hoo Stack\"",
+        "note": "8 file hits for \"Hoo Stack\"; search is a lead, not a second source"
+      }
+    ],
+    "fileTitle": "File:Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg",
+    "commonsTitle": "File:Hoo Stack from the south - geograph.org.uk - 6573235.jpg",
+    "description": "Hoo Stack from the south      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mike Pennington",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg/960px-Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Hoo_Stack_from_the_south_-_geograph.org.uk_-_6573235.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "wd-Q7160438",
+    "name": "Peerie Bard",
+    "slice": "scotland-01",
+    "verdict": "wrong",
+    "lat": 59.9981,
+    "lng": -1.15778,
+    "names": {
+      "en": "Peerie Bard"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Peeriebard.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Peerie_Bard",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by See above (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Peeriebard.jpg",
+    "width": 640,
+    "height": 424,
+    "reason": "wikipedia-lead, file-page-names-island, own-category agree that Peeriebard.jpg shows Peerie Bard. File-page licence is CC-BY-SA-2.0. File GPS is 0.7 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q7160438",
+        "note": "P18 Eastern tip of Mousa - geograph.org.uk - 32822.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Peerie_Bard",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Peeriebard.jpg",
+    "commonsTitle": "File:Peeriebard.jpg",
+    "description": " East coast of Mousa\n \nLooking SSE towards the Peerie Bard. Shetland Islands.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Peerie Bard"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "See above.",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Peeriebard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Peeriebard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.73,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.73km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "wd-Q25634959",
+    "name": "Fitty Hill",
+    "slice": "scotland-01",
+    "verdict": "no-photo",
+    "lat": 59.28643,
+    "lng": -3.00262,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Fitty_Hill,_Westside,_Westray_-_geograph.org.uk_-_489704.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://gd.wikipedia.org/wiki/Fitty_Hill",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Isla17 (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Fitty_Hill%2C_Westside%2C_Westray_-_geograph.org.uk_-_489704.jpg",
+    "width": 640,
+    "height": 473,
+    "reason": "wikipedia-lead, file-page-names-island agree that Fitty Hill, Westside, Westray - geograph.org.uk - 489704.jpg shows Fitty Hill. File-page licence is CC-BY-SA-2.0. File GPS is 1.4 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q25634959",
+        "note": "No P18"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://gd.wikipedia.org/wiki/Fitty_Hill",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Fitty_Hill,_Westside,_Westray_-_geograph.org.uk_-_489704.jpg",
+    "commonsTitle": "File:Fitty Hill, Westside, Westray - geograph.org.uk - 489704.jpg",
+    "description": "Fitty Hill, Westside, Westray The rocky outcrops on the side are known as Vins Hamar.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Hills of the Orkney Islands",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:July 2007 in the Orkney Islands",
+      "Category:Taken with Konica Revio KD-400Z",
+      "Category:United Kingdom photographs taken on 2007-07-09",
+      "Category:Westray"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Isla17",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Fitty_Hill%2C_Westside%2C_Westray_-_geograph.org.uk_-_489704.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Fitty_Hill%2C_Westside%2C_Westray_-_geograph.org.uk_-_489704.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.38,
+    "signals": [
+      "file-page",
+      "geo-1.38km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "wd-Q25634954",
+    "name": "Blotchnie Fiold",
+    "slice": "scotland-01",
+    "verdict": "no-photo",
+    "lat": 59.14315,
+    "lng": -3.01872,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://gd.wikipedia.org/wiki/Blotchnie_Fiold",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Stephen McKay (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg",
+    "width": 640,
+    "height": 428,
+    "reason": "wikipedia-lead, file-page-names-island, own-category agree that Blotchnie Fiold - geograph.org.uk - 1452046.jpg shows Blotchnie Fiold. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q25634954",
+        "note": "No P18"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://gd.wikipedia.org/wiki/Blotchnie_Fiold",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg",
+    "commonsTitle": "File:Blotchnie Fiold - geograph.org.uk - 1452046.jpg",
+    "description": "Blotchnie Fiold The top of this Rousay hill is marked by a small cairn and a waypoint on the RSPB trail. In the distance are Peerie Water (to the left) and Muckle Water (to the right).",
+    "categories": [
+      "Category:Blotchnie Fiold",
+      "Category:CC-BY-SA-2.0",
+      "Category:Hills of the Orkney Islands",
+      "Category:Images by Stephen McKay"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Stephen McKay",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.05,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.05km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "wd-Q25635110",
+    "name": "Mid Hill",
+    "slice": "scotland-01",
+    "verdict": "no-photo",
+    "lat": 58.96043,
+    "lng": -3.15733,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://gd.wikipedia.org/wiki/Mid_Hill_%28Arcaibh%29",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Richard Webb (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg",
+    "width": 640,
+    "height": 422,
+    "reason": "wikipedia-lead, file-page-names-island agree that Mid Hill-Geograph-4357240-by-Richard-Webb.jpg shows Mid Hill. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q25635110",
+        "note": "No P18"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://gd.wikipedia.org/wiki/Mid_Hill_%28Arcaibh%29",
+        "note": "Lead image retrieved"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg",
+    "commonsTitle": "File:Mid Hill-Geograph-4357240-by-Richard-Webb.jpg",
+    "description": "Mid Hill summit",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Richard Webb",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/83/Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.03,
+    "signals": [
+      "file-page",
+      "geo-0.03km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-205823859",
+    "name": "Lìth Sgeir",
+    "slice": "scotland-01",
+    "verdict": "wrong",
+    "lat": 58.51947,
+    "lng": -6.2617,
+    "names": {
+      "en": "Lìth Sgeir"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:L%C3%ACth_Sgeir_-_geograph.org.uk_-_3454593.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "https://commons.wikimedia.org/wiki/File:L%C3%ACth_Sgeir_-_geograph.org.uk_-_3454593.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by John Lucas (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/L%C3%ACth_Sgeir_-_geograph.org.uk_-_3454593.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "file-page-names-island, own-category agree that Lìth Sgeir - geograph.org.uk - 3454593.jpg shows Lìth Sgeir. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "commons-search",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/w/index.php?search=\"Lìth Sgeir\"",
+        "note": "5 file hits for \"Lìth Sgeir\"; search is a lead, not a second source"
+      }
+    ],
+    "fileTitle": "File:Lìth_Sgeir_-_geograph.org.uk_-_3454593.jpg",
+    "commonsTitle": "File:Lìth Sgeir - geograph.org.uk - 3454593.jpg",
+    "description": "Lìth Sgeir      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "John Lucas",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ec/L%C3%ACth_Sgeir_-_geograph.org.uk_-_3454593.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/ec/L%C3%ACth_Sgeir_-_geograph.org.uk_-_3454593.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "wd-Q110954880",
+    "name": "Àrd Neackie",
+    "slice": "scotland-01",
+    "verdict": "no-photo",
+    "lat": 58.49789,
+    "lng": -4.66738,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Gorse_in_full_bloom_overlooking_Ard_Neackie_-_geograph.org.uk_-_2415026.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q110954880",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Des Colhoun (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Gorse_in_full_bloom_overlooking_Ard_Neackie_-_geograph.org.uk_-_2415026.jpg",
+    "width": 640,
+    "height": 426,
+    "reason": "wikidata-p18, file-page-names-island, own-category agree that Gorse in full bloom overlooking Ard Neackie - geograph.org.uk - 2415026.jpg shows Àrd Neackie. File-page licence is CC-BY-SA-2.0. The file page has no GPS. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q110954880",
+        "note": "P18 Gorse in full bloom overlooking Ard Neackie - geograph.org.uk - 2415026.jpg"
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": "",
+        "note": "Not searched; a cited file already had two sources"
+      }
+    ],
+    "fileTitle": "File:Gorse_in_full_bloom_overlooking_Ard_Neackie_-_geograph.org.uk_-_2415026.jpg",
+    "commonsTitle": "File:Gorse in full bloom overlooking Ard Neackie - geograph.org.uk - 2415026.jpg",
+    "description": "Gorse in full bloom overlooking Ard Neackie      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Des Colhoun",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Gorse_in_full_bloom_overlooking_Ard_Neackie_-_geograph.org.uk_-_2415026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Gorse_in_full_bloom_overlooking_Ard_Neackie_-_geograph.org.uk_-_2415026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-25393114",
+    "name": "Boreray",
+    "slice": "scotland-02",
+    "verdict": "wrong",
+    "lat": 57.87012,
+    "lng": -8.48997,
+    "names": {
+      "en": "Boreray",
+      "ga": "Boraraigh",
+      "gd": "Boraraigh",
+      "alt": "St Kilda"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Boreray%2C_St_Kilda",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Richard Webb (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 353,
+    "reason": "The Wikipedia lead is this file; the file page names Boreray; it sits in this island's Commons category.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q151635",
+        "note": "P18 File:Boreray from Conachair.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Boreray%2C_St_Kilda",
+        "note": "Lead File:The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg",
+        "note": "two sources agree; 0.9 km; CC BY-SA 2.0"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Boreray_from_Conachair.jpg",
+        "note": "no agreeing source names this island; 7.4 km; CC BY-SA 2.0"
+      }
+    ],
+    "fileTitle": "File:The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg",
+    "commonsTitle": "File:The southern side of Boreray - geograph.org.uk - 1440449.jpg",
+    "description": "The southern side of Boreray View up the sheep pastures on the grassy side of Mullach an Eilean. Still a difficult ascent from this side due to an exposed landing and some interesting climbing on the lower slopes. Gannets are occupying the col between the two tops.",
+    "categories": [
+      "Category:Boreray, St Kilda",
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by Richard Webb",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:United Kingdom photographs taken on 2009-04-12"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Richard Webb",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/ac/The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/ac/The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.92,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.92km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-788981365",
+    "name": "Stac Biorach",
+    "slice": "scotland-02",
+    "verdict": "wrong",
+    "lat": 57.82819,
+    "lng": -8.62214,
+    "names": {
+      "en": "Stac Biorach"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Sound_of_Soay.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/Stac_Biorach",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Russel Wills (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Sound_of_Soay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 478,
+    "reason": "The Wikipedia lead is this file; it sits in this island's Commons category; GPS is 0.1 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q3778175",
+        "note": "P18 File:Sound of Soay - geograph.org.uk - 1435860.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Stac_Biorach",
+        "note": "Lead File:Sound_of_Soay.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Sound_of_Soay.jpg",
+        "note": "two sources agree; 0.1 km; CC BY-SA 2.0"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Sound_of_Soay_-_geograph.org.uk_-_1435860.jpg",
+        "note": "only one source (wikidata-p18); 0.1 km; CC BY-SA 2.0"
+      }
+    ],
+    "fileTitle": "File:Sound_of_Soay.jpg",
+    "commonsTitle": "File:Sound of Soay.jpg",
+    "description": "Sea stacks in the Sound of Soay We moved about these vicious rocks with twin powerful motors. The thought of rowing or sailing wooden boats through these waters as the natives did is mind blowing.",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Hirta",
+      "Category:Images by Russel Wills",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Soay, St Kilda",
+      "Category:Stac Biorach",
+      "Category:United Kingdom photographs taken on 2002-05-07"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Russel Wills",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Sound_of_Soay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Sound_of_Soay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.06,
+    "signals": [
+      "own-category",
+      "geo-0.06km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-28218749",
+    "name": "Dùn",
+    "slice": "scotland-02",
+    "verdict": "wrong",
+    "lat": 57.79686,
+    "lng": -8.56192,
+    "names": {
+      "en": "Dùn",
+      "ga": "Dùn",
+      "gd": "Dùn",
+      "alt": "St Kilda"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Dun,_St_Kilda.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "https://en.wikipedia.org/wiki/D%C3%B9n",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Bob Jones (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Dun%2C_St_Kilda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 421,
+    "reason": "The Wikipedia lead is this file; the file page names Dùn; it sits in this island's Commons category.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q1271573",
+        "note": "P18 File:St Kilda Village Bay.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/D%C3%B9n",
+        "note": "Lead File:Dun,_St_Kilda.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Dun,_St_Kilda.jpg",
+        "note": "two sources agree; 1.1 km; CC BY-SA 2.0"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "miss",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Kilda_Village_Bay.jpg",
+        "note": "two sources agree; 2.0 km; CC BY-SA 2.0"
+      }
+    ],
+    "fileTitle": "File:Dun,_St_Kilda.jpg",
+    "commonsTitle": "File:Dun, St Kilda.jpg",
+    "description": "Dun and Stac Levenish from Hirta,  St Kilda ..",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Derivative versions",
+      "Category:Dùn, St Kilda",
+      "Category:Files with coordinates missing SDC location of creation",
+      "Category:Hirta",
+      "Category:Stac Levenish"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Bob Jones",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Dun%2C_St_Kilda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Dun%2C_St_Kilda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.07,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.07km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-157532304",
+    "name": "South Ascrib",
+    "slice": "scotland-03",
+    "verdict": "wrong",
+    "lat": 57.58125,
+    "lng": -6.51469,
+    "names": {
+      "en": "South Ascrib"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:South_Ascrib.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q7566014",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by John Allan (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/South_Ascrib.jpg",
+    "width": 640,
+    "height": 388,
+    "reason": "The Wikipedia lead and the file page and the island's own Commons category agree the photograph shows South Ascrib. GPS is 0.28 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q7566014",
+        "note": "P18 File:Eilean Garave, Ascrib Islands. - geograph.org.uk - 1170155.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/South_Ascrib",
+        "note": "Lead File:South_Ascrib.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Eilean_Garave,_Ascrib_Islands._-_geograph.org.uk_-_1170155.jpg",
+        "note": "File:Eilean Garave, Ascrib Islands. - geograph.org.uk - 1170155.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:South_Ascrib.jpg",
+        "note": "File:South Ascrib.jpg"
+      }
+    ],
+    "fileTitle": "File:South_Ascrib.jpg",
+    "commonsTitle": "File:South Ascrib.jpg",
+    "description": "South Ascrib Island and the Loch Snizort from Skye, Scotland",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by John Allan",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Images from Geograph Britain and Ireland missing SDC coordinates of the point of view",
+      "Category:Information field template with formatting",
+      "Category:South Ascrib",
+      "Category:Taken with Canon Digital IXUS 400",
+      "Category:United Kingdom photographs taken on 2005-10-21"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "John Allan",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d9/South_Ascrib.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d9/South_Ascrib.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page",
+      "own-category"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-relation-7185419",
+    "name": "Eilean Bàn",
+    "slice": "scotland-03",
+    "verdict": "wrong",
+    "lat": 57.27921,
+    "lng": -5.73861,
+    "names": {
+      "en": "Eilean Bàn"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q3049402",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by OLU (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "The Wikipedia lead and the file page and the island's own Commons category agree the photograph shows Eilean Bàn. GPS is 1.48 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q3049402",
+        "note": "P18 File:View from Skye bridge, Scotland (5892791021).jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Eilean_B%C3%A0n",
+        "note": "Lead File:Eilean_Bàn_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:View_from_Skye_bridge,_Scotland_(5892791021).jpg",
+        "note": "File:View from Skye bridge, Scotland (5892791021).jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg",
+        "note": "File:Eilean Bàn viewed from Kyle of Lochalsh - geograph.org.uk - 1191653.jpg"
+      }
+    ],
+    "fileTitle": "File:Eilean_Bàn_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg",
+    "commonsTitle": "File:Eilean Bàn viewed from Kyle of Lochalsh - geograph.org.uk - 1191653.jpg",
+    "description": "Eilean Bàn viewed from Kyle of Lochalsh The steep approach onto the main span of the Skye Road Bridge is seen to good effect here. The Cuillin are seen beyond.",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "OLU",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/45/Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/45/Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.48,
+    "signals": [
+      "file-page",
+      "geo-1.48km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "isle-of-skye",
+    "name": "Isle of Skye",
+    "slice": "scotland-03",
+    "verdict": "unsure",
+    "lat": 57.273,
+    "lng": -6.215,
+    "names": {
+      "en": "Isle of Skye",
+      "ga": "An t-Eilean Sgitheanach",
+      "gd": "An t-Eilean Sgitheanach",
+      "cy": "Ynys Skye",
+      "gv": "Yn Ellan Skianagh",
+      "alt": "An t-Eilean Sgitheanach",
+      "sco": "Isle o Skye",
+      "fr": "île de Skye"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Quiraing,_Isle_of_Skye.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q107393",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Quiraing%2C_Isle_of_Skye.jpg",
+    "width": 640,
+    "height": 337,
+    "reason": "Wikidata P18 and the file page agree the photograph shows Isle of Skye. The file page has no GPS.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q107393",
+        "note": "P18 File:Quiraing, Isle of Skye.jpg; File:00 2355 Skye Bridge - (Scotland).jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Isle_of_Skye",
+        "note": "Lead File:Flag_of_the_Isle_of_Skye.svg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Old_Man_of_Storr,_Isle_of_Skye,_Scotland_-_Diliff.jpg",
+        "note": "File:Old Man of Storr, Isle of Skye, Scotland - Diliff.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Quiraing,_Isle_of_Skye.jpg",
+        "note": "File:Quiraing, Isle of Skye.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:00_2355_Skye_Bridge_-_(Scotland).jpg",
+        "note": "File:00 2355 Skye Bridge - (Scotland).jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Isle_of_Skye.svg",
+        "note": "File:Flag of the Isle of Skye.svg"
+      }
+    ],
+    "fileTitle": "File:Quiraing,_Isle_of_Skye.jpg",
+    "commonsTitle": "File:Quiraing, Isle of Skye.jpg",
+    "description": "",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Files with no machine-readable author",
+      "Category:Files with no machine-readable source",
+      "Category:Flickr images missing SDC creator",
+      "Category:Flickr images missing SDC inception",
+      "Category:Flickr images missing SDC source of file",
+      "Category:Flickr images reviewed by trusted users",
+      "Category:Media missing infobox template",
+      "Category:Quiraing"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/50/Quiraing%2C_Isle_of_Skye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/50/Quiraing%2C_Isle_of_Skye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-4230732",
+    "name": "Soay",
+    "slice": "scotland-04",
+    "verdict": "unsure",
+    "lat": 57.14741,
+    "lng": -6.21789,
+    "names": {
+      "en": "Soay",
+      "ga": "Sòthaigh",
+      "gd": "Sòthaigh"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Soay_South_Harbour_by_Ben_Dallimore.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q1297438",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Ben Dallimore (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Soay_South_Harbour_by_Ben_Dallimore.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:Soay South Harbour by Ben Dallimore.jpg shows Soay. wikidata-p18, file-page-names-island, commons-category. GPS 0.8 km.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q1297438",
+        "note": "P18 File:Soay South Harbour by Ben Dallimore.jpg, File:Soaybaskingsharkfisheries.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "miss",
+        "page": "https://en.wikipedia.org/wiki/Soay%2C_Inner_Hebrides",
+        "note": "Sitelink Soay, Inner Hebrides; no lead image"
+      }
+    ],
+    "fileTitle": "File:Soay_South_Harbour_by_Ben_Dallimore.jpg",
+    "commonsTitle": "File:Soay South Harbour by Ben Dallimore.jpg",
+    "description": "Soay South Harbour (Camas nan Gall)",
+    "categories": [
+      "Category:CC-BY-SA-2.0"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Ben Dallimore",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/21/Soay_South_Harbour_by_Ben_Dallimore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/21/Soay_South_Harbour_by_Ben_Dallimore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.78,
+    "signals": [
+      "file-page",
+      "geo-0.78km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-relation-929839",
+    "name": "Isle of Rum",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.99765,
+    "lng": -6.34924,
+    "names": {
+      "en": "Rùm",
+      "ga": "Rúm",
+      "gd": "Rùm",
+      "cy": "Rùm"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Kinloch_Castle,_Rum_(geograph_2949666).jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Rùm",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Jim Barton (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Kinloch_Castle%2C_Rum_%28geograph_2949666%29.jpg",
+    "width": 640,
+    "height": 424,
+    "reason": "File:Kinloch Castle, Rum (geograph 2949666).jpg shows Isle of Rum. wikipedia-lead, file-page-names-island. GPS 4.4 km.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q278082",
+        "note": "P18 File:Harris, Isle of Rum.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/R%C3%B9m",
+        "note": "Sitelink Rùm; lead File:Kinloch_Castle,_Rum_(geograph_2949666).jpg"
+      }
+    ],
+    "fileTitle": "File:Kinloch_Castle,_Rum_(geograph_2949666).jpg",
+    "commonsTitle": "File:Kinloch Castle, Rum (geograph 2949666).jpg",
+    "description": "Kinloch Castle, Rum",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Jim Barton",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/92/Kinloch_Castle%2C_Rum_%28geograph_2949666%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/92/Kinloch_Castle%2C_Rum_%28geograph_2949666%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 4.44,
+    "signals": [
+      "geo-4.44km"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-1663615",
+    "name": "Eigg",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.90793,
+    "lng": -6.16101,
+    "names": {
+      "en": "Eigg",
+      "ga": "Eige",
+      "gd": "Eige",
+      "cy": "Eige"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Eigg",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Mick Garratt (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg",
+    "width": 640,
+    "height": 959,
+    "reason": "The Wikipedia lead is a view of Galmisdale and An Sgùrr on Eigg, and the file page's category names Eigg. GPS is 3.5 km from the centroid. The current lead is the lighthouse on Eilean Chathastail.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "mismatch",
+        "page": "https://www.wikidata.org/wiki/Q514481",
+        "note": "P18 File:Eilean Chathastail, lighthouse - geograph.org.uk - 916403.jpg is the lighthouse on Eilean Chathastail, seen from the Mallaig–Eigg ferry."
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Eigg",
+        "note": "Lead File:View of Galmisdale and An Sgurr - geograph.org.uk - 823602.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg",
+        "note": "View of Galmisdale and An Sgùrr; category An Sgùrr, Eigg; GPS 3.5 km from Eigg's centroid."
+      }
+    ],
+    "fileTitle": "File:View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg",
+    "commonsTitle": "File:View of Galmisdale and An Sgurr - geograph.org.uk - 823602.jpg",
+    "description": "View of Galmisdale and An Sgurr Taken at the exit to the woods on the climb from Galmisdale Point.",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mick Garratt",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d7/View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d7/View_of_Galmisdale_and_An_Sgurr_-_geograph.org.uk_-_823602.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 3.52,
+    "signals": [
+      "geo-3.52km"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-711432296",
+    "name": "Sandray",
+    "slice": "scotland-04",
+    "verdict": "unsure",
+    "lat": 56.89122,
+    "lng": -7.51594,
+    "names": {
+      "en": "Sandray",
+      "ga": "Sanndraigh",
+      "gd": "Sanndraigh"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Sandray.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Sandray",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Thomas Dick (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Sandray.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:Sandray.jpg shows Sandray. wikipedia-lead, file-page-names-island. GPS 1.9 km.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q3180999",
+        "note": "P18 File:Blick vom Süden der Insel Vatersay nach Sandray.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Sandray",
+        "note": "Sitelink Sandray; lead File:Sandray.jpg"
+      }
+    ],
+    "fileTitle": "File:Sandray.jpg",
+    "commonsTitle": "File:Sandray.jpg",
+    "description": " w:Kittiwake  colony on the seacliffs of  Sandray  in the  Outer Hebrides  of  Scotland .",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Cliffs of the Outer Hebrides",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Rissa tridactyla nests",
+      "Category:Sandray",
+      "Category:United Kingdom photographs taken on 2003-07-08"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Thomas Dick",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/42/Sandray.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/42/Sandray.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.89,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.89km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "wd-Q56665227",
+    "name": "Eilean na Carraidh",
+    "slice": "scotland-04",
+    "verdict": "no-photo",
+    "lat": 56.5862,
+    "lng": -6.1888,
+    "names": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Argyll_and_Bute_-_Eilean_na_Carraidh,_fish_trap_-_20240726122912.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q56665227",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Photo by Dbrooke1829 (CC BY-SA 4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Argyll_and_Bute_-_Eilean_na_Carraidh%2C_fish_trap_-_20240726122912.jpg",
+    "width": 640,
+    "height": 427,
+    "reason": "File:Argyll and Bute - Eilean na Carraidh, fish trap - 20240726122912.jpg shows Eilean na Carraidh. wikidata-p18, file-page-names-island. The file page has no GPS. The name is specific, and the other sources name this island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q56665227",
+        "note": "P18 File:Argyll and Bute - Eilean na Carraidh, fish trap - 20240726122912.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "miss",
+        "note": "No Wikipedia article on the worklist or sitelink"
+      }
+    ],
+    "fileTitle": "File:Argyll_and_Bute_-_Eilean_na_Carraidh,_fish_trap_-_20240726122912.jpg",
+    "commonsTitle": "File:Argyll and Bute - Eilean na Carraidh, fish trap - 20240726122912.jpg",
+    "description": "This is a photo of  scheduled monument  number",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Dbrooke1829",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Argyll_and_Bute_-_Eilean_na_Carraidh%2C_fish_trap_-_20240726122912.jpg/960px-Argyll_and_Bute_-_Eilean_na_Carraidh%2C_fish_trap_-_20240726122912.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/49/Argyll_and_Bute_-_Eilean_na_Carraidh%2C_fish_trap_-_20240726122912.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-144467600",
+    "name": "Gunna",
+    "slice": "scotland-04",
+    "verdict": "unsure",
+    "lat": 56.56471,
+    "lng": -6.72042,
+    "names": {
+      "en": "Eilean Frachlan",
+      "ga": "Gunnaigh",
+      "gd": "Gunnaigh"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Gunna, Scotland",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Julian Thomas (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:Beach on South side of Gunna - geograph.org.uk - 6953673.jpg shows Gunna. wikipedia-lead, file-page-names-island, commons-category. GPS 0.6 km.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q3057931",
+        "note": "P18 File:Shunaisland.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Gunna%2C_Scotland",
+        "note": "Sitelink Gunna, Scotland; lead File:Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg"
+      }
+    ],
+    "fileTitle": "File:Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg",
+    "commonsTitle": "File:Beach on South side of Gunna - geograph.org.uk - 6953673.jpg",
+    "description": "Beach on South side of Gunna      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Julian Thomas",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg/960px-Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/59/Beach_on_South_side_of_Gunna_-_geograph.org.uk_-_6953673.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-way-4009570",
+    "name": "Lunga",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.4887,
+    "lng": -6.42562,
+    "names": {
+      "en": "Lunga",
+      "ga": "Lungaigh"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Lunga.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Lunga, Treshnish Isles",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Photo by Clydiee (CC BY-SA 4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Isle_of_Lunga.jpg",
+    "width": 640,
+    "height": 234,
+    "reason": "File:Isle of Lunga.jpg shows Lunga. the Wikipedia lead, the file page, its Commons category agree. GPS is 3.52 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q3058378",
+        "note": "P18 File:Puffins, Lunga.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Lunga%2C_Treshnish_Isles",
+        "note": "Sitelink Lunga, Treshnish Isles; lead File:Isle_of_Lunga.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Lunga.jpg",
+        "note": "The Isle of Lunga viewed from a boat"
+      }
+    ],
+    "fileTitle": "File:Isle_of_Lunga.jpg",
+    "commonsTitle": "File:Isle of Lunga.jpg",
+    "description": "The Isle of Lunga viewed from a boat",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Clydiee",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Isle_of_Lunga.jpg/960px-Isle_of_Lunga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Isle_of_Lunga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-relation-8245962",
+    "name": "Gometra",
+    "slice": "scotland-04",
+    "verdict": "unsure",
+    "lat": 56.48593,
+    "lng": -6.28116,
+    "names": {
+      "en": "Gometra",
+      "ga": "Gòmastra",
+      "gd": "Gòmastra"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Gometra",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Rude Health (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:View Towards Gometra House - geograph.org.uk - 3458062.jpg shows Gometra. the Wikipedia lead, the file page agree. GPS is 1.15 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q2746323",
+        "note": "P18 File:Gometra-bridge-to-Ulva.jpg, File:Gometra-Ulva-Bruecke.png, File:Gometra-Ruinen.png, File:Gometra-Panorama-Rubha-na-h-Airde.png"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Gometra",
+        "note": "Sitelink Gometra; lead File:View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg",
+        "note": "View Towards Gometra House"
+      }
+    ],
+    "fileTitle": "File:View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg",
+    "commonsTitle": "File:View Towards Gometra House - geograph.org.uk - 3458062.jpg",
+    "description": "View Towards Gometra House      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Rude Health",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg/960px-View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/6c/View_Towards_Gometra_House_-_geograph.org.uk_-_3458062.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-way-4009661",
+    "name": "Little Colonsay",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.45124,
+    "lng": -6.25827,
+    "names": {
+      "en": "Little Colonsay",
+      "ga": "Colbhasa Beag",
+      "gd": "Colbhasa Beag"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Coastline,_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q2746317",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Christine Howson (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Coastline%2C_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:Coastline, SE Little Colonsay - geograph.org.uk - 1012665.jpg shows Little Colonsay. Wikidata P18, the file page, its Commons category agree. GPS is 0.7 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q2746317",
+        "note": "P18 File:Colbhasa Beag 1012642.jpg, File:Coastline, SE Little Colonsay - geograph.org.uk - 1012665.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "miss",
+        "page": "https://en.wikipedia.org/wiki/Little_Colonsay",
+        "note": "Sitelink Little Colonsay; no lead image"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Coastline,_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg",
+        "note": "Coastline, SE Little Colonsay I think this is Port an Roin on the SE corner of the island"
+      }
+    ],
+    "fileTitle": "File:Coastline,_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg",
+    "commonsTitle": "File:Coastline, SE Little Colonsay - geograph.org.uk - 1012665.jpg",
+    "description": "Coastline, SE Little Colonsay I think this is Port an Roin on the SE corner of the island",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Christine Howson",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/89/Coastline%2C_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/89/Coastline%2C_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.7,
+    "signals": [
+      "file-page",
+      "geo-0.7km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-4009664",
+    "name": "Inch Kenneth",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.4414,
+    "lng": -6.15783,
+    "names": {
+      "en": "Inch Kenneth",
+      "ga": "Inis Choinnich",
+      "gd": "Innis Choinnich"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Inch_Kenneth_-_geograph.org.uk_-_869362.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q868480",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Mrs V Bryant (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Inch_Kenneth_-_geograph.org.uk_-_869362.jpg",
+    "width": 640,
+    "height": 434,
+    "reason": "File:Inch Kenneth - geograph.org.uk - 869362.jpg shows Inch Kenneth. Wikidata P18, the file page, its Commons category agree. GPS is 1.82 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q868480",
+        "note": "P18 File:Inch Kenneth - geograph.org.uk - 869362.jpg, File:Lochnakealislands.jpg"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "miss",
+        "page": "https://en.wikipedia.org/wiki/Inch_Kenneth",
+        "note": "Sitelink Inch Kenneth; no lead image"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Inch_Kenneth_-_geograph.org.uk_-_869362.jpg",
+        "note": "Inch Kenneth The large building used to host the Piping Competitions!"
+      }
+    ],
+    "fileTitle": "File:Inch_Kenneth_-_geograph.org.uk_-_869362.jpg",
+    "commonsTitle": "File:Inch Kenneth - geograph.org.uk - 869362.jpg",
+    "description": "Inch Kenneth The large building used to host the Piping Competitions!",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Mrs V Bryant",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/66/Inch_Kenneth_-_geograph.org.uk_-_869362.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/66/Inch_Kenneth_-_geograph.org.uk_-_869362.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.82,
+    "signals": [
+      "file-page",
+      "geo-1.82km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "wd-Q105722173",
+    "name": "South Inch",
+    "slice": "scotland-04",
+    "verdict": "wrong",
+    "lat": 56.3904,
+    "lng": -3.4332,
+    "names": {
+      "en": "South Inch"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:South_Inch_(geograph_7813501).jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "South Inch",
+    "license": "CC BY-SA 2.0",
+    "attribution": "Photo by Scott Cormie (CC BY-SA 2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/South_Inch_%28geograph_7813501%29.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "File:South Inch (geograph 7813501).jpg shows South Inch. the Wikipedia lead, the file page agree. GPS is 0.15 km from the centroid. It replaces the current lead.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q105722173",
+        "note": "Label South Inch; coordinates 0.0 km from centroid; no P18"
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/South_Inch",
+        "note": "Sitelink South Inch; lead File:South_Inch_(geograph_7813501).jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:South_Inch_(geograph_7813501).jpg",
+        "note": "South Inch"
+      }
+    ],
+    "fileTitle": "File:South_Inch_(geograph_7813501).jpg",
+    "commonsTitle": "File:South Inch (geograph 7813501).jpg",
+    "description": "South Inch",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Scott Cormie",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/South_Inch_%28geograph_7813501%29.jpg/960px-South_Inch_%28geograph_7813501%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/cd/South_Inch_%28geograph_7813501%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-3833751",
+    "name": "Seil",
+    "slice": "scotland-05",
+    "verdict": "wrong",
+    "lat": 56.29611,
+    "lng": -5.61756,
+    "names": {
+      "en": "Seil",
+      "ga": "Saoil",
+      "gd": "Saoil"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Seil_-_Ellenabeich_02.JPG",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Seil",
+    "license": "CC-BY-SA-3.0",
+    "attribution": "Photo by Remi Mathis (CC-BY-SA-3.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Isle_of_Seil_-_Ellenabeich_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A stronger licence-safe photograph is available. the Wikipedia lead and the file page agree. GPS is 2.0 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q607334",
+        "note": "P18 Clachan Bridge 2005-05-07.jpg, Seill.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Seil",
+        "note": "Isle_of_Seil_-_Ellenabeich_02.JPG"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/Category:Seil,_Scotland",
+        "note": "Category:Seil, Scotland"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Clachan_Bridge_2005-05-07.jpg",
+        "note": ""
+      }
+    ],
+    "fileTitle": "File:Isle_of_Seil_-_Ellenabeich_02.JPG",
+    "commonsTitle": "File:Isle of Seil - Ellenabeich 02.JPG",
+    "description": "Isle of Seil - Ellenabeich",
+    "categories": [],
+    "licenseShort": "CC BY-SA 3.0",
+    "artist": "Remi Mathis",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Isle_of_Seil_-_Ellenabeich_02.JPG/960px-Isle_of_Seil_-_Ellenabeich_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/03/Isle_of_Seil_-_Ellenabeich_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.99,
+    "signals": [
+      "file-page",
+      "geo-1.99km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 3.0"
+  },
+  {
+    "id": "kilminning-castle",
+    "name": "Kilminning Castle",
+    "slice": "scotland-05",
+    "verdict": "no-photo",
+    "lat": 56.2685,
+    "lng": -2.59559,
+    "names": {
+      "en": "Kilminning Castle"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "File:Kilminning Castle - geograph.org.uk - 4111298.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Sandy Gemmill (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A stronger licence-safe photograph is available. the file page and the island's Commons category agree. GPS is 0.0 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/Category:Kilminning_Castle",
+        "note": "Category:Kilminning Castle"
+      }
+    ],
+    "fileTitle": "File:Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg",
+    "commonsTitle": "File:Kilminning Castle - geograph.org.uk - 4111298.jpg",
+    "description": "Kilminning Castle      ",
+    "categories": [],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Sandy Gemmill",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg/960px-Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Kilminning_Castle_-_geograph.org.uk_-_4111298.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-60438001",
+    "name": "St Serf's Island",
+    "slice": "scotland-05",
+    "verdict": "wrong",
+    "lat": 56.18914,
+    "lng": -3.35748,
+    "names": {
+      "en": "St Serf's Inch",
+      "ga": "Innis Mhogha",
+      "gd": "Innis Mhogha"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:StSerfsLochLeven.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "St Serf's Inch",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Iangpark (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/StSerfsLochLeven.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 410,
+    "reason": "A stronger licence-safe photograph is available. the Wikipedia lead and the island's Commons category agree. The file page has no GPS.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q7595459",
+        "note": "P18 Loch Leven Kinross.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/St_Serf%27s_Inch",
+        "note": "StSerfsLochLeven.jpg"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/Category:St_Serf's_Island",
+        "note": "Category:St Serf's Island"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Loch_Leven_Kinross.jpg",
+        "note": ""
+      }
+    ],
+    "fileTitle": "File:StSerfsLochLeven.jpg",
+    "commonsTitle": "File:StSerfsLochLeven.jpg",
+    "description": "St. Serf's Inch (Loch Leven) from Benarty Hill.",
+    "categories": [],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Iangpark",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/StSerfsLochLeven.jpg/960px-StSerfsLochLeven.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/0d/StSerfsLochLeven.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "islay",
+    "name": "Islay",
+    "slice": "scotland-05",
+    "verdict": "wrong",
+    "lat": 55.78,
+    "lng": -6.21,
+    "names": {
+      "en": "Islay",
+      "ga": "Ìle",
+      "gd": "Ìle",
+      "cy": "Ìle",
+      "alt": "Ìle"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Port_Ellen,_Islay.jpg",
+    "pickerSource": "wikidata",
+    "pickerRef": "Q273",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by J M Briscoe (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Port_Ellen%2C_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 475,
+    "reason": "A stronger licence-safe photograph is available. Wikidata P18 and the Wikipedia lead and the file page agree. GPS is 16.9 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q273",
+        "note": "P18 Port Ellen, Islay.jpg, Wfm islay landsat.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Islay",
+        "note": "Port_Ellen,_Islay.jpg"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/Category:Islay",
+        "note": "Category:Islay"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Wfm_islay_landsat.jpg",
+        "note": "map-category"
+      }
+    ],
+    "fileTitle": "File:Port_Ellen,_Islay.jpg",
+    "commonsTitle": "File:Port Ellen, Islay.jpg",
+    "description": "Port Ellen",
+    "categories": [
+      "Category:August 2004 in Argyll and Bute",
+      "Category:Boats in Argyll and Bute",
+      "Category:CC-BY-SA-2.0",
+      "Category:Frederick Crescent, Port Ellen",
+      "Category:Images by J M Briscoe",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Loch Leòdamais",
+      "Category:Scotland photographs taken on 2004-08-16"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "J M Briscoe",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Port_Ellen%2C_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Port_Ellen%2C_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 16.93,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-relation-6949620",
+    "name": "Gigha",
+    "slice": "scotland-05",
+    "verdict": "wrong",
+    "lat": 55.68769,
+    "lng": -5.74303,
+    "names": {
+      "en": "Isle of Gigha",
+      "ga": "Giogha",
+      "gd": "Giogha",
+      "sco": "Gigha",
+      "fr": "Gigha"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Gigha_Hotel,_Ardminish.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Gigha",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Johnny Durnan (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Gigha_Hotel%2C_Ardminish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A stronger licence-safe photograph is available. the Wikipedia lead and the file page agree. GPS is 1.3 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q506284",
+        "note": "P18 Blaeu - Atlas of Scotland 1654 - CANTYRA - Kintyre.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Gigha",
+        "note": "Gigha_Hotel,_Ardminish.jpg"
+      },
+      {
+        "source": "commons-category",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/Category:Isle_of_Gigha",
+        "note": "Category:Isle of Gigha"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Blaeu_-_Atlas_of_Scotland_1654_-_CANTYRA_-_Kintyre.jpg",
+        "note": ""
+      }
+    ],
+    "fileTitle": "File:Gigha_Hotel,_Ardminish.jpg",
+    "commonsTitle": "File:Gigha Hotel, Ardminish.jpg",
+    "description": "Gigha Hotel, Isle of Gigha",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Gigha Hotel",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Images from Geograph Britain and Ireland missing SDC coordinates of the point of view",
+      "Category:Information field template with formatting",
+      "Category:June 2006 in Argyll and Bute",
+      "Category:Scotland photographs taken on 2006-06-01",
+      "Category:Taken with Canon PowerShot G3"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Johnny Durnan",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/59/Gigha_Hotel%2C_Ardminish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/59/Gigha_Hotel%2C_Ardminish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page",
+      "own-category"
+    ],
+    "decision": "reject",
+    "why": "short or generic name needs GPS within 5 km"
+  },
+  {
+    "id": "osm-way-252380368",
+    "name": "Orsay",
+    "slice": "scotland-05",
+    "verdict": "wrong",
+    "lat": 55.67373,
+    "lng": -6.51105,
+    "names": {
+      "en": "Orsay",
+      "ga": "Eilean Orasaigh",
+      "gd": "Eilean Orasaigh"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Orsay,_near_Islay.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Orsay, Inner Hebrides",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Richard Webb (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Orsay%2C_near_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "width": 640,
+    "height": 480,
+    "reason": "A stronger licence-safe photograph is available. the Wikipedia lead and the file page agree. GPS is 0.5 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q1899558",
+        "note": "P18 Rhinns of Islay Lighthouse - geograph.org.uk - 259363.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Orsay%2C_Inner_Hebrides",
+        "note": "Orsay,_near_Islay.jpg"
+      },
+      {
+        "source": "commons-category",
+        "result": "miss",
+        "page": "https://commons.wikimedia.org/wiki/Category:Orsay",
+        "note": "no category that is this island"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Rhinns_of_Islay_Lighthouse_-_geograph.org.uk_-_259363.jpg",
+        "note": ""
+      }
+    ],
+    "fileTitle": "File:Orsay,_near_Islay.jpg",
+    "commonsTitle": "File:Orsay, near Islay.jpg",
+    "description": "Orsay, seen from Port Wemyss in the Rhinns of Islay, Scotland, the lighthouse on the high ground in the middle of the island",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by Richard Webb",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Orsay, Inner Hebrides",
+      "Category:Rinns of Islay Lighthouse",
+      "Category:Taken with Canon PowerShot A640",
+      "Category:United Kingdom photographs taken on 2008-04-07"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Richard Webb",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Orsay%2C_near_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Orsay%2C_near_Islay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.45,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.45km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-relation-18138346",
+    "name": "Isle of Muck",
+    "slice": "wales-ni-01",
+    "verdict": "wrong",
+    "lat": 54.84832,
+    "lng": -5.71856,
+    "names": {
+      "en": "Isle of Muck"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File%3AIsle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q24639661",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Eleanor Ballard (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "The Wikipedia lead shows the Isle of Muck and Portmuck harbour. GPS is 0.1 km from the centroid and the file is in Category:Isle of Muck, County Antrim. The current lead is a road on Islandmagee.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q24639661",
+        "note": "Checked the Q-id for a P18 of this island."
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Isle_of_Muck,_County_Antrim",
+        "note": "File:Isle_of_Muck_-_geograph.org.uk_-_250906.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:Portmuck_Road,_Islandmagee_(1)_-_geograph.org.uk_-_221265.jpg",
+        "note": "Checked the current lead file page."
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": null,
+        "note": "Not required. The file was already the Wikipedia lead or a Wikidata P18."
+      }
+    ],
+    "fileTitle": "File:Isle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+    "commonsTitle": "File:Isle of Muck - geograph.org.uk - 250906.jpg",
+    "description": "Isle of Muck Isle of Muck and the harbour at Portmuck",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Images from Geograph Britain and Ireland needing category review",
+      "Category:Information field template with formatting",
+      "Category:Isle of Muck, County Antrim",
+      "Category:United Kingdom photographs taken on 2005-04-18"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Eleanor Ballard",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-relation-3512150",
+    "name": "Boa Island",
+    "slice": "wales-ni-01",
+    "verdict": "unsure",
+    "lat": 54.51734,
+    "lng": -7.84217,
+    "names": {
+      "en": "Boa Island",
+      "ga": "Inis Badhbha"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File%3ABoaIslandShore.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q887472",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Kenneth Allen (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/BoaIslandShore.jpg",
+    "width": 640,
+    "height": 479,
+    "reason": "The Wikipedia lead is a shore view on Boa Island, in Category:Boa Island, with GPS 1.3 km from the centroid. The current lead is a close view of the Janus figure, not a view of the island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q887472",
+        "note": "Checked the Q-id for a P18 of this island."
+      },
+      {
+        "source": "wikipedia-pageimages",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/Boa_Island",
+        "note": "File:BoaIslandShore.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "mismatch",
+        "page": "https://commons.wikimedia.org/wiki/File:JanusandLustymoreFigures.jpg",
+        "note": "Checked the current lead file page."
+      },
+      {
+        "source": "commons-search",
+        "result": "miss",
+        "page": null,
+        "note": "Not required. The file was already the Wikipedia lead or a Wikidata P18."
+      }
+    ],
+    "fileTitle": "File:BoaIslandShore.jpg",
+    "commonsTitle": "File:BoaIslandShore.jpg",
+    "description": "Boa Island, County Fermanagh. Overlooking Lough Erne from the shore. Subject Location; Irish: H 116 632 [100m precision]; WGS84: 54:31.0122N 7:49.3235W View Direction West-southwest (about 247 degrees)",
+    "categories": [
+      "Category:Boa Island",
+      "Category:CC-BY-SA-2.0",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:July 2006 in County Fermanagh",
+      "Category:Lower Lough Erne",
+      "Category:Taken with Olympus C-750UZ"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Kenneth Allen",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/57/BoaIslandShore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/57/BoaIslandShore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 1.3,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-1.3km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-4557268",
+    "name": "Guns Island",
+    "slice": "wales-ni-02",
+    "verdict": "wrong",
+    "lat": 54.29425,
+    "lng": -5.54663,
+    "names": {
+      "en": "Guns Island"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Q24641350",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Adpsimpson (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg",
+    "width": 640,
+    "height": 145,
+    "reason": "The file names Guns Island. Sources: file-page-names-island, commons-category. GPS is 0.77 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q24641350",
+        "note": "no P18"
+      },
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=intitle:\"Guns Island\" \"Northern Ireland\"",
+        "note": "intitle:\"Guns Island\" \"Northern Ireland\" (15 files)"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg",
+        "note": "Guns Island, connected by a tidal causeway at low tide to the bay at Ballyhornan, in County Down, Northern Ireland."
+      }
+    ],
+    "fileTitle": "File:Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg",
+    "commonsTitle": "File:Guns Island from Ballyhornan Bay at low tide.jpg",
+    "description": "Guns Island, connected by a tidal causeway at low tide to the bay at Ballyhornan, in County Down, Northern Ireland.",
+    "categories": [
+      "Category:August 2022 in County Down",
+      "Category:Ballyhornan",
+      "Category:CC-BY-SA-4.0",
+      "Category:Files with coordinates missing SDC location of creation",
+      "Category:Guns Island",
+      "Category:Self-published work"
+    ],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Adpsimpson",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg/960px-Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.77,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.77km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 4.0"
+  },
+  {
+    "id": "osm-node-252820875",
+    "name": "Little Eye",
+    "slice": "wales-ni-02",
+    "verdict": "wrong",
+    "lat": 53.37143,
+    "lng": -3.20554,
+    "names": {
+      "en": "Little Eye"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Little_Eye_-_geograph.org.uk_-_1502259.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "File:Little Eye - geograph.org.uk - 1502259.jpg",
+    "license": "CC-BY-SA-2.0",
+    "attribution": "Photo by Eirian Evans (CC-BY-SA-2.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Little_Eye_-_geograph.org.uk_-_1502259.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "The file names Little Eye. Sources: file-page-names-island, commons-category. GPS is 0.11 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=intitle:\"Little Eye\"",
+        "note": "intitle:\"Little Eye\" (76 files)"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Little_Eye_-_geograph.org.uk_-_1502259.jpg",
+        "note": "Little Eye"
+      }
+    ],
+    "fileTitle": "File:Little_Eye_-_geograph.org.uk_-_1502259.jpg",
+    "commonsTitle": "File:Little Eye - geograph.org.uk - 1502259.jpg",
+    "description": "Little Eye",
+    "categories": [
+      "Category:CC-BY-SA-2.0",
+      "Category:Images by Eirian Evans",
+      "Category:Images from Geograph Britain and Ireland",
+      "Category:Information field template with formatting",
+      "Category:Little Eye, Hilbre"
+    ],
+    "licenseShort": "CC BY-SA 2.0",
+    "artist": "Eirian Evans",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Little_Eye_-_geograph.org.uk_-_1502259.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Little_Eye_-_geograph.org.uk_-_1502259.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.11,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.11km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 2.0"
+  },
+  {
+    "id": "osm-way-157872362",
+    "name": "Ynys Welltog",
+    "slice": "wales-ni-02",
+    "verdict": "unsure",
+    "lat": 53.22213,
+    "lng": -4.17472,
+    "names": {
+      "en": "Ynys Welltog",
+      "cy": "Ynys Welltog"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Ynys_Welltog_gan_Dogfael.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q11048375",
+    "license": "CC-BY-SA-3.0",
+    "attribution": "Photo (CC-BY-SA-3.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ynys_Welltog_gan_Dogfael.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "The file names Ynys Welltog. Sources: wikipedia-lead, file-page-names-island.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q11048375",
+        "note": "no P18"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://cy.wikipedia.org/wiki/Ynys_Welltog",
+        "note": "File:Ynys_Welltog_gan_Dogfael.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Ynys_Welltog_gan_Dogfael.jpg",
+        "note": "File:Ynys Welltog gan Dogfael.jpg"
+      }
+    ],
+    "fileTitle": "File:Ynys_Welltog_gan_Dogfael.jpg",
+    "commonsTitle": "File:Ynys Welltog gan Dogfael.jpg",
+    "description": "",
+    "categories": [],
+    "licenseShort": "CC BY-SA 3.0",
+    "artist": "",
+    "mime": "image/jpeg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ynys_Welltog_gan_Dogfael.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ynys_Welltog_gan_Dogfael.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page"
+    ],
+    "decision": "reject",
+    "why": "fewer than two independent sources on the file page"
+  },
+  {
+    "id": "osm-way-1493746472",
+    "name": "Dinas Fach",
+    "slice": "wales-ni-02",
+    "verdict": "wrong",
+    "lat": 51.85999,
+    "lng": -5.15904,
+    "names": {
+      "en": "Dinas Fach"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale,_Sir_Benfro,_Cymru,_Wales_17.jpg",
+    "pickerSource": "commons",
+    "pickerRef": "File:Dinas Fach near Dinas Fawr between Solfach and Newgale, Sir Benfro, Cymru, Wales 17.jpg",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Llywelyn2000 (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale%2C_Sir_Benfro%2C_Cymru%2C_Wales_17.jpg",
+    "width": 640,
+    "height": 480,
+    "reason": "The file names Dinas Fach. Sources: file-page-names-island, commons-category. GPS is 0.21 km from the centroid.",
+    "sourcesChecked": [
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=intitle:\"Dinas Fach\"",
+        "note": "intitle:\"Dinas Fach\" (65 files)"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale,_Sir_Benfro,_Cymru,_Wales_17.jpg",
+        "note": "Dinas Fach near Dinas Fawr between Solfach and Newgale, Sir Benfro, Cymru, Wales"
+      }
+    ],
+    "fileTitle": "File:Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale,_Sir_Benfro,_Cymru,_Wales_17.jpg",
+    "commonsTitle": "File:Dinas Fach near Dinas Fawr between Solfach and Newgale, Sir Benfro, Cymru, Wales 17.jpg",
+    "description": "Dinas Fach near Dinas Fawr between Solfach and Newgale, Sir Benfro, Cymru, Wales",
+    "categories": [
+      "Category:CC-BY-SA-4.0",
+      "Category:Dinas Fach",
+      "Category:Files with coordinates missing SDC location of creation",
+      "Category:Images from Wiki Loves Earth 2021",
+      "Category:Images from Wiki Loves Earth 2021 in Wales",
+      "Category:Images from Wiki Loves Earth missing SDC depicts",
+      "Category:Images from Wiki Loves Earth missing SDC location of creation",
+      "Category:Photos by User:Llywelyn2000",
+      "Category:Self-published work",
+      "Category:United Kingdom photographs taken on 2021-06-13",
+      "Category:Uploaded via Campaign:wle-gb-wls"
+    ],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Llywelyn2000",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale%2C_Sir_Benfro%2C_Cymru%2C_Wales_17.jpg/960px-Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale%2C_Sir_Benfro%2C_Cymru%2C_Wales_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale%2C_Sir_Benfro%2C_Cymru%2C_Wales_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": 0.21,
+    "signals": [
+      "file-page",
+      "own-category",
+      "geo-0.21km"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 4.0"
+  },
+  {
+    "id": "osm-way-304960830",
+    "name": "Monkstone",
+    "slice": "wales-ni-02",
+    "verdict": "wrong",
+    "lat": 51.69719,
+    "lng": -4.67813,
+    "names": {
+      "en": "Monkstone"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Monkstone_Point_(6386).jpg",
+    "pickerSource": "commons",
+    "pickerRef": "Q24639596",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Photo by Nilfanion (CC-BY-SA-4.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Monkstone_Point_%286386%29.jpg",
+    "width": 640,
+    "height": 425,
+    "reason": "The file names Monkstone. Sources: file-page-names-island, commons-category.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "miss",
+        "page": "https://www.wikidata.org/wiki/Q24639596",
+        "note": "no P18"
+      },
+      {
+        "source": "commons-search",
+        "result": "lead",
+        "page": "https://commons.wikimedia.org/w/index.php?search=intitle:\"Monkstone\"",
+        "note": "intitle:\"Monkstone\" (68 files)"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Monkstone_Point_(6386).jpg",
+        "note": "Monkstone Point"
+      }
+    ],
+    "fileTitle": "File:Monkstone_Point_(6386).jpg",
+    "commonsTitle": "File:Monkstone Point (6386).jpg",
+    "description": "Monkstone Point",
+    "categories": [
+      "Category:CC-BY-SA-4.0",
+      "Category:Content media by years - Supported by Wikimedia UK - 2016",
+      "Category:Images by Nilfanion/Pembrokeshire",
+      "Category:Monkstone Point",
+      "Category:Supported by Wikimedia UK",
+      "Category:Uploaded with VicuñaUploader"
+    ],
+    "licenseShort": "CC BY-SA 4.0",
+    "artist": "Nilfanion",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Monkstone_Point_%286386%29.jpg/960px-Monkstone_Point_%286386%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Monkstone_Point_%286386%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page",
+      "own-category"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 4.0"
+  },
+  {
+    "id": "osm-way-1493746453",
+    "name": "St Catherine's Island",
+    "slice": "wales-ni-02",
+    "verdict": "wrong",
+    "lat": 51.67072,
+    "lng": -4.69247,
+    "names": {
+      "en": "St Catherine's Island",
+      "cy": "Ynys Catrin"
+    },
+    "page": "https://commons.wikimedia.org/wiki/File:Wales_nov_2001_st_catherine%27s_island.jpg",
+    "pickerSource": "wikipedia",
+    "pickerRef": "Q582014",
+    "license": "CC-BY-SA-3.0",
+    "attribution": "Photo by Quistnix at English Wikipedia (CC-BY-SA-3.0) via Wikimedia Commons",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Wales_nov_2001_st_catherine%27s_island.jpg",
+    "width": 640,
+    "height": 429,
+    "reason": "The file names St Catherine's Island. Sources: wikipedia-lead, file-page-names-island, commons-category.",
+    "sourcesChecked": [
+      {
+        "source": "wikidata-p18",
+        "result": "hit",
+        "page": "https://www.wikidata.org/wiki/Q582014",
+        "note": "File:St Catherines Island and Fort from Castle Beach May 2012.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://en.wikipedia.org/wiki/St_Catherine's_Island",
+        "note": "File:Wales_nov_2001_st_catherine's_island.jpg"
+      },
+      {
+        "source": "wikipedia-lead",
+        "result": "hit",
+        "page": "https://cy.wikipedia.org/wiki/Ynys_Catrin",
+        "note": "File:St_Catherines_Island_and_Fort_from_Castle_Beach_May_2012.jpg"
+      },
+      {
+        "source": "commons-file-page",
+        "result": "hit",
+        "page": "https://commons.wikimedia.org/wiki/File:Wales_nov_2001_st_catherine%27s_island.jpg",
+        "note": "St Catherine's Island, Wales - own photograph"
+      }
+    ],
+    "fileTitle": "File:Wales_nov_2001_st_catherine's_island.jpg",
+    "commonsTitle": "File:Wales nov 2001 st catherine's island.jpg",
+    "description": "St Catherine's Island, Wales - own photograph",
+    "categories": [
+      "Category:2001 in Pembrokeshire",
+      "Category:CC-BY-SA-3.0-migrated",
+      "Category:GFDL",
+      "Category:GFDL-en (check disclaimers)",
+      "Category:License migration completed",
+      "Category:November 2001 in Wales",
+      "Category:Self-published work",
+      "Category:St Catherine's Island, Tenby",
+      "Category:User-created GFDL images"
+    ],
+    "licenseShort": "CC BY-SA 3.0",
+    "artist": "Quistnix at English Wikipedia",
+    "mime": "image/jpeg",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Wales_nov_2001_st_catherine%27s_island.jpg/960px-Wales_nov_2001_st_catherine%27s_island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Wales_nov_2001_st_catherine%27s_island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "distanceKm": null,
+    "signals": [
+      "file-page",
+      "own-category"
+    ],
+    "decision": "accept",
+    "why": "file page agrees in two places, licence is reusable",
+    "licenseNorm": "CC BY-SA 3.0"
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "added": [
+    {
+      "id": "osm-way-2957548",
+      "name": "Icho",
+      "page": "https://commons.wikimedia.org/wiki/File:Icho_tower_-_geograph.ci_-_370.jpg"
+    },
+    {
+      "id": "osm-way-1430010007",
+      "name": "Wood Howe",
+      "page": "https://commons.wikimedia.org/wiki/File:Wood_Howe_in_Haweswater_-_geograph.org.uk_-_65691.jpg"
+    },
+    {
+      "id": "osm-way-61603377",
+      "name": "Peel Island",
+      "page": "https://commons.wikimedia.org/wiki/File:Peel_Island,_Coniston.jpg"
+    },
+    {
+      "id": "osm-relation-953228",
+      "name": "Pewit Island",
+      "page": "https://commons.wikimedia.org/wiki/File:South_shore_of_Pewit_Island_-_geograph.org.uk_-_836928.jpg"
+    },
+    {
+      "id": "osm-node-12177869998",
+      "name": "Bawden Rocks (Calf)",
+      "page": "https://commons.wikimedia.org/wiki/File:Bawden_Rocks_-_geograph.org.uk_-_469385.jpg"
+    },
+    {
+      "id": "osm-relation-8158177",
+      "name": "Inishmaan",
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg"
+    },
+    {
+      "id": "wd-Q25634959",
+      "name": "Fitty Hill",
+      "page": "https://commons.wikimedia.org/wiki/File:Fitty_Hill,_Westside,_Westray_-_geograph.org.uk_-_489704.jpg"
+    },
+    {
+      "id": "wd-Q25634954",
+      "name": "Blotchnie Fiold",
+      "page": "https://commons.wikimedia.org/wiki/File:Blotchnie_Fiold_-_geograph.org.uk_-_1452046.jpg"
+    },
+    {
+      "id": "wd-Q25635110",
+      "name": "Mid Hill",
+      "page": "https://commons.wikimedia.org/wiki/File:Mid_Hill-Geograph-4357240-by-Richard-Webb.jpg"
+    },
+    {
+      "id": "osm-way-25393114",
+      "name": "Boreray",
+      "page": "https://commons.wikimedia.org/wiki/File:The_southern_side_of_Boreray_-_geograph.org.uk_-_1440449.jpg"
+    },
+    {
+      "id": "osm-way-788981365",
+      "name": "Stac Biorach",
+      "page": "https://commons.wikimedia.org/wiki/File:Sound_of_Soay.jpg"
+    },
+    {
+      "id": "osm-way-28218749",
+      "name": "Dùn",
+      "page": "https://commons.wikimedia.org/wiki/File:Dun,_St_Kilda.jpg"
+    },
+    {
+      "id": "osm-way-157532304",
+      "name": "South Ascrib",
+      "page": "https://commons.wikimedia.org/wiki/File:South_Ascrib.jpg"
+    },
+    {
+      "id": "osm-relation-7185419",
+      "name": "Eilean Bàn",
+      "page": "https://commons.wikimedia.org/wiki/File:Eilean_B%C3%A0n_viewed_from_Kyle_of_Lochalsh_-_geograph.org.uk_-_1191653.jpg"
+    },
+    {
+      "id": "osm-relation-4230732",
+      "name": "Soay",
+      "page": "https://commons.wikimedia.org/wiki/File:Soay_South_Harbour_by_Ben_Dallimore.jpg"
+    },
+    {
+      "id": "osm-way-4009661",
+      "name": "Little Colonsay",
+      "page": "https://commons.wikimedia.org/wiki/File:Coastline,_SE_Little_Colonsay_-_geograph.org.uk_-_1012665.jpg"
+    },
+    {
+      "id": "osm-way-4009664",
+      "name": "Inch Kenneth",
+      "page": "https://commons.wikimedia.org/wiki/File:Inch_Kenneth_-_geograph.org.uk_-_869362.jpg"
+    },
+    {
+      "id": "osm-relation-3833751",
+      "name": "Seil",
+      "page": "https://commons.wikimedia.org/wiki/File:Isle_of_Seil_-_Ellenabeich_02.JPG"
+    },
+    {
+      "id": "osm-way-252380368",
+      "name": "Orsay",
+      "page": "https://commons.wikimedia.org/wiki/File:Orsay,_near_Islay.jpg"
+    },
+    {
+      "id": "osm-way-4557268",
+      "name": "Guns Island",
+      "page": "https://commons.wikimedia.org/wiki/File:Guns_Island_from_Ballyhornan_Bay_at_low_tide.jpg"
+    },
+    {
+      "id": "osm-node-252820875",
+      "name": "Little Eye",
+      "page": "https://commons.wikimedia.org/wiki/File:Little_Eye_-_geograph.org.uk_-_1502259.jpg"
+    },
+    {
+      "id": "osm-way-1493746472",
+      "name": "Dinas Fach",
+      "page": "https://commons.wikimedia.org/wiki/File:Dinas_Fach_near_Dinas_Fawr_between_Solfach_and_Newgale,_Sir_Benfro,_Cymru,_Wales_17.jpg"
+    },
+    {
+      "id": "osm-way-304960830",
+      "name": "Monkstone",
+      "page": "https://commons.wikimedia.org/wiki/File:Monkstone_Point_(6386).jpg"
+    },
+    {
+      "id": "osm-way-1493746453",
+      "name": "St Catherine's Island",
+      "page": "https://commons.wikimedia.org/wiki/File:Wales_nov_2001_st_catherine%27s_island.jpg"
+    }
+  ],
+  "removedCount": 1559,
+  "conflictsLeft": 30,
+  "missing": [],
+  "blocked": [
+    "csv-geocoded-Q282210",
+    "osm-relation-3512150",
+    "osm-way-711432296",
+    "osm-way-917227026",
+    "thames-henley-on-thames",
+    "thames-isleworth",
+    "thames-maidenhead",
+    "wd-Q7160438"
+  ]
+}

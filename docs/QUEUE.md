@@ -520,3 +520,8 @@ for source / licence / refresh-cadence detail.
 - **[pending]** Batch 3: request GSC indexing on hubs + top flagship `/islands/` URLs; fill first scored GEO benchmark run; deepen ferry hub last-verified dates.
 - **[pending]** Homepage LCP follow-up: measure field CWV after font change; consider self-hosting DM Serif / Source Sans if third-party fonts remain a bottleneck.
 - **[pending]** Apply `supabase/migrations/20261027120000_island_visitor_notes.sql` so a note about what’s interesting, and what you can do, is shared. Until then it stays on the computer that wrote it.
+
+## P1 — photo source-to-source audit (2026-10-27)
+
+- **[done]** Named-island photo availability and lead check. 24 Commons photos added after an independent file-page check. 1,559 leads the checker called wrong were removed where no replacement passed. 30 conflicts left unchanged. See the session log.
+- **[in flight]** Wider-source pass for islands that still have no appropriate photo. Openverse and other open-licence sources, with a separate verifier on the proposed file. Nothing else is written to `islands.json` until that pass agrees.

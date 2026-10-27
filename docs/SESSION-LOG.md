@@ -3616,3 +3616,38 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Counts unchanged. Live filters stay film **139**, whisky **21**, for sale **48**, rare wildlife **36**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **78** islands.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-27 — Cover headline
+
+- **Goal**: Keep the opening headline short.
+- **What changed**: The small line is “An Atlas for”. The large line is “Island Adventures.”, and only the last word is gold. The compass and Find My Island stay in the top bar. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
+
+## 2026-10-27 — Appropriate photos shipped
+
+- **Goal**: Publish the photos the picker and the checker can both support, and take down leads the checker called the wrong subject when no replacement passed.
+- **What changed**: `data/islands.json` and `data/galleries.json`. 24 new leads (Icho, Wood Howe, Peel Island, Pewit Island, Bawden Rocks, Inishmaan, Fitty Hill, Blotchnie Fiold, Mid Hill, Boreray, Stac Biorach, Dùn, South Ascrib, Eilean Bàn, Soay, Little Colonsay, Inch Kenneth, Seil, Orsay, Guns Island, Little Eye, Dinas Fach, Monkstone, St Catherine's Island). Each file page names the island and a second signal agrees. Eight proposed files were refused on review: Henley bank, Maidenhead Bridge, Isleworth street, Saint Patrick's Island shared with Colt Island, a view from Uyea, Peerie Bard seen from Mousa, a kittiwake colony on Sandray, and a view from Boa Island. 1,559 wrong leads removed, including the Brownsea map and the Menai Bridge photo on Anglesey. 30 conflicts left, including Muckle Flugga. Curated island records were not deleted. Replacements of a photo the checker already called correct were not swapped.
+- **Outcome / counts**: 24 added, 1,559 removed, 30 conflicts unchanged. Island count unchanged.
+- **Open items kicked to QUEUE.md**: Wider-source pass for islands that still have no appropriate photo.
+
+## 2026-10-27 — Photo source-to-source audit started
+
+- **Goal**: Check photo availability for every named island, with one set of agents choosing the best relevant licence-safe photo and a separate set checking that the photo already on the page is the right subject.
+- **What changed**: Worklists for 7,237 named islands (4,356 with a lead, 2,881 without) in `data/photo_audit/2026-10-27/worklists/`, thirteen regional slices. Rules in `BRIEF.md`. Pickers and verifiers write only under that folder. `islands.json` was not edited.
+- **Outcome / counts**: Audit in flight. Nothing adopted onto the atlas yet.
+- **Open items kicked to QUEUE.md**: P1 photo source-to-source audit, in flight.
+
+## 2026-10-27 — Interest expansion, round 4
+
+- **Goal**: Publish the local interest index from the finished round-4 candidate files.
+- **What changed**: Every accepted row in `data/interest/candidates/zz-expansion-4-*.json` already had an `island_id` in `data/islands_index.json`, so none were rejected for a missing id. For sale was not re-run: `for-sale.json` already had 49 accepted rows, including Inishdaweel (`osm-way-4561771`). The index was written by loading the candidate rows and calling `publish`, then `membership_sql` was written to `data/interest/memberships_sync.sql`. The publish command was not used. Picture lookup hit HTTP 429; the publisher’s own wait finished and this was the only publish. `islands.json` was not edited. Supabase was not called. Not committed. Not pushed.
+- **Outcome / counts**: Film, art and music **143**. Whisky **22**. For sale **49**. Rare wildlife **40**. Tidal islands **116**. Islands with castles **100**. Books **41**. Local traditions **39**. Unusual news **89**. Stories **1,638**, **996** with an open-licence picture. Round-4 accepted rows that stayed accepted: film, art and music 29 (MacArthur’s piping school on Ulva included), whisky 1 (Inchfad; Stroma stayed rejected), wildlife 8, tidal 12, castles 4, books 11 (The Rising Tide stayed rejected), traditions 17 (Foula old Christmas and the Tory Island king stayed rejected), unusual news 17 (the nine customs and geography rows stayed rejected).
+- **Open items kicked to QUEUE.md**: Load `data/interest/memberships_sync.sql` when Supabase should match this index.
+
+## 2026-10-27 — All islands leads with interesting places
+
+- **Goal**: Use the interest order on the unfiltered list, so the opening of All islands is the interesting islands, the ones with a real photograph, and the listings that are the island itself.
+- **What changed**: `scoreAtlasIsland` in `interest-rank.js` replaces the old size-and-population browse order for All islands and for other browses that are not a search, a collection, or Remote. A strong cited story, up to eight subject photographs, and a private-island or acre-estate listing with a photograph each lift an island. Great Britain and Ireland stay at the bottom. A house on a river ait does not rise. `islands.json` was not edited. Supabase was not called.
+- **Outcome / counts**: Counts unchanged. The first screen runs Lindisfarne, Sark, Mull, Islay, Skye, Arran, Staffa, and Iona, then Orkney, Shetland, St Kilda, Lundy, and Lewis. Calf Island Middle, Eilean Righ, Inchmarnock, Inis Barna, and Shuna sit in that opening because the listing is the island.
+- **Open items kicked to QUEUE.md**: none.

@@ -4,7 +4,15 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
-**2026-10-27 (cover headline)** — The opening headline is “An Atlas for local adventures.” The last word is gold. The top bar is still the compass and Find My Island. Counts unchanged. Shipped to main.
+**2026-10-27 (photo adoption)** — Adopted the photos both checks support. **24** new leads, each with a Commons file page that names the island and a second signal (its own category or a GPS fix inside the limit). **1,559** leads the checker called the wrong subject were removed where there was no approved replacement. **30** conflicts, where the picker would keep a photo the checker rejected, stay. Curated island records are all still present. `galleries.json` no longer promotes the removed file. A wider-source pass is next and is not on the atlas yet.
+
+**2026-10-27 (all-islands order)** — The unfiltered list leads with interesting islands, subject photographs, and standout whole-island listings (`scoreAtlasIsland` in `interest-rank.js`). Counts unchanged. `islands.json` was not edited. Supabase was not reloaded.
+
+**2026-10-27 (interest expansion, round 4)** — Local index only. Film, art and music **143**, whisky **22**, for sale **49**, rare wildlife **40**, tidal islands **116**, castles **100**, books **41**, local traditions **39**, unusual news **89**. Stories **1,638**, **996** with an open-licence picture. Supabase was not called. Not pushed. `islands.json` was not edited.
+
+**2026-10-27 (photo audit)** — Source-to-source photo check in flight for 7,237 named islands. Pickers and verifiers write only under `data/photo_audit/2026-10-27/`. Counts unchanged. `islands.json` was not edited.
+
+**2026-10-27 (cover headline)** — The small line reads “An Atlas for”. The large line is “Island Adventures.”, with the last word in gold. The top bar is still the compass and Find My Island. Counts unchanged.
 
 **2026-10-27 (shipped to main)** — The quieter atlas is on `main` for GitHub Pages: the compass and the name, interest order, visitor notes, the quiet cover, and placing a pin before naming it. Counts unchanged. The for-sale filter stays **48**. Supabase was not reloaded. `islands.json` was not edited.
 
@@ -1011,6 +1019,9 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| Interest daywave: 9 category researchers + 3 quality reviewers, hourly wake `AGENT_LOOP_TICK_interest_daywave` | 2026-10-27 08:30 UTC | through the day, pause after 21:00 Europe/London | cursor agents | Each researcher writes only `data/interest/candidates/zz-daywave-2026-10-27-<slug>.json` (status `proposed` until a quality agent sets `accepted` or `rejected`). No `islands.json` edits, no index publish, no commit. Photo audit stays in `data/photo_audit/2026-10-27/`. |
+| ~~Local interest index publish, round 4~~ ✅ 2026-10-27 06:37 UTC | 2026-10-27 06:35 UTC | — | cursor agent | Published `data/interest_index.json`. Film **143**, whisky **22**, for sale **49**, rare wildlife **40**, tidal **116**, castles **100**, books **41**, traditions **39**, unusual news **89**. Stories **1,638** / **996** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. Local only, not pushed. |
+| Photo source-to-source audit, 13 slices × picker + verifier | 2026-10-27 06:30 UTC | adopted 2026-10-27 | cursor agents | Finished. 24 new leads adopted. 1,559 wrong leads removed. 30 conflicts left in place. Files under `data/photo_audit/2026-10-27/`. |
 | ~~Interest expansion, leftover cited rows~~ ✅ 2026-10-26 20:25 UTC | 2026-10-26 20:15 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **50**. Stories **1,502** / **915** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Interest expansion, wildlife and traditions follow-up~~ ✅ 2026-10-26 20:25 UTC | 2026-10-26 20:00 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **36**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **50**. Stories **1,507** / **923** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
 | ~~Interest expansion, second pass~~ ✅ 2026-10-26 19:54 UTC | 2026-10-26 19:27 UTC | — | cursor agent | Published `data/interest_index.json`. Film **139**, whisky **21**, for sale **48**, rare wildlife **33**, tidal **104**, castles **96**, books **32**, traditions **30**, unusual news **50**. Stories **1,488** / **901** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. |
