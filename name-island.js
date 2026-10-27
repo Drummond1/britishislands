@@ -4,7 +4,7 @@
  * The email stays in the private log (Supabase, or the suggestion inbox).
  */
 
-import { loadCrowdSuggestConfig, isCrowdSuggestConfigured, submitCrowdSuggestion } from "./crowd-pins.js";
+import { loadCrowdSuggestConfig, isCrowdSuggestConfigured, submitCrowdSuggestion } from "./crowd-pins.js?v=visitor-note-1";
 
 const LOCAL_KEY = "iobSuggestedNames";
 

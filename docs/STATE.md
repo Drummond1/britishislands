@@ -4,6 +4,20 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-10-27 (shipped to main)** — The quieter atlas is on `main` for GitHub Pages: the compass and the name, interest order, visitor notes, the quiet cover, and placing a pin before naming it. Counts unchanged. The for-sale filter stays **48**. Supabase was not reloaded. `islands.json` was not edited.
+
+**2026-10-27 (simpler wordmark)** — The top bar is the compass and the name. The slogan and the single “Explore the islands” control are gone. Home is still the name. Counts unchanged.
+
+**2026-10-27 (interest order)** — Each filter leads with its most interesting islands. The order is computed in the browser from the cited rows (`interest-rank.js`). Counts unchanged. `islands.json` was not edited. Supabase was not reloaded. The static collection guides still list by how many citations they carry.
+
+**2026-10-27 (visitor notes)** — An island page has two boxes: what’s interesting, and what you can do. The note shows on that island. No email. `islands.json` was not edited. Migration `supabase/migrations/20261027120000_island_visitor_notes.sql` is written and not applied. Until it is, a note stays on that computer.
+
+**2026-10-27 (quiet cover)** — The opening is one sentence, three photographs, and a single compass ring. The needle answers the headline and the search field. Iona and Staffa are plates. Counts unchanged. Not pushed.
+
+**2026-10-27 (for-sale registry)** — One new broker listing, Inishdaweel, appended to the property registry. Registry **49**. The published for-sale filter was not regenerated and stays **48**. `islands.json` was not edited. Supabase was not called.
+
+**2026-10-27 (contribute)** — Adding a missing island is now: zoom in, click the land, drag the gold dot, then name it. Naming an island already on the map is the other Contribute choice. Counts unchanged. `islands.json` was not edited.
+
 **2026-10-26 (unusual news, five regions)** — Twenty-five more reports from smaller islands. **78** islands, **86** cited stories, every one with an open-licence picture. Shetland News, Historic Environment Scotland, a Fair Isle newsletter, the British Film Institute, the SCAPE Trust, BBC News, the Irish Times, the Postal Museum, the Herald, Achamore Gardens, Devon Perspectives, Maldon Nub News, the Western Telegraph, Royal Museums Greenwich, Devon Live, and BBC Guernsey. Stories **1,539**, **955** with a picture. Did not edit `islands.json`. Supabase was not reloaded.
 
 **2026-10-26 (unusual news, obscure islands)** — Seven reports from the Forth, the Clyde, and the lochs. **56** islands, **61** cited stories, every one with an open-licence picture. A stencil over the Davaar cave mural, a ship that burned on Cara, the 1791 ash deaths on the Isle of May, the prisoners who took the Bass Rock, rats that arrived with the coal on Ailsa Craig, wallabies on Inchconnachan, and the haggis record on Inchmurrin. Stories **1,514**, **930** with a picture. Did not edit `islands.json`. Supabase was not reloaded.
@@ -1124,12 +1138,18 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
   ferry-accessible, summit/elevation, minimum area, subtype, and
   curated / hide-unconfirmed. Ferries preload after islands load so the
   ferry filter enables without opening an island first.
-- **Crowd pins**: optional gold markers from `data/crowd_pins.json`; **Suggest
-  island** opens a map pick + GitHub issue (no on-site accounts). Toggle
-  **Crowd pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
-- **Name an unnamed island**: Filters → Unnamed places only → click one. The
-  profile is a four-field form. The suggested name shows at once. The email
-  stays in Supabase `island_name_log`. See `name-island.js`.
+- **Crowd pins**: optional gold markers from `data/crowd_pins.json`. **More →
+  Contribute → Add a missing island** zooms the map, takes a click on the land,
+  and lets the gold dot be dragged before the name step. Toggle **Community
+  pins** in filters. See `docs/CROWD-PINS.md` and `crowd-pins.js`.
+- **Name an unnamed island**: **Contribute → Name an island already on the map**,
+  or Filters → Unnamed places only. Open a question-mark pin and type the name
+  people use. The suggested name shows at once. The email stays in Supabase
+  `island_name_log`. See `name-island.js`.
+- **Visitor notes**: On a named island, two boxes — what’s interesting, and
+  what you can do — plus a name. The note shows under “From visitors. Not
+  checked.” No email. See `island-notes.js`. The shared table is not applied
+  yet (`supabase/migrations/20261027120000_island_visitor_notes.sql`).
 - **Chatbot ("Island finder")**: floating "Ask" button bottom-right opens a
   chat panel. **Local mode** (default) parses nation, type, subtype,
   archipelago, feature, size, sort, and proximity, and nothing leaves the

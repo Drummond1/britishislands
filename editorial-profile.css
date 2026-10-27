@@ -427,7 +427,9 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
 :is(.crowd-modal__lead, .favorites-modal__lead) { color: #3d4a56; font-size: 15px; line-height: 1.65; }
 .crowd-modal__fine { color: #6e655c; line-height: 1.6; }
 :is(.crowd-field, .favorites-field) { color: #3d4a56; font-size: 14px; }
+:is(.crowd-source, .crowd-more) > summary { color: #0e4c5c; font-size: 14px; }
 .crowd-field span { color: #1b2430; }
+.crowd-field span.crowd-field__help { color: #6e655c; font-weight: 400; font-size: 13px; }
 :is(.crowd-field input:not([type="checkbox"]), .crowd-field textarea, .favorites-field input) { min-height: 46px; background: #fff; color: #1b2430; border-color: #e0d4c2; border-radius: 7px; font-size: 15px; }
 :is(.crowd-modal__btn, .favorites-modal__btn) { min-height: 44px; padding: 10px 16px; border-radius: 7px; border-color: #e0d4c2; background: #fff; color: #1b2430; font-size: 14px; }
 :is(.crowd-modal__btn--primary, .favorites-modal__btn--primary) { background: #0e4c5c; color: #fff; border-color: #0e4c5c; }
@@ -822,6 +824,7 @@ body.filters-open .filter-drawer,
 }
 
 .island-details .name-island__lead,
+.island-details .name-island__how,
 .island-details .name-island__note,
 .island-details .name-island__credit {
   margin: 10px 0 0;
@@ -830,6 +833,7 @@ body.filters-open .filter-drawer,
   line-height: 1.5;
 }
 
+.island-details .name-island__how,
 .island-details .name-island__note,
 .island-details .name-island__credit {
   font-size: 14px;
@@ -898,6 +902,113 @@ body.filters-open .filter-drawer,
 
 .island-details .name-island__credit a {
   color: inherit;
+}
+
+.island-details .island-note {
+  margin: 28px 0 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--profile-line);
+}
+
+.island-details .island-note__title {
+  margin: 0;
+  font-family: var(--font-display, Newsreader, Georgia, serif);
+  font-size: 28px;
+  font-weight: 450;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--profile-ink);
+}
+
+.island-details .island-note__lead,
+.island-details .island-note__note,
+.island-details .island-note__kicker,
+.island-details .island-note__by {
+  margin: 8px 0 0;
+  color: var(--profile-muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.island-details .island-note__kicker {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.island-details .island-note__list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.island-details .island-note__list li {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--profile-line);
+}
+
+.island-details .island-note__list p {
+  margin: 0 0 4px;
+  color: var(--profile-ink);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.island-details .island-note__list span {
+  font-weight: 650;
+}
+
+.island-details .island-note__where {
+  font-weight: 500;
+}
+
+.island-details .island-note label {
+  display: block;
+  margin: 14px 0 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--profile-ink);
+}
+
+.island-details .island-note textarea,
+.island-details .island-note input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--profile-line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--profile-ink);
+  font: inherit;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.island-details .island-note input {
+  min-height: 44px;
+  padding: 0 12px;
+}
+
+.island-details .island-note textarea:focus,
+.island-details .island-note input:focus {
+  outline: 2px solid var(--profile-green);
+  outline-offset: 1px;
+}
+
+.island-details .island-note__error {
+  margin: 12px 0 0;
+  color: #8a2e2e;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.island-details .island-note .profile-primary-btn {
+  width: 100%;
+  margin-top: 16px;
 }
 
 /* The name is set into the photograph. Facts sit on the paper under it. */

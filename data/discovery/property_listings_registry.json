@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26T14:30:00+00:00",
-  "totalIslandsWithListings": 48,
+  "updatedAt": "2026-10-27T04:45:00+00:00",
+  "totalIslandsWithListings": 49,
   "verifiedManifest": "data/discovery/property_listings_verified.json",
   "humanDoc": "docs/FOR-SALE-ISLANDS.md",
   "islands": [
@@ -1012,6 +1012,27 @@
       ],
       "firstSeenAt": "2026-10-26T14:30:00+00:00",
       "lastSeenAt": "2026-10-26T14:30:00+00:00"
+    },
+    {
+      "islandId": "osm-way-4561771",
+      "name": "Inishdaweel",
+      "nation": "Ireland",
+      "areaKm2": 0.065,
+      "lat": 53.8829,
+      "lng": -9.6143,
+      "listingCount": 1,
+      "listings": [
+        {
+          "title": "Inishdaweel — Frank Chambers",
+          "url": "https://chambersauctioneers.com/property/inishdaweel-island-clew-bay-co-mayo-for-sale/",
+          "listingType": "whole_island",
+          "priceDisplay": "Price not stated",
+          "source": "tier4",
+          "sourceListingId": "tier4-frankchambers-inishdaweel"
+        }
+      ],
+      "firstSeenAt": "2026-10-27T04:45:00+00:00",
+      "lastSeenAt": "2026-10-27T04:45:00+00:00"
     }
   ],
   "runs": [
@@ -1338,6 +1359,17 @@
       "removedIslandIds": [],
       "source": "desk_research",
       "verifiedCount": 48
+    },
+    {
+      "runAt": "2026-10-27T04:45:00+00:00",
+      "addedCount": 1,
+      "removedCount": 0,
+      "addedIslandIds": [
+        "osm-way-4561771"
+      ],
+      "removedIslandIds": [],
+      "source": "desk_research_round4",
+      "note": "Appended only. Did not rebuild from islands.json. Did not publish the interest index."
     }
   ]
 }

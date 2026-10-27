@@ -9,10 +9,12 @@ append approved rows to `data/crowd_pins.json`. Nothing is merged into
 
 This is separate from dropping a new gold pin. The island is already there.
 
-1. Open **Filters** and turn on **Unnamed places only**. The list heading
-   becomes **Click one to name it**.
-2. Click an island. The page is the form: the island’s name, your name, your
-   email, and an optional note of how you know.
+1. **More → Contribute → Name an island already on the map.** That turns on
+   **Unnamed places only**. The list heading becomes **Unnamed — open one and
+   type its name**.
+2. Open an island marked with a question mark. The page is the form. The note
+   under the name says to use the name people there use — Gaelic, Irish, Welsh,
+   Manx, or English — and not to guess.
 3. **Save the name.** The map, the list, and the profile show that name, with
    “Suggested by …”. The canonical `islands.json` row is left unnamed until a
    published source is added.
@@ -26,12 +28,31 @@ the same form is sent through the existing suggestion inbox
 The live site shares names once the Pages secrets `IOB_SUPABASE_URL` and
 `IOB_SUPABASE_ANON_KEY` are set; the deploy writes them into `config.local.js`.
 
+## What's interesting, and what you can do
+
+On a named island, under the description:
+
+1. Two boxes: what's interesting, and what you can do. One of them is enough.
+2. Your name. No email.
+3. **Add this.** The note shows on that island, under “From visitors. Not checked.”
+
+It is not written into `islands.json`. Leave out private addresses, phone numbers, and anything meant as a guide for boats or wildlife. When Supabase has `island_visitor_notes`, other people see the note. Until that migration is applied, the note stays on this computer, and a copy is sent through the suggestion inbox when that inbox is configured.
+
 ## User flow (frontend)
 
-1. **Suggest island** (top bar) → click the map once → optional fields → **Submit
-   suggestion** (in-app; no GitHub account). Optional **Submit via GitHub** fallback.
-2. **Crowd pins** toggle shows gold `circleMarker`s from `data/crowd_pins.json`.
-3. Popups: **Suggest a name** opens the same in-app form (pin id prefilled).
+1. **More → Contribute.** Two choices: add a missing island, or name one that is
+   already on the map. A listed island whose text is wrong is a quieter third link.
+2. **Add a missing island** opens the map. On a phone the list sheet tucks away.
+   The bar says to zoom in and click the middle of the land, not the water.
+   Another click, or a drag of the gold dot, moves it. **Use this spot** opens
+   the name step.
+3. **Name it.** “What is it called?” explains the local name, and that a blank
+   is allowed. “How do you know?” takes a link, a book, or a sentence, and can
+   be left empty. A note, a photo, and an email sit behind “Add a note…”.
+   One button sends the pin. **Move the pin** returns to the map without
+   clearing the name.
+4. **Crowd pins** toggle shows gold markers from `data/crowd_pins.json`.
+   An unnamed pin’s popup says **Name this place** and opens the same form.
 
 ### Native submit configuration
 
@@ -157,8 +178,9 @@ Keep personal data minimal; prefer GitHub @handles or first names only.
 
 - Crowd pins are **not** assertions of legal title or exact boundaries — they are
   pointers for review.
-- Optional **name source URL** helps others trust labels; absence does not block
-  an unnamed pin.
+- The contribute form keeps **Add a source** collapsed. Most people will not
+  have one, and a name can still be sent. Open it for a link, a book, or a
+  sentence. Reviewers still ask when a label is contentious.
 - Do not publish email addresses or precise home addresses in `pins` or issues.
 
 ## Related files

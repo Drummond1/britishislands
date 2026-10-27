@@ -3553,3 +3553,59 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: **78** islands, **86** stories, **86** with a picture. Stories overall **1,539**, **955** with a picture. Supabase was not reloaded.
 - **Open items kicked to QUEUE.md**: Lighthouses remain the next chip.
 
+## 2026-10-27 — Quiet cover
+
+- **Goal**: Keep the first screen simple, and let the motion answer the hand.
+- **What changed**: The compass is one ring, a gold N, and a needle. The needle tips when the headline is under the pointer, and tips further when search is focused. The search line still lights. Filters sits on that same line and turns gold. Interest chips are words; the gold rule is what moves. Skye, Iona, and Staffa are photographs with the name set into the picture. A gold line draws along the bottom of a plate, the picture eases larger, and the name lifts. The list names keep their underline. The sweep across the top bar and the spark down the map edge are gone. On a phone the compass stays off the headline, and the three plates share one height in the sideways row. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. On a wide screen the list still starts on the first screen. Hovering the headline and focusing search moves the needle. The gold rule travels to Whisky. The Skye picture scales, the name lifts, and the line draws. On a phone-width column the headline is clear of the compass, Skye is the first plate, and Iona sits beside it.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Source link stays folded on Contribute
+
+- **Goal**: Stop the contribute form asking everyone for a name source.
+- **What changed**: **How do you know?** is a closed row, **Add a source (only if you have one)**. It opens for a link, a book, or a sentence, and it opens on its own when an existing pin already has one. A name can be sent with the row closed. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — One more island for sale
+
+- **Goal**: Add current whole-island broker listings that are already in the atlas.
+- **What changed**: Appended Inishdaweel (`osm-way-4561771`) to `data/discovery/property_listings_registry.json` and `data/discovery/property_tier4_obscure_raw.json`. Wrote one accepted candidate at `data/interest/candidates/zz-expansion-4-for-sale.json`. Did not rebuild the registry from `islands.json`, did not edit `islands.json`, and did not publish the interest index.
+- **Outcome / counts**: Registry **48 → 49**. The public for-sale filter was not regenerated, so it stays at **48** until a later publish. Plots, cottages, sold pages, and islands missing from the atlas were left out.
+- **Open items kicked to QUEUE.md**: None. Eilean Dà Mhèinn is in the atlas but Savills marks it under offer.
+
+## 2026-10-27 — Visitor notes on an island
+
+- **Goal**: Let someone add, in one short form, what’s interesting about an island and what you can do there.
+- **What changed**: A named island shows two boxes and a name. Adding the note shows it on that island, labelled as from a visitor and not checked. No email is asked for or stored. The note is not written into `islands.json`. Private addresses, phone numbers, and email addresses are refused. Contribute’s first choice opens that form. If the shared log is unreachable, the note stays on this computer, and a copy goes to the suggestion inbox when that inbox is configured. Migration `supabase/migrations/20261027120000_island_visitor_notes.sql` is written and not applied.
+- **Outcome / counts**: Dataset counts unchanged.
+- **Open items kicked to QUEUE.md**: Apply `20261027120000_island_visitor_notes.sql` when Supabase should share these notes.
+
+## 2026-10-27 — Contribute: place the pin, then name it
+
+- **Goal**: Make it obvious where to drop a pin, and how to name the island.
+- **What changed**: Contribute now offers two choices: add a missing island, or name one already on the map. Placing a pin is its own step: zoom in, click the middle of the land, drag the gold dot, then confirm the spot. The name step says to use the name people there use, in Gaelic, Irish, Welsh, Manx, or English, and that a blank name is allowed. How you know stays on the form, as a link, a book, or a sentence, and can be left empty. On a phone the list sheet tucks away so the map can be clicked, and the dialog sits above the page rather than inside the hidden map pane. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Interesting islands first in each filter
+
+- **Goal**: When a filter is on, put the most interesting islands at the top of the list.
+- **What changed**: `interest-rank.js` scores each published filter on its own terms, and the atlas list and Ask use that order. Unusual news leads with the strangest cited events. Castles lead with a photographed castle on a small island. Rare wildlife leads with a species named for the island, or found only there. Whisky leads with a working still, and a well-known one before a single obscure still. Books lead with a cited book that has its own picture. Local traditions lead with a custom such as Up Helly Aa, Tynwald, or the Ba. Tidal islands lead with a known crossing that also has another cited story. Film, art and music leads with a real film or a known work, ahead of a pile of untitled pictures. For sale leads with a sea island offered as an island, ahead of a house on a river ait. Remote leads with an empty island that already has a cited story, St Kilda first. A search still ranks by the words typed. The card and the profile put the highest-scoring cited row first. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. Supabase was not reloaded.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Simpler wordmark
+
+- **Goal**: Leave the top left as the name, without extra lines.
+- **What changed**: Removed “An atlas for the curious” and the “Explore the islands” control. The compass and “Find My Island” stay, and the name still returns home. Saved and More stay on the right. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged.
+- **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-27 — Quieter atlas shipped
+
+- **Goal**: Put the current atlas on findmyisland.com.
+- **What changed**: Pushed the quiet cover, the simpler wordmark, interest order (`interest-rank.js`), visitor notes (`island-notes.js`), and the contribute flow that places the pin before the name. The Inishdaweel registry row stays unpublished, so the for-sale filter remains 48. `islands.json` was not edited. Supabase was not called. The visitor-notes migration is in the repo and not applied.
+- **Outcome / counts**: Counts unchanged. Live filters stay film **139**, whisky **21**, for sale **48**, rare wildlife **36**, tidal **104**, castles **96**, books **32**, traditions **35**, unusual news **78** islands.
+- **Open items kicked to QUEUE.md**: none.
+

@@ -251,5 +251,16 @@
     "status": "for_sale",
     "notes": "Sale page names Inis Saimer, a 0.5-acre freehold island in the Erne estuary at Ballyshannon, Co. Donegal. Status Available.",
     "pageNamesIsland": true
+  },
+  {
+    "islandName": "Inishdaweel",
+    "nation": "Ireland",
+    "broker": "Frank Chambers",
+    "url": "https://chambersauctioneers.com/property/inishdaweel-island-clew-bay-co-mayo-for-sale/",
+    "listingType": "whole_island",
+    "priceDisplay": "Price not stated",
+    "status": "for_sale",
+    "notes": "Whole Clew Bay island, about 17 acres. Page is marked For Sale and gives coordinates that match atlas osm-way-4561771. No price on the page. The page says it was added about three years ago.",
+    "pageNamesIsland": true
   }
 ]

@@ -66,12 +66,12 @@
     <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css" />
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
-    <link rel="stylesheet" href="styles.css?v=name-island-2" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=ux-pass-6" />
-    <link rel="stylesheet" href="editorial-profile.css?v=ux-pass-5" />
+    <link rel="stylesheet" href="styles.css?v=contribute-pin-2" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=ux-pass-7" />
+    <link rel="stylesheet" href="editorial-profile.css?v=visitor-note-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
-    <link rel="modulepreload" href="app.js?v=ask-nl-3" />
+    <link rel="modulepreload" href="app.js?v=interest-rank-2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -103,15 +103,8 @@
     <header class="topbar topbar--atlas">
       <button class="brand brand-link" id="home-link" type="button" aria-label="Find My Island home">
         <span class="brand-mark" aria-hidden="true" data-lucide="compass"></span>
-        <div>
-          <h1>Find My Island</h1>
-          <p class="tagline">An atlas for the curious</p>
-        </div>
+        <h1>Find My Island</h1>
       </button>
-
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <button type="button" class="desktop-nav__link is-active" id="explore-home">Explore the islands</button>
-      </nav>
 
       <div class="topbar-actions">
         <button
@@ -250,7 +243,7 @@
               <option value="curated">Featured only</option>
               <option value="hide-unconfirmed" selected>Skip uncertain places</option>
             </select>
-            <label class="toggle" title="Show islands with no name. Click one, then type its name.">
+            <label class="toggle" title="Show islands with no name. Open one, then type the name people use.">
               <input type="checkbox" id="filter-unnamed" />
               <span>Unnamed places only</span>
             </label>
@@ -281,7 +274,7 @@
                 <path d="M32 32l16 16M168 32l-16 16M32 168l16-16M168 168l-16-16" />
                 <path d="M100 38v10M100 152v10M38 100h10M152 100h10" />
                 <g class="chart-rose__points" fill="currentColor" font-size="11" text-anchor="middle" font-family="Newsreader, Georgia, serif">
-                  <text class="chart-rose__n" x="100" y="16">N</text>
+                  <text class="chart-rose__n" x="100" y="26">N</text>
                 </g>
                 <circle class="chart-rose__hub" cx="100" cy="100" r="2.4" />
               </svg>
@@ -483,103 +476,6 @@
           <span aria-hidden="true" data-lucide="arrow-left"></span>
           <span class="map-back__label">Back</span>
         </button>
-        <div id="crowd-modal" class="crowd-modal" hidden>
-          <div class="crowd-modal__backdrop" id="crowd-modal-backdrop" tabindex="-1"></div>
-          <div
-            class="crowd-modal__panel"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="crowd-modal-title"
-          >
-            <h2 id="crowd-modal-title" class="crowd-modal__title">Contribute</h2>
-            <div id="crowd-step-hub" class="crowd-step">
-              <p class="crowd-modal__lead">What would you like to do?</p>
-              <div class="contribute-hub">
-                <button type="button" class="contribute-hub__card" id="contribute-new-pin">
-                  <span class="contribute-hub__badge contribute-hub__badge--community">Community</span>
-                  <span class="contribute-hub__title">New island or pin</span>
-                  <span class="contribute-hub__desc">Drop a gold pin where something is missing from the atlas.</span>
-                </button>
-                <button type="button" class="contribute-hub__card" id="contribute-update-pin">
-                  <span class="contribute-hub__badge contribute-hub__badge--community">Community</span>
-                  <span class="contribute-hub__title">Update a community pin</span>
-                  <span class="contribute-hub__desc">Add a name, photo link, or notes to an existing gold pin.</span>
-                </button>
-                <button type="button" class="contribute-hub__card" id="contribute-fix-atlas">
-                  <span class="contribute-hub__badge contribute-hub__badge--atlas">Atlas</span>
-                  <span class="contribute-hub__title">Improve an atlas island</span>
-                  <span class="contribute-hub__desc">Suggest name, text, or photo fixes for an island already in the list.</span>
-                </button>
-              </div>
-              <p class="crowd-modal__fine">
-                <strong>Gold pins</strong> = community suggestions under review.
-                <strong>Coloured dots</strong> = verified atlas islands.
-              </p>
-              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-hub-cancel">Cancel</button>
-            </div>
-            <div id="crowd-step-pick" class="crowd-step" hidden>
-              <p class="crowd-modal__lead"><strong>Drop a pin on the map</strong> (crosshair). A gold marker shows your spot.</p>
-              <p id="crowd-pick-context" class="crowd-context-banner" hidden></p>
-              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">Cancel</button>
-            </div>
-            <div id="crowd-step-form" class="crowd-step" hidden>
-              <p id="crowd-context-banner" class="crowd-context-banner" hidden></p>
-              <p id="crowd-coords-label" class="crowd-coords-label"></p>
-              <input type="hidden" id="crowd-field-kind" value="new_pin" />
-              <input type="hidden" id="crowd-field-atlas-id" value="" />
-              <label class="crowd-field" id="crowd-field-proposed-wrap" hidden>
-                <span>What should change?</span>
-                <textarea id="crowd-field-proposed" rows="2" placeholder="e.g. name spelling, description, population…"></textarea>
-              </label>
-              <label class="crowd-field">
-                <span id="crowd-label-name">Name</span>
-                <input id="crowd-field-name" type="text" autocomplete="off" placeholder="Leave blank if unknown" />
-              </label>
-              <label class="crowd-field">
-                <span>Name source <em class="crowd-optional" id="crowd-source-optional">(link required if you add a name)</em></span>
-                <input id="crowd-field-source" type="url" placeholder="Wikipedia, OSM, gazetteer…" />
-              </label>
-              <label class="crowd-field crowd-field--checkbox">
-                <input id="crowd-field-skip-source" type="checkbox" />
-                <span>No public link yet</span>
-              </label>
-              <label class="crowd-field">
-                <span>Description &amp; details</span>
-                <textarea id="crowd-field-note" rows="3" placeholder="What you see, transport, history…"></textarea>
-              </label>
-              <label class="crowd-field">
-                <span>Photo links <em class="crowd-optional">(one URL per line)</em></span>
-                <textarea id="crowd-field-photos" rows="2" placeholder="https://commons.wikimedia.org/…"></textarea>
-              </label>
-              <label class="crowd-field">
-                <span>Credit / handle <em class="crowd-optional">(optional)</em></span>
-                <input id="crowd-field-credit" type="text" autocomplete="off" placeholder="How you want to appear" />
-              </label>
-              <label class="crowd-field" id="crowd-field-pin-id-wrap">
-                <span>Community pin id <em class="crowd-optional">(if updating a gold pin)</em></span>
-                <input id="crowd-field-existing-id" type="text" autocomplete="off" placeholder="From the pin popup" />
-              </label>
-              <label class="crowd-field">
-                <span>Your email <em class="crowd-optional">(optional)</em></span>
-                <input id="crowd-field-email" type="email" autocomplete="email" placeholder="you@example.com" />
-              </label>
-              <p id="crowd-config-hint" class="crowd-config-hint" hidden></p>
-              <p id="crowd-form-error" class="crowd-form-error" hidden role="alert"></p>
-              <div class="crowd-modal__actions">
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-github-submit">Send via GitHub ↗</button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-mailto-submit" hidden>Send via email app</button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-native-submit" hidden>Send contribution</button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">Change location</button>
-                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">Close</button>
-              </div>
-            </div>
-            <div id="crowd-step-success" class="crowd-step" hidden>
-              <p class="crowd-modal__lead">Thanks — we received your contribution.</p>
-              <p class="crowd-modal__fine" id="crowd-success-detail">Reviewers check sources before gold pins or atlas updates go live.</p>
-              <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-success-done">Done</button>
-            </div>
-          </div>
-        </div>
         <button type="button" class="map-island-peek" id="map-island-peek" hidden>
           <span class="map-island-peek__thumb" id="map-island-peek-thumb" hidden></span>
           <span class="map-island-peek__body">
@@ -642,6 +538,114 @@
         </details>
       </section>
     </main>
+
+        <div id="crowd-modal" class="crowd-modal" hidden>
+          <div class="crowd-modal__backdrop" id="crowd-modal-backdrop" tabindex="-1"></div>
+          <div
+            class="crowd-modal__panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="crowd-modal-title"
+          >
+            <h2 id="crowd-modal-title" class="crowd-modal__title">Contribute</h2>
+            <div id="crowd-step-hub" class="crowd-step">
+              <p class="crowd-modal__lead">Choose one.</p>
+              <div class="contribute-hub">
+                <button type="button" class="contribute-hub__card" id="contribute-add-note">
+                  <span class="contribute-hub__step">1</span>
+                  <span class="contribute-hub__title">What’s interesting, and what you can do</span>
+                  <span class="contribute-hub__desc">Open an island. Two short boxes.</span>
+                </button>
+                <button type="button" class="contribute-hub__card" id="contribute-new-pin">
+                  <span class="contribute-hub__step">2</span>
+                  <span class="contribute-hub__title">Add a missing island</span>
+                  <span class="contribute-hub__desc">Zoom in and click the land itself. Then name it, or leave the name blank.</span>
+                </button>
+                <button type="button" class="contribute-hub__card" id="contribute-name-existing">
+                  <span class="contribute-hub__step">3</span>
+                  <span class="contribute-hub__title">Name an island already on the map</span>
+                  <span class="contribute-hub__desc">These places are marked with a question mark. Open one and type the name people use.</span>
+                </button>
+              </div>
+              <p class="crowd-modal__fine">
+                A note shows under that island straight away. A new pin is checked first.
+              </p>
+              <button type="button" class="crowd-modal__textlink" id="contribute-fix-atlas">The name or the text of a listed island is wrong</button>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-hub-cancel">Cancel</button>
+            </div>
+            <div id="crowd-step-pick" class="crowd-step" hidden>
+              <p class="crowd-modal__lead" id="crowd-pick-lead">Zoom in until you can see the island. Click the middle of the land, not the water beside it.</p>
+              <p class="crowd-modal__fine">Use the search bar if you need to find the coast first. Click again, or drag the gold dot, to move it.</p>
+              <p id="crowd-pick-status" class="crowd-pick-status" role="status">No spot yet.</p>
+              <p id="crowd-pick-context" class="crowd-context-banner" hidden></p>
+              <div class="crowd-pick__actions">
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-use-spot" disabled>Use this spot</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-cancel-pick">Cancel</button>
+              </div>
+            </div>
+            <div id="crowd-step-form" class="crowd-step" hidden>
+              <p id="crowd-context-banner" class="crowd-context-banner" hidden></p>
+              <p id="crowd-coords-label" class="crowd-coords-label"></p>
+              <input type="hidden" id="crowd-field-kind" value="new_pin" />
+              <input type="hidden" id="crowd-field-atlas-id" value="" />
+              <label class="crowd-field" id="crowd-field-proposed-wrap" hidden>
+                <span>What should change?</span>
+                <textarea id="crowd-field-proposed" rows="2" placeholder="The name, the description, or what the photo should show"></textarea>
+              </label>
+              <label class="crowd-field crowd-field--name">
+                <span id="crowd-label-name">What is it called?</span>
+                <input id="crowd-field-name" type="text" autocomplete="off" placeholder="The name people use" />
+                <span class="crowd-field__help" id="crowd-name-help">Use the name people there use — Gaelic, Irish, Welsh, Manx, or English. If you do not know it, leave this blank. Do not invent a name.</span>
+              </label>
+              <details class="crowd-source" id="crowd-source-more">
+                <summary>Add a source <em class="crowd-optional">only if you have one</em></summary>
+                <label class="crowd-field">
+                  <span>How do you know?</span>
+                  <input id="crowd-field-source" type="text" autocomplete="off" placeholder="A link, a book, or a sentence" />
+                  <span class="crowd-field__help">A link lets us check the spelling. A book title or a sentence is fine.</span>
+                </label>
+              </details>
+              <details class="crowd-more" id="crowd-more">
+                <summary>Add a note, a photo, or your name</summary>
+                <label class="crowd-field">
+                  <span>What you can see</span>
+                  <textarea id="crowd-field-note" rows="3" placeholder="A rock off the pier, a tidal islet, a loch island…"></textarea>
+                </label>
+                <label class="crowd-field">
+                  <span>Photo links <em class="crowd-optional">one web address per line</em></span>
+                  <textarea id="crowd-field-photos" rows="2" placeholder="https://commons.wikimedia.org/…"></textarea>
+                </label>
+                <label class="crowd-field">
+                  <span>Your name <em class="crowd-optional">optional</em></span>
+                  <input id="crowd-field-credit" type="text" autocomplete="name" placeholder="Shown if we publish the pin" />
+                </label>
+                <label class="crowd-field">
+                  <span>Your email <em class="crowd-optional">optional, only if you want a reply</em></span>
+                  <input id="crowd-field-email" type="email" autocomplete="email" placeholder="you@example.com" />
+                </label>
+              </details>
+              <label class="crowd-field" id="crowd-field-pin-id-wrap" hidden>
+                <span>Community pin</span>
+                <input id="crowd-field-existing-id" type="text" autocomplete="off" />
+              </label>
+              <p id="crowd-config-hint" class="crowd-config-hint" hidden></p>
+              <p id="crowd-send-note" class="crowd-modal__fine" hidden></p>
+              <p id="crowd-form-error" class="crowd-form-error" hidden role="alert"></p>
+              <div class="crowd-modal__actions">
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-native-submit" hidden>Send this pin</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-mailto-submit" hidden>Send this pin</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-github-submit">Send via GitHub</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-pick-again">Move the pin</button>
+                <button type="button" class="crowd-modal__btn crowd-modal__btn--ghost" id="crowd-close-form">Close</button>
+              </div>
+            </div>
+            <div id="crowd-step-success" class="crowd-step" hidden>
+              <p class="crowd-modal__lead">Thanks — we have this.</p>
+              <p class="crowd-modal__fine" id="crowd-success-detail">We check the place, and the name, before a new pin goes on the map.</p>
+              <button type="button" class="crowd-modal__btn crowd-modal__btn--primary" id="crowd-success-done">Done</button>
+            </div>
+          </div>
+        </div>
 
     <button
       class="chat-launcher"
@@ -843,6 +847,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=ask-nl-3" type="module"></script>
+    <script src="app.js?v=interest-rank-2" type="module"></script>
   </body>
 </html>

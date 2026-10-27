@@ -1,0 +1,23 @@
+{
+  "slug": "for-sale",
+  "generatedAt": "2026-10-27T04:45:00+00:00",
+  "source": "data/discovery/property_listings_registry.json",
+  "rows": [
+    {
+      "category_slug": "for-sale",
+      "island_id": "osm-way-4561771",
+      "island_name": "Inishdaweel",
+      "facet": "listing",
+      "title": "Inishdaweel — Frank Chambers",
+      "source_url": "https://chambersauctioneers.com/property/inishdaweel-island-clew-bay-co-mayo-for-sale/",
+      "source_title": "Inishdaweel — Frank Chambers",
+      "licence": "outbound-link",
+      "evidence": "Frank Chambers marks Inishdaweel Island for sale. The page gives the island as about 17 acres in Clew Bay and says a buyer can own the island. The coordinates on the page match the atlas island. No price is stated.",
+      "external_id": "tier4-frankchambers-inishdaweel",
+      "confidence": "high",
+      "status": "accepted",
+      "reject_reason": "",
+      "fetched_at": "2026-10-27T04:45:00+00:00"
+    }
+  ]
+}

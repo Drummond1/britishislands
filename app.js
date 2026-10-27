@@ -25,8 +25,10 @@ import {
   validateContributionFields,
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
-} from "./crowd-pins.js";
+} from "./crowd-pins.js?v=visitor-note-1";
 import { suggestedName, refreshSuggestedNames, saveIslandName } from "./name-island.js";
+import { notesForIsland, refreshIslandNotes, saveIslandNote, visitorName } from "./island-notes.js?v=visitor-note-2";
+import { rankIslands, rankRemoteIslands, scoreCitedItem } from "./interest-rank.js";
 import {
   searchIslands as agentSearchIslands,
   countIslands as agentCountIslands,
@@ -1530,7 +1532,7 @@ function renderCorrectionReport(island) {
       <h3>Contribute improvements</h3>
       <p class="correction-report__lead">
         Suggest a better <strong>name</strong>, <strong>description</strong>, or <strong>photo links</strong>.
-        If you propose a name, add a source link so we can verify it.
+        A source helps if you have one.
       </p>
       ${curatedNote}
       ${unconfirmedNote}
@@ -1841,24 +1843,87 @@ function setCrowdPickMode(on) {
 
 function setCrowdDraftMarker(lat, lng) {
   if (!map) return;
-  clearCrowdDraftMarker();
-  state.crowdDraftMarker = L.circleMarker([lat, lng], {
-    ...CROWD_MARKER_STYLE,
-    radius: 11,
-    weight: 3,
+  if (state.crowdDraftMarker) {
+    state.crowdDraftMarker.setLatLng([lat, lng]);
+    return;
+  }
+  const icon = L.divIcon({
+    className: "crowd-draft-pin",
+    html: '<span class="crowd-draft-pin__dot"></span>',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+  });
+  state.crowdDraftMarker = L.marker([lat, lng], {
+    icon,
+    draggable: true,
+    zIndexOffset: 2000,
+    keyboard: false,
+    title: "Drag onto the island",
+  });
+  state.crowdDraftMarker.on("dragend", () => {
+    refreshPickPlacement();
   });
   state.crowdDraftMarker.addTo(map);
 }
 
-function clearCrowdMapPicker() {
+function stopCrowdMapClicks() {
   if (state.crowdMapClickHandler && map) {
     map.off("click", state.crowdMapClickHandler);
     state.crowdMapClickHandler = null;
   }
-  const wrap = document.getElementById("map");
-  if (wrap) wrap.classList.remove("map--crowd-pick");
-  clearCrowdDraftMarker();
+  if (state.crowdPickZoomHandler && map) {
+    map.off("zoomend", state.crowdPickZoomHandler);
+    state.crowdPickZoomHandler = null;
+  }
+  document.getElementById("map")?.classList.remove("map--crowd-pick");
   setCrowdPickMode(false);
+}
+
+function clearCrowdMapPicker() {
+  stopCrowdMapClicks();
+  clearCrowdDraftMarker();
+}
+
+function refreshPickCopy() {
+  const lead = document.getElementById("crowd-pick-lead");
+  if (!lead) return;
+  const zoom = map?.getZoom?.() ?? 0;
+  lead.textContent =
+    zoom < 12
+      ? "Zoom in until you can see the island clearly. Then click the middle of the land, not the water."
+      : "Click the middle of the land, not the water beside it. Click again, or drag the gold dot, to move it.";
+}
+
+function refreshPickPlacement() {
+  const button = document.getElementById("crowd-use-spot");
+  const status = document.getElementById("crowd-pick-status");
+  const placed = Boolean(state.crowdDraftMarker);
+  if (button) button.disabled = !placed;
+  if (!status) return;
+  if (!placed) {
+    status.textContent = "No spot yet.";
+    return;
+  }
+  const zoom = map?.getZoom?.() ?? 0;
+  status.textContent =
+    zoom < 12
+      ? "Gold dot is down, but the map is still zoomed out. Zoom in and drag the dot onto the land."
+      : "Gold dot is down. Drag it if it sits in the water, then continue.";
+}
+
+function prepareContributeSurface() {
+  document.body.classList.remove("filters-open");
+  document.getElementById("filters-toggle")?.setAttribute("aria-expanded", "false");
+  if (typeof mobileNav !== "undefined" && mobileNav.isActive() && mobileNav.view !== "map") {
+    mobileNav.setView("map");
+  }
+  requestAnimationFrame(() => {
+    try {
+      map?.invalidateSize();
+    } catch (_) {
+      /* ignore */
+    }
+  });
 }
 
 function rebuildCrowdPinsLayer() {
@@ -1890,6 +1955,12 @@ async function loadCrowdPinsAndRender() {
   rebuildCrowdPinsLayer();
 }
 
+function normalizeCrowdSource(value) {
+  const source = String(value || "").trim();
+  if (/^www\./i.test(source)) return `https://${source}`;
+  return source;
+}
+
 function readCrowdFormFields(modal) {
   const kind = document.getElementById("crowd-field-kind")?.value || "new_pin";
   const atlasId = document.getElementById("crowd-field-atlas-id")?.value || "";
@@ -1899,7 +1970,9 @@ function readCrowdFormFields(modal) {
     lng: Number(modal.dataset.crowdLng),
     name: document.getElementById("crowd-field-name")?.value || "",
     note: document.getElementById("crowd-field-note")?.value || "",
-    nameSourceUrl: document.getElementById("crowd-field-source")?.value || "",
+    nameSourceUrl: document.getElementById("crowd-source-more")?.open
+      ? normalizeCrowdSource(document.getElementById("crowd-field-source")?.value || "")
+      : "",
     credit: document.getElementById("crowd-field-credit")?.value || "",
     existingPinId: document.getElementById("crowd-field-existing-id")?.value || "",
     contactEmail: document.getElementById("crowd-field-email")?.value || "",
@@ -1908,7 +1981,7 @@ function readCrowdFormFields(modal) {
     contributionKind: kind,
     atlasIslandId: atlasId,
     atlasIslandName: island?.name || "",
-    skipSourceCheck: Boolean(document.getElementById("crowd-field-skip-source")?.checked),
+    skipSourceCheck: true,
   };
 }
 
@@ -1930,9 +2003,11 @@ function resetCrowdFormFields() {
   const kindEl = document.getElementById("crowd-field-kind");
   if (kindEl) kindEl.value = "new_pin";
   const nameLabel = document.getElementById("crowd-label-name");
-  if (nameLabel) nameLabel.textContent = "Name";
-  const skip = document.getElementById("crowd-field-skip-source");
-  if (skip) skip.checked = false;
+  if (nameLabel) nameLabel.textContent = "What is it called?";
+  const more = document.getElementById("crowd-more");
+  if (more) more.open = false;
+  const sourceMore = document.getElementById("crowd-source-more");
+  if (sourceMore) sourceMore.open = false;
 }
 
 function applyContributeFormUi(kind) {
@@ -1950,24 +2025,35 @@ function applyContributeFormUi(kind) {
       banner.hidden = false;
       banner.className = "crowd-context-banner crowd-context-banner--atlas";
       banner.textContent = isl
-        ? `Atlas island “${isl.name}” — link sources for name changes; we review before updates go live.`
-        : "Atlas island — your changes are reviewed with linked sources before they go live.";
+        ? `“${isl.name}” is already on the map. Say what should change.`
+        : "This island is already on the map. Say what should change.";
     } else if (kind === "update_pin") {
       banner.hidden = false;
       banner.className = "crowd-context-banner crowd-context-banner--community";
-      banner.textContent =
-        "Community pin — appears as a gold marker after maintainer approval.";
+      banner.textContent = "Write the name people use. Leave it blank if you still do not know it.";
     } else {
       banner.hidden = false;
       banner.className = "crowd-context-banner crowd-context-banner--community";
-      banner.textContent =
-        "New community pin — not in the main atlas until verified and sourced.";
+      banner.textContent = "The gold dot is the place. A name helps. A blank name is still useful.";
     }
   }
+  const help = document.getElementById("crowd-name-help");
+  const nameLabel = document.getElementById("crowd-label-name");
+  const nameInput = document.getElementById("crowd-field-name");
+  if (help) {
+    help.textContent =
+      kind === "fix_atlas"
+        ? "Fill this in only if the name itself is wrong. Use the name people there use."
+        : "Use the name people there use — Gaelic, Irish, Welsh, Manx, or English. If you do not know it, leave this blank. Do not invent a name.";
+  }
+  if (nameLabel && kind !== "fix_atlas") nameLabel.textContent = "What is it called?";
+  if (nameInput && kind !== "fix_atlas") nameInput.placeholder = "The name people use";
   if (proposedWrap) proposedWrap.hidden = kind !== "fix_atlas";
-  if (pinWrap) pinWrap.hidden = kind === "fix_atlas";
+  if (pinWrap) pinWrap.hidden = true;
+  const moveBtn = document.getElementById("crowd-pick-again");
+  if (moveBtn) moveBtn.hidden = kind === "fix_atlas";
   if (coordsEl && kind === "fix_atlas") {
-    coordsEl.textContent = "Location taken from the atlas island you have open.";
+    coordsEl.textContent = "This is the island already on the map.";
   }
 }
 
@@ -1976,17 +2062,23 @@ function updateContributeSubmitButtons(cfg) {
   const githubBtn = document.getElementById("crowd-github-submit");
   const mailtoBtn = document.getElementById("crowd-mailto-submit");
   const hint = document.getElementById("crowd-config-hint");
+  const note = document.getElementById("crowd-send-note");
+  const kind = document.getElementById("crowd-field-kind")?.value || "new_pin";
+  const primary =
+    kind === "fix_atlas" ? "Send this correction" : kind === "update_pin" ? "Send this name" : "Send this pin";
   const configured = isCrowdSuggestConfigured(cfg);
   if (nativeBtn) {
     nativeBtn.hidden = !configured;
-    nativeBtn.textContent = "Send contribution";
+    nativeBtn.textContent = primary;
   }
   if (mailtoBtn) {
     mailtoBtn.hidden = configured;
+    mailtoBtn.textContent = primary;
     mailtoBtn.classList.toggle("crowd-modal__btn--primary", !configured);
     mailtoBtn.classList.toggle("crowd-modal__btn--ghost", configured);
   }
   if (githubBtn) {
+    githubBtn.textContent = "Send via GitHub";
     githubBtn.classList.remove("crowd-modal__btn--primary");
     githubBtn.classList.add("crowd-modal__btn--ghost");
     if (configured && nativeBtn) {
@@ -1998,14 +2090,10 @@ function updateContributeSubmitButtons(cfg) {
     nativeBtn.classList.remove("crowd-modal__btn--primary");
     nativeBtn.classList.add("crowd-modal__btn--ghost");
   }
-  if (hint) {
-    if (configured) {
-      hint.hidden = true;
-    } else {
-      hint.hidden = false;
-      hint.textContent =
-        "One-click send: add GitHub repo secret CROWD_FORM_EMAIL (FormSubmit) or set config.local.js. Until then use GitHub, email app, or copy the pre-filled issue.";
-    }
+  if (hint) hint.hidden = true;
+  if (note) {
+    note.hidden = configured;
+    note.textContent = "This opens your email app with the place and the name filled in.";
   }
 }
 
@@ -2016,8 +2104,16 @@ function prefillCrowdFormFromPin(pin) {
   const srcEl = document.getElementById("crowd-field-source");
   const idEl = document.getElementById("crowd-field-existing-id");
   if (nameEl && pin.name) nameEl.value = pin.name;
-  if (noteEl && pin.note) noteEl.value = pin.note;
-  if (srcEl && pin.nameSourceUrl) srcEl.value = pin.nameSourceUrl;
+  if (noteEl && pin.note) {
+    noteEl.value = pin.note;
+    const more = document.getElementById("crowd-more");
+    if (more) more.open = true;
+  }
+  if (srcEl && pin.nameSourceUrl) {
+    srcEl.value = pin.nameSourceUrl;
+    const sourceMore = document.getElementById("crowd-source-more");
+    if (sourceMore) sourceMore.open = true;
+  }
   if (idEl) idEl.value = pin.id || "";
 }
 
@@ -2043,6 +2139,11 @@ function initCrowdSuggestUi() {
 
   if (!modal || !btnOpen) return;
 
+  document.getElementById("crowd-source-more")?.addEventListener("toggle", (event) => {
+    if (!event.currentTarget.open) return;
+    document.getElementById("crowd-field-source")?.focus();
+  });
+
   let contributeKind = "new_pin";
 
   loadCrowdSuggestConfig().then((cfg) => {
@@ -2067,10 +2168,19 @@ function initCrowdSuggestUi() {
     if (stepPick) stepPick.hidden = which !== "pick";
     if (stepForm) stepForm.hidden = which !== "form";
     if (stepSuccess) stepSuccess.hidden = which !== "success";
+    const title = document.getElementById("crowd-modal-title");
+    if (!title) return;
+    if (which === "hub") title.textContent = "Contribute";
+    else if (which === "pick") title.textContent = "Click the island";
+    else if (which === "success") title.textContent = "Sent";
+    else if (contributeKind === "fix_atlas") title.textContent = "Suggest a correction";
+    else if (contributeKind === "update_pin") title.textContent = "Name this pin";
+    else title.textContent = "Name it";
   }
 
   function closeModal() {
     clearCrowdMapPicker();
+    document.body.classList.remove("crowd-placing");
     hideFormError();
     modal.hidden = true;
     contributeKind = "new_pin";
@@ -2080,13 +2190,13 @@ function initCrowdSuggestUi() {
 
   function showForm(lat, lng, opts = {}) {
     hideFormError();
-    setCrowdPickMode(false);
+    stopCrowdMapClicks();
     const kind = opts.kind || contributeKind;
     contributeKind = kind;
     applyContributeFormUi(kind);
     showStep("form");
     if (coordsEl && kind !== "fix_atlas") {
-      coordsEl.textContent = `Pin: ${lat.toFixed(5)}, ${lng.toFixed(5)} (WGS84)`;
+      coordsEl.textContent = "The gold dot marks this spot. Move the pin if it sits in the water.";
     }
     modal.dataset.crowdLat = String(lat);
     modal.dataset.crowdLng = String(lng);
@@ -2105,54 +2215,58 @@ function initCrowdSuggestUi() {
       const nameLabel = document.getElementById("crowd-label-name");
       if (nameLabel) {
         nameLabel.textContent =
-          kind === "fix_atlas" ? "New name (only if changing)" : "Name";
+          kind === "fix_atlas" ? "New name, only if it is wrong" : "What is it called?";
       }
+      applyContributeFormUi(kind);
     }
     if (opts.prefillPin) prefillCrowdFormFromPin(opts.prefillPin);
+    if (!window.matchMedia("(pointer: coarse)").matches) {
+      const focusId = kind === "fix_atlas" ? "crowd-field-proposed" : "crowd-field-name";
+      requestAnimationFrame(() => document.getElementById(focusId)?.focus());
+    }
     loadCrowdSuggestConfig().then((cfg) => {
       state.crowdSuggestConfig = cfg;
       updateContributeSubmitButtons(cfg);
     });
   }
 
-  function startPick(kind, hintText) {
+  function startPick(kind) {
     contributeKind = kind || "new_pin";
     clearCrowdMapPicker();
     hideFormError();
+    prepareContributeSurface();
+    document.body.classList.add("crowd-placing");
     showStep("pick");
     setCrowdPickMode(true);
-    if (pickContext) {
-      if (hintText) {
-        pickContext.hidden = false;
-        pickContext.textContent = hintText;
-        pickContext.className = "crowd-context-banner crowd-context-banner--community";
-      } else {
-        pickContext.hidden = true;
-      }
-    }
-    const wrap = document.getElementById("map");
-    if (wrap) wrap.classList.add("map--crowd-pick");
+    refreshPickCopy();
+    refreshPickPlacement();
+    if (pickContext) pickContext.hidden = true;
+    document.getElementById("map")?.classList.add("map--crowd-pick");
     const handler = (e) => {
-      if (state.crowdMapClickHandler && map) {
-        map.off("click", state.crowdMapClickHandler);
-        state.crowdMapClickHandler = null;
-      }
-      if (wrap) wrap.classList.remove("map--crowd-pick");
       setCrowdDraftMarker(e.latlng.lat, e.latlng.lng);
-      showForm(e.latlng.lat, e.latlng.lng, { kind: contributeKind });
+      refreshPickPlacement();
     };
     state.crowdMapClickHandler = handler;
+    state.crowdPickZoomHandler = () => {
+      refreshPickCopy();
+      refreshPickPlacement();
+    };
     if (!map) return;
     map.on("click", handler);
+    map.on("zoomend", state.crowdPickZoomHandler);
   }
 
   function openContributeHub() {
+    prepareContributeSurface();
+    document.body.classList.add("crowd-placing");
     playReveal(modal);
     showStep("hub");
     hideFormError();
   }
 
   function openCrowdModal(opts = {}) {
+    prepareContributeSurface();
+    document.body.classList.add("crowd-placing");
     playReveal(modal);
     if (opts.kind === "fix_atlas" && opts.atlasIslandId) {
       const isl = state.byId.get(opts.atlasIslandId);
@@ -2190,12 +2304,31 @@ function initCrowdSuggestUi() {
     resetCrowdFormFields();
     startPick("new_pin");
   });
-  document.getElementById("contribute-update-pin")?.addEventListener("click", () => {
-    resetCrowdFormFields();
-    startPick(
-      "update_pin",
-      "Click a gold community pin on the map, or drop a new pin if you are adding one.",
-    );
+  document.getElementById("contribute-add-note")?.addEventListener("click", () => {
+    closeModal();
+    document.body.classList.remove("filters-open");
+    if (typeof mobileNav !== "undefined" && mobileNav.isActive()) mobileNav.setView("islands");
+    const form = document.getElementById("island-note-form");
+    if (form && els.details && !els.details.hidden) {
+      document.getElementById("island-note")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById("island-note-interesting")?.focus({ preventScroll: true });
+      return;
+    }
+    if (state.activeId && els.details && !els.details.hidden) {
+      showToast("Name this one first, or open an island that already has a name.", 4200);
+      return;
+    }
+    showToast("Open an island, then add what you know.", 4200);
+  });
+  document.getElementById("contribute-name-existing")?.addEventListener("click", () => {
+    closeModal();
+    document.body.classList.remove("filters-open");
+    if (typeof mobileNav !== "undefined" && mobileNav.isActive()) mobileNav.setView("islands");
+    if (els.filterUnnamed && !els.filterUnnamed.checked) {
+      els.filterUnnamed.checked = true;
+      els.filterUnnamed.dispatchEvent(new Event("change"));
+    }
+    showToast("Open a place with a question mark, then type the name people use.", 5200);
   });
   document.getElementById("contribute-fix-atlas")?.addEventListener("click", () => {
     resetCrowdFormFields();
@@ -2208,11 +2341,7 @@ function initCrowdSuggestUi() {
       });
       return;
     }
-    hideFormError();
-    showStep("hub");
-    showFormError(
-      "Open an island from the list first (so we know which atlas entry you mean), then tap Contribute → Improve an atlas island.",
-    );
+    showToast("Open the island from the list first, then come back here.", 4200);
   });
   hubCancel?.addEventListener("click", closeModal);
   backdrop?.addEventListener("click", () => {
@@ -2227,17 +2356,28 @@ function initCrowdSuggestUi() {
   successDone?.addEventListener("click", closeModal);
   pickAgain?.addEventListener("click", () => {
     const kind = document.getElementById("crowd-field-kind")?.value || contributeKind;
-    resetCrowdFormFields();
-    clearCrowdDraftMarker();
-    if (kind === "fix_atlas") {
-      const aid = state.activeId;
-      const isl = aid ? state.byId.get(aid) : null;
-      if (isl) {
-        showForm(isl.lat, isl.lng, { kind: "fix_atlas", atlasIslandId: aid });
-        return;
-      }
-    }
+    if (kind === "fix_atlas") return;
+    const lat = Number(modal.dataset.crowdLat);
+    const lng = Number(modal.dataset.crowdLng);
     startPick(kind);
+    if (Number.isFinite(lat) && Number.isFinite(lng)) {
+      setCrowdDraftMarker(lat, lng);
+      refreshPickPlacement();
+    }
+  });
+  document.getElementById("crowd-use-spot")?.addEventListener("click", () => {
+    const ll = state.crowdDraftMarker?.getLatLng?.();
+    if (!ll) return;
+    showForm(ll.lat, ll.lng, { kind: contributeKind });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || modal.hidden) return;
+    if (modal.classList.contains("crowd-modal--picking")) {
+      clearCrowdMapPicker();
+      openContributeHub();
+      return;
+    }
+    closeModal();
   });
 
   async function submitContribution(viaGithub) {
@@ -2853,29 +2993,41 @@ function interestKicker(item) {
   return INTEREST_STORY_FACETS[item.facet] || "Cited";
 }
 
-function castlePhotoRank(islandId) {
-  const slug = ["island-books", "island-castles", "local-traditions", "unusual-news"].includes(state.activeInterestSlug)
-    ? state.activeInterestSlug
-    : "island-castles";
-  const items = state.interestIndex?.stories?.[slug]?.[islandId] || [];
-  return items.some((item) => item?.image?.thumbUrl) ? 0 : 1;
-}
+let interestSlugByIsland = null;
 
-function whiskyIslandRank(islandId) {
-  const items = state.interestIndex?.stories?.["whisky-distilleries"]?.[islandId] || [];
-  const order = whiskySubdivisions().map((row) => row.id);
-  const still = items.find((item) => item?.facet === "distillery");
-  if (still) {
-    const rank = order.indexOf(still.subdivision);
-    if (rank >= 0) return rank;
-  }
-  for (const facet of ["story", "silent", "planned"]) {
-    if (items.some((item) => item?.facet === facet)) {
-      const rank = order.indexOf(facet);
-      if (rank >= 0) return rank;
+function interestSlugsFor(islandId) {
+  if (!interestSlugByIsland) {
+    interestSlugByIsland = new Map();
+    const members = state.interestIndex?.members || {};
+    for (const [slug, ids] of Object.entries(members)) {
+      if (!Array.isArray(ids)) continue;
+      for (const id of ids) {
+        const list = interestSlugByIsland.get(id);
+        if (list) list.push(slug);
+        else interestSlugByIsland.set(id, [slug]);
+      }
     }
   }
-  return order.length + 1;
+  return interestSlugByIsland.get(islandId) || [];
+}
+
+function citedItems(slug, islandId) {
+  if (slug === "for-sale") {
+    const titles = state.interestIndex?.highlights?.[slug]?.[islandId];
+    if (!Array.isArray(titles)) return [];
+    return titles.map((title) => ({ title: title && typeof title === "object" ? title.title : title, facet: "listing" }));
+  }
+  const items = state.interestIndex?.stories?.[slug]?.[islandId];
+  return Array.isArray(items) ? items : [];
+}
+
+function orderedCitedItems(slug, islandId, items) {
+  const island = state.byId?.get(islandId) || { id: islandId, name: "" };
+  return items.slice().sort((a, b) => {
+    const diff = scoreCitedItem(slug, b, island) - scoreCitedItem(slug, a, island);
+    if (diff) return diff;
+    return String(a?.title || "").localeCompare(String(b?.title || ""));
+  });
 }
 
 function interestStoryGroups(islandId) {
@@ -2898,6 +3050,7 @@ function interestStoryGroups(islandId) {
       if (state.interestFacet && slug === "film-art-music") {
         items = items.filter((item) => item?.facet === state.interestFacet && item?.title !== lead?.title);
       }
+      items = orderedCitedItems(slug, islandId, items);
       if (slug === "whisky-distilleries") {
         return whiskySubdivisions()
           .map((spec) => {
@@ -3025,42 +3178,15 @@ function interestStoriesFor(islandId, facet = state.interestFacet) {
   return items.filter((item) => item?.facet === facet);
 }
 
-function distilleryStoryScore(item) {
-  const text = `${item?.title || ""} ${item?.summary || ""}`.toLowerCase();
-  let score = item?.image?.thumbUrl ? 5 : 0;
-  for (const hint of ["oldest", "founded", "established", "first ", "peated", "northernmost", "classic malt", "shore", "only "]) {
-    if (text.includes(hint)) score += 2;
-  }
-  score += Math.min((item?.summary || "").length, 320) / 160;
-  return score;
-}
-
-function wildlifeStoryScore(item) {
-  const text = `${item?.title || ""} ${item?.summary || ""}`.toLowerCase();
-  let score = item?.image?.thumbUrl ? 8 : 0;
-  for (const hint of ["endemic", "only", "restricted", "rare", "subspecies", "stronghold", "largest"]) {
-    if (text.includes(hint)) score += 2;
-  }
-  score += Math.min((item?.summary || "").length, 400) / 200;
-  return score;
-}
-
 function interestLeadStory(islandId) {
   if (!interestFeatureMode()) return null;
   const items = interestStoriesFor(islandId);
   if (!items.length) return null;
-  const islandName = (state.byId?.get(islandId)?.name || "").toLowerCase();
+  const island = state.byId?.get(islandId) || { id: islandId, name: "" };
+  const islandName = (island.name || "").toLowerCase();
   const works = items.filter((item) => (item.title || "").trim().toLowerCase() !== islandName);
   const pool = works.length ? works : items;
-  if (state.activeInterestSlug === "whisky-distilleries") {
-    const stills = pool.filter((item) => item?.facet === "distillery");
-    const ranked = stills.length && !state.interestFacet ? stills : pool;
-    return [...ranked].sort((a, b) => distilleryStoryScore(b) - distilleryStoryScore(a))[0];
-  }
-  if (state.activeInterestSlug === "unusual-wildlife") {
-    return [...pool].sort((a, b) => wildlifeStoryScore(b) - wildlifeStoryScore(a))[0];
-  }
-  return pool.find((item) => item?.image?.thumbUrl) || pool[0];
+  return orderedCitedItems(state.activeInterestSlug, islandId, pool)[0] || null;
 }
 
 function interestMoreLink(item) {
@@ -3293,6 +3419,7 @@ async function loadInterestIndex() {
     if (!res.ok) return;
     const data = await res.json();
     state.interestIndex = data;
+    interestSlugByIsland = null;
     renderInterestFilters();
     renderBrowseQuickChips();
     const slug = new URLSearchParams(window.location.search).get("interest");
@@ -3314,6 +3441,8 @@ async function loadInterestIndex() {
       if (slug === "for-sale" && els.filterForSale) els.filterForSale.checked = true;
       renderInterestFilters();
       renderBrowseQuickChips();
+      applyFilters();
+    } else if (activeBrowseQuick === "remote") {
       applyFilters();
     }
     const open = state.activeId && state.byId?.get(state.activeId);
@@ -4380,7 +4509,7 @@ function applyFilters(opts = {}) {
       const interest = interestCategories().find((c) => c.slug === state.activeInterestSlug);
       els.listHeading.textContent = interest?.label || "Islands";
     }
-    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Click one to name it";
+    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed — open one and type its name";
     else if (hasUserDiscoveryIntent()) els.listHeading.textContent = "Search results";
     else els.listHeading.textContent = "Islands to inspire you";
   }
@@ -4466,14 +4595,10 @@ function applyFilters(opts = {}) {
   } else {
     state.filtered = state.islands.filter(passesScope);
     if (!skipSort) {
-      if (state.activeInterestSlug === "whisky-distilleries") {
-        state.filtered.sort(
-          (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || a.name.localeCompare(b.name),
-        );
-      } else if (state.activeInterestSlug === "island-castles" || state.activeInterestSlug === "island-books" || state.activeInterestSlug === "local-traditions" || state.activeInterestSlug === "unusual-news") {
-        state.filtered.sort(
-          (a, b) => castlePhotoRank(a.id) - castlePhotoRank(b.id) || a.name.localeCompare(b.name),
-        );
+      if (state.activeInterestSlug) {
+        state.filtered = rankIslands(state.activeInterestSlug, state.filtered, citedItems, interestSlugsFor);
+      } else if (activeBrowseQuick === "remote") {
+        state.filtered = rankRemoteIslands(state.filtered, interestSlugsFor);
       } else if (!hasUserDiscoveryIntent()) {
         state.filtered.sort(
           (a, b) => browseAppeal(b) - browseAppeal(a) || a.name.localeCompare(b.name),
@@ -4593,8 +4718,8 @@ function updateSidebarOrient() {
   const hasFilters = countActiveFilters() > 0 || Boolean(state.activeInterestSlug);
   const hasQuery = Boolean(els.search?.value?.trim());
   if (els.filterUnnamed?.checked && !hasQuery && !state.activeInterestSlug) {
-    if (el) el.textContent = "Click one, then type its name.";
-    if (heading) heading.textContent = "Click one to name it";
+    if (el) el.textContent = "Open one, then type the name people use.";
+    if (heading) heading.textContent = "Unnamed — open one and type its name";
     return;
   }
   if (state.askFocusIds) {
@@ -4609,8 +4734,12 @@ function updateSidebarOrient() {
 }
 
 function settleSuggestedNames() {
-  refreshSuggestedNames()
-    .then(async (changed) => {
+  Promise.all([
+    refreshSuggestedNames().catch(() => false),
+    refreshIslandNotes().catch(() => false),
+  ])
+    .then(async ([nameChanged, notesChanged]) => {
+      let changed = Boolean(nameChanged);
       let named = false;
       try {
         const raw = JSON.parse(localStorage.getItem("iobSuggestedNames") || "[]");
@@ -4626,14 +4755,17 @@ function settleSuggestedNames() {
           /* overlay stays lazy */
         }
       }
-      if (!changed) return;
-      for (const island of state.islands) {
-        delete island.__searchName;
-        delete island.__searchHay;
+      if (!changed && !notesChanged) return;
+      if (changed) {
+        for (const island of state.islands) {
+          delete island.__searchName;
+          delete island.__searchHay;
+        }
+        applyFilters({ skipMarkers: false });
       }
-      applyFilters({ skipMarkers: false });
       const open = state.activeId ? state.byId.get(state.activeId) : null;
-      if (open && els.details && !els.details.hidden) renderDetails(open);
+      const typingNote = document.activeElement?.closest?.("#island-note-form");
+      if (open && els.details && !els.details.hidden && (changed || !typingNote)) renderDetails(open);
     })
     .catch(() => {});
 }
@@ -5658,9 +5790,10 @@ function renderNameIslandForm(island, previous) {
   return `
     <form class="name-island" id="name-island-form" novalidate>
       <h2 class="name-island__title">Name this island</h2>
-      <p class="name-island__lead">${place ? `${escapeHtml(place)}. ` : ""}Type the name. It shows on the map as soon as you save.</p>
+      <p class="name-island__lead">${place ? `${escapeHtml(place)}. ` : ""}This place is already on the map, with no name. It shows on the map as soon as you save.</p>
       <label for="name-island-called">What is it called?</label>
-      <input id="name-island-called" name="islandName" type="text" required maxlength="80" autocomplete="off" value="${escapeAttr(previous?.islandName || "")}" />
+      <input id="name-island-called" name="islandName" type="text" required maxlength="80" autocomplete="off" placeholder="The name people use" value="${escapeAttr(previous?.islandName || "")}" />
+      <p class="name-island__how">Use the name people there use. Gaelic, Irish, Welsh, Manx, or English is fine. If you are not sure of the spelling, say so below. If you do not know the name, go back.</p>
       <label for="name-island-person">Your name</label>
       <input id="name-island-person" name="personName" type="text" required maxlength="60" autocomplete="name" value="${escapeAttr(previous?.contributorName || "")}" />
       <label for="name-island-email">Email</label>
@@ -5681,6 +5814,43 @@ function renderSuggestedCredit(row) {
     <p class="name-island__credit">Suggested by ${escapeHtml(row.contributorName)}.</p>
     ${source}
     <button type="button" class="name-island__change" id="name-island-change">Change this name</button>`;
+}
+
+function renderIslandNotes(island) {
+  const notes = notesForIsland(island.id).slice(0, 12);
+  const items = notes
+    .map((note) => {
+      const bits = [];
+      if (note.interesting) {
+        bits.push(`<p><span>Interesting.</span> ${escapeHtml(note.interesting)}</p>`);
+      }
+      if (note.canDo) {
+        bits.push(`<p><span>You can.</span> ${escapeHtml(note.canDo)}</p>`);
+      }
+      const where = note.shared ? "" : `<span class="island-note__where">On this computer.</span>`;
+      return `<li>${bits.join("")}<p class="island-note__by">From ${escapeHtml(note.contributorName)}. ${where}</p></li>`;
+    })
+    .join("");
+  const list = items
+    ? `<p class="island-note__kicker">From visitors. Not checked.</p><ul class="island-note__list">${items}</ul>`
+    : "";
+  return `
+    <section class="island-note" id="island-note">
+      <h3 class="island-note__title">Add what you know</h3>
+      <p class="island-note__lead">What's interesting, and what you can do. It shows here straight away.</p>
+      <p class="island-note__note">Leave out private addresses, and anything meant as a guide for boats or wildlife.</p>
+      ${list}
+      <form class="island-note__form" id="island-note-form" novalidate>
+        <label for="island-note-interesting">What's interesting?</label>
+        <textarea id="island-note-interesting" name="interesting" rows="2" maxlength="280" placeholder="A view, a story, a building"></textarea>
+        <label for="island-note-do">What can you do?</label>
+        <textarea id="island-note-do" name="canDo" rows="2" maxlength="280" placeholder="A walk, a swim, a ferry"></textarea>
+        <label for="island-note-person">Your name</label>
+        <input id="island-note-person" name="personName" type="text" maxlength="60" autocomplete="name" value="${escapeAttr(visitorName())}" />
+        <p class="island-note__error" id="island-note-error" hidden role="alert"></p>
+        <button type="submit" class="profile-primary-btn">Add this</button>
+      </form>
+    </section>`;
 }
 
 function renderDetails(island) {
@@ -5758,6 +5928,7 @@ function renderDetails(island) {
     ${renderSummitLine(island)}
     ${renderHeritageLine(island)}
     ${moreLink}
+    ${showNameForm ? "" : renderIslandNotes(island)}
     ${renderInterestStories(island)}
     ${renderPropertyListings(island)}
     ${renderFerries(island)}
@@ -5884,6 +6055,44 @@ function renderDetails(island) {
   document.getElementById("name-island-change")?.addEventListener("click", () => {
     renamingIslandId = island.id;
     renderDetails(island);
+  });
+
+  document.getElementById("island-note-form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector("[type=submit]");
+    const err = document.getElementById("island-note-error");
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Adding…";
+    }
+    if (err) err.hidden = true;
+    const result = await saveIslandNote({
+      island,
+      interesting: form.interesting.value,
+      canDo: form.canDo.value,
+      personName: form.personName.value,
+    });
+    if (!result.ok) {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = "Add this";
+      }
+      if (err) {
+        err.hidden = false;
+        err.textContent = result.message;
+      }
+      return;
+    }
+    const toast =
+      result.where === "shared"
+        ? "Added."
+        : result.where === "sent"
+          ? "Added. A copy was sent to be checked."
+          : "Added on this computer.";
+    renderDetails(island);
+    showToast(toast, 3200);
+    document.getElementById("island-note")?.scrollIntoView({ block: "nearest" });
   });
 
   syncChatLauncherContext();
@@ -9277,23 +9486,13 @@ function chatGuideIslands(slug) {
   const ids = state.interestIndex?.members?.[slug];
   if (!Array.isArray(ids) || !ids.length) return [];
   const islands = ids.map((id) => state.byId.get(id)).filter(Boolean);
-  if (slug === "whisky-distilleries") {
-    islands.sort(
-      (a, b) => whiskyIslandRank(a.id) - whiskyIslandRank(b.id) || (b.areaKm2 || 0) - (a.areaKm2 || 0),
-    );
-  } else {
-    islands.sort((a, b) => (b.areaKm2 || 0) - (a.areaKm2 || 0) || a.name.localeCompare(b.name));
-  }
-  return islands;
+  return rankIslands(slug, islands, citedItems, interestSlugsFor);
 }
 
 function chatGuideStory(slug, islandId) {
   const items = state.interestIndex?.stories?.[slug]?.[islandId];
   if (!Array.isArray(items) || !items.length) return null;
-  if (slug === "whisky-distilleries") {
-    return items.find((item) => item?.facet === "distillery") || items[0];
-  }
-  return items[0];
+  return orderedCitedItems(slug, islandId, items)[0] || null;
 }
 
 function chatGuideProse(slug, shown, total) {
@@ -11247,7 +11446,6 @@ const mobileNav = (() => {
 })();
 
 document.getElementById("home-link")?.addEventListener("click", resetAtlasHome);
-document.getElementById("explore-home")?.addEventListener("click", resetAtlasHome);
 
 document.getElementById("filter-reset-btn")?.addEventListener("click", resetAllFilters);
 

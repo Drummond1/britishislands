@@ -519,3 +519,4 @@ for source / licence / refresh-cadence detail.
 - **[pending]** Deploy the eight `/collections/` interest guides (local, 2026-10-26) and request indexing for `/collections/` plus those guides. Search Console refresh token is expired (`mcp-google-search-console auth`). Do not put the fact-check’s false rows back onto the guides.
 - **[pending]** Batch 3: request GSC indexing on hubs + top flagship `/islands/` URLs; fill first scored GEO benchmark run; deepen ferry hub last-verified dates.
 - **[pending]** Homepage LCP follow-up: measure field CWV after font change; consider self-hosting DM Serif / Source Sans if third-party fonts remain a bottleneck.
+- **[pending]** Apply `supabase/migrations/20261027120000_island_visitor_notes.sql` so a note about what’s interesting, and what you can do, is shared. Until then it stays on the computer that wrote it.

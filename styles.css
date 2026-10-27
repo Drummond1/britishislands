@@ -834,8 +834,33 @@ body[data-island-detail="open"] .sidebar-orient {
 }
 
 .crowd-modal--picking + #map,
-.map-wrap:has(.crowd-modal--picking) #map {
+.map-wrap:has(.crowd-modal--picking) #map,
+body.crowd-placing #map.map--crowd-pick {
   cursor: crosshair;
+}
+
+body.crowd-placing .chat-launcher,
+body.crowd-placing .map-island-peek,
+body.crowd-placing .map-search-area,
+body.crowd-placing .map-hint,
+body.crowd-placing .legend-wrap {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  body.crowd-placing[data-mobile-view="map"] .sidebar {
+    transform: translateY(120%);
+    pointer-events: none;
+  }
+
+  .crowd-modal {
+    padding-bottom: calc(16px + var(--mobile-nav-h));
+  }
+
+  .crowd-modal--picking .crowd-modal__panel {
+    margin-bottom: calc(12px + var(--mobile-nav-h));
+  }
 }
 
 .crowd-modal__backdrop {
@@ -903,6 +928,101 @@ body[data-island-detail="open"] .sidebar-orient {
 .crowd-field span {
   font-weight: 600;
   color: var(--text);
+}
+
+.crowd-field .crowd-field__help {
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.crowd-field--name input {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.crowd-pick-status {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #e8c44a;
+}
+
+.crowd-pick__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.crowd-pick__actions .crowd-modal__btn--primary {
+  width: 100%;
+}
+
+.crowd-modal__textlink {
+  display: block;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.crowd-modal__textlink:hover,
+.crowd-modal__textlink:focus-visible {
+  color: var(--text);
+}
+
+.contribute-hub__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(245, 197, 66, 0.2);
+  border: 1px solid rgba(245, 197, 66, 0.35);
+  color: #e8c44a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.crowd-more {
+  margin: 0 0 14px;
+}
+
+.crowd-more summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.crowd-more[open] summary {
+  margin-bottom: 10px;
+}
+
+.leaflet-div-icon.crowd-draft-pin {
+  background: transparent;
+  border: none;
+}
+
+.crowd-draft-pin__dot {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #f5c542;
+  border: 3px solid #3d2e0a;
+  box-shadow: 0 0 0 6px rgba(245, 197, 66, 0.35);
 }
 
 .crowd-optional {
@@ -1097,6 +1217,64 @@ body[data-island-detail="open"] .sidebar-orient {
 
 .crowd-config-hint[hidden] {
   display: none;
+}
+
+.crowd-source,
+.crowd-more {
+  margin: 0 0 14px;
+}
+
+.crowd-source > summary,
+.crowd-more > summary {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.crowd-source > summary::-webkit-details-marker,
+.crowd-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.crowd-source > summary::before,
+.crowd-more > summary::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.42em;
+  height: 0.42em;
+  margin-right: 2px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg) translateY(-0.05em);
+}
+
+.crowd-source[open] > summary::before,
+.crowd-more[open] > summary::before {
+  transform: rotate(45deg) translateY(-0.12em);
+}
+
+.crowd-source > summary:focus-visible,
+.crowd-more > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.crowd-source .crowd-field {
+  margin: 10px 0 0;
+}
+
+.crowd-field .crowd-field__help {
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.45;
 }
 
 .crowd-field--checkbox {

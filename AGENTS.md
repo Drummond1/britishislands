@@ -67,6 +67,7 @@ needed.
 ├── index.html               ← entry HTML (import map, preload index, chat launcher)
 ├── styles.css               ← all styling
 ├── app.js                   ← Leaflet + UI logic + chatbot (ES module)
+├── interest-rank.js         ← browse order for each interest filter
 ├── chat-agent.js            ← Ask tools: search, count, read records
 ├── island-3d.js             ← Three.js terrain (dynamic import; see docs/3D-TERRAIN.md)
 ├── showcase-3d.html         ← gallery of 10 showcase 3D models

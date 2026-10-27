@@ -122,11 +122,10 @@ export function isCrowdSuggestConfigured(config) {
   return false;
 }
 
-/** Soft verification: names should cite a public source when possible. */
+/** A public source is welcome when someone has one. A name can be sent without one. */
 export function validateContributionFields(fields) {
   const name = String(fields?.name || "").trim();
   const source = String(fields?.nameSourceUrl || "").trim();
-  const skip = Boolean(fields?.skipSourceCheck);
   const note = String(fields?.note || "").trim();
   const proposed = String(fields?.proposedChanges || "").trim();
   const photos = String(fields?.photoUrls || "").trim();
@@ -137,32 +136,27 @@ export function validateContributionFields(fields) {
       return {
         ok: false,
         message:
-          "Describe what you want to improve — use “What should change?”, description, name, or photo links.",
+          "Say what should change — the name, the description, or a photo link.",
       };
     }
   } else if (!name && !note && !photos) {
     return {
       ok: false,
-      message: "Add at least a name, description, or photo link so reviewers know what you mean.",
+      message:
+        "Add the name, or one sentence about what you can see. If you do not know the name, describe the place.",
     };
   }
 
-  if (name && !source && !skip) {
-    return {
-      ok: false,
-      message:
-        "Please add a name source link (Wikipedia, OSM, gazetteer, etc.) so we can verify the name. " +
-        "Or tick “No public link yet” below.",
-    };
-  }
-  if (source) {
+  if (source && /^(https?:\/\/|www\.)/i.test(source)) {
+    const candidate = /^www\./i.test(source) ? `https://${source}` : source;
     try {
-      const u = new URL(source);
-      if (!/^https?:$/i.test(u.protocol)) {
-        return { ok: false, message: "Source link must start with http:// or https://" };
-      }
+      const u = new URL(candidate);
+      if (!/^https?:$/i.test(u.protocol)) throw new Error("bad protocol");
     } catch {
-      return { ok: false, message: "Source link doesn’t look like a valid URL." };
+      return {
+        ok: false,
+        message: "That link does not look valid. A book title or a sentence is fine too.",
+      };
     }
   }
   return { ok: true };
@@ -189,6 +183,7 @@ export function formatCrowdSuggestionBody(fields) {
       new_pin: "New island / map pin",
       update_pin: "Update community pin",
       fix_atlas: "Suggest atlas changes",
+      visitor_note: "What's interesting, and what you can do",
     }[contributionKind] || contributionKind;
 
   const photos = String(photoUrls)
@@ -333,7 +328,7 @@ export function buildNameCrowdPinIssueUrl(pin, fields = {}) {
 }
 
 export function crowdPinPopupHtml(pin) {
-  const name = pin.name ? esc(pin.name) : "<em>Unnamed — needs ID</em>";
+  const name = pin.name ? esc(pin.name) : "<em>No name yet</em>";
   const status = esc(pin.status || "open");
   const note = pin.note ? `<p class="crowd-popup__note">${esc(pin.note)}</p>` : "";
   const src =
@@ -350,7 +345,7 @@ export function crowdPinPopupHtml(pin) {
       `</ul></div>`;
   }
 
-  const simpleNameIssue = buildNameCrowdPinIssueUrl(pin);
+  const action = pin.name ? "Edit the name or the note" : "Name this place";
 
   return `
     <div class="crowd-popup">
@@ -359,15 +354,13 @@ export function crowdPinPopupHtml(pin) {
       ${note}
       ${src}
       ${creditsBlock}
-      <p class="crowd-popup__id"><code>${esc(pin.id)}</code></p>
       <button
         type="button"
         class="crowd-popup__action crowd-popup__action--edit-details"
         data-crowd-id="${esc(pin.id)}"
         data-crowd-lat="${Number(pin.lat)}"
         data-crowd-lng="${Number(pin.lng)}"
-      >Add or edit details</button>
-      <a class="crowd-popup__action crowd-popup__action--github" href="${esc(simpleNameIssue)}" target="_blank" rel="noopener noreferrer">GitHub issue ↗</a>
+      >${action}</button>
     </div>`;
 }
 
