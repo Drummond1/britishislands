@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-27",
+  "source": "docs/fact-check/2026-10-26-claims.md (Confirmed only)",
+  "publish_called": false,
+  "changes": [
+    {
+      "category": "island-castles",
+      "island_id": "arran",
+      "title": "Airds Castle",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "island-castles",
+      "island_id": "osm-way-56059556",
+      "title": "Torksey Castle",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "island-castles",
+      "island_id": "osm-way-205500003",
+      "title": "Calvay Castle",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "island-castles",
+      "island_id": "osm-way-767535808",
+      "title": "Cloughoughter Castle",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "island-castles",
+      "island_id": "thames-oxford",
+      "title": "Oxford Castle",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "osm-relation-15671047",
+      "title": "The Great Silkie of Sule Skerry",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "mainland-shetland",
+      "title": "King Orfeo",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "arran",
+      "title": "Ailsa Craig",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Peter Pratt",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Julian Beale",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Absinthe",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "mainland-orkney",
+      "title": "Lee Taylor",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "islay",
+      "title": "Alexander Mackay",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "John MacAulay",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "Neil Ferguson",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "osm-relation-380685",
+      "title": "Donald Morrison",
+      "action": "drop",
+      "island_removed_from_category": false
+    },
+    {
+      "category": "film-art-music",
+      "island_id": "osm-relation-3148462",
+      "title": "Douglas Montgomery",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "for-sale",
+      "island_id": "osm-relation-14940681",
+      "title": "Gasker Island — uninhabited (Galbraith)",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "for-sale",
+      "island_id": "osm-way-200912404",
+      "title": "Insh Island — Savills auction lot (90 acres)",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "tidal-islands",
+      "island_id": "osm-relation-13146202",
+      "title": "Joined to North Uist",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "tidal-islands",
+      "island_id": "osm-way-4557019",
+      "title": "Strangford Lough",
+      "action": "drop",
+      "island_removed_from_category": true
+    },
+    {
+      "category": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "title": "Highland Park distillery",
+      "action": "rewrite",
+      "summary": "Highland Park is a single malt distillery in Kirkwall on Mainland Orkney. The claim that it is the northernmost single malt is no longer true, because Lerwick Distillery in Shetland has been described as further north and Kimbland on Sanday is also north of Kirkwall.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Highland_Park_distillery"
+    },
+    {
+      "category": "whisky-distilleries",
+      "island_id": "mainland-orkney",
+      "title": "Scapa distillery",
+      "action": "rewrite",
+      "summary": "Scapa is a distillery on Mainland Orkney beside Scapa Flow, near Kirkwall.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scapa_distillery"
+    },
+    {
+      "category": "unusual-wildlife",
+      "island_id": "osm-relation-12913146",
+      "title": "blonde hedgehog",
+      "action": "rewrite",
+      "summary": "A blonde colour form of the European hedgehog lives on Alderney. The species itself is widespread.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/European_hedgehog"
+    },
+    {
+      "category": "unusual-wildlife",
+      "island_id": "osm-way-4569485",
+      "title": "blonde hedgehog",
+      "action": "rewrite",
+      "summary": "A blonde colour form of the European hedgehog lives on North Ronaldsay. The species itself is widespread.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/European_hedgehog",
+      "note": "Follow-up. Same false wording as the confirmed Alderney row, on the other island that sentence names."
+    }
+  ],
+  "not_found": [
+    {
+      "category": null,
+      "island_id": "csv-geocoded-Q1375188",
+      "title": null,
+      "name": "Greenisland",
+      "action": "not_found",
+      "note": "No interest row in interest_index.json. Listed under drop_islands so a later publish cannot attach one."
+    },
+    {
+      "category": null,
+      "island_id": "wd-Q24639396",
+      "title": null,
+      "name": "Island Magee",
+      "action": "not_found",
+      "note": "No interest row in interest_index.json. Listed under drop_islands so a later publish cannot attach one."
+    }
+  ],
+  "category_counts": {
+    "film-art-music": 142,
+    "whisky-distilleries": 22,
+    "for-sale": 47,
+    "unusual-wildlife": 40,
+    "tidal-islands": 114,
+    "island-castles": 96,
+    "island-books": 41,
+    "local-traditions": 39,
+    "unusual-news": 89
+  },
+  "previous_category_counts": {
+    "film-art-music": 143,
+    "whisky-distilleries": 22,
+    "for-sale": 49,
+    "unusual-wildlife": 40,
+    "tidal-islands": 116,
+    "island-castles": 100,
+    "island-books": 41,
+    "local-traditions": 39,
+    "unusual-news": 89
+  },
+  "counts_match_members": true,
+  "left_unchanged": [],
+  "collections_html": "No listed false sentence remained in collections/. Whisky guide already omitted the northernmost claims, the Alderney hedgehog sentence was already the corrected wording, and the castle, for-sale, and tidal guide pages already omitted these rows. No guide text was edited."
+}

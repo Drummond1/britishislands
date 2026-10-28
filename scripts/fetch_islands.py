@@ -57,6 +57,54 @@ NATION_BOXES: list[tuple[str, tuple[float, float, float, float]]] = [
     ("England", (49.5, -6.5, 55.9, 1.9)),
 ]
 
+# Checked before NATION_BOXES. First match wins.
+# These name coasts and lakes that the overlapping general boxes mis-tag.
+# The general boxes above are unchanged, so Galloway, the Scottish Solway,
+# and the validation islands still match as before. Split lakes (Melvin,
+# MacNean) use a tight box around the confirmed island only.
+NATION_OVERRIDES: list[tuple[str, tuple[float, float, float, float]]] = [
+    # Northumberland and Tyne & Wear, south of Marshall Meadows
+    ("England", (54.99, -1.91, 55.78, -1.35)),
+    # English Solway at Beckfoot; Hestan and Kippford stay west of 3.46°W
+    ("England", (54.82, -3.46, 54.85, -3.40)),
+    # River Eden at Buckholme, east of the Solway Scots shore
+    ("England", (54.684, -3.255, 54.690, -3.246)),
+    # River Eden at Little Corby
+    ("England", (54.9080, -2.8200, 54.9092, -2.8175)),
+    # Eden-valley lake south of Carlisle (Big Island, Little Island)
+    ("England", (54.633, -2.657, 54.636, -2.653)),
+    # Somerset shore. Flat Holm is west of 3.115°W; Denny Island is north of 51.42°N
+    ("England", (51.33, -3.115, 51.42, -2.90)),
+    # Davaar and the Sanda group, off Kintyre
+    ("Scotland", (55.25, -5.65, 55.45, -5.50)),
+    # Pembrokeshire west of the Wales box (Grassholm, South Bishop)
+    ("Wales", (51.71, -5.63, 51.86, -5.405)),
+    # North Donegal and Lough Swilly, west of Lough Foyle
+    ("Ireland", (55.05, -8.20, 55.33, -7.38)),
+    # Donegal Bay: Ballyboyle and Rooney's Island
+    ("Ireland", (54.620, -8.145, 54.642, -8.133)),
+    # Lough Allen (Leitrim / Roscommon)
+    ("Ireland", (54.06, -8.11, 54.16, -8.03)),
+    # Garadice Lough
+    ("Ireland", (54.043, -7.720, 54.053, -7.693)),
+    # Lough Oughter
+    ("Ireland", (54.000, -7.490, 54.025, -7.450)),
+    # Lough Eske
+    ("Ireland", (54.685, -8.06, 54.715, -8.02)),
+    # Pilgrimage Lough Derg in Donegal, not the Shannon lake
+    ("Ireland", (54.600, -7.915, 54.626, -7.850)),
+    # Lough Melvin, Leitrim side only
+    ("Ireland", (54.4365, -8.167, 54.4415, -8.160)),
+    ("Ireland", (54.4345, -8.192, 54.4388, -8.186)),
+    # Upper Lough MacNean: Trawnish, then Tuam. Inishteige stays outside.
+    ("Ireland", (54.3185, -7.972, 54.3215, -7.967)),
+    ("Ireland", (54.3012, -7.926, 54.3035, -7.920)),
+    # Inishmuck Lough, County Cavan
+    ("Ireland", (54.046, -7.449, 54.049, -7.443)),
+    # Inishnagon, County Leitrim
+    ("Ireland", (54.009, -8.086, 54.014, -8.078)),
+]
+
 
 def overpass_query(bbox: tuple[float, float, float, float]) -> str:
     s, w, n, e = bbox
@@ -104,6 +152,9 @@ def slugify(name: str) -> str:
 
 
 def nation_for(lat: float, lng: float) -> str:
+    for nation, (s, w, n, e) in NATION_OVERRIDES:
+        if s <= lat <= n and w <= lng <= e:
+            return nation
     for nation, (s, w, n, e) in NATION_BOXES:
         if s <= lat <= n and w <= lng <= e:
             return nation

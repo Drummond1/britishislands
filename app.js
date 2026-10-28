@@ -26,8 +26,8 @@ import {
   submitCrowdSuggestion,
   formatCrowdSuggestionBody,
 } from "./crowd-pins.js?v=visitor-note-1";
-import { suggestedName, refreshSuggestedNames, saveIslandName } from "./name-island.js";
-import { notesForIsland, refreshIslandNotes, saveIslandNote, visitorName } from "./island-notes.js?v=visitor-note-2";
+import { suggestedName, allSuggestedNames, rememberedNamer, refreshSuggestedNames, saveIslandName } from "./name-island.js?v=name-it-1";
+import { notesForIsland, refreshIslandNotes, saveIslandNote, visitorEmail, visitorName } from "./island-notes.js?v=visitor-note-3";
 import { rankIslands, rankRemoteIslands, scoreAtlasIsland, scoreCitedItem } from "./interest-rank.js";
 import {
   searchIslands as agentSearchIslands,
@@ -312,7 +312,7 @@ const state = {
   islands: [],
   filtered: [],
   byId: new Map(),
-  bySeoPath: new Map(),     // "/islands/{nation}/{slug}/" -> island id
+  bySeoPath: new Map(),     // path -> island id (canonical path, plus lookup aliases)
   markers: new Map(),       // id -> L.Marker (category pin)
   polygonCache: new Map(),  // id -> GeoJSON layer
   polygonGeo: new Map(),    // id -> GeoJSON | null
@@ -440,6 +440,37 @@ function registerIslandSeoPath(island) {
 function rebuildSeoPathIndex() {
   state.bySeoPath = new Map();
   for (const island of state.islands) registerIslandSeoPath(island);
+  applyPathAliases();
+}
+
+/** Old ids and paths from removed duplicate records open the island that was kept. */
+function canonicalIslandId(islandId) {
+  if (!islandId) return islandId;
+  const mapped = state.islandIdAliases?.[islandId];
+  if (mapped && state.byId?.has(mapped)) return mapped;
+  return islandId;
+}
+
+function applyPathAliases() {
+  const aliases = state.pathAliases;
+  if (!aliases) return;
+  for (const [path, islandId] of Object.entries(aliases)) {
+    const sp = normalizeSeoPath(path);
+    const keeper = canonicalIslandId(islandId);
+    if (!sp || !state.byId?.has(keeper)) continue;
+    if (state.bySeoPath.has(sp) && state.bySeoPath.get(sp) !== keeper) continue;
+    state.bySeoPath.set(sp, keeper);
+  }
+}
+
+function rememberIslandAliases(payload) {
+  if (!payload || typeof payload !== "object") return;
+  if (payload.idAliases && typeof payload.idAliases === "object") {
+    state.islandIdAliases = { ...(state.islandIdAliases || {}), ...payload.idAliases };
+  }
+  if (payload.pathAliases && typeof payload.pathAliases === "object") {
+    state.pathAliases = { ...(state.pathAliases || {}), ...payload.pathAliases };
+  }
 }
 
 /** Visible URL for an island: prefer name-based /islands/… path. */
@@ -450,6 +481,7 @@ function publicIslandHref(island) {
   return "/";
 }
 
+/** Two-segment island path only. A nation hub (`/islands/scotland/`) returns null. */
 function parseIslandsPathname(pathname) {
   const path = (pathname || "").replace(/\/+$/, "") || "";
   const m = path.match(/^\/islands\/([^/]+)\/([^/]+)$/);
@@ -457,7 +489,32 @@ function parseIslandsPathname(pathname) {
   return normalizeSeoPath(`/islands/${m[1]}/${m[2]}/`);
 }
 
-/** Stamp seoPath onto stubs from the generated id→path lookup (covers pre-rebuild index). */
+function islandSeoSlug(path) {
+  const sp = normalizeSeoPath(path);
+  const m = sp.match(/^\/islands\/[^/]+\/([^/]+)\/$/);
+  return m ? m[1] : "";
+}
+
+/** Loaded islands whose canonical path uses this exact slug. Stops at two. */
+function islandsWithSeoSlug(slug) {
+  if (!slug) return [];
+  const matches = [];
+  const seen = new Set();
+  for (const island of state.islands) {
+    if (!island?.id || seen.has(island.id)) continue;
+    if (islandSeoSlug(island.seoPath) !== slug) continue;
+    seen.add(island.id);
+    matches.push(island);
+    if (matches.length > 1) break;
+  }
+  return matches;
+}
+
+/**
+ * Register id→path lookup entries.
+ * An index seoPath stays canonical. A lookup path may alias the old URL,
+ * but it must not replace another island's claim on that path.
+ */
 async function hydrateSeoPathsFromLookup() {
   try {
     const res = await fetch("data/seo_path_by_id.json");
@@ -465,13 +522,19 @@ async function hydrateSeoPathsFromLookup() {
     const payload = await res.json();
     const paths = payload && payload.paths;
     if (!paths || typeof paths !== "object") return;
+    rememberIslandAliases(payload);
     for (const [id, path] of Object.entries(paths)) {
       const sp = normalizeSeoPath(path);
       if (!sp) continue;
-      state.bySeoPath.set(sp, id);
-      const stub = state.byId.get(id);
-      if (stub) stub.seoPath = sp;
+      const keeper = canonicalIslandId(id);
+      const stub = state.byId.get(keeper);
+      if (!stub) continue;
+      const canonical = normalizeSeoPath(stub.seoPath);
+      if (state.bySeoPath.has(sp) && state.bySeoPath.get(sp) !== keeper) continue;
+      if (sp === canonical) continue;
+      state.bySeoPath.set(sp, keeper);
     }
+    applyPathAliases();
   } catch (_) {
     /* non-fatal */
   }
@@ -509,6 +572,7 @@ const NATION_SHARD = {
 
 const BROWSE_QUICK_FILTERS = [
   { id: "all", label: "All islands" },
+  { id: "public-names", label: "Named by the public", publicNames: true },
   { id: "remote", label: "Remote", remote: true },
   { id: "for-sale", label: "For sale", forSale: true },
 ];
@@ -2027,33 +2091,40 @@ function applyContributeFormUi(kind) {
       banner.textContent = isl
         ? `“${isl.name}” is already on the map. Say what should change.`
         : "This island is already on the map. Say what should change.";
-    } else if (kind === "update_pin") {
-      banner.hidden = false;
-      banner.className = "crowd-context-banner crowd-context-banner--community";
-      banner.textContent = "Write the name people use. Leave it blank if you still do not know it.";
     } else {
-      banner.hidden = false;
-      banner.className = "crowd-context-banner crowd-context-banner--community";
-      banner.textContent = "The gold dot is the place. A name helps. A blank name is still useful.";
+      banner.hidden = true;
     }
   }
+  const naming = kind === "new_pin" || kind === "update_pin";
   const help = document.getElementById("crowd-name-help");
   const nameLabel = document.getElementById("crowd-label-name");
   const nameInput = document.getElementById("crowd-field-name");
+  const who = document.getElementById("crowd-who");
+  const fixExtra = document.getElementById("crowd-fix-extra");
   if (help) {
-    help.textContent =
-      kind === "fix_atlas"
-        ? "Fill this in only if the name itself is wrong. Use the name people there use."
-        : "Use the name people there use — Gaelic, Irish, Welsh, Manx, or English. If you do not know it, leave this blank. Do not invent a name.";
+    help.hidden = naming;
+    help.textContent = "Fill this in only if the name itself is wrong. Use the name people there use.";
   }
-  if (nameLabel && kind !== "fix_atlas") nameLabel.textContent = "What is it called?";
-  if (nameInput && kind !== "fix_atlas") nameInput.placeholder = "The name people use";
+  if (nameLabel) {
+    nameLabel.hidden = naming;
+    nameLabel.textContent = kind === "fix_atlas" ? "New name, only if it is wrong" : "What is it called?";
+  }
+  if (nameInput && naming) nameInput.placeholder = "The name people use";
+  if (who) who.hidden = !naming;
+  if (fixExtra) fixExtra.hidden = naming;
   if (proposedWrap) proposedWrap.hidden = kind !== "fix_atlas";
   if (pinWrap) pinWrap.hidden = true;
   const moveBtn = document.getElementById("crowd-pick-again");
-  if (moveBtn) moveBtn.hidden = kind === "fix_atlas";
-  if (coordsEl && kind === "fix_atlas") {
-    coordsEl.textContent = "This is the island already on the map.";
+  if (moveBtn) {
+    moveBtn.hidden = kind === "fix_atlas";
+    moveBtn.textContent = "Move the pin";
+    moveBtn.classList.toggle("crowd-modal__textlink", naming);
+    moveBtn.classList.toggle("crowd-modal__btn", !naming);
+    moveBtn.classList.toggle("crowd-modal__btn--ghost", !naming);
+  }
+  if (coordsEl) {
+    coordsEl.hidden = naming;
+    if (kind === "fix_atlas") coordsEl.textContent = "This is the island already on the map.";
   }
 }
 
@@ -2064,9 +2135,29 @@ function updateContributeSubmitButtons(cfg) {
   const hint = document.getElementById("crowd-config-hint");
   const note = document.getElementById("crowd-send-note");
   const kind = document.getElementById("crowd-field-kind")?.value || "new_pin";
-  const primary =
-    kind === "fix_atlas" ? "Send this correction" : kind === "update_pin" ? "Send this name" : "Send this pin";
+  const naming = kind === "new_pin" || kind === "update_pin";
+  const primary = kind === "fix_atlas" ? "Send this correction" : "Name it";
   const configured = isCrowdSuggestConfigured(cfg);
+  const actions = document.querySelector("#crowd-step-form .crowd-modal__actions");
+  if (actions) actions.classList.toggle("crowd-modal__actions--naming", naming);
+  if (naming) {
+    if (nativeBtn) {
+      nativeBtn.hidden = false;
+      nativeBtn.textContent = "Name it";
+      nativeBtn.classList.add("crowd-modal__btn--primary");
+      nativeBtn.classList.remove("crowd-modal__btn--ghost");
+    }
+    if (mailtoBtn) mailtoBtn.hidden = true;
+    if (githubBtn) githubBtn.hidden = true;
+    const closeBtn = document.getElementById("crowd-close-form");
+    if (closeBtn) closeBtn.hidden = true;
+    if (hint) hint.hidden = true;
+    if (note) note.hidden = true;
+    return;
+  }
+  if (githubBtn) githubBtn.hidden = false;
+  const closeBtn = document.getElementById("crowd-close-form");
+  if (closeBtn) closeBtn.hidden = false;
   if (nativeBtn) {
     nativeBtn.hidden = !configured;
     nativeBtn.textContent = primary;
@@ -2172,10 +2263,17 @@ function initCrowdSuggestUi() {
     if (!title) return;
     if (which === "hub") title.textContent = "Contribute";
     else if (which === "pick") title.textContent = "Click the island";
-    else if (which === "success") title.textContent = "Sent";
+    else if (which === "success") {
+      title.textContent = contributeKind === "fix_atlas" ? "Sent" : "Named";
+      const detail = document.getElementById("crowd-success-detail");
+      if (detail) {
+        detail.textContent = contributeKind === "fix_atlas"
+          ? "Thanks. We check this before changing the island."
+          : "This name is saved, and credited to you.";
+      }
+    }
     else if (contributeKind === "fix_atlas") title.textContent = "Suggest a correction";
-    else if (contributeKind === "update_pin") title.textContent = "Name this pin";
-    else title.textContent = "Name it";
+    else title.textContent = "What is it called?";
   }
 
   function closeModal() {
@@ -2220,10 +2318,18 @@ function initCrowdSuggestUi() {
       applyContributeFormUi(kind);
     }
     if (opts.prefillPin) prefillCrowdFormFromPin(opts.prefillPin);
+    if (kind !== "fix_atlas") {
+      const remembered = rememberedNamer();
+      const creditEl = document.getElementById("crowd-field-credit");
+      const emailEl = document.getElementById("crowd-field-email");
+      if (creditEl && !creditEl.value && remembered.personName) creditEl.value = remembered.personName;
+      if (emailEl && !emailEl.value && remembered.email) emailEl.value = remembered.email;
+    }
     if (!window.matchMedia("(pointer: coarse)").matches) {
       const focusId = kind === "fix_atlas" ? "crowd-field-proposed" : "crowd-field-name";
       requestAnimationFrame(() => document.getElementById(focusId)?.focus());
     }
+    updateContributeSubmitButtons(state.crowdSuggestConfig || {});
     loadCrowdSuggestConfig().then((cfg) => {
       state.crowdSuggestConfig = cfg;
       updateContributeSubmitButtons(cfg);
@@ -2328,7 +2434,7 @@ function initCrowdSuggestUi() {
       els.filterUnnamed.checked = true;
       els.filterUnnamed.dispatchEvent(new Event("change"));
     }
-    showToast("Open a place with a question mark, then type the name people use.", 5200);
+    showToast("Click an island with a question mark.", 4200);
   });
   document.getElementById("contribute-fix-atlas")?.addEventListener("click", () => {
     resetCrowdFormFields();
@@ -2380,8 +2486,78 @@ function initCrowdSuggestUi() {
     closeModal();
   });
 
+  async function submitIslandName() {
+    hideFormError();
+    const lat = Number(modal.dataset.crowdLat);
+    const lng = Number(modal.dataset.crowdLng);
+    const called = document.getElementById("crowd-field-name")?.value || "";
+    const person = document.getElementById("crowd-field-credit")?.value || "";
+    const email = document.getElementById("crowd-field-email")?.value || "";
+    const atlasId = document.getElementById("crowd-field-atlas-id")?.value || "";
+    const existingId = document.getElementById("crowd-field-existing-id")?.value || "";
+    let island = atlasId ? state.byId.get(atlasId) : null;
+    if (!island && existingId) island = state.byId.get(existingId);
+    if (!island) {
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+        showFormError("Click the island on the map first.");
+        return;
+      }
+      const id = `pin-${lat.toFixed(5)}-${lng.toFixed(5)}`;
+      island = {
+        id,
+        lat,
+        lng,
+        name: "Unnamed island",
+        nameStatus: "unknown",
+        tags: ["unnamed"],
+        type: "sea",
+        source: "public-name",
+        publicNamed: true,
+        __fullMerged: true,
+        areaKm2: 0,
+      };
+    }
+    if (nativeBtn) {
+      nativeBtn.disabled = true;
+      nativeBtn.textContent = "Saving…";
+    }
+    const result = await saveIslandName({
+      island,
+      islandName: called,
+      personName: person,
+      email,
+      attribution: "",
+    });
+    if (nativeBtn) {
+      nativeBtn.disabled = false;
+      nativeBtn.textContent = "Name it";
+    }
+    if (!result.ok) {
+      showFormError(result.message);
+      return;
+    }
+    if (island.publicNamed) state.byId.set(island.id, island);
+    const saved = state.byId.get(island.id);
+    if (saved && !saved.publicNamed) {
+      delete saved.__searchName;
+      delete saved.__searchHay;
+      refreshIslandMarker(saved);
+      if (state.activeId === saved.id) renderDetails(saved);
+    }
+    syncPublicNameStubs();
+    applyFilters();
+    const detail = document.getElementById("crowd-success-detail");
+    if (detail) detail.textContent = "This name is saved, and credited to you.";
+    showStep("success");
+  }
+
   async function submitContribution(viaGithub) {
     hideFormError();
+    const kindNow = document.getElementById("crowd-field-kind")?.value || "new_pin";
+    if (!viaGithub && kindNow !== "fix_atlas") {
+      await submitIslandName();
+      return;
+    }
     const fields = readCrowdFormFields(modal);
     const v = validateContributionFields(fields);
     if (!v.ok) {
@@ -2510,6 +2686,7 @@ function syncIslandUrl(id, { mode = "replace" } = {}) {
 }
 
 function focusIslandFromRouteId(islandId) {
+  islandId = canonicalIslandId(islandId);
   if (!islandId) return false;
   if (state.byId?.has(islandId)) {
     focusIsland(islandId, { fly: true, fromHistory: true });
@@ -2540,7 +2717,14 @@ function applyRouteFromUrl() {
         if (wantMap && typeof mobileNav !== "undefined") mobileNav.setView?.("map");
         return;
       }
-      // Path may be an unnamed island not yet in the overlay.
+      // Wrong nation (or other stale prefix) on a slug that belongs to one island.
+      const slugMatches = islandsWithSeoSlug(islandSeoSlug(seoFromPath));
+      if (slugMatches.length === 1 && focusIslandFromRouteId(slugMatches[0].id)) {
+        if (wantMap && typeof mobileNav !== "undefined") mobileNav.setView?.("map");
+        return;
+      }
+      // No unique slug. The path may still be an unnamed island not yet loaded.
+      // Two or more islands share the slug — do not guess.
       loadUnnamedIslandOverlay()
         .then(() => {
           rebuildSeoPathIndex();
@@ -2829,6 +3013,7 @@ async function loadIslands() {
       if (indexRows.length > 0) {
         state.islands = indexRows;
         state.byId = new Map(indexRows.map((i) => [i.id, i]));
+        rememberIslandAliases(indexPayload);
         rebuildSeoPathIndex();
         settleIslandsIndex?.();
         usedIndex = true;
@@ -3937,6 +4122,16 @@ function renderBrowseQuickChips() {
   if (all) {
     addChip(all.id, all.label, !hasUserDiscoveryIntent(), icons.all, () => resetAllFilters());
   }
+  const namedByPublic = BROWSE_QUICK_FILTERS.find((preset) => preset.id === "public-names");
+  if (namedByPublic) {
+    addChip(
+      namedByPublic.id,
+      namedByPublic.label,
+      activeBrowseQuick === namedByPublic.id,
+      "pen-line",
+      () => applyBrowseQuickFilter(namedByPublic),
+    );
+  }
   for (const category of orderedInterestCategories()) {
     const selected = state.activeInterestSlug === category.slug;
     addChip(
@@ -3948,7 +4143,7 @@ function renderBrowseQuickChips() {
     );
   }
   for (const preset of BROWSE_QUICK_FILTERS) {
-    if (preset.id === "all") continue;
+    if (preset.id === "all" || preset.id === "public-names") continue;
     if (preset.forSale && interestSlugs.has("for-sale")) continue;
     addChip(preset.id, preset.label, activeBrowseQuick === preset.id, icons[preset.id], () =>
       applyBrowseQuickFilter(preset),
@@ -4041,12 +4236,21 @@ function applyBrowseQuickFilter(preset) {
       else if (preset.remote) els.populationFilter.value = "uninhabited";
       else els.populationFilter.value = "";
     }
-    if (preset.unnamed) {
+    if (preset.unnamed || preset.publicNames) {
       try {
         await loadUnnamedIslandOverlay();
       } catch (err) {
         console.warn("Unnamed island overlay unavailable", err);
       }
+    }
+    if (preset.publicNames) {
+      if (els.filterUnnamed) els.filterUnnamed.checked = false;
+      try {
+        await refreshSuggestedNames();
+      } catch (_) {
+        /* the names already on this computer still filter */
+      }
+      syncPublicNameStubs();
     }
     renderBrowseQuickChips();
     applyFilters();
@@ -4597,10 +4801,45 @@ function initTopbarMoreMenu() {
   });
 }
 
+function syncPublicNameStubs() {
+  for (const row of allSuggestedNames()) {
+    if (!row?.islandId) continue;
+    const existing = state.byId.get(row.islandId);
+    if (existing && !existing.publicNamed) continue;
+    const lat = Number(row.lat);
+    const lng = Number(row.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+    const stub = existing || {
+      id: row.islandId,
+      tags: ["unnamed"],
+      nameStatus: "unknown",
+      type: "sea",
+      source: "public-name",
+      publicNamed: true,
+      __fullMerged: true,
+      areaKm2: 0,
+    };
+    stub.name = row.islandName;
+    stub.lat = lat;
+    stub.lng = lng;
+    state.byId.set(row.islandId, stub);
+  }
+}
+
+function islandsInScope() {
+  if (activeBrowseQuick !== "public-names") return state.islands;
+  const extras = [];
+  for (const island of state.byId.values()) {
+    if (island?.publicNamed) extras.push(island);
+  }
+  return extras.length ? state.islands.concat(extras) : state.islands;
+}
+
 function applyFilters(opts = {}) {
   const { skipMarkers = false, skipSort = false } = opts;
   if (state.askFocusIds && (els.search?.value || "").trim()) clearAskFocus();
   const q = _searchNorm(els.search.value);
+  const pool = islandsInScope();
   const type = els.typeFilter.value;
   const nation = els.nationFilter.value;
   const favOnly = els.favoritesFilter?.value === "favorites";
@@ -4634,7 +4873,8 @@ function applyFilters(opts = {}) {
       const interest = interestCategories().find((c) => c.slug === state.activeInterestSlug);
       els.listHeading.textContent = interest?.label || "Islands";
     }
-    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Unnamed — open one and type its name";
+    else if (activeBrowseQuick === "public-names") els.listHeading.textContent = "Named by the public";
+    else if (els.filterUnnamed?.checked) els.listHeading.textContent = "Click one to name it";
     else if (hasUserDiscoveryIntent()) els.listHeading.textContent = "Search results";
     else els.listHeading.textContent = "Islands to inspire you";
   }
@@ -4681,9 +4921,10 @@ function applyFilters(opts = {}) {
     ) {
       return false;
     }
+    if (activeBrowseQuick === "public-names" && !suggestedName(i.id)) return false;
     if (els.filterUnnamed?.checked) {
       if (!isUnnamedIsland(i)) return false;
-    } else if (activeBrowseQuick !== "unnamed" && isUnnamedIsland(i) && !suggestedName(i.id)) {
+    } else if (activeBrowseQuick !== "unnamed" && activeBrowseQuick !== "public-names" && isUnnamedIsland(i) && !suggestedName(i.id)) {
       return false;
     }
     if (activeBrowseQuick === "unnamed" && !isUnnamedIsland(i)) return false;
@@ -4706,7 +4947,7 @@ function applyFilters(opts = {}) {
   if (q) {
     // Score and rank.
     const scored = [];
-    for (const i of state.islands) {
+    for (const i of pool) {
       if (!passesScope(i)) continue;
       const s = _scoreIsland(i, q);
       if (s > -Infinity) scored.push({ island: i, score: s });
@@ -4718,9 +4959,15 @@ function applyFilters(opts = {}) {
     );
     state.filtered = scored.map((x) => x.island);
   } else {
-    state.filtered = state.islands.filter(passesScope);
+    state.filtered = pool.filter(passesScope);
     if (!skipSort) {
-      if (state.activeInterestSlug) {
+      if (activeBrowseQuick === "public-names") {
+        state.filtered.sort((a, b) => {
+          const tb = Date.parse(suggestedName(b.id)?.at || "") || 0;
+          const ta = Date.parse(suggestedName(a.id)?.at || "") || 0;
+          return tb - ta;
+        });
+      } else if (state.activeInterestSlug) {
         state.filtered = rankIslands(state.activeInterestSlug, state.filtered, citedItems, interestSlugsFor);
       } else if (activeBrowseQuick === "remote") {
         state.filtered = rankRemoteIslands(state.filtered, interestSlugsFor);
@@ -4768,6 +5015,7 @@ if (els.filterUnnamed) {
   els.filterUnnamed.addEventListener("change", () => {
     const on = els.filterUnnamed.checked;
     void (async () => {
+      if (on && activeBrowseQuick === "public-names") activeBrowseQuick = null;
       if (on) {
         try {
           await loadUnnamedIslandOverlay();
@@ -4850,9 +5098,14 @@ function updateSidebarOrient() {
   const heading = document.getElementById("list-heading");
   const hasFilters = countActiveFilters() > 0 || Boolean(state.activeInterestSlug);
   const hasQuery = Boolean(els.search?.value?.trim());
+  if (activeBrowseQuick === "public-names" && !hasQuery && !state.activeInterestSlug) {
+    if (el) el.textContent = "Each name is credited to the person who sent it.";
+    if (heading) heading.textContent = "Named by the public";
+    return;
+  }
   if (els.filterUnnamed?.checked && !hasQuery && !state.activeInterestSlug) {
-    if (el) el.textContent = "Open one, then type the name people use.";
-    if (heading) heading.textContent = "Unnamed — open one and type its name";
+    if (el) el.textContent = "Click one. It asks you for the name.";
+    if (heading) heading.textContent = "Click one to name it";
     return;
   }
   if (state.askFocusIds) {
@@ -4880,6 +5133,7 @@ function settleSuggestedNames() {
       } catch (_) {
         named = false;
       }
+      syncPublicNameStubs();
       if (named && !state.unnamedOverlayLoaded) {
         try {
           await loadUnnamedIslandOverlay();
@@ -5030,11 +5284,14 @@ function renderListEmptyOrSkeleton(total) {
     return;
   }
   const hasQuery = Boolean(els.search?.value?.trim());
+  const publicNamesEmpty = activeBrowseQuick === "public-names" && !hasQuery;
   listInner.innerHTML = `
     <div class="list-empty" role="status">
-      <p class="list-empty__title">No islands match</p>
+      <p class="list-empty__title">${publicNamesEmpty ? "No public names yet" : "No islands match"}</p>
       <p class="list-empty__hint">${
-        hasQuery
+        publicNamesEmpty
+          ? "Click an island with a question mark. It asks you for the name."
+          : hasQuery
           ? "Try a shorter name, or clear the search."
           : "Clear filters, or try Photos or Stories above."
       }</p>
@@ -5164,6 +5421,7 @@ function renderListWindow() {
         ? `<span class="island-card__shot"><img class="island-card__thumb" src="${escapeAttr(phoneSafeImageUrl(thumb, 330))}" alt="${escapeAttr(thumbAlt)}" loading="eager" decoding="async" /></span>`
         : renderEmptyThumb(island);
     const metaBits = [];
+    if (suggested?.contributorName) metaBits.push(`Named by ${escapeHtml(suggested.contributorName)}`);
     if (placeBits) metaBits.push(escapeHtml(placeBits));
     if (access) metaBits.push(escapeHtml(access));
     const highlight = feature?.tie || feature?.summary || interestHighlight(island.id);
@@ -5184,7 +5442,6 @@ function renderListWindow() {
           ${unnamed && !suggested ? '<span class="dot dot--unnamed" aria-hidden="true"></span>' : ""}
           ${escapeHtml(displayName)}
           ${unnamed && !suggested ? '<span class="island-card__unnamed-pill">Name it</span>' : ""}
-          ${unnamed && suggested ? '<span class="island-card__unnamed-pill island-card__unnamed-pill--suggested">Suggested</span>' : ""}
           ${hasListing ? '<span class="island-card__sale-pill">For sale</span>' : ""}
         </div>
         <div class="island-card__meta">
@@ -5316,7 +5573,7 @@ function makeMarker(island) {
   const tip = unnamed
     ? "Name this island"
     : suggested
-      ? `${label} — suggested by ${suggested.contributorName}`
+      ? `${label} — Named by ${suggested.contributorName}`
       : `${label} — ${capitalize(island.type || "island")}, ${island.nation || "Unknown"}`;
   const lazyTooltip = map.getZoom() <= LOW_ZOOM_MARKER_MAX;
   const tipOffset = [0, -Math.round(size * 0.35)];
@@ -5917,25 +6174,24 @@ function attributionHtml(text) {
 }
 
 function renderNameIslandForm(island, previous) {
-  const place = [island.nation, island.archipelago, island.parentWaterBody?.name]
-    .filter(Boolean)
+  const place = [island.parentWaterBody?.name, island.archipelago, island.nation]
+    .map((part) => String(part || "").trim())
+    .filter((part) => part && part !== "—" && part !== "-" && !/^osm\b/i.test(part))
     .join(" · ");
+  const who = rememberedNamer();
   return `
     <form class="name-island" id="name-island-form" novalidate>
-      <h2 class="name-island__title">Name this island</h2>
-      <p class="name-island__lead">${place ? `${escapeHtml(place)}. ` : ""}This place is already on the map, with no name. It shows on the map as soon as you save.</p>
-      <label for="name-island-called">What is it called?</label>
-      <input id="name-island-called" name="islandName" type="text" required maxlength="80" autocomplete="off" placeholder="The name people use" value="${escapeAttr(previous?.islandName || "")}" />
-      <p class="name-island__how">Use the name people there use. Gaelic, Irish, Welsh, Manx, or English is fine. If you are not sure of the spelling, say so below. If you do not know the name, go back.</p>
+      <h2 class="name-island__title">What is it called?</h2>
+      ${place ? `<p class="name-island__lead">${escapeHtml(place)}</p>` : ""}
+      <label class="name-island__label-name" for="name-island-called">The name people use</label>
+      <input id="name-island-called" class="name-island__called" name="islandName" type="text" required maxlength="80" autocomplete="off" placeholder="The name people use" value="${escapeAttr(previous?.islandName || "")}" />
       <label for="name-island-person">Your name</label>
-      <input id="name-island-person" name="personName" type="text" required maxlength="60" autocomplete="name" value="${escapeAttr(previous?.contributorName || "")}" />
-      <label for="name-island-email">Email</label>
-      <input id="name-island-email" name="email" type="email" required maxlength="200" autocomplete="email" inputmode="email" />
-      <p class="name-island__note">Your email stays in the private log.</p>
-      <label for="name-island-source">How do you know? <em>Optional</em></label>
-      <input id="name-island-source" name="attribution" type="text" maxlength="300" autocomplete="off" placeholder="A link, a book, or a sentence" value="${escapeAttr(previous?.attribution || "")}" />
+      <input id="name-island-person" name="personName" type="text" required maxlength="60" autocomplete="name" value="${escapeAttr(who.personName)}" />
+      <label for="name-island-email">Your email</label>
+      <input id="name-island-email" name="email" type="email" required maxlength="200" autocomplete="email" inputmode="email" value="${escapeAttr(who.email)}" />
+      <p class="name-island__note">We don’t publish your email.</p>
       <p class="name-island__error" id="name-island-error" hidden role="alert"></p>
-      <button type="submit" class="profile-primary-btn name-island__submit">Save the name</button>
+      <button type="submit" class="profile-primary-btn name-island__submit">Name it</button>
     </form>`;
 }
 
@@ -5944,12 +6200,12 @@ function renderSuggestedCredit(row) {
     ? `<p class="name-island__credit">Source: ${attributionHtml(row.attribution)}</p>`
     : "";
   return `
-    <p class="name-island__credit">Suggested by ${escapeHtml(row.contributorName)}.</p>
+    <p class="name-island__credit">Named by ${escapeHtml(row.contributorName)}.</p>
     ${source}
     <button type="button" class="name-island__change" id="name-island-change">Change this name</button>`;
 }
 
-function renderIslandNotes(island) {
+function islandNoteListHtml(island) {
   const notes = notesForIsland(island.id).slice(0, 12);
   const items = notes
     .map((note) => {
@@ -5960,29 +6216,36 @@ function renderIslandNotes(island) {
       if (note.canDo) {
         bits.push(`<p><span>You can.</span> ${escapeHtml(note.canDo)}</p>`);
       }
-      const where = note.shared ? "" : `<span class="island-note__where">On this computer.</span>`;
-      return `<li>${bits.join("")}<p class="island-note__by">From ${escapeHtml(note.contributorName)}. ${where}</p></li>`;
+      const where = note.shared ? "" : `<span class="island-note__where">Saved on this computer.</span>`;
+      return `<li>${bits.join("")}<p class="island-note__by">From ${escapeHtml(note.contributorName)}.${where ? ` ${where}` : ""}</p></li>`;
     })
     .join("");
-  const list = items
-    ? `<p class="island-note__kicker">From visitors. Not checked.</p><ul class="island-note__list">${items}</ul>`
-    : "";
+  if (!items) return "";
+  return `<p class="island-note__kicker">From visitors. Not checked.</p><ul class="island-note__list">${items}</ul>`;
+}
+
+function renderIslandNotes(island) {
   return `
     <section class="island-note" id="island-note">
       <h3 class="island-note__title">Add what you know</h3>
-      <p class="island-note__lead">What's interesting, and what you can do. It shows here straight away.</p>
-      <p class="island-note__note">Leave out private addresses, and anything meant as a guide for boats or wildlife.</p>
-      ${list}
+      <p class="island-note__lead">It shows on this island, with your name.</p>
       <form class="island-note__form" id="island-note-form" novalidate>
         <label for="island-note-interesting">What's interesting?</label>
         <textarea id="island-note-interesting" name="interesting" rows="2" maxlength="280" placeholder="A view, a story, a building"></textarea>
         <label for="island-note-do">What can you do?</label>
-        <textarea id="island-note-do" name="canDo" rows="2" maxlength="280" placeholder="A walk, a swim, a ferry"></textarea>
+        <textarea id="island-note-do" name="canDo" rows="2" maxlength="280" placeholder="A walk, a beach, a cafe"></textarea>
+        <p class="island-note__hint">One of these is enough.</p>
         <label for="island-note-person">Your name</label>
-        <input id="island-note-person" name="personName" type="text" maxlength="60" autocomplete="name" value="${escapeAttr(visitorName())}" />
+        <input id="island-note-person" name="personName" type="text" maxlength="60" autocomplete="name" placeholder="The name on the note" value="${escapeAttr(visitorName())}" />
+        <label for="island-note-email">Email <span class="island-note__private">Not published</span></label>
+        <input id="island-note-email" name="email" type="email" maxlength="200" autocomplete="email" inputmode="email" placeholder="you@example.com" value="${escapeAttr(visitorEmail())}" />
+        <p class="island-note__reassure">Optional. It is not shown on the island. We use it only if we need to reply.</p>
         <p class="island-note__error" id="island-note-error" hidden role="alert"></p>
-        <button type="submit" class="profile-primary-btn">Add this</button>
+        <p class="island-note__status" id="island-note-status" hidden role="status"></p>
+        <button type="submit" class="profile-primary-btn">Add to this island</button>
+        <p class="island-note__note">Leave out private addresses, and anything meant as a guide for boats or wildlife.</p>
       </form>
+      <div id="island-note-list">${islandNoteListHtml(island)}</div>
     </section>`;
 }
 
@@ -6047,9 +6310,14 @@ function renderDetails(island) {
     : "";
 
   els.details.classList.remove("is-arriving");
+  els.details.classList.toggle("is-naming", showNameForm);
   requestAnimationFrame(() => els.details.classList.add("is-arriving"));
 
-  els.detailsContent.innerHTML = `
+  els.detailsContent.innerHTML = showNameForm
+    ? renderNameIslandForm(island, suggested)
+    : island.publicNamed
+      ? heading
+      : `
     ${gallery}
     ${flowHeading}
     ${photoAfter}
@@ -6114,7 +6382,9 @@ function renderDetails(island) {
   });
 
   const toolbar = document.getElementById("details-toolbar-actions");
-  if (toolbar) {
+  if (toolbar && showNameForm) {
+    toolbar.innerHTML = "";
+  } else if (toolbar) {
     const osBtn =
       Number.isFinite(island.lat) && Number.isFinite(island.lng)
         ? `<button type="button" id="details-os-btn" class="details-action-btn details-os-btn" aria-label="Open the Ordnance Survey map of the whole island">Ordnance Survey</button>`
@@ -6165,12 +6435,12 @@ function renderDetails(island) {
       islandName: form.islandName.value,
       personName: form.personName.value,
       email: form.email.value,
-      attribution: form.attribution.value,
+      attribution: "",
     });
     if (!result.ok) {
       if (btn) {
         btn.disabled = false;
-        btn.textContent = "Save the name";
+        btn.textContent = "Name it";
       }
       if (err) {
         err.hidden = false;
@@ -6195,37 +6465,46 @@ function renderDetails(island) {
     const form = e.currentTarget;
     const btn = form.querySelector("[type=submit]");
     const err = document.getElementById("island-note-error");
+    const status = document.getElementById("island-note-status");
     if (btn) {
       btn.disabled = true;
       btn.textContent = "Adding…";
     }
     if (err) err.hidden = true;
+    if (status) status.hidden = true;
     const result = await saveIslandNote({
       island,
       interesting: form.interesting.value,
       canDo: form.canDo.value,
       personName: form.personName.value,
+      email: form.email.value,
+      pagePath: publicIslandHref(island),
     });
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "Add to this island";
+    }
     if (!result.ok) {
-      if (btn) {
-        btn.disabled = false;
-        btn.textContent = "Add this";
-      }
       if (err) {
         err.hidden = false;
         err.textContent = result.message;
       }
       return;
     }
-    const toast =
-      result.where === "shared"
-        ? "Added."
-        : result.where === "sent"
-          ? "Added. A copy was sent to be checked."
-          : "Added on this computer.";
-    renderDetails(island);
-    showToast(toast, 3200);
-    document.getElementById("island-note")?.scrollIntoView({ block: "nearest" });
+    form.interesting.value = "";
+    form.canDo.value = "";
+    const list = document.getElementById("island-note-list");
+    if (list) list.innerHTML = islandNoteListHtml(island);
+    if (status) {
+      const keptEmail = String(form.email.value || "").trim();
+      status.hidden = false;
+      status.textContent = result.where !== "shared"
+        ? "Added on this computer."
+        : keptEmail
+          ? "Added to this island. Your email is not on the page."
+          : "Added to this island.";
+    }
+    list?.querySelector(".island-note__list li")?.scrollIntoView({ block: "nearest" });
   });
 
   syncChatLauncherContext();
@@ -11198,8 +11477,7 @@ function chatLLMRefreshUI() {
     if (s.enabled && (s.apiKey || s.shared)) {
       modeSub.textContent = "I'll look it up in the atlas.";
     } else if (s.enabled && !s.apiKey) {
-      modeSub.textContent =
-        "AI mode is on but no key is set. Open settings to add one.";
+      modeSub.textContent = "AI mode is on but no key is set. Open settings to add one.";
     } else {
       modeSub.textContent = "How can I help?";
     }

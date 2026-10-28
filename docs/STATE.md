@@ -4,9 +4,15 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
-**2026-10-27 (Erraid photograph)** — The opening card and the list use Erraid’s own photograph of David Balfour’s Bay, not the Kidnapped cover and not an empty pin. Counts unchanged. `islands.json` was not edited.
+**2026-10-28 (shipped to main)** — The deduped atlas (**11,212**), the place-label corrections, public naming, visitor notes with a private email, and the island reel are on `main` for GitHub Pages. Supabase functions are not redeployed by that push. Counts otherwise unchanged.
+
+**2026-10-28 (name an island)** — Clicking an unnamed island asks for the name, your name, and an email that is not published. The name is stored in `island_name_log` and shown as “Named by …”. **Named by the public** filters to those islands. A new row emails drummondgilbert@gmail.com after the FormSubmit activation link is opened. `islands.json` was not edited. Counts unchanged.
+
+**2026-10-28 (visitor notes)** — An island page can take an optional email. The label says it is not published. The note shows on that island for everyone. The email stays off the page. `island_visitor_notes` is applied on Find My Island. A FormSubmit activation mail is waiting in drummondgilbert@gmail.com. The Google Sheet is not connected yet: Google was signed out. Counts unchanged. `islands.json` was not edited.
 
 **2026-10-27 (iPhone list photos)** — Homepage list photographs stay a fixed size and load from a direct thumbnail address, so iPhone Safari can show them. Counts unchanged. `islands.json` was not edited.
+
+**2026-10-27 (duplicate islands)** — 165 second copies of the same island were removed. Car Island in Lower Lough Erne is one record. Seven borrowed names were cleared. Atlas **11,212**. Index rebuilt. Supabase was not reloaded.
 
 **2026-10-27 (Safari photos)** — Tall opening pictures are shown whole, and list thumbnails keep a fixed frame so Safari cannot squash them. Counts unchanged. `islands.json` was not edited.
 
@@ -1037,6 +1043,7 @@ See [`FERRIES.md`](FERRIES.md) for the full operator inventory, ToS notes, and r
 
 | Process | Started | ETA | Owner | Notes |
 |---|---|---|---|---|
+| ~~Same-place duplicate merge~~ ✅ 2026-10-27 15:40 UTC | 2026-10-27 15:10 UTC | — | cursor agent | Removed **165** stacked copies. Atlas **11,377 → 11,212**. Car Island is `osm-relation-3998375` only. Seven borrowed names cleared. Index, shards, details, chat corpus, and SEO paths rebuilt. Supabase was not reloaded. |
 | ~~Fact-check corrections, atlas records~~ ✅ 2026-10-27 11:10 UTC | 2026-10-27 10:40 UTC | — | cursor agent | 151 nations, 3 removals, measurements, Belle Isle Grade I, index rebuilt. Seventeen stale country sentences and Inch’s Lough Swilly parent filled afterwards. Claims and old links already done. No commit. |
 | ~~Interest daywave publish~~ ✅ pushed 2026-10-27 | 2026-10-27 11:40 UTC | — | cursor agent | On `main` as `7d6bd4ad`. Film **153**, whisky **23**, for sale **49**, rare wildlife **42**, tidal **126**, castles **98**, books **49**, traditions **46**, unusual news **118**. Stories **1,733** / **1,088** with a picture. Supabase loaded from `data/interest/memberships_sync.sql`. Did not edit `islands.json`. The hourly wake `AGENT_LOOP_TICK_interest_daywave` is still armed until 21:00 Europe/London. |
 | ~~Local interest index publish, round 4~~ ✅ 2026-10-27 06:37 UTC | 2026-10-27 06:35 UTC | — | cursor agent | Published `data/interest_index.json`. Film **143**, whisky **22**, for sale **49**, rare wildlife **40**, tidal **116**, castles **100**, books **41**, traditions **39**, unusual news **89**. Stories **1,638** / **996** with a picture. Wrote `data/interest/memberships_sync.sql`. Did not call Supabase. Did not edit `islands.json`. Local only, not pushed. |

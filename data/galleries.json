@@ -37407,6 +37407,32 @@
       "caption": "Take Off",
       "fileName": "Take Off (230913797).jpeg",
       "primary": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
+      "source": "commons-category",
+      "sourceRef": "Category:Garinish Island",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attribution": "Photo by Ben Brooksbank (CC BY-SA 2.0) via Wikimedia Commons",
+      "caption": "Bantry Bay from Garinish Island geograph-3174577-by-Ben-Brooksbank",
+      "fileName": "Bantry Bay from Garinish Island geograph-3174577-by-Ben-Brooksbank.jpg",
+      "primary": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Garinish_dibe.jpeg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Garinish_dibe.jpeg",
+      "source": "commons-category",
+      "sourceRef": "Category:Garinish Island",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Garinish_dibe.jpeg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Photo by Towel401 (CC BY-SA 4.0) via Wikimedia Commons",
+      "caption": "Garinish dibe",
+      "fileName": "Garinish dibe.jpeg",
+      "primary": false
     }
   ],
   "osm-way-133154542": [
@@ -37529,47 +37555,6 @@
       "attribution": "Photo by Alan Hughes (CC BY-SA 2.0) via Wikimedia Commons",
       "caption": "Garland Stone - geograph.org.uk - 4959093",
       "fileName": "Garland Stone - geograph.org.uk - 4959093.jpg",
-      "primary": false
-    }
-  ],
-  "osm-node-384972465": [
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
-      "source": "commons-category",
-      "sourceRef": "Category:Garinish Island",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Bantry_Bay_from_Garinish_Island_geograph-3174577-by-Ben-Brooksbank.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "attribution": "Photo by Ben Brooksbank (CC BY-SA 2.0) via Wikimedia Commons",
-      "caption": "Bantry Bay from Garinish Island geograph-3174577-by-Ben-Brooksbank",
-      "fileName": "Bantry Bay from Garinish Island geograph-3174577-by-Ben-Brooksbank.jpg",
-      "primary": false
-    },
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Garinish_dibe.jpeg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Garinish_dibe.jpeg",
-      "source": "commons-category",
-      "sourceRef": "Category:Garinish Island",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Garinish_dibe.jpeg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "attribution": "Photo by Towel401 (CC BY-SA 4.0) via Wikimedia Commons",
-      "caption": "Garinish dibe",
-      "fileName": "Garinish dibe.jpeg",
-      "primary": false
-    },
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Garinish_Island_Caha_Mountains_geograph-3174567-by-Ben-Brooksbank.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Garinish_Island_Caha_Mountains_geograph-3174567-by-Ben-Brooksbank.jpg",
-      "source": "commons-category",
-      "sourceRef": "Category:Garinish Island",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Garinish_Island_Caha_Mountains_geograph-3174567-by-Ben-Brooksbank.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "attribution": "Photo by Ben Brooksbank (CC BY-SA 2.0) via Wikimedia Commons",
-      "caption": "Garinish Island Caha Mountains geograph-3174567-by-Ben-Brooksbank",
-      "fileName": "Garinish Island Caha Mountains geograph-3174567-by-Ben-Brooksbank.jpg",
       "primary": false
     }
   ],
@@ -51662,7 +51647,7 @@
       "primary": false
     }
   ],
-  "wd-Q115473746": [
+  "osm-way-274169103": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Island%2C_Loch_an_Sgoltaire%2C_Colonsay_-_geograph.org.uk_-_4095644.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Island%2C_Loch_an_Sgoltaire%2C_Colonsay_-_geograph.org.uk_-_4095644.jpg",
@@ -54721,7 +54706,7 @@
       "primary": false
     }
   ],
-  "wd-Q124343669": [
+  "osm-way-1047653855": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Path_through_Wood_on_Lamb_Island_-_geograph.org.uk_-_3934023.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Path_through_Wood_on_Lamb_Island_-_geograph.org.uk_-_3934023.jpg",
@@ -59776,7 +59761,7 @@
       "primary": false
     }
   ],
-  "wd-Q104348833": [
+  "osm-way-470199195": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coastguard_station%2C_Bunbeg_-_geograph.org.uk_-_2424725.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coastguard_station%2C_Bunbeg_-_geograph.org.uk_-_2424725.jpg",
@@ -60787,6 +60772,45 @@
       "attribution": "Photo by Richard Webb (CC BY-SA 2.0) via Wikimedia Commons",
       "caption": "On Scalla Field - geograph.org.uk - 3555161",
       "fileName": "On Scalla Field - geograph.org.uk - 3555161.jpg",
+      "primary": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
+      "source": "commons-geosearch",
+      "sourceRef": "60.2450,-1.3766;800",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attribution": "Photo by Mat Tuck (CC BY-SA 2.0) via Wikimedia Commons",
+      "caption": "Fish Farm - geograph.org.uk - 5041557",
+      "fileName": "Fish Farm - geograph.org.uk - 5041557.jpg",
+      "primary": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tresta_Voe_%28geograph_2745266%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tresta_Voe_%28geograph_2745266%29.jpg",
+      "source": "commons-geosearch",
+      "sourceRef": "60.2450,-1.3766;800",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tresta_Voe_(geograph_2745266).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attribution": "Photo by David Nicolson (CC BY-SA 2.0) via Wikimedia Commons",
+      "caption": "Tresta Voe (geograph 2745266)",
+      "fileName": "Tresta Voe (geograph 2745266).jpg",
+      "primary": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
+      "source": "commons-geosearch",
+      "sourceRef": "60.2450,-1.3766;800",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attribution": "Photo by John Lucas (CC BY-SA 2.0) via Wikimedia Commons",
+      "caption": "Looking across Tresta Voe towards Lung Ness - geograph.org.uk - 4511481",
+      "fileName": "Looking across Tresta Voe towards Lung Ness - geograph.org.uk - 4511481.jpg",
       "primary": false
     }
   ],
@@ -79956,47 +79980,6 @@
       "primary": false
     }
   ],
-  "osm-relation-376677": [
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
-      "source": "commons-geosearch",
-      "sourceRef": "60.2450,-1.3766;800",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Fish_Farm_-_geograph.org.uk_-_5041557.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "attribution": "Photo by Mat Tuck (CC BY-SA 2.0) via Wikimedia Commons",
-      "caption": "Fish Farm - geograph.org.uk - 5041557",
-      "fileName": "Fish Farm - geograph.org.uk - 5041557.jpg",
-      "primary": false
-    },
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tresta_Voe_%28geograph_2745266%29.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tresta_Voe_%28geograph_2745266%29.jpg",
-      "source": "commons-geosearch",
-      "sourceRef": "60.2450,-1.3766;800",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tresta_Voe_(geograph_2745266).jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "attribution": "Photo by David Nicolson (CC BY-SA 2.0) via Wikimedia Commons",
-      "caption": "Tresta Voe (geograph 2745266)",
-      "fileName": "Tresta Voe (geograph 2745266).jpg",
-      "primary": false
-    },
-    {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
-      "source": "commons-geosearch",
-      "sourceRef": "60.2450,-1.3766;800",
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Looking_across_Tresta_Voe_towards_Lung_Ness_-_geograph.org.uk_-_4511481.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "attribution": "Photo by John Lucas (CC BY-SA 2.0) via Wikimedia Commons",
-      "caption": "Looking across Tresta Voe towards Lung Ness - geograph.org.uk - 4511481",
-      "fileName": "Looking across Tresta Voe towards Lung Ness - geograph.org.uk - 4511481.jpg",
-      "primary": false
-    }
-  ],
   "osm-way-84782374": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Croftland_at_Fearnbeg._-_geograph.org.uk_-_182382.jpg",
@@ -81261,7 +81244,7 @@
       "primary": false
     }
   ],
-  "wd-Q98446638": [
+  "osm-way-97575995": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/River_Thames_-_geograph.org.uk_-_6731571.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/River_Thames_-_geograph.org.uk_-_6731571.jpg",
@@ -86937,7 +86920,7 @@
       "primary": false
     }
   ],
-  "wd-Q116723281": [
+  "osm-way-115921377": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/A_tranquil_corner_on_the_Tweed_-_geograph.org.uk_-_2026826.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/A_tranquil_corner_on_the_Tweed_-_geograph.org.uk_-_2026826.jpg",
@@ -89144,7 +89127,7 @@
       "primary": false
     }
   ],
-  "wd-Q124343695": [
+  "osm-way-1047653849": [
     {
       "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Threave_Castle_-_geograph.org.uk_-_6182017.jpg",
       "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Threave_Castle_-_geograph.org.uk_-_6182017.jpg",

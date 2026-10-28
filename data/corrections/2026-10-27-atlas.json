@@ -1,0 +1,1290 @@
+{
+  "date": "2026-10-27",
+  "source": [
+    "docs/fact-check/2026-10-26-locations.md",
+    "docs/fact-check/2026-10-26-measurements.md",
+    "docs/fact-check/2026-10-26-claims.md item 25"
+  ],
+  "nationChanges": [
+    {
+      "id": "wd-Q24637553",
+      "name": "Spittal Hirst",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24641671",
+      "name": "Inner Hirst",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638971",
+      "name": "Outer Tours",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24639860",
+      "name": "Park Dyke",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24636775",
+      "name": "Wingate Reef",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "riding-stone",
+      "name": "Riding Stone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "willy-potts-rock",
+      "name": "Willy Pott's Rock",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-26723926",
+      "name": "St. Cuthbert's Isle",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24641355",
+      "name": "Guzzard",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q3881514",
+      "name": "Old Law",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638006",
+      "name": "Tree o' the House",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24640149",
+      "name": "Knivestone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921338",
+      "name": "Northern Hares",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921346",
+      "name": "Humber Rock",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921366",
+      "name": "Longstone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921362",
+      "name": "Little Harcar",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921352",
+      "name": "Blue Caps",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921337",
+      "name": "Big Harcar",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921367",
+      "name": "North Wamses",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921365",
+      "name": "The Sandbags",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921369",
+      "name": "South Wamses",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921361",
+      "name": "Roddam and Green",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-3121406",
+      "name": "Brownsman",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q33171886",
+      "name": "Elbow",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24637813",
+      "name": "Swedman",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-relation-3077274",
+      "name": "Staple Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-relation-3077273",
+      "name": "Megstone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921802",
+      "name": "Crumstone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921371",
+      "name": "Solan Rock",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921344",
+      "name": "Little Scarcar",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921339",
+      "name": "Big Scarcar",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921353",
+      "name": "West Wideopen",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-relation-3077272",
+      "name": "Inner Farne",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-61921350",
+      "name": "East Wideopen",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24641716",
+      "name": "Islestone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24649313",
+      "name": "Dicky Shad",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638796",
+      "name": "Newton Skere",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24656421",
+      "name": "Barnyard Reef",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24652070",
+      "name": "Craster Skeres",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24654295",
+      "name": "Boulmer Bush",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24654297",
+      "name": "Boulmer Stile",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24656798",
+      "name": "Birling Carrs",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24639018",
+      "name": "Pan Rocks",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q2755722",
+      "name": "Coquet Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24656915",
+      "name": "Bondicarr Bush",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-145174776",
+      "name": "Island 1",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-145174780",
+      "name": "Island 2",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-145174778",
+      "name": "Island 3",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-145174779",
+      "name": "Island 4",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-145174777",
+      "name": "Island 5",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24645889",
+      "name": "Elm Bush",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638828",
+      "name": "Northern Hill",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24652091",
+      "name": "Cresswell Skeres",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24657174",
+      "name": "Blackdyke",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q137756430",
+      "name": "Castle Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-3121034",
+      "name": "Castle Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24637522",
+      "name": "South Spit",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638857",
+      "name": "North Spit",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24638503",
+      "name": "Seaton Sea Rocks",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24651800",
+      "name": "Colville Rock",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24641666",
+      "name": "Inner Bell Rock",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "old-hartley-standing-stone",
+      "name": "Old Hartley Standing Stone",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q7594502",
+      "name": "St Mary's Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24658754",
+      "name": "Brierdean Bushes",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24636755",
+      "name": "Whitley Shad",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24656498",
+      "name": "Bellhues Rocks",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q27627601",
+      "name": "Black Middens",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24657162",
+      "name": "Beckfoot",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-527570894",
+      "name": "Buckholme Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-1260658988",
+      "name": "Little Corby Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "big-island-w29471565",
+      "name": "Big Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "little-island-w31028733",
+      "name": "Little Island",
+      "from": "Scotland",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q125365707",
+      "name": "Knightstone Island",
+      "from": "Wales",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q125365684",
+      "name": "Birnbeck Island",
+      "from": "Wales",
+      "to": "England"
+    },
+    {
+      "id": "osm-way-30782387",
+      "name": "Steep Holm",
+      "from": "Wales",
+      "to": "England"
+    },
+    {
+      "id": "wd-Q24658725",
+      "name": "Langford Grounds",
+      "from": "Wales",
+      "to": "England"
+    },
+    {
+      "id": "osm-relation-10323151",
+      "name": "Davaar Island",
+      "from": "Ireland",
+      "to": "Scotland"
+    },
+    {
+      "id": "osm-way-376949973",
+      "name": "Sanda",
+      "from": "Northern Ireland",
+      "to": "Scotland"
+    },
+    {
+      "id": "osm-way-376949974",
+      "name": "Sheep Island",
+      "from": "Northern Ireland",
+      "to": "Scotland"
+    },
+    {
+      "id": "osm-way-4006840",
+      "name": "Glunimore Island",
+      "from": "Northern Ireland",
+      "to": "Scotland"
+    },
+    {
+      "id": "osm-node-530980959",
+      "name": "Paterson's Rock",
+      "from": "Northern Ireland",
+      "to": "Scotland"
+    },
+    {
+      "id": "osm-way-27013704",
+      "name": "Grassholm",
+      "from": "Ireland",
+      "to": "Wales"
+    },
+    {
+      "id": "osm-way-1493746561",
+      "name": "West Tump",
+      "from": "Ireland",
+      "to": "Wales"
+    },
+    {
+      "id": "osm-relation-3009841",
+      "name": "South Bishop",
+      "from": "Ireland",
+      "to": "Wales"
+    },
+    {
+      "id": "wd-Q24657075",
+      "name": "Barrels",
+      "from": "Ireland",
+      "to": "Wales"
+    },
+    {
+      "id": "wd-Q24641433",
+      "name": "Hats",
+      "from": "Ireland",
+      "to": "Wales"
+    },
+    {
+      "id": "osm-way-4558730",
+      "name": "Glashedy Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-5497270",
+      "name": "Inch",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4558430",
+      "name": "Inishbofin",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-11619444",
+      "name": "Inishdooey",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4559909",
+      "name": "Ballyboyle Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "wd-Q26717163",
+      "name": "Croaghan Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "wd-Q26717191",
+      "name": "Duncap Isle",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4558951",
+      "name": "Inishbeg",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4559046",
+      "name": "Island Roy",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4558415",
+      "name": "Clonmass Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-835031691",
+      "name": "Rabbit Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4559198",
+      "name": "Rough Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-4559951",
+      "name": "Rooney's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-814326891",
+      "name": "\"Jenny's Island\"",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-207529521",
+      "name": "Corry Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1327471955",
+      "name": "Corry Shoal",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-322267458",
+      "name": "Drummans Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1106942090",
+      "name": "Fahy Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1106942089",
+      "name": "Fahy Rock",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-816432968",
+      "name": "Gull Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-816432969",
+      "name": "Gull Rock",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1327471956",
+      "name": "Holy island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-7169522",
+      "name": "Inishmacgrath",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-231229702",
+      "name": "Inishmagrath",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1081419180",
+      "name": "Long Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "wd-Q26717915",
+      "name": "O'Reilly's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1105379439",
+      "name": "Round Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1094318119",
+      "name": "Spiranthes Islands",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1081419179",
+      "name": "The Spit",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-186289752",
+      "name": "Cherry Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-6957984",
+      "name": "Church Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-186289751",
+      "name": "Crane Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1102225963",
+      "name": "Buck Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "wd-Q26717992",
+      "name": "Eonish",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-182626259",
+      "name": "Inch Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-767535808",
+      "name": "Stony Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1033855557",
+      "name": "Grania's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1033855559",
+      "name": "Moylederg Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1033855558",
+      "name": "Pigeon's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-467589924",
+      "name": "Roshin Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-1033855560",
+      "name": "Round Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-467586333",
+      "name": "Ò' Donnell's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156376",
+      "name": "Allingham's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156370",
+      "name": "Ash Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-306303592",
+      "name": "Ash Islands",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-4087461",
+      "name": "Boat Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156369",
+      "name": "Bulls Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-4087462",
+      "name": "Derg Beg Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-4087463",
+      "name": "Derg More Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156375",
+      "name": "Derry Beg Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156371",
+      "name": "Derry More Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-109722657",
+      "name": "Friar's Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-4087466",
+      "name": "Inishgoosk",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-109728511",
+      "name": "Kelly's Isles",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156380",
+      "name": "Philipboy Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-relation-4087468",
+      "name": "Saints Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-106592833",
+      "name": "Station Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-112156377",
+      "name": "Trough Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-127628516",
+      "name": "Inishkeen",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-127628517",
+      "name": "Inishtemple",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-274965315",
+      "name": "Trawnish Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-179021429",
+      "name": "Tuam Island",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-367724521",
+      "name": "Inishmuck",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "osm-way-369604216",
+      "name": "Inishnagon",
+      "from": "Northern Ireland",
+      "to": "Ireland"
+    },
+    {
+      "id": "wd-Q104348087",
+      "name": "Ranaghmore Island",
+      "from": "Northern Ireland",
+      "to": "Ireland",
+      "note": "Confirmed in section 11 prose, not in the Lough Derg table. Lough Swilly, County Donegal."
+    }
+  ],
+  "removed": [
+    {
+      "id": "csv-geocoded-Q1375188",
+      "name": "Greenisland",
+      "reason": "Town of Greenisland on the shore of Belfast Lough, not an island."
+    },
+    {
+      "id": "wd-Q24639396",
+      "name": "Island Magee",
+      "reason": "Island Magee is a peninsula in County Antrim, not a sea island."
+    },
+    {
+      "id": "thames-oxford",
+      "name": "Oxford",
+      "reason": "City-centre pin for Oxford, not an island."
+    }
+  ],
+  "parentFills": [
+    {
+      "id": "inchcailloch",
+      "name": "Inchcailloch",
+      "parentWaterBody": {
+        "name": "Loch Lomond",
+        "type": "lake",
+        "osmType": "relation",
+        "osmId": 11015,
+        "wikidata": "Q208926"
+      },
+      "copiedFrom": "osm-way-45834131"
+    },
+    {
+      "id": "eel-pie-island",
+      "name": "Eel Pie Island",
+      "parentWaterBody": {
+        "name": "River Thames",
+        "type": "river",
+        "wikidata": "Q19686"
+      },
+      "copiedFrom": "osm-relation-4573198"
+    },
+    {
+      "id": "isle-of-dogs",
+      "name": "Isle of Dogs",
+      "parentWaterBody": {
+        "name": "River Thames",
+        "type": "river",
+        "wikidata": "Q19686"
+      },
+      "copiedFrom": "osm-relation-4573198"
+    }
+  ],
+  "measurementEdits": [
+    {
+      "id": "osm-relation-3970260",
+      "name": "Hayling Island",
+      "changes": [
+        {
+          "field": "areaKm2",
+          "from": 16.2385,
+          "to": null
+        },
+        {
+          "field": "areaSource",
+          "from": "osm-relation",
+          "to": null
+        },
+        {
+          "field": "areaConfidence",
+          "from": "medium",
+          "to": "n/a"
+        }
+      ]
+    },
+    {
+      "id": "mainland-orkney",
+      "name": "Mainland (Orkney)",
+      "changes": [
+        {
+          "field": "areaKm2",
+          "from": 580.604,
+          "to": 523.25
+        },
+        {
+          "field": "areaSource",
+          "from": "osm-coastline-polygon",
+          "to": null
+        },
+        {
+          "field": "areaConfidence",
+          "from": "high",
+          "to": "medium"
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-8156739",
+      "name": "Arranmore",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 281.0,
+          "to": 227
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-8495304",
+      "name": "Cape Clear Island",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 212.8,
+          "to": 160
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-3699362",
+      "name": "Bere Island",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 320.1,
+          "to": 270
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-6045552",
+      "name": "Inishmore",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 71.0,
+          "to": 123
+        },
+        {
+          "field": "highestPointName",
+          "from": "An Charcair",
+          "to": "An Droim Rua"
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-3214114",
+      "name": "Tresco",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 34.0,
+          "to": 44
+        },
+        {
+          "field": "highestPointName",
+          "from": "Gun Hill",
+          "to": "Castle Down"
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "osm-way-219575236",
+      "name": "Scarriff Island",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 305.3,
+          "to": 252
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        }
+      ]
+    },
+    {
+      "id": "lundy",
+      "name": "Lundy",
+      "changes": [
+        {
+          "field": "highestPointM",
+          "from": 138.0,
+          "to": 143
+        },
+        {
+          "field": "highestPointName",
+          "from": "Tibbett's Hill",
+          "to": "Beacon Hill"
+        },
+        {
+          "field": "highestPointSource",
+          "from": "osm-peak",
+          "to": "manual"
+        },
+        {
+          "field": "highestPointConfidence",
+          "from": "high",
+          "to": "estimate"
+        }
+      ]
+    },
+    {
+      "id": "isle-of-skye",
+      "name": "Isle of Skye",
+      "changes": [
+        {
+          "field": "population",
+          "from": 10008,
+          "to": 10496
+        }
+      ]
+    },
+    {
+      "id": "lewis-and-harris",
+      "name": "Lewis and Harris",
+      "changes": [
+        {
+          "field": "population",
+          "from": 21031,
+          "to": 19680
+        }
+      ]
+    },
+    {
+      "id": "islay",
+      "name": "Islay",
+      "changes": [
+        {
+          "field": "population",
+          "from": 3498,
+          "to": 3180
+        }
+      ]
+    },
+    {
+      "id": "arran",
+      "name": "Isle of Arran",
+      "changes": [
+        {
+          "field": "population",
+          "from": 4679,
+          "to": 4618
+        }
+      ]
+    },
+    {
+      "id": "fair-isle",
+      "name": "Fair Isle",
+      "changes": [
+        {
+          "field": "population",
+          "from": 55,
+          "to": 44
+        },
+        {
+          "field": "populationYear",
+          "from": null,
+          "to": 2022
+        }
+      ]
+    },
+    {
+      "id": "osm-relation-3969458",
+      "name": "Portsea Island",
+      "changes": [
+        {
+          "field": "population",
+          "from": 150000,
+          "to": 165248
+        },
+        {
+          "field": "populationYear",
+          "from": null,
+          "to": 2021
+        }
+      ]
+    }
+  ],
+  "belleIsleGrade": {
+    "id": "belle-isle-windermere",
+    "files": [
+      "data/curated.json",
+      "data/islands.json"
+    ],
+    "from": "The round house is Grade II* listed.",
+    "to": "The round house is Grade I listed."
+  },
+  "nationForChanged": true,
+  "nationFor": {
+    "file": "scripts/fetch_islands.py",
+    "generalBoxesShrunk": false,
+    "test": "scripts/test_nation_for.py",
+    "note": "Overrides are checked before the existing boxes. The general boxes were not shrunk. The function was not reapplied to the atlas."
+  },
+  "indexRebuild": {
+    "success": true,
+    "command": "python3 scripts/build_islands_index.py",
+    "shards": 7,
+    "detailFiles": 11348,
+    "detailIdsSkipped": 29,
+    "compactRows": 7234,
+    "unnamedRows": 4143,
+    "detail": "One run finished. It rewrote data/islands_index.json, data/islands_unnamed_index.json, data/shards/, and data/details/. It did not rewrite data/islands.json. The 29 skipped detail files are ids the writer already rejects; none of the corrected ids were skipped."
+  },
+  "skipped": [
+    {
+      "id": "osm-relation-5497270",
+      "name": "Inch",
+      "why": "Section 6 says the parent water is empty and should be Lough Swilly. Nation was set to Ireland. Follow-up set parentWaterBody to Lough Swilly, copied as a sea lough with no invented OSM id."
+    },
+    {
+      "id": null,
+      "name": "Unlisted neighbours",
+      "why": "Islands in the same lake or on the same coast that were not in the section 1-13 tables were left unchanged. That includes unnamed Northumberland rocks and other Donegal islets. nation_for() now classifies those coordinates, and it was not reapplied to the atlas."
+    }
+  ],
+  "checks": {
+    "curatedIdsPresent": 27,
+    "removedGone": [
+      "csv-geocoded-Q1375188",
+      "thames-oxford",
+      "wd-Q24639396"
+    ],
+    "isleOfDogsKept": true,
+    "skye": {
+      "nation": "Scotland",
+      "type": "sea"
+    },
+    "devenish": {
+      "nation": "Northern Ireland",
+      "type": "lake"
+    },
+    "wight": {
+      "nation": "England",
+      "type": "sea"
+    },
+    "achill": {
+      "nation": "Ireland",
+      "type": "sea"
+    },
+    "innerFarne": "England",
+    "davaar": "Scotland",
+    "knightstone": "England",
+    "glashedy": "Ireland",
+    "sulaSgeirSummitUnchanged": true,
+    "ionaImageCount": 1,
+    "untouchedRecordsByteIdentical": true
+  }
+}

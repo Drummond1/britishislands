@@ -227,6 +227,13 @@ def main() -> None:
     unnamed_rows = [slim_unnamed_stub(x) for x in data if is_unnamed(x)]
 
     index_payload = {"version": INDEX_VERSION, "rows": main_rows}
+    alias_path = ROOT / "data" / "duplicate_place_aliases.json"
+    if alias_path.exists():
+        aliases = json.loads(alias_path.read_text(encoding="utf-8"))
+        if aliases.get("idAliases"):
+            index_payload["idAliases"] = aliases["idAliases"]
+        if aliases.get("pathAliases"):
+            index_payload["pathAliases"] = aliases["pathAliases"]
     out.write_text(
         json.dumps(index_payload, separators=(",", ":"), ensure_ascii=False) + "\n",
         encoding="utf-8",

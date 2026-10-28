@@ -279,7 +279,7 @@
       "osm-relation-380646",
       "osm-relation-380684",
       "osm-relation-3075243",
-      "osm-relation-376677",
+      "mainland-shetland",
       "isle-of-man",
       "osm-relation-15708714",
       "osm-way-4001735",
@@ -542,7 +542,7 @@
       "arran",
       "osm-way-562232753",
       "mull",
-      "wd-Q124343695",
+      "osm-way-1047653849",
       "osm-relation-4092586",
       "lindisfarne",
       "rathlin",
@@ -570,7 +570,7 @@
       "osm-relation-380684",
       "wd-Q43372925",
       "osm-way-201511514",
-      "osm-relation-376677",
+      "mainland-shetland",
       "osm-relation-3148465",
       "osm-relation-6045406",
       "mainland-orkney",
@@ -2229,7 +2229,7 @@
       "osm-relation-3075243": [
         "Kimbland distillery"
       ],
-      "osm-relation-376677": [
+      "mainland-shetland": [
         "Lerwick Distillery"
       ],
       "isle-of-man": [
@@ -3052,7 +3052,7 @@
         "Aros Castle",
         "Torosay Castle"
       ],
-      "wd-Q124343695": [
+      "osm-way-1047653849": [
         "Threave Castle"
       ],
       "osm-relation-4092586": [
@@ -3142,7 +3142,7 @@
       "osm-way-201511514": [
         "Eilean Donan Castle"
       ],
-      "osm-relation-376677": [
+      "mainland-shetland": [
         "Scalloway Castle"
       ],
       "osm-relation-3148465": [
@@ -16568,7 +16568,7 @@
           "subdivision": "orkney"
         }
       ],
-      "osm-relation-376677": [
+      "mainland-shetland": [
         {
           "title": "Lerwick Distillery",
           "facet": "distillery",
@@ -19695,7 +19695,7 @@
           }
         }
       ],
-      "wd-Q124343695": [
+      "osm-way-1047653849": [
         {
           "title": "Threave Castle",
           "facet": "castle",
@@ -20191,7 +20191,7 @@
           }
         }
       ],
-      "osm-relation-376677": [
+      "mainland-shetland": [
         {
           "title": "Scalloway Castle",
           "facet": "castle",

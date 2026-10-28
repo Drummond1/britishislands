@@ -1,13 +1,14 @@
 /**
  * Visitor notes on an island: what's interesting, and what you can do.
- * The note shows on that island. It is not part of the canonical record.
- * No email is collected.
+ * The note shows on that island. The email is not part of the note.
+ * A copy is emailed to the maintainer and, when configured, a Google Sheet.
  */
-
-import { loadCrowdSuggestConfig, isCrowdSuggestConfigured, submitCrowdSuggestion } from "./crowd-pins.js?v=visitor-note-1";
 
 const LOCAL_KEY = "iobIslandNotes";
 const NAME_KEY = "iobVisitorName";
+const EMAIL_KEY = "iobVisitorEmail";
+const MAINTAINER = "drummondgilbert@gmail.com";
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** @type {Map<string, Array<{id: string, islandId: string, interesting: string, canDo: string, contributorName: string, at: string, shared: boolean}>>} */
 const byIsland = new Map();
@@ -25,7 +26,9 @@ function letters(value) {
 }
 
 function looksPrivate(text) {
-  if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test(text)) return "Leave out email addresses.";
+  if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test(text)) {
+    return "Leave out email addresses. Use the email field. It is not published.";
+  }
   if (/(?:\+?\d[\d\s().-]{8,}\d)/.test(text)) return "Leave out phone numbers.";
   return "";
 }
@@ -58,6 +61,7 @@ function normalise(row) {
   const id = String(row.id || "").trim();
   if (!islandId || !id || !contributorName) return null;
   if (letters(interesting) < 4 && letters(canDo) < 4) return null;
+  if (looksPrivate(`${interesting} ${canDo} ${contributorName}`)) return null;
   return {
     id,
     islandId,
@@ -103,6 +107,15 @@ export function visitorName() {
   }
 }
 
+export function visitorEmail() {
+  try {
+    const value = clean(localStorage.getItem(EMAIL_KEY) || "", 200);
+    return EMAIL_RE.test(value) ? value : "";
+  } catch (_) {
+    return "";
+  }
+}
+
 export function notesForIsland(islandId) {
   const list = byIsland.get(islandId) || [];
   return list
@@ -110,16 +123,20 @@ export function notesForIsland(islandId) {
     .sort((a, b) => (Date.parse(b.at) || 0) - (Date.parse(a.at) || 0));
 }
 
-function supabaseReady() {
-  const url = String(window.IOB_SUPABASE_URL || document.querySelector('meta[name="iob-supabase-url"]')?.getAttribute("content") || "").trim();
+function supabaseConfig() {
+  const url = String(window.IOB_SUPABASE_URL || document.querySelector('meta[name="iob-supabase-url"]')?.getAttribute("content") || "")
+    .trim()
+    .replace(/\/$/, "");
   const key = String(window.IOB_SUPABASE_ANON_KEY || document.querySelector('meta[name="iob-supabase-anon-key"]')?.getAttribute("content") || "").trim();
-  return Boolean(url && key);
+  if (!url || !key) return null;
+  return { url, key };
 }
 
 export async function refreshIslandNotes() {
   let changed = false;
   try {
-    if (!supabaseReady()) return false;
+    const cfg = supabaseConfig();
+    if (!cfg) return false;
     const { getSupabase } = await import("./supabase-client.js");
     const sb = getSupabase();
     if (!sb) return false;
@@ -146,52 +163,97 @@ export async function refreshIslandNotes() {
   return changed;
 }
 
-async function writeSupabase(row) {
-  if (!supabaseReady()) return false;
-  const { getSupabase } = await import("./supabase-client.js");
-  const sb = getSupabase();
-  if (!sb) return false;
-  const { error } = await sb.from("island_visitor_notes").insert({
-    id: row.id,
-    island_id: row.islandId,
-    interesting: row.interesting || null,
-    can_do: row.canDo || null,
-    contributor_name: row.contributorName,
-  });
-  return !error;
+function placeLine(island) {
+  return [island?.nation, island?.archipelago, island?.parentWaterBody?.name]
+    .filter(Boolean)
+    .join(" · ");
 }
 
-async function writeInbox(row, island) {
-  const cfg = await loadCrowdSuggestConfig();
-  if (!isCrowdSuggestConfigured(cfg)) return false;
-  const bits = [];
-  if (row.interesting) bits.push(`What's interesting: ${row.interesting}`);
-  if (row.canDo) bits.push(`What you can do: ${row.canDo}`);
-  await submitCrowdSuggestion(
-    {
-      lat: island.lat,
-      lng: island.lng,
-      name: island.name || "",
-      note: bits.join("\n"),
-      credit: row.contributorName,
-      contributionKind: "visitor_note",
-      atlasIslandId: island.id,
-      atlasIslandName: island.name || island.id,
-      proposedChanges: "Visitor note: what's interesting, and what you can do",
-      skipSourceCheck: true,
+function pageUrl(island, pagePath) {
+  const origin = String(window.location?.origin || "https://www.findmyisland.com").replace(/\/$/, "");
+  const path = String(pagePath || "");
+  if (path.startsWith("/")) return `${origin}${path}`;
+  if (island?.id) return `${origin}/?island=${encodeURIComponent(island.id)}&map=1`;
+  return origin;
+}
+
+async function postShared(payload) {
+  const cfg = supabaseConfig();
+  if (!cfg) return null;
+  const res = await fetch(`${cfg.url}/functions/v1/visitor-note`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: cfg.key,
+      Authorization: `Bearer ${cfg.key}`,
     },
-    cfg,
-  );
-  return true;
+    body: JSON.stringify(payload),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (data && data.ok) return { ok: true, mailed: Boolean(data.mailed), sheet: Boolean(data.sheet) };
+  if (data && data.message && res.status < 500) return { ok: false, message: String(data.message) };
+  return null;
+}
+
+async function insertDirect(row) {
+  const cfg = supabaseConfig();
+  if (!cfg) return false;
+  const res = await fetch(`${cfg.url}/rest/v1/island_visitor_notes`, {
+    method: "POST",
+    headers: {
+      apikey: cfg.key,
+      Authorization: `Bearer ${cfg.key}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify({
+      id: row.id,
+      island_id: row.islandId,
+      interesting: row.interesting || null,
+      can_do: row.canDo || null,
+      contributor_name: row.contributorName,
+      contributor_email: row.email || null,
+    }),
+  });
+  return res.ok || res.status === 409;
+}
+
+async function mailMaintainer(row, island, link) {
+  const fd = new FormData();
+  fd.append("_subject", `Visitor note: ${island.name || island.id}`);
+  fd.append("_template", "table");
+  fd.append("_captcha", "false");
+  if (row.email) fd.append("_replyto", row.email);
+  const fields = {
+    Island: island.name || island.id,
+    "Island id": island.id,
+    Place: placeLine(island),
+    Page: link,
+    "About this island": clean(island.shortDescription || island.accommodation || "", 400),
+    "What's interesting": row.interesting,
+    "What you can do": row.canDo,
+    From: row.contributorName,
+    "Email (not published)": row.email,
+    "Note id": row.id,
+  };
+  for (const [key, value] of Object.entries(fields)) fd.append(key, value || "—");
+  const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(MAINTAINER)}`, {
+    method: "POST",
+    headers: { Accept: "application/json" },
+    body: fd,
+  });
+  const data = await res.json().catch(() => ({}));
+  return res.ok && String(data.success || "") !== "false";
 }
 
 /**
  * @returns {Promise<{ok: true, where: "shared" | "sent" | "here"} | {ok: false, message: string}>}
  */
-export async function saveIslandNote({ island, personName, interesting, canDo }) {
+export async function saveIslandNote({ island, personName, email, interesting, canDo, pagePath }) {
   const who = clean(personName, 60);
   const interest = clean(interesting, 280);
   const doing = clean(canDo, 280);
+  const mail = clean(email, 200);
   if (!island?.id) return { ok: false, message: "Open an island, then try again." };
   if (letters(interest) < 4 && letters(doing) < 4) {
     return { ok: false, message: "Say what's interesting, or what you can do." };
@@ -199,6 +261,7 @@ export async function saveIslandNote({ island, personName, interesting, canDo })
   const privacy = looksPrivate(`${interest} ${doing} ${who}`);
   if (privacy) return { ok: false, message: privacy };
   if (letters(who) < 2) return { ok: false, message: "Type your name." };
+  if (mail && !EMAIL_RE.test(mail)) return { ok: false, message: "That email does not look right." };
 
   const row = {
     id: crypto.randomUUID(),
@@ -206,30 +269,65 @@ export async function saveIslandNote({ island, personName, interesting, canDo })
     interesting: interest,
     canDo: doing,
     contributorName: who,
+    email: mail,
     at: new Date().toISOString(),
     shared: false,
+  };
+  const link = pageUrl(island, pagePath);
+  const payload = {
+    id: row.id,
+    islandId: row.islandId,
+    islandName: clean(island.name || "", 120),
+    place: placeLine(island),
+    listing: clean(island.shortDescription || island.accommodation || "", 400),
+    pageUrl: link,
+    interesting: row.interesting,
+    canDo: row.canDo,
+    contributorName: row.contributorName,
+    email: row.email,
   };
 
   let where = "here";
   try {
-    if (await writeSupabase(row)) {
+    const remote = await postShared(payload);
+    if (remote && remote.ok) {
       row.shared = true;
       where = "shared";
+      if (!remote.mailed) {
+        try {
+          await mailMaintainer(row, island, link);
+        } catch (_) {
+          /* the note is already on the island */
+        }
+      }
+    } else if (remote && remote.message) {
+      return { ok: false, message: remote.message };
     }
   } catch (_) {
-    /* try the inbox */
+    /* try the table directly */
   }
+
   if (where !== "shared") {
     try {
-      if (await writeInbox(row, island)) where = "sent";
+      if (await insertDirect(row)) {
+        row.shared = true;
+        where = "shared";
+      }
     } catch (_) {
       /* stays on this computer */
+    }
+    try {
+      if (await mailMaintainer(row, island, link)) where = row.shared ? "shared" : "sent";
+    } catch (_) {
+      /* the note can still show here */
     }
   }
 
   remember(row);
   try {
     localStorage.setItem(NAME_KEY, who);
+    if (mail) localStorage.setItem(EMAIL_KEY, mail);
+    else localStorage.removeItem(EMAIL_KEY);
   } catch (_) {
     /* ignore */
   }

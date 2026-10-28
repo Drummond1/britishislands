@@ -5,38 +5,49 @@ map pin and open a pre-filled GitHub issue. Maintainers triage proposals and
 append approved rows to `data/crowd_pins.json`. Nothing is merged into
 `data/islands.json` without normal **provenance** rules (`docs/ETHICS.md`).
 
-## Name an island that is already on the map
+## Name an island
 
-This is separate from dropping a new gold pin. The island is already there.
+Click an island marked with a question mark. The page asks one question:
+what it is called. Then your name, and your email. The line under the email
+says we don’t publish it. One button: **Name it**.
 
-1. **More → Contribute → Name an island already on the map.** That turns on
-   **Unnamed places only**. The list heading becomes **Unnamed — open one and
-   type its name**.
-2. Open an island marked with a question mark. The page is the form. The note
-   under the name says to use the name people there use — Gaelic, Irish, Welsh,
-   Manx, or English — and not to guess.
-3. **Save the name.** The map, the list, and the profile show that name, with
-   “Suggested by …”. The canonical `islands.json` row is left unnamed until a
-   published source is added.
+The name shows on the map, the list, and the profile, as **Named by** that
+person. `islands.json` stays unnamed until a published source is added.
 
-The email is written only to `public.island_name_log` (Supabase). Anonymous
-clients can insert a row and cannot read the table. The map reads
-`island_names_public()`, which returns the name, the person’s name, and the
-optional source, and does not return the email. If Supabase is not configured,
-the same form is sent through the existing suggestion inbox
+The same three fields are the naming step if someone is placing a missing
+island. A source, a note, and GitHub are not part of naming.
+
+**Named by the public**, next to All islands, shows only these names, newest
+first.
+
+Each save inserts `public.island_name_log`. Anonymous clients can insert and
+cannot read the table. The map reads `island_names_public()`, which returns
+the name, the person’s name, and the place, and does not return the email.
+A database trigger emails drummondgilbert@gmail.com through FormSubmit. The
+first message is an activation link; after that link is opened, each name
+sends an email. The same rows are available as a private CSV for the Google
+Sheet **Find My Island — names from the public**, with columns Submitted,
+Island, Named by, Email, Island id, Latitude, Longitude. The token for that
+CSV is not in the repo. Creating the spreadsheet needs a connected Google
+Sheets account.
+
+If Supabase is not configured, the form is sent through the suggestion inbox
 (`data/crowd_suggest_config.json`) and the name is kept in this browser.
-The live site shares names once the Pages secrets `IOB_SUPABASE_URL` and
-`IOB_SUPABASE_ANON_KEY` are set; the deploy writes them into `config.local.js`.
 
 ## What's interesting, and what you can do
 
 On a named island, under the description:
 
 1. Two boxes: what's interesting, and what you can do. One of them is enough.
-2. Your name. No email.
-3. **Add this.** The note shows on that island, under “From visitors. Not checked.”
+2. Your name, which is shown on the note.
+3. Email, optional. The label says **Not published**. It is not shown on the island, not stored in the browser’s public note, and not returned by `island_visitor_notes_public()`.
+4. **Add to this island.** The note appears under “From visitors. Not checked.” The page does not jump back to the top.
 
-It is not written into `islands.json`. Leave out private addresses, phone numbers, and anything meant as a guide for boats or wildlife. When Supabase has `island_visitor_notes`, other people see the note. Until that migration is applied, the note stays on this computer, and a copy is sent through the suggestion inbox when that inbox is configured.
+It is not written into `islands.json`. Leave out private addresses, phone numbers, and anything meant as a guide for boats or wildlife. The public text is in `island_visitor_notes`. The email sits in `contributor_email` on that row. Anonymous clients can insert and cannot select the table.
+
+Each new note is also emailed to drummondgilbert@gmail.com through FormSubmit, with the island name, place, page, the short listing, both answers, the name, and the email. The first send asks FormSubmit for a one-time activation click in that inbox. If the server send does not go through, the browser sends the same message.
+
+A private Google Form can also append the same fields to a spreadsheet. The form address and entry ids live in `island_note_inbox` (one row, id 1), which anonymous clients cannot read. Until that row is filled, the sheet is not written. Do not put the form address in the site JavaScript.
 
 ## User flow (frontend)
 
@@ -46,11 +57,8 @@ It is not written into `islands.json`. Leave out private addresses, phone number
    The bar says to zoom in and click the middle of the land, not the water.
    Another click, or a drag of the gold dot, moves it. **Use this spot** opens
    the name step.
-3. **Name it.** “What is it called?” explains the local name, and that a blank
-   is allowed. “How do you know?” takes a link, a book, or a sentence, and can
-   be left empty. A note, a photo, and an email sit behind “Add a note…”.
-   One button sends the pin. **Move the pin** returns to the map without
-   clearing the name.
+3. **What is it called?** The name, your name, and your email. The email is
+   not published. **Name it** saves it. **Move the pin** goes back to the map.
 4. **Crowd pins** toggle shows gold markers from `data/crowd_pins.json`.
    An unnamed pin’s popup says **Name this place** and opens the same form.
 

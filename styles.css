@@ -1060,6 +1060,28 @@ body.crowd-placing .legend-wrap {
   margin-top: 8px;
 }
 
+.crowd-modal__actions--naming {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.crowd-modal__actions--naming .crowd-modal__btn--primary {
+  width: 100%;
+  min-height: 48px;
+  font-size: 16px;
+}
+
+.crowd-modal__actions--naming .crowd-modal__textlink {
+  margin: 2px 0 0;
+  text-align: center;
+}
+
+.crowd-field--name input {
+  min-height: 52px;
+  font-size: 20px;
+  font-family: Newsreader, Georgia, serif;
+}
+
 .crowd-modal__btn {
   display: inline-flex;
   align-items: center;

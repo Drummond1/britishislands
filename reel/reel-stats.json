@@ -1,0 +1,10 @@
+{
+ "built": "2026-10-27T08:23:09+00:00",
+ "numbers": {
+  "islands": 11380,
+  "sea": 5344,
+  "lake": 4183,
+  "river": 1853,
+  "photographed": 4356
+ }
+}

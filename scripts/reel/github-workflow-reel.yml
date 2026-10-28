@@ -1,0 +1,87 @@
+# Keeps the island reel's on-screen numbers in step with the atlas.
+# Monthly it compares the counts in reel/reel-stats.json with data/islands.json. If an on-screen count
+# (islands, sea, lake, river, photographed) has moved by 1% or more, it re-renders the full film and the
+# LinkedIn cut, commits reel/, and redeploys Pages. Run it by hand from the Actions tab at any time;
+# tick "force" to rebuild regardless. The homepage loop shows no numbers and is left alone.
+
+name: Rebuild island reel
+
+on:
+  schedule:
+    - cron: "17 5 1 * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Rebuild even if the numbers have barely moved"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: reel
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Are the numbers on screen out of date?
+        id: drift
+        run: python3 scripts/reel/check_drift.py ${{ inputs.force && '--force' || '' }}
+
+      - name: Install ffmpeg and Python packages
+        if: steps.drift.outputs.rebuild == 'true'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -r scripts/reel/requirements.txt
+
+      - uses: actions/setup-node@v4
+        if: steps.drift.outputs.rebuild == 'true'
+        with:
+          node-version: "20"
+
+      - name: Install the renderer
+        if: steps.drift.outputs.rebuild == 'true'
+        working-directory: scripts/reel
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Reuse photographs from earlier builds
+        if: steps.drift.outputs.rebuild == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .reel-build/photos
+          key: reel-photos-${{ hashFiles('scripts/reel/wall_picks.json', 'scripts/reel/prep.py') }}
+          restore-keys: reel-photos-
+
+      - name: Build the reel
+        if: steps.drift.outputs.rebuild == 'true'
+        run: python3 scripts/reel/build.py
+
+      - name: Commit and redeploy
+        if: steps.drift.outputs.rebuild == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reel/
+          if git diff --staged --quiet; then
+            echo "Reel unchanged"
+          else
+            git commit -m "chore: rebuild island reel (${{ steps.drift.outputs.moved || 'forced' }})"
+            git push
+            # pushes made with the workflow token do not trigger other workflows, so start the Pages deploy explicitly
+            gh workflow run pages.yml --ref main
+          fi

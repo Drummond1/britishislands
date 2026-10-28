@@ -1,0 +1,5104 @@
+{
+  "date": "2026-10-27",
+  "before": 11377,
+  "after": 11212,
+  "dropped": 165,
+  "groups": [
+    {
+      "keeper": {
+        "id": "osm-relation-3516492",
+        "name": "Aghinish",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516492,
+        "areaKm2": 0.0991,
+        "lat": 54.22282,
+        "lng": -7.51645,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207465",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207465,
+          "areaKm2": 0.0989,
+          "lat": 54.22295,
+          "lng": -7.51634,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3581015",
+        "name": "Ardillaun",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3581015,
+        "areaKm2": 0.0428,
+        "lat": 53.51771,
+        "lng": -9.31484,
+        "wikidata": "Q104323175"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-262876114",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 262876114,
+          "areaKm2": 0.0427,
+          "lat": 53.51753,
+          "lng": -9.31486,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1414751288",
+        "name": "Bennett Island",
+        "nation": "England",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 1414751288,
+        "areaKm2": 0.0012,
+        "lat": 53.21446,
+        "lng": -2.5233,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-41079254",
+          "name": "Unnamed island",
+          "nation": "England",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 41079254,
+          "areaKm2": 0.0012,
+          "lat": 53.21447,
+          "lng": -2.52328,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625566",
+        "name": "Bess Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625566,
+        "areaKm2": 0.0127,
+        "lat": 54.45591,
+        "lng": -7.78815,
+        "wikidata": "Q104361410"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203461",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203461,
+          "areaKm2": 0.0126,
+          "lat": 54.45591,
+          "lng": -7.7882,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516493",
+        "name": "Bilberry Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516493,
+        "areaKm2": 0.0248,
+        "lat": 54.24551,
+        "lng": -7.55321,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207450",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207450,
+          "areaKm2": 0.0247,
+          "lat": 54.24552,
+          "lng": -7.55335,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3474542",
+        "name": "Bilberry Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3474542,
+        "areaKm2": 0.013,
+        "lat": 53.46393,
+        "lng": -9.29166,
+        "wikidata": "Q104323303"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-258901435",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 258901435,
+          "areaKm2": 0.013,
+          "lat": 53.4639,
+          "lng": -9.29163,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516643",
+        "name": "Bleanish Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516643,
+        "areaKm2": 0.488,
+        "lat": 54.17657,
+        "lng": -7.46382,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-157698803",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 157698803,
+          "areaKm2": 0.487,
+          "lat": 54.17683,
+          "lng": -7.46464,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-245294582",
+        "name": "Boathouse Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 245294582,
+        "areaKm2": 0.0024,
+        "lat": 52.04392,
+        "lng": -9.5347,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-245294578",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 245294578,
+          "areaKm2": 0.0027,
+          "lat": 52.04394,
+          "lng": -9.53473,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-18210417",
+        "name": "Brush Islands",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 18210417,
+        "areaKm2": 0.0057,
+        "lat": 54.95259,
+        "lng": -8.34101,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-260393496",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 260393496,
+          "areaKm2": 0.0054,
+          "lat": 54.95258,
+          "lng": -8.34133,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998533",
+        "name": "Buck Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998533,
+        "areaKm2": 0.0477,
+        "lat": 54.49815,
+        "lng": -7.94758,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191983",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191983,
+          "areaKm2": 0.0476,
+          "lat": 54.49841,
+          "lng": -7.94726,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516494",
+        "name": "Bunnahola Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516494,
+        "areaKm2": 0.0057,
+        "lat": 54.2514,
+        "lng": -7.52798,
+        "wikidata": "Q104365929"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207448",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207448,
+          "areaKm2": 0.0057,
+          "lat": 54.25139,
+          "lng": -7.52796,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998375",
+        "name": "Car Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998375,
+        "areaKm2": 0.1085,
+        "lat": 54.38926,
+        "lng": -7.67051,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527987",
+          "name": "Car Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527987,
+          "areaKm2": 0.1083,
+          "lat": 54.38946,
+          "lng": -7.67027,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516885",
+        "name": "Carrickmacrourk Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516885,
+        "areaKm2": 0.0254,
+        "lat": 54.25672,
+        "lng": -7.56236,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010760",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010760,
+          "areaKm2": 0.0254,
+          "lat": 54.25662,
+          "lng": -7.56233,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-16315477",
+        "name": "Church Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 16315477,
+        "areaKm2": 0.0183,
+        "lat": 53.99442,
+        "lng": -8.26087,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-186507791",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 186507791,
+          "areaKm2": 0.0207,
+          "lat": 53.99442,
+          "lng": -8.26086,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-727393965",
+        "name": "Cloon Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 727393965,
+        "areaKm2": 0.0125,
+        "lat": 52.11714,
+        "lng": -9.77361,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-4560471",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 4560471,
+          "areaKm2": 0.0125,
+          "lat": 52.11711,
+          "lng": -9.77383,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998534",
+        "name": "Coghran's Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998534,
+        "areaKm2": 0.0212,
+        "lat": 54.50123,
+        "lng": -7.9407,
+        "wikidata": "Q104359632"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191968",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191968,
+          "areaKm2": 0.0212,
+          "lat": 54.50129,
+          "lng": -7.94079,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "wd-Q115309314",
+        "name": "Coolure Demesne crannóg",
+        "nation": "Ireland",
+        "source": "wikidata",
+        "osmType": "way",
+        "osmId": 1121925770,
+        "areaKm2": 0.0011,
+        "lat": 53.66966,
+        "lng": -7.36968,
+        "wikidata": "Q115309314"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-165498305",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 165498305,
+          "areaKm2": 0.0011,
+          "lat": 53.66965,
+          "lng": -7.36968,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998535",
+        "name": "Crannoges",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998535,
+        "areaKm2": 0.0376,
+        "lat": 54.47757,
+        "lng": -7.95823,
+        "wikidata": "Q104359566"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180164264",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180164264,
+          "areaKm2": 0.0375,
+          "lat": 54.47764,
+          "lng": -7.95822,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516645",
+        "name": "Creaghamanone Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516645,
+        "areaKm2": 0.0231,
+        "lat": 54.23252,
+        "lng": -7.5118,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207453",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207453,
+          "areaKm2": 0.023,
+          "lat": 54.23252,
+          "lng": -7.51184,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516898",
+        "name": "Creaghanachreesty Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516898,
+        "areaKm2": 0.0067,
+        "lat": 54.21402,
+        "lng": -7.48739,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207441",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207441,
+          "areaKm2": 0.0067,
+          "lat": 54.21404,
+          "lng": -7.48738,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516646",
+        "name": "Creaghanameelta Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516646,
+        "areaKm2": 0.0233,
+        "lat": 54.23141,
+        "lng": -7.50749,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207451",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207451,
+          "areaKm2": 0.0232,
+          "lat": 54.23127,
+          "lng": -7.50754,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516495",
+        "name": "Creaghananure Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516495,
+        "areaKm2": 0.0146,
+        "lat": 54.2314,
+        "lng": -7.52845,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207470",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207470,
+          "areaKm2": 0.0146,
+          "lat": 54.23134,
+          "lng": -7.52856,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516647",
+        "name": "Creaghanarourke Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516647,
+        "areaKm2": 0.0328,
+        "lat": 54.22859,
+        "lng": -7.50209,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207472",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207472,
+          "areaKm2": 0.0328,
+          "lat": 54.22871,
+          "lng": -7.50211,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516496",
+        "name": "Creaghawaddy Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516496,
+        "areaKm2": 0.0501,
+        "lat": 54.21919,
+        "lng": -7.50007,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207457",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207457,
+          "areaKm2": 0.05,
+          "lat": 54.21917,
+          "lng": -7.50006,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516497",
+        "name": "Creaghmacwallen Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516497,
+        "areaKm2": 0.0349,
+        "lat": 54.25141,
+        "lng": -7.5769,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010769",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010769,
+          "areaKm2": 0.0348,
+          "lat": 54.25147,
+          "lng": -7.57695,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3518760",
+        "name": "Creaghnarourk Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3518760,
+        "areaKm2": 0.0261,
+        "lat": 54.23983,
+        "lng": -7.57665,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207452",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207452,
+          "areaKm2": 0.0261,
+          "lat": 54.23985,
+          "lng": -7.57663,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998477",
+        "name": "Creefin Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998477,
+        "areaKm2": 0.0083,
+        "lat": 54.49056,
+        "lng": -7.77317,
+        "wikidata": "Q104361743"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203456",
+          "name": "Cleenishgarve Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203456,
+          "areaKm2": 0.0082,
+          "lat": 54.49055,
+          "lng": -7.77332,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516648",
+        "name": "Crehan Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516648,
+        "areaKm2": 0.0207,
+        "lat": 54.18728,
+        "lng": -7.47913,
+        "wikidata": "Q104366236"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-157699835",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 157699835,
+          "areaKm2": 0.0207,
+          "lat": 54.18722,
+          "lng": -7.4793,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998479",
+        "name": "Crevinishaughy island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998479,
+        "areaKm2": 0.6331,
+        "lat": 54.487,
+        "lng": -7.75322,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116481205",
+          "name": "Crevinishaughy island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116481205,
+          "areaKm2": 0.6318,
+          "lat": 54.48701,
+          "lng": -7.75257,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-71927349",
+        "name": "Croaghan Island",
+        "nation": "Northern Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 71927349,
+        "areaKm2": 0.0332,
+        "lat": 54.49869,
+        "lng": -6.3976,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-node-10778002898",
+          "name": "Croaghan Island",
+          "nation": "Northern Ireland",
+          "source": "osm",
+          "osmType": "node",
+          "osmId": 10778002898,
+          "areaKm2": null,
+          "lat": 54.49862,
+          "lng": -6.39756,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998496",
+        "name": "Cruninish Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998496,
+        "areaKm2": 0.1603,
+        "lat": 54.50881,
+        "lng": -7.81516,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527171",
+          "name": "Cruninish",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527171,
+          "areaKm2": 0.1599,
+          "lat": 54.50903,
+          "lng": -7.81571,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3485685",
+        "name": "Cussafoor Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3485685,
+        "areaKm2": 0.0201,
+        "lat": 53.45259,
+        "lng": -9.27063,
+        "wikidata": "Q104323436"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-259703738",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 259703738,
+          "areaKm2": 0.02,
+          "lat": 53.45267,
+          "lng": -9.27075,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998480",
+        "name": "Davy's Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998480,
+        "areaKm2": 0.0765,
+        "lat": 54.48231,
+        "lng": -7.73376,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203481",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203481,
+          "areaKm2": 0.0763,
+          "lat": 54.48237,
+          "lng": -7.7338,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516498",
+        "name": "Deal Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516498,
+        "areaKm2": 0.0433,
+        "lat": 54.24477,
+        "lng": -7.55857,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207456",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207456,
+          "areaKm2": 0.0432,
+          "lat": 54.24474,
+          "lng": -7.55853,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3412375",
+        "name": "Dear Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3412375,
+        "areaKm2": 0.0246,
+        "lat": 53.52102,
+        "lng": -9.75973,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-188988434",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 188988434,
+          "areaKm2": 0.0245,
+          "lat": 53.52107,
+          "lng": -9.75961,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4087462",
+        "name": "Derg Beg Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4087462,
+        "areaKm2": 0.0106,
+        "lat": 54.61949,
+        "lng": -7.91013,
+        "wikidata": "Q104350084"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-112156375",
+          "name": "Derry Beg Island",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 112156375,
+          "areaKm2": 0.0106,
+          "lat": 54.61949,
+          "lng": -7.91013,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4087463",
+        "name": "Derg More Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4087463,
+        "areaKm2": 0.0236,
+        "lat": 54.62372,
+        "lng": -7.91075,
+        "wikidata": "Q104350073"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-112156371",
+          "name": "Derry More Island",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 112156371,
+          "areaKm2": 0.0236,
+          "lat": 54.62372,
+          "lng": -7.91075,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516649",
+        "name": "Dernish Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516649,
+        "areaKm2": 0.4121,
+        "lat": 54.18469,
+        "lng": -7.47068,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116529928",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116529928,
+          "areaKm2": 0.4112,
+          "lat": 54.18457,
+          "lng": -7.47091,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-12820026",
+        "name": "Derryclone",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 12820026,
+        "areaKm2": 0.0368,
+        "lat": 54.53113,
+        "lng": -6.36629,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-71927350",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 71927350,
+          "areaKm2": 0.0367,
+          "lat": 54.5312,
+          "lng": -6.36627,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1263257488",
+        "name": "Devenish Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 1263257488,
+        "areaKm2": 0.0479,
+        "lat": 53.62288,
+        "lng": -9.32883,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-177691249",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 177691249,
+          "areaKm2": 0.05,
+          "lat": 53.62296,
+          "lng": -9.3292,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998376",
+        "name": "Devenish Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998376,
+        "areaKm2": 0.6217,
+        "lat": 54.37386,
+        "lng": -7.65835,
+        "wikidata": "Q739845"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-70845846",
+          "name": "Devenish Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 70845846,
+          "areaKm2": 0.6204,
+          "lat": 54.37336,
+          "lng": -7.65809,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3515997",
+        "name": "Devinish Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3515997,
+        "areaKm2": 0.0567,
+        "lat": 53.43384,
+        "lng": -9.22355,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-49024597",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 49024597,
+          "areaKm2": 0.0566,
+          "lat": 53.43369,
+          "lng": -9.22353,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-2511753",
+        "name": "Drummans Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 2511753,
+        "areaKm2": 0.1755,
+        "lat": 53.98987,
+        "lng": -8.24568,
+        "wikidata": "Q26717919"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-186513965",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 186513965,
+          "areaKm2": 0.1747,
+          "lat": 53.99004,
+          "lng": -8.24546,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3559046",
+        "name": "Duck Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3559046,
+        "areaKm2": 0.0179,
+        "lat": 54.51088,
+        "lng": -7.7556,
+        "wikidata": "Q104358929"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180201342",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180201342,
+          "areaKm2": 0.0178,
+          "lat": 54.51089,
+          "lng": -7.75571,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516499",
+        "name": "Edergole Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516499,
+        "areaKm2": 0.0947,
+        "lat": 54.22991,
+        "lng": -7.52098,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207488",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207488,
+          "areaKm2": 0.0945,
+          "lat": 54.23011,
+          "lng": -7.52155,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-4004961",
+        "name": "Eilean Trodday",
+        "nation": "Scotland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 4004961,
+        "areaKm2": 0.4941,
+        "lat": 57.72602,
+        "lng": -6.29868,
+        "wikidata": "Q1459562"
+      },
+      "dropped": [
+        {
+          "id": "csv-geocoded-Q29552470",
+          "name": "Trodday Lighthouse",
+          "nation": "Scotland",
+          "source": "csv-geocoded",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 57.726666666667,
+          "lng": -6.2983333333333,
+          "wikidata": "Q29552470"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998497",
+        "name": "Estea Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998497,
+        "areaKm2": 0.0431,
+        "lat": 54.5248,
+        "lng": -7.76552,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191938",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191938,
+          "areaKm2": 0.043,
+          "lat": 54.52468,
+          "lng": -7.7654,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998377",
+        "name": "Ferny Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998377,
+        "areaKm2": 0.0683,
+        "lat": 54.39462,
+        "lng": -7.6743,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527986",
+          "name": "Ferny Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527986,
+          "areaKm2": 0.0681,
+          "lat": 54.39452,
+          "lng": -7.67455,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516886",
+        "name": "Finnis Island North",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516886,
+        "areaKm2": 0.0054,
+        "lat": 54.25336,
+        "lng": -7.55833,
+        "wikidata": "Q104358391"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010766",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010766,
+          "areaKm2": 0.0054,
+          "lat": 54.25343,
+          "lng": -7.55834,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516887",
+        "name": "Finnis Island South",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516887,
+        "areaKm2": 0.0036,
+        "lat": 54.25229,
+        "lng": -7.55754,
+        "wikidata": "Q104358395"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010767",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010767,
+          "areaKm2": 0.0036,
+          "lat": 54.2523,
+          "lng": -7.55755,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3524627",
+        "name": "Freeheen Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3524627,
+        "areaKm2": 0.0318,
+        "lat": 53.42665,
+        "lng": -9.19767,
+        "wikidata": "Q104323902"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-49022986",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 49022986,
+          "areaKm2": 0.0317,
+          "lat": 53.42685,
+          "lng": -9.19774,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516500",
+        "name": "Friars Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516500,
+        "areaKm2": 0.0127,
+        "lat": 54.22561,
+        "lng": -7.49114,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207442",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207442,
+          "areaKm2": 0.0127,
+          "lat": 54.22561,
+          "lng": -7.49118,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625568",
+        "name": "Gaffer Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625568,
+        "areaKm2": 0.0461,
+        "lat": 54.45279,
+        "lng": -7.74285,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203482",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203482,
+          "areaKm2": 0.046,
+          "lat": 54.45277,
+          "lng": -7.74318,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625569",
+        "name": "Gall Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625569,
+        "areaKm2": 0.0776,
+        "lat": 54.42466,
+        "lng": -7.72765,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203500",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203500,
+          "areaKm2": 0.0774,
+          "lat": 54.42458,
+          "lng": -7.72761,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-8609282",
+        "name": "Garinish",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 8609282,
+        "areaKm2": 0.1626,
+        "lat": 51.7362,
+        "lng": -9.54324,
+        "wikidata": "Q349007"
+      },
+      "dropped": [
+        {
+          "id": "osm-node-384972465",
+          "name": "Garnish Island",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "node",
+          "osmId": 384972465,
+          "areaKm2": null,
+          "lat": 51.7361,
+          "lng": -9.54303,
+          "wikidata": "Q349007"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3976704",
+        "name": "Gay Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3976704,
+        "areaKm2": 0.0442,
+        "lat": 54.48182,
+        "lng": -7.77836,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203477",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203477,
+          "areaKm2": 0.0441,
+          "lat": 54.48184,
+          "lng": -7.77856,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516501",
+        "name": "Geddagh Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516501,
+        "areaKm2": 0.0098,
+        "lat": 54.21942,
+        "lng": -7.48785,
+        "wikidata": "Q104366167"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207440",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207440,
+          "areaKm2": 0.0098,
+          "lat": 54.21942,
+          "lng": -7.48785,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625570",
+        "name": "Goat Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625570,
+        "areaKm2": 0.029,
+        "lat": 54.44236,
+        "lng": -7.74923,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527173",
+          "name": "Guat Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527173,
+          "areaKm2": 0.0289,
+          "lat": 54.44242,
+          "lng": -7.74942,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998537",
+        "name": "Gravelly Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998537,
+        "areaKm2": 0.0054,
+        "lat": 54.49941,
+        "lng": -7.93709,
+        "wikidata": "Q104358316"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191943",
+          "name": "Gravelly Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191943,
+          "areaKm2": 0.0054,
+          "lat": 54.49943,
+          "lng": -7.93705,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3647912",
+        "name": "Gurlaun Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3647912,
+        "areaKm2": 0.0129,
+        "lat": 53.38765,
+        "lng": -9.12817,
+        "wikidata": "Q104333226"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-48995789",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 48995789,
+          "areaKm2": 0.0129,
+          "lat": 53.3875,
+          "lng": -9.12811,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998498",
+        "name": "Hare Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998498,
+        "areaKm2": 0.3111,
+        "lat": 54.52323,
+        "lng": -7.78104,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-5033602",
+          "name": "Hare Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 5033602,
+          "areaKm2": 0.3104,
+          "lat": 54.52313,
+          "lng": -7.78105,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998432",
+        "name": "Hay Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998432,
+        "areaKm2": 0.1023,
+        "lat": 54.42752,
+        "lng": -7.68963,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203517",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203517,
+          "areaKm2": 0.1021,
+          "lat": 54.42735,
+          "lng": -7.69035,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625571",
+        "name": "Heron Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625571,
+        "areaKm2": 0.0208,
+        "lat": 54.46218,
+        "lng": -7.80119,
+        "wikidata": "Q104358682"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203478",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203478,
+          "areaKm2": 0.0208,
+          "lat": 54.46218,
+          "lng": -7.80102,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3559047",
+        "name": "Horse Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3559047,
+        "areaKm2": 0.0176,
+        "lat": 54.51223,
+        "lng": -7.76185,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180201359",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180201359,
+          "areaKm2": 0.0176,
+          "lat": 54.51216,
+          "lng": -7.76207,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998454",
+        "name": "Horse Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998454,
+        "areaKm2": 0.2351,
+        "lat": 54.4308,
+        "lng": -7.69744,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203504",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203504,
+          "areaKm2": 0.2346,
+          "lat": 54.43071,
+          "lng": -7.69747,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4077820",
+        "name": "Illaunaneel",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4077820,
+        "areaKm2": 0.1418,
+        "lat": 53.39153,
+        "lng": -9.09722,
+        "wikidata": "Q26717726"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-305348684",
+          "name": "Illaunaneel",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 305348684,
+          "areaKm2": 0.1181,
+          "lat": 53.39188,
+          "lng": -9.09654,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3490197",
+        "name": "Illauncarbry",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3490197,
+        "areaKm2": 0.0447,
+        "lat": 53.44272,
+        "lng": -9.28928,
+        "wikidata": "Q104323308"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-260086417",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 260086417,
+          "areaKm2": 0.0446,
+          "lat": 53.44267,
+          "lng": -9.28937,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3506031",
+        "name": "Illaundaulaur",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3506031,
+        "areaKm2": 0.0264,
+        "lat": 53.47593,
+        "lng": -9.31821,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-235371492",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 235371492,
+          "areaKm2": 0.0264,
+          "lat": 53.47577,
+          "lng": -9.31817,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3473198",
+        "name": "Illaundauvrack",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3473198,
+        "areaKm2": 0.015,
+        "lat": 53.47391,
+        "lng": -9.33591,
+        "wikidata": "Q104332980"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-258762865",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 258762865,
+          "areaKm2": 0.015,
+          "lat": 53.474,
+          "lng": -9.33616,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3533996",
+        "name": "Illaunfadda Beg",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3533996,
+        "areaKm2": 0.0417,
+        "lat": 53.42738,
+        "lng": -9.23144,
+        "wikidata": "Q104323575"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-263140140",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 263140140,
+          "areaKm2": 0.0417,
+          "lat": 53.42741,
+          "lng": -9.23178,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3372821",
+        "name": "Illaunnaginga",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3372821,
+        "areaKm2": 0.0043,
+        "lat": 53.38252,
+        "lng": -9.56138,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-251318763",
+          "name": "An tOileán Bán",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 251318763,
+          "areaKm2": 0.0043,
+          "lat": 53.38252,
+          "lng": -9.56138,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3518440",
+        "name": "Illaunnagower",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3518440,
+        "areaKm2": 0.0338,
+        "lat": 53.43778,
+        "lng": -9.21183,
+        "wikidata": "Q104322456"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-262046638",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 262046638,
+          "areaKm2": 0.0337,
+          "lat": 53.43772,
+          "lng": -9.21184,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-15061321",
+        "name": "Inchbofin",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 15061321,
+        "areaKm2": 0.3069,
+        "lat": 53.5379,
+        "lng": -7.91881,
+        "wikidata": "Q26914817"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-48996179",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 48996179,
+          "areaKm2": 0.2991,
+          "lat": 53.53769,
+          "lng": -7.91901,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4219937",
+        "name": "Inchmore",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4219937,
+        "areaKm2": 0.8051,
+        "lat": 53.50759,
+        "lng": -7.93767,
+        "wikidata": "Q26715842"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-48996175",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 48996175,
+          "areaKm2": 0.7212,
+          "lat": 53.50768,
+          "lng": -7.93853,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3976705",
+        "name": "Inish Conra",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3976705,
+        "areaKm2": 0.0467,
+        "lat": 54.4464,
+        "lng": -7.72684,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203499",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203499,
+          "areaKm2": 0.0466,
+          "lat": 54.44647,
+          "lng": -7.72729,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3976706",
+        "name": "Inish Davar",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3976706,
+        "areaKm2": 0.1038,
+        "lat": 54.44272,
+        "lng": -7.72681,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203516",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203516,
+          "areaKm2": 0.1036,
+          "lat": 54.4427,
+          "lng": -7.72721,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998455",
+        "name": "Inish Divann",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998455,
+        "areaKm2": 0.1023,
+        "lat": 54.42687,
+        "lng": -7.71286,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527168",
+          "name": "Inish Divann",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527168,
+          "areaKm2": 0.1021,
+          "lat": 54.42654,
+          "lng": -7.71313,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998364",
+        "name": "Inish Fovar",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998364,
+        "areaKm2": 0.21,
+        "lat": 54.42021,
+        "lng": -7.72046,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203436",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203436,
+          "areaKm2": 0.2096,
+          "lat": 54.42028,
+          "lng": -7.72092,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998433",
+        "name": "Inish Free",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998433,
+        "areaKm2": 0.0582,
+        "lat": 54.41918,
+        "lng": -7.69944,
+        "wikidata": "Q64665867"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203491",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203491,
+          "areaKm2": 0.0581,
+          "lat": 54.41927,
+          "lng": -7.69928,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998363",
+        "name": "Inish Lougher",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998363,
+        "areaKm2": 0.2012,
+        "lat": 54.41522,
+        "lng": -7.71945,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203438",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203438,
+          "areaKm2": 0.2008,
+          "lat": 54.41512,
+          "lng": -7.71919,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516651",
+        "name": "Inish Rath",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516651,
+        "areaKm2": 0.1073,
+        "lat": 54.19194,
+        "lng": -7.48454,
+        "wikidata": "Q19891924"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207475",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207475,
+          "areaKm2": 0.1071,
+          "lat": 54.19217,
+          "lng": -7.48437,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3476652",
+        "name": "Inishbeagh",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3476652,
+        "areaKm2": 0.0269,
+        "lat": 53.46625,
+        "lng": -9.26932,
+        "wikidata": "Q104333025"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-1051701449",
+          "name": "Inighbeagh",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 1051701449,
+          "areaKm2": 0.0269,
+          "lat": 53.46625,
+          "lng": -9.26932,
+          "wikidata": ""
+        },
+        {
+          "id": "osm-way-259034215",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 259034215,
+          "areaKm2": 0.0269,
+          "lat": 53.46621,
+          "lng": -9.26943,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3506161",
+        "name": "Inishbiana",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3506161,
+        "areaKm2": 0.0509,
+        "lat": 53.47856,
+        "lng": -9.2552,
+        "wikidata": "Q104323518"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-261135499",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 261135499,
+          "areaKm2": 0.0508,
+          "lat": 53.4783,
+          "lng": -9.25504,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3498496",
+        "name": "Inishcash",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3498496,
+        "areaKm2": 0.0517,
+        "lat": 53.43826,
+        "lng": -9.26224,
+        "wikidata": "Q104323330"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-260609219",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 260609219,
+          "areaKm2": 0.0516,
+          "lat": 53.43819,
+          "lng": -9.262,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516503",
+        "name": "Inishcreagh",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516503,
+        "areaKm2": 0.0818,
+        "lat": 54.2506,
+        "lng": -7.56655,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010768",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010768,
+          "areaKm2": 0.0816,
+          "lat": 54.2506,
+          "lng": -7.56594,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3488238",
+        "name": "Inishdauwee",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3488238,
+        "areaKm2": 0.0636,
+        "lat": 53.44466,
+        "lng": -9.31128,
+        "wikidata": "Q104323181"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-259829356",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 259829356,
+          "areaKm2": 0.0635,
+          "lat": 53.4448,
+          "lng": -9.31181,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4068396",
+        "name": "Inishee",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4068396,
+        "areaKm2": 0.0143,
+        "lat": 54.28826,
+        "lng": -7.84622,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-305184506",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 305184506,
+          "areaKm2": 0.0143,
+          "lat": 54.28828,
+          "lng": -7.84628,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516652",
+        "name": "Inisherk",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516652,
+        "areaKm2": 0.4601,
+        "lat": 54.1675,
+        "lng": -7.4575,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-123276083",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 123276083,
+          "areaKm2": 0.4591,
+          "lat": 54.16689,
+          "lng": -7.45777,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516505",
+        "name": "Inishfausy",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516505,
+        "areaKm2": 0.0389,
+        "lat": 54.24303,
+        "lng": -7.54945,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207455",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207455,
+          "areaKm2": 0.0389,
+          "lat": 54.24302,
+          "lng": -7.54938,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3520658",
+        "name": "Inishflynn",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3520658,
+        "areaKm2": 0.0226,
+        "lat": 53.43388,
+        "lng": -9.2003,
+        "wikidata": "Q104323886"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-49024143",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 49024143,
+          "areaKm2": 0.0226,
+          "lat": 53.43396,
+          "lng": -9.20026,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3502448",
+        "name": "Inishgarraun More",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3502448,
+        "areaKm2": 0.0796,
+        "lat": 53.43575,
+        "lng": -9.24645,
+        "wikidata": "Q104323546"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-260758121",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 260758121,
+          "areaKm2": 0.0794,
+          "lat": 53.43577,
+          "lng": -9.24623,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3999306",
+        "name": "Inishkeen",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3999306,
+        "areaKm2": 0.1299,
+        "lat": 54.31513,
+        "lng": -7.95356,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-179021418",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 179021418,
+          "areaKm2": 0.1296,
+          "lat": 54.31498,
+          "lng": -7.9536,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998518",
+        "name": "Inishkeeragh",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998518,
+        "areaKm2": 0.1308,
+        "lat": 54.51094,
+        "lng": -7.89844,
+        "wikidata": "Q104359962"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-5033595",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 5033595,
+          "areaKm2": 0.1305,
+          "lat": 54.51105,
+          "lng": -7.89791,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516506",
+        "name": "Inishleague",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516506,
+        "areaKm2": 0.5566,
+        "lat": 54.2419,
+        "lng": -7.54012,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116529118",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116529118,
+          "areaKm2": 0.5554,
+          "lat": 54.2427,
+          "lng": -7.53881,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516591",
+        "name": "Inishlirroo",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516591,
+        "areaKm2": 0.0956,
+        "lat": 54.23198,
+        "lng": -7.56527,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207485",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207485,
+          "areaKm2": 0.0954,
+          "lat": 54.23193,
+          "lng": -7.56561,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516507",
+        "name": "Inishlught",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516507,
+        "areaKm2": 0.192,
+        "lat": 54.226,
+        "lng": -7.52711,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207491",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207491,
+          "areaKm2": 0.1916,
+          "lat": 54.22622,
+          "lng": -7.52626,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-231229702",
+        "name": "Inishmagrath",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 231229702,
+        "areaKm2": 0.0374,
+        "lat": 54.15412,
+        "lng": -8.04293,
+        "wikidata": "Q26717868"
+      },
+      "dropped": [
+        {
+          "id": "osm-relation-7169522",
+          "name": "Inishmacgrath",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "relation",
+          "osmId": 7169522,
+          "areaKm2": 0.0374,
+          "lat": 54.15412,
+          "lng": -8.04293,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3976707",
+        "name": "Inishmakill",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3976707,
+        "areaKm2": 0.4518,
+        "lat": 54.47728,
+        "lng": -7.75894,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116523178",
+          "name": "Inishmakill",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116523178,
+          "areaKm2": 0.4508,
+          "lat": 54.47731,
+          "lng": -7.75919,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998519",
+        "name": "Inishmeely",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998519,
+        "areaKm2": 0.0746,
+        "lat": 54.51839,
+        "lng": -7.85803,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191971",
+          "name": "Inishmeely",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191971,
+          "areaKm2": 0.0744,
+          "lat": 54.51835,
+          "lng": -7.85834,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3395357",
+        "name": "Inishmicatreer",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3395357,
+        "areaKm2": 1.0977,
+        "lat": 53.49781,
+        "lng": -9.24928,
+        "wikidata": "Q104323466"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-253228052",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 253228052,
+          "areaKm2": 1.0956,
+          "lat": 53.49789,
+          "lng": -9.25127,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3485688",
+        "name": "Inishool",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3485688,
+        "areaKm2": 0.0511,
+        "lat": 53.44885,
+        "lng": -9.27614,
+        "wikidata": "Q104323420"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-259704191",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 259704191,
+          "areaKm2": 0.051,
+          "lat": 53.44876,
+          "lng": -9.27607,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516508",
+        "name": "Inishore",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516508,
+        "areaKm2": 0.0554,
+        "lat": 54.22187,
+        "lng": -7.49232,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207463",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207463,
+          "areaKm2": 0.0553,
+          "lat": 54.22203,
+          "lng": -7.4923,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3493861",
+        "name": "Inishshanboe",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3493861,
+        "areaKm2": 0.0905,
+        "lat": 53.45266,
+        "lng": -9.29153,
+        "wikidata": "Q104333006"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-260368824",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 260368824,
+          "areaKm2": 0.0904,
+          "lat": 53.4526,
+          "lng": -9.29139,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3999307",
+        "name": "Inishteige",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3999307,
+        "areaKm2": 0.0507,
+        "lat": 54.3284,
+        "lng": -7.96751,
+        "wikidata": "Q24658729"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-177191559",
+          "name": "Inishteige",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 177191559,
+          "areaKm2": 0.0506,
+          "lat": 54.32839,
+          "lng": -7.96742,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516509",
+        "name": "Inishturk",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516509,
+        "areaKm2": 0.1566,
+        "lat": 54.21921,
+        "lng": -7.50924,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207490",
+          "name": "Inishturk Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207490,
+          "areaKm2": 0.1563,
+          "lat": 54.2191,
+          "lng": -7.5089,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625572",
+        "name": "Innishmacsaint",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625572,
+        "areaKm2": 0.2948,
+        "lat": 54.43717,
+        "lng": -7.74925,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527178",
+          "name": "Innishmacsaint",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527178,
+          "areaKm2": 0.2941,
+          "lat": 54.43723,
+          "lng": -7.74943,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3507322",
+        "name": "Island Beg",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3507322,
+        "areaKm2": 0.0186,
+        "lat": 53.55952,
+        "lng": -9.47779,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-177704893",
+          "name": "Islandbeg",
+          "nation": "Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 177704893,
+          "areaKm2": 0.0186,
+          "lat": 53.55952,
+          "lng": -9.47779,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-761861390",
+        "name": "Island Roary",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 761861390,
+        "areaKm2": 0.014,
+        "lat": 57.45606,
+        "lng": -3.33364,
+        "wikidata": "Q126087958"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q126087958",
+          "name": "Island Roary",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 57.45614,
+          "lng": -3.334,
+          "wikidata": "Q126087958"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625573",
+        "name": "Isle Namanfin",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625573,
+        "areaKm2": 0.0232,
+        "lat": 54.45284,
+        "lng": -7.75411,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203464",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203464,
+          "areaKm2": 0.0232,
+          "lat": 54.45279,
+          "lng": -7.75419,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3999308",
+        "name": "Kilrooskagh Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3999308,
+        "areaKm2": 0.1004,
+        "lat": 54.30063,
+        "lng": -7.90972,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-179021421",
+          "name": "Kilrooscagh Island",
+          "nation": "Northern Ireland",
+          "source": "osm",
+          "osmType": "way",
+          "osmId": 179021421,
+          "areaKm2": 0.1004,
+          "lat": 54.30063,
+          "lng": -7.90972,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998484",
+        "name": "Kinnausy Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998484,
+        "areaKm2": 0.037,
+        "lat": 54.50313,
+        "lng": -7.77017,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180201354",
+          "name": "Kinnanisy Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180201354,
+          "areaKm2": 0.0369,
+          "lat": 54.50327,
+          "lng": -7.77018,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "close-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516511",
+        "name": "Kippeen Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516511,
+        "areaKm2": 0.0107,
+        "lat": 54.24845,
+        "lng": -7.59333,
+        "wikidata": "Q104365516"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207443",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207443,
+          "areaKm2": 0.0107,
+          "lat": 54.24844,
+          "lng": -7.59341,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1047653855",
+        "name": "Lamb Island",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 1047653855,
+        "areaKm2": 0.0169,
+        "lat": 54.92343,
+        "lng": -3.9729,
+        "wikidata": "Q124343669"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q124343669",
+          "name": "Lamb Island",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 54.9234,
+          "lng": -3.9728,
+          "wikidata": "Q124343669"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3647115",
+        "name": "Lee's Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3647115,
+        "areaKm2": 0.3455,
+        "lat": 53.42022,
+        "lng": -9.13269,
+        "wikidata": "Q104324304"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-48995092",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 48995092,
+          "areaKm2": 0.3448,
+          "lat": 53.42078,
+          "lng": -9.13315,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1047653858",
+        "name": "Lodge Island",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 1047653858,
+        "areaKm2": 0.2072,
+        "lat": 54.92815,
+        "lng": -3.97482,
+        "wikidata": "Q124343664"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q124343664",
+          "name": "Lodge Island",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 54.9282,
+          "lng": -3.97502,
+          "wikidata": "Q124343664"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998521",
+        "name": "Loftus Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998521,
+        "areaKm2": 0.0198,
+        "lat": 54.50292,
+        "lng": -7.93241,
+        "wikidata": "Q104359755"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191960",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191960,
+          "areaKm2": 0.0198,
+          "lat": 54.50293,
+          "lng": -7.93236,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998378",
+        "name": "Long Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998378,
+        "areaKm2": 0.0492,
+        "lat": 54.40976,
+        "lng": -7.68384,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203510",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203510,
+          "areaKm2": 0.0491,
+          "lat": 54.40989,
+          "lng": -7.68345,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-6395140",
+        "name": "Long Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 6395140,
+        "areaKm2": 0.1546,
+        "lat": 53.28456,
+        "lng": -8.05012,
+        "wikidata": "Q26718715"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-310796734",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 310796734,
+          "areaKm2": 0.1317,
+          "lat": 53.2849,
+          "lng": -8.05034,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "mainland-shetland",
+        "name": "Mainland (Shetland)",
+        "nation": "Scotland",
+        "source": "curated",
+        "osmType": "relation",
+        "osmId": 376677,
+        "areaKm2": 953.3653,
+        "lat": 60.24498,
+        "lng": -1.37657,
+        "wikidata": "Q738734"
+      },
+      "dropped": [
+        {
+          "id": "osm-relation-376677",
+          "name": "Shetland",
+          "nation": "Scotland",
+          "source": "osm",
+          "osmType": "relation",
+          "osmId": 376677,
+          "areaKm2": 953.3653,
+          "lat": 60.24498,
+          "lng": -1.37657,
+          "wikidata": "Q738734"
+        }
+      ],
+      "reasons": [
+        "same-osm-object"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1029874069",
+        "name": "Minus Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "way",
+        "osmId": 1029874069,
+        "areaKm2": 0.3155,
+        "lat": 53.21457,
+        "lng": -7.96506,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-315039437",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 315039437,
+          "areaKm2": 0.3188,
+          "lat": 53.21454,
+          "lng": -7.96536,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3524626",
+        "name": "Moor Islands",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3524626,
+        "areaKm2": 0.0621,
+        "lat": 53.42935,
+        "lng": -9.21701,
+        "wikidata": "Q104323706"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-262527685",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 262527685,
+          "areaKm2": 0.062,
+          "lat": 53.4292,
+          "lng": -9.21721,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516512",
+        "name": "Mountjoy Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516512,
+        "areaKm2": 0.029,
+        "lat": 54.2349,
+        "lng": -7.52684,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207473",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207473,
+          "areaKm2": 0.029,
+          "lat": 54.23486,
+          "lng": -7.52692,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998538",
+        "name": "Muckinish",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998538,
+        "areaKm2": 0.0733,
+        "lat": 54.47326,
+        "lng": -7.99523,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180164272",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180164272,
+          "areaKm2": 0.0731,
+          "lat": 54.47329,
+          "lng": -7.9949,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516513",
+        "name": "Naan Island East",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516513,
+        "areaKm2": 0.0026,
+        "lat": 54.23379,
+        "lng": -7.53321,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207434",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207434,
+          "areaKm2": 0.0026,
+          "lat": 54.2338,
+          "lng": -7.53325,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516514",
+        "name": "Naan Island South",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516514,
+        "areaKm2": 0.0111,
+        "lat": 54.23168,
+        "lng": -7.53601,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207446",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207446,
+          "areaKm2": 0.011,
+          "lat": 54.23162,
+          "lng": -7.53612,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516515",
+        "name": "Naan Island West",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516515,
+        "areaKm2": 0.456,
+        "lat": 54.23503,
+        "lng": -7.54479,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116529119",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116529119,
+          "areaKm2": 0.455,
+          "lat": 54.23524,
+          "lng": -7.54455,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625575",
+        "name": "Owl Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625575,
+        "areaKm2": 0.1369,
+        "lat": 54.4439,
+        "lng": -7.74363,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527169",
+          "name": "Owl Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527169,
+          "areaKm2": 0.1366,
+          "lat": 54.44393,
+          "lng": -7.74365,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998434",
+        "name": "Paris Island Big",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998434,
+        "areaKm2": 0.0746,
+        "lat": 54.41586,
+        "lng": -7.69263,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203484",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203484,
+          "areaKm2": 0.0744,
+          "lat": 54.41577,
+          "lng": -7.69254,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998435",
+        "name": "Paris Island Little",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998435,
+        "areaKm2": 0.0354,
+        "lat": 54.41248,
+        "lng": -7.69276,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203485",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203485,
+          "areaKm2": 0.0354,
+          "lat": 54.41247,
+          "lng": -7.69273,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625576",
+        "name": "Pushen Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625576,
+        "areaKm2": 0.0421,
+        "lat": 54.4273,
+        "lng": -7.73686,
+        "wikidata": "Q104362522"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203483",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203483,
+          "areaKm2": 0.042,
+          "lat": 54.42729,
+          "lng": -7.73658,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3559048",
+        "name": "Rabbit Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3559048,
+        "areaKm2": 0.1018,
+        "lat": 54.51395,
+        "lng": -7.74855,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-264804150",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 264804150,
+          "areaKm2": 0.1016,
+          "lat": 54.51391,
+          "lng": -7.74863,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516653",
+        "name": "Rabbit Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516653,
+        "areaKm2": 0.0413,
+        "lat": 54.22743,
+        "lng": -7.4953,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207458",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207458,
+          "areaKm2": 0.0412,
+          "lat": 54.22737,
+          "lng": -7.4955,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625577",
+        "name": "Rabbit Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625577,
+        "areaKm2": 0.1222,
+        "lat": 54.44625,
+        "lng": -7.76751,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527177",
+          "name": "Rabbit Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527177,
+          "areaKm2": 0.1219,
+          "lat": 54.4464,
+          "lng": -7.76731,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3625578",
+        "name": "Rocky Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3625578,
+        "areaKm2": 0.0017,
+        "lat": 54.45131,
+        "lng": -7.78504,
+        "wikidata": "Q104358337"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203447",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203447,
+          "areaKm2": 0.0017,
+          "lat": 54.45135,
+          "lng": -7.78507,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3505983",
+        "name": "Roeillaunbaun",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3505983,
+        "areaKm2": 0.0139,
+        "lat": 53.4921,
+        "lng": -9.3746,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-198667249",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 198667249,
+          "areaKm2": 0.0139,
+          "lat": 53.49206,
+          "lng": -9.37478,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998539",
+        "name": "Rosscor Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998539,
+        "areaKm2": 0.0612,
+        "lat": 54.47685,
+        "lng": -8.00341,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180164276",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180164276,
+          "areaKm2": 0.061,
+          "lat": 54.47669,
+          "lng": -8.00317,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998541",
+        "name": "Rough Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998541,
+        "areaKm2": 0.0477,
+        "lat": 54.4758,
+        "lng": -7.96706,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180164260",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180164260,
+          "areaKm2": 0.0476,
+          "lat": 54.47585,
+          "lng": -7.96727,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998485",
+        "name": "Scattered Rocks",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998485,
+        "areaKm2": 0.0093,
+        "lat": 54.50807,
+        "lng": -7.76492,
+        "wikidata": "Q104358339"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180201324",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180201324,
+          "areaKm2": 0.0093,
+          "lat": 54.50809,
+          "lng": -7.76502,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516516",
+        "name": "Shave Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516516,
+        "areaKm2": 0.0496,
+        "lat": 54.24933,
+        "lng": -7.58597,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207480",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207480,
+          "areaKm2": 0.0495,
+          "lat": 54.24924,
+          "lng": -7.58571,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998504",
+        "name": "Smiths Rocks",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998504,
+        "areaKm2": 0.0025,
+        "lat": 54.5288,
+        "lng": -7.84759,
+        "wikidata": "Q104358867"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180191951",
+          "name": "Smiths Rock (visible at low water)",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180191951,
+          "areaKm2": 0.0025,
+          "lat": 54.52881,
+          "lng": -7.8475,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516517",
+        "name": "Staff Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516517,
+        "areaKm2": 0.0478,
+        "lat": 54.24597,
+        "lng": -7.57725,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010770",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010770,
+          "areaKm2": 0.0477,
+          "lat": 54.24606,
+          "lng": -7.57719,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998542",
+        "name": "Stony Islands",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998542,
+        "areaKm2": 0.0091,
+        "lat": 54.48335,
+        "lng": -7.95567,
+        "wikidata": "Q104359587"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180164254",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180164254,
+          "areaKm2": 0.0091,
+          "lat": 54.48333,
+          "lng": -7.95551,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998486",
+        "name": "Strongbow Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998486,
+        "areaKm2": 0.0071,
+        "lat": 54.49322,
+        "lng": -7.75396,
+        "wikidata": "Q104362147"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180203450",
+          "name": "Derrahun Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180203450,
+          "areaKm2": 0.0071,
+          "lat": 54.4932,
+          "lng": -7.75413,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-4060927",
+        "name": "Teige's Rock",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 4060927,
+        "areaKm2": 0.0142,
+        "lat": 54.52697,
+        "lng": -7.83937,
+        "wikidata": "Q104360487"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-180201328",
+          "name": "Teiges Rock",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 180201328,
+          "areaKm2": 0.0142,
+          "lat": 54.52691,
+          "lng": -7.83919,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "close-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-115921377",
+        "name": "The Batta",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 115921377,
+        "areaKm2": 0.0073,
+        "lat": 55.61677,
+        "lng": -2.94909,
+        "wikidata": "Q116723281"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q116723281",
+          "name": "The Batta",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 55.61674,
+          "lng": -2.94901,
+          "wikidata": "Q116723281"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-1047653849",
+        "name": "Threave Island",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 1047653849,
+        "areaKm2": 0.1017,
+        "lat": 54.94049,
+        "lng": -3.96727,
+        "wikidata": "Q124343695"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q124343695",
+          "name": "Threave Island",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 54.94095,
+          "lng": -3.96764,
+          "wikidata": "Q124343695"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516518",
+        "name": "Tonregee Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516518,
+        "areaKm2": 0.0278,
+        "lat": 54.24445,
+        "lng": -7.56536,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-28010772",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 28010772,
+          "areaKm2": 0.0277,
+          "lat": 54.24452,
+          "lng": -7.56523,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516654",
+        "name": "Trahanacarrick Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516654,
+        "areaKm2": 0.0044,
+        "lat": 54.20408,
+        "lng": -7.5015,
+        "wikidata": "Q104366087"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-195207432",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 195207432,
+          "areaKm2": 0.0044,
+          "lat": 54.20412,
+          "lng": -7.50155,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516655",
+        "name": "Trannish",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516655,
+        "areaKm2": 0.5534,
+        "lat": 54.21044,
+        "lng": -7.50262,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116529927",
+          "name": "Unnamed island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116529927,
+          "areaKm2": 0.5522,
+          "lat": 54.21133,
+          "lng": -7.50222,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998379",
+        "name": "Trasna Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998379,
+        "areaKm2": 0.0839,
+        "lat": 54.385,
+        "lng": -7.66665,
+        "wikidata": "Q104364105"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527988",
+          "name": "Trasna Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527988,
+          "areaKm2": 0.0837,
+          "lat": 54.38511,
+          "lng": -7.66699,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3516656",
+        "name": "Trasna Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3516656,
+        "areaKm2": 0.4317,
+        "lat": 54.19568,
+        "lng": -7.50282,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-117099218",
+          "name": "Trasna Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 117099218,
+          "areaKm2": 0.4308,
+          "lat": 54.19591,
+          "lng": -7.50337,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-name"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-65976765",
+        "name": "Unnamed island",
+        "nation": "Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 65976765,
+        "areaKm2": 0.018,
+        "lat": 53.27491,
+        "lng": -8.05325,
+        "wikidata": "Q104256068"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q104256068",
+          "name": "Borniagh Island",
+          "nation": "Ireland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 53.27489,
+          "lng": -8.05324,
+          "wikidata": "Q104256068"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-274169103",
+        "name": "Unnamed island",
+        "nation": "Scotland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 274169103,
+        "areaKm2": 0.0017,
+        "lat": 56.0961,
+        "lng": -6.20324,
+        "wikidata": "Q115473746"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q115473746",
+          "name": "island in Loch an Sgoltaire",
+          "nation": "Scotland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 56.09612,
+          "lng": -6.2033,
+          "wikidata": "Q115473746"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-300711668",
+        "name": "Unnamed island",
+        "nation": "Northern Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 300711668,
+        "areaKm2": 0.0324,
+        "lat": 54.49394,
+        "lng": -7.765,
+        "wikidata": "Q104361814"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q104361814",
+          "name": "Deerahan Island",
+          "nation": "Northern Ireland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 54.49391,
+          "lng": -7.76497,
+          "wikidata": "Q104361814"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-470199195",
+        "name": "Unnamed island",
+        "nation": "Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 470199195,
+        "areaKm2": 0.0048,
+        "lat": 55.05683,
+        "lng": -8.31262,
+        "wikidata": "Q104348833"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q104348833",
+          "name": "Loughlin Island",
+          "nation": "Ireland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 55.05683,
+          "lng": -8.31262,
+          "wikidata": "Q104348833"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-308991592",
+        "name": "Unnamed island",
+        "nation": "Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 308991592,
+        "areaKm2": 0.0484,
+        "lat": 53.18608,
+        "lng": -8.0548,
+        "wikidata": "Q104256065"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q104256065",
+          "name": "Illaunnacalliagh",
+          "nation": "Ireland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 53.18608,
+          "lng": -8.0548,
+          "wikidata": "Q104256065"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-97575995",
+        "name": "Unnamed island",
+        "nation": "England",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 97575995,
+        "areaKm2": 0.0028,
+        "lat": 51.46739,
+        "lng": -0.92489,
+        "wikidata": "Q98446638"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q98446638",
+          "name": "Sonning Hill Island",
+          "nation": "England",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 51.4674,
+          "lng": -0.9247,
+          "wikidata": "Q98446638"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-way-262603005",
+        "name": "Unnamed island",
+        "nation": "Ireland",
+        "source": "osm-unnamed",
+        "osmType": "way",
+        "osmId": 262603005,
+        "areaKm2": 0.0112,
+        "lat": 53.50554,
+        "lng": -9.43944,
+        "wikidata": "Q7994722"
+      },
+      "dropped": [
+        {
+          "id": "wd-Q7994722",
+          "name": "White Goat Island",
+          "nation": "Ireland",
+          "source": "wikidata",
+          "osmType": null,
+          "osmId": null,
+          "areaKm2": null,
+          "lat": 53.50567,
+          "lng": -9.43961,
+          "wikidata": "Q7994722"
+        }
+      ],
+      "reasons": [
+        "point-and-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3481323",
+        "name": "Urkaun Beg Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3481323,
+        "areaKm2": 0.0359,
+        "lat": 53.4563,
+        "lng": -9.27925,
+        "wikidata": "Q104323400"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-259380859",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 259380859,
+          "areaKm2": 0.0359,
+          "lat": 53.45633,
+          "lng": -9.27934,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3474543",
+        "name": "Urkaun More Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3474543,
+        "areaKm2": 0.0496,
+        "lat": 53.46021,
+        "lng": -9.28553,
+        "wikidata": "Q104323324"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-258877531",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 258877531,
+          "areaKm2": 0.0495,
+          "lat": 53.46009,
+          "lng": -9.28531,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998381",
+        "name": "White Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998381,
+        "areaKm2": 0.1463,
+        "lat": 54.39815,
+        "lng": -7.67899,
+        "wikidata": ""
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116527985",
+          "name": "White Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116527985,
+          "areaKm2": 0.146,
+          "lat": 54.39814,
+          "lng": -7.67906,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3998487",
+        "name": "White Island",
+        "nation": "Northern Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3998487,
+        "areaKm2": 0.3248,
+        "lat": 54.48886,
+        "lng": -7.73636,
+        "wikidata": "Q6978800"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-116523159",
+          "name": "White Island",
+          "nation": "Northern Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 116523159,
+          "areaKm2": 0.3241,
+          "lat": 54.48892,
+          "lng": -7.73645,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "osm-relation-3534585",
+        "name": "White Island",
+        "nation": "Ireland",
+        "source": "osm",
+        "osmType": "relation",
+        "osmId": 3534585,
+        "areaKm2": 0.1597,
+        "lat": 53.56137,
+        "lng": -9.36425,
+        "wikidata": "Q104322786"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-263199085",
+          "name": "Unnamed island",
+          "nation": "Ireland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 263199085,
+          "areaKm2": 0.1594,
+          "lat": 53.56121,
+          "lng": -9.36397,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "named-and-unnamed-outline"
+      ]
+    },
+    {
+      "keeper": {
+        "id": "wd-Q56663104",
+        "name": "crannog 800m W of Achlian",
+        "nation": "Scotland",
+        "source": "wikidata",
+        "osmType": "way",
+        "osmId": 1387338766,
+        "areaKm2": 0.0008,
+        "lat": 56.37739,
+        "lng": -5.05406,
+        "wikidata": "Q56663104"
+      },
+      "dropped": [
+        {
+          "id": "osm-way-202204341",
+          "name": "Unnamed island",
+          "nation": "Scotland",
+          "source": "osm-unnamed",
+          "osmType": "way",
+          "osmId": 202204341,
+          "areaKm2": 0.0008,
+          "lat": 56.37741,
+          "lng": -5.0541,
+          "wikidata": ""
+        }
+      ],
+      "reasons": [
+        "same-outline"
+      ]
+    }
+  ]
+}

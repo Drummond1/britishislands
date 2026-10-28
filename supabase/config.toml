@@ -31,3 +31,11 @@ enable_confirmations = true
 # Ask proxy. The OpenAI key is a secret on the project, not a value in this file.
 [functions.ask]
 verify_jwt = true
+
+# Google Sheets imports this CSV with a secret token. The function checks the token.
+# verify_jwt is off because a spreadsheet cannot send an Authorization header.
+[functions.island-name-sheet]
+verify_jwt = false
+
+[functions.visitor-note]
+verify_jwt = true

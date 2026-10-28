@@ -17361,7 +17361,7 @@
     },
     {
       "category_slug": "island-castles",
-      "island_id": "wd-Q124343695",
+      "island_id": "osm-way-1047653849",
       "island_name": "Threave Island",
       "facet": "castle",
       "title": "Threave Castle",
@@ -18117,7 +18117,7 @@
     },
     {
       "category_slug": "island-castles",
-      "island_id": "osm-relation-376677",
+      "island_id": "mainland-shetland",
       "island_name": "Shetland",
       "facet": "castle",
       "title": "Scalloway Castle",
@@ -26375,7 +26375,7 @@
     },
     {
       "category_slug": "whisky-distilleries",
-      "island_id": "osm-relation-376677",
+      "island_id": "mainland-shetland",
       "island_name": "Shetland",
       "facet": "distillery",
       "title": "Lerwick Distillery",

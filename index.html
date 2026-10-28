@@ -66,12 +66,12 @@
     <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css" />
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
-    <link rel="stylesheet" href="styles.css?v=contribute-pin-2" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-3" />
-    <link rel="stylesheet" href="editorial-profile.css?v=safari-photos-3" />
+    <link rel="stylesheet" href="styles.css?v=name-it-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-1" />
+    <link rel="stylesheet" href="editorial-profile.css?v=name-it-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
-    <link rel="modulepreload" href="app.js?v=safari-photos-3" />
+    <link rel="modulepreload" href="app.js?v=name-it-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -283,7 +283,8 @@
             </div>
             <p class="discovery-eyebrow"><span class="editorial-rule"></span><span class="discovery-eyebrow__text">A WORLD A LITTLE CLOSER TO HOME</span></p>
             <h2>
-              <span class="discovery-display"><em>An Atlas for</em> <em>local adventures.</em></span>
+              <span class="discovery-line">An Atlas for</span>
+              <span class="discovery-display"><em>Island</em> <em>Adventures.</em></span>
               <svg class="discovery-coast" viewBox="0 0 280 16" aria-hidden="true">
                 <path d="M1 9C18 9 26 3 44 4C62 5 70 12 90 10C110 8 118 3 138 5C158 7 170 13 192 9C214 5 228 3 248 6C262 9 270 12 279 8" />
               </svg>
@@ -558,12 +559,12 @@
                 <button type="button" class="contribute-hub__card" id="contribute-new-pin">
                   <span class="contribute-hub__step">2</span>
                   <span class="contribute-hub__title">Add a missing island</span>
-                  <span class="contribute-hub__desc">Zoom in and click the land itself. Then name it, or leave the name blank.</span>
+                  <span class="contribute-hub__desc">Click the island, then name it.</span>
                 </button>
                 <button type="button" class="contribute-hub__card" id="contribute-name-existing">
                   <span class="contribute-hub__step">3</span>
                   <span class="contribute-hub__title">Name an island already on the map</span>
-                  <span class="contribute-hub__desc">These places are marked with a question mark. Open one and type the name people use.</span>
+                  <span class="contribute-hub__desc">Click a question mark. It asks you for the name.</span>
                 </button>
               </div>
               <p class="crowd-modal__fine">
@@ -593,9 +594,21 @@
               </label>
               <label class="crowd-field crowd-field--name">
                 <span id="crowd-label-name">What is it called?</span>
-                <input id="crowd-field-name" type="text" autocomplete="off" placeholder="The name people use" />
-                <span class="crowd-field__help" id="crowd-name-help">Use the name people there use — Gaelic, Irish, Welsh, Manx, or English. If you do not know it, leave this blank. Do not invent a name.</span>
+                <input id="crowd-field-name" type="text" autocomplete="off" placeholder="The name people use" aria-label="What is it called?" />
+                <span class="crowd-field__help" id="crowd-name-help" hidden>Use the name people there use.</span>
               </label>
+              <div id="crowd-who">
+                <label class="crowd-field">
+                  <span>Your name</span>
+                  <input id="crowd-field-credit" type="text" autocomplete="name" />
+                </label>
+                <label class="crowd-field">
+                  <span>Your email</span>
+                  <input id="crowd-field-email" type="email" autocomplete="email" inputmode="email" />
+                </label>
+                <p class="crowd-modal__fine" id="crowd-email-private">We don’t publish your email.</p>
+              </div>
+              <div id="crowd-fix-extra" hidden>
               <details class="crowd-source" id="crowd-source-more">
                 <summary>Add a source <em class="crowd-optional">only if you have one</em></summary>
                 <label class="crowd-field">
@@ -605,7 +618,7 @@
                 </label>
               </details>
               <details class="crowd-more" id="crowd-more">
-                <summary>Add a note, a photo, or your name</summary>
+                <summary>Add a note or a photo</summary>
                 <label class="crowd-field">
                   <span>What you can see</span>
                   <textarea id="crowd-field-note" rows="3" placeholder="A rock off the pier, a tidal islet, a loch island…"></textarea>
@@ -614,15 +627,8 @@
                   <span>Photo links <em class="crowd-optional">one web address per line</em></span>
                   <textarea id="crowd-field-photos" rows="2" placeholder="https://commons.wikimedia.org/…"></textarea>
                 </label>
-                <label class="crowd-field">
-                  <span>Your name <em class="crowd-optional">optional</em></span>
-                  <input id="crowd-field-credit" type="text" autocomplete="name" placeholder="Shown if we publish the pin" />
-                </label>
-                <label class="crowd-field">
-                  <span>Your email <em class="crowd-optional">optional, only if you want a reply</em></span>
-                  <input id="crowd-field-email" type="email" autocomplete="email" placeholder="you@example.com" />
-                </label>
               </details>
+              </div>
               <label class="crowd-field" id="crowd-field-pin-id-wrap" hidden>
                 <span>Community pin</span>
                 <input id="crowd-field-existing-id" type="text" autocomplete="off" />
@@ -845,6 +851,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=safari-photos-3" type="module"></script>
+    <script src="app.js?v=name-it-1" type="module"></script>
   </body>
 </html>

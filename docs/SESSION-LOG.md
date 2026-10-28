@@ -3729,6 +3729,13 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **Outcome / counts**: Counts unchanged. In WebKit the Kidnapped cover on Erraid is the whole book, Lewis and Harris is the whole satellite view, and list thumbnails stay 111×94. The same sizes held in Chrome. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
 
+## 2026-10-27 — One record for each duplicated island
+
+- **Goal**: Car Island was stored twice, the named island and a second outline on the same spot in Lower Lough Erne. Remove that kind of duplicate, then check the atlas has one record for each of those islands.
+- **What changed**: `scripts/dedup_same_place.py` removed **165** records that sat on another island of the same shape. The kept record is the named one. Blank area, Wikidata, photographs, and descriptions were copied onto it. Inishbeagh had two extra outlines; one record remains. Seven outlines that had borrowed a neighbour’s name (Ray Mill Island, Cutlers Ait, Grass Eyot, Peasholm Island, Rose Isle, Saint Thomas Island, St Thomas’s Island) are unnamed again. Mainland Shetland keeps the curated record; the second copy of OpenStreetMap relation 376677 was removed, and the pin moved from 60.3, −1.3 to the relation’s centroid. Old paths such as `/islands/northern-ireland/car-island-lower-lough-erne/` open the kept island. Interest rows, galleries, the featured card, and the photo queue now use the kept id. The index, shards, details, chat corpus, and SEO paths were rebuilt. Supabase was not reloaded.
+- **Outcome / counts**: Atlas **11,212** (was 11,377). Car Island is only `osm-relation-3998375`, Lower Lough Erne, 10.8 ha. A second pass found no remaining stacked pair. All **27** curated islands are still present. Devenish still matches the validation set. Nearby islands that share a name but are separate outlines were left alone: a Wikidata point that does not sit on the outline, or a small rock beside a larger island of the same name. Report: `data/duplicate_place_report.json`.
+- **Open items kicked to QUEUE.md**: none.
+
 ## 2026-10-27 — iPhone list photographs
 
 - **Goal**: Homepage list photographs were still missing on iPhone Safari.
@@ -3742,3 +3749,24 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: The opening cards use a photograph of the island when the record has one, and do not substitute a cited book or painting. The first screen loads those photograph addresses, which the compact index does not carry. `islands.json` was not edited.
 - **Outcome / counts**: Counts unchanged. Erraid’s opening card and list thumbnail are David Balfour’s Bay. Pushed to `main` for GitHub Pages.
 - **Open items kicked to QUEUE.md**: none.
+
+## 2026-10-28 — Visitor notes can carry a private email
+
+- **Goal**: Let someone add an email to “Add what you know”, keep that email off the island page, show the note on the island, and send Drummond a copy with the listing context.
+- **What changed**: The form leads with the two questions, then the name, then an optional email marked “Not published”. Adding a note updates the list on that island without reloading the page or jumping to the top. The public text is stored in `island_visitor_notes` and returned by `island_visitor_notes_public()`, which does not include the email. Anonymous clients cannot read the table. The same submission is emailed to drummondgilbert@gmail.com through FormSubmit, with the island, place, page, short listing, both answers, the name, and the email. A private `island_note_inbox` row can point that send at a Google Form spreadsheet. `islands.json` was not edited.
+- **Outcome / counts**: Counts unchanged. On Lewis and Harris, an empty submit asked for one of the two answers, a bad email was refused, and a valid note appeared under “From visitors. Not checked.” The email stayed in the field and did not appear in the note. The test row was removed afterwards. FormSubmit has sent an activation mail and will not deliver the note until that link is clicked. The Google account in this browser was signed out, so the spreadsheet is not connected yet.
+- **Open items kicked to QUEUE.md**: Connect the Google Sheet after Google is signed in, and click the FormSubmit activation mail.
+
+## 2026-10-28 — Name an island in one step
+
+- **Goal**: Click an unnamed island and be asked only for its name, with the person’s name and a private email, then keep that name, the credit, a filter, an email, and a table for Google Sheets.
+- **What changed**: The island page and the pin form are three fields and one button, **Name it**. The line under the email says it is not published. A save writes `island_name_log`, shows **Named by** that person, and does not change `islands.json`. The chip **Named by the public** lists those names. A database trigger emails drummondgilbert@gmail.com through FormSubmit. A private CSV, `island-name-sheet`, is the sheet table (Submitted, Island, Named by, Email, Island id, Latitude, Longitude). The sheet token is not in the repo.
+- **Outcome / counts**: Counts unchanged. A browser check named one English islet, saw the credit and the filter (1 name), then the check row was deleted. FormSubmit replied that the inbox must open the activation link before later names arrive as email. Google Sheets authorization had expired, so the spreadsheet file is not in Drive yet.
+- **Open items kicked to QUEUE.md**: Open the FormSubmit activation email. Reconnect Google Sheets so the spreadsheet can be created.
+
+## 2026-10-28 — Shipped to main
+
+- **Goal**: Put the current atlas on findmyisland.com.
+- **What changed**: Pushed the deduped atlas (11,212 islands, including the place-label corrections), public naming, visitor notes with a private email, and the island reel. GitHub Pages rebuilds the index and shards from `data/islands.json`. The Pages workflow does not redeploy Supabase functions.
+- **Outcome / counts**: Atlas **11,212**. All 27 curated islands remain.
+- **Open items kicked to QUEUE.md**: FormSubmit activation and the Google Sheets connections stay blocked.

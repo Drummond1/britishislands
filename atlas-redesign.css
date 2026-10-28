@@ -1918,7 +1918,7 @@ body.is-atlas-ready .discovery-header::after {
 .island-card__title { font-size: 23px; }
 .island-card__meta { color: #d4cbbd; font-size: 12.5px; }
 
-/* The opening headline is two lines, then the photographs. */
+/* The opening is a short line, then the photographs. The full sentence is not set in the large type. */
 .discovery-eyebrow,
 .discovery-bearing,
 .discovery-lede,
@@ -1927,14 +1927,11 @@ body.is-atlas-ready .discovery-header::after {
 .chart-rose { width: min(150px, 30%); opacity: .28; top: -6px; }
 .discovery-intro { padding-top: 12px; padding-bottom: 0; }
 .discovery-intro h2 {
-  font-size: clamp(42px, 3.6vw, 58px);
+  font-size: clamp(52px, 4.6vw, 72px);
   line-height: 0.92;
   margin-bottom: 8px;
 }
-.discovery-intro h2 .discovery-display em {
-  display: block;
-  color: #f6f1e6;
-}
+.discovery-intro h2 .discovery-display em { color: #f6f1e6; }
 .discovery-intro h2 .discovery-display em:last-child { color: #e4a322; }
 .featured-strip__title {
   position: absolute;

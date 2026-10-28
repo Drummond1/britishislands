@@ -7,8 +7,9 @@
 import { loadCrowdSuggestConfig, isCrowdSuggestConfigured, submitCrowdSuggestion } from "./crowd-pins.js?v=visitor-note-1";
 
 const LOCAL_KEY = "iobSuggestedNames";
+const NAMER_KEY = "iobNamer";
 
-/** @type {Map<string, {islandId: string, islandName: string, contributorName: string, attribution: string, at: string}>} */
+/** @type {Map<string, {islandId: string, islandName: string, contributorName: string, attribution: string, at: string, lat: number|null, lng: number|null}>} */
 const byId = new Map();
 
 function clean(value, max) {
@@ -44,6 +45,8 @@ function loadLocal() {
         contributorName: clean(row.contributorName, 60),
         attribution: clean(row.attribution, 300),
         at: String(row.at || ""),
+        lat: Number.isFinite(Number(row.lat)) ? Number(row.lat) : null,
+        lng: Number.isFinite(Number(row.lng)) ? Number(row.lng) : null,
       });
     }
   } catch (_) {
@@ -56,6 +59,30 @@ loadLocal();
 export function suggestedName(islandId) {
   if (!islandId) return null;
   return byId.get(islandId) || null;
+}
+
+export function allSuggestedNames() {
+  return [...byId.values()];
+}
+
+export function rememberedNamer() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(NAMER_KEY) || "{}");
+    return {
+      personName: clean(raw?.personName, 60),
+      email: clean(raw?.email, 200),
+    };
+  } catch (_) {
+    return { personName: "", email: "" };
+  }
+}
+
+function rememberNamer(personName, email) {
+  try {
+    localStorage.setItem(NAMER_KEY, JSON.stringify({ personName, email }));
+  } catch (_) {
+    /* private mode */
+  }
 }
 
 function remember(row) {
@@ -83,6 +110,8 @@ export async function refreshSuggestedNames() {
         contributorName: clean(row.contributor_name, 60),
         attribution: clean(row.attribution, 300),
         at: String(row.created_at || ""),
+        lat: Number.isFinite(Number(row.lat)) ? Number(row.lat) : null,
+        lng: Number.isFinite(Number(row.lng)) ? Number(row.lng) : null,
       };
       if (!next.islandId || !next.islandName) continue;
       const prev = byId.get(next.islandId);
@@ -182,6 +211,9 @@ export async function saveIslandName({ island, personName, email, islandName, at
     contributorName: row.contributorName,
     attribution: row.attribution,
     at: row.at,
+    lat: Number.isFinite(Number(row.lat)) ? Number(row.lat) : null,
+    lng: Number.isFinite(Number(row.lng)) ? Number(row.lng) : null,
   });
+  rememberNamer(who, mail);
   return { ok: true };
 }
