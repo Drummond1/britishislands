@@ -42,6 +42,45 @@ import {
   suggestPlaceNames,
   CHAT_AGENT_TOOLS,
 } from "./chat-agent.js?v=ask-nl-3";
+
+// ---------- Optional, consent-gated analytics ----------
+// The shared loader owns consent and URL sanitisation. Never queue visitor actions here.
+let analyticsOpenIslandId = "";
+
+function trackAtlasEvent(event, params = {}) {
+  try {
+    window.fmiAnalytics?.track?.(event, params);
+  } catch (_) {
+    /* Analytics must not interrupt the atlas. */
+  }
+}
+
+function trackOpenedIsland(island) {
+  const id = canonicalIslandId(island?.id);
+  if (!id || !state.byId?.has(id) || analyticsOpenIslandId === id) return;
+  analyticsOpenIslandId = id;
+  trackAtlasEvent("page_view", { island_id: id });
+  trackAtlasEvent("island_view", { island_id: id });
+}
+
+function trackBrokerLinkActivation(event) {
+  if (event.defaultPrevented || (event.type === "auxclick" && event.button !== 1)) return;
+  const link = event.target?.closest?.("a[data-broker-island]");
+  if (!link) return;
+  const id = canonicalIslandId(link.getAttribute("data-broker-island"));
+  if (!id || !state.byId?.has(id)) return;
+  try {
+    const url = new URL(link.href);
+    if (!["https:", "http:"].includes(url.protocol)) return;
+    trackAtlasEvent("broker_click", { island_id: id, outbound_host: url.hostname });
+  } catch (_) {
+    /* Ignore malformed listing links. */
+  }
+}
+
+document.addEventListener("click", trackBrokerLinkActivation);
+document.addEventListener("auxclick", trackBrokerLinkActivation);
+
 /** Showcase islands with pre-generated 3D terrain (see island-3d.js). */
 const SHOWCASE_3D_IDS = new Set([
   "staffa",
@@ -1052,7 +1091,7 @@ function propertyListingPopupHtml(island, { loading = false } = {}) {
       const typeLabel = _LISTING_TYPE_LABEL[r.listingType] || r.listingType || "Listing";
       const price = r.priceDisplay || (r.priceGBP != null ? `£${Number(r.priceGBP).toLocaleString("en-GB")}` : "");
       return `<li class="sale-popup__item">
-        <a href="${escapeAttr(r.url)}" target="_blank" rel="noopener noreferrer" class="sale-popup__link">${escapeHtml(r.title || "View listing")} ↗</a>
+        <a href="${escapeAttr(r.url)}" target="_blank" rel="noopener noreferrer" class="sale-popup__link" data-broker-island="${escapeAttr(island.id)}">${escapeHtml(r.title || "View listing")} ↗</a>
         <span class="sale-popup__meta">${escapeHtml(typeLabel)}${price ? ` · ${escapeHtml(price)}` : ""}</span>
       </li>`;
     })
@@ -1501,6 +1540,7 @@ function toggleFavoriteIsland(id) {
   else state.favoriteIds.delete(id);
   if (adding) markJustSaved(id);
   persistFavoriteIds();
+  if (adding && state.byId?.has(id)) trackAtlasEvent("island_save", { island_id: id });
   updateSavedUiChrome();
   scheduleRenderListWindow();
   rebuildMarkerLayer();
@@ -3582,6 +3622,9 @@ function setActiveInterest(slug, { skipUrl = false } = {}) {
   renderBrowseQuickChips();
   if (!skipUrl) syncInterestUrl(next);
   applyFilters();
+  if (next && interestCategories().some((category) => category.slug === next)) {
+    trackAtlasEvent("interest_select", { category: next });
+  }
 }
 
 function renderInterestFilters() {
@@ -5729,6 +5772,7 @@ function focusIsland(id, { fly = true, fromHistory = false } = {}) {
     });
 
     applyIslandSeo(island);
+    trackOpenedIsland(island);
   };
 
   if (stub.__fullMerged) {
@@ -5871,7 +5915,7 @@ function renderPropertyListings(island) {
           : "";
       const src = L.source ? `<span class="property-listing__source">${escapeHtml(L.source)}</span>` : "";
       return `<li class="property-listing">
-        <a class="property-listing__link" href="${escapeAttr(L.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(L.title || "View listing")} ↗</a>
+        <a class="property-listing__link" href="${escapeAttr(L.url)}" target="_blank" rel="noopener noreferrer" data-broker-island="${escapeAttr(island.id)}">${escapeHtml(L.title || "View listing")} ↗</a>
         <span class="property-listing__meta">${escapeHtml(typeLabel)}${price ? ` · ${escapeHtml(price)}` : ""}${conf} ${src}</span>
       </li>`;
     })
@@ -7835,6 +7879,7 @@ function releaseIslandDetailView({ clearUrl = false, keepMap = false } = {}) {
   els.details.hidden = true;
   els.listSection.hidden = false;
   state.activeId = null;
+  analyticsOpenIslandId = "";
   document.body.dataset.islandDetail = "closed";
   syncListVirtualPauseState();
   if (state.activePolygon) {
@@ -7846,6 +7891,7 @@ function releaseIslandDetailView({ clearUrl = false, keepMap = false } = {}) {
     state.detailMap = null;
   }
   if (clearUrl) syncIslandUrl(null, { mode: "replace" });
+  if (closingId) trackAtlasEvent("page_view");
   syncChatLauncherContext();
   scheduleRenderListWindow();
   if (closingId) {

@@ -1125,6 +1125,8 @@ def asset_href_for_depth(depth: int, filename: str) -> str:
 def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
     landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    analytics_css = html.escape(asset_href_for_depth(depth, "analytics.css?v=analytics-20261102a"), quote=True)
+    analytics_js = html.escape(asset_href_for_depth(depth, "analytics.js?v=analytics-20261102a"), quote=True)
     fonts = (
         "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600"
         "&amp;family=Outfit:wght@400;500;600&amp;display=swap"
@@ -1136,7 +1138,9 @@ def landing_head_assets(depth: int) -> str:
         'onload="this.media=\'all\'"/>\n'
         f'  <noscript><link rel="stylesheet" href="{fonts}"/></noscript>\n'
         f'  <link rel="stylesheet" href="{styles}"/>\n'
-        f'  <link rel="stylesheet" href="{landing}"/>'
+        f'  <link rel="stylesheet" href="{landing}"/>\n'
+        f'  <link rel="stylesheet" href="{analytics_css}"/>\n'
+        f'  <script src="{analytics_js}" defer></script>'
     )
 
 

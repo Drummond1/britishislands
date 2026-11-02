@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M2T6LN5J');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -69,9 +62,11 @@
     <link rel="stylesheet" href="styles.css?v=name-it-1" />
     <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-1" />
     <link rel="stylesheet" href="editorial-profile.css?v=name-it-1" />
+    <link rel="stylesheet" href="analytics.css?v=analytics-20261102a" />
+    <script src="analytics.js?v=analytics-20261102a" defer></script>
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
-    <link rel="modulepreload" href="app.js?v=name-it-1" />
+    <link rel="modulepreload" href="app.js?v=analytics-20261102a" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -96,10 +91,6 @@
         <p class="app-loading__text">Loading the atlas…</p>
       </div>
     </div>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2T6LN5J"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="topbar topbar--atlas">
       <button class="brand brand-link" id="home-link" type="button" aria-label="Find My Island home">
         <span class="brand-mark" aria-hidden="true" data-lucide="compass"></span>
@@ -851,6 +842,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=name-it-1" type="module"></script>
+    <script src="app.js?v=analytics-20261102a" type="module"></script>
   </body>
 </html>

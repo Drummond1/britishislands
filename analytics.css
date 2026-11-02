@@ -1,0 +1,54 @@
+/* Shared consent controls for the atlas and static landing pages. */
+.fmi-privacy-settings,
+.fmi-analytics-choice {
+  appearance: none;
+  border: 1px solid #63736c;
+  border-radius: 6px;
+  background: #f8f5ee;
+  color: #182a23;
+  font: 500 13px/1.4 system-ui, sans-serif;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.fmi-privacy-settings {
+  position: fixed;
+  left: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 2200;
+  box-shadow: 0 1px 8px #0002;
+}
+.fmi-analytics-banner {
+  position: fixed;
+  left: 12px;
+  bottom: max(58px, calc(env(safe-area-inset-bottom) + 58px));
+  z-index: 2201;
+  width: min(420px, calc(100vw - 24px));
+  max-height: calc(100dvh - 100px);
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1px solid #63736c;
+  border-radius: 10px;
+  background: #f8f5ee;
+  color: #182a23;
+  box-shadow: 0 4px 24px #0003;
+  padding: 18px;
+  font: 14px/1.5 system-ui, sans-serif;
+}
+.fmi-analytics-banner[hidden] { display: none !important; }
+.fmi-analytics-title { margin: 0 0 8px; font: 600 17px/1.3 system-ui, sans-serif; }
+.fmi-analytics-copy { margin: 0 0 14px; }
+.fmi-analytics-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.fmi-analytics-choice { min-height: 44px; flex: 1; }
+.fmi-privacy-settings:focus-visible,
+.fmi-analytics-choice:focus-visible { outline: 3px solid #006c86; outline-offset: 3px; }
+
+/* Keep the atlas's Map / Explore / Ask navigation available on smaller screens. */
+@media (max-width: 900px) {
+  body:not(.lp) .fmi-privacy-settings {
+    bottom: calc(var(--mobile-nav-h, 64px) + var(--safe-bottom, 0px) + 12px);
+  }
+  body:not(.lp) .fmi-analytics-banner {
+    bottom: calc(var(--mobile-nav-h, 64px) + var(--safe-bottom, 0px) + 58px);
+    max-height: calc(100dvh - var(--mobile-nav-h, 64px) - var(--safe-bottom, 0px) - 100px);
+  }
+}
