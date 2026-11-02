@@ -2303,3 +2303,85 @@ img.island-card__thumb {
   object-position: center;
   background: #121816;
 }
+
+/* Homepage discovery: visible choices and clear focus without changing the atlas. */
+.discovery-intro .discovery-lede {
+  display: block;
+  max-width: 38em;
+  margin: 10px 0 14px;
+  color: #d4cbbd;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.browse-quick__label {
+  display: block;
+  margin: 16px 0 8px;
+  color: #d4cbbd;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.browse-quick__chips {
+  flex-wrap: wrap;
+  overflow: visible;
+  gap: 6px;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+.browse-quick__chip {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid rgba(244, 240, 230, .22);
+  border-radius: 6px;
+  color: #d4cbbd;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+}
+.browse-quick__chip:hover {
+  background: rgba(244, 240, 230, .06);
+  border-color: rgba(244, 240, 230, .5);
+}
+.browse-quick__chip.is-active {
+  background: rgba(228, 163, 34, .12);
+  border-color: #e4a322;
+  color: #f6f1e6;
+  box-shadow: none;
+}
+/* Selection stays on the button even when wrapped rows reflow after resizing. */
+.browse-quick__rule { display: none; }
+.featured-strip__title {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 18px 0 10px;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  color: #d4cbbd;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.browse-quick__chip:focus-visible,
+.featured-card:focus-visible,
+.discovery-search-row .topbar-filters-toggle:focus-visible,
+.list-show-all-header:focus-visible {
+  outline: 2px solid #e4a322;
+  outline-offset: 3px;
+}
+.discovery-search-row .topbar-filters-toggle {
+  min-width: 44px;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .discovery-intro .discovery-lede {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .browse-quick__chips { gap: 6px; }
+  .browse-quick__chip { padding: 9px 10px; }
+}

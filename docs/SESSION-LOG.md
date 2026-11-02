@@ -3770,3 +3770,10 @@ loop (`descriptions+photos-gap`, cycle 17).
 - **What changed**: Pushed the deduped atlas (11,212 islands, including the place-label corrections), public naming, visitor notes with a private email, and the island reel. GitHub Pages rebuilds the index and shards from `data/islands.json`. The Pages workflow does not redeploy Supabase functions.
 - **Outcome / counts**: Atlas **11,212**. All 27 curated islands remain.
 - **Open items kicked to QUEUE.md**: FormSubmit activation and the Google Sheets connections stay blocked.
+
+## 2026-11-02 — Clearer homepage discovery
+
+- **Goal**: Help first-time visitors understand the atlas, search, and see all discovery interests.
+- **What changed**: Added a short geographic introduction and explicit search placeholder. Interest buttons now wrap into visible rows with 44px touch targets, stronger contrast, and a gold selected border. The existing interest label and featured heading are visible. Search-adjacent controls and discovery cards have explicit keyboard focus outlines. The animated underline is hidden because selection is now attached to each wrapping button. The stylesheet URL is versioned for returning visitors.
+- **Scope**: Homepage HTML and presentation only. Dataset, ordering, map, profile, and filter logic unchanged.
+- **Validation**: Source checks completed; live homepage inspected before changes. Full interactive and responsive verification of this branch is pending because the local environment cannot reach GitHub to obtain the complete application. Proposed as a draft pull request for review.

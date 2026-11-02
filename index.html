@@ -67,7 +67,7 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css?v=name-it-1" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=homepage-discovery-1" />
     <link rel="stylesheet" href="editorial-profile.css?v=name-it-1" />
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
@@ -299,7 +299,7 @@
                 <span>Skellig Michael</span>
               </span>
             </p>
-            <p class="discovery-lede">Sea, loch, and river. One story at a time.</p>
+            <p class="discovery-lede">Explore the islands of Britain and Ireland. Find a place, follow a story, or choose an interest below.</p>
           </div>
           <div class="discovery-search-row">
       <div class="discovery-search">
@@ -308,7 +308,7 @@
           <input
             id="search"
             type="search"
-            placeholder="An island, a place, a possibility…"
+            placeholder="Search islands or places…"
             aria-label="Search islands"
             autocomplete="off"
             title="Press / to focus search"
@@ -343,7 +343,7 @@
 
 
           <div class="sidebar-explore" id="sidebar-explore">
-            <div class="browse-quick" id="browse-quick" aria-label="High-value filters">
+            <div class="browse-quick" id="browse-quick" role="group" aria-labelledby="browse-quick-label">
               <p class="browse-quick__label" id="browse-quick-label">Find your kind of island</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
