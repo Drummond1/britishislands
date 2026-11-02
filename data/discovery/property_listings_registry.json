@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T04:45:00+00:00",
-  "totalIslandsWithListings": 49,
+  "updatedAt": "2026-11-02T14:40:06+00:00",
+  "totalIslandsWithListings": 42,
   "verifiedManifest": "data/discovery/property_listings_verified.json",
   "humanDoc": "docs/FOR-SALE-ISLANDS.md",
   "islands": [
@@ -24,7 +24,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "eel-pie-island",
@@ -45,7 +45,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-157810927",
@@ -66,7 +66,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-148442098",
@@ -87,7 +87,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3198786",
@@ -108,7 +108,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3210701",
@@ -129,7 +129,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:26:03+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "scilly-st-marys",
@@ -150,7 +150,7 @@
         }
       ],
       "firstSeenAt": "2026-10-25T14:33:13+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-49901778",
@@ -171,7 +171,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-48076585",
@@ -192,7 +192,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-157812309",
@@ -213,7 +213,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-607165894",
@@ -234,7 +234,7 @@
         }
       ],
       "firstSeenAt": "2026-10-25T14:33:13+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-8156739",
@@ -255,7 +255,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4554655",
@@ -276,7 +276,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-9126999",
@@ -297,7 +297,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-4029093",
@@ -318,7 +318,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-190629034",
@@ -339,7 +339,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4562311",
@@ -360,7 +360,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4554537",
@@ -381,7 +381,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-704795953",
@@ -402,7 +402,7 @@
         }
       ],
       "firstSeenAt": "2026-10-25T14:33:13+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4562119",
@@ -423,7 +423,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3395357",
@@ -444,7 +444,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4563603",
@@ -465,7 +465,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-6925696",
@@ -486,7 +486,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-5725196",
@@ -507,7 +507,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3512150",
@@ -528,7 +528,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3516496",
@@ -549,7 +549,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3516509",
@@ -570,7 +570,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3998378",
@@ -591,7 +591,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-3516655",
@@ -612,7 +612,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-205056852",
@@ -633,7 +633,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-3619206",
@@ -654,7 +654,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-750275320",
@@ -675,7 +675,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-200745352",
@@ -696,7 +696,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-15708714",
@@ -717,7 +717,7 @@
         }
       ],
       "firstSeenAt": "2026-10-25T14:33:13+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-14940681",
@@ -738,7 +738,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4002996",
@@ -759,7 +759,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-200912404",
@@ -780,7 +780,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-4092586",
@@ -801,7 +801,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-200773375",
@@ -822,7 +822,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-relation-4230732",
@@ -843,7 +843,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4011476",
@@ -864,7 +864,7 @@
         }
       ],
       "firstSeenAt": "2026-10-25T14:33:13+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     },
     {
       "islandId": "osm-way-4001735",
@@ -885,154 +885,7 @@
         }
       ],
       "firstSeenAt": "2026-05-19T13:25:27+00:00",
-      "lastSeenAt": "2026-10-26T12:11:10+00:00"
-    },
-    {
-      "islandId": "osm-way-4561837",
-      "name": "Roeillaun",
-      "nation": "Ireland",
-      "areaKm2": 0.078,
-      "lat": 53.8745,
-      "lng": -9.7071,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Roeillaun — Sherry FitzGerald Crowley",
-          "url": "https://www.sherryfitz.ie/buy/commercial/land/mayo/westport/roeillaun-island-clew-bay",
-          "listingType": "whole_island",
-          "priceDisplay": "Asking Price €115,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-sherryfitz-roeillaun-clew"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-4554380",
-      "name": "Mannion's Island (Large)",
-      "nation": "Ireland",
-      "areaKm2": 0.017,
-      "lat": 51.6088,
-      "lng": -9.5561,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Mannion's Island — Dominic J Daly",
-          "url": "https://dominicjdaly.com/mannions-island-dunmanus-bay-west-cork/",
-          "listingType": "whole_island",
-          "priceDisplay": "Guide Price £230,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-dominicjdaly-mannions-island"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-4561775",
-      "name": "Inishcoragh",
-      "nation": "Ireland",
-      "areaKm2": 0.034,
-      "lat": 53.881,
-      "lng": -9.6478,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Inishcoragh — Patrick Chambers",
-          "url": "https://patrickchambersestateagents.ie/property/innischoragh-island-clew-bay-co-mayo/",
-          "listingType": "whole_island",
-          "priceDisplay": "€550,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-patrickchambers-inishcoragh"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-4560078",
-      "name": "Inish Samer",
-      "nation": "Ireland",
-      "areaKm2": 0.005,
-      "lat": 54.501,
-      "lng": -8.2008,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Inis Saimer — O'Boyle Auctioneers",
-          "url": "https://oboyleproperty.ie/listing/inis-saimer-island-mall-quay-ballyshannon-co-donegal-f94-nw18/",
-          "listingType": "whole_island",
-          "priceDisplay": "€299,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-oboyle-inis-saimer"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-4821984",
-      "name": "Inchconnachan",
-      "nation": "Scotland",
-      "areaKm2": 0.425,
-      "lat": 56.09,
-      "lng": -4.6143,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Inchconnachan — UK Sotheby's International Realty",
-          "url": "https://sothebysrealty.co.uk/properties/buy/land-for-sale-stirlingshire-loch-lomond-inchconnachan-island-49068/",
-          "listingType": "whole_island",
-          "priceDisplay": "£2,500,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-sothebys-inchconnachan"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-41105627",
-      "name": "Hildasay",
-      "nation": "Scotland",
-      "areaKm2": 0.996,
-      "lat": 60.1459,
-      "lng": -1.3599,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Hildasay — Kelvin Anderson",
-          "url": "https://kelvinanderson.exp.uk.com/property/hildasay-island/1559203/",
-          "listingType": "whole_island",
-          "priceDisplay": "Offers over £350,000",
-          "source": "tier4",
-          "sourceListingId": "tier4-kelvinanderson-hildasay"
-        }
-      ],
-      "firstSeenAt": "2026-10-26T14:30:00+00:00",
-      "lastSeenAt": "2026-10-26T14:30:00+00:00"
-    },
-    {
-      "islandId": "osm-way-4561771",
-      "name": "Inishdaweel",
-      "nation": "Ireland",
-      "areaKm2": 0.065,
-      "lat": 53.8829,
-      "lng": -9.6143,
-      "listingCount": 1,
-      "listings": [
-        {
-          "title": "Inishdaweel — Frank Chambers",
-          "url": "https://chambersauctioneers.com/property/inishdaweel-island-clew-bay-co-mayo-for-sale/",
-          "listingType": "whole_island",
-          "priceDisplay": "Price not stated",
-          "source": "tier4",
-          "sourceListingId": "tier4-frankchambers-inishdaweel"
-        }
-      ],
-      "firstSeenAt": "2026-10-27T04:45:00+00:00",
-      "lastSeenAt": "2026-10-27T04:45:00+00:00"
+      "lastSeenAt": "2026-11-02T14:40:06+00:00"
     }
   ],
   "runs": [
@@ -1370,6 +1223,31 @@
       "removedIslandIds": [],
       "source": "desk_research_round4",
       "note": "Appended only. Did not rebuild from islands.json. Did not publish the interest index."
+    },
+    {
+      "runAt": "2026-11-02T14:40:05+00:00",
+      "source": "registry_sync",
+      "addedCount": 0,
+      "removedCount": 7,
+      "addedIslandIds": [],
+      "removedIslandIds": [
+        "osm-way-41105627",
+        "osm-way-4554380",
+        "osm-way-4560078",
+        "osm-way-4561771",
+        "osm-way-4561775",
+        "osm-way-4561837",
+        "osm-way-4821984"
+      ]
+    },
+    {
+      "runAt": "2026-11-02T14:40:06+00:00",
+      "addedCount": 0,
+      "removedCount": 0,
+      "addedIslandIds": [],
+      "removedIslandIds": [],
+      "source": "registry_only",
+      "verifiedCount": 42
     }
   ]
 }
