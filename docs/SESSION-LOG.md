@@ -3781,3 +3781,7 @@ loop (`descriptions+photos-gap`, cycle 17).
 ## 2026-11-03 — Publish independently reviewed Irish photographs
 
 User explicitly requested removal of incorrect photographs, addition of verified photos, volume summary and a live-site push. Combined review covers 1,403 original associations and two discovery rounds; the extended round examined 430 distinct coastal/inland targets plus alternative sources, with different final reviewers. Applied 108 new placements, 273 removals/quarantines, 50 cover-link repairs, 65 story caption/credit corrections and two context reclassifications across 280 listings. 382 existing associations remain unresolved; one new Bull aerial was withheld for unclear permission. All island records and non-photo data preserved. Context views stay separate from covers and fallbacks; source-specific story overrides prevent regeneration of reviewed image errors. Release uses current main and only photo changes; private caches and unrelated unpublished changes excluded. [Full counts and exact change ledger](photo-reviews/2026-11-03-ireland.md). Production verification is recorded after deployment.
+
+### Irish photo publication: standalone credits follow-up
+
+During live verification after commit `324e66d2`, the existing standalone profile template omitted visible photo credits. Added only photo-attribution helpers and the selected-image credit caption, plus focused credit/escaping checks. No unrelated SEO changes included; photo counts and reviewed data hashes unchanged.

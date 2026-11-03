@@ -26,12 +26,14 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+from html.parser import HTMLParser
 import json
 import os
 import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 from typing import Any
 from xml.sax.saxutils import escape as xml_escape
 
@@ -143,6 +145,41 @@ def island_image_url(isl: dict) -> str:
             if u:
                 return u
     return str(isl.get("image") or "").strip()
+
+
+def external_url(value: Any) -> str:
+    """Only link public web sources, never executable URL schemes."""
+    value = str(value or "").strip()
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return ""
+    return value if parsed.scheme in {"https", "http"} and parsed.netloc else ""
+
+def attribution_text(value: Any) -> str:
+    class AttributionParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.parts: list[str] = []
+
+        def handle_data(self, data: str) -> None:
+            self.parts.append(data)
+
+    parser = AttributionParser()
+    parser.feed(str(value or ""))
+    return " ".join("".join(parser.parts).split())
+
+def image_credit_html(isl: dict, image_url: str) -> str:
+    for image in isl.get("images") or []:
+        if not isinstance(image, dict) or image_url not in {
+            image.get("url"), image.get("fullUrl"), image.get("thumbUrl")
+        }:
+            continue
+        pieces = [html.escape(attribution_text(image[key])) for key in ("attribution", "license") if image.get(key)]
+        if source := external_url(image.get("sourcePageUrl")):
+            pieces.append(f'<a href="{html.escape(source, quote=True)}">Image source</a>')
+        return f'<figcaption>{" · ".join(pieces)}</figcaption>' if pieces else ""
+    return ""
 
 
 def island_is_unnamed(isl: dict) -> bool:
@@ -588,7 +625,8 @@ def profile_page_html(
     if img:
         img_block = (
             f'  <figure class="lp-media"><img src="{html.escape(img, quote=True)}" '
-            f'alt="{name}" width="960" height="540" fetchpriority="high" decoding="async"/></figure>\n'
+            f'alt="{name}" width="960" height="540" fetchpriority="high" decoding="async"/>'
+            f'{image_credit_html(isl, img)}</figure>\n'
         )
 
     assets = landing_head_assets(depth)
@@ -1124,7 +1162,7 @@ def asset_href_for_depth(depth: int, filename: str) -> str:
 
 def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
-    landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    landing = html.escape(asset_href_for_depth(depth, "landing.css?v=photos-20261103a"), quote=True)
     analytics_css = html.escape(asset_href_for_depth(depth, "analytics.css?v=analytics-20261102a"), quote=True)
     analytics_js = html.escape(asset_href_for_depth(depth, "analytics.js?v=analytics-20261102a"), quote=True)
     fonts = (
