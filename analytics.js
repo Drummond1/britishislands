@@ -4,6 +4,7 @@
   if (window.fmiAnalytics) return;
 
   const CONTAINER_ID = "GTM-M2T6LN5J";
+  const GA_DISABLE_KEY = "ga-disable-G-GGXR2KHHCZ";
   const STORAGE_KEY = "fmi.analytics.consent.v1";
   const SESSION_DENIAL_KEY = "fmi.analytics.denied.v1";
   const SITE_HOSTS = new Set(["findmyisland.com", "www.findmyisland.com"]);
@@ -35,6 +36,7 @@
   try {
     if (new URL(window.location.href).searchParams.get("fmi_analytics") === "off") consent = "denied";
   } catch { /* An unreadable address must never opt a visitor in. */ }
+  if (consent !== "granted") window[GA_DISABLE_KEY] = true;
 
   function publicPath(pathname) {
     const path = pathname === "/index.html" ? "/" : pathname;
@@ -152,6 +154,8 @@
   }
 
   function chooseConsent(choice) {
+    // Stop an already loaded Google tag before storage, cookie clearing or unload.
+    if (choice === "denied") window[GA_DISABLE_KEY] = true;
     consent = choice;
     let denialPersists = false;
     try {
@@ -173,6 +177,7 @@
     if (settingsButton) settingsButton.setAttribute("aria-expanded", "false");
     if (settingsButton) settingsButton.focus();
     if (choice === "granted") {
+      window[GA_DISABLE_KEY] = false;
       try {
         const current = new URL(window.location.href);
         if (current.searchParams.has("fmi_analytics")) {

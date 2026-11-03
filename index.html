@@ -59,14 +59,15 @@
     <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css" />
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
-    <link rel="stylesheet" href="styles.css?v=photos-20261103a" />
+    <link rel="stylesheet" href="styles.css?v=name-it-1" />
     <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-1" />
     <link rel="stylesheet" href="editorial-profile.css?v=name-it-1" />
-    <link rel="stylesheet" href="analytics.css?v=analytics-20261102a" />
-    <script src="analytics.js?v=analytics-20261102a" defer></script>
+    <link rel="stylesheet" href="learning.css?v=learning-4" />
+    <link rel="stylesheet" href="analytics.css?v=analytics-20261103a" />
+    <script src="analytics.js?v=analytics-20261103a" defer></script>
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
-    <link rel="modulepreload" href="chat-agent.js?v=ask-nl-3" />
-    <link rel="modulepreload" href="app.js?v=analytics-20261102a" />
+    <link rel="modulepreload" href="chat-agent.js?v=learning-4" />
+    <link rel="modulepreload" href="app.js?v=learning-4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -339,6 +340,8 @@
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
             </div>
             <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
+            <section id="learning-controls" class="learning-controls" aria-label="Discover a story" hidden></section>
+            <section id="learning-journey" class="learning-journey" aria-live="polite" hidden></section>
             <section class="featured-strip" id="featured-strip" hidden aria-labelledby="featured-heading">
               <h3 id="featured-heading" class="featured-strip__title">Begin with</h3>
               <div class="featured-strip__scroll" id="featured-strip-scroll" role="group" aria-label="Featured islands"></div>
@@ -780,41 +783,6 @@
 
     <div id="app-toast" class="app-toast" role="status" aria-live="polite" hidden></div>
 
-    <div id="favorites-access-modal" class="favorites-modal" hidden>
-      <div class="favorites-modal__backdrop" id="favorites-access-backdrop" tabindex="-1"></div>
-      <div
-        class="favorites-modal__panel"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="favorites-access-title"
-      >
-        <h2 id="favorites-access-title" class="favorites-modal__title">Save islands</h2>
-        <p class="favorites-modal__lead">
-          Enter your email once to heart islands and open your saved list. Everything stays in this
-          browser for now — we only use your email to unlock the feature.
-        </p>
-        <label class="favorites-field">
-          <span>Email</span>
-          <input
-            id="favorites-email-input"
-            type="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-            required
-          />
-        </label>
-        <p id="favorites-access-error" class="favorites-access-error" hidden role="alert"></p>
-        <div class="favorites-modal__actions">
-          <button type="button" class="favorites-modal__btn favorites-modal__btn--primary" id="favorites-access-continue">
-            Continue
-          </button>
-          <button type="button" class="favorites-modal__btn favorites-modal__btn--ghost" id="favorites-access-cancel">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-
     <div id="image-lightbox" class="lightbox" hidden>
       <div class="lightbox__backdrop" tabindex="-1"></div>
       <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Island photo">
@@ -842,6 +810,6 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=photos-20261103a" type="module"></script>
+    <script src="app.js?v=learning-4" type="module"></script>
   </body>
 </html>

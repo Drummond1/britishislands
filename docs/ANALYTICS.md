@@ -1,6 +1,6 @@
 # Analytics — installation and verification
 
-Status checked through the signed-in browser on **2 November 2026**.
+Status checked through the signed-in browser on **2–3 November 2026**.
 
 ## Current state
 
@@ -29,10 +29,19 @@ Enhanced Measurement, Google Signals and user-provided data collection are
 **off**. Advertising personalisation is disabled in all **307** listed regions,
 verified in the property settings. Optional account data sharing is off.
 
-**Rollout is in progress.** The site integration remains local and unpublished;
-no site deployment or Tag Manager publication has occurred for this setup.
-Live receipt of visits and events in the new property is **unverified**. Saved
-account settings and tag drafts are preparation, not proof of collection.
+**Rollout is in progress.** The consent integration was deployed in commit
+`97f72466b6cd1a79b0f5adb7ea35f66579fb8540`; Pages run `41548769552` succeeded.
+Production browser checks confirmed equal choices, remembered denial on the
+homepage and a depth-three island landing, and no Google scripts before consent.
+All six site event names reached the intended property in Preview. The initial
+page view, session start and first visit had clean public page addresses and
+origin-only external referrers. A final engagement hit on withdrawal exposed
+an unload race; the fix below must pass a production retest before publishing
+the still-unpublished Tag Manager workspace.
+
+Enhanced Measurement was found enabled after the creation screen despite the
+initial choice. It was turned off in the saved stream, confirmed, and verified
+off again after a fully loaded reload. Treat loading placeholders as unverified.
 
 Saved draft variables (all Data Layer Variable version 2):
 
@@ -71,13 +80,17 @@ Browser proof images are retained locally under `docs/reports/analytics-2026-11-
 `analytics.js` and `analytics.css` load on the homepage and every generated
 landing through `landing_head_assets()`. The immediate homepage GTM snippet and
 the noscript iframe are replaced by one consent-gated loader. The assets and
-both `app.js` references use version `analytics-20261102a`.
+both `app.js` references use version `analytics-20261103a`.
 
 The visitor gets equal Accept analytics and Decline choices, with a persistent
 Privacy settings button. No container, event queue or analytics request starts
 before an affirmative choice. Earlier actions are discarded. Localhost and
 other non-production hosts never load the container.
 
+Withdrawal first sets the measurement-specific Google opt-out flag synchronously,
+before storage, cookie clearing or unload. Only affirmative acceptance clears
+it. This prevents the observed final engagement hit during withdrawal; see
+[Google's programmatic opt-out guidance](https://developers.google.com/tag-platform/security/guides/privacy).
 Withdrawal clears GA cookies and unloads already loaded tags. A denial is
 saved locally, with removal of an old grant and a tab-level denial as fallbacks.
 If all browser storage operations fail, navigation to the clean public path
@@ -119,10 +132,9 @@ automatic tags that bypass this event contract.
 Account creation, legal-terms acceptance and both tag drafts are complete. The
 remaining work is:
 
-1. Deploy the prepared analytics-only consent integration while the live
-   container is empty. Verify production visitor choices and generated asset
-   paths before publishing measurement tags.
-2. Preview the container and inspect emitted requests before publication.
+1. Deploy the withdrawal fix while the live container is empty, then retest
+   that no final engagement hit escapes when consent is withdrawn.
+2. Finish Preview inspection before publication.
    Decline must produce no Google measurement requests; Accept must produce
    one initial page view with clean addresses. Confirm island opening, saving,
    interest selection and broker navigation without text leakage or duplicates.
@@ -164,9 +176,10 @@ isolated worktree. A release clone at
 `/private/tmp/findmyisland-analytics-release` starts from latest `main`,
 `3db265ee`; the source patch applied cleanly and its tests pass. It excludes
 concurrent photo changes and the separate, unpublished SEO improvements in the
-primary checkout. No deployment has occurred. Deploy the consent integration
-while the live container is empty, verify visitor choices, then publish the
-verified measurement tags.
+primary checkout. The first consent deployment succeeded. The subsequent
+withdrawal fix uses the assigned public measurement ID, includes ordering
+regressions for local and cross-tab denial, and bumps shared assets to
+`analytics-20261103a`. Tag publication waits for the live withdrawal retest.
 
 Analytics will describe the visits of people who opt in. Search Console remains
 the source for search impressions, clicks and Google AI feature reporting;

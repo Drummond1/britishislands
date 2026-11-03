@@ -19,10 +19,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 INTEREST_INDEX = ROOT / "data" / "interest_index.json"
 
-# Shown sentences per island. Further titles stay as links so a long
-# film/art list does not repeat every source paragraph.
-_SUMMARY_CAP = 2
-_TITLE_CAP = 8
+# Keep long island sections compact while retaining every record and its
+# summary in the HTML, without requiring the map application to read it.
+_EXPANDED_ROW_CAP = 2
 
 # Confirmed false attachments in docs/fact-check/2026-10-26-claims.md.
 # They stay in the atlas until that correction lands. Citable guides omit them
@@ -127,6 +126,10 @@ class GuidePage:
     def path(self) -> str:
         return f"/collections/{self.slug}/"
 
+    @property
+    def source_count(self) -> int:
+        return sum(bool(row.source_url) for island in self.islands for row in island.rows)
+
 
 # Order is the order on /collections/ and in llms.txt.
 # Ledes are original. {islands}, {rows}, and {facet_*} are filled from the index.
@@ -142,29 +145,29 @@ GUIDE_SPECS: list[dict[str, Any]] = [
             "The mainland, Martello towers, brochs, and country houses are left out."
         ),
         "lede": (
-            "{islands} islands in Britain and Ireland have a castle the sources place "
-            "on the island itself — {rows} castles in all. The mainland of Great Britain "
-            "and the island of Ireland are not listed. Martello towers, brochs, and "
-            "country houses are left out."
+            "{islands} islands in Britain and Ireland have records in the atlas's "
+            "castle collection — {rows} entries in all. The mainland of Great Britain "
+            "and the island of Ireland are not listed. The inclusion rules exclude "
+            "Martello towers, brochs, and country houses."
         ),
         "method": (
             "A castle is kept only when Wikidata, Wikipedia, OpenStreetMap, Canmore, "
             "the National Heritage List for England, Cadw, or the Archaeological Survey "
-            "of Ireland places it on that island. The sentence under a name is the "
-            "source line that makes the link."
+            "of Ireland places it on that island. Records describe the island "
+            "connection, not confirmation of public access."
         ),
         "faqs": [
             (
                 "How many islands in Britain and Ireland have a castle?",
-                "This guide lists {islands} islands and {rows} castles. It counts a castle on an island, not a castle on the mainland of Britain or Ireland.",
+                "This guide lists {rows} castle records associated with {islands} atlas islands. This is catalogue coverage, not an exhaustive count of castles or islands.",
             ),
             (
                 "Are brochs and Martello towers included?",
-                "No. Martello towers, brochs, and country houses are left out.",
+                "No. Martello towers, brochs, and country houses are excluded by the collection's inclusion rules.",
             ),
             (
                 "Where does the list come from?",
-                "From cited records in Wikidata, Wikipedia, OpenStreetMap, and the national heritage lists. Each entry links to its source.",
+                "From atlas records drawing on Wikidata, Wikipedia, OpenStreetMap, and national heritage lists. Source links are shown where recorded; missing links are marked.",
             ),
         ],
     },
@@ -175,28 +178,28 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         "nav_label": "Whisky islands",
         "priority": 0.84,
         "description": (
-            "Islands with a whisky distillery, a silent still, or a whisky story "
-            "a cited source places on that island."
+            "Recorded island connections to whisky and whiskey: distillery entries, "
+            "silent stills, plans and stories. Not a current production-status check."
         ),
         "lede": (
-            "{islands} islands have a whisky or whiskey record a source places on the "
-            "island: {facet_distillery} distillery entries, {facet_silent} silent stills, "
-            "{facet_story} stories, and {facet_planned} that are named but not yet in "
-            "production. A still is listed only when the source names the island."
+            "The atlas's whisky and whiskey collection contains {rows} records across "
+            "{islands} islands: {facet_distillery} tagged as distilleries, {facet_silent} "
+            "as silent stills, {facet_story} as stories, and {facet_planned} as planned. "
+            "These stored labels do not confirm current whisky production."
         ),
         "method": (
-            "Rows cover a working distillery, a closed still, a story, or a planned "
-            "still. The page does not list every bottle, brand, or bar. Islay, the "
-            "Hebrides, Orkney, and other isles use the same cited rows."
+            "Rows use the classifications recorded in the atlas. A distillery entry "
+            "does not establish that it is open or currently making whisky. The page "
+            "does not list every bottle, brand, or bar."
         ),
         "faqs": [
             (
-                "Which Scottish islands make whisky?",
-                "The distillery rows on this page. An island appears only where a source places a still, a silent distillery, or a whisky story on it.",
+                "Which Scottish islands have recorded whisky connections?",
+                "{scottish_whisky_answer}",
             ),
             (
                 "Are closed distilleries included?",
-                "Yes. {facet_silent} silent stills are listed separately from the {facet_distillery} distillery entries.",
+                "Yes. {facet_silent} records are tagged as silent stills, alongside {facet_distillery} distillery entries. These are stored classifications, not a current operating-status check.",
             ),
             (
                 "Is Irish whiskey included?",
@@ -246,23 +249,23 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         "nav_label": "Islands for sale",
         "priority": 0.8,
         "description": (
-            "Islands in Britain and Ireland with a broker listing. The link leaves "
-            "this site. Check the broker before treating a listing as current."
+            "Property listing leads associated with islands in Britain and Ireland. "
+            "Check the broker for availability and what the sale includes."
         ),
         "lede": (
-            "{islands} islands with a broker listing the atlas can point to. The link "
-            "leaves this site. A listing can sell, so check the broker before you "
-            "treat it as still on the market."
+            "{rows} property listing records are associated with {islands} islands. "
+            "A listing may cover a whole island, part of one, a home or other property "
+            "on an island. Check the broker for the sale's scope and availability."
         ),
         "method": (
-            "Listings are outbound links to the broker that published them. This page "
-            "does not copy asking prices. Sold islands already removed from the atlas "
-            "stay off the list."
+            "Listing titles come from the atlas. Broker links are shown where a "
+            "matching URL is recorded; missing links are marked. This page does not "
+            "copy asking prices or independently confirm availability."
         ),
         "faqs": [
             (
-                "Can I buy an island in Scotland or Ireland?",
-                "The islands on this page have a broker page the atlas links to. The broker is the place to ask what is still for sale.",
+                "Does every listing offer a whole island?",
+                "No. Records can describe whole islands, parts of islands, homes and other property. The broker's listing is the place to check exactly what is offered.",
             ),
             (
                 "Are prices listed here?",
@@ -286,7 +289,8 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "lede": (
             "{islands} islands with a rare, endemic, or otherwise remarkable species "
-            "a source places there — {rows} species in all. The page names the island "
+            "recorded in the atlas — {rows} wildlife records in all. The same species "
+            "can occur on more than one island. The page names the island "
             "and the species. It does not give nest sites or advice on how to visit."
         ),
         "method": (
@@ -296,7 +300,7 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         "faqs": [
             (
                 "Which British and Irish islands have rare wildlife?",
-                "The {islands} islands on this page, covering {rows} cited species.",
+                "This guide contains {rows} wildlife records associated with {islands} islands. These are island–wildlife connections, not a count of distinct species.",
             ),
             (
                 "Are breeding sites shown?",
@@ -320,25 +324,26 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "lede": (
             "{islands} islands are the setting of a novel, memoir, or story collection "
-            "in this guide — {rows} books. A book is included only when its article "
-            "sets the story on that island."
+            "recorded in this guide — {rows} book–island connections. A title can "
+            "appear under more than one island."
         ),
         "method": (
             "“Inspired by”, “based on”, and “filmed on” are not enough. The sentence "
-            "under a title is the one that places the book on the island."
+            "under a title summarises the recorded connection; follow the source "
+            "to check where the book is set."
         ),
         "faqs": [
             (
                 "Which books are set on Scottish islands?",
-                "Open the Scottish islands in this list. Each title links to the source that places the book there.",
+                "{scottish_books_answer}",
             ),
             (
                 "Are films included on this page?",
                 "No. Films, art, and music have their own guide.",
             ),
             (
-                "How many books are listed?",
-                "{rows} books across {islands} islands.",
+                "How many book records are listed?",
+                "{rows} book–island connections across {islands} islands; a book can appear more than once.",
             ),
         ],
     },
@@ -354,8 +359,8 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "lede": (
             "{islands} islands with a custom, festival, dance, or craft a source "
-            "places on that island — {rows} traditions. The note is the sentence "
-            "that ties the custom to the place."
+            "places on that island — {rows} tradition records. A custom can appear "
+            "under more than one island."
         ),
         "method": (
             "Monastic pilgrimages, island breeds, and a bare legend are not listed. "
@@ -365,7 +370,7 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         "faqs": [
             (
                 "What island traditions are recorded here?",
-                "{rows} customs on {islands} islands: festivals, dances, food, and crafts the source places on that island.",
+                "{rows} tradition records on {islands} islands: festivals, dances, food, and crafts. A custom can appear under more than one island.",
             ),
             (
                 "Are island breeds included?",
@@ -373,7 +378,7 @@ GUIDE_SPECS: list[dict[str, Any]] = [
             ),
             (
                 "Where is Up Helly Aa?",
-                "On the Shetland entry, when the source places the festival on that island.",
+                "{up_helly_aa_answer}",
             ),
         ],
     },
@@ -389,8 +394,8 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "lede": (
             "{islands} islands where a report records something strange — {rows} stories. "
-            "Each note is a short account of the event, and the link goes to the article. "
-            "The picture is of the place or the thing the report is about."
+            "Each note is a short account of the event, with the recorded article "
+            "link where available."
         ),
         "method": (
             "A story is kept when the report places the event on that island. "
@@ -424,9 +429,9 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "lede": (
             "{islands} islands tied to a film, an artwork, or a piece of music — "
-            "{rows} cited works ({facet_artwork} artworks, {facet_music} music, "
-            "{facet_film} films). Each row names the work and the source that "
-            "connects it to the island."
+            "{rows} work–island connections ({facet_artwork} artwork entries, "
+            "{facet_music} music entries, {facet_film} film entries). A work can "
+            "appear under more than one island."
         ),
         "method": (
             "A work is kept when the source connects it to that island. A shared "
@@ -435,15 +440,15 @@ GUIDE_SPECS: list[dict[str, Any]] = [
         ),
         "faqs": [
             (
-                "Which films are connected to British and Irish islands?",
-                "The film rows on this page. {facet_film} films are cited, alongside {facet_artwork} artworks and {facet_music} pieces of music.",
+                "How are films, art and music counted?",
+                "There are {facet_film} film entries, {facet_artwork} artwork entries and {facet_music} music entries. These count connections to islands, so the same work can appear more than once.",
             ),
             (
                 "Why is a painting listed under an island?",
                 "Because the source says the work depicts that island, or files it with art of that island.",
             ),
             (
-                "How many works are listed?",
+                "How many work–island connections are listed?",
                 "{rows} across {islands} islands.",
             ),
         ],
@@ -589,6 +594,43 @@ def assemble_guides(
         }
         for facet, count in facets.items():
             values[f"facet_{facet}"] = count
+        scottish = sorted(
+            (island for island in islands if island.nation == "Scotland"),
+            key=lambda island: island.name.casefold(),
+        )
+        values["scottish_whisky_answer"] = (
+            "The guide records whisky connections for "
+            + ", ".join(island.name for island in scottish)
+            + ". These include distillery records, silent stills, plans and stories; "
+            "they do not establish current whisky production."
+            if scottish
+            else "No Scottish island connections are recorded in this guide."
+        )
+        book_connections = [
+            f"{row.title} ({island.name})"
+            for island in scottish
+            for row in island.rows
+        ]
+        values["scottish_books_answer"] = (
+            "The guide records these book–island connections: "
+            + "; ".join(dict.fromkeys(book_connections))
+            + "."
+            if book_connections
+            else "No Scottish book–island connections are recorded in this guide."
+        )
+        festival_islands = sorted(
+            {
+                island.name
+                for island in islands
+                if any(row.title.casefold() == "up helly aa" for row in island.rows)
+            },
+            key=str.casefold,
+        )
+        values["up_helly_aa_answer"] = (
+            "The guide records Up Helly Aa on " + ", ".join(festival_islands) + "."
+            if festival_islands
+            else "No Up Helly Aa entry is recorded in this guide."
+        )
         pages.append(
             GuidePage(
                 slug=slug,
@@ -609,7 +651,7 @@ def assemble_guides(
 
 
 def guides_for_island(pages: list[GuidePage]) -> dict[str, list[dict[str, Any]]]:
-    """Island id → guide links and up to four cited titles, for profile pages."""
+    """Island id → guide links, preview titles and complete rows for profiles."""
     out: dict[str, list[dict[str, Any]]] = {}
     for page in pages:
         for island in page.islands:
@@ -618,6 +660,14 @@ def guides_for_island(pages: list[GuidePage]) -> dict[str, list[dict[str, Any]]]
                     "href": page.path,
                     "label": page.nav_label,
                     "titles": [row.title for row in island.rows[:4]],
+                    "rows": [
+                        {
+                            "title": row.title,
+                            "summary": row.summary,
+                            "sourceUrl": row.source_url,
+                        }
+                        for row in island.rows
+                    ],
                 }
             )
     return out
@@ -628,10 +678,18 @@ def _json_script(data: dict[str, Any]) -> str:
     return f'  <script type="application/ld+json">{payload}</script>'
 
 
-def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: str) -> str:
+def render_guide_html(
+    *, page: GuidePage, origin: str, assets: str, reviewed: str | None = None
+) -> str:
+    """Render recorded content without inventing an editorial review date.
+
+    ``reviewed`` is retained for callers using the former build-date argument.
+    It is deliberately not emitted: a build date is neither a review nor a
+    reliable content-modification timestamp.
+    """
     canonical = f"{origin}{page.path}"
     item_list = []
-    for position, island in enumerate(page.islands[:50], start=1):
+    for position, island in enumerate(page.islands, start=1):
         item_list.append(
             {
                 "@type": "ListItem",
@@ -672,7 +730,6 @@ def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: st
                 "headline": page.h1,
                 "description": page.description,
                 "url": canonical,
-                "dateModified": reviewed,
                 "isPartOf": {
                     "@type": "WebSite",
                     "name": "Find My Island",
@@ -700,34 +757,54 @@ def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: st
 
     island_html: list[str] = []
     for island in page.islands:
-        shown = island.rows[:_TITLE_CAP]
         cite_items: list[str] = []
-        for index, row in enumerate(shown):
+        for row in island.rows:
             title = html.escape(row.title)
             if row.source_url:
                 title = (
                     f'<a href="{html.escape(row.source_url, quote=True)}" '
                     f'rel="noopener noreferrer">{title}</a>'
                 )
-            summary = ""
-            if index < _SUMMARY_CAP and row.summary:
-                summary = f" — {html.escape(row.summary)}"
-            cite_items.append(f"<li>{title}{summary}</li>")
+            else:
+                title += ' <span class="lp-note">(source link not recorded)</span>'
+            facet = ""
+            if page.slug == "whisky-distilleries":
+                facet_label = {
+                    "distillery": "distillery record",
+                    "silent": "silent still record",
+                    "story": "story",
+                    "planned": "planned record",
+                }.get(row.facet, "unclassified record")
+                facet = f' <span class="lp-note">({facet_label})</span>'
+            summary = f" — {html.escape(row.summary)}" if row.summary else ""
+            cite_items.append(f"<li>{title}{facet}{summary}</li>")
         cites = ""
         if cite_items:
             cites = (
                 '<ul class="lp-guide__cites">\n      '
-                + "\n      ".join(cite_items)
+                + "\n      ".join(cite_items[:_EXPANDED_ROW_CAP])
                 + "\n    </ul>"
             )
-        extra = len(island.rows) - len(shown)
-        extra_html = ""
-        if extra > 0:
-            extra_html = (
-                f'<p class="lp-note"><a href="/?island={html.escape(island.island_id, quote=True)}">'
-                f"Open {html.escape(island.name)} on the atlas</a> for {extra} more.</p>"
+        if len(cite_items) > _EXPANDED_ROW_CAP:
+            extra = len(cite_items) - _EXPANDED_ROW_CAP
+            cites += (
+                '\n    <details class="lp-faq">\n'
+                f'      <summary>{extra} more {"entry" if extra == 1 else "entries"} '
+                f'for {html.escape(island.name)}</summary>\n'
+                '      <ul class="lp-guide__cites">\n        '
+                + "\n        ".join(cite_items[_EXPANDED_ROW_CAP:])
+                + "\n      </ul>\n    </details>"
             )
-        meta_bits = [bit for bit in (island.nation, f"{len(island.rows)} cited" if island.rows else "") if bit]
+        source_count = sum(bool(row.source_url) for row in island.rows)
+        meta_bits = [
+            bit
+            for bit in (
+                island.nation,
+                f"{len(island.rows)} entries",
+                f"{source_count} with source links",
+            )
+            if bit
+        ]
         meta = f'<p class="lp-guide__meta">{html.escape(" · ".join(meta_bits))}</p>' if meta_bits else ""
         island_html.append(
             f'  <article class="lp-guide" id="{html.escape(island.island_id, quote=True)}">\n'
@@ -735,7 +812,6 @@ def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: st
             f"{html.escape(island.name)}</a></h2>\n"
             f"    {meta}\n"
             f"    {cites}\n"
-            f"    {extra_html}\n"
             "  </article>"
         )
 
@@ -755,7 +831,7 @@ def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: st
         )
     count_line = f"{len(page.islands)} islands"
     if page.row_count:
-        count_line += f" · {page.row_count} cited"
+        count_line += f" · {page.row_count} entries · {page.source_count} with source links"
     map_href = f"/?interest={html.escape(page.slug, quote=True)}"
 
     return f"""<!DOCTYPE html>
@@ -795,7 +871,7 @@ def render_guide_html(*, page: GuidePage, origin: str, assets: str, reviewed: st
     <section class="lp-section">
       <h2 class="lp-section-title">How this list is made</h2>
       <p>{html.escape(page.method)}</p>
-      <p class="lp-note">The sentence under a title is taken from the linked source. Cite this page as Find My Island, “{html.escape(page.h1)}”, {html.escape(canonical)}, retrieved {html.escape(reviewed)}.</p>
+      <p class="lp-note">Summaries describe the recorded island connection. Follow the source link to check an entry; missing source links are marked. Counts describe atlas records, and the same work or species can appear under more than one island. Cite this page as Find My Island, “{html.escape(page.h1)}”, {html.escape(canonical)}, with the date you accessed it.</p>
       {held_note}
     </section>
     <section class="lp-section">
@@ -872,7 +948,7 @@ def render_collections_index_html(
   <meta name="robots" content="index,follow"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Island guides | Find My Island"/>
-  <meta property="og:description" content="Castles, whisky, tidal islands, islands for sale, wildlife, books, and traditions — each list cites its source."/>
+  <meta property="og:description" content="Castles, whisky, tidal islands, property leads, wildlife, books, and traditions, with recorded source links."/>
   <meta property="og:url" content="{html.escape(canonical, quote=True)}"/>
 {assets}
 {_json_script(graph)}
@@ -886,7 +962,7 @@ def render_collections_index_html(
     <header class="lp-hero">
       <p class="lp-kicker">Find My Island</p>
       <h1>Island guides</h1>
-      <p class="lp-lede">Lists you can cite: a castle on the island, a whisky still, a tidal crossing, a book set there. Each guide says what was left out, and links the source.</p>
+      <p class="lp-lede">Island guides to castles, whisky connections, tidal islands and books set there. Each guide explains its scope and shows source links where recorded.</p>
     </header>
     <section class="lp-section">
       <h2 class="lp-section-title">Guides</h2>
@@ -909,9 +985,12 @@ def render_collections_index_html(
 def render_llms_txt(pages: list[GuidePage]) -> str:
     guide_lines = []
     for page in pages:
-        cited = f", {page.row_count} cited" if page.row_count else ""
+        entries = (
+            f", {page.row_count} entries, {page.source_count} with source links"
+            if page.row_count else ""
+        )
         guide_lines.append(
-            f"- {page.h1}: {page.path} ({len(page.islands)} islands{cited}). {page.description}"
+            f"- {page.h1}: {page.path} ({len(page.islands)} islands{entries}). {page.description}"
         )
     guides = "\n".join(guide_lines)
     return f"""# Find My Island (findmyisland.com)
@@ -943,6 +1022,7 @@ def render_llms_txt(pages: list[GuidePage]) -> str:
 
 ## For machines
 - Prefer the guide URL for a list, and the island path for a single place.
-- Sentences on a guide are taken from the linked source. Do not treat a guide as a price list or a crossing timetable.
+- Guide summaries describe recorded island connections. Follow source links to check claims; missing links are marked. Counts are records, not necessarily distinct works or species.
+- Whisky classifications do not establish current production. Property records do not establish whole-island scope or current availability. Do not treat a guide as a price list or a crossing timetable.
 - Sitemap: /sitemap.xml
 """

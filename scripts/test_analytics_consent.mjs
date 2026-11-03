@@ -6,6 +6,7 @@ import vm from "node:vm";
 const source = readFileSync(new URL("../analytics.js", import.meta.url), "utf8");
 const STORAGE_KEY = "fmi.analytics.consent.v1";
 const SESSION_DENIAL_KEY = "fmi.analytics.denied.v1";
+const GA_DISABLE_KEY = "ga-disable-G-GGXR2KHHCZ";
 const allowedEvents = new Set([
   "page_view", "map_open", "island_view", "island_save", "interest_select", "broker_click",
 ]);
@@ -19,6 +20,8 @@ function browser({ stored, storageError = false, writeError = false, removeError
   const storage = new Map(stored ? [[STORAGE_KEY, stored]] : []);
   const session = new Map(sessionStored ? [[SESSION_DENIAL_KEY, sessionStored]] : []);
   const cookieWrites = [];
+  const operations = [];
+  let optOutFlag;
   let reloads = 0;
   let navigations = 0;
   let canonicalHref = canonical;
@@ -55,14 +58,21 @@ function browser({ stored, storageError = false, writeError = false, removeError
   document.addEventListener = (event, callback) => listeners.set(event, callback);
   Object.defineProperty(document, "cookie", {
     get: () => cookies,
-    set: (value) => cookieWrites.push(value),
+    set: (value) => {
+      operations.push({ operation: "cookie", optOut: optOutFlag });
+      cookieWrites.push(value);
+    },
   });
   const address = new URL(href);
   const window = {
     location: {
       href, origin: address.origin, hostname: address.hostname, protocol: address.protocol,
-      reload: () => { reloads += 1; },
+      reload: () => {
+        operations.push({ operation: "reload", optOut: optOutFlag });
+        reloads += 1;
+      },
       replace(value) {
+        operations.push({ operation: "navigate", optOut: optOutFlag });
         navigations += 1;
         const next = new URL(value);
         Object.assign(this, { href: next.href, origin: next.origin, hostname: next.hostname, protocol: next.protocol });
@@ -71,7 +81,11 @@ function browser({ stored, storageError = false, writeError = false, removeError
     addEventListener: (event, callback) => windowListeners.set(event, callback),
     localStorage: {
       getItem(key) { if (storageError) throw new Error("storage blocked"); return storage.get(key) ?? null; },
-      setItem(key, value) { if (writeError) throw new Error("storage full"); storage.set(key, value); },
+      setItem(key, value) {
+        operations.push({ operation: "store", optOut: optOutFlag });
+        if (writeError) throw new Error("storage full");
+        storage.set(key, value);
+      },
       removeItem(key) { if (removeError) throw new Error("storage blocked"); storage.delete(key); },
     },
     sessionStorage: {
@@ -80,11 +94,18 @@ function browser({ stored, storageError = false, writeError = false, removeError
       removeItem(key) { if (sessionError) throw new Error("session storage blocked"); session.delete(key); },
     },
   };
+  Object.defineProperty(window, GA_DISABLE_KEY, {
+    get: () => optOutFlag,
+    set(value) {
+      optOutFlag = value;
+      operations.push({ operation: "optOut", value });
+    },
+  });
   vm.runInNewContext(source, { window, document, URL, console });
   const scripts = () => document.head.children.filter((node) => node.tagName === "SCRIPT");
   const events = () => (window.dataLayer || []).filter((row) => allowedEvents.has(row.event));
   return {
-    window, document, storage, session, scripts, events, cookieWrites,
+    window, document, storage, session, scripts, events, cookieWrites, operations,
     reloads: () => reloads,
     navigations: () => navigations,
     storageEvent(key, newValue) {
@@ -109,6 +130,7 @@ function browser({ stored, storageError = false, writeError = false, removeError
 const fresh = browser();
 assert.equal(fresh.scripts().length, 0, "no remote script before consent");
 assert.equal(fresh.window.dataLayer, undefined, "no event queue before consent");
+assert.equal(fresh.window[GA_DISABLE_KEY], true, "unknown consent defaults to measurement opt-out");
 assert.equal(fresh.window.fmiAnalytics.track("island_view", { island_id: "islay" }), false);
 fresh.clickMap("https://www.findmyisland.com/?ask=private-question");
 assert.equal(fresh.events().length, 0, "pre-consent actions are discarded");
@@ -118,10 +140,13 @@ fresh.decline();
 assert.equal(fresh.storage.get(STORAGE_KEY), "denied");
 assert.equal(fresh.scripts().length, 0, "initial decline never loads tags");
 assert.equal(fresh.reloads(), 0, "initial decline does not reload");
+assert.equal(fresh.window[GA_DISABLE_KEY], true);
 fresh.window.fmiAnalytics.openSettings();
+assert.equal(fresh.window[GA_DISABLE_KEY], true, "opening settings cannot reset a denial");
 assert.equal(fresh.document.getElementById("fmi-analytics-preferences").hidden, false);
 assert.equal(fresh.document.activeElement.id, "fmi-analytics-accept");
 fresh.accept();
+assert.equal(fresh.window[GA_DISABLE_KEY], false, "only explicit acceptance clears opt-out");
 assert.equal(fresh.storage.get(STORAGE_KEY), "granted");
 assert.equal(fresh.scripts().length, 1, "later opt-in loads one container");
 assert.match(fresh.scripts()[0].src, /gtm\.js\?id=GTM-M2T6LN5J$/);
@@ -195,6 +220,12 @@ const denied = browser({ stored: "denied" });
 assert.equal(denied.scripts().length, 0);
 assert.equal(denied.document.getElementById("fmi-analytics-preferences").hidden, true);
 assert.equal(denied.window.fmiAnalytics.track("map_open"), false);
+assert.equal(denied.window[GA_DISABLE_KEY], true, "saved denial retains measurement opt-out");
+denied.window.fmiAnalytics.openSettings();
+assert.equal(denied.window[GA_DISABLE_KEY], true);
+denied.window.fmiAnalytics.track("page_view");
+assert.ok(!denied.operations.some((row) => row.operation === "optOut" && row.value === false),
+  "denied page lifecycle must never re-enable measurement");
 const blockedStorage = browser({ storageError: true, writeError: true });
 assert.equal(blockedStorage.scripts().length, 0, "unreadable storage defaults to off");
 blockedStorage.accept();
@@ -204,8 +235,17 @@ assert.equal(blockedStorage.events().length, 1, "explicit page-only consent work
 const withdrawal = browser({ stored: "granted", cookies: "_ga=ANALYTICS; _ga_STREAM=SESSION; session=KEEP" });
 withdrawal.loaded();
 const beforeWithdrawal = withdrawal.window.dataLayer.length;
+const beforeWithdrawalOperations = withdrawal.operations.length;
 withdrawal.window.fmiAnalytics.openSettings();
 withdrawal.decline();
+const withdrawalOperations = withdrawal.operations.slice(beforeWithdrawalOperations);
+assert.deepEqual(withdrawalOperations[0], { operation: "optOut", value: true },
+  "measurement opt-out must be the first withdrawal side effect");
+assert.ok(withdrawalOperations.filter((row) => ["store", "cookie", "reload"].includes(row.operation))
+  .every((row) => row.optOut === true), "opt-out precedes persistence, cookie removal and unload");
+assert.equal(withdrawal.window[GA_DISABLE_KEY], true);
+withdrawal.scripts()[0].onload();
+assert.equal(withdrawal.window[GA_DISABLE_KEY], true, "a late tag load cannot reset withdrawal");
 assert.equal(withdrawal.storage.get(STORAGE_KEY), "denied");
 assert.equal(withdrawal.reloads(), 1, "withdrawal removes previously loaded tags through reload");
 assert.equal(withdrawal.window.fmiAnalytics.track("island_view", { island_id: "islay" }), false);
@@ -238,6 +278,9 @@ const beforeBlockedWithdrawal = allStorageBlocked.window.dataLayer.length;
 allStorageBlocked.decline();
 assert.equal(allStorageBlocked.reloads(), 0, "do not reload directly into an unchangeable old grant");
 assert.equal(allStorageBlocked.navigations(), 1, "force document unload with a controlled off marker");
+assert.equal(allStorageBlocked.window[GA_DISABLE_KEY], true);
+assert.ok(allStorageBlocked.operations.filter((row) => row.operation === "navigate")
+  .every((row) => row.optOut === true), "fallback navigation starts only after measurement opt-out");
 assert.equal(allStorageBlocked.window.location.href, "https://www.findmyisland.com/?fmi_analytics=off");
 assert.equal(allStorageBlocked.window.dataLayer.length, beforeBlockedWithdrawal, "fallback withdrawal sends no ping");
 const afterBlockedNavigation = browser({
@@ -246,6 +289,7 @@ const afterBlockedNavigation = browser({
 });
 assert.equal(afterBlockedNavigation.scripts().length, 0, "off marker prevents automatic restart despite the stale grant");
 assert.equal(afterBlockedNavigation.window.fmiAnalytics.track("page_view"), false);
+assert.equal(afterBlockedNavigation.window[GA_DISABLE_KEY], true, "off marker keeps measurement disabled");
 const blockedIsland = browser({
   stored: "granted", writeError: true, removeError: true, sessionError: true,
   canonical: "https://www.findmyisland.com/islands/scotland/islay/",
@@ -258,7 +302,14 @@ for (const newValue of ["denied", null]) {
   const otherTab = browser({ stored: "granted" });
   otherTab.loaded();
   const beforeOtherTabWithdrawal = otherTab.window.dataLayer.length;
+  const beforeOtherTabOperations = otherTab.operations.length;
   otherTab.storageEvent(STORAGE_KEY, newValue);
+  const otherTabOperations = otherTab.operations.slice(beforeOtherTabOperations);
+  assert.deepEqual(otherTabOperations[0], { operation: "optOut", value: true },
+    "cross-tab withdrawal sets the opt-out before any unload work");
+  assert.equal(otherTab.window[GA_DISABLE_KEY], true);
+  assert.ok(otherTabOperations.filter((row) => row.operation === "reload")
+    .every((row) => row.optOut === true));
   assert.equal(otherTab.reloads(), 1, "another tab's denial or removal unloads active tags");
   assert.equal(otherTab.window.fmiAnalytics.track("island_view", { island_id: "islay" }), false);
   assert.equal(otherTab.window.dataLayer.length, beforeOtherTabWithdrawal, "cross-tab withdrawal sends no ping");
