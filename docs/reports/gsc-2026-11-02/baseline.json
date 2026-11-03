@@ -1,0 +1,161 @@
+{
+  "observedOn": "2026-11-02",
+  "property": "sc-domain:findmyisland.com",
+  "source": "Google Search Console browser CSV exports",
+  "webThreeMonths": {
+    "from": "2026-08-01",
+    "to": "2026-10-31",
+    "clicks": 0,
+    "impressions": 2272,
+    "ctr": 0.0,
+    "averagePositionApprox": 75.63
+  },
+  "web28Days": {
+    "from": "2026-10-04",
+    "to": "2026-10-31",
+    "clicks": 0,
+    "impressions": 192,
+    "ctr": 0.0,
+    "averagePositionApprox": 66.83
+  },
+  "previous28Days": {
+    "from": "2026-09-06",
+    "to": "2026-10-03",
+    "clicks": 0,
+    "impressions": 491,
+    "ctr": 0.0,
+    "averagePositionApprox": 79.42
+  },
+  "impressionChangePercent": -60.9,
+  "positionNote": "Positions calculated from rounded daily exports; use UI for authoritative displayed aggregate.",
+  "displayedAveragePosition": {
+    "threeMonths": 75.6,
+    "last28Days": 66.8
+  },
+  "indexing": {
+    "reportLastUpdated": "2026-10-23",
+    "latestChartRow": {
+      "Date": "2026-10-23",
+      "Not indexed": "1728",
+      "Indexed": "32",
+      "Impressions": "7"
+    },
+    "reasons": [
+      {
+        "Reason": "Alternative page with proper canonical tag",
+        "Source": "Website",
+        "Validation": "Not Started",
+        "Pages": "11"
+      },
+      {
+        "Reason": "Page with redirect",
+        "Source": "Website",
+        "Validation": "Not Started",
+        "Pages": "6"
+      },
+      {
+        "Reason": "Excluded by \u2018noindex\u2019 tag",
+        "Source": "Website",
+        "Validation": "Not Started",
+        "Pages": "1"
+      },
+      {
+        "Reason": "Not found (404)",
+        "Source": "Website",
+        "Validation": "Not Started",
+        "Pages": "1"
+      },
+      {
+        "Reason": "Discovered \u2013 currently not indexed",
+        "Source": "Google systems",
+        "Validation": "Not Started",
+        "Pages": "1643"
+      },
+      {
+        "Reason": "Crawled - currently not indexed",
+        "Source": "Google systems",
+        "Validation": "Not Started",
+        "Pages": "66"
+      }
+    ]
+  },
+  "sitemap": {
+    "status": "Success",
+    "lastRead": "2026-10-29",
+    "discoveredPages": 1683
+  },
+  "ai28Days": {
+    "from": "2026-10-04",
+    "to": "2026-10-31",
+    "impressions": 30,
+    "pages": [
+      {
+        "Top pages": "https://www.findmyisland.com/islands/england/eel-pie-island/",
+        "Impressions": "28"
+      },
+      {
+        "Top pages": "https://www.findmyisland.com/ferries/calmac/",
+        "Impressions": "2"
+      }
+    ],
+    "note": "AI feature impressions; not clicks, sessions or independent assistant citations."
+  },
+  "urlInspection": {
+    "url": "https://www.findmyisland.com/islands/england/eel-pie-island/",
+    "indexed": true,
+    "googleSelectedCanonical": "Inspected URL",
+    "lastCrawledDisplayed": "24 Oct 2026, 10:18:22",
+    "crawler": "Googlebot smartphone",
+    "pageFetch": "Successful",
+    "sitemapsDisplayed": "Temporary processing error"
+  },
+  "exports": {
+    "web-three-months": {
+      "sourceExport": "findmyisland.com-Performance-on-Search-2026-11-02.zip",
+      "sha256": "edd1a51a3ee0bd6e615c595a765d66c85ebd8905e98334eb792eb6eb6a4e4337",
+      "files": {
+        "Chart.csv": 92,
+        "Queries.csv": 702,
+        "Pages.csv": 40,
+        "Countries.csv": 67,
+        "Devices.csv": 3,
+        "Search appearance.csv": 0,
+        "Filters.csv": 2
+      }
+    },
+    "web-28-days": {
+      "sourceExport": "findmyisland.com-Performance-on-Search-2026-11-02 (1).zip",
+      "sha256": "ba92292171708b78219d97fd86e91de038a111b73615d8d013347d9e5e294b2b",
+      "files": {
+        "Chart.csv": 28,
+        "Queries.csv": 80,
+        "Pages.csv": 22,
+        "Countries.csv": 24,
+        "Devices.csv": 3,
+        "Search appearance.csv": 0,
+        "Filters.csv": 2
+      }
+    },
+    "indexing": {
+      "sourceExport": "findmyisland.com-Coverage-2026-11-02.zip",
+      "sha256": "5037fd57f1c2d41839be3d54181408f2afcef8dafea0696828406a2db1bde1d6",
+      "files": {
+        "Chart.csv": 81,
+        "Critical issues.csv": 6,
+        "Non-critical issues.csv": 0,
+        "Metadata.csv": 1
+      }
+    },
+    "ai-28-days": {
+      "sourceExport": "findmyisland.com-Performance-on-Search-Generative-AI-Features-2026-11-02.zip",
+      "sha256": "0bf2ba5abd7319ccac91c4036830df4799d1609c51a9b7197bd285ebf15ea1a9",
+      "files": {
+        "Chart.csv": 28,
+        "Pages.csv": 2,
+        "Countries.csv": 12,
+        "Devices.csv": 2,
+        "Filters.csv": 2
+      }
+    }
+  }
+}

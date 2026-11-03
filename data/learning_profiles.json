@@ -1,0 +1,1594 @@
+{
+  "schemaVersion": 1,
+  "contentLicence": "CC BY-SA 4.0",
+  "profiles": {
+    "osm-relation-9620215": {
+      "hook": "A fictional castaway and real lighthouse builders share this little tidal island.",
+      "overview": "Erraid links the working coast of the lighthouse builders with the imagined coast of Robert Louis Stevenson. In Kidnapped, David Balfour is stranded here without realising that the island is joined to Mull when the sea recedes.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "In a novel",
+          "text": "David Balfour spends part of Kidnapped on Erraid after a shipwreck.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Lighthouse country",
+          "text": "Stone for Dubh Artach lighthouse was quarried here; lighthouse keepers also had cottages on the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A changing shoreline",
+          "text": "Erraid is a tidal island beside Mull. Its connection to the land is part of the story, rather than a permanent geographical boundary.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "c. 1872",
+          "text": "The Northern Lighthouse Board cottages date from this period.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "2021",
+          "text": "Erraid featured in an episode of New Lives in the Wild.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "guernsey",
+          "reason": "Follow another island that became part of a novelist’s working life."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "reason": "Compare Stevenson’s fictional castaway with Synge’s observations of island life."
+        },
+        {
+          "id": "lindisfarne",
+          "reason": "Explore another island whose connection to the mainland changes with the tide."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Erraid",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Erraid",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "staffa": {
+      "hook": "Cooling lava made the columns; a sea cave helped inspire a concert overture.",
+      "overview": "Staffa brings geology and music unusually close together. Fingal’s Cave opens into cliffs of basalt columns, and the island’s caves and sea inspired Mendelssohn’s Hebrides overture.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Natural columns",
+          "text": "The columns around Fingal’s Cave are basalt, a volcanic rock.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Music from a landscape",
+          "text": "Mendelssohn’s Hebrides overture is associated with his response to Staffa and its caves.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A place once inhabited",
+          "text": "A family was still living on Staffa when Joseph Banks visited in 1772; the island later became uninhabited.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1772",
+          "text": "Joseph Banks visited and helped bring Staffa wider attention.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1986",
+          "text": "Staffa was given to the National Trust for Scotland.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-1663615",
+          "reason": "Compare Staffa’s basalt columns with Eigg’s different volcanic landscape."
+        },
+        {
+          "id": "rathlin",
+          "reason": "Follow the basalt connection across to Northern Ireland."
+        },
+        {
+          "id": "anglesey",
+          "reason": "Compare this island with Anglesey, a much larger Welsh island linked to the mainland by bridges."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Staffa",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Staffa",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "iona": {
+      "hook": "A small island became a centre of monastic learning with connections far beyond its shore.",
+      "overview": "Iona’s influence grew from the community associated with Columba. Its religious history sits within a living island, where the village, landscapes and continuing community matter alongside the abbey.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Early monastery",
+          "text": "Columba established a monastic community on Iona in 563.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "More than an abbey",
+          "text": "Baile Mòr is the island’s main settlement; Iona is also an inhabited community.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A continuing tradition",
+          "text": "The modern Iona Community was founded in 1938 as an ecumenical Christian community.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "563",
+          "text": "Columba established his community on the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1938",
+          "text": "The modern Iona Community was founded.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "lindisfarne",
+          "reason": "Follow the connection between island monasteries and Northumbrian Christianity."
+        },
+        {
+          "id": "osm-relation-3998376",
+          "reason": "Compare a sea-island monastery with one on Lower Lough Erne."
+        },
+        {
+          "id": "osm-relation-6046655",
+          "reason": "Explore a Welsh island with a long pilgrimage tradition."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Iona",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Iona",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-1663615": {
+      "hook": "A community buyout and a shared renewable electricity grid changed this island’s story.",
+      "overview": "Eigg is a useful place to explore how an island community can shape its future. Community ownership and an electricity system combining several renewable sources sit beneath the distinctive volcanic ridge of An Sgùrr.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Community ownership",
+          "text": "The Isle of Eigg Heritage Trust bought the island in 1997.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Shared electricity",
+          "text": "Eigg’s electricity system combines hydro, wind and solar generation, with backup provision.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A volcanic skyline",
+          "text": "An Sgùrr is formed from pitchstone, above older volcanic rocks.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1997",
+          "text": "The island passed into community ownership.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "2008",
+          "text": "Eigg’s island-wide electricity system was switched on.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "staffa",
+          "reason": "Compare two striking landscapes made from volcanic rocks."
+        },
+        {
+          "id": "osm-relation-9620215",
+          "reason": "Explore a different kind of small island community near Mull."
+        },
+        {
+          "id": "st-kilda",
+          "reason": "Compare community renewal with the history of an island community that left."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Eigg",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eigg",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "st-kilda": {
+      "hook": "Stone storage huts preserve the traces of a community that chose to leave in 1930.",
+      "overview": "Hirta is the main island of the St Kilda group. Its surviving village and stone storage huts help explain how people lived in an Atlantic landscape that is also important for seabirds.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "One island in a group",
+          "text": "Hirta is the largest island in the St Kilda archipelago.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Food and storage",
+          "text": "The distinctive stone huts called cleitean were used for storage.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Human and natural heritage",
+          "text": "St Kilda’s World Heritage recognition covers both its natural and cultural significance.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1930",
+          "text": "The remaining 36 islanders left Hirta at their own request.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1986",
+          "text": "St Kilda was inscribed on the UNESCO World Heritage List; its recognition was later extended.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-1663615",
+          "reason": "Compare the departure of one island community with the renewal of another."
+        },
+        {
+          "id": "osm-relation-319479",
+          "reason": "Explore another island with traces of a former resident community."
+        },
+        {
+          "id": "osm-way-25987471",
+          "reason": "Follow a different island’s conservation story in Manx waters."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "St Kilda, Scotland",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/St_Kilda,_Scotland",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "lundy": {
+      "hook": "An island’s puffin coins became the subject of a court case.",
+      "overview": "Lundy’s story includes much more than its position in the Bristol Channel. Its local coins, lighthouse history and conservation work show how a small island can develop a distinctive identity while remaining closely connected to the mainland.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Puffin money",
+          "text": "Half Puffin and One Puffin coins were issued in 1929; their issue led to a prosecution under the Coinage Act.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Granite landscape",
+          "text": "Much of Lundy is granite, with steep coastal cliffs.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Conservation and care",
+          "text": "The island was given to the National Trust in 1969 and is managed by the Landmark Trust.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1929",
+          "text": "The Puffin coins were issued.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1931",
+          "text": "An appeal against the coinage conviction was dismissed.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1969",
+          "text": "The island was given to the National Trust.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "brownsea",
+          "reason": "Compare two islands cared for by the National Trust."
+        },
+        {
+          "id": "osm-way-25987471",
+          "reason": "Follow another island whose conservation story includes a bird observatory."
+        },
+        {
+          "id": "rathlin",
+          "reason": "Explore another island with a strong seabird and lighthouse story."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Lundy",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lundy",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "lindisfarne": {
+      "hook": "A tidal island connects the stories of monks, manuscripts and a Viking raid.",
+      "overview": "Holy Island’s history links Northumberland to the wider world of early medieval Christianity. Its monastic community and later castle occupy an island whose physical connection to the coast is repeatedly covered by the sea.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Changing connection",
+          "text": "Holy Island is tidal; the road connection is not a permanently dry link.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Monastic history",
+          "text": "Aidan founded a monastery here in 635, building links with the Christian community of Iona.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Layers of history",
+          "text": "The priory ruins and the much later Lindisfarne Castle belong to different chapters of the island’s history.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "635",
+          "text": "Aidan founded the monastery.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "793",
+          "text": "A Viking raid on the monastery was recorded.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "iona",
+          "reason": "Return to the island community associated with Aidan’s mission."
+        },
+        {
+          "id": "osm-relation-3998376",
+          "reason": "Compare this monastic landscape with a lake-island monastery."
+        },
+        {
+          "id": "osm-relation-9620215",
+          "reason": "Explore another tidal island, this time in Stevenson’s fiction."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Lindisfarne",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lindisfarne",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "eel-pie-island": {
+      "hook": "A Thames island hotel became a stage for British jazz, blues and rock.",
+      "overview": "Eel Pie Island shows how an island can be culturally significant in the middle of a city. Its hotel’s music history sits alongside boatyards, artists’ studios and an island community connected to Twickenham by a footbridge.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "An island in a river",
+          "text": "Eel Pie Island is in the Thames at Twickenham.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Music history",
+          "text": "The Rolling Stones and the Who were among the acts that played at the island hotel.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A working island",
+          "text": "Boatyards and artists’ studios form part of the island’s more recent story; private plots are not public attractions.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1957",
+          "text": "The island’s first bridge was built.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1971",
+          "text": "The former Eel Pie Island Hotel burned down.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "guernsey",
+          "reason": "Follow another island with an influential creative history."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "reason": "Compare a musical island’s influence with a literary island’s."
+        },
+        {
+          "id": "osm-relation-6045364",
+          "reason": "Explore another island whose relationship with the mainland changed with a bridge."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Eel Pie Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eel_Pie_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "brownsea": {
+      "hook": "An experimental camp on this harbour island helped launch the Scout movement.",
+      "overview": "Brownsea combines conservation, industry and social history within Poole Harbour. The remains of its pottery venture and the memory of the 1907 camp add different layers to a landscape now associated with woodland and wildlife.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "A movement begins",
+          "text": "Baden-Powell held an experimental camp for boys here in 1907.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "An industrial chapter",
+          "text": "A nineteenth-century pottery used the island’s clay; the venture closed in 1887.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Conservation",
+          "text": "The National Trust and Dorset Wildlife Trust have both played roles in protecting the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1907",
+          "text": "The experimental camp took place.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1962",
+          "text": "The National Trust agreed to buy Brownsea.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1963",
+          "text": "Brownsea opened to the public under the National Trust.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "lundy",
+          "reason": "Compare another National Trust island with a very different landscape."
+        },
+        {
+          "id": "osm-way-25987471",
+          "reason": "Follow an island’s transition towards conservation."
+        },
+        {
+          "id": "st-kilda",
+          "reason": "Explore how island heritage includes both people and wildlife."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Brownsea Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Brownsea_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-6045364": {
+      "hook": "A bridge changed the connection to Mayo, but Achill kept a distinctive island identity.",
+      "overview": "Achill is a good place to question what makes an island an island. A permanent road link joins it to the mainland, while its communities, Irish-language history and landscape retain a distinct identity.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "An island with a bridge",
+          "text": "Achill has been connected to the mainland by a bridge since 1887.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Language and place",
+          "text": "The history of Achill’s Irish includes influences associated with both Connacht and Ulster.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A railway nearby",
+          "text": "Achill railway station was on the mainland, despite its name.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1887",
+          "text": "The first bridge across Achill Sound was completed.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1895",
+          "text": "Achill railway station opened on the mainland.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1937",
+          "text": "The railway station and line closed.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "eel-pie-island",
+          "reason": "Compare two islands changed by the arrival of a bridge."
+        },
+        {
+          "id": "osm-relation-8609288",
+          "reason": "Explore a very different connection to the Irish mainland."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "reason": "Follow another island’s Irish-language and cultural history."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Achill Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Achill_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-8609288": {
+      "hook": "A cable car crosses the sound between this island and the Beara Peninsula.",
+      "overview": "Dursey’s cable car gives the island an unusual relationship with the mainland. Its wider history includes a signal tower, earlier settlement and the challenges of sustaining a very small island community.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Across the sound",
+          "text": "A cable car connects Dursey to the mainland across Dursey Sound.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "An older communications network",
+          "text": "A ruined signal tower dates from the Napoleonic Wars.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A dated population",
+          "text": "The 2022 census recorded three permanent residents; that is a census snapshot, not a live count.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1974",
+          "text": "The island’s post office closed.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "2023",
+          "text": "The cable car reopened after refurbishment of its infrastructure.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-6045364",
+          "reason": "Compare a cable connection with an island joined by a road bridge."
+        },
+        {
+          "id": "osm-relation-9620215",
+          "reason": "Explore an island with a connection that changes with the tide."
+        },
+        {
+          "id": "rathlin",
+          "reason": "Follow another island’s communications history, from cable transport to early radio."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Dursey Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dursey_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-8158177": {
+      "hook": "Island life helped shape Synge’s writing above a landscape of limestone pavements.",
+      "overview": "Inis Meáin, the middle Aran island, connects literature with the physical work of island life. Its limestone surface, stone structures and association with J. M. Synge give several ways into its story.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "A writer’s stays",
+          "text": "Synge stayed on the island during visits between 1898 and 1902, drawing inspiration from stories he heard.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A limestone landscape",
+          "text": "The island is geologically related to the Burren, with limestone pavements divided by fissures.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Remembering the writer",
+          "text": "Teach Synge is the restored house associated with the writer’s stays.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1898–1902",
+          "text": "Synge made the island visits associated with his writing.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1999",
+          "text": "The restored Teach Synge opened to the public.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-9620215",
+          "reason": "Compare two islands that became part of a writer’s imaginative world."
+        },
+        {
+          "id": "guernsey",
+          "reason": "Follow the connection between another island and a major novelist."
+        },
+        {
+          "id": "staffa",
+          "reason": "Compare limestone pavement with a landscape of volcanic columns."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Inishmaan",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Inishmaan",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-319479": {
+      "hook": "A round tower and former river-piloting community share this Shannon island.",
+      "overview": "Inis Cathaigh, also known as Scattery Island, brings together monastic history and the working Shannon Estuary. Its surviving tower and church ruins tell one story; the former river-piloting community tells another.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Monastic remains",
+          "text": "The island has a ruined monastery associated with Senan and a surviving Irish round tower.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Working on the Shannon",
+          "text": "River pilots and their families formed an island community in the nineteenth century.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Several kinds of heritage",
+          "text": "A lighthouse and an artillery battery add later layers to the monastic landscape.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "6th century",
+          "text": "The foundation of Senan’s monastery is traditionally placed in this period.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1842",
+          "text": "The island became home to a community of Shannon Estuary pilots and their families.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1991",
+          "text": "The island was bought by the state heritage service Dúchas.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-3998376",
+          "reason": "Compare two Irish island monasteries with surviving round towers."
+        },
+        {
+          "id": "iona",
+          "reason": "Explore a sea-island monastic community in the Hebrides."
+        },
+        {
+          "id": "st-kilda",
+          "reason": "Compare traces of two former island communities."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Inis Cathaigh",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Inis_Cathaigh",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-6046655": {
+      "hook": "Pilgrimage, farming and a legendary burial tradition meet on Ynys Enlli.",
+      "overview": "Ynys Enlli, also known as Bardsey, lies off the Llŷn Peninsula. Its story combines a medieval pilgrimage destination with a farming island and a landscape of unusually mixed ancient rocks.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Pilgrimage",
+          "text": "In medieval tradition, three pilgrimages to Bardsey were considered equivalent to one to Rome.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Tradition and evidence",
+          "text": "The association with 20,000 saints is a religious tradition, not a verified count of burials.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Mixed rocks",
+          "text": "The island’s geology includes the Gwna Mélange, a mixture of rock types and large fragments.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1537",
+          "text": "St Mary’s Abbey was dissolved.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1953",
+          "text": "The island school closed.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "iona",
+          "reason": "Compare two islands with continuing religious significance."
+        },
+        {
+          "id": "lindisfarne",
+          "reason": "Follow another island’s monastic and pilgrimage history."
+        },
+        {
+          "id": "anglesey",
+          "reason": "Compare this island with Anglesey, a much larger Welsh island linked to the mainland by bridges."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Bardsey Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bardsey_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-relation-3998376": {
+      "hook": "A lake island’s round tower preserves a long history of monastic learning.",
+      "overview": "Devenish is in Lower Lough Erne, rather than at sea. Its monastic remains make it a useful comparison with better-known coastal holy islands: water separated communities, but could also connect them.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "A lake setting",
+          "text": "Devenish is an island in Lower Lough Erne, County Fermanagh.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A monastic tradition",
+          "text": "The monastery is traditionally associated with Mo Laisse in the sixth century.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A distinctive tower",
+          "text": "The round tower has four upper windows facing the cardinal directions.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "6th century",
+          "text": "Traditional accounts place the monastic foundation in this period.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1157",
+          "text": "The monastic settlement was burned.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-319479",
+          "reason": "Compare two monastic islands with surviving round towers."
+        },
+        {
+          "id": "iona",
+          "reason": "Compare a lake monastery with a Hebridean island community."
+        },
+        {
+          "id": "osm-relation-6046655",
+          "reason": "Explore a Welsh island’s monastic tradition."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Devenish Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Devenish_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "rathlin": {
+      "hook": "An early wireless link connects Rathlin’s lighthouse history with the beginnings of radio.",
+      "overview": "Rathlin combines communications history with a striking geological landscape. Basalt sits above older limestone, while the island’s seabirds and lighthouses offer further ways to understand its place off the Antrim coast.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Early radio",
+          "text": "An 1898 wireless link connected Rathlin’s East Lighthouse with Ballycastle.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Layers in the landscape",
+          "text": "Basalt overlies older limestone on Rathlin.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Seabird conservation",
+          "text": "The island is important for seabirds and has an RSPB reserve.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "795",
+          "text": "The Annals of Ulster record a Viking raid on the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1898",
+          "text": "The wireless telegraph link with Ballycastle was established.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "staffa",
+          "reason": "Follow the geological connection between two basalt landscapes."
+        },
+        {
+          "id": "lundy",
+          "reason": "Compare two islands with seabird and lighthouse histories."
+        },
+        {
+          "id": "osm-way-25987471",
+          "reason": "Explore another island used for long-term bird observation."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Rathlin Island",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rathlin_Island",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "isle-of-man": {
+      "hook": "Manx language, Norse connections and self-government meet in the Irish Sea.",
+      "overview": "The Isle of Man is a self-governing Crown Dependency with a distinct history. Its Manx language and connections with the Norse world provide a wider context for the smaller islands around it.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Distinct status",
+          "text": "The Isle of Man is a Crown Dependency and is not part of the United Kingdom.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "A living language",
+          "text": "Manx is a Gaelic language associated with the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Motorcycling history",
+          "text": "The TT motorcycle races began in 1907.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1266",
+          "text": "Norwegian sovereignty over Man was ceded to Scotland in the Treaty of Perth.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1765",
+          "text": "The lordship revested in the British Crown; the island retained internal self-government.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1907",
+          "text": "The first TT races were held.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-way-25987471",
+          "reason": "Explore the smaller island immediately off Man’s southwest coast."
+        },
+        {
+          "id": "guernsey",
+          "reason": "Compare two Crown Dependencies with distinct language traditions."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "reason": "Explore another island’s Gaelic-language culture."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Isle of Man",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Isle_of_Man",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "guernsey": {
+      "hook": "Victor Hugo wrote major works while living in exile on this Channel Island.",
+      "overview": "Guernsey connects island identity with language, exile and wartime history. Its literary associations sit within a distinct island jurisdiction and a culture with Norman as well as British influences.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Literary exile",
+          "text": "Victor Hugo lived on Guernsey and wrote works including Les Misérables during his exile.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "An island novel",
+          "text": "Hugo’s Toilers of the Sea is set on Guernsey and was dedicated to the island.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Language",
+          "text": "Guernésiais is the island’s traditional Norman language.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1855",
+          "text": "Victor Hugo arrived on Guernsey.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1866",
+          "text": "Toilers of the Sea was published.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1945",
+          "text": "Guernsey was liberated from German occupation on 9 May.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-9620215",
+          "reason": "Follow another island that entered a novelist’s imagination."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "reason": "Compare Hugo’s island writing with Synge’s island visits."
+        },
+        {
+          "id": "isle-of-man",
+          "reason": "Explore another Crown Dependency with a distinct language."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Guernsey",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Guernsey",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "osm-way-25987471": {
+      "hook": "A former private island became a bird sanctuary and an observatory.",
+      "overview": "The Calf of Man is a small neighbour of the Isle of Man across Calf Sound. Its transition towards conservation and its lighthouse history make it a useful companion to the larger island’s story.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Conservation history",
+          "text": "The Calf was donated to the National Trust in 1939 to become a bird sanctuary.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Long-term observation",
+          "text": "The island has had a bird observatory since 1959.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Lighthouse history",
+          "text": "Two Robert Stevenson lighthouses were built on the Calf in 1818.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1939",
+          "text": "The island was donated for use as a bird sanctuary.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1959",
+          "text": "The bird observatory began.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1986",
+          "text": "Ownership transferred to Manx National Heritage.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "isle-of-man",
+          "reason": "Put the Calf in the context of its larger Manx neighbour."
+        },
+        {
+          "id": "brownsea",
+          "reason": "Compare two islands whose recent history centres on conservation."
+        },
+        {
+          "id": "rathlin",
+          "reason": "Explore another island with seabird and lighthouse histories."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Calf of Man",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Calf_of_Man",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    },
+    "anglesey": {
+      "hook": "Two nineteenth-century bridges changed the connections of Wales’s largest island.",
+      "overview": "Anglesey, or Ynys Môn, combines a distinct Welsh identity with strong connections across the Menai Strait. Its prehistoric monuments and two famous bridges offer different ways to read a large inhabited island.",
+      "sourceIds": [
+        "wiki"
+      ],
+      "facts": [
+        {
+          "title": "Welsh identity",
+          "text": "Ynys Môn is the Welsh name for Anglesey, an island off northwest Wales.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Across the strait",
+          "text": "The Menai Strait separates Anglesey from the Welsh mainland.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "title": "Two bridges",
+          "text": "The Menai Suspension Bridge and Britannia Bridge span the strait; the latter was originally a railway bridge.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1826",
+          "text": "The Menai Suspension Bridge opened.",
+          "sourceIds": [
+            "wiki"
+          ]
+        },
+        {
+          "date": "1850",
+          "text": "The original Britannia Bridge opened.",
+          "sourceIds": [
+            "wiki"
+          ]
+        }
+      ],
+      "related": [
+        {
+          "id": "osm-relation-6046655",
+          "reason": "Compare Anglesey with a smaller Welsh island and its pilgrimage history."
+        },
+        {
+          "id": "osm-relation-6045364",
+          "reason": "Explore another large island connected to the mainland by a bridge."
+        },
+        {
+          "id": "eel-pie-island",
+          "reason": "Compare this road-and-rail connection with a river island’s footbridge."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wiki",
+          "label": "Anglesey",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Anglesey",
+          "licence": "CC BY-SA 4.0",
+          "attribution": "Adapted from Wikipedia contributors; original summaries by Find My Island",
+          "checkedAt": "2026-11-03"
+        }
+      ]
+    }
+  },
+  "journeys": [
+    {
+      "slug": "islands-and-community",
+      "title": "Faith, stories and island communities",
+      "introduction": "Follow the ways island communities have gathered, learned and changed, from monasteries to community ownership. These are comparisons between distinct histories, not a single historical route.",
+      "stops": [
+        {
+          "id": "iona",
+          "note": "Begin with Columba’s community and the island’s continuing religious life."
+        },
+        {
+          "id": "lindisfarne",
+          "note": "Follow Iona’s connection to Northumbria through Aidan."
+        },
+        {
+          "id": "osm-relation-3998376",
+          "note": "Move inland: a lake could also hold a centre of learning."
+        },
+        {
+          "id": "osm-relation-319479",
+          "note": "Compare the monastery with a later river-piloting community."
+        },
+        {
+          "id": "osm-relation-6046655",
+          "note": "Distinguish religious tradition from a countable historical claim."
+        },
+        {
+          "id": "anglesey",
+          "note": "Compare the identity of a much larger Welsh island with those of the smaller communities."
+        },
+        {
+          "id": "osm-relation-9620215",
+          "note": "Meet a different kind of intentional community and its literary setting."
+        },
+        {
+          "id": "osm-relation-1663615",
+          "note": "Finish with community ownership and shared infrastructure."
+        }
+      ]
+    },
+    {
+      "slug": "islands-and-connections",
+      "title": "How islands connect",
+      "introduction": "An island’s boundary need not mean isolation. Follow bridges, tides, technology and writing to see different ways islands connect with the wider world. This is a reading journey, not a travel itinerary.",
+      "stops": [
+        {
+          "id": "eel-pie-island",
+          "note": "Start with a river island and the bridge that changed its connection."
+        },
+        {
+          "id": "osm-relation-6045364",
+          "note": "Compare a much larger island connected by a road bridge."
+        },
+        {
+          "id": "lindisfarne",
+          "note": "Consider a connection that the sea repeatedly covers."
+        },
+        {
+          "id": "osm-relation-9620215",
+          "note": "See a changing shoreline become part of a fictional castaway’s story."
+        },
+        {
+          "id": "osm-relation-8609288",
+          "note": "Explore a cable car connection across a sound."
+        },
+        {
+          "id": "isle-of-man",
+          "note": "Widen the view to the island’s historical ties across the Irish Sea."
+        },
+        {
+          "id": "guernsey",
+          "note": "Follow a writer in exile and the books associated with his island."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "note": "Finish with a visitor whose writing drew on island stories."
+        }
+      ]
+    },
+    {
+      "slug": "reading-island-landscapes",
+      "title": "Reading island landscapes",
+      "introduction": "Compare volcanic rock, limestone and conservation histories. Each island is a different case: the point is to notice what the landscape can explain, and what needs a human story alongside it.",
+      "stops": [
+        {
+          "id": "staffa",
+          "note": "Notice the basalt columns before following their musical connection."
+        },
+        {
+          "id": "osm-relation-1663615",
+          "note": "Compare basalt country with the pitchstone ridge of An Sgùrr."
+        },
+        {
+          "id": "rathlin",
+          "note": "Look for a landscape made from more than one layer of rock."
+        },
+        {
+          "id": "osm-relation-8158177",
+          "note": "Contrast volcanic landscapes with fissured limestone pavement."
+        },
+        {
+          "id": "lundy",
+          "note": "Add a granite island with a very different human history."
+        },
+        {
+          "id": "brownsea",
+          "note": "Read an island through industrial remains and conservation."
+        },
+        {
+          "id": "osm-way-25987471",
+          "note": "Follow the change from private island to bird sanctuary."
+        },
+        {
+          "id": "st-kilda",
+          "note": "Finish where human remains and natural heritage are recognised together."
+        }
+      ]
+    }
+  ]
+}

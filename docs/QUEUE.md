@@ -24,6 +24,7 @@ Read-only pass: [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md).
   starting with La Boue (Palmarin, Senegal) and the Dunmanus / Illaunkearagh
   / Tanera mismatches. Drop film-art images that are flags, maps, museum
   logos, or a different subject.
+  Irish/NI confirmed cases published and verified live on 2026-11-03; see the session log and [full photo audit](../data/photo_audit/2026-11-02-ireland/REPORT.md). Other nations remain in scope here. Follow up the 382 unresolved Irish/NI associations and ensure future main/gallery harvesters respect the reviewed removal ledger. The extended search adds separately reviewed photographs; it does not certify those unresolved originals.
 - **Claims.** Unhook Airds Castle from Arran, Torksey Castle from Torksey
   Island, Calvay Castle from Calbhaigh, Cloughoughter from Stony Island,
   and Oxford Castle. Rewrite the Highland Park and Scapa “northernmost”
@@ -34,6 +35,18 @@ Read-only pass: [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md).
   Summit corrections: Arranmore, Cape Clear, Bere, Inishmore, Tresco,
   Sùla Sgeir, Lundy. Census year on Skye, Lewis and Harris, Islay, and
   Arran says 2022 and stores the 2011 total.
+
+## P1 — learning pilot identity and scoped release (2026-11-03)
+
+The 20-profile implementation is complete locally; acceptance, manifest, source policy and handover are in [LEARNING-DISCOVERY.md](LEARNING-DISCOVERY.md). Do not treat it as deployed or stage the whole shared checkout. Pending actions in priority order:
+
+1. **Llanddwyn identity:** `osm-way-310149701` is the 0.0012 km² **Ynys y Clochydd** islet but aliases/Wikipedia point at much larger neighbouring **Ynys Llanddwyn**. Independently establish the correct entity/boundary, then correct associations through the data pipeline once the active photo writer has released canonical writes. Inspect attached content/images. The learning pilot withholds this ID and uses Anglesey.
+2. **Scoped release:** prepare only the learning changes against the current branch, respecting the separate exact analytics release approval gate in `STATE.md` / `ANALYTICS.md`. Include the new JSON/module/CSS/Python helper and regenerate reading pages in CI. Verify the public 20 profile blocks, `/learn/` plus three journeys, source links and actual deployment commit.
+3. **Expand to 100 profiles:** add 80 in reviewed batches, with authoritative open-licensed sources, regional/inland variety, claim-level source IDs and three specific onward reasons. Use existing integrity checks; never attach content by article title alone.
+4. **Ask evaluation:** measure factual/citation accuracy beyond deterministic pilot story/timeline prompts. Model paragraph citation is requested but not guaranteed; background read is labelled as background. Improve contradiction handling before claiming whole-answer verification.
+5. **Language/audio and legacy access:** add pronunciation only with authoritative licensed recordings. Independently audit legacy access notes, including unqualified safe-crossing/bridge-opening guarantees, without re-enabling ferry features.
+
+Completed pilot work and verification are in the session log, not pending tasks here.
 
 ## P1 — ferries stay hidden
 
@@ -526,3 +539,8 @@ for source / licence / refresh-cadence detail.
 
 - **[done]** Named-island photo availability and lead check. 24 Commons photos added after an independent file-page check. 1,559 leads the checker called wrong were removed where no replacement passed. 30 conflicts left unchanged. See the session log.
 - **[in flight]** Wider-source pass for islands that still have no appropriate photo. Openverse and other open-licence sources, with a separate verifier on the proposed file. Nothing else is written to `islands.json` until that pass agrees.
+
+## Irish photo discovery diagnostics — 2026-11-02
+
+- Correct and verify `scripts/photo_geo_utils.py` before another native Irish photo pipeline. Northern Ireland currently follows the GB projection; the Irish letter layout, easting offset and digit scale also produced incorrect grid references. The isolated extended-discovery script uses EPSG:29903 for both nations and excludes 18 invalid initial requests from its 239 successful target queries. See [Geograph evidence](../data/photo_audit/2026-11-02-ireland-expansion/geograph/REPORT.md). The shared helper was not changed in the photo adoption.
+- Verify Castle Island at 54.36541, -5.67534: its stored upper-Lough-Erne parent conflicts with its Quoile/Strangford location near Downpatrick. Keep it separate from the correctly identified Castle Island at Enniskillen. Photo discovery withheld the conflicting matches; no geographic correction was made.

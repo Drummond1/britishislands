@@ -1,0 +1,15 @@
+{
+  "profilesGenerated": 11212,
+  "legacyProfilesGenerated": 11212,
+  "learningProfilesVerified": 20,
+  "learningPages": 4,
+  "canonicalInputsUnchanged": true,
+  "inputSha256": {
+    "data/islands.json": "baff6aedd7a45f8da7c8d7dc85bb605a9ba0d44ef5c04c832706b2c8ee8cf894",
+    "data/curated.json": "7e9680c38ef938df6c5c0e5d4fe673fb459bdbdd7340edb85218b498076770ef",
+    "data/islands_index.json": "bee1f33bfe4b777a41e3990d571d414697a390c90581ac92bc824f7db44c7914",
+    "data/interest_index.json": "3e976e0184492e97979862dd787aca71b6ddb470e478586f79b8e866c0a0a787",
+    "data/galleries.json": "857a4ab7e3de25f675f810e5cdf8da6abd166cd9e2048b46f7ece9d7205b7e84"
+  },
+  "previewDirectory": "/private/tmp/fmi-learning-static-20261103"
+}

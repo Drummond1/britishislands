@@ -32,8 +32,8 @@ Status legend: ✅ in use · 🟡 plausible, not yet integrated · 🛑 ethicall
 
 | # | Source | Licence | Access | Status | Notes |
 |---|---|---|---|---|---|
-| 7 | **Geograph Britain and Ireland** | **CC-BY-SA 2.0** (every photo) | XML/JSON API at `geograph.org.uk/api/` + `syndicator.php` | 🛑 (direct) / ✅ (indirect via Commons) | The public API now returns 451 ("Unavailable For Legal Reasons") for unauthenticated requests — appears to be a UK regulatory block. **However**, a very large fraction of Geograph photos have been re-uploaded to Wikimedia Commons (you can spot them by the `_-_geograph.org.uk_-_NNN.jpg` filename suffix), so we surface them transparently via #3 and #4 below. |
-| 8 | **Geograph Ireland** | **CC-BY-SA 2.0** | Same API family at `geograph.ie` | 🛑 / ✅ via Commons | Same status as #7. |
+| 7 | **Geograph Britain and Ireland** | **CC-BY-SA 2.0**, checked per photo | XML/JSON API at `geograph.org.uk/api/` + public `syndicator.php` | ✅ public feed / ✅ via Commons; separate API previously blocked | On 2 November 2026, the public syndicator returned 239 successful Irish-grid target queries and exact photo pages supplied author/licence evidence. This does not retest the separate API previously returning 451. Commons copies remain useful; reconcile native photo IDs with renamed Commons copies. [Evidence](../data/photo_audit/2026-11-02-ireland-expansion/geograph/REPORT.md). |
+| 8 | **Geograph Ireland** | **CC-BY-SA 2.0** | Same API family at `geograph.ie`; Irish imagery also in the Britain and Ireland public feed | ✅ via public BI feed / ✅ via Commons; IE endpoint not retested | Use Irish National Grid for both Ireland and Northern Ireland, then verify the exact subject and source rights. Do not infer identity from proximity. See #7. |
 | 9 | **GeoHack catalogue** | (links only) | `tools.wmflabs.org/geohack` | — | Not a photo source, but used to surface other sources for a given coordinate. |
 
 ### Other open photo libraries
@@ -168,7 +168,10 @@ Acceptance rules (spot-check):
   `_looks_like_non_photo` filter. Photos that match only on distance are
   flagged `_suspect: true` in the report.
 
-Direct Geograph (#7, #8) and Flickr CC (#11) are deferred (auth required).
+The original v3 implementation deferred direct Geograph (#7, #8) and Flickr CC
+(#11). The November 2026 reviewed discovery round additionally used public
+Geograph feeds and exact Flickr photo pages; that manual verification does not
+remove the authentication requirements of separate API endpoints.
 Statutory bodies (#14–20) deferred (slow per-photo; better as a curated
 workstream).
 

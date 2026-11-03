@@ -1,0 +1,58 @@
+/* Learning additions inherit the atlas and paper-profile design. */
+.learning-controls { margin: 14px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.learning-controls button, .learning-journey button { font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 5px; padding: 9px 12px; cursor: pointer; min-height: 44px; }
+.learning-controls button:hover, .learning-controls button:focus-visible { color: var(--accent, #c9a04b); }
+.learning-controls details { flex: 1; min-width: 180px; }
+.learning-controls summary { cursor: pointer; padding: 9px 0; min-height: 44px; box-sizing: border-box; }
+.learning-controls__journeys { display: grid; gap: 8px; margin: 6px 0; }
+.learning-controls__note { font-size: 12px; opacity: .85; margin: 0; }
+.learning-week { flex-basis: 100%; margin: 0; font-size: 14px; line-height: 1.5; }
+.learning-week a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.learning-journey { margin: 16px 0 28px; line-height: 1.65; }
+.learning-journey h2 { font-family: var(--font-display, Georgia, serif); font-size: 30px; line-height: 1.2; }
+.learning-journey ol { padding-left: 24px; }
+.learning-journey li { padding: 8px 0 12px; }
+.learning-journey a { color: inherit; font-size: 20px; text-underline-offset: 3px; }
+.learning-journey li p { margin: 4px 0; }
+body.has-learning-journey #featured-strip, body.has-learning-journey #island-list, body.has-learning-journey .sidebar-section-header { display: none; }
+body.has-learning-journey #learning-controls, body.has-learning-journey #discovery-intro, body.has-learning-journey #browse-quick { display: none; }
+.learning-journey .learning-journey-source a { font-size: 12px; }
+.profile-discovery-hook { font-family: var(--font-display, Georgia, serif); font-size: clamp(20px, 2vw, 25px); line-height: 1.4; margin: 12px 0 20px; color: #3d493d; }
+.learning-profile, .learning-connections { margin: 28px 0; line-height: 1.7; }
+.learning-profile h3, .learning-connections h3 { font-family: var(--font-display, Georgia, serif); font-size: 25px; font-weight: 400; margin: 24px 0 12px; }
+.learning-profile h4 { font: inherit; font-weight: 600; margin: 0; }
+.learning-facts { list-style: none; padding: 0; display: grid; gap: 18px; }
+.learning-facts p, .learning-timeline p { margin: 3px 0; }
+.learning-timeline { padding-left: 23px; }
+.learning-timeline li { padding: 6px 0 12px; }
+.learning-source { white-space: normal; font-size: 12px; }
+.learning-source a, .learning-sources a { color: #65501e; text-decoration: underline; text-underline-offset: 3px; }
+.learning-sources { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.learning-sources summary { min-height: 44px; display: list-item; padding: 10px 0; cursor: pointer; }
+.learning-connections ul { list-style: none; padding: 0; display: grid; gap: 8px; }
+.learning-connections a { display: block; padding: 12px 14px; border: 1px solid #c6c8b9; border-radius: 5px; text-decoration: none; color: inherit; }
+.learning-connections a:hover { background: #e9e9dc; }
+.learning-connections a strong, .learning-connections a span { display: block; }
+.learning-connections a span { margin-top: 4px; font-size: 14px; line-height: 1.5; }
+.learning-profile :focus-visible, .learning-connections :focus-visible, .learning-controls :focus-visible, .learning-journey :focus-visible { outline: 3px solid #aa7b22; outline-offset: 4px; }
+.chat-factual-sources { border-top: 1px solid #d5d4c5; padding-top: 12px; margin-top: 16px; font-size: 12px; }
+.chat-factual-sources a { color: #65501e; text-decoration: underline; }
+.chat-factual-sources ul { padding-left: 18px; }
+/* Keep the hook ahead of a bounded picture, including in thematic browse. */
+.island-card--feature .island-card__frame { order: 4; height: clamp(150px, 25vw, 240px); min-height: 0; aspect-ratio: auto; margin: 12px 0 0; }
+.island-card--feature .island-card__text { order: 0; }
+.island-card--feature .island-card__kicker { order: 1; }
+.island-card--feature .island-card__work { order: 2; }
+.island-card--feature .island-card__blurb { order: 3; }
+#featured-strip .featured-card .featured-card__blurb { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 13px; line-height: 1.4; }
+body[data-island-detail="open"] .interest-feature__figure img { max-height: 360px; object-fit: contain; }
+#details-hero .hero-img { max-height: 340px; object-fit: contain; }
+.learning-controls > a { color: inherit; font-size: 13px; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .island-details .details-toolbar { flex-wrap: wrap; }
+  .island-details .details-toolbar__actions { flex: 1 1 auto; min-width: 0; }
+  .island-details .back-button { flex: 0 0 auto; min-width: 44px; }
+  .learning-profile, .learning-connections { margin: 22px 0; }
+  .learning-controls { gap: 8px; }
+  .learning-controls button { font-size: 13px; }
+}

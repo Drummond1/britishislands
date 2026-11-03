@@ -1198,7 +1198,7 @@ def asset_href_for_depth(depth: int, filename: str) -> str:
 
 def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
-    landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    landing = html.escape(asset_href_for_depth(depth, "landing.css?v=learning-20261103a"), quote=True)
     analytics_css = html.escape(asset_href_for_depth(depth, "analytics.css?v=analytics-20261103a"), quote=True)
     analytics_js = html.escape(asset_href_for_depth(depth, "analytics.js?v=analytics-20261103a"), quote=True)
     fonts = (

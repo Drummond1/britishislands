@@ -243,6 +243,21 @@ The map filters in the browser from `members`. A draft category is absent from t
 
 `data/chat_corpus.json` is not an island field. Ask loads it when the chat opens, so the map index can stay small. Each row is keyed by island id and may include `w` (parent water name), `d` (description snippet), `p` (summit name), and `n` (other-language names). Unnamed islands are omitted. Water names that are only an OSM relation id are omitted. Rebuild with `python3 scripts/build_chat_corpus.py` after `data/islands.json` changes. Full prose still comes from `data/details/{id}.json` when the model asks to read an island.
 
+## Learning and discovery sidecar
+
+`data/learning_profiles.json` is an authored overlay, not a change to the canonical island schema. `schemaVersion: 1`, `contentLicence: "CC BY-SA 4.0"`; `profiles` is keyed by existing stable atlas IDs and `journeys` is an array. See [delivery/context](LEARNING-DISCOVERY.md).
+
+| Object | Fields and constraints |
+|---|---|
+| Profile | `hook`, `overview`, `sourceIds`, `facts[]`, `timeline[]`, `related[]`, `sources[]`. Hook shares overview sources. |
+| Fact | `title`, `text`, non-empty `sourceIds[]` resolving within this profile. Three facts per pilot profile. |
+| Timeline entry | `date` (display string, may be approximate), `text`, non-empty `sourceIds[]`. At least two per pilot. Dates are not forced into falsely precise timestamps. |
+| Related entry | `id` (another existing island), `reason` (explicit connection). Three unique non-self targets per pilot. |
+| Source | Unique local `id`, `label`, `publisher`, HTTP(S) `url`, `licence`, `attribution`, `checkedAt` (`YYYY-MM-DD`). This check date does not certify legacy fields or present-day access. |
+| Journey | Unique `slug`, `title`, `introduction`, ordered `stops[]` with `id` and `note`. Eight unique stops per pilot journey, each resolving to an existing learning profile. |
+
+No image fields: use canonical/gallery photographs with their existing image licences. No pronunciation/audio field until an authoritative licensed source is available. Edit this sidecar in a reviewed content change; the browser reads it directly and SEO generation renders static equivalents. No canonical index/shard rebuild is required for overlay-only edits. Run `scripts/test_learning.mjs` and `scripts/test_seo_learning.py` before accepting additions.
+
 ## Adding a new field
 
 1. Pick a name and type. Prefer extending an existing object (e.g.

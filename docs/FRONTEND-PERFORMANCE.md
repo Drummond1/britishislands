@@ -78,6 +78,9 @@ setAppLoading(true)
 | `data/islands_unnamed_index.json` | Unnamed filter |
 | `data/galleries.json` | Island click |
 | `data/chat_corpus.json` | Ask opens (loch names and snippets; not on first paint) |
+| `data/learning_profiles.json` | idle after atlas paint, or Ask preparation; 51,491 bytes for the 20-profile pilot |
+
+The learning sidecar is fetched once and shared by cards, profiles, journeys and Ask. First paint does not wait for it and failure retains ordinary atlas browsing. The initial module graph includes `learning.js` (about 9 KB uncompressed); source-linked story caches use a WeakMap and existing list windows/marker clusters remain in place. Feature pictures have a bounded height and are measured by the existing virtual row logic. Do not merge this authored content into every compact index row or eagerly load all nation shards. See [learning handover](LEARNING-DISCOVERY.md).
 
 ## Profile open (double render)
 

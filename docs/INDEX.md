@@ -20,14 +20,16 @@ Single map of every document in this repository. Always start at the top.
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Code layout, data flow, how the frontend renders 6k+ islands. |
 | [`DEPLOYMENT.md`](DEPLOYMENT.md) | GitHub Pages, `_site/` artifact, findmyisland.com, push notes. |
 | [`FRONTEND-PERFORMANCE.md`](FRONTEND-PERFORMANCE.md) | Homepage load path, index v2, markers, deferred fetches. |
+| [`LEARNING-DISCOVERY.md`](LEARNING-DISCOVERY.md) | Prioritised learning/discovery delivery: story hooks, 20 sourced profiles, explained connections, learning journeys, Ask citations and browser-local saving; implementation and handover tracker. |
 | [`3D-TERRAIN.md`](3D-TERRAIN.md) | Showcase 3D islands, import map, mount lifecycle, build script. |
 | [`DATA-SCHEMA.md`](DATA-SCHEMA.md) | Full island record spec. Interest filters are an overlay (`data/interest_index.json`), not new island fields. |
 | [`PIPELINE.md`](PIPELINE.md) | How to rebuild `data/islands.json` end-to-end. |
 | [`SEO-GEO.md`](SEO-GEO.md) | Island SEO + JSON-LD; **`/islands/{nation}/{slug}/` URLs**; sitemap / `llms.txt`; continuous SEO/GEO loop. |
-| [`ANALYTICS.md`](ANALYTICS.md) | Consent-gated Analytics installation, account/property IDs, event contract and verification. |
-| [`SEO-GEO-STRATEGY.md`](SEO-GEO-STRATEGY.md) | Full SEO+GEO strategy brief (90-day roadmap). Continuous loop follows this with no-deindex override. |
+| [`SEO-GEO-STRATEGY.md`](SEO-GEO-STRATEGY.md) | SEO and GEO strategy refreshed 2 November 2026: current findings, priority pages, measurement and 90-day roadmap. Retains the no-deindex override and ferry freeze. |
 | [`GEO-BENCHMARK.md`](GEO-BENCHMARK.md) | Weekly GEO benchmark cadence: prompt set, citation tracking, and accuracy KPIs. |
 | [`GSC-CTR-FINDINGS.md`](GSC-CTR-FINDINGS.md) | Search Console diagnosis: impressions without clicks; position filters; URL inspection; winnable queries. |
+| [`GSC-BASELINE-2026-11-02.md`](GSC-BASELINE-2026-11-02.md) | Current Search Console baseline, AI impressions, indexing reasons and verified local SEO implementation. Raw CSV exports and validation evidence linked inside. |
+| [`ANALYTICS.md`](ANALYTICS.md) | Deployed consent layer and verified GA Preview delivery; exact release approval and withdrawal retest pending. Tags unpublished; ordinary live collection unverified. Local screenshots excluded from release. |
 | [`SUPABASE.md`](SUPABASE.md) | Supabase project setup, schema, RLS, keys, storage bucket. |
 | [`PROPERTY-LISTINGS.md`](PROPERTY-LISTINGS.md) | For-sale outbound links: curated + optional Homedata; no portal scraping. |
 | [`FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) | **Full list** of islands currently on the market (generated table + counts). |
@@ -50,6 +52,7 @@ Single map of every document in this repository. Always start at the top.
 | [`VALIDATION.md`](VALIDATION.md) | Canonical regression set: islands you should always be able to find correctly. |
 | [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md) | Read-only fact-check of locations, photos, claims, and measurements. Data not corrected. |
 | [`IMAGE-SOURCES.md`](IMAGE-SOURCES.md) | Image source registry + ranking for enrichment passes. |
+| [`METHODOLOGY-IRISH-PHOTO-REVIEW.md`](METHODOLOGY-IRISH-PHOTO-REVIEW.md) | Exhaustive Irish photo association review, independent candidate verification, uncertainty and safe adoption. |
 | [`PHOTO-DISCOVERY-IDEAS.md`](PHOTO-DISCOVERY-IDEAS.md) | 35 high-confidence photo discovery ideas (beyond geosearch/Openverse); top-10 ranking. |
 | [`NAMING-SOURCES.md`](NAMING-SOURCES.md) | 100 high-confidence naming approaches for ~4,310 unnamed islands; implementation registry + runbook. |
 | [`DISCOVERY-PUSH.md`](DISCOVERY-PUSH.md) | New-island gap discovery harvesters (GeoNames, Wikipedia coords, OSM scanner) + runbook. |
@@ -57,10 +60,6 @@ Single map of every document in this repository. Always start at the top.
 | [`FERRIES.md`](FERRIES.md) | Ferry-routes feature: operator inventory (54 operators), data sources (OSM + GTFS + manual), refresh cadence, terminal-mapping rules, UI surface. |
 | [`DATA-SOURCES.md`](DATA-SOURCES.md) | Registry of every external dataset ingested into `islands.json`: licence, refresh cadence, attribution string, consuming script. |
 | [`SCHEMA-ENRICHMENTS-2026-05-13.md`](SCHEMA-ENRICHMENTS-2026-05-13.md) | Proposal for the 2026-05-13 enrichments (hills, lighthouses, wildlife colonies, geology, census 2022).  Schema, ethics rules, UI render plan, and apply order. |
-
-## Recent photo review
-
-[Irish photo review and publication](photo-reviews/2026-11-03-ireland.md): verified additions, removals, remaining uncertainty and exact source changes.
 
 ## Reading order by goal
 
