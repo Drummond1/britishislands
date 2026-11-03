@@ -30,13 +30,16 @@ Enhanced Measurement, Google Signals and user-provided data collection are
 verified in the property settings. Optional account data sharing is off.
 
 **Rollout is in progress.** The consent integration was deployed in commit
-`97f72466b6cd1a79b0f5adb7ea35f66579fb8540`; Pages run `41548769552` succeeded.
+`97f72466b6cd1a79b0f5adb7ea35f66579fb8540`. The withdrawal opt-out fix
+and asset version `analytics-20261103a` were deployed with commit `4cef2d8`;
+[Pages run 41695300995](https://github.com/Drummond1/britishislands/actions/runs/41695300995)
+succeeded, and the public `analytics.js` exactly matches the release artifact.
 Production browser checks confirmed equal choices, remembered denial on the
 homepage and a depth-three island landing, and no Google scripts before consent.
 All six site event names reached the intended property in Preview. The initial
 page view, session start and first visit had clean public page addresses and
 origin-only external referrers. A final engagement hit on withdrawal exposed
-an unload race; the fix below must pass a production retest before publishing
+an unload race; the deployed fix must pass a production retest before publishing
 the still-unpublished Tag Manager workspace.
 
 Enhanced Measurement was found enabled after the creation screen despite the
@@ -132,8 +135,8 @@ automatic tags that bypass this event contract.
 Account creation, legal-terms acceptance and both tag drafts are complete. The
 remaining work is:
 
-1. Deploy the withdrawal fix while the live container is empty, then retest
-   that no final engagement hit escapes when consent is withdrawn.
+1. Retest the deployed withdrawal fix with the live container in Preview;
+   confirm that no final engagement hit escapes when consent is withdrawn.
 2. Finish Preview inspection before publication.
    Decline must produce no Google measurement requests; Accept must produce
    one initial page view with clean addresses. Confirm island opening, saving,
@@ -171,15 +174,10 @@ choices and had no horizontal overflow. These tests do not verify Google
 receiving events; that requires deployment, Preview, publication and live checks.
 
 Browser screenshots and account-creation evidence are retained in the local working records. Explicit terms approval and account creation have completed.
-The analytics-only patch is prepared on `codex/analytics-consent` in the attached
-isolated worktree. A release clone at
-`/private/tmp/findmyisland-analytics-release` starts from latest `main`,
-`3db265ee`; the source patch applied cleanly and its tests pass. It excludes
-concurrent photo changes and the separate, unpublished SEO improvements in the
-primary checkout. The first consent deployment succeeded. The subsequent
-withdrawal fix uses the assigned public measurement ID, includes ordering
-regressions for local and cross-tab denial, and bumps shared assets to
-`analytics-20261103a`. Tag publication waits for the live withdrawal retest.
+The withdrawn-consent fix uses the assigned public measurement ID, includes
+ordering regressions for local and cross-tab denial, and bumps shared assets to
+`analytics-20261103a`. It is live from commit `4cef2d8`, alongside the reviewed
+SEO and learning changes. Tag publication waits for the live withdrawal retest.
 
 Analytics will describe the visits of people who opt in. Search Console remains
 the source for search impressions, clicks and Google AI feature reporting;

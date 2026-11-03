@@ -36,15 +36,14 @@ Read-only pass: [`fact-check/2026-10-26.md`](fact-check/2026-10-26.md).
   Sùla Sgeir, Lundy. Census year on Skye, Lewis and Harris, Islay, and
   Arran says 2022 and stores the 2011 total.
 
-## P1 — learning pilot identity and scoped release (2026-11-03)
+## P1 — learning pilot identity and expansion (2026-11-03)
 
-The 20-profile implementation is complete locally; acceptance, manifest, source policy and handover are in [LEARNING-DISCOVERY.md](LEARNING-DISCOVERY.md). Do not treat it as deployed or stage the whole shared checkout. Pending actions in priority order:
+The 20-profile pilot is live from commit `4cef2d8`; acceptance, manifest, source policy and handover are in [LEARNING-DISCOVERY.md](LEARNING-DISCOVERY.md). Public asset and reading-page verification is recorded in the session log. Pending actions in priority order:
 
 1. **Llanddwyn identity:** `osm-way-310149701` is the 0.0012 km² **Ynys y Clochydd** islet but aliases/Wikipedia point at much larger neighbouring **Ynys Llanddwyn**. Independently establish the correct entity/boundary, then correct associations through the data pipeline once the active photo writer has released canonical writes. Inspect attached content/images. The learning pilot withholds this ID and uses Anglesey.
-2. **Scoped release:** prepare only the learning changes against the current branch, respecting the separate exact analytics release approval gate in `STATE.md` / `ANALYTICS.md`. Include the new JSON/module/CSS/Python helper and regenerate reading pages in CI. Verify the public 20 profile blocks, `/learn/` plus three journeys, source links and actual deployment commit.
-3. **Expand to 100 profiles:** add 80 in reviewed batches, with authoritative open-licensed sources, regional/inland variety, claim-level source IDs and three specific onward reasons. Use existing integrity checks; never attach content by article title alone.
-4. **Ask evaluation:** measure factual/citation accuracy beyond deterministic pilot story/timeline prompts. Model paragraph citation is requested but not guaranteed; background read is labelled as background. Improve contradiction handling before claiming whole-answer verification.
-5. **Language/audio and legacy access:** add pronunciation only with authoritative licensed recordings. Independently audit legacy access notes, including unqualified safe-crossing/bridge-opening guarantees, without re-enabling ferry features.
+2. **Expand to 100 profiles:** add 80 in reviewed batches, with authoritative open-licensed sources, regional/inland variety, claim-level source IDs and three specific onward reasons. Use existing integrity checks; never attach content by article title alone.
+3. **Ask evaluation:** measure factual/citation accuracy beyond deterministic pilot story/timeline prompts. Model paragraph citation is requested but not guaranteed; background read is labelled as background. Improve contradiction handling before claiming whole-answer verification.
+4. **Language/audio and legacy access:** add pronunciation only with authoritative licensed recordings. Independently audit legacy access notes, including unqualified safe-crossing/bridge-opening guarantees, without re-enabling ferry features.
 
 Completed pilot work and verification are in the session log, not pending tasks here.
 

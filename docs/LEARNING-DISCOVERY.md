@@ -1,6 +1,6 @@
 # Learning and discovery improvements
 
-**Owner:** Codex · **Delivered locally:** 3 November 2026 · **Status:** 20-island pilot implemented and verified; not committed or deployed.
+**Owner:** Codex · **Published:** 3 November 2026 · **Status:** 20-island pilot live and verified.
 
 ## Purpose and authority
 
@@ -82,17 +82,14 @@ No canonical correction was made while another chat owns photo-related data writ
 
 ## Release and coordination
 
-The implementation is in the shared primary checkout, alongside pre-existing analytics, SEO and Irish-photo work. No canonical ingestion, naming, gallery, interest or shard pipelines ran for this learning delivery. Do not stage or push the whole checkout. The analytics release has its own explicit approval gate recorded in `STATE.md` / `ANALYTICS.md`; this work does not authorise that payload.
-
-Full SEO generation was exercised only in `/private/tmp/fmi-learning-static-20261103/`, with all canonical input hashes unchanged. Generated `islands/`, `profiles/` and `learn/` outputs were not rebuilt in the shared checkout. Existing Pages CI invokes the generator and copies these assets through `prepare_pages_artifact.py`; release must include `learning.js`, `learning.css`, the JSON sidecar and the Python helper with the app/generator changes. After a reviewed release, verify public source links, the 20 learning blocks, four learning pages and actual deployment commit. Local previews are not production evidence.
+The scoped release was built from the then-current production branch, preserving the published Irish-photo data and excluding active research caches. Commit `4cef2d8` includes `learning.js`, `learning.css`, the JSON sidecar and Python helper with the app/generator changes. [Pages run 41695300995](https://github.com/Drummond1/britishislands/actions/runs/41695300995) succeeded. The public homepage, modules, sidecar, `/learn/` and one journey page matched the built artifact byte for byte. CI generated all four learning pages and 11,212 island landings. Canonical island data was not changed by this release.
 
 Local app preview: <http://127.0.0.1:8766/>. Isolated reading-page preview: <http://127.0.0.1:8767/learn/>. These require their local preview servers to remain running.
 
 ## Next priorities
 
 1. Resolve the Llanddwyn entity mismatch without disrupting the active photo writer; independently check any changed aliases and attached content.
-2. Review a scoped learning release against the current branch, preserve the separate analytics approval boundary, and verify its public deployment.
-3. Expand from 20 to 100 profiles in reviewed batches, using authoritative open-licensed sources and the same claim/source/identity checks. Keep regional and inland variety. Add more specific shared-event, writer and geology connections as evidence grows.
-4. Improve Ask citation coverage and contradiction handling beyond the deterministic pilot. Expand evaluation with known-answer/source cases before claiming answer-wide grounding.
-5. Add authoritative local-language explanations and licensed pronunciation recordings where available. Never fabricate pronunciation, etymology or audio provenance.
-6. Audit existing access notes separately, including unqualified safe-crossing/bridge-opening guarantees. No new travel advice was added in this pilot.
+2. Expand from 20 to 100 profiles in reviewed batches, using authoritative open-licensed sources and the same claim/source/identity checks. Keep regional and inland variety. Add more specific shared-event, writer and geology connections as evidence grows.
+3. Improve Ask citation coverage and contradiction handling beyond the deterministic pilot. Expand evaluation with known-answer/source cases before claiming answer-wide grounding.
+4. Add authoritative local-language explanations and licensed pronunciation recordings where available. Never fabricate pronunciation, etymology or audio provenance.
+5. Audit existing access notes separately, including unqualified safe-crossing/bridge-opening guarantees. No new travel advice was added in this pilot.
