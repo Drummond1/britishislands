@@ -60,14 +60,14 @@
     <!-- Root base so history paths like /islands/scotland/soay/ keep data/ CSS fetches working -->
     <base href="/" />
     <link rel="stylesheet" href="styles.css?v=name-it-1" />
-    <link rel="stylesheet" href="atlas-redesign.css?v=safari-photos-1" />
+    <link rel="stylesheet" href="atlas-redesign.css?v=homepage-discovery-3" />
     <link rel="stylesheet" href="editorial-profile.css?v=name-it-1" />
     <link rel="stylesheet" href="learning.css?v=learning-4" />
     <link rel="stylesheet" href="analytics.css?v=analytics-20261103a" />
     <script src="analytics.js?v=analytics-20261103a" defer></script>
     <link rel="preload" href="data/islands_index.json" as="fetch" crossorigin="use-credentials" />
     <link rel="modulepreload" href="chat-agent.js?v=learning-4" />
-    <link rel="modulepreload" href="app.js?v=learning-4" />
+    <link rel="modulepreload" href="app.js?v=homepage-discovery-3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Non-blocking fonts: avoid render-blocking stylesheet (CWV LCP). -->
@@ -291,7 +291,7 @@
                 <span>Skellig Michael</span>
               </span>
             </p>
-            <p class="discovery-lede">Sea, loch, and river. One story at a time.</p>
+            <p class="discovery-lede">Explore the islands of Britain and Ireland. Find a place, follow a story, or choose an interest below.</p>
           </div>
           <div class="discovery-search-row">
       <div class="discovery-search">
@@ -300,7 +300,7 @@
           <input
             id="search"
             type="search"
-            placeholder="An island, a place, a possibility…"
+            placeholder="Search islands or places…"
             aria-label="Search islands"
             autocomplete="off"
             title="Press / to focus search"
@@ -335,9 +335,10 @@
 
 
           <div class="sidebar-explore" id="sidebar-explore">
-            <div class="browse-quick" id="browse-quick" aria-label="High-value filters">
+            <div class="browse-quick" id="browse-quick" role="group" aria-labelledby="browse-quick-label">
               <p class="browse-quick__label" id="browse-quick-label">Find your kind of island</p>
               <div class="browse-quick__chips" id="browse-quick-chips"></div>
+              <button class="browse-quick__more" id="browse-interests-toggle" type="button" aria-expanded="false" aria-controls="browse-quick-chips" hidden>More interests</button>
             </div>
             <div class="active-filter-chips" id="active-filter-chips" hidden aria-label="Active filters"></div>
             <section id="learning-controls" class="learning-controls" aria-label="Discover a story" hidden></section>
@@ -811,6 +812,7 @@
     <script src="crowd-config.js"></script>
     <!-- Optional gitignored overrides: copy config.local.example.js → config.local.js -->
     <script src="config.local.js" onerror="void 0"></script>
-    <script src="app.js?v=learning-4" type="module"></script>
+    <script src="app.js?v=homepage-discovery-3" type="module"></script>
   </body>
 </html>
+

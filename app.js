@@ -4144,6 +4144,8 @@ function renderPhotoPlaceholderHero(island) {
 let chipGreetingAt = 0;
 let placeChipRule = () => {};
 
+let browseInterestsExpanded = false;
+
 function renderBrowseQuickChips() {
   const host = document.getElementById("browse-quick-chips");
   if (!host) return;
@@ -4161,6 +4163,7 @@ function renderBrowseQuickChips() {
     b.className = "browse-quick__chip" + (selected ? " is-active" : "");
     b.innerHTML = `<span data-lucide="${icon || "tag"}" aria-hidden="true"></span>${escapeHtml(label)}`;
     b.setAttribute("aria-pressed", selected ? "true" : "false");
+    b.dataset.interestId = id;
     if (greet) b.classList.add("is-greeting");
     b.addEventListener("click", onClick);
     host.appendChild(b);
@@ -4170,7 +4173,7 @@ function renderBrowseQuickChips() {
     addChip(all.id, all.label, !hasUserDiscoveryIntent(), icons.all, () => resetAllFilters());
   }
   const namedByPublic = BROWSE_QUICK_FILTERS.find((preset) => preset.id === "public-names");
-  if (namedByPublic) {
+  if (namedByPublic && allSuggestedNames().length > 0) {
     addChip(
       namedByPublic.id,
       namedByPublic.label,
@@ -4229,6 +4232,18 @@ function renderBrowseQuickChips() {
       button.addEventListener("click", () => setInterestFacet(spec.id));
       host.appendChild(button);
     }
+  }
+  const primaryInterests = new Set(["all", "island-castles", "unusual-wildlife", "tidal-islands", "whisky-distilleries", "for-sale"]);
+  const chips = [...host.querySelectorAll(".browse-quick__chip")];
+  const secondaryChips = chips.filter((chip) => !primaryInterests.has(chip.dataset.interestId));
+  for (const chip of secondaryChips) {
+    chip.hidden = !browseInterestsExpanded && chip.getAttribute("aria-pressed") !== "true";
+  }
+  const toggle = document.getElementById("browse-interests-toggle");
+  if (toggle) {
+    toggle.hidden = secondaryChips.length === 0;
+    toggle.setAttribute("aria-expanded", String(browseInterestsExpanded));
+    toggle.textContent = browseInterestsExpanded ? "Fewer interests" : "More interests";
   }
   refreshLucideIcons(host);
   placeChipRule(host.querySelector(".browse-quick__chip.is-active"));
@@ -5232,7 +5247,7 @@ function renderList() {
   if (showAllBtn) {
     showAllBtn.hidden = !truncatedFrom;
     if (truncatedFrom) {
-      showAllBtn.textContent = "Show all";
+      showAllBtn.textContent = "Browse all";
       showAllBtn.setAttribute("aria-label", `Show all ${truncatedFrom.toLocaleString()} islands`);
     }
   }
@@ -12506,9 +12521,14 @@ initSearchClear();
 initMapHint();
 initFoldMotion();
 initGlobalKeyboardShortcuts();
+document.getElementById("browse-interests-toggle")?.addEventListener("click", () => {
+  browseInterestsExpanded = !browseInterestsExpanded;
+  renderBrowseQuickChips();
+});
 initTopbarMoreMenu();
 initAtlasChrome();
 initAtlasViewHistory();
 initMapSearchArea();
 chatAutoLoadFromUrl();
 refreshLucideIcons();
+
