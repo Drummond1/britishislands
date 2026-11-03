@@ -4,6 +4,8 @@
 > Stamp the date at the top of each section so we can spot drift.
 ## Last updated
 
+**2026-11-03 (Irish photo release)** — User authorised production publication of both independently reviewed rounds: **108** new photo placements introducing **102** source photos, **273** incorrect/unsuitable/insufficient-rights associations removed, **50** existing cover links restored, **65** story captions/credits clarified and **2** existing object photos moved to context. **280** listings changed. **382** existing associations remain unresolved. Scope image counts: **404** canonical, **768** gallery, **66** story; atlas with photos **2,792**. All **11,212** islands and **27** curated records preserved. Supporting views carry captions and cannot become covers. [Evidence and exact changes](photo-reviews/2026-11-03-ireland.md). Deployment and live checks are recorded by the publishing session after this commit.
+
 **2026-10-28 (shipped to main)** — The deduped atlas (**11,212**), the place-label corrections, public naming, visitor notes with a private email, and the island reel are on `main` for GitHub Pages. Supabase functions are not redeployed by that push. Counts otherwise unchanged.
 
 **2026-10-28 (name an island)** — Clicking an unnamed island asks for the name, your name, and an email that is not published. The name is stored in `island_name_log` and shown as “Named by …”. **Named by the public** filters to those islands. A new row emails drummondgilbert@gmail.com after the FormSubmit activation link is opened. `islands.json` was not edited. Counts unchanged.

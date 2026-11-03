@@ -58,6 +58,10 @@ Single map of every document in this repository. Always start at the top.
 | [`DATA-SOURCES.md`](DATA-SOURCES.md) | Registry of every external dataset ingested into `islands.json`: licence, refresh cadence, attribution string, consuming script. |
 | [`SCHEMA-ENRICHMENTS-2026-05-13.md`](SCHEMA-ENRICHMENTS-2026-05-13.md) | Proposal for the 2026-05-13 enrichments (hills, lighthouses, wildlife colonies, geology, census 2022).  Schema, ethics rules, UI render plan, and apply order. |
 
+## Recent photo review
+
+[Irish photo review and publication](photo-reviews/2026-11-03-ireland.md): verified additions, removals, remaining uncertainty and exact source changes.
+
 ## Reading order by goal
 
 **"I'm a new agent, what is this?"**

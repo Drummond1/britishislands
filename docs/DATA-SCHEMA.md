@@ -173,6 +173,13 @@ set when `images[]` is non-empty.
 - Never derive an image from a free-text search (e.g. "google for Foo Island").
 - Only one image may have `primary: true` per record.
 
+The optional gallery sidecar `data/galleries.json` uses the same image fields.
+An entry with `contextOnly: true` must have an explicit `caption` describing
+the actual view or landmark. It appears under “Views and landmarks” with its
+caption and credit, and is never merged into `images[]`, used as a cover, or
+used as a failed-cover fallback. Omitted or false preserves the usual gallery
+behaviour. These supporting photos do not count as islands with a lead photo.
+
 ### Property listings (for sale — outbound links)
 
 Optional field group. **Link-out only** — no scraped portal HTML, photos, or

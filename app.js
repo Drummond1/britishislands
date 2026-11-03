@@ -3992,10 +3992,10 @@ function populateSubtypeFilter() {
 function islandHasPhoto(island) {
   if (!island) return false;
   if (island.hasImage === true) return true;
-  if (island.images?.length) return true;
+  if (island.images?.some((img) => !img.contextOnly)) return true;
   if (island.image) return true;
   const extra = state.galleries?.[island.id];
-  return Array.isArray(extra) && extra.length > 0;
+  return Array.isArray(extra) && extra.some((img) => !img.contextOnly);
 }
 
 function islandHasWrittenStory(island) {
@@ -4108,11 +4108,11 @@ function phoneSafeImageUrl(url, pixels) {
 function islandThumbUrl(island) {
   if (!island) return null;
   if (island.thumbUrl) return island.thumbUrl;
-  const img = island.images?.[0];
+  const img = island.images?.find((img) => !img.contextOnly);
   if (img?.thumbUrl) return img.thumbUrl;
   if (img?.url) return img.url;
   if (island.image) return island.image;
-  const extra = state.galleries?.[island.id]?.[0];
+  const extra = state.galleries?.[island.id]?.find((img) => !img.contextOnly);
   if (extra?.thumbUrl) return extra.thumbUrl;
   if (extra?.url) return extra.url;
   return null;
@@ -6107,6 +6107,9 @@ function _renderAffiliateLinks(mainlandTerm, op) {
 // Rebuild only the hero gallery section, avoiding a full renderDetails()
 // re-flow (preserves scroll, the OS detail map, etc.).
 function refreshGalleryInPlace(island) {
+  ensureGalleryMerged(island);
+  const supporting = document.getElementById("supporting-photos");
+  if (supporting) supporting.outerHTML = renderSupportingPhotos(island);
   const hero = document.getElementById("details-hero");
   if (!hero) return;
   const mast = hero.querySelector(".profile-mast");
@@ -6373,6 +6376,7 @@ function renderDetails(island) {
     ${renderSummitLine(island)}
     ${renderHeritageLine(island)}
     ${moreLink}
+    ${renderSupportingPhotos(island)}
     ${showNameForm ? "" : renderIslandNotes(island)}
     ${renderInterestStories(island)}
     ${renderPropertyListings(island)}
@@ -7694,6 +7698,9 @@ function ensureGalleryMerged(island) {
     const have = new Set(lead.map((x) => imageDedupKey(x)));
     const merged = lead.slice();
     for (const ex of extras) {
+      // Contextual views have explicit captions and never become cover images,
+      // including when there is no lead photo or a lead fails to load.
+      if (ex.contextOnly) continue;
       const key = imageDedupKey(ex);
       if (key && have.has(key)) continue;
       merged.push({ ...ex, primary: false });
@@ -7704,6 +7711,22 @@ function ensureGalleryMerged(island) {
     island.images = dedupeImagesByKey(island.images);
   }
   island.__galleryMerged = true;
+}
+
+function renderSupportingPhotos(island) {
+  const images = dedupeImagesByKey(
+    (state.galleries?.[island.id] || []).filter((img) => img.contextOnly),
+  );
+  return `<section id="supporting-photos" class="supporting-photos"${images.length ? "" : " hidden"}>
+    ${images.length ? `<h3>Views and landmarks</h3>${images.map((img) => `
+      <figure>
+        <a href="${escapeAttr(img.fullUrl || img.url)}" target="_blank" rel="noopener">
+          <img src="${escapeAttr(img.url)}" alt="${escapeAttr(img.caption || island.name)}" loading="lazy" />
+        </a>
+        <figcaption>${escapeHtml(img.caption || island.name)}</figcaption>
+        ${renderAttribution(img)}
+      </figure>`).join("")}` : ""}
+  </section>`;
 }
 
 function renderGallery(island, mastHtml = "") {

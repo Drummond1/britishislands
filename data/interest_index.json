@@ -12645,13 +12645,7 @@
           "summary": "Achill Island (; Irish: Acaill, Oileán Acla) is located off the west coast of Ireland in the historical barony of Burrishoole, County Mayo.",
           "sourceUrl": "https://www.wikidata.org/wiki/Q119788285",
           "sourceTitle": "Achill Island",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Achillsatmap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
-            "attribution": "Wikimedia Commons",
-            "licence": "CC BY-SA 3.0",
-            "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
-          }
+          "image": null
         },
         {
           "title": "Raymond Deane",
@@ -12659,13 +12653,7 @@
           "summary": "Raymond Deane (born 27 January 1953) is an Irish composer. Raymond Deane is a composer. The artist was born on Achill Island.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Raymond_Deane",
           "sourceTitle": "Raymond Deane",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Raymond-Deane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Raymond-Deane.jpg",
-            "attribution": "Tommy Donnellan",
-            "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
-          }
+          "image": null
         },
         {
           "title": "The Banshees of Inisherin",
@@ -12697,13 +12685,7 @@
           "summary": "Achill Island (; Irish: Acaill, Oileán Acla) is located off the west coast of Ireland in the historical barony of Burrishoole, County Mayo.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Achill_Island",
           "sourceTitle": "Achill Island",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Achillsatmap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
-            "attribution": "Wikimedia Commons",
-            "licence": "CC BY-SA 3.0",
-            "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
-          }
+          "image": null
         },
         {
           "title": "Achill Sound",
@@ -12716,7 +12698,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:The_village_of_Achill_Sound_-_geograph.org.uk_-_5115368.jpg",
             "attribution": "John Lucas",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "The village of Achill Sound, shown as island context for this story",
+            "alt": "The village of Achill Sound, shown as island context for this story"
           }
         },
         {
@@ -12725,13 +12709,7 @@
           "summary": "Achill Island (; Irish: Acaill, Oileán Acla) is located off the west coast of Ireland in the historical barony of Burrishoole, County Mayo.",
           "sourceUrl": "https://musicbrainz.org/work/fe935a8c-89af-425c-8462-a5af4bb2c225",
           "sourceTitle": "Achill Island",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Achillsatmap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
-            "attribution": "Wikimedia Commons",
-            "licence": "CC BY-SA 3.0",
-            "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
-          }
+          "image": null
         }
       ],
       "osm-relation-1663615": [
@@ -12820,7 +12798,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishturk_north.jpg",
             "attribution": "Towel401",
             "licence": "CC0",
-            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "note": "North coast of Inishturk, shown as island context for this story",
+            "alt": "North coast of Inishturk, shown as island context for this story"
           }
         }
       ],
@@ -14021,13 +14001,7 @@
           "summary": "Inishmore (Irish: Árainn [ˈaːɾˠən̠ʲ] , Árainn Mhór [ˈaːɾˠən̠ʲ woːɾ] or Inis Mór [ˈɪnʲɪʃ mˠoːɾ]) is the largest of the Aran Islands in Galway Bay, off the west coast of Ireland.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Inishmore",
           "sourceTitle": "Inishmore",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Inishmore_-_Aran_Islands.svg/960px-Inishmore_-_Aran_Islands.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_-_Aran_Islands.svg",
-            "attribution": "User:Hogweard",
-            "licence": "Public domain",
-            "licenceUrl": ""
-          }
+          "image": null
         },
         {
           "title": "Inishmore",
@@ -14035,13 +14009,7 @@
           "summary": "Inishmore (Irish: Árainn [ˈaːɾˠən̠ʲ] , Árainn Mhór [ˈaːɾˠən̠ʲ woːɾ] or Inis Mór [ˈɪnʲɪʃ mˠoːɾ]) is the largest of the Aran Islands in Galway Bay, off the west coast of Ireland.",
           "sourceUrl": "https://musicbrainz.org/release-group/346aab77-f550-3192-bf2f-1febdcc1d5c8",
           "sourceTitle": "Inishmore",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Inishmore_-_Aran_Islands.svg/960px-Inishmore_-_Aran_Islands.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_-_Aran_Islands.svg",
-            "attribution": "User:Hogweard",
-            "licence": "Public domain",
-            "licenceUrl": ""
-          }
+          "image": null
         },
         {
           "title": "Inishmore (Forsaken Heart)",
@@ -14362,7 +14330,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
             "attribution": "Brendanconway",
             "licence": "Public domain",
-            "licenceUrl": ""
+            "licenceUrl": "",
+            "note": "Clare Island in Clew Bay, shown as island context for this film",
+            "alt": "Clare Island in Clew Bay, shown as island context for this film"
           }
         },
         {
@@ -14376,7 +14346,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
             "attribution": "Brendanconway",
             "licence": "Public domain",
-            "licenceUrl": ""
+            "licenceUrl": "",
+            "note": "Clare Island in Clew Bay, shown as island context for this story",
+            "alt": "Clare Island in Clew Bay, shown as island context for this story"
           }
         },
         {
@@ -14390,7 +14362,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
             "attribution": "Brendanconway",
             "licence": "Public domain",
-            "licenceUrl": ""
+            "licenceUrl": "",
+            "note": "Clare Island in Clew Bay, shown as island context for this story",
+            "alt": "Clare Island in Clew Bay, shown as island context for this story"
           }
         },
         {
@@ -14440,7 +14414,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Tory_island1.jpg",
             "attribution": "Julianne Forde",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Cliffs on Tory Island; this is not a close-up of the Tau Cross",
+            "alt": "Cliffs on Tory Island; this is not a close-up of the Tau Cross"
           }
         }
       ],
@@ -14456,7 +14432,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
             "attribution": "Mike Knell",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Arranmore and the Donegal coast photographed from a commercial flight in 2007",
+            "alt": "Arranmore and the Donegal coast photographed from a commercial flight in 2007"
           }
         }
       ],
@@ -14467,13 +14445,7 @@
           "summary": "Riders to the Sea is a play written by Irish and Literary Renaissance playwright John Millington Synge. A one-act tragedy, the play is set at Inishmaan in the Aran Islands, and like all of Synge's plays it is noted for capturing the poetic dialogue of rural Ireland.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Riders_to_the_Sea",
           "sourceTitle": "Riders to the Sea",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Sara_Allgood.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Sara_Allgood.jpg",
-            "attribution": "The original uploader was Noirish at English Wikipedia .",
-            "licence": "Public domain",
-            "licenceUrl": ""
-          }
+          "image": null
         }
       ],
       "mainland-shetland": [
@@ -14924,7 +14896,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Rathlin_Island_by_Sentinel-2.jpg",
             "attribution": "Copernicus Sentinel-2, ESA",
             "licence": "CC BY-SA 3.0 igo",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+            "note": "Satellite view of Rathlin Island, Copernicus Sentinel-2, 2018",
+            "alt": "Satellite view of Rathlin Island, Copernicus Sentinel-2, 2018"
           }
         }
       ],
@@ -15104,7 +15078,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:White_Island,Lower_Lough_Erne._(cropped).JPG",
             "attribution": "Jason098",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Carved figures on White Island, Lower Lough Erne",
+            "alt": "Carved figures on White Island, Lower Lough Erne"
           }
         }
       ],
@@ -15214,7 +15190,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Nendrummonastery.jpg",
             "attribution": "Pulsar.co.nr",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Nendrum Monastery on Mahee Island; this is not a close-up of the sundial",
+            "alt": "Nendrum Monastery on Mahee Island; this is not a close-up of the sundial"
           }
         }
       ],
@@ -15230,7 +15208,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Holy_Island_Clare_St._Caimin%27s_and_Brigid%27s_churches.jpg",
             "attribution": "Deadstar",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "St Brigid’s and St Caimin’s churches and round tower on Inishcaltra, Lough Derg",
+            "alt": "St Brigid’s and St Caimin’s churches and round tower on Inishcaltra, Lough Derg"
           }
         }
       ],
@@ -15246,7 +15226,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Archaeology_on_Caher_Island,_County_Mayo,_Ireland_02.jpg",
             "attribution": "Ridiculopathy",
             "licence": "CC0",
-            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "note": "Monastic ruins on Caher Island; this is not a close-up of the carved slabs",
+            "alt": "Monastic ruins on Caher Island; this is not a close-up of the carved slabs"
           }
         }
       ],
@@ -15417,13 +15399,7 @@
           "summary": "The Art Institute of Chicago is a private, nonprofit art museum in Grant Park, Chicago, Illinois, United States. Founded in 1879, it is one of the oldest and largest art museums in the United States. Dalkey Island. Elizabeth Murray, English, c. 1815-1882. September 1843. Brush and brown wash highlighted with white gouache, over graphite, on tan wove paper. Place of origin: England.",
           "sourceUrl": "https://www.artic.edu/artworks/115155",
           "sourceTitle": "Art Institute of Chicago",
-          "image": {
-            "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Art_Institute_of_Chicago_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Art_Institute_of_Chicago_Logo.png",
-            "attribution": "The Art Institute of Chicago",
-            "licence": "CC0",
-            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-          }
+          "image": null
         }
       ],
       "osm-relation-3998376": [
@@ -15438,7 +15414,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Irish_School_-_Devenish_Island_-_631057_-_National_Trust.jpg",
             "attribution": "anonymous",
             "licence": "Public domain",
-            "licenceUrl": ""
+            "licenceUrl": "",
+            "note": "Historical painting of Devenish Island, Irish School, about 1780–1795",
+            "alt": "Historical painting of Devenish Island, Irish School, about 1780–1795"
           }
         },
         {
@@ -15656,7 +15634,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_Plassy.jpg",
             "attribution": "G.Mannaerts",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "The Plassy shipwreck on Inisheer",
+            "alt": "The Plassy shipwreck on Inisheer"
           }
         },
         {
@@ -15670,7 +15650,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_5091_(2).jpg",
             "attribution": "Jjm596",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Village on Inisheer, shown as island context for this story",
+            "alt": "Village on Inisheer, shown as island context for this story"
           }
         },
         {
@@ -15694,7 +15676,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Lettermore_Church_-_geograph.org.uk_-_7789246.jpg",
             "attribution": "Gordon Hatton",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Lettermore Church on Leitir Móir, shown as island context; not a film still",
+            "alt": "Lettermore Church on Leitir Móir, shown as island context; not a film still"
           }
         },
         {
@@ -15844,7 +15828,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Cruit_Island_-_Homes_at_south_end_near_bridge_-_geograph.org.uk_-_1169006.jpg",
             "attribution": "Sue Mischyshyn",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Southern shore of Cruit Island, shown as island context for this song",
+            "alt": "Southern shore of Cruit Island, shown as island context for this song"
           }
         }
       ],
@@ -15860,7 +15846,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Quay_at_south_end_of_Garmna_(Gorumna)_island_-_geograph.org.uk_-_1249945.jpg",
             "attribution": "Graham Horn",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Droim Quay on Gorumna Island, shown as island context for this song",
+            "alt": "Droim Quay on Gorumna Island, shown as island context for this song"
           }
         }
       ],
@@ -17157,7 +17145,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Puffin_(Fratercula_arctica).jpg",
             "attribution": "Charles J. Sharp",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Atlantic puffin photographed on Skomer, Wales; an illustration of the species",
+            "alt": "Atlantic puffin photographed on Skomer, Wales; an illustration of the species"
           }
         }
       ],
@@ -17173,7 +17163,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:2021-07-10_Sterna_dougallii,_St_Marys_Island,_Northumberland_15.jpg",
             "attribution": "MPF",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Roseate tern photographed at St Mary’s Island, Northumberland; an illustration of the species",
+            "alt": "Roseate tern photographed at St Mary’s Island, Northumberland; an illustration of the species"
           }
         }
       ],
@@ -17369,7 +17361,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:House_Rat_David_Raju.jpg",
             "attribution": "Davidvraju",
             "licence": "CC0",
-            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+            "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "note": "Black rat photographed in India; an illustration of the species",
+            "alt": "Black rat photographed in India; an illustration of the species"
           }
         }
       ],
@@ -17580,13 +17574,7 @@
           "summary": "The article gives Saxifraga rosacea subsp. hartii the range Arranmore Island, and gives the other subspecies ranges in continental Europe, Ireland, Iceland and the Faroes. The photograph shows Saxifraga rosacea.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Saxifraga_rosacea",
           "sourceTitle": "Saxifraga rosacea",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Rasen-Steinbrech_%28Saxifraga_rosacea%29_5725.JPG/960px-Rasen-Steinbrech_%28Saxifraga_rosacea%29_5725.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Rasen-Steinbrech_(Saxifraga_rosacea)_5725.JPG",
-            "attribution": "Hedwig Storch",
-            "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
-          }
+          "image": null
         }
       ],
       "osm-way-236857275": [
@@ -17659,7 +17647,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Edwardsia_delapiae.jpg",
             "attribution": "Libby Keatley",
             "licence": "CC BY 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+            "note": "Edwardsia delapiae; species photograph",
+            "alt": "Edwardsia delapiae; species photograph"
           }
         }
       ],
@@ -19209,7 +19199,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster-_Belvelly,_Cork_(geograph_3036861).jpg",
             "attribution": "Mike Searle",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Belvelly Castle, Great Island, Cork Harbour",
+            "alt": "Belvelly Castle, Great Island, Cork Harbour"
           }
         }
       ],
@@ -19282,13 +19274,7 @@
           "summary": "Cloghan Castle (Irish: An Clochán) is a ruined tower house on Castle Island in Lough Hyne in West Cork, Ireland. Although it no longer stands, it was originally at least three storeys tall.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Cloghan_Castle_(County_Cork)",
           "sourceTitle": "Cloghan Castle (County Cork)",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cloghan_castle%2C_lough_hyne.jpg/960px-Cloghan_castle%2C_lough_hyne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Cloghan_castle,_lough_hyne.jpg",
-            "attribution": "George Victor Du Noyer MRIA (1817 – 3 January 1869)",
-            "licence": "Public domain",
-            "licenceUrl": ""
-          }
+          "image": null
         },
         {
           "title": "Castle Island (Carbery West (E.D.) By.) tower house",
@@ -19311,7 +19297,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Sketrick_Castle.jpg",
             "attribution": "Wilson Adams",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Sketrick Castle on Sketrick Island",
+            "alt": "Sketrick Castle on Sketrick Island"
           }
         }
       ],
@@ -19343,7 +19331,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Granuaile_castle.jpg",
             "attribution": "Steve Edge",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Granuaile’s Castle on Clare Island",
+            "alt": "Granuaile’s Castle on Clare Island"
           }
         }
       ],
@@ -19429,7 +19419,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Treaty_Stone_and_King_Johns_Castle,_Limerick_-_geograph.org.uk_-_303274.jpg",
             "attribution": "Mike Shinners",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "King John’s Castle on King’s Island, seen across the Shannon with the Treaty Stone in the foreground",
+            "alt": "King John’s Castle on King’s Island, seen across the Shannon with the Treaty Stone in the foreground"
           }
         }
       ],
@@ -19750,13 +19742,7 @@
           "summary": "Rathlin Castle, also known as Bruce's Castle, was a castle on Rathlin Island off the coast of County Antrim in Northern Ireland.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Rathlin_Castle",
           "sourceTitle": "Rathlin Castle",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Bruce%27s_Castle-_Island_of_Raghery%2C_1833_%28IA_jstor-30003195%29_%28page_1_crop%29.jpg/960px-Bruce%27s_Castle-_Island_of_Raghery%2C_1833_%28IA_jstor-30003195%29_%28page_1_crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:Bruce%27s_Castle-_Island_of_Raghery,_1833_(IA_jstor-30003195)_(page_1_crop).jpg",
-            "attribution": "S. M'S.",
-            "licence": "Public domain",
-            "licenceUrl": ""
-          }
+          "image": null
         }
       ],
       "osm-way-495525351": [
@@ -19913,7 +19899,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Farland_Bank_and_Inch_Castle_-_panoramio.jpg",
             "attribution": "Alistair Cunningham",
             "licence": "CC BY 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+            "note": "Inch Castle and Farland Bank on Inch, Lough Swilly",
+            "alt": "Inch Castle and Farland Bank on Inch, Lough Swilly"
           }
         }
       ],
@@ -20581,7 +20569,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_on_Fenit_Within_-_geograph.org.uk_-_333217.jpg",
             "attribution": "Colin Park",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Fenit Castle on Fenit Island, overlooking Barrow Harbour",
+            "alt": "Fenit Castle on Fenit Island, overlooking Barrow Harbour"
           }
         }
       ],
@@ -20597,7 +20587,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_Site,_Island_Eddy,_Galway_Bay.jpg",
             "attribution": "Pjgoslyng",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Surviving masonry at the castle site on Island Eddy",
+            "alt": "Surviving masonry at the castle site on Island Eddy"
           }
         }
       ],
@@ -20645,7 +20637,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Arkin%27s_Castle.JPG",
             "attribution": "Ronan Mac Giollapharaic",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Arkin’s Castle on Inishmore",
+            "alt": "Arkin’s Castle on Inishmore"
           }
         }
       ],
@@ -20687,7 +20681,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_Cliffs_2005_08_10.jpg",
             "attribution": "Andreas F. Borchert",
             "licence": "CC BY-SA 4.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "note": "Cliffs on Tory Island, seen from Dún Bhaloir; island context for the castle story",
+            "alt": "Cliffs on Tory Island, seen from Dún Bhaloir; island context for the castle story"
           }
         }
       ],
@@ -20703,7 +20699,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:OBrien_fort_Inisheer_2013.JPG",
             "attribution": "Laurel Lodged",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "O’Brien’s Castle on Inisheer",
+            "alt": "O’Brien’s Castle on Inisheer"
           }
         }
       ],
@@ -20719,7 +20717,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster,_Kilcoe,_Cork_-_revisited_(2)_-_geograph.org.uk_-_3716335.jpg",
             "attribution": "Mike Searle",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Kilcoe Castle on Mannin Beg, Roaringwater Bay",
+            "alt": "Kilcoe Castle on Mannin Beg, Roaringwater Bay"
           }
         }
       ],
@@ -20735,7 +20735,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Carrickkildavnet_Castle1.jpg",
             "attribution": "Michelle Owner of the Squishy from Denver",
             "licence": "CC BY 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+            "note": "Kildavnet Castle on Achill Island",
+            "alt": "Kildavnet Castle on Achill Island"
           }
         }
       ],
@@ -20751,7 +20753,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Mahee_Castle,_January_2011_(01).JPG",
             "attribution": "Ardfern",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Mahee Castle on Mahee Island",
+            "alt": "Mahee Castle on Mahee Island"
           }
         }
       ],
@@ -21518,8 +21522,8 @@
             "attribution": "Van helsing",
             "licence": "CC BY 2.5",
             "licenceUrl": "",
-            "note": "Photograph of the island",
-            "alt": "Rathlin Island"
+            "note": "Southern coast of Rathlin Island, looking towards Fair Head; island context for the book",
+            "alt": "Southern coast of Rathlin Island, looking towards Fair Head; island context for the book"
           }
         }
       ],
@@ -21620,8 +21624,8 @@
             "attribution": "Herbert Ortner",
             "licence": "CC BY 3.0",
             "licenceUrl": "",
-            "note": "Photograph of the island",
-            "alt": "Inishmore"
+            "note": "Cliffs at Dún Aengus on Inishmore; island context for the book",
+            "alt": "Cliffs at Dún Aengus on Inishmore; island context for the book"
           }
         },
         {
@@ -21636,8 +21640,8 @@
             "attribution": "Herbert Ortner",
             "licence": "CC BY 3.0",
             "licenceUrl": "",
-            "note": "Photograph of the island",
-            "alt": "Inishmore"
+            "note": "Cliffs at Dún Aengus on Inishmore; island context for the book",
+            "alt": "Cliffs at Dún Aengus on Inishmore; island context for the book"
           }
         }
       ],
@@ -22129,7 +22133,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg",
             "attribution": "Colin Park",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Cliffs on northern Clare Island; island context for the book",
+            "alt": "Cliffs on northern Clare Island; island context for the book"
           }
         }
       ],
@@ -22568,8 +22574,8 @@
             "attribution": "Andreas F. Borchert",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "",
-            "note": "Photograph of the island",
-            "alt": "Tory Island"
+            "note": "Cliffs on Tory Island, shown as island context for this tradition",
+            "alt": "Cliffs on Tory Island, shown as island context for this tradition"
           },
           "tie": "In keeping with a long-standing tradition, a \"king\" is chosen by consensus of the islanders."
         }
@@ -23006,7 +23012,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Aran_cardigan.jpg",
             "attribution": "Lisa Dusseault from USA",
             "licence": "CC BY 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+            "note": "An Aran-style cardigan made in 1996; an illustration of the knitting tradition",
+            "alt": "An Aran-style cardigan made in 1996; an illustration of the knitting tradition"
           },
           "tie": "The Aran jumper (Irish: Geansaí Árann), also called a fisherman's jumper or a gansey, is a style of jumper that takes its name from the Aran Islands off the west coast of Ireland. A traditional Aran Jumper usually is off-white in colour, with cable patterns on the body and sleeves."
         }
@@ -23258,8 +23266,8 @@
             "attribution": "Patrice78500",
             "licence": "CC BY-SA 3.0",
             "licenceUrl": "",
-            "note": "Photograph of the island",
-            "alt": "Omey Island"
+            "note": "Fahy Lough on Omey Island; island context, not a photograph of the races",
+            "alt": "Fahy Lough on Omey Island; island context, not a photograph of the races"
           },
           "tie": "The beach is the site of the annual Omey Races, reestablished in 2001. This horse racing event is held in late summer (July/August)."
         }
@@ -23461,7 +23469,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
             "attribution": "Brendanconway",
             "licence": "Public domain",
-            "licenceUrl": ""
+            "licenceUrl": "",
+            "note": "Clare Island in Clew Bay; island context, not a photograph of the festival",
+            "alt": "Clare Island in Clew Bay; island context, not a photograph of the festival"
           },
           "tie": "Clare Island (Irish: Cliara or Oileán Chliara), also historically Inishcleer, is a mountainous island guarding the entrance to Clew Bay in County Mayo, Ireland. The Clare Island Film Festival has been run annually since 2014."
         }
@@ -23478,7 +23488,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg",
             "attribution": "Paucabot",
             "licence": "CC BY-SA 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "note": "Panorama of Inishmaan; island context for the Cead tradition",
+            "alt": "Panorama of Inishmaan; island context for the Cead tradition"
           },
           "tie": "Inishmaan ( IN-ish-MAN; Irish: Inis Meáin [ˈɪnʲɪʃ mʲaːnʲ], the official name, formerly spelled Inis Meadhóin, meaning \"middle island\") is the middle of the three main Aran Islands in Galway Bay, off the west coast of Ireland. Inishmaan is home to the game Cead. This is a traditional sport unique to the island. Cead means \"permission\" in Irish. Cead is only allowed to be played once a year, on Saint Patrick's Day."
         }
@@ -23783,7 +23795,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Dalkey_Island_-_geograph.org.uk_-_1537531.jpg",
             "attribution": "Eirian Evans",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Dalkey Island seen from the Holyhead–Dublin ferry",
+            "alt": "Dalkey Island seen from the Holyhead–Dublin ferry"
           }
         }
       ],
@@ -23883,7 +23897,9 @@
             "pageUrl": "https://commons.wikimedia.org/wiki/File:Achill_Island_-_Keel_-_Village_Walk_-_geograph.org.uk_-_3758209.jpg",
             "attribution": "Joseph Mischyshyn",
             "licence": "CC BY-SA 2.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "note": "Keel village on Achill; island context, not Dooagh or a photograph of Dooagh Day",
+            "alt": "Keel village on Achill; island context, not Dooagh or a photograph of Dooagh Day"
           }
         },
         {
@@ -23892,13 +23908,7 @@
           "summary": "A currach (Irish: curach [ˈkʊɾˠəx]) is a type of Irish boat with a wooden frame, over which animal skins or hides were once stretched, though now canvas is more usual. In Achill Island the currach is built with double gunwales.",
           "sourceUrl": "https://en.wikipedia.org/wiki/Currach",
           "sourceTitle": "Currach",
-          "image": {
-            "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/TwoFishermenIn_CurrachIreland1986.jpg/960px-TwoFishermenIn_CurrachIreland1986.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "pageUrl": "https://commons.wikimedia.org/wiki/File:TwoFishermenIn_CurrachIreland1986.jpg",
-            "attribution": "Eddi Laumanns aka RX-Guru",
-            "licence": "CC BY 3.0",
-            "licenceUrl": "https://creativecommons.org/licenses/by/3.0"
-          },
+          "image": null,
           "tie": "A currach (Irish: curach [ˈkʊɾˠəx]) is a type of Irish boat with a wooden frame, over which animal skins or hides were once stretched, though now canvas is more usual. In Achill Island the currach is built with double gunwales."
         }
       ],
@@ -23934,8 +23944,8 @@
             "attribution": "Miroslav Dunaev",
             "licence": "CC BY-SA 3.0",
             "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "note": "Photograph of the island",
-            "alt": "Sherkin Island"
+            "note": "View from Sherkin Island; island context, not a photograph of the festival",
+            "alt": "View from Sherkin Island; island context, not a photograph of the festival"
           },
           "tie": "Open Ear is an annual music festival held on Sherkin Island off the coast of County Cork, Ireland which focuses on experimental and avant-garde music and performances."
         }
@@ -23953,8 +23963,8 @@
             "attribution": "Colin Park",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "Photograph of the island",
-            "alt": "Cape Clear Island"
+            "note": "North Harbour on Cape Clear Island; island context, not a photograph of the storytelling festival",
+            "alt": "North Harbour on Cape Clear Island; island context, not a photograph of the storytelling festival"
           },
           "tie": "Clear Island or Cape Clear Island (officially known by its Irish name: Cléire, and sometimes also called Oileán Chléire) is an island off the south-west coast of County Cork in Ireland. Every first weekend of September, the island hosts the Cape Clear Island International Storytelling Festival. The festival has been running annually since 1994."
         }
@@ -24254,8 +24264,8 @@
             "attribution": "ArcticEmmet",
             "licence": "Public domain",
             "licenceUrl": "",
-            "note": "Photograph of Great Saltee",
-            "alt": "Photograph of Great Saltee"
+            "note": "Great Saltee, shown as island context for this story",
+            "alt": "Great Saltee, shown as island context for this story"
           }
         }
       ],
@@ -24642,8 +24652,8 @@
             "attribution": "Nigel Cox",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "The cable car to Dursey Island",
-            "alt": "The cable car to Dursey Island"
+            "note": "The Dursey Island cable car",
+            "alt": "The Dursey Island cable car"
           }
         }
       ],
@@ -24838,8 +24848,8 @@
             "attribution": "Kiran Madhusudhanan",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "note": "Achill",
-            "alt": "Achill"
+            "note": "Achill coastline; island context, not a photograph of Achill Henge",
+            "alt": "Achill coastline; island context, not a photograph of Achill Henge"
           }
         }
       ],
@@ -24856,8 +24866,8 @@
             "attribution": "Tboardman75",
             "licence": "CC BY 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-            "note": "A wallaby on Lambay",
-            "alt": "A wallaby on Lambay"
+            "note": "Red-necked wallaby with a joey on Lambay Island",
+            "alt": "Red-necked wallaby with a joey on Lambay Island"
           }
         }
       ],
@@ -24874,8 +24884,8 @@
             "attribution": "Mike Pennington",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "The entrance to Fort Mitchel on Spike Island",
-            "alt": "The entrance to Fort Mitchel on Spike Island"
+            "note": "Entrance to Fort Mitchel on Spike Island; fort context, not the tunnels",
+            "alt": "Entrance to Fort Mitchel on Spike Island; fort context, not the tunnels"
           }
         }
       ],
@@ -24892,8 +24902,8 @@
             "attribution": "Karie Kuiper",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "note": "Inis Oírr",
-            "alt": "Inis Oírr"
+            "note": "O’Brien’s Castle and stone terraces on Inisheer; island context, not the Plassy shipwreck",
+            "alt": "O’Brien’s Castle and stone terraces on Inisheer; island context, not the Plassy shipwreck"
           }
         }
       ],
@@ -24910,8 +24920,8 @@
             "attribution": "Frank Donovan",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "The cable station on Valentia",
-            "alt": "The cable station on Valentia"
+            "note": "Former transatlantic cable station and residences on Valentia Island",
+            "alt": "Former transatlantic cable station and residences on Valentia Island"
           }
         },
         {
@@ -24926,8 +24936,8 @@
             "attribution": "Terryballard",
             "licence": "CC BY-SA 3.0",
             "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "note": "Valentia Island",
-            "alt": "Valentia Island"
+            "note": "View north across Valentia Island; island context, not a photograph of the tetrapod tracks",
+            "alt": "View north across Valentia Island; island context, not a photograph of the tetrapod tracks"
           }
         }
       ],
@@ -24944,8 +24954,8 @@
             "attribution": "Colin Park",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "The cliff by Rathlin West Light",
-            "alt": "The cliff by Rathlin West Light"
+            "note": "Cliffs south of Rathlin’s West Lighthouse; lighthouse setting",
+            "alt": "Cliffs south of Rathlin’s West Lighthouse; lighthouse setting"
           }
         }
       ],
@@ -25336,8 +25346,8 @@
             "attribution": "Andreas F. Borchert",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "note": "Inishmurray",
-            "alt": "Inishmurray"
+            "note": "Teampall Molaise ruins on Inishmurray; island context for this story",
+            "alt": "Teampall Molaise ruins on Inishmurray; island context for this story"
           }
         }
       ],
@@ -25354,8 +25364,8 @@
             "attribution": "Jbuck78",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "note": "The friary on Sherkin",
-            "alt": "The friary on Sherkin"
+            "note": "Sherkin Abbey on Sherkin Island",
+            "alt": "Sherkin Abbey on Sherkin Island"
           }
         }
       ],
@@ -25372,8 +25382,8 @@
             "attribution": "-- منش ‎",
             "licence": "Public domain",
             "licenceUrl": "",
-            "note": "Inishbofin, County Galway",
-            "alt": "Inishbofin, County Galway"
+            "note": "Cromwell’s Barrack on neighbouring Port Island at Inishbofin harbour; context, not the excavated hull",
+            "alt": "Cromwell’s Barrack on neighbouring Port Island at Inishbofin harbour; context, not the excavated hull"
           }
         }
       ],
@@ -25390,8 +25400,8 @@
             "attribution": "Jonathan Wilkins",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "The shore of Omey",
-            "alt": "The shore of Omey"
+            "note": "Omey Island shore; island context for this report",
+            "alt": "Omey Island shore; island context for this report"
           }
         }
       ],
@@ -25746,8 +25756,8 @@
             "attribution": "Towel401",
             "licence": "CC BY-SA 4.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "note": "The disused tanker jetty at Whiddy Island",
-            "alt": "The disused tanker jetty at Whiddy Island"
+            "note": "Disused tanker jetty on Whiddy Island",
+            "alt": "Disused tanker jetty on Whiddy Island"
           }
         }
       ],
@@ -25836,8 +25846,8 @@
             "attribution": "derek menzies",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "Haulbowline, in Cork Harbour",
-            "alt": "Haulbowline, in Cork Harbour"
+            "note": "Haulbowline Island in Cork Harbour",
+            "alt": "Haulbowline Island in Cork Harbour"
           }
         }
       ],
@@ -25908,8 +25918,8 @@
             "attribution": "Richard Webb",
             "licence": "CC BY-SA 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "note": "Inishtrahull, with its lighthouse",
-            "alt": "Inishtrahull, with its lighthouse"
+            "note": "Inishtrahull seen offshore; island context for this story",
+            "alt": "Inishtrahull seen offshore; island context for this story"
           }
         }
       ],
@@ -25962,8 +25972,8 @@
             "attribution": "Anthony Patterson from Cork, Ireland",
             "licence": "CC BY 2.0",
             "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-            "note": "The lighthouse on Fastnet Rock",
-            "alt": "The lighthouse on Fastnet Rock"
+            "note": "Fastnet lighthouse; a view of the lighthouse, not a photograph of the reported wave",
+            "alt": "Fastnet lighthouse; a view of the lighthouse, not a photograph of the reported wave"
           }
         }
       ],
