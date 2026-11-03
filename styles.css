@@ -2626,6 +2626,12 @@ body[data-island-detail="open"] .island-details:not([hidden]) {
   -webkit-overflow-scrolling: touch;
 }
 
+.supporting-photos { margin: 24px 0; }
+.supporting-photos figure { margin: 16px 0; }
+.supporting-photos img { display: block; width: 100%; max-height: 360px; object-fit: contain; border-radius: var(--radius); }
+.supporting-photos figcaption { margin-top: 8px; font-size: 13px; line-height: 1.5; }
+.supporting-photos .hero-attrib { margin-top: 5px; font-size: 11px; line-height: 1.4; color: var(--text-muted); }
+
 .thumb-strip::-webkit-scrollbar {
   height: 5px;
 }

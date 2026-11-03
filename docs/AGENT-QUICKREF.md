@@ -40,6 +40,7 @@ python3 scripts/build_islands_index.py
 | Ingestion / rebuild | [`PIPELINE.md`](PIPELINE.md) + [`STATE.md`](STATE.md) | |
 | Orange unnamed pins | `discover_unnamed_islands.py` + `nameStatus: "unknown"` in schema | |
 | For-sale listings | [`FOR-SALE-ISLANDS.md`](FOR-SALE-ISLANDS.md) | |
+| Story hooks, learning journeys, profile sources or Ask references | [`LEARNING-DISCOVERY.md`](LEARNING-DISCOVERY.md) | Lazy authored sidecar; local pilot/release state and identity gates |
 
 ## Frontend boot sequence (happy path)
 
@@ -59,6 +60,7 @@ python3 scripts/build_islands_index.py
 | `island-3d.js` | Three.js terrain (dynamic import only) |
 | `crowd-pins.js` | Community pins |
 | `seo-meta.js` | Per-island head tags in-browser |
+| `learning.js` / `learning.css` | Source-linked discovery/profile UI from `data/learning_profiles.json` |
 | `scripts/build_islands_index.py` | v2 compact index + shards |
 | `scripts/prepare_pages_artifact.py` | Stages `_site/` for Pages |
 

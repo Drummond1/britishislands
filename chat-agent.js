@@ -152,6 +152,8 @@ function buildStoryCache(interestIndex) {
           facet: item.facet || null,
           subdivision: item.subdivision || null,
           summary,
+          sourceUrl: item.sourceUrl || null,
+          sourceTitle: item.sourceTitle || null,
         });
         if (title) bits.push(title);
         if (summary) bits.push(summary.slice(0, 180));
@@ -600,7 +602,7 @@ function dropEmpty(obj) {
   return out;
 }
 
-export function serialiseIslandRecord(island, storyPack) {
+export function serialiseIslandRecord(island, storyPack, learning = null) {
   const names = island.names && typeof island.names === "object" ? island.names : null;
   const otherNames = {};
   if (names) {
@@ -624,7 +626,9 @@ export function serialiseIslandRecord(island, storyPack) {
       title: item.title || null,
       facet: item.facet,
       subdivision: item.subdivision,
-      summary: trim(item.summary, 280),
+      summary: trim(item.summary, 600),
+      sourceUrl: item.sourceUrl || null,
+      sourceTitle: item.sourceTitle || null,
     }),
   );
   const record = dropEmpty({
@@ -654,12 +658,36 @@ export function serialiseIslandRecord(island, storyPack) {
     hasPhoto: !!(island.image || island.images?.length),
     listings,
     cited,
+    learning: learning ? {
+      hook: learning.hook,
+      overview: learning.overview,
+      facts: learning.facts,
+      timeline: learning.timeline,
+      sources: learning.sources,
+    } : null,
   });
   if (storyPack && storyPack.total > cited.length) {
     record.citedTotal = storyPack.total;
     record.citedNote = `Showing ${cited.length} of ${storyPack.total} cited rows. Pass collection and facet to narrow.`;
   }
   return record;
+}
+
+/** Keep tool output valid JSON when several full learning records exceed the budget. */
+export function packToolResult(value, limit = 14000) {
+  const text = JSON.stringify(value);
+  if (text.length <= limit) return text;
+  if (Array.isArray(value?.islands)) {
+    const rows = value.islands.slice();
+    const omitted = [];
+    while (rows.length) {
+      const packed = JSON.stringify({ ...value, islands: rows, omittedIds: omitted,
+        note: "Read omitted ids in a smaller separate request." });
+      if (packed.length <= limit) return packed;
+      omitted.unshift(rows.pop()?.id);
+    }
+  }
+  return JSON.stringify({ error: "Result too large. Narrow the request and read fewer records." });
 }
 
 const NATION_SYNONYMS = {

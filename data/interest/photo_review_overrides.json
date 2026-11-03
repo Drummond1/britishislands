@@ -1,0 +1,1450 @@
+{
+  "reviewedAt": "2026-11-02",
+  "evidence": "data/photo_audit/2026-11-02-ireland/",
+  "reviews": [
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045364",
+      "title": "Achill Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
+      "image": null,
+      "reason": "A labelled relief map of Achill, not the artwork named by this story.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045364",
+      "title": "Raymond Deane",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Raymond-Deane.jpg",
+      "image": null,
+      "reason": "Prominent identifiable person; unsuitable under ETHICS.md imagery policy.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045364",
+      "title": "Cottage, Achill Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
+      "image": null,
+      "reason": "A labelled relief map of Achill, not the painting Cottage, Achill Island.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045364",
+      "title": "Achill Sound",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:The_village_of_Achill_Sound_-_geograph.org.uk_-_5115368.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/The_village_of_Achill_Sound_-_geograph.org.uk_-_5115368.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:The_village_of_Achill_Sound_-_geograph.org.uk_-_5115368.jpg",
+        "attribution": "John Lucas",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "The village of Achill Sound, shown as island context for this story",
+        "alt": "The village of Achill Sound, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045364",
+      "title": "Achill",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Achillsatmap.jpg",
+      "image": null,
+      "reason": "A labelled relief map used as a story photograph; replace only with a verified photograph.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-5763894",
+      "title": "Inishturk, Ireland",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishturk_north.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Inishturk_north.jpg/960px-Inishturk_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishturk_north.jpg",
+        "attribution": "Towel401",
+        "licence": "CC0",
+        "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "note": "North coast of Inishturk, shown as island context for this story",
+        "alt": "North coast of Inishturk, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045552",
+      "title": "For Island Fires and Family",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_-_Aran_Islands.svg",
+      "image": null,
+      "reason": "SVG location map, not a photograph of Inishmore or the cited music work.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6045552",
+      "title": "Inishmore",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_-_Aran_Islands.svg",
+      "image": null,
+      "reason": "SVG location map, not a photograph of Inishmore or the cited music work.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6188599",
+      "title": "Budawanny",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Clare_Island.jpg/960px-Clare_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+        "attribution": "Brendanconway",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Clare Island in Clew Bay, shown as island context for this film",
+        "alt": "Clare Island in Clew Bay, shown as island context for this film"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6188599",
+      "title": "The Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Clare_Island.jpg/960px-Clare_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+        "attribution": "Brendanconway",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Clare Island in Clew Bay, shown as island context for this story",
+        "alt": "Clare Island in Clew Bay, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-6188599",
+      "title": "Clare Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Clare_Island.jpg/960px-Clare_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+        "attribution": "Brendanconway",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Clare Island in Clew Bay, shown as island context for this story",
+        "alt": "Clare Island in Clew Bay, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-way-4558807",
+      "title": "Tau Cross",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Tory_island1.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Tory_island1.jpg/960px-Tory_island1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tory_island1.jpg",
+        "attribution": "Julianne Forde",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Cliffs on Tory Island; this is not a close-up of the Tau Cross",
+        "alt": "Cliffs on Tory Island; this is not a close-up of the Tau Cross"
+      },
+      "reason": "The picture is a valid island/monastery context scene, not a close depiction of the named cross, sundial or slabs. The explicit proposed qualification is sufficient to retain it; a verified photo of the actual object would be a stronger later replacement.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-8156739",
+      "title": "Arranmore",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg/960px-Arranmore%2C_Co._Donegal_%28Aerial_2007%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Arranmore,_Co._Donegal_(Aerial_2007).jpg",
+        "attribution": "Mike Knell",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Arranmore and the Donegal coast photographed from a commercial flight in 2007",
+        "alt": "Arranmore and the Donegal coast photographed from a commercial flight in 2007"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-8158177",
+      "title": "Riders to the Sea",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Sara_Allgood.jpg",
+      "image": null,
+      "reason": "Prominent portrait of Sara Allgood rather than the island; unsuitable under imagery policy.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "rathlin",
+      "title": "Rathlin Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Rathlin_Island_by_Sentinel-2.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Rathlin_Island_by_Sentinel-2.jpg/960px-Rathlin_Island_by_Sentinel-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Rathlin_Island_by_Sentinel-2.jpg",
+        "attribution": "Copernicus Sentinel-2, ESA",
+        "licence": "CC BY-SA 3.0 igo",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+        "note": "Satellite view of Rathlin Island, Copernicus Sentinel-2, 2018",
+        "alt": "Satellite view of Rathlin Island, Copernicus Sentinel-2, 2018"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-3998487",
+      "title": "White Island figures",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:White_Island,Lower_Lough_Erne._(cropped).JPG",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/White_Island%2CLower_Lough_Erne._%28cropped%29.JPG/960px-White_Island%2CLower_Lough_Erne._%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:White_Island,Lower_Lough_Erne._(cropped).JPG",
+        "attribution": "Jason098",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Carved figures on White Island, Lower Lough Erne",
+        "alt": "Carved figures on White Island, Lower Lough Erne"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-way-4557019",
+      "title": "Nendrum sundial",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Nendrummonastery.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Nendrummonastery.jpg/960px-Nendrummonastery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Nendrummonastery.jpg",
+        "attribution": "Pulsar.co.nr",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Nendrum Monastery on Mahee Island; this is not a close-up of the sundial",
+        "alt": "Nendrum Monastery on Mahee Island; this is not a close-up of the sundial"
+      },
+      "reason": "The picture is a valid island/monastery context scene, not a close depiction of the named cross, sundial or slabs. The explicit proposed qualification is sufficient to retain it; a verified photo of the actual object would be a stronger later replacement.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-way-34752926",
+      "title": "Round tower",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Holy_Island_Clare_St._Caimin%27s_and_Brigid%27s_churches.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Holy_Island_Clare_St._Caimin%27s_and_Brigid%27s_churches.jpg/960px-Holy_Island_Clare_St._Caimin%27s_and_Brigid%27s_churches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Holy_Island_Clare_St._Caimin%27s_and_Brigid%27s_churches.jpg",
+        "attribution": "Deadstar",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "St Brigid’s and St Caimin’s churches and round tower on Inishcaltra, Lough Derg",
+        "alt": "St Brigid’s and St Caimin’s churches and round tower on Inishcaltra, Lough Derg"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-way-4562065",
+      "title": "Carved slabs",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Archaeology_on_Caher_Island,_County_Mayo,_Ireland_02.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Archaeology_on_Caher_Island%2C_County_Mayo%2C_Ireland_02.jpg/960px-Archaeology_on_Caher_Island%2C_County_Mayo%2C_Ireland_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Archaeology_on_Caher_Island,_County_Mayo,_Ireland_02.jpg",
+        "attribution": "Ridiculopathy",
+        "licence": "CC0",
+        "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "note": "Monastic ruins on Caher Island; this is not a close-up of the carved slabs",
+        "alt": "Monastic ruins on Caher Island; this is not a close-up of the carved slabs"
+      },
+      "reason": "The picture is a valid island/monastery context scene, not a close depiction of the named cross, sundial or slabs. The explicit proposed qualification is sufficient to retain it; a verified photo of the actual object would be a stronger later replacement.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-way-4550061",
+      "title": "Dalkey Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Art_Institute_of_Chicago_Logo.png",
+      "image": null,
+      "reason": "Art Institute of Chicago logo, not Dalkey Island or its named artwork.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-3998376",
+      "title": "Devenish Island, Co. Fermanagh",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Irish_School_-_Devenish_Island_-_631057_-_National_Trust.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Irish_School_-_Devenish_Island_-_631057_-_National_Trust.jpg/960px-Irish_School_-_Devenish_Island_-_631057_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Irish_School_-_Devenish_Island_-_631057_-_National_Trust.jpg",
+        "attribution": "anonymous",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Historical painting of Devenish Island, Irish School, about 1780–1795",
+        "alt": "Historical painting of Devenish Island, Irish School, about 1780–1795"
+      },
+      "reason": "The image is the exact artwork named by the art story. A clearly labelled historical painting can remain in that artwork context; it must not become an island photograph. Raw Commons DateTimeOriginal and National Trust object 631057 support the proposed approximate date.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-3235264",
+      "title": "Father Ted",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_Plassy.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Inisheer_Plassy.jpg/960px-Inisheer_Plassy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_Plassy.jpg",
+        "attribution": "G.Mannaerts",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "The Plassy shipwreck on Inisheer",
+        "alt": "The Plassy shipwreck on Inisheer"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-3235264",
+      "title": "Inisheer",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_5091_(2).jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Inisheer_5091_%282%29.jpg/960px-Inisheer_5091_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_5091_(2).jpg",
+        "attribution": "Jjm596",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Village on Inisheer, shown as island context for this story",
+        "alt": "Village on Inisheer, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-3340472",
+      "title": "The Guard",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Lettermore_Church_-_geograph.org.uk_-_7789246.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Lettermore_Church_-_geograph.org.uk_-_7789246.jpg/960px-Lettermore_Church_-_geograph.org.uk_-_7789246.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Lettermore_Church_-_geograph.org.uk_-_7789246.jpg",
+        "attribution": "Gordon Hatton",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Lettermore Church on Leitir Móir, shown as island context; not a film still",
+        "alt": "Lettermore Church on Leitir Móir, shown as island context; not a film still"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-9126999",
+      "title": "Thíos Cois na Trá Domh",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Cruit_Island_-_Homes_at_south_end_near_bridge_-_geograph.org.uk_-_1169006.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Cruit_Island_-_Homes_at_south_end_near_bridge_-_geograph.org.uk_-_1169006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Cruit_Island_-_Homes_at_south_end_near_bridge_-_geograph.org.uk_-_1169006.jpg",
+        "attribution": "Sue Mischyshyn",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Southern shore of Cruit Island, shown as island context for this song",
+        "alt": "Southern shore of Cruit Island, shown as island context for this song"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "film-art-music",
+      "id": "osm-relation-4029093",
+      "title": "Amhrán na Trá Bháine",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Quay_at_south_end_of_Garmna_(Gorumna)_island_-_geograph.org.uk_-_1249945.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Quay_at_south_end_of_Garmna_%28Gorumna%29_island_-_geograph.org.uk_-_1249945.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Quay_at_south_end_of_Garmna_(Gorumna)_island_-_geograph.org.uk_-_1249945.jpg",
+        "attribution": "Graham Horn",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Droim Quay on Gorumna Island, shown as island context for this song",
+        "alt": "Droim Quay on Gorumna Island, shown as island context for this song"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-wildlife",
+      "id": "osm-way-4564233",
+      "title": "Atlantic puffin",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Puffin_(Fratercula_arctica).jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Puffin_%28Fratercula_arctica%29.jpg/960px-Puffin_%28Fratercula_arctica%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Puffin_(Fratercula_arctica).jpg",
+        "attribution": "Charles J. Sharp",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Atlantic puffin photographed on Skomer, Wales; an illustration of the species",
+        "alt": "Atlantic puffin photographed on Skomer, Wales; an illustration of the species"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-wildlife",
+      "id": "osm-relation-1146449",
+      "title": "roseate tern",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:2021-07-10_Sterna_dougallii,_St_Marys_Island,_Northumberland_15.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/2021-07-10_Sterna_dougallii%2C_St_Marys_Island%2C_Northumberland_15.jpg/960px-2021-07-10_Sterna_dougallii%2C_St_Marys_Island%2C_Northumberland_15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:2021-07-10_Sterna_dougallii,_St_Marys_Island,_Northumberland_15.jpg",
+        "attribution": "MPF",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Roseate tern photographed at St Mary’s Island, Northumberland; an illustration of the species",
+        "alt": "Roseate tern photographed at St Mary’s Island, Northumberland; an illustration of the species"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-wildlife",
+      "id": "osm-way-329053691",
+      "title": "Black rat",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:House_Rat_David_Raju.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/House_Rat_David_Raju.jpg/960px-House_Rat_David_Raju.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:House_Rat_David_Raju.jpg",
+        "attribution": "Davidvraju",
+        "licence": "CC0",
+        "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "note": "Black rat photographed in India; an illustration of the species",
+        "alt": "Black rat photographed in India; an illustration of the species"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-wildlife",
+      "id": "osm-relation-8156739",
+      "title": "Saxifraga rosacea subsp. hartii",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Rasen-Steinbrech_(Saxifraga_rosacea)_5725.JPG",
+      "image": null,
+      "reason": "Source identifies Saxifraga rosacea at an Icelandic botanical garden, not subsp. hartii. No evidence verifies the rare subspecies named in the story.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-wildlife",
+      "id": "osm-relation-7230308",
+      "title": "Edwardsia delapiae",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Edwardsia_delapiae.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Edwardsia_delapiae.jpg/960px-Edwardsia_delapiae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Edwardsia_delapiae.jpg",
+        "attribution": "Libby Keatley",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+        "note": "Edwardsia delapiae; species photograph",
+        "alt": "Edwardsia delapiae; species photograph"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-8158173",
+      "title": "Belvelly Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster-_Belvelly,_Cork_(geograph_3036861).jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Castles_of_Munster-_Belvelly%2C_Cork_%28geograph_3036861%29.jpg/960px-Castles_of_Munster-_Belvelly%2C_Cork_%28geograph_3036861%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster-_Belvelly,_Cork_(geograph_3036861).jpg",
+        "attribution": "Mike Searle",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Belvelly Castle, Great Island, Cork Harbour",
+        "alt": "Belvelly Castle, Great Island, Cork Harbour"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-way-169018853",
+      "title": "Cloghan Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Cloghan_castle,_lough_hyne.jpg",
+      "image": null,
+      "reason": "Reject caption-only retention: the inspected image is a historical drawing in a castle photograph slot. Remove the illustration under ETHICS section 6. Source correctly identifies the historic subject, so this is a suitability removal rather than a geographic mismatch.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-node-8656167145",
+      "title": "Sketrick Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Sketrick_Castle.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Sketrick_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Sketrick_Castle.jpg",
+        "attribution": "Wilson Adams",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Sketrick Castle on Sketrick Island",
+        "alt": "Sketrick Castle on Sketrick Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-6188599",
+      "title": "Granuaile's Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Granuaile_castle.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Granuaile_castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Granuaile_castle.jpg",
+        "attribution": "Steve Edge",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Granuaile’s Castle on Clare Island",
+        "alt": "Granuaile’s Castle on Clare Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-9499902",
+      "title": "King John's Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Treaty_Stone_and_King_Johns_Castle,_Limerick_-_geograph.org.uk_-_303274.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Treaty_Stone_and_King_Johns_Castle%2C_Limerick_-_geograph.org.uk_-_303274.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Treaty_Stone_and_King_Johns_Castle,_Limerick_-_geograph.org.uk_-_303274.jpg",
+        "attribution": "Mike Shinners",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "King John’s Castle on King’s Island, seen across the Shannon with the Treaty Stone in the foreground",
+        "alt": "King John’s Castle on King’s Island, seen across the Shannon with the Treaty Stone in the foreground"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "rathlin",
+      "title": "Rathlin Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Bruce%27s_Castle-_Island_of_Raghery,_1833_(IA_jstor-30003195)_(page_1_crop).jpg",
+      "image": null,
+      "reason": "Reject caption-only retention: the inspected image is a historical drawing in a castle photograph slot. Remove the illustration under ETHICS section 6. Source correctly identifies the historic subject, so this is a suitability removal rather than a geographic mismatch.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-5497270",
+      "title": "Inch Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Farland_Bank_and_Inch_Castle_-_panoramio.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Farland_Bank_and_Inch_Castle_-_panoramio.jpg/960px-Farland_Bank_and_Inch_Castle_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Farland_Bank_and_Inch_Castle_-_panoramio.jpg",
+        "attribution": "Alistair Cunningham",
+        "licence": "CC BY 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+        "note": "Inch Castle and Farland Bank on Inch, Lough Swilly",
+        "alt": "Inch Castle and Farland Bank on Inch, Lough Swilly"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "wd-Q3378796",
+      "title": "Fenit Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Castle_on_Fenit_Within_-_geograph.org.uk_-_333217.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Castle_on_Fenit_Within_-_geograph.org.uk_-_333217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_on_Fenit_Within_-_geograph.org.uk_-_333217.jpg",
+        "attribution": "Colin Park",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Fenit Castle on Fenit Island, overlooking Barrow Harbour",
+        "alt": "Fenit Castle on Fenit Island, overlooking Barrow Harbour"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-way-4563292",
+      "title": "Island Eddy Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Castle_Site,_Island_Eddy,_Galway_Bay.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Castle_Site%2C_Island_Eddy%2C_Galway_Bay.jpg/960px-Castle_Site%2C_Island_Eddy%2C_Galway_Bay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castle_Site,_Island_Eddy,_Galway_Bay.jpg",
+        "attribution": "Pjgoslyng",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Surviving masonry at the castle site on Island Eddy",
+        "alt": "Surviving masonry at the castle site on Island Eddy"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-6045552",
+      "title": "Arkin's Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Arkin%27s_Castle.JPG",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Arkin%27s_Castle.JPG/960px-Arkin%27s_Castle.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Arkin%27s_Castle.JPG",
+        "attribution": "Ronan Mac Giollapharaic",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Arkin’s Castle on Inishmore",
+        "alt": "Arkin’s Castle on Inishmore"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-way-4558807",
+      "title": "Castle on Tory Island",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_Cliffs_2005_08_10.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Tory_Island_Cliffs_2005_08_10.jpg/960px-Tory_Island_Cliffs_2005_08_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_Cliffs_2005_08_10.jpg",
+        "attribution": "Andreas F. Borchert",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Cliffs on Tory Island, seen from Dún Bhaloir; island context for the castle story",
+        "alt": "Cliffs on Tory Island, seen from Dún Bhaloir; island context for the castle story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-3235264",
+      "title": "O'Brien's Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:OBrien_fort_Inisheer_2013.JPG",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/OBrien_fort_Inisheer_2013.JPG/960px-OBrien_fort_Inisheer_2013.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:OBrien_fort_Inisheer_2013.JPG",
+        "attribution": "Laurel Lodged",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "O’Brien’s Castle on Inisheer",
+        "alt": "O’Brien’s Castle on Inisheer"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-way-355520866",
+      "title": "Kilcoe Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster,_Kilcoe,_Cork_-_revisited_(2)_-_geograph.org.uk_-_3716335.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Castles_of_Munster%2C_Kilcoe%2C_Cork_-_revisited_%282%29_-_geograph.org.uk_-_3716335.jpg/960px-Castles_of_Munster%2C_Kilcoe%2C_Cork_-_revisited_%282%29_-_geograph.org.uk_-_3716335.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Castles_of_Munster,_Kilcoe,_Cork_-_revisited_(2)_-_geograph.org.uk_-_3716335.jpg",
+        "attribution": "Mike Searle",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Kilcoe Castle on Mannin Beg, Roaringwater Bay",
+        "alt": "Kilcoe Castle on Mannin Beg, Roaringwater Bay"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-relation-6045364",
+      "title": "Kildavnet Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Carrickkildavnet_Castle1.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Carrickkildavnet_Castle1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Carrickkildavnet_Castle1.jpg",
+        "attribution": "Michelle Owner of the Squishy from Denver",
+        "licence": "CC BY 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+        "note": "Kildavnet Castle on Achill Island",
+        "alt": "Kildavnet Castle on Achill Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-castles",
+      "id": "osm-way-4557019",
+      "title": "Mahee Castle",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Mahee_Castle,_January_2011_(01).JPG",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Mahee_Castle%2C_January_2011_%2801%29.JPG/960px-Mahee_Castle%2C_January_2011_%2801%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Mahee_Castle,_January_2011_(01).JPG",
+        "attribution": "Ardfern",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Mahee Castle on Mahee Island",
+        "alt": "Mahee Castle on Mahee Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-books",
+      "id": "rathlin",
+      "title": "Turbulent Priests",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:South_leg_of_Rathlin_Island_looking_towards_Fear_Head.jpg",
+      "image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/South_leg_of_Rathlin_Island_looking_towards_Fear_Head.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:South_leg_of_Rathlin_Island_looking_towards_Fear_Head.jpg",
+        "attribution": "Van helsing",
+        "licence": "CC BY 2.5",
+        "licenceUrl": "",
+        "note": "Southern coast of Rathlin Island, looking towards Fair Head; island context for the book",
+        "alt": "Southern coast of Rathlin Island, looking towards Fair Head; island context for the book"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-books",
+      "id": "osm-relation-6045552",
+      "title": "Over the Bar",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_cliffs_at_Dun_Aengus.jpg",
+      "image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishmore_cliffs_at_Dun_Aengus.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_cliffs_at_Dun_Aengus.jpg",
+        "attribution": "Herbert Ortner",
+        "licence": "CC BY 3.0",
+        "licenceUrl": "",
+        "note": "Cliffs at Dún Aengus on Inishmore; island context for the book",
+        "alt": "Cliffs at Dún Aengus on Inishmore; island context for the book"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-books",
+      "id": "osm-relation-6045552",
+      "title": "An Aran Keening",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_cliffs_at_Dun_Aengus.jpg",
+      "image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishmore_cliffs_at_Dun_Aengus.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishmore_cliffs_at_Dun_Aengus.jpg",
+        "attribution": "Herbert Ortner",
+        "licence": "CC BY 3.0",
+        "licenceUrl": "",
+        "note": "Cliffs at Dún Aengus on Inishmore; island context for the book",
+        "alt": "Cliffs at Dún Aengus on Inishmore; island context for the book"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "island-books",
+      "id": "osm-relation-6188599",
+      "title": "The Ghost of Grania O'Malley",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg/960px-Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island_-_Cliffs_along_northern_side_of_island_-_geograph.org.uk_-_5221152.jpg",
+        "attribution": "Colin Park",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Cliffs on northern Clare Island; island context for the book",
+        "alt": "Cliffs on northern Clare Island; island context for the book"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-way-4558807",
+      "title": "King of Tory",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_Cliffs_2005_08_10.jpg",
+      "image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tory_Island_Cliffs_2005_08_10.jpg?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_Cliffs_2005_08_10.jpg",
+        "attribution": "Andreas F. Borchert",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "",
+        "note": "Cliffs on Tory Island, shown as island context for this tradition",
+        "alt": "Cliffs on Tory Island, shown as island context for this tradition"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-6045552",
+      "title": "Aran knitting",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Aran_cardigan.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Aran_cardigan.jpg/960px-Aran_cardigan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Aran_cardigan.jpg",
+        "attribution": "Lisa Dusseault from USA",
+        "licence": "CC BY 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+        "note": "An Aran-style cardigan made in 1996; an illustration of the knitting tradition",
+        "alt": "An Aran-style cardigan made in 1996; an illustration of the knitting tradition"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-3414078",
+      "title": "Omey races",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Omey_island_-_Fahy_Lough.JPG",
+      "image": {
+        "thumbUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Omey_island_-_Fahy_Lough.JPG?width=640",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Omey_island_-_Fahy_Lough.JPG",
+        "attribution": "Patrice78500",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "",
+        "note": "Fahy Lough on Omey Island; island context, not a photograph of the races",
+        "alt": "Fahy Lough on Omey Island; island context, not a photograph of the races"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-6188599",
+      "title": "Clare Island Film Festival",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Clare_Island.jpg/960px-Clare_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Clare_Island.jpg",
+        "attribution": "Brendanconway",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Clare Island in Clew Bay; island context, not a photograph of the festival",
+        "alt": "Clare Island in Clew Bay; island context, not a photograph of the festival"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-8158177",
+      "title": "Cead",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Panorama_Inis_Me%C3%A1in.jpg/960px-Panorama_Inis_Me%C3%A1in.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Inis_Me%C3%A1in.jpg",
+        "attribution": "Paucabot",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "note": "Panorama of Inishmaan; island context for the Cead tradition",
+        "alt": "Panorama of Inishmaan; island context for the Cead tradition"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-way-4550061",
+      "title": "King of Dalkey",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Dalkey_Island_-_geograph.org.uk_-_1537531.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Dalkey_Island_-_geograph.org.uk_-_1537531.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Dalkey_Island_-_geograph.org.uk_-_1537531.jpg",
+        "attribution": "Eirian Evans",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Dalkey Island seen from the Holyhead–Dublin ferry",
+        "alt": "Dalkey Island seen from the Holyhead–Dublin ferry"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-6045364",
+      "title": "Dooagh Day",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Achill_Island_-_Keel_-_Village_Walk_-_geograph.org.uk_-_3758209.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Achill_Island_-_Keel_-_Village_Walk_-_geograph.org.uk_-_3758209.jpg/960px-Achill_Island_-_Keel_-_Village_Walk_-_geograph.org.uk_-_3758209.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Achill_Island_-_Keel_-_Village_Walk_-_geograph.org.uk_-_3758209.jpg",
+        "attribution": "Joseph Mischyshyn",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Keel village on Achill; island context, not Dooagh or a photograph of Dooagh Day",
+        "alt": "Keel village on Achill; island context, not Dooagh or a photograph of Dooagh Day"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-6045364",
+      "title": "Currach",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:TwoFishermenIn_CurrachIreland1986.jpg",
+      "image": null,
+      "reason": "Prominent identifiable people in a currach; file gives only Irish west coast, not Achill.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-5208439",
+      "title": "Open Ear Festival",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:From_the_highest_point_of_Sherkin_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/From_the_highest_point_of_Sherkin_Island.jpg/960px-From_the_highest_point_of_Sherkin_Island.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:From_the_highest_point_of_Sherkin_Island.jpg",
+        "attribution": "Miroslav Dunaev",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "note": "View from Sherkin Island; island context, not a photograph of the festival",
+        "alt": "View from Sherkin Island; island context, not a photograph of the festival"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "local-traditions",
+      "id": "osm-relation-8495304",
+      "title": "Cape Clear Island International Storytelling Festival",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Cape_Clear_Island_-_N_Harbour_-_geograph.org.uk_-_6008817.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Cape_Clear_Island_-_N_Harbour_-_geograph.org.uk_-_6008817.jpg/960px-Cape_Clear_Island_-_N_Harbour_-_geograph.org.uk_-_6008817.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Cape_Clear_Island_-_N_Harbour_-_geograph.org.uk_-_6008817.jpg",
+        "attribution": "Colin Park",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "North Harbour on Cape Clear Island; island context, not a photograph of the storytelling festival",
+        "alt": "North Harbour on Cape Clear Island; island context, not a photograph of the storytelling festival"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-way-128077107",
+      "title": "Prince of the Saltees",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Saltee.JPG",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Great_Saltee.JPG/960px-The_Great_Saltee.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Saltee.JPG",
+        "attribution": "ArcticEmmet",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Great Saltee, shown as island context for this story",
+        "alt": "Great Saltee, shown as island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-8609288",
+      "title": "The car over the sound",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Oile%C3%A1n_Baoi_(Dursey_Island),_Cable_car_-_geograph.org.uk_-_262128.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Oile%C3%A1n_Baoi_%28Dursey_Island%29%2C_Cable_car_-_geograph.org.uk_-_262128.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Oile%C3%A1n_Baoi_(Dursey_Island),_Cable_car_-_geograph.org.uk_-_262128.jpg",
+        "attribution": "Nigel Cox",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "The Dursey Island cable car",
+        "alt": "The Dursey Island cable car"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-6045364",
+      "title": "A henge built over a weekend",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Beautiful_Achill_Islands_in_County_Mayo_of_Ireland.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Beautiful_Achill_Islands_in_County_Mayo_of_Ireland.jpg/960px-Beautiful_Achill_Islands_in_County_Mayo_of_Ireland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Beautiful_Achill_Islands_in_County_Mayo_of_Ireland.jpg",
+        "attribution": "Kiran Madhusudhanan",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Achill coastline; island context, not a photograph of Achill Henge",
+        "alt": "Achill coastline; island context, not a photograph of Achill Henge"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-way-329053691",
+      "title": "Wallabies that were meant to fade",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Lambay_Island_Wallaby.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Lambay_Island_Wallaby.jpg/960px-Lambay_Island_Wallaby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Lambay_Island_Wallaby.jpg",
+        "attribution": "Tboardman75",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+        "note": "Red-necked wallaby with a joey on Lambay Island",
+        "alt": "Red-necked wallaby with a joey on Lambay Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-way-128067375",
+      "title": "Tunnels under the fort",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Fort_Mitchel_on_Spike_Island_-_geograph.org.uk_-_7686095.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Entrance_to_Fort_Mitchel_on_Spike_Island_-_geograph.org.uk_-_7686095.jpg/960px-Entrance_to_Fort_Mitchel_on_Spike_Island_-_geograph.org.uk_-_7686095.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Entrance_to_Fort_Mitchel_on_Spike_Island_-_geograph.org.uk_-_7686095.jpg",
+        "attribution": "Mike Pennington",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Entrance to Fort Mitchel on Spike Island; fort context, not the tunnels",
+        "alt": "Entrance to Fort Mitchel on Spike Island; fort context, not the tunnels"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-3235264",
+      "title": "The crew came ashore in a buoy",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_Ruins.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Inisheer_Ruins.jpg/960px-Inisheer_Ruins.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inisheer_Ruins.jpg",
+        "attribution": "Karie Kuiper",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "O’Brien’s Castle and stone terraces on Inisheer; island context, not the Plassy shipwreck",
+        "alt": "O’Brien’s Castle and stone terraces on Inisheer; island context, not the Plassy shipwreck"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-7230308",
+      "title": "A wire under the Atlantic",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Valentia_Island_Cable_Station_and_residences_-_geograph.org.uk_-_386249.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Valentia_Island_Cable_Station_and_residences_-_geograph.org.uk_-_386249.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Valentia_Island_Cable_Station_and_residences_-_geograph.org.uk_-_386249.jpg",
+        "attribution": "Frank Donovan",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Former transatlantic cable station and residences on Valentia Island",
+        "alt": "Former transatlantic cable station and residences on Valentia Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-7230308",
+      "title": "Footprints in the rock",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Valentia_Island.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Valentia_Island.jpg/960px-Valentia_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Valentia_Island.jpg",
+        "attribution": "Terryballard",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "note": "View north across Valentia Island; island context, not a photograph of the tetrapod tracks",
+        "alt": "View north across Valentia Island; island context, not a photograph of the tetrapod tracks"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "rathlin",
+      "title": "The lamp at the bottom",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Cliff_scenery_south_of_West_Lighthouse,_Rathlin_Island_-_geograph.org.uk_-_646842.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Cliff_scenery_south_of_West_Lighthouse%2C_Rathlin_Island_-_geograph.org.uk_-_646842.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Cliff_scenery_south_of_West_Lighthouse,_Rathlin_Island_-_geograph.org.uk_-_646842.jpg",
+        "attribution": "Colin Park",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Cliffs south of Rathlin’s West Lighthouse; lighthouse setting",
+        "alt": "Cliffs south of Rathlin’s West Lighthouse; lighthouse setting"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-3012429",
+      "title": "A still sent from the distillery",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishmurray_Teampall_Molaise_N_2007_08_22.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Inishmurray_Teampall_Molaise_N_2007_08_22.jpg/960px-Inishmurray_Teampall_Molaise_N_2007_08_22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishmurray_Teampall_Molaise_N_2007_08_22.jpg",
+        "attribution": "Andreas F. Borchert",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Teampall Molaise ruins on Inishmurray; island context for this story",
+        "alt": "Teampall Molaise ruins on Inishmurray; island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-5208439",
+      "title": "Burned over a cargo of wine",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:County_Cork_-_Sherkin_Abbey_-_20150806104724.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/County_Cork_-_Sherkin_Abbey_-_20150806104724.jpg/960px-County_Cork_-_Sherkin_Abbey_-_20150806104724.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:County_Cork_-_Sherkin_Abbey_-_20150806104724.jpg",
+        "attribution": "Jbuck78",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Sherkin Abbey on Sherkin Island",
+        "alt": "Sherkin Abbey on Sherkin Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-8158207",
+      "title": "A hull eaten by a warm-water worm",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishbofin-fort.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Inishbofin-fort.jpg/960px-Inishbofin-fort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishbofin-fort.jpg",
+        "attribution": "-- منش ‎",
+        "licence": "Public domain",
+        "licenceUrl": "",
+        "note": "Cromwell’s Barrack on neighbouring Port Island at Inishbofin harbour; context, not the excavated hull",
+        "alt": "Cromwell’s Barrack on neighbouring Port Island at Inishbofin harbour; context, not the excavated hull"
+      },
+      "reason": "Fort pixels match Cromwells Barrack. The proposed caption correctly locates it on neighbouring Port Island at Inishbofin harbour and does not claim to show the excavated hull. This is context only, not a photograph of the principal Inishbofin landmass.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-3414078",
+      "title": "A bog at the foot of the cliff",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Omey_Island_shore_-_geograph.org.uk_-_5959574.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Omey_Island_shore_-_geograph.org.uk_-_5959574.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Omey_Island_shore_-_geograph.org.uk_-_5959574.jpg",
+        "attribution": "Jonathan Wilkins",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Omey Island shore; island context for this report",
+        "alt": "Omey Island shore; island context for this report"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-relation-5725196",
+      "title": "The tanker at the jetty",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Whiddy_jetty.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Whiddy_jetty.jpg/960px-Whiddy_jetty.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Whiddy_jetty.jpg",
+        "attribution": "Towel401",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "note": "Disused tanker jetty on Whiddy Island",
+        "alt": "Disused tanker jetty on Whiddy Island"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-way-4555538",
+      "title": "The first yacht club",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Haulbowline_Island_(geograph_3666565).jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Haulbowline_Island_%28geograph_3666565%29.jpg/960px-Haulbowline_Island_%28geograph_3666565%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Haulbowline_Island_(geograph_3666565).jpg",
+        "attribution": "derek menzies",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Haulbowline Island in Cork Harbour",
+        "alt": "Haulbowline Island in Cork Harbour"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "osm-way-4558676",
+      "title": "Everyone left together",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Inishtrahull_-_geograph.org.uk_-_3900972.jpg",
+      "image": {
+        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Inishtrahull_-_geograph.org.uk_-_3900972.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Inishtrahull_-_geograph.org.uk_-_3900972.jpg",
+        "attribution": "Richard Webb",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "note": "Inishtrahull seen offshore; island context for this story",
+        "alt": "Inishtrahull seen offshore; island context for this story"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    },
+    {
+      "category": "unusual-news",
+      "id": "wd-Q373978",
+      "title": "A wave over the lantern",
+      "expectedPageUrl": "https://commons.wikimedia.org/wiki/File:Fastnet_Rock_Lighthouse.jpg",
+      "image": {
+        "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Fastnet_Rock_Lighthouse.jpg/960px-Fastnet_Rock_Lighthouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Fastnet_Rock_Lighthouse.jpg",
+        "attribution": "Anthony Patterson from Cork, Ireland",
+        "licence": "CC BY 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+        "note": "Fastnet lighthouse; a view of the lighthouse, not a photograph of the reported wave",
+        "alt": "Fastnet lighthouse; a view of the lighthouse, not a photograph of the reported wave"
+      },
+      "reason": "The source subject and inspected pixels agree with the proposed caption. The wording limits the claim to the depicted scene or clearly labelled contextual illustration; existing credit and licence are supported by source metadata.",
+      "reviewers": [
+        "parent_story_audit",
+        "final_existing_review"
+      ]
+    }
+  ]
+}

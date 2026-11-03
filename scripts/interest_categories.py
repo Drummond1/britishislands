@@ -2495,6 +2495,52 @@ def _story_for(item: dict, cache: dict) -> dict:
     return story
 
 
+def validate_reviewed_story_image(image: dict | None) -> None:
+    """Reject incomplete or non-open replacement imagery before publishing."""
+    if image is None:
+        return
+    if not isinstance(image, dict) or not all(
+        isinstance(image.get(key), str) and image[key].strip()
+        for key in ("thumbUrl", "pageUrl", "attribution", "licence")
+    ):
+        raise ValueError("Reviewed story photo is missing source, licence or attribution")
+    if not all(image[key].startswith("https://") for key in ("thumbUrl", "pageUrl")):
+        raise ValueError("Reviewed story photo URLs must use HTTPS")
+    licence = re.sub(r"[ _]+", "-", image["licence"].upper())
+    if not (re.fullmatch(r"CC-BY(?:-SA)?-\d\.\d(?:-IGO)?", licence)
+            or licence in ("CC0", "CC0-1.0", "PUBLIC-DOMAIN", "PD", "OGL-3.0")):
+        raise ValueError("Unsupported reviewed story licence: " + image["licence"])
+
+
+def apply_reviewed_story_images(stories: dict, review_path: Path | None = None) -> int:
+    """Preserve source-specific image reviews when regenerating interest stories.
+
+    A later, different source photo is left alone so this review cannot silently
+    replace a future correction. Only the image is overridden, never the story.
+    """
+    path = review_path or INTEREST / "photo_review_overrides.json"
+    if not path.exists():
+        return 0
+    reviewed = json.loads(path.read_text(encoding="utf-8"))
+    applied = 0
+    for row in reviewed.get("reviews", []):
+        if "image" not in row or not row.get("expectedPageUrl"):
+            raise ValueError("Photo review requires an explicit image and expected source page")
+        replacement = row["image"]
+        validate_reviewed_story_image(replacement)
+        for story in stories.get(row["category"], {}).get(row["id"], []):
+            if story.get("title") != row["title"]:
+                continue
+            current_page = (story.get("image") or {}).get("pageUrl")
+            allowed_pages = {row["expectedPageUrl"]}
+            if replacement:
+                allowed_pages.add(replacement["pageUrl"])
+            if current_page in allowed_pages:
+                story["image"] = dict(replacement) if replacement is not None else None
+                applied += 1
+    return applied
+
+
 def build_stories(accepted: list[dict]) -> dict:
     """Picture and cited lead for film, art, music, and distilleries."""
     wanted = [item for item in accepted if item.get("category_slug") in STORY_SLUGS]
@@ -2533,6 +2579,7 @@ def build_stories(accepted: list[dict]) -> dict:
         if any(existing["title"] == story["title"] for existing in bucket):
             continue
         bucket.append(story)
+    apply_reviewed_story_images(stories)
     with_image = sum(1 for slug in stories.values() for rows in slug.values() for row in rows if row.get("image"))
     total = sum(len(rows) for slug in stories.values() for rows in slug.values())
     print(f"stories: {total} cited, {with_image} with an open-licence picture")

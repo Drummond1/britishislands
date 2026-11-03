@@ -1,283 +1,195 @@
-# Find My Island: SEO + GEO Strategy
+# Find My Island SEO and GEO strategy
 
-> Repo copy of the strategy brief (source: Desktop `find-my-island-seo-geo-strategy.md`,
-> 28 July 2026). Operational loop: `scripts/run_continuous_seo_geo.sh`.
->
-> **Project override:** Tier C pages stay **indexable** for now (do not noindex /
-> remove from sitemaps) unless the maintainer explicitly reverses that decision.
-> The continuous loop still executes every other strategy workstream: brand,
-> trust pages, Landform schema, segmented sitemaps, flagship depth, hubs, CWV,
-> GEO benchmark, and coverage enrichment.
+Updated 2 November 2026. Scope: **https://www.findmyisland.com**. This replaces the July strategy with a plan based on the current site and repository. SEO means discovery in conventional search; GEO means discovery and citation in generative search and AI answers.
 
-Research and live-site audit completed on 28 July 2026.
+**Recommendation:** concentrate the next 90 days on a small set of excellent island guides and comparisons, supported by reliable facts, clear sources and measurable routes into the interactive atlas. The catalogue supplies breadth; reviewed pages supply the reasons to visit and cite it.
 
-## Executive verdict
+**Primary outcome:** engaged island discovery. Count visits that lead to a map interaction, another island profile, a saved island or a useful outbound visit. Treat property referrals and dataset citations as secondary outcomes until their value is measured.
 
-Find My Island’s best opportunity is to become **the definitive data-led atlas of British and Irish islands**—not another general travel blog.
+**Project policy:** retain the existing no-deindex override for atlas records. Preserve shareable records and current sitemap eligibility; do not introduce bulk `noindex`, remove atlas records or launch enrichment/publishing loops as part of this strategy. Existing query-view handling remains separate. Ferry promotion stays subject to the freeze in [QUEUE.md](QUEUE.md). [ETHICS.md](ETHICS.md) governs every workstream.
 
-The map and underlying data are genuinely differentiated. The present SEO risk is that search engines see thousands of very thin, automated pages before they see that value. The strategy should therefore be:
+## 1 What has changed since the previous strategy
 
-> Keep every island shareable on the map, but make indexability an editorial privilege.
+The foundations already exist: canonical `/islands/{nation}/{slug}/` pages, nation and collection hubs, `Landform` markup, segmented sitemaps, trust pages and explicit permission for OAI-SearchBot. The task is to improve their usefulness and accuracy, rather than recreate those features.
 
-Start with roughly 100 exceptional, authoritative pages, then expand only when each new profile clears a documented quality threshold.
+The following observations were checked on 2 November 2026. Live pages were retrieved through Firecrawl; source code and local reports supplied implementation evidence. These are a bounded sample, not a complete crawl or a current Search Console report.
 
-## What the live audit found
+| Evidence | Strategic consequence |
+| --- | --- |
+| Local `data/islands.json` contains 11,212 records; 1,620 have `shortDescription`, and 2,799 have an `image` or non-empty `images`. These are corpus counts, not indexed-page counts. | Improving every record equally would spread effort too thinly. Select pages with clear intent and enough reliable material. |
+| [Scottish islands map](https://www.findmyisland.com/islands/scotland/) is principally a short introduction and links. [Shetland](https://www.findmyisland.com/collections/shetland/) is principally a one-sentence introduction and 51 links. | Existing hubs need useful maps, comparisons and explanations to fulfil their titles. |
+| [Fair Isle](https://www.findmyisland.com/islands/scotland/fair-isle/) has undated population, very short sections, guide links but little of the underlying story content, and just one listed source. | Bring verified facts and useful summaries into the canonical HTML itself. |
+| Fair Isle says the observatory is being rebuilt, while the [observatory's booking page](https://www.fairislebirdobs.co.uk/booking.html) describes accommodation and bookings for 2026 and 2027. The island page nevertheless says “Last reviewed: 2026-10-28”. | Fix factual freshness and the meaning of review dates before expanding this template. |
+| `generate_seo_artifacts.py` prints the build date as “Last reviewed”. Several sitemap dates also use the current date or a shared file timestamp. | Separate generation, content modification and actual review. |
+| [Whisky islands](https://www.findmyisland.com/collections/whisky-distilleries/) combines distillery entries, silent stills, stories and planned stills. Its first question asks which Scottish islands make whisky without naming the qualifying islands in the answer. | Lead with a direct, verified answer; clearly distinguish production status and historical connections. |
+| [Islands for sale](https://www.findmyisland.com/collections/for-sale/) includes whole islands, portions, homes and a houseboat. Some listed broker names have no clickable source. | Distinguish the thing being sold and its verification status before targeting purchase-intent searches. |
+| [About](https://www.findmyisland.com/about/), [methodology](https://www.findmyisland.com/methodology/) and [dataset](https://www.findmyisland.com/dataset/) exist but contain little detail. Methodology refers readers to repository docs without linking them. | Expand the existing pages into usable evidence of responsibility and method. |
+| [The ferry sitemap](https://www.findmyisland.com/sitemap-ferries-verified.xml) still promotes 13 ferry URLs; the generator still has those paths despite the queue's ferry freeze. | Align generated discovery surfaces with the existing freeze. A filename containing “verified” does not establish verification. |
+| `data/geo_prompt_benchmark_latest.json` is dated 2 August and contains 50 prompts with zero scored results. The runner creates templates; it does not query assistants. | Run and score a real benchmark before reporting any GEO improvement. |
 
-| Finding | Impact |
-|---|---|
-| The [sitemap](https://www.findmyisland.com/sitemap.xml) contains 11,402 URLs, including 11,380 island profiles. | Search engines are being asked to evaluate a very large site immediately. |
-| The live data contains 4,310 records sourced as `osm-unnamed`; 5,011 sitemap URLs contain machine identifiers. | High risk of index bloat, duplicate entities and low-value results. |
-| Only 1,621 records have a short description, and just 27 have all four editorial sections: history, geography, transport and accommodation. | Most profiles cannot currently compete with Wikipedia, official tourism organisations or specialist guides. |
-| Direct canonical pages such as [Fair Isle](https://www.findmyisland.com/islands/scotland/fair-isle/) expose one sentence and a fact list, while the interactive application contains substantially richer data. | The best content is missing from the page search engines and visitors land on. |
-| An [unnamed profile](https://www.findmyisland.com/islands/ireland/osm-way-827589756/) is indexable with generic text. | This is precisely the kind of page that should remain usable in the atlas but stay out of search. |
-| JSON-LD uses `@type: "Island"`, but Schema.org has no `Island` type. | The central entity markup is invalid. Use [`Landform`](https://schema.org/Landform) or `Place`. |
-| Every sitemap URL currently has the same `lastmod` date plus `priority` and `changefreq`. | Google ignores priority/changefreq and only trusts consistently accurate, per-page significant modification dates. [Google sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) |
-| The visible brand, page title, publisher and web-app name alternate between “Find My Island” and “Isles of Britain.” | Weakens brand/entity consolidation. |
-| There are no public About, methodology, editorial, corrections, licensing or contact pages. | Search engines, journalists and AI systems cannot easily establish provenance or responsibility. |
-| [`llms.txt`](https://www.findmyisland.com/llms.txt) references two 404 resources and recommends a legacy query-parameter URL. | Update it, but do not treat it as a ranking lever. |
-| A mobile Lighthouse lab run scored the homepage 60 for performance, with 10.0s LCP. Fair Isle scored 77, with 3.0s LCP and 0.208 CLS. | Both exceed Google’s recommended LCP ≤2.5s and CLS <0.1 targets. [Core Web Vitals guidance](https://developers.google.com/search/docs/appearance/core-web-vitals) |
-| The [Hebrides ferry page](https://www.findmyisland.com/ferries/hebrides/) exposes raw codes and some same-terminal route pairs. | Ferry queries are valuable but volatile; clean and verify this dataset before targeting them aggressively. |
+The July Search Console findings are historical. A fresh authenticated baseline was subsequently captured on 2 November: **192 Web impressions, zero clicks and average position 66.8** for 4–31 October, plus **30 Google AI-feature impressions**, 28 for Eel Pie Island. Eel Pie Island's Web average position was **10.82** on 33 impressions. Prioritise that page first while recognising the small sample. See [the current baseline and exports](GSC-BASELINE-2026-11-02.md). Bing and visitor-conversion baselines remain unverified; Core Web Vitals has insufficient field data in the GSC overview.
 
-The presence of many automated records is not automatically a penalty. The danger is asking Google to index large amounts of unoriginal or minimally useful content. Google explicitly recommends excluding scaled pages that add little user value. [Google’s spam policy](https://developers.google.com/search/docs/essentials/spam-policies)
+## 2 Choose searches the atlas can answer well
 
-## 1. Rebuild the indexing model
+The strongest positioning is a visual, source-backed atlas of the islands of Britain and Ireland. Its distinctive contribution is connecting geography with culture, names, stories and interests across many islands.
 
-Create three quality tiers.
+Start with the following hypotheses. These are proposed query clusters, not measured search volumes or promised ranking opportunities. Reorder them using current GSC impressions, positions, indexed status and visitor behaviour in week one.
 
-### Tier A: definitive editorial profiles
+| Priority | Search intent and examples | Page to improve |
+| --- | --- | --- |
+| 1 | Interest discovery: islands with castles; Scottish islands with whisky distilleries; books set on British and Irish islands. | Existing castle, whisky and book guides. Match each answer to precisely defined inclusion rules. |
+| 2 | Regional orientation: Scottish islands map; Shetland islands map; islands of Loch Lomond; Thames islands map. | Existing nation and regional hubs with visible maps and useful comparison tables. |
+| 3 | Individual islands: Bute map; Staffa island; St Mary's Scilly map; where is Eel Pie Island. | A first group of 10 strong island profiles. July impressions provide leads only; verify current demand. |
+| 4 | Facts and comparisons: Fair Isle population; Gaelic island names; largest islands in a defined region. | Island profiles and a few sourced data collections. Include years, definitions and missing-data notes. |
+| 5 | Purchase intent: whole islands for sale in Scotland or Ireland; houses for sale on islands. | The property guide, after scope and current listing status are separated. |
 
-Initially 40–60 major islands: Skye, Mull, Islay, Lewis and Harris, Arran, Iona, Fair Isle, St Kilda, Anglesey, Isle of Wight, Lundy, Brownsea, Rathlin, Achill, the Aran Islands, Jersey, Guernsey and similar.
+Keep each query family attached to one principal page. A regional hub answers a regional question; a profile answers an island question; the interactive filter supports exploration. Avoid creating separate pages for every filter combination.
 
-Each should contain original synthesis, full provenance, useful planning information and a complete entity record.
+Defer ferry timetables, live crossing advice, generic accommodation guides and mass “best islands” articles. The ferry freeze and ethics charter already limit those subjects, and the atlas has more defensible opportunities.
 
-### Tier B: authoritative data profiles
+## 3 Make the best pages complete answers
 
-Eventually 200–500 named islands with enough verified material to answer a real query: unambiguous identity, map, image, multiple meaningful facts, source dates, related islands and at least two or three trustworthy sources.
+### Island profiles
 
-### Tier C: raw atlas records
+Upgrade 10 profiles first, then expand to 25 only after the template and review process work. The initial selection should include Fair Isle, Bute, Staffa, St Mary's in Scilly, Anglesey, Lewis and Harris, Lundy, Brownsea, Eel Pie Island and Iona, subject to current demand and source availability.
 
-All unnamed, ambiguous, duplicate and minimally documented map features:
+Each profile should provide:
 
-- Preserve their unique shareable links.
-- Set `noindex,follow`.
-- Remove them from XML sitemaps.
-- Do not block them in `robots.txt` until search engines have seen the `noindex`.
-- Merge duplicates and redirect retired URLs to the correct entity.
-- Return 404/410 where a feature proves not to be a real island.
+- A concise opening explaining location, identity and distinctive interest.
+- A readable map in the returned HTML, with a lightweight fallback and a clear route into the interactive atlas.
+- A fact table with units, population year, source and measurement confidence. Unknown population must not become zero or “uninhabited”.
+- Two or three useful sections drawn from verified island material: geography, history, names, culture or publicly documented access context. No filler to reach a word count.
+- Short, original summaries of the relevant interest stories, with citations beside the claims. Link to deeper guides without making readers open several pages to learn the essential facts.
+- The island's verified local-language names and cultural authority where available.
+- Proper photograph credit and licence, meaningful alt text and reserved image dimensions.
+- A real editor/reviewer credit, correction route and honest modification/review dates.
+- Relevant internal links. Distinguish geographical neighbours from islands with similar interests; do not describe a same-country list as nearby.
 
-This will not make the atlas smaller. It will make the searchable part credible.
+A profile clears editorial review when its essential claims are traceable, its dated facts are current for the stated reference year, its map and image identify the correct island, and its canonical HTML stands on its own. Three copied summaries do not become independent corroboration.
 
-Split the sitemap into diagnostic groups:
+### Interest guides
 
-- `sitemap-core.xml`
-- `sitemap-islands-editorial.xml`
-- `sitemap-collections.xml`
-- `sitemap-ferries-verified.xml`
-- `sitemap-images.xml`
+Improve the existing guides before building more. The first paragraph and comparison table should directly answer the page's question. Follow with examples, inclusion rules, evidence and a useful map action.
 
-Include only URLs you actually want indexed. Record significant `lastmod` dates per page.
+For whisky, show active whisky production, closed distilleries, planned production and cultural stories as separate groups. Gin production or a shipwreck story must not qualify an island for an answer about current whisky production. Verify current status against official producers; retain historical stories in their appropriate section.
 
-## 2. Unify the profile and interactive experience
+For property, show **whole island**, **part of island**, **home on an island** and **other property**. A whole-island count must exclude the other groups. Display broker, source link, last status check and whether availability is confirmed or unknown. Keep asking prices on broker pages under the existing policy. Any future property schema must describe the actual offer, rather than imply the whole island is for sale.
 
-A canonical island URL should return the complete page directly:
+For castles, distinguish islands containing a castle from small castle islets and from places a visitor can enter. For tidal islands, describe the connection and link to official access information without publishing crossing times or implying safe access. For wildlife, keep information at the permitted island level and honour the sensitive-species exclusions.
 
-`/islands/scotland/lewis-and-harris/`
+Retain complete relevant rows in crawlable HTML, using accessible expandable sections where needed. The current whisky page sends readers to the application for some remaining entries; the search landing page should contain the evidence needed to support its stated totals.
 
-It should include all useful content already present in the application—names, population year, source confidence, geology, lighthouses, history and transport—then progressively enhance into the interactive map.
+### Regional hubs
 
-Do not maintain one thin “crawler page” and a richer JavaScript experience. Users and crawlers should receive the same substantive information.
+Start with Scotland, Shetland, Loch Lomond and the Thames. Give each a map, an explanation of scope, a comparison table, a few distinct starting points and links to its islands and interest guides. Use an actual region-specific map view where the interface supports it.
 
-Legacy URLs such as `/?island=lewis-and-harris` and `/profiles/*.html` should issue genuine HTTP 301 redirects to the canonical path. GitHub Pages cannot perform all dynamic redirects cleanly, so use an edge layer such as Cloudflare or migrate the deployment to hosting with redirect rules.
+Label catalogue totals as atlas coverage. Do not present the atlas's record count as an official answer to “How many islands does Scotland have?” without reconciling definitions, geographic extent and inclusion of inland or unnamed features.
 
-Also remove the visible sentence:
+## 4 Strengthen technical discovery
 
-> “Canonical profile for search engines and AI crawlers.”
+Keep the static site and current URL scheme. A platform migration is unnecessary for the content work.
 
-It is written for machines, not visitors, and conflicts with Google’s people-first guidance. [Google’s content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+1. **Audit a representative URL sample.** Test the homepage, four hubs, five guides, ten profiles, a legacy profile, a query view and a nonexistent slug. Confirm HTTP status, canonical, robots directive, useful initial HTML, image loading and internal links. Inspect Google's selected canonical for the priority pages.
+2. **Fix dates.** Store or derive genuine per-page content modification dates; persist review dates only when a review occurs. Build dates belong in release metadata. Source retrieval is not automatically editorial review. Google recommends accurate `lastmod` values reflecting significant page changes. [Google sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+3. **Keep sitemap policy explicit.** Retain existing canonical, named/prose eligibility and the no-deindex override. Add priority pages to the correct segment when eligible. Reconcile ferry URLs in the core and ferry sitemaps with the documented freeze. Do not regenerate every URL's freshness on routine builds.
+4. **Consolidate legacy URLs.** `/profiles/fair-isle.html` still returns a complete 200 page. Maintain canonical signals while preparing a one-hop 301/308 redirect plan for an edge layer that supports it. Audit old nation paths and merged IDs as well. Query-aware rules must preserve unrelated atlas parameters. JavaScript address changes do not provide HTTP redirects. A DNS or hosting cutover is a separate deployment decision.
+5. **Improve structured data already present.** Retain `Landform` and correct entity identifiers. Add stable entity IDs, `WebPage`, breadcrumbs, publisher and licensed `ImageObject` information where supported by visible content. Validate vocabulary and factual correspondence. Use `Dataset` only with real metadata, access and licensing. No schema type guarantees a rich result or AI citation.
+6. **Measure mobile performance before prescribing fixes.** Baseline the homepage, one guide and one profile in PageSpeed/Lighthouse and field data where available. Aim for field p75 LCP at most 2.5 seconds, INP at most 200 ms and CLS at most 0.1. Reserve image space, use appropriate thumbnails, and defer map/3D work without hiding the main answer. Retain clustering, virtualisation and lazy loading. July Lighthouse figures are not today's baseline. [Google Core Web Vitals guidance](https://developers.google.com/search/docs/appearance/core-web-vitals)
 
-## 3. Use this island-page blueprint
+## 5 Make the site useful as an AI source
 
-Every Tier A profile should contain:
+Google's guidance prioritises useful original content and ordinary search eligibility for its generative features. Important answers should be available as text with supporting images and matching structured data; it requires no special AI file or schema. [Google AI guidance](https://developers.google.com/search/docs/appearance/ai-features), [Google generative search guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
 
-1. **Breadcrumb:** Home → Scotland → Shetland → Fair Isle
-2. **H1:** Fair Isle
-3. **Answer-first summary:** 40–70 words explaining where it is, what type of island it is and why it is notable.
-4. **Key facts table:** nation, archipelago/water body, area, population and year, highest point, access type and coordinates.
-5. **Interactive map plus static fallback:** so the geography remains understandable without JavaScript.
-6. **Names and etymology:** English, Gaelic, Irish, Manx, Welsh, Scots or Norse forms where verified.
-7. **Geography and geology.**
-8. **History and heritage.**
-9. **Wildlife and conservation.**
-10. **How to reach it:** with official links and “last verified” date.
-11. **Nearby and similar islands.**
-12. **Sources:** inline citations, not merely a general attribution at the bottom.
-13. **Authorship and review:** author/editor, methodology link, date reviewed and meaningful date modified.
-14. **Correction mechanism:** “Report an error or contribute local knowledge.”
+Apply that to every priority page:
 
-Use exact years and units: “population 55, 2022 NRS figure,” rather than an undated “population 55.” This is substantially easier for both humans and answer engines to quote correctly.
+- Put the direct answer immediately below the relevant heading. For a list question, name the qualifying islands.
+- Keep each important claim with its island identity, source, reference year and qualification. Avoid floating numbers or vague “currently” language.
+- Provide compact comparison tables and explicit definitions. Clearly distinguish verified absence, missing data and unreviewed visitor contributions.
+- Keep displayed facts, JSON-LD, downloadable data and the site's own Ask answers consistent.
+- Publish original comparisons or analysis that add something beyond the upstream source. AI systems can otherwise cite that source directly.
+- Keep access open to search crawlers. The live robots file already explicitly allows OAI-SearchBot, so changing that is not an early growth task. OpenAI distinguishes its search crawler from GPTBot training access; training permission is a separate choice. [OpenAI crawler guidance](https://developers.openai.com/api/docs/bots)
+- Maintain `llms.txt` as a small navigation aid with working canonical links and accurate counts. Treat it as housekeeping, not the main discovery channel.
 
-### Structured-data graph
+Do not use hidden AI instructions, invented reviews, unsupported superlatives or bulk rewritten source pages. Do not add FAQ markup in expectation of automatic search enhancements; visible questions must earn their place by helping readers.
 
-Use:
+## 6 Earn references through distinctive evidence
 
-- `WebPage` or `Article`
-- `mainEntity` → `Landform` or `Place`
-- `BreadcrumbList`
-- `ImageObject`
-- `Person`/`Organization` for author, reviewer and publisher
-- `sameAs` for the correct Wikidata, Wikipedia and official-community identity
-- `identifier` for OSM and Wikidata IDs
-- `containedInPlace`, `geo`, `alternateName`, `hasMap` and sourced `additionalProperty` values
+Expand the existing About, methodology, sources and dataset pages. Name the responsible editor; explain inclusion, water-body classification, measurements, language handling, corrections and limits. Make their links work on the public site.
 
-Use `TouristDestination` only on substantial visitor-oriented pages. There is no special “GEO schema”: Google explicitly says AI features require ordinary SEO eligibility, textual content and accurate structured data—not AI-specific markup. [Google AI-search guidance](https://developers.google.com/search/docs/appearance/ai-features)
+Build one carefully scoped, reproducible data story first: **a map of castle islands across Britain and Ireland**, with a downloadable table, explicit definition, cited entries and a dated release. A second candidate is the geography of island names, once cultural-authority validation is sufficient. Choose the topic using the first month of demand data.
 
-Create a separate dataset landing page using `Dataset`, `DataCatalog` and `DataDownload`, with version, licence, provenance, variables, coverage and downloadable formats. [Google’s Dataset guidance](https://developers.google.com/search/docs/appearance/structured-data/dataset)
+Offer a lightweight map embed or a source-backed table to relevant island organisations, heritage groups, local publications and geography educators. Link back to the relevant collection and methodology. Prepare a shortlist of 10 appropriate recipients and a useful pitch for each. Contacting them is a separate action requiring explicit sending authority.
 
-## 4. Build query-led information architecture
+Provide a public versioned release only for material the project can redistribute. Preserve OSM, Wikimedia and other upstream attribution and licence obligations; do not label the combined corpus CC0. Prefer a real download and clear field documentation over a metadata-only dataset page. Register a DOI only when there is a maintained release worth citing.
 
-The broad entity SERPs are dominated by Wikipedia, official tourism bodies, National Trust, Wikivoyage and established travel publishers. Find My Island should first target combinations where its structured dataset is uniquely useful.
+## 7 Measure discovery and useful visits
 
-| Cluster | Example queries | Target page |
-|---|---|---|
-| Atlas/maps | “Scottish islands map”, “British and Irish islands map” | Homepage and nation hubs |
-| Counts and definitions | “how many islands are in the UK?”, “what counts as an island?” | Methodology-led research pages |
-| Lists and rankings | “largest Scottish islands”, “inhabited Irish islands” | Data table + map collections |
-| Archipelagos | “Outer Hebrides islands map”, “islands of Loch Lomond” | Archipelago/water-body hubs |
-| Entity facts | “Fair Isle population”, “Anglesey area”, “Islay Gaelic name” | Island profiles |
-| Access | “Scottish islands without a car”, “islands accessible by bridge” | Editorial comparison guides |
-| Specialist data | “Scottish islands with lighthouses”, “Gaelic island names” | Original data visualisations |
-| Ferries | “how to get to Mull”, “Hebrides ferry map” | Verified route hubs and profiles |
+Establish a fresh 28-day baseline and an equal-length comparison, with the previous year where available because island interest is seasonal. Segment UK and Ireland visitors, devices, branded searches, page families and priority pages.
 
-The missing middle layer is particularly important. Add hubs for:
+**Search Console:** reconnect the property, export queries/pages and inspect priority URLs. Track non-brand clicks, impressions, queries moving into the top 20/10, selected canonicals and priority-page indexation. Google now documents separate generative AI performance reports; record the visibility data actually exposed in this property and retain ordinary Web reporting for the overall trend. Do not infer a separate AI click total from an impressions-only view. [Google reporting announcement](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports?hl=en)
 
-- Inner Hebrides
-- Outer Hebrides
-- Orkney
-- Shetland
-- Isles of Scilly
-- Channel Islands
-- Aran Islands
-- Loch Lomond
-- Lough Corrib
-- Thames islands
+**Bing Webmaster Tools:** use AI Performance for citations, grounding queries and cited pages. Topics Portfolio, introduced in October, may supply opportunity queries when the site has enough activity. Its estimates are directional and apply to Bing's supported AI surfaces, not every assistant. [Bing AI Performance](https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/), [Topics Portfolio](https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/)
 
-Nation hubs should contain explanation, statistics, maps, tables and links—not only a list of 50 names.
+**Visitor outcomes:** GTM is installed; verify what it actually records. Track map opens from landing pages, subsequent island views, saves, relevant broker/official-source clicks and accepted contributions. Measure sessions with at least one useful action as well as action rates. Segment identifiable AI referrals, recognising that missing referrers prevent a complete AI-traffic count. Keep contribution text and private email addresses out of analytics events.
 
-Do not allow every map filter to become indexable. Hand-select canonical collections with demonstrable search intent and unique explanatory content.
+**Analytics setup check, 2 November:** the existing GTM container has no tags.
+A shared, opt-in loader and six controlled events are now implemented and
+tested locally; five data-layer fields are saved as unpublished GTM drafts.
+The account and sharing choices are approved; separate action-time legal-terms
+confirmation is pending after automatic approval review blocked Next. An
+allowlisted event trigger is also saved as an unpublished draft. There is no
+measurement ID or verified live collection yet. See [the installation record](ANALYTICS.md).
 
-## 5. Turn the dataset into an authority moat
+**Independent AI benchmark:** reuse the 50 existing prompts, fixing misleading ferry or live-property prompts before freezing a version. Complete a first scored run on ChatGPT Search, Copilot and Perplexity, with date, product/model, search mode, country/language and fresh-chat conditions. Retain answer evidence and cited URLs. Repeat 10 priority prompts weekly and the full set monthly; use repeated runs where results fluctuate.
 
-The most linkable asset is not another “10 best islands” article. It is the reproducible dataset.
+Report citation rate as prompts citing the site divided by completed prompts, separately for each product. Report canonical URL share among site-citing results and factual accuracy among completed answers. Unrun or failed prompts are unscored, not false. Brand mentions without links are not citations. The current runner needs denominator and incomplete-run handling before it can be trusted for partial scores.
 
-Publish:
+Use these operational targets, not traffic forecasts:
 
-- A clear definition of island, islet, tidal island, river island, crannog and rock.
-- Inclusion/exclusion criteria.
-- Source and licence matrix for OSM, Wikidata, Wikimedia, NRS, BGS and ferry data.
-- Confidence methodology.
-- Versioned changelog.
-- CSV/GeoJSON downloads or a documented API.
-- A citable release on GitHub or Zenodo with a DOI, if licensing permits.
+| By day 90 | Acceptance measure |
+| --- | --- |
+| Reliable measurement | Fresh GSC/Bing/visitor baselines and one completed, scored cross-product benchmark. |
+| Stronger entry points | 25 reviewed profiles, 4 substantive regional hubs and 3 improved existing guides. |
+| Trustworthy facts | All priority pages have claim-level sources, dated population/measurements where relevant, correct images and honest review dates. |
+| Technical clarity | Priority URLs return 200 with consistent canonical and schema; invalid URLs return genuine errors; legacy handling is documented and verified where deployed. |
+| Evidence of growth | Compare non-brand clicks, engaged discovery sessions and citation rate with baseline; report absolute numbers and denominators. Set numerical growth goals after the baseline. |
 
-Strong digital-PR projects could include:
+## 8 The 90 day sequence
 
-- “How many islands do Britain and Ireland actually have?”
-- “Every inhabited Scottish island ranked by population and ferry access.”
-- “The Gaelic, Irish, Welsh and Manx names of the islands.”
-- “Britain and Ireland’s lighthouse islands.”
-- “The unnamed islands still missing from public records.”
+Suggested capacity is 6–8 hours a week for 12 weeks. Allocate roughly half to research and editing, a quarter to implementation, and the remainder to measurement and useful distribution. Reduce the page count if review quality requires more time.
 
-Pitch the resulting research to island community organisations, local newspapers, geography departments, map publications, outdoor media and national tourism bodies. Offer embeddable maps with a restrained branded attribution link.
+| Period | Work | Exit condition |
+| --- | --- | --- |
+| Days 1–14 | Restore reporting; audit priority URLs; repair review-date semantics; resolve ferry promotion drift; specify whisky/property categories; review Fair Isle; baseline performance and 10 AI prompts. | A usable baseline, explicit page/query map and a working reviewed-page template. |
+| Days 15–45 | Upgrade the first 10 profiles, 3 guides and 4 regional hubs. Expand trust pages. Make essential facts available in canonical HTML and test the path into the map. | Pages pass factual, source, image, mobile and canonical checks. First full AI benchmark completed. |
+| Days 46–90 | Expand to 25 profiles; publish one reproducible data story; prepare targeted distribution; add change-only IndexNow notifications if Bing discovery is slow. Repeat measurements and prioritise the next cohort. | A repeatable process with measured discovery, visitor actions and citation outcomes. |
 
-This also helps GEO: the foundational GEO paper found that relevant citations, quotations and quantitative evidence can improve visibility within a generative response, although its reported gains were experimental—not a promise of organic discovery. [Original KDD research](https://arxiv.org/abs/2311.09735) A recent critical review found no stable cross-platform technique that guarantees long-term organic discovery, so traditional retrieval, authority and measurement remain essential. [2026 critical survey](https://arxiv.org/abs/2607.14035)
+The coding agent can prepare implementation, conduct bounded research, assemble comparisons and produce distribution drafts. Drummond supplies account reconnection where necessary, first-hand observations and explicit authority for external outreach. Do not imply first-hand experience where none exists.
 
-## 6. Clarify the brand and establish trust
+At day 30, prioritise indexability and canonical problems if priority pages remain undiscovered. If pages are indexed but receive few impressions, improve query relevance, distinctiveness and references. Work on title/snippet click-through when pages already have meaningful visibility near the first page. If clicks arrive without map use or further exploration, improve the landing-page journey. Expand content only when the evidence identifies a useful next group.
 
-Use one identity everywhere:
+## 9 First implementation backlog
 
-**Find My Island**  
-*The British & Irish Islands Atlas*
+| Order | Concrete task | Main implementation area | Done when |
+| --- | --- | --- | --- |
+| 1 | Establish fresh reporting and a priority URL/query sheet. | GSC, Bing, existing analytics and benchmark files | Dates, filters and baseline values are recorded; unknowns remain explicit. |
+| 2 | Separate build, modification and review dates. | `scripts/generate_seo_artifacts.py`, `scripts/seo_interest_guides.py` and review metadata | Rebuilding an unchanged page cannot claim a new editorial review. |
+| 3 | Align ferry sitemap and discovery links with the freeze. | Generator and deployed sitemap segments | Every promoted route passes the existing policy, or promotion is removed without a blanket atlas deindex change. |
+| 4 | Make whisky and property answers match their qualifying rows. | Guide generator and attributed interest/property records | Active production and whole-island claims exclude non-qualifying items. |
+| 5 | Upgrade the profile template and first 10 profiles. | Generator, existing detail records and editorial content | Useful content is present without opening the application; facts and credits pass review. |
+| 6 | Improve regional hubs, contextual links and public trust pages. | Generator and public landing assets | Each target page fulfils its title, connects to useful islands and offers a relevant map action. |
+| 7 | Replace benchmark templates with valid scored evidence. | Existing prompt set and runner | Completed/failed/unrun states and KPI denominators are correct. |
 
-Update the H1, `<title>`, `og:site_name`, WebSite schema, Organization schema, application name, footer and `llms.txt`. Treat “Isles of Britain” as an old descriptor, not the publisher.
+Implementation should be reviewed in small diffs, retaining the canonical dataset schema and curated regression spine. Changes to generated pages must be made in their generators or source records so the next Pages build preserves them.
 
-This matters because Google derives site names from structured data, titles, headings and visible homepage references and recommends consistent naming. [Google site-name guidance](https://developers.google.com/search/docs/appearance/site-names)
+**Implementation status, 2–3 November:** current GSC exports and an Eel Pie Island URL inspection are complete. Reviewed generator changes remove false review/modification dates, respect the ferry promotion freeze, expose existing sourced stories and credits, improve entity markup, fix map-link escaping and add public trust links. Guide rows and source counts are complete and explicit. Benchmark scoring distinguishes unrun/failed answers and the continuous script preserves measured results. Desktop/mobile verification also corrected landing-page backgrounds and card colours that made text hard to read below the first screen. **33 focused tests pass** and all **11,212** canonical plus **11,212** legacy profiles passed isolated rendering checks. Canonical data and running schedules are unchanged. The SEO integrity batch is isolated in local release commit `35e1c5a`; automatic approval review requires explicit user permission before publishing this exact release. Separately, the consent layer deployed in `97f72466`, the dedicated Analytics property was created, and all six site event names reached it in Preview. The release also includes the tested withdrawal correction; GTM remains unpublished pending deployment and a live retest. See [ANALYTICS.md](ANALYTICS.md) for exact verification and approval state. This is a verified first implementation batch, not completion of the 90-day editorial programme.
 
-Add:
+## 10 Project references
 
-- About Find My Island
-- Founder/editor profiles
-- Editorial and review policy
-- Data methodology
-- Sources and licensing
-- Corrections and contributions
-- Contact
-- Privacy/cookie information
-- Dataset changelog
-
-Add a crawlable, stable favicon and a homepage social-sharing image.
-
-## 7. GEO discovery and measurement
-
-Your wildcard `robots.txt` currently allows OAI-SearchBot, so no special change is necessary. OpenAI says inclusion in ChatGPT summaries and snippets requires that OAI-SearchBot not be blocked. [OpenAI publisher guidance](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq)
-
-Update `llms.txt` because its data and ethics links currently return 404, but keep its priority low. Google states that it does not require or use special AI files to appear in its generative search features.
-
-Set up:
-
-- Google Search Console, including the 2026 generative-AI performance reporting.
-- Bing Webmaster Tools and its **AI Performance** report: citations, cited URLs, grounding queries, topics, intents and citation share. [Bing AI Performance](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c)
-- IndexNow for genuinely added, changed or removed indexable URLs. [IndexNow documentation](https://www.indexnow.org/documentation)
-- Analytics segments for `chatgpt.com`, Copilot, Gemini and Perplexity referrals.
-- Events for “open map,” “save island,” “view ferry,” “contribute,” and meaningful outbound clicks.
-- Server-log monitoring for Googlebot, Bingbot and OAI-SearchBot.
-- A repeated 50-prompt benchmark covering maps, facts, comparisons and itinerary questions. Record cited domains and factual accuracy, not merely whether the brand is mentioned.
-
-## 90-day execution roadmap
-
-### Weeks 1–2: stop dilution
-
-- Noindex and remove low-quality profiles from sitemaps.
-- Fix the invalid `Island` schema.
-- Unify the brand.
-- Repair or remove broken `llms.txt` references.
-- Add trust and methodology pages.
-- Establish Search Console, Bing and analytics baselines.
-- Fix legacy canonical/redirect handling.
-
-### Weeks 3–6: create the winning template
-
-- Make canonical profiles full-content, progressively enhanced pages.
-- Build 25–30 flagship island profiles.
-- Add breadcrumbs and related-island links.
-- Fix image dimensions, CLS and homepage loading behaviour.
-- Normalize ferry data and mark verification dates.
-- Build the first archipelago hubs.
-
-### Weeks 7–12: earn authority
-
-- Expand to 50–75 flagship profiles.
-- Publish three to five original data collections.
-- Launch the dataset/methodology page and downloadable release.
-- Conduct outreach around one major data story.
-- Enable IndexNow.
-- Review indexation and AI citation data before expanding further.
-
-## Success metrics
-
-Do not judge success by the number of indexed pages.
-
-Track:
-
-- Percentage of curated sitemap URLs indexed.
-- Zero unnamed pages indexed.
-- Non-branded impressions and clicks by page cluster.
-- Queries entering the top 20 and top 10.
-- Passing field Core Web Vitals.
-- Relevant referring domains and community citations.
-- Bing AI citations, grounding topics and unique cited pages.
-- Google generative-search visibility.
-- ChatGPT and other AI referral sessions.
-- Factual accuracy in the prompt benchmark.
-- Map opens, saved islands, contributions and verified transport clicks.
-
-The central strategic move is simple: **surface the exceptional data already in the application, index far fewer pages initially, and make every indexed page the best structured answer on the web for that island.**
+- [SEO and GEO implementation](SEO-GEO.md)
+- [Historical Search Console findings](GSC-CTR-FINDINGS.md)
+- [GEO benchmark procedure](GEO-BENCHMARK.md)
+- [Deployment](DEPLOYMENT.md)
+- [Current queue and ferry freeze](QUEUE.md)
+- [Ethics](ETHICS.md)
+- [Validation](VALIDATION.md)

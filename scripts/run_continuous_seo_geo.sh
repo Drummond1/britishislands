@@ -9,7 +9,7 @@
 #   0 descriptions — Wikipedia/multilang leads (entity facts / GEO answers)
 #   1 photos       — OG images for crawlers + social
 #   2 featured     — featured strip + discovery topics + flagship priority
-#   3 authority    — regenerate landings/hubs/trust/sitemaps + GEO benchmark stub
+#   3 authority    — regenerate landings/hubs/trust/sitemaps; preserve measured GEO results
 #   4 gsc          — GSC-driven priority enrichment (when snapshot present)
 #
 # Start (detached recommended):
@@ -347,14 +347,12 @@ PY
 }
 
 run_authority_phase() {
-  log "=== Authority: regenerate SEO artifacts + GEO benchmark stub ==="
+  log "=== Authority: regenerate SEO artifacts ==="
   audit_flagship_editorial
   python3 scripts/build_islands_index.py >>"$LOG" 2>&1 || true
   IOB_SITE_ORIGIN="$SITE_ORIGIN" python3 scripts/generate_seo_artifacts.py --landing-dir profiles >>"$LOG" 2>&1 || true
   python3 scripts/audit_seo_geo_coverage.py >>"$LOG" 2>&1 || true
-  if [[ -f scripts/run_geo_prompt_benchmark.py ]]; then
-    python3 scripts/run_geo_prompt_benchmark.py --assistant "continuous-loop" >>"$LOG" 2>&1 || true
-  fi
+  log "GEO benchmark not run: measured results require completed assistant observations and validated scores; existing benchmark files preserved."
   for path in /about/ /methodology/ /collections/ /collections/flagship-islands/ /islands/scotland/fair-isle/ /sitemap.xml /llms.txt; do
     code=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_ORIGIN$path" || echo 000)
     log "Probe $path → HTTP $code"

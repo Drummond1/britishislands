@@ -2304,6 +2304,7 @@ img.island-card__thumb {
   background: #121816;
 }
 
+
 /* Homepage discovery: visible choices and clear focus without changing the atlas. */
 .discovery-intro .discovery-lede {
   display: block;
@@ -2384,4 +2385,54 @@ img.island-card__thumb {
   }
   .browse-quick__chips { gap: 6px; }
   .browse-quick__chip { padding: 9px 10px; }
+}
+
+
+/* Keep the opening concise; reveal secondary interests on request. */
+.browse-quick__chip[hidden], .browse-quick__more[hidden] { display: none; }
+.browse-quick__more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: #e4a322;
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.browse-quick__more:focus-visible, .legend-wrap__toggle:focus-visible {
+  outline: 2px solid #e4a322;
+  outline-offset: 3px;
+}
+.featured-card--lead .featured-card__blurb {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 5px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.45;
+  color: #f6f1e6;
+}
+.legend-wrap { pointer-events: auto; }
+.legend-wrap__toggle {
+  display: block;
+  min-height: 44px;
+  color: #f6f1e6;
+  background: #121816;
+}
+.legend-wrap:not([open]) .legend { display: none !important; }
+.legend-wrap[open] .legend { margin-top: 8px; }
+@media (max-width: 900px) {
+  .discovery-search-row .topbar-filters-toggle__label { display: inline; }
+  .discovery-search-row { gap: 10px; }
+  .discovery-search-row .topbar-filters-toggle { gap: 5px; font-size: 10px; letter-spacing: .04em; }
+  .search-field--hero input[type="search"] { font-size: 16px; }
 }

@@ -165,7 +165,12 @@ See [`PIPELINE.md`](PIPELINE.md) for the exact run order and CLI flags.
 | Details | `focusIsland`, `renderDetails`, `renderDetailMap`, `loadAndShowPolygon` |
 | 3D terrain | `scheduleIsland3DMount`, `loadIsland3dModule` (see `island-3d.js`) |
 | Chat | `CHAT_*` dictionaries, `chatAutoLoadFromUrl` |
+| Learning | `loadLearningProfiles`, `renderLearningControls`, `renderLearningJourney`; pure content selectors/renderers in `learning.js`, styles in `learning.css`. |
 | Ferries | `loadFerries`, trip planner, `refreshFerriesInPlace` |
+
+The source-linked learning overlay (`data/learning_profiles.json`) loads at idle after first paint, or during Ask preparation. It adds hooks, richer pilot profiles, explained connections and `?journey=` reading sequences without changing canonical island records. `chat-agent.js` retains factual source URLs and learning facts/timelines in `read_islands`; model replies distinguish cited references from background read and photo credits. Simple pilot story/timeline prompts use the authored material directly. Recent exploration is limited to 12 browser-local IDs; saved islands keep their existing local IDs without an email gate. [Learning handover](LEARNING-DISCOVERY.md).
+
+`scripts/seo_learning.py` supplies static profile blocks and `/learn/` journey pages to `generate_seo_artifacts.py`. Existing Pages generation and artifact copying include them; the collections hub and core sitemap link the reading hub. Tests and source/identity constraints are in the learning handover and schema. The canonical ingestion pipeline does not write this authored overlay.
 
 When the dataset shape changes, update the relevant pipeline **and** `renderDetails` in the same diff.
 

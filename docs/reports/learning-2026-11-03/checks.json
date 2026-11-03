@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-11-03T17:36:49.658136+00:00",
+  "automated": [
+    {
+      "command": "node --experimental-default-type=module --check app.js",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": "node --experimental-default-type=module --check chat-agent.js",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": "node --experimental-default-type=module --check learning.js",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": "node --experimental-default-type=module scripts/test_learning.mjs",
+      "exitCode": 0,
+      "output": "PASS 20 complete, source-linked profiles and 60 explained connections\nPASS three eight-stop journeys have no missing or repeated islands\nPASS uncertain Llanddwyn identity stays out of the learning pilot\nPASS unknown region labels cannot create false geographic neighbours\nPASS default hooks use meaningful cited stories and degrade without the overlay\nPASS discovery never promotes a broken, current or content-free record\nPASS local history handles invalid and blocked storage and stays bounded\nPASS Ask records retain evidence; photo credits cannot become factual references\nPASS oversized tool output remains parseable with explicit omissions\nPASS Ask distinguishes cited references from background it read\nPASS source protocols and authored text are safely rendered\n{\n  \"checks\": 11,\n  \"profiles\": 20,\n  \"facts\": 60,\n  \"timelineEvents\": 47,\n  \"connections\": 60,\n  \"journeys\": 3,\n  \"coveredIslands\": 20\n}\n"
+    },
+    {
+      "command": "node --experimental-default-type=module scripts/test_detail_map_lifecycle.mjs",
+      "exitCode": 0,
+      "output": "PASS detail map: repeated renders, island switches and close during async setup\n"
+    },
+    {
+      "command": "node --experimental-default-type=module scripts/test_chat_agent.mjs",
+      "exitCode": 0,
+      "output": "chat-agent checks passed\n{\n  \"skye\": \"isle-of-skye\",\n  \"lomond\": 29,\n  \"islayWhisky\": 1,\n  \"puffin\": 13,\n  \"nearOban\": 104,\n  \"named\": 7185\n}\n"
+    },
+    {
+      "command": "node --experimental-default-type=module scripts/test_analytics_consent.mjs",
+      "exitCode": 0,
+      "output": "Analytics consent, withdrawal, URL sanitisation and event contract checks passed.\n"
+    },
+    {
+      "command": "node --experimental-default-type=module scripts/test_app_analytics.mjs",
+      "exitCode": 0,
+      "output": "ok: consent-safe app hooks, island view deduplication, additions-only saves, published categories and broker host privacy\n"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p test_seo*.py",
+      "exitCode": 0,
+      "output": ".....................\n----------------------------------------------------------------------\nRan 21 tests in 0.238s\n\nOK\n"
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts -p test_geo_prompt_benchmark.py",
+      "exitCode": 0,
+      "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "output": ""
+    }
+  ],
+  "geographicRegression": "OK    isle-of-skye                         type=sea   nation=Scotland          parent=None\nOK    isle-of-wight                        type=sea   nation=England           parent=None\nOK    isle-of-man                          type=sea   nation=Crown Dependency  parent=None\nOK    lundy                                type=sea   nation=England           parent=None\nOK    anglesey                             type=sea   nation=Wales             parent=None\nOK    mull                                 type=sea   nation=Scotland          parent=None\nOK    rathlin                              type=sea   nation=Northern Ireland  parent=None\nOK    lewis-and-harris                     type=sea   nation=Scotland          parent=None\nOK    belle-isle-windermere                type=lake  nation=England           parent=None\nOK    osm-relation-380646                  type=sea   nation=Scotland          parent=None\nOK    osm-relation-380670                  type=sea   nation=Scotland          parent=None\nOK    osm-relation-380685                  type=sea   nation=Scotland          parent=None\nOK    osm-relation-4619204                 type=sea   nation=Scotland          parent=None\nOK    osm-relation-6045455                 type=sea   nation=Scotland          parent=None\nOK    osm-relation-6045364                 type=sea   nation=Ireland           parent=None\nOK    osm-relation-3998376                 type=lake  nation=Northern Ireland  parent=Lower Lough Erne\nOK    osm-relation-3512150                 type=lake  nation=Northern Ireland  parent=Lower Lough Erne\nOK    osm-way-26526918                     type=lake  nation=Ireland           parent=Lough Leane\nFAIL  osm-way-403472785                    type=sea   nation=England           parent=Crouch / Roach Estuaries\n\n1 failures out of 19\n",
+  "geographicRegressionNote": "Pre-existing Wallasea mismatch; no canonical geography edits in this session.",
+  "canonicalRecords": 11212,
+  "curatedRecords": 27,
+  "missingCuratedIds": []
+}

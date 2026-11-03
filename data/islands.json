@@ -11262,7 +11262,23 @@
       "attribution": "Contains British Geological Survey materials © UKRI 2026, licensed under the BGS Open Data Licence (OGL v3.0). Source: BGS DigMapGB-625 Bedrock & Superficial WMS.",
       "fetchedAt": "2026-05-16T17:47:30+00:00",
       "_note": "Outside BGS extent (covers GB only); GSNI / GSI / Channel Islands geology is a future workstream."
-    }
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Abbey_Island.jpg/1280px-Abbey_Island.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Abbey_Island.jpg",
+        "source": "commons",
+        "sourceRef": "File:Abbey Island.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Abbey_Island.jpg",
+        "license": "CC-BY-2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "attribution": "Photo by Scummy at English Wikipedia (William Bennett) (CC-BY-2.5) via Wikimedia Commons",
+        "caption": "Derrynane Abbey on Abbey Island, County Kerry",
+        "fileName": "Abbey Island.jpg",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Abbey_Island.jpg/1280px-Abbey_Island.jpg"
   },
   {
     "id": "osm-way-1422328811",
@@ -31915,7 +31931,7 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/Angus_Rock",
     "wikidata": "Q124362316",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_telephoto_view_of_Angus_Rock_Tower_from_the_Killard_Road_-_geograph.org.uk_-_4137192.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/A_telephoto_view_of_Angus_Rock_Tower_from_the_Killard_Road_-_geograph.org.uk_-_4137192.jpg?width=800",
@@ -43941,7 +43957,23 @@
     "propertyListingsSource": "curated",
     "propertyListingsConfidence": "high",
     "propertyListingsAttribution": "Outbound links to third-party estate agents and brokers; not scraped from Rightmove or Zoopla. Verify status on the source site.",
-    "propertyListingsFetchedAt": "2026-10-25T14:33:07+00:00"
+    "propertyListingsFetchedAt": "2026-10-25T14:33:07+00:00",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Arranmore_Cliffs_-_Lighthouse.jpg/1280px-Arranmore_Cliffs_-_Lighthouse.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Arranmore_Cliffs_-_Lighthouse.jpg",
+        "source": "commons",
+        "sourceRef": "File:Arranmore Cliffs - Lighthouse.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Arranmore_Cliffs_-_Lighthouse.jpg",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Photo by Olha Volotkevych (CC-BY-SA-4.0) via Wikimedia Commons",
+        "caption": "Cliffs near the lighthouse on Arranmore, County Donegal",
+        "fileName": "Arranmore Cliffs - Lighthouse.jpg",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Arranmore_Cliffs_-_Lighthouse.jpg/1280px-Arranmore_Cliffs_-_Lighthouse.jpg"
   },
   {
     "id": "wd-Q24657122",
@@ -44848,22 +44880,7 @@
     "wikipedia": "",
     "wikidata": "Q26718910",
     "image": "",
-    "images": [
-      {
-        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/288954582/medium.jpg",
-        "source": "inaturalist-obs",
-        "sourceRef": "166843984",
-        "sourcePageUrl": "https://www.inaturalist.org/observations/166843984",
-        "license": "CC-BY-4.0",
-        "attribution": "(c) rmjb, some rights reserved (CC BY)",
-        "caption": "Grey Heron; observed 2023-06-11; 111 m from island centroid",
-        "primary": true,
-        "imageConfidence": "medium",
-        "verifiedAt": "2026-06-02T21:00:36+00:00",
-        "inaturalistDistanceM": 110.6,
-        "islandId": "osm-way-393292258"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -46971,7 +46988,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716346",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/On_Inishturk_Ferry_-_view_to_Ballybeg_Island_-_geograph.org.uk_-_5609786.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/On_Inishturk_Ferry_-_view_to_Ballybeg_Island_-_geograph.org.uk_-_5609786.jpg?width=800",
@@ -49169,7 +49186,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716375",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Barranagh_Island_-_geograph.org.uk_-_1855177.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Barranagh_Island_-_geograph.org.uk_-_1855177.jpg?width=800",
@@ -52400,7 +52417,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q31572381",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beeves_Rock_Lighthouse.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beeves_Rock_Lighthouse.jpg?width=800",
@@ -53794,22 +53811,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/542232843/medium.jpg",
-        "source": "inaturalist-obs",
-        "sourceRef": "300923196",
-        "sourcePageUrl": "https://www.inaturalist.org/observations/300923196",
-        "license": "CC-BY-4.0",
-        "attribution": "(c) Rocco Lieghio, some rights reserved (CC BY)",
-        "caption": "Yorkshire fog; observed 2025-07-25; 178 m from island centroid",
-        "primary": true,
-        "imageConfidence": "medium",
-        "verifiedAt": "2026-06-02T21:01:45+00:00",
-        "inaturalistDistanceM": 177.7,
-        "islandId": "osm-way-88125442"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet",
       "wood"
@@ -61579,22 +61581,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/523397364/medium.jpg",
-        "source": "inaturalist-obs",
-        "sourceRef": "290924614",
-        "sourcePageUrl": "https://www.inaturalist.org/observations/290924614",
-        "license": "CC-BY-4.0",
-        "attribution": "(c) Rocco Lieghio, some rights reserved (CC BY)",
-        "caption": "Cherry laurel; observed 2025-06-19; 259 m from island centroid",
-        "primary": true,
-        "imageConfidence": "medium",
-        "verifiedAt": "2026-06-02T21:02:34+00:00",
-        "inaturalistDistanceM": 259.4,
-        "islandId": "osm-way-88143446"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet",
       "wood"
@@ -83622,7 +83609,22 @@
     "descriptionAttribution": "From Wikipedia article “Bull Island” (CC BY-SA 4.0). Read more: https://en.wikipedia.org/wiki/Bull_Island",
     "descriptionFetchedAt": "2026-05-12T20:33:33+00:00",
     "osmType": "relation",
-    "osmId": 5496743
+    "osmId": 5496743,
+    "images": [
+      {
+        "url": "https://live.staticflickr.com/7132/7150119203_73fcac7f56_b.jpg",
+        "fullUrl": "https://live.staticflickr.com/7132/7150119203_730777875f_o.jpg",
+        "source": "flickr-cc",
+        "sourceRef": "7150119203",
+        "sourcePageUrl": "https://www.flickr.com/photos/80824546@N00/7150119203",
+        "license": "CC-BY-SA-2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attribution": "Photo by William Murphy (CC-BY-SA-2.0) via Flickr",
+        "caption": "Sand dunes on North Bull Island, Dublin Bay.",
+        "primary": true
+      }
+    ],
+    "image": "https://live.staticflickr.com/7132/7150119203_73fcac7f56_b.jpg"
   },
   {
     "id": "osm-way-4554779",
@@ -87292,7 +87294,23 @@
       "attribution": "Contains British Geological Survey materials © UKRI 2026, licensed under the BGS Open Data Licence (OGL v3.0). Source: BGS DigMapGB-625 Bedrock & Superficial WMS.",
       "fetchedAt": "2026-05-16T17:47:30+00:00",
       "_note": "Outside BGS extent (covers GB only); GSNI / GSI / Channel Islands geology is a future workstream."
-    }
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Caher_island.jpg/1280px-Caher_island.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Caher_island.jpg",
+        "source": "commons",
+        "sourceRef": "File:Caher island.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Caher_island.jpg",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Photo by Towel401 (CC-BY-SA-4.0) via Wikimedia Commons",
+        "caption": "Caher Island seen from Inishturk",
+        "fileName": "Caher island.jpg",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Caher_island.jpg/1280px-Caher_island.jpg"
   },
   {
     "id": "osm-way-124660665",
@@ -91361,17 +91379,7 @@
     "wikipedia": "https://en.wikipedia.org/wiki/Canon_Island",
     "wikidata": "Q431559",
     "image": "",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Canon_Island_Abbey.png?width=800",
-        "source": "wikipedia",
-        "sourceRef": "Canon_Island",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Canon_Island_Abbey.png",
-        "license": "Public domain",
-        "attribution": "Photo by Unknown, via Wikimedia Commons (Public domain)",
-        "caption": "Canon Island Abbey"
-      }
-    ],
+    "images": [],
     "tags": [
       "island"
     ],
@@ -108509,22 +108517,7 @@
     "wikipedia": "",
     "wikidata": "Q26718907",
     "image": "",
-    "images": [
-      {
-        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/151491663/medium.jpg",
-        "source": "inaturalist-obs",
-        "sourceRef": "91570902",
-        "sourcePageUrl": "https://www.inaturalist.org/observations/91570902",
-        "license": "CC-BY-4.0",
-        "attribution": "(c) rmjb, some rights reserved (CC BY)",
-        "caption": "Great Black-backed Gull; observed 2021-08-17; 282 m from island centroid",
-        "primary": true,
-        "imageConfidence": "medium",
-        "verifiedAt": "2026-06-02T21:06:44+00:00",
-        "inaturalistDistanceM": 281.5,
-        "islandId": "osm-way-223842666"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -110776,7 +110769,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q31571690",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carricknamoan_-_geograph.org.uk_-_5539262.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carricknamoan_-_geograph.org.uk_-_5539262.jpg?width=800",
@@ -146626,7 +146619,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beach_on_the_north_side_of_Claggan_Island_isthmus_-_geograph.org.uk_-_1878603.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beach_on_the_north_side_of_Claggan_Island_isthmus_-_geograph.org.uk_-_1878603.jpg?width=800",
@@ -148352,19 +148345,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://live.staticflickr.com/2285/2132196242_44baca99fe.jpg",
-        "source": "openverse",
-        "sourceRef": "1c299484-3f2c-41d0-88fb-f58210d84a08",
-        "sourcePageUrl": "https://www.flickr.com/photos/76669273@N00/2132196242",
-        "license": "CC-BY-2.0",
-        "attribution": "\"Cliffs of Moher, Co. Clare, Ireland\" by atomicpuppy68 is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
-        "caption": "Cliffs of Moher, Co. Clare, Ireland",
-        "imageConfidence": "medium",
-        "verifiedAt": "2026-06-02T21:27:56+00:00"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet"
     ],
@@ -153040,7 +153021,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Conly_Island_-_geograph.org.uk_-_7663930.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Conly_Island_-_geograph.org.uk_-_7663930.jpg?width=800",
@@ -156787,7 +156768,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716841",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cow_Island%2C_Lough_Leane%2C_Killarney_-_geograph.org.uk_-_4142976.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cow_Island%2C_Lough_Leane%2C_Killarney_-_geograph.org.uk_-_4142976.jpg?width=800",
@@ -164980,7 +164961,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Crovinish%2C_Co_Mayo_-_geograph.org.uk_-_3472428.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Crovinish%2C_Co_Mayo_-_geograph.org.uk_-_3472428.jpg?width=800",
@@ -166319,7 +166300,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716122",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shore_view_to_Crump_Island_-_geograph.org.uk_-_5953688.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shore_view_to_Crump_Island_-_geograph.org.uk_-_5953688.jpg?width=800",
@@ -177958,7 +177939,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717919",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Quiet_mooring_Drummans_Island_-_Lough_Key_-_geograph.org.uk_-_400335.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Quiet_mooring_Drummans_Island_-_Lough_Key_-_geograph.org.uk_-_400335.jpg?width=800",
@@ -179547,7 +179528,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716178",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/F%C3%ADnis_Point_and_Oile%C3%A1n_Lachan_-_geograph.org.uk_-_3596275.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/F%C3%ADnis_Point_and_Oile%C3%A1n_Lachan_-_geograph.org.uk_-_3596275.jpg?width=800",
@@ -183437,7 +183418,7 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/Eagle_Island%2C_County_Mayo",
     "wikidata": "Q5325135",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eagle_Island_lighthouses_-_20180919145655.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eagle_Island_lighthouses_-_20180919145655.jpg?width=800",
@@ -183532,17 +183513,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eagle_Island_lighthouses_-_20180919145655.jpg?width=800",
-        "source": "commons-text-search",
-        "sourceRef": "osm-way-26526927",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Eagle_Island_lighthouses_-_20180919145655.jpg",
-        "license": "CC BY-SA 4.0",
-        "attribution": "Photo by MickReynolds, via Wikimedia Commons (CC BY-SA 4.0)",
-        "caption": "Eagle Island lighthouses - 20180919145655"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet"
     ],
@@ -183598,17 +183569,7 @@
     "wikipedia": "",
     "wikidata": "Q104321068",
     "image": "",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eagle_Island_lighthouses_-_20180919145655.jpg?width=800",
-        "source": "commons-text-search",
-        "sourceRef": "osm-way-188988733",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Eagle_Island_lighthouses_-_20180919145655.jpg",
-        "license": "CC BY-SA 4.0",
-        "attribution": "Photo by MickReynolds, via Wikimedia Commons (CC BY-SA 4.0)",
-        "caption": "Eagle Island lighthouses - 20180919145655"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet"
     ],
@@ -184495,17 +184456,18 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/The_Maidens",
     "wikidata": "Q3776778",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancien_phare_des_Maidens.jpg?width=640",
+    "image": "https://s0.geograph.org.uk/geophotos/05/95/79/5957939_220877dd.jpg",
     "images": [
       {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancien_phare_des_Maidens.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ancien_phare_des_Maidens.jpg?width=1600",
-        "caption": "Ancien phare des Maidens",
-        "source": "wikidata",
-        "sourceRef": "Q3776778",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ancien_phare_des_Maidens.jpg",
-        "license": "CC BY-SA 3.0",
-        "attribution": "Alvaro",
+        "url": "https://s0.geograph.org.uk/geophotos/05/95/79/5957939_220877dd.jpg",
+        "fullUrl": "https://s0.geograph.org.uk/geophotos/05/95/79/5957939_220877dd.jpg",
+        "source": "geograph",
+        "sourceRef": "5957939",
+        "sourcePageUrl": "https://www.geograph.org.uk/photo/5957939",
+        "license": "CC-BY-SA-2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attribution": "Oliver Dixon via Geograph (CC-BY-SA 2.0)",
+        "caption": "East Maiden and its lighthouse in the North Channel",
         "primary": true
       }
     ],
@@ -256231,7 +256193,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friar_Island_-_geograph.org.uk_-_2436494.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Friar_Island_-_geograph.org.uk_-_2436494.jpg?width=800",
@@ -269398,7 +269360,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goose_Island%2C_aerial_view.jpg?width=800",
@@ -293963,7 +293925,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q24651831",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cottage_on_Copeland_Island_-_geograph.org.uk_-_3768899.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cottage_on_Copeland_Island_-_geograph.org.uk_-_3768899.jpg?width=800",
@@ -296942,7 +296904,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Green_Island_and_Bird_Island_south_of_Portavogie_-_geograph.org.uk_-_3749099.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Green_Island_and_Bird_Island_south_of_Portavogie_-_geograph.org.uk_-_3749099.jpg?width=800",
@@ -303610,7 +303572,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717033",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gurrig_Island_-_geograph.org.uk_-_500462.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gurrig_Island_-_geograph.org.uk_-_500462.jpg?width=800",
@@ -308553,7 +308515,23 @@
     "areaSource": "osm-way",
     "areaConfidence": "high",
     "highestPointSource": null,
-    "highestPointConfidence": "n/a"
+    "highestPointConfidence": "n/a",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haulbowline_from_the_High_Road_at_Cobh.JPG/1280px-Haulbowline_from_the_High_Road_at_Cobh.JPG",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Haulbowline_from_the_High_Road_at_Cobh.JPG",
+        "source": "commons",
+        "sourceRef": "File:Haulbowline from the High Road at Cobh.JPG",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Haulbowline_from_the_High_Road_at_Cobh.JPG",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Photo by Guliolopez (CC-BY-SA-4.0) via Wikimedia Commons",
+        "caption": "Haulbowline seen from the High Road at Cobh, Cork Harbour",
+        "fileName": "Haulbowline from the High Road at Cobh.JPG",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haulbowline_from_the_High_Road_at_Cobh.JPG/1280px-Haulbowline_from_the_High_Road_at_Cobh.JPG"
   },
   {
     "id": "osm-way-1217590859",
@@ -313952,7 +313930,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717918",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hogs_Island%2C_Lough_Key_-_geograph.org.uk_-_1643757.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hogs_Island%2C_Lough_Key_-_geograph.org.uk_-_1643757.jpg?width=800",
@@ -319338,7 +319316,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse_Island_-_geograph.org.uk_-_977170.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse_Island_-_geograph.org.uk_-_977170.jpg?width=800",
@@ -326110,7 +326088,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717037",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunnabarnagh_-_geograph.org.uk_-_500553.jpg?width=800",
@@ -329432,7 +329410,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q104296920",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaungawna_Island.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaungawna_Island.jpg?width=800",
@@ -330093,7 +330071,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_East.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illaunkearagh_East.jpg?width=800",
@@ -332927,21 +332905,8 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26716612",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ring_of_Kerry%2C_Illaunsillagh_-_geograph.org.uk_-_5999025.jpg?width=640",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ring_of_Kerry%2C_Illaunsillagh_-_geograph.org.uk_-_5999025.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ring_of_Kerry%2C_Illaunsillagh_-_geograph.org.uk_-_5999025.jpg?width=1600",
-        "caption": "Ring of Kerry, Illaunsillagh - geograph.org.uk - 5999025",
-        "source": "commons-geosearch",
-        "sourceRef": "51.7749,-10.0003;800",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ring_of_Kerry,_Illaunsillagh_-_geograph.org.uk_-_5999025.jpg",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "attribution": "Photo by N Chadwick (CC BY-SA 2.0) via Wikimedia Commons (geosearch)",
-        "primary": true
-      }
-    ],
+    "image": "",
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -333052,7 +333017,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717645",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Illauntannig.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Illauntannig.jpg?width=800",
@@ -334216,7 +334181,7 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/Inchaghaun",
     "wikidata": "Q26717771",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inis_an_Ghainimh_%28Inchaghaun%29_-_geograph.org.uk_-_1250718.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inis_an_Ghainimh_%28Inchaghaun%29_-_geograph.org.uk_-_1250718.jpg?width=800",
@@ -337481,21 +337446,8 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lomanotus_genei_12005170.jpg?width=640",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lomanotus_genei_12005170.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lomanotus_genei_12005170.jpg?width=1600",
-        "caption": "Lomanotus genei 12005170",
-        "source": "commons-geosearch",
-        "sourceRef": "53.6285,-9.8781;800",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lomanotus_genei_12005170.jpg",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-        "attribution": "Photo by Bernard Picton (CC BY 4.0) via Wikimedia Commons (geosearch)",
-        "primary": true
-      }
-    ],
+    "image": "",
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -338285,7 +338237,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inish_Doney_-_geograph.org.uk_-_485011.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inish_Doney_-_geograph.org.uk_-_485011.jpg?width=800",
@@ -340029,20 +339981,8 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/Inishbofin,_County_Donegal",
     "wikidata": "Q2663127",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tory_Island_East_Town_2005_08_10.jpg?width=640",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tory_Island_East_Town_2005_08_10.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tory_Island_East_Town_2005_08_10.jpg?width=1600",
-        "caption": "Tory Island East Town 2005 08 10",
-        "source": "wikidata",
-        "sourceRef": "Q2663127",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tory_Island_East_Town_2005_08_10.jpg",
-        "license": "CC BY-SA 4.0",
-        "attribution": "Andreas F. Borchert",
-        "primary": true
-      }
-    ],
+    "image": "",
+    "images": [],
     "tags": [
       "island",
       "coastline"
@@ -341512,7 +341452,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lough_Corrib%2C_View_towards_Inishdauwee_-_geograph.org.uk_-_8264230.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lough_Corrib%2C_View_towards_Inishdauwee_-_geograph.org.uk_-_8264230.jpg?width=800",
@@ -342424,7 +342364,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishee_Island%2C_Lough_Macnean_Lower_-_geograph.org.uk_-_984290.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishee_Island%2C_Lough_Macnean_Lower_-_geograph.org.uk_-_984290.jpg?width=800",
@@ -343772,16 +343712,20 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg/1280px-Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg",
     "images": [
       {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg?width=800",
-        "source": "commons-text-search",
-        "sourceRef": "osm-way-4561939",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg/1280px-Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg",
+        "source": "commons",
+        "sourceRef": "File:Lighthouse on Inishgort at mouth of Westport Harbour - geograph.org.uk - 5610240.jpg",
         "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lighthouse_on_Inishgort_at_mouth_of_Westport_Harbour_-_geograph.org.uk_-_5610240.jpg",
-        "license": "CC BY-SA 2.0",
-        "attribution": "Photo by Colin Park, via Wikimedia Commons (CC BY-SA 2.0)",
-        "caption": "Lighthouse on Inishgort at mouth of Westport Harbour - geograph.org.uk - 5610240"
+        "license": "CC-BY-SA-2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "attribution": "Photo by Colin Park (CC-BY-SA-2.0) via Wikimedia Commons",
+        "caption": "Inishgort Lighthouse at the entrance to Westport Harbour, Clew Bay",
+        "fileName": "Lighthouse on Inishgort at mouth of Westport Harbour - geograph.org.uk - 5610240.jpg",
+        "primary": true
       }
     ],
     "tags": [
@@ -344206,7 +344150,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26715867",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View_across_Dunmore_Strand_to_Inishinny_-_geograph.org.uk_-_305455.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_across_Dunmore_Strand_to_Inishinny_-_geograph.org.uk_-_305455.jpg?width=800",
@@ -344379,7 +344323,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26715869",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishkea_South_Island._-_geograph.org.uk_-_291268.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishkea_South_Island._-_geograph.org.uk_-_291268.jpg?width=800",
@@ -344768,19 +344712,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cross%2C_Inishkeen_Island_-_geograph.org.uk_-_2133379.jpg?width=800",
-        "source": "geograph-via-commons",
-        "sourceRef": "osm-relation-3999306",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cross,_Inishkeen_Island_-_geograph.org.uk_-_2133379.jpg",
-        "license": "CC BY-SA 2.0",
-        "attribution": "Photo by Kenneth Allen, via Wikimedia Commons (CC BY-SA 2.0)",
-        "caption": "Cross, Inishkeen Island - geograph.org.uk - 2133379",
-        "imageConfidence": "high",
-        "verifiedAt": "2026-06-02T20:47:37+00:00"
-      }
-    ],
+    "images": [],
     "tags": [
       "island"
     ],
@@ -346494,7 +346426,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717853",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lough_Melvin%2C_with_Inishmean_and_Inishtemple%2C_from_the_Glennans_-_geograph.org.uk_-_65045.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lough_Melvin%2C_with_Inishmean_and_Inishtemple%2C_from_the_Glennans_-_geograph.org.uk_-_65045.jpg?width=800",
@@ -346633,7 +346565,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q104323466",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishmicatreer_Pastures_and_Monastic_Site_2010_09_14.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inishmicatreer_Pastures_and_Monastic_Site_2010_09_14.jpg?width=800",
@@ -356300,7 +356232,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Island_Taggart%2C_Strangford_Lough_-_geograph.org.uk_-_2005957.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Island_Taggart%2C_Strangford_Lough_-_geograph.org.uk_-_2005957.jpg?width=800",
@@ -358736,7 +358668,23 @@
       "confidence": "high",
       "attribution": "Contains British Geological Survey materials © UKRI 2026, licensed under the BGS Open Data Licence (OGL v3.0). Source: BGS DigMapGB-625 Bedrock & Superficial WMS.",
       "fetchedAt": "2026-05-16T17:47:30+00:00"
-    }
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+        "source": "commons",
+        "sourceRef": "File:Isle of Muck - geograph.org.uk - 250906.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Isle_of_Muck_-_geograph.org.uk_-_250906.jpg",
+        "license": "CC-BY-SA-2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "attribution": "Photo by Eleanor Ballard (CC-BY-SA-2.0) via Wikimedia Commons",
+        "caption": "Isle of Muck and the harbour at Portmuck, County Antrim",
+        "fileName": "Isle of Muck - geograph.org.uk - 250906.jpg",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Isle_of_Muck_-_geograph.org.uk_-_250906.jpg"
   },
   {
     "id": "mull",
@@ -373271,7 +373219,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q104273416",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Keeragh_Islands_-_geograph.org.uk_-_1371649.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Keeragh_Islands_-_geograph.org.uk_-_1371649.jpg?width=800",
@@ -397498,7 +397446,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Knock_Island_-_geograph.org.uk_-_1044532.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Knock_Island_-_geograph.org.uk_-_1044532.jpg?width=800",
@@ -401259,7 +401207,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View_towards_Derrynane%2C_Abbey_Island_and_Lamb%27s_Island%2C_County_Kerry_-_geograph.org.uk_-_5647292.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_towards_Derrynane%2C_Abbey_Island_and_Lamb%27s_Island%2C_County_Kerry_-_geograph.org.uk_-_5647292.jpg?width=800",
@@ -405805,7 +405753,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Leveret_Island%2C_Lough_Ree_-_geograph.org.uk_-_412880.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leveret_Island%2C_Lough_Ree_-_geograph.org.uk_-_412880.jpg?width=800",
@@ -416937,7 +416885,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View_N_from_R572_to_Tranaduileasg_%5E_Long_Island_near_Garinish_-_geograph.org.uk_-_6008984.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_N_from_R572_to_Tranaduileasg_%5E_Long_Island_near_Garinish_-_geograph.org.uk_-_6008984.jpg?width=800",
@@ -431187,7 +431135,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lousy_Castle_Island_-_geograph.org.uk_-_15145.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lousy_Castle_Island_-_geograph.org.uk_-_15145.jpg?width=800",
@@ -446637,7 +446585,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Malthooa_-_geograph.org.uk_-_2436495.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Malthooa_-_geograph.org.uk_-_2436495.jpg?width=800",
@@ -463110,7 +463058,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mid_Island%2C_Strangford_Lough_-_geograph.org.uk_-_3589.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mid_Island%2C_Strangford_Lough_-_geograph.org.uk_-_3589.jpg?width=800",
@@ -492621,7 +492569,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_Island_West_-_geograph.org.uk_-_400744.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_Island_West_-_geograph.org.uk_-_400744.jpg?width=800",
@@ -533832,7 +533780,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q104334375",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell_Fort%2C_Port_Island%2C_Inishbofin_-_geograph.org.uk_-_199476.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell_Fort%2C_Port_Island%2C_Inishbofin_-_geograph.org.uk_-_199476.jpg?width=800",
@@ -533948,21 +533896,8 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcyonium_digitatum_22285939.jpg?width=640",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcyonium_digitatum_22285939.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcyonium_digitatum_22285939.jpg?width=1600",
-        "caption": "Alcyonium digitatum 22285939",
-        "source": "commons-geosearch",
-        "sourceRef": "54.5671,-8.4589;800",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alcyonium_digitatum_22285939.jpg",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-        "attribution": "Photo by Bernard Picton (CC BY 4.0) via Wikimedia Commons (geosearch)",
-        "primary": true
-      }
-    ],
+    "image": "",
+    "images": [],
     "tags": [
       "islet"
     ],
@@ -546347,7 +546282,23 @@
       "attribution": "Contains British Geological Survey materials © UKRI 2026, licensed under the BGS Open Data Licence (OGL v3.0). Source: BGS DigMapGB-625 Bedrock & Superficial WMS.",
       "fetchedAt": "2026-05-16T17:47:30+00:00",
       "_note": "Outside BGS extent (covers GB only); GSNI / GSI / Channel Islands geology is a future workstream."
-    }
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Puffinisland1.jpg/1280px-Puffinisland1.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Puffinisland1.jpg",
+        "source": "commons",
+        "sourceRef": "File:Puffinisland1.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Puffinisland1.jpg",
+        "license": "CC-BY-SA-3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "attribution": "Photo by Hugh McCann (uploaded by Snalwibma) (CC-BY-SA-3.0) via Wikimedia Commons",
+        "caption": "Puffin Island, County Kerry, with the Skelligs beyond (1991)",
+        "fileName": "Puffinisland1.jpg",
+        "primary": true
+      }
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Puffinisland1.jpg/1280px-Puffinisland1.jpg"
   },
   {
     "id": "osm-way-237775398",
@@ -558011,7 +557962,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Squince_Harbour_and_Rabbit_Island_-_geograph.org.uk_-_4749008.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Squince_Harbour_and_Rabbit_Island_-_geograph.org.uk_-_4749008.jpg?width=800",
@@ -565652,7 +565603,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rockabill_Lighthouse_from_Skerries_South_Beach_-_geograph.org.uk_-_7673409.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rockabill_Lighthouse_from_Skerries_South_Beach_-_geograph.org.uk_-_7673409.jpg?width=800",
@@ -575682,7 +575633,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q26717614",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Little_Samphire_Island_-_geograph.org.uk_-_1475897.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Little_Samphire_Island_-_geograph.org.uk_-_1475897.jpg?width=800",
@@ -604220,7 +604171,7 @@
     "accommodation": "",
     "wikipedia": "https://en.wikipedia.org/wiki/East_Skeam_Island",
     "wikidata": "Q26716566",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Skeam_East_island.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Skeam_East_island.jpg?width=800",
@@ -692288,8 +692239,22 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "Q31570608",
-    "image": "",
-    "images": [],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/The_Muglins_Beacon_%28geograph_5816491%29.jpg",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/The_Muglins_Beacon_%28geograph_5816491%29.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/The_Muglins_Beacon_%28geograph_5816491%29.jpg",
+        "source": "commons",
+        "sourceRef": "File:The Muglins Beacon (geograph 5816491).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Muglins_Beacon_(geograph_5816491).jpg",
+        "license": "CC-BY-SA-2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "attribution": "Photo by David Dixon (CC-BY-SA-2.0) via Wikimedia Commons",
+        "caption": "The Muglins and its beacon, off Dalkey",
+        "fileName": "The Muglins Beacon (geograph 5816491).jpg",
+        "primary": true
+      }
+    ],
     "tags": [
       "islet",
       "coastline"
@@ -710217,17 +710182,7 @@
     "wikipedia": "",
     "wikidata": "",
     "image": "",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torglass%2C_Owey_Island_-_geograph.org.uk_-_3552169.jpg?width=800",
-        "source": "commons-text-search",
-        "sourceRef": "osm-way-4559331",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Torglass,_Owey_Island_-_geograph.org.uk_-_3552169.jpg",
-        "license": "CC BY-SA 2.0",
-        "attribution": "Photo by louise price, via Wikimedia Commons (CC BY-SA 2.0)",
-        "caption": "Torglass, Owey Island - geograph.org.uk - 3552169"
-      }
-    ],
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -711376,7 +711331,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camping_on_Trannish_Island.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Camping_on_Trannish_Island.jpg?width=800",
@@ -713250,21 +713205,8 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Upper_deck_of_Burtonport_ferry_-_geograph.org.uk_-_1164477.jpg?width=640",
-    "images": [
-      {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Upper_deck_of_Burtonport_ferry_-_geograph.org.uk_-_1164477.jpg?width=640",
-        "fullUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Upper_deck_of_Burtonport_ferry_-_geograph.org.uk_-_1164477.jpg?width=1600",
-        "caption": "Upper deck of Burtonport ferry - geograph.org.uk - 1164477",
-        "source": "commons-geosearch",
-        "sourceRef": "54.9780,-8.4419;800",
-        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Upper_deck_of_Burtonport_ferry_-_geograph.org.uk_-_1164477.jpg",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "attribution": "Photo by Joseph Mischyshyn (CC BY-SA 2.0) via Wikimedia Commons (geosearch)",
-        "primary": true
-      }
-    ],
+    "image": "",
+    "images": [],
     "tags": [
       "islet",
       "coastline"
@@ -957530,7 +957472,7 @@
     "accommodation": "",
     "wikipedia": "",
     "wikidata": "",
-    "image": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood_Island_-_geograph.org.uk_-_8020656.jpg?width=800",
     "images": [
       {
         "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood_Island_-_geograph.org.uk_-_8020656.jpg?width=800",

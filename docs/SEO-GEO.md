@@ -84,16 +84,30 @@ python3 scripts/build_islands_index.py   # stamps seoPath onto shards
 - `sitemap-core.xml` (home, nation hubs, trust pages, collections root)
 - `sitemap-islands-editorial.xml` (curated + featured)
 - `sitemap-islands.xml` (**named islands with a description only** — unnamed / thin atlas records stay shareable on `/islands/…` but are omitted so Google does not spend crawl budget on them)
-- `sitemap-ferries-verified.xml`
+- `sitemap-ferries-verified.xml` (empty while the ferry promotion freeze in `QUEUE.md` remains in force)
 - `sitemap-collections.xml` (interest guides first, then archipelago hubs)
 
 Interest guides are written by `scripts/seo_interest_guides.py` from `data/interest_index.json`. Each page leads with what the list counts and what it leaves out, then the cited rows. Rows a 26 October 2026 fact-check found false are omitted from these pages until the atlas itself is corrected. `llms.txt` points answer engines at the guides. Homepage `?interest=` and `?island=` views are `noindex`; a known interest filter uses the guide URL as its canonical.
 
 Legacy `/profiles/` URLs are **not** listed in the sitemap (canonical is `/islands/…`). They are still **indexable** landings so crawlers and GEO systems that already know the old URL get full content instead of a `noindex` stub.
 
+**Local integrity update, 2 November 2026:** generator output omits optional
+`lastmod` dates until reliable per-page content dates exist; source retrieval,
+file checkout and build times must not imply editorial review. Profiles carry
+existing population years, image/source credits, stable JSON-LD entity IDs,
+breadcrumbs and cited interest entries directly in the HTML. All guide rows
+remain available in native expandable sections, and records without a source
+URL are explicitly distinguished from linked citations. No atlas indexability
+policy changed. These changes require a subsequent deployment to appear live.
+
 **301 redirects:** GitHub Pages cannot emit HTTP 301s. After each generate, `data/legacy_redirects.csv` lists `/profiles/<id>.html` and `/?island=<id>` → `/islands/{nation}/{slug}/` for sitemap-eligible islands (Cloudflare Bulk Redirects). Import that CSV on an edge layer when DNS allows; until then, canonical tags are the only consolidation signal.
 
 ## Google Search Console (connected 2026-07-26)
+
+Visitor measurement is documented separately in [ANALYTICS.md](ANALYTICS.md).
+The consent-gated loader covers the homepage and generated landings locally;
+the new account choice and live collection remain uncompleted. Search Console
+impressions and Analytics visits must not be combined as one measure.
 
 Property: `sc-domain:findmyisland.com`. Snapshot: `data/gsc_seo_snapshot.json`.
 
@@ -204,7 +218,7 @@ Phase rotation (5-cycle):
 | descriptions | Wikipedia/multilang leads for entity/GEO answers |
 | photos | OG images + named photo-gap harvest |
 | featured-flagship | Featured/topics + flagship editorial audit + desc |
-| authority-artifacts | Landings/hubs/trust/sitemaps + GEO benchmark stub + live probes |
+| authority-artifacts | Landings/hubs/trust/sitemaps + live probes; preserves existing GEO benchmark results |
 | gsc-priority | GSC snapshot-driven enrichment when available |
 
 **Policy:** improve coverage and landings; **do not noindex/deindex** Tier C

@@ -3,7 +3,7 @@
 Generate crawlers / GEO-friendly artifacts for the static atlas.
 
 Outputs (when --site-origin is set):
-  - sitemap.xml — home, nation hubs, ferry guides, /islands/{nation}/{slug}/
+  - sitemap.xml — home, nation hubs, guides, /islands/{nation}/{slug}/
   - robots.txt — allows all, points to sitemap
 
 Always written:
@@ -23,16 +23,21 @@ Examples:
 
 from __future__ import annotations
 
+from seo_learning import load_learning, learning_profile_html, reading_links_for, write_learning_pages
+
 import argparse
 import csv
 import html
 import json
+import math
 import os
 import re
 import sys
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode, urlsplit
 from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +69,7 @@ SEO_PATH_MAP = DATA / "seo_path_by_id.json"
 LEGACY_REDIRECTS = DATA / "legacy_redirects.csv"
 INDEX_HTML = ROOT / "index.html"
 ISLANDS_DIR = ROOT / "islands"
+REPOSITORY_URL = "https://github.com/Drummond1/britishislands"
 
 FERRY_LABELS: dict[str, str] = {
     "/ferries/": "All ferry guides",
@@ -81,21 +87,9 @@ FERRY_LABELS: dict[str, str] = {
     "/ferries/calmac/": "CalMac",
 }
 
-FERRY_PATHS = (
-    "/ferries/",
-    "/ferries/hebrides/",
-    "/ferries/orkney/",
-    "/ferries/shetland/",
-    "/ferries/isle-of-wight/",
-    "/ferries/isles-of-scilly/",
-    "/ferries/isle-of-man/",
-    "/ferries/channel-islands/",
-    "/ferries/scottish/",
-    "/ferries/welsh/",
-    "/ferries/ireland/",
-    "/ferries/northern-ireland/",
-    "/ferries/calmac/",
-)
+# docs/QUEUE.md: ferry discovery stays off until route data is reliable.
+# Keep the empty sitemap file for existing consumers, without promoting routes.
+FERRY_PATHS: tuple[str, ...] = ()
 
 CRAWL_LINKS_MARKER_START = "<!-- IOB_CRAWL_LINKS_START -->"
 CRAWL_LINKS_MARKER_END = "<!-- IOB_CRAWL_LINKS_END -->"
@@ -143,6 +137,59 @@ def island_image_url(isl: dict) -> str:
             if u:
                 return u
     return str(isl.get("image") or "").strip()
+
+
+def external_url(value: Any) -> str:
+    """Only link public web sources, never executable URL schemes."""
+    value = str(value or "").strip()
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return ""
+    return value if parsed.scheme in {"https", "http"} and parsed.netloc else ""
+
+
+def json_ld_script(payload: dict[str, Any]) -> str:
+    # JSON strings must not be able to terminate their containing HTML script.
+    data = json.dumps(payload, ensure_ascii=False, allow_nan=False).replace("<", "\\u003c")
+    return f'  <script type="application/ld+json">{data}</script>'
+
+
+def attribution_text(value: Any) -> str:
+    class AttributionParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.parts: list[str] = []
+
+        def handle_data(self, data: str) -> None:
+            self.parts.append(data)
+
+    parser = AttributionParser()
+    parser.feed(str(value or ""))
+    return " ".join("".join(parser.parts).split())
+
+
+def image_credit_html(isl: dict, image_url: str) -> str:
+    for image in isl.get("images") or []:
+        if not isinstance(image, dict) or image_url not in {
+            image.get("url"), image.get("fullUrl"), image.get("thumbUrl")
+        }:
+            continue
+        pieces = [html.escape(attribution_text(image[key])) for key in ("attribution", "license") if image.get(key)]
+        if source := external_url(image.get("sourcePageUrl")):
+            pieces.append(f'<a href="{html.escape(source, quote=True)}">Image source</a>')
+        return f'<figcaption>{" · ".join(pieces)}</figcaption>' if pieces else ""
+    return ""
+
+
+def coordinate(value: Any, limit: float) -> float | None:
+    if isinstance(value, bool):
+        return None
+    try:
+        number = float(value)
+    except (ValueError, TypeError):
+        return None
+    return number if math.isfinite(number) and abs(number) <= limit else None
 
 
 def island_is_unnamed(isl: dict) -> bool:
@@ -244,28 +291,7 @@ def _ymd_from_iso(s: str) -> str | None:
         return None
 
 
-def _mtime_ymd(path: Path) -> str:
-    try:
-        return datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d")
-    except Exception:
-        return datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-
-def _island_lastmod(isl: dict, default_ymd: str) -> str:
-    # Prefer explicit record timestamps when available; otherwise file mtime.
-    candidates = [
-        _ymd_from_iso(str(isl.get("propertyListingsFetchedAt") or "")),
-        _ymd_from_iso(str(isl.get("imageEnrichmentFetchedAt") or "")),
-        _ymd_from_iso(str(isl.get("nameEnrichmentFetchedAt") or "")),
-    ]
-    for src in isl.get("sources") or []:
-        if isinstance(src, dict):
-            candidates.append(_ymd_from_iso(str(src.get("retrieved") or "")))
-    vals = [c for c in candidates if c]
-    return max(vals) if vals else default_ymd
-
-
-def write_urlset(path: Path, entries: list[tuple[str, float, str]]) -> None:
+def write_urlset(path: Path, entries: list[tuple[str, float, str | None]]) -> None:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -273,7 +299,10 @@ def write_urlset(path: Path, entries: list[tuple[str, float, str]]) -> None:
     for loc, priority, lastmod in entries:
         lines.append("  <url>")
         lines.append(f"    <loc>{xml_escape(loc)}</loc>")
-        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        # Source retrieval and filesystem checkout times are not page edits.
+        # Omit this optional value unless a real content date is supplied.
+        if date := _ymd_from_iso(lastmod or ""):
+            lines.append(f"    <lastmod>{date}</lastmod>")
         lines.append(f"    <priority>{priority:.2f}</priority>")
         lines.append("  </url>")
     lines.append("</urlset>")
@@ -338,7 +367,7 @@ def write_legacy_redirects_csv(
     return n
 
 
-def write_sitemap_index(path: Path, files: list[tuple[str, str]]) -> None:
+def write_sitemap_index(path: Path, files: list[tuple[str, str | None]]) -> None:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -346,7 +375,8 @@ def write_sitemap_index(path: Path, files: list[tuple[str, str]]) -> None:
     for loc, lastmod in files:
         lines.append("  <sitemap>")
         lines.append(f"    <loc>{xml_escape(loc)}</loc>")
-        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        if date := _ymd_from_iso(lastmod or ""):
+            lines.append(f"    <lastmod>{date}</lastmod>")
         lines.append("  </sitemap>")
     lines.append("</sitemapindex>")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -361,65 +391,69 @@ def profile_page_html(
     title: str,
     related_links: list[tuple[str, str]] | None = None,
     guide_links: list[dict[str, Any]] | None = None,
+    learning: dict | None = None,
+    learning_links: list[tuple[str, str, str]] | None = None,
     depth: int = 3,
 ) -> str:
     iid = isl["id"]
     name = html.escape(str(isl.get("name") or iid), quote=True)
     nation = html.escape(str(isl.get("nation") or ""), quote=True)
     title_esc = html.escape(title, quote=True)
-    desc_raw = isl.get("shortDescription") or (
+    desc_raw = (learning or {}).get("hook") or isl.get("shortDescription") or (
         f"{isl.get('name', '')} — island in {isl.get('nation', 'the British Isles')}. "
         f"Map, location, and profile on Find My Island."
     )
     desc = html.escape(str(desc_raw).replace("\n", " ").strip()[:300], quote=True)
     profile_url = f"{origin}{profile_path}" if origin else profile_path
-    atlas_url = f"{atlas_href}?island={html.escape(iid, quote=True)}&amp;map=1"
+    atlas_url = html.escape(f"{atlas_href}?{urlencode({'island': iid, 'map': '1'})}", quote=True)
     img = island_image_url(isl)
     og_img = ""
     if img:
         og_img = f'  <meta property="og:image" content="{html.escape(img, quote=True)}"/>\n'
 
-    lat = isl.get("lat")
-    lng = isl.get("lng")
-    address = ""
-    if isl.get("nation"):
-        address = f',\n    "address": {{"@type": "PostalAddress", "addressCountry": {json.dumps(str(isl.get("nation")))}}}'
-
-    geo_block = ""
+    lat = coordinate(isl.get("lat"), 90)
+    lng = coordinate(isl.get("lng"), 180)
+    country = {
+        "Scotland": "GB", "England": "GB", "Wales": "GB",
+        "Northern Ireland": "GB", "Ireland": "IE", "Isle of Man": "IM",
+    }.get(str(isl.get("nation") or ""))
+    entity_id = f"{profile_url}#island"
+    entity: dict[str, Any] = {
+        "@type": "Landform", "@id": entity_id,
+        "name": str(isl.get("name") or iid),
+        "description": str(desc_raw)[:500], "url": profile_url,
+    }
     if lat is not None and lng is not None:
-        identifiers: list[dict[str, Any]] = []
-        if isl.get("osmType") and isl.get("osmId") is not None:
-            identifiers.append(
-                {
-                    "@type": "PropertyValue",
-                    "propertyID": "OpenStreetMap",
-                    "value": f"{isl.get('osmType')}/{isl.get('osmId')}",
-                }
-            )
-        if isl.get("wikidata"):
-            identifiers.append(
-                {
-                    "@type": "PropertyValue",
-                    "propertyID": "Wikidata",
-                    "value": str(isl.get("wikidata")),
-                }
-            )
-        same_as: list[str] = []
-        if isl.get("wikipedia"):
-            same_as.append(str(isl["wikipedia"]))
-        if isl.get("wikidata"):
-            same_as.append(f"https://www.wikidata.org/wiki/{isl['wikidata']}")
-        geo_block = f"""
-  <script type="application/ld+json">{{
-    "@context": "https://schema.org",
-    "@type": "Landform",
-    "name": {json.dumps(str(isl.get("name") or iid))},
-    "description": {json.dumps(str(desc_raw)[:500])},
-    "url": {json.dumps(profile_url)},
-    "identifier": {json.dumps(identifiers[0] if len(identifiers) == 1 else identifiers) if identifiers else "null"},
-    "sameAs": {json.dumps(same_as) if same_as else "null"},
-    "geo": {{"@type": "GeoCoordinates", "latitude": {lat}, "longitude": {lng}}}{address}
-  }}</script>"""
+        entity["geo"] = {"@type": "GeoCoordinates", "latitude": lat, "longitude": lng}
+    if country:
+        entity["address"] = {"@type": "PostalAddress", "addressCountry": country}
+    identifiers = []
+    if isl.get("osmType") and isl.get("osmId") is not None:
+        identifiers.append({"@type": "PropertyValue", "propertyID": "OpenStreetMap",
+                            "value": f"{isl['osmType']}/{isl['osmId']}"})
+    if isl.get("wikidata"):
+        identifiers.append({"@type": "PropertyValue", "propertyID": "Wikidata", "value": str(isl["wikidata"])})
+    if identifiers:
+        entity["identifier"] = identifiers
+    same_as = [url for value in [isl.get("wikipedia"),
+        f"https://www.wikidata.org/wiki/{isl['wikidata']}" if isl.get("wikidata") else None]
+        if (url := external_url(value))]
+    if same_as:
+        entity["sameAs"] = same_as
+    if img:
+        entity["image"] = img
+    breadcrumb_items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": f"{origin}/"}]
+    if segment := nation_segment(isl.get("nation")):
+        breadcrumb_items.append({"@type": "ListItem", "position": 2,
+                                 "name": str(isl.get("nation")), "item": f"{origin}/islands/{segment}/"})
+    breadcrumb_items.append({"@type": "ListItem", "position": len(breadcrumb_items) + 1,
+                             "name": str(isl.get("name") or iid), "item": profile_url})
+    geo_block = json_ld_script({"@context": "https://schema.org", "@graph": [
+        entity,
+        {"@type": "WebPage", "@id": f"{profile_url}#webpage", "url": profile_url,
+         "name": title, "mainEntity": {"@id": entity_id}, "breadcrumb": {"@id": f"{profile_url}#breadcrumb"}},
+        {"@type": "BreadcrumbList", "@id": f"{profile_url}#breadcrumb", "itemListElement": breadcrumb_items},
+    ]})
 
     nation_line = (
         f'<p class="lp-kicker">{nation}</p>' if nation else ""
@@ -434,13 +468,18 @@ def profile_page_html(
         facts.append(
             f"<li><strong>Group</strong>{html.escape(str(isl['archipelago']))}</li>"
         )
-    if isl.get("areaKm2"):
+    if isl.get("areaKm2") is not None and isl.get("areaKm2") != "":
         facts.append(
             f"<li><strong>Area</strong>{html.escape(str(isl['areaKm2']))} km²</li>"
         )
     if isl.get("population") is not None and isl.get("population") != "":
+        population_year = (
+            f" ({html.escape(str(isl['populationYear']))})"
+            if isl.get("populationYear") else " (reference year not recorded)"
+        )
         facts.append(
-            f"<li><strong>Population</strong>{html.escape(str(isl['population']))}</li>"
+            f"<li><strong>Population</strong>{html.escape(str(isl['population']))}"
+            f"{population_year}</li>"
         )
     parent = isl.get("parentWaterBody")
     if isinstance(parent, dict) and parent.get("name"):
@@ -453,8 +492,9 @@ def profile_page_html(
     if hp is None:
         hp = isl.get("highestPoint")
     if hp is not None and hp != "":
+        estimate = " (estimate)" if isl.get("highestPointConfidence") == "estimate" else ""
         facts.append(
-            f"<li><strong>Highest point</strong>{html.escape(str(hp))} m</li>"
+            f"<li><strong>Highest point</strong>{html.escape(str(hp))} m{estimate}</li>"
         )
     facts_block = ""
     if facts:
@@ -526,14 +566,20 @@ def profile_page_html(
         if not isinstance(src, dict):
             continue
         src_name = html.escape(str(src.get("name") or "Source"))
-        src_url = html.escape(str(src.get("url") or ""), quote=True)
+        src_url = html.escape(external_url(src.get("url")), quote=True)
         src_ref = html.escape(str(src.get("ref") or ""))
         src_lic = html.escape(str(src.get("licence") or ""))
+        src_date = _ymd_from_iso(str(src.get("retrieved") or ""))
+        src_attr = html.escape(attribution_text(src.get("attribution")))
         if src_url:
             src_rows.append(
                 f'<li><a href="{src_url}" rel="noopener" target="_blank">{src_name}</a>'
-                f'{f" · {src_ref}" if src_ref else ""}{f" · {src_lic}" if src_lic else ""}</li>'
+                f'{f" · {src_ref}" if src_ref else ""}{f" · {src_lic}" if src_lic else ""}'
+                f'{f" · retrieved {src_date}" if src_date else ""}'
+                f'{f" · {src_attr}" if src_attr else ""}</li>'
             )
+    if isl.get("populationAttribution") and isl.get("population") is not None:
+        src_rows.append(f'<li>Population: {html.escape(attribution_text(isl["populationAttribution"]))}</li>')
     if src_rows:
         sources_block = (
             '  <section class="lp-section"><h2 class="lp-section-title">Sources</h2><ul class="lp-list">\n    '
@@ -566,29 +612,50 @@ def profile_page_html(
     guide_block = ""
     if guide_links:
         guide_items: list[str] = []
-        for link in guide_links[:6]:
+        for link in guide_links:
             href = str(link.get("href") or "")
             label = str(link.get("label") or "Guide")
             titles = [str(t) for t in (link.get("titles") or []) if str(t).strip()]
             extra = ""
             if titles:
                 extra = " — " + html.escape(", ".join(titles[:4]))
-            guide_items.append(
-                f'<li><a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>{extra}</li>'
-            )
+            rows = []
+            for row in link.get("rows") or []:
+                row_title = html.escape(str(row.get("title") or ""))
+                source = external_url(row.get("sourceUrl"))
+                summary = html.escape(str(row.get("summary") or "").strip())
+                if source:
+                    row_title = f'<a href="{html.escape(source, quote=True)}">{row_title}</a>'
+                else:
+                    row_title += " (source link not recorded)"
+                rows.append(f'<li>{row_title}{f" — {summary}" if summary else ""}</li>')
+            if rows:
+                body = '<ul class="lp-list">' + "\n".join(rows[:2]) + '</ul>'
+                if len(rows) > 2:
+                    body += (
+                        f'<details><summary>{len(rows) - 2} more entries</summary>'
+                        '<ul class="lp-list">' + "\n".join(rows[2:]) + '</ul></details>'
+                    )
+                guide_items.append(
+                    f'<section class="lp-section"><h3><a href="{html.escape(href, quote=True)}">{html.escape(label)}</a></h3>{body}</section>'
+                )
+            else:
+                guide_items.append(
+                    f'<p><a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>{extra}</p>'
+                )
         if guide_items:
             guide_block = (
-                '  <section class="lp-section"><h2 class="lp-section-title">Guides</h2>'
-                '<ul class="lp-list">\n    '
+                '  <section class="lp-section"><h2 class="lp-section-title">Stories and guides</h2>\n    '
                 + "\n    ".join(guide_items)
-                + "\n  </ul></section>\n"
+                + "\n  </section>\n"
             )
 
     img_block = ""
     if img:
         img_block = (
             f'  <figure class="lp-media"><img src="{html.escape(img, quote=True)}" '
-            f'alt="{name}" width="960" height="540" fetchpriority="high" decoding="async"/></figure>\n'
+            f'alt="{name}" width="960" height="540" fetchpriority="high" decoding="async"/>'
+            f'{image_credit_html(isl, img)}</figure>\n'
         )
 
     assets = landing_head_assets(depth)
@@ -609,7 +676,7 @@ def profile_page_html(
             for path, label in related_links[:8]
         )
         related_block = (
-            '  <section class="lp-section"><h2 class="lp-section-title">Nearby and related islands</h2>'
+            '  <section class="lp-section"><h2 class="lp-section-title">Related islands</h2>'
             f'<ul class="lp-list">\n{related_items}\n  </ul></section>\n'
         )
 
@@ -629,7 +696,7 @@ def profile_page_html(
 {og_img}  <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{title_esc}"/>
   <meta name="twitter:description" content="{desc}"/>
-  <link rel="alternate" href="{html.escape(atlas_url, quote=True)}"/>
+  <link rel="alternate" href="{atlas_url}"/>
 {assets}
 {geo_block}
 </head>
@@ -647,9 +714,9 @@ def profile_page_html(
       <a class="lp-cta" href="{atlas_url}">Open interactive map →</a>
     </header>
 {img_block}{facts_block}{hub}
-{guide_block}{sections_block}
+{learning_profile_html(learning, learning_links)}{guide_block}{sections_block}
 {related_block}
-{sources_block}    <p class="lp-note">Last reviewed: {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.</p>
+{sources_block}    <p class="lp-note"><a href="/methodology/">How this atlas is made</a> · <a href="/corrections/">Report a correction</a></p>
   </div>
 </body>
 </html>
@@ -770,7 +837,7 @@ def nation_hub_html(
   <meta property="og:title" content="{title_esc}"/>
   <meta property="og:description" content="{blurb_esc}"/>
   <meta property="og:url" content="{html.escape(hub_url, quote=True)}"/>
-  <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
+{json_ld_script(jsonld)}
 {assets}
 </head>
 <body class="lp">
@@ -838,9 +905,16 @@ def islands_root_html(*, origin: str, atlas_href: str, depth: int = 1) -> str:
 """
 
 
-def trust_page_html(*, title: str, lede: str, body: list[str], canonical: str, depth: int = 1) -> str:
+def trust_page_html(*, title: str, lede: str, body: list[str], canonical: str,
+                    links: list[tuple[str, str]] | None = None, depth: int = 1) -> str:
     assets = landing_head_assets(depth)
     paras = "\n".join(f"    <p>{html.escape(p)}</p>" for p in body)
+    if links:
+        items = "\n".join(
+            f'<li><a href="{html.escape(url, quote=True)}">{html.escape(label)}</a></li>'
+            for label, url in links if external_url(url) or url.startswith("/")
+        )
+        paras += f'<section class="lp-section"><h2>Further information</h2><ul class="lp-list">{items}</ul></section>'
     title_esc = html.escape(title, quote=True)
     lede_esc = html.escape(lede, quote=True)
     return f"""<!DOCTYPE html>
@@ -1124,7 +1198,9 @@ def asset_href_for_depth(depth: int, filename: str) -> str:
 
 def landing_head_assets(depth: int) -> str:
     styles = html.escape(asset_href_for_depth(depth, "styles.css"), quote=True)
-    landing = html.escape(asset_href_for_depth(depth, "landing.css"), quote=True)
+    landing = html.escape(asset_href_for_depth(depth, "landing.css?v=learning-20261103a"), quote=True)
+    analytics_css = html.escape(asset_href_for_depth(depth, "analytics.css?v=analytics-20261103a"), quote=True)
+    analytics_js = html.escape(asset_href_for_depth(depth, "analytics.js?v=analytics-20261103a"), quote=True)
     fonts = (
         "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600"
         "&amp;family=Outfit:wght@400;500;600&amp;display=swap"
@@ -1136,7 +1212,10 @@ def landing_head_assets(depth: int) -> str:
         'onload="this.media=\'all\'"/>\n'
         f'  <noscript><link rel="stylesheet" href="{fonts}"/></noscript>\n'
         f'  <link rel="stylesheet" href="{styles}"/>\n'
-        f'  <link rel="stylesheet" href="{landing}"/>'
+        f'  <link rel="stylesheet" href="{landing}"/>\n'
+        f'  <link rel="stylesheet" href="{html.escape(asset_href_for_depth(depth, "learning.css?v=learning-4"), quote=True)}"/>\n'
+        f'  <link rel="stylesheet" href="{analytics_css}"/>\n'
+        f'  <script src="{analytics_js}" defer></script>'
     )
 
 
@@ -1192,6 +1271,7 @@ def main() -> int:
     interest = load_interest_index()
     guide_pages = assemble_guides(interest, islands_by_id, paths) if interest else []
     guide_by_island = guides_for_island(guide_pages)
+    learning_doc = load_learning(DATA / "learning_profiles.json")
     if guide_pages:
         print(
             "Interest guides: "
@@ -1208,21 +1288,25 @@ def main() -> int:
             flush=True,
         )
     else:
-        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        islands_mtime = _mtime_ymd(ISLANDS)
-        core_entries: list[tuple[str, float, str]] = [(f"{origin}/", 1.0, _mtime_ymd(INDEX_HTML))]
-        core_entries.append((f"{origin}/islands/", 0.9, today))
+        # No reliable per-page modification dates are recorded yet.
+        # Omit optional lastmod values instead of stamping build/checkout dates.
+        core_entries: list[tuple[str, float, str | None]] = [(f"{origin}/", 1.0, None)]
+        core_entries.append((f"{origin}/islands/", 0.9, None))
         for seg in sorted(set(NATION_SEGMENT.values())):
-            core_entries.append((f"{origin}/islands/{seg}/", 0.88, today))
+            core_entries.append((f"{origin}/islands/{seg}/", 0.88, None))
         for path in TRUST_PAGES:
-            core_entries.append((f"{origin}{path}", 0.75, today))
-        core_entries.append((f"{origin}/collections/", 0.78, today))
+            core_entries.append((f"{origin}{path}", 0.75, None))
+        core_entries.append((f"{origin}/collections/", 0.78, None))
+        if learning_doc:
+            core_entries.append((f"{origin}/learn/", 0.8, None))
+            for journey in learning_doc.get("journeys", []):
+                core_entries.append((f"{origin}/learn/{journey['slug']}/", 0.8, None))
         for path in FERRY_PATHS:
-            core_entries.append((f"{origin}{path}", 0.72, _mtime_ymd(ROOT / path.strip("/") / "index.html")))
+            core_entries.append((f"{origin}{path}", 0.72, None))
 
         sorted_islands = sort_islands_for_sitemap(islands, curated, featured)
-        island_editorial: list[tuple[str, float, str]] = []
-        island_bulk: list[tuple[str, float, str]] = []
+        island_editorial: list[tuple[str, float, str | None]] = []
+        island_bulk: list[tuple[str, float, str | None]] = []
         skipped_thin = 0
         for isl in sorted_islands:
             iid = isl.get("id")
@@ -1234,24 +1318,23 @@ def main() -> int:
             pri = island_priority(str(iid), isl, curated, featured)
             sp = paths.get(str(iid))
             loc = f"{origin}{sp.path}" if sp else f"{origin}/?island={iid}"
-            row = (loc, pri, _island_lastmod(isl, islands_mtime))
+            row = (loc, pri, None)
             if str(iid) in curated or str(iid) in featured:
                 island_editorial.append(row)
             else:
                 island_bulk.append(row)
 
-        ferry_entries: list[tuple[str, float, str]] = [
-            (f"{origin}{path}", 0.72, _mtime_ymd(ROOT / path.strip("/") / "index.html"))
+        ferry_entries: list[tuple[str, float, str | None]] = [
+            (f"{origin}{path}", 0.72, None)
             for path in FERRY_PATHS
         ]
 
-        collection_entries: list[tuple[str, float, str]] = []
-        guide_lastmod = _mtime_ymd(INTEREST_INDEX) if INTEREST_INDEX.is_file() else today
+        collection_entries: list[tuple[str, float, str | None]] = []
         for page in guide_pages:
-            collection_entries.append((f"{origin}{page.path}", page.priority, guide_lastmod))
+            collection_entries.append((f"{origin}{page.path}", page.priority, None))
         for spec in collection_specs():
-            collection_entries.append((f"{origin}/collections/{spec['slug']}/", 0.68, today))
-        collection_entries.append((f"{origin}/collections/flagship-islands/", 0.82, today))
+            collection_entries.append((f"{origin}/collections/{spec['slug']}/", 0.68, None))
+        collection_entries.append((f"{origin}/collections/flagship-islands/", 0.82, None))
 
         write_urlset(ROOT / "sitemap-core.xml", core_entries)
         write_urlset(ROOT / "sitemap-islands-editorial.xml", island_editorial)
@@ -1261,11 +1344,11 @@ def main() -> int:
         write_sitemap_index(
             ROOT / "sitemap.xml",
             [
-                (f"{origin}/sitemap-core.xml", today),
-                (f"{origin}/sitemap-islands-editorial.xml", islands_mtime),
-                (f"{origin}/sitemap-islands.xml", islands_mtime),
-                (f"{origin}/sitemap-ferries-verified.xml", today),
-                (f"{origin}/sitemap-collections.xml", today),
+                (f"{origin}/sitemap-core.xml", None),
+                (f"{origin}/sitemap-islands-editorial.xml", None),
+                (f"{origin}/sitemap-islands.xml", None),
+                (f"{origin}/sitemap-ferries-verified.xml", None),
+                (f"{origin}/sitemap-collections.xml", None),
             ],
         )
         print(
@@ -1311,6 +1394,7 @@ Sitemap: {origin}/sitemap.xml
         print("Wrote robots.txt")
 
     if write_landings:
+        write_learning_pages(ROOT, learning_doc, islands_by_id, paths, origin, landing_head_assets(2), landing_head_assets(1))
         # Clear previous generated tree under islands/ (keep safe).
         # macOS can return ENOTEMPTY once while a directory is still settling.
         if ISLANDS_DIR.exists():
@@ -1359,8 +1443,8 @@ Sitemap: {origin}/sitemap.xml
                 "How we maintain quality, updates, and attribution.",
                 [
                     "We prioritize verifiable facts, clear attribution, and respectful naming across languages.",
-                    "Machine-generated enrichments are reviewed before being treated as canonical editorial content.",
-                    "When uncertain, records are marked with confidence and preserved transparently.",
+                    "Records combine curated entries with data from external sources. A source link or automated update does not mean every claim has been independently reviewed.",
+                    "Confidence labels and reference years are shown where recorded. A missing value means the atlas does not have that information, not that the value is zero.",
                 ],
             ),
             "/corrections/": (
@@ -1394,7 +1478,7 @@ Sitemap: {origin}/sitemap.xml
                 "Versioned atlas dataset metadata, definitions, and reuse guidance.",
                 [
                     "The dataset includes island geometry references, metadata, and provenance fields.",
-                    "Machine-readable outputs include islands.json, islands_index.json, nation shards, and SEO path maps.",
+                    "The public site uses a compact island index and individual detail files. The full canonical dataset and field definitions are maintained in the public repository.",
                     "Use source citations and licence obligations when reusing derived outputs.",
                 ],
             ),
@@ -1408,6 +1492,13 @@ Sitemap: {origin}/sitemap.xml
                     lede=lede,
                     body=body,
                     canonical=f"{origin}{rel_path}",
+                    links=[
+                        ("How the atlas is made", "/methodology/"),
+                        ("Sources and licences", "/sources-licensing/"),
+                        ("Ethics and source policy", f"{REPOSITORY_URL}/blob/main/docs/ETHICS.md"),
+                        ("Dataset field definitions", f"{REPOSITORY_URL}/blob/main/docs/DATA-SCHEMA.md"),
+                        ("Report an error or ask a question", f"{REPOSITORY_URL}/issues"),
+                    ],
                 ),
                 encoding="utf-8",
             )
@@ -1432,6 +1523,8 @@ Sitemap: {origin}/sitemap.xml
             (f"/collections/{spec['slug']}/", spec["title"], spec.get("blurb") or "")
             for spec in collection_specs()
         ]
+        if learning_doc:
+            other_hubs.append(("/learn/", "Island learning journeys", "Follow connected stories through eight islands at a time."))
         other_hubs.append(
             (
                 "/collections/flagship-islands/",
@@ -1448,7 +1541,6 @@ Sitemap: {origin}/sitemap.xml
             ),
             encoding="utf-8",
         )
-        reviewed = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         for page in guide_pages:
             out_dir = collections_root / page.slug
             out_dir.mkdir(parents=True, exist_ok=True)
@@ -1457,7 +1549,6 @@ Sitemap: {origin}/sitemap.xml
                     page=page,
                     origin=origin,
                     assets=landing_head_assets(2),
-                    reviewed=reviewed,
                 ),
                 encoding="utf-8",
             )
@@ -1519,6 +1610,8 @@ Sitemap: {origin}/sitemap.xml
                 title=page_title(isl),
                 related_links=related_links_for(str(iid), sp, by_seg),
                 guide_links=guide_by_island.get(str(iid)),
+                learning=learning_doc.get("profiles", {}).get(str(iid)),
+                learning_links=reading_links_for(learning_doc.get("profiles", {}).get(str(iid)), islands_by_id, paths),
                 depth=3,
             )
             out.write_text(page, encoding="utf-8")

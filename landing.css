@@ -9,6 +9,7 @@
 
 body.lp {
   margin: 0;
+  height: auto;
   min-height: 100dvh;
   background:
     radial-gradient(90% 55% at 15% -8%, rgba(94, 176, 255, 0.14), transparent 52%),
@@ -147,17 +148,23 @@ body.lp {
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   background: var(--bg-soft);
-  aspect-ratio: 16 / 9;
-  max-height: 420px;
   box-shadow: var(--shadow-card);
 }
 
 .lp-media img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   max-height: 420px;
   object-fit: cover;
+}
+
+.lp-media figcaption {
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .lp-facts {
@@ -462,6 +469,9 @@ body.lp {
   --bg-elev: #faf6ee;
   --bg-soft: #e7f1ef;
   --bg-muted: #e6dccb;
+  --surface-card: #faf6ee;
+  --surface-hover: #e7f1ef;
+  --surface-inset: #e6dccb;
   --text: #1b2430;
   --text-soft: #3d4a58;
   --text-muted: #6e655c;
